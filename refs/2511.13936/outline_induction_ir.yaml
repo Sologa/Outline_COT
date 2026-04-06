@@ -1,0 +1,566 @@
+artifact_type: "reference_grounded_outline_induction_ir"
+artifact_alias: "section_aligned_taxonomy_ledger"
+source_mode: "reference_only"
+paper_id: "2511.13936"
+title: "Preference-Based Learning in Audio Applications: A Systematic Analysis"
+inputs:
+  title: true
+  reference_metadata: true
+  gold_outline: false
+nodes:
+  - node_id: "n1"
+    level: 1
+    title_candidate: "Review Protocol and Source Coverage"
+    node_role: "framing_group"
+    parent: null
+    refs_complete: []
+    inclusion_rule: "Use for references whose titles describe systematic-review reporting, search utilities, or literature-source coverage instead of an audio preference-learning task."
+    ordering_reason: "Placed first because the review title explicitly promises a systematic analysis, so retrieval and reporting infrastructure logically precede thematic synthesis."
+    preserve_reason: "Kept as an empty top-level frame so review-construction references do not dilute substantive audio-method sections."
+  - node_id: "n1_1"
+    level: 2
+    title_candidate: "Systematic-review reporting and source discovery"
+    node_role: "method_leaf"
+    parent: "n1"
+    refs_complete:
+      - "page2021prisma"
+      - "google_scholar_hindex"
+      - "harzing2007pop"
+      - "ginsparg2021lessons"
+      - "sutton2017popularity"
+    inclusion_rule: "Include only references that name review guidelines, search tools, or literature-discovery platforms."
+    ordering_reason: "This leaf leads the IR because it operationalizes the 'systematic analysis' framing before any method or application taxonomy."
+  - node_id: "n2"
+    level: 1
+    title_candidate: "Preference Learning Foundations"
+    node_role: "thematic_group"
+    parent: null
+    refs_complete: []
+    inclusion_rule: "Use for non-audio-specific references that define ranking, choice, or preference-optimization machinery reused by later audio applications."
+    ordering_reason: "Placed second because foundational preference formalisms and RLHF mechanics support all downstream audio application clusters."
+    preserve_reason: "Kept as an empty group so generic preference-learning machinery stays separated from application-specific audio sections."
+  - node_id: "n2_1"
+    level: 2
+    title_candidate: "Pairwise choice, ranking, and ordinal formulations"
+    node_role: "evidence_leaf"
+    parent: "n2"
+    refs_complete:
+      - "bradley1952rank"
+      - "luce1959individual"
+      - "plackett1975analysis"
+      - "cao2007learning"
+      - "carterette2008here"
+      - "chumbalov2020scalable"
+      - "jayawardena2020ordinal"
+    inclusion_rule: "References must explicitly discuss paired comparisons, choice behavior, permutations, ranking, comparison-based search, or ordinal-data formulation."
+    ordering_reason: "This leaf comes before RLHF because static ranking and choice models are the older and simpler substrate for later preference optimization."
+  - node_id: "n2_2"
+    level: 2
+    title_candidate: "RLHF, reward models, and preference optimization"
+    node_role: "evidence_leaf"
+    parent: "n2"
+    refs_complete:
+      - "christiano2017deep"
+      - "ziegler2019fine"
+      - "stiennon2020learning"
+      - "ouyang2022training"
+      - "schulman2017proximal"
+      - "zhang2021sample"
+      - "pan2022effects"
+      - "gao2023scaling"
+      - "casper2023open"
+      - "rafailov2023direct"
+      - "singhal2023long"
+      - "zhou2023beyond"
+      - "kaufmann2024survey"
+      - "chaudhari2025rlhf"
+    inclusion_rule: "References must explicitly mention human preferences, human feedback, reward models, DPO, RLHF, or optimization pathologies tied to preference learning."
+    ordering_reason: "This leaf follows ranking formalisms because it moves from static comparison models into full optimization pipelines and failure analyses."
+  - node_id: "n3"
+    level: 1
+    title_candidate: "Affective Audio and Emotion-Centric Applications"
+    node_role: "thematic_group"
+    parent: null
+    refs_complete: []
+    inclusion_rule: "Use for references whose titles center emotion recognition, emotional annotation, or affective audio settings."
+    ordering_reason: "Placed third because emotion-oriented speech and affective audio are the densest direct application cluster in the recovered bibliography."
+    preserve_reason: "Kept as an empty group so data, modeling, and non-speech affect extensions can remain distinct but adjacent."
+  - node_id: "n3_1"
+    level: 2
+    title_candidate: "Emotion corpora, annotation conversion, and label acquisition"
+    node_role: "evidence_leaf"
+    parent: "n3"
+    refs_complete:
+      - "busso2016msp"
+      - "mckeown2011semaine"
+      - "metallinou2013annotation"
+      - "lotfian2017building"
+      - "parthasarathy2018preference"
+      - "naini2023preference"
+      - "wu2023interval"
+    inclusion_rule: "References must foreground datasets, annotation procedures, label transformation, or preference-derived emotional labels."
+    ordering_reason: "This leaf comes before SER models because corpus construction and label formation are prerequisites for downstream emotion-learning systems."
+  - node_id: "n3_2"
+    level: 2
+    title_candidate: "Rank- and preference-based speech emotion recognition"
+    node_role: "evidence_leaf"
+    parent: "n3"
+    refs_complete:
+      - "al2023speech"
+      - "cao2012combining"
+      - "cao2015speaker"
+      - "lotfian2016practical"
+      - "lotfian2016retrieving"
+      - "parthasarathy2016using"
+      - "parthasarathy2017ranking"
+      - "han2020ordinal"
+      - "naini2023unsupervised"
+      - "lei2023audio"
+    inclusion_rule: "References must explicitly pair emotion recognition with ranking, preference learning, ordinal learning, or preference-derived supervision."
+    ordering_reason: "This leaf follows annotation work because it consumes those labels to build and adapt concrete speech emotion recognizers."
+  - node_id: "n3_3"
+    level: 2
+    title_candidate: "Non-speech affective and multimodal extensions"
+    node_role: "context_leaf"
+    parent: "n3"
+    refs_complete:
+      - "yang2010ranking"
+      - "lopes2017modelling"
+      - "zhu2021deep"
+    inclusion_rule: "References must move beyond core speech SER into music, soundscape affect, or broader audio-visual affect context."
+    ordering_reason: "Placed after core speech SER because these references broaden the emotion theme into neighboring audio modalities rather than the main speech track."
+  - node_id: "n4"
+    level: 1
+    title_candidate: "Preference Alignment for Audio Generation"
+    node_role: "thematic_group"
+    parent: null
+    refs_complete: []
+    inclusion_rule: "Use for references whose titles directly describe aligning generated speech, text-to-audio, or music outputs to human preferences."
+    ordering_reason: "Placed after affective recognition because the bibliography then shifts from interpreting emotion to actively steering generated audio with preference signals."
+    preserve_reason: "Kept as an empty group so speech-generation and broader text-to-audio alignment can be separated without importing generic model-backbone papers."
+  - node_id: "n4_1"
+    level: 2
+    title_candidate: "Preference-optimized speech generation and emotional TTS"
+    node_role: "evidence_leaf"
+    parent: "n4"
+    refs_complete:
+      - "liu2021reinforcement"
+      - "gao2025emo"
+      - "zhang2024speechalign"
+    inclusion_rule: "References must explicitly mention reinforcement, DPO, or human preferences in speech generation or emotional TTS."
+    ordering_reason: "Speech generation is listed before broader text-to-audio because it has tighter lexical overlap with the speech-heavy application evidence in the bibliography."
+  - node_id: "n4_2"
+    level: 2
+    title_candidate: "Human-preference alignment for text-to-audio and music generation"
+    node_role: "evidence_leaf"
+    parent: "n4"
+    refs_complete:
+      - "liao2024baton"
+      - "cideron2024musicrl"
+    inclusion_rule: "References must explicitly state alignment to human preference feedback for text-to-audio or music generation."
+    ordering_reason: "Placed after speech generation because it widens the scope from speech-specific alignment to more general audio and music generation."
+  - node_id: "n5"
+    level: 1
+    title_candidate: "Perceptual Quality Assessment and Quality-Oriented Optimization"
+    node_role: "thematic_group"
+    parent: null
+    refs_complete: []
+    inclusion_rule: "Use for references centered on perceptual audio quality judgments, quality metrics, MOS/MUSHRA protocols, or optimization toward those targets."
+    ordering_reason: "Placed after generation alignment because quality assessment papers mainly evaluate or optimize outputs once an audio system exists."
+    preserve_reason: "Kept as an empty group so measurement protocols can remain distinct from the smaller cluster that optimizes directly against quality scores."
+  - node_id: "n5_1"
+    level: 2
+    title_candidate: "Subjective protocols and learned audio quality metrics"
+    node_role: "evidence_leaf"
+    parent: "n5"
+    refs_complete:
+      - "itu20031534"
+      - "rix2001perceptual"
+      - "wester2015we"
+      - "dong2020pyramid"
+      - "mittag2021nisqa"
+      - "manocha2020differentiable"
+      - "kilgour2018fr"
+    inclusion_rule: "References must define subjective listening protocols or learned/perceptual metrics for audio or speech quality."
+    ordering_reason: "This leaf precedes quality optimization because measurement protocols and predictors are needed before systems can optimize toward them."
+  - node_id: "n5_2"
+    level: 2
+    title_candidate: "MOS-aligned enhancement optimization"
+    node_role: "evidence_leaf"
+    parent: "n5"
+    refs_complete:
+      - "kumar2025using"
+    inclusion_rule: "References must explicitly optimize an audio enhancement system toward MOS or quality-score targets via RLHF or a similar preference loop."
+    ordering_reason: "Placed after the metric leaf because it depends on MOS-like quality targets rather than introducing a new evaluation framework."
+  - node_id: "n6"
+    level: 1
+    title_candidate: "Audio Foundation Models and Adjacent Task Context"
+    node_role: "thematic_group"
+    parent: null
+    refs_complete: []
+    inclusion_rule: "Use for broad audio-model backbones, benchmarks, or neighboring audio tasks that contextualize but do not themselves define a direct preference-learning method."
+    ordering_reason: "Placed last because these references provide broader system context and adjacent tasks, not the core preference-learning application evidence."
+    preserve_reason: "Kept as an empty group so contextual model papers and neighboring task papers do not get mistaken for direct preference-learning application leaves."
+  - node_id: "n6_1"
+    level: 2
+    title_candidate: "Audio-language and omnimodal model backbones"
+    node_role: "context_leaf"
+    parent: "n6"
+    refs_complete:
+      - "anastassiou2024seed"
+      - "chu2024qwen2"
+      - "huang2025step"
+      - "huang2022mulan"
+      - "li2024omnibench"
+      - "luo2025openomni"
+      - "xu2025qwen2"
+      - "hurst2024gpt"
+      - "team2024gemini"
+    inclusion_rule: "References must present a speech, audio-language, or omnimodal model family, benchmark suite, or multimodal backbone that contextualizes later alignment work."
+    ordering_reason: "This leaf leads the context section because model backbones frame what kinds of audio systems later preference signals can steer."
+  - node_id: "n6_2"
+    level: 2
+    title_candidate: "Speech/audio understanding benchmarks and adaptation"
+    node_role: "context_leaf"
+    parent: "n6"
+    refs_complete:
+      - "yang2021superb"
+      - "morris2004and"
+      - "nagpal2025speech"
+    inclusion_rule: "References must benchmark speech understanding or adapt recognition systems, without making human preference learning the main title claim."
+    ordering_reason: "Placed after backbone models because these references operationalize evaluation and adaptation on understanding tasks rather than defining new model families."
+  - node_id: "n6_3"
+    level: 2
+    title_candidate: "Adjacent interactive or reinforcement-driven audio tasks"
+    node_role: "context_leaf"
+    parent: "n6"
+    refs_complete:
+      - "latif2101survey"
+      - "donahue2022melody"
+      - "lopes2015sonancia"
+      - "zhou2021interactive"
+      - "wu2025adaptive"
+    inclusion_rule: "References must describe neighboring audio tasks with reinforcement, interaction, procedural sonification, or other control signals that are adjacent to preference-based audio learning."
+    ordering_reason: "Placed last because these titles are the most adjacent rather than directly preference-grounded, so they work best as boundary-setting context."
+ref_assignment_ledger:
+  - ref_key: "page2021prisma"
+    assigned_to:
+      - "n1_1"
+    assignment_reason: "The title explicitly says 'guideline for reporting systematic reviews', so it grounds review protocol rather than any audio application leaf."
+  - ref_key: "google_scholar_hindex"
+    assigned_to:
+      - "n1_1"
+    assignment_reason: "The title 'Top Publications - Computer Science' identifies a discovery and ranking source for literature collection, not a preference-learning method."
+  - ref_key: "harzing2007pop"
+    assigned_to:
+      - "n1_1"
+    assignment_reason: "Because 'Publish or Perish' is a citation-search utility rather than an audio paper, it belongs with source discovery instead of substantive method nodes."
+  - ref_key: "ginsparg2021lessons"
+    assigned_to:
+      - "n1_1"
+    assignment_reason: "The title focuses on 'arXiv's 30 years of information sharing', which supports literature-source coverage rather than an application taxonomy."
+  - ref_key: "sutton2017popularity"
+    assigned_to:
+      - "n1_1"
+    assignment_reason: "Its focus on the 'Popularity of arxiv.org within computer science' is about corpus sourcing and coverage, not preference learning in audio."
+  - ref_key: "bradley1952rank"
+    assigned_to:
+      - "n2_1"
+    assignment_reason: "The title centers 'paired comparisons', making it a direct pairwise-choice foundation rather than an audio-specific application."
+  - ref_key: "luce1959individual"
+    assigned_to:
+      - "n2_1"
+    assignment_reason: "The book title 'Individual choice behavior' is a canonical choice-model reference, so it fits formulation foundations rather than any downstream audio node."
+  - ref_key: "plackett1975analysis"
+    assigned_to:
+      - "n2_1"
+    assignment_reason: "Because the title is 'The analysis of permutations', it supports ranking-choice formalisms rather than RLHF or a concrete audio task."
+  - ref_key: "cao2007learning"
+    assigned_to:
+      - "n2_1"
+    assignment_reason: "The title explicitly traces 'pairwise' to 'listwise' learning-to-rank, so it is a general ranking-method foundation instead of an audio application paper."
+  - ref_key: "carterette2008here"
+    assigned_to:
+      - "n2_1"
+    assignment_reason: "The phrase 'Preference judgments for relevance' directly names preference elicitation, but the lack of audio terms keeps it in generic ranking foundations."
+  - ref_key: "chumbalov2020scalable"
+    assigned_to:
+      - "n2_1"
+    assignment_reason: "Its title foregrounds 'comparison-based search without features', which is a generic comparison framework rather than an RLHF or audio-specific method."
+  - ref_key: "jayawardena2020ordinal"
+    assigned_to:
+      - "n2_1"
+    assignment_reason: "The title asks 'How Ordinal Are Your Data?', so it fits ordinal-data formulation as general methodology, not a specific speech emotion system."
+  - ref_key: "christiano2017deep"
+    assigned_to:
+      - "n2_2"
+    assignment_reason: "The title 'Deep reinforcement learning from human preferences' is a direct RLHF precursor, so it belongs in preference optimization rather than ranking-only formulations."
+  - ref_key: "ziegler2019fine"
+    assigned_to:
+      - "n2_2"
+    assignment_reason: "Because it explicitly says 'Fine-tuning language models from human preferences', it is a core human-feedback optimization reference, not an audio application."
+  - ref_key: "stiennon2020learning"
+    assigned_to:
+      - "n2_2"
+    assignment_reason: "The phrase 'with human feedback' makes this a direct RLHF-style optimization paper, even though the task is summarization rather than audio."
+  - ref_key: "ouyang2022training"
+    assigned_to:
+      - "n2_2"
+    assignment_reason: "Its title ends with 'with human feedback', placing it squarely in RLHF pipelines rather than in choice-model or audio-task leaves."
+  - ref_key: "schulman2017proximal"
+    assigned_to:
+      - "n2_2"
+    assignment_reason: "PPO is an optimization algorithm repeatedly used inside RLHF loops, so it fits preference optimization infrastructure rather than a static ranking leaf."
+  - ref_key: "zhang2021sample"
+    assigned_to:
+      - "n2_2"
+    assignment_reason: "The title names REINFORCE and sample-efficient reinforcement learning, which is optimizer-level machinery more aligned with RLHF stacks than with audio applications."
+  - ref_key: "pan2022effects"
+    assigned_to:
+      - "n2_2"
+    assignment_reason: "Because the title studies 'reward misspecification' and 'misaligned models', it belongs with preference-optimization failure analysis rather than audio evaluation."
+  - ref_key: "gao2023scaling"
+    assigned_to:
+      - "n2_2"
+    assignment_reason: "The phrase 'reward model overoptimization' is reward-model pathology, making it a direct fit for RLHF mechanics rather than any task-specific audio node."
+  - ref_key: "casper2023open"
+    assigned_to:
+      - "n2_2"
+    assignment_reason: "Its title explicitly names 'fundamental limitations of reinforcement learning from human feedback', so it is a high-level RLHF analysis, not an application paper."
+  - ref_key: "rafailov2023direct"
+    assigned_to:
+      - "n2_2"
+    assignment_reason: "Direct Preference Optimization is explicitly named in the title, which makes this a central preference-optimization method rather than a ranking-only formulation."
+  - ref_key: "singhal2023long"
+    assigned_to:
+      - "n2_2"
+    assignment_reason: "The title investigates 'length correlations in RLHF', so it fits optimization-side diagnostics rather than any audio-specific application leaf."
+  - ref_key: "zhou2023beyond"
+    assigned_to:
+      - "n2_2"
+    assignment_reason: "Because it introduces 'Multi-objective direct preference optimization', it clearly belongs in the DPO/RLHF method cluster instead of an audio application node."
+  - ref_key: "kaufmann2024survey"
+    assigned_to:
+      - "n2_2"
+    assignment_reason: "The title is literally 'A survey of reinforcement learning from human feedback', so it synthesizes RLHF foundations rather than audio use cases."
+  - ref_key: "chaudhari2025rlhf"
+    assigned_to:
+      - "n2_2"
+    assignment_reason: "Its title promises 'A critical analysis of reinforcement learning from human feedback for LLMs', making it a method-level critique rather than an audio paper."
+  - ref_key: "busso2016msp"
+    assigned_to:
+      - "n3_1"
+    assignment_reason: "The title names 'an acted corpus' for studying emotion perception, so it is a dataset/annotation resource rather than a ranking model."
+  - ref_key: "mckeown2011semaine"
+    assigned_to:
+      - "n3_1"
+    assignment_reason: "Because it presents 'The semaine database' of emotionally colored conversations, it supports corpus and annotation infrastructure instead of a preference-learning classifier."
+  - ref_key: "metallinou2013annotation"
+    assigned_to:
+      - "n3_1"
+    assignment_reason: "The title begins 'Annotation and processing of continuous emotional attributes', which is label-creation work rather than downstream recognition."
+  - ref_key: "lotfian2017building"
+    assigned_to:
+      - "n3_1"
+    assignment_reason: "Its focus on 'Building naturalistic emotionally balanced speech corpus' clearly matches corpus acquisition, not a model or optimization paper."
+  - ref_key: "parthasarathy2018preference"
+    assigned_to:
+      - "n3_1"
+    assignment_reason: "The title centers 'preference-learning' for emotional annotations, which is closer to label acquisition than to an end-task recognizer."
+  - ref_key: "naini2023preference"
+    assigned_to:
+      - "n3_1"
+    assignment_reason: "Because it is about 'Preference learning labels by anchoring on consecutive annotations', it belongs with label construction rather than with SER model architecture."
+  - ref_key: "wu2023interval"
+    assigned_to:
+      - "n3_1"
+    assignment_reason: "The title 'From Interval to Ordinal' describes label conversion, so it fits annotation transformation rather than a task-specific preference model."
+  - ref_key: "al2023speech"
+    assigned_to:
+      - "n3_2"
+    assignment_reason: "A 'comprehensive survey' of speech emotion recognition is the broadest anchor for the SER leaf, not a dataset-only or generation node."
+  - ref_key: "cao2012combining"
+    assigned_to:
+      - "n3_2"
+    assignment_reason: "The title explicitly pairs 'Ranking and Classification' with 'Emotion Recognition in Spontaneous Speech', so it is an applied SER model rather than a generic ranking foundation."
+  - ref_key: "cao2015speaker"
+    assigned_to:
+      - "n3_2"
+    assignment_reason: "Because it says 'emotion recognition via ranking' and studies speech, it squarely fits rank-based SER instead of corpus construction or generic ranking theory."
+  - ref_key: "lotfian2016practical"
+    assigned_to:
+      - "n3_2"
+    assignment_reason: "The title links 'preference learning' to 'ranking emotional speech', which is direct evidence for applied speech emotion ranking rather than annotation collection."
+  - ref_key: "lotfian2016retrieving"
+    assigned_to:
+      - "n3_2"
+    assignment_reason: "Its phrase 'Retrieving Categorical Emotions' using preference-learning samples places it in applied emotional-speech inference, not in generic preference theory."
+  - ref_key: "parthasarathy2016using"
+    assigned_to:
+      - "n3_2"
+    assignment_reason: "The title says it builds 'rank-based emotion classifiers', so it belongs with SER modeling rather than with annotation or corpora."
+  - ref_key: "parthasarathy2017ranking"
+    assigned_to:
+      - "n3_2"
+    assignment_reason: "Because it is explicitly 'Ranking emotional attributes with deep neural networks', it is a model paper for emotion prediction, not a generic DNN or ranking reference."
+  - ref_key: "han2020ordinal"
+    assigned_to:
+      - "n3_2"
+    assignment_reason: "The title 'Ordinal learning for emotion recognition in customer service calls' is a direct emotion-recognition application, so it fits here rather than the general ordinal-method leaf."
+  - ref_key: "naini2023unsupervised"
+    assigned_to:
+      - "n3_2"
+    assignment_reason: "Its title explicitly says 'preference learning based speech emotion recognition', making it a direct SER application rather than a dataset or label-construction paper."
+  - ref_key: "lei2023audio"
+    assigned_to:
+      - "n3_2"
+    assignment_reason: "The phrase 'emotion recognition with preference learning' makes this a core application paper, while its audio-visual setting broadens the SER leaf rather than moving it to generic multimodal context."
+  - ref_key: "yang2010ranking"
+    assigned_to:
+      - "n3_3"
+    assignment_reason: "Because the title says 'Ranking-based emotion recognition for music', it is affective but non-speech, which fits the extension leaf instead of the speech SER core."
+  - ref_key: "lopes2017modelling"
+    assigned_to:
+      - "n3_3"
+    assignment_reason: "Its focus on 'affect for horror soundscapes' clearly extends emotion-oriented audio work beyond speech, so it fits the non-speech affect leaf."
+  - ref_key: "zhu2021deep"
+    assigned_to:
+      - "n3_3"
+    assignment_reason: "A 'survey' of deep audio-visual learning is broader and more multimodal than the speech SER leaf, so it is best treated as extension context within affective audio."
+  - ref_key: "liu2021reinforcement"
+    assigned_to:
+      - "n4_1"
+    assignment_reason: "The title explicitly combines 'Reinforcement learning' with 'emotional text-to-speech synthesis', so it belongs in preference-optimized speech generation rather than generic model context."
+  - ref_key: "gao2025emo"
+    assigned_to:
+      - "n4_1"
+    assignment_reason: "Because it introduces 'Emo-DPO' for 'controllable emotional speech synthesis', it is a direct speech-generation preference-optimization paper, not a backbone-only model."
+  - ref_key: "zhang2024speechalign"
+    assigned_to:
+      - "n4_1"
+    assignment_reason: "The title 'Aligning speech generation to human preferences' is an exact lexical match for this leaf and is more specific than the broader text-to-audio sibling."
+  - ref_key: "liao2024baton"
+    assigned_to:
+      - "n4_2"
+    assignment_reason: "Its title says 'Aligning text-to-audio model with human preference feedback', which directly supports the broader audio-generation alignment leaf rather than speech-only TTS."
+  - ref_key: "cideron2024musicrl"
+    assigned_to:
+      - "n4_2"
+    assignment_reason: "Because it is about 'Aligning music generation to human preferences', it fits the music/text-to-audio alignment leaf instead of speech generation or quality assessment."
+  - ref_key: "itu20031534"
+    assigned_to:
+      - "n5_1"
+    assignment_reason: "The title names MUSHRA as a 'method for the subjective assessment' of quality, so it is a core listening-protocol reference rather than an optimization paper."
+  - ref_key: "rix2001perceptual"
+    assigned_to:
+      - "n5_1"
+    assignment_reason: "PESQ is explicitly introduced as 'a new method for speech quality assessment', which makes it a measurement reference rather than a generation or recognition method."
+  - ref_key: "wester2015we"
+    assigned_to:
+      - "n5_1"
+    assignment_reason: "Its critique of listener counts in 'TTS evaluations' clearly belongs to subjective evaluation protocol design, not to preference-learning optimization."
+  - ref_key: "dong2020pyramid"
+    assigned_to:
+      - "n5_1"
+    assignment_reason: "The title focuses on predicting 'crowdsourced speech-quality ratings', so it is a quality-prediction metric/model paper rather than an alignment method."
+  - ref_key: "mittag2021nisqa"
+    assigned_to:
+      - "n5_1"
+    assignment_reason: "Because it presents a model for 'multidimensional speech quality prediction', it fits the quality-metric leaf instead of a preference-optimization leaf."
+  - ref_key: "manocha2020differentiable"
+    assigned_to:
+      - "n5_1"
+    assignment_reason: "The phrase 'differentiable perceptual audio metric' marks it as an audio-quality metric paper, not as a direct RLHF or generation-alignment work."
+  - ref_key: "kilgour2018fr"
+    assigned_to:
+      - "n5_1"
+    assignment_reason: "Frechet Audio Distance is introduced as 'A metric for evaluating music enhancement algorithms', so it belongs with evaluation metrics rather than with generation alignment."
+  - ref_key: "kumar2025using"
+    assigned_to:
+      - "n5_2"
+    assignment_reason: "Its title explicitly says 'Using RLHF to align speech enhancement approaches to mean-opinion quality scores', making it a direct MOS-targeted optimization paper rather than a metric-only reference."
+  - ref_key: "anastassiou2024seed"
+    assigned_to:
+      - "n6_1"
+    assignment_reason: "Seed-TTS is presented as 'a family of high-quality versatile speech generation models', so it serves as speech-model context rather than direct preference alignment."
+  - ref_key: "chu2024qwen2"
+    assigned_to:
+      - "n6_1"
+    assignment_reason: "The title 'Qwen2-Audio technical report' identifies an audio-language backbone, which contextualizes alignment work without itself claiming preference optimization."
+  - ref_key: "huang2025step"
+    assigned_to:
+      - "n6_1"
+    assignment_reason: "Because 'Step-Audio' is framed as unified speech understanding and generation, it is a system backbone reference rather than an explicit human-preference paper."
+  - ref_key: "huang2022mulan"
+    assigned_to:
+      - "n6_1"
+    assignment_reason: "The title 'A joint embedding of music audio and natural language' provides representation context for text-audio systems, not a direct preference-alignment method."
+  - ref_key: "li2024omnibench"
+    assigned_to:
+      - "n6_1"
+    assignment_reason: "OmniBench is benchmark/context infrastructure for 'universal omni-language models', so it fits model-context framing rather than a direct audio preference method."
+  - ref_key: "luo2025openomni"
+    assigned_to:
+      - "n6_1"
+    assignment_reason: "Although the title mentions 'alignment' and emotional speech synthesis, it frames OpenOmni as a broad omnimodal model platform rather than a focused human-preference algorithm paper."
+  - ref_key: "xu2025qwen2"
+    assigned_to:
+      - "n6_1"
+    assignment_reason: "The 'Qwen2.5-omni technical report' is a broad model-report title, so it belongs in omnimodal backbone context rather than a specific preference-learning leaf."
+  - ref_key: "hurst2024gpt"
+    assigned_to:
+      - "n6_1"
+    assignment_reason: "A system card for GPT-4o is multimodal platform context, not a direct audio preference-learning contribution."
+  - ref_key: "team2024gemini"
+    assigned_to:
+      - "n6_1"
+    assignment_reason: "Its title emphasizes 'multimodal understanding' at model scale, so it is contextual backbone evidence instead of a targeted audio preference method."
+  - ref_key: "yang2021superb"
+    assigned_to:
+      - "n6_2"
+    assignment_reason: "SUPERB is explicitly a 'speech processing universal performance benchmark', making it understanding-task context rather than a direct preference-learning paper."
+  - ref_key: "morris2004and"
+    assigned_to:
+      - "n6_2"
+    assignment_reason: "Because it introduces evaluation measures for 'connected speech recognition', it supports speech-understanding adaptation context rather than quality or generation alignment."
+  - ref_key: "nagpal2025speech"
+    assigned_to:
+      - "n6_2"
+    assignment_reason: "The title combines 'Speech recognition' with reinforcement learning, but the task is recognition adaptation rather than explicit preference labeling, so it fits adjacent understanding context."
+  - ref_key: "latif2101survey"
+    assigned_to:
+      - "n6_3"
+    assignment_reason: "A 'survey on deep reinforcement learning for audio-based applications' is adjacent RL context for audio, but not specific enough for a narrower preference-only application leaf."
+  - ref_key: "donahue2022melody"
+    assigned_to:
+      - "n6_3"
+    assignment_reason: "The title is about 'Melody transcription via generative pre-training', which is an adjacent audio task without direct preference wording, so it stays in contextual boundary-setting."
+  - ref_key: "lopes2015sonancia"
+    assigned_to:
+      - "n6_3"
+    assignment_reason: "Because it studies 'Sonification of procedurally generated game levels', it is an interactive/procedural audio task adjacent to, but not itself evidence for, preference learning."
+  - ref_key: "zhou2021interactive"
+    assigned_to:
+      - "n6_3"
+    assignment_reason: "The title foregrounds 'Interactive exploration-exploitation balancing' for melody composition, which is adjacent control-oriented audio generation rather than explicit human-preference alignment."
+  - ref_key: "wu2025adaptive"
+    assigned_to:
+      - "n6_3"
+    assignment_reason: "Its focus on 'Adaptive accompaniment' makes it an interactive music-generation context paper, but the title does not directly ground a preference-label or human-feedback mechanism."
+unassigned_refs:
+  - ref_key: "chakrabarty2024art"
+    reason: "The title concerns LLM creativity claims, but it gives no audio-specific or preference-learning evidence strong enough to justify assignment."
+  - ref_key: "liang2022holistic"
+    reason: "Holistic LM evaluation is too general and text-centered in the title to support a specific audio-preference node without overreaching."
+  - ref_key: "lin2004rouge"
+    reason: "ROUGE is a summarization metric paper; the title provides no audio or preference cue, so forcing it into evaluation nodes would be weak."
+  - ref_key: "papineni2002bleu"
+    reason: "BLEU is a machine-translation metric reference, and the title alone does not justify mapping it to an audio-preference section."
+  - ref_key: "reiter2018structured"
+    reason: "This structured review is specifically about BLEU validity, which is still too text-metric-specific to anchor an audio leaf from metadata alone."
+  - ref_key: "schluter2017limits"
+    reason: "The title discusses ROUGE limits for summarisation, offering only a distant evaluation analogy and not enough syntax-specific evidence for assignment."
+  - ref_key: "shao2024deepseekmath"
+    reason: "A math-reasoning open-language-model paper is outside the recovered audio and preference signal in this bibliography."
+  - ref_key: "zhou2014predicting"
+    reason: "Predicting the geographical origin of music is an audio task, but the title shows no preference, ranking, alignment, or affect signal strong enough for assignment."

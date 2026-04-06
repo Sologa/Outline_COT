@@ -1,0 +1,780 @@
+artifact_type: reference_grounded_outline_induction_ir
+artifact_alias: section_aligned_taxonomy_ledger
+source_mode: reference_only
+paper_id: '2507.18910'
+title: 'A Systematic Review of Key Retrieval-Augmented Generation (RAG) Systems: Progress, Gaps, and Future Directions'
+inputs:
+  title: true
+  reference_metadata: true
+  gold_outline: false
+nodes:
+- node_id: n_rag_foundations
+  level: 1
+  title_candidate: Foundations and Core RAG Architectures
+  node_role: background_theme
+  parent: null
+  refs_complete:
+  - Weston2015
+  - Sukhbaatar2015
+  - Guu2020
+  - Guu2020REALM
+  - lewis2020retrieval
+  - Lewis2020
+  - Petroni2019LMasKB
+  - petroni2019
+  - roberts2020
+  - Borgeaud2022
+  - Borgeaud2022RETRO
+  inclusion_rule: Assign only canonical precursors and core retrieval-augmented formulations that define the idea of external knowledge access or memory-backed generation, not vendor explainers or product guides.
+  ordering_reason: The review still opens with true RAG precursors and core formulations because these papers define the pattern before implementation details split into retrieval, applications, and assessment.
+- node_id: n_retrieval_and_indexing
+  level: 1
+  title_candidate: Retrieval, Indexing, and Reranking Methods
+  node_role: method_theme
+  parent: null
+  refs_complete:
+  - Lee2019
+  - Karpukhin2020
+  - Izacard2022
+  - Shuster2022
+  - wang2018r3
+  - Izacard2021
+  - li2024rag_vs_long
+  - zhao2024frag
+  - jiang-etal-2023-active
+  - salemi2024evaluating
+  - yu2024rankrag
+  - wang2024searching
+  - wang2023learning
+  - soudani2024fine
+  - golatkar2024cpr
+  - he2024g
+  - cheng2023lift
+  - siriwardhana2023improving
+  - jin2024long
+  - Izacard2022Atlas
+  - Jin2024KnowledgeConflicts
+  - Shuster2021
+  - Trivedi2023
+  - Asai2024
+  - Jin2024
+  - Bergman2025
+  - Malkov2018
+  - An2025
+  - Siriwardhana2023
+  - Izacard2023
+  - lewis2020marge
+  - sachan2021emdr2
+  - parvez-etal-2021-retrieval-augmented
+  - sachan-etal-2021-end
+  - izacard2022contriever
+  - izacard2023atlas
+  - asai2023selfrag
+  - kang2023surge
+  - zhai2024samrag
+  - li2024omnsearch
+  - han2025graphrag
+  - yang2025simrag
+  - wu2025srrag
+  - Zhu2025
+  - Yu2024VisRAG
+  - Juseon2025
+  - Momii2024
+  - Karpukhin2020DPR
+  - Guo2024
+  - Sankaradas2025
+  - Harvey2025
+  - Singh2025ChunkRAG
+  - Nogueira2019
+  inclusion_rule: Assign retrieval infrastructure papers on retrievers, rerankers, chunking, indexing, caching, graph retrieval, multimodal retrieval, and context-selection mechanisms that alter the retrieval stack itself.
+  ordering_reason: Retrieval mechanics follow the foundations because they are the main engineering axis that differentiates one RAG system from another.
+- node_id: n_agents_and_domain_applications
+  level: 1
+  title_candidate: Tool Use, Agents, and Domain Applications
+  node_role: application_theme
+  parent: null
+  refs_complete:
+  - Nakano2022
+  - Chen2017WikipediaQA
+  - Dinan2019
+  - langchain2023
+  - radeva2024web
+  - zhang2024raft
+  - dinan2019wizard
+  - shuster2022bb3
+  - singh2025agentic
+  - Singh2025
+  - Veturi2024
+  - Buehler2024
+  - Chiang2024
+  - Takahara2025
+  - Magesh2025LegalHallucinations
+  - Miao2024NephrologyRAG
+  - miao2024integrating
+  - Yang2025RAGHealthcare
+  - CBR_RAG_Legal
+  - Gilbert2024MedCurator
+  - zhang2024interactive
+  - Das2025
+  - AbdulKhaliq2024
+  - Maharana2024
+  - Singal2024
+  - kumari2023dialog
+  inclusion_rule: Assign explicit tool-use, agentic, web, chatbot, or domain-application papers where RAG is instantiated in a concrete workflow or sector rather than only analyzed as infrastructure.
+  ordering_reason: Applications and agentic variants come after retrieval mechanics because they show how the core pattern is deployed in concrete domains and user-facing workflows.
+- node_id: n_evaluation_and_assessment
+  level: 1
+  title_candidate: Evaluation, Benchmarks, and System Assessment
+  node_role: evaluation_theme
+  parent: null
+  refs_complete:
+  - petroni2021kilt
+  - chen2024benchmarking
+  - Gao2024RAGSurvey
+  - petroni-etal-2021-kilt
+  - pradeep2024ragnarok
+  - han2025ragvgraph
+  - katsis2025mtrag
+  - Yu2024
+  - Es2023
+  - Katsis2025
+  - Petroni2021
+  - Pradeep2024
+  - xiong2024benchmarking
+  - zhao2024retrieval
+  - Fan2024
+  - Eibich2024
+  - eibich2024arag
+  - liang2025saferag
+  - Peng2024
+  - Gupta2024
+  - Ding2024RAGsurvey
+  - Chen2025
+  - Tang2024
+  - Mei2025
+  inclusion_rule: Assign benchmarks, evaluation frameworks, reusable baselines, systematic assessment papers, and survey-style overviews that compare or audit RAG systems.
+  ordering_reason: Evaluation follows methods and applications because these references are used to compare RAG system behavior rather than define a new retrieval component.
+- node_id: n_robustness_and_future
+  level: 1
+  title_candidate: Robustness, Costs, and Future Directions
+  node_role: risk_theme
+  parent: null
+  refs_complete:
+  - federatedlearning2021
+  - chen2020dialogue
+  - Zhou2025
+  - Kandula2025
+  - Sharma2025RAGSurvey
+  - Zeng2024
+  - BaezaYates2018Bias
+  - Pan2023
+  - Kim2025
+  - He2025
+  inclusion_rule: Assign references on privacy, security, bias, knowledge updating, robustness frontiers, and unresolved future tradeoffs in RAG systems.
+  ordering_reason: The taxonomy closes with robustness and future directions because these papers synthesize unresolved risks that cut across the preceding technical nodes.
+ref_assignment_ledger:
+- ref_key: Weston2015
+  assigned_to:
+  - n_rag_foundations
+  assignment_reason: Title 'Memory Networks' is a canonical precursor or core formulation for external-memory or retrieval-augmented generation, so it belongs in the foundations node rather than a later implementation bucket.
+- ref_key: Sukhbaatar2015
+  assigned_to:
+  - n_rag_foundations
+  assignment_reason: Title 'End-to-End Memory Networks' is a canonical precursor or core formulation for external-memory or retrieval-augmented generation, so it belongs in the foundations node rather than a later implementation bucket.
+- ref_key: Guu2020
+  assigned_to:
+  - n_rag_foundations
+  assignment_reason: Title 'Retrieval-augmented language model pre-training' is a canonical precursor or core formulation for external-memory or retrieval-augmented generation, so it belongs in the foundations node rather than a later implementation bucket.
+- ref_key: Guu2020REALM
+  assigned_to:
+  - n_rag_foundations
+  assignment_reason: 'Title ''REALM: Retrieval-Augmented Language Model Pre-Training'' is a canonical precursor or core formulation for external-memory or retrieval-augmented generation, so it belongs in the foundations node rather than a later implementation bucket.'
+- ref_key: lewis2020retrieval
+  assigned_to:
+  - n_rag_foundations
+  assignment_reason: Title 'Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks' is a canonical precursor or core formulation for external-memory or retrieval-augmented generation, so it belongs in the foundations node rather than a later implementation bucket.
+- ref_key: Lewis2020
+  assigned_to:
+  - n_rag_foundations
+  assignment_reason: Title 'Retrieval-augmented generation for knowledge-intensive NLP tasks' is a canonical precursor or core formulation for external-memory or retrieval-augmented generation, so it belongs in the foundations node rather than a later implementation bucket.
+- ref_key: Petroni2019LMasKB
+  assigned_to:
+  - n_rag_foundations
+  assignment_reason: Title 'Language Models as Knowledge Bases?' is a canonical precursor or core formulation for external-memory or retrieval-augmented generation, so it belongs in the foundations node rather than a later implementation bucket.
+- ref_key: petroni2019
+  assigned_to:
+  - n_rag_foundations
+  assignment_reason: Title 'Language Models as Knowledge Bases?' is a canonical precursor or core formulation for external-memory or retrieval-augmented generation, so it belongs in the foundations node rather than a later implementation bucket.
+- ref_key: roberts2020
+  assigned_to:
+  - n_rag_foundations
+  assignment_reason: Available metadata for 'How Much Knowledge Can You Pack Into the Parameters of a Language Model?' defines the basic retrieval-augmented paradigm, which makes it foundational context rather than an application or benchmark paper.
+- ref_key: Borgeaud2022
+  assigned_to:
+  - n_rag_foundations
+  assignment_reason: Available metadata for 'Improving language models by retrieving from trillions of tokens' defines the basic retrieval-augmented paradigm, which makes it foundational context rather than an application or benchmark paper.
+- ref_key: Borgeaud2022RETRO
+  assigned_to:
+  - n_rag_foundations
+  assignment_reason: Available metadata for 'Improving language models by retrieving from trillions of tokens' defines the basic retrieval-augmented paradigm, which makes it foundational context rather than an application or benchmark paper.
+- ref_key: Lee2019
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Latent retrieval for weakly supervised open domain question answering' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: Karpukhin2020
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Dense passage retrieval for open-domain question answering' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: Izacard2022
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Title ''Atlas: Few-shot learning with retrieval augmented language models'' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.'
+- ref_key: Shuster2022
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Title ''Language models that seek for knowledge: Modular search & generation for dialogue and prompt completion'' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.'
+- ref_key: wang2018r3
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Available metadata for ''R ^3: Reinforced Reader-Ranker for Open-Domain Question Answering'' is about how evidence is retrieved or organized inside a RAG pipeline, not about a standalone domain deployment.'
+- ref_key: Izacard2021
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: li2024rag_vs_long
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Retrieval Augmented Generation or Long-Context LLMs? A Comprehensive Study and Hybrid Approach' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: zhao2024frag
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Title ''FRAG: Toward Federated Vector Database Management for Collaborative and Secure Retrieval-Augmented Generation'' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.'
+- ref_key: jiang-etal-2023-active
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Active Retrieval Augmented Generation' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: salemi2024evaluating
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Evaluating retrieval quality in retrieval-augmented generation' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: yu2024rankrag
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Title ''Rankrag: Unifying context ranking with retrieval-augmented generation in llms'' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.'
+- ref_key: wang2024searching
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Searching for best practices in retrieval-augmented generation' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: wang2023learning
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Learning to filter context for retrieval-augmented generation' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: soudani2024fine
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Fine tuning vs. retrieval augmented generation for less popular knowledge' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: golatkar2024cpr
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Title ''Cpr: Retrieval augmented generation for copyright protection'' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.'
+- ref_key: he2024g
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Title ''G-retriever: Retrieval-augmented generation for textual graph understanding and question answering'' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.'
+- ref_key: cheng2023lift
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Title ''Lift yourself up: Retrieval-augmented text generation with self-memory'' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.'
+- ref_key: siriwardhana2023improving
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Improving the domain adaptation of retrieval augmented generation (RAG) models for open domain question answering' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: jin2024long
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Title ''Long-context llms meet rag: Overcoming challenges for long inputs in rag'' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.'
+- ref_key: Izacard2022Atlas
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Title ''Atlas: Few-shot Learning with Retrieval Augmented Language Models'' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.'
+- ref_key: Jin2024KnowledgeConflicts
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Title ''Tug-of-War between Knowledge: Exploring and Resolving Knowledge Conflicts in Retrieval-Augmented Language Models'' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.'
+- ref_key: Shuster2021
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Retrieval Augmentation Reduces Hallucination in Conversation' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: Trivedi2023
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: Asai2024
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Available metadata for ''Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection'' is about how evidence is retrieved or organized inside a RAG pipeline, not about a standalone domain deployment.'
+- ref_key: Jin2024
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Title ''RAGCache: Efficient Knowledge Caching for Retrieval-Augmented Generation'' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.'
+- ref_key: Bergman2025
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Leveraging Approximate Caching for Faster Retrieval-Augmented Generation' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: Malkov2018
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Efficient and robust approximate nearest neighbor search using hierarchical navigable small world graphs' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: An2025
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Title ''HyperRAG: Enhancing Quality-Efficiency Tradeoffs in Retrieval-Augmented Generation with Reranker KV-Cache Reuse'' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.'
+- ref_key: Siriwardhana2023
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Improving the Domain Adaptation of Retrieval Augmented Generation (RAG) Models for Open Domain Question Answering' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: Izacard2023
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Title ''Atlas: Few-shot Learning with Retrieval Augmented Language Models'' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.'
+- ref_key: lewis2020marge
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Available metadata for 'Pre-training via Paraphrasing' is about how evidence is retrieved or organized inside a RAG pipeline, not about a standalone domain deployment.
+- ref_key: sachan2021emdr2
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Available metadata for 'End-to-End Training of Multi-Document Reader and Retriever for Open-Domain Question Answering' is about how evidence is retrieved or organized inside a RAG pipeline, not about a standalone domain deployment.
+- ref_key: parvez-etal-2021-retrieval-augmented
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Retrieval Augmented Code Generation and Summarization' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: sachan-etal-2021-end
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Available metadata for 'End-to-End Training of Multi-Document Reader and Retriever for Open-Domain Question Answering' is about how evidence is retrieved or organized inside a RAG pipeline, not about a standalone domain deployment.
+- ref_key: izacard2022contriever
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Unsupervised Dense Information Retrieval with Contrastive Learning' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: izacard2023atlas
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Title ''Atlas: Few-shot Learning with Retrieval Augmented Language Models'' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.'
+- ref_key: asai2023selfrag
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Available metadata for ''Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection'' is about how evidence is retrieved or organized inside a RAG pipeline, not about a standalone domain deployment.'
+- ref_key: kang2023surge
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Knowledge Graph-Augmented Language Models for Knowledge-Grounded Dialogue Generation (SURGE)' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: zhai2024samrag
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Self-adaptive Multimodal Retrieval-Augmented Generation' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: li2024omnsearch
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Benchmarking Multimodal Retrieval Augmented Generation with Dynamic VQA Dataset and Self-adaptive Planning Agent' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: han2025graphrag
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Retrieval-Augmented Generation with Graphs (GraphRAG)' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: yang2025simrag
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Title ''Knowing You Don''t Know: Learning When to Continue Search in Multi-round RAG through Self-Practicing'' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.'
+- ref_key: wu2025srrag
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Title ''Self-Routing RAG: Binding Selective Retrieval with Knowledge Verbalization'' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.'
+- ref_key: Zhu2025
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Knowledge Graph-Guided Retrieval Augmented Generation' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: Yu2024VisRAG
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Title ''VisRAG: Vision-based Retrieval-augmented Generation on Multi-modality Documents'' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.'
+- ref_key: Juseon2025
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Considering Length Diversity in Retrieval-Augmented Summarization' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: Momii2024
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'RAG-Fusion Based Information Retrieval for Fact-Checking' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: Karpukhin2020DPR
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Dense Passage Retrieval for Open-Domain Question Answering' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: Guo2024
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Title ''StructuGraphRAG: Structured Document-Informed Knowledge Graphs for Retrieval-Augmented Generation'' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.'
+- ref_key: Sankaradas2025
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Title ''StreamingRAG: Real-time Contextual Retrieval and Generation Framework'' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.'
+- ref_key: Harvey2025
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Available metadata for ''Enterprise-Grade RAG Systems: High-Performance RAG with Vector Databases'' is about how evidence is retrieved or organized inside a RAG pipeline, not about a standalone domain deployment.'
+- ref_key: Singh2025ChunkRAG
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: 'Title ''ChunkRAG: A Novel LLM-Chunk Filtering Method for RAG Systems'' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.'
+- ref_key: Nogueira2019
+  assigned_to:
+  - n_retrieval_and_indexing
+  assignment_reason: Title 'Passage re-ranking with BERT' changes the retrieval, indexing, reranking, or context-selection stack itself, so it fits the retrieval-and-indexing node.
+- ref_key: Nakano2022
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: 'Title ''WebGPT: Browser-assisted question-answering with human feedback'' instantiates RAG or LLM retrieval workflows in a concrete tool, agent, or application domain, so it belongs in the applications node.'
+- ref_key: Chen2017WikipediaQA
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: Available metadata for 'Reading Wikipedia to Answer Open-Domain Questions' is deployment-oriented or domain-facing, which makes it a better fit for applications than for retrieval infrastructure or evaluation.
+- ref_key: Dinan2019
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: 'Title ''Wizard of Wikipedia: Knowledge-Powered Conversational Agents'' instantiates RAG or LLM retrieval workflows in a concrete tool, agent, or application domain, so it belongs in the applications node.'
+- ref_key: langchain2023
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: 'Available metadata for ''LangChain: A Framework for RAG Applications'' is deployment-oriented or domain-facing, which makes it a better fit for applications than for retrieval infrastructure or evaluation.'
+- ref_key: radeva2024web
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: 'Title ''Web application for retrieval-augmented generation: Implementation and testing'' instantiates RAG or LLM retrieval workflows in a concrete tool, agent, or application domain, so it belongs in the applications node.'
+- ref_key: zhang2024raft
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: 'Title ''Raft: Adapting language model to domain specific rag'' instantiates RAG or LLM retrieval workflows in a concrete tool, agent, or application domain, so it belongs in the applications node.'
+- ref_key: dinan2019wizard
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: 'Title ''Wizard of Wikipedia: Knowledge-Powered Conversational Agents'' instantiates RAG or LLM retrieval workflows in a concrete tool, agent, or application domain, so it belongs in the applications node.'
+- ref_key: shuster2022bb3
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: 'Title ''BlenderBot 3: A Deployed Conversational Agent that Continually Learns to Responsibly Engage'' instantiates RAG or LLM retrieval workflows in a concrete tool, agent, or application domain, so it belongs in the applications node.'
+- ref_key: singh2025agentic
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: 'Title ''Agentic Retrieval-Augmented Generation: A Survey on Agentic RAG'' instantiates RAG or LLM retrieval workflows in a concrete tool, agent, or application domain, so it belongs in the applications node.'
+- ref_key: Singh2025
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: 'Title ''Agentic Retrieval-Augmented Generation: A Survey on Agentic RAG'' instantiates RAG or LLM retrieval workflows in a concrete tool, agent, or application domain, so it belongs in the applications node.'
+- ref_key: Veturi2024
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: Title 'RAG based Question-Answering for Contextual Response Prediction System' instantiates RAG or LLM retrieval workflows in a concrete tool, agent, or application domain, so it belongs in the applications node.
+- ref_key: Buehler2024
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: Title 'Generative Retrieval-Augmented Ontologic Graph and Multiagent Strategies for Interpretive Large Language Model-Based Materials Design' instantiates RAG or LLM retrieval workflows in a concrete tool, agent, or application domain, so it belongs in the applications node.
+- ref_key: Chiang2024
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: 'Title ''LLaMP: Large Language Model Made Powerful for High-fidelity Materials Knowledge Retrieval and Distillation'' instantiates RAG or LLM retrieval workflows in a concrete tool, agent, or application domain, so it belongs in the applications node.'
+- ref_key: Takahara2025
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: Title 'Accelerated Inorganic Materials Design with Generative AI Agents' instantiates RAG or LLM retrieval workflows in a concrete tool, agent, or application domain, so it belongs in the applications node.
+- ref_key: Magesh2025LegalHallucinations
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: Title 'Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools' instantiates RAG or LLM retrieval workflows in a concrete tool, agent, or application domain, so it belongs in the applications node.
+- ref_key: Miao2024NephrologyRAG
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: 'Available metadata for ''Integrating Retrieval-Augmented Generation with Large Language Models in Nephrology: Advancing Practical Applications'' is deployment-oriented or domain-facing, which makes it a better fit for applications than for retrieval infrastructure or evaluation.'
+- ref_key: miao2024integrating
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: 'Available metadata for ''Integrating retrieval-augmented generation with large language models in nephrology: advancing practical applications'' is deployment-oriented or domain-facing, which makes it a better fit for applications than for retrieval infrastructure or evaluation.'
+- ref_key: Yang2025RAGHealthcare
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: Available metadata for 'Retrieval-augmented generation for generative artificial intelligence in health care' is deployment-oriented or domain-facing, which makes it a better fit for applications than for retrieval infrastructure or evaluation.
+- ref_key: CBR_RAG_Legal
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: 'Title ''CBR-RAG: Case-Based Reasoning for Retrieval Augmented Generation in LLMs for Legal Question Answering'' instantiates RAG or LLM retrieval workflows in a concrete tool, agent, or application domain, so it belongs in the applications node.'
+- ref_key: Gilbert2024MedCurator
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: Title 'Augmented non-hallucinating large language models as medical information curators' instantiates RAG or LLM retrieval workflows in a concrete tool, agent, or application domain, so it belongs in the applications node.
+- ref_key: zhang2024interactive
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: Available metadata for 'Interactive AI with retrieval-augmented generation for next generation networking' is deployment-oriented or domain-facing, which makes it a better fit for applications than for retrieval infrastructure or evaluation.
+- ref_key: Das2025
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: 'Title ''Two-layer Retrieval-Augmented Generation Framework for Low-Resource Medical Question Answering Using Reddit Data: Proof-of-Concept Study'' instantiates RAG or LLM retrieval workflows in a concrete tool, agent, or application domain, so it belongs in the applications node.'
+- ref_key: AbdulKhaliq2024
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: 'Available metadata for ''RAGAR, Your Falsehood RADAR: RAG-Augmented Reasoning for Political Fact-Checking using Multimodal LLMs'' is deployment-oriented or domain-facing, which makes it a better fit for applications than for retrieval infrastructure or evaluation.'
+- ref_key: Maharana2024
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: Available metadata for 'Retrieval augmented generation for building datasets from scientific literature' is deployment-oriented or domain-facing, which makes it a better fit for applications than for retrieval infrastructure or evaluation.
+- ref_key: Singal2024
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: Available metadata for 'Evidence-backed Fact Checking using RAG and Few-Shot In-Context Learning with LLMs' is deployment-oriented or domain-facing, which makes it a better fit for applications than for retrieval infrastructure or evaluation.
+- ref_key: kumari2023dialog
+  assigned_to:
+  - n_agents_and_domain_applications
+  assignment_reason: Available metadata for 'Retrieval-Augmented Generation for Dialog Modeling' is deployment-oriented or domain-facing, which makes it a better fit for applications than for retrieval infrastructure or evaluation.
+- ref_key: petroni2021kilt
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: 'Title ''KILT: a Benchmark for Knowledge Intensive Language Tasks'' is explicitly about benchmarking, evaluation, reusable assessment frameworks, or survey-level comparison, so it belongs in the evaluation node.'
+- ref_key: chen2024benchmarking
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: Title 'Benchmarking large language models in retrieval-augmented generation' is explicitly about benchmarking, evaluation, reusable assessment frameworks, or survey-level comparison, so it belongs in the evaluation node.
+- ref_key: Gao2024RAGSurvey
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: 'Title ''Retrieval-Augmented Generation for Large Language Models: A Survey'' is explicitly about benchmarking, evaluation, reusable assessment frameworks, or survey-level comparison, so it belongs in the evaluation node.'
+- ref_key: petroni-etal-2021-kilt
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: 'Title ''KILT: a Benchmark for Knowledge Intensive Language Tasks'' is explicitly about benchmarking, evaluation, reusable assessment frameworks, or survey-level comparison, so it belongs in the evaluation node.'
+- ref_key: pradeep2024ragnarok
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: "Title 'Ragnar\xF6k: A Reusable RAG Framework and Baselines for the TREC 2024 Retrieval-Augmented Generation Track' is explicitly about benchmarking, evaluation, reusable assessment frameworks, or survey-level comparison, so it belongs in the evaluation node."
+- ref_key: han2025ragvgraph
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: 'Title ''RAG vs. GraphRAG: A Systematic Evaluation and Key Insights'' is explicitly about benchmarking, evaluation, reusable assessment frameworks, or survey-level comparison, so it belongs in the evaluation node.'
+- ref_key: katsis2025mtrag
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: 'Title ''mtRAG: A Multi-Turn Conversational Benchmark for Evaluating Retrieval-Augmented Generation Systems'' is explicitly about benchmarking, evaluation, reusable assessment frameworks, or survey-level comparison, so it belongs in the evaluation node.'
+- ref_key: Yu2024
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: 'Title ''Evaluation of Retrieval-Augmented Generation: A Survey'' is explicitly about benchmarking, evaluation, reusable assessment frameworks, or survey-level comparison, so it belongs in the evaluation node.'
+- ref_key: Es2023
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: 'Title ''Ragas: Automated Evaluation of Retrieval Augmented Generation'' is explicitly about benchmarking, evaluation, reusable assessment frameworks, or survey-level comparison, so it belongs in the evaluation node.'
+- ref_key: Katsis2025
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: 'Title ''MTRAG: A Multi-Turn Conversational Benchmark for Evaluating Retrieval-Augmented Generation Systems'' is explicitly about benchmarking, evaluation, reusable assessment frameworks, or survey-level comparison, so it belongs in the evaluation node.'
+- ref_key: Petroni2021
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: 'Title ''KILT: a Benchmark for Knowledge Intensive Language Tasks'' is explicitly about benchmarking, evaluation, reusable assessment frameworks, or survey-level comparison, so it belongs in the evaluation node.'
+- ref_key: Pradeep2024
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: "Title 'Ragnar\xF6k: A Reusable Retrieval\u2011Augmented Generation Framework and Baselines for the TREC 2024 RAG Track' is explicitly about benchmarking, evaluation, reusable assessment frameworks, or survey-level comparison, so it belongs in the evaluation node."
+- ref_key: xiong2024benchmarking
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: Title 'Benchmarking retrieval-augmented generation for medicine' is explicitly about benchmarking, evaluation, reusable assessment frameworks, or survey-level comparison, so it belongs in the evaluation node.
+- ref_key: zhao2024retrieval
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: 'Title ''Retrieval-augmented generation for ai-generated content: A survey'' is explicitly about benchmarking, evaluation, reusable assessment frameworks, or survey-level comparison, so it belongs in the evaluation node.'
+- ref_key: Fan2024
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: 'Title ''A Survey on RAG Meeting LLMs: Towards Retrieval-Augmented Large Language Models'' is explicitly about benchmarking, evaluation, reusable assessment frameworks, or survey-level comparison, so it belongs in the evaluation node.'
+- ref_key: Eibich2024
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: 'Available metadata for ''ARAGOG: Advanced RAG Output Grading'' is being used to compare or audit RAG system performance rather than to define a new retrieval component.'
+- ref_key: eibich2024arag
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: 'Available metadata for ''ARAGOG: Advanced RAG Output Grading'' is being used to compare or audit RAG system performance rather than to define a new retrieval component.'
+- ref_key: liang2025saferag
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: 'Title ''SafeRAG: Benchmarking Security in Retrieval-Augmented Generation of Large Language Models'' is explicitly about benchmarking, evaluation, reusable assessment frameworks, or survey-level comparison, so it belongs in the evaluation node.'
+- ref_key: Peng2024
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: 'Title ''Graph Retrieval-Augmented Generation: A Survey'' is explicitly about benchmarking, evaluation, reusable assessment frameworks, or survey-level comparison, so it belongs in the evaluation node.'
+- ref_key: Gupta2024
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: 'Title ''A Comprehensive Survey of Retrieval-Augmented Generation (RAG): Evolution, Current Landscape and Future Directions'' is explicitly about benchmarking, evaluation, reusable assessment frameworks, or survey-level comparison, so it belongs in the evaluation node.'
+- ref_key: Ding2024RAGsurvey
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: 'Title ''A Survey on RAG Meets LLMs: Towards Retrieval-Augmented Large Language Models'' is explicitly about benchmarking, evaluation, reusable assessment frameworks, or survey-level comparison, so it belongs in the evaluation node.'
+- ref_key: Chen2025
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: 'Title ''Retrieval-Augmented Generation with Knowledge Graphs: A Survey'' is explicitly about benchmarking, evaluation, reusable assessment frameworks, or survey-level comparison, so it belongs in the evaluation node.'
+- ref_key: Tang2024
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: 'Title ''MultiHop-RAG: Benchmarking Retrieval-Augmented Generation for Multi-Hop Queries'' is explicitly about benchmarking, evaluation, reusable assessment frameworks, or survey-level comparison, so it belongs in the evaluation node.'
+- ref_key: Mei2025
+  assigned_to:
+  - n_evaluation_and_assessment
+  assignment_reason: Title 'A Survey of Multimodal Retrieval-Augmented Generation' is explicitly about benchmarking, evaluation, reusable assessment frameworks, or survey-level comparison, so it belongs in the evaluation node.
+- ref_key: federatedlearning2021
+  assigned_to:
+  - n_robustness_and_future
+  assignment_reason: 'Available metadata for ''Federated Learning: Opportunities and Challenges'' is about unresolved cross-cutting risks in RAG systems rather than a narrow retrieval or application mechanism.'
+- ref_key: chen2020dialogue
+  assigned_to:
+  - n_robustness_and_future
+  assignment_reason: Available metadata for 'Bridging the Gap between Prior and Posterior Knowledge Selection for Knowledge-Grounded Dialogue Generation' is about unresolved cross-cutting risks in RAG systems rather than a narrow retrieval or application mechanism.
+- ref_key: Zhou2025
+  assigned_to:
+  - n_robustness_and_future
+  assignment_reason: 'Title ''Privacy-Aware RAG: Secure and Isolated Knowledge Retrieval'' foregrounds privacy, security, bias, knowledge updating, or another cross-cutting risk frontier, so it fits the robustness-and-future node.'
+- ref_key: Kandula2025
+  assigned_to:
+  - n_robustness_and_future
+  assignment_reason: 'Title ''Securing Retrieval-Augmented Generation: Privacy Risks and Mitigation Strategies'' foregrounds privacy, security, bias, knowledge updating, or another cross-cutting risk frontier, so it fits the robustness-and-future node.'
+- ref_key: Sharma2025RAGSurvey
+  assigned_to:
+  - n_robustness_and_future
+  assignment_reason: 'Title ''Retrieval-Augmented Generation: A Comprehensive Survey of Architectures, Enhancements, and Robustness Frontiers'' foregrounds privacy, security, bias, knowledge updating, or another cross-cutting risk frontier, so it fits the robustness-and-future node.'
+- ref_key: Zeng2024
+  assigned_to:
+  - n_robustness_and_future
+  assignment_reason: 'Title ''The good and the bad: Exploring privacy issues in retrieval-augmented generation (RAG)'' foregrounds privacy, security, bias, knowledge updating, or another cross-cutting risk frontier, so it fits the robustness-and-future node.'
+- ref_key: BaezaYates2018Bias
+  assigned_to:
+  - n_robustness_and_future
+  assignment_reason: Title 'Bias on the web' foregrounds privacy, security, bias, knowledge updating, or another cross-cutting risk frontier, so it fits the robustness-and-future node.
+- ref_key: Pan2023
+  assigned_to:
+  - n_robustness_and_future
+  assignment_reason: Title 'On the Risk of Misinformation Pollution with Large Language Models' foregrounds privacy, security, bias, knowledge updating, or another cross-cutting risk frontier, so it fits the robustness-and-future node.
+- ref_key: Kim2025
+  assigned_to:
+  - n_robustness_and_future
+  assignment_reason: 'Title ''Mitigating Bias in RAG: Controlling the Embedder'' foregrounds privacy, security, bias, knowledge updating, or another cross-cutting risk frontier, so it fits the robustness-and-future node.'
+- ref_key: He2025
+  assigned_to:
+  - n_robustness_and_future
+  assignment_reason: Title 'Knowledge Updating? No More Model Editing! Just Selective Contextual Reasoning' foregrounds privacy, security, bias, knowledge updating, or another cross-cutting risk frontier, so it fits the robustness-and-future node.
+- ref_key: Akkiraju2024FACTS
+  assigned_to: []
+  assignment_reason: Title 'FACTS About Building Retrieval Augmented Generation-based Chatbots' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.
+- ref_key: Antunes2024
+  assigned_to: []
+  assignment_reason: Title 'Crystal structure generation with autoregressive large language modeling' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.
+- ref_key: Bai2025
+  assigned_to: []
+  assignment_reason: Title 'Construction of a knowledge graph for framework material enabled by large language models and its application' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.
+- ref_key: Brown2020
+  assigned_to: []
+  assignment_reason: Title 'Language Models are Few-Shot Learners' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.
+- ref_key: Choi2024
+  assigned_to: []
+  assignment_reason: Title 'Accelerating materials language processing with large language models' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.
+- ref_key: Chowdhery2022
+  assigned_to: []
+  assignment_reason: 'Title ''PaLM: Scaling Language Modeling with Pathways'' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.'
+- ref_key: Gruver2024
+  assigned_to: []
+  assignment_reason: Title 'Fine-Tuned Language Models Generate Stable Inorganic Materials as Text' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.
+- ref_key: IBM2023
+  assigned_to: []
+  assignment_reason: Title 'What is retrieval-augmented generation?' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.
+- ref_key: Katzer2025
+  assigned_to: []
+  assignment_reason: Title 'Towards an automated workflow in materials science for combining multi-modal simulative and experimental information using data mining and large language models' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.
+- ref_key: Lei2024
+  assigned_to: []
+  assignment_reason: 'Title ''Materials science in the era of large language models: a perspective'' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.'
+- ref_key: Merritt2023
+  assigned_to: []
+  assignment_reason: Title 'What is retrieval-augmented generation aka RAG?' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.
+- ref_key: Nori2023MedicalGPT
+  assigned_to: []
+  assignment_reason: Title 'Capabilities of GPT-4 on Medical Challenge Problems' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.
+- ref_key: Raffel2020
+  assigned_to: []
+  assignment_reason: Title 'Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.
+- ref_key: Wang2024
+  assigned_to: []
+  assignment_reason: Title 'Crystalline Material Discovery in the Age of Artificial Intelligence' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.
+- ref_key: Zheng2024
+  assigned_to: []
+  assignment_reason: Title 'Image and data mining in reticular chemistry powered by GPT-4V' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.
+- ref_key: athina2024
+  assigned_to: []
+  assignment_reason: Title 'A Comprehensive Guide to Different RAG Architectures' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.
+- ref_key: aws2023rag
+  assigned_to: []
+  assignment_reason: Title 'Enterprise AI with Retrieval-Augmented Generation' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.
+- ref_key: hadi2023survey
+  assigned_to: []
+  assignment_reason: 'Title ''A survey on large language models: Applications, challenges, limitations, and practical usage'' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.'
+- ref_key: ibm2023rag
+  assigned_to: []
+  assignment_reason: Title 'What is RAG (retrieval augmented generation)?' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.
+- ref_key: jia2024llmatdesign
+  assigned_to: []
+  assignment_reason: 'Title ''LLMatDesign: Autonomous Materials Discovery with Large Language Models'' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.'
+- ref_key: k2view2023
+  assigned_to: []
+  assignment_reason: 'Title ''Enterprise RAG: Leveraging Enterprise Data for GenAI'' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.'
+- ref_key: nvidia2023rag
+  assigned_to: []
+  assignment_reason: Title 'Activate Your Data With Custom Generative AI' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.
+- ref_key: openwebui2023
+  assigned_to: []
+  assignment_reason: 'Title ''OpenWebUI: Enhancing Chatbots with Web Data'' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.'
+- ref_key: phospho2023ragsearch
+  assigned_to: []
+  assignment_reason: 'Title ''RAG-Powered Search: The Future of AI-Driven Information Retrieval'' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.'
+- ref_key: ragwebui2023
+  assigned_to: []
+  assignment_reason: 'Title ''RAG Web UI: Intelligent Dialogue System'' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.'
+- ref_key: time2024patrick
+  assigned_to: []
+  assignment_reason: Title 'TIME100 AI 2024' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.
+- ref_key: wsj2024golf
+  assigned_to: []
+  assignment_reason: Title 'AI Doesn't Know Much About Golf. Or Farming. Or Mortgages. Or' is vendor-facing, product-style, or too generic to support a precise place inside this RAG taxonomy from metadata alone, so it remains unassigned.
+unassigned_refs:
+- Akkiraju2024FACTS
+- Antunes2024
+- Bai2025
+- Brown2020
+- Choi2024
+- Chowdhery2022
+- Gruver2024
+- IBM2023
+- Katzer2025
+- Lei2024
+- Merritt2023
+- Nori2023MedicalGPT
+- Raffel2020
+- Wang2024
+- Zheng2024
+- athina2024
+- aws2023rag
+- hadi2023survey
+- ibm2023rag
+- jia2024llmatdesign
+- k2view2023
+- nvidia2023rag
+- openwebui2023
+- phospho2023ragsearch
+- ragwebui2023
+- time2024patrick
+- wsj2024golf

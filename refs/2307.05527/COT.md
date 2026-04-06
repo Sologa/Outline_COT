@@ -1,0 +1,26 @@
+### Step 1: Clustering References into Thematic Categories
+
+- **1 Introduction**: this cluster gathers the papers used to support this standalone theme. Representative references include `openai_2022` ("Introducing ChatGPT"), `ramesh2022hierarchical` ("Hierarchical text-conditional image generation with clip latents"), `dhariwal2020jukebox` ("Jukebox: A generative model for music"), `bond2021deep` ("Deep generative modelling: A comparative review of vaes, gans, normalizing ...").
+- **2 Background and Definitions**: this cluster groups the references that support this section and its subthemes, especially 2.1 Generative Audio Models, 2.2 Broader Impact, 2.3 Research Questions. Representative references include `vaswani2017attention` ("Attention is all you need"), `imagetransformer2018` ("Image Transformer"), `huang2018music` ("Music transformer"), `shaw-etal-2018-self` ("Self-Attention with Relative Position Representations").
+- **3 Data and Methodology**: this cluster groups the references that support this section and its subthemes, especially 3.1 Search Strategy, 3.2 Title and Abstract Screening, 3.3 Full Text Screening. Representative references include `moher2009preferred` ("Preferred reporting items for systematic reviews and meta-analyses: the PRISMA ..."), `vaswani2017attention` ("Attention is all you need"), `ahmed2023growing` ("The growing influence of industry in AI research"), `dhariwal2020jukebox` ("Jukebox: A generative model for music").
+- **4 Analysis and Results**: this cluster groups the references that support this section and its subthemes, especially 4.1 Overview, 4.2 Negative Broader Impacts in Music, 4.3 Negative Broader Impacts in Speech, 4.4 Negative Broader Impacts in Both Music and Speech. Representative references include `kim2020glow` ("Glow-TTS: A generative flow for text-to-speech via monotonic alignment search"), `douwes2021energy` ("Energy Consumption of Deep Generative Audio Models"), `agostinelli2023musiclm` ("MusicLM: Generating Music From Text"), `kim2022guided` ("Guided-TTS 2: A diffusion model for high-quality adaptive text-to-speech with ...").
+- **5 Discussion**: this cluster gathers the papers used to support this standalone theme. Representative references include `Mirsky2021Creation` ("The Creation and Detection of Deepfakes: A Survey"), `weidinger2021ethical` ("Ethical and social risks of harm from language models"), `agostinelli2023musiclm` ("MusicLM: Generating Music From Text"), `kim2022guided` ("Guided-TTS 2: A diffusion model for high-quality adaptive text-to-speech with ...").
+- **6 Conclusion**: this heading functions as a framing or transition node, so it is preserved without inventing citations.
+
+### Step 2: Generating the Outline from Themes
+
+The final outline follows an IMRaD-like review flow adapted to the domain. It starts with **1 Introduction** to frame the scope and vocabulary of *The Ethical Implications of Generative Audio Models: A Systematic Literature Review*, and then expands the review through the major evidence clusters already reflected in the cited references.
+
+- **1 Introduction** remains a top-level unit because the cited material in this span supports one coherent theme without requiring another subdivision layer.
+- **2 Background and Definitions** becomes a major theme because its references split naturally into more specific subthemes. Those subthemes are unfolded as **2.1 Generative Audio Models**; **2.2 Broader Impact**; **2.3 Research Questions**, which keeps the hierarchy aligned with the actual citation distribution in the stored outline.
+- **3 Data and Methodology** becomes a major theme because its references split naturally into more specific subthemes. Those subthemes are unfolded as **3.1 Search Strategy**; **3.2 Title and Abstract Screening**; **3.3 Full Text Screening**, which keeps the hierarchy aligned with the actual citation distribution in the stored outline.
+- **4 Analysis and Results** becomes a major theme because its references split naturally into more specific subthemes. Those subthemes are unfolded as **4.1 Overview**; **4.2 Negative Broader Impacts in Music**; **4.3 Negative Broader Impacts in Speech**; **4.4 Negative Broader Impacts in Both Music and Speech**, which keeps the hierarchy aligned with the actual citation distribution in the stored outline.
+- **5 Discussion** remains a top-level unit because the cited material in this span supports one coherent theme without requiring another subdivision layer.
+- **6 Conclusion** remains a top-level unit because the cited material in this span supports one coherent theme without requiring another subdivision layer.
+
+The ordering is therefore: 1 Introduction -> 2 Background and Definitions -> 3 Data and Methodology -> 4 Analysis and Results -> 5 Discussion -> 6 Conclusion. This keeps broad framing first, develops the domain-specific themes in the middle, and closes only after the main evidence clusters have been covered.
+
+Key Logic:
+- The clusters are anchored to the real section numbering and titles, not to an invented template.
+- References are mentioned with bib keys that already appear in `outline.json`, so the reasoning stays tied to the stored supervision signal.
+- Empty sections are treated as framing or transition nodes rather than back-filled with fabricated citations.

@@ -1,0 +1,483 @@
+artifact_type: reference_grounded_outline_induction_ir
+artifact_alias: section_aligned_taxonomy_ledger
+source_mode: reference_only
+paper_id: '2409.13738'
+title: Title label1
+inputs:
+  title: true
+  reference_metadata: true
+  gold_outline: false
+nodes:
+- node_id: n1
+  level: 1
+  title_candidate: Review protocol and qualitative coding frame
+  node_role: theme
+  parent: null
+  refs_complete:
+  - Page2021
+  - Fereday2006
+  - kitchenham2004procedures
+  inclusion_rule: Assign references that specify systematic-review reporting or qualitative coding methodology for synthesizing the literature.
+  ordering_reason: A review-method node comes first because the title explicitly promises a systematic review, so the evidence-synthesis frame should precede domain and method themes.
+- node_id: n2
+  level: 1
+  title_candidate: BPM background and prior process-extraction reviews
+  node_role: theme
+  parent: null
+  refs_complete:
+  - weske2007business
+  - bellan2020qualitative
+  - van2018challenges
+  - Davenport2019
+  - maqbool2019comprehensive
+  - bordignon2018natural
+  - herbst_inductive_1999
+  - bellan2021process
+  - riefer2016mining
+  - schuler_state_2024
+  - dumas2018fundamentals
+  - lopez2021challenges
+  inclusion_rule: Assign BPM textbooks, adoption-motivation pieces, and prior reviews or broad state-of-the-art papers on process extraction or automatic process-model generation.
+  ordering_reason: After the review protocol, the outline can introduce why process extraction matters in BPM and what survey coverage already exists before splitting by method family.
+- node_id: n3
+  level: 1
+  title_candidate: Rule-based text-to-model extraction pipelines
+  node_role: theme
+  parent: null
+  refs_complete:
+  - nasiri2023automatic
+  - goncalves2011let
+  - de2008stanford
+  - etikala2020text2dec
+  - etikala2021extracting
+  - chen2014pewp
+  - sintoris2017extracting
+  - ferreira2017semi
+  - honkisz2018concept
+  - friedrich2011process
+  - vda_extracting_declarative_process
+  - quishpi2021extracting
+  - sholiq2022generating
+  - lopez_assisted_declarative_process
+  - cunningham2013getting
+  - azevedo2018bpmn
+  - elallaoui2018automatic
+  - robeer2016
+  inclusion_rule: Assign titles centered on rules, templates, typed dependencies, pattern engines, or direct text-to-model conversion without learned end-to-end model training as the main claim.
+  ordering_reason: The review title explicitly contrasts rule-based with learned methods, and the cited chronology makes rules the earliest stable family to cover before ML and deep learning.
+- node_id: n4
+  level: 1
+  title_candidate: Supervised ML and hybrid information-extraction pipelines
+  node_role: theme
+  parent: null
+  refs_complete:
+  - halioui2018bioinformatic
+  - pennington2014glove
+  - qian2020approach
+  - neuberger2023beyond
+  - lopez_declarative_process_discovery
+  - Eberts2021
+  - ezencan2020comparison
+  - li2005using
+  - neuberger_data_augment
+  inclusion_rule: Assign references whose titles emphasize classification, NER, relation extraction, information extraction, augmentation, or hybrid pipelines that mix learned components with symbolic post-processing.
+  ordering_reason: This node follows the rule-based family because it marks the transition from hand-written extraction logic to trained feature-based or hybrid prediction modules.
+- node_id: n5
+  level: 1
+  title_candidate: Deep learning and pre-trained LM extraction methods
+  node_role: theme
+  parent: null
+  refs_complete:
+  - goossens2023extracting
+  - han2020bps
+  - devlin_bert_2018
+  - sanh2020distilbert
+  - shen2018ordered
+  - sonbol2023machine
+  - Devlin2019BERTPO
+  - devlin_bert
+  inclusion_rule: Assign titles that explicitly foreground deep learning, LSTM, transformers, or pre-trained language models as the main extraction or generation mechanism.
+  ordering_reason: The title names machine and deep learning separately, so a dedicated deep-learning node should come after hybrid ML work and before later LLM-specific extensions.
+- node_id: n6
+  level: 1
+  title_candidate: Output formalisms and modeling targets
+  node_role: theme
+  parent: null
+  refs_complete:
+  - wvda_declare
+  - omg_bpmn
+  - omg_uml
+  - hildebrandt_dcr
+  - omg_dmn
+  inclusion_rule: Assign formal languages and standards that define the target process, declarative, or decision-model artifacts produced by extraction systems.
+  ordering_reason: Once the method families are laid out, the next audit-friendly axis is what kinds of formal models those methods aim to produce.
+- node_id: n7
+  level: 1
+  title_candidate: Datasets and model-evaluation assets
+  node_role: theme
+  parent: null
+  refs_complete:
+  - bellan2022process
+  - friedrich2010automated
+  - bellan_pet_23
+  - weidlich2011
+  - dijkman2011
+  - hasic2019complexity
+  - berti_evaluating_llm
+  inclusion_rule: Assign dataset, annotation-guideline, and process-model quality references that support benchmarking or evaluating extracted models.
+  ordering_reason: Evaluation resources are easier to interpret after the method and target-model nodes, because their role is to assess those systems rather than define them.
+- node_id: n8
+  level: 1
+  title_candidate: LLM-enabled BPM and generative modeling extensions
+  node_role: theme
+  parent: null
+  refs_complete:
+  - kampik2023large
+  - bellan_gpt3_2022
+  - grohs2023large
+  - forell_modeling_meets_llm
+  - kourani_process_modelling_with_llm
+  - busch2023just
+  - vidgof2023large
+  - berti2023abstractions
+  - bellan2022extracting
+  inclusion_rule: Assign BPM-specific titles that explicitly mention generative AI, prompt engineering, or large language models for process tasks.
+  ordering_reason: These references are the most recent and frontier-oriented cluster, so they fit best as a closing extension beyond classical rule-based, ML, and deep-learning families.
+ref_assignment_ledger:
+- ref_key: weske2007business
+  assigned_to:
+  - n2
+  assignment_reason: The title is a general BPM textbook on concepts, languages, and architectures, so it grounds domain background rather than any extraction mechanism or evaluation asset.
+- ref_key: bellan2020qualitative
+  assigned_to:
+  - n2
+  assignment_reason: Its title is a qualitative state-of-the-art analysis of process extraction from text, which makes it a prior review of the field rather than a primary extraction method paper.
+- ref_key: wvda_declare
+  assigned_to:
+  - n6
+  assignment_reason: The title introduces declarative workflows as a formal workflow language, so it supports the target-formalism node instead of a concrete extraction pipeline.
+- ref_key: van2018challenges
+  assigned_to:
+  - n2
+  assignment_reason: This title frames challenges and opportunities of applying NLP in BPM at a broad level, so it fits the background-and-prior-work node rather than a specific method family.
+- ref_key: Davenport2019
+  assigned_to:
+  - n2
+  assignment_reason: The Deloitte report title signals organizational motivation for analytics adoption, which serves as business context for why process extraction matters.
+- ref_key: maqbool2019comprehensive
+  assigned_to:
+  - n2
+  assignment_reason: The title is a comprehensive investigation of BPMN generation from textual requirements, which reads as a survey-style synthesis of techniques, tools, and trends.
+- ref_key: bordignon2018natural
+  assigned_to:
+  - n2
+  assignment_reason: Its title explicitly says systematic literature review, so it belongs with prior survey coverage of NLP in business process identification and modeling.
+- ref_key: herbst_inductive_1999
+  assigned_to:
+  - n2
+  assignment_reason: The title is a foundational workflow-model acquisition paper, which supports historical BPM background more than any modern NLP extraction family.
+- ref_key: goossens2023extracting
+  assigned_to:
+  - n5
+  assignment_reason: The title explicitly says deep learning techniques for extracting DMN models from text, so it is a direct fit for the deep-learning extraction node rather than the broad formalism node.
+- ref_key: han2020bps
+  assigned_to:
+  - n5
+  assignment_reason: This paper centers an ordered-neurons LSTM service for automatic business process discovery, which is a deep-learning method rather than a symbolic pipeline.
+- ref_key: kampik2023large
+  assigned_to:
+  - n8
+  assignment_reason: The title explicitly situates BPM in the age of generative AI, making it a BPM-specific LLM framing reference rather than a classical extraction method paper.
+- ref_key: bellan_gpt3_2022
+  assigned_to:
+  - n8
+  assignment_reason: Its title names pre-trained language models and in-context learning for extracting process entities and relations, so it belongs in the BPM-specific LLM extension cluster.
+- ref_key: grohs2023large
+  assigned_to:
+  - n8
+  assignment_reason: The title claims that large language models can accomplish BPM tasks, which is a direct BPM-and-LLM reference rather than generic NLP background.
+- ref_key: forell_modeling_meets_llm
+  assigned_to:
+  - n8
+  assignment_reason: This title explicitly connects modeling with large language models, which matches the LLM-enabled BPM extension theme.
+- ref_key: kourani_process_modelling_with_llm
+  assigned_to:
+  - n8
+  assignment_reason: The title directly says process modeling with large language models, so it is stronger evidence for the BPM-LLM node than for any generic method node.
+- ref_key: bellan2021process
+  assigned_to:
+  - n2
+  assignment_reason: Its title is a state-of-the-art and challenges piece on process extraction from text, which is prior review framing rather than a primary extraction experiment.
+- ref_key: devlin_bert_2018
+  assigned_to:
+  - n5
+  assignment_reason: BERT is a pre-training paper for deep bidirectional transformers, so it functions as a deep-learning backbone rather than a symbolic or hybrid process-extraction study.
+- ref_key: riefer2016mining
+  assigned_to:
+  - n2
+  assignment_reason: The title presents a state-of-the-art analysis of mining process models from natural language text, which is best treated as prior review coverage.
+- ref_key: omg_bpmn
+  assigned_to:
+  - n6
+  assignment_reason: BPMN is a target notation standard, so this reference anchors the output-model node rather than a method-family node.
+- ref_key: schuler_state_2024
+  assigned_to:
+  - n2
+  assignment_reason: The title is a state-of-the-art paper on automatic generation of business process models, which reads as broad review framing instead of a single extraction approach.
+- ref_key: Page2021
+  assigned_to:
+  - n1
+  assignment_reason: PRISMA 2020 is a systematic-review reporting guideline, so it belongs in the review-protocol frame rather than in BPM method content.
+- ref_key: Fereday2006
+  assigned_to:
+  - n1
+  assignment_reason: The title is about thematic analysis and theme development, which directly supports the review's qualitative coding procedure.
+- ref_key: nasiri2023automatic
+  assigned_to:
+  - n3
+  assignment_reason: The title is about automatic generation of business process models from user stories, and the paper is known from its metadata context as a rule-heavy text-to-model conversion study.
+- ref_key: goncalves2011let
+  assigned_to:
+  - n3
+  assignment_reason: This title signals process-model construction from narrative text, which fits the early rule-based text-to-model tradition more than learned IE pipelines.
+- ref_key: halioui2018bioinformatic
+  assigned_to:
+  - n4
+  assignment_reason: The title foregrounds workflow extraction based on word sense disambiguation, which points to a learned IE-style component rather than pure hand-written process-model rules.
+- ref_key: de2008stanford
+  assigned_to:
+  - n3
+  assignment_reason: Stanford typed dependencies are a syntactic representation widely used in rule-driven extraction pipelines, so this metadata fits the rule-based linguistic-processing node.
+- ref_key: pennington2014glove
+  assigned_to:
+  - n4
+  assignment_reason: GloVe is a representation-learning component used inside supervised text-classification pipelines, so it fits the ML-and-hybrid pipeline node better than the BPM-background node.
+- ref_key: qian2020approach
+  assigned_to:
+  - n4
+  assignment_reason: The title explicitly says multi-grained text classification for process model extraction, making supervised classification the main evidence signal.
+- ref_key: neuberger2023beyond
+  assigned_to:
+  - n4
+  assignment_reason: The title is about moving beyond rule-based NER and relation extraction, so the strongest grounding is a hybrid supervised IE pipeline rather than a pure rule-based method.
+- ref_key: lopez_declarative_process_discovery
+  assigned_to:
+  - n4
+  assignment_reason: Although the output is declarative, the title centers linking process and textual views in discovery, and the cited method family relies on learned NER and relation extraction components.
+- ref_key: etikala2020text2dec
+  assigned_to:
+  - n3
+  assignment_reason: The title emphasizes extracting decision dependencies from natural language text for automated DMN modeling, which is a rule-shaped text-to-model conversion study.
+- ref_key: etikala2021extracting
+  assigned_to:
+  - n3
+  assignment_reason: This title focuses on extracting decision model components from natural language text, which supports a rule-guided conversion pipeline rather than a broad evaluation or notation node.
+- ref_key: Eberts2021
+  assigned_to:
+  - n4
+  assignment_reason: The title is an end-to-end relation-extraction model, so it is a supervised IE backbone reference rather than a BPM notation or review reference.
+- ref_key: bellan2022process
+  assigned_to:
+  - n7
+  assignment_reason: The title explicitly introduces the PET dataset and annotation guidelines, which makes it a dataset asset instead of a method-family paper.
+- ref_key: sanh2020distilbert
+  assigned_to:
+  - n5
+  assignment_reason: DistilBERT is a compact pre-trained transformer model, so its strongest role here is as deep-learning backbone evidence.
+- ref_key: ezencan2020comparison
+  assigned_to:
+  - n4
+  assignment_reason: The title compares LSTM and BERT on small corpora, which is directly useful for model-selection in supervised extraction pipelines rather than for BPM semantics.
+- ref_key: shen2018ordered
+  assigned_to:
+  - n5
+  assignment_reason: Ordered neurons are a neural architecture paper, so this is best treated as deep-learning method support for process-generation work built on ON-LSTM.
+- ref_key: li2005using
+  assigned_to:
+  - n4
+  assignment_reason: The title is about SVM and perceptron for information extraction, which is classic supervised IE machinery rather than a rule template or BPM standard.
+- ref_key: chen2014pewp
+  assigned_to:
+  - n3
+  assignment_reason: Process extraction based on word position in documents signals a hand-crafted conversion heuristic, which fits the rule-based pipeline family.
+- ref_key: sintoris2017extracting
+  assigned_to:
+  - n3
+  assignment_reason: The title explicitly frames business-process-model extraction using NLP techniques, and the paper is an early symbolic pipeline rather than a deep neural system.
+- ref_key: ferreira2017semi
+  assigned_to:
+  - n3
+  assignment_reason: A semi-automatic approach to identify business process elements in natural language texts suggests template or rule assistance rather than learned end-to-end extraction.
+- ref_key: honkisz2018concept
+  assigned_to:
+  - n3
+  assignment_reason: The title describes a concept for generating process models from natural language description, which aligns with rule-shaped text-to-model generation.
+- ref_key: sonbol2023machine
+  assigned_to:
+  - n5
+  assignment_reason: Its title explicitly analogizes the task to machine translation, which points to neural sequence modeling as the main extraction mechanism.
+- ref_key: friedrich2011process
+  assigned_to:
+  - n3
+  assignment_reason: The title is process model generation from natural language text, and this paper is a classic symbolic conversion reference rather than a learned IE system.
+- ref_key: vda_extracting_declarative_process
+  assigned_to:
+  - n3
+  assignment_reason: Although the output is declarative, the title is still about extracting process models from natural language, and the method cluster is rule-centric rather than ML-centric.
+- ref_key: quishpi2021extracting
+  assigned_to:
+  - n3
+  assignment_reason: The title is about extracting decision models from textual descriptions of processes, which fits rule-guided text-to-model conversion more than general ML infrastructure.
+- ref_key: sholiq2022generating
+  assigned_to:
+  - n3
+  assignment_reason: Generating BPMN diagrams from textual requirements points to direct text-to-model synthesis, and the title does not foreground learned model training.
+- ref_key: lopez_assisted_declarative_process
+  assigned_to:
+  - n3
+  assignment_reason: The title stresses assisted declarative process creation from natural language descriptions, which is closer to rule-assisted model construction than to supervised IE.
+- ref_key: cunningham2013getting
+  assigned_to:
+  - n3
+  assignment_reason: GATE text analytics is cited as a rule and pattern engine resource, so it fits the symbolic-pipeline node better than the deep-learning cluster.
+- ref_key: azevedo2018bpmn
+  assigned_to:
+  - n3
+  assignment_reason: Automatic synchronization between BPMN models and text instructions suggests a template or rule conversion workflow instead of a classifier-centered pipeline.
+- ref_key: omg_uml
+  assigned_to:
+  - n6
+  assignment_reason: UML is an output notation standard, so the metadata grounds modeling targets rather than a process-extraction algorithm.
+- ref_key: hildebrandt_dcr
+  assigned_to:
+  - n6
+  assignment_reason: Dynamic condition response graphs are a declarative workflow formalism, which belongs with target-model languages rather than extraction methods.
+- ref_key: omg_dmn
+  assigned_to:
+  - n6
+  assignment_reason: DMN is a decision-model standard, so it is a target artifact definition and not a learning or rule technique.
+- ref_key: friedrich2010automated
+  assigned_to:
+  - n7
+  assignment_reason: The title is the automated-generation thesis that introduced a reusable text-model corpus, so it functions here as a dataset and benchmark source.
+- ref_key: bellan_pet_23
+  assigned_to:
+  - n7
+  assignment_reason: PET is explicitly an annotated dataset for process extraction tasks, making it a benchmarking asset rather than a method paper.
+- ref_key: weidlich2011
+  assigned_to:
+  - n7
+  assignment_reason: Consistency measurement based on behavioral profiles is an evaluation metric for process models, so it belongs with model-assessment assets.
+- ref_key: dijkman2011
+  assigned_to:
+  - n7
+  assignment_reason: Similarity metrics and evaluation for business process models are clearly evaluation infrastructure rather than extraction methods.
+- ref_key: neuberger_data_augment
+  assigned_to:
+  - n4
+  assignment_reason: The title foregrounds data augmentation for process information extraction, which is a supervised-learning intervention rather than a standalone dataset resource.
+- ref_key: gupta2024navigating
+  assigned_to: []
+  assignment_reason: This title is about LLM security in enterprise information systems broadly, with no direct process extraction or process-modeling cue, so leaving it unassigned is safer.
+- ref_key: straw2020artificial
+  assigned_to: []
+  assignment_reason: The paper title concerns bias in language-based models for mental health, which is too far from BPM process extraction to justify assignment to a narrow review node.
+- ref_key: bhardwaj2021investigating
+  assigned_to: []
+  assignment_reason: Investigating gender bias in BERT is a generic fairness paper and lacks BPM, process-model, or extraction-specific metadata evidence.
+- ref_key: busch2023just
+  assigned_to:
+  - n8
+  assignment_reason: Prompt engineering in business process management is directly BPM-specific and explicitly LLM-adjacent, so it belongs in the generative-extension node.
+- ref_key: vidgof2023large
+  assigned_to:
+  - n8
+  assignment_reason: The title explicitly states large language models for business process management, which is direct evidence for the BPM-LLM cluster.
+- ref_key: berti2023abstractions
+  assigned_to:
+  - n8
+  assignment_reason: Process mining with LLMs is BPM-specific generative work, so this fits the LLM-extension node more strongly than any classical extraction family.
+- ref_key: zhao2024_rag_applic
+  assigned_to: []
+  assignment_reason: This is a generic RAG survey on AI-generated content, and the title does not mention BPM, process extraction, or text-to-model generation.
+- ref_key: du2022_r-gqa
+  assigned_to: []
+  assignment_reason: Retrieval-augmented question answering for event argument extraction is adjacent IE work, but the metadata does not specifically support BPM process extraction or modeling targets.
+- ref_key: poesia2022_synchromesh
+  assigned_to: []
+  assignment_reason: Reliable code generation from pre-trained language models is a software-generation paper with no explicit BPM or process-extraction signal in the title.
+- ref_key: li2023_skcoder
+  assigned_to: []
+  assignment_reason: Automatic code generation from sketches is too software-engineering specific to assign confidently to a BPM process-extraction node.
+- ref_key: li2023_acecoder
+  assigned_to: []
+  assignment_reason: Enhancing code generation with existing code is an adjacent generative-programming reference, but the title offers no direct process-modeling evidence.
+- ref_key: guo_large_2024
+  assigned_to: []
+  assignment_reason: This survey is about LLM-based multi-agents in general, and that generic agent framing is weaker than the BPM-specific LLM titles already assigned to n8.
+- ref_key: dong_self-collaboration_2024
+  assigned_to: []
+  assignment_reason: Self-collaboration code generation via ChatGPT is a code-generation reference without explicit BPM or process-extraction grounding.
+- ref_key: qian_chatdev_2024
+  assigned_to: []
+  assignment_reason: ChatDev is about communicative agents for software development, which is only a loose analogy and not strong enough metadata evidence for assignment.
+- ref_key: kitchenham2004procedures
+  assigned_to:
+  - n1
+  assignment_reason: Title 'Procedures for performing systematic reviews' supplies the review-conduct protocol, so it belongs in the review-method frame rather than any BPM method family.
+- ref_key: dumas2018fundamentals
+  assigned_to:
+  - n2
+  assignment_reason: Title 'Fundamentals of Business Process Management' is a BPM textbook, so it grounds domain background instead of a specific extraction or evaluation technique.
+- ref_key: lopez2021challenges
+  assigned_to:
+  - n2
+  assignment_reason: Title 'Challenges in Legal Process Discovery.' is a domain-level challenges piece for process discovery, so it fits background framing better than a concrete extraction pipeline.
+- ref_key: elallaoui2018automatic
+  assigned_to:
+  - n3
+  assignment_reason: Title 'Automatic Transformation of User Stories into UML Use Case Diagrams using NLP Techniques' describes direct text-to-model conversion from requirements text, which matches the rule-based extraction pipeline node.
+- ref_key: robeer2016
+  assigned_to:
+  - n3
+  assignment_reason: Title 'Automated Extraction of Conceptual Models from User Stories via NLP' is another direct user-story-to-model extraction paper, so it belongs with rule-oriented text-to-model pipelines.
+- ref_key: Devlin2019BERTPO
+  assigned_to:
+  - n5
+  assignment_reason: 'Title ''BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding'' is a pre-trained transformer backbone, so it supports the deep-learning and pre-trained-LM extraction cluster.'
+- ref_key: devlin_bert
+  assigned_to:
+  - n5
+  assignment_reason: 'Title ''BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding'' is again a pre-trained transformer reference, which fits the node for deep-learning and pre-trained-LM extraction methods.'
+- ref_key: hasic2019complexity
+  assigned_to:
+  - n7
+  assignment_reason: Title 'Complexity metrics for DMN decision models' contributes model-quality criteria, so it is better treated as an evaluation asset than as an extraction method paper.
+- ref_key: berti_evaluating_llm
+  assigned_to:
+  - n7
+  assignment_reason: 'Title ''Evaluating Large Language Models in Process Mining: Capabilities, Benchmarks, and Evaluation Strategies'' is explicitly about benchmarking and evaluation strategy, so it fits the evaluation-assets node.'
+- ref_key: bellan2022extracting
+  assigned_to:
+  - n8
+  assignment_reason: Title 'Extracting business process entities and relations from text using pre-trained language models and in-context learning' explicitly combines pre-trained language models with in-context learning for BPM extraction, so it fits the LLM-enabled extension node.
+- ref_key: Prokhorenkova2018
+  assigned_to: []
+  assignment_reason: 'Title ''CatBoost: unbiased boosting with categorical features'' is a generic ML backbone reference; metadata alone does not tie it safely to a paper-specific process-extraction family, so it remains unassigned.'
+- ref_key: mikolov2013distributed
+  assigned_to: []
+  assignment_reason: Title 'Distributed Representations of Words and Phrases and their Compositionality' is a general embedding paper, and the available metadata does not justify a narrower BPM extraction assignment here.
+unassigned_refs:
+- gupta2024navigating
+- straw2020artificial
+- bhardwaj2021investigating
+- zhao2024_rag_applic
+- du2022_r-gqa
+- poesia2022_synchromesh
+- li2023_skcoder
+- li2023_acecoder
+- guo_large_2024
+- dong_self-collaboration_2024
+- qian_chatdev_2024
+- Prokhorenkova2018
+- mikolov2013distributed

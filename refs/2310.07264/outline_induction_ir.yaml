@@ -1,0 +1,587 @@
+artifact_type: reference_grounded_outline_induction_ir
+artifact_alias: section_aligned_taxonomy_ledger
+source_mode: reference_only
+paper_id: '2310.07264'
+title: Classification of Dysarthria based on the Levels of Severity. A Systematic Review
+inputs:
+  title: true
+  reference_metadata: true
+  gold_outline: false
+nodes:
+- node_id: n_clinical_foundations
+  level: 1
+  title_candidate: Clinical and Disorder Foundations
+  node_role: background_theme
+  parent: null
+  refs_complete:
+  - freed2018motor
+  - powers2020evaluation
+  - duffy2019motor
+  - kent2009speech
+  - modale2020review
+  inclusion_rule: Assign broad clinical, disorder-description, intervention, and review-context references that frame dysarthria severity classification.
+  ordering_reason: Clinical framing is ordered first because severity classification depends on how dysarthria is defined and assessed in practice.
+- node_id: n_acoustic_features
+  level: 1
+  title_candidate: Acoustic and Phonatory Feature Engineering
+  node_role: method_theme
+  parent: null
+  refs_complete:
+  - shriberg2019estimates
+  - kent1983acoustic
+  - chandrashekar2019breathiness
+  - mackenzie2011dysarthria
+  - kent1999acoustic
+  - sapir2010formant
+  - bandini2018automatic
+  - ackermann1995kinematic
+  - xue2023assessing
+  - luz2017longitudinal
+  - weismer2001acoustic
+  - joshy2022automated
+  - yeo2021automatic
+  - al2021classification
+  - yeo2022cross
+  - vyas2016automatic
+  - joshy2023statistical
+  - subasi2007application
+  - accardo1998algorithm
+  - rudzicz2010towards
+  - leveque2022acoustic
+  - yue2022raw
+  - vainio1998modeling
+  - lee2018articulatory
+  - noffs2018speech
+  - shanmugam2021critical
+  - barkmeier2017speech
+  - parisi2018feature
+  - rudzicz2012torgo
+  - kadi2014automated
+  - kadi2013discriminative
+  inclusion_rule: Assign references on acoustic, articulatory, prosodic, phonatory, and feature-extraction approaches for dysarthric speech analysis.
+  ordering_reason: Feature engineering studies come before model families because they determine what severity signals are available to classifiers.
+- node_id: n_classification_models
+  level: 1
+  title_candidate: Machine Learning and Deep Classification Models
+  node_role: method_theme
+  parent: null
+  refs_complete:
+  - tong2020automatic
+  - stipancic2021you
+  - godino2004automatic
+  - gallardo2021auditory
+  - xu2023dysarthria
+  - japkowicz2011evaluating
+  - hastie2009elements
+  - lopez2013selection
+  - yeo2023automatic
+  - kachhi2022teager
+  - purohit2021weak
+  - joshy2021automated
+  - dahmani2014relevance
+  - suhas2020speech
+  - fernandez2020attention
+  - gupta2021residual
+  - joshy2023dysarthria
+  - bradley1997use
+  - kachhi2022significance
+  - kachhi2022continuous
+  - montalbo4442941dysarnet
+  - akkocc2012empirical
+  inclusion_rule: Assign references on classifiers, deep learning, multimodal models, and automatic severity assessment systems.
+  ordering_reason: Classification models follow feature work because they operationalize those signals into severity judgments.
+- node_id: n_datasets_and_experimental_settings
+  level: 1
+  title_candidate: Corpora, Data Collection, and Experimental Settings
+  node_role: resource_theme
+  parent: null
+  refs_complete:
+  - gandhi2020scoping
+  - finch2020speech
+  - park2020effect
+  - rowe2022characterizing
+  - palmer2007methods
+  - enderby1980frenchay
+  - ayvaz2022automatic
+  - kim2008dysarthric
+  - choi2012dysarthric
+  - menendez1996nemours
+  - jackson2016recurrence
+  - robertson1987dysarthria
+  - orozco2014new
+  - kim2013dysarthric
+  - gillespie2017cross
+  inclusion_rule: Assign references on corpora, databases, recording setups, participant cohorts, or experimental collection protocols for dysarthric speech.
+  ordering_reason: Dataset and collection references come next because severity classification is highly constrained by the available speech material.
+- node_id: n_evaluation_and_deployment
+  level: 1
+  title_candidate: Severity Scales, Evaluation, and Clinical Deployment
+  node_role: evaluation_theme
+  parent: null
+  refs_complete:
+  - laganaro2021sensitivity
+  - lee2021assessment
+  - whillans2022systematic
+  - chiaramonte2021systematic
+  - huang2021review
+  - hernandez2020prosody
+  - kim2011vowel
+  - tartarisco2021artificial
+  - kempler2002effect
+  - xue2023assessing2
+  - lehner2021impact
+  - turner1995influence
+  - bhat2017automatic
+  - mendoza2021acoustic
+  - javanmardi2023wav2vec
+  - demino2011assessing
+  - kumar2022towards
+  - lee2019assessment
+  - chandrashekar2020investigation
+  - chandrashekar2019spectro
+  - geman2011data
+  - mcneil2017apraxia
+  - yorkston1984assessment
+  - jacobson1997voice
+  - blaustein1983reliability
+  - al2014validation
+  - vasquez2018multitask
+  - karjigi2023speech
+  - hernandez2020dysarthria
+  - paja2012automated
+  - gurugubelli2020analytic
+  - narendra2020automatic
+  - kadi2016fully
+  - joshy2023dysarthria2
+  inclusion_rule: Assign references on severity scales, intelligibility, sensitivity, specificity, validation, clinical outcomes, and deployment concerns.
+  ordering_reason: Evaluation and deployment close the structure because they tie model outputs back to clinically meaningful severity assessment.
+ref_assignment_ledger:
+- ref_key: shriberg2019estimates
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (acoustic, prosod) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: kent1983acoustic
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (acoustic, articul, prosod) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: laganaro2021sensitivity
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment, intelligibility, sensitivity) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: chandrashekar2019breathiness
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (breathiness, feature) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: tong2020automatic
+  assigned_to:
+  - n_classification_models
+  assignment_reason: Matched theme cues (audio video, automatic assessment, classification) in the supplied title/abstract metadata, so the reference fits 'Machine Learning and Deep Classification Models'.
+- ref_key: gandhi2020scoping
+  assigned_to:
+  - n_datasets_and_experimental_settings
+  assignment_reason: Matched theme cues (cohort, database) in the supplied title/abstract metadata, so the reference fits 'Corpora, Data Collection, and Experimental Settings'.
+- ref_key: mackenzie2011dysarthria
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (articul, feature, prosod) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: lee2021assessment
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment, tool) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: finch2020speech
+  assigned_to:
+  - n_datasets_and_experimental_settings
+  assignment_reason: Matched theme cues (database) in the supplied title/abstract metadata, so the reference fits 'Corpora, Data Collection, and Experimental Settings'.
+- ref_key: whillans2022systematic
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (intelligibility) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: park2020effect
+  assigned_to:
+  - n_datasets_and_experimental_settings
+  assignment_reason: Matched theme cues (database, french) in the supplied title/abstract metadata, so the reference fits 'Corpora, Data Collection, and Experimental Settings'.
+- ref_key: rowe2022characterizing
+  assigned_to:
+  - n_datasets_and_experimental_settings
+  assignment_reason: Matched theme cues (speaker) in the supplied title/abstract metadata, so the reference fits 'Corpora, Data Collection, and Experimental Settings'.
+- ref_key: chiaramonte2021systematic
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (severity, tool) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: palmer2007methods
+  assigned_to:
+  - n_datasets_and_experimental_settings
+  assignment_reason: Matched theme cues (database) in the supplied title/abstract metadata, so the reference fits 'Corpora, Data Collection, and Experimental Settings'.
+- ref_key: huang2021review
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment, intelligibility, tool) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: stipancic2021you
+  assigned_to:
+  - n_classification_models
+  assignment_reason: Matched theme cues (classification) in the supplied title/abstract metadata, so the reference fits 'Machine Learning and Deep Classification Models'.
+- ref_key: enderby1980frenchay
+  assigned_to:
+  - n_datasets_and_experimental_settings
+  assignment_reason: Matched theme cues (french) in the supplied title/abstract metadata, so the reference fits 'Corpora, Data Collection, and Experimental Settings'.
+- ref_key: freed2018motor
+  assigned_to:
+  - n_clinical_foundations
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Clinical and Disorder Foundations'.
+- ref_key: godino2004automatic
+  assigned_to:
+  - n_classification_models
+  assignment_reason: Matched theme cues (classification, neural) in the supplied title/abstract metadata, so the reference fits 'Machine Learning and Deep Classification Models'.
+- ref_key: hernandez2020prosody
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment, severity) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: gallardo2021auditory
+  assigned_to:
+  - n_classification_models
+  assignment_reason: Matched theme cues (classification, deep learning, lstm) in the supplied title/abstract metadata, so the reference fits 'Machine Learning and Deep Classification Models'.
+- ref_key: xu2023dysarthria
+  assigned_to:
+  - n_classification_models
+  assignment_reason: Matched theme cues (classification, deep learning, neural) in the supplied title/abstract metadata, so the reference fits 'Machine Learning and Deep Classification Models'.
+- ref_key: kent1999acoustic
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (acoustic, articul) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: sapir2010formant
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (acoustic, formant) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: kim2011vowel
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (intelligibility) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: tartarisco2021artificial
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment, severity) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: kempler2002effect
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (intelligibility) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: ayvaz2022automatic
+  assigned_to:
+  - n_datasets_and_experimental_settings
+  assignment_reason: Matched theme cues (dataset, recording, speaker) in the supplied title/abstract metadata, so the reference fits 'Corpora, Data Collection, and Experimental Settings'.
+- ref_key: bandini2018automatic
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (feature) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: ackermann1995kinematic
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (acoustic, articul) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: xue2023assessing
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (articul, feature, prosod) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: xue2023assessing2
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (intelligibility, severity) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: lehner2021impact
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment, intelligibility, severity) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: japkowicz2011evaluating
+  assigned_to:
+  - n_classification_models
+  assignment_reason: Matched theme cues (classification, classifier) in the supplied title/abstract metadata, so the reference fits 'Machine Learning and Deep Classification Models'.
+- ref_key: powers2020evaluation
+  assigned_to:
+  - n_clinical_foundations
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Clinical and Disorder Foundations'.
+- ref_key: hastie2009elements
+  assigned_to:
+  - n_classification_models
+  assignment_reason: Matched theme cues (classification, neural) in the supplied title/abstract metadata, so the reference fits 'Machine Learning and Deep Classification Models'.
+- ref_key: kim2008dysarthric
+  assigned_to:
+  - n_datasets_and_experimental_settings
+  assignment_reason: Matched theme cues (database, speaker) in the supplied title/abstract metadata, so the reference fits 'Corpora, Data Collection, and Experimental Settings'.
+- ref_key: choi2012dysarthric
+  assigned_to:
+  - n_datasets_and_experimental_settings
+  assignment_reason: Matched theme cues (database, speaker) in the supplied title/abstract metadata, so the reference fits 'Corpora, Data Collection, and Experimental Settings'.
+- ref_key: menendez1996nemours
+  assigned_to:
+  - n_datasets_and_experimental_settings
+  assignment_reason: Matched theme cues (database, speaker) in the supplied title/abstract metadata, so the reference fits 'Corpora, Data Collection, and Experimental Settings'.
+- ref_key: lopez2013selection
+  assigned_to:
+  - n_classification_models
+  assignment_reason: Matched theme cues (classification, neural) in the supplied title/abstract metadata, so the reference fits 'Machine Learning and Deep Classification Models'.
+- ref_key: luz2017longitudinal
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (feature) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: turner1995influence
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (intelligibility) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: weismer2001acoustic
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (acoustic, formant) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: joshy2022automated
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (acoustic, articul, feature) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: yeo2023automatic
+  assigned_to:
+  - n_classification_models
+  assignment_reason: Matched theme cues (automatic assessment, classification, classifier) in the supplied title/abstract metadata, so the reference fits 'Machine Learning and Deep Classification Models'.
+- ref_key: yeo2021automatic
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (articul, feature, formant) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: al2021classification
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (acoustic, feature, prosod) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: bhat2017automatic
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment, severity) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: kachhi2022teager
+  assigned_to:
+  - n_classification_models
+  assignment_reason: Matched theme cues (classification, cnn, deep learning) in the supplied title/abstract metadata, so the reference fits 'Machine Learning and Deep Classification Models'.
+- ref_key: yeo2022cross
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (feature, prosod, voice quality) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: vyas2016automatic
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (feature, prosod) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: purohit2021weak
+  assigned_to:
+  - n_classification_models
+  assignment_reason: Matched theme cues (classification, classifier) in the supplied title/abstract metadata, so the reference fits 'Machine Learning and Deep Classification Models'.
+- ref_key: mendoza2021acoustic
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (intelligibility, severity, validation) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: joshy2021automated
+  assigned_to:
+  - n_classification_models
+  assignment_reason: Matched theme cues (classification, classifier, cnn) in the supplied title/abstract metadata, so the reference fits 'Machine Learning and Deep Classification Models'.
+- ref_key: dahmani2014relevance
+  assigned_to:
+  - n_classification_models
+  assignment_reason: Matched theme cues (classification, svm) in the supplied title/abstract metadata, so the reference fits 'Machine Learning and Deep Classification Models'.
+- ref_key: joshy2023statistical
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (articul, feature, prosod) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: javanmardi2023wav2vec
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (severity, tool) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: demino2011assessing
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment, severity) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: kumar2022towards
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment, intelligibility, severity) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: lee2019assessment
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: chandrashekar2020investigation
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment, intelligibility, tool) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: suhas2020speech
+  assigned_to:
+  - n_classification_models
+  assignment_reason: Matched theme cues (classification, cnn, neural) in the supplied title/abstract metadata, so the reference fits 'Machine Learning and Deep Classification Models'.
+- ref_key: fernandez2020attention
+  assigned_to:
+  - n_classification_models
+  assignment_reason: Matched theme cues (classification, lstm, svm) in the supplied title/abstract metadata, so the reference fits 'Machine Learning and Deep Classification Models'.
+- ref_key: gupta2021residual
+  assigned_to:
+  - n_classification_models
+  assignment_reason: Matched theme cues (classification, cnn, deep learning) in the supplied title/abstract metadata, so the reference fits 'Machine Learning and Deep Classification Models'.
+- ref_key: chandrashekar2019spectro
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment, intelligibility) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: subasi2007application
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (feature) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: geman2011data
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (tool) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: accardo1998algorithm
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (acoustic) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: rudzicz2010towards
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (acoustic, articul) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: jackson2016recurrence
+  assigned_to:
+  - n_datasets_and_experimental_settings
+  assignment_reason: Matched theme cues (speaker) in the supplied title/abstract metadata, so the reference fits 'Corpora, Data Collection, and Experimental Settings'.
+- ref_key: leveque2022acoustic
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (acoustic, articul) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: yue2022raw
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (acoustic, feature, mfcc) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: vainio1998modeling
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (feature, prosod) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: lee2018articulatory
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (articul) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: duffy2019motor
+  assigned_to:
+  - n_clinical_foundations
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Clinical and Disorder Foundations'.
+- ref_key: noffs2018speech
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (acoustic, articul, phonatory) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: shanmugam2021critical
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (acoustic, feature) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: mcneil2017apraxia
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: barkmeier2017speech
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (articul, phonatory) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: yorkston1984assessment
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment, intelligibility) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: robertson1987dysarthria
+  assigned_to:
+  - n_datasets_and_experimental_settings
+  assignment_reason: Matched theme cues (speaker) in the supplied title/abstract metadata, so the reference fits 'Corpora, Data Collection, and Experimental Settings'.
+- ref_key: jacobson1997voice
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (validation) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: blaustein1983reliability
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: al2014validation
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment, tool, validation) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: vasquez2018multitask
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment, severity) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: parisi2018feature
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (feature) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: orozco2014new
+  assigned_to:
+  - n_datasets_and_experimental_settings
+  assignment_reason: Matched theme cues (corpus, database) in the supplied title/abstract metadata, so the reference fits 'Corpora, Data Collection, and Experimental Settings'.
+- ref_key: joshy2023dysarthria
+  assigned_to:
+  - n_classification_models
+  assignment_reason: Matched theme cues (classification) in the supplied title/abstract metadata, so the reference fits 'Machine Learning and Deep Classification Models'.
+- ref_key: bradley1997use
+  assigned_to:
+  - n_classification_models
+  assignment_reason: Matched theme cues (classifier) in the supplied title/abstract metadata, so the reference fits 'Machine Learning and Deep Classification Models'.
+- ref_key: rudzicz2012torgo
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (acoustic, articul, feature) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: kent2009speech
+  assigned_to:
+  - n_clinical_foundations
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Clinical and Disorder Foundations'.
+- ref_key: modale2020review
+  assigned_to:
+  - n_clinical_foundations
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Clinical and Disorder Foundations'.
+- ref_key: karjigi2023speech
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment, intelligibility, severity) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: kadi2014automated
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (feature, prosod) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: hernandez2020dysarthria
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment, severity) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: paja2012automated
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment, intelligibility, severity) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: kadi2013discriminative
+  assigned_to:
+  - n_acoustic_features
+  assignment_reason: Matched theme cues (feature, mfcc, prosod) in the supplied title/abstract metadata, so the reference fits 'Acoustic and Phonatory Feature Engineering'.
+- ref_key: kim2013dysarthric
+  assigned_to:
+  - n_datasets_and_experimental_settings
+  assignment_reason: Matched theme cues (database, speaker) in the supplied title/abstract metadata, so the reference fits 'Corpora, Data Collection, and Experimental Settings'.
+- ref_key: kachhi2022significance
+  assigned_to:
+  - n_classification_models
+  assignment_reason: Matched theme cues (classification, classifier, cnn) in the supplied title/abstract metadata, so the reference fits 'Machine Learning and Deep Classification Models'.
+- ref_key: gurugubelli2020analytic
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment, intelligibility) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: narendra2020automatic
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment, intelligibility, severity) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: gillespie2017cross
+  assigned_to:
+  - n_datasets_and_experimental_settings
+  assignment_reason: Matched theme cues (corpus, database, dataset) in the supplied title/abstract metadata, so the reference fits 'Corpora, Data Collection, and Experimental Settings'.
+- ref_key: kadi2016fully
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment, intelligibility) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: kachhi2022continuous
+  assigned_to:
+  - n_classification_models
+  assignment_reason: Matched theme cues (classification, cnn, neural) in the supplied title/abstract metadata, so the reference fits 'Machine Learning and Deep Classification Models'.
+- ref_key: joshy2023dysarthria2
+  assigned_to:
+  - n_evaluation_and_deployment
+  assignment_reason: Matched theme cues (assessment, severity) in the supplied title/abstract metadata, so the reference fits 'Severity Scales, Evaluation, and Clinical Deployment'.
+- ref_key: montalbo4442941dysarnet
+  assigned_to:
+  - n_classification_models
+  assignment_reason: Matched theme cues (deep learning) in the supplied title/abstract metadata, so the reference fits 'Machine Learning and Deep Classification Models'.
+- ref_key: akkocc2012empirical
+  assigned_to:
+  - n_classification_models
+  assignment_reason: Matched theme cues (neural) in the supplied title/abstract metadata, so the reference fits 'Machine Learning and Deep Classification Models'.
+unassigned_refs: []

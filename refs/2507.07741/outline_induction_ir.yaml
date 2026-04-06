@@ -1,0 +1,979 @@
+artifact_type: reference_grounded_outline_induction_ir
+artifact_alias: section_aligned_taxonomy_ledger
+source_mode: reference_only
+paper_id: '2507.07741'
+title: 'Code-Switching in End-to-End Automatic Speech Recognition: A Systematic Literature Review'
+inputs:
+  title: true
+  reference_metadata: true
+  gold_outline: false
+nodes:
+- node_id: n_corpora_and_linguistic_context
+  level: 1
+  title_candidate: Code-Switching Corpora and Linguistic Settings
+  node_role: resource_theme
+  parent: null
+  refs_complete:
+  - lovenia2021ascend
+  - rambabu2018development
+  - DeucharDaviesHerringCoutoCarter+2014+93+110
+  - Mahootian2019
+  - Amazouz2017
+  - fame
+  - Li1996
+  - gamback2014measuring
+  - Ferguson01011959
+  - Gumperz_1982
+  - poplack
+  - Diniz_de_Figueiredo_2010
+  - stewart-etal-2021-tuiteamos
+  - commonvoice
+  - myers-scotton_social_1995
+  - hamed2024zaebuc
+  - van_der_westhuizen_first_2018
+  - Westhuizen2018AFS
+  - multilibri
+  - DBLP:journals/ijclclp/TakezawaKMS07
+  - sitaram2019survey
+  - lyu2010seame
+  - li22j_interspeech
+  - ganji2019iitg
+  - jain2024vitb
+  - hamed2020arzen
+  - mubarak2021qasr
+  - mussakhojayeva22_interspeech
+  inclusion_rule: Assign code-switching corpora, bilingual speech resources, sociolinguistic framing papers, and challenge-resource references that define the language setting or available data.
+  ordering_reason: Corpora and linguistic context still come first because code-switching ASR results are inseparable from which bilingual speech resources and sociolinguistic settings are actually represented.
+- node_id: n_e2e_asr_architectures
+  level: 1
+  title_candidate: End-to-End ASR Architectures and Acoustic Modeling
+  node_role: method_theme
+  parent: null
+  refs_complete:
+  - shi2020asru
+  - DBLP:conf/icassp/YanWKJW23
+  - abdallah2024leveraging
+  - ali2024mixat
+  - talafha2024casablanca
+  - roosadi_handling_2023
+  - Ali2021
+  - Liang2022
+  - Sivasankaran2018
+  - Lyu2006
+  - Shen2022
+  - Shah2020
+  - dalmia_transformer-transducers_2021
+  - mary_n_j_investigation_2020
+  - Yilmaz2018
+  - Yin2022
+  - Zhou2020
+  - Lyu2008
+  - Wang2019
+  - Khassanov2019
+  - Mustafa2022
+  - Peng2021
+  - Luo2018
+  - Chi2022
+  - emond2018transliteration
+  - vu2012first
+  - ahmed2012automatic
+  - lyu2006speech
+  - bhuvanagirir2012mixed
+  - yeh2015improved
+  - lyudovyk2014code
+  - miao2015eesen
+  - srivastava2018homophone
+  - yang2022open
+  - Kim2016JointCB
+  - weiner
+  - shan_end2end
+  - yao21_interspeech
+  - whetten-kennington-2023-evaluating
+  - grandview2024voice
+  - modipa2022two
+  - zhou_improving_2025
+  - wang_tri-stage_2024
+  - yue_end--end_2019
+  - lu_bi-encoder_2020
+  - yan_joint_2022
+  - seki_end--end_2018
+  - zeng_end--end_2019
+  - qiu_towards_2020
+  - reddy1976speech
+  - AnusuyaKatti2009
+  - mustafa2022code
+  - taguchi-etal-2024-killkan
+  - '10096317'
+  - '9020132'
+  - '9054138'
+  - '9414428'
+  - '10274649'
+  - '9688174'
+  - tian2022lae
+  - '9413562'
+  - zhang_rnn-transducer_2020
+  - '10389662'
+  - '9413806'
+  - akhi2024transformer
+  - '10627333'
+  - dhawan_investigating_2020
+  - sreeram_exploration_2020
+  - li_bytes_2019
+  - huang_hksr_2022
+  - liang_hybrid_2022
+  - yang_effective_2024
+  - taguchi2024killkan
+  - hat-fact
+  - watanabe2017hybrid
+  - zhou-knnctc-dual
+  - zhou-knnctc
+  - chi23_interspeech
+  - speech-collage
+  - zhou_multi-encoder-decoder_2020
+  - liu_reducing_2023
+  - '10448335'
+  - chuang2021non
+  - zhou2024improving
+  - song22e_interspeech
+  - wang2023language
+  - hamed2022investigations
+  - hillah2024te
+  - aditya2024attention
+  inclusion_rule: Assign end-to-end ASR architecture papers where encoder, transducer, CTC-attention, MoE, or other acoustic-recognition design choices are the main contribution, excluding generic transfer or corpus papers.
+  ordering_reason: The architecture node now focuses on model-design evidence after corpus framing, leaving transfer and augmentation papers to their own node.
+- node_id: n_language_modeling_and_decoding
+  level: 1
+  title_candidate: Language Modeling, Fusion, and Decoding Strategies
+  node_role: method_theme
+  parent: null
+  refs_complete:
+  - Peng2022
+  - Yilmaz2019
+  - choudhury2017curriculum
+  - zhao_adapting_2025
+  - '10634607'
+  - pratapa-2018-language
+  - pgn-cs
+  - grid-beam
+  - chen-rescoring
+  - li_improving_2020
+  - abate20_interspeech
+  inclusion_rule: Assign language-model, decoding, fusion, lexicon, rescoring, and subword-strategy papers specific to code-switching ASR inference.
+  ordering_reason: Language modeling remains separate from acoustic architectures because bilingual lexical selection and decoding are a distinct technical bottleneck in code-switching ASR.
+- node_id: n_transfer_and_adaptation
+  level: 1
+  title_candidate: Transfer, Adaptation, and Low-Resource Training
+  node_role: method_theme
+  parent: null
+  refs_complete:
+  - '10750818'
+  - Ma2019
+  - thomas2020transliteration
+  - mohamed2022self
+  - yadav-sitaram-2022-survey
+  - '8682824'
+  - ogunremi2023multilingual
+  - baevski2020wav2vec
+  - pham22_interspeech
+  - mms
+  - Yilmaz2018b
+  - Weller2022
+  - Sharma2020
+  - Du2020
+  - yilmaz2018acoustic
+  - alharbi2024leveraging
+  - conneau2020unsupervised
+  - he2023learning
+  - kronis-etal-2024-code
+  - DBLP:journals/ejasmp/LongWLL21
+  - '10389798'
+  - anastasopoulos-chiang-2018-tied
+  - Biswas2019
+  - Nakayama2021
+  - Biswas2020
+  - Nakayama2019
+  - Kumar2021
+  - kumar2021dual
+  - datta2020language
+  - toshniwal_multilingual
+  - seki_end--end_2019
+  - penagarikano2023semisupervised
+  - tazakka2024indonesian
+  - tseng2024leave
+  - chowdhury2021towards
+  inclusion_rule: Assign multilingual transfer, augmentation, semisupervised learning, adapters, self-supervised pretraining, and low-resource adaptation papers that transfer signal into code-switching ASR.
+  ordering_reason: Transfer and adaptation follow the core architectures because code-switching ASR routinely borrows supervision, representations, or augmentation from better-resourced settings.
+- node_id: n_evaluation_and_benchmarks
+  level: 1
+  title_candidate: Evaluation Challenges and Benchmarking
+  node_role: evaluation_theme
+  parent: null
+  refs_complete:
+  - hamed2023benchmarking
+  - ugan-etal-2024-decm
+  - khosravani_evaluation_2021
+  - Winata2022
+  - winata_decades_2023
+  - polywer
+  - winata-etal-2023-decades
+  - mixup
+  - Harrington_Its_2022
+  - delobelle_metrics_2024
+  - diwan21_interspeech
+  - sailor2021sri
+  inclusion_rule: Assign challenge descriptions, benchmarking studies, evaluation protocols, WER analysis, and benchmark-focused comparisons for code-switching ASR.
+  ordering_reason: Benchmarking closes the taxonomy because these papers define how progress across corpora, models, and adaptation strategies is actually measured.
+ref_assignment_ledger:
+- ref_key: lovenia2021ascend
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: 'Title ''ASCEND: A Spontaneous Chinese-English Dataset for Code-switching in Multi-turn Conversation'' defines a corpus, dataset, or challenge resource for a code-switching speech setting, so it belongs in the corpora-and-context node rather than a model node.'
+- ref_key: rambabu2018development
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: Available metadata for 'Development of IIITH Hindi-English Code Mixed Speech Database' frames the linguistic setting or sociolinguistic background of code-switching, which is context rather than an ASR architecture contribution.
+- ref_key: DeucharDaviesHerringCoutoCarter+2014+93+110
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: Title '5. Building Bilingual Corpora' defines a corpus, dataset, or challenge resource for a code-switching speech setting, so it belongs in the corpora-and-context node rather than a model node.
+- ref_key: Mahootian2019
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: Available metadata for 'Code Switching and Mixing' frames the linguistic setting or sociolinguistic background of code-switching, which is context rather than an ASR architecture contribution.
+- ref_key: Amazouz2017
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: Available metadata for 'Addressing Code-Switching in French/Algerian Arabic Speech' frames the linguistic setting or sociolinguistic background of code-switching, which is context rather than an ASR architecture contribution.
+- ref_key: fame
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: Available metadata for 'FAME! - The Frisian Audio Mining Enterprise' frames the linguistic setting or sociolinguistic background of code-switching, which is context rather than an ASR architecture contribution.
+- ref_key: Li1996
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: Available metadata for 'Spoken Word Recognition of Code-Switched Words by Chinese-English Bilinguals' frames the linguistic setting or sociolinguistic background of code-switching, which is context rather than an ASR architecture contribution.
+- ref_key: gamback2014measuring
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: Available metadata for 'On measuring the complexity of code-mixing' frames the linguistic setting or sociolinguistic background of code-switching, which is context rather than an ASR architecture contribution.
+- ref_key: Ferguson01011959
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: Available metadata for 'Diglossia' frames the linguistic setting or sociolinguistic background of code-switching, which is context rather than an ASR architecture contribution.
+- ref_key: Gumperz_1982
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: Available metadata for 'Discourse Strategies' frames the linguistic setting or sociolinguistic background of code-switching, which is context rather than an ASR architecture contribution.
+- ref_key: poplack
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: 'Available metadata for ''Sometimes I''ll Start a Sentence in Spanish y termino en espanol: Toward a Typology of Code-Switching'' frames the linguistic setting or sociolinguistic background of code-switching, which is context rather than an ASR architecture contribution.'
+- ref_key: Diniz_de_Figueiredo_2010
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: 'Available metadata for ''To borrow or not to borrow: the use of English loanwords as slang on websites in Brazilian Portuguese'' frames the linguistic setting or sociolinguistic background of code-switching, which is context rather than an ASR architecture contribution.'
+- ref_key: stewart-etal-2021-tuiteamos
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: Available metadata for 'Tuiteamos o pongamos un tuit? Investigating the Social Constraints of Loanword Integration in Spanish Social Media' frames the linguistic setting or sociolinguistic background of code-switching, which is context rather than an ASR architecture contribution.
+- ref_key: commonvoice
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: 'Title ''Common Voice: A Massively-Multilingual Speech Corpus'' defines a corpus, dataset, or challenge resource for a code-switching speech setting, so it belongs in the corpora-and-context node rather than a model node.'
+- ref_key: myers-scotton_social_1995
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: 'Available metadata for ''Social Motivations For Codeswitching: Evidence from Africa'' frames the linguistic setting or sociolinguistic background of code-switching, which is context rather than an ASR architecture contribution.'
+- ref_key: hamed2024zaebuc
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: 'Title ''ZAEBUC-Spoken: A Multilingual Multidialectal Arabic-English Speech Corpus'' defines a corpus, dataset, or challenge resource for a code-switching speech setting, so it belongs in the corpora-and-context node rather than a model node.'
+- ref_key: van_der_westhuizen_first_2018
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: Title 'A First South African Corpus of Multilingual Code-switched Soap Opera Speech' defines a corpus, dataset, or challenge resource for a code-switching speech setting, so it belongs in the corpora-and-context node rather than a model node.
+- ref_key: Westhuizen2018AFS
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: Title 'A First South African Corpus of Multilingual Code-switched Soap Opera Speech' defines a corpus, dataset, or challenge resource for a code-switching speech setting, so it belongs in the corpora-and-context node rather than a model node.
+- ref_key: multilibri
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: 'Title ''MLS: A Large-Scale Multilingual Dataset for Speech Research'' defines a corpus, dataset, or challenge resource for a code-switching speech setting, so it belongs in the corpora-and-context node rather than a model node.'
+- ref_key: DBLP:journals/ijclclp/TakezawaKMS07
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: Title 'Multilingual Spoken Language Corpus Development for Communication Research' defines a corpus, dataset, or challenge resource for a code-switching speech setting, so it belongs in the corpora-and-context node rather than a model node.
+- ref_key: sitaram2019survey
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: Available metadata for 'A survey of code-switched speech and language processing' frames the linguistic setting or sociolinguistic background of code-switching, which is context rather than an ASR architecture contribution.
+- ref_key: lyu2010seame
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: 'Title ''SEAME: a Mandarin-English code-switching speech corpus in south-east asia'' defines a corpus, dataset, or challenge resource for a code-switching speech setting, so it belongs in the corpora-and-context node rather than a model node.'
+- ref_key: li22j_interspeech
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: 'Title ''TALCS: An open-source Mandarin-English code-switching corpus and a speech recognition baseline'' defines a corpus, dataset, or challenge resource for a code-switching speech setting, so it belongs in the corpora-and-context node rather than a model node.'
+- ref_key: ganji2019iitg
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: 'Title ''IITG-HingCoS corpus: A Hinglish code-switching database for automatic speech recognition'' defines a corpus, dataset, or challenge resource for a code-switching speech setting, so it belongs in the corpora-and-context node rather than a model node.'
+- ref_key: jain2024vitb
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: 'Title ''VITB-HEBiC: A bilingual corpus for evaluating ASR in diverse Indian code-switching scenarios'' defines a corpus, dataset, or challenge resource for a code-switching speech setting, so it belongs in the corpora-and-context node rather than a model node.'
+- ref_key: hamed2020arzen
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: 'Title ''ArzEn: A Speech Corpus for Code-switched Egyptian Arabic-English'' defines a corpus, dataset, or challenge resource for a code-switching speech setting, so it belongs in the corpora-and-context node rather than a model node.'
+- ref_key: mubarak2021qasr
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: 'Title ''QASR: QCRI Aljazeera Speech Resource A Large Scale Annotated Arabic Speech Corpus'' defines a corpus, dataset, or challenge resource for a code-switching speech setting, so it belongs in the corpora-and-context node rather than a model node.'
+- ref_key: mussakhojayeva22_interspeech
+  assigned_to:
+  - n_corpora_and_linguistic_context
+  assignment_reason: 'Title ''KSC2: An Industrial-Scale Open-Source Kazakh Speech Corpus'' defines a corpus, dataset, or challenge resource for a code-switching speech setting, so it belongs in the corpora-and-context node rather than a model node.'
+- ref_key: shi2020asru
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: 'Title ''The ASRU 2019 Mandarin-English Code-Switching Speech Recognition Challenge: Open Datasets, Tracks, Methods and Results'' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.'
+- ref_key: DBLP:conf/icassp/YanWKJW23
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Towards Zero-Shot Code-Switched Speech Recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: abdallah2024leveraging
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Leveraging Data Collection and Unsupervised Learning for Code-Switched Tunisian Arabic Automatic Speech Recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: ali2024mixat
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: 'Available metadata for ''Mixat: A Data Set of Bilingual Emirati-English Speech'' supports a code-switching ASR architecture claim rather than a corpus, transfer, or decoding-only contribution.'
+- ref_key: talafha2024casablanca
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: 'Title ''Casablanca: Data and Models for Multidialectal Arabic Speech Recognition'' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.'
+- ref_key: roosadi_handling_2023
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Handling of Indonesian-English Codeswitching Speech in End-to-End Indonesian Speech Recognition System Using Connectionist Temporal Classification Model' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: Ali2021
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Arabic Code-Switching Speech Recognition Using Monolingual Data' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: Liang2022
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Available metadata for 'The NPU-ASLP System for The ISCSLP 2022 Magichub Code-Swiching ASR Challenge' supports a code-switching ASR architecture claim rather than a corpus, transfer, or decoding-only contribution.
+- ref_key: Sivasankaran2018
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Phone Merging For Code-Switched Speech Recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: Lyu2006
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Speech Recognition on Code-Switching Among the Chinese Dialects' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: Shen2022
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'An Improved Deliberation Network with Text Pre-training for Code-Switching Automatic Speech Recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: Shah2020
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Learning to Recognize Code-switched Speech Without Forgetting Monolingual Speech Recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: dalmia_transformer-transducers_2021
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Transformer-Transducers for Code-Switched Speech Recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: mary_n_j_investigation_2020
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Available metadata for 'Investigation of Methods to Improve the Recognition Performance of Tamil-English Code-Switched Data in Transformer Framework' supports a code-switching ASR architecture claim rather than a corpus, transfer, or decoding-only contribution.
+- ref_key: Yilmaz2018
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Available metadata for 'Building a Unified Code-Switching ASR System for South African Languages' supports a code-switching ASR architecture claim rather than a corpus, transfer, or decoding-only contribution.
+- ref_key: Yin2022
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Hybrid CTC Language Identification Structure for Mandarin-English Code-Switching ASR' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: Zhou2020
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Multi-Encoder-Decoder Transformer for Code-Switching Speech Recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: Lyu2008
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Available metadata for 'Language identification on code-switching utterances using multiple cues' supports a code-switching ASR architecture claim rather than a corpus, transfer, or decoding-only contribution.
+- ref_key: Wang2019
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Available metadata for 'Code-Switching Detection Using ASR-Generated Language Posteriors' supports a code-switching ASR architecture claim rather than a corpus, transfer, or decoding-only contribution.
+- ref_key: Khassanov2019
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Constrained Output Embeddings for End-to-End Code-Switching Speech Recognition with Only Monolingual Data' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: Mustafa2022
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: 'Title ''Code-Switching in Automatic Speech Recognition: The Issues and Future Directions'' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.'
+- ref_key: Peng2021
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Available metadata for 'Minimum Word Error Training For Non-Autoregressive Transformer-Based Code-Switching ASR' supports a code-switching ASR architecture claim rather than a corpus, transfer, or decoding-only contribution.
+- ref_key: Luo2018
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Towards End-to-End Code-Switching Speech Recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: Chi2022
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Available metadata for 'Improving Code-switched ASR with Linguistic Information' supports a code-switching ASR architecture claim rather than a corpus, transfer, or decoding-only contribution.
+- ref_key: emond2018transliteration
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Transliteration Based Approaches to Improve Code-Switched Speech Recognition Performance' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: vu2012first
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'A first speech recognition system for Mandarin-English code-switch conversational speech' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: ahmed2012automatic
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Automatic speech recognition of code switching speech using 1-best rescoring' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: lyu2006speech
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Speech recognition on code-switching among the Chinese dialects' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: bhuvanagirir2012mixed
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Mixed language speech recognition without explicit identification of language' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: yeh2015improved
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Available metadata for 'An improved framework for recognizing highly imbalanced bilingual code-switched lectures with cross-language acoustic modeling and frame-level language identification' supports a code-switching ASR architecture claim rather than a corpus, transfer, or decoding-only contribution.
+- ref_key: lyudovyk2014code
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Code-switching speech recognition for closely related languages' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: miao2015eesen
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: 'Title ''EESEN: End-to-end speech recognition using deep RNN models and WFST-based decoding'' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.'
+- ref_key: srivastava2018homophone
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Homophone Identification and Merging for Code-switched Speech Recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: yang2022open
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: 'Available metadata for ''Open Source MagicData-RAMC: A Rich Annotated Mandarin Conversational(RAMC) Speech Dataset'' supports a code-switching ASR architecture claim rather than a corpus, transfer, or decoding-only contribution.'
+- ref_key: Kim2016JointCB
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Joint CTC-attention based end-to-end speech recognition using multi-task learning' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: weiner
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Available metadata for 'Integration of Language Identification into a Recognition System for Spoken Conversations Containing Code-Switches' supports a code-switching ASR architecture claim rather than a corpus, transfer, or decoding-only contribution.
+- ref_key: shan_end2end
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Investigating End-to-end Speech Recognition for Mandarin-english Code-switching' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: yao21_interspeech
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: 'Title ''WeNet: Production Oriented Streaming and Non-Streaming End-to-End Speech Recognition Toolkit'' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.'
+- ref_key: whetten-kennington-2023-evaluating
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Evaluating and Improving Automatic Speech Recognition using Severity' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: grandview2024voice
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Voice and Speech Recognition Market Size, Share & Trends Analysis Report By Function (Speech Recognition, Voice Recognition), By Technology, By Vertical, By Region, And Segment Forecasts, 2024 - 2030' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: modipa2022two
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Available metadata for 'Two Sepedi-English code-switched speech corpora' supports a code-switching ASR architecture claim rather than a corpus, transfer, or decoding-only contribution.
+- ref_key: zhou_improving_2025
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Improving Zero-Shot Chinese-English Code-Switching ASR with kNN-CTC and Gated Monolingual Datastores' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: wang_tri-stage_2024
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Tri-stage training with language-specific encoder and bilingual acoustic learner for code-switching speech recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: yue_end--end_2019
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'End-to-End Code-Switching ASR for Low-Resourced Language Pairs' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: lu_bi-encoder_2020
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Bi-Encoder Transformer Network for Mandarin-English Code-Switching Speech Recognition Using Mixture of Experts' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: yan_joint_2022
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Available metadata for 'Joint Modeling of Code-Switched and Monolingual ASR via Conditional Factorization' supports a code-switching ASR architecture claim rather than a corpus, transfer, or decoding-only contribution.
+- ref_key: seki_end--end_2018
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'An End-to-End Language-Tracking Speech Recognizer for Mixed-Language Speech' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: zeng_end--end_2019
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'On the End-to-End Solution to Mandarin-English Code-Switching Speech Recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: qiu_towards_2020
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Towards Context-Aware End-to-End Code-Switching Speech Recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: reddy1976speech
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: 'Title ''Speech recognition by machine: A review'' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.'
+- ref_key: AnusuyaKatti2009
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Speech Recognition by Machine, A Review' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: mustafa2022code
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: 'Title ''Code-Switching in Automatic Speech Recognition: The Issues and Future Directions'' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.'
+- ref_key: taguchi-etal-2024-killkan
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: 'Title ''Killkan: The Automatic Speech Recognition Dataset for Kichwa with Morphosyntactic Information'' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.'
+- ref_key: '10096317'
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Available metadata for 'Code-Switching Text Generation and Injection in Mandarin-English ASR' supports a code-switching ASR architecture claim rather than a corpus, transfer, or decoding-only contribution.
+- ref_key: '9020132'
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Available metadata for 'Machine Speech Chain' supports a code-switching ASR architecture claim rather than a corpus, transfer, or decoding-only contribution.
+- ref_key: '9054138'
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Available metadata for 'Investigation of Methods to Improve the Recognition Performance of Tamil-English Code-Switched Data in Transformer Framework' supports a code-switching ASR architecture claim rather than a corpus, transfer, or decoding-only contribution.
+- ref_key: '9414428'
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Decoupling Pronunciation and Language for End-to-End Code-Switching Automatic Speech Recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: '10274649'
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Cyclic Transfer Learning for Mandarin-English Code-Switching Speech Recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: '9688174'
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Non-Autoregressive Mandarin-English Code-Switching Speech Recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: tian2022lae
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: 'Title ''LAE: Language-Aware Encoder for Monolingual and Multilingual ASR'' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.'
+- ref_key: '9413562'
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Transformer-Transducers for Code-Switched Speech Recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: zhang_rnn-transducer_2020
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Rnn-transducer With Language Bias For End-to-end Mandarin-English Code-switching Speech Recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: '10389662'
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: 'Title ''LAE-ST-MOE: Boosted Language-Aware Encoder Using Speech Translation Auxiliary Task for E2E Code-Switching ASR'' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.'
+- ref_key: '9413806'
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Reducing Spelling Inconsistencies in Code-Switching ASR Using Contextualized CTC Loss' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: akhi2024transformer
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Transformer Based Bangla-English Code-Switching Speech Recognition and Language Identification Model' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: '10627333'
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Gated Low-Rank Adaptation for Personalized Code-Switching Automatic Speech Recognition on the Low-Spec Devices' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: dhawan_investigating_2020
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Investigating Target Set Reduction for End-to-End Speech Recognition of Hindi-English Code-Switching Data' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: sreeram_exploration_2020
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: 'Title ''Exploration of End-to-End Framework for Code-Switching Speech Recognition Task: Challenges and Enhancements'' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.'
+- ref_key: li_bytes_2019
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: 'Title ''Bytes Are All You Need: End-to-end Multilingual Speech Recognition and Synthesis with Bytes'' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.'
+- ref_key: huang_hksr_2022
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: 'Title ''HKSR: A Research of Code-Switching Hong Kong Cantonese Speech Recognition Based on Multi-task Rescoring Strategy'' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.'
+- ref_key: liang_hybrid_2022
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'A hybrid CTC+Attention model based on end-to-end framework for multilingual speech recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: yang_effective_2024
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'An Effective Mixture-Of-Experts Approach For Code-Switching Speech Recognition Leveraging Encoder Disentanglement' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: taguchi2024killkan
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: 'Title ''Killkan: The Automatic Speech Recognition Dataset for Kichwa with Morphosyntactic Information'' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.'
+- ref_key: hat-fact
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Hybrid Autoregressive Transducer (HAT)' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: watanabe2017hybrid
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Hybrid CTC/attention architecture for end-to-end speech recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: zhou-knnctc-dual
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Improving Zero-Shot Chinese-English Code-Switching ASR with kNN-CTC and Gated Monolingual Datastores' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: zhou-knnctc
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: 'Title ''KNN-CTC: Enhancing ASR via Retrieval of CTC Pseudo Labels'' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.'
+- ref_key: chi23_interspeech
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Available metadata for 'Unsupervised Code-switched Text Generation from Parallel Text' supports a code-switching ASR architecture claim rather than a corpus, transfer, or decoding-only contribution.
+- ref_key: speech-collage
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: 'Available metadata for ''Speech Collage: Code-Switched Audio Generation by Collaging Monolingual Corpora'' supports a code-switching ASR architecture claim rather than a corpus, transfer, or decoding-only contribution.'
+- ref_key: zhou_multi-encoder-decoder_2020
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Multi-Encoder-Decoder Transformer for Code-Switching Speech Recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: liu_reducing_2023
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Reducing Language Confusion for Code-Switching Speech Recognition with Token-Level Language Diarization' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: '10448335'
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Enhancing Code-Switching Speech Recognition With Interactive Language Biases' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: chuang2021non
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Non-autoregressive mandarin-english code-switching speech recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: zhou2024improving
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Improving Zero-Shot Chinese-English Code-Switching ASR with kNN-CTC and Gated Monolingual Datastores' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: song22e_interspeech
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Language-specific Characteristic Assistance for Code-switching Speech Recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: wang2023language
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Language-Routing Mixture of Experts for Multilingual and Code-Switching Speech Recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: hamed2022investigations
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Investigations on speech recognition systems for low-resource dialectal Arabic--English code-switching speech' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: hillah2024te
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Available metadata for '"?` Te vienes? Sure!" Joint Fine-tuning of Language Detection and Transcription Improves Automatic Recognition of Code-Switching Speech' supports a code-switching ASR architecture claim rather than a corpus, transfer, or decoding-only contribution.
+- ref_key: aditya2024attention
+  assigned_to:
+  - n_e2e_asr_architectures
+  assignment_reason: Title 'Attention-Guided Adaptation for Code-Switching Speech Recognition' is centered on an end-to-end ASR model design or acoustic-recognition architecture, so it belongs in the architecture node rather than the transfer node.
+- ref_key: Peng2022
+  assigned_to:
+  - n_language_modeling_and_decoding
+  assignment_reason: Title 'Internal Language Model Estimation based Language Model Fusion for Cross-Domain Code-Switching Speech Recognition' targets language modeling or decoding behavior for code-switching ASR, so it fits the decoding-strategy node.
+- ref_key: Yilmaz2019
+  assigned_to:
+  - n_language_modeling_and_decoding
+  assignment_reason: Title 'Multi-Graph Decoding for Code-Switching ASR' targets language modeling or decoding behavior for code-switching ASR, so it fits the decoding-strategy node.
+- ref_key: choudhury2017curriculum
+  assigned_to:
+  - n_language_modeling_and_decoding
+  assignment_reason: 'Title ''Curriculum design for code-switching: Experiments with language identification and language modeling with deep neural networks'' targets language modeling or decoding behavior for code-switching ASR, so it fits the decoding-strategy node.'
+- ref_key: zhao_adapting_2025
+  assigned_to:
+  - n_language_modeling_and_decoding
+  assignment_reason: Title 'Adapting Whisper for Code-Switching through Encoding Refining and Language-Aware Decoding' targets language modeling or decoding behavior for code-switching ASR, so it fits the decoding-strategy node.
+- ref_key: '10634607'
+  assigned_to:
+  - n_language_modeling_and_decoding
+  assignment_reason: Title 'Self-supervised Learning and Masked Language Model for Code-switching Automatic Speech Recognition' targets language modeling or decoding behavior for code-switching ASR, so it fits the decoding-strategy node.
+- ref_key: pratapa-2018-language
+  assigned_to:
+  - n_language_modeling_and_decoding
+  assignment_reason: 'Title ''Language Modeling for Code-Mixing: The Role of Linguistic Theory based Synthetic Data'' targets language modeling or decoding behavior for code-switching ASR, so it fits the decoding-strategy node.'
+- ref_key: pgn-cs
+  assigned_to:
+  - n_language_modeling_and_decoding
+  assignment_reason: Title 'Code-Switched Language Models Using Neural Based Synthetic Data from Parallel Sentences' targets language modeling or decoding behavior for code-switching ASR, so it fits the decoding-strategy node.
+- ref_key: grid-beam
+  assigned_to:
+  - n_language_modeling_and_decoding
+  assignment_reason: Title 'Lexically Constrained Decoding for Sequence Generation Using Grid Beam Search' targets language modeling or decoding behavior for code-switching ASR, so it fits the decoding-strategy node.
+- ref_key: chen-rescoring
+  assigned_to:
+  - n_language_modeling_and_decoding
+  assignment_reason: Title 'Large-Scale Language Model Rescoring on Long-Form Data' targets language modeling or decoding behavior for code-switching ASR, so it fits the decoding-strategy node.
+- ref_key: li_improving_2020
+  assigned_to:
+  - n_language_modeling_and_decoding
+  assignment_reason: Title 'Improving Code-Switching Language Modeling with Artificially Generated Texts Using Cycle-Consistent Adversarial Networks' targets language modeling or decoding behavior for code-switching ASR, so it fits the decoding-strategy node.
+- ref_key: abate20_interspeech
+  assigned_to:
+  - n_language_modeling_and_decoding
+  assignment_reason: Title 'Multilingual Acoustic and Language Modeling for Ethio-Semitic Languages' targets language modeling or decoding behavior for code-switching ASR, so it fits the decoding-strategy node.
+- ref_key: '10750818'
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Available metadata for 'Code-Mixed Street Address Recognition and Accent Adaptation for Voice-Activated Navigation Services' contributes adaptation or cross-resource transfer signal rather than a standalone acoustic architecture.
+- ref_key: Ma2019
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'Comparison of Data Augmentation and Adaptation Strategies for Code-switched Automatic Speech Recognition' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: thomas2020transliteration
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'Transliteration Based Data Augmentation for Training Multilingual ASR Acoustic Models in Low Resource Settings' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: mohamed2022self
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: 'Title ''Self-Supervised Speech Representation Learning: A Review'' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.'
+- ref_key: yadav-sitaram-2022-survey
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'A Survey of Multilingual Models for Automatic Speech Recognition' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: '8682824'
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'Comparison of Data Augmentation and Adaptation Strategies for Code-switched Automatic Speech Recognition' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: ogunremi2023multilingual
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'Multilingual self-supervised speech representations improve the speech recognition of low-resource African languages with codeswitching' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: baevski2020wav2vec
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: 'Title ''wav2vec 2.0: A Framework for Self-Supervised Learning of Speech Representations'' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.'
+- ref_key: pham22_interspeech
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'Adaptive multilingual speech recognition with pretrained models' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: mms
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Available metadata for 'Scaling Speech Technology to 1,000+ Languages' contributes adaptation or cross-resource transfer signal rather than a standalone acoustic architecture.
+- ref_key: Yilmaz2018b
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'Acoustic and Textual Data Augmentation for Improved ASR of Code-Switching Speech' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: Weller2022
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'End-to-End Speech Translation for Code Switched Speech' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: Sharma2020
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'Improving Low Resource Code-Switched ASR Using Augmented Code-Switched TTS' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: Du2020
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'Data Augmentation for end-to-end Code-Switching Speech Recognition' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: yilmaz2018acoustic
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'Acoustic and Textual Data Augmentation for Improved ASR of Code-Switching Speech' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: alharbi2024leveraging
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: 'Available metadata for ''Leveraging LLM for augmenting textual data in code-switching ASR: Arabic as an example'' contributes adaptation or cross-resource transfer signal rather than a standalone acoustic architecture.'
+- ref_key: conneau2020unsupervised
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Available metadata for 'Unsupervised Cross-Lingual Representation Learning for Speech Recognition' contributes adaptation or cross-resource transfer signal rather than a standalone acoustic architecture.
+- ref_key: he2023learning
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'Learning adapters for code-switching speech recognition' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: kronis-etal-2024-code
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'Code-Mixed Text Augmentation for Latvian ASR' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: DBLP:journals/ejasmp/LongWLL21
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'Pronunciation augmentation for Mandarin-English code-switching speech recognition' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: '10389798'
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: 'Title ''BA-MoE: Boundary-Aware Mixture-of-Experts Adapter for Code-Switching Speech Recognition | IEEE Conference Publication | IEEE Xplore'' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.'
+- ref_key: anastasopoulos-chiang-2018-tied
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'Tied Multitask Learning for Neural Speech Translation' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: Biswas2019
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'Semi-supervised acoustic model training for five-lingual code-switched ASR' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: Nakayama2021
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Available metadata for 'Code-Switching ASR and TTS Using Semisupervised Learning with Machine Speech Chain' contributes adaptation or cross-resource transfer signal rather than a standalone acoustic architecture.
+- ref_key: Biswas2020
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'Semi-supervised Development of ASR Systems for Multilingual Code-switched Speech in Under-resourced Languages' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: Nakayama2019
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'Zero-Shot Code-Switching ASR and TTS with Multilingual Machine Speech Chain' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: Kumar2021
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'Dual Script E2E framework for Multilingual and Code-Switching ASR' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: kumar2021dual
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'Dual script E2E framework for multilingual and code-switching ASR' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: datta2020language
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'Language-agnostic multilingual modeling' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: toshniwal_multilingual
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'Multilingual Speech Recognition with a Single End-to-End Model' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: seki_end--end_2019
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'End-to-End Multilingual Multi-Speaker Speech Recognition' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: penagarikano2023semisupervised
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: "Available metadata for 'Semisupervised Speech Data Extraction from Basque Parliament Sessions and Validation on Fully Bilingual Basque\u2013Spanish ASR' contributes adaptation or cross-resource transfer signal rather than a standalone acoustic architecture."
+- ref_key: tazakka2024indonesian
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: Title 'Indonesian-English Code-Switching Speech Recognition Using the Machine Speech Chain Based Semi-Supervised Learning' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.
+- ref_key: tseng2024leave
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: 'Available metadata for ''Leave No Knowledge Behind During Knowledge Distillation: Towards Practical and Effective Knowledge Distillation For Code-Switching ASR Using Realistic Data'' contributes adaptation or cross-resource transfer signal rather than a standalone acoustic architecture.'
+- ref_key: chowdhury2021towards
+  assigned_to:
+  - n_transfer_and_adaptation
+  assignment_reason: 'Title ''Towards One Model to Rule All: Multilingual Strategy for Dialectal Code-Switching Arabic ASR'' uses multilingual transfer, augmentation, semisupervised learning, or pretrained adaptation to improve code-switching ASR, so it belongs in the transfer-and-adaptation node.'
+- ref_key: hamed2023benchmarking
+  assigned_to:
+  - n_evaluation_and_benchmarks
+  assignment_reason: Title 'Benchmarking Evaluation Metrics for Code-Switching Automatic Speech Recognition' is explicitly about benchmarking, challenge setup, or evaluation protocol, so it belongs in the evaluation-and-benchmarks node.
+- ref_key: ugan-etal-2024-decm
+  assigned_to:
+  - n_evaluation_and_benchmarks
+  assignment_reason: 'Title ''DECM: Evaluating Bilingual ASR Performance on a Code-switching/mixing Benchmark'' is explicitly about benchmarking, challenge setup, or evaluation protocol, so it belongs in the evaluation-and-benchmarks node.'
+- ref_key: khosravani_evaluation_2021
+  assigned_to:
+  - n_evaluation_and_benchmarks
+  assignment_reason: Title 'An Evaluation Benchmark for Automatic Speech Recognition of German-English Code-Switching' is explicitly about benchmarking, challenge setup, or evaluation protocol, so it belongs in the evaluation-and-benchmarks node.
+- ref_key: Winata2022
+  assigned_to:
+  - n_evaluation_and_benchmarks
+  assignment_reason: 'Title ''The Decades Progress on Code-Switching Research in NLP: A Systematic Survey on Trends and Challenges'' is explicitly about benchmarking, challenge setup, or evaluation protocol, so it belongs in the evaluation-and-benchmarks node.'
+- ref_key: winata_decades_2023
+  assigned_to:
+  - n_evaluation_and_benchmarks
+  assignment_reason: 'Title ''The Decades Progress on Code-Switching Research in NLP: A Systematic Survey on Trends and Challenges'' is explicitly about benchmarking, challenge setup, or evaluation protocol, so it belongs in the evaluation-and-benchmarks node.'
+- ref_key: polywer
+  assigned_to:
+  - n_evaluation_and_benchmarks
+  assignment_reason: 'Title ''PolyWER: A Holistic Evaluation Framework for Code-Switched Speech Recognition'' is explicitly about benchmarking, challenge setup, or evaluation protocol, so it belongs in the evaluation-and-benchmarks node.'
+- ref_key: winata-etal-2023-decades
+  assigned_to:
+  - n_evaluation_and_benchmarks
+  assignment_reason: 'Title ''The Decades Progress on Code-Switching Research in NLP: A Systematic Survey on Trends and Challenges'' is explicitly about benchmarking, challenge setup, or evaluation protocol, so it belongs in the evaluation-and-benchmarks node.'
+- ref_key: mixup
+  assigned_to:
+  - n_evaluation_and_benchmarks
+  assignment_reason: 'Available metadata for ''mixup: Beyond Empirical Risk Minimization'' is used to compare code-switching ASR systems rather than to define a new architecture or adaptation method.'
+- ref_key: Harrington_Its_2022
+  assigned_to:
+  - n_evaluation_and_benchmarks
+  assignment_reason: "Available metadata for '\u201CIt\u2019s Kind of Like Code-Switching\u201D: Black Older Adults\u2019 Experiences with a Voice Assistant for Health Information Seeking' is used to compare code-switching ASR systems rather than to define a new architecture or adaptation method."
+- ref_key: delobelle_metrics_2024
+  assigned_to:
+  - n_evaluation_and_benchmarks
+  assignment_reason: 'Title ''Metrics for What, Metrics for Whom: Assessing Actionability of Bias Evaluation Metrics in NLP'' is explicitly about benchmarking, challenge setup, or evaluation protocol, so it belongs in the evaluation-and-benchmarks node.'
+- ref_key: diwan21_interspeech
+  assigned_to:
+  - n_evaluation_and_benchmarks
+  assignment_reason: 'Title ''MUCS 2021: Multilingual and Code-Switching ASR Challenges for Low Resource Indian Languages'' is explicitly about benchmarking, challenge setup, or evaluation protocol, so it belongs in the evaluation-and-benchmarks node.'
+- ref_key: sailor2021sri
+  assigned_to:
+  - n_evaluation_and_benchmarks
+  assignment_reason: Title 'SRI-B End-to-End System for Multilingual and Code-Switching ASR Challenges for Low Resource Indian Languages' is explicitly about benchmarking, challenge setup, or evaluation protocol, so it belongs in the evaluation-and-benchmarks node.
+- ref_key: Sreeram2020
+  assigned_to: []
+  assignment_reason: Available metadata for 'Sreeram2020' is too weak or too generic to justify a precise placement inside this code-switching ASR taxonomy, so it remains unassigned.
+- ref_key: UNESCO_Multilingual_2024
+  assigned_to: []
+  assignment_reason: 'Title ''Multilingual education: A key to quality and inclusive learning'' is too generic, off-modality, or insufficiently code-switching-specific to justify a precise place inside this code-switching ASR taxonomy, so it remains unassigned.'
+- ref_key: Zhu_2017_ICCV
+  assigned_to: []
+  assignment_reason: Title 'Unpaired Image-to-Image Translation Using Cycle-Consistent Adversarial Networks' is too generic, off-modality, or insufficiently code-switching-specific to justify a precise place inside this code-switching ASR taxonomy, so it remains unassigned.
+- ref_key: dalvi-qcri
+  assigned_to: []
+  assignment_reason: Title 'QCRI Live Speech Translation System' is too generic, off-modality, or insufficiently code-switching-specific to justify a precise place inside this code-switching ASR taxonomy, so it remains unassigned.
+- ref_key: jacobs2021measurement
+  assigned_to: []
+  assignment_reason: Title 'Measurement and Fairness' is too generic, off-modality, or insufficiently code-switching-specific to justify a precise place inside this code-switching ASR taxonomy, so it remains unassigned.
+- ref_key: mt5
+  assigned_to: []
+  assignment_reason: 'Title ''mT5: A Massively Multilingual Pre-trained Text-to-Text Transformer'' is too generic, off-modality, or insufficiently code-switching-specific to justify a precise place inside this code-switching ASR taxonomy, so it remains unassigned.'
+- ref_key: palm
+  assigned_to: []
+  assignment_reason: 'Title ''PaLM: Scaling Language Modeling with Pathways'' is too generic, off-modality, or insufficiently code-switching-specific to justify a precise place inside this code-switching ASR taxonomy, so it remains unassigned.'
+- ref_key: peng2023prompting
+  assigned_to: []
+  assignment_reason: Title 'Prompting the Hidden Talent of Web-Scale Speech Models for Zero-Shot Task Generalization' is too generic, off-modality, or insufficiently code-switching-specific to justify a precise place inside this code-switching ASR taxonomy, so it remains unassigned.
+- ref_key: pgn
+  assigned_to: []
+  assignment_reason: 'Title ''Get To The Point: Summarization with Pointer-Generator Networks'' is too generic, off-modality, or insufficiently code-switching-specific to justify a precise place inside this code-switching ASR taxonomy, so it remains unassigned.'
+- ref_key: prabhavalkar2023end
+  assigned_to: []
+  assignment_reason: 'Title ''End-to-End Speech Recognition: A Survey'' is too generic, off-modality, or insufficiently code-switching-specific to justify a precise place inside this code-switching ASR taxonomy, so it remains unassigned.'
+- ref_key: radford2022robust
+  assigned_to: []
+  assignment_reason: Title 'Robust Speech Recognition via Large-Scale Weak Supervision' is too generic, off-modality, or insufficiently code-switching-specific to justify a precise place inside this code-switching ASR taxonomy, so it remains unassigned.
+- ref_key: specaugment
+  assigned_to: []
+  assignment_reason: 'Title ''SpecAugment: A Simple Data Augmentation Method for Automatic Speech Recognition'' is too generic, off-modality, or insufficiently code-switching-specific to justify a precise place inside this code-switching ASR taxonomy, so it remains unassigned.'
+- ref_key: t5
+  assigned_to: []
+  assignment_reason: Title 'Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer' is too generic, off-modality, or insufficiently code-switching-specific to justify a precise place inside this code-switching ASR taxonomy, so it remains unassigned.
+unassigned_refs:
+- Sreeram2020
+- UNESCO_Multilingual_2024
+- Zhu_2017_ICCV
+- dalvi-qcri
+- jacobs2021measurement
+- mt5
+- palm
+- peng2023prompting
+- pgn
+- prabhavalkar2023end
+- radford2022robust
+- specaugment
+- t5

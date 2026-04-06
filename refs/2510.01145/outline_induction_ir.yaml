@@ -1,0 +1,889 @@
+artifact_type: reference_grounded_outline_induction_ir
+artifact_alias: section_aligned_taxonomy_ledger
+source_mode: reference_only
+paper_id: '2510.01145'
+title: 'Automatic Speech Recognition (ASR) for African Low-Resource Languages: A Systematic
+  Literature Review'
+inputs:
+  title: true
+  reference_metadata: true
+  gold_outline: false
+nodes:
+- node_id: n_review_context
+  level: 1
+  title_candidate: Review Framing and African-Language Context
+  node_role: grouping_theme
+  parent: null
+  refs_complete: []
+  inclusion_rule: Group framing references that justify the review protocol, African
+    language context, and equity lens before technical ASR topics.
+  ordering_reason: The review opens with protocol and context sources because they
+    define scope and motivation before technical resource or model discussions.
+  preserve_reason: This node is a structural grouping node; its child leaves carry
+    the substantive assignments.
+- node_id: n_review_protocol
+  level: 2
+  title_candidate: Systematic-review protocol
+  node_role: framing_leaf
+  parent: n_review_context
+  refs_complete:
+  - page2021prisma
+  inclusion_rule: Include review-method references that justify systematic-review
+    process rather than ASR content.
+  ordering_reason: Protocol evidence precedes contextual framing because it explains
+    how the literature review is organized.
+- node_id: n_language_landscape
+  level: 2
+  title_candidate: Demographic and language-landscape context
+  node_role: context_leaf
+  parent: n_review_context
+  refs_complete:
+  - WorldBank2024
+  - WPR2025
+  - WPR2025literacy
+  - NationsOnline2025
+  inclusion_rule: Include demographic, literacy, and language-distribution sources
+    that frame African low-resource conditions without describing speech technology.
+  ordering_reason: These context sources follow the protocol reference because they
+    motivate why low-resource African ASR is a distinct review setting.
+- node_id: n_equity_coloniality
+  level: 2
+  title_candidate: Equity and coloniality framing
+  node_role: framing_leaf
+  parent: n_review_context
+  refs_complete:
+  - Held2023
+  inclusion_rule: Include conceptual work that frames African language technology
+    through equity, coloniality, or representation concerns.
+  ordering_reason: The equity framing closes the opening context block by connecting
+    demographic scarcity to broader sociotechnical stakes.
+- node_id: n_resources_data
+  level: 1
+  title_candidate: Speech Resources, Corpora, and Data Creation
+  node_role: grouping_theme
+  parent: null
+  refs_complete: []
+  inclusion_rule: Group references that build or analyze speech resources, corpora,
+    and collection pipelines for African ASR.
+  ordering_reason: Resource creation follows framing because data availability is
+    the first technical bottleneck for low-resource ASR.
+  preserve_reason: This node groups corpus and data-creation leaves; the assignments
+    live at the leaf level.
+- node_id: n_corpora
+  level: 2
+  title_candidate: Corpus releases and speech collections
+  node_role: resource_leaf
+  parent: n_resources_data
+  refs_complete:
+  - abate2020large
+  - Adelani2024
+  - Barnard2014
+  - Chisanga2021
+  - Diouf2024
+  - emezue2023afrodigits
+  - emezue2025naijavoices
+  - gutkin2020developing
+  - kimanuka2024speech
+  - meyer2022bibletts
+  - mukiibi2022makerere
+  - ogunremi2023r
+  - olatunji2023afrispeech
+  - Panayotov2015
+  - Pratap2020
+  - ramanantsoa2023voxmg
+  - sikasote2022bembaspeech
+  inclusion_rule: Include papers whose main contribution is releasing, curating, or
+    describing speech corpora, benchmark datasets, or reusable collections.
+  ordering_reason: Corpus-release papers come before data-pipeline papers because
+    they define the concrete speech assets used downstream.
+- node_id: n_collection_pipelines
+  level: 2
+  title_candidate: Speech data collection and sourcing pipelines
+  node_role: resource_leaf
+  parent: n_resources_data
+  refs_complete:
+  - LacunaFund2021
+  - doumbouya2021using
+  - gauthier2016collecting
+  inclusion_rule: Include references centered on sourcing speech, collecting archives,
+    or organizing community collection pipelines for African-language ASR.
+  ordering_reason: Collection-pipeline papers follow corpus releases because they
+    explain how raw speech material is sourced before later preparation or modeling.
+- node_id: n_corpus_analysis
+  level: 2
+  title_candidate: Corpus analysis and data preparation for African ASR
+  node_role: resource_leaf
+  parent: n_resources_data
+  refs_complete:
+  - asfaw
+  - tachbelie2020analysis
+  inclusion_rule: Include papers focused on noisy-data preparation, preprocessing
+    tools, or corpus analysis for downstream African ASR experiments.
+  ordering_reason: Data-preparation studies follow collection pipelines because they
+    turn sourced speech into analyzable or trainable ASR inputs.
+- node_id: n_transfer_repr
+  level: 1
+  title_candidate: Multilingual Transfer and Representation Learning
+  node_role: grouping_theme
+  parent: null
+  refs_complete: []
+  inclusion_rule: Group work that improves low-resource ASR through multilingual transfer
+    or reusable speech representations.
+  ordering_reason: Transfer and representation learning follow data creation because
+    they are the main strategies for coping with sparse African-language supervision.
+  preserve_reason: This node is structural; its child leaves separate multilingual
+    transfer from pretrained representation work.
+- node_id: n_multilingual_transfer
+  level: 2
+  title_candidate: Multilingual transfer and cross-lingual modeling
+  node_role: method_leaf
+  parent: n_transfer_repr
+  refs_complete:
+  - Zhou2024
+  - abate2020multilingual
+  - abdou2024multilingual
+  - biswas2022code
+  - fantaye2020investigation
+  - mohamed2023multilingual
+  - padhi2020multilingual
+  - tachbelie2020dnn
+  - westhuizen2021multilingual
+  - woldemariam2020transfer
+  inclusion_rule: Include papers whose titles explicitly emphasize multilingual training,
+    transfer learning, code-switching, or cross-lingual reuse.
+  ordering_reason: Cross-lingual modeling comes before pretrained representation work
+    because it is the more explicit transfer strategy in the supplied references.
+- node_id: n_self_supervised_repr
+  level: 2
+  title_candidate: Self-supervised and pretrained speech representations
+  node_role: method_leaf
+  parent: n_transfer_repr
+  refs_complete:
+  - alabi2024afrihubert
+  - caubriere2024africa
+  - mohamud2021fast
+  - ritchie2022large
+  inclusion_rule: Include references whose titles explicitly foreground self-supervised
+    pretraining or multilingual speech representations rather than downstream ASR
+    improvement alone.
+  ordering_reason: Representation-learning papers follow multilingual transfer because
+    they provide reusable pretrained speech encoders rather than direct transfer recipes.
+- node_id: n_systems_adaptation
+  level: 1
+  title_candidate: African-Language ASR Systems and Adaptation
+  node_role: grouping_theme
+  parent: null
+  refs_complete: []
+  inclusion_rule: Group concrete ASR systems and narrower adaptation studies for specific
+    languages or speech conditions.
+  ordering_reason: System-building follows transfer methods because the review can
+    then move from reusable techniques to deployed models for named languages.
+  preserve_reason: This node is structural; the leaf split separates full ASR systems
+    from narrower adaptation-oriented work.
+- node_id: n_asr_systems
+  level: 2
+  title_candidate: End-to-end and acoustic ASR systems
+  node_role: system_leaf
+  parent: n_systems_adaptation
+  refs_complete:
+  - abate2020deep
+  - abate2021endtoend
+  - abubakar2024development
+  - adnew2024semantically
+  - babatunde2023automatic
+  - biswas2019improved
+  - demisse2024amharic
+  - dossou2021okwugbe
+  - ejigu2024large
+  - el2023comparative
+  - ibrahim2022development
+  - nzenwata2024ika
+  - rikhotso2021development
+  - shamore2023hadiyyissa
+  - sirora2024shona
+  - stan2022lightweight
+  inclusion_rule: Include papers that present an ASR system, acoustic model, or end-to-end
+    recognizer for a named African language or deployment setting.
+  ordering_reason: These concrete ASR systems are listed before adaptation studies
+    because they represent the baseline recognizers being adapted or stress-tested.
+- node_id: n_adaptation
+  level: 2
+  title_candidate: Lexical, phonemic, accent, and domain adaptation / fine-tuning
+  node_role: method_leaf
+  parent: n_systems_adaptation
+  refs_complete:
+  - afonja2024performant
+  - awino2022phonemic
+  - emiru2021improving
+  - jacobs2025speech
+  - kivaisi2023swahili
+  - mak2024exploring
+  - masekwameng2020effects
+  - oladipo2020accent
+  - tachbelie2023lexical
+  - zellou2024linguistic
+  inclusion_rule: Include references whose main contribution is adapting recognition
+    through lexical modeling, phonemic representation, accents, or domain-specific
+    fine-tuning constraints.
+  ordering_reason: This leaf follows the system leaf because it captures narrower
+    interventions layered on top of recognizers rather than standalone ASR system
+    presentations.
+- node_id: n_evaluation_outlook
+  level: 1
+  title_candidate: Evaluation, Bias, and Broader Outlook
+  node_role: grouping_theme
+  parent: null
+  refs_complete: []
+  inclusion_rule: Group evaluation studies, robustness and bias probes, plus synthesis
+    papers that remain specific to African-language ASR.
+  ordering_reason: The review closes with evaluation and outlook because these references
+    compare systems and reflect on broader lessons after the technical pipeline is
+    established.
+  preserve_reason: This node is structural; its leaves separate benchmark studies,
+    risk probes, and retained African-language syntheses.
+- node_id: n_benchmarks
+  level: 2
+  title_candidate: Benchmark and performance-analysis studies
+  node_role: evaluation_leaf
+  parent: n_evaluation_outlook
+  refs_complete:
+  - mdhaffar-etal-2024-performance
+  - peterson2022openasr21
+  - sanni2025afrispeech
+  inclusion_rule: Include references that foreground benchmarks, evaluation datasets,
+    or comparative performance analysis.
+  ordering_reason: Benchmark papers come first in the closing block because they provide
+    the concrete evaluation frame for later robustness and survey discussion.
+- node_id: n_bias_stress
+  level: 2
+  title_candidate: Bias, adversarial, and name/accent stress tests
+  node_role: evaluation_leaf
+  parent: n_evaluation_outlook
+  refs_complete:
+  - guo2023towards
+  - martin2023bias
+  - olatunji2023afrinames
+  inclusion_rule: Include references that test ASR systems for adversarial robustness,
+    demographic bias, or failures on African names and accents.
+  ordering_reason: Risk and bias probes follow benchmark studies because they examine
+    where recognizers fail after baseline evaluation is established.
+- node_id: n_surveys_outlook
+  level: 2
+  title_candidate: African-language syntheses and tutorials
+  node_role: synthesis_leaf
+  parent: n_evaluation_outlook
+  refs_complete:
+  - Ndiaye2025
+  - elmadany2025voice
+  - imam-etal-2025-automatic
+  - koffi2020tutorial
+  inclusion_rule: Include only Africa-specific syntheses, mapping papers, or tutorials
+    explicitly centered on African languages rather than generic low-resource ASR
+    overviews.
+  ordering_reason: This final synthesis leaf is kept narrow so the closing outlook
+    remains specific to African-language ASR rather than absorbing generic survey
+    literature.
+ref_assignment_ledger:
+- ref_key: page2021prisma
+  assigned_to:
+  - n_review_protocol
+  assignment_reason: 'The title ''The PRISMA 2020 statement: An updated guideline
+    for reporting systematic reviews'' is a review-protocol reference from Journal
+    of Clinical Epidemiology, so it supports the review method scaffold rather than
+    any corpus, system, or evaluation leaf.'
+- ref_key: NationsOnline2025
+  assigned_to:
+  - n_language_landscape
+  assignment_reason: The title 'Languages of Africa' is demographic or language-landscape
+    context from https://www.nationsonline.org/oneworld/african_languages.htm, so
+    it grounds the African low-resource setting instead of a speech-resource or ASR-method
+    node.
+- ref_key: WPR2025
+  assigned_to:
+  - n_language_landscape
+  assignment_reason: The title 'Agriculture Employment by Country 2025' is demographic
+    or language-landscape context from https://worldpopulationreview.com/country-rankings/agriculture-employment-by-country,
+    so it grounds the African low-resource setting instead of a speech-resource or
+    ASR-method node.
+- ref_key: WPR2025literacy
+  assigned_to:
+  - n_language_landscape
+  assignment_reason: The title 'Literacy Rate by Country 2025' is demographic or language-landscape
+    context from https://worldpopulationreview.com/country-rankings/literacy-rate-by-country,
+    so it grounds the African low-resource setting instead of a speech-resource or
+    ASR-method node.
+- ref_key: WorldBank2024
+  assigned_to:
+  - n_language_landscape
+  assignment_reason: The title 'Population, total - Sub-Saharan Africa' is demographic
+    or language-landscape context from https://data.worldbank.org/indicator/SP.POP.TOTL?locations=ZG,
+    so it grounds the African low-resource setting instead of a speech-resource or
+    ASR-method node.
+- ref_key: Held2023
+  assigned_to:
+  - n_equity_coloniality
+  assignment_reason: The title 'A Material Lens on Coloniality in NLP' frames language
+    technology through coloniality and equity in arXiv preprint arXiv:2311.08391,
+    which fits review framing rather than a technical ASR contribution leaf.
+- ref_key: Adelani2024
+  assigned_to:
+  - n_corpora
+  assignment_reason: 'The title ''ÌròyìnSpeech: A Yoruba News Reading Speech Corpus''
+    explicitly presents a speech corpus, dataset, or reusable collection in Proceedings
+    of LREC-COLING, so it belongs in the corpus-release leaf rather than collection-pipeline
+    or system-performance nodes.'
+- ref_key: Barnard2014
+  assigned_to:
+  - n_corpora
+  assignment_reason: The title 'The NCHLT Speech Corpus of the Eleven Official South
+    African Languages' explicitly presents a speech corpus, dataset, or reusable collection
+    in Proceedings of the 4th Workshop on Spoken Language Technologies for Under-Resourced
+    Languages (SLTU), so it belongs in the corpus-release leaf rather than collection-pipeline
+    or system-performance nodes.
+- ref_key: Chisanga2021
+  assigned_to:
+  - n_corpora
+  assignment_reason: 'The title ''BembaSpeech: A Bemba Language Speech Corpus for
+    ASR in Zambia'' explicitly presents a speech corpus, dataset, or reusable collection
+    in Proceedings of Interspeech, so it belongs in the corpus-release leaf rather
+    than collection-pipeline or system-performance nodes.'
+- ref_key: Diouf2024
+  assigned_to:
+  - n_corpora
+  assignment_reason: 'The title ''Kallaama: Wolof Speech Corpus for ASR'' explicitly
+    presents a speech corpus, dataset, or reusable collection in Proceedings of LREC-COLING,
+    so it belongs in the corpus-release leaf rather than collection-pipeline or system-performance
+    nodes.'
+- ref_key: Panayotov2015
+  assigned_to:
+  - n_corpora
+  assignment_reason: 'The title ''Librispeech: An ASR Corpus Based on Public Domain
+    Audio Books'' explicitly presents a speech corpus, dataset, or reusable collection
+    in Proceedings of IEEE International Conference on Acoustics, Speech and Signal
+    Processing (ICASSP), so it belongs in the corpus-release leaf rather than collection-pipeline
+    or system-performance nodes.'
+- ref_key: Pratap2020
+  assigned_to:
+  - n_corpora
+  assignment_reason: 'The title ''MLS: A Large-Scale Multilingual Speech Corpus''
+    explicitly presents a speech corpus, dataset, or reusable collection in Proceedings
+    of Interspeech, so it belongs in the corpus-release leaf rather than collection-pipeline
+    or system-performance nodes.'
+- ref_key: abate2020large
+  assigned_to:
+  - n_corpora
+  assignment_reason: 'The title ''Large vocabulary read speech corpora for four ethiopian
+    languages: Amharic, tigrigna, oromo and wolaytta'' explicitly presents a speech
+    corpus, dataset, or reusable collection in Proceedings of the Twelfth Language
+    Resources and Evaluation Conference, so it belongs in the corpus-release leaf
+    rather than collection-pipeline or system-performance nodes.'
+- ref_key: emezue2023afrodigits
+  assigned_to:
+  - n_corpora
+  assignment_reason: 'The title ''AfroDigits: A Community-Driven Spoken Digit Dataset
+    for African Languages'' explicitly presents a speech corpus, dataset, or reusable
+    collection in arXiv preprint arXiv:2303.12582, so it belongs in the corpus-release
+    leaf rather than collection-pipeline or system-performance nodes.'
+- ref_key: emezue2025naijavoices
+  assigned_to:
+  - n_corpora
+  assignment_reason: 'The title ''The NaijaVoices Dataset: Cultivating Large-Scale,
+    High-Quality, Culturally-Rich Speech Data for African Languages'' explicitly presents
+    a speech corpus, dataset, or reusable collection in arXiv preprint arXiv:2505.20564,
+    so it belongs in the corpus-release leaf rather than collection-pipeline or system-performance
+    nodes.'
+- ref_key: gutkin2020developing
+  assigned_to:
+  - n_corpora
+  assignment_reason: The title 'Developing an open-source corpus of Yoruba speech'
+    explicitly presents a speech corpus, dataset, or reusable collection in Proceedings
+    of the Annual Conference of the International Speech Communication Association,
+    INTERSPEECH, so it belongs in the corpus-release leaf rather than collection-pipeline
+    or system-performance nodes.
+- ref_key: kimanuka2024speech
+  assigned_to:
+  - n_corpora
+  assignment_reason: The title 'Speech recognition datasets for low-resource Congolese
+    languages' explicitly presents a speech corpus, dataset, or reusable collection
+    in Data in Brief, so it belongs in the corpus-release leaf rather than collection-pipeline
+    or system-performance nodes.
+- ref_key: meyer2022bibletts
+  assigned_to:
+  - n_corpora
+  assignment_reason: 'The title ''BibleTTS: A Large, High-Fidelity, Multilingual,
+    and Uniquely African Speech Corpus'' explicitly presents a speech corpus, dataset,
+    or reusable collection in Proceedings of the Annual Conference of the International
+    Speech Communication Association (INTERSPEECH), so it belongs in the corpus-release
+    leaf rather than collection-pipeline or system-performance nodes.'
+- ref_key: mukiibi2022makerere
+  assigned_to:
+  - n_corpora
+  assignment_reason: 'The title ''The Makerere Radio Speech Corpus: A Luganda Radio
+    Corpus for Automatic Speech Recognition'' explicitly presents a speech corpus,
+    dataset, or reusable collection in 2022 Language Resources and Evaluation Conference
+    (LREC 2022), so it belongs in the corpus-release leaf rather than collection-pipeline
+    or system-performance nodes.'
+- ref_key: ogunremi2023r
+  assigned_to:
+  - n_corpora
+  assignment_reason: 'The title ''IroyinSpeech: A Multi-purpose Yoruba Speech Corpus''
+    explicitly presents a speech corpus, dataset, or reusable collection in Proceedings
+    of the 2024 Joint International Conference on Computational Linguistics, Language
+    Resources and Evaluation (LREC-COLING 2024), so it belongs in the corpus-release
+    leaf rather than collection-pipeline or system-performance nodes.'
+- ref_key: olatunji2023afrispeech
+  assigned_to:
+  - n_corpora
+  assignment_reason: 'The title ''Afrispeech-200: Pan-african accented speech dataset
+    for clinical and general domain asr'' explicitly presents a speech corpus, dataset,
+    or reusable collection in Transactions of the Association for Computational Linguistics,
+    so it belongs in the corpus-release leaf rather than collection-pipeline or system-performance
+    nodes.'
+- ref_key: ramanantsoa2023voxmg
+  assigned_to:
+  - n_corpora
+  assignment_reason: 'The title ''VoxMg: An Automatic Speech Recognition Dataset for
+    Malagasy'' explicitly presents a speech corpus, dataset, or reusable collection
+    in 4th Workshop on African Natural Language Processing, so it belongs in the corpus-release
+    leaf rather than collection-pipeline or system-performance nodes.'
+- ref_key: sikasote2022bembaspeech
+  assigned_to:
+  - n_corpora
+  assignment_reason: 'The title ''BembaSpeech: A Speech Recognition Corpus for the
+    Bemba Language'' explicitly presents a speech corpus, dataset, or reusable collection
+    in Proceedings of the 2022 Language Resources and Evaluation Conference (LREC
+    2022), so it belongs in the corpus-release leaf rather than collection-pipeline
+    or system-performance nodes.'
+- ref_key: LacunaFund2021
+  assigned_to:
+  - n_collection_pipelines
+  assignment_reason: The title 'Naija Voices Project' is about sourcing or collecting
+    speech material in https://lacunafund.org/naija-voices/, so it fits the collection-pipeline
+    leaf rather than corpus-release or downstream modeling nodes.
+- ref_key: doumbouya2021using
+  assigned_to:
+  - n_collection_pipelines
+  assignment_reason: 'The title ''Using radio archives for low-resource speech recognition:
+    towards an intelligent virtual assistant for illiterate users'' is about sourcing
+    or collecting speech material in Proceedings of the AAAI Conference on Artificial
+    Intelligence, so it fits the collection-pipeline leaf rather than corpus-release
+    or downstream modeling nodes.'
+- ref_key: gauthier2016collecting
+  assigned_to:
+  - n_collection_pipelines
+  assignment_reason: 'The title ''Collecting resources in sub-Saharan African languages
+    for automatic speech recognition: A case study of Wolof'' is about sourcing or
+    collecting speech material in Proceedings of the 10th International Conference
+    on Language Resources and Evaluation, LREC 2016, so it fits the collection-pipeline
+    leaf rather than corpus-release or downstream modeling nodes.'
+- ref_key: asfaw
+  assigned_to:
+  - n_corpus_analysis
+  assignment_reason: The title 'Dialect-Based Noisy Speech Dataset, Pre-Processing
+    Tools, and Recognition Models for Amharic' focuses on preprocessing, noisy-data
+    preparation, or corpus analysis in 2022 International Conference on Information
+    and Communication Technology for Development for Africa (ICT4DA), which makes
+    it data-preparation work rather than a corpus-release or ASR-system paper.
+- ref_key: tachbelie2020analysis
+  assigned_to:
+  - n_corpus_analysis
+  assignment_reason: The title 'Analysis of GlobalPhone and Ethiopian languages speech
+    corpora for multilingual ASR' focuses on preprocessing, noisy-data preparation,
+    or corpus analysis in LREC 2020 - 12th International Conference on Language Resources
+    and Evaluation, Conference Proceedings, which makes it data-preparation work rather
+    than a corpus-release or ASR-system paper.
+- ref_key: Zhou2024
+  assigned_to:
+  - n_multilingual_transfer
+  assignment_reason: The title 'Multilingual Meta-Transfer Learning for Low-Resource
+    Speech Recognition' explicitly emphasizes multilingual training, transfer, or
+    cross-lingual reuse in IEEE Access, so it fits this transfer leaf rather than
+    corpus release or single-system deployment.
+- ref_key: abate2020multilingual
+  assigned_to:
+  - n_multilingual_transfer
+  assignment_reason: The title 'Multilingual Acoustic and Language Modeling for Ethio-Semitic
+    Languages.' explicitly emphasizes multilingual training, transfer, or cross-lingual
+    reuse in Interspeech, so it fits this transfer leaf rather than corpus release
+    or single-system deployment.
+- ref_key: abdou2024multilingual
+  assigned_to:
+  - n_multilingual_transfer
+  assignment_reason: The title 'Multilingual speech recognition initiative for African
+    languages' explicitly emphasizes multilingual training, transfer, or cross-lingual
+    reuse in International Journal of Data Science and Analytics, so it fits this
+    transfer leaf rather than corpus release or single-system deployment.
+- ref_key: biswas2022code
+  assigned_to:
+  - n_multilingual_transfer
+  assignment_reason: The title 'Code-switched Automatic Speech Recognition in Five
+    South African Languages' explicitly emphasizes multilingual training, transfer,
+    or cross-lingual reuse in Computer Speech & Language, so it fits this transfer
+    leaf rather than corpus release or single-system deployment.
+- ref_key: fantaye2020investigation
+  assigned_to:
+  - n_multilingual_transfer
+  assignment_reason: The title 'Investigation of automatic speech recognition systems
+    via the multilingual deep neural network modeling methods for a very low-resource
+    language, Chaha' explicitly emphasizes multilingual training, transfer, or cross-lingual
+    reuse in Journal of Signal and Information Processing, so it fits this transfer
+    leaf rather than corpus release or single-system deployment.
+- ref_key: mohamed2023multilingual
+  assigned_to:
+  - n_multilingual_transfer
+  assignment_reason: The title 'Multilingual speech recognition initiative for African
+    languages' explicitly emphasizes multilingual training, transfer, or cross-lingual
+    reuse in Springer Nature, so it fits this transfer leaf rather than corpus release
+    or single-system deployment.
+- ref_key: padhi2020multilingual
+  assigned_to:
+  - n_multilingual_transfer
+  assignment_reason: The title 'Multilingual Bottleneck Features for Improving ASR
+    Performance of Code-Switched Speech in Under-Resourced Languages' explicitly emphasizes
+    multilingual training, transfer, or cross-lingual reuse in arXiv preprint arXiv:2011.03118,
+    so it fits this transfer leaf rather than corpus release or single-system deployment.
+- ref_key: tachbelie2020dnn
+  assigned_to:
+  - n_multilingual_transfer
+  assignment_reason: The title 'DNN-Based Multilingual Automatic Speech Recognition
+    for Wolaytta using Oromo Speech' explicitly emphasizes multilingual training,
+    transfer, or cross-lingual reuse in Proceedings of the 1st Joint Workshop on Spoken
+    Language Technologies for Under-resourced languages (SLTU) and Collaboration and
+    Computing for Under-Resourced Languages (CCURL), so it fits this transfer leaf
+    rather than corpus release or single-system deployment.
+- ref_key: westhuizen2021multilingual
+  assigned_to:
+  - n_multilingual_transfer
+  assignment_reason: The title 'Multilingual Training Set Selection for ASR in Under-Resourced
+    Malian Languages' explicitly emphasizes multilingual training, transfer, or cross-lingual
+    reuse in Lecture Notes in Computer Science (Including Subseries Lecture Notes
+    in Artificial Intelligence and Lecture Notes in Bioinformatics), so it fits this
+    transfer leaf rather than corpus release or single-system deployment.
+- ref_key: woldemariam2020transfer
+  assigned_to:
+  - n_multilingual_transfer
+  assignment_reason: 'The title ''Transfer Learning for Less-Resourced Semitic Languages
+    Speech Recognition: the Case of Amharic'' explicitly emphasizes multilingual training,
+    transfer, or cross-lingual reuse in Proceedings of the 1st Joint Workshop on Spoken
+    Language Technologies for Under-Resourced Languages (SLTU) and Collaboration and
+    Computing for Under-Resourced Languages (CCURL), so it fits this transfer leaf
+    rather than corpus release or single-system deployment.'
+- ref_key: alabi2024afrihubert
+  assigned_to:
+  - n_self_supervised_repr
+  assignment_reason: 'The title ''AfriHuBERT: A self-supervised speech representation
+    model for African languages'' explicitly foregrounds self-supervised pretraining
+    or multilingual speech representation learning in arXiv preprint arXiv:2409.20201,
+    so it belongs here instead of the downstream ASR-system leaf.'
+- ref_key: caubriere2024africa
+  assigned_to:
+  - n_self_supervised_repr
+  assignment_reason: The title 'Africa-Centric Self-Supervised Pre-Training for Multilingual
+    Speech Representation in a Sub-Saharan Context' explicitly foregrounds self-supervised
+    pretraining or multilingual speech representation learning in arXiv preprint arXiv:2404.02000,
+    so it belongs here instead of the downstream ASR-system leaf.
+- ref_key: mohamud2021fast
+  assigned_to:
+  - n_self_supervised_repr
+  assignment_reason: The title 'Fast Development of ASR in African Languages using
+    Self Supervised Speech Representation Learning' explicitly foregrounds self-supervised
+    pretraining or multilingual speech representation learning in arXiv preprint arXiv:2103.08993,
+    so it belongs here instead of the downstream ASR-system leaf.
+- ref_key: ritchie2022large
+  assigned_to:
+  - n_self_supervised_repr
+  assignment_reason: 'The title ''Large vocabulary speech recognition for languages
+    of africa: multilingual modeling and self-supervised learning'' explicitly foregrounds
+    self-supervised pretraining or multilingual speech representation learning in
+    arXiv preprint arXiv:2208.03067, so it belongs here instead of the downstream
+    ASR-system leaf.'
+- ref_key: abate2020deep
+  assigned_to:
+  - n_asr_systems
+  assignment_reason: The title 'Deep neural networks based automatic speech recognition
+    for four ethiopian languages' reports a concrete ASR model or recognizer for a
+    named language/task in ICASSP 2020-2020 IEEE International Conference on Acoustics,
+    Speech and Signal Processing (ICASSP), so it fits the system leaf instead of corpus-building
+    or adaptation/fine-tuning nodes.
+- ref_key: abate2021endtoend
+  assigned_to:
+  - n_asr_systems
+  assignment_reason: 'The title ''End-to-End Multilingual Automatic Speech Recognition
+    for Less-Resourced Languages: The Case of Four Ethiopian Languages'' reports a
+    concrete ASR model or recognizer for a named language/task in ICASSP 2021 - 2021
+    IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP),
+    so it fits the system leaf instead of corpus-building or adaptation/fine-tuning
+    nodes.'
+- ref_key: abubakar2024development
+  assigned_to:
+  - n_asr_systems
+  assignment_reason: The title 'Development of a diacritic-aware large vocabulary
+    automatic speech recognition for Hausa language' reports a concrete ASR model
+    or recognizer for a named language/task in International Journal of Speech Technology,
+    so it fits the system leaf instead of corpus-building or adaptation/fine-tuning
+    nodes.
+- ref_key: adnew2024semantically
+  assigned_to:
+  - n_asr_systems
+  assignment_reason: The title 'Semantically Corrected Amharic Automatic Speech Recognition'
+    reports a concrete ASR model or recognizer for a named language/task in arXiv
+    preprint arXiv:2404.13362, so it fits the system leaf instead of corpus-building
+    or adaptation/fine-tuning nodes.
+- ref_key: babatunde2023automatic
+  assigned_to:
+  - n_asr_systems
+  assignment_reason: The title 'Automatic speech recognition for Nigerian-accented
+    English' reports a concrete ASR model or recognizer for a named language/task
+    in Deep Learning Indaba 2023, so it fits the system leaf instead of corpus-building
+    or adaptation/fine-tuning nodes.
+- ref_key: biswas2019improved
+  assigned_to:
+  - n_asr_systems
+  assignment_reason: The title 'Improved Low-resource Somali Speech Recognition by
+    Semi-supervised Acoustic and Language Model Training' reports a concrete ASR model
+    or recognizer for a named language/task in Proceedings of the Annual Conference
+    of the International Speech Communication Association (INTERSPEECH), so it fits
+    the system leaf instead of corpus-building or adaptation/fine-tuning nodes.
+- ref_key: demisse2024amharic
+  assigned_to:
+  - n_asr_systems
+  assignment_reason: The title 'Amharic Speech Recognition Using Joint Transformer
+    and Connectionist Temporal Classification with Character-Based and Sub-word-Based
+    Acoustic and Language Models' reports a concrete ASR model or recognizer for a
+    named language/task in Zede Journal, so it fits the system leaf instead of corpus-building
+    or adaptation/fine-tuning nodes.
+- ref_key: dossou2021okwugbe
+  assigned_to:
+  - n_asr_systems
+  assignment_reason: 'The title ''OkwuGbe: End-to-End Speech Recognition for Fon and
+    Igbo'' reports a concrete ASR model or recognizer for a named language/task in
+    Proceedings of the Fifth Workshop on Widening Natural Language Processing, so
+    it fits the system leaf instead of corpus-building or adaptation/fine-tuning nodes.'
+- ref_key: ejigu2024large
+  assigned_to:
+  - n_asr_systems
+  assignment_reason: The title 'Large Scale Speech Recognition for Low Resource Language
+    Amharic, an End-to-End Approach' reports a concrete ASR model or recognizer for
+    a named language/task, so it fits the system leaf instead of corpus-building or
+    adaptation/fine-tuning nodes.
+- ref_key: el2023comparative
+  assigned_to:
+  - n_asr_systems
+  assignment_reason: The title 'Comparative Study of Amazigh Speech Recognition Systems
+    Based on Different Toolkits and Approaches' reports a concrete ASR model or recognizer
+    for a named language/task in E3S Web of Conferences, so it fits the system leaf
+    instead of corpus-building or adaptation/fine-tuning nodes.
+- ref_key: ibrahim2022development
+  assigned_to:
+  - n_asr_systems
+  assignment_reason: The title 'Development of Hausa Acoustic Model for Speech Recognition'
+    reports a concrete ASR model or recognizer for a named language/task in International
+    Journal of Advanced Computer Science and Applications, so it fits the system leaf
+    instead of corpus-building or adaptation/fine-tuning nodes.
+- ref_key: nzenwata2024ika
+  assigned_to:
+  - n_asr_systems
+  assignment_reason: The title 'Automatic Speech Recognition for the IKA Language'
+    reports a concrete ASR model or recognizer for a named language/task in arXiv
+    preprint arXiv:2410.00940, so it fits the system leaf instead of corpus-building
+    or adaptation/fine-tuning nodes.
+- ref_key: rikhotso2021development
+  assigned_to:
+  - n_asr_systems
+  assignment_reason: The title 'Development of Automatic Speech Recognition for Xitsonga
+    Using Subspace Gaussian Mixture Model' reports a concrete ASR model or recognizer
+    for a named language/task in IcABCD 2021 - 4th International Conference on Artificial
+    Intelligence, Big Data, Computing and Data Communication Systems, Proceedings,
+    so it fits the system leaf instead of corpus-building or adaptation/fine-tuning
+    nodes.
+- ref_key: shamore2023hadiyyissa
+  assigned_to:
+  - n_asr_systems
+  assignment_reason: The title 'Hadiyyissa Automatic Speech Recognition Using Deep
+    Learning Approach' reports a concrete ASR model or recognizer for a named language/task
+    in 2023 International Conference on Information and Communication Technology for
+    Development for Africa (ICT4DA), so it fits the system leaf instead of corpus-building
+    or adaptation/fine-tuning nodes.
+- ref_key: sirora2024shona
+  assigned_to:
+  - n_asr_systems
+  assignment_reason: The title 'A Deep Learning Automatic Speech Recognition Model
+    for Shona Language' reports a concrete ASR model or recognizer for a named language/task
+    in International Journal of Innovative Research in Computer and Communication
+    Engineering, so it fits the system leaf instead of corpus-building or adaptation/fine-tuning
+    nodes.
+- ref_key: stan2022lightweight
+  assigned_to:
+  - n_asr_systems
+  assignment_reason: The title 'A Lightweight Downscaled Approach to Automatic Speech
+    Recognition for Small Indigenous Languages' reports a concrete ASR model or recognizer
+    for a named language/task in Proceedings of the ACM International Conference,
+    so it fits the system leaf instead of corpus-building or adaptation/fine-tuning
+    nodes.
+- ref_key: afonja2024performant
+  assigned_to:
+  - n_adaptation
+  assignment_reason: The title 'Performant ASR Models for Medical Entities in Accented
+    Speech' focuses on lexical, phonemic, accent, or domain-specific adaptation/fine-tuning
+    in arXiv preprint arXiv:2406.12387, which is narrower than a standalone ASR-system
+    paper and not primarily a benchmark study.
+- ref_key: awino2022phonemic
+  assigned_to:
+  - n_adaptation
+  assignment_reason: 'The title ''Phonemic Representation and Transcription for Speech
+    to Text Applications for Under-resourced Indigenous African Languages: The Case
+    of Kiswahili'' focuses on lexical, phonemic, accent, or domain-specific adaptation/fine-tuning
+    in arXiv preprint arXiv:2210.16537, which is narrower than a standalone ASR-system
+    paper and not primarily a benchmark study.'
+- ref_key: emiru2021improving
+  assigned_to:
+  - n_adaptation
+  assignment_reason: The title 'Improving Amharic speech recognition system using
+    connectionist temporal classification with attention model and phoneme-based byte-pair-encodings'
+    focuses on lexical, phonemic, accent, or domain-specific adaptation/fine-tuning
+    in Information, which is narrower than a standalone ASR-system paper and not primarily
+    a benchmark study.
+- ref_key: jacobs2025speech
+  assigned_to:
+  - n_adaptation
+  assignment_reason: The title 'Speech Recognition for Automatically Assessing Afrikaans
+    and isiXhosa Preschool Oral Narratives' focuses on lexical, phonemic, accent,
+    or domain-specific adaptation/fine-tuning in ICASSP 2025-2025 IEEE International
+    Conference on Acoustics, Speech and Signal Processing (ICASSP), which is narrower
+    than a standalone ASR-system paper and not primarily a benchmark study.
+- ref_key: kivaisi2023swahili
+  assigned_to:
+  - n_adaptation
+  assignment_reason: The title 'Swahili speech dataset development and improved pre-training
+    method for spoken digit recognition' focuses on lexical, phonemic, accent, or
+    domain-specific adaptation/fine-tuning in ACM Transactions on Asian and Low-Resource
+    Language Information Processing, which is narrower than a standalone ASR-system
+    paper and not primarily a benchmark study.
+- ref_key: mak2024exploring
+  assigned_to:
+  - n_adaptation
+  assignment_reason: The title 'Exploring ASR Fine-tuning on Limited Domain-Specific
+    Data for Low-Resource Languages' focuses on lexical, phonemic, accent, or domain-specific
+    adaptation/fine-tuning in Journal of the Digital Humanities Association of Southern
+    Africa (DHASA), which is narrower than a standalone ASR-system paper and not primarily
+    a benchmark study.
+- ref_key: masekwameng2020effects
+  assigned_to:
+  - n_adaptation
+  assignment_reason: The title 'Effects of Language Modelling for Sepedi-English Code-Switched
+    Speech in Automatic Speech Recognition System' focuses on lexical, phonemic, accent,
+    or domain-specific adaptation/fine-tuning in 2020 International Conference on
+    Artificial Intelligence, Big Data, Computing and Data Communication Systems (icABCD),
+    which is narrower than a standalone ASR-system paper and not primarily a benchmark
+    study.
+- ref_key: oladipo2020accent
+  assigned_to:
+  - n_adaptation
+  assignment_reason: The title 'Accent Identification of Ethnically Diverse Nigerian
+    English Speakers' focuses on lexical, phonemic, accent, or domain-specific adaptation/fine-tuning
+    in SSRN Electronic Journal, which is narrower than a standalone ASR-system paper
+    and not primarily a benchmark study.
+- ref_key: tachbelie2023lexical
+  assigned_to:
+  - n_adaptation
+  assignment_reason: The title 'Lexical modeling for the development of Amharic automatic
+    speech recognition systems' focuses on lexical, phonemic, accent, or domain-specific
+    adaptation/fine-tuning in Language Resources and Evaluation, which is narrower
+    than a standalone ASR-system paper and not primarily a benchmark study.
+- ref_key: zellou2024linguistic
+  assigned_to:
+  - n_adaptation
+  assignment_reason: The title 'Linguistic disparities in cross-language automatic
+    speech recognition transfer from Arabic to Tashlhiyt' focuses on lexical, phonemic,
+    accent, or domain-specific adaptation/fine-tuning in Scientific Reports, which
+    is narrower than a standalone ASR-system paper and not primarily a benchmark study.
+- ref_key: mdhaffar-etal-2024-performance
+  assigned_to:
+  - n_benchmarks
+  assignment_reason: The title 'Performance Analysis of Speech Encoders for Low-Resource
+    SLU and ASR in Tunisian Dialect' foregrounds benchmark construction or comparative
+    performance analysis in Proceedings of the Second Arabic Natural Language Processing
+    Conference, so it belongs in evaluation rather than resource collection or system-building.
+- ref_key: peterson2022openasr21
+  assigned_to:
+  - n_benchmarks
+  assignment_reason: 'The title ''OpenASR21: The Second Open Challenge for Automatic
+    Speech Recognition of Low-Resource Languages'' foregrounds benchmark construction
+    or comparative performance analysis in Proceedings of Interspeech 2022, so it
+    belongs in evaluation rather than resource collection or system-building.'
+- ref_key: sanni2025afrispeech
+  assigned_to:
+  - n_benchmarks
+  assignment_reason: 'The title ''Afrispeech-Dialog: A Benchmark Dataset for Spontaneous
+    English Conversations in Healthcare and Beyond'' foregrounds benchmark construction
+    or comparative performance analysis in arXiv preprint arXiv:2502.03945, so it
+    belongs in evaluation rather than resource collection or system-building.'
+- ref_key: guo2023towards
+  assigned_to:
+  - n_bias_stress
+  assignment_reason: The title 'Towards the universal defense for query-based audio
+    adversarial attacks on speech recognition system' is about adversarial defense,
+    demographic bias, or failure on African names in Cybersecurity, which is a stress-test/evaluation
+    concern rather than ordinary adaptation.
+- ref_key: martin2023bias
+  assigned_to:
+  - n_bias_stress
+  assignment_reason: 'The title ''Bias in automatic speech recognition: The case of
+    African American language'' is about adversarial defense, demographic bias, or
+    failure on African names in Applied Linguistics, which is a stress-test/evaluation
+    concern rather than ordinary adaptation.'
+- ref_key: olatunji2023afrinames
+  assigned_to:
+  - n_bias_stress
+  assignment_reason: 'The title ''AfriNames: Most ASR Models “Butcher” African Names''
+    is about adversarial defense, demographic bias, or failure on African names in
+    Proceedings of the Annual Conference of the International Speech Communication
+    Association, INTERSPEECH, which is a stress-test/evaluation concern rather than
+    ordinary adaptation.'
+- ref_key: Ndiaye2025
+  assigned_to:
+  - n_surveys_outlook
+  assignment_reason: The title 'Challenges and Opportunities for ASR in African Languages'
+    is an Africa-specific synthesis or tutorial in Proceedings of ICASSP, so it stays
+    in the narrow African-language outlook leaf instead of being broadened into a
+    generic low-resource ASR survey bucket.
+- ref_key: elmadany2025voice
+  assigned_to:
+  - n_surveys_outlook
+  assignment_reason: 'The title ''Voice of a Continent: Mapping Africa''s Speech Technology
+    Frontier'' is an Africa-specific synthesis or tutorial in arXiv preprint arXiv:2505.18436,
+    so it stays in the narrow African-language outlook leaf instead of being broadened
+    into a generic low-resource ASR survey bucket.'
+- ref_key: imam-etal-2025-automatic
+  assigned_to:
+  - n_surveys_outlook
+  assignment_reason: 'The title ''Automatic Speech Recognition for African Low-Resource
+    Languages: Challenges and Future Directions'' is an Africa-specific synthesis
+    or tutorial in Proceedings of the Sixth Workshop on African Natural Language Processing
+    (AfricaNLP 2025), so it stays in the narrow African-language outlook leaf instead
+    of being broadened into a generic low-resource ASR survey bucket.'
+- ref_key: koffi2020tutorial
+  assigned_to:
+  - n_surveys_outlook
+  assignment_reason: The title 'A tutorial on acoustic phonetic feature extraction
+    for automatic speech recognition (ASR) and text-to-speech (TTS) applications in
+    African languages' is an Africa-specific synthesis or tutorial in Linguistic Portfolios,
+    so it stays in the narrow African-language outlook leaf instead of being broadened
+    into a generic low-resource ASR survey bucket.
+unassigned_refs:
+- Besacier2016
+- Yu2020
+- alhumud2024improving
+- ayall2024amharic
+- badji2020automatic
+- bhable2020review
+- hu2021artificial
+- ibrahim2023breaking
+- jacobs2023towards
+- jelassi2024revolutionizing
+- jimerson2023unhelpful
+- kabongo2022listra
+- kumar2024comprehensive
+- morris2021one
+- nzeyimana2023kinspeak
+- teshite2023afan

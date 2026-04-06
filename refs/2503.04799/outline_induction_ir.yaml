@@ -1,0 +1,707 @@
+artifact_type: reference_grounded_outline_induction_ir
+artifact_alias: section_aligned_taxonomy_ledger
+source_mode: reference_only
+paper_id: '2503.04799'
+title: 'Direct Speech to Speech Translation: A Review'
+inputs:
+  title: true
+  reference_metadata: true
+  gold_outline: false
+nodes:
+- node_id: n_core_architectures
+  level: 1
+  title_candidate: Core Speech-to-Speech Translation Architectures
+  node_role: method_theme
+  parent: null
+  refs_complete:
+  - app11104380
+  - pratapa-etal-2018-language
+  - key
+  - GoogleAIBlog
+  - PullumKornai2003
+  - Kornai2007
+  - ijcaonline
+  - igntu
+  - yan2023espnetstv2multipurposespokenlanguage
+  - Quintana2018ADS
+  - dong2022leveragingpseudolabeleddataimprove
+  - huang2023avtranspeechaudiovisualrobustspeechtospeech
+  - Jin2010
+  - '5453745'
+  - whetten2024openimplementationstudybestrq
+  - Zhang2019AudioRecognition
+  - kent2002acoustic
+  - gulati2020conformerconvolutionaugmentedtransformerspeech
+  - GRAVES2005602
+  - Park_2019
+  - caruana1997multitask
+  - lester2021powerscaleparameterefficientprompt
+  - germain2015mademaskedautoencoderdistribution
+  inclusion_rule: Assign broad references on direct S2ST architectures, cascaded pipelines, and core speech translation system designs.
+  ordering_reason: Core architectures come first because the review centers direct speech-to-speech translation as a system design problem.
+- node_id: n_representations_and_voice
+  level: 1
+  title_candidate: Speech Representation, Units, and Voice Preservation
+  node_role: method_theme
+  parent: null
+  refs_complete:
+  - jia2022translatotron2highqualitydirect
+  - le2024transvipspeechspeechtranslation
+  - jia2019directspeechtospeechtranslationsequencetosequence
+  - lee2022directspeechtospeechtranslationdiscrete
+  - inaguma2023unitytwopassdirectspeechtospeech
+  - Rahmawati2020
+  - DBLP:journals/corr/abs-1804-08771
+  - kaur2024directpunjabienglishspeech
+  - nachmani2024translatotron
+  - lee2022direct
+  - jia2019direct
+  - li2022textlessdirectspeechtospeechtranslation
+  - zhu2023diffs2utsemanticpreservingdiffusion
+  - popuri2022enhanceddirectspeechtospeechtranslation
+  - nachmani2024translatotron3speechspeech
+  - duquenne2022tmodulestranslationmoduleszeroshot
+  - Mingote_2023
+  - song2023styles2stzeroshotstyletransfer
+  - tjandra2019speechtospeechtranslationuntranscribedunknown
+  - Hernandez_2018
+  - '10446418'
+  - poncelet2024efficientextractionnoiserobustdiscrete
+  - hsu2021hubertselfsupervisedspeechrepresentation
+  - oord2018neuraldiscreterepresentationlearning
+  - astuti2022melweighted
+  - Boulal2024
+  - joshi2020spanbertimprovingpretrainingrepresenting
+  - Desplanques_2020
+  - DBLP:journals/corr/abs-2103-15060
+  - shen2018naturalttssynthesisconditioning
+  - shi2022learningaudiovisualspeechrepresentation
+  - song2023dspganganbaseduniversalvocoder
+  - sarkar2023xkdcrossmodalknowledgedistillation
+  inclusion_rule: Assign references on discrete units, representations, prosody, speaker preservation, and expressivity in S2ST.
+  ordering_reason: Representation work follows core architectures because direct S2ST quality depends heavily on how speech content and voice are encoded.
+- node_id: n_multilingual_data
+  level: 1
+  title_candidate: Multilingual Data, Corpora, and Low-Resource Settings
+  node_role: resource_theme
+  parent: null
+  refs_complete:
+  - communication2023seamlessmultilingualexpressivestreaming
+  - li-etal-2017-translating
+  - communication2023seamlessm4tmassivelymultilingual
+  - 10.1007/978-3-031-48312-7_21
+  - wei2022jointpretrainingspeechbilingual
+  - fang2024achievehighqualitydirectspeechtospeech
+  - carolefrench
+  - liu2023multi
+  - zhang2021uwspeech
+  - '10229412'
+  - shi2023enhancingspeechtospeechtranslationmultiple
+  - zhang2020uwspeechspeechspeechtranslation
+  - nguyen2022improvingspeechtospeechtranslationunlabeled
+  - jia2022cvsscorpusmassivelymultilingual
+  - jia2022leveragingunsupervisedweaklysuperviseddata
+  - wang-etal-2021-voxpopuli
+  - post-etal-2013-improved
+  - iranzosánchez2020europarlstmultilingualcorpusspeech
+  - jia2022introducing
+  - jia-etal-2022-cvss
+  - afouras2018lrs3tedlargescaledatasetvisual
+  - chen2021gigaspeechevolvingmultidomainasr
+  - di-gangi-etal-2019-must
+  - BTEC
+  - anderson1991hcrc
+  - hayakawa-etal-2018-speech
+  - hayakawa-etal-2016-ilmt
+  - wang2020covost2massivelymultilingual
+  - salesky2021mtedx
+  - Pratap_2020
+  - commonvoice2023
+  - '7178964'
+  - liu19d_interspeech
+  - wenzek2019ccnetextractinghighquality
+  - chiu2022selfsupervisedlearningrandomprojectionquantizer
+  - ilmt-s2s
+  - DBLP:journals/corr/VaswaniSPUJGKP17
+  - DBLP:journals/corr/abs-2001-08210
+  - DBLP:journals/corr/abs-2006-09526
+  - chung2021w2vbertcombiningcontrastivelearning
+  - huang2022directedacyclictransformernonautoregressive
+  - bapna2022mslammassivelymultilingualjoint
+  inclusion_rule: Assign references on multilingual corpora, low-resource settings, data collection, and cross-lingual training resources for S2ST.
+  ordering_reason: Data and multilingual coverage follow representation choices because direct S2ST is fundamentally constrained by parallel or pseudo-parallel speech data.
+- node_id: n_evaluation_and_quality
+  level: 1
+  title_candidate: Evaluation of Quality, Intelligibility, and Naturalness
+  node_role: evaluation_theme
+  parent: null
+  refs_complete:
+  - wu2016googlesneuralmachinetranslation
+  - dasgupta2020improvinglocalidentifiabilityprobabilistic
+  - han2024speechqeestimatingqualitydirect
+  - 10.3115/1073083.1073135
+  - articleMOS
+  - fang2023daspeechdirectedacyclictransformer
+  - akira16_interspeech
+  - akira17_interspeech
+  - DBLP:conf/ococosda/AryaAMP22
+  - Sasindran_2024
+  - roy2021semanticwerunifiedmetricevaluation
+  - kong2020hifigangenerativeadversarialnetworks
+  - articleMeteorScores
+  - articleStft
+  - Griffin-Lim
+  - oshea2015introductionconvolutionalneuralnetworks
+  - oord2016wavenetgenerativemodelraw
+  - ren2022fastspeech2fasthighquality
+  - kim2021conditionalvariationalautoencoderadversarial
+  - hsu2023pseudolabeltrainingmodelinertia
+  inclusion_rule: Assign references on evaluation, intelligibility, naturalness, MOS-style assessment, or quality metrics for spoken translation outputs.
+  ordering_reason: Evaluation comes late because it measures the tradeoffs introduced by architectural and representation choices.
+- node_id: n_applications_and_future
+  level: 1
+  title_candidate: Applications, Deployment Constraints, and Future Directions
+  node_role: synthesis_theme
+  parent: null
+  refs_complete:
+  - ijcat
+  - xu2023recentadvancesdirectspeechtotext
+  - Al-Tarawneh2024
+  - arxiv1
+  - book
+  - wang2024uncertaintyawaremeanopinionscore
+  - latency
+  - articleConcern
+  - chang2024interspeech2024challengespeech
+  - hasanabadi2023overviewtexttospeechsystemsmedia
+  - randomQuantizationarticle
+  - mfcc2015
+  - '58337'
+  inclusion_rule: Assign references on applications, deployment constraints, latency, real-time use, limitations, and future directions for direct S2ST.
+  ordering_reason: The structure closes with applications and future directions because these references synthesize where direct S2ST is heading beyond benchmark settings.
+ref_assignment_ledger:
+- ref_key: communication2023seamlessmultilingualexpressivestreaming
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (low resource, multilingual, streaming) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: jia2022translatotron2highqualitydirect
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (speaker, voice preservation) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: le2024transvipspeechspeechtranslation
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (isochrony, speaker) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: ijcat
+  assigned_to:
+  - n_applications_and_future
+  assignment_reason: Matched theme cues (challenge, future) in the supplied title/abstract metadata, so the reference fits 'Applications, Deployment Constraints, and Future Directions'.
+- ref_key: wu2016googlesneuralmachinetranslation
+  assigned_to:
+  - n_evaluation_and_quality
+  assignment_reason: Matched theme cues (evaluation, human, mos) in the supplied title/abstract metadata, so the reference fits 'Evaluation of Quality, Intelligibility, and Naturalness'.
+- ref_key: li-etal-2017-translating
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus, parallel) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: app11104380
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+- ref_key: dasgupta2020improvinglocalidentifiabilityprobabilistic
+  assigned_to:
+  - n_evaluation_and_quality
+  assignment_reason: Matched theme cues (metric) in the supplied title/abstract metadata, so the reference fits 'Evaluation of Quality, Intelligibility, and Naturalness'.
+- ref_key: jia2019directspeechtospeechtranslationsequencetosequence
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (representation, speaker) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: pratapa-etal-2018-language
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+- ref_key: communication2023seamlessm4tmassivelymultilingual
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus, multilingual) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: 10.1007/978-3-031-48312-7_21
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (dataset) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: han2024speechqeestimatingqualitydirect
+  assigned_to:
+  - n_evaluation_and_quality
+  assignment_reason: Matched theme cues (quality) in the supplied title/abstract metadata, so the reference fits 'Evaluation of Quality, Intelligibility, and Naturalness'.
+- ref_key: xu2023recentadvancesdirectspeechtotext
+  assigned_to:
+  - n_applications_and_future
+  assignment_reason: Matched theme cues (application, challenge, future) in the supplied title/abstract metadata, so the reference fits 'Applications, Deployment Constraints, and Future Directions'.
+- ref_key: key
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+- ref_key: lee2022directspeechtospeechtranslationdiscrete
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (unit) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: inaguma2023unitytwopassdirectspeechtospeech
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (unit) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: GoogleAIBlog
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+- ref_key: wei2022jointpretrainingspeechbilingual
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (dataset) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: Al-Tarawneh2024
+  assigned_to:
+  - n_applications_and_future
+  assignment_reason: Matched theme cues (application) in the supplied title/abstract metadata, so the reference fits 'Applications, Deployment Constraints, and Future Directions'.
+- ref_key: PullumKornai2003
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+- ref_key: Rahmawati2020
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (representation) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: 10.3115/1073083.1073135
+  assigned_to:
+  - n_evaluation_and_quality
+  assignment_reason: Matched theme cues (evaluation, human) in the supplied title/abstract metadata, so the reference fits 'Evaluation of Quality, Intelligibility, and Naturalness'.
+- ref_key: DBLP:journals/corr/abs-1804-08771
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (unit) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: Kornai2007
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+- ref_key: ijcaonline
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+- ref_key: arxiv1
+  assigned_to:
+  - n_applications_and_future
+  assignment_reason: Matched theme cues (application, challenge, future) in the supplied title/abstract metadata, so the reference fits 'Applications, Deployment Constraints, and Future Directions'.
+- ref_key: kaur2024directpunjabienglishspeech
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (representation, unit) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: fang2024achievehighqualitydirectspeechtospeech
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (dataset, parallel) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: carolefrench
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus, dataset, speech corpus) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: liu2023multi
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus, dataset, parallel) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: nachmani2024translatotron
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (speaker) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: lee2022direct
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (unit) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: zhang2021uwspeech
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (dataset) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: jia2019direct
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (representation, speaker) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: '10229412'
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (low resource) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: igntu
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+- ref_key: book
+  assigned_to:
+  - n_applications_and_future
+  assignment_reason: Matched theme cues (application) in the supplied title/abstract metadata, so the reference fits 'Applications, Deployment Constraints, and Future Directions'.
+- ref_key: articleMOS
+  assigned_to:
+  - n_evaluation_and_quality
+  assignment_reason: Matched theme cues (mos, quality) in the supplied title/abstract metadata, so the reference fits 'Evaluation of Quality, Intelligibility, and Naturalness'.
+- ref_key: wang2024uncertaintyawaremeanopinionscore
+  assigned_to:
+  - n_applications_and_future
+  assignment_reason: Matched theme cues (application, challenge) in the supplied title/abstract metadata, so the reference fits 'Applications, Deployment Constraints, and Future Directions'.
+- ref_key: latency
+  assigned_to:
+  - n_applications_and_future
+  assignment_reason: Matched theme cues (application, latency) in the supplied title/abstract metadata, so the reference fits 'Applications, Deployment Constraints, and Future Directions'.
+- ref_key: shi2023enhancingspeechtospeechtranslationmultiple
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (dataset, parallel) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: zhang2020uwspeechspeechspeechtranslation
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (dataset) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: li2022textlessdirectspeechtospeechtranslation
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (representation) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: zhu2023diffs2utsemanticpreservingdiffusion
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (representation, unit) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: nguyen2022improvingspeechtospeechtranslationunlabeled
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (low resource) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: popuri2022enhanceddirectspeechtospeechtranslation
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (representation, unit) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: fang2023daspeechdirectedacyclictransformer
+  assigned_to:
+  - n_evaluation_and_quality
+  assignment_reason: Matched theme cues (mos, quality) in the supplied title/abstract metadata, so the reference fits 'Evaluation of Quality, Intelligibility, and Naturalness'.
+- ref_key: yan2023espnetstv2multipurposespokenlanguage
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+- ref_key: nachmani2024translatotron3speechspeech
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (speaker) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: duquenne2022tmodulestranslationmoduleszeroshot
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (representation) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: Mingote_2023
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (unit, vocoder) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: jia2022cvsscorpusmassivelymultilingual
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus, multilingual, parallel) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: jia2022leveragingunsupervisedweaklysuperviseddata
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus, dataset, low resource) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: Quintana2018ADS
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+- ref_key: song2023styles2stzeroshotstyletransfer
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (expressive, speaker) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: wang-etal-2021-voxpopuli
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus, multilingual, speech corpus) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: post-etal-2013-improved
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus, dataset, parallel) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: dong2022leveragingpseudolabeleddataimprove
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+- ref_key: iranzosánchez2020europarlstmultilingualcorpusspeech
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus, dataset, multilingual) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: jia2022introducing
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus, multilingual, parallel) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: jia-etal-2022-cvss
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus, multilingual, parallel) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: huang2023avtranspeechaudiovisualrobustspeechtospeech
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+- ref_key: afouras2018lrs3tedlargescaledatasetvisual
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (dataset) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: chen2021gigaspeechevolvingmultidomainasr
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: di-gangi-etal-2019-must
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus, multilingual) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: BTEC
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: tjandra2019speechtospeechtranslationuntranscribedunknown
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (representation) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: anderson1991hcrc
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: akira16_interspeech
+  assigned_to:
+  - n_evaluation_and_quality
+  assignment_reason: Matched theme cues (human) in the supplied title/abstract metadata, so the reference fits 'Evaluation of Quality, Intelligibility, and Naturalness'.
+- ref_key: akira17_interspeech
+  assigned_to:
+  - n_evaluation_and_quality
+  assignment_reason: Matched theme cues (human) in the supplied title/abstract metadata, so the reference fits 'Evaluation of Quality, Intelligibility, and Naturalness'.
+- ref_key: hayakawa-etal-2018-speech
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: hayakawa-etal-2016-ilmt
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: wang2020covost2massivelymultilingual
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus, dataset, low resource) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: salesky2021mtedx
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus, low resource, multilingual) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: Pratap_2020
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus, dataset, multilingual) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: commonvoice2023
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (dataset) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: '7178964'
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus, speech corpus) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: Hernandez_2018
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (speaker) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: liu19d_interspeech
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: wenzek2019ccnetextractinghighquality
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (dataset) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: DBLP:conf/ococosda/AryaAMP22
+  assigned_to:
+  - n_evaluation_and_quality
+  assignment_reason: Matched theme cues (mos, quality) in the supplied title/abstract metadata, so the reference fits 'Evaluation of Quality, Intelligibility, and Naturalness'.
+- ref_key: articleConcern
+  assigned_to:
+  - n_applications_and_future
+  assignment_reason: Matched theme cues (challenge) in the supplied title/abstract metadata, so the reference fits 'Applications, Deployment Constraints, and Future Directions'.
+- ref_key: Sasindran_2024
+  assigned_to:
+  - n_evaluation_and_quality
+  assignment_reason: Matched theme cues (evaluation, human, metric) in the supplied title/abstract metadata, so the reference fits 'Evaluation of Quality, Intelligibility, and Naturalness'.
+- ref_key: roy2021semanticwerunifiedmetricevaluation
+  assigned_to:
+  - n_evaluation_and_quality
+  assignment_reason: Matched theme cues (evaluation, metric) in the supplied title/abstract metadata, so the reference fits 'Evaluation of Quality, Intelligibility, and Naturalness'.
+- ref_key: chang2024interspeech2024challengespeech
+  assigned_to:
+  - n_applications_and_future
+  assignment_reason: Matched theme cues (application, challenge, future) in the supplied title/abstract metadata, so the reference fits 'Applications, Deployment Constraints, and Future Directions'.
+- ref_key: '10446418'
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (speaker, vocoder) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: poncelet2024efficientextractionnoiserobustdiscrete
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (unit) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: hsu2021hubertselfsupervisedspeechrepresentation
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (representation, unit) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: Jin2010
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+- ref_key: '5453745'
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+- ref_key: hasanabadi2023overviewtexttospeechsystemsmedia
+  assigned_to:
+  - n_applications_and_future
+  assignment_reason: Matched theme cues (application) in the supplied title/abstract metadata, so the reference fits 'Applications, Deployment Constraints, and Future Directions'.
+- ref_key: oord2018neuraldiscreterepresentationlearning
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (representation, speaker) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: chiu2022selfsupervisedlearningrandomprojectionquantizer
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (multilingual, streaming) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: randomQuantizationarticle
+  assigned_to:
+  - n_applications_and_future
+  assignment_reason: Matched theme cues (application) in the supplied title/abstract metadata, so the reference fits 'Applications, Deployment Constraints, and Future Directions'.
+- ref_key: whetten2024openimplementationstudybestrq
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+- ref_key: astuti2022melweighted
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (speaker) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: Zhang2019AudioRecognition
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+- ref_key: Boulal2024
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (speaker) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: kong2020hifigangenerativeadversarialnetworks
+  assigned_to:
+  - n_evaluation_and_quality
+  assignment_reason: Matched theme cues (evaluation, human, mos) in the supplied title/abstract metadata, so the reference fits 'Evaluation of Quality, Intelligibility, and Naturalness'.
+- ref_key: mfcc2015
+  assigned_to:
+  - n_applications_and_future
+  assignment_reason: Matched theme cues (application) in the supplied title/abstract metadata, so the reference fits 'Applications, Deployment Constraints, and Future Directions'.
+- ref_key: articleMeteorScores
+  assigned_to:
+  - n_evaluation_and_quality
+  assignment_reason: Matched theme cues (evaluation, human, metric) in the supplied title/abstract metadata, so the reference fits 'Evaluation of Quality, Intelligibility, and Naturalness'.
+- ref_key: articleStft
+  assigned_to:
+  - n_evaluation_and_quality
+  assignment_reason: Matched theme cues (quality) in the supplied title/abstract metadata, so the reference fits 'Evaluation of Quality, Intelligibility, and Naturalness'.
+- ref_key: kent2002acoustic
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+- ref_key: Griffin-Lim
+  assigned_to:
+  - n_evaluation_and_quality
+  assignment_reason: Matched theme cues (evaluation, quality) in the supplied title/abstract metadata, so the reference fits 'Evaluation of Quality, Intelligibility, and Naturalness'.
+- ref_key: oshea2015introductionconvolutionalneuralnetworks
+  assigned_to:
+  - n_evaluation_and_quality
+  assignment_reason: Matched theme cues (mos) in the supplied title/abstract metadata, so the reference fits 'Evaluation of Quality, Intelligibility, and Naturalness'.
+- ref_key: gulati2020conformerconvolutionaugmentedtransformerspeech
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+- ref_key: joshi2020spanbertimprovingpretrainingrepresenting
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (representation) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: ilmt-s2s
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: Desplanques_2020
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (representation, speaker) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: DBLP:journals/corr/VaswaniSPUJGKP17
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (parallel) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: DBLP:journals/corr/abs-2001-08210
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus, low resource, multilingual) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: DBLP:journals/corr/abs-2006-09526
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (multilingual) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: DBLP:journals/corr/abs-2103-15060
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (prosody, representation, speaker) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: shen2018naturalttssynthesisconditioning
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (representation, vocoder) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: oord2016wavenetgenerativemodelraw
+  assigned_to:
+  - n_evaluation_and_quality
+  assignment_reason: Matched theme cues (human, metric) in the supplied title/abstract metadata, so the reference fits 'Evaluation of Quality, Intelligibility, and Naturalness'.
+- ref_key: ren2022fastspeech2fasthighquality
+  assigned_to:
+  - n_evaluation_and_quality
+  assignment_reason: Matched theme cues (quality) in the supplied title/abstract metadata, so the reference fits 'Evaluation of Quality, Intelligibility, and Naturalness'.
+- ref_key: kim2021conditionalvariationalautoencoderadversarial
+  assigned_to:
+  - n_evaluation_and_quality
+  assignment_reason: Matched theme cues (evaluation, human, mos) in the supplied title/abstract metadata, so the reference fits 'Evaluation of Quality, Intelligibility, and Naturalness'.
+- ref_key: shi2022learningaudiovisualspeechrepresentation
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (representation, speaker, unit) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: chung2021w2vbertcombiningcontrastivelearning
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (corpus, dataset) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: song2023dspganganbaseduniversalvocoder
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (speaker, vocoder) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: huang2022directedacyclictransformernonautoregressive
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (parallel) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: bapna2022mslammassivelymultilingualjoint
+  assigned_to:
+  - n_multilingual_data
+  assignment_reason: Matched theme cues (multilingual) in the supplied title/abstract metadata, so the reference fits 'Multilingual Data, Corpora, and Low-Resource Settings'.
+- ref_key: GRAVES2005602
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+- ref_key: Park_2019
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+- ref_key: '58337'
+  assigned_to:
+  - n_applications_and_future
+  assignment_reason: Matched theme cues (application) in the supplied title/abstract metadata, so the reference fits 'Applications, Deployment Constraints, and Future Directions'.
+- ref_key: caruana1997multitask
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+- ref_key: sarkar2023xkdcrossmodalknowledgedistillation
+  assigned_to:
+  - n_representations_and_voice
+  assignment_reason: Matched theme cues (representation) in the supplied title/abstract metadata, so the reference fits 'Speech Representation, Units, and Voice Preservation'.
+- ref_key: lester2021powerscaleparameterefficientprompt
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+- ref_key: hsu2023pseudolabeltrainingmodelinertia
+  assigned_to:
+  - n_evaluation_and_quality
+  assignment_reason: Matched theme cues (quality) in the supplied title/abstract metadata, so the reference fits 'Evaluation of Quality, Intelligibility, and Naturalness'.
+- ref_key: germain2015mademaskedautoencoderdistribution
+  assigned_to:
+  - n_core_architectures
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Core Speech-to-Speech Translation Architectures'.
+unassigned_refs: []

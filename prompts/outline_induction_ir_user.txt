@@ -1,0 +1,99 @@
+Generate a reference-only outline induction IR for the following literature review candidate.
+
+Your job is to infer an auditable intermediate representation that explains how a hierarchical review outline could be induced from the paper title and the supplied reference metadata alone.
+
+Use only:
+- the review title
+- the supplied reference metadata
+
+Do not use:
+- any gold outline
+- any stored `COT.md`
+- any previously extracted section structure
+- any target hierarchy supplied outside this prompt
+
+Output requirements:
+1. Output YAML only.
+2. Do not output any prose before or after the YAML.
+3. Do not invent references, assignments, or section claims that are not grounded in the supplied metadata.
+4. Every supplied reference must either:
+   - appear in at least one node's `refs_complete`, or
+   - appear in `unassigned_refs`.
+5. Nodes with no assigned references may exist, but only when they function as structural or framing nodes. In those cases, set `node_role` accordingly and provide `preserve_reason`.
+6. Node ordering must be justified. Do not merely assert an order without an `ordering_reason` where ordering is non-trivial.
+7. Keep the artifact reference-only. Do not back-fill structure from any external template or hidden target outline.
+8. Do not output `rendered_outline`.
+9. Prefer single-home assignment. Assign a reference to multiple nodes only when the metadata directly supports more than one distinct thematic role. If you use a multi-home assignment, make the overlap explicit in `assignment_reason`.
+10. Prefer `unassigned_refs` over weak assignments. Generic cues such as `pre-training`, `architecture`, `large language model`, `survey`, or `benchmark` are not sufficient by themselves to place a paper into a narrow mechanism, intervention, or phenomenon node.
+11. Leaf nodes must be discriminative. Do not create a leaf node whose title is so broad that generic foundation-model or background papers could enter it without syntax-specific evidence.
+12. Empty `refs_complete` is allowed only for true grouping or framing nodes. Leaf nodes should not be empty.
+13. `assignment_reason` must be case-specific, not boilerplate. For each reference, cite the positive metadata evidence that supports the chosen node and, when needed, explain why nearby sibling nodes were not chosen.
+14. Do not mirror IMRaD or any conventional review scaffold unless the supplied reference metadata itself supports that taxonomy.
+
+Required top-level YAML keys:
+- `artifact_type`
+- `artifact_alias`
+- `source_mode`
+- `paper_id`
+- `title`
+- `inputs`
+- `nodes`
+- `ref_assignment_ledger`
+- `unassigned_refs`
+
+Required `inputs` keys:
+- `title`
+- `reference_metadata`
+- `gold_outline`
+
+Required fields for each item in `nodes`:
+- `node_id`
+- `level`
+- `title_candidate`
+- `node_role`
+- `parent`
+- `refs_complete`
+
+Recommended optional fields for each item in `nodes`:
+- `inclusion_rule`
+- `ordering_reason`
+- `preserve_reason`
+
+Required fields for each item in `ref_assignment_ledger`:
+- `ref_key`
+- `assigned_to`
+- `assignment_reason`
+
+YAML schema expectations:
+- `artifact_type`: fixed string `reference_grounded_outline_induction_ir`
+- `artifact_alias`: fixed string `section_aligned_taxonomy_ledger`
+- `source_mode`: fixed string `reference_only`
+- `inputs.title`: true
+- `inputs.reference_metadata`: true
+- `inputs.gold_outline`: false
+- `nodes` must be a list
+- `ref_assignment_ledger` must be a list
+- `unassigned_refs` must be a list
+- `refs_complete` must always be a list, even if empty
+- `parent` must be null for top-level nodes
+- `assigned_to` must be a list of node IDs
+
+Behavioral guidance:
+- Prefer explicit, review-like top-level themes that could plausibly organize the literature.
+- Prefer 4-8 top-level themes unless the metadata strongly supports a different granularity.
+- Use subsection nodes only when reference evidence supports a meaningful thematic split.
+- If a reference is relevant to multiple nodes, include that explicitly in `ref_assignment_ledger` and justify the overlap conservatively.
+- If references are too sparse or heterogeneous to support a clean node, leave them in `unassigned_refs` rather than forcing a weak assignment.
+- Keep titles concise, audit-friendly, and discriminative.
+- Background or foundation-model papers belong in broad framing/context nodes unless the metadata explicitly indicates syntax-specific mechanism, evaluation, multilingual, or intervention content.
+- Grouping nodes may have empty `refs_complete` only when their child nodes carry the substantive reference assignments.
+- If a paper is borderline or the metadata is thin, keep it unassigned rather than forcing a fit.
+
+Paper ID:
+{paper_id}
+
+Review Title:
+{title}
+
+Reference Metadata:
+{reference_metadata}

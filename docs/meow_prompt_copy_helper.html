@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MEOW Prompt Copy Helper</title>
+<style>
+:root {
+  --ink:#111827; --muted:#4b5563; --line:#d1d5db; --blue:#1d4ed8; --green:#047857; --violet:#7c3aed;
+  --bg:#f8fafc; --card:#ffffff;
+}
+html, body {
+  margin:0; padding:0; background:var(--bg); color:var(--ink);
+  font-family:"Noto Sans CJK TC","Noto Sans CJK SC",sans-serif; line-height:1.5;
+}
+.wrap { max-width: 1120px; margin: 0 auto; padding: 28px 20px 40px; }
+h1 { font-size: 32px; margin:0 0 8px 0; }
+h2 { font-size: 22px; margin: 28px 0 10px; }
+p { margin: 0 0 10px 0; color: var(--muted); }
+.toolbar {
+  display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 18px;
+}
+button {
+  appearance:none; border:1px solid #bfdbfe; background:#eff6ff; color:#1d4ed8;
+  padding:10px 14px; border-radius:10px; cursor:pointer; font-size:14px; font-weight:700;
+}
+button.green { background:#ecfdf5; color:#065f46; border-color:#a7f3d0; }
+button.violet { background:#faf5ff; color:#6d28d9; border-color:#ddd6fe; }
+button:hover { filter: brightness(0.98); }
+.grid {
+  display:grid; grid-template-columns: 1fr; gap:16px;
+}
+.card {
+  background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 16px 14px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+.card h3 {
+  font-size:18px; margin:0 0 6px 0;
+}
+.meta {
+  font-size:13px; color:var(--muted); margin-bottom:10px;
+}
+textarea {
+  width:100%; min-height:180px; resize:vertical; box-sizing:border-box;
+  border:1px solid #cbd5e1; border-radius:10px; padding:12px;
+  font-family:"Noto Sans Mono","DejaVu Sans Mono",monospace; font-size:13px; line-height:1.45;
+  white-space:pre; background:#f8fafc; color:#111827;
+}
+.row { display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
+.note {
+  border-left:4px solid #f59e0b; background:#fffaf0; padding:12px 14px; border-radius:8px; margin:16px 0 22px;
+  color:#78350f;
+}
+.success {
+  border-left-color:#10b981; background:#f0fdf4; color:#065f46;
+}
+.small { font-size:13px; }
+</style>
+<script>
+function copyText(id) {
+  const el = document.getElementById(id);
+  const text = el.value;
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(() => {
+      flash(id);
+    });
+  } else {
+    el.focus();
+    el.select();
+    document.execCommand('copy');
+    flash(id);
+  }
+}
+function flash(id) {
+  const btns = document.querySelectorAll('[data-target="'+id+'"]');
+  btns.forEach(btn => {
+    const old = btn.textContent;
+    btn.textContent = 'Copied';
+    setTimeout(() => btn.textContent = old, 1200);
+  });
+}
+function copyMany(ids) {
+  const joined = ids.map(id => document.getElementById(id).value).join('\n\n');
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(joined).then(() => {
+      document.getElementById('copyManyBtn').textContent = 'Copied';
+      setTimeout(() => document.getElementById('copyManyBtn').textContent = 'Copy All Main Prompts', 1200);
+    });
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = joined;
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    document.getElementById('copyManyBtn').textContent = 'Copied';
+    setTimeout(() => document.getElementById('copyManyBtn').textContent = 'Copy All Main Prompts', 1200);
+  }
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <h1>MEOW Prompt Copy Helper</h1>
+  <p>這份 HTML 專門給你一鍵複製 prompt。每個區塊都能單獨 Copy；上方也有整包複製按鈕。內容以 released code 的 faithful raw prompt 為主，另外把 repo 中的 discipline-aware system prompt 與 SFT packing 也整理進來。</p>
+
+  <div class="note">PDF viewer 對剪貼簿按鈕的支援很不穩定，所以我把一鍵複製功能獨立做成這份 HTML。這樣你不用再手動框選。</div>
+
+  <div class="toolbar">
+    <button id="copyManyBtn" onclick="copyMany(['outline_system','outline_user','cot_system','cot_user'])">Copy All Main Prompts</button>
+    <button class="green" onclick="copyMany(['outline_system','outline_user'])">Copy Outline Prompt Pair</button>
+    <button class="green" onclick="copyMany(['cot_system','cot_user'])">Copy CoT Prompt Pair</button>
+    <button class="violet" data-target="prompt_pack_json" onclick="copyText('prompt_pack_json')">Copy JSON Prompt Pack</button>
+  </div>
+
+  <div class="note success">重點提醒：CoT prompt 的 faithful raw 版本會把 <code>Target Outline</code> 一起傳入；outline generation 的 released formatter 只餵 <code>title + ref_meta</code>，而不是 paper narrative 中較抽象的 full metadata。</div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Outline generation · confirmed system prompt</h3>
+      <div class="meta">來源：utils/data_to_trainformat/formet_to_train_data.py</div>
+      <textarea id="outline_system" readonly>You are a scientific writing assistant. Produce a structured outline based on the article metadata and references provided.</textarea>
+      <div class="row"><button data-target="outline_system" onclick="copyText('outline_system')">Copy</button></div>
+    </div>
+
+    <div class="card">
+      <h3>Outline generation · confirmed user prompt template</h3>
+      <div class="meta">placeholder 保留：{title}, {references_json}</div>
+      <textarea id="outline_user" readonly>Write an outline for a literature review based on the given title and references.
+If I set Output_references to False, do not generate the contents of the ref list for me
+Format: {{&quot;level&quot;: 1, &quot;numbering&quot;: &quot;1&quot;, &quot;title&quot;: &quot;Introduction&quot;, &quot;ref&quot;: [&quot;key1&quot;,&quot;key2&quot;...]}}
+Output_references: True
+Title:
+{title}
+References:
+{references_json}</textarea>
+      <div class="row"><button data-target="outline_user" onclick="copyText('outline_user')">Copy</button></div>
+    </div>
+
+    <div class="card">
+      <h3>Repo auxiliary · discipline-aware system prompt</h3>
+      <div class="meta">來源：utils/add_cot/add_cot.py；有價值，但不是 released formatter 的主路徑</div>
+      <textarea id="discipline_system" readonly>You are a scientific writing assistant. Produce a structured outline based on the article metadata and references provided.You need to pay attention to the differences in review structure between different disciplines. For example, medical reviews should follow the IMRaD structure, while computer science reviews should be written in a taxonomic structure or in the order of theoretical development.</textarea>
+      <div class="row"><button data-target="discipline_system" onclick="copyText('discipline_system')">Copy</button></div>
+    </div>
+
+    <div class="card">
+      <h3>CoT generation · DeepSeek-R1 system prompt</h3>
+      <div class="meta">來源：utils/add_cot/add_cot.py</div>
+      <textarea id="cot_system" readonly>You are an expert in review writing. You need to show your complete reasoning when you write an outline.</textarea>
+      <div class="row"><button data-target="cot_system" onclick="copyText('cot_system')">Copy</button></div>
+    </div>
+
+    <div class="card">
+      <h3>CoT generation · DeepSeek-R1 user prompt template</h3>
+      <div class="meta">placeholder 保留：{title}, {reference}, {outline}</div>
+      <textarea id="cot_user" readonly>Based on the given review outline and references, describe the reasoning process for deriving the outline from the references.
+This reasoning process should consist of only two steps.
+1. Cluster the references into categories based on corresponding themes. These categories should be similar to the subheadings that appear in the actual outline. When describing the references, use  text rather than numbers.
+2. Describe the process for generating the complete outline from these themes.
+Title:{title}
+References:{reference}
+Target Outline:{outline}
+The &quot;ref&quot; field in the &quot;outline&quot; field is the actual reference. The references you mention should be as consistent as possible with it, rather than using other references in the &quot;reference&quot; field.</textarea>
+      <div class="row"><button data-target="cot_user" onclick="copyText('cot_user')">Copy</button></div>
+    </div>
+
+    <div class="card">
+      <h3>SFT assistant packing</h3>
+      <div class="meta">來源：utils/data_to_trainformat/formet_to_train_data.py</div>
+      <textarea id="sft_packing" readonly>&lt;think&gt;{cot}&lt;/think&gt;{outline}</textarea>
+      <div class="row"><button data-target="sft_packing" onclick="copyText('sft_packing')">Copy</button></div>
+    </div>
+
+    <div class="card">
+      <h3>Observed CoT output skeleton</h3>
+      <div class="meta">從 dataset sample 歸納出的表面輸出形狀，方便你仿造格式</div>
+      <textarea id="cot_shape" readonly>### Step 1: Clustering References into Thematic Categories
+[Theme cluster A]
+- Papers grouped by shared subtheme
+- Reference mentions are written as text / citation keys, not just numeric IDs
+
+[Theme cluster B]
+- Another cluster aligned with a future subsection in the target outline
+
+### Step 2: Generating the Outline from Themes
+1. Introduction / background framing
+2. Major section from theme cluster A
+   2.1 Subsection from subcluster A1
+   2.2 Subsection from subcluster A2
+3. Major section from theme cluster B
+4. Conclusion / future directions
+
+[Optional closing block seen in samples]
+Key Logic:
+- Hierarchical flow
+- Thematic alignment
+- Exclusion of redundancy
+</textarea>
+      <div class="row"><button data-target="cot_shape" onclick="copyText('cot_shape')">Copy</button></div>
+    </div>
+
+    <div class="card">
+      <h3>Machine-readable JSON prompt pack</h3>
+      <div class="meta">適合直接餵給自己的 pipeline / vault / agent config</div>
+      <textarea id="prompt_pack_json" readonly style="min-height:420px;">{
+  &quot;report_subject&quot;: &quot;MEOW prompt extraction and pipeline reconstruction&quot;,
+  &quot;sources&quot;: {
+    &quot;paper&quot;: &quot;https://arxiv.org/pdf/2509.19370&quot;,
+    &quot;repo&quot;: &quot;https://github.com/zhaoyMa/Meow-Data-curation&quot;,
+    &quot;dataset&quot;: &quot;https://huggingface.co/datasets/haajimi/Meow&quot;
+  },
+  &quot;outline_extraction&quot;: {
+    &quot;type&quot;: &quot;deterministic_source_parsing_not_llm_prompt&quot;,
+    &quot;repo_file&quot;: &quot;utils/data_exact/exact.py&quot;,
+    &quot;note&quot;: &quot;The released repo does not expose a dedicated LLM prompt for extracting an outline from a paper. It extracts the outline from TeX/BibTeX source.&quot;
+  },
+  &quot;outline_generation_confirmed&quot;: {
+    &quot;repo_file&quot;: &quot;utils/data_to_trainformat/formet_to_train_data.py&quot;,
+    &quot;system_prompt&quot;: &quot;You are a scientific writing assistant. Produce a structured outline based on the article metadata and references provided.&quot;,
+    &quot;user_prompt_template&quot;: &quot;Write an outline for a literature review based on the given title and references.\nIf I set Output_references to False, do not generate the contents of the ref list for me\nFormat: {{\&quot;level\&quot;: 1, \&quot;numbering\&quot;: \&quot;1\&quot;, \&quot;title\&quot;: \&quot;Introduction\&quot;, \&quot;ref\&quot;: [\&quot;key1\&quot;,\&quot;key2\&quot;...]}}\nOutput_references: True\nTitle:\n{title}\nReferences:\n{references_json}&quot;,
+    &quot;notes&quot;: [
+      &quot;Output_references is hardcoded to True in the released formatter.&quot;,
+      &quot;The formatter injects item[&#x27;ref_meta&#x27;] directly, so the released prompt uses Python repr-style reference objects rather than strict JSON.&quot;,
+      &quot;The assistant target is str(item[&#x27;outline&#x27;]), i.e., Python repr rather than strict JSON.&quot;
+    ]
+  },
+  &quot;outline_generation_repo_auxiliary&quot;: {
+    &quot;repo_file&quot;: &quot;utils/add_cot/add_cot.py&quot;,
+    &quot;system_prompt&quot;: &quot;You are a scientific writing assistant. Produce a structured outline based on the article metadata and references provided.You need to pay attention to the differences in review structure between different disciplines. For example, medical reviews should follow the IMRaD structure, while computer science reviews should be written in a taxonomic structure or in the order of theoretical development.&quot;,
+    &quot;usage_status&quot;: &quot;present_in_repo_but_not_clearly_wired_into_formet_to_train_data_py&quot;
+  },
+  &quot;cot_generation_confirmed&quot;: {
+    &quot;repo_file&quot;: &quot;utils/add_cot/add_cot.py&quot;,
+    &quot;model&quot;: &quot;DeepSeek-R1 wrapper via call_deepseek_R1&quot;,
+    &quot;system_prompt&quot;: &quot;You are an expert in review writing. You need to show your complete reasoning when you write an outline.&quot;,
+    &quot;user_prompt_template&quot;: &quot;Based on the given review outline and references, describe the reasoning process for deriving the outline from the references.\nThis reasoning process should consist of only two steps.\n1. Cluster the references into categories based on corresponding themes. These categories should be similar to the subheadings that appear in the actual outline. When describing the references, use  text rather than numbers.\n2. Describe the process for generating the complete outline from these themes.\nTitle:{title}\nReferences:{reference}\nTarget Outline:{outline}\nThe \&quot;ref\&quot; field in the \&quot;outline\&quot; field is the actual reference. The references you mention should be as consistent as possible with it, rather than using other references in the \&quot;reference\&quot; field.&quot;,
+    &quot;notes&quot;: [
+      &quot;The released CoT generation prompt conditions on title + references + target outline.&quot;,
+      &quot;The script stores the returned answer content into item[&#x27;cot&#x27;]; it does not persist hidden reasoning_content.&quot;
+    ]
+  },
+  &quot;sft_packing&quot;: {
+    &quot;repo_file&quot;: &quot;utils/data_to_trainformat/formet_to_train_data.py&quot;,
+    &quot;assistant_template&quot;: &quot;&lt;think&gt;{cot}&lt;/think&gt;{outline}&quot;,
+    &quot;assistant_tail_example&quot;: &quot;&lt;/think&gt;[{&#x27;level&#x27;: 1, &#x27;numbering&#x27;: &#x27;1&#x27;, &#x27;title&#x27;: &#x27;Introduction&#x27;, &#x27;ref&#x27;: []}, ...]&quot;,
+    &quot;note&quot;: &quot;In the released formatter, the closing &lt;/think&gt; tag is immediately followed by str(item[&#x27;outline&#x27;]) without a newline.&quot;
+  },
+  &quot;observed_cot_output_shape&quot;: &quot;### Step 1: Clustering References into Thematic Categories\n[Theme cluster A]\n- Papers grouped by shared subtheme\n- Reference mentions are written as text / citation keys, not just numeric IDs\n\n[Theme cluster B]\n- Another cluster aligned with a future subsection in the target outline\n\n### Step 2: Generating the Outline from Themes\n1. Introduction / background framing\n2. Major section from theme cluster A\n   2.1 Subsection from subcluster A1\n   2.2 Subsection from subcluster A2\n3. Major section from theme cluster B\n4. Conclusion / future directions\n\n[Optional closing block seen in samples]\nKey Logic:\n- Hierarchical flow\n- Thematic alignment\n- Exclusion of redundancy\n&quot;,
+  &quot;important_discrepancies&quot;: [
+    &quot;Paper says metadata-driven and discusses titles + abstracts; released formatter uses only title + references.&quot;,
+    &quot;Paper describes deriving taxonomy from references; released CoT prompt also includes the gold target outline.&quot;,
+    &quot;Released assistant targets are Python repr strings, not strict JSON.&quot;,
+    &quot;exact.py computes has_conclusion and then sets has_conclusion = True, weakening that filter in the released script.&quot;
+  ]
+}</textarea>
+      <div class="row"><button data-target="prompt_pack_json" onclick="copyText('prompt_pack_json')">Copy</button></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
