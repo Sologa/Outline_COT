@@ -1,0 +1,22 @@
+Write a MEOW-style chain-of-thought distillation for the following literature review.
+
+Paper ID: {paper_id}
+Review Title: {title}
+
+Reference Metadata:
+{reference}
+
+Target Outline:
+{outline}
+
+Instructions:
+1. Use the real target outline as the structure you must explain, not as something to rewrite.
+2. In Step 1, cluster the references into thematic groups that correspond as closely as possible to the actual top-level sections and important subsections in the target outline.
+3. In Step 2, explain how those themes produce the final outline hierarchy, section ordering, and section granularity.
+4. Keep the COT aligned with `outline.ref`: when you mention references, prioritize bib keys that actually appear in the relevant outline span.
+5. If a section in the target outline has no citations, keep it as a framing or transition section rather than inventing supporting references.
+6. If some reference metadata is incomplete, do not guess missing facts; use only what is present.
+7. Output Markdown only, with these headings exactly:
+   - `### Step 1: Clustering References into Thematic Categories`
+   - `### Step 2: Generating the Outline from Themes`
+8. You may end with a short `Key Logic` block, but do not add any other top-level section.

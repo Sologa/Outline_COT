@@ -1,0 +1,1272 @@
+artifact_type: reference_grounded_outline_induction_ir
+artifact_alias: section_aligned_taxonomy_ledger
+source_mode: reference_only
+paper_id: '2405.15604'
+title: 'Text Generation: A Systematic Literature Review of Tasks, Evaluation, and Challenges'
+inputs:
+  title: true
+  reference_metadata: true
+  gold_outline: false
+nodes:
+- node_id: n_foundations_and_context
+  level: 1
+  title_candidate: General Foundations and Language Model Context
+  node_role: background_theme
+  parent: null
+  refs_complete:
+  - premack2004language
+  - dennett2013role
+  - McKeown82
+  - BengioDV00
+  - GeminiTeamABW23
+  - winograd1972automatic
+  - BrownMRS20b
+  - RamosMR23
+  - TayDBM20
+  - LinWLQ21
+  - ZhaoZLT23a
+  - KitchenhamC07
+  - Okoli15
+  - VaswaniSPU17a
+  - ValenzuelaEscarcegaHE15
+  - AbdallaWRN23
+  - WahleRAG23
+  - Mcdonald80
+  - Katz80
+  - ZellersHRB20
+  - GoldbergDK94
+  - REITERML95
+  - JurafskyM24
+  - DolanB05a
+  - VilaBMR15a
+  - WahleGR23a
+  - GehrmannSR19a
+  - AdelaniMFN20
+  - DevlinCLT19a
+  - CostaODL18
+  - NiM18
+  - RadfordWCL
+  - LiuYZX23a
+  - ZhangSGC20a
+  - MccowanCKA05
+  - HuangZG20
+  - WangMWG23
+  - JinxinJYX23a
+  - KumarRL19
+  - BeltagyPC20b
+  - KovatchevMS18a
+  - Grusky23a
+  - BeckerWRG23
+  - GargPMS21
+  - LanQHX17b
+  - ChenTWG19a
+  - ZhangDLY21a
+  - WilliamsNB18a
+  - TanMLL23
+  - ZhuangYWS23
+  - ZhouNGD21
+  - NishidaNSA20
+  - RajpurkarZLL16b
+  - RajpurkarJL18
+  - DuSC17
+  - YuanWGS17
+  - UtoTS23
+  - FanJPG19a
+  - MaSLL18a
+  - Sonntag04
+  - DengTLX21
+  - ChungKA23
+  - XuLWS17
+  - JelinekMBB05
+  - LiGBG16
+  - YangDYC20
+  - HuangLPH18
+  - BabakovDLP22a
+  - KusnerSKW15
+  - MikolovCCD13b
+  - ZellersHBF19a
+  - CobbeKBC21
+  - ChenJX20
+  - StolfoJSS23
+  - PrabhumoyeHZB21
+  - GoyalD20a
+  - FagniFGM21
+  - MunirBSS21
+  - JawaharAL20
+  - RodriguezHGS22
+  - ZhongTXW20
+  - MoscaARG22
+  - GaoLSQ18
+  - JinJZS20
+  - TenneyWBB20a
+  - AczelW23
+  - WahleRMM23
+  - CarliniTWJ21
+  - KaplanMHB20a
+  - LiuOPS23
+  inclusion_rule: Assign broad references on transformer-based language modeling, foundation models, and survey context for text generation.
+  ordering_reason: General model context is first because the review spans many text-generation tasks built on shared modeling assumptions.
+- node_id: n_tasks_and_use_cases
+  level: 1
+  title_candidate: Task Formulations and Application Types
+  node_role: application_theme
+  parent: null
+  refs_complete:
+  - Harris54
+  - LeiZSL22
+  - KocmiABB23
+  - LiangTLZ23
+  - LiTZW21
+  - KeneshlooSRR19
+  - YuZLH22
+  - JiLFY23
+  - FatimaIKD22
+  - GoyalKS23
+  - LiTZN22a
+  - XiaoWGL23
+  - LiHFL23
+  - RadevHM02
+  - LewisLGG20a
+  - GuanMFL21
+  - Kawamae23
+  - FanLD18
+  - Peng22
+  - AlabdulkarimLP21
+  - ZhangWLG20a
+  - LiZ23
+  - BaoHWW20
+  - KannEKD22
+  - Skantze21
+  - BrazinskasLT20
+  - TaunkSPS23
+  - MoratanchC17
+  - ZhangZSL20a
+  - PaulusXS17
+  - XiaoC19a
+  - WangYTZ18
+  - ZhangCXW19
+  - MunotS14
+  - GambhirG17
+  - MaynezNBM20
+  - LiuL19a
+  - NarayanCL18a
+  - NallapatiZdG16a
+  - MaZGW23
+  - FabbriLSL19a
+  - FengFQQ21
+  - ZhuXZH20
+  - PagnoniBT21
+  - ShiFGZ22
+  - CurreyMD20
+  - ArtetxeGBF23
+  - VilarFCL23
+  - ZhangZ20a
+  - KhandelwalFJZ21
+  - ZhangHB23
+  - CallisonBurchFKM08
+  - KoehnK17
+  - MarufSH22
+  - WangLJZ23
+  - NISTMultimodalInformationGroup10
+  - NISTMultimodalInformationGroup13
+  - ZhengMH18
+  - EgonmwanC19a
+  - BothaFAB18
+  - GhoshCLM17
+  - SeoJJH23
+  - YangK21
+  - DurmusHD20
+  - ZhangKWW20a
+  - AlihosseiniMB19
+  - JagfeldJV18
+  - Doddington02
+  - ZhuLZG18
+  - VaibhavSSN19
+  - Popovic17
+  - LinZSZ20a
+  - HeZWK23a
+  - SellamDP20
+  - YuanNL21c
+  - ZhaoPLG19
+  - ZhengSVF23a
+  - DhamalaSKK21
+  - JinG22
+  - ShenLC22
+  - GuFMW22
+  - FleisigAAB23
+  - AbhishekSSS22
+  - FabbriWLX22
+  - HanKT23
+  - TourilleSP22
+  - YuanCRI22
+  - WangWAY20
+  - XuWWF18
+  - MagerANS20
+  inclusion_rule: Assign references on summarization, translation, dialogue, data-to-text, table-to-text, AMR-to-text, QA generation, and other text-generation tasks.
+  ordering_reason: Task formulations follow the general context because the review title explicitly foregrounds the space of text-generation tasks.
+- node_id: n_techniques_and_control
+  level: 1
+  title_candidate: Planning, Control, and Generation Techniques
+  node_role: method_theme
+  parent: null
+  refs_complete:
+  - OuyangWJA22
+  - ReiterD97
+  - CaiWZY20
+  - LiuSLS21
+  - YangLLY23
+  - YangTPK22
+  - WiherMC22
+  - LuWWJ22
+  - BandelASS22a
+  - KumarAVT20a
+  - YangBXZ22
+  - WeiWSB23
+  - LiL21a
+  - YinSCG23
+  - MadaanPPS21
+  - JiangXNX24
+  - GreshakeAME23
+  - GehmanGSC20a
+  - ShahamHAS24
+  inclusion_rule: Assign references on controlled generation, prompting, decoding, planning, retrieval, and other techniques for steering generated text.
+  ordering_reason: Technique-focused work is ordered after tasks because it explains how text-generation systems are made controllable or faithful across those tasks.
+- node_id: n_evaluation_metrics
+  level: 1
+  title_candidate: Evaluation Metrics and Human Judgment
+  node_role: evaluation_theme
+  parent: null
+  refs_complete:
+  - AchiamAAA24
+  - TouvronLIM23
+  - UchenduMLZ21
+  - DouFKS22a
+  - ClarkASH21
+  - LuDXZ23
+  - HLeeSAP20
+  - MullaG23
+  - FabbriKMX21a
+  - LiuWNC20
+  - MaynezAG23a
+  - LiuXTL19
+  - ShenLJS22a
+  - WangHF17a
+  - HuangZJS20
+  - RogersGA23
+  - GaoBCL19
+  - PapineniRWZ02
+  - QaderJPL18
+  - Lin04a
+  - GattK18
+  - BanerjeeL05
+  - AndersonFJG16
+  - NgA15
+  - VedantamZP15a
+  - ClarkCS19
+  - ZhaoWYO18
+  - GoodrichRLS19
+  - WahleRMG21b
+  - SchusterSSB20a
+  - LuMXQ22
+  - MitchellWZB19
+  inclusion_rule: Assign references on BLEU, ROUGE, BERTScore, human judgment, Turing-style evaluation, or other frameworks for assessing generated text.
+  ordering_reason: Evaluation is placed late because it compares outputs across the broad set of text-generation tasks and methods.
+- node_id: n_risks_and_safety
+  level: 1
+  title_candidate: Risks, Misuse, and Safety Constraints
+  node_role: risk_theme
+  parent: null
+  refs_complete:
+  - WahleRFM22b
+  - SunGTH19
+  - VilaMR14a
+  - ShengCNP19
+  - GiraZL22a
+  - SchickUS21
+  - FalkeRUD19
+  - CottonCS24
+  - WahleRKG22b
+  - SinghIGC24
+  - LiGFX23
+  - YueILK23
+  - SongS19
+  inclusion_rule: Assign references on bias, hallucination, privacy, plagiarism, jailbreaking, provenance, and other safety or misuse concerns for text generation.
+  ordering_reason: The structure closes with risks because the review title explicitly names challenges alongside tasks and evaluation.
+ref_assignment_ledger:
+- ref_key: OuyangWJA22
+  assigned_to:
+  - n_techniques_and_control
+  assignment_reason: Matched theme cues (instruction, prompt) in the supplied title/abstract metadata, so the reference fits 'Planning, Control, and Generation Techniques'.
+- ref_key: AchiamAAA24
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (benchmark) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: TouvronLIM23
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (benchmark) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: premack2004language
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: dennett2013role
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: UchenduMLZ21
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (benchmark, turing) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: DouFKS22a
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (human text) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: WahleRFM22b
+  assigned_to:
+  - n_risks_and_safety
+  assignment_reason: Matched theme cues (plagiarism) in the supplied title/abstract metadata, so the reference fits 'Risks, Misuse, and Safety Constraints'.
+- ref_key: Harris54
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (story) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: McKeown82
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: BengioDV00
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: GeminiTeamABW23
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: winograd1972automatic
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: BrownMRS20b
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: LeiZSL22
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (dialogue) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: KocmiABB23
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: LiangTLZ23
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (open ended, text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: RamosMR23
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: TayDBM20
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: LinWLQ21
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: LiTZW21
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: KeneshlooSRR19
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization, translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: YuZLH22
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization, text generation, translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: JiLFY23
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (data to text, dialogue, summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: SunGTH19
+  assigned_to:
+  - n_risks_and_safety
+  assignment_reason: Matched theme cues (bias) in the supplied title/abstract metadata, so the reference fits 'Risks, Misuse, and Safety Constraints'.
+- ref_key: ClarkASH21
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (evaluation) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: ZhaoZLT23a
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: FatimaIKD22
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: GoyalKS23
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (dialogue, story, summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: LiTZN22a
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: KitchenhamC07
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: Okoli15
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: VaswaniSPU17a
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: ValenzuelaEscarcegaHE15
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: AbdallaWRN23
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: WahleRAG23
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: Mcdonald80
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: Katz80
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: ReiterD97
+  assigned_to:
+  - n_techniques_and_control
+  assignment_reason: Matched theme cues (planning) in the supplied title/abstract metadata, so the reference fits 'Planning, Control, and Generation Techniques'.
+- ref_key: ZellersHRB20
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: GoldbergDK94
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: REITERML95
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: JurafskyM24
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: XiaoWGL23
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: LiHFL23
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (open ended, text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: RadevHM02
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (dialogue, summarization, translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: LewisLGG20a
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: DolanB05a
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: VilaBMR15a
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: WahleGR23a
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: CaiWZY20
+  assigned_to:
+  - n_techniques_and_control
+  assignment_reason: Matched theme cues (retrieval) in the supplied title/abstract metadata, so the reference fits 'Planning, Control, and Generation Techniques'.
+- ref_key: GehrmannSR19a
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: AdelaniMFN20
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: DevlinCLT19a
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: GuanMFL21
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: Kawamae23
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: LiuSLS21
+  assigned_to:
+  - n_techniques_and_control
+  assignment_reason: Matched theme cues (controlled, decoding) in the supplied title/abstract metadata, so the reference fits 'Planning, Control, and Generation Techniques'.
+- ref_key: YangLLY23
+  assigned_to:
+  - n_techniques_and_control
+  assignment_reason: Matched theme cues (controlled, prompt) in the supplied title/abstract metadata, so the reference fits 'Planning, Control, and Generation Techniques'.
+- ref_key: CostaODL18
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: NiM18
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: LuDXZ23
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (evaluation) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: HLeeSAP20
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (evaluation) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: RadfordWCL
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: MullaG23
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (evaluation) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: LiuYZX23a
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: FanLD18
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (story) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: Peng22
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (open ended, story, summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: YangTPK22
+  assigned_to:
+  - n_techniques_and_control
+  assignment_reason: Matched theme cues (prompt) in the supplied title/abstract metadata, so the reference fits 'Planning, Control, and Generation Techniques'.
+- ref_key: AlabdulkarimLP21
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (story) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: WiherMC22
+  assigned_to:
+  - n_techniques_and_control
+  assignment_reason: Matched theme cues (decoding) in the supplied title/abstract metadata, so the reference fits 'Planning, Control, and Generation Techniques'.
+- ref_key: LuWWJ22
+  assigned_to:
+  - n_techniques_and_control
+  assignment_reason: Matched theme cues (constrained, decoding) in the supplied title/abstract metadata, so the reference fits 'Planning, Control, and Generation Techniques'.
+- ref_key: ZhangWLG20a
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: LiZ23
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (dialogue) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: BaoHWW20
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (dialogue) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: ZhangSGC20a
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: MccowanCKA05
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: HuangZG20
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: KannEKD22
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (dialogue) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: Skantze21
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (dialogue) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: WangMWG23
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: JinxinJYX23a
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: FabbriKMX21a
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (benchmark, evaluation) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: BrazinskasLT20
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: TaunkSPS23
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization, text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: MoratanchC17
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: ZhangZSL20a
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: PaulusXS17
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: LiuWNC20
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (evaluation) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: XiaoC19a
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: WangYTZ18
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: ZhangCXW19
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: MunotS14
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: GambhirG17
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: MaynezNBM20
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: LiuL19a
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: KumarRL19
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: NarayanCL18a
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: NallapatiZdG16a
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: BeltagyPC20b
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: MaZGW23
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: MaynezAG23a
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (benchmark) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: LiuXTL19
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (evaluation, rouge) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: FabbriLSL19a
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: FengFQQ21
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (dialogue, summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: ZhuXZH20
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: PagnoniBT21
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: ShiFGZ22
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: CurreyMD20
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: ArtetxeGBF23
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: VilarFCL23
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: ZhangZ20a
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: KhandelwalFJZ21
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: ZhangHB23
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: CallisonBurchFKM08
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: KoehnK17
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: MarufSH22
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: WangLJZ23
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: NISTMultimodalInformationGroup10
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: NISTMultimodalInformationGroup13
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: KovatchevMS18a
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: Grusky23a
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: ShenLJS22a
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (evaluation) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: ZhengMH18
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation, translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: WangHF17a
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (benchmark) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: BeckerWRG23
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: EgonmwanC19a
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: GargPMS21
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: LanQHX17b
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: BandelASS22a
+  assigned_to:
+  - n_techniques_and_control
+  assignment_reason: Matched theme cues (controlled) in the supplied title/abstract metadata, so the reference fits 'Planning, Control, and Generation Techniques'.
+- ref_key: ChenTWG19a
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: KumarAVT20a
+  assigned_to:
+  - n_techniques_and_control
+  assignment_reason: Matched theme cues (controlled) in the supplied title/abstract metadata, so the reference fits 'Planning, Control, and Generation Techniques'.
+- ref_key: VilaMR14a
+  assigned_to:
+  - n_risks_and_safety
+  assignment_reason: Matched theme cues (plagiarism) in the supplied title/abstract metadata, so the reference fits 'Risks, Misuse, and Safety Constraints'.
+- ref_key: YangBXZ22
+  assigned_to:
+  - n_techniques_and_control
+  assignment_reason: Matched theme cues (controlled) in the supplied title/abstract metadata, so the reference fits 'Planning, Control, and Generation Techniques'.
+- ref_key: ZhangDLY21a
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: BothaFAB18
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (story) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: WilliamsNB18a
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: GhoshCLM17
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: HuangZJS20
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (evaluation) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: SeoJJH23
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (data to text, text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: YangK21
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: DurmusHD20
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: WeiWSB23
+  assigned_to:
+  - n_techniques_and_control
+  assignment_reason: Matched theme cues (prompt) in the supplied title/abstract metadata, so the reference fits 'Planning, Control, and Generation Techniques'.
+- ref_key: TanMLL23
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: ZhuangYWS23
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: ZhouNGD21
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: NishidaNSA20
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: RogersGA23
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (benchmark) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: RajpurkarZLL16b
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: RajpurkarJL18
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: DuSC17
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: YuanWGS17
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: GaoBCL19
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (bleu, evaluation) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: UtoTS23
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: FanJPG19a
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: PapineniRWZ02
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (bleu, evaluation) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: ZhangKWW20a
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: MaSLL18a
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: QaderJPL18
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (evaluation) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: Sonntag04
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: DengTLX21
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: ChungKA23
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: AlihosseiniMB19
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: Lin04a
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (evaluation, rouge) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: XuLWS17
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: JagfeldJV18
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (data to text) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: GattK18
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (evaluation) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: BanerjeeL05
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (evaluation) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: AndersonFJG16
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (evaluation) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: JelinekMBB05
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: Doddington02
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: ZhuLZG18
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: VaibhavSSN19
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: NgA15
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (evaluation, rouge) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: VedantamZP15a
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (benchmark, evaluation) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: LiL21a
+  assigned_to:
+  - n_techniques_and_control
+  assignment_reason: Matched theme cues (prompt) in the supplied title/abstract metadata, so the reference fits 'Planning, Control, and Generation Techniques'.
+- ref_key: Popovic17
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: LiGBG16
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: YangDYC20
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: HuangLPH18
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: LinZSZ20a
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: BabakovDLP22a
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: HeZWK23a
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: SellamDP20
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: YuanNL21c
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization, text generation, translation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: ZhaoPLG19
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: KusnerSKW15
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: ClarkCS19
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (evaluation) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: MikolovCCD13b
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: ShengCNP19
+  assigned_to:
+  - n_risks_and_safety
+  assignment_reason: Matched theme cues (bias) in the supplied title/abstract metadata, so the reference fits 'Risks, Misuse, and Safety Constraints'.
+- ref_key: ZhengSVF23a
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: DhamalaSKK21
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (open ended, story, text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: JinG22
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (amr to text, text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: ShenLC22
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: ZhaoWYO18
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (evaluation) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: GuFMW22
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: GiraZL22a
+  assigned_to:
+  - n_risks_and_safety
+  assignment_reason: Matched theme cues (bias) in the supplied title/abstract metadata, so the reference fits 'Risks, Misuse, and Safety Constraints'.
+- ref_key: SchickUS21
+  assigned_to:
+  - n_risks_and_safety
+  assignment_reason: Matched theme cues (bias) in the supplied title/abstract metadata, so the reference fits 'Risks, Misuse, and Safety Constraints'.
+- ref_key: FleisigAAB23
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: ZellersHBF19a
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: CobbeKBC21
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: YinSCG23
+  assigned_to:
+  - n_techniques_and_control
+  assignment_reason: Matched theme cues (constrained) in the supplied title/abstract metadata, so the reference fits 'Planning, Control, and Generation Techniques'.
+- ref_key: ChenJX20
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: StolfoJSS23
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: PrabhumoyeHZB21
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: GoodrichRLS19
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (bleu, evaluation, rouge) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: AbhishekSSS22
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: GoyalD20a
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: FalkeRUD19
+  assigned_to:
+  - n_risks_and_safety
+  assignment_reason: Matched theme cues (bias) in the supplied title/abstract metadata, so the reference fits 'Risks, Misuse, and Safety Constraints'.
+- ref_key: FabbriWLX22
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: MadaanPPS21
+  assigned_to:
+  - n_techniques_and_control
+  assignment_reason: Matched theme cues (controlled) in the supplied title/abstract metadata, so the reference fits 'Planning, Control, and Generation Techniques'.
+- ref_key: CottonCS24
+  assigned_to:
+  - n_risks_and_safety
+  assignment_reason: Matched theme cues (plagiarism) in the supplied title/abstract metadata, so the reference fits 'Risks, Misuse, and Safety Constraints'.
+- ref_key: HanKT23
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: TourilleSP22
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: WahleRKG22b
+  assigned_to:
+  - n_risks_and_safety
+  assignment_reason: Matched theme cues (plagiarism) in the supplied title/abstract metadata, so the reference fits 'Risks, Misuse, and Safety Constraints'.
+- ref_key: WahleRMG21b
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (benchmark) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: FagniFGM21
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: MunirBSS21
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: SchusterSSB20a
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (benchmark, evaluation, turing) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: JawaharAL20
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: RodriguezHGS22
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: ZhongTXW20
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: JiangXNX24
+  assigned_to:
+  - n_techniques_and_control
+  assignment_reason: Matched theme cues (prompt) in the supplied title/abstract metadata, so the reference fits 'Planning, Control, and Generation Techniques'.
+- ref_key: MoscaARG22
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: GaoLSQ18
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: JinJZS20
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: GreshakeAME23
+  assigned_to:
+  - n_techniques_and_control
+  assignment_reason: Matched theme cues (instruction, prompt) in the supplied title/abstract metadata, so the reference fits 'Planning, Control, and Generation Techniques'.
+- ref_key: GehmanGSC20a
+  assigned_to:
+  - n_techniques_and_control
+  assignment_reason: Matched theme cues (prompt) in the supplied title/abstract metadata, so the reference fits 'Planning, Control, and Generation Techniques'.
+- ref_key: ShahamHAS24
+  assigned_to:
+  - n_techniques_and_control
+  assignment_reason: Matched theme cues (instruction) in the supplied title/abstract metadata, so the reference fits 'Planning, Control, and Generation Techniques'.
+- ref_key: LuMXQ22
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (benchmark) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: SinghIGC24
+  assigned_to:
+  - n_risks_and_safety
+  assignment_reason: Matched theme cues (audit) in the supplied title/abstract metadata, so the reference fits 'Risks, Misuse, and Safety Constraints'.
+- ref_key: TenneyWBB20a
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: MitchellWZB19
+  assigned_to:
+  - n_evaluation_metrics
+  assignment_reason: Matched theme cues (benchmark, evaluation) in the supplied title/abstract metadata, so the reference fits 'Evaluation Metrics and Human Judgment'.
+- ref_key: AczelW23
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: WahleRMM23
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: YuanCRI22
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (open ended, story) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: CarliniTWJ21
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: LiGFX23
+  assigned_to:
+  - n_risks_and_safety
+  assignment_reason: Matched theme cues (jailbreak, privacy) in the supplied title/abstract metadata, so the reference fits 'Risks, Misuse, and Safety Constraints'.
+- ref_key: YueILK23
+  assigned_to:
+  - n_risks_and_safety
+  assignment_reason: Matched theme cues (differential privacy, privacy) in the supplied title/abstract metadata, so the reference fits 'Risks, Misuse, and Safety Constraints'.
+- ref_key: SongS19
+  assigned_to:
+  - n_risks_and_safety
+  assignment_reason: Matched theme cues (audit, provenance) in the supplied title/abstract metadata, so the reference fits 'Risks, Misuse, and Safety Constraints'.
+- ref_key: KaplanMHB20a
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: LiuOPS23
+  assigned_to:
+  - n_foundations_and_context
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'General Foundations and Language Model Context'.
+- ref_key: WangWAY20
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (table to text, text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: XuWWF18
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (sql to text, text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+- ref_key: MagerANS20
+  assigned_to:
+  - n_tasks_and_use_cases
+  assignment_reason: Matched theme cues (amr to text, text generation) in the supplied title/abstract metadata, so the reference fits 'Task Formulations and Application Types'.
+unassigned_refs: []

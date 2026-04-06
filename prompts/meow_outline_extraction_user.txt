@@ -1,0 +1,50 @@
+Extract the main-body outline of the following literature review paper.
+
+Goal:
+Produce a flattened hierarchical outline that is as faithful as possible to the source document, following MEOW-style outline extraction behavior.
+
+Extraction rules:
+1. Parse the paper as if it came from structured source rather than summarizing it freely.
+2. Focus on the document body only. Ignore front matter, author block, abstract-only metadata, and boilerplate outside the main paper body.
+3. If an Introduction section exists, discard any earlier top-level sections and start the final outline from Introduction.
+4. Preserve the original section hierarchy as faithfully as possible:
+   - level 1 = top-level section
+   - level 2 = subsection
+   - level 3 = subsubsection
+   - continue deeper only if the source clearly supports it
+5. Exclude non-core back matter when it is clearly present, especially:
+   - Acknowledgment / Acknowledgement
+   - Appendix / Appendices
+   - References / Bibliography
+6. For each section, collect the citation keys or reference identifiers associated with that section.
+   - Prefer citation keys exactly as they appear in the source.
+   - If a section contains nested subsections, treat the section span as continuing until the next section of the same or higher level. This means parent sections may inherit citations appearing before the next same-or-higher-level boundary.
+   - Deduplicate references while preserving first appearance order.
+7. Clean section titles conservatively:
+   - remove obvious formatting commands
+   - preserve the substantive title text
+   - do not rewrite titles into new wording
+8. Number the flattened outline hierarchically:
+   - 1, 2, 3
+   - 2.1, 2.2
+   - 2.2.1, etc.
+9. Output only the outline data. Do not add explanations.
+
+Output format:
+Return a Python-repr-style list of dictionaries in this schema:
+[{'level': 1, 'numbering': '1', 'title': 'Introduction', 'ref': ['key1', 'key2']}]
+
+Constraints:
+- Use Python-style single-quoted dict/list formatting, not JSON.
+- Every item must contain: level, numbering, title, ref.
+- `ref` must be a list, even if empty.
+- Do not fabricate references that are not grounded in the source.
+
+Paper title:
+{title}
+
+Reference metadata:
+{references}
+
+Paper source:
+{paper_source}

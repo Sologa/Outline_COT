@@ -1,0 +1,1027 @@
+artifact_type: reference_grounded_outline_induction_ir
+artifact_alias: section_aligned_taxonomy_ledger
+source_mode: reference_only
+paper_id: '2401.09244'
+title: Cross-lingual HS Survey
+inputs:
+  title: true
+  reference_metadata: true
+  gold_outline: false
+nodes:
+- node_id: n_review_protocol_and_prior_surveys
+  level: 1
+  title_candidate: Review Protocol and Prior Survey Framing
+  node_role: framing_theme
+  parent: null
+  refs_complete:
+  - alkomah2022literature
+  - chhabra2023literature
+  - demilie2022detection
+  - fortuna2018survey
+  - husain2021survey
+  - jahan2023systematic
+  - mishra2019tackling
+  - page2021prisma
+  - pamungkas2021towards
+  - pan2010survey
+  - pikuliak2021cross
+  - poletto2021resources
+  - schmidt2017survey
+  - vidgen2020directions
+  - yin2021towards
+  - al2019detection
+  - dowlagar2021survey
+  - yi2023session
+  inclusion_rule: Assign sources that scope the review process itself or summarize prior hateful/offensive-language review literature rather than contributing a primary cross-lingual detection method, dataset, or benchmark.
+  ordering_reason: This framing layer comes first because it bounds the review method and records which prior surveys shape the evidence map before the content taxonomy begins.
+- node_id: n_datasets_and_annotation
+  level: 1
+  title_candidate: Datasets, Annotation, and Resource Landscape
+  node_role: resource_theme
+  parent: null
+  refs_complete:
+  - salaam2022offensive
+  - bansal2020code
+  - jiang2022swsr
+  - jeong2022kold
+  - pitenis2020offensive
+  - charitidis2020towards
+  - ccoltekin2020corpus
+  - hande-etal-2020-kancmd
+  - ljubevsic2019frenk
+  - arata2019study
+  - ibrohim-budi-2019-multi
+  - gibert2018hate
+  - ptaszynski2018cyberbullying
+  - alakrot2018dataset
+  - bohra-etal-2018-dataset
+  - elsherief2018peer
+  - golbeck2017harassment
+  - '8004907'
+  - alfina2017hatedataset
+  - Fortuna2017AutomaticDO
+  - bretschneider2017detecting
+  - mubarak2017abusive
+  - waseem2016hate
+  - dybala2010machine
+  - kumar2018aggression
+  - unspahs2019
+  - hartvigsen2022toxigen
+  inclusion_rule: Assign references that introduce abusive-language corpora, annotation schemas, lexicons, or language-specific resource construction directly used by this review area.
+  ordering_reason: The resource landscape still precedes modeling because cross-lingual offensive-language detection is constrained by which annotated data exists per language and domain.
+- node_id: n_cross_lingual_transfer
+  level: 1
+  title_candidate: Cross-Lingual Transfer and Multilingual Modeling
+  node_role: method_theme
+  parent: null
+  refs_complete:
+  - plaza2023respectful
+  - paul2023covid
+  - awal2023model
+  - jiang2023sexwes
+  - zhou2023cross
+  - kumar2022multi
+  - elalami2022multilingual
+  - rottger2022multilingual
+  - zia2022improving
+  - mozafari2022cross
+  - eronen2022transfer
+  - deshpande2022highly
+  - arango2022resources
+  - shi2022cross
+  - rottger2022data
+  - hahn2021modeling
+  - bigoulaeva2022addressing
+  - boulouard2022detecting
+  - montariol2022multilingual
+  - ryzhova2022training
+  - phung2022exploratory
+  - muti2022checkpoint
+  - husain2022tranfer
+  - gupta2022multilingual
+  - aluru2021deep
+  - pamungkas2021joint
+  - gaikwad2021cross
+  - nozza2021exposing
+  - ranasinghe2021multilingual
+  - vashistha2021online
+  - ranasinghe2021mudes
+  - bigoulaeva2021cross
+  - ranasinghe2021evaluation
+  - pelicon2021investigating
+  - pelicon2021zero
+  - song2021study
+  - vitiugin2021efficient
+  - jiang2021cross
+  - ticta2021cross
+  - arango2021cross
+  - firmino2021using
+  - burtenshaw2021dutch
+  - ranasinghe2020multilingual
+  - pamungkas2020misogyny
+  - stappen2020cross
+  - elouali2020hate
+  - corazza2020hybrid
+  - ousidhoum2019multilingual
+  - pamungkas2019cross
+  - kapoor2019mind
+  - chiril2019multilingual
+  - ibrohim2019translated
+  - mathur2018detecting
+  - bigoulaeva2023label
+  - aluru2020deep
+  - chakravarthi2022dravidiancodemix
+  - bhattacharya2020developing
+  - sigurbergsson-derczynski-2020-offensive
+  - arango2019hate
+  - chung2019conan
+  - mathur2018offend
+  - liu2020multilingual
+  - wei2021finetuned
+  - stamou2022cleansing
+  - rivaling2021llod
+  - lee2021exploring
+  - chen2022adaprompt
+  - wang2015transfer
+  - roy2023probing
+  inclusion_rule: Assign references whose title or metadata points to multilingual abusive-language detection, zero-shot transfer, cross-lingual adaptation, or multilingual encoder-based classification.
+  ordering_reason: These papers form the main methodological core because they study how abusive-language detectors transfer across languages when direct supervision is scarce.
+- node_id: n_translation_and_alignment
+  level: 1
+  title_candidate: Translation, Alignment, and Representation Strategies
+  node_role: method_theme
+  parent: null
+  refs_complete:
+  - sarracen2022unsupervised
+  - rodriguez2021detecting
+  - pant2020towards
+  - sohn2019mc
+  - s19214654
+  - fortuna-etal-2019-hierarchically
+  - ross2017measuring
+  - peters2018deep
+  - ouyang2021ernie
+  - grave2018learning
+  - smith2017offline
+  - lample2018word
+  - lample2018unsupervised
+  - feng2022language
+  - artetxe2019massively
+  - conneau2020unsupervised
+  - ferreira2016jointly
+  inclusion_rule: Assign references that focus on machine translation, bilingual lexicon induction, multilingual embedding alignment, or sentence-representation alignment used to bridge language gaps.
+  ordering_reason: Translation and alignment are separated from the broader transfer node because they provide a distinct bridge mechanism rather than an end-to-end abusive-language detector.
+- node_id: n_evaluation_and_robustness
+  level: 1
+  title_candidate: Evaluation, Robustness, and Domain Generalization
+  node_role: evaluation_theme
+  parent: null
+  refs_complete:
+  - markov2021exploring
+  - hande2021benchmarking
+  - glavas2020xhate
+  - deng2022cold
+  - pavlopoulos-etal-2021-semeval
+  - mathew2021hatexplain
+  - Romim2020HateSD
+  - vidgen2020learning
+  - Shekhar2020AutomatingNC
+  - rizwan2020hate
+  - kennedy2020contextualizing
+  - mulki2019hsab
+  - founta2018large
+  - gao2017detecting
+  - wulczyn2017ex
+  - fersini2018ibereval
+  - fersini2018evalita
+  - strus2019germeval
+  - modha2021hasoc
+  - satapara2023hasoc
+  - kumar2020evaluating
+  - sanguinetti2020haspeede
+  - amjad2022urdu
+  - lai2023haspeede3
+  - finn2017model
+  - jin2020bert
+  - florio2020time
+  - mandl2019overview
+  - mandl2021hasoc
+  - rodriguez2022overview
+  - mubarak2020overview
+  - rodriguez2021overview
+  - wiegand2018overview
+  - plaza2023overview
+  - basile2019semeval
+  - ptaszynski2019poleval
+  - zampieri2019semeval
+  - zampieri2020semeval
+  inclusion_rule: Assign references centered on shared-task overviews, benchmark comparisons, robustness tests, cross-domain generalization, or empirical assessment of offensive-language systems.
+  ordering_reason: This node groups the evidence on how performance is compared and stress-tested once datasets and transfer methods are in place.
+- node_id: n_bias_and_open_challenges
+  level: 1
+  title_candidate: Bias, Low-Resource Constraints, and Open Challenges
+  node_role: challenge_theme
+  parent: null
+  refs_complete:
+  - garg2023handling
+  - kiritchenko2021confronting
+  - ayo2020machine
+  - das2022data
+  - hande2021offensive
+  - arango2020hate
+  - khan2021hate
+  - mubarak-etal-2021-arabic
+  - akhter2020automatic
+  - sanguinett2018hate
+  - rogers2017offensive
+  - davidson2017hatedataset
+  - van2015automatic
+  - swami2018corpus
+  inclusion_rule: Assign references that foreground low-resource settings, demographic bias, fairness, toxicity spillover, or unresolved deployment challenges in abusive-language detection.
+  ordering_reason: The taxonomy closes with limitations and unresolved risks because they synthesize where current cross-lingual evidence remains fragile.
+ref_assignment_ledger:
+- ref_key: alkomah2022literature
+  assigned_to:
+  - n_review_protocol_and_prior_surveys
+  assignment_reason: Title 'A literature review of textual hate speech detection methods and datasets' is itself a survey or review of abusive-language work, so it provides framing context instead of a primary dataset or method contribution.
+- ref_key: chhabra2023literature
+  assigned_to:
+  - n_review_protocol_and_prior_surveys
+  assignment_reason: Title 'A literature survey on multimodal and multilingual automatic hate speech identification' is itself a survey or review of abusive-language work, so it provides framing context instead of a primary dataset or method contribution.
+- ref_key: demilie2022detection
+  assigned_to:
+  - n_review_protocol_and_prior_surveys
+  assignment_reason: 'Title ''Detection of fake news and hate speech for Ethiopian languages: a systematic review of the approaches'' is itself a survey or review of abusive-language work, so it provides framing context instead of a primary dataset or method contribution.'
+- ref_key: fortuna2018survey
+  assigned_to:
+  - n_review_protocol_and_prior_surveys
+  assignment_reason: Title 'A Survey on Automatic Detection of Hate Speech in Text' is itself a survey or review of abusive-language work, so it provides framing context instead of a primary dataset or method contribution.
+- ref_key: husain2021survey
+  assigned_to:
+  - n_review_protocol_and_prior_surveys
+  assignment_reason: Title 'A survey of offensive language detection for the Arabic language' is itself a survey or review of abusive-language work, so it provides framing context instead of a primary dataset or method contribution.
+- ref_key: jahan2023systematic
+  assigned_to:
+  - n_review_protocol_and_prior_surveys
+  assignment_reason: Title 'A systematic review of Hate Speech automatic detection using Natural Language Processing' is itself a survey or review of abusive-language work, so it provides framing context instead of a primary dataset or method contribution.
+- ref_key: mishra2019tackling
+  assigned_to:
+  - n_review_protocol_and_prior_surveys
+  assignment_reason: 'Title ''Tackling online abuse: A survey of automated abuse detection methods'' is itself a survey or review of abusive-language work, so it provides framing context instead of a primary dataset or method contribution.'
+- ref_key: page2021prisma
+  assigned_to:
+  - n_review_protocol_and_prior_surveys
+  assignment_reason: 'Title ''The PRISMA 2020 statement: An updated guideline for reporting systematic reviews'' defines the systematic-review reporting protocol, so it is preserved as audit framing rather than forced into a content node.'
+- ref_key: pamungkas2021towards
+  assigned_to:
+  - n_review_protocol_and_prior_surveys
+  assignment_reason: 'Title ''Towards multidomain and multilingual abusive language detection: a survey'' is itself a survey or review of abusive-language work, so it provides framing context instead of a primary dataset or method contribution.'
+- ref_key: pan2010survey
+  assigned_to:
+  - n_review_protocol_and_prior_surveys
+  assignment_reason: Title 'A Survey on Transfer Learning' is itself a survey or review of abusive-language work, so it provides framing context instead of a primary dataset or method contribution.
+- ref_key: pikuliak2021cross
+  assigned_to:
+  - n_review_protocol_and_prior_surveys
+  assignment_reason: 'Title ''Cross-lingual learning for text processing: A survey'' is itself a survey or review of abusive-language work, so it provides framing context instead of a primary dataset or method contribution.'
+- ref_key: poletto2021resources
+  assigned_to:
+  - n_review_protocol_and_prior_surveys
+  assignment_reason: 'Title ''Resources and benchmark corpora for hate speech detection: a systematic review'' is itself a survey or review of abusive-language work, so it provides framing context instead of a primary dataset or method contribution.'
+- ref_key: schmidt2017survey
+  assigned_to:
+  - n_review_protocol_and_prior_surveys
+  assignment_reason: Title 'A survey on hate speech detection using natural language processing' is itself a survey or review of abusive-language work, so it provides framing context instead of a primary dataset or method contribution.
+- ref_key: vidgen2020directions
+  assigned_to:
+  - n_review_protocol_and_prior_surveys
+  assignment_reason: 'Title ''Directions in abusive language training data, a systematic review: Garbage in, garbage out'' is itself a survey or review of abusive-language work, so it provides framing context instead of a primary dataset or method contribution.'
+- ref_key: yin2021towards
+  assigned_to:
+  - n_review_protocol_and_prior_surveys
+  assignment_reason: 'Available metadata for ''Towards generalisable hate speech detection: a review on obstacles and solutions'' is review-level context for how this literature area is scoped, so it stays in the framing node.'
+- ref_key: al2019detection
+  assigned_to:
+  - n_review_protocol_and_prior_surveys
+  assignment_reason: 'Title ''Detection of hate speech in social networks: a survey on multilingual corpus'' is itself a survey or review of abusive-language work, so it provides framing context instead of a primary dataset or method contribution.'
+- ref_key: dowlagar2021survey
+  assigned_to:
+  - n_review_protocol_and_prior_surveys
+  assignment_reason: Title 'A survey of recent neural network models on code-mixed indian hate speech data' is itself a survey or review of abusive-language work, so it provides framing context instead of a primary dataset or method contribution.
+- ref_key: yi2023session
+  assigned_to:
+  - n_review_protocol_and_prior_surveys
+  assignment_reason: 'Title ''Session-based cyberbullying detection in social media: A survey'' is itself a survey or review of abusive-language work, so it provides framing context instead of a primary dataset or method contribution.'
+- ref_key: salaam2022offensive
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: Available metadata for 'Offensive Content Detection via Synthetic Code-Switched Text' identifies a language-specific abusive-language resource rather than a transfer method or evaluation-only paper.
+- ref_key: bansal2020code
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: 'Available metadata for ''Code-Switching Patterns Can Be an Effective Route to Improve Performance of Downstream NLP Applications: A Case Study of Humour, Sarcasm and Hate Speech Detection'' identifies a language-specific abusive-language resource rather than a transfer method or evaluation-only paper.'
+- ref_key: jiang2022swsr
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: 'Title ''SWSR: A Chinese dataset and lexicon for online sexism detection'' introduces a corpus, dataset, or resource-building effort for abusive-language analysis, which directly supports the paper''s resource landscape.'
+- ref_key: jeong2022kold
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: 'Title ''KOLD: Korean Offensive Language Dataset'' introduces a corpus, dataset, or resource-building effort for abusive-language analysis, which directly supports the paper''s resource landscape.'
+- ref_key: pitenis2020offensive
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: Available metadata for 'Offensive Language Identification in Greek' identifies a language-specific abusive-language resource rather than a transfer method or evaluation-only paper.
+- ref_key: charitidis2020towards
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: Available metadata for 'Towards countering hate speech against journalists on social media' identifies a language-specific abusive-language resource rather than a transfer method or evaluation-only paper.
+- ref_key: ccoltekin2020corpus
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: Title 'A corpus of Turkish offensive language on social media' introduces a corpus, dataset, or resource-building effort for abusive-language analysis, which directly supports the paper's resource landscape.
+- ref_key: hande-etal-2020-kancmd
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: 'Title ''KanCMD: Kannada CodeMixed Dataset for Sentiment Analysis and Offensive Language Detection'' introduces a corpus, dataset, or resource-building effort for abusive-language analysis, which directly supports the paper''s resource landscape.'
+- ref_key: ljubevsic2019frenk
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: Title 'The FRENK datasets of socially unacceptable discourse in Slovene and English' introduces a corpus, dataset, or resource-building effort for abusive-language analysis, which directly supports the paper's resource landscape.
+- ref_key: arata2019study
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: Available metadata for 'Study on change of detection accuracy over time in cyberbullying detection' identifies a language-specific abusive-language resource rather than a transfer method or evaluation-only paper.
+- ref_key: ibrohim-budi-2019-multi
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: Available metadata for 'Multi-label Hate Speech and Abusive Language Detection in Indonesian Twitter' identifies a language-specific abusive-language resource rather than a transfer method or evaluation-only paper.
+- ref_key: gibert2018hate
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: Title 'Hate Speech Dataset from a White Supremacy Forum' introduces a corpus, dataset, or resource-building effort for abusive-language analysis, which directly supports the paper's resource landscape.
+- ref_key: ptaszynski2018cyberbullying
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: Available metadata for 'Cyberbullying Detection--Technical Report 2/2018, Department of Computer Science AGH, University of Science and Technology' identifies a language-specific abusive-language resource rather than a transfer method or evaluation-only paper.
+- ref_key: alakrot2018dataset
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: Title 'Dataset construction for the detection of anti-social behaviour in online communication in Arabic' introduces a corpus, dataset, or resource-building effort for abusive-language analysis, which directly supports the paper's resource landscape.
+- ref_key: bohra-etal-2018-dataset
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: Title 'A Dataset of Hindi-English Code-Mixed Social Media Text for Hate Speech Detection' introduces a corpus, dataset, or resource-building effort for abusive-language analysis, which directly supports the paper's resource landscape.
+- ref_key: elsherief2018peer
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: 'Available metadata for ''Peer to peer hate: Hate speech instigators and their targets'' identifies a language-specific abusive-language resource rather than a transfer method or evaluation-only paper.'
+- ref_key: golbeck2017harassment
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: Title 'A Large Labeled Corpus for Online Harassment Research' introduces a corpus, dataset, or resource-building effort for abusive-language analysis, which directly supports the paper's resource landscape.
+- ref_key: '8004907'
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: Available metadata for 'Exploring linguistic features for extremist texts detection (on the material of Russian-speaking illegal texts)' identifies a language-specific abusive-language resource rather than a transfer method or evaluation-only paper.
+- ref_key: alfina2017hatedataset
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: 'Title ''Hate speech detection in the Indonesian language: A dataset and preliminary study'' introduces a corpus, dataset, or resource-building effort for abusive-language analysis, which directly supports the paper''s resource landscape.'
+- ref_key: Fortuna2017AutomaticDO
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: 'Title ''Automatic detection of hate speech in text: an overview of the topic and dataset annotation with hierarchical classes'' introduces a corpus, dataset, or resource-building effort for abusive-language analysis, which directly supports the paper''s resource landscape.'
+- ref_key: bretschneider2017detecting
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: Available metadata for 'Detecting offensive statements towards foreigners in social media' identifies a language-specific abusive-language resource rather than a transfer method or evaluation-only paper.
+- ref_key: mubarak2017abusive
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: Available metadata for 'Abusive Language Detection on Arabic Social Media' identifies a language-specific abusive-language resource rather than a transfer method or evaluation-only paper.
+- ref_key: waseem2016hate
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: Available metadata for 'Hateful Symbols or Hateful People? Predictive Features for Hate Speech Detection on Twitter' identifies a language-specific abusive-language resource rather than a transfer method or evaluation-only paper.
+- ref_key: dybala2010machine
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: Available metadata for 'Machine Learning and Affect Analysis against Cyber-Bullying' identifies a language-specific abusive-language resource rather than a transfer method or evaluation-only paper.
+- ref_key: kumar2018aggression
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: Title 'Aggression-annotated Corpus of Hindi-English Code-mixed Data' introduces a corpus, dataset, or resource-building effort for abusive-language analysis, which directly supports the paper's resource landscape.
+- ref_key: unspahs2019
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: Available metadata for 'UN Strategy and Plan of Action on Hate Speech' identifies a language-specific abusive-language resource rather than a transfer method or evaluation-only paper.
+- ref_key: hartvigsen2022toxigen
+  assigned_to:
+  - n_datasets_and_annotation
+  assignment_reason: 'Title ''ToxiGen: A Large-Scale Machine-Generated Dataset for Adversarial and Implicit Hate Speech Detection'' introduces a corpus, dataset, or resource-building effort for abusive-language analysis, which directly supports the paper''s resource landscape.'
+- ref_key: plaza2023respectful
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Respectful or Toxic? Using Zero-Shot Learning with Language Models to Detect Hate Speech' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: paul2023covid
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: 'Available metadata for ''COVID-19 and cyberbullying: deep ensemble model to identify cyberbullying from code-switched languages during the pandemic'' supports multilingual abusive-language classification across languages rather than translation tooling or evaluation scaffolding.'
+- ref_key: awal2023model
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Model-Agnostic Meta-Learning for Multilingual Hate Speech Detection' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: jiang2023sexwes
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: 'Title ''SexWEs: Domain-Aware Word Embeddings via Cross-Lingual Semantic Specialisation for Chinese Sexism Detection in Social Media'' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.'
+- ref_key: zhou2023cross
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Cross-Cultural Transfer Learning for Chinese Offensive Language Detection' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: kumar2022multi
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Multi-input integrative learning using deep neural networks and transfer learning for cyberbullying detection in real-time code-mix data' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: elalami2022multilingual
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'A multilingual offensive language detection method based on transfer learning from transformer fine-tuning model' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: rottger2022multilingual
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: 'Title ''Multilingual HateCheck: Functional Tests for Multilingual Hate Speech Detection Models'' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.'
+- ref_key: zia2022improving
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Improving Zero-Shot Cross-Lingual Hate Speech Detection with Pseudo-Label Fine-Tuning of Transformer Language Models' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: mozafari2022cross
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Cross-Lingual Few-Shot Hate Speech and Offensive Language Detection Using Meta Learning' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: eronen2022transfer
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Transfer language selection for zero-shot cross-lingual abusive language detection' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: deshpande2022highly
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Highly generalizable models for multilingual hate speech detection' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: arango2022resources
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Resources for Multilingual Hate Speech Detection' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: shi2022cross
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Cross-lingual offensive speech identification with transfer learning for low-resource languages' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: rottger2022data
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Available metadata for 'Data-Efficient Strategies for Expanding Hate Speech Detection into Under-Resourced Languages' supports multilingual abusive-language classification across languages rather than translation tooling or evaluation scaffolding.
+- ref_key: hahn2021modeling
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Available metadata for 'Modeling Profanity and Hate Speech in Social Media with Semantic Subspaces' supports multilingual abusive-language classification across languages rather than translation tooling or evaluation scaffolding.
+- ref_key: bigoulaeva2022addressing
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Addressing the Challenges of Cross-Lingual Hate Speech Detection' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: boulouard2022detecting
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Detecting Hateful and Offensive Speech in Arabic Social Media Using Transfer Learning' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: montariol2022multilingual
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: 'Title ''Multilingual Auxiliary Tasks Training: Bridging the Gap between Languages for Zero-Shot Transfer of Hate Speech Detection Models'' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.'
+- ref_key: ryzhova2022training
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Training Multilingual and Adversarial Attack-Robust Models for Hate Detection on Social Media' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: phung2022exploratory
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'An exploratory experiment on Hindi, Bengali hate-speech detection and transfer learning using neural networks' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: muti2022checkpoint
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'A Checkpoint on Multilingual Misogyny Identification' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: husain2022tranfer
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Transfer Learning Across Arabic Dialects for Offensive Language Detection' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: gupta2022multilingual
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Multilingual Abusive Comment Detection at Scale for Indic Languages' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: aluru2021deep
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'A Deep Dive into Multilingual Hate Speech Classification' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: pamungkas2021joint
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'A joint learning approach with knowledge injection for zero-shot cross-lingual hate speech detection' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: gaikwad2021cross
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: 'Title ''Cross-lingual Offensive Language Identification for Low Resource Languages: The Case of Marathi'' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.'
+- ref_key: nozza2021exposing
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Exposing the limits of Zero-shot Cross-lingual Hate Speech Detection' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: ranasinghe2021multilingual
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Multilingual Offensive Language Identification for Low-Resource Languages' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: vashistha2021online
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: 'Title ''Online Multilingual Hate Speech Detection: Experimenting with Hindi and English Social Media'' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.'
+- ref_key: ranasinghe2021mudes
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: 'Title ''MUDES: Multilingual Detection of Offensive Spans'' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.'
+- ref_key: bigoulaeva2021cross
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Cross-Lingual Transfer Learning for Hate Speech Detection' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: ranasinghe2021evaluation
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'An Evaluation of Multilingual Offensive Language Identification Methods for the Languages of India' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: pelicon2021investigating
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Investigating cross-lingual training for offensive language detection' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: pelicon2021zero
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: 'Title ''Zero-shot Cross-lingual Content Filtering: Offensive Language and Hate Speech Detection'' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.'
+- ref_key: song2021study
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'A Study of Multilingual Toxic Text Detection Approaches under Imbalanced Sample Distribution' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: vitiugin2021efficient
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Efficient Detection of Multilingual Hate Speech by Using Interactive Attention Network with Minimal Human Feedback' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: jiang2021cross
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Cross-Lingual Capsule Network for Hate Speech Detection in Social Media' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: ticta2021cross
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Cross-lingual Hate Speech Detection using Transformer Models' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: arango2021cross
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Cross-lingual hate speech detection based on multilingual domain-specific word embeddings' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: firmino2021using
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Using Cross Lingual Learning for Detecting Hate Speech in Portuguese' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: burtenshaw2021dutch
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'A Dutch Dataset for Cross-lingual Multilabel Toxicity Detection' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: ranasinghe2020multilingual
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Multilingual Offensive Language Identification with Cross-lingual Embeddings' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: pamungkas2020misogyny
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: 'Title ''Misogyny Detection in Twitter: a Multilingual and Cross-Domain Study'' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.'
+- ref_key: stappen2020cross
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Cross-lingual zero-and few-shot hate speech detection utilising frozen transformer language models and AXEL' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: elouali2020hate
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Hate Speech Detection on Multilingual Twitter Using Convolutional Neural Networks' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: corazza2020hybrid
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Hybrid Emoji-Based Masked Language Models for Zero-Shot Abusive Language Detection' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: ousidhoum2019multilingual
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Multilingual and Multi-Aspect Hate Speech Analysis' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: pamungkas2019cross
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: 'Title ''Cross-domain and Cross-lingual Abusive Language Detection: A Hybrid Approach with Deep Learning and a Multilingual Lexicon'' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.'
+- ref_key: kapoor2019mind
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: 'Available metadata for ''Mind Your Language: Abuse and Offense Detection for Code-Switched Languages'' supports multilingual abusive-language classification across languages rather than translation tooling or evaluation scaffolding.'
+- ref_key: chiril2019multilingual
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Multilingual and Multitarget Hate Speech Detection in Tweets' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: ibrohim2019translated
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Translated vs non-translated method for multilingual hate speech identification in Twitter' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: mathur2018detecting
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Available metadata for 'Detecting Offensive Tweets in Hindi-English Code-Switched Language' supports multilingual abusive-language classification across languages rather than translation tooling or evaluation scaffolding.
+- ref_key: bigoulaeva2023label
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Label modification and bootstrapping for zero-shot cross-lingual hate speech detection' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: aluru2020deep
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Deep learning models for multilingual hate speech detection' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: chakravarthi2022dravidiancodemix
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: 'Available metadata for ''Dravidiancodemix: Sentiment analysis and offensive language identification dataset for dravidian languages in code-mixed text'' supports multilingual abusive-language classification across languages rather than translation tooling or evaluation scaffolding.'
+- ref_key: bhattacharya2020developing
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Developing a multilingual annotated corpus of misogyny and aggression' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: sigurbergsson-derczynski-2020-offensive
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Available metadata for 'Offensive Language and Hate Speech Detection for Danish' supports multilingual abusive-language classification across languages rather than translation tooling or evaluation scaffolding.
+- ref_key: arango2019hate
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: 'Available metadata for ''Hate Speech Detection is Not as Easy as You May Think: A Closer Look at Model Validation'' supports multilingual abusive-language classification across languages rather than translation tooling or evaluation scaffolding.'
+- ref_key: chung2019conan
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: 'Title ''CONAN - COunter NArratives through Nichesourcing: a Multilingual Dataset of Responses to Fight Online Hate Speech'' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.'
+- ref_key: mathur2018offend
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Available metadata for 'Did you offend me? Classification of Offensive Tweets in Hinglish Language' supports multilingual abusive-language classification across languages rather than translation tooling or evaluation scaffolding.
+- ref_key: liu2020multilingual
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Multilingual Denoising Pre-training for Neural Machine Translation' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: wei2021finetuned
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Finetuned language models are zero-shot learners' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: stamou2022cleansing
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Available metadata for 'Cleansing & expanding the HURTLEX(el) with a multidimensional categorization of offensive words' supports multilingual abusive-language classification across languages rather than translation tooling or evaluation scaffolding.
+- ref_key: rivaling2021llod
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Llod-driven bilingual word embeddings rivaling cross-lingual transformers in quality of life concept detection from french online health communities' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: lee2021exploring
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Exploring the Data Efficiency of Cross-Lingual Post-Training in Pretrained Language Models' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: chen2022adaprompt
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: 'Available metadata for ''AdaPrompt: Adaptive Model Training for Prompt-based NLP'' supports multilingual abusive-language classification across languages rather than translation tooling or evaluation scaffolding.'
+- ref_key: wang2015transfer
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: Title 'Transfer learning for speech and language processing' explicitly studies multilingual or transfer-based abusive-language modeling, which is the core evidence captured by the cross-lingual transfer node.
+- ref_key: roy2023probing
+  assigned_to:
+  - n_cross_lingual_transfer
+  assignment_reason: 'Available metadata for ''Probing LLMs for hate speech detection: strengths and vulnerabilities'' supports multilingual abusive-language classification across languages rather than translation tooling or evaluation scaffolding.'
+- ref_key: sarracen2022unsupervised
+  assigned_to:
+  - n_translation_and_alignment
+  assignment_reason: Title 'Unsupervised Embeddings with Graph Auto-Encoders for Multi-domain and Multilingual Hate Speech Detection' is about bilingual or cross-lingual representation alignment, which serves as transfer infrastructure rather than a standalone abusive-language benchmark.
+- ref_key: rodriguez2021detecting
+  assigned_to:
+  - n_translation_and_alignment
+  assignment_reason: Available metadata for 'Detecting Hate Speech in Cross-Lingual and Multi-lingual Settings Using Language Agnostic Representations' describes a language-bridging representation strategy, so it is kept separate from end-to-end abusive-language detector papers.
+- ref_key: pant2020towards
+  assigned_to:
+  - n_translation_and_alignment
+  assignment_reason: Available metadata for 'Towards Code-switched Classification Exploiting Constituent Language Resources' describes a language-bridging representation strategy, so it is kept separate from end-to-end abusive-language detector papers.
+- ref_key: sohn2019mc
+  assigned_to:
+  - n_translation_and_alignment
+  assignment_reason: 'Title ''MC-BERT4HATE: Hate Speech Detection using Multi-channel BERT for Different Languages and Translations'' uses translation as the bridge across languages, so it belongs in the translation and alignment node.'
+- ref_key: s19214654
+  assigned_to:
+  - n_translation_and_alignment
+  assignment_reason: Available metadata for 'Detecting and Monitoring Hate Speech in Twitter' describes a language-bridging representation strategy, so it is kept separate from end-to-end abusive-language detector papers.
+- ref_key: fortuna-etal-2019-hierarchically
+  assigned_to:
+  - n_translation_and_alignment
+  assignment_reason: Available metadata for 'A Hierarchically-Labeled Portuguese Hate Speech Dataset' describes a language-bridging representation strategy, so it is kept separate from end-to-end abusive-language detector papers.
+- ref_key: ross2017measuring
+  assigned_to:
+  - n_translation_and_alignment
+  assignment_reason: 'Available metadata for ''Measuring the reliability of hate speech annotations: The case of the european refugee crisis'' describes a language-bridging representation strategy, so it is kept separate from end-to-end abusive-language detector papers.'
+- ref_key: peters2018deep
+  assigned_to:
+  - n_translation_and_alignment
+  assignment_reason: Available metadata for 'Deep Contextualized Word Representations' describes a language-bridging representation strategy, so it is kept separate from end-to-end abusive-language detector papers.
+- ref_key: ouyang2021ernie
+  assigned_to:
+  - n_translation_and_alignment
+  assignment_reason: 'Available metadata for ''ERNIE-M: Enhanced Multilingual Representation by Aligning Cross-lingual Semantics with Monolingual Corpora'' describes a language-bridging representation strategy, so it is kept separate from end-to-end abusive-language detector papers.'
+- ref_key: grave2018learning
+  assigned_to:
+  - n_translation_and_alignment
+  assignment_reason: Title 'Learning Word Vectors for 157 Languages' is about bilingual or cross-lingual representation alignment, which serves as transfer infrastructure rather than a standalone abusive-language benchmark.
+- ref_key: smith2017offline
+  assigned_to:
+  - n_translation_and_alignment
+  assignment_reason: Title 'Offline bilingual word vectors, orthogonal transformations and the inverted softmax' is about bilingual or cross-lingual representation alignment, which serves as transfer infrastructure rather than a standalone abusive-language benchmark.
+- ref_key: lample2018word
+  assigned_to:
+  - n_translation_and_alignment
+  assignment_reason: Title 'Word translation without parallel data' uses translation as the bridge across languages, so it belongs in the translation and alignment node.
+- ref_key: lample2018unsupervised
+  assigned_to:
+  - n_translation_and_alignment
+  assignment_reason: Title 'Unsupervised machine translation using monolingual corpora only' uses translation as the bridge across languages, so it belongs in the translation and alignment node.
+- ref_key: feng2022language
+  assigned_to:
+  - n_translation_and_alignment
+  assignment_reason: Title 'Language-agnostic BERT Sentence Embedding' is about bilingual or cross-lingual representation alignment, which serves as transfer infrastructure rather than a standalone abusive-language benchmark.
+- ref_key: artetxe2019massively
+  assigned_to:
+  - n_translation_and_alignment
+  assignment_reason: Title 'Massively Multilingual Sentence Embeddings for Zero-Shot Cross-Lingual Transfer and Beyond' is about bilingual or cross-lingual representation alignment, which serves as transfer infrastructure rather than a standalone abusive-language benchmark.
+- ref_key: conneau2020unsupervised
+  assigned_to:
+  - n_translation_and_alignment
+  assignment_reason: Title 'Unsupervised Cross-lingual Representation Learning at Scale' is about bilingual or cross-lingual representation alignment, which serves as transfer infrastructure rather than a standalone abusive-language benchmark.
+- ref_key: ferreira2016jointly
+  assigned_to:
+  - n_translation_and_alignment
+  assignment_reason: Title 'Jointly Learning to Embed and Predict with Multiple Languages' is about bilingual or cross-lingual representation alignment, which serves as transfer infrastructure rather than a standalone abusive-language benchmark.
+- ref_key: markov2021exploring
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: Title 'Exploring Stylometric and Emotion-Based Features for Multilingual Cross-Domain Hate Speech Detection' foregrounds evaluation, robustness, or generalization, which matches this empirical-assessment node.
+- ref_key: hande2021benchmarking
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: Title 'Benchmarking multi-task learning for sentiment analysis and offensive language identification in under-resourced dravidian languages' foregrounds evaluation, robustness, or generalization, which matches this empirical-assessment node.
+- ref_key: glavas2020xhate
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Available metadata for ''XHate-999: Analyzing and Detecting Abusive Language Across Domains and Languages'' is primarily used to compare system behavior or benchmark conditions, so it is grouped under evaluation and robustness.'
+- ref_key: deng2022cold
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Title ''COLD: A Benchmark for Chinese Offensive Language Detection'' foregrounds evaluation, robustness, or generalization, which matches this empirical-assessment node.'
+- ref_key: pavlopoulos-etal-2021-semeval
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Title ''SemEval-2021 Task 5: Toxic Spans Detection'' is a shared-task or benchmark overview, so it is more defensible as evaluation scaffolding than as a dataset or method paper.'
+- ref_key: mathew2021hatexplain
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Title ''Hatexplain: A benchmark dataset for explainable hate speech detection'' foregrounds evaluation, robustness, or generalization, which matches this empirical-assessment node.'
+- ref_key: Romim2020HateSD
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Title ''Hate speech detection in the bengali language: A dataset and its baseline evaluation'' foregrounds evaluation, robustness, or generalization, which matches this empirical-assessment node.'
+- ref_key: vidgen2020learning
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Available metadata for ''Learning from the worst: Dynamically generated datasets to improve online hate detection'' is primarily used to compare system behavior or benchmark conditions, so it is grouped under evaluation and robustness.'
+- ref_key: Shekhar2020AutomatingNC
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Title ''Automating News Comment Moderation with Limited Resources: Benchmarking in Croatian and Estonian'' foregrounds evaluation, robustness, or generalization, which matches this empirical-assessment node.'
+- ref_key: rizwan2020hate
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: Available metadata for 'Hate-speech and offensive language detection in roman Urdu' is primarily used to compare system behavior or benchmark conditions, so it is grouped under evaluation and robustness.
+- ref_key: kennedy2020contextualizing
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: Available metadata for 'Contextualizing hate speech classifiers with post-hoc explanation' is primarily used to compare system behavior or benchmark conditions, so it is grouped under evaluation and robustness.
+- ref_key: mulki2019hsab
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Available metadata for ''L-hsab: A levantine twitter dataset for hate speech and abusive language'' is primarily used to compare system behavior or benchmark conditions, so it is grouped under evaluation and robustness.'
+- ref_key: founta2018large
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: Available metadata for 'Large scale crowdsourcing and characterization of twitter abusive behavior' is primarily used to compare system behavior or benchmark conditions, so it is grouped under evaluation and robustness.
+- ref_key: gao2017detecting
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: Available metadata for 'Detecting online hate speech using context aware models' is primarily used to compare system behavior or benchmark conditions, so it is grouped under evaluation and robustness.
+- ref_key: wulczyn2017ex
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Available metadata for ''Ex machina: Personal attacks seen at scale'' is primarily used to compare system behavior or benchmark conditions, so it is grouped under evaluation and robustness.'
+- ref_key: fersini2018ibereval
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: Title 'Overview of the Task on Automatic Misogyny Identification at IberEval 2018' is a shared-task or benchmark overview, so it is more defensible as evaluation scaffolding than as a dataset or method paper.
+- ref_key: fersini2018evalita
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: Title 'Overview of the Evalita 2018 Task on Automatic Misogyny Identification (AMI)' is a shared-task or benchmark overview, so it is more defensible as evaluation scaffolding than as a dataset or method paper.
+- ref_key: strus2019germeval
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: Title 'Overview of GermEval Task 2, 2019 shared task on the identification of offensive language' is a shared-task or benchmark overview, so it is more defensible as evaluation scaffolding than as a dataset or method paper.
+- ref_key: modha2021hasoc
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Title ''Overview of the hasoc subtrack at fire 2021: Hate speech and offensive content identification in english and indo-aryan languages and conversational hate speech'' is a shared-task or benchmark overview, so it is more defensible as evaluation scaffolding than as a dataset or method paper.'
+- ref_key: satapara2023hasoc
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Title ''Overview of the HASOC Subtrack at FIRE 2022: Hate Speech and Offensive Content Identification in English and Indo-Aryan Languages'' is a shared-task or benchmark overview, so it is more defensible as evaluation scaffolding than as a dataset or method paper.'
+- ref_key: kumar2020evaluating
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: Title 'Evaluating aggression identification in social media' foregrounds evaluation, robustness, or generalization, which matches this empirical-assessment node.
+- ref_key: sanguinetti2020haspeede
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Title ''Haspeede 2@ evalita2020: Overview of the evalita 2020 hate speech detection task'' is a shared-task or benchmark overview, so it is more defensible as evaluation scaffolding than as a dataset or method paper.'
+- ref_key: amjad2022urdu
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Available metadata for ''UrduThreat@FIRE2021: Shared Track on Abusive Threat Identification in Urdu'' is primarily used to compare system behavior or benchmark conditions, so it is grouped under evaluation and robustness.'
+- ref_key: lai2023haspeede3
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Title ''Haspeede3 at evalita 2023: Overview of the political and religious hate speech detection task'' is a shared-task or benchmark overview, so it is more defensible as evaluation scaffolding than as a dataset or method paper.'
+- ref_key: finn2017model
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: Available metadata for 'Model-agnostic meta-learning for fast adaptation of deep networks' is primarily used to compare system behavior or benchmark conditions, so it is grouped under evaluation and robustness.
+- ref_key: jin2020bert
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: Title 'Is bert really robust? a strong baseline for natural language attack on text classification and entailment' foregrounds evaluation, robustness, or generalization, which matches this empirical-assessment node.
+- ref_key: florio2020time
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Available metadata for ''Time of your hate: The challenge of time in hate speech detection on social media'' is primarily used to compare system behavior or benchmark conditions, so it is grouped under evaluation and robustness.'
+- ref_key: mandl2019overview
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Title ''Overview of the HASOC Track at FIRE 2019: Hate Speech and Offensive Content Identification in Indo-European Languages'' is a shared-task or benchmark overview, so it is more defensible as evaluation scaffolding than as a dataset or method paper.'
+- ref_key: mandl2021hasoc
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Title ''Overview of the HASOC Track at FIRE 2020: Hate Speech and Offensive Language Identification in Tamil, Malayalam, Hindi, English and German'' is a shared-task or benchmark overview, so it is more defensible as evaluation scaffolding than as a dataset or method paper.'
+- ref_key: rodriguez2022overview
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Title ''Overview of exist 2022: sexism identification in social networks'' is a shared-task or benchmark overview, so it is more defensible as evaluation scaffolding than as a dataset or method paper.'
+- ref_key: mubarak2020overview
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: Title 'Overview of OSACT4 Arabic Offensive Language Detection Shared Task' is a shared-task or benchmark overview, so it is more defensible as evaluation scaffolding than as a dataset or method paper.
+- ref_key: rodriguez2021overview
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Title ''Overview of exist 2021: sexism identification in social networks'' is a shared-task or benchmark overview, so it is more defensible as evaluation scaffolding than as a dataset or method paper.'
+- ref_key: wiegand2018overview
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: Title 'Overview of the germeval 2018 shared task on the identification of offensive language' is a shared-task or benchmark overview, so it is more defensible as evaluation scaffolding than as a dataset or method paper.
+- ref_key: plaza2023overview
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Title ''Overview of EXIST 2023: sEXism Identification in Social NeTworks'' is a shared-task or benchmark overview, so it is more defensible as evaluation scaffolding than as a dataset or method paper.'
+- ref_key: basile2019semeval
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Title ''SemEval-2019 Task 5: Multilingual Detection of Hate Speech Against Immigrants and Women in Twitter'' is a shared-task or benchmark overview, so it is more defensible as evaluation scaffolding than as a dataset or method paper.'
+- ref_key: ptaszynski2019poleval
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Title ''Results of the poleval 2019 shared task 6: First dataset and open shared task for automatic cyberbullying detection in polish twitter'' is a shared-task or benchmark overview, so it is more defensible as evaluation scaffolding than as a dataset or method paper.'
+- ref_key: zampieri2019semeval
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Title ''SemEval-2019 Task 6: Identifying and Categorizing Offensive Language in Social Media (OffensEval)'' is a shared-task or benchmark overview, so it is more defensible as evaluation scaffolding than as a dataset or method paper.'
+- ref_key: zampieri2020semeval
+  assigned_to:
+  - n_evaluation_and_robustness
+  assignment_reason: 'Title ''SemEval-2020 Task 12: Multilingual Offensive Language Identification in Social Media (OffensEval 2020)'' is a shared-task or benchmark overview, so it is more defensible as evaluation scaffolding than as a dataset or method paper.'
+- ref_key: garg2023handling
+  assigned_to:
+  - n_bias_and_open_challenges
+  assignment_reason: 'Title ''Handling Bias in Toxic Speech Detection: A Survey'' foregrounds bias, fairness, or ethical risk, so it belongs in the open-challenges node rather than a method bucket.'
+- ref_key: kiritchenko2021confronting
+  assigned_to:
+  - n_bias_and_open_challenges
+  assignment_reason: 'Title ''Confronting abusive language online: A survey from the ethical and human rights perspective'' foregrounds bias, fairness, or ethical risk, so it belongs in the open-challenges node rather than a method bucket.'
+- ref_key: ayo2020machine
+  assigned_to:
+  - n_bias_and_open_challenges
+  assignment_reason: 'Title ''Machine learning techniques for hate speech classification of twitter data: State-of-the-art, future challenges and research directions'' highlights a low-resource or unresolved challenge condition, which is exactly the evidence tracked in this closing node.'
+- ref_key: das2022data
+  assigned_to:
+  - n_bias_and_open_challenges
+  assignment_reason: Title 'Data Bootstrapping Approaches to Improve Low Resource Abusive Language Detection for Indic Languages' highlights a low-resource or unresolved challenge condition, which is exactly the evidence tracked in this closing node.
+- ref_key: hande2021offensive
+  assigned_to:
+  - n_bias_and_open_challenges
+  assignment_reason: Title 'Offensive language identification in low-resourced code-mixed dravidian languages using pseudo-labeling' highlights a low-resource or unresolved challenge condition, which is exactly the evidence tracked in this closing node.
+- ref_key: arango2020hate
+  assigned_to:
+  - n_bias_and_open_challenges
+  assignment_reason: 'Available metadata for ''Hate speech detection is not as easy as you may think: A closer look at model validation (extended version)'' points to limitations or unresolved deployment risks in abusive-language detection rather than a stable resource or method theme.'
+- ref_key: khan2021hate
+  assigned_to:
+  - n_bias_and_open_challenges
+  assignment_reason: Available metadata for 'Hate Speech Detection in Roman Urdu' points to limitations or unresolved deployment risks in abusive-language detection rather than a stable resource or method theme.
+- ref_key: mubarak-etal-2021-arabic
+  assigned_to:
+  - n_bias_and_open_challenges
+  assignment_reason: 'Available metadata for ''Arabic Offensive Language on Twitter: Analysis and Experiments'' points to limitations or unresolved deployment risks in abusive-language detection rather than a stable resource or method theme.'
+- ref_key: akhter2020automatic
+  assigned_to:
+  - n_bias_and_open_challenges
+  assignment_reason: Available metadata for 'Automatic detection of offensive language for urdu and roman urdu' points to limitations or unresolved deployment risks in abusive-language detection rather than a stable resource or method theme.
+- ref_key: sanguinett2018hate
+  assigned_to:
+  - n_bias_and_open_challenges
+  assignment_reason: Available metadata for 'An Italian Twitter Corpus of Hate Speech against Immigrants' points to limitations or unresolved deployment risks in abusive-language detection rather than a stable resource or method theme.
+- ref_key: rogers2017offensive
+  assigned_to:
+  - n_bias_and_open_challenges
+  assignment_reason: 'Available metadata for ''Offensive Comments in the Brazilian Web: a dataset and baseline results'' points to limitations or unresolved deployment risks in abusive-language detection rather than a stable resource or method theme.'
+- ref_key: davidson2017hatedataset
+  assigned_to:
+  - n_bias_and_open_challenges
+  assignment_reason: Available metadata for 'Automated Hate Speech Detection and the Problem of Offensive Language' points to limitations or unresolved deployment risks in abusive-language detection rather than a stable resource or method theme.
+- ref_key: van2015automatic
+  assigned_to:
+  - n_bias_and_open_challenges
+  assignment_reason: Available metadata for 'Automatic detection and prevention of cyberbullying' points to limitations or unresolved deployment risks in abusive-language detection rather than a stable resource or method theme.
+- ref_key: swami2018corpus
+  assigned_to:
+  - n_bias_and_open_challenges
+  assignment_reason: Available metadata for 'A corpus of english-hindi code-mixed tweets for sarcasm detection' points to limitations or unresolved deployment risks in abusive-language detection rather than a stable resource or method theme.
+- ref_key: alkhalifa2023building
+  assigned_to: []
+  assignment_reason: 'Title ''Building for tomorrow: Assessing the temporal persistence of text classifiers'' is too generic, tool-oriented, or meta-methodological to justify a reliable placement inside this paper-specific cross-lingual offensive-language taxonomy from metadata alone.'
+- ref_key: brown2020language
+  assigned_to: []
+  assignment_reason: Title 'Language models are few-shot learners' is too generic, tool-oriented, or meta-methodological to justify a reliable placement inside this paper-specific cross-lingual offensive-language taxonomy from metadata alone.
+- ref_key: devlin2019bert
+  assigned_to: []
+  assignment_reason: 'Title ''BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding'' is too generic, tool-oriented, or meta-methodological to justify a reliable placement inside this paper-specific cross-lingual offensive-language taxonomy from metadata alone.'
+- ref_key: wals
+  assigned_to: []
+  assignment_reason: Title 'WALS Online (v2020.3)' is too generic, tool-oriented, or meta-methodological to justify a reliable placement inside this paper-specific cross-lingual offensive-language taxonomy from metadata alone.
+- ref_key: han2022designing
+  assigned_to: []
+  assignment_reason: Title 'Designing of Prompts for Hate Speech Recognition with In-Context Learning' is too generic, tool-oriented, or meta-methodological to justify a reliable placement inside this paper-specific cross-lingual offensive-language taxonomy from metadata alone.
+- ref_key: koch2015siamese
+  assigned_to: []
+  assignment_reason: Title 'Siamese neural networks for one-shot image recognition' is too generic, tool-oriented, or meta-methodological to justify a reliable placement inside this paper-specific cross-lingual offensive-language taxonomy from metadata alone.
+- ref_key: lee2013pseudo
+  assigned_to: []
+  assignment_reason: 'Title ''Pseudo-label: The simple and efficient semi-supervised learning method for deep neural networks'' is too generic, tool-oriented, or meta-methodological to justify a reliable placement inside this paper-specific cross-lingual offensive-language taxonomy from metadata alone.'
+- ref_key: shap
+  assigned_to: []
+  assignment_reason: Title 'A Unified Approach to Interpreting Model Predictions' is too generic, tool-oriented, or meta-methodological to justify a reliable placement inside this paper-specific cross-lingual offensive-language taxonomy from metadata alone.
+- ref_key: openai2023gpt4
+  assigned_to: []
+  assignment_reason: Title 'GPT-4 Technical Report' is too generic, tool-oriented, or meta-methodological to justify a reliable placement inside this paper-specific cross-lingual offensive-language taxonomy from metadata alone.
+- ref_key: lime
+  assigned_to: []
+  assignment_reason: 'Title ''``Why Should I Trust You?'''': Explaining the Predictions of Any Classifier'' is too generic, tool-oriented, or meta-methodological to justify a reliable placement inside this paper-specific cross-lingual offensive-language taxonomy from metadata alone.'
+- ref_key: wang2023evaluating
+  assigned_to: []
+  assignment_reason: Title 'Evaluating GPT-3 Generated Explanations for Hateful Content Moderation' is too generic, tool-oriented, or meta-methodological to justify a reliable placement inside this paper-specific cross-lingual offensive-language taxonomy from metadata alone.
+- ref_key: xue2021mt5
+  assigned_to: []
+  assignment_reason: 'Title ''mT5: A Massively Multilingual Pre-trained Text-to-Text Transformer'' is too generic, tool-oriented, or meta-methodological to justify a reliable placement inside this paper-specific cross-lingual offensive-language taxonomy from metadata alone.'
+- ref_key: zhao2023survey
+  assigned_to: []
+  assignment_reason: Title 'A survey of large language models' is too generic, tool-oriented, or meta-methodological to justify a reliable placement inside this paper-specific cross-lingual offensive-language taxonomy from metadata alone.
+unassigned_refs:
+- alkhalifa2023building
+- brown2020language
+- devlin2019bert
+- wals
+- han2022designing
+- koch2015siamese
+- lee2013pseudo
+- shap
+- openai2023gpt4
+- lime
+- wang2023evaluating
+- xue2021mt5
+- zhao2023survey

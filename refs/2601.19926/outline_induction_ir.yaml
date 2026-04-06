@@ -1,0 +1,1971 @@
+artifact_type: reference_grounded_outline_induction_ir
+artifact_alias: section_aligned_taxonomy_ledger
+source_mode: reference_only
+paper_id: '2601.19926'
+title: 'The Grammar of Transformers: A Systematic Review of Interpretability Research on Syntactic Knowledge in Language Models'
+inputs:
+  title: true
+  reference_metadata: true
+  gold_outline: false
+nodes:
+- node_id: t1
+  level: 1
+  title_candidate: Review Framing, Surveys, and General LM Context
+  node_role: theme
+  parent: null
+  refs_complete:
+  - rogers_primer_2020
+  - page:etal:2021
+  - Linzen:Baroni:2020
+  - chang:bergen:2023
+  - Milliere:2024
+  - lopezotal:etal:2025
+  - boleda:2025
+  - abdou_higher-order_2019
+  - chrupala_correlating_2019
+  - tenney_bert_2019
+  - van_schijndel_quantity_2019
+  - dalvi_analyzing_2020
+  - davis_discourse_2020
+  - kahardipraja-etal-2020-exploring
+  - kulmizev_neural_2020
+  - limisiewicz_universal_2020
+  - pruksachatkun_intermediate-task_2020
+  - salazar_masked_2020
+  - yu_word_2020
+  - gupta_bert_2021
+  - kim_testing_2021
+  - kuribayashi_lower_2021
+  - pham_out_2021
+  - sinha_unnatural_2021
+  - wei-etal-2021-frequency
+  - clouatre_local_2022-1
+  - yin_interpreting_2022
+  - asher_limits_2023
+  - hou_detecting_2023
+  - jumelet_feature_2023
+  - murty_grokking_2023
+  - petersen_lexical_2023
+  - sharma-etal-2023-learning
+  - zhou_how_2023
+  - allen-zhu_interpretability_2024
+  - n_atox_evaluating_nodate
+  - mccoy_embers_2023
+  - turner_steering_2024
+  - wijesiriwardene_relationship_2024
+  - bunzeck_subword_2025
+  - cheng_linguistic_2025
+  - constantinescu_investigating_2025
+  - wang_extracting_2025
+  inclusion_rule: Assign surveys, primers, review-method papers, and broad language-model context references that frame syntactic interpretability without centering a narrower method or evidence block.
+  ordering_reason: Background framing comes first because it establishes why syntactic interpretability matters before introducing specific analytic methods, evidence, or interventions.
+- node_id: t2
+  level: 1
+  title_candidate: Probing and Representation Analysis
+  node_role: theme
+  parent: null
+  refs_complete:
+  - agarwal:etal:2025
+  - Limisiewicz:Maracek:2020
+  - hewitt_structural_2019
+  - Belinkov:2022
+  - Peters:etal:2018
+  - jawahar_what_2019
+  - krasnowska-kieras-wroblewska-2019-empirical
+  - lin_open_2019
+  - liu_linguistic_2019
+  - ravishankar_multilingual_2019
+  - Tenney:etal:2019b
+  - alt_probing_2020
+  - celikkanat_controlling_2020
+  - torroba_hennigen_intrinsic_2020
+  - ma_kelly_which_2020
+  - klafka_spying_2020
+  - kunz_classifier_2020
+  - lepori_picking_2020
+  - miaschi_contextual_2020
+  - miaschi-etal-2020-linguistic
+  - michael_asking_2020
+  - pimentel_information-theoretic_2020
+  - pimentel_pareto_2020
+  - sorodoc_probing_2020
+  - wu_perturbed_2020
+  - zhu_information_2020
+  - chen2021probing
+  - fayyaz_not_2021
+  - gupta_deep_2021
+  - hou_birds_2021
+  - kasthuriarachchy_general_2021
+  - kunz_test_2021
+  - li_how_2021
+  - limisiewicz_introducing_2021
+  - liu_probing_2021
+  - maudslay_syntactic_2021
+  - miaschi-etal-2021-probing
+  - mohebbi_exploring_2021
+  - perez-mayos_evolution_2021
+  - shapiro_multilabel_2021
+  - swamy_interpreting_2021
+  - timmapathini_probing_2021
+  - white_non-linear_2021
+  - aoyama:schneider:2022
+  - conia_probing_2022
+  - eisape_probing_2022
+  - kunz_where_2022
+  - la_malfa_emergent_2022
+  - li_neural_2022
+  - li_probing_2022
+  - niu_does_2022
+  - niu_using_2022
+  - sajjad_analyzing_2022
+  - schuster_berts_2022
+  - sevastjanova_lmfingerprints_2022
+  - tucker_when_2022
+  - weissweiler_better_2022
+  - yi_probing_2022
+  - zhang_probing_2022
+  - amini_naturalistic_2023
+  - kervadec_unnatural_2023
+  - kim_reconstruction_2023
+  - miaschi_testing_2023
+  - mysiak_is_2023
+  - oota_joint_2023
+  - sieker_when_2023
+  - stanczak_latent-variable_2023
+  - tjuatja_syntax_2023
+  - weissweiler_explaining_2023
+  - simon2024a
+  - he_decoding_2024
+  - miaschi_evaluating_2024
+  - he_large_2025
+  - kennedy_evidence_2025
+  - kissane_probing_2025
+  - someya_derivational_2025
+  - vandermeerschen_supervised_2025
+  inclusion_rule: Assign references centered on probes, representational diagnostics, embedding analyses, and layerwise studies that inspect where syntactic information is encoded.
+  ordering_reason: Diagnostic probing follows framing because it is the main observational toolkit used before stronger mechanistic claims or benchmark-driven evidence.
+- node_id: t3
+  level: 1
+  title_candidate: Mechanistic Interpretability of Syntax
+  node_role: grouping_theme
+  parent: null
+  refs_complete: []
+  inclusion_rule: Preserve a dedicated mechanism block that groups lower-level analyses of how syntax is implemented inside transformer internals.
+  ordering_reason: Mechanistic work is ordered after probing because it asks stronger explanatory questions about internal realization rather than merely locating information.
+  preserve_reason: Mechanistic syntax work splits cleanly between attention-level diagnostics and neuron/subspace/causal studies.
+- node_id: t3a
+  level: 2
+  title_candidate: Attention Heads and Geometric Diagnostics
+  node_role: mechanism_subtheme
+  parent: t3
+  refs_complete:
+  - clark_what_2019
+  - coenen_visualizing_2019
+  - htut_attention_2019
+  - marecek_balustrades_2019
+  - vig_analyzing_2019
+  - jo_roles_2020
+  - zhao_how_2020
+  - chang-etal-2021-convolutions
+  - hernandez_low-dimensional_2021
+  - luo_have_2021
+  - madhura_pande_heads_2021
+  - ravishankar_attention_2021
+  - auyespek_hyperbolic_2022
+  - pimentel_architectural_2022
+  - yoshida-oseki-2022-composition
+  - lee_decoding_2023
+  - zhang_closer_2023
+  - ferrando_information_2024
+  - li_incremental_2024
+  - marks_geometry_2024
+  - mcgee_evidence_2024
+  - aoyama_language_2025
+  inclusion_rule: Assign references on attention-head behavior, attention geometry, and related structural diagnostics that interpret syntax through head patterns or embedding geometry.
+  ordering_reason: Surface head-level and geometric diagnostics come before stronger causal or neuron-level claims because they usually provide the first mechanistic signal.
+- node_id: t3b
+  level: 2
+  title_candidate: Neurons, Subspaces, and Causal Interventions
+  node_role: mechanism_subtheme
+  parent: t3
+  refs_complete:
+  - Wiegreffe:Saphra:2024
+  - durrani_analyzing_2020
+  - elazar_amnesic_2021
+  - finlayson-etal-2021-causal
+  - oba_exploratory_2021
+  - ravfogel_counterfactual_2021
+  - tucker_what_2021
+  - mueller_causal_2022
+  - stanczak_same_2022
+  - wang_interpretability_2022
+  - chen_sudden_2023
+  - clark_cross-linguistic_2023
+  - de_varda_data-driven_2023
+  - gurnee_finding_2023
+  - hao_verb_2023
+  - huang_rigorously_2023
+  - muller-eberstein_subspace_2023
+  - yamakoshi_causal_2023
+  - arora_causalgym_2024
+  - ferrando_similarity_2024
+  - marks_sparse_2024
+  - misra_language_2024
+  - aljaafari_interpreting_2025
+  - hu_between_2025
+  inclusion_rule: Assign references on neurons, subspaces, amnesic or counterfactual methods, circuits, and causal analyses of syntactic behavior.
+  ordering_reason: Neuron, subspace, and intervention studies follow attention diagnostics because they make more targeted mechanistic claims about causal structure.
+- node_id: t4
+  level: 1
+  title_candidate: Syntactic Evaluation and Phenomena
+  node_role: grouping_theme
+  parent: null
+  refs_complete: []
+  inclusion_rule: Preserve a dedicated empirical evidence block for papers that organize syntactic knowledge through benchmarks, diagnostics, and phenomenon-targeted evaluation.
+  ordering_reason: Evaluation is placed after mechanism-oriented work because it aggregates the empirical evidence that interpretability claims are meant to explain.
+  preserve_reason: Evaluation papers split cleanly between benchmark/diagnostic resources and phenomenon-specific studies.
+- node_id: t4a
+  level: 2
+  title_candidate: Benchmarks, Minimal Pairs, and Diagnostic Suites
+  node_role: evaluation_subtheme
+  parent: t4
+  refs_complete:
+  - zhou_linguistic_2025
+  - waldis_holmes_2024
+  - Warstadt:etal:2020
+  - jumelet:etal:2025
+  - xiang:etal:2021
+  - song:etal:2022
+  - taktasheva:etal:2024
+  - Wang:etal:2018
+  - gauthier:etal:2020
+  - wang_superglue_2019
+  - ettinger_what_2020
+  - ribeiro_beyond_2020
+  - newman_refining_2021
+  - park_deep_2021
+  - misra_minicons_2022
+  - elgaar_ling-cl_2023
+  - roy_benchclamp_2023
+  - someya_jblimp_2023
+  - srivastava_beyond_2023
+  - zhang_how_2023
+  - arora_causalgym_2024
+  - huang_large-scale_2024
+  - weber_interpretability_2024
+  - alkhamissi-etal-2025-language
+  - koyama_targeted_2025
+  - tian_large_2025
+  inclusion_rule: Assign benchmark papers, minimal-pair resources, targeted evaluation suites, and reusable diagnostic platforms for syntactic assessment.
+  ordering_reason: Shared diagnostic infrastructure comes before individual phenomena because it defines the reusable evidence base used across many studies.
+- node_id: t4b
+  level: 2
+  title_candidate: Phenomenon-Specific Generalization Studies
+  node_role: evaluation_subtheme
+  parent: t4
+  refs_complete:
+  - Linzen:etal:2016
+  - Lau:etal:2017
+  - lasri_does_2022
+  - Lake:Baroni:2017
+  - mccoy_right_2019
+  - tran:etal:2018
+  - bacon_does_2019
+  - goldberg_assessing_2019
+  - warstadt_investigating_2019
+  - yanaka-etal-2019-neural
+  - hu_closer_2020
+  - hu_systematic_2020
+  - manning_emergent_2020
+  - min_syntactic_2020
+  - thrush_investigating_2020
+  - warstadt_can_2020
+  - warstadt_learning_2020
+  - yanaka-etal-2020-neural
+  - chaves_look_2021
+  - finlayson-etal-2021-causal
+  - hessel_how_2021
+  - li_are_2021
+  - malkin_studying_2021
+  - ravfogel_counterfactual_2021
+  - ryu_accounting_2021
+  - wilcox_targeted_2021
+  - abdou_word_2022
+  - cherniavskii_acceptability_2022
+  - de-dios-flores_computational_2022
+  - lakretz_can_2022
+  - lasri_subject_2022
+  - lasri_word_2022
+  - lee_bert_2022
+  - lee_can_2022
+  - mueller_causal_2022
+  - papadimitriou_when_2022
+  - sinclair_structural_2022
+  - wilcox_2022_chapter
+  - clark_cross-linguistic_2023
+  - de-dios-flores-etal-2023-dependency
+  - de_varda_data-driven_2023
+  - dentella_systematic_2023
+  - guarasci_assessing_2023
+  - hu_prompting_2023
+  - mahowald_discerning_2023
+  - sinha_language_2023
+  - wijnholds_assessing_2023
+  - ambridge_large_2024
+  - arehalli_neural_2024
+  - arora_causalgym_2024
+  - chen_when_2024
+  - ferrando_similarity_2024
+  - hu_auxiliary_2024
+  - hu_language_2024
+  - kim_does_2024
+  - kuribayashi_emergent_2024
+  - lampinen_can_2024
+  - patil_filtered_2024
+  - wilcox_using_2024
+  - dentella_language_2025
+  - ide_how_2025
+  - qiu_grammaticality_2025
+  inclusion_rule: Assign papers that test specific syntactic phenomena or generalization targets such as agreement, binding, monotonicity, reflexives, or structure dependence.
+  ordering_reason: Phenomenon-specific evidence follows the benchmark block because it instantiates those resources on concrete linguistic questions.
+- node_id: t5
+  level: 1
+  title_candidate: Multilingual and Cross-Lingual Syntax
+  node_role: theme
+  parent: null
+  refs_complete:
+  - brinkmann_large_2025
+  - kryvosheieva_controlled_2025
+  - baucells-etal-2025-iberobench
+  - perez-mayos:etal:2021
+  - cao_multilingual_2019
+  - pires_how_2019
+  - ravishankar_multilingual_2019
+  - ronnqvist_is_2019
+  - salvatore_logical-based_2019
+  - wang_cross-lingual_2019
+  - wu_beto_2019
+  - artetxe_cross-lingual_2020
+  - chi_finding_2020
+  - dufter-schutze-2020-identifying
+  - k_cross-lingual_2020
+  - miaschi_italian_2020
+  - mueller_cross-linguistic_2020
+  - wu_are_2020
+  - bjerva_does_2021
+  - gupta_deep_2021
+  - mikhailov_morph_2021
+  - mikhailov_rusenteval_2021
+  - papadimitriou_deep_2021
+  - perez-mayos_assessing_2021
+  - taktasheva_shaking_2021
+  - wang-etal-2021-controlled
+  - white-cotterell-2021-examining
+  - yanaka_assessing_2021
+  - alzetta_probing_2022
+  - bolucu_analysing_2022
+  - choenni_investigating_2022
+  - clouatre_local_2022
+  - garcia_targeted_2022
+  - guarasci_bert_2022
+  - otmakhova_cross-linguistic_2022
+  - ravishankar_effects_2022
+  - ri_pretraining_2022
+  - xu_cross-linguistic_2022
+  - zheng_probing_2022
+  - amini_naturalistic_2023
+  - de_varda_data-driven_2023
+  - gessler_syntactic_2023
+  - hlavnova_empowering_2023
+  - miaschi_testing_2023
+  - michaelov_structural_2023
+  - munoz-ortiz_assessment_2023
+  - mysiak_is_2023
+  - papadimitriou_injecting_2023
+  - ruzzetti_exploring_2023
+  - stanczak_latent-variable_2023
+  - xu_are_2023
+  - zheng_what_2023
+  - acs_morphosyntactic_2024
+  - arps_multilingual_2024
+  - chang_when_2024
+  - hale_llms_2024
+  - kallini_mission_2024
+  - leong2024testinglearninghypothesesusing
+  - someya_targeted_2024
+  - zhang_unveiling_2024
+  - alzetta_parallel_2025
+  - duan_unnatural_2025
+  - he_large_2025
+  - xu2025languagemodelslearntypologically
+  - yang_anything_2025
+  inclusion_rule: Assign multilingual probing, cross-lingual transfer, typology-aware studies, and non-English syntactic evaluations whose main organizing signal is language coverage.
+  ordering_reason: Cross-lingual scope comes after core evaluation blocks because it widens the empirical lens beyond mostly English-centric findings.
+- node_id: t6
+  level: 1
+  title_candidate: Syntax-Aware Modeling and Structural Control
+  node_role: grouping_theme
+  parent: null
+  refs_complete: []
+  inclusion_rule: Preserve a separate intervention block for papers that try to build, induce, or control syntactic structure rather than only analyze it.
+  ordering_reason: Modeling and control are placed last because they use the prior framing, diagnostics, and empirical findings to motivate intervention or design choices.
+  preserve_reason: Intervention/model-design work splits between structure induction/parsing and syntax-aware training/control.
+- node_id: t6a
+  level: 2
+  title_candidate: Parsing, Tree Induction, and Structural Bias
+  node_role: modeling_subtheme
+  parent: t6
+  refs_complete:
+  - Kulmizev:Nivre:2021
+  - rosa_inducing_2019
+  - wang_cross-lingual_2019
+  - Kim2020Are
+  - maudslay_tale_2020
+  - vilares_parsing_2020
+  - alleman_syntactic_2021
+  - bai_syntax-bert_2021
+  - glavas_is_2021
+  - nayak_using_2021
+  - sachan_syntax_2021
+  - taktasheva_shaking_2021
+  - alzetta_probing_2022
+  - arps_probing_2022
+  - bolucu_analysing_2022
+  - prange_linguistic_2022
+  - bai_constituency_2023
+  - lin_chatgpt_2023
+  - zhao_transformers_2023
+  - arps_multilingual_2024
+  - ginn_tree_2024
+  - someya_targeted_2024
+  - alzetta_parallel_2025
+  - ahuja_learning_2025
+  - kennedy_evidence_2025-1
+  - nandi_sneaking_2025
+  - swarup-etal-2025-syntax
+  - zhao_systematic_2025
+  inclusion_rule: Assign parsing, tree-induction, grammar-induction, constituency/dependency, and structural-bias papers that impose or recover explicit syntactic structure.
+  ordering_reason: Structure induction and parsing come before broader control methods because they provide the most explicit route to representing syntax.
+- node_id: t6b
+  level: 2
+  title_candidate: Syntax-Infused Architectures, Control, and Generation
+  node_role: modeling_subtheme
+  parent: t6
+  refs_complete:
+  - kryvosheieva_controlled_2025
+  - Devlin:etal:2019
+  - sundararaman_syntax-infused_2019
+  - tayyar_madabushi_cxgbert_2020
+  - zhou_limit-bert_2020
+  - huebner_babyberta_2021
+  - kuncoro-etal-2020-syntactic
+  - Lovering2021PredictingIB
+  - nikoulina_rediscovery_2021
+  - perez-mayos_how_2021
+  - puccetti_how_2021
+  - sinha_masked_2021
+  - wang-etal-2021-controlled
+  - white-cotterell-2021-examining
+  - wu_infusing_2021
+  - xu_syntax-enhanced_2021
+  - yun_transformer_2021
+  - zhang_dependency-based_2021
+  - zhang_when_2021
+  - alajrami_how_2022
+  - chang_bergen_2022
+  - choshen_grammar-learning_2022
+  - ri_pretraining_2022
+  - sartran_transformer_2022
+  - sinha_curious_2022
+  - blevins_prompting_2023
+  - georges_gabriel_charpentier_not_2023
+  - el_mesbahi_utility_2023
+  - gessler_syntactic_2023
+  - hewitt-etal-2023-backpack
+  - nikolaev_universe_2023
+  - papadimitriou_injecting_2023
+  - wettig_should_2023
+  - diehl_martinez_mitigating_2024
+  - feng-etal-2024-child
+  - kallini_mission_2024
+  - duan_how_2025
+  - ju_domain_2025
+  - WILCOX2025104650
+  - xefteri-etal-2025-syntactic
+  - yang_anything_2025
+  - zimmerman_tokens_2025
+  inclusion_rule: Assign syntax-infused architectures, controlled generation, pretraining or inductive-bias interventions, and other design papers that modify models to shape syntactic behavior.
+  ordering_reason: Architecture and control papers follow explicit structure-induction work because they broaden from symbolic structure insertion to more general design interventions.
+ref_assignment_ledger:
+- ref_key: rogers_primer_2020
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (primer, bertology) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: zhou_linguistic_2025
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (minimal pairs) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: brinkmann_large_2025
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (typolog, languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: kryvosheieva_controlled_2025
+  assigned_to:
+  - t6b
+  - t5
+  assignment_reason: Matched reference-metadata cues (controlled, control, syntax-aware or control study is explicitly multilingual/cross-lingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: agarwal:etal:2025
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: page:etal:2021
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (special-case classification for t1 based on title-level fit) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: Limisiewicz:Maracek:2020
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (word embeddings, embedding) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: Linzen:Baroni:2020
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (special-case classification for t1 based on title-level fit) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: Kulmizev:Nivre:2021
+  assigned_to:
+  - t6a
+  assignment_reason: Matched reference-metadata cues (tree) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: chang:bergen:2023
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (survey, language model behavior) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: Milliere:2024
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (language models as models of language) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: lopezotal:etal:2025
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (systematic review) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: Devlin:etal:2019
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (pre-training, architecture) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: waldis_holmes_2024
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (benchmark, holmes) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: Linzen:etal:2016
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (syntax-sensitive, agreement, grammaticality) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: Lau:etal:2017
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (grammaticality, acceptability) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: Warstadt:etal:2020
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (benchmark, minimal pairs, blimp) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: hewitt_structural_2019
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (structural probe, probe for, probe) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: Belinkov:2022
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, classifier) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: Wiegreffe:Saphra:2024
+  assigned_to:
+  - t3b
+  assignment_reason: Matched reference-metadata cues (mechanistic, causal) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: boleda:2025
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (synthesis between symbolic and continuous) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: lasri_does_2022
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (special-case classification for t4b based on title-level fit) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: Lake:Baroni:2017
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (systematicity, generalization) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: jumelet:etal:2025
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (benchmark, minimal pairs, blimp, multiblimp) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: baucells-etal-2025-iberobench
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (ibero, multilingual, languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: perez-mayos:etal:2021
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (multilingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: google:2023:notebooklm
+  assigned_to: []
+  assignment_reason: Reference metadata was too weak or too off-scope to place it confidently inside the syntax-interpretability taxonomy without forcing a fragile assignment.
+- ref_key: chatgpt5:2025
+  assigned_to: []
+  assignment_reason: Reference metadata was too weak or too off-scope to place it confidently inside the syntax-interpretability taxonomy without forcing a fragile assignment.
+- ref_key: xiang:etal:2021
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (benchmark, climp) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: song:etal:2022
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (special-case classification for t4a based on title-level fit) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: taktasheva:etal:2024
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (benchmark, minimal pairs, blimp, rublimp) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: Wang:etal:2018
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (special-case classification for t4a based on title-level fit) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: gauthier:etal:2020
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (special-case classification for t4a based on title-level fit) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: mccoy_right_2019
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (special-case classification for t4b based on title-level fit) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: tran:etal:2018
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (special-case classification for t4b based on title-level fit) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: Peters:etal:2018
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (contextualized word representations) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: abdou_higher-order_2019
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: bacon_does_2019
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (agreement, structure dependence, syntax-sensitive) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: cao_multilingual_2019
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (multilingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: chrupala_correlating_2019
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: clark_what_2019
+  assigned_to:
+  - t3a
+  assignment_reason: Matched reference-metadata cues (attention, what does bert look at) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: coenen_visualizing_2019
+  assigned_to:
+  - t3a
+  assignment_reason: Matched reference-metadata cues (geometry) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: goldberg_assessing_2019
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (special-case classification for t4b based on title-level fit) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: htut_attention_2019
+  assigned_to:
+  - t3a
+  assignment_reason: Matched reference-metadata cues (attention, attention head, attention heads, self-attention) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: jawahar_what_2019
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (special-case classification for t2 based on title-level fit) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: krasnowska-kieras-wroblewska-2019-empirical
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (sentence embeddings, embedding) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: lin_open_2019
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (open sesame) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: liu_linguistic_2019
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (special-case classification for t2 based on title-level fit) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: marecek_balustrades_2019
+  assigned_to:
+  - t3a
+  assignment_reason: Matched reference-metadata cues (attention, self-attention, self-attentions, balustrades) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: pires_how_2019
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (multilingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: ravishankar_multilingual_2019
+  assigned_to:
+  - t2
+  - t5
+  assignment_reason: Matched reference-metadata cues (probing, probe, classifier, layer, multilingual probing overlap) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: ronnqvist_is_2019
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (multilingual, languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: rosa_inducing_2019
+  assigned_to:
+  - t6a
+  assignment_reason: Matched reference-metadata cues (tree, trees, syntactic trees, dependency) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: salvatore_logical-based_2019
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (cross-lingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: sundararaman_syntax-infused_2019
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (syntax-infused) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: tenney_bert_2019
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (special-case classification for t1 based on title-level fit) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: Tenney:etal:2019b
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, contextualized word representations, what do you learn from context, probe) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: van_schijndel_quantity_2019
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: vig_analyzing_2019
+  assigned_to:
+  - t3a
+  assignment_reason: Matched reference-metadata cues (attention) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: wang_cross-lingual_2019
+  assigned_to:
+  - t6a
+  - t5
+  assignment_reason: Matched reference-metadata cues (parsing, dependency parsing, dependency, syntax-aware or control study is explicitly multilingual/cross-lingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: wang_superglue_2019
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (benchmark, glue, superglue) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: warstadt_investigating_2019
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (npi) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: wu_beto_2019
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (cross-lingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: yanaka-etal-2019-neural
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (monotonicity) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: alt_probing_2020
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: artetxe_cross-lingual_2020
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (cross-lingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: celikkanat_controlling_2020
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (contextualized representations) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: chi_finding_2020
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (multilingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: dalvi_analyzing_2020
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: davis_discourse_2020
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: durrani_analyzing_2020
+  assigned_to:
+  - t3b
+  assignment_reason: Matched reference-metadata cues (neuron, neurons) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: dufter-schutze-2020-identifying
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (multilingual, languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: ettinger_what_2020
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (diagnostics, diagnostic) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: torroba_hennigen_intrinsic_2020
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: hu_closer_2020
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (anaphor, reflexive, generalization) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: hu_systematic_2020
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (syntactic generalization, generalization) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: jo_roles_2020
+  assigned_to:
+  - t3a
+  assignment_reason: Matched reference-metadata cues (attention, attention head, attention heads) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: k_cross-lingual_2020
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (multilingual, cross-lingual, languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: kahardipraja-etal-2020-exploring
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: ma_kelly_which_2020
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (sentence embeddings, layers encode, embedding, layer) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: Kim2020Are
+  assigned_to:
+  - t6a
+  assignment_reason: Matched reference-metadata cues (grammar induction, phrases, constituency) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: klafka_spying_2020
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, spying on your neighbors, embedding) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: kulmizev_neural_2020
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: kunz_classifier_2020
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (classifier probe, probe, classifier) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: lepori_picking_2020
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, representational similarity, picking bert, embedding) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: limisiewicz_universal_2020
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: tayyar_madabushi_cxgbert_2020
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (cxgbert) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: manning_emergent_2020
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (anaphor) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: maudslay_tale_2020
+  assigned_to:
+  - t6a
+  assignment_reason: Matched reference-metadata cues (parser) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: miaschi_contextual_2020
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (word embeddings, embedding) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: miaschi_italian_2020
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (italian) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: miaschi-etal-2020-linguistic
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (linguistic profiling) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: michael_asking_2020
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (latent ontologies) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: min_syntactic_2020
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (heuristics) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: mueller_cross-linguistic_2020
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (special-case classification for t5 based on title-level fit) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: pimentel_information-theoretic_2020
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: pimentel_pareto_2020
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: pruksachatkun_intermediate-task_2020
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: ribeiro_beyond_2020
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (special-case classification for t4a based on title-level fit) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: salazar_masked_2020
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: sorodoc_probing_2020
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: thrush_investigating_2020
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (syntactic generalization, generalization) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: vilares_parsing_2020
+  assigned_to:
+  - t6a
+  assignment_reason: Matched reference-metadata cues (parsing, dependency) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: warstadt_can_2020
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (binding, reflexive, npi, generalization) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: warstadt_learning_2020
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (generalization) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: wu_are_2020
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (multilingual, languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: wu_perturbed_2020
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: yanaka-etal-2020-neural
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (monotonicity, systematicity) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: yu_word_2020
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: zhao_how_2020
+  assigned_to:
+  - t3a
+  assignment_reason: Matched reference-metadata cues (attention) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: zhou_limit-bert_2020
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (limit-bert) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: zhu_information_2020
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probe) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: alleman_syntactic_2021
+  assigned_to:
+  - t6a
+  assignment_reason: Matched reference-metadata cues (phrase structure) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: bai_syntax-bert_2021
+  assigned_to:
+  - t6a
+  assignment_reason: Matched reference-metadata cues (tree, trees) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: bjerva_does_2021
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (cross-lingual, typolog) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: chang-etal-2021-convolutions
+  assigned_to:
+  - t3a
+  assignment_reason: Matched reference-metadata cues (attention, self-attention) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: chen2021probing
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, probe, embedding, contextualized representations) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: chaves_look_2021
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (morphosyntax, agreement, generalization) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: elazar_amnesic_2021
+  assigned_to:
+  - t3b
+  assignment_reason: Matched reference-metadata cues (counterfactual, amnesic, causal) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: finlayson-etal-2021-causal
+  assigned_to:
+  - t3b
+  - t4b
+  assignment_reason: Matched reference-metadata cues (causal, mechanistic study also targets a named syntactic phenomenon) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: fayyaz_not_2021
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, layer) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: glavas_is_2021
+  assigned_to:
+  - t6a
+  assignment_reason: Matched reference-metadata cues (parsing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: gupta_bert_2021
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: gupta_deep_2021
+  assigned_to:
+  - t2
+  - t5
+  assignment_reason: Matched reference-metadata cues (probing, probe, layer, multilingual probing overlap) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: hernandez_low-dimensional_2021
+  assigned_to:
+  - t3a
+  assignment_reason: Matched reference-metadata cues (geometry) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: hessel_how_2021
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (word order) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: hou_birds_2021
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: huebner_babyberta_2021
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (child-directed language) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: kasthuriarachchy_general_2021
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, layer) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: kim_testing_2021
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: kuncoro-etal-2020-syntactic
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (pretraining) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: kunz_test_2021
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: kuribayashi_lower_2021
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: li_are_2021
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (agreement) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: li_how_2021
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (layer) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: limisiewicz_introducing_2021
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (structural probe, probe) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: liu_probing_2021
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: Lovering2021PredictingIB
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (inductive bias, pre-training) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: luo_have_2021
+  assigned_to:
+  - t3a
+  assignment_reason: Matched reference-metadata cues (attention, attention head, attention heads) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: madhura_pande_heads_2021
+  assigned_to:
+  - t3a
+  assignment_reason: Matched reference-metadata cues (attention, heads hypothesis, attention head, attention heads) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: malkin_studying_2021
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (word order) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: maudslay_syntactic_2021
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, probe) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: miaschi-etal-2021-probing
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: mikhailov_morph_2021
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (multilingual, typology) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: mikhailov_rusenteval_2021
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (rusenteval, multilingual, languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: mohebbi_exploring_2021
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: nayak_using_2021
+  assigned_to:
+  - t6a
+  assignment_reason: Matched reference-metadata cues (constituency, tree, trees, parse tree) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: newman_refining_2021
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (special-case classification for t4a based on title-level fit) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: nikoulina_rediscovery_2021
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (rediscovery hypothesis, pretraining) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: oba_exploratory_2021
+  assigned_to:
+  - t3b
+  assignment_reason: Matched reference-metadata cues (neuron) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: papadimitriou_deep_2021
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (multilingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: park_deep_2021
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (minimal pairs) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: perez-mayos_assessing_2021
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (multilingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: perez-mayos_evolution_2021
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (contextualized representations) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: perez-mayos_how_2021
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (pretraining) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: pham_out_2021
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: puccetti_how_2021
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (architecture) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: ravfogel_counterfactual_2021
+  assigned_to:
+  - t3b
+  - t4b
+  assignment_reason: Matched reference-metadata cues (causal, counterfactual, mechanistic study also targets a named syntactic phenomenon) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: ravishankar_attention_2021
+  assigned_to:
+  - t3a
+  assignment_reason: Matched reference-metadata cues (attention) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: ryu_accounting_2021
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (agreement) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: sachan_syntax_2021
+  assigned_to:
+  - t6a
+  assignment_reason: Matched reference-metadata cues (tree, trees) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: shapiro_multilabel_2021
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: sinha_masked_2021
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (pre-training) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: sinha_unnatural_2021
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: swamy_interpreting_2021
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: taktasheva_shaking_2021
+  assigned_to:
+  - t6a
+  - t5
+  assignment_reason: Matched reference-metadata cues (tree, trees, syntactic trees, syntax-aware or control study is explicitly multilingual/cross-lingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: timmapathini_probing_2021
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, probe, layer) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: tucker_what_2021
+  assigned_to:
+  - t3b
+  assignment_reason: Matched reference-metadata cues (counterfactual, modified that) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: wei-etal-2021-frequency
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: wang-etal-2021-controlled
+  assigned_to:
+  - t6b
+  - t5
+  assignment_reason: Matched reference-metadata cues (controlled, control, syntax-aware or control study is explicitly multilingual/cross-lingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: white_non-linear_2021
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (structural probe, probe) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: white-cotterell-2021-examining
+  assigned_to:
+  - t6b
+  - t5
+  assignment_reason: Matched reference-metadata cues (inductive bias, syntax-aware or control study is explicitly multilingual/cross-lingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: wilcox_targeted_2021
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (incremental processing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: wu_infusing_2021
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (infusing finetuning, pretraining) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: xu_syntax-enhanced_2021
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (syntax-enhanced) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: yanaka_assessing_2021
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (special-case classification for t5 based on title-level fit) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: yun_transformer_2021
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (architecture) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: zhang_dependency-based_2021
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (syntax-aware) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: zhang_when_2021
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (pretraining, need billions of words of pretraining data) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: abdou_word_2022
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (word order) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: alajrami_how_2022
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (pre-training, pre-training objective) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: alzetta_probing_2022
+  assigned_to:
+  - t6a
+  - t5
+  assignment_reason: Matched reference-metadata cues (constituency, tree, trees, dependency, syntax-aware or control study is explicitly multilingual/cross-lingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: arps_probing_2022
+  assigned_to:
+  - t6a
+  assignment_reason: Matched reference-metadata cues (constituency) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: aoyama:schneider:2022
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, probe, layer) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: auyespek_hyperbolic_2022
+  assigned_to:
+  - t3a
+  assignment_reason: Matched reference-metadata cues (hyperbolic) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: bolucu_analysing_2022
+  assigned_to:
+  - t6a
+  - t5
+  assignment_reason: Matched reference-metadata cues (parsing, dependency, constituency, syntax-aware or control study is explicitly multilingual/cross-lingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: chang_bergen_2022
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (architecture) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: cherniavskii_acceptability_2022
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (acceptability) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: choenni_investigating_2022
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (multilingual, typolog, cross-lingual, typology, languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: choshen_grammar-learning_2022
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (grammar-learning trajectories) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: clouatre_local_2022
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: clouatre_local_2022-1
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: conia_probing_2022
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: de-dios-flores_computational_2022
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (syntactic abilities, agreement) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: eisape_probing_2022
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: garcia_targeted_2022
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (special-case classification for t5 based on title-level fit) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: guarasci_bert_2022
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (italian, french, multilingual, cross-lingual, languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: kunz_where_2022
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, classifier, layer) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: la_malfa_emergent_2022
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: lakretz_can_2022
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (recursive) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: lasri_subject_2022
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (agreement) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: lasri_word_2022
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (word order) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: lee_bert_2022
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (garden path, grammaticality) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: lee_can_2022
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (anaphor, reflexive, agreement) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: li_neural_2022
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, probe, embedding) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: li_probing_2022
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, probe) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: misra_minicons_2022
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (benchmark, benchmarking) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: mueller_causal_2022
+  assigned_to:
+  - t3b
+  - t4b
+  assignment_reason: Matched reference-metadata cues (causal, neuron, neurons, counterfactual, mechanistic study also targets a named syntactic phenomenon) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: niu_does_2022
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probe, layer) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: niu_using_2022
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, probe, embedding) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: otmakhova_cross-linguistic_2022
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (typolog, languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: papadimitriou_when_2022
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (word order) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: pimentel_architectural_2022
+  assigned_to:
+  - t3a
+  assignment_reason: Matched reference-metadata cues (attention head, self-attention) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: prange_linguistic_2022
+  assigned_to:
+  - t6a
+  assignment_reason: Matched reference-metadata cues (dependency, constituency) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: ravishankar_effects_2022
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (multilingual, cross-lingual, languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: ri_pretraining_2022
+  assigned_to:
+  - t6b
+  - t5
+  assignment_reason: Matched reference-metadata cues (pretraining, syntax-aware or control study is explicitly multilingual/cross-lingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: sajjad_analyzing_2022
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (encoded concepts, layer) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: sartran_transformer_2022
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (inductive bias, transformer grammars) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: schuster_berts_2022
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, layer) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: sevastjanova_lmfingerprints_2022
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, classifier, embedding, layer) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: sinclair_structural_2022
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (generalization) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: sinha_curious_2022
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (pretraining) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: stanczak_same_2022
+  assigned_to:
+  - t3b
+  assignment_reason: Matched reference-metadata cues (neuron, neurons) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: tucker_when_2022
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, probe, embedding) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: wang_interpretability_2022
+  assigned_to:
+  - t3b
+  assignment_reason: Matched reference-metadata cues (circuit, causal, mechanistic) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: weissweiler_better_2022
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, probe) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: wilcox_2022_chapter
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (binding) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: xu_cross-linguistic_2022
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (multilingual, cross-lingual, languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: yi_probing_2022
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, probe, classifier, embedding, layer) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: yin_interpreting_2022
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: yoshida-oseki-2022-composition
+  assigned_to:
+  - t3a
+  assignment_reason: Matched reference-metadata cues (attention, self-attention) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: zhang_probing_2022
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: zheng_probing_2022
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (multilingual, typolog, cross-lingual, typology, languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: amini_naturalistic_2023
+  assigned_to:
+  - t2
+  - t5
+  assignment_reason: Matched reference-metadata cues (probing, probe, contextualized representations, multilingual probing overlap) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: asher_limits_2023
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: bai_constituency_2023
+  assigned_to:
+  - t6a
+  assignment_reason: Matched reference-metadata cues (parsing, constituency) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: blevins_prompting_2023
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (special-case classification for t6b based on title-level fit) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: chen_sudden_2023
+  assigned_to:
+  - t3b
+  assignment_reason: Matched reference-metadata cues (causal) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: georges_gabriel_charpentier_not_2023
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (pretraining, architecture) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: clark_cross-linguistic_2023
+  assigned_to:
+  - t4b
+  - t3b
+  assignment_reason: Matched reference-metadata cues (word order, mechanistic study also targets a named syntactic phenomenon) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: de-dios-flores-etal-2023-dependency
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (agreement, anaphor, acceptability, generalization) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: de_varda_data-driven_2023
+  assigned_to:
+  - t5
+  - t3b
+  - t4b
+  assignment_reason: Matched reference-metadata cues (multilingual, cross-lingual, languages, mechanistic study also targets a named syntactic phenomenon) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: dentella_systematic_2023
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (anaphor) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: el_mesbahi_utility_2023
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (pretraining) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: elgaar_ling-cl_2023
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (benchmark) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: gessler_syntactic_2023
+  assigned_to:
+  - t6b
+  - t5
+  assignment_reason: Matched reference-metadata cues (inductive bias, pretraining, syntax-aware or control study is explicitly multilingual/cross-lingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: guarasci_assessing_2023
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (agreement) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: gurnee_finding_2023
+  assigned_to:
+  - t3b
+  assignment_reason: Matched reference-metadata cues (neuron, neurons) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: hao_verb_2023
+  assigned_to:
+  - t3b
+  assignment_reason: Matched reference-metadata cues (causal) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: hlavnova_empowering_2023
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (cross-lingual, typolog, languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: hewitt-etal-2023-backpack
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (architecture) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: hou_detecting_2023
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: hu_prompting_2023
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (generalization) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: huang_rigorously_2023
+  assigned_to:
+  - t3b
+  assignment_reason: Matched reference-metadata cues (neuron, neurons, causal) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: jumelet_feature_2023
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: kervadec_unnatural_2023
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probe, embedding) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: kim_reconstruction_2023
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, embedding, contextualized representations, layer) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: lee_decoding_2023
+  assigned_to:
+  - t3a
+  assignment_reason: Matched reference-metadata cues (attention) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: lin_chatgpt_2023
+  assigned_to:
+  - t6a
+  assignment_reason: Matched reference-metadata cues (special-case classification for t6a based on title-level fit) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: mahowald_discerning_2023
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (acceptability) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: miaschi_testing_2023
+  assigned_to:
+  - t2
+  - t5
+  assignment_reason: Matched reference-metadata cues (probing, probe, multilingual probing overlap) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: michaelov_structural_2023
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (multilingual, languages, non-english) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: muller-eberstein_subspace_2023
+  assigned_to:
+  - t3b
+  assignment_reason: Matched reference-metadata cues (subspace) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: munoz-ortiz_assessment_2023
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: murty_grokking_2023
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: mysiak_is_2023
+  assigned_to:
+  - t2
+  - t5
+  assignment_reason: Matched reference-metadata cues (probing, probe, multilingual probing overlap) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: nikolaev_universe_2023
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (pre-training) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: oota_joint_2023
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: papadimitriou_injecting_2023
+  assigned_to:
+  - t6b
+  - t5
+  assignment_reason: Matched reference-metadata cues (inductive bias, pretraining, syntax-aware or control study is explicitly multilingual/cross-lingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: petersen_lexical_2023
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: roy_benchclamp_2023
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (benchmark) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: ruzzetti_exploring_2023
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (typolog, languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: sharma-etal-2023-learning
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: sieker_when_2023
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: sinha_language_2023
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (acceptability) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: someya_jblimp_2023
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (benchmark, minimal pairs, blimp) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: srivastava_beyond_2023
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (benchmark) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: stanczak_latent-variable_2023
+  assigned_to:
+  - t2
+  - t5
+  assignment_reason: Matched reference-metadata cues (probing, probe, contextualized representations, multilingual probing overlap) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: tjuatja_syntax_2023
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: weissweiler_explaining_2023
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probe) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: wettig_should_2023
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (pre-training) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: wijnholds_assessing_2023
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (monotonicity, generalization) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: xu_are_2023
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (cross-lingual, languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: yamakoshi_causal_2023
+  assigned_to:
+  - t3b
+  assignment_reason: Matched reference-metadata cues (causal, circuit) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: zhang_closer_2023
+  assigned_to:
+  - t3a
+  assignment_reason: Matched reference-metadata cues (attention, attention head, attention heads, self-attention) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: zhang_how_2023
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (benchmark) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: zhao_transformers_2023
+  assigned_to:
+  - t6a
+  assignment_reason: Matched reference-metadata cues (parsing, parse tree) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: zheng_what_2023
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (chinese) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: zhou_how_2023
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: acs_morphosyntactic_2024
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (multilingual, languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: allen-zhu_interpretability_2024
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: ambridge_large_2024
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (acceptability, generalization) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: arehalli_neural_2024
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (agreement) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: arora_causalgym_2024
+  assigned_to:
+  - t4a
+  - t3b
+  - t4b
+  assignment_reason: Matched reference-metadata cues (benchmark, benchmarking, mechanistic study also targets a named syntactic phenomenon) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: arps_multilingual_2024
+  assigned_to:
+  - t6a
+  - t5
+  assignment_reason: Matched reference-metadata cues (tree, dependency, syntax-aware or control study is explicitly multilingual/cross-lingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: n_atox_evaluating_nodate
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: chang_when_2024
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (multilingual, languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: chen_when_2024
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (word order) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: diehl_martinez_mitigating_2024
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (pre-training) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: simon2024a
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probe, embedding, layer) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: feng-etal-2024-child
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (pretraining) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: ferrando_information_2024
+  assigned_to:
+  - t3a
+  assignment_reason: Matched reference-metadata cues (attention head) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: ferrando_similarity_2024
+  assigned_to:
+  - t3b
+  - t4b
+  assignment_reason: Matched reference-metadata cues (circuit, circuits, causal, neuron, neurons, mechanistic study also targets a named syntactic phenomenon) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: ginn_tree_2024
+  assigned_to:
+  - t6a
+  assignment_reason: Matched reference-metadata cues (constituency, tree) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: hale_llms_2024
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (multilingual, languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: he_decoding_2024
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, probe, embedding, layer) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: hu_auxiliary_2024
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (grammaticality) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: hu_language_2024
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (grammaticality, generalization) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: huang_large-scale_2024
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (benchmark) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: kallini_mission_2024
+  assigned_to:
+  - t6b
+  - t5
+  assignment_reason: Matched reference-metadata cues (architecture, syntax-aware or control study is explicitly multilingual/cross-lingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: kim_does_2024
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (word order) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: kuribayashi_emergent_2024
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (word order) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: lampinen_can_2024
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (recursive, recursively nested) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: leong2024testinglearninghypothesesusing
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: li_incremental_2024
+  assigned_to:
+  - t3a
+  assignment_reason: Matched reference-metadata cues (attention) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: marks_geometry_2024
+  assigned_to:
+  - t3a
+  assignment_reason: Matched reference-metadata cues (geometry) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: marks_sparse_2024
+  assigned_to:
+  - t3b
+  assignment_reason: Matched reference-metadata cues (causal, circuit, circuits, neuron, neurons) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: mccoy_embers_2023
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: mcgee_evidence_2024
+  assigned_to:
+  - t3a
+  assignment_reason: Matched reference-metadata cues (attention head, attention heads) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: miaschi_evaluating_2024
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (linguistic profiling) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: misra_language_2024
+  assigned_to:
+  - t3b
+  assignment_reason: Matched reference-metadata cues (counterfactual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: patil_filtered_2024
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (generalization) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: someya_targeted_2024
+  assigned_to:
+  - t6a
+  - t5
+  assignment_reason: Matched reference-metadata cues (dependency, syntax-aware or control study is explicitly multilingual/cross-lingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: turner_steering_2024
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: weber_interpretability_2024
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (benchmark) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: wijesiriwardene_relationship_2024
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: wilcox_using_2024
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (filler-gap, generalization) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: zhang_unveiling_2024
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (cross-lingual, languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: alkhamissi-etal-2025-language
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (benchmark) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: alzetta_parallel_2025
+  assigned_to:
+  - t6a
+  - t5
+  assignment_reason: Matched reference-metadata cues (constituency, tree, trees, dependency, syntax-aware or control study is explicitly multilingual/cross-lingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: ahuja_learning_2025
+  assigned_to:
+  - t6a
+  assignment_reason: Matched reference-metadata cues (tree, trees) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: aljaafari_interpreting_2025
+  assigned_to:
+  - t3b
+  assignment_reason: Matched reference-metadata cues (mechanistic) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: aoyama_language_2025
+  assigned_to:
+  - t3a
+  assignment_reason: Matched reference-metadata cues (attention head, attention heads) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: bunzeck_subword_2025
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: cheng_linguistic_2025
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: constantinescu_investigating_2025
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: dentella_language_2025
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (anaphor, grammaticality) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: duan_how_2025
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (specialization emerges, architecture) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: duan_unnatural_2025
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: he_large_2025
+  assigned_to:
+  - t2
+  - t5
+  assignment_reason: Matched reference-metadata cues (probing, layer, multilingual probing overlap) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: hu_between_2025
+  assigned_to:
+  - t3b
+  assignment_reason: Matched reference-metadata cues (circuit, circuits, mechanistic) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: ide_how_2025
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (acceptability) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: ju_domain_2025
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (generation) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: kennedy_evidence_2025
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, probe) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: kennedy_evidence_2025-1
+  assigned_to:
+  - t6a
+  assignment_reason: Matched reference-metadata cues (dependency, constituency) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: kissane_probing_2025
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, classifier, layer) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: koyama_targeted_2025
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (benchmark, minimal pairs) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: nandi_sneaking_2025
+  assigned_to:
+  - t6a
+  assignment_reason: Matched reference-metadata cues (tree) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: qiu_grammaticality_2025
+  assigned_to:
+  - t4b
+  assignment_reason: Matched reference-metadata cues (special-case classification for t4b based on title-level fit) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: someya_derivational_2025
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, embedding, layer) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: swarup-etal-2025-syntax
+  assigned_to:
+  - t6a
+  assignment_reason: Matched reference-metadata cues (dependency, constituency) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: tian_large_2025
+  assigned_to:
+  - t4a
+  assignment_reason: Matched reference-metadata cues (benchmark) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: vandermeerschen_supervised_2025
+  assigned_to:
+  - t2
+  assignment_reason: Matched reference-metadata cues (probing, probe, layer) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: wang_extracting_2025
+  assigned_to:
+  - t1
+  assignment_reason: Matched reference-metadata cues (broad or weak syntax-interpretability cues, kept as framing/background context) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: WILCOX2025104650
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (pretraining) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: xefteri-etal-2025-syntactic
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (control, posterior inference) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: xu2025languagemodelslearntypologically
+  assigned_to:
+  - t5
+  assignment_reason: Matched reference-metadata cues (typolog, cross-lingual, languages) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: yang_anything_2025
+  assigned_to:
+  - t6b
+  - t5
+  assignment_reason: Matched reference-metadata cues (inductive bias, architecture, syntax-aware or control study is explicitly multilingual/cross-lingual) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: zhao_systematic_2025
+  assigned_to:
+  - t6a
+  assignment_reason: Matched reference-metadata cues (constituency, parse tree) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+- ref_key: zimmerman_tokens_2025
+  assigned_to:
+  - t6b
+  assignment_reason: Matched reference-metadata cues (pretraining, architecture) in the title and available abstract/venue metadata, so the paper fits the selected node(s) without relying on any gold outline.
+unassigned_refs:
+- google:2023:notebooklm
+- chatgpt5:2025

@@ -1,0 +1,51 @@
+{
+  "report_subject": "MEOW prompt extraction and pipeline reconstruction",
+  "sources": {
+    "paper": "https://arxiv.org/pdf/2509.19370",
+    "repo": "https://github.com/zhaoyMa/Meow-Data-curation",
+    "dataset": "https://huggingface.co/datasets/haajimi/Meow"
+  },
+  "outline_extraction": {
+    "type": "deterministic_source_parsing_not_llm_prompt",
+    "repo_file": "utils/data_exact/exact.py",
+    "note": "The released repo does not expose a dedicated LLM prompt for extracting an outline from a paper. It extracts the outline from TeX/BibTeX source."
+  },
+  "outline_generation_confirmed": {
+    "repo_file": "utils/data_to_trainformat/formet_to_train_data.py",
+    "system_prompt": "You are a scientific writing assistant. Produce a structured outline based on the article metadata and references provided.",
+    "user_prompt_template": "Write an outline for a literature review based on the given title and references.\nIf I set Output_references to False, do not generate the contents of the ref list for me\nFormat: {{\"level\": 1, \"numbering\": \"1\", \"title\": \"Introduction\", \"ref\": [\"key1\",\"key2\"...]}}\nOutput_references: True\nTitle:\n{title}\nReferences:\n{references_json}",
+    "notes": [
+      "Output_references is hardcoded to True in the released formatter.",
+      "The formatter injects item['ref_meta'] directly, so the released prompt uses Python repr-style reference objects rather than strict JSON.",
+      "The assistant target is str(item['outline']), i.e., Python repr rather than strict JSON."
+    ]
+  },
+  "outline_generation_repo_auxiliary": {
+    "repo_file": "utils/add_cot/add_cot.py",
+    "system_prompt": "You are a scientific writing assistant. Produce a structured outline based on the article metadata and references provided.You need to pay attention to the differences in review structure between different disciplines. For example, medical reviews should follow the IMRaD structure, while computer science reviews should be written in a taxonomic structure or in the order of theoretical development.",
+    "usage_status": "present_in_repo_but_not_clearly_wired_into_formet_to_train_data_py"
+  },
+  "cot_generation_confirmed": {
+    "repo_file": "utils/add_cot/add_cot.py",
+    "model": "DeepSeek-R1 wrapper via call_deepseek_R1",
+    "system_prompt": "You are an expert in review writing. You need to show your complete reasoning when you write an outline.",
+    "user_prompt_template": "Based on the given review outline and references, describe the reasoning process for deriving the outline from the references.\nThis reasoning process should consist of only two steps.\n1. Cluster the references into categories based on corresponding themes. These categories should be similar to the subheadings that appear in the actual outline. When describing the references, use  text rather than numbers.\n2. Describe the process for generating the complete outline from these themes.\nTitle:{title}\nReferences:{reference}\nTarget Outline:{outline}\nThe \"ref\" field in the \"outline\" field is the actual reference. The references you mention should be as consistent as possible with it, rather than using other references in the \"reference\" field.",
+    "notes": [
+      "The released CoT generation prompt conditions on title + references + target outline.",
+      "The script stores the returned answer content into item['cot']; it does not persist hidden reasoning_content."
+    ]
+  },
+  "sft_packing": {
+    "repo_file": "utils/data_to_trainformat/formet_to_train_data.py",
+    "assistant_template": "<think>{cot}</think>{outline}",
+    "assistant_tail_example": "</think>[{'level': 1, 'numbering': '1', 'title': 'Introduction', 'ref': []}, ...]",
+    "note": "In the released formatter, the closing </think> tag is immediately followed by str(item['outline']) without a newline."
+  },
+  "observed_cot_output_shape": "### Step 1: Clustering References into Thematic Categories\n[Theme cluster A]\n- Papers grouped by shared subtheme\n- Reference mentions are written as text / citation keys, not just numeric IDs\n\n[Theme cluster B]\n- Another cluster aligned with a future subsection in the target outline\n\n### Step 2: Generating the Outline from Themes\n1. Introduction / background framing\n2. Major section from theme cluster A\n   2.1 Subsection from subcluster A1\n   2.2 Subsection from subcluster A2\n3. Major section from theme cluster B\n4. Conclusion / future directions\n\n[Optional closing block seen in samples]\nKey Logic:\n- Hierarchical flow\n- Thematic alignment\n- Exclusion of redundancy\n",
+  "important_discrepancies": [
+    "Paper says metadata-driven and discusses titles + abstracts; released formatter uses only title + references.",
+    "Paper describes deriving taxonomy from references; released CoT prompt also includes the gold target outline.",
+    "Released assistant targets are Python repr strings, not strict JSON.",
+    "exact.py computes has_conclusion and then sets has_conclusion = True, weakening that filter in the released script."
+  ]
+}

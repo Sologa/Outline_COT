@@ -1,0 +1,26 @@
+### Step 1: Clustering References into Thematic Categories
+
+- **1 Introduction**: this cluster gathers the papers used to support this standalone theme. Representative references include `Dubay2006TheStudies` ("The Classic Readability Studies"), `Cutts2007OxfordEnglish` ("Oxford guide to plain English"), `sweller2011cognitive` ("Cognitive load theory"), `lin2003improving` ("Improving Summarization Performance by Sentence Compression --- A Pilot Study").
+- **2 Survey Methodology**: this cluster gathers the papers used to support this standalone theme. Representative references include `page2021prisma` ("The PRISMA 2020 statement: an updated guideline for reporting systematic ...").
+- **3 Sentence Compression**: this cluster groups the references that support this section and its subthemes, especially 3.1 Methods, 3.2 Datasets, 3.3 Measures, 3.4 Comparative Evaluation. Representative references include `Knight2000` ("Statistics-Based Summarization - Step One: Sentence Compression"), `Knight2002` ("Summarization beyond sentence extraction: A probabilistic approach to sentence compression"), `turner2005supervised` ("Supervised and Unsupervised Learning for Sentence Compression"), `Galley2007` ("Lexicalized Markov Grammars for Sentence Compression").
+- **4 Sentence Splitting**: this cluster groups the references that support this section and its subthemes, especially 4.1 Methods, 4.2 Datasets, 4.3 Evaluation Metrics, 4.4 Comparative Evaluation. Representative references include `nomoto2022fewer` ("The Fewer Splits are Better: Deconstructing Readability in Sentence Splitting"), `nomoto2023does` ("Does splitting make sentence easier?"), `liu2025community` ("Community-Oriented Sentence Simplification: Towards Accessible Language Processing"), `yu2019gumdrop` ("GumDrop at the DISRPT2019 Shared Task: A Model Stacking Approach ...").
+- **5 Challenges and Limitations**: this cluster groups the references that support this section and its subthemes, especially 5.1 Sentence Compression vs Sentence Splitting, 5.2 Evaluation Metrics, 5.3 Interpretability, 5.4 Complexity. Representative references include `Beauchemin2023Meaning` ("MeaningBERT: assessing meaning preservation between sentences"), `liu2023revisiting` ("Revisiting the gold standard: Grounding summarization evaluation with robust human ..."), `zhang2024benchmarking` ("Benchmarking large language models for news summarization"), `Raffel2020` ("Exploring the limits of transfer learning with a unified text-to-text ...").
+- **6 Conclusions**: this heading functions as a framing or transition node, so it is preserved without inventing citations.
+
+### Step 2: Generating the Outline from Themes
+
+The final outline follows an IMRaD-like review flow adapted to the domain. It starts with **1 Introduction** to frame the scope and vocabulary of *From Lengthy to Lucid: A Systematic Literature Review on NLP Techniques for Taming Long Sentences*, and then expands the review through the major evidence clusters already reflected in the cited references.
+
+- **1 Introduction** remains a top-level unit because the cited material in this span supports one coherent theme without requiring another subdivision layer.
+- **2 Survey Methodology** remains a top-level unit because the cited material in this span supports one coherent theme without requiring another subdivision layer.
+- **3 Sentence Compression** becomes a major theme because its references split naturally into more specific subthemes. Those subthemes are unfolded as **3.1 Methods**; **3.2 Datasets**; **3.3 Measures**; **3.4 Comparative Evaluation**; **3.5 Other Trends**, which keeps the hierarchy aligned with the actual citation distribution in the stored outline.
+- **4 Sentence Splitting** becomes a major theme because its references split naturally into more specific subthemes. Those subthemes are unfolded as **4.1 Methods**; **4.2 Datasets**; **4.3 Evaluation Metrics**; **4.4 Comparative Evaluation**, which keeps the hierarchy aligned with the actual citation distribution in the stored outline.
+- **5 Challenges and Limitations** becomes a major theme because its references split naturally into more specific subthemes. Those subthemes are unfolded as **5.1 Sentence Compression vs Sentence Splitting**; **5.2 Evaluation Metrics**; **5.3 Interpretability**; **5.4 Complexity**; **5.5 Large Language Models in Sentence Compression and Splitting**, which keeps the hierarchy aligned with the actual citation distribution in the stored outline.
+- **6 Conclusions** remains a top-level unit because the cited material in this span supports one coherent theme without requiring another subdivision layer.
+
+The ordering is therefore: 1 Introduction -> 2 Survey Methodology -> 3 Sentence Compression -> 4 Sentence Splitting -> 5 Challenges and Limitations -> 6 Conclusions. This keeps broad framing first, develops the domain-specific themes in the middle, and closes only after the main evidence clusters have been covered.
+
+Key Logic:
+- The clusters are anchored to the real section numbering and titles, not to an invented template.
+- References are mentioned with bib keys that already appear in `outline.json`, so the reasoning stays tied to the stored supervision signal.
+- Empty sections are treated as framing or transition nodes rather than back-filled with fabricated citations.

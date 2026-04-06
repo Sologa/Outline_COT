@@ -1,0 +1,797 @@
+artifact_type: reference_grounded_outline_induction_ir
+artifact_alias: section_aligned_taxonomy_ledger
+source_mode: reference_only
+paper_id: '2312.05172'
+title: 'From Lengthy to Lucid: A Systematic Literature Review on NLP Techniques for Taming Long Sentences'
+inputs:
+  title: true
+  reference_metadata: true
+  gold_outline: false
+nodes:
+- node_id: n_readability_foundations
+  level: 1
+  title_candidate: Readability, Plain Language, and Cognitive Load Foundations
+  node_role: background_theme
+  parent: null
+  refs_complete:
+  - Cutts2007OxfordEnglish
+  - page2021prisma
+  - Grusky2018Newsroom:Strategies
+  - Gardent2017
+  inclusion_rule: Assign broad readability, plain-language, comprehension, and cognitive-load references that motivate simplifying long sentences.
+  ordering_reason: Foundational readability work is first because it defines why long sentences are problematic in the first place.
+- node_id: n_compression_and_deletion
+  level: 1
+  title_candidate: Sentence Compression and Deletion-Based Simplification
+  node_role: method_theme
+  parent: null
+  refs_complete:
+  - lin2003improving
+  - li2013document
+  - Filippova2015
+  - luotolahti2015sentence
+  - wu2007
+  - wang2012two
+  - siddharthan2014survey
+  - fathima2018review
+  - napoles2011evaluating
+  - Knight2000
+  - Knight2002
+  - turner2005supervised
+  - Galley2007
+  - unno2006trimming
+  - clarkelapata2006constraint
+  - clarke2007modelling
+  - Clarke2008GlobalApproach
+  - clarkelapata2010discourse
+  - thadani2013-sentence
+  - napoles2011paraphrastic
+  - thadani2014approximation
+  - Filippova2008
+  - Filippova2013OvercomingCompression
+  - Galanis2010
+  - Cohn2008
+  - Cohn2009
+  - Galanis2011ACompressor
+  - cohn2013
+  - kamigaito2018higher
+  - kamigaito2020syntactically
+  - park2021sentence
+  - Yu2018operation
+  - hou2020cnn
+  - choi2019event
+  - miao2016language
+  - klerke2016improving
+  - Kuvshinova2019Improving
+  - Malireddy2020
+  - Baziotis2019
+  - fevry2018unsupervised
+  - nguyen2020contextual
+  - soares2020sentence
+  - Mallinson2018
+  - Shichel2021
+  - Ghalandari2022EfficientLearning
+  - Zhao2018
+  - vandeghinste2004sentence
+  - yamangil2008mining
+  - toutanova-etal-2016-dataset
+  - vandeghinste2004using
+  - McDonald2006
+  - hirao2009syntax
+  - harashima2012flexible
+  - yoshikawa2012-sentence
+  - wang2017syntax
+  - hasegawa2017japanese
+  - zi2021som
+  - tavakoli2025sentence
+  - xu2009parse
+  - cordeiro2009unsupervised
+  - clarke2006models
+  - juseon2024instructcmp
+  - liu2025community
+  - Siddharthan2006
+  - Siddharthan2014
+  - zajic2008
+  - Liangguo2018
+  - oguro2002evaluation
+  - nomoto2007
+  - zhang2012research
+  - zhang2013chinese
+  - frederico2018multilingual
+  - nobrega2020sentence
+  - aziz2012cross
+  - tollef2025cross
+  - gasan2024multi
+  - zhao2022simple
+  - wang2020hierarchical
+  inclusion_rule: Assign references on compression, deletion, shortening, and related sentence-level simplification methods.
+  ordering_reason: Compression-oriented work is ordered next because it is the most direct family of methods for shortening long sentences.
+- node_id: n_structure_and_segmentation
+  level: 1
+  title_candidate: Parsing, Clause Segmentation, and Structural Decomposition
+  node_role: method_theme
+  parent: null
+  refs_complete:
+  - narayan-etal-2017-split
+  - aharoni-goldberg-2018-split
+  - Zhang2020
+  - kim-etal-2021-bisect
+  - lee2008transformation
+  - yu2019gumdrop
+  - fillmore2001building
+  - Riezler2003StatisticalGrammar
+  - nomoto2022fewer
+  - nomoto2023does
+  - Cripwell2021
+  - lee2017splitting
+  - botha-etal-2018-learning
+  - berlanga2021split
+  - guo2020fact
+  - alajlouni2023knowledge
+  - ponce-etal-2024-split
+  - niklaus-etal-2019-minwikisplit
+  - tsukagoshi2024wikisplit
+  - fan2020memory
+  - talebpour2024split
+  inclusion_rule: Assign references on parsing, clause splitting, segmentation, syntactic decomposition, and structure-aware simplification.
+  ordering_reason: Structure-aware methods follow compression because they explicitly reason over the internal composition of long sentences.
+- node_id: n_neural_generation
+  level: 1
+  title_candidate: Neural Generation, Summarization, and LLM Rewriting
+  node_role: method_theme
+  parent: null
+  refs_complete:
+  - Rush2015ASummarization
+  - li2020explicit
+  - Jing2000
+  - Schumann2020DiscreteExtraction
+  - Liu2022Controlling
+  - liu2022learning
+  - Chopra2016
+  - Liu2017Attention
+  - zhou2017selective
+  - guan2021knowledge
+  - duan2019contrastive
+  - west2019bottlesum
+  - See2017GetNetworks
+  - zhou2019
+  - chali2024transfer
+  - guan2021integrating
+  - zhang2020dense
+  - Vaswani2017
+  - guan2023extract
+  - SclarReferee2022
+  - jung2024impossible
+  - hyun2022generating
+  - li2018ensure
+  - duan2019zero
+  - li2020keywords
+  - zheng2020controllable
+  - Lin2023Multimodal
+  - yuan2024exploring
+  - west2022symbolic
+  - raffel17a
+  - Bahdanau2014
+  - Beauchemin2023Meaning
+  - zhang2024benchmarking
+  - Raffel2020
+  - Guan2021Frame
+  - nayeem2019diverse
+  - guan2025structure
+  - Zhang2021Fact
+  - jing2023vision
+  - Papineni2002
+  inclusion_rule: Assign references on neural generation, summarization, rewriting, seq2seq, transformer, and LLM-based approaches to sentence simplification.
+  ordering_reason: Neural generation methods are placed after structural methods because they typically absorb or replace earlier pipelines with learned rewriting models.
+- node_id: n_evaluation_and_usability
+  level: 1
+  title_candidate: Evaluation, Usability, and Application Constraints
+  node_role: evaluation_theme
+  parent: null
+  refs_complete:
+  - sweller2011cognitive
+  - wang2008automatic
+  - Lin2004Rouge
+  - Zhang2020BertScore
+  - liu2023revisiting
+  - Dubay2006TheStudies
+  inclusion_rule: Assign references on evaluation, accessibility, human studies, readability metrics, and application-specific usability constraints.
+  ordering_reason: Evaluation comes last because it synthesizes whether simplification methods actually improve readability and usability.
+ref_assignment_ledger:
+- ref_key: Cutts2007OxfordEnglish
+  assigned_to:
+  - n_readability_foundations
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Readability, Plain Language, and Cognitive Load Foundations'.
+- ref_key: sweller2011cognitive
+  assigned_to:
+  - n_evaluation_and_usability
+  assignment_reason: Matched theme cues (education) in the supplied title/abstract metadata, so the reference fits 'Evaluation, Usability, and Application Constraints'.
+- ref_key: lin2003improving
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: li2013document
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Rush2015ASummarization
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (abstractive, neural, summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: Filippova2015
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression, deletion) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: luotolahti2015sentence
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression, subtitling) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: li2020explicit
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (machine translation, neural, transformer) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: wu2007
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: wang2012two
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Jing2000
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: Schumann2020DiscreteExtraction
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: narayan-etal-2017-split
+  assigned_to:
+  - n_structure_and_segmentation
+  assignment_reason: Matched theme cues (split) in the supplied title/abstract metadata, so the reference fits 'Parsing, Clause Segmentation, and Structural Decomposition'.
+- ref_key: aharoni-goldberg-2018-split
+  assigned_to:
+  - n_structure_and_segmentation
+  assignment_reason: Matched theme cues (split) in the supplied title/abstract metadata, so the reference fits 'Parsing, Clause Segmentation, and Structural Decomposition'.
+- ref_key: Zhang2020
+  assigned_to:
+  - n_structure_and_segmentation
+  assignment_reason: Matched theme cues (split) in the supplied title/abstract metadata, so the reference fits 'Parsing, Clause Segmentation, and Structural Decomposition'.
+- ref_key: kim-etal-2021-bisect
+  assigned_to:
+  - n_structure_and_segmentation
+  assignment_reason: Matched theme cues (split) in the supplied title/abstract metadata, so the reference fits 'Parsing, Clause Segmentation, and Structural Decomposition'.
+- ref_key: lee2008transformation
+  assigned_to:
+  - n_structure_and_segmentation
+  assignment_reason: Matched theme cues (split) in the supplied title/abstract metadata, so the reference fits 'Parsing, Clause Segmentation, and Structural Decomposition'.
+- ref_key: yu2019gumdrop
+  assigned_to:
+  - n_structure_and_segmentation
+  assignment_reason: Matched theme cues (parsing, segmentation) in the supplied title/abstract metadata, so the reference fits 'Parsing, Clause Segmentation, and Structural Decomposition'.
+- ref_key: siddharthan2014survey
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (simplification) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: fathima2018review
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: napoles2011evaluating
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: page2021prisma
+  assigned_to:
+  - n_readability_foundations
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Readability, Plain Language, and Cognitive Load Foundations'.
+- ref_key: Knight2000
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Knight2002
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: turner2005supervised
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Galley2007
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression, deletion) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: unno2006trimming
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: clarkelapata2006constraint
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: clarke2007modelling
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Clarke2008GlobalApproach
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: clarkelapata2010discourse
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: thadani2013-sentence
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: napoles2011paraphrastic
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression, deletion) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Liu2022Controlling
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: liu2022learning
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: thadani2014approximation
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Filippova2008
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Filippova2013OvercomingCompression
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression, deletion) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Galanis2010
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Cohn2008
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression, deletion) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Cohn2009
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Galanis2011ACompressor
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: cohn2013
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression, deletion) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: kamigaito2018higher
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: kamigaito2020syntactically
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: park2021sentence
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Yu2018operation
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Chopra2016
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (abstractive, neural, summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: Liu2017Attention
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: zhou2017selective
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (abstractive, summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: guan2021knowledge
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (abstractive, summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: hou2020cnn
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression, deletion) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: duan2019contrastive
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (abstractive, summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: west2019bottlesum
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: See2017GetNetworks
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: choi2019event
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: miao2016language
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: zhou2019
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: klerke2016improving
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Kuvshinova2019Improving
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Malireddy2020
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Baziotis2019
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: fevry2018unsupervised
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: chali2024transfer
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (abstractive, neural, summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: nguyen2020contextual
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression, deletion) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: soares2020sentence
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Mallinson2018
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: guan2021integrating
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (abstractive, summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: fillmore2001building
+  assigned_to:
+  - n_structure_and_segmentation
+  assignment_reason: Matched theme cues (syntactic) in the supplied title/abstract metadata, so the reference fits 'Parsing, Clause Segmentation, and Structural Decomposition'.
+- ref_key: zhang2020dense
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: Vaswani2017
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (machine translation, neural, transformer) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: Shichel2021
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: guan2023extract
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (rewrite, summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: SclarReferee2022
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (language model, summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: jung2024impossible
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: Ghalandari2022EfficientLearning
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: hyun2022generating
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (abstractive, summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: Zhao2018
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: vandeghinste2004sentence
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression, subtitling) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: yamangil2008mining
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: toutanova-etal-2016-dataset
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Grusky2018Newsroom:Strategies
+  assigned_to:
+  - n_readability_foundations
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Readability, Plain Language, and Cognitive Load Foundations'.
+- ref_key: vandeghinste2004using
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: McDonald2006
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: hirao2009syntax
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: harashima2012flexible
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: yoshikawa2012-sentence
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: wang2017syntax
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: hasegawa2017japanese
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: zi2021som
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: tavakoli2025sentence
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression, deletion) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: xu2009parse
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: cordeiro2009unsupervised
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: wang2008automatic
+  assigned_to:
+  - n_evaluation_and_usability
+  assignment_reason: Matched theme cues (evaluation) in the supplied title/abstract metadata, so the reference fits 'Evaluation, Usability, and Application Constraints'.
+- ref_key: clarke2006models
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: juseon2024instructcmp
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: li2018ensure
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (abstractive, neural, summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: duan2019zero
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (abstractive, summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: li2020keywords
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (abstractive, summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: zheng2020controllable
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (abstractive, summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: Lin2023Multimodal
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (language model, summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: yuan2024exploring
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: Lin2004Rouge
+  assigned_to:
+  - n_evaluation_and_usability
+  assignment_reason: Matched theme cues (evaluation) in the supplied title/abstract metadata, so the reference fits 'Evaluation, Usability, and Application Constraints'.
+- ref_key: Riezler2003StatisticalGrammar
+  assigned_to:
+  - n_structure_and_segmentation
+  assignment_reason: Matched theme cues (parse) in the supplied title/abstract metadata, so the reference fits 'Parsing, Clause Segmentation, and Structural Decomposition'.
+- ref_key: west2022symbolic
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (language model) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: raffel17a
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (machine translation, neural, summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: nomoto2022fewer
+  assigned_to:
+  - n_structure_and_segmentation
+  assignment_reason: Matched theme cues (split) in the supplied title/abstract metadata, so the reference fits 'Parsing, Clause Segmentation, and Structural Decomposition'.
+- ref_key: nomoto2023does
+  assigned_to:
+  - n_structure_and_segmentation
+  assignment_reason: Matched theme cues (split) in the supplied title/abstract metadata, so the reference fits 'Parsing, Clause Segmentation, and Structural Decomposition'.
+- ref_key: liu2025community
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (simplification) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Siddharthan2006
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (simplification) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Siddharthan2014
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (simplification) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Cripwell2021
+  assigned_to:
+  - n_structure_and_segmentation
+  assignment_reason: Matched theme cues (split) in the supplied title/abstract metadata, so the reference fits 'Parsing, Clause Segmentation, and Structural Decomposition'.
+- ref_key: lee2017splitting
+  assigned_to:
+  - n_structure_and_segmentation
+  assignment_reason: Matched theme cues (clause, dependency, parse) in the supplied title/abstract metadata, so the reference fits 'Parsing, Clause Segmentation, and Structural Decomposition'.
+- ref_key: botha-etal-2018-learning
+  assigned_to:
+  - n_structure_and_segmentation
+  assignment_reason: Matched theme cues (split) in the supplied title/abstract metadata, so the reference fits 'Parsing, Clause Segmentation, and Structural Decomposition'.
+- ref_key: Bahdanau2014
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (machine translation, neural) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: berlanga2021split
+  assigned_to:
+  - n_structure_and_segmentation
+  assignment_reason: Matched theme cues (split) in the supplied title/abstract metadata, so the reference fits 'Parsing, Clause Segmentation, and Structural Decomposition'.
+- ref_key: guo2020fact
+  assigned_to:
+  - n_structure_and_segmentation
+  assignment_reason: Matched theme cues (split) in the supplied title/abstract metadata, so the reference fits 'Parsing, Clause Segmentation, and Structural Decomposition'.
+- ref_key: alajlouni2023knowledge
+  assigned_to:
+  - n_structure_and_segmentation
+  assignment_reason: Matched theme cues (split) in the supplied title/abstract metadata, so the reference fits 'Parsing, Clause Segmentation, and Structural Decomposition'.
+- ref_key: ponce-etal-2024-split
+  assigned_to:
+  - n_structure_and_segmentation
+  assignment_reason: Matched theme cues (split) in the supplied title/abstract metadata, so the reference fits 'Parsing, Clause Segmentation, and Structural Decomposition'.
+- ref_key: Gardent2017
+  assigned_to:
+  - n_readability_foundations
+  assignment_reason: No narrower theme cues were strong enough in the supplied metadata, so the reference is retained under the broad fallback node 'Readability, Plain Language, and Cognitive Load Foundations'.
+- ref_key: niklaus-etal-2019-minwikisplit
+  assigned_to:
+  - n_structure_and_segmentation
+  assignment_reason: Matched theme cues (split) in the supplied title/abstract metadata, so the reference fits 'Parsing, Clause Segmentation, and Structural Decomposition'.
+- ref_key: tsukagoshi2024wikisplit
+  assigned_to:
+  - n_structure_and_segmentation
+  assignment_reason: Matched theme cues (split) in the supplied title/abstract metadata, so the reference fits 'Parsing, Clause Segmentation, and Structural Decomposition'.
+- ref_key: Zhang2020BertScore
+  assigned_to:
+  - n_evaluation_and_usability
+  assignment_reason: Matched theme cues (evaluation, metric) in the supplied title/abstract metadata, so the reference fits 'Evaluation, Usability, and Application Constraints'.
+- ref_key: Beauchemin2023Meaning
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (language model, machine translation, summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: liu2023revisiting
+  assigned_to:
+  - n_evaluation_and_usability
+  assignment_reason: Matched theme cues (evaluation, human evaluation, metric) in the supplied title/abstract metadata, so the reference fits 'Evaluation, Usability, and Application Constraints'.
+- ref_key: zhang2024benchmarking
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (language model, summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: Raffel2020
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (summarization, transformer) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: Dubay2006TheStudies
+  assigned_to:
+  - n_evaluation_and_usability
+  assignment_reason: Matched theme cues (readability) in the supplied title/abstract metadata, so the reference fits 'Evaluation, Usability, and Application Constraints'.
+- ref_key: zajic2008
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Guan2021Frame
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (abstractive, summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: nayeem2019diverse
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (abstractive, machine translation, neural) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: guan2025structure
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (abstractive, summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: Liangguo2018
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression, deletion) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: Zhang2021Fact
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (abstractive, neural, summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: oguro2002evaluation
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: nomoto2007
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: zhang2012research
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: zhang2013chinese
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: frederico2018multilingual
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression, deletion) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: nobrega2020sentence
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression, simplification) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: aziz2012cross
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: tollef2025cross
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: jing2023vision
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (language model, summarization) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+- ref_key: gasan2024multi
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression, subtitling) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: zhao2022simple
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (compress, compression, deletion) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: wang2020hierarchical
+  assigned_to:
+  - n_compression_and_deletion
+  assignment_reason: Matched theme cues (simplification) in the supplied title/abstract metadata, so the reference fits 'Sentence Compression and Deletion-Based Simplification'.
+- ref_key: fan2020memory
+  assigned_to:
+  - n_structure_and_segmentation
+  assignment_reason: Matched theme cues (split) in the supplied title/abstract metadata, so the reference fits 'Parsing, Clause Segmentation, and Structural Decomposition'.
+- ref_key: talebpour2024split
+  assigned_to:
+  - n_structure_and_segmentation
+  assignment_reason: Matched theme cues (split, syntactic) in the supplied title/abstract metadata, so the reference fits 'Parsing, Clause Segmentation, and Structural Decomposition'.
+- ref_key: Papineni2002
+  assigned_to:
+  - n_neural_generation
+  assignment_reason: Matched theme cues (machine translation) in the supplied title/abstract metadata, so the reference fits 'Neural Generation, Summarization, and LLM Rewriting'.
+unassigned_refs: []
