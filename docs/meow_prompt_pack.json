@@ -3,7 +3,8 @@
   "sources": {
     "paper": "https://arxiv.org/pdf/2509.19370",
     "repo": "https://github.com/zhaoyMa/Meow-Data-curation",
-    "dataset": "https://huggingface.co/datasets/haajimi/Meow"
+    "dataset": "https://huggingface.co/datasets/haajimi/Meow",
+    "evaluation_repo": "https://github.com/cedricshan/Survey-Outline-Evaluation-Benckmark"
   },
   "outline_extraction": {
     "type": "deterministic_source_parsing_not_llm_prompt",
@@ -33,6 +34,19 @@
     "notes": [
       "The released CoT generation prompt conditions on title + references + target outline.",
       "The script stores the returned answer content into item['cot']; it does not persist hidden reasoning_content."
+    ]
+  },
+  "llm_judge_source_confirmed": {
+    "upstream_repo": "https://github.com/cedricshan/Survey-Outline-Evaluation-Benckmark",
+    "upstream_source_file": "scripts/evaluate_llm.py",
+    "local_system_prompt_path": "prompts/meow_llm_judge_6d_source_system.txt",
+    "local_user_prompt_path": "prompts/meow_llm_judge_6d_source_user.txt",
+    "dimensions": 6,
+    "usage_status": "source_only_provenance_exception_not_default_direct_payload",
+    "notes": [
+      "These prompt files are a provenance capture of the upstream LLM judge implementation, not the paper's 5-dimension metric definition.",
+      "The upstream judge includes Content - Academic Value as a sixth dimension; the paper's evaluation section and result tables define five concrete criteria plus a derived Total.",
+      "The local user prompt preserves the upstream runtime text with only two placeholder substitutions: topic -> {topic}, outline -> {outline}."
     ]
   },
   "sft_packing": {
