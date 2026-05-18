@@ -4,6 +4,35 @@ This file is the repo-level guide for future conversations and agents working in
 
 Read this file before inferring workflow from scattered prompt files, helper HTML, or older notes.
 
+## 0. Default Codex Operating Guardrails
+These guardrails are the default behavior for Codex work in this tree. Keep them prominent and apply them unless a direct user, system, developer, or more specific repository rule says otherwise.
+
+**Think before coding.** Do not silently assume missing requirements. State important assumptions, surface ambiguity, present tradeoffs when they matter, and stop to ask when uncertainty could send the work in the wrong direction.
+
+**Simplicity first.** Use the minimum change that solves the requested problem. Do not add speculative features, unnecessary abstractions, new configurability, or defensive handling for scenarios with no evidence they matter.
+
+**Surgical changes.** Touch only files and lines required for the task. Match existing style. Do not refactor, reformat, rename, or clean adjacent code opportunistically. Remove only dead imports, variables, or code that your own change made unused.
+
+**Goal-driven execution.** Convert vague requests into concrete success criteria before acting. Prefer tests, builds, focused repro steps, file comparisons, or documented checks over confidence. Do not claim a change is complete without fresh verification evidence.
+
+For trivial, low-risk one-line work, keep the process lightweight, but keep the same bias toward explicit assumptions, small diffs, and verified outcomes.
+
+## 0.1 Experiment Data Ledger
+
+The official stable experiment ledger for this repository is the native Google Sheet:
+
+- [Outline_COT 實驗總表 2026-05-18](https://docs.google.com/spreadsheets/d/1qoyrAI2NCos6RXHVcK5cbOrH0h8ONDCqs7Vy6aLfxVM/edit?gid=389765809#gid=389765809)
+
+All stable experiment settings, artifact descriptions, and final experiment results should be preserved in this sheet, not only in chat, ad hoc notes, or local-only summaries.
+
+Staging rule for fresh or unstable experiments:
+
+- Do not write newly produced, unstable, provisional, or still-being-debugged results directly into the official stable ledger.
+- First create a separate new Google Sheet in Google Drive for the provisional experiment data.
+- Record and report the provisional sheet's exact name and URL so later agents can find it.
+- Keep using that provisional sheet until the result is stable and both the user and Codex agree it is ready for formal recordkeeping.
+- Only after that explicit agreement should the provisional data be merged into the official stable ledger above.
+
 ## 1. Repo purpose
 
 This repository is primarily used to inspect, reconstruct, compare, and extract:
@@ -194,3 +223,92 @@ Operational rule:
   - the upstream repo's 6-dimension judge, which adds `Content - Academic Value`
 - Treat `Structural Distance` as a programmatic metric path and `LLM-as-a-Judge` as a prompt-driven evaluation path.
 - Treat ref-based reward helpers as auxiliary programmatic metrics unless the user explicitly asks about them; do not present them as the paper's main evaluation table metrics.
+
+## 10. Execution and Orchestration Policy
+
+For this repo, use a policy-first execution model. Choose among direct execution, native subagent delegation, and manual `codex exec` dispatch based on task shape rather than style preference.
+
+### 10.1 Execution mode selection
+
+- Prefer direct execution for short, tightly coupled, or critical-path work:
+  - single-file edits
+  - narrow bug fixes
+  - one-off source checks
+  - any task where the next step immediately depends on the answer
+- Prefer native subagents when the environment supports them and the work is:
+  - independently scannable
+  - bounded in scope
+  - useful to run in parallel with the main agent's integration work
+  - better handled in a separate context window
+- Prefer manual `codex exec` dispatch for work that is:
+  - long-running
+  - batch-oriented
+  - artifact-heavy
+  - easier to audit through explicit logs, output directories, and rerunnable commands
+- Do not open subagents or background jobs just to appear more agentic. If the task is small, urgent, or tightly coupled, keep it in the main agent.
+- If native subagent tools are unavailable, fall back to manual `codex exec` dispatch rather than forcing everything through serial manual reading.
+
+### 10.2 Delegation rules
+
+- Use native subagents for:
+  - repo comprehension across multiple independent surfaces
+  - parallel paper/file comparisons
+  - bounded provenance checks
+  - sidecar verification that does not block the main agent's immediate next step
+- Keep delegated asks concrete and provenance-aware. A good delegated task should state:
+  - the exact question
+  - the target files or surfaces
+  - the expected output shape
+  - whether the task is read-only or allowed to mutate files
+- Prefer read-only delegation for comprehension, comparison, and evidence gathering.
+- If the main agent is blocked on a small answer that it can obtain directly, do not delegate it.
+- Do not treat delegated output as final truth. Delegation produces intermediate evidence for later synthesis.
+
+### 10.3 Batch research and `codex exec`
+
+- For cross-paper inspection, batch comparison, large report preparation, figure precomputation, or other heavy non-mutating analysis, prefer using `codex exec` jobs first instead of serial manual reading.
+- When multiple independent scans can be run separately, dispatch them in parallel and then synthesize the results in the main agent.
+- Prefer `codex exec` when the task benefits from:
+  - explicit shell commands
+  - saved output artifacts
+  - reproducible reruns
+  - isolated long-context reading
+- Keep the main agent focused on integration, provenance tracking, contradiction checking, and final interpretation rather than doing all heavy reading inline.
+- Prefer read-only `codex exec` runs for evidence gathering unless a task explicitly requires mutation.
+
+### 10.4 Verification and integration
+
+- Subagent outputs and `codex exec` artifacts are intermediate evidence, not final claims.
+- Important claims about prompts, runtime behavior, evaluation metrics, and repo provenance must be verified against primary source artifacts before being presented as confirmed.
+- The main agent remains responsible for:
+  - synthesis
+  - contradiction resolution
+  - path correctness
+  - final wording
+- Do not collapse inferred or reconstructed prompt text into confirmed prompt text without explicit provenance.
+- When delegated analyses disagree, reconcile against source artifacts rather than choosing by majority.
+
+### 10.5 Reporting expectations
+
+- In final answers, separate:
+  - confirmed from source
+  - inferred or reconstructed
+  - open uncertainty
+- Preserve concrete file paths and artifact locations.
+- State whether an important conclusion came from:
+  - direct source inspection
+  - delegated subagent analysis
+  - manual `codex exec` output
+- For long reports, summarize delegated findings, but keep provenance visible enough that a later reader can trace the claim back to source evidence.
+
+## 11. graphify
+
+This project may maintain a `graphify` knowledge graph at `graphify-out/`.
+
+Rules:
+- For architecture, prompt provenance, cross-file relationships, or pipeline-tracing questions, consult `graphify-out/GRAPH_REPORT.md` before broad raw-file search when the graph exists
+- If `graphify-out/wiki/index.md` exists, navigate it before reading scattered raw files
+- Treat `INFERRED` edges as leads, not final truth; verify important claims against source files
+- If the graph is missing or likely stale after meaningful repo changes, rebuild with `graphify . --update` or `graphify .` for a full rebuild
+- After modifying code files in this session, run `python3 -c "from graphify.watch import _rebuild_code; from pathlib import Path; _rebuild_code(Path('.'))"` to keep the graph current
+- Detailed usage notes live in `docs/skills/graphify_skills_guide.md`
