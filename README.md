@@ -12,6 +12,7 @@ This repository is a MEOW outline-analysis workspace. It keeps prompt payloads, 
 - `scripts/`: local runners, extractors, and evaluation utilities.
 - `tests/`: focused regression tests for scripts.
 - `experiments/`: incubating experiment specs, prototype code, prompt variants, and promotion notes.
+- `engineering_validation/`: incubating larger code-change specs, prototypes, validation plans, and promotion notes.
 - `results/`: experiment outputs and run-scoped evaluation artifacts.
 - `docs/`: human-readable reports, guides, prompt notes, figures, and audits.
 - `graphify-out/`: rebuildable local graphify output.

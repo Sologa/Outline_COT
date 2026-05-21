@@ -211,6 +211,8 @@ For per-paper or per-run records:
 For code-change or patch validation:
 
 - Prefer the term `engineering_validation` over `patch` for folder names, because the artifacts may cover bug fixes, refactors, prompt/runtime changes, or regression checks, not only patch files.
+- Use repo-local `engineering_validation/` for larger code-change specs, implementation plans, prototype code, focused tests, validation plans, runbooks, and promotion checklists before the change is promoted into stable scripts/tests/docs.
+- Keep repo-local `engineering_validation/` distinct from the official Drive folder `03_engineering_validation/`. The local folder is for planning and small reviewable scaffolding; the Drive folder is only for human-facing aggregate validation Sheets when the user explicitly wants them.
 - If a code change produces important intermediate test artifacts, back up the source/snapshot package under `_gdrive_sync_outline_cot/artifacts/tables/engineering_validation/<YYYY-MM-DD_change_slug>/` for tabular artifacts or `_gdrive_sync_outline_cot/results/engineering_validation/<YYYY-MM-DD_change_slug>/` for run outputs.
 - Create a native Google Sheet only when there is a human-facing aggregate comparison to inspect, and put it under the official Drive folder `03_engineering_validation/<YYYY-MM-DD_change_slug>/`.
 - Routine test logs, caches, pycache files, and retry scratch should not get individual native Sheets.
@@ -304,6 +306,7 @@ Current working artifacts include:
 - `data/paper_sets/meow_test100/`
 - `results/<paper_id>/...`
 - `experiments/<experiment_id>/...`
+- `engineering_validation/<change_id>/...`
 - `prompts/*.txt`
 - `docs/prompts/meow_prompt_copy_helper.html`
 - `scripts/extract_meow_outline.py`
@@ -460,6 +463,44 @@ Short form:
 - `results/` = run outputs and evaluation artifacts.
 - stable pipeline code/prompts live outside `experiments/`.
 
+## 8.1 Engineering Validation Incubation Area
+
+Use `engineering_validation/` for larger code changes that need a temporary planning/prototype/validation workspace before they are promoted into the stable pipeline.
+
+Prefer `engineering_validation/` over `patches/`:
+
+- `patches/` is easy to confuse with literal `.patch` or `.diff` files.
+- `engineering_validation/` matches this repo's existing Drive and Sheet terminology for code-change validation.
+- The scope includes bug fixes, refactors, prompt/runtime changes, evaluation changes, regression checks, and compatibility work, not only patch files.
+
+Directory convention:
+
+- `engineering_validation/YYYY-MM-DD_change_slug/`
+  - `spec.md`: problem, intended behavior, scope, non-goals, target files, risks, and promotion gate.
+  - `implementation_plan.md`: planned edits, ownership boundaries, migration steps, and rollback notes.
+  - `validation_plan.md`: smoke checks, regression checks, full validation matrix, and acceptance evidence.
+  - `runbook.md`: exact commands, expected outputs, rerun notes, and environment assumptions.
+  - `promotion_checklist.md`: what must be true before reusable pieces move into stable repo locations.
+  - `artifact_manifest.md`: pointers to result folders, Drive snapshots, Sheets, logs, or archives; do not store raw outputs here.
+  - `prototype/`: code that is local to this change and not imported by stable scripts.
+  - `tests/`: focused checks for the prototype or behavior under validation.
+  - `fixtures/`: small test fixtures only.
+  - `prompts/`: prompt variants local to this engineering change, only when the change is prompt-facing.
+
+Operational rules:
+
+- Do not put bulky run outputs, logs, caches, model responses, debug dumps, or generated evaluation directories in `engineering_validation/`; use `results/engineering_validation/<change_id>/...`, `.local/engineering_validation/<change_id>/...`, or `_gdrive_sync_outline_cot/results/engineering_validation/<change_id>/...`.
+- Stable scripts must not import from `engineering_validation/*/prototype` unless the code has been promoted.
+- Promote reusable code to `scripts/` or another stable module, durable regression tests to repo-level `tests/`, stable prompt payloads to `prompts/`, and docs/reports to `docs/`.
+- If a code change produces a human-facing aggregate comparison table, create a native Google Sheet only after the user explicitly asks for it, then place it under the official Drive folder `03_engineering_validation/<YYYY-MM-DD_change_slug>/`.
+- After promotion, leave a short note in the engineering-validation folder pointing to the promoted files and validation evidence.
+
+Short form:
+
+- `engineering_validation/` = planned or in-progress code-change validation work.
+- `results/engineering_validation/` = run outputs for those changes.
+- `03_engineering_validation/` in Google Drive = optional human-facing aggregate Sheets for those changes.
+
 ## 9. Blind Outline Generation and Evaluation Contract
 
 Current blind-outline workflow is `results-first`.
@@ -606,5 +647,5 @@ Rules:
 - Do not run shell commands like `graphify .` or `graphify . --update` on this machine; the local CLI path has previously rejected that form with `unknown command`.
 - For code-only refresh after code edits, run `python3 -c "from graphify.watch import _rebuild_code; from pathlib import Path; _rebuild_code(Path('.'))"`.
 - For a full semantic rebuild, use the installed `$graphify` skill/workflow or the Python package API documented in `docs/skills/graphify_skills_guide.md`; verify detect scope before rebuilding the full repo.
-- Keep experiment specs, prompt variants, and prototype code visible to graphify, but exclude experiment-local `outputs/`, `runs/`, `artifacts/`, `.local/`, and logs via `.graphifyignore`.
+- Keep experiment and engineering-validation specs, prompt variants, prototype code, and focused tests visible to graphify, but exclude local `outputs/`, `runs/`, `artifacts/`, `.local/`, and logs via `.graphifyignore`.
 - Detailed usage notes live in `docs/skills/graphify_skills_guide.md`

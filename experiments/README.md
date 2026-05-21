@@ -2,6 +2,8 @@
 
 `experiments/` is the incubation area for ideas that are not yet part of the stable pipeline.
 
+For larger code changes, bug fixes, refactors, prompt/runtime changes, or regression-validation work, use `engineering_validation/` instead.
+
 Use one directory per experiment family:
 
 ```text
