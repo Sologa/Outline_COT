@@ -1,0 +1,104 @@
+experiment_id: 2026-05-20_taxonomy_augmented_outline_prompt
+status: provisional_runner_ready
+created: "2026-05-20"
+
+question: >
+  Does adding a supplied taxonomy to the original blind outline-generation prompt
+  improve MEOW-style outline quality compared with the original prompt?
+
+scope:
+  paper_id: 096_2502.03108
+  upstream_test_prompts_index_0_based: 95
+  upstream_test_prompts_path: third_party/repos/Survey-Outline-Evaluation-Benckmark/datasets/test_prompts.json
+  reference_outline: data/paper_sets/meow_test100/outlines/096_2502.03108.outline.json
+  evaluator_reference_outline_list: results/2026-05-20_taxonomy_augmented_outline_prompt/_inputs/096_2502.03108.reference_outline.list.json
+  tex_main: data/paper_sets/meow_test100/tex_src/096_2502.03108/main.tex
+  taxonomy_artifact: results/2026-05-19_meow_taxonomy_extraction/smoke/096_2502.03108/taxonomy_extraction.json
+  input_conditions:
+    - no_abstract
+    - with_abstract
+  variants:
+    - baseline_no_taxonomy
+    - taxonomy_augmented_v1_minimal
+    - taxonomy_augmented_v2_guarded
+
+models:
+  generation:
+    model: gpt-5.4-mini
+    reasoning_effort: medium
+  judge:
+    backend: codex
+    model: gpt-5.5
+    reasoning_effort: high
+
+baseline:
+  name: original_blind_outline_prompt
+  prompt_source: scripts/codex_meow_outline_blind_lib.py
+  required_match:
+    - same_paper_inputs
+    - same_model
+    - same_reasoning_effort
+    - same_include_abstract_setting
+    - same_evaluation_backend
+
+method:
+  primary_prompt_variant: taxonomy_augmented_v1_minimal
+  prompt_variants:
+    - name: taxonomy_augmented_v1_minimal
+      prompt_template: experiments/2026-05-20_taxonomy_augmented_outline_prompt/prompts/taxonomy_augmented_outline_prompt_template.txt
+      description: minimal taxonomy augmentation; no explicit anti-overexpansion instruction
+    - name: taxonomy_augmented_v2_guarded
+      prompt_template: experiments/2026-05-20_taxonomy_augmented_outline_prompt/prompts/taxonomy_augmented_outline_prompt_guarded_template.txt
+      description: taxonomy augmentation plus explicit anti-overexpansion guidance
+  taxonomy_rendering:
+    mode: tree_only
+    include_taxonomy_kind: false
+    include_source_boundary: false
+    include_tree: true
+    include_node_notes: false
+    include_qualifiers: false
+    include_classified_items: false
+    include_evidence: false
+    include_audit: false
+    include_citation_assignments: false
+  prototype_entrypoint: experiments/2026-05-20_taxonomy_augmented_outline_prompt/prototype/run_taxonomy_augmented_outline_prompt.py
+  summary_entrypoint: experiments/2026-05-20_taxonomy_augmented_outline_prompt/prototype/summarize_taxonomy_augmented_results.py
+  evaluation_entrypoint: scripts/evaluate_chatgpt_meow_blind_batch.py
+
+outputs:
+  results_root: results/2026-05-20_taxonomy_augmented_outline_prompt
+  local_scratch: .local/experiments/2026-05-20_taxonomy_augmented_outline_prompt
+  run_layout: results/2026-05-20_taxonomy_augmented_outline_prompt/096_2502.03108/<input_condition>/<variant>/
+
+google_drive_record:
+  staging_rule: provisional_sheet_only
+  target_folder_url: https://drive.google.com/drive/folders/1l1bINVVStjrVuhpp6AoS_KPnwpvH0h5W?usp=drive_link
+  official_native_folder_url: https://drive.google.com/drive/u/0/folders/1l1bINVVStjrVuhpp6AoS_KPnwpvH0h5W
+  official_native_subfolder: 02_experiments/2026-05-20_taxonomy_augmented_outline_prompt
+  provisional_sheet_name: Outline_COT provisional taxonomy augmented outline prompt 2026-05-20
+  provisional_sheet_url: https://docs.google.com/spreadsheets/d/1T6Rtniq9EVH_sCUp0pJ_oZLciKDWECkAYUq-lLB8IZg/edit?gid=1708901450#gid=1708901450
+  local_table_package: _gdrive_sync_outline_cot/artifacts/tables/experiments/2026-05-20_taxonomy_augmented_outline_prompt
+  xlsx_source_snapshot: _gdrive_sync_outline_cot/artifacts/tables/experiments/2026-05-20_taxonomy_augmented_outline_prompt/snapshots/Outline_COT provisional taxonomy augmented outline prompt 2026-05-20.xlsx
+  conversion_policy: generate local xlsx/source package first, then convert or import into the official native experiment subfolder with scripts/import_experiment_workbook_to_google_sheet.py; do not ask the user to manually import
+  tabs:
+    - README
+    - Run Matrix
+    - Prompt Variants
+    - Taxonomy Payload
+    - Generation Results
+    - Judge Results
+    - Pairwise Comparison
+    - Manual Notes
+
+metrics:
+  primary: paired_meow_eval_delta
+  secondary:
+    - structural_distance_delta
+    - taxonomy_body_heading_overlap
+    - qualitative_taxonomy_overexpansion_audit
+
+notes:
+  - Prompt wording must be generic; it must not claim the taxonomy was extracted from the target paper.
+  - The primary runnable version is minimal: original prompt plus one taxonomy block.
+  - The guarded prompt is an ablation to measure whether anti-overexpansion wording helps or hurts.
+  - Do not update the official stable ledger until the result is stable and explicitly approved.

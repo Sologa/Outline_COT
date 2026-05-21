@@ -1,0 +1,338 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.outline-cot/experiments/2026-05-19_meow_taxonomy_extraction/taxonomy_extraction.schema.json",
+  "title": "MEOW taxonomy extraction artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "paper_id",
+    "test_index",
+    "arxiv_id",
+    "title",
+    "taxonomy_status",
+    "taxonomy_kind",
+    "source_pack",
+    "visual_table_review",
+    "taxonomies",
+    "evidence_ledger",
+    "rejected_candidates",
+    "audit"
+  ],
+  "properties": {
+    "paper_id": {
+      "type": "string",
+      "pattern": "^[0-9]{3}_[0-9]{4}\\.[0-9]{4,5}$"
+    },
+    "test_index": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100
+    },
+    "arxiv_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "taxonomy_status": {
+      "type": "string",
+      "enum": ["explicit", "taxonomy_like", "none_found", "ambiguous", "blocked"]
+    },
+    "taxonomy_kind": {
+      "type": ["string", "null"],
+      "enum": ["tree", "forest", "faceted_taxonomy", "taxonomy_like_dag", null]
+    },
+    "source_pack": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tex_dir", "entrypoint", "pdf_path", "assets", "outline_inventory_path"],
+      "properties": {
+        "tex_dir": { "type": "string" },
+        "entrypoint": { "type": "string" },
+        "included_tex_files": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "pdf_path": { "type": "string" },
+        "outline_inventory_path": { "type": "string" },
+        "assets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "asset_type", "referenced_by_tex"],
+            "properties": {
+              "path": { "type": "string" },
+              "asset_type": {
+                "type": "string",
+                "enum": ["pdf", "png", "jpg", "jpeg", "svg", "tikz_inline", "other"]
+              },
+              "referenced_by_tex": { "type": "boolean" },
+              "tex_locator": { "type": ["string", "null"] },
+              "notes": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "visual_table_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["figures_read", "tables_read", "unresolved_assets"],
+      "properties": {
+        "figures_read": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/reviewed_visual" }
+        },
+        "tables_read": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/reviewed_table" }
+        },
+        "unresolved_assets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["locator", "reason"],
+            "properties": {
+              "locator": { "type": "string" },
+              "reason": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "taxonomies": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/taxonomy" }
+    },
+    "evidence_ledger": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/evidence" }
+    },
+    "rejected_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["candidate_id", "locator", "reason", "notes"],
+        "properties": {
+          "candidate_id": { "type": "string" },
+          "locator": { "type": "string" },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "outline_only",
+              "section_navigation",
+              "performance_table_only",
+              "caption_without_visible_body",
+              "unresolved_asset",
+              "insufficient_taxonomy_signal",
+              "other"
+            ]
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reviewer", "status", "findings", "unresolved_questions"],
+      "properties": {
+        "reviewer": { "type": "string" },
+        "status": {
+          "type": "string",
+          "enum": ["not_reviewed", "pass", "pass_with_notes", "revise", "fail", "blocked"]
+        },
+        "findings": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "unresolved_questions": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "reviewed_visual": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["figure_id", "locator", "asset_or_page", "read_status"],
+      "properties": {
+        "figure_id": { "type": "string" },
+        "locator": { "type": "string" },
+        "asset_or_page": { "type": "string" },
+        "read_status": {
+          "type": "string",
+          "enum": ["read", "partial", "blocked"]
+        },
+        "visible_text_transcribed": { "type": "boolean" },
+        "qualifiers_recorded": { "type": "boolean" },
+        "notes": { "type": "string" }
+      }
+    },
+    "reviewed_table": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["table_id", "locator", "read_status"],
+      "properties": {
+        "table_id": { "type": "string" },
+        "locator": { "type": "string" },
+        "read_status": {
+          "type": "string",
+          "enum": ["read", "partial", "blocked"]
+        },
+        "row_column_facets_preserved": { "type": "boolean" },
+        "notes": { "type": "string" }
+      }
+    },
+    "taxonomy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "taxonomy_id",
+        "name",
+        "source_boundary",
+        "taxonomy_kind",
+        "nodes",
+        "edges",
+        "classified_items"
+      ],
+      "properties": {
+        "taxonomy_id": { "type": "string" },
+        "name": { "type": "string" },
+        "source_boundary": {
+          "type": "string",
+          "enum": [
+            "author_taxonomy_tree",
+            "classification_table_tree",
+            "taxonomy_section_tree",
+            "induced_taxonomy_tree"
+          ]
+        },
+        "taxonomy_kind": {
+          "type": "string",
+          "enum": ["tree", "forest", "faceted_taxonomy", "taxonomy_like_dag"]
+        },
+        "scope_note": { "type": "string" },
+        "nodes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/node" }
+        },
+        "edges": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/edge" }
+        },
+        "classified_items": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/classified_item" }
+        }
+      }
+    },
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["node_id", "label_raw", "label_normalized", "evidence_ids"],
+      "properties": {
+        "node_id": { "type": "string" },
+        "label_raw": { "type": "string" },
+        "label_normalized": { "type": "string" },
+        "depth": { "type": ["integer", "null"], "minimum": 0 },
+        "facet": { "type": ["string", "null"] },
+        "qualifiers": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "notes": { "type": "string" }
+      }
+    },
+    "edge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["edge_id", "source", "target", "relation", "evidence_ids"],
+      "properties": {
+        "edge_id": { "type": "string" },
+        "source": { "type": "string" },
+        "target": { "type": "string" },
+        "relation": {
+          "type": "string",
+          "enum": ["parent_child", "facet_membership", "table_row_column", "cross_link", "derived_from", "other"]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "notes": { "type": "string" }
+      }
+    },
+    "classified_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["item_id", "label", "assigned_node_ids", "evidence_ids"],
+      "properties": {
+        "item_id": { "type": "string" },
+        "label": { "type": "string" },
+        "item_type": {
+          "type": "string",
+          "enum": ["citation_key", "paper_title", "method", "dataset", "metric", "application", "phenomenon", "other"]
+        },
+        "assigned_node_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "multi_label": { "type": "boolean" },
+        "evidence_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "notes": { "type": "string" }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_id",
+        "locator_type",
+        "locator",
+        "quote_or_transcription",
+        "confirmation_status"
+      ],
+      "properties": {
+        "evidence_id": { "type": "string" },
+        "locator_type": {
+          "type": "string",
+          "enum": [
+            "tex_line",
+            "pdf_page",
+            "figure_asset",
+            "visible_figure_text",
+            "table_cell",
+            "caption",
+            "surrounding_prose",
+            "bibliography_mapping"
+          ]
+        },
+        "locator": { "type": "string" },
+        "quote_or_transcription": { "type": "string" },
+        "asset_path": { "type": ["string", "null"] },
+        "pdf_page": { "type": ["integer", "null"], "minimum": 1 },
+        "tex_line_start": { "type": ["integer", "null"], "minimum": 1 },
+        "tex_line_end": { "type": ["integer", "null"], "minimum": 1 },
+        "confirmation_status": {
+          "type": "string",
+          "enum": ["confirmed_manual", "confirmed_source_text", "ocr_aid_only", "blocked"]
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

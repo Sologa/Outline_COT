@@ -1,0 +1,105 @@
+experiment_id: 2026-05-19_meow_taxonomy_extraction
+status: draft_provisional
+created: 2026-05-19
+
+scope:
+  full_100_run_allowed: false
+  stable_google_sheet_write_allowed: false
+  outline_json_evidence_allowed: false
+  outline_json_inventory_allowed: true
+
+paths:
+  manifest: data/paper_sets/meow_test100/metadata/outline_manifest.jsonl
+  tex_root: data/paper_sets/meow_test100/tex_src
+  pdf_root: data/paper_sets/meow_test100/pdf
+  outline_inventory_root: data/paper_sets/meow_test100/outlines
+  results_root: results/2026-05-19_meow_taxonomy_extraction
+  local_scratch: .local/experiments/2026-05-19_meow_taxonomy_extraction
+  schema: experiments/2026-05-19_meow_taxonomy_extraction/schema/taxonomy_extraction.schema.json
+
+source_boundaries:
+  - author_taxonomy_tree
+  - classification_table_tree
+  - taxonomy_section_tree
+  - induced_taxonomy_tree
+
+taxonomy_status_values:
+  - explicit
+  - taxonomy_like
+  - none_found
+  - ambiguous
+  - blocked
+
+taxonomy_kind_values:
+  - tree
+  - forest
+  - faceted_taxonomy
+  - taxonomy_like_dag
+  - null
+
+evidence_locator_types:
+  - tex_line
+  - pdf_page
+  - figure_asset
+  - visible_figure_text
+  - table_cell
+  - caption
+  - surrounding_prose
+  - bibliography_mapping
+
+smoke_set:
+  - paper_id: 037_2202.07170
+    test_index: 37
+    arxiv_id: "2202.07170"
+    title: "Fairness Amidst Non-IID Graph Data: A Literature Review"
+    entrypoint: data/paper_sets/meow_test100/tex_src/037_2202.07170/ijcai23.tex
+    expected_focus:
+      - raster_taxonomy_figure
+      - method_summary_tables
+  - paper_id: 044_2308.06764
+    test_index: 44
+    arxiv_id: "2308.06764"
+    title: "Few-shot Class-incremental Learning for Classification and Object Detection: A Survey"
+    entrypoint: data/paper_sets/meow_test100/tex_src/044_2308.06764/main.tex
+    expected_focus:
+      - inline_tikz_taxonomy
+      - performance_table_confusion_risk
+  - paper_id: 094_2502.02459
+    test_index: 94
+    arxiv_id: "2502.02459"
+    title: "Computing with Smart Rings: A Systematic Literature Review"
+    entrypoint: data/paper_sets/meow_test100/tex_src/094_2502.02459/sample-sigconf-authordraft.tex
+    expected_focus:
+      - taxonomy_review_outline_mixture
+      - phenomena_flow
+      - classification_tables
+  - paper_id: 096_2502.03108
+    test_index: 96
+    arxiv_id: "2502.03108"
+    title: "Multi-objective methods in Federated Learning: A survey and taxonomy"
+    entrypoint: data/paper_sets/meow_test100/tex_src/096_2502.03108/main.tex
+    expected_focus:
+      - explicit_taxonomy_tree
+      - visual_qualifiers
+      - unexplored_categories
+  - paper_id: 097_2502.03668
+    test_index: 97
+    arxiv_id: "2502.03668"
+    title: "Privacy-Preserving Generative Models: A Comprehensive Survey"
+    entrypoint: data/paper_sets/meow_test100/tex_src/097_2502.03668/Padariya2024privacysurvey..tex
+    expected_focus:
+      - multiple_independent_taxonomy_figures
+      - flat_pdf_svg_assets
+
+review:
+  positive_requires_second_review: true
+  ambiguous_requires_second_review: true
+  negative_requires_audited_record: true
+  ocr_confirmation_allowed: false
+
+validation:
+  require_schema_validation: true
+  require_visual_table_review_for_positive: true
+  require_evidence_per_node: true
+  require_evidence_per_edge: true
+  preserve_multilabel_tables: true
