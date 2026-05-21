@@ -9,6 +9,10 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm import tqdm
 import argparse
 from datetime import datetime
+from pathlib import Path
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+DEFAULT_OUTPUT_DIR = ROOT_DIR / ".local" / "output"
 
 def setup_logging(log_file=None):
     """设置日志配置"""
@@ -26,8 +30,9 @@ def setup_logging(log_file=None):
         log_filename = log_file
     else:
         # 创建独立的日志目录和文件
-        os.makedirs("outputs/logs", exist_ok=True)
-        log_filename = f"outputs/logs/evaluation_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+        log_dir = DEFAULT_OUTPUT_DIR / "logs"
+        log_dir.mkdir(parents=True, exist_ok=True)
+        log_filename = str(log_dir / f"evaluation_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log")
         logging.basicConfig(
             level=logging.INFO,
             format='%(asctime)s - %(levelname)s - [Evaluator] - %(message)s',
@@ -437,7 +442,7 @@ class Evaluator:
         }
         
         if output_file_path is None:
-            output_file_path = os.path.join("outputs", "evaluation_results.jsonl")
+            output_file_path = str(DEFAULT_OUTPUT_DIR / "evaluation_results.jsonl")
         
         os.makedirs(os.path.dirname(output_file_path), exist_ok=True)
         
@@ -450,7 +455,7 @@ class Evaluator:
                 outfile.write(json.dumps({"stats": {"successful_entries": success_count, "failed_entries": fail_count}}, ensure_ascii=False) + "\n")
         
         # 保存详细的统计结果到score.json
-        score_file_path = os.path.join("outputs", "score.json")
+        score_file_path = os.path.join(os.path.dirname(output_file_path), "score.json")
         with open(score_file_path, 'w', encoding='utf-8') as f:
             json.dump(stats_data, f, ensure_ascii=False, indent=2)
         

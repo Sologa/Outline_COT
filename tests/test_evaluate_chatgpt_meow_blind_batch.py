@@ -1,8 +1,10 @@
 import importlib.util
 import json
+import os
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -123,7 +125,7 @@ class EvaluateChatgptMeowBlindBatchTests(unittest.TestCase):
         )
         self.assertEqual(
             target["reference_outline_path"],
-            REPO_ROOT / "refs" / "2409.13738" / "outline.json",
+            REPO_ROOT / "data" / "paper_sets" / "meow_refs" / "2409.13738" / "outline.json",
         )
 
     def test_resolve_eval_target_accepts_explicit_source_reference_and_output(self):
@@ -157,6 +159,72 @@ class EvaluateChatgptMeowBlindBatchTests(unittest.TestCase):
             summary_path,
             REPO_ROOT / "results" / "_summaries" / "codex_exp_a" / "chatgpt_meow_outline_blind.eval.summary.json",
         )
+
+    def test_compute_summary_includes_backend_and_reasoning_effort(self):
+        module = load_module()
+        summary = module.compute_summary(
+            [
+                {
+                    "paper_id": "2511.13936",
+                    "status": "success",
+                    "structural_distance": 0.25,
+                    "judge_scores": {key: 8.0 for key in module.SCORE_KEYS},
+                }
+            ],
+            judge_backend="codex",
+            model="gpt-5.4",
+            judge_reasoning_effort="xhigh",
+            dry_run=False,
+        )
+        self.assertEqual(summary["judge_backend"], "codex")
+        self.assertEqual(summary["judge_model"], "gpt-5.4")
+        self.assertEqual(summary["judge_reasoning_effort"], "xhigh")
+        self.assertEqual(summary["judge_average_scores"]["内容_学术价值"], 8.0)
+
+    def test_parse_args_defaults_to_openai_backend(self):
+        module = load_module()
+        args = module.parse_args(["--paper", "2409.13738", "--dry-run"])
+        self.assertEqual(args.judge_backend, "openai")
+        self.assertEqual(args.judge_reasoning_effort, "medium")
+
+    def test_parse_args_accepts_codex_reasoning_effort_without_openai_key(self):
+        module = load_module()
+        with patch.dict(os.environ, {}, clear=True):
+            args = module.parse_args(
+                [
+                    "--paper",
+                    "2511.13936",
+                    "--judge-backend",
+                    "codex",
+                    "--model",
+                    "gpt-5.4",
+                    "--judge-reasoning-effort",
+                    "xhigh",
+                ]
+            )
+        self.assertEqual(args.judge_backend, "codex")
+        self.assertEqual(args.judge_reasoning_effort, "xhigh")
+
+    def test_parse_args_rejects_reasoning_effort_for_gemini(self):
+        module = load_module()
+        with self.assertRaises(SystemExit):
+            module.parse_args(
+                [
+                    "--paper",
+                    "2511.13936",
+                    "--judge-backend",
+                    "gemini",
+                    "--judge-reasoning-effort",
+                    "xhigh",
+                    "--dry-run",
+                ]
+            )
+
+    def test_parse_args_requires_openai_key_only_for_openai_backend(self):
+        module = load_module()
+        with patch.dict(os.environ, {}, clear=True):
+            with self.assertRaises(SystemExit):
+                module.parse_args(["--paper", "2409.13738"])
 
 
 if __name__ == "__main__":

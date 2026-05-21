@@ -10,6 +10,7 @@ MAX_WAIT_SECS=3600
 POLL_SECS=5
 FORCE=0
 DRY_RUN=0
+INCLUDE_META_ABSTRACT=0
 
 declare -a PAPER_IDS=()
 
@@ -26,6 +27,7 @@ Options:
                           Allowed: low, medium, high, xhigh
   --force                 Overwrite existing results/<paper_id>/chatgpt_meow_outline_blind.json.
   --dry-run               Print the Codex command for each paper without executing it.
+  --include-meta-abstract Include target meta.abstract in the blind-generation prompt.
   --output-root DIR       Output root. Default: results
   --run-name NAME         Write outputs to results/<paper_id>/<run-name>/...
   --max-wait SECONDS      Max wait per paper before terminating codex. Default: 3600
@@ -64,6 +66,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     --dry-run)
       DRY_RUN=1
+      shift
+      ;;
+    --include-meta-abstract)
+      INCLUDE_META_ABSTRACT=1
       shift
       ;;
     --output-root)
@@ -134,14 +140,16 @@ wait_for_pid() {
 render_prompt() {
   local payload_path="$1"
   local prompt_path="$2"
+  local include_meta_abstract="$3"
 
-  python3 - "$ROOT_DIR" "$payload_path" "$prompt_path" <<'PY'
+  python3 - "$ROOT_DIR" "$payload_path" "$prompt_path" "$include_meta_abstract" <<'PY'
 import sys
 from pathlib import Path
 
 root = Path(sys.argv[1])
 payload_path = Path(sys.argv[2])
 prompt_path = Path(sys.argv[3])
+include_meta_abstract = sys.argv[4] == "1"
 
 sys.path.insert(0, str(root / "scripts"))
 from codex_meow_outline_blind_lib import build_prompt, load_blind_payload
@@ -151,6 +159,8 @@ prompt = build_prompt(
     payload["paper_id"],
     payload["title"],
     payload["reference_metadata"],
+    target_meta_abstract=payload["target_abstract"],
+    include_meta_abstract=include_meta_abstract,
 )
 prompt_path.write_text(prompt, encoding="utf-8")
 PY
@@ -176,7 +186,7 @@ PY
 }
 
 for paper_id in "${PAPER_IDS[@]}"; do
-  paper_dir="$ROOT_DIR/refs/$paper_id"
+  paper_dir="$ROOT_DIR/data/paper_sets/meow_refs/$paper_id"
   payload_path="$paper_dir/meow_reconstructed_blind.json"
   if [[ -n "$RUN_NAME" ]]; then
     output_dir="$OUTPUT_ROOT/$paper_id/$RUN_NAME"
@@ -201,7 +211,7 @@ for paper_id in "${PAPER_IDS[@]}"; do
     continue
   fi
 
-  render_prompt "$payload_path" "$prompt_path"
+  render_prompt "$payload_path" "$prompt_path" "$INCLUDE_META_ABSTRACT"
 
   codex_cmd=(
     codex exec

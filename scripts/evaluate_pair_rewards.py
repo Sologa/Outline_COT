@@ -9,8 +9,8 @@ It leverages the single-pair API from combine_scores.compute_shape_and_reward.
 Usage:
   python scripts/evaluate_pair_rewards.py \
     --human_file datasets/human_generation.normalized.jsonl \
-    --model_file outputs/run_20250904_155708/generation.normalized.jsonl \
-    --output outputs/run_20250904_155708/human_model.rewards.jsonl \
+    --model_file .local/output/run_20250904_155708/generation.normalized.jsonl \
+    --output .local/output/run_20250904_155708/human_model.rewards.jsonl \
     --max_workers 16
 """
 
@@ -139,4 +139,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

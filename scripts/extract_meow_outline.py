@@ -461,14 +461,18 @@ def process_ref_dir(ref_dir: Path) -> tuple[bool, str]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Extract MEOW-style outlines from refs/*/tex_src")
-    parser.add_argument("--refs-root", default="refs", help="Root directory containing per-paper ref directories")
+    parser = argparse.ArgumentParser(description="Extract MEOW-style outlines from data/paper_sets/meow_refs/*/tex_src")
+    parser.add_argument(
+        "--refs-root",
+        default="data/paper_sets/meow_refs",
+        help="Root directory containing per-paper reference directories",
+    )
     parser.add_argument("--paper-id", action="append", help="Specific paper id(s) to process")
     args = parser.parse_args()
 
     refs_root = Path(args.refs_root).resolve()
     if not refs_root.exists():
-        raise SystemExit(f"refs root does not exist: {refs_root}")
+        raise SystemExit(f"reference root does not exist: {refs_root}")
 
     if args.paper_id:
         ref_dirs = [refs_root / paper_id for paper_id in args.paper_id]

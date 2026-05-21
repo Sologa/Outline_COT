@@ -20,9 +20,12 @@ def load_module():
 class CodexMeowOutlineBlindLibTests(unittest.TestCase):
     def test_load_blind_payload_reads_expected_fields(self):
         module = load_module()
-        payload = module.load_blind_payload(REPO_ROOT / "refs" / "2601.19926" / "meow_reconstructed_blind.json")
+        payload = module.load_blind_payload(
+            REPO_ROOT / "data" / "paper_sets" / "meow_refs" / "2601.19926" / "meow_reconstructed_blind.json"
+        )
         self.assertEqual(payload["paper_id"], "2601.19926")
         self.assertIn("Grammar of Transformers", payload["title"])
+        self.assertIn("systematic review", payload["target_abstract"].lower())
         self.assertIsInstance(payload["reference_metadata"], list)
         self.assertGreater(len(payload["reference_metadata"]), 1)
 
@@ -38,6 +41,39 @@ class CodexMeowOutlineBlindLibTests(unittest.TestCase):
         self.assertIn(module.SYSTEM_PROMPT, prompt)
         self.assertIn("Write an outline for a literature review based on the given title and references.", prompt)
         self.assertIn("Example Title", prompt)
+        self.assertNotIn("Target Paper Abstract:", prompt)
+
+    def test_build_prompt_default_omits_target_abstract_block(self):
+        module = load_module()
+        prompt = module.build_prompt(
+            "2601.19926",
+            "Example Title",
+            [{"key": "ref1", "title": "Ref 1"}],
+            target_meta_abstract="Example target abstract.",
+            include_meta_abstract=False,
+        )
+        self.assertNotIn("Target Paper Abstract:", prompt)
+        self.assertNotIn("Example target abstract.", prompt)
+
+    def test_build_prompt_can_include_target_abstract_block_only(self):
+        module = load_module()
+        baseline = module.build_prompt(
+            "2601.19926",
+            "Example Title",
+            [{"key": "ref1", "title": "Ref 1"}],
+            target_meta_abstract="Example target abstract.",
+            include_meta_abstract=False,
+        )
+        patched = module.build_prompt(
+            "2601.19926",
+            "Example Title",
+            [{"key": "ref1", "title": "Ref 1"}],
+            target_meta_abstract="Example target abstract.",
+            include_meta_abstract=True,
+        )
+        expected_block = "Target Paper Abstract:\nExample target abstract.\n"
+        self.assertIn(expected_block, patched)
+        self.assertEqual(patched.replace(expected_block, ""), baseline)
 
     def test_parse_outline_response_accepts_json_array(self):
         module = load_module()

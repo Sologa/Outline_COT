@@ -17,7 +17,14 @@ SCRIPTS_DIR = Path(__file__).resolve().parent
 if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
 
-REFS_DIR = ROOT_DIR / "refs"
+from cli_judge_backends import (
+    CODEX_REASONING_EFFORTS,
+    JUDGE_BACKENDS,
+    build_openai_async_client,
+    run_judge_attempt,
+)
+
+MEOW_REFS_DIR = ROOT_DIR / "data" / "paper_sets" / "meow_refs"
 RESULTS_DIR = ROOT_DIR / "results"
 SYSTEM_PROMPT_PATH = ROOT_DIR / "prompts" / "meow_llm_judge_6d_source_system.txt"
 USER_PROMPT_PATH = ROOT_DIR / "prompts" / "meow_llm_judge_6d_source_user.txt"
@@ -38,7 +45,7 @@ SCORE_KEYS = [
 
 def discover_target_papers(repo_root: Path = ROOT_DIR) -> List[str]:
     papers = set()
-    refs_dir = repo_root / "refs"
+    refs_dir = repo_root / "data" / "paper_sets" / "meow_refs"
     results_dir = repo_root / "results"
     papers.update(path.parent.name for path in refs_dir.glob(f"*/{BLIND_FILENAME}"))
     papers.update(path.parent.name for path in results_dir.glob(f"*/{BLIND_FILENAME}"))
@@ -275,26 +282,12 @@ def write_artifacts(paper_dir: Path, result: Dict[str, Any], debug: Dict[str, An
     return result_path, debug_path
 
 
-def build_async_client(api_key: str, timeout: int, base_url: Optional[str]) -> Any:
-    try:
-        from openai import AsyncOpenAI
-    except ImportError as exc:
-        raise SystemExit(
-            "Missing dependency 'openai'. Install it before running LLM judge evaluation: "
-            "`python3 -m pip install openai`."
-        ) from exc
-    kwargs: Dict[str, Any] = {"api_key": api_key, "timeout": timeout}
-    if base_url:
-        kwargs["base_url"] = base_url
-    return AsyncOpenAI(**kwargs)
-
-
 def utc_now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
 def build_paper_paths(repo_root: Path, paper_id: str) -> Dict[str, Path]:
-    paper_dir = repo_root / "refs" / paper_id
+    paper_dir = repo_root / "data" / "paper_sets" / "meow_refs" / paper_id
     return {
         "paper_dir": paper_dir,
         "source_outline_path": paper_dir / BLIND_FILENAME,
@@ -314,7 +307,7 @@ def resolve_eval_target(
     reference_outline: Optional[Path] = None,
     output_dir: Optional[Path] = None,
 ) -> Dict[str, Path]:
-    refs_paper_dir = repo_root / "refs" / paper_id
+    refs_paper_dir = repo_root / "data" / "paper_sets" / "meow_refs" / paper_id
     results_paper_dir = results_root / paper_id
 
     if source_outline is not None:
@@ -378,12 +371,14 @@ def resolve_summary_path(
 
 async def run_judge_with_retries(
     *,
+    backend: str,
     client: Any,
     model: str,
     messages: List[Dict[str, str]],
     semaphore: asyncio.Semaphore,
     timeout: int,
     max_retries: int,
+    reasoning_effort: Optional[str],
 ) -> Dict[str, Any]:
     debug: Dict[str, Any] = {"attempts": []}
     last_error = "Judge did not return a successful response"
@@ -391,17 +386,19 @@ async def run_judge_with_retries(
         started = time.perf_counter()
         attempt_debug: Dict[str, Any] = {"attempt": attempt}
         try:
-            async with semaphore:
-                response = await asyncio.wait_for(
-                    client.chat.completions.create(
-                        model=model,
-                        messages=messages,
-                    ),
-                    timeout=timeout,
-                )
-            raw_response = (response.choices[0].message.content or "").strip()
+            attempt_result = await run_judge_attempt(
+                backend=backend,
+                client=client,
+                model=model,
+                messages=messages,
+                semaphore=semaphore,
+                timeout=timeout,
+                reasoning_effort=reasoning_effort,
+            )
+            raw_response = attempt_result["raw_response"].strip()
             attempt_debug["latency_seconds"] = round(time.perf_counter() - started, 4)
             attempt_debug["raw_response"] = raw_response
+            attempt_debug["transport"] = attempt_result.get("transport_debug", {})
             parsed = parse_judge_response(raw_response)
             attempt_debug["parse_status"] = "success"
             debug["attempts"].append(attempt_debug)
@@ -444,6 +441,8 @@ async def evaluate_single_paper(
     repo_root: Path,
     target: Dict[str, Path],
     client: Any,
+    judge_backend: str,
+    judge_reasoning_effort: Optional[str],
     model: str,
     semaphore: asyncio.Semaphore,
     timeout: int,
@@ -465,7 +464,9 @@ async def evaluate_single_paper(
         "outline_rendering": {},
         "structural_distance": {},
         "judge": {
+            "backend": judge_backend,
             "model": model,
+            "reasoning_effort": judge_reasoning_effort,
             "dry_run": dry_run,
             "prompt_paths": {
                 "system": str(SYSTEM_PROMPT_PATH),
@@ -479,7 +480,9 @@ async def evaluate_single_paper(
         "source_outline_path": str(target["source_outline_path"]),
         "reference_outline_path": str(target["reference_outline_path"]),
         "output_dir": str(target["output_dir"]),
+        "judge_backend": judge_backend,
         "judge_model": model,
+        "judge_reasoning_effort": judge_reasoning_effort,
         "judge_scores": None,
         "judge_evaluation": None,
         "structural_distance": None,
@@ -539,12 +542,14 @@ async def evaluate_single_paper(
             "user_preview": messages[1]["content"][:1000],
         }
         judge_result = await run_judge_with_retries(
+            backend=judge_backend,
             client=client,
             model=model,
             messages=messages,
             semaphore=semaphore,
             timeout=timeout,
             max_retries=max_retries,
+            reasoning_effort=judge_reasoning_effort,
         )
         debug["judge"].update(judge_result.get("debug", {}))
         if judge_result["success"]:
@@ -566,7 +571,14 @@ async def evaluate_single_paper(
     return result, debug
 
 
-def compute_summary(results: Sequence[Dict[str, Any]], model: str, dry_run: bool) -> Dict[str, Any]:
+def compute_summary(
+    results: Sequence[Dict[str, Any]],
+    *,
+    judge_backend: str,
+    model: str,
+    judge_reasoning_effort: Optional[str],
+    dry_run: bool,
+) -> Dict[str, Any]:
     structural_values = [item["structural_distance"] for item in results if isinstance(item.get("structural_distance"), (int, float))]
     judge_successes = [item for item in results if isinstance(item.get("judge_scores"), dict)]
 
@@ -580,7 +592,9 @@ def compute_summary(results: Sequence[Dict[str, Any]], model: str, dry_run: bool
 
     return {
         "generated_at": utc_now_iso(),
+        "judge_backend": judge_backend,
         "judge_model": model,
+        "judge_reasoning_effort": judge_reasoning_effort,
         "dry_run": dry_run,
         "papers_total": len(results),
         "status_counts": {
@@ -605,11 +619,11 @@ async def run_batch(args: argparse.Namespace) -> int:
     else:
         paper_ids = args.paper or discover_target_papers(repo_root)
     if not paper_ids:
-        raise SystemExit("No chatgpt_meow_outline_blind.json files were found under refs/.")
+        raise SystemExit("No chatgpt_meow_outline_blind.json files were found under data/paper_sets/meow_refs/.")
 
     client = None
-    if not args.dry_run:
-        client = build_async_client(
+    if not args.dry_run and args.judge_backend == "openai":
+        client = build_openai_async_client(
             api_key=args.openai_api_key,
             timeout=args.timeout,
             base_url=args.openai_base_url,
@@ -634,6 +648,8 @@ async def run_batch(args: argparse.Namespace) -> int:
             repo_root=repo_root,
             target=target,
             client=client,
+            judge_backend=args.judge_backend,
+            judge_reasoning_effort=args.judge_reasoning_effort if args.judge_backend == "codex" else None,
             model=args.model,
             semaphore=semaphore,
             timeout=args.timeout,
@@ -651,7 +667,13 @@ async def run_batch(args: argparse.Namespace) -> int:
         ordered_results.append(result)
         output_dirs.append(target["output_dir"])
 
-    summary = compute_summary(ordered_results, model=args.model, dry_run=args.dry_run)
+    summary = compute_summary(
+        ordered_results,
+        judge_backend=args.judge_backend,
+        model=args.model,
+        judge_reasoning_effort=args.judge_reasoning_effort if args.judge_backend == "codex" else None,
+        dry_run=args.dry_run,
+    )
     summary_path = resolve_summary_path(
         repo_root=repo_root,
         results_root=results_root,
@@ -668,11 +690,19 @@ async def run_batch(args: argparse.Namespace) -> int:
             structural_text = "NA"
         else:
             structural_text = f"{structural:.6f}"
-        print(f"{item['paper_id']}\tstatus={item['status']}\tstructural_distance={structural_text}")
+        print(
+            f"{item['paper_id']}\tstatus={item['status']}\tjudge_backend={item['judge_backend']}"
+            f"\tstructural_distance={structural_text}"
+        )
     return 0
 
 
-def parse_args() -> argparse.Namespace:
+def _judge_effort_explicit(argv: Sequence[str]) -> bool:
+    return any(arg == "--judge-reasoning-effort" or arg.startswith("--judge-reasoning-effort=") for arg in argv)
+
+
+def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
+    argv = list(argv if argv is not None else sys.argv[1:])
     parser = argparse.ArgumentParser(
         description="Evaluate blind outlines with structural distance and async LLM judge."
     )
@@ -683,19 +713,28 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--summary-path", help="Explicit summary output path.")
     parser.add_argument("--run-name", help="Results namespace under results/<paper_id>/<run_name>/...")
     parser.add_argument("--results-root", default=str(RESULTS_DIR), help="Root directory for experiment outputs. Default: results/")
+    parser.add_argument("--judge-backend", choices=JUDGE_BACKENDS, default="openai", help="Judge transport backend. Default: openai.")
     parser.add_argument("--model", default="gpt-5-nano", help="Judge model name.")
+    parser.add_argument(
+        "--judge-reasoning-effort",
+        choices=CODEX_REASONING_EFFORTS,
+        default="medium",
+        help="Reasoning effort for the codex judge backend. Default: medium.",
+    )
     parser.add_argument("--concurrency", type=int, default=4, help="Async judge concurrency.")
     parser.add_argument("--max-retries", type=int, default=3, help="Per-paper max judge retries.")
     parser.add_argument("--timeout", type=int, default=120, help="Per-request timeout in seconds.")
     parser.add_argument("--dry-run", action="store_true", help="Skip API calls and only validate inputs plus structural distance.")
     parser.add_argument("--openai-api-key", default=os.environ.get("OPENAI_API_KEY"), help="OpenAI API key; defaults to OPENAI_API_KEY.")
     parser.add_argument("--openai-base-url", default=os.environ.get("OPENAI_BASE_URL"), help="Optional OpenAI-compatible base URL.")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     if args.output_dir and ((args.paper and len(args.paper) > 1) or not (args.paper or args.source_outline)):
         parser.error("--output-dir only supports single-paper mode.")
     if args.reference_outline and not (args.paper or args.source_outline):
         parser.error("--reference-outline requires --paper or --source-outline.")
-    if not args.dry_run and not args.openai_api_key:
+    if args.judge_backend != "codex" and _judge_effort_explicit(argv):
+        parser.error("--judge-reasoning-effort is only valid when --judge-backend=codex.")
+    if not args.dry_run and args.judge_backend == "openai" and not args.openai_api_key:
         parser.error("Missing OPENAI_API_KEY or --openai-api-key for LLM-as-a-Judge evaluation.")
     return args
 

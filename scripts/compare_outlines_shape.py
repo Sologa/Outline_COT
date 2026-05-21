@@ -116,7 +116,7 @@ def compare_files(human_file: str, model_file: str, output_file: str, max_worker
 def main():
     parser = argparse.ArgumentParser(description="Compare human vs model outline shapes (JSONL)")
     parser.add_argument("--human_file", required=True, help="Path to human JSONL (e.g., datasets/human_generation.normalized.jsonl)")
-    parser.add_argument("--model_file", required=True, help="Path to model JSONL (e.g., outputs/run_xxx/generation.normalized.jsonl)")
+    parser.add_argument("--model_file", required=True, help="Path to model JSONL (e.g., .local/output/run_xxx/generation.normalized.jsonl)")
     parser.add_argument("--output", required=True, help="Output JSONL path for pair distances")
     parser.add_argument("--max_workers", type=int, default=8, help="Concurrent workers")
     args = parser.parse_args()
@@ -127,5 +127,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 
