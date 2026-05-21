@@ -13,7 +13,7 @@ This repository is a MEOW outline-analysis workspace. It keeps prompt payloads, 
 - `tests/`: focused regression tests for scripts.
 - `experiments/`: incubating experiment specs, prototype code, prompt variants, and promotion notes.
 - `engineering_validation/`: incubating larger code-change specs, prototypes, validation plans, and promotion notes.
-- `results/`: experiment outputs and run-scoped evaluation artifacts.
+- `results/`: experiment outputs and run-scoped evaluation artifacts. On this machine it is a symlink to `_gdrive_sync_outline_cot/results/` so scripts keep the short path while Drive sync owns the physical storage.
 - `docs/`: human-readable reports, guides, prompt notes, figures, and audits.
 - `graphify-out/`: rebuildable local graphify output.
 - `.local/`: ignored scratch space, logs, temporary exports, and local-only intermediates.

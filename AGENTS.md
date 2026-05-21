@@ -220,11 +220,12 @@ For code-change or patch validation:
 For `results/` backup:
 
 - `results/` remains the default repo path that scripts read from and write to.
-- The Drive-backed mirror/root is `_gdrive_sync_outline_cot/results/`.
+- Current storage mode on 2026-05-22: `results` is a symlink to `_gdrive_sync_outline_cot/results/`, so there is one active physical results tree and scripts can keep using the short `results/` path.
 - `.gitignore` ignores `results/` for future untracked run outputs.
 - Migration status on 2026-05-21: the then-current `results/` tree was mirrored into `_gdrive_sync_outline_cot/results/`, a checksum manifest was written under `_gdrive_sync_outline_cot/manifests/checksums/`, and `git rm --cached -r results` was run so Git no longer tracks `results/` paths. The staged `D results/...` entries from that migration are intended index-only removals; do not restore or re-add them unless the user explicitly asks to put result artifacts back under Git.
-- If the user asks for coarse backup, sync whole experiment/run folders from `results/` into `_gdrive_sync_outline_cot/results/` rather than picking individual JSON files by hand.
-- Keep the top-level repo `results/` directory as the script-facing path. Do not replace it with a symlink unless the user explicitly asks for physical storage to move fully under `_gdrive_sync_outline_cot/results/`.
+- Migration status on 2026-05-22: after the user explicitly chose symlink mode, the then-current physical `results/` tree was merged into `_gdrive_sync_outline_cot/results/`, the original physical tree was moved to `.local/results_physical_backup_20260522_005527/`, and top-level `results` was replaced by a symlink to `_gdrive_sync_outline_cot/results/`.
+- Do not recreate a separate physical top-level `results/` directory unless the user explicitly asks to leave symlink mode.
+- Because active `results/` writes now land in the Drive sync area, avoid high-frequency scratch, repeatedly overwritten files, open databases, and long-running append logs under `results/`. Use `.local/` for unstable scratch, and write final run outputs into run-specific folders under `results/`.
 
 ### 0.2.3 Placement Rules
 
