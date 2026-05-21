@@ -1,0 +1,304 @@
+{
+  "test_index": 33,
+  "arxiv_id": "2503.24039",
+  "title": "TOPz: photometric redshifts using template fitting applied to GAMA survey",
+  "source": {
+    "kind": "gold_human_outline_from_benchmark_prompt_assistant_message",
+    "github_repository": "cedricshan/Survey-Outline-Evaluation-Benckmark",
+    "github_path": "datasets/test_prompts.json",
+    "github_blob_sha": "5ebe31ea9ebb0fc9eb547247c5ea7b7d3a8cb7ed",
+    "github_url": "https://github.com/cedricshan/Survey-Outline-Evaluation-Benckmark/blob/main/datasets/test_prompts.json",
+    "huggingface_dataset": "haajimi/Meow",
+    "huggingface_dataset_url": "https://huggingface.co/datasets/haajimi/Meow",
+    "huggingface_test_file_url": "https://huggingface.co/datasets/haajimi/Meow/resolve/main/test.jsonl",
+    "note": "Hugging Face dataset card defines the test split as 100 articles and the dataset schema includes outline. The local extract uses the benchmark GitHub prompt file because it exposes the 100 assistant outlines as parseable JSON."
+  },
+  "local_inputs": {
+    "download_manifest": "data/paper_sets/meow_test100/metadata/download_manifest.jsonl",
+    "pdf_path": "pdf/033_2503.24039.pdf",
+    "tex_source_dir": "tex_src/033_2503.24039",
+    "prompt_path": "third_party/repos/Survey-Outline-Evaluation-Benckmark/datasets/test_prompts.json"
+  },
+  "outline_node_count": 20,
+  "outline": [
+    {
+      "level": 1,
+      "numbering": "1",
+      "title": "Introduction",
+      "ref": []
+    },
+    {
+      "level": 1,
+      "numbering": "2",
+      "title": "TOPz: Bayesian photometric redshifts using template fitting",
+      "ref": [
+        "2019NatAs...3..212S",
+        "2022ARA&A..60..363N",
+        "2016PASP..128j4502S",
+        "2018A&A...616A..69B",
+        "2018A&A...609A.111D",
+        "2019A&A...621A..26P",
+        "2021A&A...651A..55S",
+        "2024ApJ...964..130J",
+        "2024MNRAS.527..651T",
+        "2024arXiv240909981M",
+        "2010ApJ...715..823G",
+        "2013MNRAS.432.1483C",
+        "2016MNRAS.462..726A",
+        "2016MNRAS.455.2387A",
+        "2021MNRAS.503.4118S",
+        "2015MNRAS.449.2040H",
+        "2020MNRAS.498.5498H",
+        "2021A&A...650A..90A",
+        "2021MNRAS.507.5034R",
+        "2022MNRAS.512.3662D",
+        "2016MNRAS.459.3078D",
+        "2021MNRAS.500.1557B",
+        "2024ApJ...967L...6M",
+        "2018A&A...619A..14F",
+        "Laplace1774",
+        "2008ApJ...686.1503B",
+        "1999MNRAS.310..540A",
+        "2006A&A...457..841I",
+        "2000ApJ...536..571B",
+        "2006MNRAS.372..565F",
+        "2022A&A...668A...8L",
+        "2022MNRAS.513.3719H",
+        "2024MNRAS.530.2012T",
+        "2016MNRAS.460.1371B",
+        "2017MNRAS.466.2039C",
+        "2000A&A...363..476B",
+        "2018MNRAS.473.2655D",
+        "2017A&A...608A...3B",
+        "2017A&A...608A...1B",
+        "2024MNRAS.534.1504N",
+        "2014MNRAS.441.2891M",
+        "2019ApJS..242....8Z",
+        "2021A&A...654A.101H",
+        "2016ApJS..225....5B",
+        "2016MNRAS.457.4005W",
+        "2013ApJ...775...93D",
+        "2018PASJ...70S...9T",
+        "2011MNRAS.417.1891A",
+        "2020A&A...644A..31E",
+        "2020MNRAS.499.1587S",
+        "2020A&A...636A..90S",
+        "2023A&A...672A.150T",
+        "2018MNRAS.477.1664G",
+        "2023A&A...670A.149N",
+        "2024AJ....168...80C",
+        "2017A&A...599A..62L",
+        "2024arXiv240815243T",
+        "2019A&A...622A.103B",
+        "2022ApJ...927..192Y",
+        "2021A&A...653A..31B",
+        "2019Msngr.175...46D",
+        "2018arXiv181205135B"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "2.1",
+      "title": "Redshift likelihood estimation",
+      "ref": [
+        "2016PASP..128j4502S",
+        "2018A&A...616A..69B",
+        "2018A&A...609A.111D",
+        "2019A&A...621A..26P",
+        "2021A&A...651A..55S",
+        "2024ApJ...964..130J",
+        "2024MNRAS.527..651T",
+        "2024arXiv240909981M",
+        "2010ApJ...715..823G",
+        "2013MNRAS.432.1483C",
+        "2016MNRAS.462..726A",
+        "2016MNRAS.455.2387A",
+        "2021MNRAS.503.4118S",
+        "2015MNRAS.449.2040H",
+        "2020MNRAS.498.5498H",
+        "2021A&A...650A..90A",
+        "2021MNRAS.507.5034R",
+        "2022MNRAS.512.3662D",
+        "2016MNRAS.459.3078D",
+        "2021MNRAS.500.1557B",
+        "2024ApJ...967L...6M",
+        "2018A&A...619A..14F",
+        "Laplace1774",
+        "2008ApJ...686.1503B",
+        "1999MNRAS.310..540A",
+        "2006A&A...457..841I",
+        "2000ApJ...536..571B",
+        "2006MNRAS.372..565F",
+        "2022A&A...668A...8L",
+        "2022MNRAS.513.3719H",
+        "2024MNRAS.530.2012T",
+        "2016MNRAS.460.1371B",
+        "2017MNRAS.466.2039C",
+        "2000A&A...363..476B",
+        "2018MNRAS.473.2655D",
+        "2017A&A...608A...3B",
+        "2017A&A...608A...1B",
+        "2024MNRAS.534.1504N",
+        "2014MNRAS.441.2891M",
+        "2019ApJS..242....8Z",
+        "2021A&A...654A.101H",
+        "2016ApJS..225....5B",
+        "2016MNRAS.457.4005W",
+        "2013ApJ...775...93D",
+        "2018PASJ...70S...9T",
+        "2011MNRAS.417.1891A",
+        "2020A&A...644A..31E",
+        "2020MNRAS.499.1587S",
+        "2020A&A...636A..90S",
+        "2023A&A...672A.150T",
+        "2018MNRAS.477.1664G",
+        "2023A&A...670A.149N",
+        "2024AJ....168...80C",
+        "2017A&A...599A..62L",
+        "2024arXiv240815243T",
+        "2019A&A...622A.103B",
+        "2022ApJ...927..192Y",
+        "2021A&A...653A..31B",
+        "2019Msngr.175...46D",
+        "2018arXiv181205135B"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "2.2",
+      "title": "TOPz: photometric redshift code",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "2.3",
+      "title": "TOPz: marginalised redshift posterior",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "2.4",
+      "title": "TOPz: output",
+      "ref": [
+        "2022A&A...668A...8L"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "2.5",
+      "title": "TOPz: galaxy physical parameters",
+      "ref": []
+    },
+    {
+      "level": 1,
+      "numbering": "3",
+      "title": "GAMA galaxy sample",
+      "ref": []
+    },
+    {
+      "level": 1,
+      "numbering": "4",
+      "title": "Template set generation for photometric redshift estimation",
+      "ref": [
+        "2011MNRAS.413..971D",
+        "2022MNRAS.513..439D",
+        "2020MNRAS.496.3235B",
+        "2011MNRAS.418.1587T",
+        "2013ExA....35...25D",
+        "2013Msngr.154...32E",
+        "2020AJ....159..258G",
+        "2022A&A...668A...8L",
+        "2019A&A...622A.103B",
+        "2022ApJ...927..192Y",
+        "2021MNRAS.502.5762C",
+        "Ryden:2021",
+        "2024arXiv240920519L",
+        "2019MNRAS.483.2487J"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "5",
+      "title": "Star-galaxy identification with template fitting",
+      "ref": [
+        "2023A&C....4400735F"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "6",
+      "title": "Observed flux and flux uncertainty corrections",
+      "ref": [
+        "1998PASP..110..863P"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "7",
+      "title": "Luminosity function prior for photometric redshifts",
+      "ref": []
+    },
+    {
+      "level": 1,
+      "numbering": "8",
+      "title": "TOPz performance using GAMA sample",
+      "ref": [
+        "2015ApJ...801...20T",
+        "2000ApJ...536..571B",
+        "2022A&A...668A...8L",
+        "2016arXiv160808016P",
+        "2016MNRAS.457.4005W"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "8.1",
+      "title": "Photometric redshifts for the GAMA sample",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "8.2",
+      "title": "Photo-z outliers, bias and $\\sigma_NMAD$",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "8.3",
+      "title": "Importance of flux corrections and physical priors",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "8.4",
+      "title": "Tests on photometric redshift PDFs",
+      "ref": [
+        "2022A&A...668A...8L"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "8.5",
+      "title": "Stellar masses from TOPz code",
+      "ref": [
+        "2016arXiv160808016P"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "8.6",
+      "title": "Comparison with EAZY and SFM photometric redshifts",
+      "ref": [
+        "2016MNRAS.457.4005W"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "9",
+      "title": "Conclusions",
+      "ref": [
+        "2022MNRAS.513..439D"
+      ]
+    }
+  ]
+}

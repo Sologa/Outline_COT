@@ -3,7 +3,7 @@
 This file is for humans and agents. It defines how to repair audited `outline_induction_ir.yaml` artifacts after a batch generation pass.
 
 Use this workflow when:
-- the IR already exists under `refs/<paper_id>/outline_induction_ir.yaml`
+- the IR already exists under `data/paper_sets/meow_refs/<paper_id>/outline_induction_ir.yaml`
 - you have audit findings for that file
 - you want Codex to edit the existing YAML instead of regenerating the whole artifact
 
@@ -64,13 +64,13 @@ Use this prompt in a new Codex conversation. Replace `{paper_id}` with the targe
 再讀 `data/outline_induction_ir_audit_2026-04-05.md`。
 
 任務：
-針對 `refs/{paper_id}/outline_induction_ir.yaml` 做定向改稿，直接修正既有檔案，使它更接近一份真正可審計的 reference-only outline induction IR。
+針對 `data/paper_sets/meow_refs/{paper_id}/outline_induction_ir.yaml` 做定向改稿，直接修正既有檔案，使它更接近一份真正可審計的 reference-only outline induction IR。
 
 這不是重生成任務。
 這次要做的是 edit existing artifact，不是從頭另寫一份新 IR。
 
 工作方式：
-- 先讀目前的 `refs/{paper_id}/outline_induction_ir.yaml`
+- 先讀目前的 `data/paper_sets/meow_refs/{paper_id}/outline_induction_ir.yaml`
 - 從 audit 檔中抽出屬於 `{paper_id}` 的 findings，當成硬性修正目標
 - 必要時檢查本地可用的 title / reference metadata / provenance artifacts，確認 reference set、key、title、與輸入邊界是否一致
 - 不可使用 `outline.json` 或 `COT.md` 來決定 taxonomy、node hierarchy、section titles、或 assignment
@@ -118,13 +118,13 @@ Start with the worst file first:
 再讀 `data/outline_induction_ir_audit_2026-04-05.md`。
 
 任務：
-針對 `refs/2510.01145/outline_induction_ir.yaml` 做定向改稿，直接修正既有檔案，使它更接近一份真正可審計的 reference-only outline induction IR。
+針對 `data/paper_sets/meow_refs/2510.01145/outline_induction_ir.yaml` 做定向改稿，直接修正既有檔案，使它更接近一份真正可審計的 reference-only outline induction IR。
 
 這不是重生成任務。
 這次要做的是 edit existing artifact，不是從頭另寫一份新 IR。
 
 工作方式：
-- 先讀目前的 `refs/2510.01145/outline_induction_ir.yaml`
+- 先讀目前的 `data/paper_sets/meow_refs/2510.01145/outline_induction_ir.yaml`
 - 從 audit 檔中抽出屬於 `2510.01145` 的 findings，當成硬性修正目標
 - 必要時檢查本地可用的 title / reference metadata / provenance artifacts，確認 reference set、key、title、與輸入邊界是否一致
 - 不可使用 `outline.json` 或 `COT.md` 來決定 taxonomy、node hierarchy、section titles、或 assignment
@@ -169,7 +169,7 @@ Run this immediately after repairing a paper.
 再讀 `data/outline_induction_ir_audit_2026-04-05.md`，但只把它當成前一輪問題清單，不要重複抄寫舊結論。
 
 任務：
-重新審核 `refs/{paper_id}/outline_induction_ir.yaml`，確認這份修正版是否已修掉前一輪 audit 的主要問題。
+重新審核 `data/paper_sets/meow_refs/{paper_id}/outline_induction_ir.yaml`，確認這份修正版是否已修掉前一輪 audit 的主要問題。
 
 要求：
 - findings first

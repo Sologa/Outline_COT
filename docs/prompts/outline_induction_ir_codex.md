@@ -10,7 +10,7 @@ The target artifact is a **reference-only outline induction IR**:
 
 Use [outline_induction_ir_user.txt](/Users/xjp/Desktop/Outline_COT/prompts/outline_induction_ir_user.txt) when you want a model to generate the IR itself.
 
-Use the templates below when you want Codex to orchestrate the workflow, inspect repo files, and save outputs under `refs/<paper_id>/outline_induction_ir.yaml`.
+Use the templates below when you want Codex to orchestrate the workflow, inspect repo files, and save outputs under `data/paper_sets/meow_refs/<paper_id>/outline_induction_ir.yaml`.
 
 If you are fixing already generated IRs after an audit pass, use the repair workflow at [outline_induction_ir_repair_workflow.md](/Users/xjp/Desktop/Outline_COT/docs/prompts/outline_induction_ir_repair_workflow.md). Do not try to continue the original generation session if the file was created via `codex exec --ephemeral`.
 
@@ -23,7 +23,7 @@ Then read `prompts/outline_induction_ir_user.txt`.
 
 Task:
 Generate a reference-only outline induction IR for paper `{paper_id}` and save it to:
-`refs/{paper_id}/outline_induction_ir.yaml`
+`data/paper_sets/meow_refs/{paper_id}/outline_induction_ir.yaml`
 
 Rules:
 - Use only the paper title and the available reference metadata as generation inputs.
@@ -86,7 +86,7 @@ Read `AGENTS.md` first.
 Then read `prompts/outline_induction_ir_user.txt`.
 
 Task:
-Audit one or more existing `refs/<paper_id>/outline_induction_ir.yaml` files for structural completeness and provenance compliance.
+Audit one or more existing `data/paper_sets/meow_refs/<paper_id>/outline_induction_ir.yaml` files for structural completeness and provenance compliance.
 
 Audit checklist:
 - confirm the file is valid YAML

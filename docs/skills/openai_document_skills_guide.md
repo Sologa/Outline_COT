@@ -90,8 +90,8 @@ Python 依賴：
 
 這個 skill 對中間檔與最終輸出也有建議：
 
-- 中間檔放 `tmp/docs/`
-- 最終輸出放 `output/doc/`
+- 中間檔放 `.local/tmp/docs/`
+- 最終輸出放 `.local/output/doc/`
 
 ### 品質要求
 

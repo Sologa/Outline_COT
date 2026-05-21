@@ -1,0 +1,562 @@
+{
+  "test_index": 88,
+  "arxiv_id": "2502.00677",
+  "title": "LLM-based event log analysis techniques: A survey",
+  "source": {
+    "kind": "gold_human_outline_from_benchmark_prompt_assistant_message",
+    "github_repository": "cedricshan/Survey-Outline-Evaluation-Benckmark",
+    "github_path": "datasets/test_prompts.json",
+    "github_blob_sha": "5ebe31ea9ebb0fc9eb547247c5ea7b7d3a8cb7ed",
+    "github_url": "https://github.com/cedricshan/Survey-Outline-Evaluation-Benckmark/blob/main/datasets/test_prompts.json",
+    "huggingface_dataset": "haajimi/Meow",
+    "huggingface_dataset_url": "https://huggingface.co/datasets/haajimi/Meow",
+    "huggingface_test_file_url": "https://huggingface.co/datasets/haajimi/Meow/resolve/main/test.jsonl",
+    "note": "Hugging Face dataset card defines the test split as 100 articles and the dataset schema includes outline. The local extract uses the benchmark GitHub prompt file because it exposes the 100 assistant outlines as parseable JSON."
+  },
+  "local_inputs": {
+    "download_manifest": "data/paper_sets/meow_test100/metadata/download_manifest.jsonl",
+    "pdf_path": "pdf/088_2502.00677.pdf",
+    "tex_source_dir": "tex_src/088_2502.00677",
+    "prompt_path": "third_party/repos/Survey-Outline-Evaluation-Benckmark/datasets/test_prompts.json"
+  },
+  "outline_node_count": 45,
+  "outline": [
+    {
+      "level": 1,
+      "numbering": "1",
+      "title": "Introduction",
+      "ref": [
+        "kurniati2016implementing",
+        "ban2021combat",
+        "yang2024harnessing",
+        "nejjar2023llms"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "2",
+      "title": "Methodology",
+      "ref": [
+        "kethireddyai",
+        "srivatsalogsense",
+        "chen2022bert",
+        "corbelle2024semantic",
+        "cometti2024real",
+        "sun4978351improving",
+        "qi2023loggpt",
+        "ali2023huntgpt",
+        "hadadi2024anomaly",
+        "balasubramanian2023transformer",
+        "mannam2023optimizing",
+        "10589612",
+        "li2024ids",
+        "fariha2024log",
+        "egersdoerfer2023early",
+        "jin2024large",
+        "zheng2023logdapt",
+        "10414427",
+        "guo2024logformer",
+        "liao2024detecting",
+        "10707565",
+        "song2024audit",
+        "yang2024anomaly",
+        "mudgal2024crasheventllm",
+        "huang2024demystifying",
+        "shan2024face",
+        "le2023log",
+        "ma2024llmparser",
+        "xu2024divlog",
+        "zhou2024leveraging",
+        "astekin2024comparative",
+        "zhi2024llm",
+        "yu2024loggenius",
+        "jiang2024lilaclogparsingusing",
+        "wu2024log",
+        "vaarandi2024using",
+        "zhong2024logparser",
+        "huang2024ulog",
+        "ma2024librelog",
+        "chen2024high",
+        "ahmed2023recommending",
+        "10.1145/3663529.3663841",
+        "chen2024automatic",
+        "zhang2024automated",
+        "mandakath2024root",
+        "sultana2023towards",
+        "kaheh2023cyber",
+        "yao20235g",
+        "ahmed2024prompting",
+        "karlsen2024benchmarking",
+        "jonkhout2024evaluating",
+        "hermann2024gpt",
+        "oniagbi2024evaluation",
+        "chen2024survey",
+        "khanllms",
+        "patil2024leveraging",
+        "ferrag2024revolutionizing",
+        "hasan2024distributed",
+        "sanchez2024transfer",
+        "houssel2024towards",
+        "novaklightweight",
+        "lanka2024intelligent",
+        "rahmani2024integrating",
+        "sundin2024ai",
+        "10.1145/3460345",
+        "6261962",
+        "li2017flap",
+        "10.1145/3400286.3418261"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "2.1",
+      "title": "Obtaining Articles",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "2.2",
+      "title": "Discarding Duplicates",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "2.3",
+      "title": "Discarding Irrelevant Articles",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "2.4",
+      "title": "Analysis",
+      "ref": [
+        "10.1145/3460345",
+        "6261962",
+        "li2017flap",
+        "10.1145/3400286.3418261"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "3",
+      "title": "Literature Review",
+      "ref": [
+        "balasubramanian2023transformer",
+        "egersdoerfer2023early",
+        "kethireddyai",
+        "chen2022bert",
+        "corbelle2024semantic",
+        "cometti2024real",
+        "sun4978351improving",
+        "qi2023loggpt",
+        "ali2023huntgpt",
+        "hadadi2024anomaly",
+        "mannam2023optimizing",
+        "10589612",
+        "li2024ids",
+        "fariha2024log",
+        "jin2024large",
+        "zheng2023logdapt",
+        "10414427",
+        "guo2024logformer",
+        "liao2024detecting",
+        "10707565",
+        "song2024audit",
+        "yang2024anomaly",
+        "mudgal2024crasheventllm",
+        "huang2024demystifying",
+        "shan2024face",
+        "le2023log",
+        "ma2024llmparser",
+        "xu2024divlog",
+        "zhou2024leveraging",
+        "astekin2024comparative",
+        "zhi2024llm",
+        "yu2024loggenius",
+        "jiang2024lilaclogparsingusing",
+        "wu2024log",
+        "vaarandi2024using",
+        "zhong2024logparser",
+        "huang2024ulog",
+        "ma2024librelog",
+        "chen2024high",
+        "xu2024help",
+        "mehrabieffectiveness"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "3.1",
+      "title": "Anomaly Detection",
+      "ref": [
+        "balasubramanian2023transformer",
+        "egersdoerfer2023early"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "3.1.1",
+      "title": "Early Research",
+      "ref": [
+        "balasubramanian2023transformer",
+        "egersdoerfer2023early"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "3.1.2",
+      "title": "BERT",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "3.1.3",
+      "title": "GPT Series",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "3.1.4",
+      "title": "Comparison",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "3.1.5",
+      "title": "Machine Learning Approaches",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "3.1.6",
+      "title": "In-Context Learning",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "3.1.7",
+      "title": "Differing Approaches",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "3.1.8",
+      "title": "Reducing Resource Consumption",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "3.2",
+      "title": "Fault Monitoring",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "3.3",
+      "title": "Log Parsing",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "3.3.1",
+      "title": "Early Work",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "3.3.2",
+      "title": "The use of different LLMs",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "3.3.3",
+      "title": "In-Context Learning",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "3.3.4",
+      "title": "Fine-tuning",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "3.3.5",
+      "title": "Solutions for previous limitations",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "3.4",
+      "title": "Root Cause Analysis",
+      "ref": [
+        "kethireddyai",
+        "chen2022bert"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "3.5",
+      "title": "SIEM",
+      "ref": [
+        "corbelle2024semantic",
+        "cometti2024real",
+        "sun4978351improving",
+        "qi2023loggpt",
+        "ali2023huntgpt",
+        "hadadi2024anomaly"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "3.6",
+      "title": "System Health Monitoring",
+      "ref": [
+        "balasubramanian2023transformer",
+        "mannam2023optimizing"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "3.7",
+      "title": "Threat Detection",
+      "ref": [
+        "10589612",
+        "li2024ids",
+        "fariha2024log",
+        "egersdoerfer2023early",
+        "jin2024large",
+        "zheng2023logdapt",
+        "10414427",
+        "guo2024logformer",
+        "liao2024detecting",
+        "10707565",
+        "song2024audit",
+        "yang2024anomaly",
+        "mudgal2024crasheventllm",
+        "huang2024demystifying",
+        "shan2024face",
+        "le2023log",
+        "ma2024llmparser",
+        "xu2024divlog",
+        "zhou2024leveraging",
+        "astekin2024comparative",
+        "zhi2024llm",
+        "yu2024loggenius",
+        "jiang2024lilaclogparsingusing",
+        "wu2024log",
+        "vaarandi2024using",
+        "zhong2024logparser",
+        "huang2024ulog",
+        "ma2024librelog"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "3.7.1",
+      "title": "Use Cases",
+      "ref": [
+        "10589612"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "3.7.2",
+      "title": "Machine Learning",
+      "ref": [
+        "fariha2024log"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "3.7.3",
+      "title": "Comparison",
+      "ref": [
+        "egersdoerfer2023early",
+        "jin2024large"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "3.7.4",
+      "title": "Fine-tuning",
+      "ref": [
+        "zheng2023logdapt",
+        "10414427",
+        "guo2024logformer",
+        "liao2024detecting",
+        "10707565",
+        "song2024audit",
+        "yang2024anomaly",
+        "mudgal2024crasheventllm",
+        "huang2024demystifying",
+        "shan2024face",
+        "le2023log",
+        "ma2024llmparser",
+        "xu2024divlog",
+        "zhou2024leveraging",
+        "astekin2024comparative",
+        "zhi2024llm",
+        "yu2024loggenius",
+        "jiang2024lilaclogparsingusing",
+        "wu2024log"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "3.7.5",
+      "title": "Concept Drift",
+      "ref": [
+        "vaarandi2024using",
+        "zhong2024logparser",
+        "huang2024ulog",
+        "ma2024librelog"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "3.8",
+      "title": "Summary",
+      "ref": [
+        "chen2024high",
+        "xu2024help",
+        "mehrabieffectiveness"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "4",
+      "title": "Use of LLM in other applications",
+      "ref": [
+        "astekin2024exploratory",
+        "xiao2024stronger",
+        "ahmed2023recommending",
+        "mandakath2024root",
+        "10.1145/3663529.3663841",
+        "wang2024rcagent",
+        "chen2024automatic",
+        "zhang2024automated"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "5",
+      "title": "Current Challenges and Potential Solutions",
+      "ref": [
+        "ahmed2024prompting",
+        "karlsen2024benchmarking",
+        "jonkhout2024evaluating",
+        "hermann2024gpt",
+        "oniagbi2024evaluation",
+        "chen2024survey",
+        "khanllms",
+        "patil2024leveraging",
+        "ferrag2024revolutionizing",
+        "sanchez2024transfer",
+        "houssel2024towards",
+        "novaklightweight",
+        "lanka2024intelligent",
+        "rahmani2024integrating",
+        "sundin2024ai"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "5.1",
+      "title": "Improving Output Accuracy",
+      "ref": [
+        "ahmed2024prompting",
+        "karlsen2024benchmarking",
+        "jonkhout2024evaluating",
+        "hermann2024gpt",
+        "oniagbi2024evaluation"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "5.2",
+      "title": "Improving Quality and Availability of Datasets",
+      "ref": [
+        "chen2024survey",
+        "khanllms",
+        "patil2024leveraging"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "5.3",
+      "title": "LLMs Understanding and Use of Reasoning",
+      "ref": [
+        "sanchez2024transfer",
+        "houssel2024towards"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "5.4",
+      "title": "Explaining Output",
+      "ref": [
+        "lanka2024intelligent",
+        "rahmani2024integrating"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "5.5",
+      "title": "Addressing Redundancy",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "5.6",
+      "title": "Analysing Logs to Establish System Health",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "5.7",
+      "title": "Inputting Data when Generated",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "5.8",
+      "title": "LLM Security",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "5.9",
+      "title": "Covering A Range of Log Types",
+      "ref": [
+        "sundin2024ai"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "6",
+      "title": "Conclusion and Future work",
+      "ref": [
+        "wu2024surveylargelanguagemodels",
+        "xiao2024cellagent",
+        "dolphin2024extracting",
+        "rao2024quallm",
+        "radwan2024predictive",
+        "jaradat2024multitask",
+        "xie2024waitgpt",
+        "pagnoni2024bytelatenttransformerpatches",
+        "sun2023reinforcementlearningerallms",
+        "portillo2019towards",
+        "cometti2024real",
+        "mirzadeh2024gsm",
+        "liu2021makes",
+        "zhao2024retrieval",
+        "khan2018review",
+        "coutinho2024role",
+        "wang2024pandoraswhiteboxprecisetraining",
+        "li2024governing"
+      ]
+    }
+  ]
+}
