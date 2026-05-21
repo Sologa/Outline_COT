@@ -1,0 +1,741 @@
+{
+  "test_index": 35,
+  "arxiv_id": "2201.12150",
+  "title": "Learning Curves for Decision Making in Supervised Machine Learning: A Survey",
+  "source": {
+    "kind": "gold_human_outline_from_benchmark_prompt_assistant_message",
+    "github_repository": "cedricshan/Survey-Outline-Evaluation-Benckmark",
+    "github_path": "datasets/test_prompts.json",
+    "github_blob_sha": "5ebe31ea9ebb0fc9eb547247c5ea7b7d3a8cb7ed",
+    "github_url": "https://github.com/cedricshan/Survey-Outline-Evaluation-Benckmark/blob/main/datasets/test_prompts.json",
+    "huggingface_dataset": "haajimi/Meow",
+    "huggingface_dataset_url": "https://huggingface.co/datasets/haajimi/Meow",
+    "huggingface_test_file_url": "https://huggingface.co/datasets/haajimi/Meow/resolve/main/test.jsonl",
+    "note": "Hugging Face dataset card defines the test split as 100 articles and the dataset schema includes outline. The local extract uses the benchmark GitHub prompt file because it exposes the 100 assistant outlines as parseable JSON."
+  },
+  "local_inputs": {
+    "download_manifest": "data/paper_sets/meow_test100/metadata/download_manifest.jsonl",
+    "pdf_path": "pdf/035_2201.12150.pdf",
+    "tex_source_dir": "tex_src/035_2201.12150",
+    "prompt_path": "third_party/repos/Survey-Outline-Evaluation-Benckmark/datasets/test_prompts.json"
+  },
+  "outline_node_count": 39,
+  "outline": [
+    {
+      "level": 1,
+      "numbering": "1",
+      "title": "Introduction",
+      "ref": []
+    },
+    {
+      "level": 1,
+      "numbering": "2",
+      "title": "Background on Learning Curves",
+      "ref": [
+        "provost1999efficientprogressivesampling",
+        "john1996staticvsdynamic",
+        "bishop1995regularization",
+        "goodfellow2016deep",
+        "domhan2015speedingup",
+        "swersky2014freezethawbo",
+        "mohr2023fast",
+        "klein2017lcpredictionwithbnn",
+        "waltz1965heuristic",
+        "viering2023theshape",
+        "meek2002thelcsamplingmethod",
+        "perlich2003treeinduction",
+        "ng2001ondiscriminative",
+        "morch1997nonlinear",
+        "bornschein2020smalldatabigdecisions",
+        "nas201",
+        "nas301",
+        "lcdb",
+        "yahpo",
+        "hpobench",
+        "last2007predicting",
+        "weiss08maximizingclassifierutility",
+        "last2009improving",
+        "leite2007aniterativeprocess",
+        "figueroa2012predictingsamplesize",
+        "furnkranz2001evaluation",
+        "leite2005predictingrelativeperformance",
+        "kolachina2012predictioninmachinetranslation",
+        "mohr2021towards",
+        "kielhofer2024learning",
+        "cortes1994limits",
+        "leite2003improvingprogressivesampling",
+        "leite2004improvingprogressivesampling",
+        "tomanek2010resourceawareannotation"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "2.1",
+      "title": "Sample-Wise and Iteration-Wise Learning Curves",
+      "ref": [
+        "provost1999efficientprogressivesampling",
+        "john1996staticvsdynamic",
+        "bishop1995regularization",
+        "goodfellow2016deep",
+        "domhan2015speedingup",
+        "swersky2014freezethawbo",
+        "mohr2023fast",
+        "klein2017lcpredictionwithbnn"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "2.2",
+      "title": "Empirical Learning Curves",
+      "ref": [
+        "waltz1965heuristic",
+        "viering2023theshape",
+        "meek2002thelcsamplingmethod"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "2.3",
+      "title": "Utility Curves",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "2.4",
+      "title": "Terminology of Learning Curves",
+      "ref": [
+        "domhan2015speedingup",
+        "goodfellow2016deep",
+        "perlich2003treeinduction",
+        "ng2001ondiscriminative",
+        "morch1997nonlinear",
+        "bornschein2020smalldatabigdecisions",
+        "nas201",
+        "nas301",
+        "lcdb",
+        "yahpo",
+        "hpobench"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "2.5",
+      "title": "Relation to Other Types of Performance Curves",
+      "ref": [
+        "viering2023theshape",
+        "john1996staticvsdynamic",
+        "provost1999efficientprogressivesampling",
+        "leite2007aniterativeprocess",
+        "figueroa2012predictingsamplesize",
+        "meek2002thelcsamplingmethod",
+        "furnkranz2001evaluation",
+        "leite2005predictingrelativeperformance",
+        "kolachina2012predictioninmachinetranslation",
+        "mohr2023fast",
+        "mohr2021towards",
+        "kielhofer2024learning",
+        "cortes1994limits",
+        "leite2003improvingprogressivesampling",
+        "leite2004improvingprogressivesampling",
+        "tomanek2010resourceawareannotation"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "2.5.1",
+      "title": "Learning Curves in Active Learning",
+      "ref": [
+        "viering2023theshape"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "2.5.2",
+      "title": "Learning Curves under Optimal Class Distribution",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "2.5.3",
+      "title": "Learning Curves on Data Streams",
+      "ref": [
+        "john1996staticvsdynamic",
+        "provost1999efficientprogressivesampling",
+        "leite2007aniterativeprocess",
+        "figueroa2012predictingsamplesize",
+        "meek2002thelcsamplingmethod",
+        "furnkranz2001evaluation",
+        "leite2005predictingrelativeperformance",
+        "kolachina2012predictioninmachinetranslation",
+        "mohr2023fast",
+        "mohr2021towards",
+        "kielhofer2024learning"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "2.5.4",
+      "title": "Feature Curves",
+      "ref": [
+        "cortes1994limits",
+        "provost1999efficientprogressivesampling",
+        "figueroa2012predictingsamplesize",
+        "meek2002thelcsamplingmethod",
+        "leite2003improvingprogressivesampling",
+        "leite2004improvingprogressivesampling"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "2.5.5",
+      "title": "Capacity Curves",
+      "ref": [
+        "tomanek2010resourceawareannotation"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "2.5.6",
+      "title": "Curriculum Learning",
+      "ref": []
+    },
+    {
+      "level": 1,
+      "numbering": "3",
+      "title": "Modelling a Learning Curve",
+      "ref": [
+        "provost1999efficientprogressivesampling",
+        "mohr2023fast",
+        "mohr2021towards",
+        "loog2012dipping",
+        "loog2019minimizers",
+        "nakkiran2020deepdoubledecent",
+        "vallet1989linear",
+        "nakkiran2020optimalregularization",
+        "viering2020makinglearnersmonotone",
+        "mhammedi2020risk",
+        "settles2009active",
+        "weiss2003learningwhentrainingdatarecostly",
+        "forman2004learningfromlittle",
+        "bifet2018machine",
+        "domingos2000mining",
+        "da2016using",
+        "hughes1968featurecurves1",
+        "viering2023theshape",
+        "strang2018dontruleout",
+        "cortes1994limits",
+        "wang2022survey",
+        "figueroa2012predictingsamplesize",
+        "swersky2014freezethawbo",
+        "domhan2015speedingup",
+        "klein2017fabolas",
+        "klein2017lcpredictionwithbnn"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "3.1",
+      "title": "Point Estimates of the Learning Curve",
+      "ref": [
+        "strang2018dontruleout",
+        "cortes1994limits"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "3.2",
+      "title": "Range Estimates of the Learning Curves",
+      "ref": [
+        "wang2022survey",
+        "figueroa2012predictingsamplesize",
+        "swersky2014freezethawbo",
+        "domhan2015speedingup",
+        "klein2017fabolas",
+        "klein2017lcpredictionwithbnn",
+        "mohr2023fast"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "3.3",
+      "title": "Distribution Estimates of Learning Curves",
+      "ref": [
+        "klein2017fabolas",
+        "klein2017lcpredictionwithbnn",
+        "swersky2014freezethawbo"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "4",
+      "title": "A Framework to Categorise Learning Curves Methods for Decision Making",
+      "ref": [
+        "hullermeier2021aleatoric",
+        "kielhofer2024learning",
+        "swersky2014freezethawbo",
+        "cortes1993learningcurves",
+        "john1996staticvsdynamic",
+        "frey1999powerlawfordecisiontrees",
+        "seung1992statistical",
+        "gu2001modelingclassificationperformance",
+        "hess2010learning",
+        "richter2019approximating",
+        "boonyanunta2004predicting",
+        "singh2005modeling",
+        "viering2023theshape",
+        "mukherjee2003estimatingdssizerequirements",
+        "figueroa2012predictingsamplesize",
+        "domhan2015speedingup",
+        "klein2017lcpredictionwithbnn",
+        "cortes1994limits",
+        "last2007predicting",
+        "weiss08maximizingclassifierutility",
+        "last2009improving",
+        "mohr2023fast",
+        "provost1999efficientprogressivesampling",
+        "bishop1995regularization",
+        "goodfellow2016deep",
+        "mohr2021towards",
+        "ruhkopf2022masif",
+        "adriaensen2023efficient",
+        "vandenbosch2004wrappedprogressivesampling",
+        "jamieson2016nonstochasticbestarm"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "4.1",
+      "title": "Types of Decision-making Situations",
+      "ref": [
+        "cortes1993learningcurves",
+        "john1996staticvsdynamic",
+        "frey1999powerlawfordecisiontrees",
+        "seung1992statistical",
+        "gu2001modelingclassificationperformance",
+        "hess2010learning",
+        "richter2019approximating",
+        "boonyanunta2004predicting",
+        "singh2005modeling",
+        "viering2023theshape",
+        "mukherjee2003estimatingdssizerequirements",
+        "figueroa2012predictingsamplesize",
+        "domhan2015speedingup",
+        "klein2017lcpredictionwithbnn",
+        "cortes1994limits",
+        "last2007predicting",
+        "weiss08maximizingclassifierutility",
+        "last2009improving",
+        "mohr2023fast",
+        "provost1999efficientprogressivesampling",
+        "bishop1995regularization",
+        "goodfellow2016deep"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "4.1.1",
+      "title": "Quantitative Data Acquisition",
+      "ref": [
+        "cortes1993learningcurves",
+        "john1996staticvsdynamic",
+        "frey1999powerlawfordecisiontrees",
+        "seung1992statistical",
+        "gu2001modelingclassificationperformance",
+        "hess2010learning",
+        "richter2019approximating",
+        "boonyanunta2004predicting",
+        "singh2005modeling",
+        "viering2023theshape"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "4.1.2",
+      "title": "Early Stopping",
+      "ref": [
+        "mukherjee2003estimatingdssizerequirements",
+        "figueroa2012predictingsamplesize",
+        "domhan2015speedingup",
+        "klein2017lcpredictionwithbnn"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "4.1.3",
+      "title": "Early Discarding",
+      "ref": [
+        "cortes1994limits",
+        "last2007predicting",
+        "weiss08maximizingclassifierutility",
+        "last2009improving",
+        "mohr2023fast",
+        "john1996staticvsdynamic",
+        "provost1999efficientprogressivesampling",
+        "bishop1995regularization",
+        "goodfellow2016deep"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "4.2",
+      "title": "Technical Questions Asked About Learning Curves",
+      "ref": [
+        "cortes1994limits",
+        "mohr2023fast"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "4.3",
+      "title": "Used Data Resources for Inference",
+      "ref": [
+        "mohr2023fast",
+        "mohr2021towards",
+        "ruhkopf2022masif",
+        "adriaensen2023efficient",
+        "swersky2014freezethawbo",
+        "domhan2015speedingup",
+        "klein2017lcpredictionwithbnn",
+        "vandenbosch2004wrappedprogressivesampling",
+        "jamieson2016nonstochasticbestarm"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "5",
+      "title": "Literature Review on learning curve extrapolation methods",
+      "ref": [
+        "domhan2015speedingup",
+        "mohr2023fast",
+        "mohr2021towards",
+        "swersky2014freezethawbo",
+        "klein2017fabolas",
+        "li2017hyperband",
+        "zeng2017progressivesampling",
+        "leite2005predictingrelativeperformance",
+        "provost1999efficientprogressivesampling",
+        "cortes1993learningcurves",
+        "leite2003improvingprogressivesampling",
+        "leite2004improvingprogressivesampling",
+        "chandrashekaran2017speedinguphpo",
+        "baker2018acceleratingnas",
+        "weiss08maximizingclassifierutility",
+        "john1996staticvsdynamic",
+        "frey1999powerlawfordecisiontrees",
+        "gu2001modelingclassificationperformance",
+        "mukherjee2003estimatingdssizerequirements",
+        "figueroa2012predictingsamplesize",
+        "last2007predicting",
+        "last2009improving",
+        "weiss2006maximizingclassifierutility",
+        "klein2017lcpredictionwithbnn",
+        "koshute2021recommending",
+        "vanrijn2015fastalgorithmselection",
+        "leite2010activetesting",
+        "leite2008selecting",
+        "ruhkopf2022masif",
+        "brazdil2022metalearning",
+        "kielhofer2024learning",
+        "vandenbosch2004wrappedprogressivesampling",
+        "jamieson2016nonstochasticbestarm",
+        "leite2007aniterativeprocess",
+        "seung1992statistical",
+        "murata1992learningcurves",
+        "amari1993statistical",
+        "fine99parameterconvergence",
+        "cortes1994limits",
+        "bishop1995regularization",
+        "goodfellow2016deep",
+        "sarkar2015costefficientsampling",
+        "beleites2013sample",
+        "ng2006progressiveoversampling",
+        "weiss2003learningwhentrainingdatarecostly",
+        "meek2002thelcsamplingmethod",
+        "eggensperger2018efficient",
+        "cardonaescobar2017efficienthpo",
+        "gkioxari2016chained",
+        "long2020performance",
+        "sabharwal2016selecting",
+        "cho2015much",
+        "alwosheel2018isyour",
+        "nakkiran2020deepdoubledecent",
+        "mao2016predicting",
+        "oyedare2019estimating",
+        "adriaensen2023efficient",
+        "hollman2023tabpfn",
+        "egele2024unreasonable"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "5.1",
+      "title": "Approaches Without Learning Curve Models",
+      "ref": [
+        "provost1999efficientprogressivesampling",
+        "leite2003improvingprogressivesampling",
+        "domhan2015speedingup",
+        "leite2010activetesting",
+        "vanrijn2015fastalgorithmselection",
+        "chandrashekaran2017speedinguphpo",
+        "swersky2014freezethawbo",
+        "klein2017fabolas",
+        "klein2017lcpredictionwithbnn",
+        "baker2018acceleratingnas",
+        "leite2008selecting",
+        "ruhkopf2022masif",
+        "brazdil2022metalearning",
+        "leite2004improvingprogressivesampling",
+        "kielhofer2024learning",
+        "gu2001modelingclassificationperformance",
+        "vandenbosch2004wrappedprogressivesampling",
+        "jamieson2016nonstochasticbestarm",
+        "li2017hyperband",
+        "zeng2017progressivesampling",
+        "leite2005predictingrelativeperformance",
+        "leite2007aniterativeprocess",
+        "seung1992statistical",
+        "murata1992learningcurves",
+        "amari1993statistical",
+        "fine99parameterconvergence",
+        "cortes1994limits",
+        "bishop1995regularization",
+        "goodfellow2016deep",
+        "john1996staticvsdynamic",
+        "sarkar2015costefficientsampling",
+        "beleites2013sample",
+        "ng2006progressiveoversampling",
+        "weiss2003learningwhentrainingdatarecostly"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "5.1.1",
+      "title": "Prediction of Candidate Competitiveness (Binary)",
+      "ref": [
+        "provost1999efficientprogressivesampling",
+        "leite2003improvingprogressivesampling",
+        "domhan2015speedingup",
+        "leite2010activetesting",
+        "vanrijn2015fastalgorithmselection",
+        "chandrashekaran2017speedinguphpo",
+        "swersky2014freezethawbo",
+        "klein2017fabolas",
+        "klein2017lcpredictionwithbnn",
+        "baker2018acceleratingnas",
+        "leite2008selecting",
+        "ruhkopf2022masif",
+        "brazdil2022metalearning",
+        "leite2004improvingprogressivesampling"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "5.1.2",
+      "title": "Candidate Ranking",
+      "ref": [
+        "kielhofer2024learning",
+        "gu2001modelingclassificationperformance"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "5.1.3",
+      "title": "Identification of Saturation Performance",
+      "ref": [
+        "domhan2015speedingup"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "5.1.4",
+      "title": "Identification of Saturation Point",
+      "ref": [
+        "vandenbosch2004wrappedprogressivesampling",
+        "jamieson2016nonstochasticbestarm",
+        "li2017hyperband",
+        "zeng2017progressivesampling",
+        "leite2005predictingrelativeperformance",
+        "leite2003improvingprogressivesampling",
+        "leite2004improvingprogressivesampling",
+        "leite2007aniterativeprocess",
+        "vanrijn2015fastalgorithmselection",
+        "leite2010activetesting",
+        "leite2008selecting",
+        "ruhkopf2022masif"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "5.1.5",
+      "title": "Finding the Utility-Based Stopping Point",
+      "ref": [
+        "seung1992statistical",
+        "murata1992learningcurves",
+        "amari1993statistical",
+        "fine99parameterconvergence",
+        "cortes1994limits",
+        "swersky2014freezethawbo",
+        "domhan2015speedingup"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "5.1.6",
+      "title": "Performance Prediction at Fixed Point",
+      "ref": [
+        "bishop1995regularization",
+        "goodfellow2016deep",
+        "john1996staticvsdynamic",
+        "provost1999efficientprogressivesampling",
+        "sarkar2015costefficientsampling",
+        "beleites2013sample"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "5.1.7",
+      "title": "Performance Bounding",
+      "ref": [
+        "ng2006progressiveoversampling",
+        "weiss2003learningwhentrainingdatarecostly",
+        "bishop1995regularization",
+        "leite2003improvingprogressivesampling",
+        "leite2004improvingprogressivesampling",
+        "brazdil2022metalearning",
+        "provost1999efficientprogressivesampling",
+        "leite2007aniterativeprocess"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "5.2",
+      "title": "Approaches With Learning Curve Models",
+      "ref": [
+        "meek2002thelcsamplingmethod",
+        "weiss2006maximizingclassifierutility",
+        "provost1999efficientprogressivesampling",
+        "weiss08maximizingclassifierutility",
+        "last2007predicting",
+        "brazdil2022metalearning",
+        "ruhkopf2022masif",
+        "eggensperger2018efficient",
+        "chandrashekaran2017speedinguphpo",
+        "leite2005predictingrelativeperformance",
+        "leite2007aniterativeprocess",
+        "leite2010activetesting",
+        "vanrijn2015fastalgorithmselection",
+        "cardonaescobar2017efficienthpo",
+        "gkioxari2016chained",
+        "baker2018acceleratingnas",
+        "long2020performance",
+        "sabharwal2016selecting",
+        "mohr2023fast",
+        "mohr2021towards",
+        "cortes1993learningcurves",
+        "seung1992statistical",
+        "john1996staticvsdynamic",
+        "cho2015much",
+        "alwosheel2018isyour",
+        "nakkiran2020deepdoubledecent",
+        "mukherjee2003estimatingdssizerequirements",
+        "figueroa2012predictingsamplesize",
+        "mao2016predicting",
+        "oyedare2019estimating",
+        "koshute2021recommending",
+        "domhan2015speedingup",
+        "gu2001modelingclassificationperformance",
+        "adriaensen2023efficient",
+        "hollman2023tabpfn",
+        "egele2024unreasonable"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "5.2.1",
+      "title": "Performance Prediction at Any Point",
+      "ref": [
+        "last2007predicting",
+        "brazdil2022metalearning",
+        "ruhkopf2022masif",
+        "eggensperger2018efficient",
+        "chandrashekaran2017speedinguphpo",
+        "leite2005predictingrelativeperformance",
+        "leite2007aniterativeprocess",
+        "leite2010activetesting",
+        "vanrijn2015fastalgorithmselection",
+        "cardonaescobar2017efficienthpo",
+        "gkioxari2016chained",
+        "baker2018acceleratingnas",
+        "long2020performance",
+        "sabharwal2016selecting"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "5.2.2",
+      "title": "Utility Prediction at Any Point",
+      "ref": [
+        "mohr2023fast",
+        "mohr2021towards"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "5.2.3",
+      "title": "Performance at Any Point for Any Learner",
+      "ref": [
+        "cortes1993learningcurves",
+        "seung1992statistical",
+        "john1996staticvsdynamic",
+        "cho2015much",
+        "alwosheel2018isyour",
+        "nakkiran2020deepdoubledecent",
+        "mukherjee2003estimatingdssizerequirements",
+        "figueroa2012predictingsamplesize",
+        "mao2016predicting",
+        "oyedare2019estimating",
+        "koshute2021recommending",
+        "mohr2023fast",
+        "mohr2021towards",
+        "domhan2015speedingup",
+        "gu2001modelingclassificationperformance",
+        "adriaensen2023efficient",
+        "hollman2023tabpfn",
+        "egele2024unreasonable",
+        "last2007predicting"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "6",
+      "title": "Summary and Open Research Directions",
+      "ref": [
+        "weiss2006maximizingclassifierutility",
+        "last2009improving",
+        "sarkar2015costefficientsampling",
+        "last2007predicting",
+        "weiss08maximizingclassifierutility",
+        "swersky2014freezethawbo",
+        "klein2017fabolas",
+        "klein2017lcpredictionwithbnn",
+        "domhan2015speedingup",
+        "wistuba2019inductive",
+        "petrak2000fast",
+        "vandenbosch2004wrappedprogressivesampling",
+        "jamieson2016nonstochasticbestarm",
+        "zeng2017progressivesampling"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "6.1",
+      "title": "Acknowledgements.",
+      "ref": [
+        "petrak2000fast",
+        "vandenbosch2004wrappedprogressivesampling",
+        "jamieson2016nonstochasticbestarm",
+        "zeng2017progressivesampling"
+      ]
+    }
+  ]
+}

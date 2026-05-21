@@ -1,0 +1,802 @@
+{
+  "test_index": 44,
+  "arxiv_id": "2308.06764",
+  "title": "Few-shot Class-incremental Learning for Classification and Object Detection: A Survey",
+  "source": {
+    "kind": "gold_human_outline_from_benchmark_prompt_assistant_message",
+    "github_repository": "cedricshan/Survey-Outline-Evaluation-Benckmark",
+    "github_path": "datasets/test_prompts.json",
+    "github_blob_sha": "5ebe31ea9ebb0fc9eb547247c5ea7b7d3a8cb7ed",
+    "github_url": "https://github.com/cedricshan/Survey-Outline-Evaluation-Benckmark/blob/main/datasets/test_prompts.json",
+    "huggingface_dataset": "haajimi/Meow",
+    "huggingface_dataset_url": "https://huggingface.co/datasets/haajimi/Meow",
+    "huggingface_test_file_url": "https://huggingface.co/datasets/haajimi/Meow/resolve/main/test.jsonl",
+    "note": "Hugging Face dataset card defines the test split as 100 articles and the dataset schema includes outline. The local extract uses the benchmark GitHub prompt file because it exposes the 100 assistant outlines as parseable JSON."
+  },
+  "local_inputs": {
+    "download_manifest": "data/paper_sets/meow_test100/metadata/download_manifest.jsonl",
+    "pdf_path": "pdf/044_2308.06764.pdf",
+    "tex_source_dir": "tex_src/044_2308.06764",
+    "prompt_path": "third_party/repos/Survey-Outline-Evaluation-Benckmark/datasets/test_prompts.json"
+  },
+  "outline_node_count": 47,
+  "outline": [
+    {
+      "level": 1,
+      "numbering": "1",
+      "title": "Introduction",
+      "ref": [
+        "krizhevsky2012imagenet",
+        "he2016deep",
+        "devlin2018bert",
+        "brown2020language",
+        "9349197",
+        "parisi2019continual",
+        "9915459",
+        "li2023crnet",
+        "wu2019large",
+        "wang2023cba",
+        "van2022three",
+        "ren2019incremental",
+        "tao2020few",
+        "zhang2021few",
+        "gidaris2018dynamic",
+        "zhou2022few"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "2",
+      "title": "Background",
+      "ref": [
+        "tao2020few",
+        "zhang2021few",
+        "cheraghian2021semantic",
+        "kukleva2021generalized",
+        "liu2022few",
+        "shi2021overcoming",
+        "mazumder2021few",
+        "zhao2021mgsvf",
+        "zhou2022forward",
+        "hersche2022constrained",
+        "yang2022dynamic",
+        "zhou2022few",
+        "zou2022margin",
+        "wang2020generalizing",
+        "lu2023survey",
+        "antonelli2022few",
+        "huang2022survey",
+        "parisi2019continual",
+        "lesort2020continual",
+        "9349197",
+        "belouadah2021comprehensive",
+        "9915459",
+        "mai2022online",
+        "van2022three",
+        "zhou2024class",
+        "wang2024comprehensive",
+        "tian2024survey",
+        "ji2023memorizing",
+        "wang2023few",
+        "song2023comprehensive",
+        "bottou2007tradeoffs",
+        "bottou2018optimization",
+        "yu2020semantic",
+        "rebuffi2017icarl",
+        "zhu2022feature",
+        "cui2022uncertainty",
+        "cui2023uncertainty",
+        "peng2022few",
+        "mallya2018packnet",
+        "maltoni2019continuous",
+        "hu2022can",
+        "chen2019closer",
+        "ye2020heterogeneous",
+        "goodfellow2013empirical",
+        "chao2016empirical",
+        "gidaris2018dynamic",
+        "qi2018low",
+        "yoon2020xtarnet"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "2.1",
+      "title": "Problem Definition",
+      "ref": [
+        "wang2020generalizing",
+        "lu2023survey",
+        "antonelli2022few",
+        "huang2022survey",
+        "parisi2019continual",
+        "lesort2020continual",
+        "9349197",
+        "belouadah2021comprehensive",
+        "9915459",
+        "mai2022online",
+        "van2022three",
+        "zhou2024class",
+        "wang2024comprehensive",
+        "tian2024survey"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "2.2",
+      "title": "Core Challenges",
+      "ref": [
+        "wang2020generalizing",
+        "antonelli2022few",
+        "huang2022survey",
+        "lu2023survey",
+        "parisi2019continual",
+        "lesort2020continual",
+        "belouadah2021comprehensive",
+        "9349197",
+        "9915459",
+        "mai2022online",
+        "wang2024comprehensive",
+        "zhou2024class",
+        "tian2024survey",
+        "tao2020few",
+        "zhang2021few",
+        "ji2023memorizing",
+        "wang2023few",
+        "zhou2022few",
+        "song2023comprehensive",
+        "shi2021overcoming",
+        "bottou2007tradeoffs",
+        "bottou2018optimization"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "2.2.1",
+      "title": "Unreliable Empirical Risk Minimization",
+      "ref": [
+        "huang2022survey",
+        "lu2023survey",
+        "parisi2019continual",
+        "lesort2020continual",
+        "belouadah2021comprehensive",
+        "9349197",
+        "9915459",
+        "mai2022online",
+        "wang2024comprehensive",
+        "zhou2024class",
+        "tian2024survey",
+        "tao2020few",
+        "zhang2021few",
+        "ji2023memorizing",
+        "wang2023few"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "2.2.2",
+      "title": "Stability-plasticity Dilemma",
+      "ref": [
+        "zhou2022few",
+        "9349197",
+        "wang2020generalizing",
+        "song2023comprehensive",
+        "shi2021overcoming",
+        "bottou2007tradeoffs",
+        "bottou2018optimization"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "2.3",
+      "title": "General Schemes",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "2.4",
+      "title": "Relevant Problems",
+      "ref": [
+        "wang2020generalizing"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "2.4.1",
+      "title": "Incremental Learning",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "2.4.2",
+      "title": "Few-shot Learning",
+      "ref": [
+        "wang2020generalizing"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "2.5",
+      "title": "Taxonomy",
+      "ref": [
+        "zhao2021mgsvf",
+        "yu2020semantic",
+        "rebuffi2017icarl",
+        "zhu2022feature",
+        "cui2022uncertainty",
+        "cui2023uncertainty",
+        "peng2022few",
+        "van2022three",
+        "9349197",
+        "zhou2024class",
+        "mallya2018packnet",
+        "maltoni2019continuous",
+        "hu2022can",
+        "chen2019closer",
+        "ye2020heterogeneous",
+        "wang2020generalizing",
+        "goodfellow2013empirical",
+        "tao2020few",
+        "chao2016empirical",
+        "gidaris2018dynamic",
+        "qi2018low",
+        "yoon2020xtarnet"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "3",
+      "title": "Datasets and Evaluation",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "3.1",
+      "title": "Datasets",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "3.1.1",
+      "title": "Datasets for Classification",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "3.1.2",
+      "title": "Datasets for Object Detection",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "3.2",
+      "title": "Evaluation Metrics",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "3.2.1",
+      "title": "Evaluation Metrics for Classification",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "3.2.2",
+      "title": "Evaluation Metrics for Object Detection",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "3.3",
+      "title": "Summary",
+      "ref": []
+    },
+    {
+      "level": 1,
+      "numbering": "4",
+      "title": "Few-shot Class-incremental Classification",
+      "ref": [
+        "vinyals2016matching",
+        "russakovsky2015imagenet",
+        "tao2020few",
+        "krizhevsky2009learning",
+        "wah2011caltech",
+        "lin2014microsoft",
+        "perez2020incremental",
+        "everingham2009pascal",
+        "pan2023ssfe",
+        "peng2022few",
+        "kukleva2021generalized",
+        "zhu2022feature",
+        "liu2022few",
+        "shankarampeta2021few",
+        "arjovsky2017wasserstein",
+        "finn2017model",
+        "agarwal2022semantics",
+        "zhou2022forward",
+        "zhang2021few",
+        "zhu2021self",
+        "martinetz1993competitive",
+        "yang2021learnable",
+        "yang2022dynamic",
+        "ahmad2022few",
+        "zhao2023few",
+        "zhou2022few",
+        "chi2022metafscil",
+        "cheraghian2021semantic",
+        "vaswani2017attention",
+        "bengio2013representation",
+        "kaya2019deep",
+        "li2023deep",
+        "mazumder2021few",
+        "zou2022margin",
+        "zhao2021mgsvf",
+        "cheraghian2021synthesized",
+        "kim2023warping",
+        "khorramshahi2020devil",
+        "hersche2022constrained",
+        "yang2023neural",
+        "papyan2020prevalence",
+        "sankaran2021feature",
+        "ahmad2022variable",
+        "kalla2022s3c",
+        "kuznetsova2020open",
+        "neal2012bayesian",
+        "lee2020self",
+        "yao2022few",
+        "gou2021knowledge",
+        "dong2021few",
+        "cui2021semi",
+        "cui2022uncertainty",
+        "cui2023uncertainty",
+        "hospedales2021meta"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "4.1",
+      "title": "Data-based Approaches",
+      "ref": [
+        "vinyals2016matching",
+        "russakovsky2015imagenet",
+        "tao2020few",
+        "krizhevsky2009learning",
+        "wah2011caltech",
+        "lin2014microsoft",
+        "perez2020incremental",
+        "everingham2009pascal"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "4.1.1",
+      "title": "Data Replay-based Methods",
+      "ref": [
+        "vinyals2016matching",
+        "russakovsky2015imagenet",
+        "tao2020few",
+        "krizhevsky2009learning",
+        "wah2011caltech",
+        "lin2014microsoft",
+        "perez2020incremental",
+        "everingham2009pascal"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "4.1.2",
+      "title": "Pseudo Scenarios-based Methods",
+      "ref": [
+        "everingham2009pascal",
+        "perez2020incremental"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "4.2",
+      "title": "Structure-based Approaches",
+      "ref": [
+        "pan2023ssfe",
+        "peng2022few"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "4.2.1",
+      "title": "Dynamic Structure-based Methods",
+      "ref": [
+        "pan2023ssfe",
+        "peng2022few"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "4.2.2",
+      "title": "Attention-based Methods",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "4.3",
+      "title": "Optimization-based Approaches",
+      "ref": [
+        "kukleva2021generalized",
+        "zhu2022feature",
+        "liu2022few",
+        "shankarampeta2021few",
+        "arjovsky2017wasserstein",
+        "finn2017model",
+        "agarwal2022semantics",
+        "zhou2022forward",
+        "peng2022few",
+        "zhang2021few",
+        "zhu2021self",
+        "tao2020few",
+        "martinetz1993competitive",
+        "yang2021learnable",
+        "yang2022dynamic",
+        "ahmad2022few",
+        "zhao2023few",
+        "zhou2022few",
+        "chi2022metafscil",
+        "cheraghian2021semantic",
+        "vaswani2017attention"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "4.3.1",
+      "title": "Representation Learning-based Methods",
+      "ref": [
+        "kukleva2021generalized",
+        "zhu2022feature",
+        "liu2022few",
+        "shankarampeta2021few",
+        "arjovsky2017wasserstein",
+        "finn2017model",
+        "agarwal2022semantics",
+        "zhou2022forward",
+        "peng2022few",
+        "zhang2021few",
+        "zhu2021self"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "4.3.2",
+      "title": "Knowledge Distillation-based Methods",
+      "ref": [
+        "tao2020few",
+        "zhang2021few",
+        "martinetz1993competitive",
+        "yang2021learnable",
+        "yang2022dynamic",
+        "ahmad2022few"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "4.3.3",
+      "title": "Meta Learning-based Methods",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "4.3.4",
+      "title": "Other Methods",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "4.4",
+      "title": "Summary",
+      "ref": [
+        "bengio2013representation",
+        "kaya2019deep",
+        "li2023deep",
+        "mazumder2021few",
+        "peng2022few",
+        "zou2022margin",
+        "zhao2021mgsvf",
+        "cheraghian2021synthesized",
+        "kim2023warping",
+        "khorramshahi2020devil",
+        "hersche2022constrained",
+        "yang2023neural",
+        "papyan2020prevalence",
+        "zhou2022forward",
+        "sankaran2021feature",
+        "ahmad2022few",
+        "ahmad2022variable",
+        "kalla2022s3c",
+        "russakovsky2015imagenet",
+        "kuznetsova2020open",
+        "neal2012bayesian",
+        "lee2020self",
+        "yao2022few",
+        "gou2021knowledge",
+        "zhao2023few",
+        "kukleva2021generalized",
+        "dong2021few",
+        "zhu2022feature",
+        "cui2021semi",
+        "cui2022uncertainty",
+        "cui2023uncertainty",
+        "cheraghian2021semantic",
+        "hospedales2021meta"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "4.4.1",
+      "title": "Performance Comparison",
+      "ref": [
+        "bengio2013representation",
+        "kaya2019deep",
+        "li2023deep",
+        "mazumder2021few",
+        "peng2022few",
+        "zou2022margin",
+        "zhao2021mgsvf",
+        "cheraghian2021synthesized",
+        "kim2023warping",
+        "khorramshahi2020devil",
+        "hersche2022constrained",
+        "yang2023neural",
+        "papyan2020prevalence",
+        "zhou2022forward",
+        "sankaran2021feature",
+        "ahmad2022few",
+        "ahmad2022variable",
+        "kalla2022s3c",
+        "russakovsky2015imagenet",
+        "kuznetsova2020open",
+        "neal2012bayesian",
+        "lee2020self",
+        "yao2022few",
+        "gou2021knowledge",
+        "zhao2023few",
+        "kukleva2021generalized",
+        "dong2021few",
+        "zhu2022feature",
+        "cui2021semi",
+        "cui2022uncertainty",
+        "cui2023uncertainty",
+        "cheraghian2021semantic"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "4.4.2",
+      "title": "Main Issues and Facts",
+      "ref": [
+        "hospedales2021meta"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "5",
+      "title": "Few-shot Class-incremental Object Detection",
+      "ref": [
+        "hersche2022constrained",
+        "zheng2021few",
+        "zhou2022few",
+        "shi2021overcoming",
+        "agarwal2022semantics",
+        "liu2022few",
+        "zhu2022feature",
+        "zhu2021self",
+        "zhou2022forward",
+        "peng2022few",
+        "song2023learning",
+        "tao2020few",
+        "zhang2021few",
+        "yang2022dynamic",
+        "cheraghian2021synthesized",
+        "mazumder2021few",
+        "zhao2021mgsvf",
+        "zou2022margin",
+        "yao2022few",
+        "kim2023warping",
+        "wang2023few2",
+        "cheraghian2021semantic",
+        "dong2021few",
+        "zhao2023few",
+        "chi2022metafscil",
+        "ganea2021incremental",
+        "yin2022sylph",
+        "dong2023incremental",
+        "perez2020incremental",
+        "cheng2021meta",
+        "feng2022incremental",
+        "zhou2019objects",
+        "finn2017model",
+        "tian2019fcos",
+        "farquhar2018towards",
+        "zhang2020bridging"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "5.1",
+      "title": "Difference with Classification",
+      "ref": [
+        "shi2021overcoming"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "5.2",
+      "title": "Methods",
+      "ref": [
+        "agarwal2022semantics",
+        "liu2022few",
+        "zhu2022feature",
+        "zhu2021self",
+        "zhou2022forward",
+        "peng2022few",
+        "song2023learning",
+        "tao2020few",
+        "zhang2021few",
+        "yang2022dynamic",
+        "cheraghian2021synthesized",
+        "mazumder2021few",
+        "zhao2021mgsvf",
+        "zou2022margin"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "5.2.1",
+      "title": "Anchor-free Frameworks",
+      "ref": [
+        "agarwal2022semantics",
+        "liu2022few",
+        "zhu2022feature",
+        "zhu2021self",
+        "zhou2022forward",
+        "peng2022few",
+        "song2023learning"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "5.2.2",
+      "title": "Anchor-based Frameworks",
+      "ref": [
+        "zhang2021few",
+        "yang2022dynamic",
+        "cheraghian2021synthesized",
+        "mazumder2021few",
+        "zhao2021mgsvf",
+        "zou2022margin"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "5.3",
+      "title": "Summary",
+      "ref": [
+        "kim2023warping",
+        "wang2023few2",
+        "cheraghian2021semantic",
+        "dong2021few",
+        "zhao2023few",
+        "chi2022metafscil",
+        "zheng2021few",
+        "zhou2022few",
+        "shi2021overcoming",
+        "song2023learning",
+        "zhao2021mgsvf",
+        "peng2022few",
+        "ganea2021incremental",
+        "yin2022sylph",
+        "dong2023incremental",
+        "perez2020incremental",
+        "cheng2021meta",
+        "feng2022incremental",
+        "zhou2019objects",
+        "finn2017model",
+        "tian2019fcos",
+        "farquhar2018towards",
+        "zhang2020bridging"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "5.3.1",
+      "title": "Performance Comparison",
+      "ref": [
+        "wang2023few2",
+        "cheraghian2021semantic",
+        "dong2021few",
+        "zhao2023few",
+        "chi2022metafscil",
+        "zheng2021few",
+        "zhou2022few",
+        "shi2021overcoming",
+        "song2023learning",
+        "zhao2021mgsvf",
+        "peng2022few",
+        "ganea2021incremental",
+        "yin2022sylph",
+        "dong2023incremental",
+        "perez2020incremental",
+        "cheng2021meta",
+        "feng2022incremental",
+        "zhou2019objects",
+        "finn2017model"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "5.3.2",
+      "title": "Main Issues and Facts",
+      "ref": []
+    },
+    {
+      "level": 1,
+      "numbering": "6",
+      "title": "Conclusion and Outlooks",
+      "ref": [
+        "ganea2021incremental",
+        "nguyen2022ifs",
+        "he2017mask",
+        "ren2015faster",
+        "wang2020frustratingly",
+        "spiegelhalter1990sequential",
+        "perez2020incremental",
+        "cheng2021meta",
+        "yin2022sylph",
+        "feng2022incremental",
+        "dong2023incremental",
+        "klein2015memory",
+        "kudithipudi2022biological",
+        "tao2020few",
+        "kalla2022s3c",
+        "cui2021semi",
+        "d2023multimodal",
+        "zhang2024few"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "6.1",
+      "title": "Human-machine Gap in FSCIL",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "6.2",
+      "title": "Practical Settings in FSCIL",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "6.3",
+      "title": "Knowledge Acquisition and Update in FSCIL",
+      "ref": [
+        "perez2020incremental"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "6.4",
+      "title": "Applications and Safety in FSCIL",
+      "ref": [
+        "cheng2021meta",
+        "yin2022sylph",
+        "feng2022incremental",
+        "dong2023incremental",
+        "ganea2021incremental",
+        "nguyen2022ifs",
+        "klein2015memory",
+        "kudithipudi2022biological",
+        "tao2020few",
+        "kalla2022s3c",
+        "cui2021semi",
+        "d2023multimodal",
+        "zhang2024few"
+      ]
+    }
+  ]
+}

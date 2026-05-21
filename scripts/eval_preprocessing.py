@@ -2,7 +2,7 @@
 """
 数据预处理脚本：将生成的大纲数据转换为评估脚本需要的格式
 
-将 outputs 文件夹下生成的大纲数据（包含 outline 数组）转换为
+将 .local/output 文件夹下生成的大纲数据（包含 outline 数组）转换为
 evaluate_llm.py 需要的格式（包含 generated 文本字段）
 """
 
@@ -177,10 +177,10 @@ def convert_outline_format(input_file, output_file):
 
 def find_generation_files(outputs_dir):
     """
-    在 outputs 目录下查找生成的大纲文件
+    在 .local/output 目录下查找生成的大纲文件
     
     Args:
-        outputs_dir: outputs 目录路径
+        outputs_dir: 输出目录路径
         
     Returns:
         list: 找到的生成文件列表
@@ -199,7 +199,7 @@ def main():
     parser = argparse.ArgumentParser(description="将生成的大纲数据转换为评估格式")
     parser.add_argument('--input', type=str, help='输入文件路径（可选，如果不指定则自动查找）')
     parser.add_argument('--output', type=str, help='输出文件路径（可选，如果不指定则自动生成）')
-    parser.add_argument('--outputs_dir', type=str, default='outputs', help='outputs目录路径')
+    parser.add_argument('--outputs_dir', type=str, default='.local/output', help='输出目录路径')
     parser.add_argument('--batch', action='store_true', help='批量处理模式，处理所有找到的生成文件')
     parser.add_argument('--log_file', help='Log file path for unified logging')
     

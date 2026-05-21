@@ -1,0 +1,744 @@
+{
+  "test_index": 54,
+  "arxiv_id": "2401.11720",
+  "title": "Graph Condensation: A Survey",
+  "source": {
+    "kind": "gold_human_outline_from_benchmark_prompt_assistant_message",
+    "github_repository": "cedricshan/Survey-Outline-Evaluation-Benckmark",
+    "github_path": "datasets/test_prompts.json",
+    "github_blob_sha": "5ebe31ea9ebb0fc9eb547247c5ea7b7d3a8cb7ed",
+    "github_url": "https://github.com/cedricshan/Survey-Outline-Evaluation-Benckmark/blob/main/datasets/test_prompts.json",
+    "huggingface_dataset": "haajimi/Meow",
+    "huggingface_dataset_url": "https://huggingface.co/datasets/haajimi/Meow",
+    "huggingface_test_file_url": "https://huggingface.co/datasets/haajimi/Meow/resolve/main/test.jsonl",
+    "note": "Hugging Face dataset card defines the test split as 100 articles and the dataset schema includes outline. The local extract uses the benchmark GitHub prompt file because it exposes the 100 assistant outlines as parseable JSON."
+  },
+  "local_inputs": {
+    "download_manifest": "data/paper_sets/meow_test100/metadata/download_manifest.jsonl",
+    "pdf_path": "pdf/054_2401.11720.pdf",
+    "tex_source_dir": "tex_src/054_2401.11720",
+    "prompt_path": "third_party/repos/Survey-Outline-Evaluation-Benckmark/datasets/test_prompts.json"
+  },
+  "outline_node_count": 45,
+  "outline": [
+    {
+      "level": 1,
+      "numbering": "1",
+      "title": "Introduction",
+      "ref": [
+        "wu2022graph",
+        "gao2023accelerating",
+        "gao2023semantic",
+        "li2018influence",
+        "jung2012irie",
+        "guo2022graph",
+        "rahmani2023graph",
+        "zheng2023automl",
+        "yu2023self",
+        "hamilton2017inductive",
+        "ding_faster_2022",
+        "yuan2023continual",
+        "oloulade2021graph",
+        "MPNN",
+        "DBLP:conf/iclr/ChenMX18",
+        "DBLP:conf/iclr/ZengZSKP20",
+        "wu2019simplifying",
+        "zhang2022nafs",
+        "zhang2022graph",
+        "ma2024acceleration",
+        "yang2023data",
+        "spielman2008graph",
+        "loukas2018spectrally",
+        "bravo2019unifying",
+        "hashemi2024comprehensive",
+        "jin_graph_2022",
+        "gao_graph_2023",
+        "liu_cat_2023",
+        "zheng_structure_free_2023",
+        "xu_kernel_2023",
+        "yang_does_2023",
+        "liu2023fairgraph",
+        "dong2023reliant",
+        "bourmpoulias2023entity",
+        "lettieri2023knowledge",
+        "wang2021review",
+        "zhu2021deep",
+        "geng_survey_2023",
+        "yu_dataset_2023",
+        "sachdeva_data_2023",
+        "lei_comprehensive_2024",
+        "zheng_towards_2023",
+        "shabani2024comprehensive",
+        "zhang2023survey",
+        "xu2024survey",
+        "liu2024gcondenser",
+        "gong2024gc",
+        "sun2024gc",
+        "li_attend_2023",
+        "gao_multiple_2023",
+        "feng_fair_2023",
+        "mao_gcare_2023",
+        "CTRL",
+        "jin_condensing_2022",
+        "gao2024heterogeneous",
+        "fang2024exgc",
+        "yan2024federated",
+        "pan_fedgkd_2023",
+        "liu2024tinygraph",
+        "gao2024robgc",
+        "zhang2024navigating",
+        "liu2024graph",
+        "wang_fast_2023",
+        "gao2024graph",
+        "liu_graph_2022",
+        "liu_graph_2023",
+        "liu_puma_2023",
+        "gao2024rethinking",
+        "xiao2024disentangled",
+        "xiao2024simple",
+        "gupta_mirage_2023"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "2",
+      "title": "Definition and Taxonomy",
+      "ref": [
+        "gao2024robgc",
+        "jin_graph_2022",
+        "jin_condensing_2022",
+        "zheng_structure_free_2023",
+        "zhang2024navigating",
+        "liu2024graph",
+        "gao_graph_2023",
+        "CTRL",
+        "gao2024rethinking",
+        "yang_does_2023",
+        "xiao2024disentangled",
+        "xu_kernel_2023",
+        "liu_graph_2023",
+        "gao_multiple_2023",
+        "liu_graph_2022",
+        "liu_cat_2023",
+        "liu_puma_2023",
+        "gao2024graph",
+        "MPNN",
+        "feng_fair_2023",
+        "wu2020openwgl",
+        "oloulade2021graph",
+        "bergstra2011algorithms"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "2.1",
+      "title": "Preliminaries",
+      "ref": [
+        "gao2024robgc",
+        "jin_graph_2022",
+        "jin_condensing_2022",
+        "zheng_structure_free_2023",
+        "zhang2024navigating",
+        "liu2024graph",
+        "gao_graph_2023",
+        "CTRL",
+        "gao2024rethinking",
+        "yang_does_2023",
+        "xiao2024disentangled",
+        "xu_kernel_2023",
+        "liu_graph_2023",
+        "gao_multiple_2023",
+        "liu_graph_2022",
+        "liu_cat_2023",
+        "liu_puma_2023",
+        "gao2024graph"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "2.2",
+      "title": "Criteria for Graph Condensation",
+      "ref": [
+        "MPNN"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "2.3",
+      "title": "Taxonomy",
+      "ref": [
+        "jin_graph_2022",
+        "yang_does_2023",
+        "jin_condensing_2022",
+        "feng_fair_2023",
+        "wu2020openwgl",
+        "oloulade2021graph",
+        "bergstra2011algorithms"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "2.3.1",
+      "title": "Effective Graph Condensation",
+      "ref": [
+        "jin_graph_2022",
+        "yang_does_2023"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "2.3.2",
+      "title": "Generalized Graph Condensation",
+      "ref": [
+        "feng_fair_2023"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "2.3.3",
+      "title": "Efficient Graph Condensation",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "2.3.4",
+      "title": "Fair Graph Condensation",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "2.3.5",
+      "title": "Robust Graph Condensation",
+      "ref": [
+        "wu2020openwgl",
+        "oloulade2021graph",
+        "bergstra2011algorithms"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "3",
+      "title": "Optimization Strategies",
+      "ref": [
+        "zhao2020dataset",
+        "lei_comprehensive_2024",
+        "cazenavette2022dataset",
+        "nguyen2020dataset",
+        "zhao2023dataset",
+        "jin_graph_2022",
+        "jin_condensing_2022",
+        "liu_graph_2022",
+        "ding_faster_2022",
+        "gao_multiple_2023",
+        "yang_does_2023",
+        "zheng_structure_free_2023",
+        "feng_fair_2023",
+        "mao_gcare_2023"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "4",
+      "title": "Graph Condensation Methods",
+      "ref": [
+        "xu_kernel_2023",
+        "liu_cat_2023",
+        "CTRL",
+        "pan_fedgkd_2023",
+        "liu_graph_2023",
+        "wang_fast_2023",
+        "gupta_mirage_2023",
+        "li_attend_2023",
+        "liu_puma_2023",
+        "xiao2024disentangled",
+        "zhang2024navigating",
+        "gao2024heterogeneous",
+        "fang2024exgc",
+        "gao2024graph",
+        "liu2024graph",
+        "xiao2024simple",
+        "yan2024federated",
+        "gao2024rethinking",
+        "gao2024robgc",
+        "liu2024tinygraph",
+        "jin_graph_2022",
+        "wu2019simplifying",
+        "zheng_structure_free_2023",
+        "sun2024gc",
+        "wei2023clnode",
+        "du2019graph",
+        "gao_multiple_2023",
+        "lu2012robust",
+        "bo2023survey",
+        "zhu2021interpreting",
+        "yang_does_2023",
+        "wu2020openwgl",
+        "jin_condensing_2022",
+        "liu_graph_2022",
+        "gretton2012kernel",
+        "feng_fair_2023",
+        "mao_gcare_2023",
+        "mehrabi2021survey",
+        "song2022guide",
+        "chen2024fairness"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "4.1",
+      "title": "Effective Graph Condensation",
+      "ref": [
+        "gupta_mirage_2023",
+        "li_attend_2023",
+        "liu_puma_2023",
+        "xiao2024disentangled",
+        "zhang2024navigating",
+        "gao2024heterogeneous",
+        "fang2024exgc",
+        "gao2024graph",
+        "liu2024graph",
+        "xiao2024simple",
+        "yan2024federated",
+        "gao2024rethinking",
+        "gao2024robgc",
+        "liu2024tinygraph",
+        "jin_graph_2022",
+        "wu2019simplifying",
+        "zheng_structure_free_2023",
+        "sun2024gc"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "4.1.1",
+      "title": "Optimization-Driven Methods",
+      "ref": [
+        "fang2024exgc",
+        "gao2024graph",
+        "liu2024graph",
+        "xiao2024simple",
+        "yan2024federated",
+        "gao2024rethinking",
+        "gao2024robgc",
+        "liu2024tinygraph",
+        "jin_graph_2022",
+        "wu2019simplifying"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "4.1.2",
+      "title": "Augmentation-Based Methods",
+      "ref": [
+        "zheng_structure_free_2023",
+        "jin_graph_2022",
+        "gao2024graph",
+        "sun2024gc"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "4.2",
+      "title": "Generalized Graph Condensation",
+      "ref": [
+        "jin_graph_2022",
+        "CTRL",
+        "zheng_structure_free_2023",
+        "zhang2024navigating",
+        "wei2023clnode",
+        "wang_fast_2023",
+        "du2019graph",
+        "xu_kernel_2023"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "4.3",
+      "title": "Efficient Graph Condensation",
+      "ref": [
+        "gao_multiple_2023",
+        "liu2024graph",
+        "lu2012robust",
+        "liu_puma_2023",
+        "gao2024rethinking",
+        "li_attend_2023",
+        "liu2024tinygraph",
+        "liu_graph_2023",
+        "bo2023survey",
+        "zhu2021interpreting",
+        "yang_does_2023",
+        "gao2024graph",
+        "wu2020openwgl"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "4.3.1",
+      "title": "Efficient Graph Encoding",
+      "ref": [
+        "gao_multiple_2023",
+        "liu2024graph",
+        "lu2012robust",
+        "liu_puma_2023",
+        "gao2024rethinking"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "4.3.2",
+      "title": "Efficient Optimization",
+      "ref": [
+        "liu2024tinygraph",
+        "liu_graph_2023",
+        "bo2023survey",
+        "zhu2021interpreting",
+        "yang_does_2023",
+        "gao2024graph",
+        "wu2020openwgl"
+      ]
+    },
+    {
+      "level": 3,
+      "numbering": "4.3.3",
+      "title": "Efficient Graph Generation",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "4.4",
+      "title": "Fair Graph Condensation",
+      "ref": [
+        "wu2019simplifying",
+        "jin_graph_2022",
+        "liu_puma_2023",
+        "xu_kernel_2023",
+        "jin_condensing_2022",
+        "fang2024exgc"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "4.5",
+      "title": "Robust Graph Condensation",
+      "ref": [
+        "xu_kernel_2023",
+        "wang_fast_2023",
+        "gao2024graph",
+        "liu_graph_2022",
+        "liu_cat_2023",
+        "liu_puma_2023",
+        "gretton2012kernel",
+        "liu_graph_2023",
+        "xiao2024disentangled",
+        "xiao2024simple",
+        "gao2024rethinking",
+        "gupta_mirage_2023",
+        "jin_graph_2022",
+        "gao_multiple_2023",
+        "liu2024graph",
+        "zheng_structure_free_2023",
+        "feng_fair_2023",
+        "mao_gcare_2023",
+        "mehrabi2021survey",
+        "song2022guide",
+        "chen2024fairness"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "5",
+      "title": "Condensed Graph Generation",
+      "ref": [
+        "randall2014use",
+        "tu2023deep",
+        "kang2019robust",
+        "gao2021training",
+        "wu2024backdoor",
+        "gao2024robgc",
+        "jin_graph_2022",
+        "yang_does_2023",
+        "xiao2024disentangled",
+        "liu2024graph",
+        "xu_kernel_2023",
+        "liu_graph_2023",
+        "gao_multiple_2023",
+        "gao2024rethinking",
+        "zheng_structure_free_2023",
+        "jin_condensing_2022",
+        "sener2017active",
+        "gao_graph_2023",
+        "CTRL"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "5.1",
+      "title": "Feature Generation",
+      "ref": [
+        "gao2024robgc"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "5.2",
+      "title": "Structure Generation",
+      "ref": [
+        "jin_graph_2022",
+        "yang_does_2023",
+        "xiao2024disentangled",
+        "liu2024graph",
+        "xu_kernel_2023",
+        "liu_graph_2023",
+        "gao_multiple_2023",
+        "gao2024rethinking",
+        "zheng_structure_free_2023",
+        "jin_condensing_2022",
+        "sener2017active",
+        "gao_graph_2023",
+        "CTRL"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "6",
+      "title": "Empirical Studies",
+      "ref": [
+        "liu2024graph",
+        "xu_kernel_2023",
+        "liu_graph_2023",
+        "gao_multiple_2023",
+        "jin_graph_2022",
+        "zheng_structure_free_2023",
+        "liu_graph_2022",
+        "liu_cat_2023",
+        "liu_puma_2023",
+        "yang_does_2023",
+        "jin_condensing_2022",
+        "maddison2016concrete",
+        "feng_fair_2023",
+        "dai2021say",
+        "beutel2017data",
+        "louizos2015variational",
+        "xiao2024simple",
+        "wang_fast_2023",
+        "DBLP:conf/iclr/KipfW17",
+        "hu2020ogb",
+        "DBLP:conf/iclr/ZengZSKP20",
+        "wu2019simplifying",
+        "hamilton2017inductive",
+        "gasteiger_predict_2019",
+        "defferrard2016convolutional",
+        "DBLP:conf/iclr/VelickovicCCRLB18"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "6.1",
+      "title": "Evaluation Metric",
+      "ref": [
+        "jin_graph_2022",
+        "zheng_structure_free_2023",
+        "liu_graph_2022",
+        "liu_cat_2023",
+        "liu_puma_2023",
+        "yang_does_2023",
+        "jin_condensing_2022",
+        "xu_kernel_2023",
+        "maddison2016concrete"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "6.2",
+      "title": "Experimental Settings",
+      "ref": [
+        "feng_fair_2023",
+        "dai2021say",
+        "beutel2017data",
+        "louizos2015variational"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "6.3",
+      "title": "Experimental Results",
+      "ref": [
+        "jin_graph_2022",
+        "jin_condensing_2022",
+        "yang_does_2023",
+        "liu_graph_2022",
+        "xiao2024simple",
+        "wang_fast_2023",
+        "zheng_structure_free_2023",
+        "liu2024graph",
+        "DBLP:conf/iclr/KipfW17",
+        "hu2020ogb",
+        "DBLP:conf/iclr/ZengZSKP20",
+        "dai2021say",
+        "wu2019simplifying",
+        "hamilton2017inductive",
+        "gasteiger_predict_2019",
+        "defferrard2016convolutional",
+        "DBLP:conf/iclr/VelickovicCCRLB18",
+        "liu_graph_2023"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "7",
+      "title": "Applications and Resources",
+      "ref": [
+        "dai2021say",
+        "feng_fair_2023",
+        "gao2021graph",
+        "ding_faster_2022"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "7.1",
+      "title": "Practical Applications",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "7.1.1",
+      "title": "Hyper-Parameter/Neural Architecture Search",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "7.1.2",
+      "title": "Graph Continual Learning",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "7.1.3",
+      "title": "Federated Learning",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "7.1.4",
+      "title": "Inference Acceleration",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "7.1.5",
+      "title": "Recommender Systems",
+      "ref": []
+    },
+    {
+      "level": 3,
+      "numbering": "7.1.6",
+      "title": "Heterogeneous Graphs",
+      "ref": []
+    },
+    {
+      "level": 2,
+      "numbering": "7.2",
+      "title": "Open-Source Libraries",
+      "ref": [
+        "gao2021graph",
+        "ding_faster_2022"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "8",
+      "title": "Challenges and Future Directions",
+      "ref": [
+        "febrinanto2023graph",
+        "liu_cat_2023",
+        "liu_puma_2023",
+        "fu2022federated",
+        "pan_fedgkd_2023",
+        "yan2024federated",
+        "gao2023accelerating",
+        "gao_graph_2023",
+        "sachdeva2022infinite",
+        "wang2022survey",
+        "gao2023semantic",
+        "gao2024heterogeneous",
+        "jin_graph_2022"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "8.1",
+      "title": "Condensation for Diverse Graphs",
+      "ref": [
+        "liu_cat_2023",
+        "liu_puma_2023"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "8.2",
+      "title": "Task-Agnostic Graph Condensation",
+      "ref": [
+        "fu2022federated",
+        "pan_fedgkd_2023",
+        "yan2024federated"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "8.3",
+      "title": "Efficient Evaluation for Condensed Graphs",
+      "ref": [
+        "gao2023accelerating"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "8.4",
+      "title": "Secure Graph Condensation",
+      "ref": [
+        "sachdeva2022infinite"
+      ]
+    },
+    {
+      "level": 2,
+      "numbering": "8.5",
+      "title": "Explainable Graph Condensation",
+      "ref": [
+        "wang2022survey",
+        "gao2023semantic",
+        "gao2024heterogeneous",
+        "jin_graph_2022"
+      ]
+    },
+    {
+      "level": 1,
+      "numbering": "9",
+      "title": "Conclusion",
+      "ref": [
+        "liu2024gcondenser",
+        "akiba2019optuna",
+        "sun2024gc",
+        "gong2024gc",
+        "li2020deeprobust",
+        "zheng2022graph",
+        "bang2008digraphs",
+        "kazemi2020representation",
+        "gao2024contrastive",
+        "akoglu2015graph",
+        "xia2021graph",
+        "zhu2022survey",
+        "zheng_structure_free_2023",
+        "jin_graph_2022",
+        "sun2022adversarial",
+        "wu2024backdoor",
+        "gao2024robgc",
+        "hu2022membership",
+        "fang2024exgc",
+        "yuan2022explainability",
+        "wang2020recent",
+        "wang2021review"
+      ]
+    }
+  ]
+}

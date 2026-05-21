@@ -3,7 +3,7 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PROMPT_FILE="$ROOT_DIR/prompts/outline_induction_ir_user.txt"
-LOG_DIR="$ROOT_DIR/logs/outline_induction_ir"
+LOG_DIR="$ROOT_DIR/.local/logs/outline_induction_ir"
 
 MODEL="${MODEL:-gpt-5.4}"
 EFFORT="${EFFORT:-xhigh}"
@@ -26,7 +26,7 @@ Usage:
 
 Options:
   --paper PAPER_ID        Add one paper ID explicitly. Repeatable.
-  --force                 Overwrite existing refs/<paper_id>/outline_induction_ir.yaml files.
+  --force                 Overwrite existing data/paper_sets/meow_refs/<paper_id>/outline_induction_ir.yaml files.
   --dry-run               Print the Codex command for each paper without executing it.
   --model MODEL           Codex model to use. Default: gpt-5.4
   --effort LEVEL          Codex reasoning effort. Default: xhigh
@@ -103,7 +103,7 @@ if [[ ! -f "$PROMPT_FILE" ]]; then
 fi
 
 if [[ ${#PAPER_IDS[@]} -eq 0 ]]; then
-  mapfile -t PAPER_IDS < <(find "$ROOT_DIR/refs" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | sort)
+  mapfile -t PAPER_IDS < <(find "$ROOT_DIR/data/paper_sets/meow_refs" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | sort)
 fi
 
 mkdir -p "$LOG_DIR"
@@ -127,7 +127,7 @@ prompt_template_path = Path(sys.argv[3])
 prompt_path = Path(sys.argv[4])
 inputs_path = Path(sys.argv[5])
 
-paper_dir = root / "refs" / paper_id
+paper_dir = root / "data" / "paper_sets" / "meow_refs" / paper_id
 tex_link = paper_dir / "tex_src"
 
 def unique_paths(items):
@@ -478,7 +478,7 @@ wait_for_output_or_exit() {
 
 run_one() {
   local paper_id="$1"
-  local paper_dir="$ROOT_DIR/refs/$paper_id"
+  local paper_dir="$ROOT_DIR/data/paper_sets/meow_refs/$paper_id"
   local output_file="$paper_dir/outline_induction_ir.yaml"
   local prompt_path="$TMP_DIR/${paper_id}.prompt.txt"
   local inputs_path="$LOG_DIR/${paper_id}.inputs.json"

@@ -15,8 +15,8 @@ from pathlib import Path
 
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
-DEFAULT_INPUT_FILE = ROOT_DIR / "resources" / "Survey-Outline-Evaluation-Benckmark" / "datasets" / "test_prompts.json"
-DEFAULT_OUTPUT_DIR = ROOT_DIR / "outputs" / "run_human"
+DEFAULT_INPUT_FILE = ROOT_DIR / "third_party" / "repos" / "Survey-Outline-Evaluation-Benckmark" / "datasets" / "test_prompts.json"
+DEFAULT_OUTPUT_DIR = ROOT_DIR / ".local" / "output" / "run_human"
 EVALUATE_LLM_SCRIPT = ROOT_DIR / "scripts" / "evaluate_llm.py"
 
 def outline_to_text(outline_items):

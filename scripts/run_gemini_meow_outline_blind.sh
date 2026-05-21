@@ -181,7 +181,7 @@ POLICY_PATH="$TMP_DIR/headless-readonly.toml"
 write_policy_file "$POLICY_PATH"
 
 for paper_id in "${PAPER_IDS[@]}"; do
-  paper_dir="$ROOT_DIR/refs/$paper_id"
+  paper_dir="$ROOT_DIR/data/paper_sets/meow_refs/$paper_id"
   payload_path="$paper_dir/meow_reconstructed_blind.json"
   if [[ -n "$RUN_NAME" ]]; then
     output_dir="$OUTPUT_ROOT/$paper_id/$RUN_NAME"

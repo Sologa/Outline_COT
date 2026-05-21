@@ -17,7 +17,7 @@ USER_PROMPT_TEMPLATE = textwrap.dedent(
     Output_references: True
     Title:
     {title}
-    References:
+    {target_paper_abstract_block}References:
     {references_json}
     """
 ).strip()
@@ -36,6 +36,12 @@ def load_blind_payload(path: Path) -> dict:
     if not isinstance(title, str) or not title.strip():
         raise ValueError(f"{path} is missing non-empty meta.title")
 
+    target_abstract = meta.get("abstract")
+    if isinstance(target_abstract, str):
+        target_abstract = target_abstract.strip()
+    else:
+        target_abstract = ""
+
     ref_meta = raw.get("ref_meta")
     if not isinstance(ref_meta, list):
         raise ValueError(f"{path} is missing list field 'ref_meta'")
@@ -47,14 +53,26 @@ def load_blind_payload(path: Path) -> dict:
     return {
         "paper_id": paper_id.strip(),
         "title": title.strip(),
+        "target_abstract": target_abstract,
         "reference_metadata": ref_meta,
     }
 
 
-def build_prompt(paper_id: str, title: str, reference_metadata: list[dict]) -> str:
+def build_prompt(
+    paper_id: str,
+    title: str,
+    reference_metadata: list[dict],
+    *,
+    target_meta_abstract: str | None = None,
+    include_meta_abstract: bool = False,
+) -> str:
     references_json = json.dumps(reference_metadata, ensure_ascii=False, indent=2)
+    target_paper_abstract_block = ""
+    if include_meta_abstract and isinstance(target_meta_abstract, str) and target_meta_abstract.strip():
+        target_paper_abstract_block = f"Target Paper Abstract:\n{target_meta_abstract.strip()}\n"
     faithful_user_prompt = USER_PROMPT_TEMPLATE.format(
         title=title,
+        target_paper_abstract_block=target_paper_abstract_block,
         references_json=references_json,
     )
     return textwrap.dedent(
