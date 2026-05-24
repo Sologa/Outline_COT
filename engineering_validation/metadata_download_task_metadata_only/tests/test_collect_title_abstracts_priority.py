@@ -168,6 +168,47 @@ class MetadataCollectorTests(unittest.TestCase):
         self.assertEqual(rows[1]["abstract"], "Needs Retry filled")
         self.assertEqual(calls, [("openalex", "Needs Retry", 2)])
 
+    def test_provider_without_abstract_falls_back_to_later_provider(self):
+        module = load_module()
+        calls = []
+
+        def fake_fetch(provider, query, max_results):
+            calls.append(provider)
+            if provider == "semantic_scholar":
+                return [
+                    {
+                        "title": query,
+                        "abstract": "",
+                        "provider": "semantic_scholar",
+                        "provider_id": "s2-paper",
+                        "provider_url": "https://www.semanticscholar.org/paper/s2-paper",
+                    }
+                ]
+            if provider == "crossref":
+                return [
+                    {
+                        "title": query,
+                        "abstract": "crossref abstract",
+                        "provider": "crossref",
+                        "provider_id": "10.123/example",
+                        "provider_url": "https://doi.org/10.123/example",
+                    }
+                ]
+            return []
+
+        with mock.patch.object(module, "fetch_candidates", fake_fetch):
+            client = module.ProviderFetchClient(max_results=2, default_delay=0.0)
+            row, got = module.resolve_reference(
+                {"key": "k1", "title": "Fallback Title"},
+                providers=["semantic_scholar", "crossref"],
+                fetch_client=client,
+            )
+
+        self.assertTrue(got)
+        self.assertEqual(row["provider"], "crossref")
+        self.assertEqual(row["abstract"], "crossref abstract")
+        self.assertEqual(calls, ["semantic_scholar", "crossref"])
+
 
 if __name__ == "__main__":
     unittest.main()

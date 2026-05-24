@@ -821,6 +821,7 @@ def resolve_reference(
 ) -> tuple[JsonObject, bool]:
     source_title = normalize_text(row.get("title", ""))
     key = normalize_text(row.get("key", ""))
+    best_without_abstract: JsonObject | None = None
 
     for provider in providers:
         if provider not in SUPPORTED_PROVIDERS:
@@ -847,8 +848,15 @@ def resolve_reference(
         out["provider_id"] = normalize_text(selected.get("provider_id", ""))
         out["provider_url"] = normalize_text(selected.get("provider_url", ""))
 
-        # Keep the best candidate regardless of title mismatch.
-        return out, bool(out.get("abstract", ""))
+        if out["abstract"]:
+            return out, True
+        if best_without_abstract is None:
+            best_without_abstract = out
+
+    if best_without_abstract is not None:
+        if row.get("_provider_errors"):
+            best_without_abstract["_provider_errors"] = dict(row["_provider_errors"])
+        return best_without_abstract, False
 
     if normalize_text(row.get("abstract", "")):
         out = dict(row)

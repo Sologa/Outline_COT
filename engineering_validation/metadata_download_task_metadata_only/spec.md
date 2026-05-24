@@ -42,6 +42,7 @@
    - `COLLECT_RATE_LIMIT_BACKOFF` 預設 `30.0` 秒；收到 `Retry-After` 時以此為上限，未收到時用此值做 429 backoff。
    - provider query cache 以 `(provider, normalized_title)` 為 key，避免相同 title 重複查詢。
    - 429 會套用 provider-level backoff；若回應有 `Retry-After`，優先採用該值。
+   - provider 回傳 title/ID metadata 但 abstract 為空時，該 candidate 只作為 fallback；collector 會繼續查後續 provider，優先輸出有 abstract 的 candidate。
    - `METADATA_API_MAILTO` 會加入 OpenAlex/Crossref query 與 User-Agent；`SEMANTIC_SCHOLAR_API_KEY` 或 `S2_API_KEY` 會加入 Semantic Scholar request；`OPENALEX_API_KEY` 會加入 OpenAlex request。
    - `METADATA_ENV_FILE` 可指向 `.env` 檔，腳本只會載入 metadata provider 相關 key。
    - 預設 `RESUME=true`，既有 output 中已有 non-empty abstract 的 rows 會重用，unresolved rows 會重試。
