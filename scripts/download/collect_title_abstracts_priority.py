@@ -39,6 +39,10 @@ DEFAULT_PROVIDER_ORDER = ["semantic_scholar", "crossref", "dblp", "pubmed"]
 DEFAULT_RATE_LIMIT_BACKOFF_SECONDS = 30.0
 
 
+class MetadataOutputError(RuntimeError):
+    """Raised when a metadata output artifact fails integrity checks."""
+
+
 def now_utc() -> str:
     return datetime.now(timezone.utc).isoformat()
 
@@ -760,6 +764,25 @@ def load_metadata_map(path: Path) -> dict[str, JsonObject]:
     return result
 
 
+def count_jsonl_rows(path: Path) -> int:
+    if not path.exists():
+        return 0
+    rows = 0
+    with path.open("r", encoding="utf-8") as handle:
+        for line in handle:
+            if line.strip():
+                rows += 1
+    return rows
+
+
+def validate_jsonl_row_count(path: Path, expected_rows: int, *, context: str) -> None:
+    actual_rows = count_jsonl_rows(path)
+    if actual_rows != expected_rows:
+        raise MetadataOutputError(
+            f"{context}: expected {expected_rows} rows, found {actual_rows}: {path}"
+        )
+
+
 def collect_one_paper(
     paper_name: str,
     refs: list[JsonObject],
@@ -804,12 +827,16 @@ def collect_one_paper(
             merged["key"] = key
             merged["metadata_request_providers"] = providers
             handle.write(json.dumps(merged, ensure_ascii=False) + "\n")
-            handle.flush()
             written += 1
             if got:
                 filled += 1
 
+        handle.flush()
+        os.fsync(handle.fileno())
+
+    validate_jsonl_row_count(temp_file, written, context=f"{paper_name} temp output")
     temp_file.replace(out_file)
+    validate_jsonl_row_count(out_file, written, context=f"{paper_name} final output")
     return paper_name, written, filled
 
 

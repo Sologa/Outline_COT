@@ -12,6 +12,8 @@
 - `COLLECT_RATE_LIMIT_BACKOFF` 預設 30 秒，作為 429 backoff 上限與無 `Retry-After` 時的等待值，避免 smoke 卡在過長 provider 等待。
 - provider 命中但沒有 abstract 時，不會立刻停止；collector 會保留該 metadata candidate 並繼續嘗試後續 provider，直到找到 abstract 或 provider 用完。
 - 預設 `RESUME=true`，既有 output 中已有 abstract 的 key 會直接重用，未解出的 row 會重試。
+- 預設 `COLLECT_USE_STAGING=true`，collector 會先寫到 `.local/metadata_download_staging/<RUN_ID>`，逐篇驗證 row count 後才發佈到 `results/`。
+- 任何 staged/final JSONL row count 與 filtered input 不一致時，run 必須 fail；不要只因 log 出現 `total_written` 或 `[done]` 就宣稱結果可用。
 - 可選 API identity：`METADATA_API_MAILTO` 會放入 OpenAlex/Crossref query 與 User-Agent；`SEMANTIC_SCHOLAR_API_KEY` 或 `S2_API_KEY` 會送到 Semantic Scholar；`OPENALEX_API_KEY` 會送到 OpenAlex。
 - 可選 `METADATA_ENV_FILE=/path/to/.env` 只會載入 metadata provider 相關 key，不會載入一般實驗設定。
 
@@ -23,3 +25,7 @@
 - `/<paper_id>/metadata/title_abstracts_metadata.jsonl`：`RUN_COLLECT=true` 時，透過 API 寫入的 metadata（已依參考鍵寫入）
 - `metadata_download_filter_summary.json`：總體統計與 per-paper 報表
 - `logs/<run_id>.log`
+
+安全規則：
+- `results/` 是 Google Drive sync 區，不適合長時間 active collector 直接寫 per-row output。
+- active collector output 必須先落在 `.local` staging；發佈到 `results/` 前後都要重新讀 disk 驗證 row count。

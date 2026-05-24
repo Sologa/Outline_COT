@@ -168,6 +168,42 @@ class MetadataCollectorTests(unittest.TestCase):
         self.assertEqual(rows[1]["abstract"], "Needs Retry filled")
         self.assertEqual(calls, [("openalex", "Needs Retry", 2)])
 
+    def test_validate_jsonl_row_count_rejects_zero_byte_output(self):
+        module = load_module()
+
+        with tempfile.TemporaryDirectory() as tmp:
+            out_file = Path(tmp) / "title_abstracts_metadata.jsonl"
+            out_file.write_text("", encoding="utf-8")
+
+            with self.assertRaisesRegex(module.MetadataOutputError, "expected 2 rows, found 0"):
+                module.validate_jsonl_row_count(out_file, 2, context="paper1")
+
+    def test_collect_one_paper_validates_replaced_output(self):
+        module = load_module()
+
+        with tempfile.TemporaryDirectory() as tmp:
+            output_root = Path(tmp) / "out"
+            refs = [{"key": "k1", "title": "Write Check"}]
+            client = module.ProviderFetchClient(max_results=1, default_delay=0.0)
+
+            with mock.patch.object(
+                module,
+                "validate_jsonl_row_count",
+                side_effect=module.MetadataOutputError("forced validation failure"),
+            ) as validate:
+                with self.assertRaisesRegex(module.MetadataOutputError, "forced validation failure"):
+                    module.collect_one_paper(
+                        paper_name="paper1",
+                        refs=refs,
+                        output_root=output_root,
+                        metadata_root=None,
+                        providers=["ieee"],
+                        fetch_client=client,
+                        resume=False,
+                    )
+
+        validate.assert_called_once()
+
     def test_provider_without_abstract_falls_back_to_later_provider(self):
         module = load_module()
         calls = []

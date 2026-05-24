@@ -226,6 +226,8 @@ For `results/` backup:
 - Migration status on 2026-05-22: after the user explicitly chose symlink mode, the then-current physical `results/` tree was merged into `_gdrive_sync_outline_cot/results/`, the original physical tree was moved to `.local/results_physical_backup_20260522_005527/`, and top-level `results` was replaced by a symlink to `_gdrive_sync_outline_cot/results/`.
 - Do not recreate a separate physical top-level `results/` directory unless the user explicitly asks to leave symlink mode.
 - Because active `results/` writes now land in the Drive sync area, avoid high-frequency scratch, repeatedly overwritten files, open databases, and long-running append logs under `results/`. Use `.local/` for unstable scratch, and write final run outputs into run-specific folders under `results/`.
+- For long-running metadata/API collection jobs, never write active per-paper JSONL outputs directly into `results/` or `_gdrive_sync_outline_cot/results/`. Write active collector output under `.local/` first, fsync and validate every expected JSONL row count, then publish verified files into `results/` via temp file plus atomic replace. Treat any mismatch between `selected_rows`, collector `total_written`, and final on-disk row counts as a failed run, not as a completed run.
+- Incident note from 2026-05-25: `metadata_priority_tree50_v2_s2_fallback_no_openalex_20260524` logged `total_written=4384`, but 16 final Drive-synced metadata files were left as 0-byte artifacts. Future agents must not trust collector logs alone for metadata runs; verify final artifact row counts and abstract counts from disk before reporting completion.
 
 ### 0.2.3 Placement Rules
 

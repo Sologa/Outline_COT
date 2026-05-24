@@ -41,6 +41,7 @@ export COLLECT_RATE_LIMIT_BACKOFF=10
   - OpenAlex 不在預設 smoke/full-run order；若手動加回，先確認每日 quota 與 `openalex=90.0` 等級的 provider delay。
   - 若要進入 OpenAlex/Crossref polite pool，設定 `METADATA_API_MAILTO`。
   - 若有 Semantic Scholar key，設定 `SEMANTIC_SCHOLAR_API_KEY` 或 `S2_API_KEY`。
+- 預設 `COLLECT_USE_STAGING=true`，collector 先寫到 `.local/metadata_download_staging/<RUN_ID>`，驗證後才發佈到 `results/`。
 - 輸出 metadata 位於 `results/engineering_validation/metadata_download_task_metadata_only/.../<paper>/metadata/title_abstracts_metadata.jsonl`
 
 ## 2. 擴展到全量（必要時）
@@ -66,6 +67,17 @@ export COLLECT_RATE_LIMIT_BACKOFF=30
 
 `openalex`、`arxiv` 與 `ieee` 不在 full-run 預設 order；只在明確需要時加回 `SOURCE_ORDER`。
 
+全量或長時間 repair run 不要把 active collector output 直接寫入 `results/`。如果需要覆蓋既有 run 的 metadata 檔，設定：
+
+```bash
+export RUN_ROOT=/Users/xjp/Desktop/Outline_COT/.local/metadata_download_runs/<repair_run_id>
+export OUTPUT_ROOT=/Users/xjp/Desktop/Outline_COT/results/engineering_validation/metadata_download_task_metadata_only/<target_run_id>
+export COLLECT_STAGING_ROOT=/Users/xjp/Desktop/Outline_COT/.local/metadata_download_staging/<repair_run_id>
+export COLLECT_USE_STAGING=true
+```
+
+run 結束時必須看到 `[validate] ... expected_rows=... final_rows=...` 且兩者相等，才可把結果視為完成。
+
 ## 3. 只處理單篇
 
 ```bash
@@ -83,3 +95,11 @@ export LIMIT=20
 - `run_root/<paper>/metadata/title_abstracts_metadata.jsonl`
 - `metadata_download_filter_summary.json`
 - `logs/<run_id>.log`
+
+必查：
+
+```bash
+find <output_root> -path '*/metadata/title_abstracts_metadata.jsonl' -type f -print0 | xargs -0 wc -l
+```
+
+逐篇 row count 必須等於 `metadata_download_filter_summary.json` 或對應 filtered input 的 `selected_rows`。任何 0-byte final metadata 檔都視為失敗，需要用 `.local` staging 補跑，不可直接報完成。

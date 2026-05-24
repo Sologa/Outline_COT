@@ -31,12 +31,14 @@ ALLOW_FUZZY="${ALLOW_FUZZY:-true}"
 MIN_SIMILARITY="${MIN_SIMILARITY:-0.9}"
 METADATA_ROOT="${METADATA_ROOT:-$REPO_ROOT/refs}"
 METADATA_ENV_FILE="${METADATA_ENV_FILE:-}"
-COLLECT_SCRIPT="${COLLECT_SCRIPT:-/Users/xjp/Desktop/Outline_COT/scripts/download/collect_title_abstracts_priority.py}"
+COLLECT_SCRIPT="${COLLECT_SCRIPT:-$REPO_ROOT/scripts/download/collect_title_abstracts_priority.py}"
 COLLECT_MAX_RESULTS="${COLLECT_MAX_RESULTS:-5}"
 COLLECT_REQUEST_DELAY="${COLLECT_REQUEST_DELAY:-1.0}"
 COLLECT_PROVIDER_DELAYS="${COLLECT_PROVIDER_DELAYS:-semantic_scholar=1.5,crossref=1.0,dblp=1.0,pubmed=0.5,openalex=90.0,arxiv=3.2,ieee=1.0}"
 COLLECT_RATE_LIMIT_BACKOFF="${COLLECT_RATE_LIMIT_BACKOFF:-30.0}"
 COLLECT_MAX_WORKERS="${COLLECT_MAX_WORKERS:-2}"
+COLLECT_USE_STAGING="${COLLECT_USE_STAGING:-true}"
+COLLECT_STAGING_ROOT="${COLLECT_STAGING_ROOT:-$REPO_ROOT/.local/metadata_download_staging/${RUN_ID}}"
 
 assert_bool() {
   local name="$1"
@@ -114,6 +116,7 @@ assert_bool RESUME "$RESUME"
 assert_bool RUN_COLLECT "$RUN_COLLECT"
 assert_bool INCLUDE_FULL_METADATA "$INCLUDE_FULL_METADATA"
 assert_bool ALLOW_FUZZY "$ALLOW_FUZZY"
+assert_bool COLLECT_USE_STAGING "$COLLECT_USE_STAGING"
 assert_int_or_empty LIMIT "$LIMIT"
 assert_int_or_empty CHECKPOINT_EVERY "$CHECKPOINT_EVERY"
 assert_int_or_empty COLLECT_MAX_RESULTS "$COLLECT_MAX_RESULTS"
@@ -155,6 +158,8 @@ echo "[run] collect_request_delay=$COLLECT_REQUEST_DELAY"
 echo "[run] collect_provider_delays=$COLLECT_PROVIDER_DELAYS"
 echo "[run] collect_rate_limit_backoff=$COLLECT_RATE_LIMIT_BACKOFF"
 echo "[run] collect_max_workers=$COLLECT_MAX_WORKERS"
+echo "[run] collect_use_staging=$COLLECT_USE_STAGING"
+echo "[run] collect_staging_root=$COLLECT_STAGING_ROOT"
   echo "[run] resume=$RESUME"
   echo "[run] checkpoint_every=$CHECKPOINT_EVERY"
   echo "[run] include_full_metadata=$INCLUDE_FULL_METADATA"
@@ -534,9 +539,39 @@ if [[ ! -f "$COLLECT_SCRIPT" ]]; then
   exit 2
 fi
 
+COLLECT_USE_STAGING_LOWER="$(printf '%s' "$COLLECT_USE_STAGING" | tr '[:upper:]' '[:lower:]')"
+COLLECT_OUTPUT_ROOT="$OUTPUT_ROOT"
+if [[ "$COLLECT_USE_STAGING_LOWER" == "true" || "$COLLECT_USE_STAGING_LOWER" == "1" || "$COLLECT_USE_STAGING_LOWER" == "yes" || "$COLLECT_USE_STAGING_LOWER" == "y" ]]; then
+  COLLECT_OUTPUT_ROOT="$COLLECT_STAGING_ROOT"
+fi
+
+mkdir -p "$COLLECT_OUTPUT_ROOT"
+if [[ "$COLLECT_OUTPUT_ROOT" != "$OUTPUT_ROOT" ]]; then
+  echo "[collect] staging_output_root=$COLLECT_OUTPUT_ROOT" | tee -a "$LOG_PATH"
+  python3 - "$OUTPUT_ROOT" "$COLLECT_OUTPUT_ROOT" <<'PY' | tee -a "$LOG_PATH"
+from pathlib import Path
+import shutil
+import sys
+
+output_root = Path(sys.argv[1])
+staging_root = Path(sys.argv[2])
+seeded = 0
+if output_root.exists():
+    for source in output_root.glob("*/metadata/title_abstracts_metadata.jsonl"):
+        relative = source.relative_to(output_root)
+        target = staging_root / relative
+        if target.exists():
+            continue
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, target)
+        seeded += 1
+print(f"[collect] staging_seeded_existing_outputs={seeded}")
+PY
+fi
+
 COLLECT_ARGS=(
   --input-root "$FILTER_ROOT"
-  --output-root "$OUTPUT_ROOT"
+  --output-root "$COLLECT_OUTPUT_ROOT"
 )
 
 if [[ -n "$PAPER_NAME" ]]; then
@@ -561,6 +596,93 @@ if [[ "$RESUME_LOWER" == "true" || "$RESUME_LOWER" == "1" || "$RESUME_LOWER" == 
 fi
 
 python3 "$COLLECT_SCRIPT" "${COLLECT_ARGS[@]}" | tee -a "$LOG_PATH"
+
+python3 - "$FILTER_ROOT" "$COLLECT_OUTPUT_ROOT" "$OUTPUT_ROOT" <<'PY' | tee -a "$LOG_PATH"
+from pathlib import Path
+import json
+import os
+import shutil
+import sys
+
+
+def count_rows(path: Path) -> int:
+    if not path.exists():
+        return 0
+    rows = 0
+    with path.open("r", encoding="utf-8") as handle:
+        for line in handle:
+            if line.strip():
+                rows += 1
+    return rows
+
+
+def count_abstracts(path: Path) -> int:
+    abstracts = 0
+    with path.open("r", encoding="utf-8") as handle:
+        for line in handle:
+            line = line.strip()
+            if not line:
+                continue
+            record = json.loads(line)
+            if isinstance(record.get("abstract"), str) and record["abstract"].strip():
+                abstracts += 1
+    return abstracts
+
+
+filter_root = Path(sys.argv[1])
+collect_output_root = Path(sys.argv[2])
+output_root = Path(sys.argv[3])
+
+if not filter_root.exists():
+    raise SystemExit(f"[error] filter_root missing during validation: {filter_root}")
+
+total_expected = 0
+total_final = 0
+total_abstracts = 0
+validated = 0
+published = 0
+
+for ref_file in sorted(filter_root.glob("*/reference_oracle.jsonl")):
+    paper = ref_file.parent.name
+    expected = count_rows(ref_file)
+    stage_file = collect_output_root / paper / "metadata" / "title_abstracts_metadata.jsonl"
+    stage_rows = count_rows(stage_file)
+    if stage_rows != expected:
+        raise SystemExit(
+            f"[error] staged metadata row mismatch for {paper}: "
+            f"expected={expected} actual={stage_rows} path={stage_file}"
+        )
+
+    final_file = output_root / paper / "metadata" / "title_abstracts_metadata.jsonl"
+    if stage_file.resolve() != final_file.resolve():
+        final_file.parent.mkdir(parents=True, exist_ok=True)
+        temp_file = final_file.with_name(f"{final_file.name}.publish_tmp")
+        shutil.copy2(stage_file, temp_file)
+        os.replace(temp_file, final_file)
+        published += 1
+
+    final_rows = count_rows(final_file)
+    if final_rows != expected:
+        raise SystemExit(
+            f"[error] final metadata row mismatch for {paper}: "
+            f"expected={expected} actual={final_rows} path={final_file}"
+        )
+
+    abstracts = count_abstracts(final_file)
+    print(
+        f"[validate] {paper}: expected={expected} staged={stage_rows} "
+        f"final={final_rows} abstracts={abstracts}"
+    )
+    total_expected += expected
+    total_final += final_rows
+    total_abstracts += abstracts
+    validated += 1
+
+print(
+    f"[validate] papers={validated} expected_rows={total_expected} "
+    f"final_rows={total_final} abstracts={total_abstracts} published={published}"
+)
+PY
 
 echo "[done] run complete" | tee -a "$LOG_PATH"
 echo "[done] output_root=$OUTPUT_ROOT" | tee -a "$LOG_PATH"

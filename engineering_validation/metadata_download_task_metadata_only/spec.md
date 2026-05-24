@@ -46,7 +46,9 @@
    - `METADATA_API_MAILTO` 會加入 OpenAlex/Crossref query 與 User-Agent；`SEMANTIC_SCHOLAR_API_KEY` 或 `S2_API_KEY` 會加入 Semantic Scholar request；`OPENALEX_API_KEY` 會加入 OpenAlex request。
    - `METADATA_ENV_FILE` 可指向 `.env` 檔，腳本只會載入 metadata provider 相關 key。
    - 預設 `RESUME=true`，既有 output 中已有 non-empty abstract 的 rows 會重用，unresolved rows 會重試。
-   - 輸出檔案是 `run_root/<paper>/metadata/title_abstracts_metadata.jsonl`。
+   - 預設 `COLLECT_USE_STAGING=true`，active collector output 先寫到 `.local/metadata_download_staging/<RUN_ID>`，逐篇驗證後才發佈到 `OUTPUT_ROOT`。
+   - 輸出檔案是 `OUTPUT_ROOT/<paper>/metadata/title_abstracts_metadata.jsonl`；若未覆蓋 `OUTPUT_ROOT`，則等同 `run_root/<paper>/metadata/title_abstracts_metadata.jsonl`。
+   - 每篇 collector temp output、staged output、final output 的 row count 都必須等於對應 filtered input 的 row count；若不一致，run 必須失敗。
 4. 可重複跑與 debug
    - 支持 `PAPER_NAME`, `LIMIT`, `RUN_ID`, `RUN_ROOT` 覆蓋。
 
@@ -55,6 +57,9 @@
 - `INPUT_ROOT` 不存在或不是檔案/目錄。
 - 參數布林值格式不合法。
 - `RUN_COLLECT=true` 但 `COLLECT_SCRIPT` 不存在。
+- staged metadata output row count 與 filtered input 不一致。
+- 發佈到 final `OUTPUT_ROOT` 後，final metadata output row count 與 filtered input 不一致。
+- 任何 expected rows > 0 的 per-paper final metadata output 是 0-byte。
 
 ## 5) 接受標準
 
@@ -63,3 +68,5 @@
 - 生成 `filtered_input` 供後續 collector。
 - collector 不會因 worker 並行而對同一 provider 無節制發送 request。
 - rerun 不會覆蓋已成功補到 abstract 的 rows；未成功 rows 可被 retry。
+- 長時間 collector 不直接把 active per-row writes 寫進 Drive-synced `results/`；必須先 staging，再驗證並發佈。
+- log 的 `total_written` 不能單獨作為完成依據；接受前必須從 disk 重新計算 final artifact row counts。
