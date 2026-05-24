@@ -1,0 +1,37 @@
+change_id: 2026-05-24_hf_meow_raw_taxonomy_tree50_selection
+dataset:
+  id: haajimi/Meow
+  config: default
+  split: raw
+  file_url: https://huggingface.co/datasets/haajimi/Meow/resolve/main/raw.jsonl
+  expected_sha256: 5938812a35aabe85f8b2a08d0408d70cdab1627ceeb008b93d82e3f76a01eca5
+  expected_rows: 2159
+  expected_unique_ids: 2159
+selection:
+  desired_count: 50
+  first_wave_size: 120
+  candidate_bucket: high
+  extension_policy: remaining_high_only
+  strict_source_standard: true
+paths:
+  results_root: results/engineering_validation/2026-05-24_hf_meow_raw_taxonomy_tree50_selection
+  scratch_root: .local/engineering_validation/2026-05-24_hf_meow_raw_taxonomy_tree50_selection
+  existing_raw_cache: temp_artifacts/hf_meow_raw_check_2026-05-24/raw.jsonl
+evidence:
+  accepted_locator_types:
+    - tex_line
+    - pdf_page
+    - figure_asset
+    - visible_figure_text
+    - table_cell
+    - caption
+    - surrounding_prose
+    - bibliography_mapping
+  rejected_as_sole_evidence:
+    - meow_outline
+    - cot
+    - metadata
+    - section_heading
+    - ocr_only
+    - filename_only
+

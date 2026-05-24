@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HF MEOW raw source confirmation output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "paper_id",
+    "arxiv_id",
+    "review_stage",
+    "reviewer_id",
+    "taxonomy_status",
+    "taxonomy_kind",
+    "source_boundary",
+    "countable_for_tree50",
+    "audit_status",
+    "evidence_ids_used",
+    "evidence_source_types",
+    "prohibited_evidence_types_used",
+    "uses_prohibited_evidence_as_sole_basis",
+    "node_count",
+    "edge_count",
+    "taxonomy_nodes",
+    "taxonomy_edges",
+    "rejection_reason",
+    "notes"
+  ],
+  "properties": {
+    "paper_id": { "type": "string" },
+    "arxiv_id": { "type": "string" },
+    "review_stage": {
+      "type": "string",
+      "enum": ["first_pass", "second_review", "final"]
+    },
+    "reviewer_id": { "type": "string" },
+    "taxonomy_status": {
+      "type": "string",
+      "enum": ["explicit", "taxonomy_like", "none_found", "ambiguous", "blocked"]
+    },
+    "taxonomy_kind": {
+      "type": ["string", "null"],
+      "enum": ["tree", "forest", "faceted_taxonomy", "taxonomy_like_dag", null]
+    },
+    "source_boundary": {
+      "type": ["string", "null"],
+      "enum": [
+        "author_taxonomy_tree",
+        "classification_table_tree",
+        "taxonomy_section_tree",
+        "induced_taxonomy_tree",
+        null
+      ]
+    },
+    "countable_for_tree50": { "type": "boolean" },
+    "audit_status": {
+      "type": "string",
+      "enum": ["pass", "pass_with_notes", "revise", "fail", "blocked"]
+    },
+    "evidence_ids_used": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "evidence_source_types": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "tex_line",
+          "pdf_page",
+          "figure_asset",
+          "visible_figure_text",
+          "table_cell",
+          "caption",
+          "surrounding_prose",
+          "bibliography_mapping",
+          "meow_outline",
+          "cot",
+          "metadata",
+          "section_heading",
+          "ocr_only",
+          "filename_only"
+        ]
+      }
+    },
+    "prohibited_evidence_types_used": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "meow_outline",
+          "cot",
+          "metadata",
+          "section_heading",
+          "ocr_only",
+          "filename_only"
+        ]
+      }
+    },
+    "uses_prohibited_evidence_as_sole_basis": { "type": "boolean" },
+    "node_count": { "type": "integer", "minimum": 0 },
+    "edge_count": { "type": "integer", "minimum": 0 },
+    "taxonomy_nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["node_id", "label", "evidence_ids"],
+        "properties": {
+          "node_id": { "type": "string" },
+          "label": { "type": "string" },
+          "evidence_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "taxonomy_edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["parent", "child", "evidence_ids"],
+        "properties": {
+          "parent": { "type": "string" },
+          "child": { "type": "string" },
+          "evidence_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "rejection_reason": { "type": ["string", "null"] },
+    "notes": { "type": "string" }
+  }
+}
