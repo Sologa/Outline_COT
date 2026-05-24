@@ -6,8 +6,12 @@
 - 預設只處理 `data/paper_sets/hf_meow_raw_taxonomy_high261/metadata/hf_meow_raw_high261.full.jsonl`。
 - 預設 debug 流程 `LIMIT=20`（表示在剔除已具備 abstract 後的 20 筆缺 abstract reference）。
 - 預設不跑 collector（`RUN_COLLECT=false`），只產生 filtered refs。
-- `RUN_COLLECT=true` 時會真的透過 API 下載 metadata（arXiv/Semantic Scholar/OpenAlex/Crossref 先行，接著嘗試 `dblp`, `pubmed`, `ieee`；IEEE 需設定 `IEEE_API_KEY` 或 `IEEE_XPLORE_API_KEY`）。
-- collector 可用 `COLLECT_MAX_WORKERS` 控制同時 worker 數（預設 1）；建議初始設定為 2~3，視 API 回應情況逐步上調。
+- `RUN_COLLECT=true` 時會真的透過 API 下載 metadata；預設 provider 順序為 `openalex,semantic_scholar,crossref,dblp,pubmed`。
+- `arxiv` 與 `ieee` 仍支援但不在預設 full-run order；arXiv title search 容易 429，IEEE 需設定 `IEEE_API_KEY` 或 `IEEE_XPLORE_API_KEY`。
+- collector 可用 `COLLECT_MAX_WORKERS` 控制同時 worker 數（預設 2），並用 `COLLECT_PROVIDER_DELAYS` 做跨 worker 的 provider-level 節流。
+- `COLLECT_RATE_LIMIT_BACKOFF` 預設 30 秒，作為 429 backoff 上限與無 `Retry-After` 時的等待值，避免 smoke 卡在過長 provider 等待。
+- 預設 `RESUME=true`，既有 output 中已有 abstract 的 key 會直接重用，未解出的 row 會重試。
+- 可選 API identity：`METADATA_API_MAILTO` 會放入 OpenAlex/Crossref query 與 User-Agent；`SEMANTIC_SCHOLAR_API_KEY` 或 `S2_API_KEY` 會送到 Semantic Scholar；`OPENALEX_API_KEY` 會送到 OpenAlex。
 
 執行入口：
 - `./run_metadata_task.sh`

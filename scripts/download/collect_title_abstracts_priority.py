@@ -8,9 +8,12 @@ import html
 import json
 import os
 import re
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import email.utils
 import urllib.parse
+import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
@@ -32,6 +35,7 @@ PUBMED_SEARCH_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
 PUBMED_FETCH_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
 IEEE_SEARCH_URL = "https://ieeexploreapi.ieee.org/api/v1/search/articles"
 SUPPORTED_PROVIDERS = {"arxiv", "openalex", "semantic_scholar", "crossref", "dblp", "pubmed", "ieee"}
+DEFAULT_RATE_LIMIT_BACKOFF_SECONDS = 30.0
 
 
 def now_utc() -> str:
@@ -81,20 +85,37 @@ def parse_openalex_inverted_index(value: Any) -> str:
     return normalize_text(" ".join(word for _position, word in items))
 
 
-def request_bytes(url: str, *, timeout: float = 30.0, accept: str = "application/json") -> bytes:
+def request_headers(*, accept: str = "application/json", headers: dict[str, str] | None = None) -> dict[str, str]:
+    mailto = normalize_text(os.environ.get("METADATA_API_MAILTO", ""))
+    user_agent = USER_AGENT
+    if mailto:
+        user_agent = f"{USER_AGENT} (mailto:{mailto})"
+    merged = {
+        "User-Agent": user_agent,
+        "Accept": accept,
+    }
+    if headers:
+        merged.update(headers)
+    return merged
+
+
+def request_bytes(
+    url: str,
+    *,
+    timeout: float = 30.0,
+    accept: str = "application/json",
+    headers: dict[str, str] | None = None,
+) -> bytes:
     req = urllib.request.Request(
         url,
-        headers={
-            "User-Agent": USER_AGENT,
-            "Accept": accept,
-        },
+        headers=request_headers(accept=accept, headers=headers),
     )
     with urllib.request.urlopen(req, timeout=timeout) as response:
         return response.read()
 
 
-def request_json(url: str, *, timeout: float = 30.0) -> JsonObject:
-    payload = request_bytes(url, timeout=timeout)
+def request_json(url: str, *, timeout: float = 30.0, headers: dict[str, str] | None = None) -> JsonObject:
+    payload = request_bytes(url, timeout=timeout, headers=headers)
     return json.loads(payload.decode("utf-8"))
 
 
@@ -434,24 +455,29 @@ def fetch_candidates(provider: str, query: str, max_results: int) -> list[JsonOb
         return parse_arxiv_candidates(raw)
 
     if provider == "openalex":
-        params = urllib.parse.urlencode(
-            {
-                "search": safe_query,
-                "per-page": str(max_results),
-                "sort": "relevance_score:desc",
-                "select": ",".join(
-                    [
-                        "id",
-                        "doi",
-                        "display_name",
-                        "publication_year",
-                        "publication_date",
-                        "abstract_inverted_index",
-                        "primary_location",
-                    ]
-                ),
-            }
-        )
+        query_params = {
+            "search": safe_query,
+            "per-page": str(max_results),
+            "sort": "relevance_score:desc",
+            "select": ",".join(
+                [
+                    "id",
+                    "doi",
+                    "display_name",
+                    "publication_year",
+                    "publication_date",
+                    "abstract_inverted_index",
+                    "primary_location",
+                ]
+            ),
+        }
+        mailto = normalize_text(os.environ.get("METADATA_API_MAILTO", ""))
+        api_key = normalize_text(os.environ.get("OPENALEX_API_KEY", ""))
+        if mailto:
+            query_params["mailto"] = mailto
+        if api_key:
+            query_params["api_key"] = api_key
+        params = urllib.parse.urlencode(query_params)
         payload = request_json(f"{OPENALEX_API_URL}?{params}", timeout=30.0)
         return parse_openalex_candidates(payload)
 
@@ -463,11 +489,19 @@ def fetch_candidates(provider: str, query: str, max_results: int) -> list[JsonOb
                 "fields": "paperId,url,title,abstract,year,publicationDate,externalIds",
             }
         )
-        payload = request_json(f"{SEMANTIC_SCHOLAR_SEARCH_URL}?{params}", timeout=30.0)
+        headers = {}
+        api_key = normalize_text(os.environ.get("SEMANTIC_SCHOLAR_API_KEY", "") or os.environ.get("S2_API_KEY", ""))
+        if api_key:
+            headers["x-api-key"] = api_key
+        payload = request_json(f"{SEMANTIC_SCHOLAR_SEARCH_URL}?{params}", timeout=30.0, headers=headers)
         return parse_semantic_scholar_candidates(payload)
 
     if provider == "crossref":
-        params = urllib.parse.urlencode({"query.title": safe_query, "rows": str(max_results)})
+        query_params = {"query.title": safe_query, "rows": str(max_results)}
+        mailto = normalize_text(os.environ.get("METADATA_API_MAILTO", ""))
+        if mailto:
+            query_params["mailto"] = mailto
+        params = urllib.parse.urlencode(query_params)
         payload = request_json(f"{CROSSREF_WORKS_URL}?{params}", timeout=30.0)
         return parse_crossref_candidates(payload)
 
@@ -564,6 +598,124 @@ def parse_provider_order(raw: str) -> list[str]:
     return ordered
 
 
+def parse_retry_after_seconds(value: Any) -> float | None:
+    text = normalize_text(value)
+    if not text:
+        return None
+    try:
+        seconds = float(text)
+    except ValueError:
+        try:
+            parsed = email.utils.parsedate_to_datetime(text)
+        except (TypeError, ValueError, IndexError, OverflowError):
+            return None
+        if parsed is None:
+            return None
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=timezone.utc)
+        seconds = (parsed - datetime.now(timezone.utc)).total_seconds()
+    return max(seconds, 0.0)
+
+
+def parse_provider_delays(raw: str, *, default_delay: float) -> dict[str, float]:
+    delays: dict[str, float] = {}
+    if not raw:
+        return delays
+
+    for item in raw.replace(";", ",").split(","):
+        item = item.strip()
+        if not item:
+            continue
+        if "=" not in item:
+            print(f"[collect][warn] provider delay ignored (expected provider=seconds): {item}")
+            continue
+        provider, value = item.split("=", 1)
+        provider = provider.strip().lower().replace("-", "_")
+        if provider not in SUPPORTED_PROVIDERS:
+            print(f"[collect][warn] provider delay ignored for unsupported provider: {provider}")
+            continue
+        try:
+            seconds = float(value.strip())
+        except ValueError:
+            print(f"[collect][warn] provider delay ignored for {provider}: {value}")
+            continue
+        if seconds < 0:
+            print(f"[collect][warn] provider delay ignored for {provider}: {value}")
+            continue
+        if seconds != default_delay:
+            delays[provider] = seconds
+    return delays
+
+
+class ProviderFetchClient:
+    def __init__(
+        self,
+        *,
+        max_results: int,
+        default_delay: float,
+        provider_delays: dict[str, float] | None = None,
+        rate_limit_backoff_seconds: float = DEFAULT_RATE_LIMIT_BACKOFF_SECONDS,
+        time_fn: Any = time.monotonic,
+        sleep_fn: Any = time.sleep,
+    ) -> None:
+        self.max_results = max_results
+        self.default_delay = default_delay
+        self.provider_delays = dict(provider_delays or {})
+        self.rate_limit_backoff_seconds = rate_limit_backoff_seconds
+        self.time_fn = time_fn
+        self.sleep_fn = sleep_fn
+        self.cache: dict[tuple[str, str], list[JsonObject]] = {}
+        self.cache_lock = threading.Lock()
+        self.provider_locks = {provider: threading.Lock() for provider in SUPPORTED_PROVIDERS}
+        self.next_request_at: dict[str, float] = {}
+
+    def delay_for(self, provider: str) -> float:
+        return self.provider_delays.get(provider, self.default_delay)
+
+    def fetch(self, provider: str, query: str) -> list[JsonObject]:
+        cache_key = (provider, normalize_title(query))
+        with self.cache_lock:
+            cached = self.cache.get(cache_key)
+        if cached is not None:
+            return cached
+
+        lock = self.provider_locks.setdefault(provider, threading.Lock())
+        with lock:
+            with self.cache_lock:
+                cached = self.cache.get(cache_key)
+            if cached is not None:
+                return cached
+
+            now = self.time_fn()
+            wait_seconds = self.next_request_at.get(provider, 0.0) - now
+            if wait_seconds > 0:
+                self.sleep_fn(wait_seconds)
+
+            try:
+                candidates = fetch_candidates(provider, query, self.max_results)
+            except urllib.error.HTTPError as exc:
+                if exc.code == 429:
+                    retry_after = parse_retry_after_seconds(exc.headers.get("Retry-After"))
+                    if retry_after is None:
+                        backoff = self.rate_limit_backoff_seconds
+                    elif self.rate_limit_backoff_seconds > 0:
+                        backoff = min(retry_after, self.rate_limit_backoff_seconds)
+                    else:
+                        backoff = retry_after
+                    self.next_request_at[provider] = self.time_fn() + max(backoff, self.delay_for(provider))
+                else:
+                    self.next_request_at[provider] = self.time_fn() + self.delay_for(provider)
+                raise
+            except Exception:
+                self.next_request_at[provider] = self.time_fn() + self.delay_for(provider)
+                raise
+
+            self.next_request_at[provider] = self.time_fn() + self.delay_for(provider)
+            with self.cache_lock:
+                self.cache[cache_key] = candidates
+            return candidates
+
+
 def load_refs(path: Path) -> list[JsonObject]:
     refs: list[JsonObject] = []
     with path.open("r", encoding="utf-8") as handle:
@@ -613,61 +765,68 @@ def collect_one_paper(
     output_root: Path,
     metadata_root: Path | None,
     providers: list[str],
-    max_results: int,
-    request_delay: float,
+    fetch_client: ProviderFetchClient,
+    resume: bool,
 ) -> tuple[str, int, int]:
     output_metadata_dir = output_root / paper_name / "metadata"
     output_metadata_dir.mkdir(parents=True, exist_ok=True)
     out_file = output_metadata_dir / "title_abstracts_metadata.jsonl"
+    temp_file = out_file.with_name(f"{out_file.name}.tmp")
 
     existing_map: dict[str, JsonObject] = {}
     if metadata_root is not None:
         existing_file = metadata_root / paper_name / "metadata" / "title_abstracts_metadata.jsonl"
         existing_map = load_metadata_map(existing_file)
 
+    resume_map: dict[str, JsonObject] = load_metadata_map(out_file) if resume else {}
+
     written = 0
     filled = 0
-    with out_file.open("w", encoding="utf-8") as handle:
+    with temp_file.open("w", encoding="utf-8") as handle:
         for ref in refs:
             key = normalize_text(ref.get("key", ""))
-            merged = dict(ref)
-            merged.update(existing_map.get(key, {}))
-            if not normalize_text(merged.get("abstract", "")):
-                merged, got = resolve_reference(
-                    merged, providers=providers, max_results=max_results, request_delay=request_delay
-                )
-            else:
-                merged["metadata_source"] = "existing"
-                merged.setdefault("metadata_downloaded_at", now_utc())
-                merged.setdefault("title_similarity", title_similarity(merged.get("title", ""), merged.get("title", "")))
+            resume_row = resume_map.get(key)
+            if resume_row and normalize_text(resume_row.get("abstract", "")):
+                merged = dict(resume_row)
                 got = False
+            else:
+                merged = dict(ref)
+                merged.update(existing_map.get(key, {}))
+                if not normalize_text(merged.get("abstract", "")):
+                    merged, got = resolve_reference(merged, providers=providers, fetch_client=fetch_client)
+                else:
+                    merged["metadata_source"] = "existing"
+                    merged.setdefault("metadata_downloaded_at", now_utc())
+                    merged.setdefault("title_similarity", title_similarity(merged.get("title", ""), merged.get("title", "")))
+                    got = False
 
+            merged["key"] = key
             merged["metadata_request_providers"] = providers
             handle.write(json.dumps(merged, ensure_ascii=False) + "\n")
+            handle.flush()
             written += 1
             if got:
                 filled += 1
 
+    temp_file.replace(out_file)
     return paper_name, written, filled
 
 
-def resolve_reference(row: JsonObject, *, providers: list[str], max_results: int, request_delay: float) -> tuple[JsonObject, bool]:
+def resolve_reference(
+    row: JsonObject,
+    *,
+    providers: list[str],
+    fetch_client: ProviderFetchClient,
+) -> tuple[JsonObject, bool]:
     source_title = normalize_text(row.get("title", ""))
     key = normalize_text(row.get("key", ""))
 
-    last_request_at: dict[str, float] = {}
     for provider in providers:
         if provider not in SUPPORTED_PROVIDERS:
             continue
 
-        if request_delay > 0 and provider in last_request_at:
-            elapsed = time.monotonic() - last_request_at[provider]
-            if elapsed < request_delay:
-                time.sleep(request_delay - elapsed)
-
-        last_request_at[provider] = time.monotonic()
         try:
-            candidates = fetch_candidates(provider, source_title, max_results)
+            candidates = fetch_client.fetch(provider, source_title)
         except Exception as exc:
             row.setdefault("_provider_errors", {})[provider] = str(exc)
             continue
@@ -727,7 +886,19 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--max-results", type=int, default=5, help="Per provider max result count")
     parser.add_argument("--request-delay", type=float, default=1.0, help="Delay between provider calls in seconds")
+    parser.add_argument(
+        "--rate-limit-backoff",
+        type=float,
+        default=DEFAULT_RATE_LIMIT_BACKOFF_SECONDS,
+        help="Maximum 429 backoff seconds when Retry-After is present; also used when Retry-After is absent",
+    )
+    parser.add_argument(
+        "--provider-delays",
+        default="",
+        help="Comma-separated provider-specific delays, e.g. openalex=1.0,semantic_scholar=1.5",
+    )
     parser.add_argument("--max-workers", type=int, default=1, help="Paper-level worker threads (default: 1)")
+    parser.add_argument("--resume", action="store_true", help="Reuse existing output rows with non-empty abstracts")
     return parser.parse_args()
 
 
@@ -741,6 +912,8 @@ def main() -> int:
         raise ValueError("--max-results must be non-negative")
     if args.request_delay < 0:
         raise ValueError("--request-delay must be non-negative")
+    if args.rate_limit_backoff < 0:
+        raise ValueError("--rate-limit-backoff must be non-negative")
     if args.max_workers < 1:
         raise ValueError("--max-workers must be >= 1")
 
@@ -752,6 +925,13 @@ def main() -> int:
         raise SystemExit(f"input-root must be a directory: {input_root}")
 
     providers = parse_provider_order(args.providers)
+    provider_delays = parse_provider_delays(args.provider_delays, default_delay=args.request_delay)
+    fetch_client = ProviderFetchClient(
+        max_results=args.max_results,
+        default_delay=args.request_delay,
+        provider_delays=provider_delays,
+        rate_limit_backoff_seconds=args.rate_limit_backoff,
+    )
     paper_dirs = sorted([p for p in input_root.iterdir() if p.is_dir()])
     total_selected = 0
     total_written = 0
@@ -783,8 +963,8 @@ def main() -> int:
                 output_root=output_root,
                 metadata_root=metadata_root,
                 providers=providers,
-                max_results=args.max_results,
-                request_delay=args.request_delay,
+                fetch_client=fetch_client,
+                resume=args.resume,
             )
             results[paper_name] = (written, filled)
     else:
@@ -797,8 +977,8 @@ def main() -> int:
                     output_root=output_root,
                     metadata_root=metadata_root,
                     providers=providers,
-                    max_results=args.max_results,
-                    request_delay=args.request_delay,
+                    fetch_client=fetch_client,
+                    resume=args.resume,
                 ): paper_name
                 for paper_name, refs in tasks
             }

@@ -18,8 +18,8 @@ LIMIT="${LIMIT-20}"
 RUN_COLLECT="${RUN_COLLECT:-false}"
 FILTER_MISSING_ONLY="${FILTER_MISSING_ONLY:-true}"
 INCLUDE_ARXIV="${INCLUDE_ARXIV:-true}"
-SOURCE_ORDER="${SOURCE_ORDER:-arxiv,semantic_scholar,openalex,crossref,dblp,pubmed,ieee}"
-RESUME="${RESUME:-false}"
+SOURCE_ORDER="${SOURCE_ORDER:-openalex,semantic_scholar,crossref,dblp,pubmed}"
+RESUME="${RESUME:-true}"
 CHECKPOINT_EVERY="${CHECKPOINT_EVERY:-20}"
 INCLUDE_FULL_METADATA="${INCLUDE_FULL_METADATA:-true}"
 ARXIV_MAX_RESULTS="${ARXIV_MAX_RESULTS:-5}"
@@ -33,7 +33,9 @@ METADATA_ROOT="${METADATA_ROOT:-$REPO_ROOT/refs}"
 COLLECT_SCRIPT="${COLLECT_SCRIPT:-/Users/xjp/Desktop/Outline_COT/scripts/download/collect_title_abstracts_priority.py}"
 COLLECT_MAX_RESULTS="${COLLECT_MAX_RESULTS:-5}"
 COLLECT_REQUEST_DELAY="${COLLECT_REQUEST_DELAY:-1.0}"
-COLLECT_MAX_WORKERS="${COLLECT_MAX_WORKERS:-1}"
+COLLECT_PROVIDER_DELAYS="${COLLECT_PROVIDER_DELAYS:-openalex=1.0,semantic_scholar=1.5,crossref=1.0,dblp=1.0,pubmed=0.5,arxiv=3.2,ieee=1.0}"
+COLLECT_RATE_LIMIT_BACKOFF="${COLLECT_RATE_LIMIT_BACKOFF:-30.0}"
+COLLECT_MAX_WORKERS="${COLLECT_MAX_WORKERS:-2}"
 
 assert_bool() {
   local name="$1"
@@ -102,6 +104,8 @@ LOG_PATH="${LOG_ROOT}/${RUN_ID}.log"
 echo "[run] source_order=$SOURCE_ORDER"
 echo "[run] collect_max_results=$COLLECT_MAX_RESULTS"
 echo "[run] collect_request_delay=$COLLECT_REQUEST_DELAY"
+echo "[run] collect_provider_delays=$COLLECT_PROVIDER_DELAYS"
+echo "[run] collect_rate_limit_backoff=$COLLECT_RATE_LIMIT_BACKOFF"
 echo "[run] collect_max_workers=$COLLECT_MAX_WORKERS"
   echo "[run] resume=$RESUME"
   echo "[run] checkpoint_every=$CHECKPOINT_EVERY"
@@ -494,7 +498,19 @@ fi
 if [[ "${INCLUDE_FULL_METADATA}" == "true" || "${INCLUDE_FULL_METADATA}" == "1" || "${INCLUDE_FULL_METADATA}" == "yes" || "${INCLUDE_FULL_METADATA}" == "y" ]]; then
   COLLECT_ARGS+=(--metadata-root "$METADATA_ROOT")
 fi
-COLLECT_ARGS+=(--providers "$SOURCE_ORDER" --max-results "$COLLECT_MAX_RESULTS" --request-delay "$COLLECT_REQUEST_DELAY" --max-workers "$COLLECT_MAX_WORKERS")
+COLLECT_ARGS+=(
+  --providers "$SOURCE_ORDER"
+  --max-results "$COLLECT_MAX_RESULTS"
+  --request-delay "$COLLECT_REQUEST_DELAY"
+  --provider-delays "$COLLECT_PROVIDER_DELAYS"
+  --rate-limit-backoff "$COLLECT_RATE_LIMIT_BACKOFF"
+  --max-workers "$COLLECT_MAX_WORKERS"
+)
+
+RESUME_LOWER="$(printf '%s' "$RESUME" | tr '[:upper:]' '[:lower:]')"
+if [[ "$RESUME_LOWER" == "true" || "$RESUME_LOWER" == "1" || "$RESUME_LOWER" == "yes" || "$RESUME_LOWER" == "y" ]]; then
+  COLLECT_ARGS+=(--resume)
+fi
 
 python3 "$COLLECT_SCRIPT" "${COLLECT_ARGS[@]}" | tee -a "$LOG_PATH"
 

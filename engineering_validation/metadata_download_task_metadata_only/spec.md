@@ -35,9 +35,15 @@
 - `RUN_COLLECT=false` 時只做 filtered refs 與 summary。
 3. 做 collector 時
    - `RUN_COLLECT=true` 時，使用 `COLLECT_SCRIPT` 對 `reference_oracle` 逐筆做實際 metadata 下載。
-   - 預設 API provider 順序為 `arxiv,semantic_scholar,openalex,crossref,dblp,pubmed,ieee`（若可用；`IEEE` 需要 `IEEE_API_KEY` 或 `IEEE_XPLORE_API_KEY` 才能啟用）。
-   - `dblp`、`pubmed`、`ieee` 會在設定的 provider order 內參與嘗試；未設定 key 的 `ieee` 會被記錄為 provider error 並跳過。
-   - collector 預設單線程執行（`COLLECT_MAX_WORKERS=1`）；設 `COLLECT_MAX_WORKERS=N` 可並行，每個 paper 佔一個 worker thread。
+   - 預設 API provider 順序為 `openalex,semantic_scholar,crossref,dblp,pubmed`。
+   - `arxiv`、`ieee` 仍可透過 `SOURCE_ORDER` 啟用；`ieee` 需要 `IEEE_API_KEY` 或 `IEEE_XPLORE_API_KEY` 才能啟用。
+   - collector 預設 `COLLECT_MAX_WORKERS=2`；每個 paper 佔一個 worker thread，但所有 worker 共用 provider-level throttle。
+   - `COLLECT_PROVIDER_DELAYS` 預設 `openalex=1.0,semantic_scholar=1.5,crossref=1.0,dblp=1.0,pubmed=0.5,arxiv=3.2,ieee=1.0`。
+   - `COLLECT_RATE_LIMIT_BACKOFF` 預設 `30.0` 秒；收到 `Retry-After` 時以此為上限，未收到時用此值做 429 backoff。
+   - provider query cache 以 `(provider, normalized_title)` 為 key，避免相同 title 重複查詢。
+   - 429 會套用 provider-level backoff；若回應有 `Retry-After`，優先採用該值。
+   - `METADATA_API_MAILTO` 會加入 OpenAlex/Crossref query 與 User-Agent；`SEMANTIC_SCHOLAR_API_KEY` 或 `S2_API_KEY` 會加入 Semantic Scholar request；`OPENALEX_API_KEY` 會加入 OpenAlex request。
+   - 預設 `RESUME=true`，既有 output 中已有 non-empty abstract 的 rows 會重用，unresolved rows 會重試。
    - 輸出檔案是 `run_root/<paper>/metadata/title_abstracts_metadata.jsonl`。
 4. 可重複跑與 debug
    - 支持 `PAPER_NAME`, `LIMIT`, `RUN_ID`, `RUN_ROOT` 覆蓋。
@@ -53,3 +59,5 @@
 - 腳本預設 1 次僅掃描前 20 筆「缺 abstract 的」HF raw reference（除非 `LIMIT` 覆蓋）。
 - summary 可正確輸出 `selected_rows`、`source_rows`、每 paper 統計。
 - 生成 `filtered_input` 供後續 collector。
+- collector 不會因 worker 並行而對同一 provider 無節制發送 request。
+- rerun 不會覆蓋已成功補到 abstract 的 rows；未成功 rows 可被 retry。
