@@ -18,7 +18,7 @@ LIMIT="${LIMIT-20}"
 RUN_COLLECT="${RUN_COLLECT:-false}"
 FILTER_MISSING_ONLY="${FILTER_MISSING_ONLY:-true}"
 INCLUDE_ARXIV="${INCLUDE_ARXIV:-true}"
-SOURCE_ORDER="${SOURCE_ORDER:-openalex,semantic_scholar,crossref,dblp,pubmed}"
+SOURCE_ORDER="${SOURCE_ORDER:-semantic_scholar,crossref,dblp,pubmed}"
 RESUME="${RESUME:-true}"
 CHECKPOINT_EVERY="${CHECKPOINT_EVERY:-20}"
 INCLUDE_FULL_METADATA="${INCLUDE_FULL_METADATA:-true}"
@@ -30,10 +30,11 @@ CROSSREF_MAX_RESULTS="${CROSSREF_MAX_RESULTS:-5}"
 ALLOW_FUZZY="${ALLOW_FUZZY:-true}"
 MIN_SIMILARITY="${MIN_SIMILARITY:-0.9}"
 METADATA_ROOT="${METADATA_ROOT:-$REPO_ROOT/refs}"
+METADATA_ENV_FILE="${METADATA_ENV_FILE:-}"
 COLLECT_SCRIPT="${COLLECT_SCRIPT:-/Users/xjp/Desktop/Outline_COT/scripts/download/collect_title_abstracts_priority.py}"
 COLLECT_MAX_RESULTS="${COLLECT_MAX_RESULTS:-5}"
 COLLECT_REQUEST_DELAY="${COLLECT_REQUEST_DELAY:-1.0}"
-COLLECT_PROVIDER_DELAYS="${COLLECT_PROVIDER_DELAYS:-openalex=1.0,semantic_scholar=1.5,crossref=1.0,dblp=1.0,pubmed=0.5,arxiv=3.2,ieee=1.0}"
+COLLECT_PROVIDER_DELAYS="${COLLECT_PROVIDER_DELAYS:-semantic_scholar=1.5,crossref=1.0,dblp=1.0,pubmed=0.5,openalex=90.0,arxiv=3.2,ieee=1.0}"
 COLLECT_RATE_LIMIT_BACKOFF="${COLLECT_RATE_LIMIT_BACKOFF:-30.0}"
 COLLECT_MAX_WORKERS="${COLLECT_MAX_WORKERS:-2}"
 
@@ -65,6 +66,48 @@ assert_int_or_empty() {
   fi
 }
 
+load_metadata_env_file() {
+  local env_file="$1"
+  local line
+  local key
+  local value
+
+  if [[ ! -f "$env_file" ]]; then
+    echo "[error] METADATA_ENV_FILE does not exist: $env_file" >&2
+    exit 1
+  fi
+
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    line="${line%$'\r'}"
+    if [[ -z "$line" || "$line" == \#* ]]; then
+      continue
+    fi
+    if [[ "$line" == export\ * ]]; then
+      line="${line#export }"
+    fi
+    if [[ "$line" != *=* ]]; then
+      continue
+    fi
+
+    key="${line%%=*}"
+    value="${line#*=}"
+    key="$(printf '%s' "$key" | tr -d '[:space:]')"
+    case "$key" in
+      METADATA_API_MAILTO|SEMANTIC_SCHOLAR_API_KEY|S2_API_KEY|OPENALEX_API_KEY|IEEE_API_KEY|IEEE_XPLORE_API_KEY)
+        ;;
+      *)
+        continue
+        ;;
+    esac
+
+    value="${value#\"}"
+    value="${value%\"}"
+    value="${value#\'}"
+    value="${value%\'}"
+    export "$key=$value"
+  done < "$env_file"
+}
+
 assert_bool FILTER_MISSING_ONLY "$FILTER_MISSING_ONLY"
 assert_bool INCLUDE_ARXIV "$INCLUDE_ARXIV"
 assert_bool RESUME "$RESUME"
@@ -78,6 +121,10 @@ assert_int_or_empty COLLECT_MAX_WORKERS "$COLLECT_MAX_WORKERS"
 if (( COLLECT_MAX_WORKERS < 1 )); then
   echo "[error] COLLECT_MAX_WORKERS must be >= 1, got: ${COLLECT_MAX_WORKERS}" >&2
   exit 1
+fi
+
+if [[ -n "$METADATA_ENV_FILE" ]]; then
+  load_metadata_env_file "$METADATA_ENV_FILE"
 fi
 
 mkdir -p "$RUN_ROOT"
@@ -102,6 +149,7 @@ LOG_PATH="${LOG_ROOT}/${RUN_ID}.log"
   echo "[run] run_collect=$RUN_COLLECT"
   echo "[run] include_arxiv=$INCLUDE_ARXIV"
 echo "[run] source_order=$SOURCE_ORDER"
+echo "[run] metadata_env_file=${METADATA_ENV_FILE:-<none>}"
 echo "[run] collect_max_results=$COLLECT_MAX_RESULTS"
 echo "[run] collect_request_delay=$COLLECT_REQUEST_DELAY"
 echo "[run] collect_provider_delays=$COLLECT_PROVIDER_DELAYS"

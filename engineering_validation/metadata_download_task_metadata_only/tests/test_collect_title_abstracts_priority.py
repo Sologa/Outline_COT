@@ -20,6 +20,12 @@ def load_module():
 
 
 class MetadataCollectorTests(unittest.TestCase):
+    def test_default_provider_order_excludes_openalex(self):
+        module = load_module()
+
+        self.assertEqual(module.parse_provider_order(""), ["semantic_scholar", "crossref", "dblp", "pubmed"])
+        self.assertNotIn("openalex", module.DEFAULT_PROVIDER_ORDER)
+
     def test_shared_provider_throttle_with_fake_clock(self):
         module = load_module()
         now = [0.0]

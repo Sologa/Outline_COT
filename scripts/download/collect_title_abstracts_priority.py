@@ -35,6 +35,7 @@ PUBMED_SEARCH_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
 PUBMED_FETCH_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
 IEEE_SEARCH_URL = "https://ieeexploreapi.ieee.org/api/v1/search/articles"
 SUPPORTED_PROVIDERS = {"arxiv", "openalex", "semantic_scholar", "crossref", "dblp", "pubmed", "ieee"}
+DEFAULT_PROVIDER_ORDER = ["semantic_scholar", "crossref", "dblp", "pubmed"]
 DEFAULT_RATE_LIMIT_BACKOFF_SECONDS = 30.0
 
 
@@ -582,19 +583,19 @@ def pick_candidate(source_title: str, candidates: list[JsonObject], *, threshold
 
 def parse_provider_order(raw: str) -> list[str]:
     if not raw:
-        return ["arxiv", "semantic_scholar", "openalex", "crossref", "dblp", "pubmed", "ieee"]
+        return list(DEFAULT_PROVIDER_ORDER)
 
     providers = [item.strip().lower().replace("-", "_") for item in raw.replace(";", ",").replace(" ", ",").split(",")]
     providers = [provider for provider in providers if provider]
     if not providers:
-        return ["arxiv", "semantic_scholar", "openalex", "crossref", "dblp", "pubmed", "ieee"]
+        return list(DEFAULT_PROVIDER_ORDER)
 
     unknown = [provider for provider in providers if provider not in SUPPORTED_PROVIDERS]
     if unknown:
         print(f"[collect][warn] unsupported providers removed: {', '.join(sorted(set(unknown)))}")
     ordered = [provider for provider in providers if provider in SUPPORTED_PROVIDERS]
     if not ordered:
-        ordered = ["arxiv", "semantic_scholar", "openalex", "crossref", "dblp", "pubmed", "ieee"]
+        ordered = list(DEFAULT_PROVIDER_ORDER)
     return ordered
 
 
@@ -881,8 +882,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--providers",
-        default=",".join(sorted(SUPPORTED_PROVIDERS)),
-        help="Comma-separated provider list (default: arxiv,semantic_scholar,openalex,crossref,dblp,pubmed,ieee)",
+        default=",".join(DEFAULT_PROVIDER_ORDER),
+        help="Comma-separated provider list (default: semantic_scholar,crossref,dblp,pubmed)",
     )
     parser.add_argument("--max-results", type=int, default=5, help="Per provider max result count")
     parser.add_argument("--request-delay", type=float, default=1.0, help="Delay between provider calls in seconds")
