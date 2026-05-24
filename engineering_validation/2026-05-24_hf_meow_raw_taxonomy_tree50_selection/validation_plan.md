@@ -48,6 +48,5 @@ Before downstream use:
 - every selected confirmation is source-confirmed strict tree;
 - every selected confirmation has second review status `pass` or
   `pass_with_notes`;
-- no selected record uses outline/COT/metadata/section headings as sole
+- no selected record uses outline/COT/metadata/section headings/tables as tree
   evidence.
-

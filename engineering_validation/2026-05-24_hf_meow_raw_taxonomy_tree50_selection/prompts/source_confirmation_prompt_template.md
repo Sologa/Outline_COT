@@ -3,8 +3,9 @@
 You are reviewing one MEOW raw paper for strict taxonomy-tree eligibility.
 
 Use only the provided source-confirmation bundle. Do not use MEOW `outline`,
-`cot`, title, abstract, or metadata as taxonomy evidence. Those fields may
-explain why the candidate was selected, but they cannot prove a taxonomy tree.
+`cot`, title, abstract, metadata, section headings, or tables as taxonomy
+evidence. Those fields may explain why the candidate was selected, but they
+cannot prove a taxonomy tree.
 
 Count the paper only if source evidence supports:
 
@@ -12,20 +13,22 @@ Count the paper only if source evidence supports:
 - `taxonomy_kind: tree`
 - `source_boundary: author_taxonomy_tree`
 - at least 3 nodes and 2 parent-child edges
-- every node and edge has evidence IDs that resolve to TeX/PDF/figure/table/prose
+- every node and edge has evidence IDs that resolve to TeX/PDF/figure/prose
+  evidence that is not a heading and not a table
 - `evidence_source_types` contains at least one source-confirmed type such as
-  `tex_line`, `pdf_page`, `visible_figure_text`, `table_cell`, `caption`, or
+  `tex_line`, `pdf_page`, `visible_figure_text`, `caption`, or
   `surrounding_prose`
 - `uses_prohibited_evidence_as_sole_basis: false`
 
 Reject as countable evidence:
 
 - whole MEOW outline
-- section headings alone
+- section headings
+- tables, table captions, table cells, and table-only classification schemes
 - COT
 - metadata-only claims
 - OCR-only labels without visual/source confirmation
-- caption-only hints when the figure or table body contains the taxonomy
+- caption-only hints when the figure body contains the taxonomy
 
 If any rejected evidence type is mentioned while reviewing, list it in
 `prohibited_evidence_types_used`. If the countable decision would depend only

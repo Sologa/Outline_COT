@@ -20,6 +20,7 @@ from tree50_common import (
     SCRATCH_ROOT,
     TAXONOMY_LOCATOR_RE,
     ensure_write_ok,
+    is_disallowed_tree50_evidence,
     read_json,
     read_jsonl,
     strict_tree50_confirmation_ok,
@@ -54,8 +55,8 @@ Batch task file: {batch_path}
 
 For every JSONL task in that file:
 1. Read `bundle_path`.
-2. Use only TeX/PDF/figure/table/prose evidence from the bundle and referenced source files.
-3. Do not use MEOW outline, COT, title, abstract, metadata, filename, or section headings as sole evidence.
+2. Use only TeX/PDF/figure/prose evidence from the bundle and referenced source files.
+3. Do not use MEOW outline, COT, title, abstract, metadata, filename, section headings, or tables as taxonomy evidence.
 4. Write exactly one JSON object to `expected_output_path`.
 
 The JSON must match:
@@ -64,7 +65,7 @@ engineering_validation/2026-05-24_hf_meow_raw_taxonomy_tree50_selection/prompts/
 Required decision standard:
 - Countable positive only if the source explicitly provides an author taxonomy tree.
 - It must have >=3 nodes, >=2 parent-child edges, and node/edge evidence IDs from the bundle.
-- Faceted taxonomies, DAGs, classification tables, and section-spine structures are not countable unless the source explicitly provides a tree.
+- Faceted taxonomies, DAGs, classification tables, and section-spine structures are not countable.
 
 Set `review_stage` to `first_pass` and `reviewer_id` to `{reviewer_id}`.
 Do not edit any files outside the listed `expected_output_path` files.
@@ -78,14 +79,14 @@ Batch task file: {batch_path}
 For every JSONL task in that file:
 1. Read `bundle_path`.
 2. Read `first_pass_path` only to see which evidence IDs need scrutiny; do not rubber-stamp its conclusion.
-3. Use only TeX/PDF/figure/table/prose source evidence.
+3. Use only TeX/PDF/figure/prose source evidence. Do not use section headings or tables as taxonomy evidence.
 4. Write exactly one JSON object to `expected_output_path`.
 
 The JSON must match:
 engineering_validation/2026-05-24_hf_meow_raw_taxonomy_tree50_selection/prompts/source_confirmation_output_schema.json
 
 Set `review_stage` to `second_review` and `reviewer_id` to `{reviewer_id}`.
-If the first pass relies only on outline/COT/metadata/section headings/OCR-only evidence, reject it.
+If the first pass relies on outline/COT/metadata/section headings/tables/OCR-only evidence for the tree, reject or prune that evidence.
 Do not edit any files outside the listed `expected_output_path` files.
 """
 
@@ -307,7 +308,8 @@ def make_bundle(row: JsonObject, args: argparse.Namespace) -> JsonObject:
         "review_instructions": {
             "use_only_source_evidence": True,
             "outline_cot_metadata_are_not_evidence": True,
-            "section_heading_only_is_not_countable": True,
+            "section_heading_evidence_is_prohibited": True,
+            "table_evidence_is_prohibited": True,
             "ocr_is_locator_only": True,
             "countable_requires_author_taxonomy_tree": True,
             "minimum_nodes": 3,
@@ -534,23 +536,107 @@ def evidence_resolution_errors(record: JsonObject, bundle: JsonObject) -> list[s
     return [f"unresolved_evidence_id:{eid}" for eid in missing]
 
 
+def evidence_lookup(bundle: JsonObject) -> dict[str, JsonObject]:
+    return {
+        item["evidence_id"]: item
+        for item in bundle.get("evidence_windows", [])
+        if isinstance(item, dict) and item.get("evidence_id")
+    }
+
+
+def disallowed_tree50_evidence_ids(bundle: JsonObject) -> set[str]:
+    return {
+        evidence_id
+        for evidence_id, window in evidence_lookup(bundle).items()
+        if is_disallowed_tree50_evidence(window)
+    }
+
+
+def clean_confirmation_for_tree50(record: JsonObject, bundle: JsonObject) -> JsonObject:
+    """Drop heading/table evidence before final Tree50 counting.
+
+    The first/second-review JSON can mention table or heading evidence while
+    rejecting a paper, but selected Tree50 positives must be supported without
+    using those locators at all.
+    """
+    cleaned = json.loads(json.dumps(record, ensure_ascii=False))
+    lookup = evidence_lookup(bundle)
+    disallowed = disallowed_tree50_evidence_ids(bundle)
+
+    def clean_ids(values: Iterable[str]) -> list[str]:
+        return sorted({value for value in values if value in lookup and value not in disallowed})
+
+    nodes: list[JsonObject] = []
+    for node in cleaned.get("taxonomy_nodes") or []:
+        if not isinstance(node, dict):
+            continue
+        evidence_ids = clean_ids(node.get("evidence_ids") or [])
+        if evidence_ids:
+            nodes.append({**node, "evidence_ids": evidence_ids})
+    valid_node_ids = {node.get("node_id") for node in nodes}
+
+    edges: list[JsonObject] = []
+    for edge in cleaned.get("taxonomy_edges") or []:
+        if not isinstance(edge, dict):
+            continue
+        evidence_ids = clean_ids(edge.get("evidence_ids") or [])
+        if evidence_ids and edge.get("parent") in valid_node_ids and edge.get("child") in valid_node_ids:
+            edges.append({**edge, "evidence_ids": evidence_ids})
+
+    used_ids = clean_ids(
+        list(cleaned.get("evidence_ids_used") or [])
+        + [eid for node in nodes for eid in (node.get("evidence_ids") or [])]
+        + [eid for edge in edges for eid in (edge.get("evidence_ids") or [])]
+    )
+    source_types = sorted({lookup[eid].get("source_type") for eid in used_ids if lookup[eid].get("source_type")})
+    pruned = sorted(referenced_evidence_ids(record) & disallowed)
+
+    cleaned["taxonomy_nodes"] = nodes
+    cleaned["taxonomy_edges"] = edges
+    cleaned["node_count"] = len(nodes)
+    cleaned["edge_count"] = len(edges)
+    cleaned["evidence_ids_used"] = used_ids
+    cleaned["evidence_source_types"] = source_types
+    cleaned["prohibited_evidence_types_used"] = [
+        item
+        for item in (cleaned.get("prohibited_evidence_types_used") or [])
+        if item not in {"section_heading", "table_cell"}
+    ]
+    cleaned["uses_prohibited_evidence_as_sole_basis"] = False
+    if pruned:
+        suffix = f" Pruned heading/table evidence IDs before final Tree50 count: {', '.join(pruned)}."
+        cleaned["notes"] = f"{cleaned.get('notes', '')}{suffix}".strip()
+    return cleaned
+
+
+def clean_tree50_confirmation_ok(record: JsonObject, bundle: JsonObject) -> tuple[JsonObject, bool, list[str]]:
+    cleaned = clean_confirmation_for_tree50(record, bundle)
+    ok, reasons = strict_tree50_confirmation_ok(cleaned)
+    return cleaned, ok, reasons
+
+
+def disallowed_evidence_reference_errors(record: JsonObject, bundle: JsonObject) -> list[str]:
+    disallowed = disallowed_tree50_evidence_ids(bundle)
+    return [f"selected_uses_heading_or_table_evidence:{eid}" for eid in sorted(referenced_evidence_ids(record) & disallowed)]
+
+
 def final_confirmation(row: JsonObject, first: JsonObject | None, second: JsonObject | None, bundle: JsonObject, schema: JsonObject) -> JsonObject:
     paper_id = row["paper_id"]
     final: JsonObject
     first_errors = schema_errors(first, schema) + evidence_resolution_errors(first, bundle) if first else ["missing_first_pass"]
     second_errors = schema_errors(second, schema) + evidence_resolution_errors(second, bundle) if second else []
-    first_ok, first_reasons = strict_tree50_confirmation_ok(first) if first and not first_errors else (False, first_errors)
-    second_ok, second_reasons = strict_tree50_confirmation_ok(second) if second and not second_errors else (False, second_errors or ["missing_second_review"])
+    first_clean, first_ok, first_reasons = clean_tree50_confirmation_ok(first, bundle) if first and not first_errors else ({}, False, first_errors)
+    second_clean, second_ok, second_reasons = clean_tree50_confirmation_ok(second, bundle) if second and not second_errors else ({}, False, second_errors or ["missing_second_review"])
     if first_ok and second_ok:
         final = {
-            **second,
+            **second_clean,
             "review_stage": "final",
             "reviewer_id": "main_merge",
             "countable_for_tree50": True,
-            "notes": f"Final positive: first-pass and second-review strict checks passed. Second-review notes: {second.get('notes', '')}",
+            "notes": f"Final positive: first-pass and second-review strict checks passed after heading/table evidence pruning. Second-review notes: {second_clean.get('notes', '')}",
         }
     elif first:
-        basis = second if second else first
+        basis = second_clean if second_clean else first_clean if first_clean else second if second else first
         final = {
             **basis,
             "review_stage": "final",
@@ -678,7 +764,10 @@ def merge_audit(args: argparse.Namespace) -> int:
             1
             for row in rows
             if (args.output_root / "per_paper" / row["paper_id"] / "source_confirmation.first_pass.json").exists()
-            and strict_tree50_confirmation_ok(read_json(args.output_root / "per_paper" / row["paper_id"] / "source_confirmation.first_pass.json"))[0]
+            and clean_tree50_confirmation_ok(
+                read_json(args.output_root / "per_paper" / row["paper_id"] / "source_confirmation.first_pass.json"),
+                read_json(args.output_root / "per_paper" / row["paper_id"] / "source_confirmation_bundle.json"),
+            )[1]
             and not (args.output_root / "per_paper" / row["paper_id"] / "source_confirmation.second_review.json").exists()
         ),
     }
@@ -723,6 +812,10 @@ def validate_audit(args: argparse.Namespace) -> int:
         ok, reasons = strict_tree50_confirmation_ok(final)
         if not ok:
             errors.append(f"selected strict check failed {row['paper_id']}: {reasons}")
+        bundle_path = ROOT_DIR / row["bundle_path"]
+        bundle = read_json(bundle_path) if bundle_path.exists() else {"evidence_windows": []}
+        for error in disallowed_evidence_reference_errors(final, bundle):
+            errors.append(f"{row['paper_id']}:{error}")
         if final.get("review_stage") != "final":
             errors.append(f"selected final has wrong review_stage: {row['paper_id']}")
         if final.get("audit_status") not in {"pass", "pass_with_notes"}:
@@ -756,6 +849,7 @@ def summarize(args: argparse.Namespace) -> int:
         f"- Selection ready: {report.get('selection_ready', False)}",
         f"- Missing first-pass confirmations: {report.get('missing_first_pass_count', 0)}",
         f"- Missing second reviews for first-pass positives: {report.get('missing_second_review_for_positive_count', 0)}",
+        f"- Heading/table evidence allowed for selected Tree50: False",
         "",
         "## Final Taxonomy Status Counts",
         "",

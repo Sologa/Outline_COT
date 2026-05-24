@@ -103,7 +103,7 @@ def main() -> int:
         insufficient_path.write_text(
             "# Insufficient Pool Report\n\n"
             f"Selected strict positives: {len(selected)} / {args.desired_count}.\n\n"
-            "Do not fill the remainder with taxonomy-like, faceted, DAG, or section-heading-only records.\n",
+            "Do not fill the remainder with taxonomy-like, faceted, DAG, section-heading, or table-supported records.\n",
             encoding="utf-8",
         )
     else:
@@ -118,4 +118,3 @@ if __name__ == "__main__":
     except Exception as exc:  # noqa: BLE001
         print(f"ERROR: {exc}", file=sys.stderr)
         raise
-

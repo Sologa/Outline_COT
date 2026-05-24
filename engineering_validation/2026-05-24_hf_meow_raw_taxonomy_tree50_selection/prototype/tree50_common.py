@@ -30,7 +30,6 @@ ACCEPTED_SOURCE_EVIDENCE_TYPES = {
     "pdf_page",
     "figure_asset",
     "visible_figure_text",
-    "table_cell",
     "caption",
     "surrounding_prose",
     "bibliography_mapping",
@@ -41,6 +40,7 @@ PROHIBITED_EVIDENCE_TYPES = {
     "cot",
     "metadata",
     "section_heading",
+    "table_cell",
     "ocr_only",
     "filename_only",
 }
@@ -95,6 +95,20 @@ TAXONOMY_LOCATOR_RE = re.compile(
     r"category|categories|facet|faceted|typology|ontology|design space|"
     r"hierarchy|hierarchical|tree|includegraphics|caption|begin\{table|"
     r"begin\{tabular|tikzpicture)",
+    re.I,
+)
+SECTION_HEADING_LOCATOR_RE = re.compile(
+    r"\\(?:paragraph|subparagraph|section|subsection|subsubsection)\*?\s*\{",
+    re.I,
+)
+TABLE_LOCATOR_RE = re.compile(
+    r"("
+    r"\\begin\{(?:table|tabular|longtable|sidewaystable)\}|"
+    r"\\end\{(?:table|tabular|longtable|sidewaystable)\}|"
+    r"\\caption\{[^}]*\btable\b|"
+    r"\btable\s+[ivxlcdm\d]+\b|"
+    r"\btab\.?\s+[ivxlcdm\d]+\b"
+    r")",
     re.I,
 )
 
@@ -353,6 +367,36 @@ def summarize_candidates(rows: list[JsonObject]) -> JsonObject:
         "weak_count": bucket_counts.get("weak", 0),
         "none_count": bucket_counts.get("none", 0),
     }
+
+
+def evidence_window_text(window: JsonObject) -> str:
+    return "\n".join(
+        str(window.get(key, ""))
+        for key in [
+            "locator_type",
+            "source_type",
+            "path",
+            "matched_line",
+            "graphic_reference",
+            "asset_path",
+            "caption_nearby",
+            "excerpt",
+        ]
+    )
+
+
+def is_section_heading_evidence(window: JsonObject) -> bool:
+    return bool(SECTION_HEADING_LOCATOR_RE.search(evidence_window_text(window)))
+
+
+def is_table_evidence(window: JsonObject) -> bool:
+    if window.get("source_type") == "table_cell":
+        return True
+    return bool(TABLE_LOCATOR_RE.search(evidence_window_text(window)))
+
+
+def is_disallowed_tree50_evidence(window: JsonObject) -> bool:
+    return is_section_heading_evidence(window) or is_table_evidence(window)
 
 
 def strict_tree50_confirmation_ok(confirmation: JsonObject) -> tuple[bool, list[str]]:

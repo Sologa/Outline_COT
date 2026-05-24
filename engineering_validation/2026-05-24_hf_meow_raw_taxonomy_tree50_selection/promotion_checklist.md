@@ -10,6 +10,5 @@ Before using Tree50 in downstream outline generation:
 - [ ] `selected_tree50_manifest.jsonl` has exactly 50 unique IDs.
 - [ ] `validation_report.json` has `selection_ready: true`.
 - [ ] `exclusion_ledger.jsonl` records all non-counted candidates.
-- [ ] No outline/COT/metadata/section-heading-only evidence was counted.
+- [ ] No outline/COT/metadata/section-heading/table evidence was counted.
 - [ ] Downstream experiments use a new experiment id and do not overwrite taxonomy22.
-

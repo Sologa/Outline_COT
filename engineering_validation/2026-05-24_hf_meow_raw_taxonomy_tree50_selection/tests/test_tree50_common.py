@@ -110,6 +110,62 @@ class Tree50CommonTests(unittest.TestCase):
         self.assertIn("taxonomy_status_not_explicit", reasons)
         self.assertIn("source_boundary_not_author_taxonomy_tree", reasons)
 
+    def test_strict_confirmation_rejects_explicit_table_only_tree(self):
+        module = load_module()
+        ok, reasons = module.strict_tree50_confirmation_ok(
+            {
+                "taxonomy_status": "explicit",
+                "taxonomy_kind": "tree",
+                "source_boundary": "author_taxonomy_tree",
+                "node_count": 3,
+                "edge_count": 2,
+                "evidence_ids_used": ["ev_table"],
+                "evidence_source_types": ["table_cell"],
+                "uses_prohibited_evidence_as_sole_basis": True,
+                "taxonomy_nodes": [
+                    {"node_id": "n1", "label": "Root", "evidence_ids": ["ev_table"]},
+                    {"node_id": "n2", "label": "Child A", "evidence_ids": ["ev_table"]},
+                    {"node_id": "n3", "label": "Child B", "evidence_ids": ["ev_table"]},
+                ],
+                "taxonomy_edges": [
+                    {"parent": "n1", "child": "n2", "evidence_ids": ["ev_table"]},
+                    {"parent": "n1", "child": "n3", "evidence_ids": ["ev_table"]},
+                ],
+                "audit_status": "pass",
+                "countable_for_tree50": True,
+            }
+        )
+        self.assertFalse(ok)
+        self.assertIn("missing_accepted_source_evidence_type", reasons)
+        self.assertIn("prohibited_evidence_source_types_only", reasons)
+
+    def test_detects_heading_and_table_locator_evidence(self):
+        module = load_module()
+        self.assertTrue(
+            module.is_section_heading_evidence(
+                {
+                    "source_type": "tex_line",
+                    "excerpt": "\\section{Taxonomy of Attacks}\nText.",
+                }
+            )
+        )
+        self.assertTrue(
+            module.is_table_evidence(
+                {
+                    "source_type": "tex_line",
+                    "excerpt": "\\begin{table}\n\\caption{Table 1: Taxonomy categories}",
+                }
+            )
+        )
+        self.assertFalse(
+            module.is_disallowed_tree50_evidence(
+                {
+                    "source_type": "tex_line",
+                    "excerpt": "We propose a hierarchical taxonomy with three branches.",
+                }
+            )
+        )
+
     def test_strict_confirmation_accepts_source_confirmed_tree(self):
         module = load_module()
         ok, reasons = module.strict_tree50_confirmation_ok(
@@ -180,6 +236,8 @@ class Tree50CommonTests(unittest.TestCase):
         ]:
             self.assertIn(field, required)
             self.assertIn(field, properties)
+        prohibited_enum = set(schema["properties"]["prohibited_evidence_types_used"]["items"]["enum"])
+        self.assertIn("table_cell", prohibited_enum)
 
 
 if __name__ == "__main__":

@@ -42,7 +42,8 @@ Out of scope:
 - Mutating MEOW test100, taxonomy22, or stable prompts.
 - Creating a native Google Sheet.
 - Running downstream outline generation.
-- Counting faceted tables, DAGs, or section-heading-only structures toward 50.
+- Counting faceted tables, classification tables, DAGs, section-heading
+  structures, or table-supported-only structures toward 50.
 
 ## Strict Count Rule
 
@@ -53,9 +54,11 @@ A paper counts only when all of the following are true:
 - `source_boundary == "author_taxonomy_tree"`
 - at least 3 nodes and 2 parent-child edges are present
 - node and edge evidence IDs resolve to source locators
+- selected node and edge evidence IDs do not resolve to section headings,
+  table environments, table captions, or table cells
 - audit status is `pass` or `pass_with_notes`
-- no outline, COT, metadata-only, OCR-only, or section-heading-only evidence is
-  used as sole evidence
+- no outline, COT, metadata-only, OCR-only, heading, or table evidence is used
+  for the selected taxonomy tree
 
 ## Promotion Gate
 
@@ -64,6 +67,6 @@ Do not use this lane as a downstream generation corpus until:
 - `selected_tree50_manifest.jsonl` has exactly 50 unique paper IDs;
 - `validation_report.json` has `selection_ready: true`;
 - every selected paper has second-review audit status `pass` or `pass_with_notes`;
+- every selected paper passes the no-heading/no-table source-evidence gate;
 - `exclusion_ledger.jsonl` records all rejected, ambiguous, blocked, and
   taxonomy-like-but-not-tree candidates.
-
