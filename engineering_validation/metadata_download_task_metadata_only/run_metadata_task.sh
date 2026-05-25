@@ -37,6 +37,7 @@ COLLECT_REQUEST_DELAY="${COLLECT_REQUEST_DELAY:-1.0}"
 COLLECT_PROVIDER_DELAYS="${COLLECT_PROVIDER_DELAYS:-semantic_scholar=1.5,crossref=1.0,dblp=1.0,pubmed=0.5,openalex=90.0,arxiv=3.2,ieee=1.0}"
 COLLECT_RATE_LIMIT_BACKOFF="${COLLECT_RATE_LIMIT_BACKOFF:-30.0}"
 COLLECT_MAX_WORKERS="${COLLECT_MAX_WORKERS:-2}"
+COLLECT_MIN_TITLE_SIMILARITY="${COLLECT_MIN_TITLE_SIMILARITY:-0.95}"
 COLLECT_USE_STAGING="${COLLECT_USE_STAGING:-true}"
 COLLECT_STAGING_ROOT="${COLLECT_STAGING_ROOT:-$REPO_ROOT/.local/metadata_download_staging/${RUN_ID}}"
 
@@ -158,6 +159,7 @@ echo "[run] collect_request_delay=$COLLECT_REQUEST_DELAY"
 echo "[run] collect_provider_delays=$COLLECT_PROVIDER_DELAYS"
 echo "[run] collect_rate_limit_backoff=$COLLECT_RATE_LIMIT_BACKOFF"
 echo "[run] collect_max_workers=$COLLECT_MAX_WORKERS"
+echo "[run] collect_min_title_similarity=$COLLECT_MIN_TITLE_SIMILARITY"
 echo "[run] collect_use_staging=$COLLECT_USE_STAGING"
 echo "[run] collect_staging_root=$COLLECT_STAGING_ROOT"
   echo "[run] resume=$RESUME"
@@ -588,6 +590,7 @@ COLLECT_ARGS+=(
   --provider-delays "$COLLECT_PROVIDER_DELAYS"
   --rate-limit-backoff "$COLLECT_RATE_LIMIT_BACKOFF"
   --max-workers "$COLLECT_MAX_WORKERS"
+  --min-title-similarity "$COLLECT_MIN_TITLE_SIMILARITY"
 )
 
 RESUME_LOWER="$(printf '%s' "$RESUME" | tr '[:upper:]' '[:lower:]')"

@@ -33,7 +33,7 @@
 - `LIMIT` 在 hf raw mode 對應「剔除已具 abstract 的 reference 後，取前 N 筆仍缺 abstract 的 reference」，不是 survey/review 筆數。
 3. 不做 collector 時
 - `RUN_COLLECT=false` 時只做 filtered refs 與 summary。
-3. 做 collector 時
+4. 做 collector 時
    - `RUN_COLLECT=true` 時，使用 `COLLECT_SCRIPT` 對 `reference_oracle` 逐筆做實際 metadata 下載。
    - 預設 API provider 順序為 `semantic_scholar,crossref,dblp,pubmed`。
    - `openalex`、`arxiv`、`ieee` 仍可透過 `SOURCE_ORDER` 啟用；OpenAlex 每日 quota 很低，`ieee` 需要 `IEEE_API_KEY` 或 `IEEE_XPLORE_API_KEY` 才能啟用。
@@ -49,7 +49,29 @@
    - 預設 `COLLECT_USE_STAGING=true`，active collector output 先寫到 `.local/metadata_download_staging/<RUN_ID>`，逐篇驗證後才發佈到 `OUTPUT_ROOT`。
    - 輸出檔案是 `OUTPUT_ROOT/<paper>/metadata/title_abstracts_metadata.jsonl`；若未覆蓋 `OUTPUT_ROOT`，則等同 `run_root/<paper>/metadata/title_abstracts_metadata.jsonl`。
    - 每篇 collector temp output、staged output、final output 的 row count 都必須等於對應 filtered input 的 row count；若不一致，run 必須失敗。
-4. 可重複跑與 debug
+5. metadata/abstract 驗證
+   - 提供 `scripts/download/verify_title_abstract_metadata.py` 做本地 artifact 驗證，不重新呼叫 API。
+   - verifier 必須先驗證 row count、row order、`key` 對齊；任何 `structural_*` 狀態都代表 artifact/pipeline 失敗。
+   - 對非空 abstract，verifier 只用 input 端一致可用的欄位做自動內容檢查：normalized `title` 為主，`year` 為輔助。
+   - `doi`、provider id、provider URL、provider raw payload 可作 provenance，但不能視為 input ground truth，因為原始 `reference_oracle.jsonl` 並不穩定提供這些欄位。
+   - verifier 輸出 aggregate summary JSON 與 per-row JSONL；title mismatch、year mismatch、fuzzy-only match 必須保留為 suspicious/review 狀態，不能被報成 verified。
+   - 可選 OpenAI title-only adjudicator 只處理 verifier 標出的 suspicious/review rows，且只把 input title 與 metadata title 放入 prompt。
+   - OpenAI adjudicator 必須 async 執行、支援 resume、checkpoint、progress output，避免長時間 API run 中斷後損失進度。
+   - OpenAI adjudication 只輸出 sidecar JSONL/summary；不得直接覆寫 metadata abstract 或把 model 判斷當作 DOI/author 層級真值。
+   - GPT 判定 `different`/`uncertain` 的 rows 可用 repair script 重下載；repair 必須只替換 selected rows，保留 per-paper row order 與 key identity。
+   - repair 必須先寫 `.local` staging，驗證 staged/final row count，再 publish final metadata。
+   - repair 若 strict title gate 找不到可靠 abstract，必須清成 unresolved blank，不能保留先前錯配 abstract。
+   - 已重下載後仍未對上的 rows 必須支援 `--clear-only` 強制清空，並保留 `_metadata_mismatch_repair` provenance。
+6. verified metadata 融合
+   - 提供 `scripts/download/merge_verified_metadata_into_hf_raw.py` 把通過驗證的 metadata abstract 寫入 HF raw dataset 的 derived copy。
+   - merge input 必須是原始 HF raw JSONL、metadata run root、verification rows，以及可選 OpenAI title-only adjudication sidecar。
+   - merge 接受條件只有 `verified_title_year`、`verified_title_only`，或 OpenAI adjudication `same`；其餘 suspicious/review/unresolved rows 不得寫入 derived raw。
+   - merge 只能填補原本 blank 的 `raw.ref_meta[].abstract`；不得覆蓋原本已存在的 abstract。
+   - merge 必須用 `paper/key/normalized_title` 對齊，避免只靠 key 將錯 title 的 abstract 融入。
+   - merge 必須保留 provenance 欄位，包括 provider、provider id/url、candidate title/year、title similarity、verification status、adjudication、source run id 與 merge timestamp。
+   - merge 必須寫出 report JSON 與 per-row action JSONL；report 至少包含原始/最終 ref row count、原始/最終 non-empty abstract count、填入數、existing abstract skip 數、unverified skip 數與 key/title mismatch 數。
+   - 原始 `hf_meow_raw_high261.full.jsonl` 不得被修改；輸出必須是明確命名的 derived JSONL。
+7. 可重複跑與 debug
    - 支持 `PAPER_NAME`, `LIMIT`, `RUN_ID`, `RUN_ROOT` 覆蓋。
 
 ## 4) 失敗條件
@@ -70,3 +92,4 @@
 - rerun 不會覆蓋已成功補到 abstract 的 rows；未成功 rows 可被 retry。
 - 長時間 collector 不直接把 active per-row writes 寫進 Drive-synced `results/`；必須先 staging，再驗證並發佈。
 - log 的 `total_written` 不能單獨作為完成依據；接受前必須從 disk 重新計算 final artifact row counts。
+- merge derived copy 前必須完成 title verification；merge 後 raw/derived JSONL 行數與 ref row count 必須一致，且 merge report 的 `filled_new_abstracts` 必須等於 per-row action JSONL 的 `filled` 行數。

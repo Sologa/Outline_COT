@@ -37,6 +37,7 @@ IEEE_SEARCH_URL = "https://ieeexploreapi.ieee.org/api/v1/search/articles"
 SUPPORTED_PROVIDERS = {"arxiv", "openalex", "semantic_scholar", "crossref", "dblp", "pubmed", "ieee"}
 DEFAULT_PROVIDER_ORDER = ["semantic_scholar", "crossref", "dblp", "pubmed"]
 DEFAULT_RATE_LIMIT_BACKOFF_SECONDS = 30.0
+DEFAULT_MIN_TITLE_SIMILARITY = 0.95
 
 
 class MetadataOutputError(RuntimeError):
@@ -55,6 +56,9 @@ def normalize_text(value: Any) -> str:
 
 def normalize_title(value: Any) -> str:
     text = normalize_text(value).lower()
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = re.sub(r"\\[a-zA-Z]+\*?\{([^{}]*)\}", r" \1 ", text)
+    text = re.sub(r"\\[a-zA-Z]+\*?", " ", text)
     text = text.replace("&amp;", " and ")
     text = text.replace("&", " and ")
     text = re.sub(r"[^a-z0-9]+", " ", text)
@@ -563,7 +567,16 @@ def fetch_candidates(provider: str, query: str, max_results: int) -> list[JsonOb
     raise ValueError(f"Unsupported provider: {provider}")
 
 
-def pick_candidate(source_title: str, candidates: list[JsonObject], *, threshold: float = 0.8) -> JsonObject | None:
+def title_is_acceptable(source_title: str, candidate_title: Any, score: float, *, threshold: float) -> bool:
+    return score >= threshold or normalize_title(source_title) == normalize_title(candidate_title)
+
+
+def pick_candidate(
+    source_title: str,
+    candidates: list[JsonObject],
+    *,
+    threshold: float = DEFAULT_MIN_TITLE_SIMILARITY,
+) -> JsonObject | None:
     if not candidates:
         return None
 
@@ -580,9 +593,12 @@ def pick_candidate(source_title: str, candidates: list[JsonObject], *, threshold
         abstract = normalize_text(candidate.get("abstract", ""))
         if not abstract:
             continue
-        if score >= threshold or normalize_title(source_title) == normalize_title(candidate.get("title", "")):
+        if title_is_acceptable(source_title, candidate.get("title", ""), score, threshold=threshold):
             return candidate
-    return scored[0][1]
+    for score, candidate in scored:
+        if title_is_acceptable(source_title, candidate.get("title", ""), score, threshold=threshold):
+            return candidate
+    return None
 
 
 def parse_provider_order(raw: str) -> list[str]:
@@ -764,6 +780,31 @@ def load_metadata_map(path: Path) -> dict[str, JsonObject]:
     return result
 
 
+def load_metadata_rows(path: Path) -> list[JsonObject]:
+    if not path.exists():
+        return []
+
+    rows: list[JsonObject] = []
+    with path.open("r", encoding="utf-8") as handle:
+        for line in handle:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                item = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if isinstance(item, dict):
+                rows.append(item)
+    return rows
+
+
+def row_matches_ref(row: JsonObject | None, ref: JsonObject) -> bool:
+    if row is None:
+        return False
+    return normalize_text(row.get("key", "")) == normalize_text(ref.get("key", ""))
+
+
 def count_jsonl_rows(path: Path) -> int:
     if not path.exists():
         return 0
@@ -791,33 +832,45 @@ def collect_one_paper(
     providers: list[str],
     fetch_client: ProviderFetchClient,
     resume: bool,
+    min_title_similarity: float = DEFAULT_MIN_TITLE_SIMILARITY,
 ) -> tuple[str, int, int]:
     output_metadata_dir = output_root / paper_name / "metadata"
     output_metadata_dir.mkdir(parents=True, exist_ok=True)
     out_file = output_metadata_dir / "title_abstracts_metadata.jsonl"
     temp_file = out_file.with_name(f"{out_file.name}.tmp")
 
-    existing_map: dict[str, JsonObject] = {}
+    existing_rows: list[JsonObject] = []
     if metadata_root is not None:
         existing_file = metadata_root / paper_name / "metadata" / "title_abstracts_metadata.jsonl"
-        existing_map = load_metadata_map(existing_file)
+        existing_rows = load_metadata_rows(existing_file)
 
-    resume_map: dict[str, JsonObject] = load_metadata_map(out_file) if resume else {}
+    resume_rows: list[JsonObject] = load_metadata_rows(out_file) if resume else []
 
     written = 0
     filled = 0
     with temp_file.open("w", encoding="utf-8") as handle:
-        for ref in refs:
+        for index, ref in enumerate(refs):
             key = normalize_text(ref.get("key", ""))
-            resume_row = resume_map.get(key)
+            resume_row = resume_rows[index] if index < len(resume_rows) else None
             if resume_row and normalize_text(resume_row.get("abstract", "")):
-                merged = dict(resume_row)
-                got = False
+                if row_matches_ref(resume_row, ref):
+                    merged = dict(resume_row)
+                    got = False
+                else:
+                    merged = dict(ref)
+                    got = False
             else:
                 merged = dict(ref)
-                merged.update(existing_map.get(key, {}))
+                existing_row = existing_rows[index] if index < len(existing_rows) else None
+                if row_matches_ref(existing_row, ref):
+                    merged.update(existing_row or {})
                 if not normalize_text(merged.get("abstract", "")):
-                    merged, got = resolve_reference(merged, providers=providers, fetch_client=fetch_client)
+                    merged, got = resolve_reference(
+                        merged,
+                        providers=providers,
+                        fetch_client=fetch_client,
+                        min_title_similarity=min_title_similarity,
+                    )
                 else:
                     merged["metadata_source"] = "existing"
                     merged.setdefault("metadata_downloaded_at", now_utc())
@@ -845,6 +898,7 @@ def resolve_reference(
     *,
     providers: list[str],
     fetch_client: ProviderFetchClient,
+    min_title_similarity: float = DEFAULT_MIN_TITLE_SIMILARITY,
 ) -> tuple[JsonObject, bool]:
     source_title = normalize_text(row.get("title", ""))
     key = normalize_text(row.get("key", ""))
@@ -860,7 +914,7 @@ def resolve_reference(
             row.setdefault("_provider_errors", {})[provider] = str(exc)
             continue
 
-        selected = pick_candidate(source_title, candidates)
+        selected = pick_candidate(source_title, candidates, threshold=min_title_similarity)
         if not selected:
             continue
 
@@ -921,6 +975,12 @@ def parse_args() -> argparse.Namespace:
         help="Comma-separated provider list (default: semantic_scholar,crossref,dblp,pubmed)",
     )
     parser.add_argument("--max-results", type=int, default=5, help="Per provider max result count")
+    parser.add_argument(
+        "--min-title-similarity",
+        type=float,
+        default=DEFAULT_MIN_TITLE_SIMILARITY,
+        help="Minimum normalized title similarity required to accept provider metadata",
+    )
     parser.add_argument("--request-delay", type=float, default=1.0, help="Delay between provider calls in seconds")
     parser.add_argument(
         "--rate-limit-backoff",
@@ -946,6 +1006,8 @@ def main() -> int:
     args = parse_main_args()
     if args.max_results < 0:
         raise ValueError("--max-results must be non-negative")
+    if args.min_title_similarity < 0 or args.min_title_similarity > 1:
+        raise ValueError("--min-title-similarity must be between 0 and 1")
     if args.request_delay < 0:
         raise ValueError("--request-delay must be non-negative")
     if args.rate_limit_backoff < 0:
@@ -1001,6 +1063,7 @@ def main() -> int:
                 providers=providers,
                 fetch_client=fetch_client,
                 resume=args.resume,
+                min_title_similarity=args.min_title_similarity,
             )
             results[paper_name] = (written, filled)
     else:
@@ -1015,6 +1078,7 @@ def main() -> int:
                     providers=providers,
                     fetch_client=fetch_client,
                     resume=args.resume,
+                    min_title_similarity=args.min_title_similarity,
                 ): paper_name
                 for paper_name, refs in tasks
             }
