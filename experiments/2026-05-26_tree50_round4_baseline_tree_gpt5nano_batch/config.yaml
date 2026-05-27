@@ -1,0 +1,52 @@
+experiment_id: 2026-05-26_tree50_round4_baseline_tree_gpt5nano_batch
+default_run_id: 2026-05-26T0000_taipei_round4_baseline_tree
+status: scaffold_ready
+
+inputs:
+  round4_edge_manifest: _gdrive_sync_outline_cot/results/engineering_validation/2026-05-25_tree50_edge_verified_reextract_round4/edge_audit_manifest.tsv
+  high261_metadata: data/paper_sets/hf_meow_raw_taxonomy_high261/metadata/hf_meow_raw_high261.with_verified_metadata.plus_openalex_pdf_abstracts.tree50_abstract_recovery_openalex_pdf_merge_20260525_2315_taipei.jsonl
+  high261_input_manifest: data/paper_sets/hf_meow_raw_taxonomy_high261/metadata/input_manifest.jsonl
+  high261_corpus_root: data/paper_sets/hf_meow_raw_taxonomy_high261
+
+generation:
+  transport: openai_batch_api
+  endpoint: /v1/responses
+  model: gpt-5-nano
+  reasoning_effort: high
+  completion_window: 24h
+  max_output_tokens: 32768
+  retry_max_output_tokens_escape_hatch: 65536
+
+paper_set:
+  count: 59
+  source: round4_edge_manifest
+  filter: unresolved_edge_count == 0
+  includes_known_error_status: true
+  known_error_paper_id: "2308.13420"
+
+matrix:
+  input_conditions:
+    - title_ref_meta
+  variants:
+    - baseline_no_taxonomy
+    - tree_only_guarded
+  expected_request_count: 118
+
+prompt_contract:
+  target_abstract_used: false
+  input_contract: target_title_plus_ref_meta_no_target_abstract
+  reference_abstracts_preserved: true
+  metadata_provenance_fields_stripped: true
+
+judge:
+  backend: codex
+  model: gpt-5.5
+  reasoning_effort: high
+  concurrency: 2
+  timeout_seconds: 600
+  max_retries: 2
+
+notes:
+  - This is a new experiment, not a rerun of the 2026-05-24 matrix.
+  - The only experimental comparison is baseline_no_taxonomy versus tree_only_guarded.
+  - The target survey/review abstract is not rendered in either arm.

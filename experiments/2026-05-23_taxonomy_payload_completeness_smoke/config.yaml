@@ -1,0 +1,59 @@
+experiment_id: 2026-05-23_taxonomy_payload_completeness_smoke
+status: provisional_smoke_test
+paper_scope:
+  paper_ids:
+    - 096_2502.03108
+  defer_remaining_taxonomy22: true
+default_run_id: 2026-05-23_paper096_smoke
+default_input_conditions:
+  - no_abstract
+default_payload_modes:
+  - tree_only_guarded
+  - structural_complete_guarded
+model_target:
+  provider: openai_batch_api
+  model: gpt-5-nano
+  reasoning_effort: high
+  max_output_tokens: 32768
+prompt_contract:
+  template: prompts/taxonomy_payload_comparison_guarded_template.txt
+  shared_prompt_wording: true
+  compare_payload_only: true
+payload_contract:
+  tree_only_guarded:
+    source: previous batch payload style
+    includes:
+      - taxonomy label tree
+      - parent-child indentation
+    excludes:
+      - node ids
+      - facets
+      - qualifiers
+      - evidence
+      - audit metadata
+      - classified items
+  structural_complete_guarded:
+    source: structural projection of taxonomy_extraction.json
+    includes:
+      - taxonomy metadata
+      - all nodes
+      - all structural edges
+      - node ids
+      - depth
+      - facets
+      - qualifiers
+    excludes:
+      - evidence_ledger
+      - evidence_ids
+      - classified_items
+      - audit
+      - rejected_candidates
+      - visual_table_review
+      - source_pack
+      - local paths
+paths:
+  taxonomy_source: results/experiments/2026-05-19_meow_taxonomy_extraction/smoke/096_2502.03108/taxonomy_extraction.json
+  v2_corrected_taxonomy_source: results/engineering_validation/2026-05-23_taxonomy_extraction_semantic_correction/096_2502.03108/taxonomy_extraction.corrected.json
+  v2_corrected_run_id: 2026-05-23_paper096_v2_corrected_smoke
+  prior_tree_only_run: results/experiments/2026-05-22_taxonomy_augmented_outline_prompt_gpt5nano_batch_taxonomy22/2026-05-22T1241_taipei/096_2502.03108
+  results_root: results/experiments/2026-05-23_taxonomy_payload_completeness_smoke

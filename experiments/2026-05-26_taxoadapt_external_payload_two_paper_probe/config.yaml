@@ -1,0 +1,41 @@
+experiment_id: 2026-05-26_taxoadapt_external_payload_two_paper_probe
+default_run_id: 2026-05-26T0000_taipei_gpt5nano_high_batch
+status: scaffold_ready
+
+inputs:
+  high261_metadata: data/paper_sets/hf_meow_raw_taxonomy_high261/metadata/hf_meow_raw_high261.with_verified_metadata.plus_openalex_pdf_abstracts.tree50_abstract_recovery_openalex_pdf_merge_20260525_2315_taipei.jsonl
+  high261_input_manifest: data/paper_sets/hf_meow_raw_taxonomy_high261/metadata/input_manifest.jsonl
+  external_taxoadapt_payloads:
+    "2305.01975": /Users/xjp/Desktop/Taxonomy/taxoadapt_review_refs_api/.local/experiment_runs/20260526_full__gold_oracle_schema__2305_01975/taxoadapt_outputs/manual_tree_only_payload.txt
+    "1910.08252": /Users/xjp/Desktop/Taxonomy/taxoadapt_review_refs_api/.local/experiment_runs/20260526_usagecheck__gold_oracle_schema__1910_08252/taxoadapt_outputs/manual_tree_only_payload.txt
+
+generation:
+  transport: openai_batch_api
+  endpoint: /v1/responses
+  model: gpt-5-nano
+  reasoning_effort: high
+  completion_window: 24h
+  max_output_tokens: 32768
+
+matrix:
+  input_conditions:
+    - title_ref_meta
+  variants:
+    - baseline_no_taxonomy
+    - taxoadapt_tree_payload
+  expected_request_count: 4
+
+prompt_contract:
+  target_abstract_used: false
+  input_contract: target_title_plus_ref_meta_no_target_abstract
+  reference_abstracts_preserved: true
+  metadata_provenance_fields_stripped: true
+  external_payloads_must_not_mix_with_round4: true
+
+judge:
+  backend: codex
+  model: gpt-5.5
+  reasoning_effort: high
+  concurrency: 4
+  timeout_seconds: 600
+  max_retries: 2

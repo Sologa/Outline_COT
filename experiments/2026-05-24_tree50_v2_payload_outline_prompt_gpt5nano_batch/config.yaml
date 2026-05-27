@@ -1,0 +1,51 @@
+experiment_id: 2026-05-24_tree50_v2_payload_outline_prompt_gpt5nano_batch
+default_run_id: 2026-05-24T2045_taipei_no_abstract
+status: provisional_with_abstract_ready
+
+inputs:
+  final_tree50_manifest: results/engineering_validation/2026-05-24_hf_meow_tree50_source_extraction_v2/_summaries/final_usable_tree50_v2_manifest.jsonl
+  high261_metadata: data/paper_sets/hf_meow_raw_taxonomy_high261/metadata/hf_meow_raw_high261.jsonl
+  high261_verified_metadata: data/paper_sets/hf_meow_raw_taxonomy_high261/metadata/hf_meow_raw_high261.with_verified_metadata.jsonl
+  high261_input_manifest: data/paper_sets/hf_meow_raw_taxonomy_high261/metadata/input_manifest.jsonl
+  high261_corpus_root: data/paper_sets/hf_meow_raw_taxonomy_high261
+
+generation:
+  transport: openai_batch_api
+  endpoint: /v1/responses
+  model: gpt-5-nano
+  reasoning_effort: high
+  completion_window: 24h
+  max_output_tokens: 32768
+  retry_max_output_tokens_escape_hatch: 65536
+
+paper_set:
+  count: 50
+  source: final_usable_tree50_v2_manifest
+  source_mix:
+    original_tree50_success: 41
+    replacement_success: 9
+
+matrix:
+  input_conditions:
+    - no_abstract
+    - with_abstract
+  run_now:
+    - with_abstract
+  completed:
+    - no_abstract
+  variants:
+    - baseline_no_taxonomy
+    - tree_only_guarded
+    - structural_complete_guarded
+
+judge:
+  backend: codex
+  model: gpt-5.5
+  reasoning_effort: high
+  concurrency: 2
+  timeout_seconds: 600
+  max_retries: 2
+
+notes:
+  - no_abstract was the first pass.
+  - with_abstract uses high261_verified_metadata so verified reference abstracts are included without mutating the original high261 metadata file.
