@@ -32,6 +32,8 @@ What does not belong here:
 - downloaded paper corpora
 - stable pipeline code after promotion
 
-Put run outputs under `results/<experiment_id>/...` and local scratch under `.local/`.
+Put run outputs under `results/experiments/<experiment_code_folder_name>/<run_id>/...` and local scratch under `.local/`.
+
+The `<experiment_code_folder_name>` must match the directory name under `experiments/`. Use `<run_id>` for a timestamp, paper/run label, or batch attempt namespace.
 
 When an experiment is promoted, move reusable code, prompts, tests, and docs into the stable repo locations and leave a short note in the experiment folder that points to the promoted artifacts.

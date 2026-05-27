@@ -226,6 +226,8 @@ For `results/` backup:
 - Migration status on 2026-05-22: after the user explicitly chose symlink mode, the then-current physical `results/` tree was merged into `_gdrive_sync_outline_cot/results/`, the original physical tree was moved to `.local/results_physical_backup_20260522_005527/`, and top-level `results` was replaced by a symlink to `_gdrive_sync_outline_cot/results/`.
 - Do not recreate a separate physical top-level `results/` directory unless the user explicitly asks to leave symlink mode.
 - Because active `results/` writes now land in the Drive sync area, avoid high-frequency scratch, repeatedly overwritten files, open databases, and long-running append logs under `results/`. Use `.local/` for unstable scratch, and write final run outputs into run-specific folders under `results/`.
+- For long-running metadata/API collection jobs, never write active per-paper JSONL outputs directly into `results/` or `_gdrive_sync_outline_cot/results/`. Write active collector output under `.local/` first, fsync and validate every expected JSONL row count, then publish verified files into `results/` via temp file plus atomic replace. Treat any mismatch between `selected_rows`, collector `total_written`, and final on-disk row counts as a failed run, not as a completed run.
+- Incident note from 2026-05-25: `metadata_priority_tree50_v2_s2_fallback_no_openalex_20260524` logged `total_written=4384`, but 16 final Drive-synced metadata files were left as 0-byte artifacts. Future agents must not trust collector logs alone for metadata runs; verify final artifact row counts and abstract counts from disk before reporting completion.
 
 ### 0.2.3 Placement Rules
 
@@ -240,6 +242,7 @@ Use these destinations unless the user provides a more specific path:
 - Stable ledger snapshots: `_gdrive_sync_outline_cot/exports/google_sheets/stable_ledger_snapshots/<sheet_slug>/`
 - Provisional Sheet snapshots: `_gdrive_sync_outline_cot/exports/google_sheets/provisional_sheet_snapshots/<sheet_slug>/`
 - Per-paper or per-run derived data: `_gdrive_sync_outline_cot/datasets/derived/<experiment_id>/`
+- Experiment run outputs: `results/experiments/<experiment_code_folder_name>/<run_id>/`
 - Optional whole-result backup or mirrored run bundles: `_gdrive_sync_outline_cot/results/<experiment_id_or_run_name>/`
 - Raw corpus data: `_gdrive_sync_outline_cot/datasets/raw/<dataset_id>/`
 - Final reports: `_gdrive_sync_outline_cot/artifacts/reports/<experiment_id_or_report_slug>/`
@@ -292,6 +295,37 @@ Use this triage order:
 - When the worktree is too noisy, report categories with `git status --porcelain`, then propose or create separate commit groups such as `drive-sync-policy`, `results-index-migration`, `data-layout-move`, `docs-move`, and `code-changes`.
 - Do not mix generated-output index removals with behavior-changing code edits in the same commit unless the user explicitly asks for one coarse cleanup commit.
 
+## 0.4 Metric Significance And Power Lookup
+
+For questions about whether metric differences are statistically significant, how large a metric gap must be to be useful, or how many survey/review papers are needed to detect a difference, use the repo-local report and lookup tables under:
+
+- `docs/reports/metric_power_curves/metric_power_curve_report.pdf`
+- `docs/reports/metric_power_curves/tables/power_lookup_formula_table.md`
+- `docs/reports/metric_power_curves/tables/power_lookup_by_N.csv`
+
+Default assumptions unless the user says otherwise:
+
+- sample unit: survey/review paper
+- comparison design: paired paper-level comparison
+- alpha: two-sided `0.05`
+- main planning threshold: `80%` power
+- sensitivity threshold: `90%` power
+- use paired differences, not independent group variance
+- report both raw gap and paired standardized effect `d_z`
+
+Core formulas:
+
+- `d_i = metric(A, i) - metric(B, i)`
+- `s_d = sd(d_i)`
+- `d_z = mean(d_i) / s_d`
+- observed significance threshold: `abs(d_z) >= t_(0.975, N-1) / sqrt(N)`
+- 80% power threshold: `abs(d_z)_min ~= (t_(0.975, N-1) + z_0.80) / sqrt(N)`
+- raw gap threshold: `abs(Delta_raw)_min = abs(d_z)_min * s_d`
+
+For `N=21` or `N=22`, a useful difference requires roughly `abs(d_z) ~= 0.62-0.64` for `80%` power. Convert this to raw metric units with `abs(Delta_raw) ~= 0.62-0.64 * s_d`.
+
+If the user provides only aggregate means, state that strict significance cannot be determined without the per-paper paired differences or their paired-difference standard deviation. If the user provides per-paper metric values, compute the paired differences directly, then report the observed p-value, `d_z`, raw gap, and whether the result clears the 80%/90% planning thresholds. For multiple metrics or judge dimensions, discuss a multiple-comparison correction such as Holm or FDR instead of treating every uncorrected p-value as confirmatory.
+
 ## 1. Repo purpose
 
 This repository is primarily used to inspect, reconstruct, compare, and extract:
@@ -320,6 +354,18 @@ Current working artifacts include:
   - auxiliary prompt text present in repo but not clearly on the main runtime path
   - inferred or reconstructed prompts
 - When discussing a prompt, preserve provenance clearly instead of merging confirmed and inferred versions.
+
+### 2.1 MEOW Outline-Generation Input Contract
+
+Confirmed released MEOW outline generation uses the target paper title plus `ref_meta`; it does not use the target survey/review paper's own `meta.abstract` in the outline-generation prompt.
+
+Operational rules:
+
+- Treat any `Target Paper Abstract:` block, `--include-meta-abstract`, `with_abstract` condition, or target-abstract ablation in this repo as a local experimental extension unless a primary source artifact proves otherwise.
+- Do not describe target paper abstract as an original MEOW outline-generation input.
+- Reference-paper abstracts are different: when `ref_meta` entries contain an `abstract` field, those reference abstracts are part of the prompt-visible reference metadata unless a runner explicitly strips them.
+- When comparing abstract effects, state whether the variable is the target paper abstract, reference-paper abstracts, or both; keep metadata source constant unless the experiment is explicitly about metadata recovery.
+- For the current Tree50 round4-style rerun scope, compare only `baseline_no_taxonomy` versus the tree payload arm. Do not add a target-abstract axis, `no_abstract` versus `with_abstract`, or `structural_complete_guarded` unless the user explicitly reopens that scope.
 
 ## 3. `prompts/` directory contract
 
@@ -448,7 +494,10 @@ Directory convention:
 
 Operational rules:
 
-- Do not put bulky run outputs, logs, caches, or debug dumps in `experiments/`; use `results/<experiment_id>/...` or `.local/`.
+- Do not put bulky run outputs, logs, caches, or debug dumps in `experiments/`; use `results/experiments/<experiment_code_folder_name>/<run_id>/...` or `.local/`.
+- For experiment-local code under `experiments/<experiment_code_folder_name>/`, the corresponding durable output root must start with `results/experiments/<experiment_code_folder_name>/`. Use a run id subfolder such as a timestamp, paper/run label, or approved batch id below that root.
+- Do not write new experiment-family outputs directly under the top-level `results/` directory using only the experiment id as the folder name. That flat layout is deprecated for `experiments/`-backed work.
+- The per-paper `results/<paper_id>/<run_name>/` convention in section 9 is a separate stable blind-outline CLI contract, not the default layout for `experiments/` folders.
 - Do not import experiment-local prototype code from stable scripts unless the experiment has been promoted.
 - Promotion means moving the reusable parts to their stable homes:
   - reusable code -> `scripts/` or another stable code module

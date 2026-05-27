@@ -2,6 +2,12 @@
 
 This experiment is provisional. Do not update the official stable Google Sheet until the result is stable and explicitly approved.
 
+Default output root:
+
+- `results/experiments/2026-05-20_taxonomy_augmented_outline_prompt/2026-05-20_paper096/`
+
+For a rerun, set `TAXONOMY_PROMPT_RUN_ID=<new_run_id>` so results stay under the same experiment folder with a different run folder.
+
 ## Scope
 
 - Paper: `096_2502.03108`
@@ -22,8 +28,8 @@ This experiment is provisional. Do not update the official stable Google Sheet u
 - title and 51 references: `third_party/repos/Survey-Outline-Evaluation-Benckmark/datasets/test_prompts.json`, item index `95`
 - with-abstract source: `data/paper_sets/meow_test100/tex_src/096_2502.03108/main.tex`
 - reference outline wrapper: `data/paper_sets/meow_test100/outlines/096_2502.03108.outline.json`
-- evaluator reference outline list adapter: `results/2026-05-20_taxonomy_augmented_outline_prompt/_inputs/096_2502.03108.reference_outline.list.json`
-- taxonomy source: `results/2026-05-19_meow_taxonomy_extraction/smoke/096_2502.03108/taxonomy_extraction.json`
+- evaluator reference outline list adapter: `results/experiments/2026-05-20_taxonomy_augmented_outline_prompt/2026-05-20_paper096/_inputs/096_2502.03108.reference_outline.list.json`
+- taxonomy source: `results/experiments/2026-05-19_meow_taxonomy_extraction/smoke/096_2502.03108/taxonomy_extraction.json`
 - primary prompt template: `experiments/2026-05-20_taxonomy_augmented_outline_prompt/prompts/taxonomy_augmented_outline_prompt_template.txt`
 - guarded prompt template: `experiments/2026-05-20_taxonomy_augmented_outline_prompt/prompts/taxonomy_augmented_outline_prompt_guarded_template.txt`
 
@@ -58,8 +64,8 @@ python3 experiments/2026-05-20_taxonomy_augmented_outline_prompt/prototype/run_t
 
 Expected output:
 
-- 6 prompts rendered under `results/2026-05-20_taxonomy_augmented_outline_prompt/096_2502.03108/<input_condition>/<variant>/prompt.txt`
-- `results/2026-05-20_taxonomy_augmented_outline_prompt/_summaries/prompt_rendering_validation.json`
+- 6 prompts rendered under `results/experiments/2026-05-20_taxonomy_augmented_outline_prompt/2026-05-20_paper096/096_2502.03108/<input_condition>/<variant>/prompt.txt`
+- `results/experiments/2026-05-20_taxonomy_augmented_outline_prompt/2026-05-20_paper096/_summaries/prompt_rendering_validation.json`
 - baseline prompts do not contain a taxonomy block
 - taxonomy prompts contain only compact tree labels
 
@@ -85,11 +91,11 @@ Run each arm with explicit source/reference/output paths:
 ```bash
 for condition in no_abstract with_abstract; do
   for variant in baseline_no_taxonomy taxonomy_augmented_v1_minimal taxonomy_augmented_v2_guarded; do
-    out="results/2026-05-20_taxonomy_augmented_outline_prompt/096_2502.03108/${condition}/${variant}"
+    out="results/experiments/2026-05-20_taxonomy_augmented_outline_prompt/2026-05-20_paper096/096_2502.03108/${condition}/${variant}"
     python3 scripts/evaluate_chatgpt_meow_blind_batch.py \
       --paper 096_2502.03108 \
       --source-outline "${out}/chatgpt_meow_outline_blind.json" \
-      --reference-outline results/2026-05-20_taxonomy_augmented_outline_prompt/_inputs/096_2502.03108.reference_outline.list.json \
+      --reference-outline results/experiments/2026-05-20_taxonomy_augmented_outline_prompt/2026-05-20_paper096/_inputs/096_2502.03108.reference_outline.list.json \
       --output-dir "${out}" \
       --summary-path "${out}/chatgpt_meow_outline_blind.eval.summary.json" \
       --judge-backend codex \
@@ -118,10 +124,10 @@ python3 experiments/2026-05-20_taxonomy_augmented_outline_prompt/prototype/summa
 
 Expected summary outputs:
 
-- `results/2026-05-20_taxonomy_augmented_outline_prompt/_summaries/run_matrix.json`
-- `results/2026-05-20_taxonomy_augmented_outline_prompt/_summaries/paired_comparison.json`
-- `results/2026-05-20_taxonomy_augmented_outline_prompt/_summaries/paired_comparison.csv`
-- `results/2026-05-20_taxonomy_augmented_outline_prompt/_summaries/manual_audit_096.md`
+- `results/experiments/2026-05-20_taxonomy_augmented_outline_prompt/2026-05-20_paper096/_summaries/run_matrix.json`
+- `results/experiments/2026-05-20_taxonomy_augmented_outline_prompt/2026-05-20_paper096/_summaries/paired_comparison.json`
+- `results/experiments/2026-05-20_taxonomy_augmented_outline_prompt/2026-05-20_paper096/_summaries/paired_comparison.csv`
+- `results/experiments/2026-05-20_taxonomy_augmented_outline_prompt/2026-05-20_paper096/_summaries/manual_audit_096.md`
 
 ## Verification
 

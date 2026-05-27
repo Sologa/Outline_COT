@@ -23,7 +23,7 @@ The experiment tests whether taxonomy information is useful as an outline-planni
   - two input conditions: `no_abstract` and `with_abstract`
   - taxonomy text rendered from the taxonomy artifact as compact tree labels only
 - Outputs:
-  - model-generated outlines under `results/2026-05-20_taxonomy_augmented_outline_prompt/...`
+  - model-generated outlines under `results/experiments/2026-05-20_taxonomy_augmented_outline_prompt/2026-05-20_paper096/...`
   - evaluation artifacts under the same result run
   - paired comparison summary against baseline
 - Out of scope:

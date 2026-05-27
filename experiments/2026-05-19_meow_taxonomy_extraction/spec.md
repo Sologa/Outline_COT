@@ -120,9 +120,9 @@ Tables:
 
 Smoke outputs should go under:
 
-- `results/2026-05-19_meow_taxonomy_extraction/smoke/<paper_id>/taxonomy_extraction.json`
-- `results/2026-05-19_meow_taxonomy_extraction/smoke/<paper_id>/taxonomy_audit.json`
-- `results/2026-05-19_meow_taxonomy_extraction/smoke/summary.json`
+- `results/experiments/2026-05-19_meow_taxonomy_extraction/smoke/<paper_id>/taxonomy_extraction.json`
+- `results/experiments/2026-05-19_meow_taxonomy_extraction/smoke/<paper_id>/taxonomy_audit.json`
+- `results/experiments/2026-05-19_meow_taxonomy_extraction/smoke/summary.json`
 
 Large rendered pages, OCR scratch, crops, and debug images should go under:
 

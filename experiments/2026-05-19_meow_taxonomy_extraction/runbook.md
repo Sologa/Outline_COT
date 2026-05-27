@@ -21,7 +21,7 @@ Useful source roots:
 - `data/paper_sets/meow_test100/metadata/outline_manifest.jsonl`
 - `data/paper_sets/meow_test100/tex_src/`
 - `data/paper_sets/meow_test100/pdf/`
-- `results/2026-05-19_meow_taxonomy_extraction/`
+- `results/experiments/2026-05-19_meow_taxonomy_extraction/`
 - `.local/experiments/2026-05-19_meow_taxonomy_extraction/`
 
 ## Read-Only Inventory Commands
@@ -71,7 +71,7 @@ tesseract .local/experiments/2026-05-19_meow_taxonomy_extraction/smoke/096_2502.
 
 For each smoke paper:
 
-1. Create the output directory under `results/2026-05-19_meow_taxonomy_extraction/smoke/<paper_id>/`.
+1. Create the output directory under `results/experiments/2026-05-19_meow_taxonomy_extraction/smoke/<paper_id>/`.
 2. Create local scratch under `.local/experiments/2026-05-19_meow_taxonomy_extraction/smoke/<paper_id>/`.
 3. Fill `source_pack` from manifest and source-pack inventory.
 4. Record candidate figures/tables and page anchors.
@@ -87,7 +87,7 @@ For each smoke paper:
 Use Python's bundled `jsonschema` only if installed; otherwise validate JSON syntax and defer schema validation until the dependency is available.
 
 ```bash
-python3 -m json.tool results/2026-05-19_meow_taxonomy_extraction/smoke/096_2502.03108/taxonomy_extraction.json >/dev/null
+python3 -m json.tool results/experiments/2026-05-19_meow_taxonomy_extraction/smoke/096_2502.03108/taxonomy_extraction.json >/dev/null
 ```
 
 Optional schema validation:
@@ -99,7 +99,7 @@ from pathlib import Path
 from jsonschema import Draft202012Validator
 
 schema_path = Path("experiments/2026-05-19_meow_taxonomy_extraction/schema/taxonomy_extraction.schema.json")
-artifact = Path("results/2026-05-19_meow_taxonomy_extraction/smoke/096_2502.03108/taxonomy_extraction.json")
+artifact = Path("results/experiments/2026-05-19_meow_taxonomy_extraction/smoke/096_2502.03108/taxonomy_extraction.json")
 schema = json.loads(schema_path.read_text())
 data = json.loads(artifact.read_text())
 Draft202012Validator(schema).validate(data)
@@ -109,9 +109,9 @@ PY
 
 ## Expected Smoke Outputs
 
-- `results/2026-05-19_meow_taxonomy_extraction/smoke/<paper_id>/taxonomy_extraction.json`
-- `results/2026-05-19_meow_taxonomy_extraction/smoke/<paper_id>/taxonomy_audit.json`
-- `results/2026-05-19_meow_taxonomy_extraction/smoke/summary.json`
+- `results/experiments/2026-05-19_meow_taxonomy_extraction/smoke/<paper_id>/taxonomy_extraction.json`
+- `results/experiments/2026-05-19_meow_taxonomy_extraction/smoke/<paper_id>/taxonomy_audit.json`
+- `results/experiments/2026-05-19_meow_taxonomy_extraction/smoke/summary.json`
 - `.local/experiments/2026-05-19_meow_taxonomy_extraction/smoke/<paper_id>/rendered/`
 
 ## Full Run

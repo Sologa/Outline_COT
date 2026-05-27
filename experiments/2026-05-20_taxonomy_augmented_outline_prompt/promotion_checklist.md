@@ -9,7 +9,7 @@ Before promoting this experiment into the stable pipeline:
 - [ ] Taxonomy prompt rendering is deterministic.
 - [ ] Taxonomy rendering excludes gold outline content.
 - [ ] Prompt provenance is clear and the stable `prompts/` directory is untouched during the provisional phase.
-- [ ] Outputs are stored under `results/2026-05-20_taxonomy_augmented_outline_prompt/...`, not inside `experiments/`.
+- [ ] Outputs are stored under `results/experiments/2026-05-20_taxonomy_augmented_outline_prompt/2026-05-20_paper096/...`, not inside `experiments/`.
 - [ ] Large local scratch files are under `.local/`.
 - [ ] Focused tests exist for reusable rendering code if code is added.
 - [ ] Smoke results are reviewed paper by paper, not only as an aggregate.

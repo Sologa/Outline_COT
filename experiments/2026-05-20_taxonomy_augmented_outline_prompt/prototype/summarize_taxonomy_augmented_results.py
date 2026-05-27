@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 import re
 from datetime import datetime, timezone
 from pathlib import Path
@@ -12,6 +13,7 @@ from typing import Any
 
 
 EXPERIMENT_ID = "2026-05-20_taxonomy_augmented_outline_prompt"
+DEFAULT_RUN_ID = "2026-05-20_paper096"
 PAPER_ID = "096_2502.03108"
 INPUT_CONDITIONS = ["no_abstract", "with_abstract"]
 VARIANTS = ["baseline_no_taxonomy", "taxonomy_augmented_v1_minimal", "taxonomy_augmented_v2_guarded"]
@@ -25,8 +27,9 @@ SCORE_KEYS = [
 ]
 
 ROOT_DIR = Path(__file__).resolve().parents[3]
-RESULTS_ROOT = ROOT_DIR / "results" / EXPERIMENT_ID
-TAXONOMY_PATH = ROOT_DIR / "results" / "2026-05-19_meow_taxonomy_extraction" / "smoke" / PAPER_ID / "taxonomy_extraction.json"
+RUN_ID = os.environ.get("TAXONOMY_PROMPT_RUN_ID", DEFAULT_RUN_ID)
+RESULTS_ROOT = ROOT_DIR / "results" / "experiments" / EXPERIMENT_ID / RUN_ID
+TAXONOMY_PATH = ROOT_DIR / "results" / "experiments" / "2026-05-19_meow_taxonomy_extraction" / "smoke" / PAPER_ID / "taxonomy_extraction.json"
 
 
 def utc_now_iso() -> str:
@@ -204,6 +207,8 @@ def write_manual_audit(path: Path, run_matrix: list[dict[str, Any]], pairwise: l
         "# Manual Audit Aid",
         "",
         f"- Experiment: `{EXPERIMENT_ID}`",
+        f"- Run: `{RUN_ID}`",
+        f"- Results root: `{RESULTS_ROOT}`",
         f"- Paper: `{PAPER_ID}`",
         f"- Generated: `{utc_now_iso()}`",
         "",

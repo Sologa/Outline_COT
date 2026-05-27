@@ -4,7 +4,7 @@ Before promoting this experiment into the stable pipeline:
 
 - [ ] The experiment has a clear baseline comparison.
 - [ ] The result is reproduced from a clean command in `runbook.md`.
-- [ ] Outputs are stored under `results/<experiment_id>/...`, not inside `experiments/`.
+- [ ] Outputs are stored under `results/experiments/<experiment_id>/<run_id>/...`, not inside `experiments/`.
 - [ ] Large local scratch files are under `.local/`.
 - [ ] Prompt provenance is clear.
 - [ ] Evaluation metrics match the intended contract.

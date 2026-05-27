@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import os
 import shutil
 from datetime import datetime, timezone
 from pathlib import Path
@@ -15,6 +16,7 @@ from openpyxl.utils import get_column_letter
 
 
 EXPERIMENT_ID = "2026-05-20_taxonomy_augmented_outline_prompt"
+DEFAULT_RUN_ID = "2026-05-20_paper096"
 PAPER_ID = "096_2502.03108"
 SHEET_NAME = "Outline_COT provisional taxonomy augmented outline prompt 2026-05-20"
 DRIVE_FOLDER_URL = "https://drive.google.com/drive/folders/1l1bINVVStjrVuhpp6AoS_KPnwpvH0h5W?usp=drive_link"
@@ -28,7 +30,9 @@ SCORE_KEYS = [
 ]
 
 ROOT_DIR = Path(__file__).resolve().parents[3]
-RESULTS_ROOT = ROOT_DIR / "results" / EXPERIMENT_ID
+RUN_ID = os.environ.get("TAXONOMY_PROMPT_RUN_ID", DEFAULT_RUN_ID)
+RESULTS_ROOT = ROOT_DIR / "results" / "experiments" / EXPERIMENT_ID / RUN_ID
+TAXONOMY_PATH = ROOT_DIR / "results" / "experiments" / "2026-05-19_meow_taxonomy_extraction" / "smoke" / PAPER_ID / "taxonomy_extraction.json"
 OUTPUT_PATH = RESULTS_ROOT / "_summaries" / f"{SHEET_NAME}.xlsx"
 TABLE_PACKAGE_DIR = ROOT_DIR / "_gdrive_sync_outline_cot" / "artifacts" / "tables" / "experiments" / EXPERIMENT_ID
 SYNC_SNAPSHOT_PATH = TABLE_PACKAGE_DIR / "snapshots" / f"{SHEET_NAME}.xlsx"
@@ -176,7 +180,7 @@ def make_taxonomy_payload(wb: Workbook) -> None:
     payload_path = RESULTS_ROOT / PAPER_ID / "no_abstract" / "taxonomy_augmented_v1_minimal" / "taxonomy_tree_payload.txt"
     taxonomy_tree = load_text(payload_path).strip()
     ws.append(["mode", "tree_only"])
-    ws.append(["source_artifact", "results/2026-05-19_meow_taxonomy_extraction/smoke/096_2502.03108/taxonomy_extraction.json"])
+    ws.append(["source_artifact", str(TAXONOMY_PATH.relative_to(ROOT_DIR))])
     ws.append(["payload_path", str(payload_path)])
     ws.append(["tree_line_count", len([line for line in taxonomy_tree.splitlines() if line.strip()])])
     ws.append(["tree", taxonomy_tree])

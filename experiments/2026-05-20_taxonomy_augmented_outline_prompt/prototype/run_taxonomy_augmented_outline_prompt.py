@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import ast
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -22,6 +23,7 @@ from typing import Any, Iterable
 
 
 EXPERIMENT_ID = "2026-05-20_taxonomy_augmented_outline_prompt"
+DEFAULT_RUN_ID = "2026-05-20_paper096"
 PAPER_ID = "096_2502.03108"
 TEST_PROMPT_INDEX = 95
 MODEL = "gpt-5.4-mini"
@@ -29,12 +31,13 @@ EFFORT = "medium"
 
 ROOT_DIR = Path(__file__).resolve().parents[3]
 EXPERIMENT_DIR = ROOT_DIR / "experiments" / EXPERIMENT_ID
-RESULTS_ROOT = ROOT_DIR / "results" / EXPERIMENT_ID
+RUN_ID = os.environ.get("TAXONOMY_PROMPT_RUN_ID", DEFAULT_RUN_ID)
+RESULTS_ROOT = ROOT_DIR / "results" / "experiments" / EXPERIMENT_ID / RUN_ID
 SCRATCH_ROOT = ROOT_DIR / ".local" / "experiments" / EXPERIMENT_ID
 TEST_PROMPTS_PATH = ROOT_DIR / "third_party" / "repos" / "Survey-Outline-Evaluation-Benckmark" / "datasets" / "test_prompts.json"
 TEX_MAIN_PATH = ROOT_DIR / "data" / "paper_sets" / "meow_test100" / "tex_src" / PAPER_ID / "main.tex"
 REFERENCE_OUTLINE_PATH = ROOT_DIR / "data" / "paper_sets" / "meow_test100" / "outlines" / f"{PAPER_ID}.outline.json"
-TAXONOMY_PATH = ROOT_DIR / "results" / "2026-05-19_meow_taxonomy_extraction" / "smoke" / PAPER_ID / "taxonomy_extraction.json"
+TAXONOMY_PATH = ROOT_DIR / "results" / "experiments" / "2026-05-19_meow_taxonomy_extraction" / "smoke" / PAPER_ID / "taxonomy_extraction.json"
 MINIMAL_PROMPT_PATH = EXPERIMENT_DIR / "prompts" / "taxonomy_augmented_outline_prompt_template.txt"
 GUARDED_PROMPT_PATH = EXPERIMENT_DIR / "prompts" / "taxonomy_augmented_outline_prompt_guarded_template.txt"
 
@@ -306,6 +309,7 @@ def write_manifest(
     outline_path = arm.output_dir / "chatgpt_meow_outline_blind.json"
     manifest = {
         "experiment_id": EXPERIMENT_ID,
+        "run_id": RUN_ID,
         "paper_id": PAPER_ID,
         "input_condition": arm.input_condition,
         "variant": arm.variant,

@@ -16,7 +16,7 @@ Record environment assumptions, API requirements, and any local-only paths.
 
 ## Expected Outputs
 
-- `results/<experiment_id>/...`
+- `results/experiments/<experiment_id>/<run_id>/...`
 - `.local/experiments/<experiment_id>/...`
 
 ## Verification
