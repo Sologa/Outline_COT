@@ -1,0 +1,48 @@
+validation_id: 2026-05-24_hf_meow_tree50_source_extraction_v2
+status: scaffold_only
+created_date: 2026-05-24
+
+inputs:
+  selected_tree50_manifest: results/engineering_validation/2026-05-24_hf_meow_raw_taxonomy_tree50_selection/_summaries/selected_tree50_manifest.jsonl
+  tree50_source_audit_root: results/engineering_validation/2026-05-24_hf_meow_raw_taxonomy_tree50_selection
+  high261_corpus_root: data/paper_sets/hf_meow_raw_taxonomy_high261
+  semantic_correction_lane: engineering_validation/2026-05-23_taxonomy_extraction_semantic_correction
+
+outputs:
+  result_root: results/engineering_validation/2026-05-24_hf_meow_tree50_source_extraction_v2
+  scratch_root: .local/engineering_validation/2026-05-24_hf_meow_tree50_source_extraction_v2
+
+evidence_policy:
+  allowed_for_tree_evidence:
+    - tex_prose
+    - pdf_prose
+    - visible_figure_text
+    - figure_caption_when_not_table
+    - surrounding_prose
+  prohibited_for_tree_evidence:
+    - meow_outline
+    - cot
+    - metadata
+    - title
+    - abstract
+    - section_heading
+    - table_environment
+    - table_caption
+    - table_cell
+    - table_only_classification
+    - ocr_only
+    - filename_only
+
+minimum_tree:
+  nodes: 3
+  parent_child_edges: 2
+
+review:
+  first_pass_batch_size: 10
+  second_review_required_for_success: true
+  disagreement_policy: not_countable_until_resolved
+
+downstream:
+  apply_semantic_correction_contract_from: 2026-05-23_taxonomy_extraction_semantic_correction
+  render_v2_tree_only_payload: true
+  do_not_mutate_taxonomy22_or_semantic_correction_lane: true

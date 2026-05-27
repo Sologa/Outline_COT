@@ -1,0 +1,241 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TaxonomySemanticCorrectionWorkerOutput",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "paper_id",
+    "title",
+    "prompt_contract_observed",
+    "artifact_level_correction",
+    "taxonomy_level_corrections",
+    "node_facet_mappings",
+    "tree_structure_change_recommendation",
+    "uncertainties"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "taxonomy_semantic_correction_worker_v1"
+    },
+    "paper_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "prompt_contract_observed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "used_only_embedded_input_bundle",
+        "used_tools_or_external_files",
+        "notes"
+      ],
+      "properties": {
+        "used_only_embedded_input_bundle": {
+          "type": "boolean"
+        },
+        "used_tools_or_external_files": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "artifact_level_correction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_type",
+        "is_taxoadapt_style_multifaceted",
+        "taxoadapt_style_verdict",
+        "taxoadapt_style_rationale",
+        "correction_basis",
+        "facet_field_interpretation",
+        "confidence"
+      ],
+      "properties": {
+        "artifact_type": {
+          "type": "string",
+          "enum": [
+            "single_author_tree",
+            "faceted_classification_scheme",
+            "multiple_independent_taxonomies",
+            "taxonomy_like_dag",
+            "operational_rule_taxonomy",
+            "review_outline_like_taxonomy",
+            "mixed_or_unclear"
+          ]
+        },
+        "is_taxoadapt_style_multifaceted": {
+          "type": "boolean"
+        },
+        "taxoadapt_style_verdict": {
+          "type": "string",
+          "enum": [
+            "no",
+            "partial_near_miss",
+            "insufficient_evidence"
+          ]
+        },
+        "taxoadapt_style_rationale": {
+          "type": "string"
+        },
+        "correction_basis": {
+          "type": "string",
+          "enum": [
+            "semantic_relabel",
+            "sample_reaudit",
+            "insufficient_evidence"
+          ]
+        },
+        "facet_field_interpretation": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "string",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      }
+    },
+    "taxonomy_level_corrections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "taxonomy_index",
+          "taxonomy_name",
+          "original_taxonomy_kind",
+          "semantic_role",
+          "is_independent_dimension_tree",
+          "rationale"
+        ],
+        "properties": {
+          "taxonomy_index": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "taxonomy_name": {
+            "type": "string"
+          },
+          "original_taxonomy_kind": {
+            "type": "string"
+          },
+          "semantic_role": {
+            "type": "string"
+          },
+          "is_independent_dimension_tree": {
+            "type": "boolean"
+          },
+          "rationale": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "node_facet_mappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "taxonomy_index",
+          "taxonomy_name",
+          "node_id",
+          "label_raw",
+          "facet_raw",
+          "local_split_axis",
+          "facet_semantic_role",
+          "rationale",
+          "confidence"
+        ],
+        "properties": {
+          "taxonomy_index": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "taxonomy_name": {
+            "type": "string"
+          },
+          "node_id": {
+            "type": "string"
+          },
+          "label_raw": {
+            "type": "string"
+          },
+          "facet_raw": {
+            "type": "string"
+          },
+          "local_split_axis": {
+            "type": "string"
+          },
+          "facet_semantic_role": {
+            "type": "string",
+            "enum": [
+              "local_split_axis",
+              "branch_criterion",
+              "table_column_or_attribute",
+              "visual_grouping",
+              "stage_or_workflow_step",
+              "independent_dimension_candidate",
+              "unclear",
+              "none"
+            ]
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        }
+      }
+    },
+    "tree_structure_change_recommendation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recommendation",
+        "rationale",
+        "suggested_label_or_edge_changes"
+      ],
+      "properties": {
+        "recommendation": {
+          "type": "string",
+          "enum": [
+            "none",
+            "review_needed"
+          ]
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "suggested_label_or_edge_changes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "uncertainties": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

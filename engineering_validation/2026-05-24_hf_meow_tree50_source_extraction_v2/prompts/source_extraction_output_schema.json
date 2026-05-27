@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HF MEOW Tree50 source extraction output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "paper_id",
+    "arxiv_id",
+    "review_stage",
+    "reviewer_id",
+    "extraction_status",
+    "countable_for_downstream",
+    "taxonomy_status",
+    "taxonomy_kind",
+    "source_boundary",
+    "prohibited_evidence_types_used",
+    "uses_prohibited_evidence_for_tree",
+    "taxonomies",
+    "evidence_ledger",
+    "audit",
+    "notes"
+  ],
+  "properties": {
+    "paper_id": { "type": "string" },
+    "arxiv_id": { "type": "string" },
+    "review_stage": {
+      "type": "string",
+      "enum": ["first_pass", "second_review", "final"]
+    },
+    "reviewer_id": { "type": "string" },
+    "extraction_status": {
+      "type": "string",
+      "enum": ["success", "not_countable", "ambiguous", "blocked"]
+    },
+    "countable_for_downstream": { "type": "boolean" },
+    "taxonomy_status": {
+      "type": "string",
+      "enum": ["explicit", "taxonomy_like", "none_found", "ambiguous", "blocked"]
+    },
+    "taxonomy_kind": {
+      "type": ["string", "null"],
+      "enum": ["tree", "forest", "faceted_taxonomy", "taxonomy_like_dag", null]
+    },
+    "source_boundary": {
+      "type": ["string", "null"],
+      "enum": ["author_taxonomy_tree", "induced_taxonomy_tree", "classification_table_tree", null]
+    },
+    "prohibited_evidence_types_used": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "meow_outline",
+          "cot",
+          "metadata",
+          "title",
+          "abstract",
+          "section_heading",
+          "table_environment",
+          "table_caption",
+          "table_cell",
+          "ocr_only",
+          "filename_only"
+        ]
+      }
+    },
+    "uses_prohibited_evidence_for_tree": { "type": "boolean" },
+    "taxonomies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["taxonomy_id", "name", "taxonomy_kind", "source_boundary", "scope_note", "nodes", "edges"],
+        "properties": {
+          "taxonomy_id": { "type": "string" },
+          "name": { "type": "string" },
+          "taxonomy_kind": { "type": "string" },
+          "source_boundary": { "type": "string" },
+          "scope_note": { "type": "string" },
+          "nodes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["node_id", "label_raw", "label_normalized", "depth", "facet", "evidence_ids"],
+              "properties": {
+                "node_id": { "type": "string" },
+                "label_raw": { "type": "string" },
+                "label_normalized": { "type": "string" },
+                "depth": { "type": "integer", "minimum": 0 },
+                "facet": { "type": ["string", "null"] },
+                "evidence_ids": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              }
+            }
+          },
+          "edges": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["source", "target", "relation", "evidence_ids"],
+              "properties": {
+                "source": { "type": "string" },
+                "target": { "type": "string" },
+                "relation": { "type": "string", "enum": ["parent_child"] },
+                "evidence_ids": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "evidence_ledger": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["evidence_id", "source_type", "locator", "supports"],
+        "properties": {
+          "evidence_id": { "type": "string" },
+          "source_type": { "type": "string" },
+          "locator": { "type": "string" },
+          "supports": { "type": "string" }
+        }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "confidence",
+        "rationale",
+        "source_boundary_notes",
+        "review_notes",
+        "agreement_with_previous_extraction",
+        "final_merge_recommendation"
+      ],
+      "properties": {
+        "confidence": { "type": "string" },
+        "rationale": { "type": "string" },
+        "source_boundary_notes": { "type": "string" },
+        "review_notes": { "type": "string" },
+        "agreement_with_previous_extraction": { "type": ["boolean", "null"] },
+        "final_merge_recommendation": { "type": ["string", "null"] }
+      }
+    },
+    "notes": { "type": "string" }
+  }
+}

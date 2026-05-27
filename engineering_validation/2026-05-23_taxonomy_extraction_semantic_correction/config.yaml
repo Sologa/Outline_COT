@@ -1,0 +1,49 @@
+validation_id: 2026-05-23_taxonomy_extraction_semantic_correction
+status: scaffold_only
+created: 2026-05-23
+
+scope:
+  mutate_original_extraction_json: false
+  run_semantic_correction_now: false
+  run_reextraction_now: false
+  stable_google_sheet_write_allowed: false
+  downstream_taxonomy22_rerun_allowed_without_user_approval: false
+
+snapshot:
+  root: results/engineering_validation/2026-05-23_taxonomy_extraction_snapshot
+  manifest: results/engineering_validation/2026-05-23_taxonomy_extraction_snapshot/MANIFEST.tsv
+  sha256: results/engineering_validation/2026-05-23_taxonomy_extraction_snapshot/sha256.txt
+  summary: results/engineering_validation/2026-05-23_taxonomy_extraction_snapshot/snapshot_summary.md
+
+source_artifacts:
+  extraction_experiment_scaffold: experiments/2026-05-19_meow_taxonomy_extraction
+  extraction_results_smoke: results/experiments/2026-05-19_meow_taxonomy_extraction/smoke
+  extraction_results_selected18: results/experiments/2026-05-19_meow_taxonomy_extraction/selected18_2026-05-21
+  downstream_taxonomy22_run: results/experiments/2026-05-22_taxonomy_augmented_outline_prompt_gpt5nano_batch_taxonomy22/2026-05-22T1241_taipei
+  payload_completeness_smoke: experiments/2026-05-23_taxonomy_payload_completeness_smoke
+
+required_context:
+  chatgpt_taxoadapt_audit_snapshot: results/engineering_validation/2026-05-23_taxonomy_extraction_snapshot/external_context/taxoadapt_style_multifaceted_taxonomy_audit_meow_samples_zh_TW.md
+  taxoadapt_repo_readme: /Users/xjp/Desktop/Taxonomy/external/paper_repos/taxoadapt/README.md
+  taxoadapt_paper_pdf: /Users/xjp/Desktop/Taxonomy/docs/papers/pdf/TaxoAdapt_Aligning_LLM_Based_Multidimensional_Taxonomy_Construction.pdf
+  omx_planning_log: results/engineering_validation/2026-05-23_taxonomy_extraction_snapshot/omx_context/turns-2026-05-19.jsonl
+
+proposed_outputs:
+  output_root: results/engineering_validation/2026-05-23_taxonomy_extraction_semantic_correction
+  corrected_json_name: taxonomy_extraction.corrected.json
+  correction_manifest_name: correction_manifest.json
+  semantic_diff_name: semantic_diff.md
+  validation_report_name: validation_report.json
+
+initial_sample_papers:
+  - 096_2502.03108
+  - 074_2501.10168
+  - 077_2501.13443
+  - 097_2502.03668
+  - 037_2202.07170
+  - 094_2502.02459
+
+semantic_rules:
+  node_facet_default_interpretation: local_split_axis
+  taxoadapt_style_multifaceted_default: false
+  preserve_original_artifact_snapshot: true
