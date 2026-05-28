@@ -62,6 +62,10 @@ Uploaded cold archives:
 - `data/paper_sets/hf_meow_raw_taxonomy_high261/tex_src/*/source_package`
   -> `archives/high261_arxiv_source_packages_2026-05-28.tar.zst`
   -> `https://drive.google.com/file/d/1SAT4zFmH1p8kjjEAw7be7QevpZftFNz8/view?usp=drivesdk`
+- `data/paper_sets/hf_meow_raw_taxonomy_high261/tex_src/` extracted files,
+  excluding the already archived `source_package` files
+  -> `archives/high261_tex_src_extracted_no_source_package_2026-05-28.tar.zst`
+  -> `https://drive.google.com/file/d/1wsi9RVFXTZ3pqMoVLuJSq-8birebXW3F/view?usp=drivesdk`
 - `temp_artifacts/hf_meow_raw_check_2026-05-24/raw.jsonl` and
   `temp_artifacts/hf_meow_raw_check_2026-05-24/sft.jsonl`
   -> `archives/hf_meow_raw_check_2026-05-24_raw_sft_2026-05-28.tar.zst`
@@ -91,6 +95,8 @@ Cloud-side documentation:
   - `https://drive.google.com/file/d/12bbvGJtyeHOESks1TTYI-2i6I0VS3ON0/view?usp=drivesdk`
 - `provenance/restore_smoke_2026-05-28.md`
   - `https://drive.google.com/file/d/1JCZQOHuXYHFjyKbUuo12h31vEyeUpRTr/view?usp=drivesdk`
+- `provenance/restore_smoke_tex_src_extracted_2026-05-28.md`
+  - `https://drive.google.com/file/d/1I27X7FGXcGcD2ZK8Sx0KZ8iIJOu4NhRs/view?usp=drivesdk`
 - `provenance/cleanup_trash_ledger_20260528_174146.tsv`
   - `https://drive.google.com/file/d/1RfiK-TkyLV_IysK9QUHuamAkCElsdqPY/view?usp=drivesdk`
 
@@ -103,6 +109,13 @@ extracted one sample path from each archive. After cleanup, `pdf/*.pdf`,
 Restore them from the Drive archives above if a later source audit needs the
 original target PDFs, original arXiv source packages, or pinned raw split
 payloads.
+
+An additional restore smoke on 2026-05-28 verified the extracted `tex_src/`
+tree archive at
+`/Volumes/My Book/Outline_COT/restore_smoke/high261_audit_20260528_tex_src_extracted/`.
+Restore that archive together with `high261_arxiv_source_packages_2026-05-28.tar.zst`
+if a later task needs the full original source tree including `source_package`
+files.
 
 Cleanup on 2026-05-28 moved the local cold copies and upload staging to macOS
 Trash under `/Users/xjp/.Trash/Outline_COT_cleanup_20260528_174146/`. Files

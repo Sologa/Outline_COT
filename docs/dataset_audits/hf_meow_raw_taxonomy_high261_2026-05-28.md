@@ -36,6 +36,7 @@ download work.
 |---|---|---|---|
 | `data/paper_sets/hf_meow_raw_taxonomy_high261/pdf/*.pdf` | `01_source_store_completed/archives/high261_target_pdfs_2026-05-28.tar.zst` | `https://drive.google.com/file/d/1yERZ4xzsI7loKv2jODJQeb1Yt0wOUkx1/view?usp=drivesdk` | `2a5a3cec8bcdcdc0241ca161ac828c6097a6ebf937fe366603ab59a780551c56` |
 | `data/paper_sets/hf_meow_raw_taxonomy_high261/tex_src/*/source_package` | `01_source_store_completed/archives/high261_arxiv_source_packages_2026-05-28.tar.zst` | `https://drive.google.com/file/d/1SAT4zFmH1p8kjjEAw7be7QevpZftFNz8/view?usp=drivesdk` | `4cd6667d4c8537f75ff148f61d4d8443216149bf19861ae28b9e32e392b5d378` |
+| `data/paper_sets/hf_meow_raw_taxonomy_high261/tex_src/` extracted files, excluding already archived `source_package` files | `01_source_store_completed/archives/high261_tex_src_extracted_no_source_package_2026-05-28.tar.zst` | `https://drive.google.com/file/d/1wsi9RVFXTZ3pqMoVLuJSq-8birebXW3F/view?usp=drivesdk` | `c8316b5c64c111da08162bd8077834ab55688d4a4f084114588fc786253807f1` |
 | `temp_artifacts/hf_meow_raw_check_2026-05-24/raw.jsonl`; `temp_artifacts/hf_meow_raw_check_2026-05-24/sft.jsonl` | `01_source_store_completed/archives/hf_meow_raw_check_2026-05-24_raw_sft_2026-05-28.tar.zst` | `https://drive.google.com/file/d/1SvD1pN5YhR1z15UbhxsbpaRnC4pst06d/view?usp=drivesdk` | `8b9557d4c52304b93387ffdeff7f7a9fa19ddd2ec5c320ae9c032d086c176711` |
 | `temp_artifacts/hf_meow_raw_check_2026-05-24/rl.jsonl`; parse, size, and overlap summaries | `01_source_store_completed/archives/hf_meow_raw_check_2026-05-24_rl_and_summaries_2026-05-28.tar.zst` | `https://drive.google.com/file/d/1SkoqjofSej4LUEzwprwIRQ0u5rwf-9xo/view?usp=drivesdk` | `5fb4d7d59299f482f5da7a454ea693afdb2bfdfbbf33ce8092e3f8c799300104` |
 
@@ -61,6 +62,10 @@ The cloud package includes its own complete documentation:
   - `https://drive.google.com/file/d/1JCZQOHuXYHFjyKbUuo12h31vEyeUpRTr/view?usp=drivesdk`
 - `provenance/restore_smoke_2026-05-28.tsv`:
   - `https://drive.google.com/file/d/1weDM4V-OBpRZKtYGQLPa36EPdu8xx6VH/view?usp=drivesdk`
+- `provenance/restore_smoke_tex_src_extracted_2026-05-28.md`:
+  - `https://drive.google.com/file/d/1I27X7FGXcGcD2ZK8Sx0KZ8iIJOu4NhRs/view?usp=drivesdk`
+- `provenance/restore_smoke_tex_src_extracted_2026-05-28.tsv`:
+  - `https://drive.google.com/file/d/10XercsnAe36exOrZnQtqVWB8Jwf_gx8A/view?usp=drivesdk`
 - `provenance/cleanup_trash_ledger_20260528_174146.tsv`:
   - `https://drive.google.com/file/d/1RfiK-TkyLV_IysK9QUHuamAkCElsdqPY/view?usp=drivesdk`
 
@@ -152,6 +157,19 @@ Do not move these hot local inputs to Drive-only storage:
 Do not move the whole `tex_src/` tree unless a separate archive is created for
 the extracted TeX, figure, and ancillary files. The current source archive
 covers only `tex_src/*/source_package`.
+
+That separate extracted-tree archive was added later on 2026-05-28:
+
+| Archive | Tar entries | Extracted sample | Sample bytes | Restore smoke |
+|---|---:|---|---:|---|
+| `high261_tex_src_extracted_no_source_package_2026-05-28.tar.zst` | 10059 | `data/paper_sets/hf_meow_raw_taxonomy_high261/tex_src/016_2202.10284/main.bbl` | 49859 | pass |
+
+The extracted-tree archive intentionally excludes `source_package` files because
+those had already been moved to Trash after the earlier source-package archive
+restore smoke. To fully restore the old local `tex_src/` tree, restore both:
+
+- `high261_arxiv_source_packages_2026-05-28.tar.zst`
+- `high261_tex_src_extracted_no_source_package_2026-05-28.tar.zst`
 
 ## Cleanup Performed
 
