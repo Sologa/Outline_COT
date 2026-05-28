@@ -61,6 +61,8 @@ The cloud package includes its own complete documentation:
   - `https://drive.google.com/file/d/1JCZQOHuXYHFjyKbUuo12h31vEyeUpRTr/view?usp=drivesdk`
 - `provenance/restore_smoke_2026-05-28.tsv`:
   - `https://drive.google.com/file/d/1weDM4V-OBpRZKtYGQLPa36EPdu8xx6VH/view?usp=drivesdk`
+- `provenance/cleanup_trash_ledger_20260528_174146.tsv`:
+  - `https://drive.google.com/file/d/1RfiK-TkyLV_IysK9QUHuamAkCElsdqPY/view?usp=drivesdk`
 
 The unfinished ref-PDF recovery task also has cloud documentation:
 
@@ -150,6 +152,36 @@ Do not move these hot local inputs to Drive-only storage:
 Do not move the whole `tex_src/` tree unless a separate archive is created for
 the extracted TeX, figure, and ancillary files. The current source archive
 covers only `tex_src/*/source_package`.
+
+## Cleanup Performed
+
+Cleanup was performed on 2026-05-28 after restore smoke passed. The batch was
+moved to macOS Trash, not directly deleted:
+
+- Trash batch root:
+  - `/Users/xjp/.Trash/Outline_COT_cleanup_20260528_174146/`
+- Cloud cleanup ledger:
+  - `https://drive.google.com/file/d/1RfiK-TkyLV_IysK9QUHuamAkCElsdqPY/view?usp=drivesdk`
+
+Moved items:
+
+| Local source | Files | Bytes | Trash destination |
+|---|---:|---:|---|
+| `.local/dataset_audit_upload_staging` | 27 | 1827009994 | `/Users/xjp/.Trash/Outline_COT_cleanup_20260528_174146/.local/dataset_audit_upload_staging` |
+| `temp_artifacts/hf_meow_raw_check_2026-05-24` | 11 | 310384492 | `/Users/xjp/.Trash/Outline_COT_cleanup_20260528_174146/temp_artifacts/hf_meow_raw_check_2026-05-24` |
+| `data/paper_sets/hf_meow_raw_taxonomy_high261/pdf` | 261 | 738624779 | `/Users/xjp/.Trash/Outline_COT_cleanup_20260528_174146/data/paper_sets/hf_meow_raw_taxonomy_high261/pdf` |
+| `.local/2026-05-23_taxonomy_extraction_semantic_correction` | 76052 | 798747322 | `/Users/xjp/.Trash/Outline_COT_cleanup_20260528_174146/.local/2026-05-23_taxonomy_extraction_semantic_correction` |
+| `data/paper_sets/hf_meow_raw_taxonomy_high261/tex_src/*/source_package` | 261 | 1097042984 | `/Users/xjp/.Trash/Outline_COT_cleanup_20260528_174146/source_packages` |
+
+Post-cleanup checks:
+
+- `data/paper_sets/hf_meow_raw_taxonomy_high261/pdf/` exists but has `0` files.
+- `data/paper_sets/hf_meow_raw_taxonomy_high261/tex_src/*/source_package` count is `0`.
+- `temp_artifacts/hf_meow_raw_check_2026-05-24` is absent.
+- `.local/dataset_audit_upload_staging` is absent.
+- `.local/2026-05-23_taxonomy_extraction_semantic_correction` is absent.
+- Hot metadata and outlines remain present.
+- Repository working tree size after cleanup: about `5.0G`.
 
 ## Verification
 

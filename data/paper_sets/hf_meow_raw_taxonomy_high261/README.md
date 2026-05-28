@@ -91,6 +91,8 @@ Cloud-side documentation:
   - `https://drive.google.com/file/d/12bbvGJtyeHOESks1TTYI-2i6I0VS3ON0/view?usp=drivesdk`
 - `provenance/restore_smoke_2026-05-28.md`
   - `https://drive.google.com/file/d/1JCZQOHuXYHFjyKbUuo12h31vEyeUpRTr/view?usp=drivesdk`
+- `provenance/cleanup_trash_ledger_20260528_174146.tsv`
+  - `https://drive.google.com/file/d/1RfiK-TkyLV_IysK9QUHuamAkCElsdqPY/view?usp=drivesdk`
 
 Restore smoke on 2026-05-28 re-downloaded all four Drive archives to
 `/Volumes/My Book/Outline_COT/restore_smoke/high261_audit_20260528/`,
@@ -101,6 +103,10 @@ extracted one sample path from each archive. After cleanup, `pdf/*.pdf`,
 Restore them from the Drive archives above if a later source audit needs the
 original target PDFs, original arXiv source packages, or pinned raw split
 payloads.
+
+Cleanup on 2026-05-28 moved the local cold copies and upload staging to macOS
+Trash under `/Users/xjp/.Trash/Outline_COT_cleanup_20260528_174146/`. Files
+were moved to Trash, not directly deleted.
 
 Do not treat the Drive source-store package as a replacement for repo-local
 hot experiment inputs. The following remain repo-local by design:
