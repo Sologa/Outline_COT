@@ -57,6 +57,10 @@ The cloud package includes its own complete documentation:
   - `https://drive.google.com/file/d/1CkPZ2553M5s5elgAdW3KXUu6X1P4jkI6/view?usp=drivesdk`
 - `provenance/excluded_unfinished_tasks.tsv`:
   - `https://drive.google.com/file/d/1FXuTroObou_f4Bh-tkzcW9FvJCOmnCVP/view?usp=drivesdk`
+- `provenance/restore_smoke_2026-05-28.md`:
+  - `https://drive.google.com/file/d/1JCZQOHuXYHFjyKbUuo12h31vEyeUpRTr/view?usp=drivesdk`
+- `provenance/restore_smoke_2026-05-28.tsv`:
+  - `https://drive.google.com/file/d/1weDM4V-OBpRZKtYGQLPa36EPdu8xx6VH/view?usp=drivesdk`
 
 The unfinished ref-PDF recovery task also has cloud documentation:
 
@@ -116,8 +120,23 @@ document.
 
 ## Cleanup Boundary
 
-The following local paths are eligible for Trash only after restore smoke passes
-against the Drive archives:
+Restore smoke passed on 2026-05-28. The smoke workspace was:
+
+- `/Volumes/My Book/Outline_COT/restore_smoke/high261_audit_20260528/`
+
+The check re-downloaded all four Drive archives, verified the expected SHA256
+values, ran `zstd -t`, listed each tar stream, and extracted one sample path
+from each archive:
+
+| Archive | Tar entries | Extracted sample | Sample bytes |
+|---|---:|---|---:|
+| `high261_target_pdfs_2026-05-28.tar.zst` | 261 | `data/paper_sets/hf_meow_raw_taxonomy_high261/pdf/001_2305.03803.pdf` | 3690855 |
+| `high261_arxiv_source_packages_2026-05-28.tar.zst` | 261 | `data/paper_sets/hf_meow_raw_taxonomy_high261/tex_src/001_2305.03803/source_package` | 3111360 |
+| `hf_meow_raw_check_2026-05-24_raw_sft_2026-05-28.tar.zst` | 2 | `temp_artifacts/hf_meow_raw_check_2026-05-24/raw.jsonl` | 229876905 |
+| `hf_meow_raw_check_2026-05-24_rl_and_summaries_2026-05-28.tar.zst` | 10 | `temp_artifacts/hf_meow_raw_check_2026-05-24/first_rows_raw.json` | 129907 |
+
+The following local paths are eligible for Trash after that successful smoke
+test:
 
 - `data/paper_sets/hf_meow_raw_taxonomy_high261/pdf/*.pdf`
 - `data/paper_sets/hf_meow_raw_taxonomy_high261/tex_src/*/source_package`
