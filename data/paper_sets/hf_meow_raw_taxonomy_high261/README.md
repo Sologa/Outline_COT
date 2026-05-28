@@ -99,6 +99,8 @@ Cloud-side documentation:
   - `https://drive.google.com/file/d/1I27X7FGXcGcD2ZK8Sx0KZ8iIJOu4NhRs/view?usp=drivesdk`
 - `provenance/cleanup_trash_ledger_20260528_174146.tsv`
   - `https://drive.google.com/file/d/1RfiK-TkyLV_IysK9QUHuamAkCElsdqPY/view?usp=drivesdk`
+- `provenance/tex_src_cleanup_trash_ledger_20260528_175848.tsv`
+  - `https://drive.google.com/file/d/14idD16_IO9R3K9gFDgfJBLxhuOdhIPzr/view?usp=drivesdk`
 
 Restore smoke on 2026-05-28 re-downloaded all four Drive archives to
 `/Volumes/My Book/Outline_COT/restore_smoke/high261_audit_20260528/`,
@@ -120,6 +122,11 @@ files.
 Cleanup on 2026-05-28 moved the local cold copies and upload staging to macOS
 Trash under `/Users/xjp/.Trash/Outline_COT_cleanup_20260528_174146/`. Files
 were moved to Trash, not directly deleted.
+
+The extracted `tex_src/` tree was archived and restore-smoked separately, then
+moved to the same Trash batch under
+`data/paper_sets/hf_meow_raw_taxonomy_high261/tex_src_extracted_after_archive_20260528/`.
+The repo-local `tex_src/` directory now exists as an empty placeholder.
 
 Do not treat the Drive source-store package as a replacement for repo-local
 hot experiment inputs. The following remain repo-local by design:

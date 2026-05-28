@@ -68,6 +68,8 @@ The cloud package includes its own complete documentation:
   - `https://drive.google.com/file/d/10XercsnAe36exOrZnQtqVWB8Jwf_gx8A/view?usp=drivesdk`
 - `provenance/cleanup_trash_ledger_20260528_174146.tsv`:
   - `https://drive.google.com/file/d/1RfiK-TkyLV_IysK9QUHuamAkCElsdqPY/view?usp=drivesdk`
+- `provenance/tex_src_cleanup_trash_ledger_20260528_175848.tsv`:
+  - `https://drive.google.com/file/d/14idD16_IO9R3K9gFDgfJBLxhuOdhIPzr/view?usp=drivesdk`
 
 The unfinished ref-PDF recovery task also has cloud documentation:
 
@@ -190,16 +192,18 @@ Moved items:
 | `data/paper_sets/hf_meow_raw_taxonomy_high261/pdf` | 261 | 738624779 | `/Users/xjp/.Trash/Outline_COT_cleanup_20260528_174146/data/paper_sets/hf_meow_raw_taxonomy_high261/pdf` |
 | `.local/2026-05-23_taxonomy_extraction_semantic_correction` | 76052 | 798747322 | `/Users/xjp/.Trash/Outline_COT_cleanup_20260528_174146/.local/2026-05-23_taxonomy_extraction_semantic_correction` |
 | `data/paper_sets/hf_meow_raw_taxonomy_high261/tex_src/*/source_package` | 261 | 1097042984 | `/Users/xjp/.Trash/Outline_COT_cleanup_20260528_174146/source_packages` |
+| `data/paper_sets/hf_meow_raw_taxonomy_high261/tex_src` | 9173 | 1485106400 | `/Users/xjp/.Trash/Outline_COT_cleanup_20260528_174146/data/paper_sets/hf_meow_raw_taxonomy_high261/tex_src_extracted_after_archive_20260528` |
 
 Post-cleanup checks:
 
 - `data/paper_sets/hf_meow_raw_taxonomy_high261/pdf/` exists but has `0` files.
 - `data/paper_sets/hf_meow_raw_taxonomy_high261/tex_src/*/source_package` count is `0`.
+- `data/paper_sets/hf_meow_raw_taxonomy_high261/tex_src/` exists but has `0` files after the extracted-tree archive and Trash move.
 - `temp_artifacts/hf_meow_raw_check_2026-05-24` is absent.
 - `.local/dataset_audit_upload_staging` is absent.
 - `.local/2026-05-23_taxonomy_extraction_semantic_correction` is absent.
 - Hot metadata and outlines remain present.
-- Repository working tree size after cleanup: about `5.0G`.
+- Repository working tree size after high261 extracted `tex_src/` cleanup: about `3.5G`.
 
 ## Verification
 
