@@ -70,18 +70,49 @@ def test_render_only_writes_five_generated_requests_without_human_written(tmp_pa
     rows = [json.loads(line) for line in (output / "batch_input.jsonl").read_text(encoding="utf-8").splitlines()]
     prompt_paths = list((output / "prompts").glob("*/*/prompt.txt"))
     all_prompt_text = "\n".join(path.read_text(encoding="utf-8") for path in prompt_paths)
+    baseline_row = next(row for row in rows if row["custom_id"].endswith("__baseline_no_taxonomy"))
+    taxonomy_rows = [row for row in rows if not row["custom_id"].endswith("__baseline_no_taxonomy")]
 
     assert summary["request_count"] == 5
     assert len(rows) == 5
     assert {row["custom_id"].split("__", 1)[1] for row in rows} == set(runner.GENERATED_ARMS)
     assert all("human_written" not in row["custom_id"] for row in rows)
     assert "meow_reconstructed_blind.json" not in all_prompt_text
+    assert "Hard restrictions" not in all_prompt_text
+    assert "Faithful released MEOW" not in all_prompt_text
+    assert "Payload comparison user prompt" not in all_prompt_text
     assert "{title}" in all_prompt_text
     assert not re.search(
         r"Target Paper Abstract:|with_abstract|no_abstract|structural_complete_guarded|metadata_|/Users/xjp|TaxoBench-CS",
         all_prompt_text + "\n" + (output / "batch_input.jsonl").read_text(encoding="utf-8"),
     )
     assert len(prompt_paths) == 5
+    assert baseline_row["body"]["input"] == runner.build_baseline_prompt(
+        title="A {taxonomy_payload} Survey",
+        references=runner.sanitize_references(
+            [
+                {
+                    "ref_index": "0",
+                    "paperId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "title": "Graph {title} Systems",
+                    "year": 2024,
+                    "abstract": "Reference abstract.",
+                    "externalIds": {"ArXiv": "2401.11111"},
+                }
+            ]
+        ),
+    )
+    assert all(row["body"]["input"][0]["content"] == runner.SYSTEM_PROMPT for row in rows)
+    assert "In addition to the references above" not in baseline_row["body"]["input"][1]["content"]
+    for row in taxonomy_rows:
+        user_content = row["body"]["input"][1]["content"]
+        assert "Write an outline for a literature review based on the given title and references." in user_content
+        assert "References:" in user_content
+        assert "In addition to the references above, the following is an auxiliary taxonomy representation" in user_content
+        assert "Payload mode:" not in user_content
+        assert "taxonomy-derived" not in user_content
+        assert "Use the reference metadata and taxonomy" not in user_content
+        assert "use it as an additional organizational signal" not in user_content
 
 
 def test_render_only_rejects_non_ready_manifest_rows(tmp_path):

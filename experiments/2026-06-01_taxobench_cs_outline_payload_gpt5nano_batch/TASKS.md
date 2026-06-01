@@ -19,6 +19,10 @@
 - Payloads were regenerated after the 2026-06-02 visibility correction:
   `tree_only_guarded`, `flat_concepts`, and `random_hierarchy` are concept-only
   prompt payloads; `tree_with_papers` keeps title-only paper leaves.
+- Prompt-template comparability was corrected in the render-only prototype:
+  baseline uses the released MEOW prompt skeleton, taxonomy arms append a
+  neutral auxiliary taxonomy block, and instruction-guided taxonomy remains a
+  separate explicit ablation.
 - No OpenAI generation, Batch submission, model output, judge output, or Google
   Sheet update exists for this experiment.
 
@@ -30,8 +34,12 @@
 - Do not write model-run artifacts into `results/`.
 - Smoke-test scratch must go under `.local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/`.
 - Prompt-visible fields must not include local absolute paths, adapter debug fields, downloader provenance, Google metadata, or target paper abstracts.
-- Do not run live model generation until the prompt-template comparability blocker in Task 12 is resolved. The current prototype must be treated as render-only infrastructure, not an approved experimental prompt contract.
+- Do not run live model generation unless the prompt-template comparability checks from Task 12 remain passing. The current prototype is approved only for render-only request building, not for live model submission.
 - Do not run live model generation unless the taxonomy-payload visibility checks from Task 13 remain passing on the current payload files.
+- Do not add usage-guidance instructions such as "use the taxonomy to organize
+  the outline" to the current `tree_only_guarded` or `tree_with_papers` arms.
+  If instruction-guided taxonomy is tested, it must be an explicit separate
+  ablation with its own arm labels, request counts, docs, and tests.
 
 ## Files To Create Or Modify
 
@@ -39,7 +47,7 @@
 - Create `data/taxobench-cs/scripts/generate_taxobench_cs_payloads.py`: render deterministic `tree_only_guarded`, `tree_with_papers`, `flat_concepts`, and `random_hierarchy` payloads from staged inputs.
 - Create `data/taxobench-cs/scripts/validate_taxobench_cs_staging.py`: verify staged counts, joins, prompt hygiene, payload existence, random seed stability, and manifest readiness.
 - Create `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/prototype/run_taxobench_cs_outline_batch.py`: render request JSONL from staged inputs in render-only mode; keep live submission absent or fail-closed.
-- Modify `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/prototype/run_taxobench_cs_outline_batch.py`, `prompts/taxobench_cs_outline_payload_prompt_template.txt`, and prompt-contract tests before any model run if Task 12 confirms the prompt template still confounds payload effects with prompt wording.
+- Keep `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/prototype/run_taxobench_cs_outline_batch.py`, `prompts/taxobench_cs_outline_payload_prompt_template.txt`, and prompt-contract tests aligned with Task 12 before any model run.
 - Modify `data/taxobench-cs/scripts/generate_taxobench_cs_payloads.py`, payload rendering tests, docs, and regenerated payload files before any model run if Task 13 confirms prompt-visible taxonomy payloads still expose `paperId` strings or over-rich leaf metadata.
 - Create `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/tests/conftest.py`: load adapter scripts from the hyphenated `data/taxobench-cs/scripts/` path for pytest.
 - Create `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/tests/test_taxobench_cs_adapter_contract.py`: unit/contract tests for parser, normalizer, membership preservation, and prompt hygiene.
@@ -712,15 +720,15 @@ Expected if canonical staging was approved and completed:
 - Modify if needed: prompt/rendering tests under `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/tests/`
 - Modify if needed: `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/spec.md`, `runbook.md`, and `promotion_checklist.md`
 
-- [ ] **Step 1: Treat the current taxonomy prompt template as an unresolved design risk**
+- [x] **Step 1: Treat the previous taxonomy prompt template as a design risk**
 
-Current risk to analyze before any live batch:
+Resolved risk:
 
 - `baseline_no_taxonomy` uses the faithful released MEOW user prompt from `codex_meow_outline_blind_lib.USER_PROMPT_TEMPLATE`.
 - taxonomy payload arms use the experiment-local `taxobench_cs_outline_payload_prompt_template.txt` instead of the same faithful MEOW user prompt.
 - taxonomy arms also expose arm framing through fields such as `Payload mode:` and `Taxonomy-derived payload:`.
 
-This means a live run would compare:
+Before the fix, a live run would have compared:
 
 ```text
 faithful MEOW baseline
@@ -728,18 +736,26 @@ vs
 experiment-local taxonomy prompt wording + taxonomy payload
 ```
 
-It would not cleanly isolate the effect of taxonomy payload presence or payload representation.
+That would not have cleanly isolated the effect of taxonomy payload presence or
+payload representation.
 
-- [ ] **Step 2: Decide and document the prompt contract**
+- [x] **Step 2: Decide and document the prompt contract**
 
-Before live generation, choose one contract and document it in `spec.md` and `runbook.md`:
+Chosen contract, documented in `spec.md` and `runbook.md`:
 
-- preferred clean comparison: all generated arms share the same instruction skeleton, output-format wording, title block, and reference-metadata block; only the payload slot content differs
-- alternative explicitly-framed comparison: taxonomy arms intentionally use a different prompt frame, and results are reported as `taxonomy prompt + taxonomy payload` rather than as a payload-only effect
+- main comparison: use the released MEOW baseline prompt as the base skeleton
+  and append one neutral auxiliary taxonomy block after the original
+  `References:` field for taxonomy arms
+- the neutral block may describe what the payload is, but must not tell the model
+  how to use it
+- baseline remains the released MEOW prompt with no taxonomy block
+- taxonomy arms must not expose `Payload mode:` or arm labels in prompt text
+- instruction-guided taxonomy is not part of the current main matrix
 
-Do not leave this implicit.
+The runner/template implementation and tests now enforce this decision in
+render-only mode.
 
-- [ ] **Step 3: Remove or justify arm-identity leakage**
+- [x] **Step 3: Remove or justify arm-identity leakage**
 
 For payload-only comparisons, avoid prompt-visible labels that tell the model which condition it is in, such as:
 
@@ -751,9 +767,10 @@ random_hierarchy
 tree_only_guarded
 ```
 
-If arm labels remain prompt-visible, record that they are part of the treatment.
+The current render-only runner removes these labels from prompt-visible model
+input.
 
-- [ ] **Step 4: Preserve the MEOW input contract**
+- [x] **Step 4: Preserve the MEOW input contract**
 
 Any replacement prompt contract must preserve:
 
@@ -763,18 +780,38 @@ Any replacement prompt contract must preserve:
 - local paths, adapter metadata, downloader provenance, and Google metadata are not prompt-visible
 - output format requirements are as comparable as possible across arms
 
-- [ ] **Step 5: Add render-only prompt-diff checks**
+- [x] **Step 5: Add render-only prompt-diff checks**
 
 Add or update tests/smoke checks so render-only prompts prove:
 
 - baseline and taxonomy arms use the intended shared envelope or explicitly documented divergent envelope
 - taxonomy arms differ only in the allowed payload block when using the preferred clean comparison
-- no `Payload mode:` or arm-id leak appears unless the chosen contract intentionally permits it
+- no `Payload mode:` or arm-id leak appears
 - prompt hygiene still has no target abstract, local paths, or adapter/debug metadata
 
-- [ ] **Step 6: Re-run non-LLM verification only**
+- [x] **Step 6: Re-run non-LLM verification only**
 
 After prompt-contract changes, rerun the local render-only smoke and hygiene checks. This task does not approve OpenAI generation, Batch submission, judging, result writes, or Google Sheet updates.
+
+Verified on 2026-06-02:
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 pytest \
+  experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/tests \
+  -q
+
+PYTHONDONTWRITEBYTECODE=1 python3 experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/prototype/run_taxobench_cs_outline_batch.py \
+  --staging-root data/taxobench-cs \
+  --output-root .local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/smoke/prompt_contract_fix \
+  --render-only \
+  --write-batch-input \
+  --limit 2 \
+  --force
+```
+
+Results: `10` pytest tests passed, render-only smoke produced `10` request rows
+for `2` papers, and the prompt hygiene scan found no wrapper, arm-label, target
+abstract, local path, or instruction-guided taxonomy leakage.
 
 ---
 
@@ -883,6 +920,67 @@ writes, or Google Sheet updates.
 
 ---
 
+### Task 14: Record Instruction-Guided Taxonomy As A Separate Ablation
+
+**Files:**
+- Modify: `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/TASKS.md`
+- Modify: `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/spec.md`
+- Modify: `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/runbook.md`
+- Modify: `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/promotion_checklist.md`
+- Modify if needed: `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/docs/arm_matrix.md`
+
+- [x] **Step 1: Define the distinction**
+
+Neutral taxonomy append means the prompt only identifies the auxiliary block:
+
+```text
+In addition to the references above, the following is an auxiliary taxonomy
+representation of the same reference set:
+{taxonomy_payload}
+```
+
+Instruction-guided taxonomy means the prompt also tells the model how to use the
+taxonomy, for example as an organizational signal. That is a prompt-steering
+treatment, not just a taxonomy-content treatment.
+
+- [x] **Step 2: Record the reviewer-facing decision**
+
+For the current main experiment, do not add instruction guidance to
+`tree_only_guarded` or `tree_with_papers`. A reviewer could otherwise argue that
+any improvement comes from treatment-only instructions rather than from the
+taxonomy payload representation.
+
+- [x] **Step 3: Specify how to add it if reopened**
+
+If instruction-guided taxonomy is added in this experiment, it must be added as
+explicit separate arms, not by rewriting the existing neutral arms. The clean
+crossed design is:
+
+```text
+tree_only_guarded_neutral
+tree_only_guarded_guided
+tree_with_papers_neutral
+tree_with_papers_guided
+```
+
+If budget only permits one guided smoke, `tree_only_guarded_guided` is the
+cleaner first ablation because it avoids mixing instruction guidance with the
+extra title-leaf evidence in `tree_with_papers`.
+
+- [x] **Step 4: Keep current request counts unchanged**
+
+Because guided arms are deferred, the current main matrix remains:
+
+```text
+156 papers * 5 generated arms = 780 generation requests
+156 papers * 6 arms including human_written = 936 comparison rows
+```
+
+This task does not implement guided arms, approve OpenAI generation, Batch
+submission, judging, result writes, or Google Sheet updates.
+
+---
+
 ## Smoke Test Definition
 
 The first acceptable smoke test is entirely local and non-LLM:
@@ -894,5 +992,8 @@ The first acceptable smoke test is entirely local and non-LLM:
 5. Render-only request build under `.local/.../smoke/render`.
 6. Request count check: `10` generated-arm rows for `2` papers.
 7. Prompt hygiene scan: no target abstract axis, no local paths, no adapter metadata, no source workspace string.
+8. Prompt comparability scan: no outer wrapper, no `Payload mode:`, no
+   prompt-visible arm labels, and no instruction-guided taxonomy wording in the
+   main arms.
 
 Passing this smoke test is a prerequisite for asking approval to write canonical staging under `data/taxobench-cs/`. It is not approval to run live generation.

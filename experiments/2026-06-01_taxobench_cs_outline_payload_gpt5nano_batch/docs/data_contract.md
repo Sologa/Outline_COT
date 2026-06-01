@@ -1,6 +1,6 @@
 # Data Contract
 
-Status: `draft_data_pending_no_runs`
+Status: `prompt_contract_corrected_no_model_runs`
 
 ## Source Workspace
 
@@ -100,6 +100,11 @@ Recommended normalized reference fields:
 - `corpus_id`
 
 Prompt-visible records should not include local paths or adapter provenance.
+Canonical `payload_sources/*.payload_source.json` may still contain join keys,
+reference abstracts, and external ids for deterministic rendering. Do not treat
+the whole payload source object as prompt-visible taxonomy text. Only the
+rendered `payloads/<arxiv_id>/*.txt` files are the prompt-safe taxonomy
+projections.
 
 Observed reference metadata caveats from 2026-06-01:
 
@@ -156,7 +161,7 @@ hand-curated official gold file, and reports should not shorten it to official
 
 ## Staged Manifest Row
 
-Planned staged row fields:
+Staged row fields:
 
 - `paper_id`
 - `arxiv_id`

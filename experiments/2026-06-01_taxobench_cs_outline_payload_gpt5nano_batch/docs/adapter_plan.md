@@ -1,6 +1,6 @@
 # Adapter Plan
 
-Status: `payload_contract_corrected_no_model_runs`
+Status: `prompt_contract_corrected_no_model_runs`
 
 ## Goal
 

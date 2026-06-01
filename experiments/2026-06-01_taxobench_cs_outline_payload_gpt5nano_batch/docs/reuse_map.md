@@ -1,6 +1,6 @@
 # Reuse Map
 
-Status: `draft_data_pending_no_runs`
+Status: `prompt_contract_corrected_no_model_runs`
 
 This document records likely reuse points from previous Outline_COT experiments.
 It is not an implementation guarantee.
@@ -27,6 +27,10 @@ Purpose:
 - render the faithful MEOW-style baseline prompt
 - keep target abstract out of the prompt
 - preserve reference metadata as the main evidence source
+
+Reuse caveat: future Task 12 work should reuse the released MEOW prompt
+skeleton, not an outer wrapper, `Hard restrictions`, prompt-visible arm labels,
+or treatment-only taxonomy usage guidance.
 
 ## Round4 Baseline/Tree Runner
 

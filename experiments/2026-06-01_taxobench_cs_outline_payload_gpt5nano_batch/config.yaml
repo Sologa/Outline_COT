@@ -1,6 +1,6 @@
 experiment_id: 2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch
-default_run_id: 2026-06-01T0000_taipei_data_staged_payloads_ready
-status: data_staged_payloads_ready_no_model_runs
+default_run_id: 2026-06-02T0000_taipei_prompt_contract_corrected
+status: prompt_contract_corrected_no_model_runs
 
 source_dataset:
   workspace_root: /Users/xjp/Desktop/TaxoBench-CS
@@ -102,6 +102,10 @@ generation:
 prompt_contract:
   target_abstract_used: false
   input_contract: target_title_plus_ref_meta_no_target_abstract
+  prompt_template_comparability: resolved_render_only_task_12
+  main_taxonomy_prompt_policy: neutral_append_after_references
+  instruction_guided_taxonomy: deferred_to_separate_ablation
+  prompt_visible_arm_labels_allowed: false
   reference_abstracts_preserved: true
   metadata_provenance_fields_stripped: true
   local_paths_stripped: true
@@ -115,10 +119,10 @@ projection:
   status: implemented_and_validated
   source_payload: TaxoBench-CS taxo_tree
   definition_policy: do_not_generate_or_impute
-  flat_concepts: remove parent-child hierarchy and keep concept labels plus descendant paper leaves
-  random_hierarchy: preserve concept labels and paper evidence; randomize hierarchy deterministically
-  tree_only_guarded: render taxonomy labels plus paper identity leaves
-  tree_with_papers: render taxonomy labels plus leaf paper id/title/year/external ids
+  flat_concepts: remove parent-child hierarchy and keep concept labels only
+  random_hierarchy: preserve concept labels only and randomize hierarchy deterministically
+  tree_only_guarded: render taxonomy labels only and omit raw Semantic Scholar paperId membership leaves
+  tree_with_papers: render taxonomy labels plus title-only reference paper leaves
   random_seed_base: taxobench_cs_outline_payload_v1
 
 judge:
@@ -140,3 +144,4 @@ notes:
   - human_written is an evaluation/reference arm and must not be sent as a generation request.
   - tree_with_papers is implemented as a TaxoBench-CS-specific deterministic renderer and excludes abstracts by default.
   - Data staging and payload readiness are validated; live generation and evaluation remain unapproved.
+  - Instruction-guided taxonomy is not part of the current five generated-arm matrix unless added later as explicit separate guided arms.

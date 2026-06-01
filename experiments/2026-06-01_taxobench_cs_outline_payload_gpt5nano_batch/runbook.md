@@ -1,6 +1,6 @@
 # Runbook
 
-Status: `payload_contract_corrected_no_model_runs`
+Status: `prompt_contract_corrected_no_model_runs`
 
 This runbook records completed local data-readiness work and remaining
 execution gates. Canonical staging and deterministic payloads were written after
@@ -215,6 +215,20 @@ rg -n "Target Paper Abstract:|with_abstract|no_abstract|structural_complete_guar
 
 Expected output: no matches.
 
+Prompt-template comparability check completed on 2026-06-02:
+
+- baseline prompt must be the released MEOW baseline with no outer wrapper
+- taxonomy prompts must preserve the same baseline skeleton and append only a
+  neutral auxiliary taxonomy block after `References:`
+- rendered prompts must not contain `Payload mode:`, arm labels, or
+  treatment-only usage guidance
+- instruction-guided taxonomy must remain absent from this main matrix unless it
+  is introduced as explicit new guided arms with updated request counts
+
+This render smoke is not approval for live generation. It only proves request
+rendering, hygiene, and prompt-contract comparability in `.local` render-only
+artifacts.
+
 Payload visibility check:
 
 ```bash
@@ -254,7 +268,10 @@ Before this experiment can move to live generation:
 - taxonomy leaves either resolve or unresolved leaves are documented: done, zero unresolved
 - prompt hygiene render smoke passes with current prompt and payload contracts
 - `tree_with_papers` title-only contract is implemented and tested
-- prompt-template comparability blocker in `TASKS.md` Task 12 is resolved
+- prompt-template comparability checks in `TASKS.md` Task 12 remain passing,
+  including removal of prompt-visible arm labels and treatment-only instructions
+- instruction-guided taxonomy is either deferred or represented by explicit
+  separate guided arms with updated docs, tests, and request counts
 - taxonomy-payload visibility blocker in `TASKS.md` Task 13 is resolved
 - evaluator explicitly handles the citation-key versus `paperId` namespace issue
 - the user approves the first live generation smoke

@@ -3,7 +3,7 @@
 ## Identity
 
 - Experiment id: `2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch`
-- Status: `payload_contract_corrected_no_model_runs`
+- Status: `prompt_contract_corrected_no_model_runs`
 - Created: `2026-06-01`
 - Source dataset workspace: `/Users/xjp/Desktop/TaxoBench-CS`
 - Owning runtime workspace: `/Users/xjp/Desktop/Outline_COT`
@@ -149,11 +149,25 @@ The single input condition is:
 
 `title_ref_meta_no_target_abstract`
 
-Generated arms receive:
+The reviewer-facing prompt decision is:
+
+- `baseline_no_taxonomy` must remain the released MEOW baseline prompt with no
+  taxonomy block, no outer wrapper, and no treatment-only instructions.
+- taxonomy payload arms should use the same baseline prompt skeleton and append
+  one neutral auxiliary taxonomy block after the original `References:` field.
+- the neutral block may identify the payload as an auxiliary taxonomy
+  representation of the same reference set, but it must not tell the model to
+  prefer, follow, or use the taxonomy as an organizational signal.
+- prompt-visible arm labels such as `Payload mode: tree_only_guarded` are not
+  part of the main experiment contract.
+- instruction-guided taxonomy is a separate prompt-steering ablation, not part
+  of this main matrix.
+
+Generated arms receive, after the prompt-template blocker is implemented:
 
 - target paper title
 - sanitized reference metadata JSON
-- arm-specific taxonomy-derived payload when applicable
+- arm-specific taxonomy payload when applicable
 
 Generated arms must not receive:
 
@@ -166,6 +180,11 @@ Generated arms must not receive:
 
 Reference paper abstracts inside normalized `ref_meta[].abstract` are preserved
 when present.
+
+Current implementation status: the data payloads satisfy the visibility
+contract, and the render-only prototype now enforces the neutral append prompt
+contract. This still does not approve live model generation, Batch submission,
+evaluation, result writes, or Google Sheet updates.
 
 ## Variant Payload Contract
 
@@ -218,6 +237,11 @@ The validated ready paper set is `156` papers. Planning counts are:
 
 These are planning counts only. The future runner must compute request counts
 from the staged manifest, not from this document.
+
+Instruction-guided taxonomy is excluded from those counts. If reopened, it must
+be added as explicit additional arms, preferably as a crossed neutral-vs-guided
+design for both `tree_only_guarded` and `tree_with_papers`. It must not be
+silently folded into the existing neutral arms.
 
 ## Evaluation Plan
 

@@ -29,6 +29,7 @@ GENERATED_ARMS = (
 ROOT_DIR = Path(__file__).resolve().parents[3]
 EXPERIMENT_DIR = ROOT_DIR / "experiments" / EXPERIMENT_ID
 PROMPT_TEMPLATE_PATH = EXPERIMENT_DIR / "prompts" / "taxobench_cs_outline_payload_prompt_template.txt"
+PromptInput = list[dict[str, str]]
 
 if str(ROOT_DIR / "scripts") not in sys.path:
     sys.path.insert(0, str(ROOT_DIR / "scripts"))
@@ -90,12 +91,18 @@ def sanitize_references(ref_meta: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return sanitized
 
 
-def build_user_prompt(*, title: str, references: list[dict[str, Any]], arm: str, taxonomy_payload: str) -> str:
+def build_meow_user_prompt(*, title: str, references: list[dict[str, Any]]) -> str:
+    return USER_PROMPT_TEMPLATE.format(
+        title=title,
+        target_paper_abstract_block="",
+        references_json=json.dumps(references, ensure_ascii=False, indent=2),
+    )
+
+
+def build_user_prompt(*, title: str, references: list[dict[str, Any]], taxonomy_payload: str) -> str:
     template = PROMPT_TEMPLATE_PATH.read_text(encoding="utf-8").strip()
     replacements = {
-        "title": title,
-        "references_json": json.dumps(references, ensure_ascii=False, indent=2),
-        "payload_mode": arm,
+        "baseline_user_prompt": build_meow_user_prompt(title=title, references=references),
         "taxonomy_payload": taxonomy_payload,
     }
     return render_template(template, replacements)
@@ -114,37 +121,19 @@ def render_template(template: str, replacements: dict[str, str]) -> str:
     return pattern.sub(lambda match: replacements[match.group(1)], template)
 
 
-def build_baseline_prompt(*, paper_id: str, title: str, references: list[dict[str, Any]]) -> str:
-    faithful_user_prompt = USER_PROMPT_TEMPLATE.format(
-        title=title,
-        target_paper_abstract_block="",
-        references_json=json.dumps(references, ensure_ascii=False, indent=2),
-    )
-    return (
-        f"You are running a constrained blind outline-generation test for paper `{paper_id}`.\n\n"
-        "Hard restrictions:\n"
-        "- Do not read `AGENTS.md`.\n"
-        "- Do not read any local files.\n"
-        "- The relevant paper inputs have already been embedded below.\n"
-        "- Do not use web search, external tools, or outside knowledge.\n"
-        "- Do not add explanations, code fences, or any text before or after the outline.\n\n"
-        f"Faithful released MEOW system prompt:\n{SYSTEM_PROMPT}\n\n"
-        f"Faithful released MEOW user prompt:\n{faithful_user_prompt}\n"
-    )
+def build_chat_input(user_prompt: str) -> PromptInput:
+    return [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "user", "content": user_prompt},
+    ]
 
 
-def build_outer_prompt(*, paper_id: str, user_prompt: str) -> str:
-    return (
-        f"You are running a constrained blind outline-generation test for paper `{paper_id}`.\n\n"
-        "Hard restrictions:\n"
-        "- Do not read `AGENTS.md`.\n"
-        "- Do not read any local files.\n"
-        "- The relevant paper inputs have already been embedded below.\n"
-        "- Do not use web search, external tools, or outside knowledge.\n"
-        "- Do not add explanations, code fences, or any text before or after the outline.\n\n"
-        f"Faithful released MEOW system prompt:\n{SYSTEM_PROMPT}\n\n"
-        f"Payload comparison user prompt:\n{user_prompt.strip()}\n"
-    )
+def build_baseline_prompt(*, title: str, references: list[dict[str, Any]]) -> PromptInput:
+    return build_chat_input(build_meow_user_prompt(title=title, references=references))
+
+
+def serialize_prompt_input(prompt_input: PromptInput) -> str:
+    return json.dumps(prompt_input, ensure_ascii=False, indent=2) + "\n"
 
 
 def render_prompt_for_arm(
@@ -154,10 +143,10 @@ def render_prompt_for_arm(
     title: str,
     references: list[dict[str, Any]],
     arm: str,
-) -> tuple[str, str | None]:
+) -> tuple[PromptInput, str | None]:
     if arm == "baseline_no_taxonomy":
         return (
-            build_baseline_prompt(paper_id=paper_id, title=title, references=references),
+            build_baseline_prompt(title=title, references=references),
             None,
         )
     payload_path = staging_root / "payloads" / paper_id / f"{arm}.txt"
@@ -167,16 +156,15 @@ def render_prompt_for_arm(
     user_prompt = build_user_prompt(
         title=title,
         references=references,
-        arm=arm,
         taxonomy_payload=payload,
     )
-    return build_outer_prompt(paper_id=paper_id, user_prompt=user_prompt), payload
+    return build_chat_input(user_prompt), payload
 
 
-def build_request(prompt: str) -> dict[str, Any]:
+def build_request(prompt_input: PromptInput) -> dict[str, Any]:
     return {
         "model": MODEL,
-        "input": prompt,
+        "input": prompt_input,
         "reasoning": {"effort": REASONING_EFFORT},
         "max_output_tokens": MAX_OUTPUT_TOKENS,
     }
@@ -204,7 +192,7 @@ def render_requests(
         references = sanitize_references(payload_source["ref_meta"])
         title = str(payload_source["title"])
         for arm in GENERATED_ARMS:
-            prompt, taxonomy_payload = render_prompt_for_arm(
+            prompt_input, taxonomy_payload = render_prompt_for_arm(
                 staging_root=staging_root,
                 paper_id=paper_id,
                 title=title,
@@ -212,13 +200,13 @@ def render_requests(
                 arm=arm,
             )
             prompt_path = output_root / "prompts" / paper_id / arm / "prompt.txt"
-            atomic_write_text(prompt_path, prompt, force=force)
+            atomic_write_text(prompt_path, serialize_prompt_input(prompt_input), force=force)
             batch_rows.append(
                 {
                     "custom_id": f"{paper_id}__{arm}",
                     "method": "POST",
                     "url": ENDPOINT,
-                    "body": build_request(prompt),
+                    "body": build_request(prompt_input),
                 }
             )
             request_manifest.append(

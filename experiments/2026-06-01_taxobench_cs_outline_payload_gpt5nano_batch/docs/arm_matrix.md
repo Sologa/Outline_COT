@@ -1,6 +1,6 @@
 # Arm Matrix
 
-Status: `payload_contract_corrected_no_model_runs`
+Status: `prompt_contract_corrected_no_model_runs`
 
 ## Summary
 
@@ -12,6 +12,12 @@ Status: `payload_contract_corrected_no_model_runs`
 | `random_hierarchy` | planned | TaxoBench adapter implemented | randomized hierarchy | none | sanity-checks hierarchy value |
 | `tree_only_guarded` | planned | TaxoBench adapter implemented | original taxonomy concept tree | none | tests structured taxonomy |
 | `tree_with_papers` | planned | TaxoBench adapter implemented | original taxonomy concept tree | title-only reference paper leaves | tests taxonomy plus readable paper-title evidence |
+
+Prompt policy for the main experiment: taxonomy arms should be neutral taxonomy
+append treatments. They may identify the auxiliary payload, but they must not
+include prompt-visible arm labels or instructions telling the model how to use
+the taxonomy. Instruction-guided taxonomy is deferred to a separate ablation and
+is not counted in this matrix.
 
 ## `human_written`
 
@@ -32,8 +38,8 @@ evidence are removed from the prompt-visible payload.
 
 ## `random_hierarchy`
 
-Uses a deterministic randomized concept hierarchy. Concept labels and paper
-labels are preserved. Descendant paper evidence is removed from the
+Uses a deterministic randomized concept hierarchy. Concept labels are preserved;
+paper leaves are not preserved. Descendant paper evidence is removed from the
 prompt-visible payload. The seed should be stable per `arxiv_id`.
 
 ## `tree_only_guarded`

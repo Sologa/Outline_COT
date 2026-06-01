@@ -1,6 +1,6 @@
 # Settings Lineage
 
-Status: `payload_contract_corrected_no_model_runs`
+Status: `prompt_contract_corrected_no_model_runs`
 
 This document records prior experiment settings that this scaffold may reuse.
 It separates existing support from planned TaxoBench-CS-specific work.
@@ -104,15 +104,15 @@ That lane separates paper/citation/method-example attachments for audit. Its
 attachment ledger is audit-only and should not be injected into an
 outline-generation prompt.
 
-TaxoBench-CS defines a new formal arm for readable paper-title leaves. Required
+TaxoBench-CS defines a new formal arm for readable paper-title leaves. Current
 decisions:
 
 - title-only leaf rendering
 - abstracts, paper ids, years, and external ids are forbidden in the taxonomy
   payload
-- token-budget policy
-- prompt label
-- evaluator label
+- token-budget policy remains bounded by future render-only smoke checks
+- prompt-visible arm labels are forbidden in the main prompt contract
+- evaluator label remains the arm id in metadata, not prompt text
 - tests proving `tree_with_papers` does not collapse into a hidden reference
   metadata duplication ablation
 
@@ -121,6 +121,18 @@ Initial policy in this scaffold:
 - include reference paper titles only at taxonomy leaves
 - do not expose Semantic Scholar `paperId`, year, external ids, or abstracts
   inside taxonomy payloads
+
+## Deferred Prompt-Steering Ablation
+
+`instruction-guided taxonomy` is not part of the current main matrix. In the
+reviewer-facing design, current taxonomy arms should be neutral auxiliary
+payload appends. A guided version would tell the model to use the taxonomy as an
+organizational signal, so it measures a different effect: taxonomy content plus
+prompt steering.
+
+If reopened, add guided variants as explicit separate arms and compare each
+guided arm against its neutral counterpart. Do not rewrite `tree_only_guarded`
+or `tree_with_papers` in place.
 
 ## Shared Generation Settings
 

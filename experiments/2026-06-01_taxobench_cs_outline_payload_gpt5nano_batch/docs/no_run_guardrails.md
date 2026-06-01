@@ -1,8 +1,10 @@
 # No-Run Guardrails
 
-Status: `draft_data_pending_no_runs`
+Status: `prompt_contract_corrected_no_model_runs`
 
-This scaffold was created before TaxoBench-CS data was declared fully ready.
+Canonical staging and prompt-safe taxonomy payloads now exist, but live
+generation is still blocked by prompt-template comparability and explicit
+approval gates.
 
 Allowed now:
 
@@ -10,11 +12,13 @@ Allowed now:
 - add future adapter/runner/evaluator design notes
 - inspect source data read-only
 - add tests that do not call external services
+- regenerate or validate `data/taxobench-cs` only when the user explicitly
+  approves the relevant canonical-data write scope
 
 Not allowed without explicit user approval:
 
 - render prompts into `results/`
-- write Batch API JSONL
+- write Batch API JSONL for live submission
 - submit OpenAI Batch jobs
 - poll or collect model jobs
 - run judge/evaluation

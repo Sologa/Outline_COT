@@ -1,6 +1,6 @@
 # Schema
 
-Status: `draft_data_pending_no_runs`
+Status: `prompt_contract_corrected_no_model_runs`
 
 Current status: `docs_only_no_schema_enforcement`.
 
