@@ -69,17 +69,21 @@ all required items are checked.
 
 ## Evaluation Readiness
 
-- [ ] Evaluator compares generated outlines against `human_written`.
-- [ ] Structural outline metric path is documented.
-- [ ] Judge dimensions and judge model are documented.
-- [ ] `human_written` is included as a reference/calibration arm only.
-- [ ] Citation-key versus `paperId` namespace handling is documented.
+- [x] Evaluator compares generated outlines against `human_written`.
+- [x] Structural outline metric path is documented.
+- [x] Judge dimensions and judge model are documented.
+- [x] `human_written` is included as a reference/calibration arm only.
+- [x] Citation-key versus `paperId` namespace handling is documented.
+- [x] Judge transport is documented as OpenAI Batch API, not direct `codex`.
+- [x] Offline judge Batch render/parser tests pass without API calls.
 
 ## Execution Approval
 
 - [ ] User approves adapter dry-run.
 - [x] User approves full staging.
 - [ ] User approves render smoke.
+- [x] User approves tiny live `human_written` judge smoke.
+- [x] Tiny live `human_written` judge smoke completes with `3 / 3` outputs.
 - [ ] User approves live generation smoke.
 - [ ] User approves full batch.
 - [ ] User approves evaluation.

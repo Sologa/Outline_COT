@@ -1,6 +1,6 @@
 experiment_id: 2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch
 default_run_id: 2026-06-02T0000_taipei_prompt_contract_corrected
-status: prompt_contract_corrected_no_model_runs
+status: live_human_written_judge_smoke_passed_no_generation
 
 source_dataset:
   workspace_root: /Users/xjp/Desktop/TaxoBench-CS
@@ -126,13 +126,26 @@ projection:
   random_seed_base: taxobench_cs_outline_payload_v1
 
 judge:
-  status: planned_not_runnable
-  backend: codex
+  status: live_human_written_smoke_completed
+  transport: openai_batch_api
+  endpoint: /v1/responses
   model: gpt-5.5
   reasoning_effort: high
-  concurrency: 2
-  timeout_seconds: 600
-  max_retries: 2
+  completion_window: 24h
+  max_output_tokens: 4096
+  lifecycle:
+    render_requests: implemented_no_api
+    parse_downloaded_batch_output: implemented_no_api
+    upload_create_poll_download: implemented_for_approved_three_row_smoke
+  live_smoke_2026_06_02:
+    batch_id: batch_6a1ddfa907a48190b2c71010e2a81c22
+    requests: 3
+    completed: 3
+    failed: 0
+    input_tokens: 8643
+    output_tokens: 6662
+    parsed_eval_rows: 3
+    avg_structural_distance: 0.0
 
 guardrails:
   no_model_runs_completed: true

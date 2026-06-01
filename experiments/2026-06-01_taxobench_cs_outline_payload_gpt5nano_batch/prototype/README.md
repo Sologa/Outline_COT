@@ -1,8 +1,8 @@
 # Prototype Scripts
 
-Status: `prompt_contract_corrected_no_model_runs`
+Status: `live_human_written_judge_smoke_passed_no_generation`
 
-Current status: `render_only_prompt_contract_verified_no_live_submission`.
+Current status: `live_human_written_judge_smoke_passed_no_generation`.
 
 Render-only prototype scripts exist, but live generation is still not approved.
 No experiment should submit model jobs from this scaffold.
@@ -28,9 +28,12 @@ Current and future entrypoints:
   - write local Batch API JSONL only for render-only inspection
   - submit/collect generation batches only after explicit approval
   - normalize generated outlines
-- `evaluate_taxobench_cs_outlines.py`
+- `evaluate_taxobench_cs_outlines_batch.py`
+  - render OpenAI Batch API judge JSONL in render-only mode
   - compare generated outlines against `human_written`
-  - produce aggregate and per-paper summaries
+  - include `human_written` self-evaluation calibration rows
+  - parse downloaded Batch output JSONL into eval/debug artifacts
+  - keep live upload/create/poll/download fail-closed until explicit approval
 
 Reusable code candidates:
 

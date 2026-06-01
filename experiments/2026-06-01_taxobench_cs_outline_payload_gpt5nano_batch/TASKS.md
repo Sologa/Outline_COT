@@ -1009,7 +1009,7 @@ submission, judging, result writes, or Google Sheet updates.
 - Create or modify if useful: shared OpenAI Batch helper code under `scripts/`
 - Create or modify: evaluator tests under `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/tests/`
 
-- [ ] **Step 1: Replace the planned judge contract**
+- [x] **Step 1: Replace the planned judge contract**
 
 Change the planned evaluator contract from:
 
@@ -1036,7 +1036,7 @@ Keep the distinction clear:
 - The judge prompt remains the repo-local upstream 6D judge prompt unless a
   separate judge-prompt task changes it.
 
-- [ ] **Step 2: Implement evaluator-level Batch lifecycle**
+- [x] **Step 2: Implement evaluator-level Batch lifecycle**
 
 Do not treat OpenAI Batch as just another immediate `run_judge_attempt()`
 backend. The current direct judge API returns one raw response per call, while
@@ -1058,7 +1058,14 @@ Reuse existing parsing utilities where possible:
 - `render_outline_text`
 - `compute_structural_distance_debug`
 
-- [ ] **Step 3: Add TaxoBench-CS evaluation target builder**
+Implementation note: Task 15 implements the non-mutating lifecycle stages that
+can be verified before approval: render judge request JSONL, parse downloaded or
+fixture Batch output, write local eval/debug artifacts under the chosen output
+root, and rebuild an aggregate summary. Live API stages, including upload,
+Batch creation, polling, and live download, remain fail-closed until Task 16
+gets explicit user approval.
+
+- [x] **Step 3: Add TaxoBench-CS evaluation target builder**
 
 The evaluator must support these target types:
 
@@ -1087,7 +1094,7 @@ reference outline = same reference outline
 
 Expected `human_written` structural distance: `0`.
 
-- [ ] **Step 4: Add render-only and parser tests**
+- [x] **Step 4: Add render-only and parser tests**
 
 Add tests that prove:
 
@@ -1101,7 +1108,7 @@ Add tests that prove:
 - fixture Batch output can be parsed into the same score keys used by the
   existing evaluator
 
-- [ ] **Step 5: Run offline judge Batch smoke, no API**
+- [x] **Step 5: Run offline judge Batch smoke, no API**
 
 Render but do not submit judge requests for three `human_written` targets:
 
@@ -1120,7 +1127,7 @@ Expected:
 - no `results/` write is made unless the user has explicitly approved the
   output location
 
-- [ ] **Step 6: Record cost estimate before asking for live approval**
+- [x] **Step 6: Record cost estimate before asking for live approval**
 
 Record token estimates in `runbook.md` or a local smoke report before any live
 judge job. Current local estimate from staged human-written outlines:
@@ -1146,7 +1153,7 @@ writes, or Google Sheet updates.
 This task is the boundary between local preparation and live spending. Do not
 check any item here without fresh command evidence.
 
-- [ ] **Step 1: Re-run full non-LLM generation render smoke**
+- [x] **Step 1: Re-run full non-LLM generation render smoke**
 
 Run the current render-only generation smoke against canonical staging:
 
@@ -1155,11 +1162,11 @@ Run the current render-only generation smoke against canonical staging:
 - request count for a two-paper smoke is `10`
 - no `human_written` generation request exists
 
-- [ ] **Step 2: Re-run offline judge Batch smoke**
+- [x] **Step 2: Re-run offline judge Batch smoke**
 
 Run Task 15 Step 5 after the latest evaluator code and docs are in place.
 
-- [ ] **Step 3: Ask for explicit live judge-smoke approval**
+- [x] **Step 3: Ask for explicit live judge-smoke approval**
 
 The first live API call should be a tiny OpenAI Batch judge smoke, not the full
 generation run:
@@ -1171,7 +1178,7 @@ generation run:
 The goal is to verify Batch submission, collection, response parsing, artifact
 writing, and score shape before spending on generated-arm judging.
 
-- [ ] **Step 4: Run and collect live `human_written` judge smoke after approval**
+- [x] **Step 4: Run and collect live `human_written` judge smoke after approval**
 
 Expected:
 
@@ -1181,6 +1188,20 @@ Expected:
 - `human_written` structural distance remains `0`
 - score values are compared against the previous judge path only as a sanity
   check, not as an exact-equality requirement
+
+Verified 2026-06-02 after user approval:
+
+- Batch id: `batch_6a1ddfa907a48190b2c71010e2a81c22`
+- status: `completed`
+- request counts: `3 completed / 0 failed / 3 total`
+- output rows parsed: `3`
+- all rows have the six repo-local judge score keys
+- `human_written` structural distance: `0.0` for all three rows
+- token usage: `8643` input tokens, `6662` output tokens
+- local artifact root:
+  `.local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/judge_human_written_smoke`
+- no full generation, full judging, `results/` write, or Google Sheet update was
+  performed
 
 - [ ] **Step 5: Ask for explicit full live generation approval**
 

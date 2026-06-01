@@ -1,6 +1,6 @@
 # Settings Lineage
 
-Status: `prompt_contract_corrected_no_model_runs`
+Status: `live_human_written_judge_smoke_passed_no_generation`
 
 This document records prior experiment settings that this scaffold may reuse.
 It separates existing support from planned TaxoBench-CS-specific work.
@@ -150,12 +150,14 @@ files were created by this scaffold.
 
 ## Shared Evaluation Settings
 
-Planned evaluation lineage:
+Planned evaluation lineage after Task 15 correction:
 
 - structural metric: `structural_distance`
-- judge backend: `codex`
+- judge transport: OpenAI Batch API
+- judge endpoint: `/v1/responses`
 - judge model: `gpt-5.5`
 - judge reasoning effort: `high`
+- completion window: `24h`
 - judge dimensions:
   - `结构_信息快速定位`
   - `结构_详略得当`
@@ -164,5 +166,10 @@ Planned evaluation lineage:
   - `内容_学术价值`
   - `语用_描述性与简洁性`
 
-TaxoBench-CS evaluator must still document how it handles original-paper
-citation keys versus TaxoBench `paperId` leaves.
+Implemented local support is render/parse only: the evaluator can render judge
+Batch JSONL and parse downloaded Batch output fixtures into the existing
+`.eval.json` / `.eval.debug.json` shape. Live upload, Batch creation, polling,
+download, and result publication remain fail-closed until explicit approval.
+
+Reference-usage metrics are disabled in this phase. Original-paper citation
+keys are not mapped to TaxoBench `paperId` leaves by the Task 15 evaluator.

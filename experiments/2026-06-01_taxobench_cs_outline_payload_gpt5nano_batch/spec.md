@@ -3,7 +3,7 @@
 ## Identity
 
 - Experiment id: `2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch`
-- Status: `prompt_contract_corrected_no_model_runs`
+- Status: `live_human_written_judge_smoke_passed_no_generation`
 - Created: `2026-06-01`
 - Source dataset workspace: `/Users/xjp/Desktop/TaxoBench-CS`
 - Owning runtime workspace: `/Users/xjp/Desktop/Outline_COT`
@@ -249,17 +249,33 @@ Generated outlines should be evaluated against the `human_written` original
 outline. The same final comparison table may include `human_written` as an arm
 for calibration, but `human_written` is not generated.
 
-Reuse candidates from Tree50 round4-style evaluation:
+TaxoBench-CS judge transport is OpenAI Batch API, not the direct `codex`
+backend:
 
-- structural outline distance
-- repo-local judge dimensions
-- judge backend `codex`
-- judge model `gpt-5.5`
-- judge reasoning effort `high`
+- judge endpoint: `/v1/responses`
+- judge model: `gpt-5.5`
+- judge reasoning effort: `high`
+- completion window: `24h`
+- implemented local lifecycle now: render judge request JSONL, parse downloaded
+  Batch output JSONL, and rebuild per-target eval artifacts
+- not implemented or approved now: Batch upload, Batch creation, polling,
+  downloading, live judging, result writes under `results/`, or Google Sheets
+  updates
 
-Before promotion, the evaluator must document whether reference-usage metrics
-are disabled, citation-key based, or mapped from original-paper citation keys to
-TaxoBench `paperId`.
+The evaluator reuses the repo-local upstream 6D judge prompt, score keys, output
+parser, outline normalization, and structural-distance helper from
+`scripts/evaluate_chatgpt_meow_blind_batch.py` where possible.
+
+For `human_written` calibration rows, the source outline and reference outline
+are the same file:
+
+`data/taxobench-cs/reference_outlines/<paper_id>.outline.json`
+
+Expected `human_written` structural distance is exactly `0`.
+
+Reference-usage metrics are disabled for this Task 15 evaluator. Original-paper
+citation keys in `human_written` outlines are not mapped to TaxoBench Semantic
+Scholar `paperId` leaves in this phase.
 
 ## Non-Goals
 
