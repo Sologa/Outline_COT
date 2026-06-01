@@ -23,6 +23,10 @@
   baseline uses the released MEOW prompt skeleton, taxonomy arms append a
   neutral auxiliary taxonomy block, and instruction-guided taxonomy remains a
   separate explicit ablation.
+- The previous planned judge setting, `judge backend: codex`, is now treated as
+  a contract issue to correct before any live run. Generation and judging should
+  both use OpenAI Batch API transport, with separate generation and judge batch
+  lifecycles.
 - No OpenAI generation, Batch submission, model output, judge output, or Google
   Sheet update exists for this experiment.
 
@@ -33,6 +37,9 @@
 - Do not update Google Sheets.
 - Do not write model-run artifacts into `results/`.
 - Smoke-test scratch must go under `.local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/`.
+- Do not submit any live OpenAI Batch generation or judge job until Task 15
+  render-only judge-batch smoke passes and Task 16 receives explicit user
+  approval.
 - Prompt-visible fields must not include local absolute paths, adapter debug fields, downloader provenance, Google metadata, or target paper abstracts.
 - Do not run live model generation unless the prompt-template comparability checks from Task 12 remain passing. The current prototype is approved only for render-only request building, not for live model submission.
 - Do not run live model generation unless the taxonomy-payload visibility checks from Task 13 remain passing on the current payload files.
@@ -47,11 +54,18 @@
 - Create `data/taxobench-cs/scripts/generate_taxobench_cs_payloads.py`: render deterministic `tree_only_guarded`, `tree_with_papers`, `flat_concepts`, and `random_hierarchy` payloads from staged inputs.
 - Create `data/taxobench-cs/scripts/validate_taxobench_cs_staging.py`: verify staged counts, joins, prompt hygiene, payload existence, random seed stability, and manifest readiness.
 - Create `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/prototype/run_taxobench_cs_outline_batch.py`: render request JSONL from staged inputs in render-only mode; keep live submission absent or fail-closed.
+- Create `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/prototype/evaluate_taxobench_cs_outlines_batch.py`: evaluate generated outlines and `human_written` calibration rows using OpenAI Batch API judge transport.
+- Create or modify shared Batch helper code only if it reduces duplication with
+  existing generation Batch lifecycle code. Keep existing direct `codex`,
+  `openai`, and `gemini` judge paths backward-compatible.
 - Keep `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/prototype/run_taxobench_cs_outline_batch.py`, `prompts/taxobench_cs_outline_payload_prompt_template.txt`, and prompt-contract tests aligned with Task 12 before any model run.
 - Modify `data/taxobench-cs/scripts/generate_taxobench_cs_payloads.py`, payload rendering tests, docs, and regenerated payload files before any model run if Task 13 confirms prompt-visible taxonomy payloads still expose `paperId` strings or over-rich leaf metadata.
 - Create `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/tests/conftest.py`: load adapter scripts from the hyphenated `data/taxobench-cs/scripts/` path for pytest.
 - Create `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/tests/test_taxobench_cs_adapter_contract.py`: unit/contract tests for parser, normalizer, membership preservation, and prompt hygiene.
 - Create `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/tests/test_taxobench_cs_payload_rendering.py`: deterministic payload renderer tests, including `tree_with_papers`.
+- Create or modify evaluator tests for OpenAI Batch judge request rendering,
+  batch-output parsing, `human_written` self-evaluation, and structural-distance
+  zero checks.
 - Modify `data/taxobench-cs/README.md`, `FORMAT.md`, and `CONVERSION_PLAN.md` only if implementation reveals a real contract mismatch.
 
 ---
@@ -981,6 +995,214 @@ submission, judging, result writes, or Google Sheet updates.
 
 ---
 
+### Task 15: Correct Judge Transport To OpenAI Batch API Before Any Live Run
+
+**Files:**
+- Modify: `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/config.yaml`
+- Modify: `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/spec.md`
+- Modify: `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/runbook.md`
+- Modify: `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/promotion_checklist.md`
+- Modify: `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/docs/settings_lineage.md`
+- Modify: `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/prototype/README.md`
+- Modify if needed: `docs/guides/meow_evaluation_assets.md`
+- Create: `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/prototype/evaluate_taxobench_cs_outlines_batch.py`
+- Create or modify if useful: shared OpenAI Batch helper code under `scripts/`
+- Create or modify: evaluator tests under `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/tests/`
+
+- [ ] **Step 1: Replace the planned judge contract**
+
+Change the planned evaluator contract from:
+
+```text
+judge backend: codex
+judge model: gpt-5.5
+judge reasoning effort: high
+```
+
+to a transport-explicit contract:
+
+```text
+judge transport: OpenAI Batch API
+judge endpoint: /v1/responses unless implementation proves /v1/chat/completions is safer
+judge model: gpt-5.5 unless the user explicitly changes it
+judge reasoning effort: high
+completion window: 24h
+```
+
+Keep the distinction clear:
+
+- `generation transport` is OpenAI Batch API for outline generation.
+- `judge transport` is OpenAI Batch API for the 6D evaluator.
+- The judge prompt remains the repo-local upstream 6D judge prompt unless a
+  separate judge-prompt task changes it.
+
+- [ ] **Step 2: Implement evaluator-level Batch lifecycle**
+
+Do not treat OpenAI Batch as just another immediate `run_judge_attempt()`
+backend. The current direct judge API returns one raw response per call, while
+Batch judge requires:
+
+1. render judge requests to JSONL
+2. upload with `purpose="batch"`
+3. create Batch job
+4. poll/retrieve job metadata
+5. download output/error files
+6. parse raw judge text back into `.eval.json` and `.eval.debug.json`
+7. rebuild aggregate summaries
+
+Reuse existing parsing utilities where possible:
+
+- `build_judge_messages`
+- `parse_judge_response`
+- `ensure_outline_list`
+- `render_outline_text`
+- `compute_structural_distance_debug`
+
+- [ ] **Step 3: Add TaxoBench-CS evaluation target builder**
+
+The evaluator must support these target types:
+
+- generated arms:
+  - `baseline_no_taxonomy`
+  - `flat_concepts`
+  - `random_hierarchy`
+  - `tree_only_guarded`
+  - `tree_with_papers`
+- calibration/reference arm:
+  - `human_written`
+
+For generated arms:
+
+```text
+source outline = generated output outline
+reference outline = data/taxobench-cs/reference_outlines/<paper_id>.outline.json
+```
+
+For `human_written` calibration:
+
+```text
+source outline = reference outline
+reference outline = same reference outline
+```
+
+Expected `human_written` structural distance: `0`.
+
+- [ ] **Step 4: Add render-only and parser tests**
+
+Add tests that prove:
+
+- judge Batch JSONL has stable `custom_id` values that map back to
+  `paper_id` and `arm`
+- Batch request body contains the 6D judge prompt and rendered outline
+- prompt-visible judge input contains no local absolute paths or adapter debug
+  fields
+- `human_written` self-eval uses the same outline as source and reference
+- structural distance for `human_written` is exactly `0`
+- fixture Batch output can be parsed into the same score keys used by the
+  existing evaluator
+
+- [ ] **Step 5: Run offline judge Batch smoke, no API**
+
+Render but do not submit judge requests for three `human_written` targets:
+
+```text
+short outline: 2309.06794
+median-sized outline: choose one of 2311.09008, 2404.04925, 2404.18231, 2406.10885
+long outline: 2212.10535
+```
+
+Expected:
+
+- exactly `3` judge Batch request rows
+- every request is for `human_written`
+- every precomputed structural distance is `0`
+- no OpenAI API call is made
+- no `results/` write is made unless the user has explicitly approved the
+  output location
+
+- [ ] **Step 6: Record cost estimate before asking for live approval**
+
+Record token estimates in `runbook.md` or a local smoke report before any live
+judge job. Current local estimate from staged human-written outlines:
+
+```text
+human_written judge input mean: about 2.8k-2.9k tokens/request
+human_written full calibration: 156 requests, about 0.44M input tokens
+five generated arms: 780 requests, about 2.2M input tokens by human-outline proxy
+all six comparison rows: 936 requests, about 2.6M input tokens by human-outline proxy
+```
+
+Visible judge output from prior Tree50-style artifacts is about `660`
+tokens/request, but high-reasoning judge runs may bill hidden reasoning tokens
+as output tokens. Use current OpenAI pricing at run time, not stale local notes.
+
+This task does not approve live generation, Batch submission, judging, result
+writes, or Google Sheet updates.
+
+---
+
+### Task 16: Live Run Approval Gates
+
+This task is the boundary between local preparation and live spending. Do not
+check any item here without fresh command evidence.
+
+- [ ] **Step 1: Re-run full non-LLM generation render smoke**
+
+Run the current render-only generation smoke against canonical staging:
+
+- all prompt-template comparability checks from Task 12 pass
+- all payload visibility checks from Task 13 pass
+- request count for a two-paper smoke is `10`
+- no `human_written` generation request exists
+
+- [ ] **Step 2: Re-run offline judge Batch smoke**
+
+Run Task 15 Step 5 after the latest evaluator code and docs are in place.
+
+- [ ] **Step 3: Ask for explicit live judge-smoke approval**
+
+The first live API call should be a tiny OpenAI Batch judge smoke, not the full
+generation run:
+
+```text
+3 papers * human_written only = 3 judge requests
+```
+
+The goal is to verify Batch submission, collection, response parsing, artifact
+writing, and score shape before spending on generated-arm judging.
+
+- [ ] **Step 4: Run and collect live `human_written` judge smoke after approval**
+
+Expected:
+
+- Batch status is `completed`
+- output rows equal input rows
+- every row has all six judge score keys
+- `human_written` structural distance remains `0`
+- score values are compared against the previous judge path only as a sanity
+  check, not as an exact-equality requirement
+
+- [ ] **Step 5: Ask for explicit full live generation approval**
+
+Only after the live judge smoke passes, ask for approval to submit:
+
+```text
+156 papers * 5 generated arms = 780 generation requests
+```
+
+- [ ] **Step 6: Run full live generation, then full Batch judge evaluation**
+
+After generation outputs exist and are validated, run:
+
+```text
+156 papers * 6 arms including human_written = 936 comparison rows
+```
+
+Then produce aggregate summaries and a Google-Sheet-ready table package. Native
+Google Sheet creation/update still requires separate explicit approval.
+
+---
+
 ## Smoke Test Definition
 
 The first acceptable smoke test is entirely local and non-LLM:
@@ -996,4 +1218,7 @@ The first acceptable smoke test is entirely local and non-LLM:
    prompt-visible arm labels, and no instruction-guided taxonomy wording in the
    main arms.
 
-Passing this smoke test is a prerequisite for asking approval to write canonical staging under `data/taxobench-cs/`. It is not approval to run live generation.
+Passing this smoke test was the prerequisite for canonical staging. Canonical
+staging now exists, so the next required smoke is Task 15 Step 5: render-only
+OpenAI Batch judge JSONL over `human_written` self-evaluation targets. Passing
+that judge smoke is still not approval to run live generation.
