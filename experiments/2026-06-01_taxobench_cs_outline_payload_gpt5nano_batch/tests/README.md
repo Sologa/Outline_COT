@@ -1,8 +1,8 @@
 # Tests
 
-Status: `draft_data_pending_no_runs`
+Status: `payload_contract_corrected_no_model_runs`
 
-Current status: `docs_only_no_tests`.
+Current status: `focused_payload_and_render_tests_passing_no_model_runs`.
 
 Planned focused tests:
 
@@ -15,6 +15,9 @@ Planned focused tests:
 - `human_written` is never included in generation requests
 - `--limit 2` render smoke produces `10` requests when five generated arms are enabled
 - deterministic projections are stable across reruns
-- `tree_with_papers` includes title/year/id at leaves but does not duplicate abstracts by default
+- `tree_only_guarded`, `flat_concepts`, and `random_hierarchy` do not expose raw
+  40-character Semantic Scholar `paperId` strings
+- `tree_with_papers` includes title-only leaves and rejects raw `paperId`, year,
+  external ids, and abstracts
 
 Do not add broad integration tests that submit batches or call model endpoints.

@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -20,6 +21,7 @@ FORBIDDEN_PROMPT_TERMS = (
     "source_ground_path",
     "human_written_outline_path",
 )
+PAPER_ID_RE = re.compile(r"\b[0-9a-fA-F]{40}\b")
 PAYLOAD_VARIANTS = (
     "tree_only_guarded",
     "tree_with_papers",
@@ -82,6 +84,32 @@ def prompt_hygiene_errors(path: Path) -> list[str]:
     return [f"{path} contains forbidden prompt-visible term {term!r}" for term in FORBIDDEN_PROMPT_TERMS if term in raw]
 
 
+def payload_visibility_errors(path: Path, variant: str) -> list[str]:
+    raw = path.read_text(encoding="utf-8")
+    errors = []
+    if PAPER_ID_RE.search(raw):
+        errors.append(f"{path} contains prompt-visible Semantic Scholar paperId")
+    if variant in {"tree_only_guarded", "flat_concepts", "random_hierarchy"} and "papers:" in raw:
+        errors.append(f"{path} contains prompt-visible descendant paper evidence")
+    if variant == "tree_with_papers":
+        forbidden_patterns = (
+            r"\bpaperId\b",
+            r"\byear:",
+            r"\bids:",
+            r"\bArXiv=",
+            r"\bDOI=",
+            r"\bDBLP=",
+            r"\bCorpusId\b",
+            r"\bMAG=",
+            r"\bexternalIds\b",
+            r"\babstract\s*:",
+        )
+        for pattern in forbidden_patterns:
+            if re.search(pattern, raw, flags=re.IGNORECASE):
+                errors.append(f"{path} contains forbidden {variant} payload pattern {pattern!r}")
+    return errors
+
+
 def validate_staging(*, staging_root: Path, expect_papers: int, require_payloads: bool) -> dict[str, Any]:
     errors: list[str] = []
     warnings: list[str] = []
@@ -97,6 +125,7 @@ def validate_staging(*, staging_root: Path, expect_papers: int, require_payloads
 
     unresolved_leaf_count = 0
     payload_file_count = 0
+    payload_visibility_checked_count = 0
     ready_paper_count = 0
     for index, row in enumerate(manifest_rows, start=1):
         for field in (
@@ -152,6 +181,8 @@ def validate_staging(*, staging_root: Path, expect_papers: int, require_payloads
                 if payload_path.exists():
                     payload_file_count += 1
                     errors.extend(prompt_hygiene_errors(payload_path))
+                    payload_visibility_checked_count += 1
+                    errors.extend(payload_visibility_errors(payload_path, variant))
                 else:
                     errors.append(f"{paper_id} missing payload: {payload_path}")
 
@@ -164,6 +195,13 @@ def validate_staging(*, staging_root: Path, expect_papers: int, require_payloads
         "unresolved_taxonomy_leaf_count": unresolved_leaf_count,
         "require_payloads": require_payloads,
         "payload_file_count": payload_file_count,
+        "payload_visibility_checked_count": payload_visibility_checked_count,
+        "payload_visibility_policy": {
+            "tree_only_guarded": "taxonomy/concept labels only; raw paperId membership leaves forbidden",
+            "flat_concepts": "flat concept labels only; raw paperId membership leaves forbidden",
+            "random_hierarchy": "randomized concept labels only; raw paperId membership leaves forbidden",
+            "tree_with_papers": "taxonomy/concept labels plus reference paper titles only; raw paperId/year/external_ids/abstracts forbidden",
+        },
         "fatal_error_count": len(errors),
         "warning_count": len(warnings),
         "errors": errors,

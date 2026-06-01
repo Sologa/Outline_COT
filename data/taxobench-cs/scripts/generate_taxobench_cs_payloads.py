@@ -22,7 +22,6 @@ PAYLOAD_VARIANTS = (
     "flat_concepts",
     "random_hierarchy",
 )
-PREFERRED_EXTERNAL_ID_ORDER = ("ArXiv", "DOI", "DBLP", "CorpusId", "MAG")
 
 
 def utc_now_iso() -> str:
@@ -91,10 +90,8 @@ def iter_tree_lines(
     for label, child in tree.items():
         indent = "  " * depth
         if is_paper_leaf(label, child):
-            if refs is None:
-                yield f"{indent}- {label}"
-            else:
-                yield f"{indent}- {format_leaf_with_metadata(label, refs.get(label))}"
+            if refs is not None:
+                yield f"{indent}- {format_leaf_title(refs.get(label))}"
             continue
         if not isinstance(child, dict):
             raise ValueError(f"taxonomy node {label!r} must contain an object")
@@ -105,7 +102,7 @@ def iter_tree_lines(
 def render_tree_only_guarded(payload_source: dict[str, Any]) -> str:
     lines = [
         "Taxonomy tree:",
-        "Paper leaves are preserved as paperId values.",
+        "Paper membership leaves are omitted; only taxonomy labels are shown.",
         *iter_tree_lines(taxonomy_tree(payload_source)),
     ]
     return "\n".join(lines).strip() + "\n"
@@ -114,30 +111,18 @@ def render_tree_only_guarded(payload_source: dict[str, Any]) -> str:
 def render_tree_with_papers(payload_source: dict[str, Any]) -> str:
     refs = reference_by_paper_id(payload_source)
     lines = [
-        "Taxonomy tree with leaf paper metadata:",
-        "Leaf rows include paperId, title, year, and stable external ids.",
+        "Taxonomy tree with leaf paper titles:",
+        "Leaf rows include reference paper titles only.",
         *iter_tree_lines(taxonomy_tree(payload_source), refs=refs),
     ]
     return "\n".join(lines).strip() + "\n"
 
 
-def format_leaf_with_metadata(paper_id: str, ref: dict[str, Any] | None) -> str:
+def format_leaf_title(ref: dict[str, Any] | None) -> str:
     if ref is None:
-        return f"{paper_id} | title: <unresolved>"
+        return "<unresolved reference title>"
     title = clean_inline(ref.get("title") or "") or "<untitled>"
-    year = ref.get("year")
-    year_text = clean_inline(year) if year is not None else "null"
-    external_ids = ref.get("externalIds") if isinstance(ref.get("externalIds"), dict) else {}
-    id_text = format_external_ids(external_ids)
-    return f"{paper_id} | title: {title} | year: {year_text} | ids: {id_text}"
-
-
-def format_external_ids(external_ids: dict[str, Any]) -> str:
-    ordered_keys = [key for key in PREFERRED_EXTERNAL_ID_ORDER if key in external_ids]
-    ordered_keys.extend(sorted(key for key in external_ids if key not in set(ordered_keys)))
-    if not ordered_keys:
-        return "none"
-    return "; ".join(f"{clean_inline(key)}={clean_inline(external_ids[key])}" for key in ordered_keys)
+    return title
 
 
 def clean_inline(value: Any) -> str:
@@ -147,15 +132,6 @@ def clean_inline(value: Any) -> str:
 
 def collect_concepts(payload_source: dict[str, Any]) -> list[dict[str, Any]]:
     concepts: list[dict[str, Any]] = []
-
-    def descendant_papers(node: dict[str, Any]) -> list[str]:
-        papers: list[str] = []
-        for label, child in node.items():
-            if is_paper_leaf(label, child):
-                papers.append(label)
-            elif isinstance(child, dict):
-                papers.extend(descendant_papers(child))
-        return unique_preserving_order(papers)
 
     def visit(node: dict[str, Any], path: list[str]) -> None:
         for label, child in node.items():
@@ -168,7 +144,6 @@ def collect_concepts(payload_source: dict[str, Any]) -> list[dict[str, Any]]:
                 {
                     "label": str(label),
                     "path": concept_path,
-                    "paperIds": descendant_papers(child),
                 }
             )
             visit(child, concept_path)
@@ -190,8 +165,7 @@ def unique_preserving_order(values: Iterable[str]) -> list[str]:
 def render_flat_concepts(payload_source: dict[str, Any]) -> str:
     lines = ["Flat concept inventory:"]
     for concept in collect_concepts(payload_source):
-        papers = "; ".join(concept["paperIds"]) if concept["paperIds"] else "none"
-        lines.append(f"- {clean_inline(concept['label'])} | papers: {papers}")
+        lines.append(f"- {clean_inline(concept['label'])}")
     return "\n".join(lines).strip() + "\n"
 
 
@@ -216,8 +190,7 @@ def render_random_hierarchy(payload_source: dict[str, Any], *, experiment_id: st
     lines = ["Random hierarchy payload:"]
 
     def emit(node_index: int, concept: dict[str, Any], depth: int) -> None:
-        papers = "; ".join(concept["paperIds"]) if concept["paperIds"] else "none"
-        lines.append(f"{'  ' * depth}- {clean_inline(concept['label'])} | papers: {papers}")
+        lines.append(f"{'  ' * depth}- {clean_inline(concept['label'])}")
         for child_index, child_concept in children_by_parent.get(node_index, []):
             emit(child_index, child_concept, depth + 1)
 

@@ -1,12 +1,11 @@
 # Prototype Scripts
 
-Status: `draft_data_pending_no_runs`
+Status: `payload_contract_corrected_no_model_runs`
 
-Current status: `docs_only_no_scripts`.
+Current status: `render_only_scripts_exist_no_live_submission`.
 
-No executable prototype scripts are created yet because the upstream
-TaxoBench-CS data is still being prepared and no experiment should run from this
-scaffold.
+Render-only prototype scripts exist, but live generation is still not approved.
+No experiment should submit model jobs from this scaffold.
 
 Planned future entrypoints:
 
@@ -40,5 +39,6 @@ Reusable code candidates:
 - `experiments/2026-05-30_tree50_round4_hierarchy_sanity_gpt5nano_batch/prototype/run_tree50_hierarchy_sanity_batch.py`
 - `experiments/2026-05-30_tree50_round4_hierarchy_sanity_gpt5nano_batch/prototype/evaluate_tree50_hierarchy_sanity.py`
 
-The `tree_with_papers` arm is a new planned feature and should not be assumed to
-exist in current Tree50 prototype code.
+The `tree_with_papers` arm is TaxoBench-specific and should not be assumed to
+exist in current Tree50 prototype code. Its prompt-visible leaves are
+title-only.

@@ -3,7 +3,7 @@
 ## Identity
 
 - Experiment id: `2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch`
-- Status: `data_staged_payloads_ready_no_model_runs`
+- Status: `payload_contract_corrected_no_model_runs`
 - Created: `2026-06-01`
 - Source dataset workspace: `/Users/xjp/Desktop/TaxoBench-CS`
 - Owning runtime workspace: `/Users/xjp/Desktop/Outline_COT`
@@ -178,30 +178,34 @@ when present.
 `tree_only_guarded`:
 
 - Renders the TaxoBench `taxo_tree` as a guarded taxonomy payload.
-- Preserves taxonomy labels and leaf paper identities.
+- Preserves taxonomy/concept labels only.
+- Omits 40-character Semantic Scholar `paperId` membership leaves from the
+  prompt-visible payload.
 - Does not generate or impute definitions.
 
 `flat_concepts`:
 
 - Deterministically removes parent-child concept hierarchy.
 - Preserves concept labels.
-- Preserves descendant leaf paper evidence beside each concept.
+- Omits descendant paper evidence from the prompt-visible payload.
 - Does not generate or impute definitions.
 
 `random_hierarchy`:
 
 - Deterministically randomizes the concept hierarchy for sanity checking.
-- Preserves concept labels and paper evidence.
+- Preserves concept labels only.
+- Omits descendant paper evidence from the prompt-visible payload.
 - Uses a stable seed derived from this experiment id and `arxiv_id`.
 - Does not generate or impute definitions.
 
 `tree_with_papers`:
 
-- Renders the taxonomy tree plus paper metadata at leaves.
-- Initial recommended leaf rendering: paper id, title, year, and stable external
-  ids.
-- Do not duplicate reference abstracts inside the tree payload unless a future
-  spec revision explicitly turns this into a separate ablation.
+- Renders the taxonomy tree plus reference paper titles at leaves.
+- Leaf rendering is title-only for readability and to avoid exposing join keys
+  or over-rich metadata.
+- Do not include Semantic Scholar `paperId`, year, external ids, or reference
+  abstracts inside the tree payload unless a future spec revision explicitly
+  turns one of those fields into a separate ablation.
 - This is implemented as a TaxoBench-CS-specific renderer; it does not reuse a
   Tree50 runtime path.
 

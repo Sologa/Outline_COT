@@ -1,6 +1,6 @@
 # Promotion Checklist
 
-Status: `data_staged_payloads_ready_no_model_runs`
+Status: `payload_contract_corrected_no_model_runs`
 
 Do not promote this experiment into a runnable or stable result workflow until
 all required items are checked.
@@ -43,6 +43,12 @@ all required items are checked.
 - [x] Projection reports include taxonomy node, leaf, and unresolved counts.
 - [x] Random hierarchy uses a stable seed derived from experiment id and paper id.
 - [x] No projection generates or imputes taxonomy definitions.
+- [x] `tree_only_guarded` omits raw Semantic Scholar `paperId` membership leaves.
+- [x] `tree_with_papers` renders title-only paper leaves.
+- [x] `tree_with_papers` omits raw `paperId`, year, external ids, and abstracts.
+- [x] `flat_concepts` and `random_hierarchy` omit descendant paper evidence.
+- [x] Canonical payloads were regenerated after the visibility contract fix.
+- [x] Staging validator rejects prompt-visible raw `paperId` payload leakage.
 
 ## Prompt Readiness
 
@@ -53,6 +59,7 @@ all required items are checked.
 - [x] `metadata_*` provenance fields are absent.
 - [x] Local paths are absent.
 - [x] Reference abstracts in `ref_meta[].abstract` are preserved when present.
+- [ ] Prompt-template comparability blocker in `TASKS.md` Task 12 is resolved.
 
 ## Evaluation Readiness
 

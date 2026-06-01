@@ -1,7 +1,10 @@
+import re
+
 from conftest import load_taxobench_script
 
 
 renderer = load_taxobench_script("generate_taxobench_cs_payloads")
+PAPER_ID_RE = re.compile(r"\b[0-9a-fA-F]{40}\b")
 
 
 def make_payload_source():
@@ -40,25 +43,29 @@ def make_payload_source():
     }
 
 
-def test_tree_only_guarded_preserves_labels_and_paper_leaves():
+def test_tree_only_guarded_preserves_labels_without_paper_id_leaves():
     text = renderer.render_tree_only_guarded(make_payload_source())
 
     assert "Representation" in text
     assert "Graphs" in text
-    assert "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" in text
+    assert not PAPER_ID_RE.search(text)
     assert "Graph Representations" not in text
+    assert "paperId" not in text
 
 
-def test_tree_with_papers_includes_metadata_but_not_abstracts():
+def test_tree_with_papers_includes_titles_only():
     text = renderer.render_tree_with_papers(make_payload_source())
 
-    assert "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" in text
     assert "Graph Representations" in text
-    assert "2024" in text
-    assert "ArXiv=2401.11111" in text
-    assert "10.0000/example" in text
+    assert not PAPER_ID_RE.search(text)
+    assert "2024" not in text
+    assert "ArXiv" not in text
+    assert "DOI" not in text
+    assert "CorpusId" not in text
+    assert "ids:" not in text
+    assert "year:" not in text
     assert "Do not duplicate this in tree payloads." not in text
-    assert "abstract" not in text.lower()
+    assert "abstract:" not in text.lower()
 
 
 def test_tree_with_papers_keeps_source_strings_on_one_line():
@@ -68,8 +75,8 @@ def test_tree_with_papers_keeps_source_strings_on_one_line():
     text = renderer.render_tree_with_papers(payload)
 
     assert "Graph Representations / Prompt" in text
-    assert "10.0000/example/pipe" in text
     assert "Graph\nRepresentations" not in text
+    assert "10.0000/example/pipe" not in text
 
 
 def test_flat_concepts_removes_parent_child_nesting_but_keeps_labels():
@@ -79,6 +86,9 @@ def test_flat_concepts_removes_parent_child_nesting_but_keeps_labels():
     assert "Graphs" in text
     assert "Trees" in text
     assert "  - " not in text
+    assert "papers:" not in text
+    assert not PAPER_ID_RE.search(text)
+    assert "Graph Representations" not in text
 
 
 def test_random_hierarchy_is_deterministic_for_same_experiment_and_paper():
@@ -90,5 +100,6 @@ def test_random_hierarchy_is_deterministic_for_same_experiment_and_paper():
     assert first == second
     assert "Representation" in first
     assert "Graphs" in first
-    assert "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" in first
+    assert "papers:" not in first
+    assert not PAPER_ID_RE.search(first)
     assert "definition" not in first.lower()

@@ -1,6 +1,6 @@
 # TaxoBench-CS Staging Store
 
-Status: `data_staged_payloads_ready_no_model_runs`
+Status: `payload_contract_corrected_no_model_runs`
 
 This directory is the Outline_COT-local staging store for TaxoBench-CS
 outline-generation experiments.
@@ -60,6 +60,8 @@ data/taxobench-cs/
 ```
 
 Canonical staging was written after explicit approval on 2026-06-01.
+Payloads were regenerated on 2026-06-02 after correcting the prompt-visible
+taxonomy payload policy.
 
 Validated canonical contents:
 
@@ -104,3 +106,9 @@ not render:
 - `metadata_*` merge provenance fields
 
 Reference paper abstracts in normalized `ref_meta` are preserved when present.
+
+Taxonomy prompt payloads must not expose raw Semantic Scholar `paperId`
+membership leaves. `tree_only_guarded`, `flat_concepts`, and
+`random_hierarchy` are concept-only projections. `tree_with_papers` renders
+reference paper titles only and omits raw `paperId`, year, external ids, and
+abstracts.

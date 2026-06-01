@@ -1,8 +1,8 @@
 # Payloads
 
-Status: `schema_only_no_data_conversion`
+Status: `payload_contract_corrected_no_model_runs`
 
-Future layout:
+Layout:
 
 ```text
 payloads/<arxiv_id>/
@@ -14,4 +14,12 @@ payloads/<arxiv_id>/
 
 These are deterministic prompt payloads, not model outputs.
 
-`tree_with_papers` is TODO / not implemented until renderer tests exist.
+Visibility policy:
+
+- `tree_only_guarded`: taxonomy/concept labels only
+- `flat_concepts`: flat concept labels only
+- `random_hierarchy`: randomized concept labels only
+- `tree_with_papers`: taxonomy/concept labels plus reference paper titles only
+
+Raw Semantic Scholar `paperId` values, years, external ids, and abstracts must
+not be rendered into prompt-visible taxonomy payload leaves.

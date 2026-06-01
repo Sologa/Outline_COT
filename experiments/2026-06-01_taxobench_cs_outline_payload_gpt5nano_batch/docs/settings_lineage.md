@@ -1,6 +1,6 @@
 # Settings Lineage
 
-Status: `draft_data_pending_no_runs`
+Status: `payload_contract_corrected_no_model_runs`
 
 This document records prior experiment settings that this scaffold may reuse.
 It separates existing support from planned TaxoBench-CS-specific work.
@@ -56,13 +56,15 @@ Known support:
 - hierarchy sanity C arm
 - deterministic projection
 - removes parent-child concept hierarchy
-- preserves labels and descendant citation leaves
+- preserves labels
 - does not use another LLM pass
 
 TaxoBench-CS change:
 
 - projection should operate on structured `taxo_tree` rather than parsing
   rendered Tree50 text.
+- descendant Semantic Scholar `paperId` leaves are source membership links, not
+  prompt-visible concept labels; the TaxoBench-CS projection omits them.
 
 ### `random_hierarchy`
 
@@ -74,13 +76,15 @@ Known support:
 
 - hierarchy sanity D arm
 - deterministic projection
-- preserves labels, citation leaves, and concept edge count where possible
+- preserves labels and concept edge count where possible
 - randomizes non-root concept parent assignment
 
 TaxoBench-CS change:
 
 - seed should change from the Tree50 seed to this experiment's seed base:
   `taxobench_cs_outline_payload_v1`
+- descendant Semantic Scholar `paperId` leaves are omitted from the
+  prompt-visible randomized hierarchy.
 
 ## Planned New Support
 
@@ -88,7 +92,7 @@ TaxoBench-CS change:
 
 Current support status:
 
-`not_implemented`
+`implemented_title_only_payload_no_model_runs`
 
 Do not describe this arm as supported by existing Tree50 code.
 
@@ -100,11 +104,12 @@ That lane separates paper/citation/method-example attachments for audit. Its
 attachment ledger is audit-only and should not be injected into an
 outline-generation prompt.
 
-TaxoBench-CS must define a new formal arm if it wants taxonomy leaves rendered
-with paper metadata. Required decisions:
+TaxoBench-CS defines a new formal arm for readable paper-title leaves. Required
+decisions:
 
-- allowed paper fields
-- whether abstracts are forbidden or allowed
+- title-only leaf rendering
+- abstracts, paper ids, years, and external ids are forbidden in the taxonomy
+  payload
 - token-budget policy
 - prompt label
 - evaluator label
@@ -113,8 +118,9 @@ with paper metadata. Required decisions:
 
 Initial policy in this scaffold:
 
-- include paper id, title, year, and stable external ids at taxonomy leaves
-- do not duplicate abstracts inside taxonomy payloads by default
+- include reference paper titles only at taxonomy leaves
+- do not expose Semantic Scholar `paperId`, year, external ids, or abstracts
+  inside taxonomy payloads
 
 ## Shared Generation Settings
 

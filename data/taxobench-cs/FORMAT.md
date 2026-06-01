@@ -75,9 +75,10 @@ Derived prompt payloads:
 - `payloads/<arxiv_id>/flat_concepts.txt`
 - `payloads/<arxiv_id>/random_hierarchy.txt`
 
-`tree_only_guarded` and `tree_with_papers` are source-faithful derived
-renderings of the same canonical taxonomy. `flat_concepts` and
-`random_hierarchy` are diagnostic/control projections. None of the four payload
+The payload files are prompt-safe projections of the canonical taxonomy, not
+raw source-faithful renderings. `tree_only_guarded`, `flat_concepts`, and
+`random_hierarchy` omit Semantic Scholar `paperId` membership leaves.
+`tree_with_papers` renders reference paper titles only. None of the four payload
 files should be treated as the canonical taxonomy source.
 
 ## Normalized Manifest
@@ -137,8 +138,9 @@ One row per target-reference pair:
 }
 ```
 
-`ref_key` should be stable and prompt-visible. `paperId` should be preserved so
-taxonomy leaves can be joined back to metadata.
+`ref_key` should be stable. `paperId` should be preserved in canonical metadata
+so taxonomy leaves can be joined back to metadata, but raw `paperId` values are
+not automatically prompt-visible taxonomy payload content.
 
 The adapter must tolerate:
 
@@ -260,13 +262,17 @@ Future payload files:
 - `flat_concepts.txt`
 - `random_hierarchy.txt`
 
-`tree_with_papers` is not implemented yet. It must remain excluded from any
-runnable config until its renderer and tests exist.
+Generated payloads are prompt-visible projections. Source `taxo_tree` paper
+membership leaves are internal join identifiers and must not be exposed as raw
+40-character `paperId` strings in prompt payloads.
 
-Default `tree_with_papers` policy:
+Default visibility policy:
 
-- allowed: `paperId`, title, year, stable external ids
-- default forbidden: duplicating abstracts inside the tree payload
+- `tree_only_guarded`: taxonomy/concept labels only
+- `flat_concepts`: flat concept labels only
+- `random_hierarchy`: randomized concept labels only
+- `tree_with_papers`: taxonomy/concept labels plus reference paper titles only
+- forbidden in `tree_with_papers`: raw `paperId`, year, external ids, abstracts
 
 ## Output Boundary
 

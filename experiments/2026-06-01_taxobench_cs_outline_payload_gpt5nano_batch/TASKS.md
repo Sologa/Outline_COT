@@ -13,10 +13,14 @@
 ## Current State
 
 - `data/taxobench-cs/reference_outlines/*.outline.json` exists for `156` papers.
-- `data/taxobench-cs/scripts/` contains only documentation.
-- `data/taxobench-cs/payloads/` contains only documentation.
-- `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/prototype/` contains only documentation.
-- No taxonomy/ref metadata adapter, payload renderer, validation script, render-only runner, Batch input, model output, judge output, or Google Sheet update exists for this experiment.
+- Canonical staging exists under `data/taxobench-cs/` after explicit approval.
+- Adapter, payload renderer, staging validator, render-only runner, and focused
+  tests exist.
+- Payloads were regenerated after the 2026-06-02 visibility correction:
+  `tree_only_guarded`, `flat_concepts`, and `random_hierarchy` are concept-only
+  prompt payloads; `tree_with_papers` keeps title-only paper leaves.
+- No OpenAI generation, Batch submission, model output, judge output, or Google
+  Sheet update exists for this experiment.
 
 ## Hard Guardrails
 
@@ -26,6 +30,8 @@
 - Do not write model-run artifacts into `results/`.
 - Smoke-test scratch must go under `.local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/`.
 - Prompt-visible fields must not include local absolute paths, adapter debug fields, downloader provenance, Google metadata, or target paper abstracts.
+- Do not run live model generation until the prompt-template comparability blocker in Task 12 is resolved. The current prototype must be treated as render-only infrastructure, not an approved experimental prompt contract.
+- Do not run live model generation unless the taxonomy-payload visibility checks from Task 13 remain passing on the current payload files.
 
 ## Files To Create Or Modify
 
@@ -33,6 +39,8 @@
 - Create `data/taxobench-cs/scripts/generate_taxobench_cs_payloads.py`: render deterministic `tree_only_guarded`, `tree_with_papers`, `flat_concepts`, and `random_hierarchy` payloads from staged inputs.
 - Create `data/taxobench-cs/scripts/validate_taxobench_cs_staging.py`: verify staged counts, joins, prompt hygiene, payload existence, random seed stability, and manifest readiness.
 - Create `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/prototype/run_taxobench_cs_outline_batch.py`: render request JSONL from staged inputs in render-only mode; keep live submission absent or fail-closed.
+- Modify `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/prototype/run_taxobench_cs_outline_batch.py`, `prompts/taxobench_cs_outline_payload_prompt_template.txt`, and prompt-contract tests before any model run if Task 12 confirms the prompt template still confounds payload effects with prompt wording.
+- Modify `data/taxobench-cs/scripts/generate_taxobench_cs_payloads.py`, payload rendering tests, docs, and regenerated payload files before any model run if Task 13 confirms prompt-visible taxonomy payloads still expose `paperId` strings or over-rich leaf metadata.
 - Create `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/tests/conftest.py`: load adapter scripts from the hyphenated `data/taxobench-cs/scripts/` path for pytest.
 - Create `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/tests/test_taxobench_cs_adapter_contract.py`: unit/contract tests for parser, normalizer, membership preservation, and prompt hygiene.
 - Create `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/tests/test_taxobench_cs_payload_rendering.py`: deterministic payload renderer tests, including `tree_with_papers`.
@@ -357,18 +365,19 @@ Expected: exit code `0`; report records `2` papers and zero fatal errors.
 - Create: `data/taxobench-cs/scripts/generate_taxobench_cs_payloads.py`
 - Create: `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/tests/test_taxobench_cs_payload_rendering.py`
 
-- [ ] **Step 1: Write renderer tests**
+- [x] **Step 1: Write renderer tests**
 
 Tests must verify:
 
-- `tree_only_guarded` preserves taxonomy labels and paper identity leaves
-- `tree_with_papers` includes paper id, title, year, and stable external ids
-- `tree_with_papers` does not include abstracts by default
-- `flat_concepts` removes parent-child nesting while preserving concept labels
-- `random_hierarchy` is deterministic for the same experiment id and paper id
+- `tree_only_guarded` preserves taxonomy/concept labels and removes prompt-visible paper membership leaves
+- `tree_only_guarded` does not contain 40-character Semantic Scholar `paperId` strings
+- `tree_with_papers` includes reference paper titles at taxonomy leaves
+- `tree_with_papers` does not include Semantic Scholar `paperId`, year, external ids, or abstracts
+- `flat_concepts` removes parent-child nesting while preserving concept labels only
+- `random_hierarchy` is deterministic for the same experiment id and paper id and preserves concept labels only
 - no renderer inserts generated definitions
 
-- [ ] **Step 2: Implement payload rendering CLI**
+- [x] **Step 2: Implement payload rendering CLI**
 
 The CLI must accept:
 
@@ -390,7 +399,7 @@ Write for each selected paper:
 <output-root>/projection_reports/<arxiv_id>.projection_report.json
 ```
 
-- [ ] **Step 3: Run renderer tests**
+- [x] **Step 3: Run renderer tests**
 
 Run:
 
@@ -667,7 +676,7 @@ Expected:
 Use status:
 
 ```text
-data_staged_payloads_ready_no_model_runs
+payload_contract_corrected_no_model_runs
 ```
 
 - [ ] **Step 2: Check off only verified promotion items**
@@ -690,6 +699,187 @@ Expected if canonical staging was approved and completed:
 624
 156
 ```
+
+---
+
+### Task 12: Resolve Prompt-Template Comparability Before Any Model Run
+
+**Files:**
+- Inspect: `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/prototype/run_taxobench_cs_outline_batch.py`
+- Inspect: `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/prompts/taxobench_cs_outline_payload_prompt_template.txt`
+- Modify if needed: `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/prototype/run_taxobench_cs_outline_batch.py`
+- Modify if needed: `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/prompts/taxobench_cs_outline_payload_prompt_template.txt`
+- Modify if needed: prompt/rendering tests under `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/tests/`
+- Modify if needed: `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/spec.md`, `runbook.md`, and `promotion_checklist.md`
+
+- [ ] **Step 1: Treat the current taxonomy prompt template as an unresolved design risk**
+
+Current risk to analyze before any live batch:
+
+- `baseline_no_taxonomy` uses the faithful released MEOW user prompt from `codex_meow_outline_blind_lib.USER_PROMPT_TEMPLATE`.
+- taxonomy payload arms use the experiment-local `taxobench_cs_outline_payload_prompt_template.txt` instead of the same faithful MEOW user prompt.
+- taxonomy arms also expose arm framing through fields such as `Payload mode:` and `Taxonomy-derived payload:`.
+
+This means a live run would compare:
+
+```text
+faithful MEOW baseline
+vs
+experiment-local taxonomy prompt wording + taxonomy payload
+```
+
+It would not cleanly isolate the effect of taxonomy payload presence or payload representation.
+
+- [ ] **Step 2: Decide and document the prompt contract**
+
+Before live generation, choose one contract and document it in `spec.md` and `runbook.md`:
+
+- preferred clean comparison: all generated arms share the same instruction skeleton, output-format wording, title block, and reference-metadata block; only the payload slot content differs
+- alternative explicitly-framed comparison: taxonomy arms intentionally use a different prompt frame, and results are reported as `taxonomy prompt + taxonomy payload` rather than as a payload-only effect
+
+Do not leave this implicit.
+
+- [ ] **Step 3: Remove or justify arm-identity leakage**
+
+For payload-only comparisons, avoid prompt-visible labels that tell the model which condition it is in, such as:
+
+```text
+Payload mode:
+tree_with_papers
+flat_concepts
+random_hierarchy
+tree_only_guarded
+```
+
+If arm labels remain prompt-visible, record that they are part of the treatment.
+
+- [ ] **Step 4: Preserve the MEOW input contract**
+
+Any replacement prompt contract must preserve:
+
+- target paper title is prompt-visible
+- reference metadata is prompt-visible
+- target paper abstract is not prompt-visible
+- local paths, adapter metadata, downloader provenance, and Google metadata are not prompt-visible
+- output format requirements are as comparable as possible across arms
+
+- [ ] **Step 5: Add render-only prompt-diff checks**
+
+Add or update tests/smoke checks so render-only prompts prove:
+
+- baseline and taxonomy arms use the intended shared envelope or explicitly documented divergent envelope
+- taxonomy arms differ only in the allowed payload block when using the preferred clean comparison
+- no `Payload mode:` or arm-id leak appears unless the chosen contract intentionally permits it
+- prompt hygiene still has no target abstract, local paths, or adapter/debug metadata
+
+- [ ] **Step 6: Re-run non-LLM verification only**
+
+After prompt-contract changes, rerun the local render-only smoke and hygiene checks. This task does not approve OpenAI generation, Batch submission, judging, result writes, or Google Sheet updates.
+
+---
+
+### Task 13: Correct Taxonomy Payload Visibility And Regenerate Payloads
+
+**Files:**
+- Modify: `data/taxobench-cs/scripts/generate_taxobench_cs_payloads.py`
+- Modify: `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/tests/test_taxobench_cs_payload_rendering.py`
+- Modify if needed: `data/taxobench-cs/FORMAT.md`, `data/taxobench-cs/README.md`, `data/taxobench-cs/payloads/README.md`, and experiment docs under `experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/docs/`
+- Regenerate after tests pass: `data/taxobench-cs/payloads/*/*.txt`
+- Regenerate after tests pass if contents change: `data/taxobench-cs/projection_reports/*.projection_report.json`
+
+- [x] **Step 1: Record the source-schema distinction**
+
+TaxoBench `taxo_tree` leaf keys such as:
+
+```text
+f37e1b62a767a307c046404ca96bc140b3e68cb5
+87f40e6f3022adbc1f1905e3e506abad05a9964f
+df2b0e26d0599ce3e70df8a9da02e51594e0e992
+```
+
+are Semantic Scholar `paperId` values used as taxonomy membership/reference-paper
+identifiers. They are not taxonomy concept labels, arXiv ids, outline citation
+keys, or human-readable paper titles.
+
+- [x] **Step 2: Fix `tree_only_guarded`**
+
+`tree_only_guarded` must render only taxonomy/concept structure. It must not
+render the 40-character `paperId` membership leaves.
+
+For example, a subtree shaped like:
+
+```json
+{
+  "Contextual?": {
+    "Non-Contextual": {
+      "f37e1b62a767a307c046404ca96bc140b3e68cb5": {}
+    }
+  }
+}
+```
+
+should render as concept structure only:
+
+```text
+- Contextual?
+  - Non-Contextual
+```
+
+It must not render:
+
+```text
+- f37e1b62a767a307c046404ca96bc140b3e68cb5
+```
+
+- [x] **Step 3: Fix `tree_with_papers`**
+
+`tree_with_papers` must also be regenerated. The prompt-visible leaf should be
+title-only for readability and to avoid exposing join keys or over-rich metadata.
+
+Allowed at paper leaves:
+
+```text
+- GloVe: Global Vectors for Word Representation
+```
+
+Forbidden at paper leaves:
+
+```text
+- f37e1b62a767a307c046404ca96bc140b3e68cb5
+- title: GloVe: Global Vectors for Word Representation
+- year: 2014
+- ids: DOI=10.3115/v1/D14-1162; DBLP=conf/emnlp/PenningtonSM14
+- abstract: ...
+```
+
+- [x] **Step 4: Audit `flat_concepts` and `random_hierarchy`**
+
+Chosen policy: remove descendant paper evidence entirely for pure concept-only
+variants. `flat_concepts` and `random_hierarchy` render concept labels only.
+
+- [x] **Step 5: Add payload visibility tests**
+
+Tests must reject:
+
+- any 40-character hex `paperId` in `tree_only_guarded`
+- any `paperId`, `year:`, `ids:`, `DOI=`, `ArXiv=`, `DBLP=`, `CorpusId=`, `MAG=`, or `abstract` field in `tree_with_papers`
+- any raw `paperId` or `papers:` descendant evidence field in `flat_concepts` or `random_hierarchy`
+
+Tests must confirm:
+
+- taxonomy/concept labels remain visible
+- title-only paper leaves remain visible in `tree_with_papers`
+- no generated definitions are introduced
+
+- [x] **Step 6: Regenerate and revalidate canonical payloads**
+
+After renderer/tests/docs are corrected, regenerate payloads under
+`data/taxobench-cs/payloads/` and rerun staging validation. The readiness report
+must explicitly record that prompt-visible taxonomy payloads no longer contain
+raw Semantic Scholar `paperId` leaves in the arms where they are forbidden.
+
+This task does not approve OpenAI generation, Batch submission, judging, result
+writes, or Google Sheet updates.
 
 ---
 

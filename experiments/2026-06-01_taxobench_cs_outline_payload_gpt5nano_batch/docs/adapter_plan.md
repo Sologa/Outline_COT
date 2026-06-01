@@ -1,6 +1,6 @@
 # Adapter Plan
 
-Status: `draft_data_pending_no_runs`
+Status: `payload_contract_corrected_no_model_runs`
 
 ## Goal
 
@@ -11,9 +11,9 @@ The adapter should make manual moving unnecessary. It should read
 `/Users/xjp/Desktop/TaxoBench-CS` and write derived Outline_COT artifacts only
 after explicit invocation.
 
-The `data/taxobench-cs/` staging root may contain schema/readme scaffolding, but
-no staged data files or full conversion outputs should exist while this
-experiment remains in `draft_data_pending_no_runs` scaffold status.
+The `data/taxobench-cs/` staging root now contains approved canonical staging
+and regenerated deterministic prompt payloads. Live model generation remains
+unapproved.
 
 ## Planned Staging Root
 

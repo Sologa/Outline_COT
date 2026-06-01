@@ -136,13 +136,15 @@ Write:
 
 Rules:
 
-- `tree_only_guarded` uses taxonomy labels plus paper identity leaves.
-- `flat_concepts` removes hierarchy while preserving concept labels and
-  descendant paper evidence.
-- `random_hierarchy` uses a deterministic seed and preserves labels plus paper
-  evidence.
-- `tree_with_papers` is TODO until explicitly implemented and tested.
-- Do not duplicate abstracts inside taxonomy payloads by default.
+- `tree_only_guarded` uses taxonomy/concept labels only and omits raw
+  Semantic Scholar `paperId` membership leaves.
+- `flat_concepts` removes hierarchy while preserving concept labels only.
+- `random_hierarchy` uses a deterministic seed and preserves concept labels
+  only.
+- `tree_with_papers` renders taxonomy/concept labels plus reference paper titles
+  only.
+- Do not expose raw `paperId`, year, external ids, or abstracts inside taxonomy
+  payloads by default.
 
 Producer code location:
 

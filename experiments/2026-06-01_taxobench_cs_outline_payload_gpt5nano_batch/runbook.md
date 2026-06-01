@@ -1,6 +1,6 @@
 # Runbook
 
-Status: `data_staged_payloads_ready_no_model_runs`
+Status: `payload_contract_corrected_no_model_runs`
 
 This runbook records completed local data-readiness work and remaining
 execution gates. Canonical staging and deterministic payloads were written after
@@ -139,7 +139,39 @@ Expected future payloads per paper:
 - `flat_concepts`
 - `random_hierarchy`
 
-`tree_with_papers` is implemented and excludes abstracts by default.
+Payload visibility contract corrected on 2026-06-02:
+
+- `tree_only_guarded` omits raw Semantic Scholar `paperId` membership leaves.
+- `flat_concepts` and `random_hierarchy` omit descendant paper evidence.
+- `tree_with_papers` renders reference paper titles only, without raw `paperId`,
+  year, external ids, or abstracts.
+
+Regeneration command:
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 python3 data/taxobench-cs/scripts/generate_taxobench_cs_payloads.py \
+  --staging-root data/taxobench-cs \
+  --output-root data/taxobench-cs \
+  --experiment-id 2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch \
+  --force
+```
+
+Validation command:
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 python3 data/taxobench-cs/scripts/validate_taxobench_cs_staging.py \
+  --staging-root data/taxobench-cs \
+  --expect-papers 156 \
+  --require-payloads \
+  --report data/taxobench-cs/manifests/readiness_report.json
+```
+
+Verified on 2026-06-02:
+
+- `156` ready papers
+- `624` payload files
+- `624` payload visibility checks
+- `0` fatal validation errors
 
 Projection report per paper includes:
 
@@ -183,6 +215,16 @@ rg -n "Target Paper Abstract:|with_abstract|no_abstract|structural_complete_guar
 
 Expected output: no matches.
 
+Payload visibility check:
+
+```bash
+rg -n "\\b[0-9a-fA-F]{40}\\b|papers:|paperId|year:|ids:|ArXiv=|DOI=|DBLP=|CorpusId|MAG=|abstract:" \
+  data/taxobench-cs/payloads \
+  -g '*.txt'
+```
+
+Expected output: no matches.
+
 ## Phase 5: Submit/Collect Batch
 
 Not implemented and not approved.
@@ -210,7 +252,9 @@ Before this experiment can move to live generation:
 - adapter dry-run passes: done
 - staged manifest row counts are verified from disk: done
 - taxonomy leaves either resolve or unresolved leaves are documented: done, zero unresolved
-- prompt hygiene render smoke passes: done
-- `tree_with_papers` contract is implemented and tested: done
+- prompt hygiene render smoke passes with current prompt and payload contracts
+- `tree_with_papers` title-only contract is implemented and tested
+- prompt-template comparability blocker in `TASKS.md` Task 12 is resolved
+- taxonomy-payload visibility blocker in `TASKS.md` Task 13 is resolved
 - evaluator explicitly handles the citation-key versus `paperId` namespace issue
 - the user approves the first live generation smoke

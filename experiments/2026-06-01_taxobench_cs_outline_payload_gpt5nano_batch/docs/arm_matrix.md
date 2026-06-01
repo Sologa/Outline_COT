@@ -1,17 +1,17 @@
 # Arm Matrix
 
-Status: `draft_data_pending_no_runs`
+Status: `payload_contract_corrected_no_model_runs`
 
 ## Summary
 
-| Arm | Generation? | Support status | Taxonomy payload? | Paper metadata in payload? | Primary purpose |
+| Arm | Generation? | Support status | Taxonomy payload? | Prompt-visible paper evidence | Primary purpose |
 |---|---:|---|---:|---:|---|
 | `human_written` | no | reference source only | original paper outline | n/a | reference/calibration |
 | `baseline_no_taxonomy` | planned | reusable pattern exists | no | n/a | MEOW-style baseline |
-| `flat_concepts` | planned | reusable pattern exists; TaxoBench adapter needed | flattened concepts | descendant paper evidence | tests concept set without hierarchy |
-| `random_hierarchy` | planned | reusable pattern exists; TaxoBench adapter needed | randomized hierarchy | paper evidence | sanity-checks hierarchy value |
-| `tree_only_guarded` | planned | reusable pattern exists; TaxoBench JSON renderer needed | original taxonomy tree | paper ids only | tests structured taxonomy |
-| `tree_with_papers` | planned | TODO / not implemented / excluded from runnable config until adapter and runner tests exist | original taxonomy tree | id/title/year/external ids | tests taxonomy plus interpretable leaf metadata |
+| `flat_concepts` | planned | TaxoBench adapter implemented | flattened concepts | none | tests concept set without hierarchy |
+| `random_hierarchy` | planned | TaxoBench adapter implemented | randomized hierarchy | none | sanity-checks hierarchy value |
+| `tree_only_guarded` | planned | TaxoBench adapter implemented | original taxonomy concept tree | none | tests structured taxonomy |
+| `tree_with_papers` | planned | TaxoBench adapter implemented | original taxonomy concept tree | title-only reference paper leaves | tests taxonomy plus readable paper-title evidence |
 
 ## `human_written`
 
@@ -27,23 +27,24 @@ the existing faithful MEOW blind prompt behavior.
 ## `flat_concepts`
 
 Uses a deterministic projection of `taxo_tree` into a flat concept inventory.
-Concept labels and descendant paper evidence are preserved. Parent-child
-hierarchy is removed.
+Concept labels are preserved. Parent-child hierarchy and descendant paper
+evidence are removed from the prompt-visible payload.
 
 ## `random_hierarchy`
 
 Uses a deterministic randomized concept hierarchy. Concept labels and paper
-evidence are preserved. The seed should be stable per `arxiv_id`.
+labels are preserved. Descendant paper evidence is removed from the
+prompt-visible payload. The seed should be stable per `arxiv_id`.
 
 ## `tree_only_guarded`
 
-Uses the original TaxoBench taxonomy tree with paper identity leaves. It should
-not include generated definitions.
+Uses the original TaxoBench taxonomy concept structure. Semantic Scholar
+`paperId` membership leaves are omitted from the prompt-visible payload. It
+should not include generated definitions.
 
 ## `tree_with_papers`
 
-Uses the original TaxoBench taxonomy tree with interpretable paper metadata at
-leaves. Initial payload should include paper id, title, year, and stable
-external ids. It should not duplicate abstracts by default.
+Uses the original TaxoBench taxonomy tree with readable reference paper titles
+at leaves. It should not include paper ids, years, external ids, or abstracts.
 
 This is a new planned arm and must be implemented explicitly.
