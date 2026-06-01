@@ -27,13 +27,18 @@
   a contract issue to correct before any live run. Generation and judging should
   both use OpenAI Batch API transport, with separate generation and judge batch
   lifecycles.
-- No OpenAI generation, Batch submission, model output, judge output, or Google
-  Sheet update exists for this experiment.
+- A three-row live `human_written` judge smoke completed on 2026-06-02.
+- A 780-row live generation Batch completed on 2026-06-02, but only `388 / 780`
+  rows normalized into usable generated-outline JSON; the remaining rows were
+  incomplete due to `max_output_tokens`.
+- No full generated-arm judge output, `results/` publication, or Google Sheet
+  update exists for this experiment.
 
 ## Hard Guardrails
 
 - Do not write into `/Users/xjp/Desktop/TaxoBench-CS`.
-- Do not call OpenAI generation, Batch, or judge APIs.
+- Do not call further OpenAI generation, Batch, or judge APIs without explicit
+  approval for the next spending step.
 - Do not update Google Sheets.
 - Do not write model-run artifacts into `results/`.
 - Smoke-test scratch must go under `.local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/`.
@@ -1203,13 +1208,16 @@ Verified 2026-06-02 after user approval:
 - no full generation, full judging, `results/` write, or Google Sheet update was
   performed
 
-- [ ] **Step 5: Ask for explicit full live generation approval**
+- [x] **Step 5: Ask for explicit full live generation approval**
 
 Only after the live judge smoke passes, ask for approval to submit:
 
 ```text
 156 papers * 5 generated arms = 780 generation requests
 ```
+
+Approved by user on 2026-06-02 for generation only. Full Batch judge
+evaluation remains explicitly deferred until the user reviews the result.
 
 - [ ] **Step 6: Run full live generation, then full Batch judge evaluation**
 
@@ -1221,6 +1229,36 @@ After generation outputs exist and are validated, run:
 
 Then produce aggregate summaries and a Google-Sheet-ready table package. Native
 Google Sheet creation/update still requires separate explicit approval.
+
+Generation attempt evidence from 2026-06-02:
+
+- Batch id: `batch_6a1de4a4eb788190afc5e88b63d2067f`
+- request counts: `780 completed / 0 failed / 780 total`
+- output rows downloaded: `780`
+- output artifact root:
+  `.local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/full_generation_live_20260602`
+- generated-root for later judge input:
+  `.local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/full_generation_live_20260602/generated_outlines`
+- normalized outline success after offline parser salvage: `388 / 780`
+- remaining unusable rows: `392 / 780`, all due to Responses API
+  `status=incomplete` with `incomplete_details.reason=max_output_tokens`
+- normalized outline success by arm:
+  - `baseline_no_taxonomy`: `82 / 156`
+  - `flat_concepts`: `72 / 156`
+  - `random_hierarchy`: `75 / 156`
+  - `tree_only_guarded`: `86 / 156`
+  - `tree_with_papers`: `73 / 156`
+- actual usage recorded by `api_usage_cost_summary.json`: `27,251,216`
+  input tokens, `19,325,056` cached input tokens, `23,544,421` output
+  tokens, `22,797,559` reasoning output tokens
+- approximate Batch cost at GPT-5 nano rates and 50% Batch discount:
+  `$4.95535084`
+- full Batch judge evaluation was not run
+
+This does not complete Step 6 because the generated-root does not yet contain
+all `780` normalized outlines. The next spending decision is whether to rerun
+generation with revised generation settings, likely avoiding `reasoning: high`
+for this prompt family or otherwise increasing the output budget.
 
 ---
 

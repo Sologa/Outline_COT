@@ -1,11 +1,15 @@
 # Prototype Scripts
 
-Status: `live_human_written_judge_smoke_passed_no_generation`
+Status: `live_generation_batch_completed_partial_normalization_no_judge`
 
-Current status: `live_human_written_judge_smoke_passed_no_generation`.
+Current status: `live_generation_batch_completed_partial_normalization_no_judge`.
 
-Render-only prototype scripts exist, but live generation is still not approved.
-No experiment should submit model jobs from this scaffold.
+Generation Batch submission is implemented and was run once after explicit user
+approval. The Batch completed all `780` requests with `0` API-level failures,
+but only `388` responses normalized into complete outline JSON. The remaining
+`392` rows are Responses API `status=incomplete` with
+`incomplete_details.reason=max_output_tokens`, so this generated-root is not
+ready for full judge evaluation.
 
 Current and future entrypoints:
 
@@ -25,7 +29,7 @@ Current and future entrypoints:
   - render chat-style prompt inputs in render-only mode
   - baseline uses the released MEOW prompt skeleton
   - taxonomy arms append a neutral auxiliary taxonomy block
-  - write local Batch API JSONL only for render-only inspection
+  - write local Batch API JSONL for inspection or submission
   - submit/collect generation batches only after explicit approval
   - normalize generated outlines
 - `evaluate_taxobench_cs_outlines_batch.py`
@@ -33,7 +37,8 @@ Current and future entrypoints:
   - compare generated outlines against `human_written`
   - include `human_written` self-evaluation calibration rows
   - parse downloaded Batch output JSONL into eval/debug artifacts
-  - keep live upload/create/poll/download fail-closed until explicit approval
+  - keep live full-evaluation upload/create/poll/download gated on explicit
+    approval
 
 Reusable code candidates:
 

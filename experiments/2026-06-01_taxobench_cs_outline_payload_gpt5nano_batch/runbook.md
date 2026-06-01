@@ -278,12 +278,14 @@ Implemented local operations:
 - parse downloaded Batch output JSONL fixtures into `.eval.json` and
   `.eval.debug.json` artifacts under the chosen local output root
 
-Still not implemented or approved:
+Live judge upload/create/poll/download is implemented and was exercised only
+for the three-row `human_written` smoke after explicit approval.
 
-- upload Batch input files
-- create OpenAI Batch jobs
-- poll/retrieve live Batch metadata
-- download live Batch output/error files
+Still not approved:
+
+- full generated-arm live judge evaluation
+- result writes under `results/`
+- Google Sheet updates
 - write model-run artifacts into `results/`
 
 Render-only three-paper judge smoke command:
@@ -403,26 +405,70 @@ Verified:
   - `.local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/judge_human_written_smoke/evaluation_summary.json`
   - `.local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/judge_human_written_smoke/evaluations/*/human_written/chatgpt_meow_outline_blind.eval.json`
 
-No full generation, full evaluation, `results/` write, or Google Sheet update
-was performed.
+At the time of this judge smoke, no full generation, full evaluation,
+`results/` write, or Google Sheet update was performed. A later full generation
+attempt is recorded in Phase 6 below.
 
 ## Phase 6: Submit/Collect Generation Batch
 
-Not implemented and not approved.
+Implemented and attempted after explicit user approval on 2026-06-02.
 
-Planning count only if `156` papers are ready:
+Command:
 
-`156 papers * 5 generated arms = 780`
+```bash
+set -a; source .env; set +a
+PYTHONDONTWRITEBYTECODE=1 python3 experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/prototype/run_taxobench_cs_outline_batch.py \
+  --output-root .local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/full_generation_live_20260602 \
+  --generated-root .local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/full_generation_live_20260602/generated_outlines \
+  --submit-live \
+  --poll-interval-seconds 60 \
+  --max-wait-seconds 21600 \
+  --force
+```
+
+Verified:
+
+- Batch id: `batch_6a1de4a4eb788190afc5e88b63d2067f`
+- request counts: `780 completed / 0 failed / 780 total`
+- `batch_output.jsonl`: `780` rows
+- API-level failures: `0`
+- normalized outline success after offline parser salvage: `388 / 780`
+- remaining unusable rows: `392 / 780`
+- every remaining unusable row has Responses API `status=incomplete` with
+  `incomplete_details.reason=max_output_tokens`
+- normalized outlines written under:
+  `.local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/full_generation_live_20260602/generated_outlines/<paper_id>/<arm>/chatgpt_meow_outline_blind.json`
+- actual token usage: `27,251,216` input tokens, `19,325,056` cached input
+  tokens, `23,544,421` output tokens, `22,797,559` reasoning output tokens
+- approximate Batch cost at GPT-5 nano rates and 50% Batch discount:
+  `$4.95535084`
+
+Current normalized-outline coverage by arm:
+
+```text
+baseline_no_taxonomy: 82 / 156
+flat_concepts:        72 / 156
+random_hierarchy:     75 / 156
+tree_only_guarded:    86 / 156
+tree_with_papers:     73 / 156
+```
+
+This generation run is not sufficient for full evaluation. The failure mode is
+not missing Batch rows; it is generation incompletion under `reasoning: high`
+and `max_output_tokens: 32768`, with many responses spending the output budget
+on reasoning tokens before final text. Do not start full judge evaluation from
+this generated-root unless the analysis is intentionally restricted to the
+`388` successful generated outlines.
 
 ## Phase 7: Full Evaluation
 
-Live evaluation is not approved.
+Live evaluation is not approved and was not run.
 
 The evaluator compares generated outlines against `human_written`. The final
 comparison table may include `human_written` as a calibration row, but it is not
 generated.
 
-Planning row count only if `156` papers are ready:
+Planning row count only if all `156` papers have all five generated arms ready:
 
 `156 papers * 6 arms = 936`
 

@@ -126,3 +126,179 @@ def test_render_only_rejects_non_ready_manifest_rows(tmp_path):
             write_batch_input=True,
             force=True,
         )
+
+
+def batch_output_row(custom_id):
+    body = {
+        "id": f"resp_{custom_id}",
+        "model": runner.MODEL,
+        "output_text": json.dumps(
+            [
+                {
+                    "level": 1,
+                    "numbering": "1",
+                    "title": f"Outline for {custom_id}",
+                    "ref": ["0"],
+                }
+            ],
+            ensure_ascii=False,
+        ),
+        "usage": {
+            "input_tokens": 100,
+            "output_tokens": 20,
+            "total_tokens": 120,
+            "output_tokens_details": {"reasoning_tokens": 5},
+        },
+    }
+    return {
+        "custom_id": custom_id,
+        "response": {"status_code": 200, "request_id": f"req_{custom_id}", "body": body},
+        "error": None,
+    }
+
+
+def test_parse_generated_outline_accepts_outline_wrapper():
+    parsed = runner.parse_generated_outline(
+        json.dumps(
+            {
+                "outline": [
+                    {
+                        "level": 1,
+                        "numbering": "1",
+                        "title": "Wrapped Section",
+                        "ref": ["0"],
+                    }
+                ]
+            }
+        )
+    )
+
+    assert parsed == [{"level": 1, "numbering": "1", "title": "Wrapped Section", "ref": ["0"]}]
+
+
+def test_parse_generated_outline_recovers_complete_objects_with_bad_ref_token():
+    raw_text = """
+    [
+      {
+        "level": 1,
+        "numbering": "1",
+        "title": "Recovered Section",
+        "ref": [
+          "S2:abc",
+          broken reference token,
+          "S2:def"
+        ]
+      }
+    ]
+    """
+
+    parsed = runner.parse_generated_outline(raw_text)
+
+    assert parsed == [{"level": 1, "numbering": "1", "title": "Recovered Section", "ref": ["S2:abc", "S2:def"]}]
+
+
+def test_parse_batch_output_writes_generated_root_layout(tmp_path):
+    staging = make_staging(tmp_path)
+    output = tmp_path / "render"
+    generated_root = tmp_path / "generated"
+    runner.render_requests(
+        staging_root=staging,
+        output_root=output,
+        generated_root=generated_root,
+        limit=1,
+        write_batch_input=True,
+        force=True,
+    )
+    rows = [json.loads(line) for line in (output / "batch_input.jsonl").read_text(encoding="utf-8").splitlines()]
+    batch_output = tmp_path / "batch_output.jsonl"
+    batch_output.write_text(
+        "".join(json.dumps(batch_output_row(row["custom_id"]), ensure_ascii=False) + "\n" for row in rows),
+        encoding="utf-8",
+    )
+
+    summary = runner.parse_batch_output(
+        output_root=output,
+        batch_output_path=batch_output,
+        generated_root=generated_root,
+        force=True,
+    )
+
+    assert summary["parsed_count"] == 5
+    assert summary["success_count"] == 5
+    assert summary["failure_count"] == 0
+    for arm in runner.GENERATED_ARMS:
+        outline_path = generated_root / "2401.00001" / arm / "chatgpt_meow_outline_blind.json"
+        manifest_path = generated_root / "2401.00001" / arm / "run_manifest.json"
+        assert json.loads(outline_path.read_text(encoding="utf-8"))[0]["level"] == 1
+        assert json.loads(manifest_path.read_text(encoding="utf-8"))["status"] == "success"
+
+
+def test_parse_batch_output_rejects_missing_custom_id(tmp_path):
+    staging = make_staging(tmp_path)
+    output = tmp_path / "render"
+    runner.render_requests(
+        staging_root=staging,
+        output_root=output,
+        generated_root=tmp_path / "generated",
+        limit=1,
+        write_batch_input=True,
+        force=True,
+    )
+    rows = [json.loads(line) for line in (output / "batch_input.jsonl").read_text(encoding="utf-8").splitlines()]
+    batch_output = tmp_path / "batch_output.jsonl"
+    batch_output.write_text(
+        "".join(json.dumps(batch_output_row(row["custom_id"]), ensure_ascii=False) + "\n" for row in rows[:-1]),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ValueError, match="missing expected custom_id"):
+        runner.parse_batch_output(output_root=output, batch_output_path=batch_output, force=True)
+
+
+def test_parse_batch_output_keeps_incomplete_response_failed(tmp_path):
+    staging = make_staging(tmp_path)
+    output = tmp_path / "render"
+    generated_root = tmp_path / "generated"
+    runner.render_requests(
+        staging_root=staging,
+        output_root=output,
+        generated_root=generated_root,
+        limit=1,
+        write_batch_input=True,
+        force=True,
+    )
+    rows = [json.loads(line) for line in (output / "batch_input.jsonl").read_text(encoding="utf-8").splitlines()]
+    output_rows = [batch_output_row(row["custom_id"]) for row in rows]
+    output_rows[0]["response"]["body"]["status"] = "incomplete"
+    output_rows[0]["response"]["body"]["incomplete_details"] = {"reason": "max_output_tokens"}
+    batch_output = tmp_path / "batch_output.jsonl"
+    batch_output.write_text(
+        "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in output_rows),
+        encoding="utf-8",
+    )
+
+    summary = runner.parse_batch_output(
+        output_root=output,
+        batch_output_path=batch_output,
+        generated_root=generated_root,
+        force=True,
+    )
+
+    assert summary["success_count"] == 4
+    assert summary["failure_count"] == 1
+    failed_manifest = json.loads((generated_root / "2401.00001" / rows[0]["custom_id"].split("__", 1)[1] / "run_manifest.json").read_text())
+    assert failed_manifest["status"] == "parse_failed"
+    assert "Response incomplete" in failed_manifest["error"]
+
+
+def test_generation_output_root_rejects_results_tree(tmp_path):
+    staging = make_staging(tmp_path)
+
+    with pytest.raises(ValueError, match=r"under results/"):
+        runner.render_requests(
+            staging_root=staging,
+            output_root=runner.ROOT_DIR / "results" / "taxobench_cs_generation_test",
+            limit=1,
+            write_batch_input=True,
+            force=True,
+        )
