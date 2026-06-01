@@ -3,20 +3,21 @@
 ## Identity
 
 - Experiment id: `2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch`
-- Status: `draft_data_pending_no_runs`
+- Status: `data_staged_payloads_ready_no_model_runs`
 - Created: `2026-06-01`
 - Source dataset workspace: `/Users/xjp/Desktop/TaxoBench-CS`
 - Owning runtime workspace: `/Users/xjp/Desktop/Outline_COT`
 
 ## Scope
 
-Prepare a new Outline_COT experiment scaffold for TaxoBench-CS survey outline
-generation and evaluation. This scaffold records the intended data contract,
-variant matrix, prompt contract, future runner hooks, and validation gates.
+Prepare a new Outline_COT experiment package for TaxoBench-CS survey outline
+generation and evaluation. This package records the data contract, variant
+matrix, prompt contract, render-only runner hook, and validation gates.
 
-This scaffold does not run generation, evaluation, render-only prompt output, or
-payload projection. TaxoBench-CS source data is still treated as upstream data
-that may need additional processing before live experiment execution.
+Canonical staged inputs and deterministic taxonomy payloads were written after
+explicit approval on 2026-06-01. No OpenAI generation, Batch submission,
+judge/evaluation run, Google Sheet update, or model-run artifact has been
+created.
 
 ## Arms
 
@@ -73,6 +74,16 @@ Observed local counts on 2026-06-01:
 
 These counts are source-snapshot observations, not permission to run this
 experiment. The adapter must re-validate them before any future smoke or batch.
+
+Canonical staging validation on 2026-06-01 confirmed:
+
+- Manifest rows: `156`
+- Ready papers: `156`
+- Normalized reference rows: `11609`
+- Taxonomy leaf paper-id mentions: `13205`
+- Taxonomy unresolved leaf mentions: `0`
+- Payload files: `624`
+- Prompt-hygiene violations in payload sources/payloads: `0`
 
 ## TaxoBench-CS Ground Record Contract
 
@@ -191,12 +202,12 @@ when present.
   ids.
 - Do not duplicate reference abstracts inside the tree payload unless a future
   spec revision explicitly turns this into a separate ablation.
-- No current Tree50 runner is known to provide this exact arm; mark as a new
-  adapter/runner feature until implemented.
+- This is implemented as a TaxoBench-CS-specific renderer; it does not reuse a
+  Tree50 runtime path.
 
 ## Expected Matrix After Data Readiness
 
-If the final ready paper set remains `156` papers:
+The validated ready paper set is `156` papers. Planning counts are:
 
 - generation requests: `156 papers * 5 generated arms = 780`
 - final comparison rows including `human_written`: `156 papers * 6 arms = 936`
@@ -226,7 +237,7 @@ TaxoBench `paperId`.
 
 - Do not run any generation batch.
 - Do not run any evaluation.
-- Do not run render-only prompt generation.
+- Do not submit live generation batches.
 - Do not publish results to the stable Google Sheet.
 - Do not mutate `/Users/xjp/Desktop/TaxoBench-CS`.
 - Do not copy large raw PDFs, source bundles, or extracted TeX trees into this

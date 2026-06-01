@@ -1,0 +1,1597 @@
+{
+  "paper_id": "2311.08298",
+  "arxiv_id": "2311.08298",
+  "title": "A Survey of Confidence Estimation and Calibration in Large Language Models",
+  "ref_meta": [
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "0",
+      "ref_key": "S2:d65ce2b8300541414bfe51d03906fca72e93523c",
+      "paperId": "d65ce2b8300541414bfe51d03906fca72e93523c",
+      "title": "On Calibration of Modern Neural Networks",
+      "year": 2017,
+      "abstract": "Confidence calibration -- the problem of predicting probability estimates representative of the true correctness likelihood -- is important for classification models in many applications. We discover that modern neural networks, unlike those from a decade ago, are poorly calibrated. Through extensive experiments, we observe that depth, width, weight decay, and Batch Normalization are important factors influencing calibration. We evaluate the performance of various post-processing calibration methods on state-of-the-art architectures with image and document classification datasets. Our analysis and experiments not only offer insights into neural network learning, but also provide a simple and straightforward recipe for practical settings: on most datasets, temperature scaling -- a single-parameter variant of Platt Scaling -- is surprisingly effective at calibrating predictions.",
+      "externalIds": {
+        "MAG": "2950953798",
+        "ArXiv": "1706.04599",
+        "DBLP": "journals/corr/GuoPSW17",
+        "CorpusId": 28671436
+      },
+      "arxiv_id": "1706.04599",
+      "doi": null,
+      "corpus_id": 28671436
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "1",
+      "ref_key": "S2:6af460d34bfc8e955e43fbe15cedcf329b48bc19",
+      "paperId": "6af460d34bfc8e955e43fbe15cedcf329b48bc19",
+      "title": "SAC3: Reliable Hallucination Detection in Black-Box Language Models via Semantic-aware Cross-check Consistency",
+      "year": 2023,
+      "abstract": "Hallucination detection is a critical step toward understanding the trustworthiness of modern language models (LMs). To achieve this goal, we re-examine existing detection approaches based on the self-consistency of LMs and uncover two types of hallucinations resulting from 1) question-level and 2) model-level, which cannot be effectively identified through self-consistency check alone. Building upon this discovery, we propose a novel sampling-based method, i.e., semantic-aware cross-check consistency (SAC3) that expands on the principle of self-consistency checking. Our SAC3 approach incorporates additional mechanisms to detect both question-level and model-level hallucinations by leveraging advances including semantically equivalent question perturbation and cross-model response consistency checking. Through extensive and systematic empirical analysis, we demonstrate that SAC3 outperforms the state of the art in detecting both non-factual and factual statements across multiple question-answering and open-domain generation benchmarks.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/ZhangLDMS23",
+        "ArXiv": "2311.01740",
+        "DOI": "10.48550/arXiv.2311.01740",
+        "CorpusId": 265019095
+      },
+      "arxiv_id": "2311.01740",
+      "doi": "10.48550/arXiv.2311.01740",
+      "corpus_id": 265019095
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "2",
+      "ref_key": "S2:f406aceba4f29cc7cfbe7edb2f52f01374486589",
+      "paperId": "f406aceba4f29cc7cfbe7edb2f52f01374486589",
+      "title": "The Internal State of an LLM Knows When its Lying",
+      "year": 2023,
+      "abstract": "While Large Language Models (LLMs) have shown exceptional performance in various tasks, one of their most prominent drawbacks is generating inaccurate or false information with a confident tone. In this paper, we provide evidence that the LLM's internal state can be used to reveal the truthfulness of statements. This includes both statements provided to the LLM, and statements that the LLM itself generates. Our approach is to train a classifier that outputs the probability that a statement is truthful, based on the hidden layer activations of the LLM as it reads or generates the statement. Experiments demonstrate that given a set of test sentences, of which half are true and half false, our trained classifier achieves an average of 71\\% to 83\\% accuracy labeling which sentences are true versus false, depending on the LLM base model. Furthermore, we explore the relationship between our classifier's performance and approaches based on the probability assigned to the sentence by the LLM. We show that while LLM-assigned sentence probability is related to sentence truthfulness, this probability is also dependent on sentence length and the frequencies of words in the sentence, resulting in our trained classifier providing a more reliable approach to detecting truthfulness, highlighting its potential to enhance the reliability of LLM-generated content and its practical applicability in real-world scenarios.",
+      "externalIds": {
+        "ArXiv": "2304.13734",
+        "DBLP": "journals/corr/abs-2304-13734",
+        "DOI": "10.18653/v1/2023.findings-emnlp.68",
+        "CorpusId": 258352729
+      },
+      "arxiv_id": "2304.13734",
+      "doi": "10.18653/v1/2023.findings-emnlp.68",
+      "corpus_id": 258352729
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "3",
+      "ref_key": "S2:89c3bd70ad33c4f8832f00ab98872b77861ee0ec",
+      "paperId": "89c3bd70ad33c4f8832f00ab98872b77861ee0ec",
+      "title": "Discovering Latent Knowledge in Language Models Without Supervision",
+      "year": 2022,
+      "abstract": "Existing techniques for training language models can be misaligned with the truth: if we train models with imitation learning, they may reproduce errors that humans make; if we train them to generate text that humans rate highly, they may output errors that human evaluators can't detect. We propose circumventing this issue by directly finding latent knowledge inside the internal activations of a language model in a purely unsupervised way. Specifically, we introduce a method for accurately answering yes-no questions given only unlabeled model activations. It works by finding a direction in activation space that satisfies logical consistency properties, such as that a statement and its negation have opposite truth values. We show that despite using no supervision and no model outputs, our method can recover diverse knowledge represented in large language models: across 6 models and 10 question-answering datasets, it outperforms zero-shot accuracy by 4\\% on average. We also find that it cuts prompt sensitivity in half and continues to maintain high accuracy even when models are prompted to generate incorrect answers. Our results provide an initial step toward discovering what language models know, distinct from what they say, even when we don't have access to explicit ground truth labels.",
+      "externalIds": {
+        "ArXiv": "2212.03827",
+        "DBLP": "journals/corr/abs-2212-03827",
+        "DOI": "10.48550/arXiv.2212.03827",
+        "CorpusId": 254366253
+      },
+      "arxiv_id": "2212.03827",
+      "doi": "10.48550/arXiv.2212.03827",
+      "corpus_id": 254366253
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "4",
+      "ref_key": "S2:d4691aef27ae3c768b90c34ca5d8521d202eb47c",
+      "paperId": "d4691aef27ae3c768b90c34ca5d8521d202eb47c",
+      "title": "Beyond temperature scaling: Obtaining well-calibrated multiclass probabilities with Dirichlet calibration",
+      "year": 2019,
+      "abstract": "Class probabilities predicted by most multiclass classifiers are uncalibrated, often tending towards over-confidence. With neural networks, calibration can be improved by temperature scaling, a method to learn a single corrective multiplicative factor for inputs to the last softmax layer. On non-neural models the existing methods apply binary calibration in a pairwise or one-vs-rest fashion. We propose a natively multiclass calibration method applicable to classifiers from any model class, derived from Dirichlet distributions and generalising the beta calibration method from binary classification. It is easily implemented with neural nets since it is equivalent to log-transforming the uncalibrated probabilities, followed by one linear layer and softmax. Experiments demonstrate improved probabilistic predictions according to multiple measures (confidence-ECE, classwise-ECE, log-loss, Brier score) across a wide range of datasets and classifiers. Parameters of the learned Dirichlet calibration map provide insights to the biases in the uncalibrated model.",
+      "externalIds": {
+        "MAG": "2971118045",
+        "DBLP": "journals/corr/abs-1910-12656",
+        "ArXiv": "1910.12656",
+        "CorpusId": 202773833
+      },
+      "arxiv_id": "1910.12656",
+      "doi": null,
+      "corpus_id": 202773833
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "5",
+      "ref_key": "S2:9386242a9ad5c1a15023043ef63d45e42ceac546",
+      "paperId": "9386242a9ad5c1a15023043ef63d45e42ceac546",
+      "title": "Selectively Answering Ambiguous Questions",
+      "year": 2023,
+      "abstract": "Trustworthy language models should abstain from answering questions when they do not know the answer. However, the answer to a question can be unknown for a variety of reasons. Prior research has focused on the case in which the question is clear and the answer is unambiguous but possibly unknown, but the answer to a question can also be unclear due to uncertainty of the questioner's intent or context. We investigate question answering from this perspective, focusing on answering a subset of questions with a high degree of accuracy, from a set of questions in which many are inherently ambiguous. In this setting, we find that the most reliable approach to decide when to abstain involves quantifying repetition within sampled model outputs, rather than the model's likelihood or self-verification as used in prior work. We find this to be the case across different types of uncertainty and model scales,and with or without instruction tuning. Our results suggest that sampling-based confidence scores help calibrate answers to relatively unambiguous questions, with more dramatic improvements on ambiguous questions.",
+      "externalIds": {
+        "ArXiv": "2305.14613",
+        "DBLP": "journals/corr/abs-2305-14613",
+        "DOI": "10.48550/arXiv.2305.14613",
+        "CorpusId": 258866001
+      },
+      "arxiv_id": "2305.14613",
+      "doi": "10.48550/arXiv.2305.14613",
+      "corpus_id": 258866001
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "6",
+      "ref_key": "S2:5424e311319c58847b4c690d5c91090e3b6a4ac3",
+      "paperId": "5424e311319c58847b4c690d5c91090e3b6a4ac3",
+      "title": "Shifting Attention to Relevance: Towards the Uncertainty Estimation of Large Language Models",
+      "year": 2023,
+      "abstract": "Although Large Language Models (LLMs) have shown great potential in Natural Language Generation, it is still challenging to characterize the uncertainty of model generations, i.e., when users could trust model outputs. Our research is derived from the heuristic facts that tokens are created unequally in reﬂecting the meaning of generations by auto-regressive LLMs, i.e., some tokens are more relevant (or representative) than others, yet all the to-kens are equally valued when estimating uncertainty. It is because of the linguistic redundancy where mostly a few keywords are sufﬁ-cient to convey the meaning of a long sentence. We name these inequalities as generative inequalities and investigate how they affect uncertainty estimation. Our results reveal that considerable tokens and sentences containing limited semantics are weighted equally or even heavily when estimating uncertainty. To tackle these biases posed by generative inequalities, we propose to jointly S hifting A ttention to more R elevant ( SAR ) components from both the token level and the sentence level while estimating uncertainty. We conduct experiments over popular “off-the-shelf” LLMs (e.g., OPT, LLaMA) with model sizes up to 30B and powerful commercial LLMs (e.g., Davinci from OpenAI), across various free-form question-answering tasks. Experimental results and detailed demographic analysis indicate the superior performance of SAR . Code is available at https://github.com/jinhaoduan/ shifting-attention-to-relevance .",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-01379",
+        "DOI": "10.48550/arXiv.2307.01379",
+        "CorpusId": 259342406
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2307.01379",
+      "corpus_id": 259342406
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "7",
+      "ref_key": "S2:28a7ced384549eaae74ea9ad3ee21189a0625afe",
+      "paperId": "28a7ced384549eaae74ea9ad3ee21189a0625afe",
+      "title": "Mitigating Label Biases for In-context Learning",
+      "year": 2023,
+      "abstract": "Various design settings for in-context learning (ICL), such as the choice and order of the in-context examples, can bias the model’s predictions. While many studies discuss these design choices, there have been few systematic investigations into categorizing them and mitigating their impact. In this work, we define a typology for three types of label biases in ICL for text classification: vanilla-label bias, context-label bias, and domain-label bias (which we conceptualize and detect for the first time). Our analysis demonstrates that prior label bias calibration methods fall short of addressing all three types of biases. Specifically, domain-label bias restricts LLMs to random-level performance on many tasks regardless of the choice of in-context examples. To mitigate the effect of these biases, we propose a simple bias calibration method that estimates a language model’s label bias using random in-domain words from the task corpus. After controlling for this estimated bias when making predictions, our novel domain-context calibration significantly improves the ICL performance of GPT-J and GPT-3 on a wide range of tasks. The gain is substantial on tasks with large domain-label bias (up to 37% in Macro-F1). Furthermore, our results generalize to models with different scales, pretraining methods, and manually-designed task instructions, showing the prevalence of label biases in ICL.",
+      "externalIds": {
+        "ArXiv": "2305.19148",
+        "DBLP": "conf/acl/FeiHCB23",
+        "ACL": "2023.acl-long.783",
+        "DOI": "10.48550/arXiv.2305.19148",
+        "CorpusId": 258967265
+      },
+      "arxiv_id": "2305.19148",
+      "doi": "10.48550/arXiv.2305.19148",
+      "corpus_id": 258967265
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "8",
+      "ref_key": "S2:6a483cd1cbecd66150c9bbcd01606723950281bc",
+      "paperId": "6a483cd1cbecd66150c9bbcd01606723950281bc",
+      "title": "Prototypical Calibration for Few-shot Learning of Language Models",
+      "year": 2022,
+      "abstract": "In-context learning of GPT-like models has been recognized as fragile across different hand-crafted templates, and demonstration permutations. In this work, we propose prototypical calibration to adaptively learn a more robust decision boundary for zero- and few-shot classification, instead of greedy decoding. Concretely, our method first adopts Gaussian mixture distribution to estimate the prototypical clusters for all categories. Then we assign each cluster to the corresponding label by solving a weighted bipartite matching problem. Given an example, its prediction is calibrated by the likelihood of prototypical clusters. Experimental results show that prototypical calibration yields a substantial improvement on a diverse set of tasks. Extensive analysis across different scales also indicates that our method calibrates the decision boundary as expected, greatly improving the robustness of GPT to templates, permutations, and class imbalance.",
+      "externalIds": {
+        "ArXiv": "2205.10183",
+        "DBLP": "conf/iclr/HanH0SW23",
+        "DOI": "10.48550/arXiv.2205.10183",
+        "CorpusId": 248964978
+      },
+      "arxiv_id": "2205.10183",
+      "doi": "10.48550/arXiv.2205.10183",
+      "corpus_id": 248964978
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "9",
+      "ref_key": "S2:67fa2f2072cca1071ed2c820d6a7f50de6ea2ff3",
+      "paperId": "67fa2f2072cca1071ed2c820d6a7f50de6ea2ff3",
+      "title": "Decomposing Uncertainty for Large Language Models through Input Clarification Ensembling",
+      "year": 2023,
+      "abstract": "Uncertainty decomposition refers to the task of decomposing the total uncertainty of a predictive model into aleatoric (data) uncertainty, resulting from inherent randomness in the data-generating process, and epistemic (model) uncertainty, resulting from missing information in the model's training data. In large language models (LLMs) specifically, identifying sources of uncertainty is an important step toward improving reliability, trustworthiness, and interpretability, but remains an important open research question. In this paper, we introduce an uncertainty decomposition framework for LLMs, called input clarification ensembling, which can be applied to any pre-trained LLM. Our approach generates a set of clarifications for the input, feeds them into an LLM, and ensembles the corresponding predictions. We show that, when aleatoric uncertainty arises from ambiguity or under-specification in LLM inputs, this approach makes it possible to factor an (unclarified) LLM's predictions into separate aleatoric and epistemic terms, using a decomposition similar to the one employed by Bayesian neural networks. Empirical evaluations demonstrate that input clarification ensembling provides accurate and reliable uncertainty quantification on several language processing tasks. Code and data are available at https://github.com/UCSB-NLP-Chang/llm_uncertainty.",
+      "externalIds": {
+        "ArXiv": "2311.08718",
+        "DBLP": "journals/corr/abs-2311-08718",
+        "DOI": "10.48550/arXiv.2311.08718",
+        "CorpusId": 265213190
+      },
+      "arxiv_id": "2311.08718",
+      "doi": "10.48550/arXiv.2311.08718",
+      "corpus_id": 265213190
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "10",
+      "ref_key": "S2:14d0489047a1390434e7ea454e7e5165d9721ae3",
+      "paperId": "14d0489047a1390434e7ea454e7e5165d9721ae3",
+      "title": "Calibrating Long-form Generations from Large Language Models",
+      "year": 2024,
+      "abstract": "To enhance Large Language Models' (LLMs) reliability, calibration is essential -- the model's assessed confidence scores should align with the actual likelihood of its responses being correct. However, current confidence elicitation methods and calibration metrics typically rely on a binary true/false assessment of response correctness. This approach does not apply to long-form generation, where an answer can be partially correct. Addressing this gap, we introduce a unified calibration framework, in which both the correctness of the LLMs' responses and their associated confidence levels are treated as distributions across a range of scores. Within this framework, we develop three metrics to precisely evaluate LLM calibration and further propose two confidence elicitation methods based on self-consistency and self-evaluation. Our experiments, which include long-form QA and summarization tasks, demonstrate that larger models don't necessarily guarantee better calibration, that calibration performance is found to be metric-dependent, and that self-consistency methods excel in factoid datasets. We also find that calibration can be enhanced through techniques such as fine-tuning, integrating relevant source documents, scaling the temperature, and combining self-consistency with self-evaluation. Lastly, we showcase a practical application of our system: selecting and cascading open-source models and ChatGPT to optimize correctness given a limited API budget. This research not only challenges existing notions of LLM calibration but also offers practical methodologies for improving trustworthiness in long-form generation.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-06544",
+        "ArXiv": "2402.06544",
+        "DOI": "10.48550/arXiv.2402.06544",
+        "CorpusId": 267617073
+      },
+      "arxiv_id": "2402.06544",
+      "doi": "10.48550/arXiv.2402.06544",
+      "corpus_id": 267617073
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "11",
+      "ref_key": "S2:88884b8806262a4095036041e3567d450dba39f7",
+      "paperId": "88884b8806262a4095036041e3567d450dba39f7",
+      "title": "Active Retrieval Augmented Generation",
+      "year": 2023,
+      "abstract": "Despite the remarkable ability of large language models (LMs) to comprehend and generate language, they have a tendency to hallucinate and create factually inaccurate output. Augmenting LMs by retrieving information from external knowledge resources is one promising solution. Most existing retrieval augmented LMs employ a retrieve-and-generate setup that only retrieves information once based on the input. This is limiting, however, in more general scenarios involving generation of long texts, where continually gathering information throughout generation is essential. In this work, we provide a generalized view of active retrieval augmented generation, methods that actively decide when and what to retrieve across the course of the generation. We propose Forward-Looking Active REtrieval augmented generation (FLARE), a generic method which iteratively uses a prediction of the upcoming sentence to anticipate future content, which is then utilized as a query to retrieve relevant documents to regenerate the sentence if it contains low-confidence tokens. We test FLARE along with baselines comprehensively over 4 long-form knowledge-intensive generation tasks/datasets. FLARE achieves superior or competitive performance on all tasks, demonstrating the effectiveness of our method. Code and datasets are available at https://github.com/jzbjyb/FLARE.",
+      "externalIds": {
+        "ArXiv": "2305.06983",
+        "DBLP": "conf/emnlp/JiangXGSLDYCN23",
+        "DOI": "10.48550/arXiv.2305.06983",
+        "CorpusId": 258615731
+      },
+      "arxiv_id": "2305.06983",
+      "doi": "10.48550/arXiv.2305.06983",
+      "corpus_id": 258615731
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "12",
+      "ref_key": "S2:142ebbf4760145f591166bde2564ac70c001e927",
+      "paperId": "142ebbf4760145f591166bde2564ac70c001e927",
+      "title": "Language Models (Mostly) Know What They Know",
+      "year": 2022,
+      "abstract": "We study whether language models can evaluate the validity of their own claims and predict which questions they will be able to answer correctly. We first show that larger models are well-calibrated on diverse multiple choice and true/false questions when they are provided in the right format. Thus we can approach self-evaluation on open-ended sampling tasks by asking models to first propose answers, and then to evaluate the probability\"P(True)\"that their answers are correct. We find encouraging performance, calibration, and scaling for P(True) on a diverse array of tasks. Performance at self-evaluation further improves when we allow models to consider many of their own samples before predicting the validity of one specific possibility. Next, we investigate whether models can be trained to predict\"P(IK)\", the probability that\"I know\"the answer to a question, without reference to any particular proposed answer. Models perform well at predicting P(IK) and partially generalize across tasks, though they struggle with calibration of P(IK) on new tasks. The predicted P(IK) probabilities also increase appropriately in the presence of relevant source materials in the context, and in the presence of hints towards the solution of mathematical word problems. We hope these observations lay the groundwork for training more honest models, and for investigating how honesty generalizes to cases where models are trained on objectives other than the imitation of human writing.",
+      "externalIds": {
+        "ArXiv": "2207.05221",
+        "DBLP": "journals/corr/abs-2207-05221",
+        "DOI": "10.48550/arXiv.2207.05221",
+        "CorpusId": 250451161
+      },
+      "arxiv_id": "2207.05221",
+      "doi": "10.48550/arXiv.2207.05221",
+      "corpus_id": 250451161
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "13",
+      "ref_key": "S2:cb693ce346f44e6b89ee814c6bb9f0e5cc2fa9d2",
+      "paperId": "cb693ce346f44e6b89ee814c6bb9f0e5cc2fa9d2",
+      "title": "Selective Question Answering under Domain Shift",
+      "year": 2020,
+      "abstract": "To avoid giving wrong answers, question answering (QA) models need to know when to abstain from answering. Moreover, users often ask questions that diverge from the model’s training data, making errors more likely and thus abstention more critical. In this work, we propose the setting of selective question answering under domain shift, in which a QA model is tested on a mixture of in-domain and out-of-domain data, and must answer (i.e., not abstain on) as many questions as possible while maintaining high accuracy. Abstention policies based solely on the model’s softmax probabilities fare poorly, since models are overconfident on out-of-domain inputs. Instead, we train a calibrator to identify inputs on which the QA model errs, and abstain when it predicts an error is likely. Crucially, the calibrator benefits from observing the model’s behavior on out-of-domain data, even if from a different domain than the test data. We combine this method with a SQuAD-trained QA model and evaluate on mixtures of SQuAD and five other QA datasets. Our method answers 56% of questions while maintaining 80% accuracy; in contrast, directly using the model’s probabilities only answers 48% at 80% accuracy.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2006-09462",
+        "MAG": "3035847612",
+        "ArXiv": "2006.09462",
+        "ACL": "2020.acl-main.503",
+        "DOI": "10.18653/v1/2020.acl-main.503",
+        "CorpusId": 219721462
+      },
+      "arxiv_id": "2006.09462",
+      "doi": "10.18653/v1/2020.acl-main.503",
+      "corpus_id": 219721462
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "14",
+      "ref_key": "S2:507465f8d46489a68a527cb5304d76bdb6c31ed9",
+      "paperId": "507465f8d46489a68a527cb5304d76bdb6c31ed9",
+      "title": "Semantic Uncertainty: Linguistic Invariances for Uncertainty Estimation in Natural Language Generation",
+      "year": 2023,
+      "abstract": "We introduce a method to measure uncertainty in large language models. For tasks like question answering, it is essential to know when we can trust the natural language outputs of foundation models. We show that measuring uncertainty in natural language is challenging because of\"semantic equivalence\"-- different sentences can mean the same thing. To overcome these challenges we introduce semantic entropy -- an entropy which incorporates linguistic invariances created by shared meanings. Our method is unsupervised, uses only a single model, and requires no modifications to off-the-shelf language models. In comprehensive ablation studies we show that the semantic entropy is more predictive of model accuracy on question answering data sets than comparable baselines.",
+      "externalIds": {
+        "ArXiv": "2302.09664",
+        "DBLP": "journals/corr/abs-2302-09664",
+        "DOI": "10.48550/arXiv.2302.09664",
+        "CorpusId": 257039062
+      },
+      "arxiv_id": "2302.09664",
+      "doi": "10.48550/arXiv.2302.09664",
+      "corpus_id": 257039062
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "15",
+      "ref_key": "S2:96c90ab340b2823a0040cd64b25d1d32af807994",
+      "paperId": "96c90ab340b2823a0040cd64b25d1d32af807994",
+      "title": "Calibration of Encoder Decoder Models for Neural Machine Translation",
+      "year": 2019,
+      "abstract": "We study the calibration of several state of the art neural machine translation(NMT) systems built on attention-based encoder-decoder models. For structured outputs like in NMT, calibration is important not just for reliable confidence with predictions, but also for proper functioning of beam-search inference. We show that most modern NMT models are surprisingly miscalibrated even when conditioned on the true previous tokens. Our investigation leads to two main reasons -- severe miscalibration of EOS (end of sequence marker) and suppression of attention uncertainty. We design recalibration methods based on these signals and demonstrate improved accuracy, better sequence-level calibration, and more intuitive results from beam-search.",
+      "externalIds": {
+        "MAG": "2918914336",
+        "ArXiv": "1903.00802",
+        "DBLP": "journals/corr/abs-1903-00802",
+        "CorpusId": 67855916
+      },
+      "arxiv_id": "1903.00802",
+      "doi": null,
+      "corpus_id": 67855916
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "16",
+      "ref_key": "S2:405f8f5f1c6df1b3343c812832479aad5180b65f",
+      "paperId": "405f8f5f1c6df1b3343c812832479aad5180b65f",
+      "title": "Inference-Time Intervention: Eliciting Truthful Answers from a Language Model",
+      "year": 2023,
+      "abstract": "We introduce Inference-Time Intervention (ITI), a technique designed to enhance the\"truthfulness\"of large language models (LLMs). ITI operates by shifting model activations during inference, following a set of directions across a limited number of attention heads. This intervention significantly improves the performance of LLaMA models on the TruthfulQA benchmark. On an instruction-finetuned LLaMA called Alpaca, ITI improves its truthfulness from 32.5% to 65.1%. We identify a tradeoff between truthfulness and helpfulness and demonstrate how to balance it by tuning the intervention strength. ITI is minimally invasive and computationally inexpensive. Moreover, the technique is data efficient: while approaches like RLHF require extensive annotations, ITI locates truthful directions using only few hundred examples. Our findings suggest that LLMs may have an internal representation of the likelihood of something being true, even as they produce falsehoods on the surface.",
+      "externalIds": {
+        "ArXiv": "2306.03341",
+        "DBLP": "journals/corr/abs-2306-03341",
+        "CorpusId": 259088877
+      },
+      "arxiv_id": "2306.03341",
+      "doi": null,
+      "corpus_id": 259088877
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "17",
+      "ref_key": "S2:374dd173491a59a10bbb2b3519ebcfe3649f529d",
+      "paperId": "374dd173491a59a10bbb2b3519ebcfe3649f529d",
+      "title": "Teaching Models to Express Their Uncertainty in Words",
+      "year": 2022,
+      "abstract": "We show that a GPT-3 model can learn to express uncertainty about its own answers in natural language -- without use of model logits. When given a question, the model generates both an answer and a level of confidence (e.g.\"90% confidence\"or\"high confidence\"). These levels map to probabilities that are well calibrated. The model also remains moderately calibrated under distribution shift, and is sensitive to uncertainty in its own answers, rather than imitating human examples. To our knowledge, this is the first time a model has been shown to express calibrated uncertainty about its own answers in natural language. For testing calibration, we introduce the CalibratedMath suite of tasks. We compare the calibration of uncertainty expressed in words (\"verbalized probability\") to uncertainty extracted from model logits. Both kinds of uncertainty are capable of generalizing calibration under distribution shift. We also provide evidence that GPT-3's ability to generalize calibration depends on pre-trained latent representations that correlate with epistemic uncertainty over its answers.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2205-14334",
+        "ArXiv": "2205.14334",
+        "DOI": "10.48550/arXiv.2205.14334",
+        "CorpusId": 249191391
+      },
+      "arxiv_id": "2205.14334",
+      "doi": "10.48550/arXiv.2205.14334",
+      "corpus_id": 249191391
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "18",
+      "ref_key": "S2:ad934a9344f68fcc0b9aa704102aa48c39c5b591",
+      "paperId": "ad934a9344f68fcc0b9aa704102aa48c39c5b591",
+      "title": "Generating with Confidence: Uncertainty Quantification for Black-box Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) specializing in natural language generation (NLG) have recently started exhibiting promising capabilities across a variety of domains. However, gauging the trustworthiness of responses generated by LLMs remains an open challenge, with limited research on uncertainty quantification (UQ) for NLG. Furthermore, existing literature typically assumes white-box access to language models, which is becoming unrealistic either due to the closed-source nature of the latest LLMs or computational constraints. In this work, we investigate UQ in NLG for *black-box* LLMs. We first differentiate *uncertainty* vs *confidence*: the former refers to the ``dispersion'' of the potential predictions for a fixed input, and the latter refers to the confidence on a particular prediction/generation. We then propose and compare several confidence/uncertainty measures, applying them to *selective NLG* where unreliable results could either be ignored or yielded for further assessment. Experiments were carried out with several popular LLMs on question-answering datasets (for evaluation purposes). Results reveal that a simple measure for the semantic dispersion can be a reliable predictor of the quality of LLM responses, providing valuable insights for practitioners on uncertainty management when adopting LLMs. The code to replicate our experiments is available at https://github.com/zlin7/UQ-NLG.",
+      "externalIds": {
+        "DBLP": "journals/tmlr/LinT024",
+        "ArXiv": "2305.19187",
+        "DOI": "10.48550/arXiv.2305.19187",
+        "CorpusId": 258967487
+      },
+      "arxiv_id": "2305.19187",
+      "doi": "10.48550/arXiv.2305.19187",
+      "corpus_id": 258967487
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "19",
+      "ref_key": "S2:ffe9a70445f99516aa3c86651f9121c84b1b78cc",
+      "paperId": "ffe9a70445f99516aa3c86651f9121c84b1b78cc",
+      "title": "Learning Confidence for Transformer-based Neural Machine Translation",
+      "year": 2022,
+      "abstract": "Confidence estimation aims to quantify the confidence of the model prediction, providing an expectation of success. A well-calibrated confidence estimate enables accurate failure prediction and proper risk measurement when given noisy samples and out-of-distribution data in real-world settings. However, this task remains a severe challenge for neural machine translation (NMT), where probabilities from softmax distribution fail to describe when the model is probably mistaken. To address this problem, we propose an unsupervised confidence estimate learning jointly with the training of the NMT model. We explain confidence as how many hints the NMT model needs to make a correct prediction, and more hints indicate low confidence. Specifically, the NMT model is given the option to ask for hints to improve translation accuracy at the cost of some slight penalty. Then, we approximate their level of confidence by counting the number of hints the model uses. We demonstrate that our learned confidence estimate achieves high accuracy on extensive sentence/word-level quality estimation tasks. Analytical results verify that our confidence estimate can correctly assess underlying risk in two real-world scenarios: (1) discovering noisy samples and (2) detecting out-of-domain data. We further propose a novel confidence-based instance-specific label smoothing approach based on our learned confidence estimate, which outperforms standard label smoothing.",
+      "externalIds": {
+        "ArXiv": "2203.11413",
+        "DBLP": "conf/acl/LuZZW022",
+        "ACL": "2022.acl-long.167",
+        "DOI": "10.48550/arXiv.2203.11413",
+        "CorpusId": 247596990
+      },
+      "arxiv_id": "2203.11413",
+      "doi": "10.48550/arXiv.2203.11413",
+      "corpus_id": 247596990
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "20",
+      "ref_key": "S2:db1aa71314016e12e115fbe449a688f523e52e77",
+      "paperId": "db1aa71314016e12e115fbe449a688f523e52e77",
+      "title": "CUED at ProbSum 2023: Hierarchical Ensemble of Summarization Models",
+      "year": 2023,
+      "abstract": "In this paper, we consider the challenge of summarizing patients medical progress notes in a limited data setting. For the Problem List Summarization (shared task 1A) at the BioNLP Workshop 2023, we demonstrate that ClinicalT5 fine-tuned to 765 medical clinic notes outperforms other extractive, abstractive and zero-shot baselines, yielding reasonable baseline systems for medical note summarization. Further, we introduce Hierarchical Ensemble of Summarization Models (HESM), consisting of token-level ensembles of diverse fine-tuned ClinicalT5 models, followed by Minimum Bayes Risk (MBR) decoding. Our HESM approach lead to a considerable summarization performance boost, and when evaluated on held-out challenge data achieved a ROUGE-L of 32.77, which was the best-performing system at the top of the shared task leaderboard.",
+      "externalIds": {
+        "ArXiv": "2306.05317",
+        "ACL": "2023.bionlp-1.51",
+        "DBLP": "journals/corr/abs-2306-05317",
+        "DOI": "10.48550/arXiv.2306.05317",
+        "CorpusId": 259108630
+      },
+      "arxiv_id": "2306.05317",
+      "doi": "10.48550/arXiv.2306.05317",
+      "corpus_id": 259108630
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "21",
+      "ref_key": "S2:7c1707db9aafd209aa93db3251e7ebd593d55876",
+      "paperId": "7c1707db9aafd209aa93db3251e7ebd593d55876",
+      "title": "SelfCheckGPT: Zero-Resource Black-Box Hallucination Detection for Generative Large Language Models",
+      "year": 2023,
+      "abstract": "Generative Large Language Models (LLMs) such as GPT-3 are capable of generating highly fluent responses to a wide variety of user prompts. However, LLMs are known to hallucinate facts and make non-factual statements which can undermine trust in their output. Existing fact-checking approaches either require access to the output probability distribution (which may not be available for systems such as ChatGPT) or external databases that are interfaced via separate, often complex, modules. In this work, we propose\"SelfCheckGPT\", a simple sampling-based approach that can be used to fact-check the responses of black-box models in a zero-resource fashion, i.e. without an external database. SelfCheckGPT leverages the simple idea that if an LLM has knowledge of a given concept, sampled responses are likely to be similar and contain consistent facts. However, for hallucinated facts, stochastically sampled responses are likely to diverge and contradict one another. We investigate this approach by using GPT-3 to generate passages about individuals from the WikiBio dataset, and manually annotate the factuality of the generated passages. We demonstrate that SelfCheckGPT can: i) detect non-factual and factual sentences; and ii) rank passages in terms of factuality. We compare our approach to several baselines and show that our approach has considerably higher AUC-PR scores in sentence-level hallucination detection and higher correlation scores in passage-level factuality assessment compared to grey-box methods.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/ManakulLG23",
+        "ArXiv": "2303.08896",
+        "DOI": "10.48550/arXiv.2303.08896",
+        "CorpusId": 257557820
+      },
+      "arxiv_id": "2303.08896",
+      "doi": "10.48550/arXiv.2303.08896",
+      "corpus_id": 257557820
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "22",
+      "ref_key": "S2:d77c78c9439422ed88e754f776a642d43a8acb66",
+      "paperId": "d77c78c9439422ed88e754f776a642d43a8acb66",
+      "title": "Reducing Conversational Agents’ Overconfidence Through Linguistic Calibration",
+      "year": 2020,
+      "abstract": "Abstract While improving neural dialogue agents’ factual accuracy is the object of much research, another important aspect of communication, less studied in the setting of neural dialogue, is transparency about ignorance. In this work, we analyze to what extent state-of-the-art chit-chat models are linguistically calibrated in the sense that their verbalized expression of doubt (or confidence) matches the likelihood that the model’s responses are factually incorrect (or correct). We find that these models are poorly calibrated, yet we show that likelihood of correctness can accurately be predicted. By incorporating such metacognitive features into the training of a controllable generation model, we obtain a dialogue agent with greatly improved linguistic calibration.",
+      "externalIds": {
+        "ArXiv": "2012.14983",
+        "DBLP": "journals/tacl/MielkeSDB22",
+        "DOI": "10.1162/tacl_a_00494",
+        "CorpusId": 250073258
+      },
+      "arxiv_id": "2012.14983",
+      "doi": "10.1162/tacl_a_00494",
+      "corpus_id": 250073258
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "23",
+      "ref_key": "S2:6d951d939d3f27054215f2606a0cf89ed21550e9",
+      "paperId": "6d951d939d3f27054215f2606a0cf89ed21550e9",
+      "title": "Improving Few-Shot Performance of Language Models via Nearest Neighbor Calibration",
+      "year": 2022,
+      "abstract": "Pre-trained language models (PLMs) have exhibited remarkable few-shot learning capabilities when provided a few examples in a natural language prompt as demonstrations of test instances, i.e., in-context learning. However, the performance of in-context learning is susceptible to the choice of prompt format, training examples and the ordering of the training examples. In this paper, we propose a novel nearest-neighbor calibration framework for in-context learning to ease this issue. It is inspired by a phenomenon that the in-context learning paradigm produces incorrect labels when inferring training instances, which provides a useful supervised signal to calibrate predictions. Thus, our method directly augments the predictions with a $k$-nearest-neighbor ($k$NN) classifier over a datastore of cached few-shot instance representations obtained by PLMs and their corresponding labels. Then adaptive neighbor selection and feature regularization modules are introduced to make full use of a few support instances to reduce the $k$NN retrieval noise. Experiments on various few-shot text classification tasks demonstrate that our method significantly improves in-context learning, while even achieving comparable performance with state-of-the-art tuning-based approaches in some sentiment analysis tasks.",
+      "externalIds": {
+        "ArXiv": "2212.02216",
+        "DBLP": "journals/corr/abs-2212-02216",
+        "DOI": "10.48550/arXiv.2212.02216",
+        "CorpusId": 254246441
+      },
+      "arxiv_id": "2212.02216",
+      "doi": "10.48550/arXiv.2212.02216",
+      "corpus_id": 254246441
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "24",
+      "ref_key": "S2:3b656bba99dbcf6c6d8fd764d53ea64cd38c7050",
+      "paperId": "3b656bba99dbcf6c6d8fd764d53ea64cd38c7050",
+      "title": "Measuring Calibration in Deep Learning",
+      "year": 2019,
+      "abstract": "Overconfidence and underconfidence in machine learning classifiers is measured by calibration: the degree to which the probabilities predicted for each class match the accuracy of the classifier on that prediction. \nHow one measures calibration remains a challenge: expected calibration error, the most popular metric, has numerous flaws which we outline, and there is no clear empirical understanding of how its choices affect conclusions in practice, and what recommendations there are to counteract its flaws. \nIn this paper, we perform a comprehensive empirical study of choices in calibration measures including measuring all probabilities rather than just the maximum prediction, thresholding probability values, class conditionality, number of bins, bins that are adaptive to the datapoint density, and the norm used to compare accuracies to confidences. To analyze the sensitivity of calibration measures, we study the impact of optimizing directly for each variant with recalibration techniques. Across MNIST, Fashion MNIST, CIFAR-10/100, and ImageNet, we find that conclusions on the rank ordering of recalibration methods is drastically impacted by the choice of calibration measure. We find that conditioning on the class leads to more effective calibration evaluations, and that using the L2 norm rather than the L1 norm improves both optimization for calibration metrics and the rank correlation measuring metric consistency. Adaptive binning schemes lead to more stablity of metric rank ordering when the number of bins vary, and is also recommended. We open source a library for the use of our calibration measures.",
+      "externalIds": {
+        "MAG": "2933254221",
+        "ArXiv": "1904.01685",
+        "DBLP": "conf/cvpr/NixonDZJT19",
+        "CorpusId": 102486060
+      },
+      "arxiv_id": "1904.01685",
+      "doi": null,
+      "corpus_id": 102486060
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "25",
+      "ref_key": "S2:94b6f6822f364cf7b1a3a9984667c009e2ec6a65",
+      "paperId": "94b6f6822f364cf7b1a3a9984667c009e2ec6a65",
+      "title": "Out-of-Distribution Detection and Selective Generation for Conditional Language Models",
+      "year": 2022,
+      "abstract": "Machine learning algorithms typically assume independent and identically distributed samples in training and at test time. Much work has shown that high-performing ML classifiers can degrade significantly and provide overly-confident, wrong classification predictions, particularly for out-of-distribution (OOD) inputs. Conditional language models (CLMs) are predominantly trained to classify the next token in an output sequence, and may suffer even worse degradation on OOD inputs as the prediction is done auto-regressively over many steps. Furthermore, the space of potential low-quality outputs is larger as arbitrary text can be generated and it is important to know when to trust the generated output. We present a highly accurate and lightweight OOD detection method for CLMs, and demonstrate its effectiveness on abstractive summarization and translation. We also show how our method can be used under the common and realistic setting of distribution shift for selective generation (analogous to selective prediction for classification) of high-quality outputs, while automatically abstaining from low-quality ones, enabling safer deployment of generative language models.",
+      "externalIds": {
+        "DBLP": "conf/iclr/0006LZKSLL23",
+        "ArXiv": "2209.15558",
+        "DOI": "10.48550/arXiv.2209.15558",
+        "CorpusId": 252668614
+      },
+      "arxiv_id": "2209.15558",
+      "doi": "10.48550/arXiv.2209.15558",
+      "corpus_id": 252668614
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "26",
+      "ref_key": "S2:df9981b9bbfc619652e84cd0eefa595274da2fef",
+      "paperId": "df9981b9bbfc619652e84cd0eefa595274da2fef",
+      "title": "Llamas Know What GPTs Don't Show: Surrogate Models for Confidence Estimation",
+      "year": 2023,
+      "abstract": "To maintain user trust, large language models (LLMs) should signal low confidence on examples where they are incorrect, instead of misleading the user. The standard approach of estimating confidence is to use the softmax probabilities of these models, but as of November 2023, state-of-the-art LLMs such as GPT-4 and Claude-v1.3 do not provide access to these probabilities. We first study eliciting confidence linguistically -- asking an LLM for its confidence in its answer -- which performs reasonably (80.5% AUC on GPT-4 averaged across 12 question-answering datasets -- 7% above a random baseline) but leaves room for improvement. We then explore using a surrogate confidence model -- using a model where we do have probabilities to evaluate the original model's confidence in a given question. Surprisingly, even though these probabilities come from a different and often weaker model, this method leads to higher AUC than linguistic confidences on 9 out of 12 datasets. Our best method composing linguistic confidences and surrogate model probabilities gives state-of-the-art confidence estimates on all 12 datasets (84.6% average AUC on GPT-4).",
+      "externalIds": {
+        "ArXiv": "2311.08877",
+        "DBLP": "journals/corr/abs-2311-08877",
+        "DOI": "10.48550/arXiv.2311.08877",
+        "CorpusId": 265213392
+      },
+      "arxiv_id": "2311.08877",
+      "doi": "10.48550/arXiv.2311.08877",
+      "corpus_id": 265213392
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "27",
+      "ref_key": "S2:86d0d3855f94105e25d81cab9f3d269c6062a9c4",
+      "paperId": "86d0d3855f94105e25d81cab9f3d269c6062a9c4",
+      "title": "Selective Annotation Makes Language Models Better Few-Shot Learners",
+      "year": 2022,
+      "abstract": "Many recent approaches to natural language tasks are built on the remarkable abilities of large language models. Large language models can perform in-context learning, where they learn a new task from a few task demonstrations, without any parameter updates. This work examines the implications of in-context learning for the creation of datasets for new natural language tasks. Departing from recent in-context learning methods, we formulate an annotation-efficient, two-step framework: selective annotation that chooses a pool of examples to annotate from unlabeled data in advance, followed by prompt retrieval that retrieves task examples from the annotated pool at test time. Based on this framework, we propose an unsupervised, graph-based selective annotation method, voke-k, to select diverse, representative examples to annotate. Extensive experiments on 10 datasets (covering classification, commonsense reasoning, dialogue, and text/code generation) demonstrate that our selective annotation method improves the task performance by a large margin. On average, vote-k achieves a 12.9%/11.4% relative gain under an annotation budget of 18/100, as compared to randomly selecting examples to annotate. Compared to state-of-the-art supervised finetuning approaches, it yields similar performance with 10-100x less annotation cost across 10 tasks. We further analyze the effectiveness of our framework in various scenarios: language models with varying sizes, alternative selective annotation methods, and cases where there is a test data domain shift. We hope that our studies will serve as a basis for data annotations as large language models are increasingly applied to new tasks. Our code is available at https://github.com/HKUNLP/icl-selective-annotation.",
+      "externalIds": {
+        "DBLP": "conf/iclr/SuKWSWX0OZS023",
+        "ArXiv": "2209.01975",
+        "DOI": "10.48550/arXiv.2209.01975",
+        "CorpusId": 252089424
+      },
+      "arxiv_id": "2209.01975",
+      "doi": "10.48550/arXiv.2209.01975",
+      "corpus_id": 252089424
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "28",
+      "ref_key": "S2:57e849d0de13ed5f91d086936296721d4ff75a75",
+      "paperId": "57e849d0de13ed5f91d086936296721d4ff75a75",
+      "title": "LLaMA: Open and Efficient Foundation Language Models",
+      "year": 2023,
+      "abstract": "We introduce LLaMA, a collection of foundation language models ranging from 7B to 65B parameters. We train our models on trillions of tokens, and show that it is possible to train state-of-the-art models using publicly available datasets exclusively, without resorting to proprietary and inaccessible datasets. In particular, LLaMA-13B outperforms GPT-3 (175B) on most benchmarks, and LLaMA-65B is competitive with the best models, Chinchilla-70B and PaLM-540B. We release all our models to the research community.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2302-13971",
+        "ArXiv": "2302.13971",
+        "CorpusId": 257219404
+      },
+      "arxiv_id": "2302.13971",
+      "doi": null,
+      "corpus_id": 257219404
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "29",
+      "ref_key": "S2:d785f543f7a344fcec7ccbe55089a7f782e32bd7",
+      "paperId": "d785f543f7a344fcec7ccbe55089a7f782e32bd7",
+      "title": "Mutual Information Alleviates Hallucinations in Abstractive Summarization",
+      "year": 2022,
+      "abstract": "Despite significant progress in the quality of language generated from abstractive summarization models, these models still exhibit the tendency to hallucinate, i.e., output content not supported by the source document. A number of works have tried to fix—or at least uncover the source of—the problem with limited success. In this paper, we identify a simple criterion under which models are significantly more likely to assign more probability to hallucinated content during generation: high model uncertainty. This finding offers a potential explanation for hallucinations: models default to favoring text with high marginal probability, i.e., high-frequency occurrences in the training set, when uncertain about a continuation. It also motivates possible routes for real-time intervention during decoding to prevent such hallucinations. We propose a decoding strategy that switches to optimizing for pointwise mutual information of the source and target token—rather than purely the probability of the target token—when the model exhibits uncertainty. Experiments on the dataset show that our method decreases the probability of hallucinated tokens while maintaining the Rouge and BERT-S scores of top-performing decoding strategies.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/PoelCM22",
+        "ArXiv": "2210.13210",
+        "ACL": "2022.emnlp-main.399",
+        "DOI": "10.48550/arXiv.2210.13210",
+        "CorpusId": 253097869
+      },
+      "arxiv_id": "2210.13210",
+      "doi": "10.48550/arXiv.2210.13210",
+      "corpus_id": 253097869
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "30",
+      "ref_key": "S2:1827dd28ef866eaeb929ddf4bcfa492880aba4c7",
+      "paperId": "1827dd28ef866eaeb929ddf4bcfa492880aba4c7",
+      "title": "A Stitch in Time Saves Nine: Detecting and Mitigating Hallucinations of LLMs by Validating Low-Confidence Generation",
+      "year": 2023,
+      "abstract": "Recently developed large language models have achieved remarkable success in generating fluent and coherent text. However, these models often tend to 'hallucinate' which critically hampers their reliability. In this work, we address this crucial problem and propose an approach that actively detects and mitigates hallucinations during the generation process. Specifically, we first identify the candidates of potential hallucination leveraging the model's logit output values, check their correctness through a validation procedure, mitigate the detected hallucinations, and then continue with the generation process. Through extensive experiments with GPT-3.5 (text-davinci-003) on the 'article generation task', we first demonstrate the individual efficacy of our detection and mitigation techniques. Specifically, the detection technique achieves a recall of ~88% and the mitigation technique successfully mitigates 57.6% of the correctly detected hallucinations. Importantly, our mitigation technique does not introduce new hallucinations even in the case of incorrectly detected hallucinations, i.e., false positives. Then, we show that the proposed active detection and mitigation approach successfully reduces the hallucinations of the GPT-3.5 model from 47.5% to 14.5% on average. We further demonstrate the effectiveness and wide applicability of our approach through additional studies including performance on different types of questions (multi-hop and false premise questions) and with another LLM from a different model family (Vicuna). In summary, our work contributes to improving the reliability and trustworthiness of large language models, a crucial step en route to enabling their widespread adoption in real-world applications.",
+      "externalIds": {
+        "ArXiv": "2307.03987",
+        "DBLP": "journals/corr/abs-2307-03987",
+        "DOI": "10.48550/arXiv.2307.03987",
+        "CorpusId": 263699899
+      },
+      "arxiv_id": "2307.03987",
+      "doi": "10.48550/arXiv.2307.03987",
+      "corpus_id": 263699899
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "31",
+      "ref_key": "S2:3ca35c7df229549997491787d93c01de29af206d",
+      "paperId": "3ca35c7df229549997491787d93c01de29af206d",
+      "title": "On the Inference Calibration of Neural Machine Translation",
+      "year": 2020,
+      "abstract": "Confidence calibration, which aims to make model predictions equal to the true correctness measures, is important for neural machine translation (NMT) because it is able to offer useful indicators of translation errors in the generated output. While prior studies have shown that NMT models trained with label smoothing are well-calibrated on the ground-truth training data, we find that miscalibration still remains a severe challenge for NMT during inference due to the discrepancy between training and inference. By carefully designing experiments on three language pairs, our work provides in-depth analyses of the correlation between calibration and translation performance as well as linguistic properties of miscalibration and reports a number of interesting findings that might help humans better analyze, understand and improve NMT models. Based on these observations, we further propose a new graduated label smoothing method that can improve both inference calibration and translation performance.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2005-00963",
+        "MAG": "3035072529",
+        "ArXiv": "2005.00963",
+        "ACL": "2020.acl-main.278",
+        "DOI": "10.18653/v1/2020.acl-main.278",
+        "CorpusId": 218487046
+      },
+      "arxiv_id": "2005.00963",
+      "doi": "10.18653/v1/2020.acl-main.278",
+      "corpus_id": 218487046
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "32",
+      "ref_key": "S2:2476832edb11cb3de46587f55e270d6df328b32d",
+      "paperId": "2476832edb11cb3de46587f55e270d6df328b32d",
+      "title": "On Hallucination and Predictive Uncertainty in Conditional Language Generation",
+      "year": 2021,
+      "abstract": "Despite improvements in performances on different natural language generation tasks, deep neural models are prone to hallucinating facts that are incorrect or nonexistent. Different hypotheses are proposed and examined separately for different tasks, but no systematic explanations are available across these tasks. In this study, we draw connections between hallucinations and predictive uncertainty in conditional language generation. We investigate their relationship in both image captioning and data-to-text generation and propose a simple extension to beam search to reduce hallucination. Our analysis shows that higher predictive uncertainty corresponds to a higher chance of hallucination. Epistemic uncertainty is more indicative of hallucination than aleatoric or total uncertainties. It helps to achieve better results of trading performance in standard metric for less hallucination with the proposed beam search variant.",
+      "externalIds": {
+        "ACL": "2021.eacl-main.236",
+        "DBLP": "conf/eacl/XiaoW21",
+        "ArXiv": "2103.15025",
+        "DOI": "10.18653/v1/2021.eacl-main.236",
+        "CorpusId": 232404053
+      },
+      "arxiv_id": "2103.15025",
+      "doi": "10.18653/v1/2021.eacl-main.236",
+      "corpus_id": 232404053
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "33",
+      "ref_key": "S2:8f7297454d7f44365b9bcda5ebb9439a43daf5e6",
+      "paperId": "8f7297454d7f44365b9bcda5ebb9439a43daf5e6",
+      "title": "Can LLMs Express Their Uncertainty? An Empirical Evaluation of Confidence Elicitation in LLMs",
+      "year": 2023,
+      "abstract": "Empowering large language models to accurately express confidence in their answers is essential for trustworthy decision-making. Previous confidence elicitation methods, which primarily rely on white-box access to internal model information or model fine-tuning, have become less suitable for LLMs, especially closed-source commercial APIs. This leads to a growing need to explore the untapped area of black-box approaches for LLM uncertainty estimation. To better break down the problem, we define a systematic framework with three components: prompting strategies for eliciting verbalized confidence, sampling methods for generating multiple responses, and aggregation techniques for computing consistency. We then benchmark these methods on two key tasks-confidence calibration and failure prediction-across five types of datasets (e.g., commonsense and arithmetic reasoning) and five widely-used LLMs including GPT-4 and LLaMA 2 Chat. Our analysis uncovers several key insights: 1) LLMs, when verbalizing their confidence, tend to be overconfident, potentially imitating human patterns of expressing confidence. 2) As model capability scales up, both calibration and failure prediction performance improve. 3) Employing our proposed strategies, such as human-inspired prompts, consistency among multiple responses, and better aggregation strategies can help mitigate this overconfidence from various perspectives. 4) Comparisons with white-box methods indicate that while white-box methods perform better, the gap is narrow, e.g., 0.522 to 0.605 in AUROC. Despite these advancements, none of these techniques consistently outperform others, and all investigated methods struggle in challenging tasks, such as those requiring professional knowledge, indicating significant scope for improvement. We believe this study can serve as a strong baseline and provide insights for eliciting confidence in black-box LLMs.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2306-13063",
+        "ArXiv": "2306.13063",
+        "DOI": "10.48550/arXiv.2306.13063",
+        "CorpusId": 259224389
+      },
+      "arxiv_id": "2306.13063",
+      "doi": "10.48550/arXiv.2306.13063",
+      "corpus_id": 259224389
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "34",
+      "ref_key": "S2:196ee3bf7724cd6b01972a7eeb4b4416a781b0ee",
+      "paperId": "196ee3bf7724cd6b01972a7eeb4b4416a781b0ee",
+      "title": "Cold-Start Data Selection for Few-shot Language Model Fine-tuning: A Prompt-Based Uncertainty Propagation Approach",
+      "year": 2022,
+      "abstract": "Large Language Models have demonstrated remarkable few-shot performance, but the performance can be sensitive to the selection of few-shot instances. We propose PATRON, a new method that uses prompt-based uncertainty estimation for data selection for pre-trained language model fine-tuning under cold-start scenarios, i.e., no initial labeled data are available. In PATRON, we design (1) a prompt-based uncertainty propagation approach to estimate the importance of data points and (2) a partition-then-rewrite (PTR) strategy to promote sample diversity when querying for annotations. Experiments on six text classification datasets show that PATRON outperforms the strongest cold-start data selection baselines by up to 6.9%. Besides, with 128 labels only, PATRON achieves 91.0% and 92.1% of the fully supervised performance based on vanilla fine-tuning and prompt-based learning respectively. Our implementation of PATRON is available at \\url{https://github.com/yueyu1030/Patron}.",
+      "externalIds": {
+        "ArXiv": "2209.06995",
+        "DBLP": "journals/corr/abs-2209-06995",
+        "DOI": "10.48550/arXiv.2209.06995",
+        "CorpusId": 261031715
+      },
+      "arxiv_id": "2209.06995",
+      "doi": "10.48550/arXiv.2209.06995",
+      "corpus_id": 261031715
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "35",
+      "ref_key": "S2:296cad46f56329843ded4a8b7d7633c9d436f113",
+      "paperId": "296cad46f56329843ded4a8b7d7633c9d436f113",
+      "title": "On Uncertainty Calibration and Selective Generation in Probabilistic Neural Summarization: A Benchmark Study",
+      "year": 2023,
+      "abstract": "Modern deep models for summarization attains impressive benchmark performance, but they are prone to generating miscalibrated predictive uncertainty. This means that they assign high confidence to low-quality predictions, leading to compromised reliability and trustworthiness in real-world applications. Probabilistic deep learning methods are common solutions to the miscalibration problem. However, their relative effectiveness in complex autoregressive summarization tasks are not well-understood. In this work, we thoroughly investigate different state-of-the-art probabilistic methods' effectiveness in improving the uncertainty quality of the neural summarization models, across three large-scale benchmarks with varying difficulty. We show that the probabilistic methods consistently improve the model's generation and uncertainty quality, leading to improved selective generation performance (i.e., abstaining from low-quality summaries) in practice. We also reveal notable failure patterns of probabilistic methods widely-adopted in NLP community (e.g., Deep Ensemble and Monte Carlo Dropout), cautioning the importance of choosing appropriate method for the data setting.",
+      "externalIds": {
+        "ArXiv": "2304.08653",
+        "DBLP": "conf/emnlp/ZablotskaiaPMN023",
+        "DOI": "10.48550/arXiv.2304.08653",
+        "CorpusId": 258187125
+      },
+      "arxiv_id": "2304.08653",
+      "doi": "10.48550/arXiv.2304.08653",
+      "corpus_id": 258187125
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "36",
+      "ref_key": "S2:56fa0b9cba4d9aee5ccc327365b3b3a721031c69",
+      "paperId": "56fa0b9cba4d9aee5ccc327365b3b3a721031c69",
+      "title": "Calibrate Before Use: Improving Few-Shot Performance of Language Models",
+      "year": 2021,
+      "abstract": "GPT-3 can perform numerous tasks when provided a natural language prompt that contains a few training examples. We show that this type of few-shot learning can be unstable: the choice of prompt format, training examples, and even the order of the training examples can cause accuracy to vary from near chance to near state-of-the-art. We demonstrate that this instability arises from the bias of language models towards predicting certain answers, e.g., those that are placed near the end of the prompt or are common in the pre-training data. To mitigate this, we first estimate the model's bias towards each answer by asking for its prediction when given the training prompt and a content-free test input such as \"N/A\". We then fit calibration parameters that cause the prediction for this input to be uniform across answers. On a diverse set of tasks, this contextual calibration procedure substantially improves GPT-3 and GPT-2's average accuracy (up to 30.0% absolute) and reduces variance across different choices of the prompt.",
+      "externalIds": {
+        "MAG": "3132736064",
+        "ArXiv": "2102.09690",
+        "DBLP": "journals/corr/abs-2102-09690",
+        "CorpusId": 231979430
+      },
+      "arxiv_id": "2102.09690",
+      "doi": null,
+      "corpus_id": 231979430
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "37",
+      "ref_key": "S2:891edceb78a274b0c2494d8176bc4d6f6e3f9cbc",
+      "paperId": "891edceb78a274b0c2494d8176bc4d6f6e3f9cbc",
+      "title": "Calibrating Sequence likelihood Improves Conditional Language Generation",
+      "year": 2022,
+      "abstract": "Conditional language models are predominantly trained with maximum likelihood estimation (MLE), giving probability mass to sparsely observed target sequences. While MLE trained models assign high probability to plausible sequences given the context, the model probabilities often do not accurately rank-order generated sequences by quality. This has been empirically observed in beam search decoding as output quality degrading with large beam sizes, and decoding strategies benefiting from heuristics such as length normalization and repetition-blocking. In this work, we introduce sequence likelihood calibration (SLiC) where the likelihood of model generated sequences are calibrated to better align with reference sequences in the model's latent space. With SLiC, decoding heuristics become unnecessary and decoding candidates' quality significantly improves regardless of the decoding method. Furthermore, SLiC shows no sign of diminishing returns with model scale, and presents alternative ways to improve quality with limited training and inference budgets. With SLiC, we exceed or match SOTA results on a wide range of generation tasks spanning abstractive summarization, question generation, abstractive question answering and data-to-text generation, even with modest-sized models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-00045",
+        "ArXiv": "2210.00045",
+        "DOI": "10.48550/arXiv.2210.00045",
+        "CorpusId": 252683988
+      },
+      "arxiv_id": "2210.00045",
+      "doi": "10.48550/arXiv.2210.00045",
+      "corpus_id": 252683988
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "38",
+      "ref_key": "S2:58af2d4fcca54c14334d1efd975554b4eb78cd4d",
+      "paperId": "58af2d4fcca54c14334d1efd975554b4eb78cd4d",
+      "title": "SLiC-HF: Sequence Likelihood Calibration with Human Feedback",
+      "year": 2023,
+      "abstract": "Learning from human feedback has been shown to be effective at aligning language models with human preferences. Past work has often relied on Reinforcement Learning from Human Feedback (RLHF), which optimizes the language model using reward scores assigned from a reward model trained on human preference data. In this work we show how the recently introduced Sequence Likelihood Calibration (SLiC), can also be used to effectively learn from human preferences (SLiC-HF). Furthermore, we demonstrate this can be done with human feedback data collected for a different model, similar to off-policy, offline RL data. Automatic and human evaluation experiments on the TL;DR summarization task show that SLiC-HF significantly improves supervised fine-tuning baselines. Furthermore, SLiC-HF presents a competitive alternative to the PPO RLHF implementation used in past work while being much simpler to implement, easier to tune and more computationally efficient in practice.",
+      "externalIds": {
+        "ArXiv": "2305.10425",
+        "DBLP": "journals/corr/abs-2305-10425",
+        "DOI": "10.48550/arXiv.2305.10425",
+        "CorpusId": 258741082
+      },
+      "arxiv_id": "2305.10425",
+      "doi": "10.48550/arXiv.2305.10425",
+      "corpus_id": 258741082
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "39",
+      "ref_key": "S2:1fa4469e5bc5d096572902fe14b0d66078a24c47",
+      "paperId": "1fa4469e5bc5d096572902fe14b0d66078a24c47",
+      "title": "Navigating the Grey Area: Expressions of Overconfidence and Uncertainty in Language Models",
+      "year": 2023,
+      "abstract": "Despite increasingly ﬂuent, relevant, and coherent language generation, major gaps remain between how humans and machines use language. We argue that a key dimension that is missing from our understanding of language models (LMs) is the model’s ability to interpret and generate expressions of uncertainty . Whether it be the weatherperson announcing a chance of rain or a doctor giving a diagnosis, information is often not black-and-white and expressions of uncertainty provide nuance to support human-decision making. The increasing deployment of LMs in the wild motivates us to investigate whether LMs are capable of interpreting expressions of uncertainty and how LMs’ behaviors change when learning to emit their own expressions of uncertainty. When injecting expressions of uncertainty into prompts (e.g., \"I think the answer is...\"), we discover that GPT3’s generations vary upwards of 80% in accuracy based on the expression used. We analyze the linguistic characteristics of these expressions and ﬁnd a drop in accuracy when naturalistic expressions of certainty are present. We ﬁnd similar effects when teaching models to emit their own expressions of uncertainty, where model calibration suffers when teaching models to emit certainty rather than un certainty. Together, these results highlight the challenges of building LMs that interpret and generate trustworthy expressions of uncertainty.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2302-13439",
+        "DOI": "10.48550/arXiv.2302.13439",
+        "CorpusId": 257220189
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2302.13439",
+      "corpus_id": 257220189
+    },
+    {
+      "paper_id": "2311.08298",
+      "ref_index": "40",
+      "ref_key": "S2:6920de816acd201aadc0de51cf0fa62fa92bb0cc",
+      "paperId": "6920de816acd201aadc0de51cf0fa62fa92bb0cc",
+      "title": "On the Calibration of Large Language Models and Alignment",
+      "year": 2023,
+      "abstract": "As large language models attract increasing attention and find widespread application, concurrent challenges of reliability also arise at the same time. Confidence calibration, an effective analysis method for gauging the reliability of deep models, serves as a crucial tool for assessing and improving their reliability. However, such investigation has been comparatively underexplored. In this work, we conduct a systematic examination of the calibration of aligned language models throughout the entire construction process, including pretraining and alignment training. At each stage, we investigate how different training settings, such as parameter scales and training data, affect model calibration. To thoroughly assess model calibration, we evaluate models on three most concerned aspects: generation, factuality and understanding. Our work sheds light on whether popular LLMs are well-calibrated and how the training process influences model calibration.",
+      "externalIds": {
+        "ArXiv": "2311.13240",
+        "DBLP": "conf/emnlp/ZhuX00M23",
+        "DOI": "10.48550/arXiv.2311.13240",
+        "CorpusId": 265351565
+      },
+      "arxiv_id": "2311.13240",
+      "doi": "10.48550/arXiv.2311.13240",
+      "corpus_id": 265351565
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "Confidence Estimation and Calibration in LLMs": {
+        "Metrics": {
+          "Classification": {
+            "d65ce2b8300541414bfe51d03906fca72e93523c": {},
+            "d4691aef27ae3c768b90c34ca5d8521d202eb47c": {},
+            "3b656bba99dbcf6c6d8fd764d53ea64cd38c7050": {}
+          },
+          "Generation": {
+            "14d0489047a1390434e7ea454e7e5165d9721ae3": {},
+            "96c90ab340b2823a0040cd64b25d1d32af807994": {},
+            "ad934a9344f68fcc0b9aa704102aa48c39c5b591": {},
+            "6920de816acd201aadc0de51cf0fa62fa92bb0cc": {}
+          }
+        },
+        "Methods": {
+          "Generation": {
+            "Estimation": {
+              "Logit-based methods": {
+                "5424e311319c58847b4c690d5c91090e3b6a4ac3": {},
+                "507465f8d46489a68a527cb5304d76bdb6c31ed9": {}
+              },
+              "Internal state-based   methods": {
+                "f406aceba4f29cc7cfbe7edb2f52f01374486589": {},
+                "89c3bd70ad33c4f8832f00ab98872b77861ee0ec": {},
+                "142ebbf4760145f591166bde2564ac70c001e927": {},
+                "405f8f5f1c6df1b3343c812832479aad5180b65f": {},
+                "94b6f6822f364cf7b1a3a9984667c009e2ec6a65": {}
+              },
+              "Linguistic confidence": {
+                "d77c78c9439422ed88e754f776a642d43a8acb66": {},
+                "8f7297454d7f44365b9bcda5ebb9439a43daf5e6": {}
+              },
+              "Consistency-based   estimation": {
+                "ad934a9344f68fcc0b9aa704102aa48c39c5b591": {},
+                "7c1707db9aafd209aa93db3251e7ebd593d55876": {}
+              },
+              "Surrogate models": {
+                "df9981b9bbfc619652e84cd0eefa595274da2fef": {},
+                "57e849d0de13ed5f91d086936296721d4ff75a75": {}
+              }
+            },
+            "Calibration": {
+              "Improving generation": {
+                "96c90ab340b2823a0040cd64b25d1d32af807994": {},
+                "ffe9a70445f99516aa3c86651f9121c84b1b78cc": {},
+                "d785f543f7a344fcec7ccbe55089a7f782e32bd7": {},
+                "3ca35c7df229549997491787d93c01de29af206d": {},
+                "2476832edb11cb3de46587f55e270d6df328b32d": {},
+                "296cad46f56329843ded4a8b7d7633c9d436f113": {},
+                "891edceb78a274b0c2494d8176bc4d6f6e3f9cbc": {},
+                "58af2d4fcca54c14334d1efd975554b4eb78cd4d": {}
+              },
+              "Improving linguistic   confidence": {
+                "374dd173491a59a10bbb2b3519ebcfe3649f529d": {},
+                "d77c78c9439422ed88e754f776a642d43a8acb66": {},
+                "1fa4469e5bc5d096572902fe14b0d66078a24c47": {}
+              }
+            }
+          },
+          "Classification": {
+            "Estimation": {
+              "Logit-based method": {
+                "374dd173491a59a10bbb2b3519ebcfe3649f529d": {},
+                "d77c78c9439422ed88e754f776a642d43a8acb66": {},
+                "1fa4469e5bc5d096572902fe14b0d66078a24c47": {}
+              }
+            },
+            "Calibration": {
+              "Bias mitigation": {
+                "28a7ced384549eaae74ea9ad3ee21189a0625afe": {},
+                "6a483cd1cbecd66150c9bbcd01606723950281bc": {},
+                "6d951d939d3f27054215f2606a0cf89ed21550e9": {},
+                "56fa0b9cba4d9aee5ccc327365b3b3a721031c69": {}
+              }
+            }
+          }
+        },
+        "Application": {
+          "Hallucination Detection  and Mitigation": {
+            "6af460d34bfc8e955e43fbe15cedcf329b48bc19": {},
+            "db1aa71314016e12e115fbe449a688f523e52e77": {},
+            "1827dd28ef866eaeb929ddf4bcfa492880aba4c7": {}
+          },
+          "Ambiguity detection   and selective generation": {
+            "9386242a9ad5c1a15023043ef63d45e42ceac546": {},
+            "67fa2f2072cca1071ed2c820d6a7f50de6ea2ff3": {},
+            "cb693ce346f44e6b89ee814c6bb9f0e5cc2fa9d2": {},
+            "296cad46f56329843ded4a8b7d7633c9d436f113": {}
+          },
+          "Uncertainty-guided data   exploitation": {
+            "88884b8806262a4095036041e3567d450dba39f7": {},
+            "86d0d3855f94105e25d81cab9f3d269c6062a9c4": {},
+            "196ee3bf7724cd6b01972a7eeb4b4416a781b0ee": {}
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000001",
+        "paperId": "d65ce2b8300541414bfe51d03906fca72e93523c",
+        "ref_index": "0",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Metrics",
+          "Classification"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000002",
+        "paperId": "d4691aef27ae3c768b90c34ca5d8521d202eb47c",
+        "ref_index": "4",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Metrics",
+          "Classification"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000003",
+        "paperId": "3b656bba99dbcf6c6d8fd764d53ea64cd38c7050",
+        "ref_index": "24",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Metrics",
+          "Classification"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000004",
+        "paperId": "14d0489047a1390434e7ea454e7e5165d9721ae3",
+        "ref_index": "10",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Metrics",
+          "Generation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000005",
+        "paperId": "96c90ab340b2823a0040cd64b25d1d32af807994",
+        "ref_index": "15",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Metrics",
+          "Generation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000006",
+        "paperId": "ad934a9344f68fcc0b9aa704102aa48c39c5b591",
+        "ref_index": "18",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Metrics",
+          "Generation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000007",
+        "paperId": "6920de816acd201aadc0de51cf0fa62fa92bb0cc",
+        "ref_index": "40",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Metrics",
+          "Generation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000008",
+        "paperId": "5424e311319c58847b4c690d5c91090e3b6a4ac3",
+        "ref_index": "6",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Estimation",
+          "Logit-based methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000009",
+        "paperId": "507465f8d46489a68a527cb5304d76bdb6c31ed9",
+        "ref_index": "14",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Estimation",
+          "Logit-based methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000010",
+        "paperId": "f406aceba4f29cc7cfbe7edb2f52f01374486589",
+        "ref_index": "2",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Estimation",
+          "Internal state-based   methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000011",
+        "paperId": "89c3bd70ad33c4f8832f00ab98872b77861ee0ec",
+        "ref_index": "3",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Estimation",
+          "Internal state-based   methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000012",
+        "paperId": "142ebbf4760145f591166bde2564ac70c001e927",
+        "ref_index": "12",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Estimation",
+          "Internal state-based   methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000013",
+        "paperId": "405f8f5f1c6df1b3343c812832479aad5180b65f",
+        "ref_index": "16",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Estimation",
+          "Internal state-based   methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000014",
+        "paperId": "94b6f6822f364cf7b1a3a9984667c009e2ec6a65",
+        "ref_index": "25",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Estimation",
+          "Internal state-based   methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000015",
+        "paperId": "d77c78c9439422ed88e754f776a642d43a8acb66",
+        "ref_index": "22",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Estimation",
+          "Linguistic confidence"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000016",
+        "paperId": "8f7297454d7f44365b9bcda5ebb9439a43daf5e6",
+        "ref_index": "33",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Estimation",
+          "Linguistic confidence"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000017",
+        "paperId": "ad934a9344f68fcc0b9aa704102aa48c39c5b591",
+        "ref_index": "18",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Estimation",
+          "Consistency-based   estimation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000018",
+        "paperId": "7c1707db9aafd209aa93db3251e7ebd593d55876",
+        "ref_index": "21",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Estimation",
+          "Consistency-based   estimation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000019",
+        "paperId": "df9981b9bbfc619652e84cd0eefa595274da2fef",
+        "ref_index": "26",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Estimation",
+          "Surrogate models"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000020",
+        "paperId": "57e849d0de13ed5f91d086936296721d4ff75a75",
+        "ref_index": "28",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Estimation",
+          "Surrogate models"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000021",
+        "paperId": "96c90ab340b2823a0040cd64b25d1d32af807994",
+        "ref_index": "15",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Calibration",
+          "Improving generation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000022",
+        "paperId": "ffe9a70445f99516aa3c86651f9121c84b1b78cc",
+        "ref_index": "19",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Calibration",
+          "Improving generation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000023",
+        "paperId": "d785f543f7a344fcec7ccbe55089a7f782e32bd7",
+        "ref_index": "29",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Calibration",
+          "Improving generation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000024",
+        "paperId": "3ca35c7df229549997491787d93c01de29af206d",
+        "ref_index": "31",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Calibration",
+          "Improving generation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000025",
+        "paperId": "2476832edb11cb3de46587f55e270d6df328b32d",
+        "ref_index": "32",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Calibration",
+          "Improving generation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000026",
+        "paperId": "296cad46f56329843ded4a8b7d7633c9d436f113",
+        "ref_index": "35",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Calibration",
+          "Improving generation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000027",
+        "paperId": "891edceb78a274b0c2494d8176bc4d6f6e3f9cbc",
+        "ref_index": "37",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Calibration",
+          "Improving generation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000028",
+        "paperId": "58af2d4fcca54c14334d1efd975554b4eb78cd4d",
+        "ref_index": "38",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Calibration",
+          "Improving generation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000029",
+        "paperId": "374dd173491a59a10bbb2b3519ebcfe3649f529d",
+        "ref_index": "17",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Calibration",
+          "Improving linguistic   confidence"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000030",
+        "paperId": "d77c78c9439422ed88e754f776a642d43a8acb66",
+        "ref_index": "22",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Calibration",
+          "Improving linguistic   confidence"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000031",
+        "paperId": "1fa4469e5bc5d096572902fe14b0d66078a24c47",
+        "ref_index": "39",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Generation",
+          "Calibration",
+          "Improving linguistic   confidence"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000032",
+        "paperId": "374dd173491a59a10bbb2b3519ebcfe3649f529d",
+        "ref_index": "17",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Classification",
+          "Estimation",
+          "Logit-based method"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000033",
+        "paperId": "d77c78c9439422ed88e754f776a642d43a8acb66",
+        "ref_index": "22",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Classification",
+          "Estimation",
+          "Logit-based method"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000034",
+        "paperId": "1fa4469e5bc5d096572902fe14b0d66078a24c47",
+        "ref_index": "39",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Classification",
+          "Estimation",
+          "Logit-based method"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000035",
+        "paperId": "28a7ced384549eaae74ea9ad3ee21189a0625afe",
+        "ref_index": "7",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Classification",
+          "Calibration",
+          "Bias mitigation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000036",
+        "paperId": "6a483cd1cbecd66150c9bbcd01606723950281bc",
+        "ref_index": "8",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Classification",
+          "Calibration",
+          "Bias mitigation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000037",
+        "paperId": "6d951d939d3f27054215f2606a0cf89ed21550e9",
+        "ref_index": "23",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Classification",
+          "Calibration",
+          "Bias mitigation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000038",
+        "paperId": "56fa0b9cba4d9aee5ccc327365b3b3a721031c69",
+        "ref_index": "36",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Methods",
+          "Classification",
+          "Calibration",
+          "Bias mitigation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000039",
+        "paperId": "6af460d34bfc8e955e43fbe15cedcf329b48bc19",
+        "ref_index": "1",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Application",
+          "Hallucination Detection  and Mitigation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000040",
+        "paperId": "db1aa71314016e12e115fbe449a688f523e52e77",
+        "ref_index": "20",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Application",
+          "Hallucination Detection  and Mitigation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000041",
+        "paperId": "1827dd28ef866eaeb929ddf4bcfa492880aba4c7",
+        "ref_index": "30",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Application",
+          "Hallucination Detection  and Mitigation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000042",
+        "paperId": "9386242a9ad5c1a15023043ef63d45e42ceac546",
+        "ref_index": "5",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Application",
+          "Ambiguity detection   and selective generation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000043",
+        "paperId": "67fa2f2072cca1071ed2c820d6a7f50de6ea2ff3",
+        "ref_index": "9",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Application",
+          "Ambiguity detection   and selective generation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000044",
+        "paperId": "cb693ce346f44e6b89ee814c6bb9f0e5cc2fa9d2",
+        "ref_index": "13",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Application",
+          "Ambiguity detection   and selective generation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000045",
+        "paperId": "296cad46f56329843ded4a8b7d7633c9d436f113",
+        "ref_index": "35",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Application",
+          "Ambiguity detection   and selective generation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000046",
+        "paperId": "88884b8806262a4095036041e3567d450dba39f7",
+        "ref_index": "11",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Application",
+          "Uncertainty-guided data   exploitation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000047",
+        "paperId": "86d0d3855f94105e25d81cab9f3d269c6062a9c4",
+        "ref_index": "27",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Application",
+          "Uncertainty-guided data   exploitation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.08298",
+        "arxiv_id": "2311.08298",
+        "leaf_mention_id": "2311.08298::000048",
+        "paperId": "196ee3bf7724cd6b01972a7eeb4b4416a781b0ee",
+        "ref_index": "34",
+        "path": [
+          "Confidence Estimation and Calibration in LLMs",
+          "Application",
+          "Uncertainty-guided data   exploitation"
+        ],
+        "depth": 3,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 48,
+      "unique_leaf_paper_count": 41,
+      "multi_membership_extra_mentions": 7,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

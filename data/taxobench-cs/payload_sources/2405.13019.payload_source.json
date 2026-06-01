@@ -1,0 +1,1643 @@
+{
+  "paper_id": "2405.13019",
+  "arxiv_id": "2405.13019",
+  "title": "A Comprehensive Survey of Accelerated Generation Techniques in Large Language Models",
+  "ref_meta": [
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "0",
+      "ref_key": "S2:a9caf21a845cb0b1b1d453c052188de118006093",
+      "paperId": "a9caf21a845cb0b1b1d453c052188de118006093",
+      "title": "SARATHI: Efficient LLM Inference by Piggybacking Decodes with Chunked Prefills",
+      "year": 2023,
+      "abstract": "Large Language Model (LLM) inference consists of two distinct phases - prefill phase which processes the input prompt and decode phase which generates output tokens autoregressively. While the prefill phase effectively saturates GPU compute at small batch sizes, the decode phase results in low compute utilization as it generates one token at a time per request. The varying prefill and decode times also lead to imbalance across micro-batches when using pipeline parallelism, resulting in further inefficiency due to bubbles. We present SARATHI to address these challenges. SARATHI employs chunked-prefills, which splits a prefill request into equal sized chunks, and decode-maximal batching, which constructs a batch using a single prefill chunk and populates the remaining slots with decodes. During inference, the prefill chunk saturates GPU compute, while the decode requests 'piggyback' and cost up to an order of magnitude less compared to a decode-only batch. Chunked-prefills allows constructing multiple decode-maximal batches from a single prefill request, maximizing coverage of decodes that can piggyback. Furthermore, the uniform compute design of these batches ameliorates the imbalance between micro-batches, significantly reducing pipeline bubbles. Our techniques yield significant improvements in inference performance across models and hardware. For the LLaMA-13B model on A6000 GPU, SARATHI improves decode throughput by up to 10x, and accelerates end-to-end throughput by up to 1.33x. For LLaMa-33B on A100 GPU, we achieve 1.25x higher end-to-end-throughput and up to 4.25x higher decode throughput. When used with pipeline parallelism on GPT-3, SARATHI reduces bubbles by 6.29x, resulting in an end-to-end throughput improvement of 1.91x.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-16369",
+        "ArXiv": "2308.16369",
+        "DOI": "10.48550/arXiv.2308.16369",
+        "CorpusId": 261395577
+      },
+      "arxiv_id": "2308.16369",
+      "doi": "10.48550/arXiv.2308.16369",
+      "corpus_id": 261395577
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "1",
+      "ref_key": "S2:d6e21619df572d04b2b2d97b4c5d1fd604f185fb",
+      "paperId": "d6e21619df572d04b2b2d97b4c5d1fd604f185fb",
+      "title": "Syntactically Supervised Transformers for Faster Neural Machine Translation",
+      "year": 2019,
+      "abstract": "Standard decoders for neural machine translation autoregressively generate a single target token per timestep, which slows inference especially for long outputs. While architectural advances such as the Transformer fully parallelize the decoder computations at training time, inference still proceeds sequentially. Recent developments in non- and semi-autoregressive decoding produce multiple tokens per timestep independently of the others, which improves inference speed but deteriorates translation quality. In this work, we propose the syntactically supervised Transformer (SynST), which first autoregressively predicts a chunked parse tree before generating all of the target tokens in one shot conditioned on the predicted parse. A series of controlled experiments demonstrates that SynST decodes sentences ~5x faster than the baseline autoregressive Transformer while achieving higher BLEU scores than most competing methods on En-De and En-Fr datasets.",
+      "externalIds": {
+        "MAG": "2948197522",
+        "ArXiv": "1906.02780",
+        "DBLP": "journals/corr/abs-1906-02780",
+        "ACL": "P19-1122",
+        "DOI": "10.18653/v1/P19-1122",
+        "CorpusId": 174801260
+      },
+      "arxiv_id": "1906.02780",
+      "doi": "10.18653/v1/P19-1122",
+      "corpus_id": 174801260
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "2",
+      "ref_key": "S2:564855d475ed9197dd7516594557ff886ff623e5",
+      "paperId": "564855d475ed9197dd7516594557ff886ff623e5",
+      "title": "Fast and Robust Early-Exiting Framework for Autoregressive Language Models with Synchronized Parallel Decoding",
+      "year": 2023,
+      "abstract": "To tackle the high inference latency exhibited by autoregressive language models, previous studies have proposed an early-exiting framework that allocates adaptive computation paths for each token based on the complexity of generating the subsequent token. However, we observed several shortcomings, including performance degradation caused by a state copying mechanism or numerous exit paths, and sensitivity to exit confidence thresholds. Consequently, we propose a Fast and Robust Early-Exiting (FREE) framework, which incorporates a shallow-deep module and a synchronized parallel decoding. Our framework enables faster inference by synchronizing the decoding process of the current token with previously stacked early-exited tokens. Furthermore, as parallel decoding allows us to observe predictions from both shallow and deep models, we present a novel adaptive threshold estimator that exploits a Beta mixture model to determine suitable confidence thresholds. We empirically demonstrated the superiority of our proposed framework on extensive generation tasks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-05424",
+        "ArXiv": "2310.05424",
+        "DOI": "10.48550/arXiv.2310.05424",
+        "CorpusId": 263830054
+      },
+      "arxiv_id": "2310.05424",
+      "doi": "10.48550/arXiv.2310.05424",
+      "corpus_id": 263830054
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "3",
+      "ref_key": "S2:57e7af0b69325fafb371ef5d502e39ef9c90ef7e",
+      "paperId": "57e7af0b69325fafb371ef5d502e39ef9c90ef7e",
+      "title": "Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads",
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) employ auto-regressive decoding that requires sequential computation, with each step reliant on the previous one's output. This creates a bottleneck as each step necessitates moving the full model parameters from High-Bandwidth Memory (HBM) to the accelerator's cache. While methods such as speculative decoding have been suggested to address this issue, their implementation is impeded by the challenges associated with acquiring and maintaining a separate draft model. In this paper, we present Medusa, an efficient method that augments LLM inference by adding extra decoding heads to predict multiple subsequent tokens in parallel. Using a tree-based attention mechanism, Medusa constructs multiple candidate continuations and verifies them simultaneously in each decoding step. By leveraging parallel processing, Medusa substantially reduces the number of decoding steps required. We present two levels of fine-tuning procedures for Medusa to meet the needs of different use cases: Medusa-1: Medusa is directly fine-tuned on top of a frozen backbone LLM, enabling lossless inference acceleration. Medusa-2: Medusa is fine-tuned together with the backbone LLM, enabling better prediction accuracy of Medusa heads and higher speedup but needing a special training recipe that preserves the backbone model's capabilities. Moreover, we propose several extensions that improve or expand the utility of Medusa, including a self-distillation to handle situations where no training data is available and a typical acceptance scheme to boost the acceptance rate while maintaining generation quality. We evaluate Medusa on models of various sizes and training procedures. Our experiments demonstrate that Medusa-1 can achieve over 2.2x speedup without compromising generation quality, while Medusa-2 further improves the speedup to 2.3-3.6x.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2401-10774",
+        "ArXiv": "2401.10774",
+        "DOI": "10.48550/arXiv.2401.10774",
+        "CorpusId": 267061277
+      },
+      "arxiv_id": "2401.10774",
+      "doi": "10.48550/arXiv.2401.10774",
+      "corpus_id": 267061277
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "4",
+      "ref_key": "S2:a1f8082505c7e90b0a033e1b9da0a97d67aad66c",
+      "paperId": "a1f8082505c7e90b0a033e1b9da0a97d67aad66c",
+      "title": "Accelerating Large Language Model Decoding with Speculative Sampling",
+      "year": 2023,
+      "abstract": "We present speculative sampling, an algorithm for accelerating transformer decoding by enabling the generation of multiple tokens from each transformer call. Our algorithm relies on the observation that the latency of parallel scoring of short continuations, generated by a faster but less powerful draft model, is comparable to that of sampling a single token from the larger target model. This is combined with a novel modified rejection sampling scheme which preserves the distribution of the target model within hardware numerics. We benchmark speculative sampling with Chinchilla, a 70 billion parameter language model, achieving a 2-2.5x decoding speedup in a distributed setup, without compromising the sample quality or making modifications to the model itself.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2302-01318",
+        "ArXiv": "2302.01318",
+        "DOI": "10.48550/arXiv.2302.01318",
+        "CorpusId": 256503945
+      },
+      "arxiv_id": "2302.01318",
+      "doi": "10.48550/arXiv.2302.01318",
+      "corpus_id": 256503945
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "5",
+      "ref_key": "S2:e30666ed82670463aa47686e744f0c6f2a0e083d",
+      "paperId": "e30666ed82670463aa47686e744f0c6f2a0e083d",
+      "title": "Cascade Speculative Drafting for Even Faster LLM Inference",
+      "year": 2023,
+      "abstract": "Introduced to enhance the efficiency of large language model (LLM) inference, speculative decoding operates by having a smaller model generate a draft. A larger target model then reviews this draft to align with its output, and any acceptance by the target model results in a reduction of the number of the target model runs, ultimately improving efficiency. However, the drafting process in speculative decoding includes slow autoregressive generation and allocates equal time to generating tokens, irrespective of their importance. These inefficiencies collectively contribute to the suboptimal performance of speculative decoding. To further improve LLM inference, we introduce Cascade Speculative Drafting (CS Drafting), a speculative execution algorithm that incorporates two types of cascades. The Vertical Cascade eliminates autoregressive generation from neural models, while the Horizontal Cascade optimizes time allocation in drafting for improved efficiency. Combining both cascades, CS Drafting achieves up to an 81 percent additional speedup over speculative decoding in our experiments, while maintaining the same output distribution as the target model. Our code is publicly available at https://github.com/lfsszd/CS-Drafting.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2312-11462",
+        "ArXiv": "2312.11462",
+        "DOI": "10.48550/arXiv.2312.11462",
+        "CorpusId": 266359077
+      },
+      "arxiv_id": "2312.11462",
+      "doi": "10.48550/arXiv.2312.11462",
+      "corpus_id": 266359077
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "6",
+      "ref_key": "S2:89d3d19ad717cd534bdd1866d28e2da253147705",
+      "paperId": "89d3d19ad717cd534bdd1866d28e2da253147705",
+      "title": "EE-LLM: Large-Scale Training and Inference of Early-Exit Large Language Models with 3D Parallelism",
+      "year": 2023,
+      "abstract": "We present EE-LLM, a framework for large-scale training and inference of early-exit large language models (LLMs). While recent works have shown preliminary evidence for the efficacy of early exiting in accelerating LLM inference, EE-LLM makes a foundational step towards scaling up early-exit LLMs by supporting their training and inference with massive 3D parallelism. Built upon Megatron-LM, EE-LLM implements a variety of algorithmic innovations and performance optimizations tailored to early exiting, including a lightweight method that facilitates backpropagation for the early-exit training objective with pipeline parallelism, techniques of leveraging idle resources in the original pipeline schedule for computation related to early-exit layers, and two approaches of early-exit inference that are compatible with KV caching for autoregressive generation. Our analytical and empirical study shows that EE-LLM achieves great training efficiency with negligible computational overhead compared to standard LLM training, as well as outstanding inference speedup without compromising output quality. To facilitate further research and adoption, we release EE-LLM at https://github.com/pan-x-c/EE-LLM.",
+      "externalIds": {
+        "DBLP": "conf/icml/ChenPLDZ24",
+        "ArXiv": "2312.04916",
+        "DOI": "10.48550/arXiv.2312.04916",
+        "CorpusId": 266149909
+      },
+      "arxiv_id": "2312.04916",
+      "doi": "10.48550/arXiv.2312.04916",
+      "corpus_id": 266149909
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "7",
+      "ref_key": "S2:ce9435c82dc9b576f2037aa2f4357a520be9b2aa",
+      "paperId": "ce9435c82dc9b576f2037aa2f4357a520be9b2aa",
+      "title": "SkipDecode: Autoregressive Skip Decoding with Batching and Caching for Efficient LLM Inference",
+      "year": 2023,
+      "abstract": "Autoregressive large language models (LLMs) have made remarkable progress in various natural language generation tasks. However, they incur high computation cost and latency resulting from the autoregressive token-by-token generation. To address this issue, several approaches have been proposed to reduce computational cost using early-exit strategies. These strategies enable faster text generation using reduced computation without applying the full computation graph to each token. While existing token-level early exit methods show promising results for online inference, they cannot be readily applied for batch inferencing and Key-Value caching. This is because they have to wait until the last token in a batch exits before they can stop computing. This severely limits the practical application of such techniques. In this paper, we propose a simple and effective token-level early exit method, SkipDecode, designed to work seamlessly with batch inferencing and KV caching. It overcomes prior constraints by setting up a singular exit point for every token in a batch at each sequence position. It also guarantees a monotonic decrease in exit points, thereby eliminating the need to recompute KV Caches for preceding tokens. Rather than terminating computation prematurely as in prior works, our approach bypasses lower to middle layers, devoting most of the computational resources to upper layers, allowing later tokens to benefit from the compute expenditure by earlier tokens. Our experimental results show that SkipDecode can obtain 2x to 5x inference speedups with negligible regression across a variety of tasks. This is achieved using OPT models of 1.3 billion and 6.7 billion parameters, all the while being directly compatible with batching and KV caching optimization techniques.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-02628",
+        "ArXiv": "2307.02628",
+        "DOI": "10.48550/arXiv.2307.02628",
+        "CorpusId": 259360560
+      },
+      "arxiv_id": "2307.02628",
+      "doi": "10.48550/arXiv.2307.02628",
+      "corpus_id": 259360560
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "8",
+      "ref_key": "S2:eee108b3e51e89d160d1116935e062c4d169b475",
+      "paperId": "eee108b3e51e89d160d1116935e062c4d169b475",
+      "title": "LayerSkip: Enabling Early Exit Inference and Self-Speculative Decoding",
+      "year": 2024,
+      "abstract": "We present LayerSkip, an end-to-end solution to speed-up inference of large language models (LLMs). First, during training we apply layer dropout, with low dropout rates for earlier layers and higher dropout rates for later layers, and an early exit loss where all transformer layers share the same exit. Second, during inference, we show that this training recipe increases the accuracy of early exit at earlier layers, without adding any auxiliary layers or modules to the model. Third, we present a novel self-speculative decoding solution where we exit at early layers and verify and correct with remaining layers of the model. Our proposed self-speculative decoding approach has less memory footprint than other speculative decoding approaches and benefits from shared compute and activations of the draft and verification stages. We run experiments on different Llama model sizes on different types of training: pretraining from scratch, continual pretraining, finetuning on specific data domain, and finetuning on specific task. We implement our inference solution and show speedups of up to 2.16x on summarization for CNN/DM documents, 1.82x on coding, and 2.0x on TOPv2 semantic parsing task. We open source our code and checkpoints at https://github.com/facebookresearch/LayerSkip.",
+      "externalIds": {
+        "ArXiv": "2404.16710",
+        "DBLP": "conf/acl/ElhoushiSLHWL0A24",
+        "DOI": "10.18653/v1/2024.acl-long.681",
+        "CorpusId": 269362647
+      },
+      "arxiv_id": "2404.16710",
+      "doi": "10.18653/v1/2024.acl-long.681",
+      "corpus_id": 269362647
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "9",
+      "ref_key": "S2:5efadc9019ce3378a0eb6c8f939cdde6c8918b1e",
+      "paperId": "5efadc9019ce3378a0eb6c8f939cdde6c8918b1e",
+      "title": "Mask-Predict: Parallel Decoding of Conditional Masked Language Models",
+      "year": 2019,
+      "abstract": "Most machine translation systems generate text autoregressively from left to right. We, instead, use a masked language modeling objective to train a model to predict any subset of the target words, conditioned on both the input text and a partially masked target translation. This approach allows for efficient iterative decoding, where we first predict all of the target words non-autoregressively, and then repeatedly mask out and regenerate the subset of words that the model is least confident about. By applying this strategy for a constant number of iterations, our model improves state-of-the-art performance levels for non-autoregressive and parallel decoding translation models by over 4 BLEU on average. It is also able to reach within about 1 BLEU point of a typical left-to-right transformer model, while decoding significantly faster.",
+      "externalIds": {
+        "MAG": "2988975212",
+        "DBLP": "conf/emnlp/GhazvininejadLL19",
+        "ACL": "D19-1633",
+        "DOI": "10.18653/v1/D19-1633",
+        "CorpusId": 202538740
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/D19-1633",
+      "corpus_id": 202538740
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "10",
+      "ref_key": "S2:15e81c8d1c21f9e928c72721ac46d458f3341454",
+      "paperId": "15e81c8d1c21f9e928c72721ac46d458f3341454",
+      "title": "Non-Autoregressive Neural Machine Translation",
+      "year": 2017,
+      "abstract": "Existing approaches to neural machine translation condition each output word on previously generated outputs. We introduce a model that avoids this autoregressive property and produces its outputs in parallel, allowing an order of magnitude lower latency during inference. Through knowledge distillation, the use of input token fertilities as a latent variable, and policy gradient fine-tuning, we achieve this at a cost of as little as 2.0 BLEU points relative to the autoregressive Transformer network used as a teacher. We demonstrate substantial cumulative improvements associated with each of the three aspects of our training strategy, and validate our approach on IWSLT 2016 English-German and two WMT language pairs. By sampling fertilities in parallel at inference time, our non-autoregressive model achieves near-state-of-the-art performance of 29.8 BLEU on WMT 2016 English-Romanian.",
+      "externalIds": {
+        "DBLP": "conf/iclr/Gu0XLS18",
+        "MAG": "2767206889",
+        "ArXiv": "1711.02281",
+        "CorpusId": 3480671
+      },
+      "arxiv_id": "1711.02281",
+      "doi": null,
+      "corpus_id": 3480671
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "11",
+      "ref_key": "S2:9d9c4a3b27dab2293ed915ad69662ea09901ccab",
+      "paperId": "9d9c4a3b27dab2293ed915ad69662ea09901ccab",
+      "title": "Non-Autoregressive Neural Machine Translation with Enhanced Decoder Input",
+      "year": 2018,
+      "abstract": "Non-autoregressive translation (NAT) models, which remove the dependence on previous target tokens from the inputs of the decoder, achieve significantly inference speedup but at the cost of inferior accuracy compared to autoregressive translation (AT) models. Previous work shows that the quality of the inputs of the decoder is important and largely impacts the model accuracy. In this paper, we propose two methods to enhance the decoder inputs so as to improve NAT models. The first one directly leverages a phrase table generated by conventional SMT approaches to translate source tokens to target tokens, which are then fed into the decoder as inputs. The second one transforms source-side word embeddings to target-side word embeddings through sentence-level alignment and word-level adversary learning, and then feeds the transformed word embeddings into the decoder as inputs. Experimental results show our method largely outperforms the NAT baseline (Gu et al. 2017) by 5.11 BLEU scores on WMT14 English-German task and 4.72 BLEU scores on WMT16 English-Romanian task.",
+      "externalIds": {
+        "ArXiv": "1812.09664",
+        "MAG": "2962969034",
+        "DBLP": "conf/aaai/GuoTHQXL19",
+        "DOI": "10.1609/aaai.v33i01.33013723",
+        "CorpusId": 56895270
+      },
+      "arxiv_id": "1812.09664",
+      "doi": "10.1609/aaai.v33i01.33013723",
+      "corpus_id": 56895270
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "12",
+      "ref_key": "S2:1bebcbfb3b8309c9cea44de52662a911f99bc65b",
+      "paperId": "1bebcbfb3b8309c9cea44de52662a911f99bc65b",
+      "title": "Fine-Tuning by Curriculum Learning for Non-Autoregressive Neural Machine Translation",
+      "year": 2019,
+      "abstract": "Non-autoregressive translation (NAT) models remove the dependence on previous target tokens and generate all target tokens in parallel, resulting in significant inference speedup but at the cost of inferior translation accuracy compared to autoregressive translation (AT) models. Considering that AT models have higher accuracy and are easier to train than NAT models, and both of them share the same model configurations, a natural idea to improve the accuracy of NAT models is to transfer a well-trained AT model to an NAT model through fine-tuning. However, since AT and NAT models differ greatly in training strategy, straightforward fine-tuning does not work well. In this work, we introduce curriculum learning into fine-tuning for NAT. Specifically, we design a curriculum in the fine-tuning process to progressively switch the training from autoregressive generation to non-autoregressive generation. Experiments on four benchmark translation datasets show that the proposed method achieves good improvement (more than 1 BLEU score) over previous NAT baselines in terms of translation accuracy, and greatly speed up (more than 10 times) the inference process over AT baselines.",
+      "externalIds": {
+        "MAG": "2996987694",
+        "DBLP": "conf/aaai/GuoTXQCL20",
+        "ArXiv": "1911.08717",
+        "DOI": "10.1609/AAAI.V34I05.6289",
+        "CorpusId": 208175668
+      },
+      "arxiv_id": "1911.08717",
+      "doi": "10.1609/AAAI.V34I05.6289",
+      "corpus_id": 208175668
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "13",
+      "ref_key": "S2:532c2c7a247d9e97d20abec1b2f4612984fdab93",
+      "paperId": "532c2c7a247d9e97d20abec1b2f4612984fdab93",
+      "title": "REST: Retrieval-Based Speculative Decoding",
+      "year": 2023,
+      "abstract": "We introduce Retrieval-Based Speculative Decoding (REST), a novel algorithm designed to speed up language model generation. The key insight driving the development of REST is the observation that the process of text generation often includes certain common phases and patterns. Unlike previous methods that rely on a draft language model for speculative decoding, REST harnesses the power of retrieval to generate draft tokens. This method draws from the reservoir of existing knowledge, retrieving and employing relevant tokens based on the current context. Its plug-and-play nature allows for seamless integration and acceleration of any language model, all without necessitating additional training. When benchmarked on 7B and 13B language models in a single-batch setting, REST achieves a significant speedup of 1.62 \\times to 2.36 \\times on code or text generation. The source code of REST is available at https://github.com/FasterDecoding/REST.",
+      "externalIds": {
+        "DBLP": "conf/naacl/0012ZCL024",
+        "ACL": "2024.naacl-long.88",
+        "ArXiv": "2311.08252",
+        "DOI": "10.48550/arXiv.2311.08252",
+        "CorpusId": 265157884
+      },
+      "arxiv_id": "2311.08252",
+      "doi": "10.48550/arXiv.2311.08252",
+      "corpus_id": 265157884
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "14",
+      "ref_key": "S2:f206d34afed6a5705757f96ea97c7bfb9e1a83cd",
+      "paperId": "f206d34afed6a5705757f96ea97c7bfb9e1a83cd",
+      "title": "SPEED: Speculative Pipelined Execution for Efficient Decoding",
+      "year": 2023,
+      "abstract": "Generative Large Language Models (LLMs) based on the Transformer architecture have recently emerged as a dominant foundation model for a wide range of Natural Language Processing tasks. Nevertheless, their application in real-time scenarios has been highly restricted due to the significant inference latency associated with these models. This is particularly pronounced due to the autoregressive nature of generative LLM inference, where tokens are generated sequentially since each token depends on all previous output tokens. It is therefore challenging to achieve any token-level parallelism, making inference extremely memory-bound. In this work, we propose SPEED, which improves inference efficiency by speculatively executing multiple future tokens in parallel with the current token using predicted values based on early-layer hidden states. For Transformer decoders that employ parameter sharing, the memory operations for the tokens executing in parallel can be amortized, which allows us to accelerate generative LLM inference. We demonstrate the efficiency of our method in terms of latency reduction relative to model accuracy and demonstrate how speculation allows for training deeper decoders with parameter sharing with minimal runtime overhead.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-12072",
+        "ArXiv": "2310.12072",
+        "DOI": "10.48550/arXiv.2310.12072",
+        "CorpusId": 264289340
+      },
+      "arxiv_id": "2310.12072",
+      "doi": "10.48550/arXiv.2310.12072",
+      "corpus_id": 264289340
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "15",
+      "ref_key": "S2:2d08ed53491053d84b6de89aedbf2178b9c8cf84",
+      "paperId": "2d08ed53491053d84b6de89aedbf2178b9c8cf84",
+      "title": "Fast Decoding in Sequence Models using Discrete Latent Variables",
+      "year": 2018,
+      "abstract": "Autoregressive sequence models based on deep neural networks, such as RNNs, Wavenet and the Transformer attain state-of-the-art results on many tasks. However, they are difficult to parallelize and are thus slow at processing long sequences. RNNs lack parallelism both during training and decoding, while architectures like WaveNet and Transformer are much more parallelizable during training, yet still operate sequentially during decoding. \nInspired by [arXiv:1711.00937], we present a method to extend sequence models using discrete latent variables that makes decoding much more parallelizable. We first auto-encode the target sequence into a shorter sequence of discrete latent variables, which at inference time is generated autoregressively, and finally decode the output sequence from this shorter latent sequence in parallel. To this end, we introduce a novel method for constructing a sequence of discrete latent variables and compare it with previously introduced methods. Finally, we evaluate our model end-to-end on the task of neural machine translation, where it is an order of magnitude faster at decoding than comparable autoregressive models. While lower in BLEU than purely autoregressive models, our model achieves higher scores than previously proposed non-autoregressive translation models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1803-03382",
+        "MAG": "2789543585",
+        "ArXiv": "1803.03382",
+        "CorpusId": 4720016
+      },
+      "arxiv_id": "1803.03382",
+      "doi": null,
+      "corpus_id": 4720016
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "16",
+      "ref_key": "S2:b7d12aec8a0152ec4921dfa43ab525a63b334385",
+      "paperId": "b7d12aec8a0152ec4921dfa43ab525a63b334385",
+      "title": "Speculative Decoding with Big Little Decoder",
+      "year": 2023,
+      "abstract": "The recent emergence of Large Language Models based on the Transformer architecture has enabled dramatic advancements in the field of Natural Language Processing. However, these models have long inference latency, which limits their deployment and makes them prohibitively expensive for various real-time applications. The inference latency is further exacerbated by autoregressive generative tasks, as models need to run iteratively to generate tokens sequentially without leveraging token-level parallelization. To address this, we propose Big Little Decoder (BiLD), a framework that can improve inference efficiency and latency for a wide range of text generation applications. The BiLD framework contains two models with different sizes that collaboratively generate text. The small model runs autoregressively to generate text with a low inference cost, and the large model is only invoked occasionally to refine the small model's inaccurate predictions in a non-autoregressive manner. To coordinate the small and large models, BiLD introduces two simple yet effective policies: (1) the fallback policy that determines when to hand control over to the large model; and (2) the rollback policy that determines when the large model needs to correct the small model's inaccurate predictions. To evaluate our framework across different tasks and models, we apply BiLD to various text generation scenarios encompassing machine translation on IWSLT 2017 De-En and WMT 2014 De-En, and summarization on XSUM and CNN/DailyMail. On an NVIDIA T4 GPU, our framework achieves a speedup of up to 2.12x speedup with minimal generation quality degradation. Furthermore, our framework is fully plug-and-play and can be applied without any modifications in the training process or model architecture. Our code is open-sourced",
+      "externalIds": {
+        "DBLP": "conf/nips/KimMMMMGK23",
+        "ArXiv": "2302.07863",
+        "CorpusId": 256868484
+      },
+      "arxiv_id": "2302.07863",
+      "doi": null,
+      "corpus_id": 256868484
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "17",
+      "ref_key": "S2:4a984ec8286b19bb0c033e6e4df198a0421b0c17",
+      "paperId": "4a984ec8286b19bb0c033e6e4df198a0421b0c17",
+      "title": "Accelerating Inference for Pretrained Language Models by Unified Multi-Perspective Early Exiting",
+      "year": 2022,
+      "abstract": "Conditional computation algorithms, such as the early exiting (EE) algorithm, can be applied to accelerate the inference of pretrained language models (PLMs) while maintaining competitive performance on resource-constrained devices. However, this approach is only applied to the vertical architecture to decide which layers should be used for inference. Conversely, the operation of the horizontal perspective is ignored, and the determination of which tokens in each layer should participate in the computation fails, leading to a high redundancy for adaptive inference. To address this limitation, a unified horizontal and vertical multi-perspective early exiting (MPEE) framework is proposed in this study to accelerate the inference of transformer-based models. Specifically, the vertical architecture uses recycling EE classifier memory and weighted self-distillation to enhance the performance of the EE classifiers. Then, the horizontal perspective uses recycling class attention memory to emphasize the informative tokens. Conversely, the tokens with less information are truncated by weighted fusion and isolated from the following computation. Based on this, both horizontal and vertical EE are unified to obtain a better tradeoff between performance and efficiency. Extensive experimental results show that MPEE can achieve higher acceleration inference with competent performance than existing competitive methods.",
+      "externalIds": {
+        "DBLP": "conf/coling/Kong0YZ22",
+        "ACL": "2022.coling-1.414",
+        "CorpusId": 252818912
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 252818912
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "18",
+      "ref_key": "S2:a1849a77644ff411a03833b5aa7a65ff57158c50",
+      "paperId": "a1849a77644ff411a03833b5aa7a65ff57158c50",
+      "title": "CLLMs: Consistency Large Language Models",
+      "year": 2024,
+      "abstract": "Parallel decoding methods such as Jacobi decoding show promise for more efficient LLM inference as it breaks the sequential nature of the LLM decoding process and transforms it into parallelizable computation. However, in practice, it achieves little speedup compared to traditional autoregressive (AR) decoding, primarily because Jacobi decoding seldom accurately predicts more than one token in a single fixed-point iteration step. To address this, we develop a new approach aimed at realizing fast convergence from any state to the fixed point on a Jacobi trajectory. This is accomplished by refining the target LLM to consistently predict the fixed point given any state as input. Extensive experiments demonstrate the effectiveness of our method, showing 2.4$\\times$ to 3.4$\\times$ improvements in generation speed while preserving generation quality across both domain-specific and open-domain benchmarks.",
+      "externalIds": {
+        "ArXiv": "2403.00835",
+        "DBLP": "journals/corr/abs-2403-00835",
+        "DOI": "10.48550/arXiv.2403.00835",
+        "CorpusId": 268230510
+      },
+      "arxiv_id": "2403.00835",
+      "doi": "10.48550/arXiv.2403.00835",
+      "corpus_id": 268230510
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "19",
+      "ref_key": "S2:9c5c89199114858eafbe50b46d77d38ffd03b28a",
+      "paperId": "9c5c89199114858eafbe50b46d77d38ffd03b28a",
+      "title": "Deterministic Non-Autoregressive Neural Sequence Modeling by Iterative Refinement",
+      "year": 2018,
+      "abstract": "We propose a conditional non-autoregressive neural sequence model based on iterative refinement. The proposed model is designed based on the principles of latent variable models and denoising autoencoders, and is generally applicable to any sequence generation task. We extensively evaluate the proposed model on machine translation (En-De and En-Ro) and image caption generation, and observe that it significantly speeds up decoding while maintaining the generation quality comparable to the autoregressive counterpart.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1802-06901",
+        "ArXiv": "1802.06901",
+        "ACL": "D18-1149",
+        "MAG": "2953322184",
+        "DOI": "10.18653/v1/D18-1149",
+        "CorpusId": 3438497
+      },
+      "arxiv_id": "1802.06901",
+      "doi": "10.18653/v1/D18-1149",
+      "corpus_id": 3438497
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "20",
+      "ref_key": "S2:d8e9f8c8a37cb4cd26b92ad0d942d641cd512644",
+      "paperId": "d8e9f8c8a37cb4cd26b92ad0d942d641cd512644",
+      "title": "Fast Inference from Transformers via Speculative Decoding",
+      "year": 2022,
+      "abstract": "Inference from large autoregressive models like Transformers is slow - decoding K tokens takes K serial runs of the model. In this work we introduce speculative decoding - an algorithm to sample from autoregressive models faster without any changes to the outputs, by computing several tokens in parallel. At the heart of our approach lie the observations that (1) hard language-modeling tasks often include easier subtasks that can be approximated well by more efficient models, and (2) using speculative execution and a novel sampling method, we can make exact decoding from the large models faster, by running them in parallel on the outputs of the approximation models, potentially generating several tokens concurrently, and without changing the distribution. Our method can accelerate existing off-the-shelf models without retraining or architecture changes. We demonstrate it on T5-XXL and show a 2X-3X acceleration compared to the standard T5X implementation, with identical outputs.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2211-17192",
+        "ArXiv": "2211.17192",
+        "DOI": "10.48550/arXiv.2211.17192",
+        "CorpusId": 254096365
+      },
+      "arxiv_id": "2211.17192",
+      "doi": "10.48550/arXiv.2211.17192",
+      "corpus_id": 254096365
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "21",
+      "ref_key": "S2:1b5db3170c195508ff24fee8eda0d4987e806f0b",
+      "paperId": "1b5db3170c195508ff24fee8eda0d4987e806f0b",
+      "title": "EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty",
+      "year": 2024,
+      "abstract": "Autoregressive decoding makes the inference of Large Language Models (LLMs) time-consuming. In this paper, we reconsider speculative sampling and derive two key observations. Firstly, autoregression at the feature (second-to-top-layer) level is more straightforward than at the token level. Secondly, the inherent uncertainty in feature (second-to-top-layer) level autoregression constrains its performance. Based on these insights, we introduce EAGLE (Extrapolation Algorithm for Greater Language-model Efficiency), a simple yet highly efficient speculative sampling framework. By incorporating a token sequence advanced by one time step, EAGLE effectively resolves the uncertainty, enabling precise second-to-top-layer feature prediction with minimal overhead. We conducted comprehensive evaluations of EAGLE, including all models from the Vicuna and LLaMA2-Chat series, the MoE model Mixtral 8x7B Instruct, and tasks in dialogue, code generation, mathematical reasoning, and instruction following. For LLaMA2-Chat 70B, EAGLE achieved a latency speedup ratio of 2.7x-3.5x, doubled throughput, while maintaining the distribution of the generated text.",
+      "externalIds": {
+        "ArXiv": "2401.15077",
+        "DBLP": "conf/icml/LiW0024",
+        "DOI": "10.48550/arXiv.2401.15077",
+        "CorpusId": 267301131
+      },
+      "arxiv_id": "2401.15077",
+      "doi": "10.48550/arXiv.2401.15077",
+      "corpus_id": 267301131
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "22",
+      "ref_key": "S2:1b4a7c0f1f46662078547388a1041aec907d9009",
+      "paperId": "1b4a7c0f1f46662078547388a1041aec907d9009",
+      "title": "BiTA: Bi-Directional Tuning for Lossless Acceleration in Large Language Models",
+      "year": 2024,
+      "abstract": "Large language models (LLMs) commonly employ autoregressive generation during inference, leading to high memory bandwidth demand and consequently extended latency. To mitigate this inefficiency, we present Bi-directional Tuning for lossless Acceleration (BiTA), an innovative method expediting LLMs via streamlined semi-autoregressive generation and draft verification. Inspired by the concept of prompt tuning, we enhance LLMs with a parameter-efficient design called bi-directional tuning for the capability in semi-autoregressive generation. Employing efficient tree-based decoding, the models perform draft candidate generation and verification in parallel, ensuring outputs identical to their autoregressive counterparts under greedy sampling. BiTA serves as a lightweight plug-in module, seamlessly boosting the inference efficiency of existing LLMs without requiring additional assistance models or incurring significant extra memory costs. Applying the proposed BiTA, LLaMA-2-70B-Chat achieves a 2.7$\\times$ speedup on the MT-Bench benchmark. Extensive experiments confirm our method surpasses state-of-the-art acceleration techniques.",
+      "externalIds": {
+        "ArXiv": "2401.12522",
+        "DBLP": "journals/corr/abs-2401-12522",
+        "DOI": "10.48550/arXiv.2401.12522",
+        "CorpusId": 267094835
+      },
+      "arxiv_id": "2401.12522",
+      "doi": "10.48550/arXiv.2401.12522",
+      "corpus_id": 267094835
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "23",
+      "ref_key": "S2:ba5261e729c181e28a98dee2c08d7cf5fc7127a2",
+      "paperId": "ba5261e729c181e28a98dee2c08d7cf5fc7127a2",
+      "title": "Online Speculative Decoding",
+      "year": 2023,
+      "abstract": "Speculative decoding is a pivotal technique to accelerate the inference of large language models (LLMs) by employing a smaller draft model to predict the target model's outputs. However, its efficacy can be limited due to the low predictive accuracy of the draft model, particularly when faced with diverse text inputs and a significant capability gap between the draft and target models. We introduce online speculative decoding to address this challenge. The main idea is to continuously update the (multiple) draft model(s) on observed user query data. Adapting to query distribution mitigates the shifts between the training distribution of the draft model and the query distribution, enabling the draft model to more accurately predict the target model's outputs. We develop a prototype of online speculative decoding based on knowledge distillation and evaluate it using both synthetic and real query data. The results show a substantial increase in the token acceptance rate by 0.1 to 0.65, bringing 1.42x to 2.17x latency reduction. Our code is available at https://github.com/LiuXiaoxuanPKU/OSD.",
+      "externalIds": {
+        "ArXiv": "2310.07177",
+        "DBLP": "journals/corr/abs-2310-07177",
+        "DOI": "10.48550/arXiv.2310.07177",
+        "CorpusId": 263835233
+      },
+      "arxiv_id": "2310.07177",
+      "doi": "10.48550/arXiv.2310.07177",
+      "corpus_id": 263835233
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "24",
+      "ref_key": "S2:75fe6c3ffdea2608794b4f21119c5a4dec07663a",
+      "paperId": "75fe6c3ffdea2608794b4f21119c5a4dec07663a",
+      "title": "FlowSeq: Non-Autoregressive Conditional Sequence Generation with Generative Flow",
+      "year": 2019,
+      "abstract": "Most sequence-to-sequence (seq2seq) models are autoregressive; they generate each token by conditioning on previously generated tokens. In contrast, non-autoregressive seq2seq models generate all tokens in one pass, which leads to increased efficiency through parallel processing on hardware such as GPUs. However, directly modeling the joint distribution of all tokens simultaneously is challenging, and even with increasingly complex model structures accuracy lags significantly behind autoregressive models. In this paper, we propose a simple, efficient, and effective model for non-autoregressive sequence generation using latent variable models. Specifically, we turn to generative flow, an elegant technique to model complex distributions using neural networks, and design several layers of flow tailored for modeling the conditional density of sequential latent variables. We evaluate this model on three neural machine translation (NMT) benchmark datasets, achieving comparable performance with state-of-the-art non-autoregressive NMT models and almost constant decoding time w.r.t the sequence length.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/MaZLNH19",
+        "MAG": "2972034672",
+        "ACL": "D19-1437",
+        "ArXiv": "1909.02480",
+        "DOI": "10.18653/v1/D19-1437",
+        "CorpusId": 202539063
+      },
+      "arxiv_id": "1909.02480",
+      "doi": "10.18653/v1/D19-1437",
+      "corpus_id": 202539063
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "25",
+      "ref_key": "S2:f0c31511134abdd23f990310e8a2f2eb3a629b62",
+      "paperId": "f0c31511134abdd23f990310e8a2f2eb3a629b62",
+      "title": "SpecInfer: Accelerating Large Language Model Serving with Tree-based Speculative Inference and Verification",
+      "year": 2023,
+      "abstract": "This paper introduces SpecInfer, a system that accelerates generative large language model (LLM) serving with tree-based speculative inference and verification. The key idea behind SpecInfer is leveraging small speculative models to predict the LLM's outputs; the predictions are organized as a token tree, whose nodes each represent a candidate token sequence. The correctness of all candidate token sequences represented by a token tree is verified against the LLM in parallel using a novel tree-based parallel decoding mechanism. SpecInfer uses an LLM as a token tree verifier instead of an incremental decoder, which significantly reduces the end-to-end latency and computational requirement for serving generative LLMs while provably preserving model quality. Our evaluation shows that SpecInfer outperforms existing LLM serving systems by 1.5-2.8× for distributed LLM inference and by 2.6-3.5× for offloading-based LLM inference, while preserving the same generative performance. SpecInfer is publicly available at https://github.com/flexflow/FlexFlow/",
+      "externalIds": {
+        "DBLP": "conf/asplos/MiaoOZCWZWZYSSC24",
+        "ArXiv": "2305.09781",
+        "DOI": "10.1145/3620666.3651335",
+        "CorpusId": 267094734
+      },
+      "arxiv_id": "2305.09781",
+      "doi": "10.1145/3620666.3651335",
+      "corpus_id": 267094734
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "26",
+      "ref_key": "S2:4067a6f57f708dec4459d3d4322373e06c2b168c",
+      "paperId": "4067a6f57f708dec4459d3d4322373e06c2b168c",
+      "title": "PaSS: Parallel Speculative Sampling",
+      "year": 2023,
+      "abstract": "Scaling the size of language models to tens of billions of parameters has led to impressive performance on a wide range of tasks. At generation, these models are used auto-regressively, requiring a forward pass for each generated token, and thus reading the full set of parameters from memory. This memory access forms the primary bottleneck for generation and it worsens as the model size increases. Moreover, executing a forward pass for multiple tokens in parallel often takes nearly the same time as it does for just one token. These two observations lead to the development of speculative sampling, where a second smaller model is used to draft a few tokens, that are then validated or rejected using a single forward pass of the large model. Unfortunately, this method requires two models that share the same tokenizer and thus limits its adoption. As an alternative, we propose to use parallel decoding as a way to draft multiple tokens from a single model with no computational cost, nor the need for a second model. Our approach only requires an additional input token that marks the words that will be generated simultaneously. We show promising performance (up to $30\\%$ speed-up) while requiring only as few as $O(d_{emb})$ additional parameters.",
+      "externalIds": {
+        "ArXiv": "2311.13581",
+        "DBLP": "journals/corr/abs-2311-13581",
+        "DOI": "10.48550/arXiv.2311.13581",
+        "CorpusId": 265351429
+      },
+      "arxiv_id": "2311.13581",
+      "doi": "10.48550/arXiv.2311.13581",
+      "corpus_id": 265351429
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "27",
+      "ref_key": "S2:3d473cbb7a377cf960abff31748a1a39bb6c7d7c",
+      "paperId": "3d473cbb7a377cf960abff31748a1a39bb6c7d7c",
+      "title": "Skeleton-of-Thought: Large Language Models Can Do Parallel Decoding",
+      "year": 2023,
+      "abstract": "This work aims at decreasing the end-to-end generation latency of large language models (LLMs). One of the major causes of the high generation latency is the sequential decoding approach adopted by almost all state-of-the-art LLMs. In this work, motivated by the thinking and writing process of humans, we propose “Skeleton-of-Thought” (SoT), which guides LLMs to first generate the skeleton of the answer, and then conducts parallel API calls or batched decoding to complete the contents of each skeleton point in parallel . Not only does SoT provide considerable speed-up (up to 2.39 × across 11 different LLMs), but it can also potentially improve the answer quality on several question categories in terms of diversity and relevance. SoT is an initial attempt at data-centric optimization for efficiency, and reveal the potential of pushing LLMs to think more like a human for answer quality.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-15337",
+        "DOI": "10.48550/arXiv.2307.15337",
+        "CorpusId": 260315904
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2307.15337",
+      "corpus_id": 260315904
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "28",
+      "ref_key": "S2:3556722b4703a21abafd2f9388743202943f4503",
+      "paperId": "3556722b4703a21abafd2f9388743202943f4503",
+      "title": "Accelerating Transformer Inference for Translation via Parallel Decoding",
+      "year": 2023,
+      "abstract": "Autoregressive decoding limits the efficiency of transformers for Machine Translation (MT). The community proposed specific network architectures and learning-based methods to solve this issue, which are expensive and require changes to the MT model, trading inference speed at the cost of the translation quality. In this paper, we propose to address the problem from the point of view of decoding algorithms, as a less explored but rather compelling direction. We propose to reframe the standard greedy autoregressive decoding of MT with a parallel formulation leveraging Jacobi and Gauss-Seidel fixed-point iteration methods for fast inference.This formulation allows to speed up existing models without training or modifications while retaining translation quality. We present three parallel decoding algorithms and test them on different languages and models showing how the parallelization introduces a speedup up to 38% w.r.t. the standard autoregressive decoding and nearly 2x when scaling the method on parallel resources. Finally, we introduce a decoding dependency graph visualizer (DDGviz) that let us see how the model has learned the conditional dependence between tokens and inspect the decoding procedure.",
+      "externalIds": {
+        "ACL": "2023.acl-long.689",
+        "DBLP": "journals/corr/abs-2305-10427",
+        "ArXiv": "2305.10427",
+        "DOI": "10.18653/v1/2023.acl-long.689",
+        "CorpusId": 258741236
+      },
+      "arxiv_id": "2305.10427",
+      "doi": "10.18653/v1/2023.acl-long.689",
+      "corpus_id": 258741236
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "29",
+      "ref_key": "S2:2ef60a4ea4ea53056be811ff55679eb59fb4b586",
+      "paperId": "2ef60a4ea4ea53056be811ff55679eb59fb4b586",
+      "title": "Confident Adaptive Language Modeling",
+      "year": 2022,
+      "abstract": "Recent advances in Transformer-based large language models (LLMs) have led to significant performance improvements across many tasks. These gains come with a drastic increase in the models' size, potentially leading to slow and costly use at inference time. In practice, however, the series of generations made by LLMs is composed of varying levels of difficulty. While certain predictions truly benefit from the models' full capacity, other continuations are more trivial and can be solved with reduced compute. In this work, we introduce Confident Adaptive Language Modeling (CALM), a framework for dynamically allocating different amounts of compute per input and generation timestep. Early exit decoding involves several challenges that we address here, such as: (1) what confidence measure to use; (2) connecting sequence-level constraints to local per-token exit decisions; and (3) attending back to missing hidden representations due to early exits in previous tokens. Through theoretical analysis and empirical experiments on three diverse text generation tasks, we demonstrate the efficacy of our framework in reducing compute -- potential speedup of up to $\\times 3$ -- while provably maintaining high performance.",
+      "externalIds": {
+        "DBLP": "conf/nips/SchusterFG0B0TM22",
+        "ArXiv": "2207.07061",
+        "DOI": "10.48550/arXiv.2207.07061",
+        "CorpusId": 250526382
+      },
+      "arxiv_id": "2207.07061",
+      "doi": "10.48550/arXiv.2207.07061",
+      "corpus_id": 250526382
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "30",
+      "ref_key": "S2:43e624ddeed82df944a6cae0dedec3372438e243",
+      "paperId": "43e624ddeed82df944a6cae0dedec3372438e243",
+      "title": "Accelerating LLM Inference with Staged Speculative Decoding",
+      "year": 2023,
+      "abstract": "Recent advances with large language models (LLM) illustrate their diverse capabilities. We propose a novel algorithm, staged speculative decoding, to accelerate LLM inference in small-batch, on-device scenarios. We address the low arithmetic intensity of small-batch inference by improving upon previous work in speculative decoding. First, we restructure the speculative batch as a tree, which reduces generation costs and increases the expected tokens per batch. Second, we add a second stage of speculative decoding. Taken together, we reduce single-batch decoding latency by 3.16x with a 762M parameter GPT-2-L model while perfectly preserving output quality.",
+      "externalIds": {
+        "ArXiv": "2308.04623",
+        "DBLP": "journals/corr/abs-2308-04623",
+        "DOI": "10.48550/arXiv.2308.04623",
+        "CorpusId": 260735640
+      },
+      "arxiv_id": "2308.04623",
+      "doi": "10.48550/arXiv.2308.04623",
+      "corpus_id": 260735640
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "31",
+      "ref_key": "S2:5e04881e91bff952d102d967c4ffb498ec30d4af",
+      "paperId": "5e04881e91bff952d102d967c4ffb498ec30d4af",
+      "title": "Blockwise Parallel Decoding for Deep Autoregressive Models",
+      "year": 2018,
+      "abstract": "Deep autoregressive sequence-to-sequence models have demonstrated impressive performance across a wide variety of tasks in recent years. While common architecture classes such as recurrent, convolutional, and self-attention networks make different trade-offs between the amount of computation needed per layer and the length of the critical path at training time, generation still remains an inherently sequential process. To overcome this limitation, we propose a novel blockwise parallel decoding scheme in which we make predictions for multiple time steps in parallel then back off to the longest prefix validated by a scoring model. This allows for substantial theoretical improvements in generation speed when applied to architectures that can process output sequences in parallel. We verify our approach empirically through a series of experiments using state-of-the-art self-attention models for machine translation and image super-resolution, achieving iteration reductions of up to 2x over a baseline greedy decoder with no loss in quality, or up to 7x in exchange for a slight decrease in performance. In terms of wall-clock time, our fastest models exhibit real-time speedups of up to 4x over standard greedy decoding.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1811-03115",
+        "MAG": "2890152612",
+        "ArXiv": "1811.03115",
+        "CorpusId": 53208380
+      },
+      "arxiv_id": "1811.03115",
+      "doi": null,
+      "corpus_id": 53208380
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "32",
+      "ref_key": "S2:3e8f037d1b2c893f4df37deda1da3dcc577a8bac",
+      "paperId": "3e8f037d1b2c893f4df37deda1da3dcc577a8bac",
+      "title": "Non-Autoregressive Text Generation with Pre-trained Language Models",
+      "year": 2021,
+      "abstract": "Non-autoregressive generation (NAG) has recently attracted great attention due to its fast inference speed. However, the generation quality of existing NAG models still lags behind their autoregressive counterparts. In this work, we show that BERT can be employed as the backbone of a NAG model for a greatly improved performance. Additionally, we devise two mechanisms to alleviate the two common problems of vanilla NAG models: the inflexibility of prefixed output length and the conditional independence of individual token predictions. To further strengthen the speed advantage of the proposed model, we propose a new decoding strategy, ratio-first, for applications where the output lengths can be approximately estimated beforehand. For a comprehensive evaluation, we test the proposed model on three text generation tasks, including text summarization, sentence compression and machine translation. Experimental results show that our model significantly outperforms existing non-autoregressive baselines and achieves competitive performance with many strong autoregressive models. In addition, we also conduct extensive analysis experiments to reveal the effect of each proposed component.",
+      "externalIds": {
+        "DBLP": "conf/eacl/SuCWVBLC21",
+        "MAG": "3154504973",
+        "ArXiv": "2102.08220",
+        "ACL": "2021.eacl-main.18",
+        "DOI": "10.17863/CAM.69916",
+        "CorpusId": 231933701
+      },
+      "arxiv_id": "2102.08220",
+      "doi": "10.17863/CAM.69916",
+      "corpus_id": 231933701
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "33",
+      "ref_key": "S2:bc1c1b0c4214907e2fc872f54a8e66b327d6aa6b",
+      "paperId": "bc1c1b0c4214907e2fc872f54a8e66b327d6aa6b",
+      "title": "The Synergy of Speculative Decoding and Batching in Serving Large Language Models",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) like GPT are state-of-the-art text generation models that provide significant assistance in daily routines. However, LLM execution is inherently sequential, since they only produce one token at a time, thus incurring low hardware utilization on modern GPUs. Batching and speculative decoding are two techniques to improve GPU hardware utilization in LLM inference. To study their synergy, we implement a prototype implementation and perform an extensive characterization analysis on various LLM models and GPU architectures. We observe that the optimal speculation length depends on the batch size used. We analyze the key observation and build a quantitative model to explain it. Based on our analysis, we propose a new adaptive speculative decoding strategy that chooses the optimal speculation length for different batch sizes. Our evaluations show that our proposed method can achieve equal or better performance than the state-of-the-art speculation decoding schemes with fixed speculation length.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-18813",
+        "ArXiv": "2310.18813",
+        "DOI": "10.48550/arXiv.2310.18813",
+        "CorpusId": 264590298
+      },
+      "arxiv_id": "2310.18813",
+      "doi": "10.48550/arXiv.2310.18813",
+      "corpus_id": 264590298
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "34",
+      "ref_key": "S2:d05141dc0900140f7146bb71e1f7402cf896ea87",
+      "paperId": "d05141dc0900140f7146bb71e1f7402cf896ea87",
+      "title": "A Simple Hash-Based Early Exiting Approach For Language Understanding and Generation",
+      "year": 2022,
+      "abstract": "Early exiting allows instances to exit at different layers according to the estimation of difficulty.Previous works usually adopt heuristic metrics such as the entropy of internal outputs to measure instance difficulty, which suffers from generalization and threshold-tuning. In contrast, learning to exit, or learning to predict instance difficulty is a more appealing way. Though some effort has been devoted to employing such “learn-to-exit” modules, it is still unknown whether and how well the instance difficulty can be learned. As a response, we first conduct experiments on the learnability of instance difficulty, which demonstrates that modern neural models perform poorly on predicting instance difficulty. Based on this observation, we propose a simple-yet-effective Hash-based Early Exiting approach HashEE) that replaces the learn-to-exit modules with hash functions to assign each token to a fixed exiting layer. Different from previous methods, HashEE requires no internal classifiers nor extra parameters, and therefore is more efficient.HashEE can be used in various tasks (including language understanding and generation) and model architectures such as seq2seq models. Experimental results on classification, regression, and generation tasks demonstrate that HashEE can achieve higher performance with fewer FLOPs and inference time compared with previous state-of-the-art early exiting methods.",
+      "externalIds": {
+        "DBLP": "conf/acl/SunLZGWHNXHQ22",
+        "ACL": "2022.findings-acl.189",
+        "ArXiv": "2203.01670",
+        "DOI": "10.48550/arXiv.2203.01670",
+        "CorpusId": 247222685
+      },
+      "arxiv_id": "2203.01670",
+      "doi": "10.48550/arXiv.2203.01670",
+      "corpus_id": 247222685
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "35",
+      "ref_key": "S2:fe2f254923c72958fb65e025adf38ec6403dd6f8",
+      "paperId": "fe2f254923c72958fb65e025adf38ec6403dd6f8",
+      "title": "Fast Structured Decoding for Sequence Models",
+      "year": 2019,
+      "abstract": "Autoregressive sequence models achieve state-of-the-art performance in domains like machine translation. However, due to the autoregressive factorization nature, these models suffer from heavy latency during inference. Recently, non-autoregressive sequence models were proposed to reduce the inference time. However, these models assume that the decoding process of each token is conditionally independent of others. Such a generation process sometimes makes the output sentence inconsistent, and thus the learned non-autoregressive models could only achieve inferior accuracy compared to their autoregressive counterparts. To improve then decoding consistency and reduce the inference cost at the same time, we propose to incorporate a structured inference module into the non-autoregressive models. Specifically, we design an efficient approximation for Conditional Random Fields (CRF) for non-autoregressive sequence models, and further propose a dynamic transition technique to model positional contexts in the CRF. Experiments in machine translation show that while increasing little latency (8~14ms), our model could achieve significantly better translation performance than previous non-autoregressive models on different translation datasets. In particular, for the WMT14 En-De dataset, our model obtains a BLEU score of 26.80, which largely outperforms the previous non-autoregressive baselines and is only 0.61 lower in BLEU than purely autoregressive models.",
+      "externalIds": {
+        "MAG": "2981648103",
+        "DBLP": "journals/corr/abs-1910-11555",
+        "ArXiv": "1910.11555",
+        "CorpusId": 204916079
+      },
+      "arxiv_id": "1910.11555",
+      "doi": null,
+      "corpus_id": 204916079
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "36",
+      "ref_key": "S2:ea1f648988c632a6dbab6d8b88432456aa021cfb",
+      "paperId": "ea1f648988c632a6dbab6d8b88432456aa021cfb",
+      "title": "SpecTr: Fast Speculative Decoding via Optimal Transport",
+      "year": 2023,
+      "abstract": "Autoregressive sampling from large language models has led to state-of-the-art results in several natural language tasks. However, autoregressive sampling generates tokens one at a time making it slow, and even prohibitive in certain tasks. One way to speed up sampling is $\\textit{speculative decoding}$: use a small model to sample a $\\textit{draft}$ (block or sequence of tokens), and then score all tokens in the draft by the large language model in parallel. A subset of the tokens in the draft are accepted (and the rest rejected) based on a statistical method to guarantee that the final output follows the distribution of the large model. In this work, we provide a principled understanding of speculative decoding through the lens of optimal transport (OT) with $\\textit{membership cost}$. This framework can be viewed as an extension of the well-known $\\textit{maximal-coupling}$ problem. This new formulation enables us to generalize the speculative decoding method to allow for a set of $k$ candidates at the token-level, which leads to an improved optimal membership cost. We show that the optimal draft selection algorithm (transport plan) can be computed via linear programming, whose best-known runtime is exponential in $k$. We then propose a valid draft selection algorithm whose acceptance probability is $(1-1/e)$-optimal multiplicatively. Moreover, it can be computed in time almost linear with size of domain of a single token. Using this $new draft selection$ algorithm, we develop a new autoregressive sampling algorithm called $\\textit{SpecTr}$, which provides speedup in decoding while ensuring that there is no quality degradation in the decoded output. We experimentally demonstrate that for state-of-the-art large language models, the proposed approach achieves a wall clock speedup of 2.13X, a further 1.37X speedup over speculative decoding on standard benchmarks.",
+      "externalIds": {
+        "DBLP": "conf/nips/SunSRBJY23",
+        "ArXiv": "2310.15141",
+        "DOI": "10.48550/arXiv.2310.15141",
+        "CorpusId": 264591415
+      },
+      "arxiv_id": "2310.15141",
+      "doi": "10.48550/arXiv.2310.15141",
+      "corpus_id": 264591415
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "37",
+      "ref_key": "S2:d0deaec3e1f74701ac43600d9e64c5c969be7391",
+      "paperId": "d0deaec3e1f74701ac43600d9e64c5c969be7391",
+      "title": "TriForce: Lossless Acceleration of Long Sequence Generation with Hierarchical Speculative Decoding",
+      "year": 2024,
+      "abstract": "With large language models (LLMs) widely deployed in long content generation recently, there has emerged an increasing demand for efficient long-sequence inference support. However, key-value (KV) cache, which is stored to avoid re-computation, has emerged as a critical bottleneck by growing linearly in size with the sequence length. Due to the auto-regressive nature of LLMs, the entire KV cache will be loaded for every generated token, resulting in low utilization of computational cores and high latency. While various compression methods for KV cache have been proposed to alleviate this issue, they suffer from degradation in generation quality. We introduce TriForce, a hierarchical speculative decoding system that is scalable for long sequence generation. This approach leverages the original model weights and dynamic sparse KV cache via retrieval as a draft model, which serves as an intermediate layer in the hierarchy and is further speculated by a smaller model to reduce its drafting latency. TriForce not only facilitates impressive speedups for Llama2-7B-128K, achieving up to 2.31$\\times$ on an A100 GPU but also showcases scalability in handling even longer contexts. For the offloading setting on two RTX 4090 GPUs, TriForce achieves 0.108s/token$\\unicode{x2014}$only half as slow as the auto-regressive baseline on an A100, which attains 7.78$\\times$ on our optimized offloading system. Additionally, TriForce performs 4.86$\\times$ than DeepSpeed-Zero-Inference on a single RTX 4090 GPU. TriForce's robustness is highlighted by its consistently outstanding performance across various temperatures. The code is available at https://github.com/Infini-AI-Lab/TriForce.",
+      "externalIds": {
+        "ArXiv": "2404.11912",
+        "DBLP": "journals/corr/abs-2404-11912",
+        "DOI": "10.48550/arXiv.2404.11912",
+        "CorpusId": 269214125
+      },
+      "arxiv_id": "2404.11912",
+      "doi": "10.48550/arXiv.2404.11912",
+      "corpus_id": 269214125
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "38",
+      "ref_key": "S2:6a1c61a0da5f56a3fdfca5515767cfd74529524a",
+      "paperId": "6a1c61a0da5f56a3fdfca5515767cfd74529524a",
+      "title": "Semi-Autoregressive Neural Machine Translation",
+      "year": 2018,
+      "abstract": "Existing approaches to neural machine translation are typically autoregressive models. While these models attain state-of-the-art translation quality, they are suffering from low parallelizability and thus slow at decoding long sequences. In this paper, we propose a novel model for fast sequence generation — the semi-autoregressive Transformer (SAT). The SAT keeps the autoregressive property in global but relieves in local and thus are able to produce multiple successive words in parallel at each time step. Experiments conducted on English-German and Chinese-English translation tasks show that the SAT achieves a good balance between translation quality and decoding speed. On WMT’14 English-German translation, the SAT achieves 5.58× speedup while maintaining 88% translation quality, significantly better than the previous non-autoregressive methods. When produces two words at each time step, the SAT is almost lossless (only 1% degeneration in BLEU score).",
+      "externalIds": {
+        "DBLP": "conf/emnlp/WangZC18",
+        "ACL": "D18-1044",
+        "MAG": "2890501761",
+        "ArXiv": "1808.08583",
+        "DOI": "10.18653/v1/D18-1044",
+        "CorpusId": 52100894
+      },
+      "arxiv_id": "1808.08583",
+      "doi": "10.18653/v1/D18-1044",
+      "corpus_id": 52100894
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "39",
+      "ref_key": "S2:218c5c69f3cf0c158e9b6af239a2cc62a688c6de",
+      "paperId": "218c5c69f3cf0c158e9b6af239a2cc62a688c6de",
+      "title": "Speculative Decoding: Exploiting Speculative Execution for Accelerating Seq2seq Generation",
+      "year": 2022,
+      "abstract": "We propose Speculative Decoding (SpecDec), for the first time ever, to formally study exploiting the idea of speculative execution to accelerate autoregressive (AR) decoding. Speculative Decoding has two innovations: Spec-Drafter -- an independent model specially optimized for efficient and accurate drafting -- and Spec-Verification -- a reliable method for verifying the drafted tokens efficiently in the decoding paradigm. Experimental results on various seq2seq tasks including machine translation and abstractive summarization show our approach can achieve around $5\\times$ speedup for the popular Transformer architectures with comparable generation quality to beam search decoding, refreshing the impression that the draft-then-verify paradigm introduces only $1.4\\times$$\\sim$$2\\times$ speedup. In addition to the remarkable speedup, we also demonstrate 3 additional advantages of SpecDec, revealing its practical value for accelerating generative models in real-world applications. Our models and codes are available at https://github.com/hemingkx/SpecDec.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/Xia0WCWS23",
+        "ArXiv": "2203.16487",
+        "DOI": "10.18653/v1/2023.findings-emnlp.257",
+        "CorpusId": 264724056
+      },
+      "arxiv_id": "2203.16487",
+      "doi": "10.18653/v1/2023.findings-emnlp.257",
+      "corpus_id": 264724056
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "40",
+      "ref_key": "S2:eb3415db1b322b1f7bf95f8697aed701b0d40f88",
+      "paperId": "eb3415db1b322b1f7bf95f8697aed701b0d40f88",
+      "title": "Inference with Reference: Lossless Acceleration of Large Language Models",
+      "year": 2023,
+      "abstract": "We propose LLMA, an LLM accelerator to losslessly speed up Large Language Model (LLM) inference with references. LLMA is motivated by the observation that there are abundant identical text spans between the decoding result by an LLM and the reference that is available in many real world scenarios (e.g., retrieved documents). LLMA first selects a text span from the reference and copies its tokens to the decoder and then efficiently checks the tokens' appropriateness as the decoding result in parallel within one decoding step. The improved computational parallelism allows LLMA to achieve over 2x speed-up for LLMs with identical generation results as greedy decoding in many practical generation scenarios where significant overlap between in-context reference and outputs exists (e.g., search engines and multi-turn conversations).",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2304-04487",
+        "ArXiv": "2304.04487",
+        "DOI": "10.48550/arXiv.2304.04487",
+        "CorpusId": 258048436
+      },
+      "arxiv_id": "2304.04487",
+      "doi": "10.48550/arXiv.2304.04487",
+      "corpus_id": 258048436
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "41",
+      "ref_key": "S2:d988eb48e8b4e471f5df9d081bfc32db0781e6bf",
+      "paperId": "d988eb48e8b4e471f5df9d081bfc32db0781e6bf",
+      "title": "Predictive Pipelined Decoding: A Compute-Latency Trade-off for Exact LLM Decoding",
+      "year": 2023,
+      "abstract": "This paper presents\"Predictive Pipelined Decoding (PPD),\"an approach that speeds up greedy decoding in Large Language Models (LLMs) while maintaining the exact same output as the original decoding. Unlike conventional strategies, PPD employs additional compute resources to parallelize the initiation of subsequent token decoding during the current token decoding. This method reduces decoding latency and reshapes the understanding of trade-offs in LLM decoding strategies. We have developed a theoretical framework that allows us to analyze the trade-off between computation and latency. Using this framework, we can analytically estimate the potential reduction in latency associated with our proposed method, achieved through the assessment of the match rate, represented as p_correct. The results demonstrate that the use of extra computational resources has the potential to accelerate LLM decoding. Additionally, we implement PPD and conduct preliminary experiments to empirically validate its efficacy, addressing potential practical overheads not covered by theoretical analysis.",
+      "externalIds": {
+        "DBLP": "journals/tmlr/YangLCP024",
+        "ArXiv": "2307.05908",
+        "DOI": "10.48550/arXiv.2307.05908",
+        "CorpusId": 259837553
+      },
+      "arxiv_id": "2307.05908",
+      "doi": "10.48550/arXiv.2307.05908",
+      "corpus_id": 259837553
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "42",
+      "ref_key": "S2:1c0a0ec50a639efe9569d0c57f73c8e1b47acbcd",
+      "paperId": "1c0a0ec50a639efe9569d0c57f73c8e1b47acbcd",
+      "title": "Multi-Candidate Speculative Decoding",
+      "year": 2024,
+      "abstract": "Large language models have shown impressive capabilities across a variety of NLP tasks, yet their generating text autoregressively is time-consuming. One way to speed them up is speculative decoding, which generates candidate segments (a sequence of tokens) from a fast draft model that is then verified in parallel by the target model. However, the acceptance rate of candidate tokens receives limitations from several factors, such as the model, the dataset, and the decoding setup. This paper proposes sampling multiple candidates from a draft model and then organising them in batches for verification. We design algorithms for efficient multi-candidate verification while maintaining the distribution of the target model. Our approach shows significant improvements in acceptance rates on multiple datasets and models, consistently outperforming standard speculative decoding.",
+      "externalIds": {
+        "ArXiv": "2401.06706",
+        "DBLP": "journals/corr/abs-2401-06706",
+        "DOI": "10.48550/arXiv.2401.06706",
+        "CorpusId": 266976982
+      },
+      "arxiv_id": "2401.06706",
+      "doi": "10.48550/arXiv.2401.06706",
+      "corpus_id": 266976982
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "43",
+      "ref_key": "S2:26128d9ec47f044de6f0186f86c0c7fb3ccef77f",
+      "paperId": "26128d9ec47f044de6f0186f86c0c7fb3ccef77f",
+      "title": "Generation Meets Verification: Accelerating Large Language Model Inference with Smart Parallel Auto-Correct Decoding",
+      "year": 2024,
+      "abstract": "This research aims to accelerate the inference speed of large language models (LLMs) with billions of parameters. We propose \\textbf{S}mart \\textbf{P}arallel \\textbf{A}uto-\\textbf{C}orrect d\\textbf{E}coding (SPACE), an innovative approach designed for achieving lossless acceleration of LLMs. By integrating semi-autoregressive inference and speculative decoding capabilities, SPACE uniquely enables autoregressive LLMs to parallelize token generation and verification. This is realized through a specialized semi-autoregressive supervised fine-tuning process that equips existing LLMs with the ability to simultaneously predict multiple tokens. Additionally, an auto-correct decoding algorithm facilitates the simultaneous generation and verification of token sequences within a single model invocation. Through extensive experiments on a range of LLMs, SPACE has demonstrated inference speedup ranging from 2.7x-4.0x on HumanEval-X while maintaining output quality.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-11809",
+        "ArXiv": "2402.11809",
+        "DOI": "10.48550/arXiv.2402.11809",
+        "CorpusId": 267750845
+      },
+      "arxiv_id": "2402.11809",
+      "doi": "10.48550/arXiv.2402.11809",
+      "corpus_id": 267750845
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "44",
+      "ref_key": "S2:26a67b61b29376aa05d5b6f2f3a6dc11d4594b22",
+      "paperId": "26a67b61b29376aa05d5b6f2f3a6dc11d4594b22",
+      "title": "Speculative Contrastive Decoding",
+      "year": 2023,
+      "abstract": "Large language models~(LLMs) exhibit exceptional performance in language tasks, yet their auto-regressive inference is limited due to high computational requirements and is sub-optimal due to the exposure bias. Inspired by speculative decoding and contrastive decoding, we introduce Speculative Contrastive Decoding~(SCD), a straightforward yet powerful decoding approach that leverages predictions from smaller language models~(LMs) to achieve both decoding acceleration and quality improvement. Extensive evaluations and analyses on four diverse language tasks demonstrate the effectiveness of SCD, showing that decoding efficiency and quality can compatibly benefit from one smaller LM.",
+      "externalIds": {
+        "DBLP": "conf/acl/YuanLHYZ24",
+        "ArXiv": "2311.08981",
+        "DOI": "10.48550/arXiv.2311.08981",
+        "CorpusId": 265212852
+      },
+      "arxiv_id": "2311.08981",
+      "doi": "10.48550/arXiv.2311.08981",
+      "corpus_id": 265212852
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "45",
+      "ref_key": "S2:f4db96c6fe2fcd83b50d54d585cbc558704e3022",
+      "paperId": "f4db96c6fe2fcd83b50d54d585cbc558704e3022",
+      "title": "ConsistentEE: A Consistent and Hardness-Guided Early Exiting Method for Accelerating Language Models Inference",
+      "year": 2023,
+      "abstract": "Early Exiting is one of the most popular methods to achieve efficient inference. Current early exiting methods adopt the (weighted) sum of the cross entropy loss of all internal classifiers as the objective function during training, imposing all these classifiers to predict all instances correctly. However, during inference, as long as one internal classifier predicts an instance correctly, it can accelerate without losing accuracy. Thus, there is a notable gap between training and inference. We propose ConsistentEE, an early exiting method that is consistent in training and inference. ConsistentEE formulates the early exiting process as a reinforcement learning problem. A policy network is added to decide whether an instance should exit or continue. The training objective of ConsistentEE only requires each instance to be predicted correctly by one internal classifier. Additionally, we introduce the concept \"Memorized Layer\" to measure the hardness of an instance. We incorporate the memorized layer into reward function design, which allows \"easy'' instances to focus more on acceleration while ``hard'' instances to focus more on accuracy. Experimental results show that our method outperforms other baselines on various natural language understanding and generation tasks using PLMs and LLMs as backbones respectively.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2312-11882",
+        "ArXiv": "2312.11882",
+        "DOI": "10.48550/arXiv.2312.11882",
+        "CorpusId": 266362672
+      },
+      "arxiv_id": "2312.11882",
+      "doi": "10.48550/arXiv.2312.11882",
+      "corpus_id": 266362672
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "46",
+      "ref_key": "S2:d8d0672e2cb73dcd25e6eee5fdf11aa1cbabecf0",
+      "paperId": "d8d0672e2cb73dcd25e6eee5fdf11aa1cbabecf0",
+      "title": "Non-autoregressive Translation with Dependency-Aware Decoder",
+      "year": 2022,
+      "abstract": "Non-autoregressive translation (NAT) models suffer from inferior translation quality due to removal of dependency on previous target to-kens from inputs to the decoder. In this paper, we propose a novel and general approach to enhance the target dependency within the NAT decoder from two perspectives: decoder input and decoder self-attention . First, we transform the initial decoder input from the source language space to the target language space through a novel attentive transformation process. The transformation reassem-bles the decoder input based on target token embeddings and conditions the ﬁnal output on the target-side information. Second, before NAT training, we introduce an effective forward-backward pre-training phase, implemented with different triangle attention masks. This pre-training phase enables the model to gradually learn bidirectional dependencies for the ﬁnal NAT decoding process. Experimental results demonstrate that the proposed approaches consistently improve highly competitive NAT models on four WMT translation directions by up to 1.88 BLEU score, while over-all maintaining inference latency comparable to other fully NAT models. 1",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2203-16266",
+        "DOI": "10.48550/arXiv.2203.16266",
+        "CorpusId": 247793982
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2203.16266",
+      "corpus_id": 247793982
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "47",
+      "ref_key": "S2:27b1b41ac386814af6f7bfd4646781f3f32b8a38",
+      "paperId": "27b1b41ac386814af6f7bfd4646781f3f32b8a38",
+      "title": "Lookahead: An Inference Acceleration Framework for Large Language Model with Lossless Generation Accuracy",
+      "year": 2023,
+      "abstract": "As Large Language Models (LLMs) have made significant advancements across various tasks, such as question answering, translation, text summarization, and dialogue systems, the need for accuracy in information becomes crucial, especially for serious financial products serving billions of users like Alipay. However, for a real-world product serving millions of users, the inference speed of LLMs becomes a critical factor compared to a mere experimental model. Hence, this paper presents a generic framework for accelerating the inference process, resulting in a substantial increase in speed and cost reduction for our LLM-based scenarios, with lossless generation accuracy. In the traditional inference process, each token is generated sequentially by the LLM, leading to a time consumption proportional to the number of generated tokens. To enhance this process, our framework, named \\textit{lookahead}, introduces a \\textit{multi-branch} strategy. Instead of generating a single token at a time, we propose a Trie-based retrieval and verification mechanism to be able to accept several tokens at a forward step. Our strategy offers two distinct advantages: (1) it guarantees absolute correctness of the output, avoiding any approximation algorithms, and (2) the worst-case performance of our approach is equivalent to the conventional process. We conduct extensive experiments to demonstrate the significant improvements achieved by applying our inference acceleration framework. Our framework is widely deployed in Alipay since April 2023, and obtain remarkable 2.66x to 6.26x speedup. Our code is available at https://github.com/alipay/PainlessInferenceAcceleration.",
+      "externalIds": {
+        "ArXiv": "2312.12728",
+        "DBLP": "conf/kdd/ZhaoXLZG24",
+        "DOI": "10.48550/arXiv.2312.12728",
+        "CorpusId": 266374986
+      },
+      "arxiv_id": "2312.12728",
+      "doi": "10.48550/arXiv.2312.12728",
+      "corpus_id": 266374986
+    },
+    {
+      "paper_id": "2405.13019",
+      "ref_index": "48",
+      "ref_key": "S2:56767c18bb5aaa2b6377624168bed1b6dcc4b94d",
+      "paperId": "56767c18bb5aaa2b6377624168bed1b6dcc4b94d",
+      "title": "DistillSpec: Improving Speculative Decoding via Knowledge Distillation",
+      "year": 2023,
+      "abstract": "Speculative decoding (SD) accelerates large language model inference by employing a faster draft model for generating multiple tokens, which are then verified in parallel by the larger target model, resulting in the text generated according to the target model distribution. However, identifying a compact draft model that is well-aligned with the target model is challenging. To tackle this issue, we propose DistillSpec that uses knowledge distillation to better align the draft model with the target model, before applying SD. DistillSpec makes two key design choices, which we demonstrate via systematic study to be crucial to improving the draft and target alignment: utilizing on-policy data generation from the draft model, and tailoring the divergence function to the task and decoding strategy. Notably, DistillSpec yields impressive 10 - 45% speedups over standard SD on a range of standard benchmarks, using both greedy and non-greedy sampling. Furthermore, we combine DistillSpec with lossy SD to achieve fine-grained control over the latency vs. task performance trade-off. Finally, in practical scenarios with models of varying sizes, first using distillation to boost the performance of the target model and then applying DistillSpec to train a well-aligned draft model can reduce decoding latency by 6-10x with minimal performance drop, compared to standard decoding without distillation.",
+      "externalIds": {
+        "DBLP": "conf/iclr/ZhouLRMRKKA24",
+        "ArXiv": "2310.08461",
+        "DOI": "10.48550/arXiv.2310.08461",
+        "CorpusId": 263909387
+      },
+      "arxiv_id": "2310.08461",
+      "doi": "10.48550/arXiv.2310.08461",
+      "corpus_id": 263909387
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "Accelerated Techniques ": {
+        "Speculative decoding": {
+          "Drafting": {
+            "57e7af0b69325fafb371ef5d502e39ef9c90ef7e": {},
+            "a1f8082505c7e90b0a033e1b9da0a97d67aad66c": {},
+            "e30666ed82670463aa47686e744f0c6f2a0e083d": {},
+            "532c2c7a247d9e97d20abec1b2f4612984fdab93": {},
+            "d8e9f8c8a37cb4cd26b92ad0d942d641cd512644": {},
+            "1b5db3170c195508ff24fee8eda0d4987e806f0b": {},
+            "ba5261e729c181e28a98dee2c08d7cf5fc7127a2": {},
+            "4067a6f57f708dec4459d3d4322373e06c2b168c": {},
+            "43e624ddeed82df944a6cae0dedec3372438e243": {},
+            "5e04881e91bff952d102d967c4ffb498ec30d4af": {},
+            "218c5c69f3cf0c158e9b6af239a2cc62a688c6de": {},
+            "56767c18bb5aaa2b6377624168bed1b6dcc4b94d": {}
+          },
+          "Verification": {
+            "b7d12aec8a0152ec4921dfa43ab525a63b334385": {},
+            "f0c31511134abdd23f990310e8a2f2eb3a629b62": {},
+            "ea1f648988c632a6dbab6d8b88432456aa021cfb": {},
+            "1c0a0ec50a639efe9569d0c57f73c8e1b47acbcd": {}
+          },
+          "Integrated": {
+            "a9caf21a845cb0b1b1d453c052188de118006093": {},
+            "f206d34afed6a5705757f96ea97c7bfb9e1a83cd": {},
+            "1b4a7c0f1f46662078547388a1041aec907d9009": {},
+            "bc1c1b0c4214907e2fc872f54a8e66b327d6aa6b": {},
+            "d0deaec3e1f74701ac43600d9e64c5c969be7391": {},
+            "eb3415db1b322b1f7bf95f8697aed701b0d40f88": {},
+            "26128d9ec47f044de6f0186f86c0c7fb3ccef77f": {},
+            "26a67b61b29376aa05d5b6f2f3a6dc11d4594b22": {},
+            "27b1b41ac386814af6f7bfd4646781f3f32b8a38": {}
+          }
+        },
+        "Early Exiting ": {
+          "564855d475ed9197dd7516594557ff886ff623e5": {},
+          "89d3d19ad717cd534bdd1866d28e2da253147705": {},
+          "ce9435c82dc9b576f2037aa2f4357a520be9b2aa": {},
+          "eee108b3e51e89d160d1116935e062c4d169b475": {},
+          "4a984ec8286b19bb0c033e6e4df198a0421b0c17": {},
+          "2ef60a4ea4ea53056be811ff55679eb59fb4b586": {},
+          "d05141dc0900140f7146bb71e1f7402cf896ea87": {},
+          "d988eb48e8b4e471f5df9d081bfc32db0781e6bf": {},
+          "f4db96c6fe2fcd83b50d54d585cbc558704e3022": {}
+        },
+        "Non-Autoregressive ": {
+          "d6e21619df572d04b2b2d97b4c5d1fd604f185fb": {},
+          "5efadc9019ce3378a0eb6c8f939cdde6c8918b1e": {},
+          "15e81c8d1c21f9e928c72721ac46d458f3341454": {},
+          "9d9c4a3b27dab2293ed915ad69662ea09901ccab": {},
+          "1bebcbfb3b8309c9cea44de52662a911f99bc65b": {},
+          "2d08ed53491053d84b6de89aedbf2178b9c8cf84": {},
+          "a1849a77644ff411a03833b5aa7a65ff57158c50": {},
+          "9c5c89199114858eafbe50b46d77d38ffd03b28a": {},
+          "75fe6c3ffdea2608794b4f21119c5a4dec07663a": {},
+          "3d473cbb7a377cf960abff31748a1a39bb6c7d7c": {},
+          "3556722b4703a21abafd2f9388743202943f4503": {},
+          "3e8f037d1b2c893f4df37deda1da3dcc577a8bac": {},
+          "fe2f254923c72958fb65e025adf38ec6403dd6f8": {},
+          "6a1c61a0da5f56a3fdfca5515767cfd74529524a": {},
+          "d8d0672e2cb73dcd25e6eee5fdf11aa1cbabecf0": {}
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000001",
+        "paperId": "57e7af0b69325fafb371ef5d502e39ef9c90ef7e",
+        "ref_index": "3",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Drafting"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000002",
+        "paperId": "a1f8082505c7e90b0a033e1b9da0a97d67aad66c",
+        "ref_index": "4",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Drafting"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000003",
+        "paperId": "e30666ed82670463aa47686e744f0c6f2a0e083d",
+        "ref_index": "5",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Drafting"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000004",
+        "paperId": "532c2c7a247d9e97d20abec1b2f4612984fdab93",
+        "ref_index": "13",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Drafting"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000005",
+        "paperId": "d8e9f8c8a37cb4cd26b92ad0d942d641cd512644",
+        "ref_index": "20",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Drafting"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000006",
+        "paperId": "1b5db3170c195508ff24fee8eda0d4987e806f0b",
+        "ref_index": "21",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Drafting"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000007",
+        "paperId": "ba5261e729c181e28a98dee2c08d7cf5fc7127a2",
+        "ref_index": "23",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Drafting"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000008",
+        "paperId": "4067a6f57f708dec4459d3d4322373e06c2b168c",
+        "ref_index": "26",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Drafting"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000009",
+        "paperId": "43e624ddeed82df944a6cae0dedec3372438e243",
+        "ref_index": "30",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Drafting"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000010",
+        "paperId": "5e04881e91bff952d102d967c4ffb498ec30d4af",
+        "ref_index": "31",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Drafting"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000011",
+        "paperId": "218c5c69f3cf0c158e9b6af239a2cc62a688c6de",
+        "ref_index": "39",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Drafting"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000012",
+        "paperId": "56767c18bb5aaa2b6377624168bed1b6dcc4b94d",
+        "ref_index": "48",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Drafting"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000013",
+        "paperId": "b7d12aec8a0152ec4921dfa43ab525a63b334385",
+        "ref_index": "16",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Verification"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000014",
+        "paperId": "f0c31511134abdd23f990310e8a2f2eb3a629b62",
+        "ref_index": "25",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Verification"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000015",
+        "paperId": "ea1f648988c632a6dbab6d8b88432456aa021cfb",
+        "ref_index": "36",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Verification"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000016",
+        "paperId": "1c0a0ec50a639efe9569d0c57f73c8e1b47acbcd",
+        "ref_index": "42",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Verification"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000017",
+        "paperId": "a9caf21a845cb0b1b1d453c052188de118006093",
+        "ref_index": "0",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Integrated"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000018",
+        "paperId": "f206d34afed6a5705757f96ea97c7bfb9e1a83cd",
+        "ref_index": "14",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Integrated"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000019",
+        "paperId": "1b4a7c0f1f46662078547388a1041aec907d9009",
+        "ref_index": "22",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Integrated"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000020",
+        "paperId": "bc1c1b0c4214907e2fc872f54a8e66b327d6aa6b",
+        "ref_index": "33",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Integrated"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000021",
+        "paperId": "d0deaec3e1f74701ac43600d9e64c5c969be7391",
+        "ref_index": "37",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Integrated"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000022",
+        "paperId": "eb3415db1b322b1f7bf95f8697aed701b0d40f88",
+        "ref_index": "40",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Integrated"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000023",
+        "paperId": "26128d9ec47f044de6f0186f86c0c7fb3ccef77f",
+        "ref_index": "43",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Integrated"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000024",
+        "paperId": "26a67b61b29376aa05d5b6f2f3a6dc11d4594b22",
+        "ref_index": "44",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Integrated"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000025",
+        "paperId": "27b1b41ac386814af6f7bfd4646781f3f32b8a38",
+        "ref_index": "47",
+        "path": [
+          "Accelerated Techniques ",
+          "Speculative decoding",
+          "Integrated"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000026",
+        "paperId": "564855d475ed9197dd7516594557ff886ff623e5",
+        "ref_index": "2",
+        "path": [
+          "Accelerated Techniques ",
+          "Early Exiting "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000027",
+        "paperId": "89d3d19ad717cd534bdd1866d28e2da253147705",
+        "ref_index": "6",
+        "path": [
+          "Accelerated Techniques ",
+          "Early Exiting "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000028",
+        "paperId": "ce9435c82dc9b576f2037aa2f4357a520be9b2aa",
+        "ref_index": "7",
+        "path": [
+          "Accelerated Techniques ",
+          "Early Exiting "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000029",
+        "paperId": "eee108b3e51e89d160d1116935e062c4d169b475",
+        "ref_index": "8",
+        "path": [
+          "Accelerated Techniques ",
+          "Early Exiting "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000030",
+        "paperId": "4a984ec8286b19bb0c033e6e4df198a0421b0c17",
+        "ref_index": "17",
+        "path": [
+          "Accelerated Techniques ",
+          "Early Exiting "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000031",
+        "paperId": "2ef60a4ea4ea53056be811ff55679eb59fb4b586",
+        "ref_index": "29",
+        "path": [
+          "Accelerated Techniques ",
+          "Early Exiting "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000032",
+        "paperId": "d05141dc0900140f7146bb71e1f7402cf896ea87",
+        "ref_index": "34",
+        "path": [
+          "Accelerated Techniques ",
+          "Early Exiting "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000033",
+        "paperId": "d988eb48e8b4e471f5df9d081bfc32db0781e6bf",
+        "ref_index": "41",
+        "path": [
+          "Accelerated Techniques ",
+          "Early Exiting "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000034",
+        "paperId": "f4db96c6fe2fcd83b50d54d585cbc558704e3022",
+        "ref_index": "45",
+        "path": [
+          "Accelerated Techniques ",
+          "Early Exiting "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000035",
+        "paperId": "d6e21619df572d04b2b2d97b4c5d1fd604f185fb",
+        "ref_index": "1",
+        "path": [
+          "Accelerated Techniques ",
+          "Non-Autoregressive "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000036",
+        "paperId": "5efadc9019ce3378a0eb6c8f939cdde6c8918b1e",
+        "ref_index": "9",
+        "path": [
+          "Accelerated Techniques ",
+          "Non-Autoregressive "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000037",
+        "paperId": "15e81c8d1c21f9e928c72721ac46d458f3341454",
+        "ref_index": "10",
+        "path": [
+          "Accelerated Techniques ",
+          "Non-Autoregressive "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000038",
+        "paperId": "9d9c4a3b27dab2293ed915ad69662ea09901ccab",
+        "ref_index": "11",
+        "path": [
+          "Accelerated Techniques ",
+          "Non-Autoregressive "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000039",
+        "paperId": "1bebcbfb3b8309c9cea44de52662a911f99bc65b",
+        "ref_index": "12",
+        "path": [
+          "Accelerated Techniques ",
+          "Non-Autoregressive "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000040",
+        "paperId": "2d08ed53491053d84b6de89aedbf2178b9c8cf84",
+        "ref_index": "15",
+        "path": [
+          "Accelerated Techniques ",
+          "Non-Autoregressive "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000041",
+        "paperId": "a1849a77644ff411a03833b5aa7a65ff57158c50",
+        "ref_index": "18",
+        "path": [
+          "Accelerated Techniques ",
+          "Non-Autoregressive "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000042",
+        "paperId": "9c5c89199114858eafbe50b46d77d38ffd03b28a",
+        "ref_index": "19",
+        "path": [
+          "Accelerated Techniques ",
+          "Non-Autoregressive "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000043",
+        "paperId": "75fe6c3ffdea2608794b4f21119c5a4dec07663a",
+        "ref_index": "24",
+        "path": [
+          "Accelerated Techniques ",
+          "Non-Autoregressive "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000044",
+        "paperId": "3d473cbb7a377cf960abff31748a1a39bb6c7d7c",
+        "ref_index": "27",
+        "path": [
+          "Accelerated Techniques ",
+          "Non-Autoregressive "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000045",
+        "paperId": "3556722b4703a21abafd2f9388743202943f4503",
+        "ref_index": "28",
+        "path": [
+          "Accelerated Techniques ",
+          "Non-Autoregressive "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000046",
+        "paperId": "3e8f037d1b2c893f4df37deda1da3dcc577a8bac",
+        "ref_index": "32",
+        "path": [
+          "Accelerated Techniques ",
+          "Non-Autoregressive "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000047",
+        "paperId": "fe2f254923c72958fb65e025adf38ec6403dd6f8",
+        "ref_index": "35",
+        "path": [
+          "Accelerated Techniques ",
+          "Non-Autoregressive "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000048",
+        "paperId": "6a1c61a0da5f56a3fdfca5515767cfd74529524a",
+        "ref_index": "38",
+        "path": [
+          "Accelerated Techniques ",
+          "Non-Autoregressive "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2405.13019",
+        "arxiv_id": "2405.13019",
+        "leaf_mention_id": "2405.13019::000049",
+        "paperId": "d8d0672e2cb73dcd25e6eee5fdf11aa1cbabecf0",
+        "ref_index": "46",
+        "path": [
+          "Accelerated Techniques ",
+          "Non-Autoregressive "
+        ],
+        "depth": 2,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 49,
+      "unique_leaf_paper_count": 49,
+      "multi_membership_extra_mentions": 0,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

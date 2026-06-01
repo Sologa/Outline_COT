@@ -1,0 +1,1554 @@
+{
+  "paper_id": "2407.01603",
+  "arxiv_id": "2407.01603",
+  "title": "A Review of Large Language Models and Autonomous Agents in Chemistry",
+  "ref_meta": [
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "0",
+      "ref_key": "S2:156d217b0a911af97fa1b5a71dc909ccef7a8028",
+      "paperId": "156d217b0a911af97fa1b5a71dc909ccef7a8028",
+      "title": "SciBERT: A Pretrained Language Model for Scientific Text",
+      "year": 2019,
+      "abstract": "Obtaining large-scale annotated data for NLP tasks in the scientific domain is challenging and expensive. We release SciBERT, a pretrained language model based on BERT (Devlin et. al., 2018) to address the lack of high-quality, large-scale labeled scientific data. SciBERT leverages unsupervised pretraining on a large multi-domain corpus of scientific publications to improve performance on downstream scientific NLP tasks. We evaluate on a suite of tasks including sequence tagging, sentence classification and dependency parsing, with datasets from a variety of scientific domains. We demonstrate statistically significant improvements over BERT and achieve new state-of-the-art results on several of these tasks. The code and pretrained models are available at https://github.com/allenai/scibert/.",
+      "externalIds": {
+        "ACL": "D19-1371",
+        "DBLP": "conf/emnlp/BeltagyLC19",
+        "MAG": "2973154071",
+        "ArXiv": "1903.10676",
+        "DOI": "10.18653/v1/D19-1371",
+        "CorpusId": 202558505
+      },
+      "arxiv_id": "1903.10676",
+      "doi": "10.18653/v1/D19-1371",
+      "corpus_id": 202558505
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "1",
+      "ref_key": "S2:1804ea0c26e9b038547ff7a7e3eedf8d9de9717d",
+      "paperId": "1804ea0c26e9b038547ff7a7e3eedf8d9de9717d",
+      "title": "BioMedLM: A 2.7B Parameter Language Model Trained On Biomedical Text",
+      "year": 2024,
+      "abstract": "Models such as GPT-4 and Med-PaLM 2 have demonstrated impressive performance on a wide variety of biomedical NLP tasks. However, these models have hundreds of billions of parameters, are computationally expensive to run, require users to send their input data over the internet, and are trained on unknown data sources. Can smaller, more targeted models compete? To address this question, we build and release BioMedLM, a 2.7 billion parameter GPT-style autoregressive model trained exclusively on PubMed abstracts and full articles. When fine-tuned, BioMedLM can produce strong multiple-choice biomedical question-answering results competitive with much larger models, such as achieving a score of 57.3% on MedMCQA (dev) and 69.0% on the MMLU Medical Genetics exam. BioMedLM can also be fine-tuned to produce useful answers to patient questions on medical topics. This demonstrates that smaller models can potentially serve as transparent, privacy-preserving, economical and environmentally friendly foundations for particular NLP applications, such as in biomedicine. The model is available on the Hugging Face Hub: https://huggingface.co/stanford-crfm/BioMedLM.",
+      "externalIds": {
+        "ArXiv": "2403.18421",
+        "DBLP": "journals/corr/abs-2403-18421",
+        "DOI": "10.48550/arXiv.2403.18421",
+        "CorpusId": 268723860
+      },
+      "arxiv_id": "2403.18421",
+      "doi": "10.48550/arXiv.2403.18421",
+      "corpus_id": 268723860
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "2",
+      "ref_key": "S2:08a809f649ae9be9fe00cfad5c8c7a30a924d7d8",
+      "paperId": "08a809f649ae9be9fe00cfad5c8c7a30a924d7d8",
+      "title": "Regression Transformer enables concurrent sequence regression and generation for molecular language modelling",
+      "year": 2022,
+      "abstract": "Despite significant progress of generative models in the natural sciences,\ntheir controllability remains challenging. One fundamentally missing aspect of\nmolecular or protein generative models is an inductive bias that can reflect\ncontinuous properties of interest. To that end, we propose the Regression\nTransformer (RT), a novel method that abstracts regression as a conditional\nsequence modeling problem. This introduces a new paradigm of multitask language\nmodels which seamlessly bridge sequence regression and conditional sequence\ngeneration.\n  We thoroughly demonstrate that, despite using a nominal-scale training\nobjective, the RT matches or surpasses the performance of conventional\nregression models in property prediction tasks of small molecules, proteins and\nchemical reactions. Critically, priming the same model with continuous\nproperties yields a highly competitive conditional generative model that\noutperforms specialized approaches in a substructure-constrained,\nproperty-driven molecule generation benchmark. Our dichotomous approach is\nfacilitated by a novel, alternating training scheme that enables the model to\ndecorate seed sequences by desired properties, e.g., to optimize reaction\nyield.\n  In sum, the RT is the first report of a multitask model that concurrently\nexcels at predictive and generative tasks in biochemistry. This finds\nparticular application in property-driven, local exploration of the chemical or\nprotein space and could pave the road toward foundation models in material\ndesign.\n  The code to reproduce all experiments of the paper is available at:\nhttps://github.com/IBM/regression-transformer",
+      "externalIds": {
+        "DBLP": "journals/natmi/BornM23",
+        "ArXiv": "2202.01338",
+        "DOI": "10.1038/s42256-023-00639-z",
+        "CorpusId": 258021826
+      },
+      "arxiv_id": "2202.01338",
+      "doi": "10.1038/s42256-023-00639-z",
+      "corpus_id": 258021826
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "3",
+      "ref_key": "S2:95ce6f77e26b496ffb705a0a3b54f2fb7a6d2452",
+      "paperId": "95ce6f77e26b496ffb705a0a3b54f2fb7a6d2452",
+      "title": "ChemBERTa: Large-Scale Self-Supervised Pretraining for Molecular Property Prediction",
+      "year": 2020,
+      "abstract": "GNNs and chemical fingerprints are the predominant approaches to representing molecules for property prediction. However, in NLP, transformers have become the de-facto standard for representation learning thanks to their strong downstream task transfer. In parallel, the software ecosystem around transformers is maturing rapidly, with libraries like HuggingFace and BertViz enabling streamlined training and introspection. In this work, we make one of the first attempts to systematically evaluate transformers on molecular property prediction tasks via our ChemBERTa model. ChemBERTa scales well with pretraining dataset size, offering competitive downstream performance on MoleculeNet and useful attention-based visualization modalities. Our results suggest that transformers offer a promising avenue of future work for molecular representation learning and property prediction. To facilitate these efforts, we release a curated dataset of 77M SMILES from PubChem suitable for large-scale self-supervised pretraining.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2010-09885",
+        "ArXiv": "2010.09885",
+        "MAG": "3093934881",
+        "CorpusId": 224803102
+      },
+      "arxiv_id": "2010.09885",
+      "doi": null,
+      "corpus_id": 224803102
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "4",
+      "ref_key": "S2:b822f2abca1da6f990b2bd47ed43da0671bfc6f8",
+      "paperId": "b822f2abca1da6f990b2bd47ed43da0671bfc6f8",
+      "title": "Unifying Molecular and Textual Representations via Multi-task Language Modelling",
+      "year": 2023,
+      "abstract": "The recent advances in neural language models have also been successfully applied to the field of chemistry, offering generative solutions for classical problems in molecular design and synthesis planning. These new methods have the potential to fuel a new era of data-driven automation in scientific discovery. However, specialized models are still typically required for each task, leading to the need for problem-specific fine-tuning and neglecting task interrelations. The main obstacle in this field is the lack of a unified representation between natural language and chemical representations, complicating and limiting human-machine interaction. Here, we propose the first multi-domain, multi-task language model that can solve a wide range of tasks in both the chemical and natural language domains. Our model can handle chemical and natural language concurrently, without requiring expensive pre-training on single domains or task-specific models. Interestingly, sharing weights across domains remarkably improves our model when benchmarked against state-of-the-art baselines on single-domain and cross-domain tasks. In particular, sharing information across domains and tasks gives rise to large improvements in cross-domain tasks, the magnitude of which increase with scale, as measured by more than a dozen of relevant metrics. Our work suggests that such models can robustly and efficiently accelerate discovery in physical sciences by superseding problem-specific fine-tuning and enhancing human-model interactions.",
+      "externalIds": {
+        "DBLP": "conf/icml/Christofidellis23",
+        "ArXiv": "2301.12586",
+        "CorpusId": 256389950
+      },
+      "arxiv_id": "2301.12586",
+      "doi": null,
+      "corpus_id": 256389950
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "5",
+      "ref_key": "S2:3b9b1aba877ecd3f7e508cbc78a41b623349902b",
+      "paperId": "3b9b1aba877ecd3f7e508cbc78a41b623349902b",
+      "title": "Translation between Molecules and Natural Language",
+      "year": 2022,
+      "abstract": "We present MolT5 - a self-supervised learning framework for pretraining models on a vast amount of unlabeled natural language text and molecule strings. MolT5 allows for new, useful, and challenging analogs of traditional vision-language tasks, such as molecule captioning and text-based de novo molecule generation (altogether: translation between molecules and language), which we explore for the first time. Since MolT5 pretrains models on single-modal data, it helps overcome the chemistry domain shortcoming of data scarcity. Furthermore, we consider several metrics, including a new cross-modal embedding-based metric, to evaluate the tasks of molecule captioning and text-based molecule generation. Our results show that MolT5-based models are able to generate outputs, both molecules and captions, which in many cases are high quality.",
+      "externalIds": {
+        "ACL": "2022.emnlp-main.26",
+        "DBLP": "journals/corr/abs-2204-11817",
+        "ArXiv": "2204.11817",
+        "DOI": "10.48550/arXiv.2204.11817",
+        "CorpusId": 248376906
+      },
+      "arxiv_id": "2204.11817",
+      "doi": "10.48550/arXiv.2204.11817",
+      "corpus_id": 248376906
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "6",
+      "ref_key": "S2:e4c5e81e6e337bb94af3eb719df5f029b40434fa",
+      "paperId": "e4c5e81e6e337bb94af3eb719df5f029b40434fa",
+      "title": "Molecular representation learning with language models and domain-relevant auxiliary tasks",
+      "year": 2020,
+      "abstract": "We apply a Transformer architecture, specifically BERT, to learn flexible and high quality molecular representations for drug discovery problems. We study the impact of using different combinations of self-supervised tasks for pre-training, and present our results for the established Virtual Screening and QSAR benchmarks. We show that: i) The selection of appropriate self-supervised task(s) for pre-training has a significant impact on performance in subsequent downstream tasks such as Virtual Screening. ii) Using auxiliary tasks with more domain relevance for Chemistry, such as learning to predict calculated molecular properties, increases the fidelity of our learnt representations. iii) Finally, we show that molecular representations learnt by our model `MolBert' improve upon the current state of the art on the benchmark datasets.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2011-13230",
+        "MAG": "3109892317",
+        "ArXiv": "2011.13230",
+        "CorpusId": 227209142
+      },
+      "arxiv_id": "2011.13230",
+      "doi": null,
+      "corpus_id": 227209142
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "7",
+      "ref_key": "S2:a2f38d03fd363e920494ad65a5f0ad8bd18cd60b",
+      "paperId": "a2f38d03fd363e920494ad65a5f0ad8bd18cd60b",
+      "title": "Domain-Specific Language Model Pretraining for Biomedical Natural Language Processing",
+      "year": 2020,
+      "abstract": "Pretraining large neural language models, such as BERT, has led to impressive gains on many natural language processing (NLP) tasks. However, most pretraining efforts focus on general domain corpora, such as newswire and Web. A prevailing assumption is that even domain-specific pretraining can benefit by starting from general-domain language models. In this article, we challenge this assumption by showing that for domains with abundant unlabeled text, such as biomedicine, pretraining language models from scratch results in substantial gains over continual pretraining of general-domain language models. To facilitate this investigation, we compile a comprehensive biomedical NLP benchmark from publicly available datasets. Our experiments show that domain-specific pretraining serves as a solid foundation for a wide range of biomedical NLP tasks, leading to new state-of-the-art results across the board. Further, in conducting a thorough evaluation of modeling choices, both for pretraining and task-specific fine-tuning, we discover that some common practices are unnecessary with BERT models, such as using complex tagging schemes in named entity recognition. To help accelerate research in biomedical NLP, we have released our state-of-the-art pretrained and task-specific models for the community, and created a leaderboard featuring our BLURB benchmark (short for Biomedical Language Understanding & Reasoning Benchmark) at https://aka.ms/BLURB.",
+      "externalIds": {
+        "MAG": "3046375318",
+        "DBLP": "journals/corr/abs-2007-15779",
+        "ArXiv": "2007.15779",
+        "DOI": "10.1145/3458754",
+        "CorpusId": 220919723
+      },
+      "arxiv_id": "2007.15779",
+      "doi": "10.1145/3458754",
+      "corpus_id": 220919723
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "8",
+      "ref_key": "S2:a280b17dc450866982dead4302d6cb6e92ea59f6",
+      "paperId": "a280b17dc450866982dead4302d6cb6e92ea59f6",
+      "title": "Automated Chemical Reaction Extraction from Scientific Literature",
+      "year": 2021,
+      "abstract": "Access to structured chemical reaction data is of key importance for chemists in performing bench experiments and in modern applications like computer-aided drug design. Existing reaction databases are generally populated by human curators through manual abstraction from published literature (e.g., patents and journals), which is time consuming and labor intensive, especially with the exponential growth of chemical literature in recent years. In this study, we focus on developing automated methods for extracting reactions from chemical literature. We consider journal publications as the target source of information, which are more comprehensive and better represent the latest developments in chemistry compared to patents; however, they are less formulaic in their descriptions of reactions. To implement the reaction extraction system, we first devised a chemical reaction schema, primarily including a central product, and a set of associated reaction roles such as reactants, catalyst, solvent, and so on. We formulate the task as a structure prediction problem and solve it with a two-stage deep learning framework consisting of product extraction and reaction role labeling. Both models are built upon Transformer-based encoders, which are adaptively pretrained using domain and task-relevant unlabeled data. Our models are shown to be both effective and data efficient, achieving an F1 score of 76.2% in product extraction and 78.7% in role extraction, with only hundreds of annotated reactions.",
+      "externalIds": {
+        "DBLP": "journals/jcisd/GuoIGQCJB22",
+        "DOI": "10.1021/acs.jcim.1c00284",
+        "CorpusId": 235412750,
+        "PubMed": "34115937"
+      },
+      "arxiv_id": null,
+      "doi": "10.1021/acs.jcim.1c00284",
+      "corpus_id": 235412750
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "9",
+      "ref_key": "S2:b146be9e80c66a6e062a1525693311fac65ae19e",
+      "paperId": "b146be9e80c66a6e062a1525693311fac65ae19e",
+      "title": "MatSciBERT: A materials domain language model for text mining and information extraction",
+      "year": 2021,
+      "abstract": "An overwhelmingly large amount of knowledge in the materials domain is\ngenerated and stored as text published in peer-reviewed scientific literature.\nRecent developments in natural language processing, such as bidirectional\nencoder representations from transformers (BERT) models, provide promising\ntools to extract information from these texts. However, direct application of\nthese models in the materials domain may yield suboptimal results as the models\nthemselves may not be trained on notations and jargon that are specific to the\ndomain. Here, we present a materials-aware language model, namely, MatSciBERT,\nwhich is trained on a large corpus of scientific literature published in the\nmaterials domain. We further evaluate the performance of MatSciBERT on three\ndownstream tasks, namely, abstract classification, named entity recognition,\nand relation extraction, on different materials datasets. We show that\nMatSciBERT outperforms SciBERT, a language model trained on science corpus, on\nall the tasks. Further, we discuss some of the applications of MatSciBERT in\nthe materials domain for extracting information, which can, in turn, contribute\nto materials discovery or optimization. Finally, to make the work accessible to\nthe larger materials community, we make the pretrained and finetuned weights\nand the models of MatSciBERT freely accessible.",
+      "externalIds": {
+        "ArXiv": "2109.15290",
+        "DBLP": "journals/corr/abs-2109-15290",
+        "DOI": "10.1038/s41524-022-00784-w",
+        "CorpusId": 238226735
+      },
+      "arxiv_id": "2109.15290",
+      "doi": "10.1038/s41524-022-00784-w",
+      "corpus_id": 238226735
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "10",
+      "ref_key": "S2:6289471f2eca01dbde71e4832f93891f54b91cfe",
+      "paperId": "6289471f2eca01dbde71e4832f93891f54b91cfe",
+      "title": "SMILES Transformer: Pre-trained Molecular Fingerprint for Low Data Drug Discovery",
+      "year": 2019,
+      "abstract": "In drug-discovery-related tasks such as virtual screening, machine learning is emerging as a promising way to predict molecular properties. Conventionally, molecular fingerprints (numerical representations of molecules) are calculated through rule-based algorithms that map molecules to a sparse discrete space. However, these algorithms perform poorly for shallow prediction models or small datasets. To address this issue, we present SMILES Transformer. Inspired by Transformer and pre-trained language models from natural language processing, SMILES Transformer learns molecular fingerprints through unsupervised pre-training of the sequence-to-sequence language model using a huge corpus of SMILES, a text representation system for molecules. We performed benchmarks on 10 datasets against existing fingerprints and graph-based methods and demonstrated the superiority of the proposed algorithms in small-data settings where pre-training facilitated good generalization. Moreover, we define a novel metric to concurrently measure model accuracy and data efficiency.",
+      "externalIds": {
+        "MAG": "2986232138",
+        "DBLP": "journals/corr/abs-1911-04738",
+        "ArXiv": "1911.04738",
+        "CorpusId": 207863425
+      },
+      "arxiv_id": "1911.04738",
+      "doi": null,
+      "corpus_id": 207863425
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "11",
+      "ref_key": "S2:9ebd20a621ea9f458d4919c8e247932ddc7664fd",
+      "paperId": "9ebd20a621ea9f458d4919c8e247932ddc7664fd",
+      "title": "The Diminishing Returns of Masked Language Models to Science",
+      "year": 2022,
+      "abstract": "Transformer-based masked language models such as BERT, trained on general corpora, have shown impressive performance on downstream tasks. It has also been demonstrated that the downstream task performance of such models can be improved by pretraining larger models for longer on more data. In this work, we empirically evaluate the extent to which these results extend to tasks in science. We use 14 domain-specific transformer-based models (including ScholarBERT, a new 770M-parameter science-focused masked language model pretrained on up to 225B tokens) to evaluate the impact of training data, model size, pretraining and finetuning time on 12 downstream scientific tasks. Interestingly, we find that increasing model sizes, training data, or compute time does not always lead to significant improvements (i.e.,>1% F1), if at all, in scientific information extraction tasks and offered possible explanations for the surprising performance differences.",
+      "externalIds": {
+        "DBLP": "conf/acl/HongAPDCF23",
+        "ArXiv": "2205.11342",
+        "DOI": "10.18653/v1/2023.findings-acl.82",
+        "CorpusId": 258461548
+      },
+      "arxiv_id": "2205.11342",
+      "doi": "10.18653/v1/2023.findings-acl.82",
+      "corpus_id": 258461548
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "12",
+      "ref_key": "S2:b3c2c9f53ab130f3eb76eaaab3afa481c5a405eb",
+      "paperId": "b3c2c9f53ab130f3eb76eaaab3afa481c5a405eb",
+      "title": "ClinicalBERT: Modeling Clinical Notes and Predicting Hospital Readmission",
+      "year": 2019,
+      "abstract": "Clinical notes contain information about patients that goes beyond structured data like lab values and medications. However, clinical notes have been underused relative to structured data, because notes are high-dimensional and sparse. This work develops and evaluates representations of clinical notes using bidirectional transformers (ClinicalBERT). ClinicalBERT uncovers high-quality relationships between medical concepts as judged by humans. ClinicalBert outperforms baselines on 30-day hospital readmission prediction using both discharge summaries and the first few days of notes in the intensive care unit. Code and model parameters are available.",
+      "externalIds": {
+        "MAG": "2937845937",
+        "ArXiv": "1904.05342",
+        "DBLP": "journals/corr/abs-1904-05342",
+        "CorpusId": 119308351
+      },
+      "arxiv_id": "1904.05342",
+      "doi": null,
+      "corpus_id": 119308351
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "13",
+      "ref_key": "S2:13b8934468665ecb586f491d7f9f6c460cb095e5",
+      "paperId": "13b8934468665ecb586f491d7f9f6c460cb095e5",
+      "title": "BioMistral: A Collection of Open-Source Pretrained Large Language Models for Medical Domains",
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) have demonstrated remarkable versatility in recent years, offering potential applications across specialized domains such as healthcare and medicine. Despite the availability of various open-source LLMs tailored for health contexts, adapting general-purpose LLMs to the medical domain presents significant challenges. In this paper, we introduce BioMistral, an open-source LLM tailored for the biomedical domain, utilizing Mistral as its foundation model and further pre-trained on PubMed Central. We conduct a comprehensive evaluation of BioMistral on a benchmark comprising 10 established medical question-answering (QA) tasks in English. We also explore lightweight models obtained through quantization and model merging approaches. Our results demonstrate BioMistral's superior performance compared to existing open-source medical models and its competitive edge against proprietary counterparts. Finally, to address the limited availability of data beyond English and to assess the multilingual generalization of medical LLMs, we automatically translated and evaluated this benchmark into 7 other languages. This marks the first large-scale multilingual evaluation of LLMs in the medical domain. Datasets, multilingual evaluation benchmarks, scripts, and all the models obtained during our experiments are freely released.",
+      "externalIds": {
+        "ArXiv": "2402.10373",
+        "DBLP": "journals/corr/abs-2402-10373",
+        "DOI": "10.48550/arXiv.2402.10373",
+        "CorpusId": 267740180
+      },
+      "arxiv_id": "2402.10373",
+      "doi": "10.48550/arXiv.2402.10373",
+      "corpus_id": 267740180
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "14",
+      "ref_key": "S2:1e43c7084bdcb6b3102afaf301cce10faead2702",
+      "paperId": "1e43c7084bdcb6b3102afaf301cce10faead2702",
+      "title": "BioBERT: a pre-trained biomedical language representation model for biomedical text mining",
+      "year": 2019,
+      "abstract": "Abstract Motivation Biomedical text mining is becoming increasingly important as the number of biomedical documents rapidly grows. With the progress in natural language processing (NLP), extracting valuable information from biomedical literature has gained popularity among researchers, and deep learning has boosted the development of effective biomedical text mining models. However, directly applying the advancements in NLP to biomedical text mining often yields unsatisfactory results due to a word distribution shift from general domain corpora to biomedical corpora. In this article, we investigate how the recently introduced pre-trained language model BERT can be adapted for biomedical corpora. Results We introduce BioBERT (Bidirectional Encoder Representations from Transformers for Biomedical Text Mining), which is a domain-specific language representation model pre-trained on large-scale biomedical corpora. With almost the same architecture across tasks, BioBERT largely outperforms BERT and previous state-of-the-art models in a variety of biomedical text mining tasks when pre-trained on biomedical corpora. While BERT obtains performance comparable to that of previous state-of-the-art models, BioBERT significantly outperforms them on the following three representative biomedical text mining tasks: biomedical named entity recognition (0.62% F1 score improvement), biomedical relation extraction (2.80% F1 score improvement) and biomedical question answering (12.24% MRR improvement). Our analysis results show that pre-training BERT on biomedical corpora helps it to understand complex biomedical texts. Availability and implementation We make the pre-trained weights of BioBERT freely available at https://github.com/naver/biobert-pretrained, and the source code for fine-tuning BioBERT available at https://github.com/dmis-lab/biobert.",
+      "externalIds": {
+        "MAG": "2972964850",
+        "ArXiv": "1901.08746",
+        "DBLP": "journals/bioinformatics/LeeYKKKSK20",
+        "PubMedCentral": "7703786",
+        "DOI": "10.1093/bioinformatics/btz682",
+        "CorpusId": 59291975,
+        "PubMed": "31501885"
+      },
+      "arxiv_id": "1901.08746",
+      "doi": "10.1093/bioinformatics/btz682",
+      "corpus_id": 59291975
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "15",
+      "ref_key": "S2:3281078bbe9378da68050cd8e29a82540bbad218",
+      "paperId": "3281078bbe9378da68050cd8e29a82540bbad218",
+      "title": "Mol-BERT: An Effective Molecular Representation with BERT for Molecular Property Prediction",
+      "year": 2021,
+      "abstract": "Molecular property prediction is an essential task in drug discovery. Most computational approaches with deep learning techniques either focus on designing novel molecular representation or combining with some advanced models together. However, researchers pay fewer attention to the potential benefits in massive unlabeled molecular data (e.g., ZINC). This task becomes increasingly challenging owing to the limitation of the scale of labeled data. Motivated by the recent advancements of pretrained models in natural language processing, the drug molecule can be naturally viewed as language to some extent. In this paper, we investigate how to develop the pretrained model BERT to extract useful molecular substructure information for molecular property prediction. We present a novel end-to-end deep learning framework, named Mol-BERT, that combines an effective molecular representation with pretrained BERT model tailored for molecular property prediction. Specifically, a large-scale prediction BERT model is pretrained to generate the embedding of molecular substructures, by using four million unlabeled drug SMILES (i.e., ZINC 15 and ChEMBL 27). Then, the pretrained BERT model can be fine-tuned on various molecular property prediction tasks. To examine the performance of our proposed Mol-BERT, we conduct several experiments on 4 widely used molecular datasets. In comparison to the traditional and state-of-the-art baselines, the results illustrate that our proposed Mol-BERT can outperform the current sequence-based methods and achieve at least 2% improvement on ROC-AUC score on Tox21, SIDER, and ClinTox dataset.",
+      "externalIds": {
+        "DBLP": "journals/wicomm/LiJ21",
+        "DOI": "10.1155/2021/7181815",
+        "CorpusId": 237476761
+      },
+      "arxiv_id": null,
+      "doi": "10.1155/2021/7181815",
+      "corpus_id": 237476761
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "16",
+      "ref_key": "S2:d733c2d6e08f5b59ccc0af9188f1f86d0aa7a4c5",
+      "paperId": "d733c2d6e08f5b59ccc0af9188f1f86d0aa7a4c5",
+      "title": "nach0: multimodal natural and chemical languages foundation model",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) have substantially driven scientific progress in various domains, and many papers have demonstrated their ability to tackle complex problems with creative solutions. Our paper introduces a new foundation model, nach0, capable of solving various chemical and biological tasks: biomedical question answering, named entity recognition, molecular generation, molecular synthesis, attributes prediction, and others. nach0 is a multi-domain and multi-task encoder–decoder LLM pre-trained on unlabeled text from scientific literature, patents, and molecule strings to incorporate a range of chemical and linguistic knowledge. We employed instruction tuning, where specific task-related instructions are utilized to fine-tune nach0 for the final set of tasks. To train nach0 effectively, we leverage the NeMo framework, enabling efficient parallel optimization of both base and large model versions. Extensive experiments demonstrate that our model outperforms state-of-the-art baselines on single-domain and cross-domain tasks. Furthermore, it can generate high-quality outputs in molecular and textual formats, showcasing its effectiveness in multi-domain setups.",
+      "externalIds": {
+        "ArXiv": "2311.12410",
+        "PubMedCentral": "11151847",
+        "DBLP": "journals/corr/abs-2311-12410",
+        "DOI": "10.1039/D4SC00966E",
+        "CorpusId": 265308911,
+        "PubMed": "38846388"
+      },
+      "arxiv_id": "2311.12410",
+      "doi": "10.1039/D4SC00966E",
+      "corpus_id": 265308911
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "17",
+      "ref_key": "S2:eee7997106834442f1704e4681a9a761df6696a1",
+      "paperId": "eee7997106834442f1704e4681a9a761df6696a1",
+      "title": "Unified Deep Learning Model for Multitask Reaction Predictions with Explanation",
+      "year": 2022,
+      "abstract": "There is significant interest and importance to develop robust machine learning models to assist organic chemistry synthesis. Typically, task-specific machine learning models for distinct reaction prediction tasks have been developed. In this work, we develop a unified deep learning model, T5Chem, for a variety of chemical reaction predictions tasks by adapting the \"Text-to-Text Transfer Transformer\" (T5) framework in natural language processing (NLP). On the basis of self-supervised pretraining with PubChem molecules, the T5Chem model can achieve state-of-the-art performances for four distinct types of task-specific reaction prediction tasks using four different open-source data sets, including reaction type classification on USPTO_TPL, forward reaction prediction on USPTO_MIT, single-step retrosynthesis on USPTO_50k, and reaction yield prediction on high-throughput C-N coupling reactions. Meanwhile, we introduced a new unified multitask reaction prediction data set USPTO_500_MT, which can be used to train and test five different types of reaction tasks, including the above four as well as a new reagent suggestion task. Our results showed that models trained with multiple tasks are more robust and can benefit from mutual learning on related tasks. Furthermore, we demonstrated the use of SHAP (SHapley Additive exPlanations) to explain T5Chem predictions at the functional group level, which provides a way to demystify sequence-based deep learning models in chemistry. T5Chem is accessible through https://yzhang.hpc.nyu.edu/T5Chem.",
+      "externalIds": {
+        "DBLP": "journals/jcisd/LuZ22",
+        "DOI": "10.1021/acs.jcim.1c01467",
+        "CorpusId": 247362020,
+        "PubMed": "35266390"
+      },
+      "arxiv_id": null,
+      "doi": "10.1021/acs.jcim.1c01467",
+      "corpus_id": 247362020
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "18",
+      "ref_key": "S2:44279244407a64431810f982be6d0c7da4429dd7",
+      "paperId": "44279244407a64431810f982be6d0c7da4429dd7",
+      "title": "BioGPT: Generative Pre-trained Transformer for Biomedical Text Generation and Mining",
+      "year": 2022,
+      "abstract": "Pre-trained language models have attracted increasing attention in the biomedical domain, inspired by their great success in the general natural language domain. Among the two main branches of pre-trained language models in the general language domain, i.e. BERT (and its variants) and GPT (and its variants), the first one has been extensively studied in the biomedical domain, such as BioBERT and PubMedBERT. While they have achieved great success on a variety of discriminative downstream biomedical tasks, the lack of generation ability constrains their application scope. In this paper, we propose BioGPT, a domain-specific generative Transformer language model pre-trained on large-scale biomedical literature. We evaluate BioGPT on six biomedical natural language processing tasks and demonstrate that our model outperforms previous models on most tasks. Especially, we get 44.98%, 38.42% and 40.76% F1 score on BC5CDR, KD-DTI and DDI end-to-end relation extraction tasks, respectively, and 78.2% accuracy on PubMedQA, creating a new record. Our case study on text generation further demonstrates the advantage of BioGPT on biomedical literature to generate fluent descriptions for biomedical terms.",
+      "externalIds": {
+        "ArXiv": "2210.10341",
+        "DBLP": "journals/bib/LuoSXQZPL22",
+        "DOI": "10.1093/bib/bbac409",
+        "CorpusId": 252542956,
+        "PubMed": "36156661"
+      },
+      "arxiv_id": "2210.10341",
+      "doi": "10.1093/bib/bbac409",
+      "corpus_id": 252542956
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "19",
+      "ref_key": "S2:e3fd89a7f6b28973cfc68bfc51caebd8fb93f0bc",
+      "paperId": "e3fd89a7f6b28973cfc68bfc51caebd8fb93f0bc",
+      "title": "BioMedGPT: Open Multimodal Generative Pre-trained Transformer for BioMedicine",
+      "year": 2023,
+      "abstract": "Foundation models (FMs) have exhibited remarkable performance across a wide range of downstream tasks in many domains. Nevertheless, general-purpose FMs often face challenges when confronted with domain-specific problems, due to their limited access to the proprietary training data in a particular domain. In biomedicine, there are various biological modalities, such as molecules, proteins, and cells, which are encoded by the language of life and exhibit significant modality gaps with human natural language. In this paper, we introduce BioMedGPT, an open multimodal generative pre-trained transformer (GPT) for biomedicine, to bridge the gap between the language of life and human natural language. BioMedGPT allows users to easily ``communicate'' with diverse biological modalities through free text, which is the first of its kind. BioMedGPT aligns different biological modalities with natural language via a large generative language model, namely, BioMedGPT-LM. We publish BioMedGPT-10B, which unifies the feature spaces of molecules, proteins, and natural language via encoding and alignment. Through fine-tuning, BioMedGPT-10B outperforms or is on par with human and significantly larger general-purpose foundation models on the biomedical QA task. It also demonstrates promising performance in the molecule QA and protein QA tasks, which could greatly accelerate the discovery of new drugs and therapeutic targets. In addition, BioMedGPT-LM-7B is the first large generative language model based on Llama2 in the biomedical domain, therefore is commercial friendly. Both BioMedGPT-10B and BioMedGPT-LM-7B are open-sourced to the research community. In addition, we publish the datasets that are meticulously curated for the alignment of multi-modalities, i.e., PubChemQA and UniProtQA. All the models, codes, and datasets are available at \\url{https://github.com/PharMolix/OpenBioMed}.",
+      "externalIds": {
+        "ArXiv": "2308.09442",
+        "DBLP": "journals/corr/abs-2308-09442",
+        "DOI": "10.48550/arXiv.2308.09442",
+        "CorpusId": 261030404
+      },
+      "arxiv_id": "2308.09442",
+      "doi": "10.48550/arXiv.2308.09442",
+      "corpus_id": 261030404
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "20",
+      "ref_key": "S2:c3382fd533b9dd7f8ed7ba7766159079bc1d3935",
+      "paperId": "c3382fd533b9dd7f8ed7ba7766159079bc1d3935",
+      "title": "BioT5: Enriching Cross-modal Integration in Biology with Chemical Knowledge and Natural Language Associations",
+      "year": 2023,
+      "abstract": "Recent advancements in biological research leverage the integration of molecules, proteins, and natural language to enhance drug discovery. However, current models exhibit several limitations, such as the generation of invalid molecular SMILES, underutilization of contextual information, and equal treatment of structured and unstructured knowledge. To address these issues, we propose $\\mathbf{BioT5}$, a comprehensive pre-training framework that enriches cross-modal integration in biology with chemical knowledge and natural language associations. $\\mathbf{BioT5}$ utilizes SELFIES for $100%$ robust molecular representations and extracts knowledge from the surrounding context of bio-entities in unstructured biological literature. Furthermore, $\\mathbf{BioT5}$ distinguishes between structured and unstructured knowledge, leading to more effective utilization of information. After fine-tuning, BioT5 shows superior performance across a wide range of tasks, demonstrating its strong capability of capturing underlying relations and properties of bio-entities. Our code is available at $\\href{https://github.com/QizhiPei/BioT5}{Github}$.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/PeiZZWGWXY23",
+        "ArXiv": "2310.07276",
+        "DOI": "10.48550/arXiv.2310.07276",
+        "CorpusId": 263834780
+      },
+      "arxiv_id": "2310.07276",
+      "doi": "10.48550/arXiv.2310.07276",
+      "corpus_id": 263834780
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "21",
+      "ref_key": "S2:f740a2474b52675287166a003bd1313f8aabcd68",
+      "paperId": "f740a2474b52675287166a003bd1313f8aabcd68",
+      "title": "BioT5+: Towards Generalized Biological Understanding with IUPAC Integration and Multi-task Tuning",
+      "year": 2024,
+      "abstract": "Recent research trends in computational biology have increasingly focused on integrating text and bio-entity modeling, especially in the context of molecules and proteins. However, previous efforts like BioT5 faced challenges in generalizing across diverse tasks and lacked a nuanced understanding of molecular structures, particularly in their textual representations (e.g., IUPAC). This paper introduces BioT5+, an extension of the BioT5 framework, tailored to enhance biological research and drug discovery. BioT5+ incorporates several novel features: integration of IUPAC names for molecular understanding, inclusion of extensive bio-text and molecule data from sources like bioRxiv and PubChem, the multi-task instruction tuning for generality across tasks, and a numerical tokenization technique for improved processing of numerical data. These enhancements allow BioT5+ to bridge the gap between molecular representations and their textual descriptions, providing a more holistic understanding of biological entities, and largely improving the grounded reasoning of bio-text and bio-sequences. The model is pre-trained and fine-tuned with a large number of experiments, including \\emph{3 types of problems (classification, regression, generation), 15 kinds of tasks, and 21 total benchmark datasets}, demonstrating the remarkable performance and state-of-the-art results in most cases. BioT5+ stands out for its ability to capture intricate relationships in biological data, thereby contributing significantly to bioinformatics and computational biology. Our code is available at \\url{https://github.com/QizhiPei/BioT5}.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-17810",
+        "ArXiv": "2402.17810",
+        "DOI": "10.48550/arXiv.2402.17810",
+        "CorpusId": 268041632
+      },
+      "arxiv_id": "2402.17810",
+      "doi": "10.48550/arXiv.2402.17810",
+      "corpus_id": 268041632
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "22",
+      "ref_key": "S2:347bac45298f37cd83c3e79d99b826dc65a70c46",
+      "paperId": "347bac45298f37cd83c3e79d99b826dc65a70c46",
+      "title": "Transfer Learning in Biomedical Natural Language Processing: An Evaluation of BERT and ELMo on Ten Benchmarking Datasets",
+      "year": 2019,
+      "abstract": "Inspired by the success of the General Language Understanding Evaluation benchmark, we introduce the Biomedical Language Understanding Evaluation (BLUE) benchmark to facilitate research in the development of pre-training language representations in the biomedicine domain. The benchmark consists of five tasks with ten datasets that cover both biomedical and clinical texts with different dataset sizes and difficulties. We also evaluate several baselines based on BERT and ELMo and find that the BERT model pre-trained on PubMed abstracts and MIMIC-III clinical notes achieves the best results. We make the datasets, pre-trained models, and codes publicly available at https://github.com/ ncbi-nlp/BLUE_Benchmark.",
+      "externalIds": {
+        "MAG": "2951675429",
+        "ArXiv": "1906.05474",
+        "DBLP": "conf/bionlp/PengYL19",
+        "ACL": "W19-5006",
+        "DOI": "10.18653/v1/W19-5006",
+        "CorpusId": 189762009
+      },
+      "arxiv_id": "1906.05474",
+      "doi": "10.18653/v1/W19-5006",
+      "corpus_id": 189762009
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "23",
+      "ref_key": "S2:2db51d392ba762af3703240325dc74df2c112b8f",
+      "paperId": "2db51d392ba762af3703240325dc74df2c112b8f",
+      "title": "BiMediX: Bilingual Medical Mixture of Experts LLM",
+      "year": 2024,
+      "abstract": "In this paper, we introduce BiMediX, the first bilingual medical mixture of experts LLM designed for seamless interaction in both English and Arabic. Our model facilitates a wide range of medical interactions in English and Arabic, including multi-turn chats to inquire about additional details such as patient symptoms and medical history, multiple-choice question answering, and open-ended question answering. We propose a semi-automated English-to-Arabic translation pipeline with human refinement to ensure high-quality translations. We also introduce a comprehensive evaluation benchmark for Arabic medical LLMs. Furthermore, we introduce BiMed1.3M, an extensive Arabic-English bilingual instruction set covering 1.3 Million diverse medical interactions, resulting in over 632 million healthcare specialized tokens for instruction tuning. Our BiMed1.3M dataset includes 250k synthesized multi-turn doctor-patient chats and maintains a 1:2 Arabic-to-English ratio. Our model outperforms state-of-the-art Med42 and Meditron by average absolute gains of 2.5% and 4.1%, respectively, computed across multiple medical evaluation benchmarks in English, while operating at 8-times faster inference. Moreover, our BiMediX outperforms the generic Arabic-English bilingual LLM, Jais-30B, by average absolute gains of 10% on our Arabic medical benchmark and 15% on bilingual evaluations across multiple datasets. Our project page with source code and trained model is available at https://github.com/mbzuai-oryx/BiMediX .",
+      "externalIds": {
+        "ArXiv": "2402.13253",
+        "DBLP": "journals/corr/abs-2402-13253",
+        "DOI": "10.18653/v1/2024.findings-emnlp.989",
+        "CorpusId": 267760013
+      },
+      "arxiv_id": "2402.13253",
+      "doi": "10.18653/v1/2024.findings-emnlp.989",
+      "corpus_id": 267760013
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "24",
+      "ref_key": "S2:df59d0098c1b2c1ee8995da802dd6b12d158c2b8",
+      "paperId": "df59d0098c1b2c1ee8995da802dd6b12d158c2b8",
+      "title": "Large-scale chemical language representations capture molecular structure and properties",
+      "year": 2021,
+      "abstract": "Models based on machine learning can enable accurate and fast molecular\nproperty predictions, which is of interest in drug discovery and material\ndesign. Various supervised machine learning models have demonstrated promising\nperformance, but the vast chemical space and the limited availability of\nproperty labels make supervised learning challenging. Recently, unsupervised\ntransformer-based language models pretrained on a large unlabelled corpus have\nproduced state-of-the-art results in many downstream natural language\nprocessing tasks. Inspired by this development, we present molecular embeddings\nobtained by training an efficient transformer encoder model, MoLFormer, which\nuses rotary positional embeddings. This model employs a linear attention\nmechanism, coupled with highly distributed training, on SMILES sequences of 1.1\nbillion unlabelled molecules from the PubChem and ZINC datasets. We show that\nthe learned molecular representation outperforms existing baselines, including\nsupervised and self-supervised graph neural networks and language models, on\nseveral downstream tasks from ten benchmark datasets. They perform\ncompetitively on two others. Further analyses, specifically through the lens of\nattention, demonstrate that MoLFormer trained on chemical SMILES indeed learns\nthe spatial relationships between atoms within a molecule. These results\nprovide encouraging evidence that large-scale molecular language models can\ncapture sufficient chemical and structural information to predict various\ndistinct molecular properties, including quantum-chemical properties.",
+      "externalIds": {
+        "DBLP": "journals/natmi/RossBCPMD22",
+        "ArXiv": "2106.09553",
+        "DOI": "10.1038/s42256-022-00580-7",
+        "CorpusId": 254636625
+      },
+      "arxiv_id": "2106.09553",
+      "doi": "10.1038/s42256-022-00580-7",
+      "corpus_id": 254636625
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "25",
+      "ref_key": "S2:acab584a22368f66f48fc3c461d315379b29b087",
+      "paperId": "acab584a22368f66f48fc3c461d315379b29b087",
+      "title": "ReactionT5: a large-scale pre-trained model towards application of limited reaction data",
+      "year": 2023,
+      "abstract": "Transformer-based deep neural networks have revolutionized the field of molecular-related prediction tasks by treating molecules as symbolic sequences. These models have been successfully applied in various organic chemical applications by pretraining them with extensive compound libraries and subsequently fine-tuning them with smaller in-house datasets for specific tasks. However, many conventional methods primarily focus on single molecules, with limited exploration of pretraining for reactions involving multiple molecules. In this paper, we propose ReactionT5, a novel model that leverages pretraining on the Open Reaction Database (ORD), a publicly available large-scale resource. We further fine-tune this model for yield prediction and product prediction tasks, demonstrating its impressive performance even with limited fine-tuning data compared to traditional models. The pre-trained ReactionT5 model is publicly accessible on the Hugging Face platform.",
+      "externalIds": {
+        "ArXiv": "2311.06708",
+        "DBLP": "journals/corr/abs-2311-06708",
+        "DOI": "10.48550/arXiv.2311.06708",
+        "CorpusId": 265149748
+      },
+      "arxiv_id": "2311.06708",
+      "doi": "10.48550/arXiv.2311.06708",
+      "corpus_id": 265149748
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "26",
+      "ref_key": "S2:e26197fb0fa409866b287f4bf63abe7997223b51",
+      "paperId": "e26197fb0fa409866b287f4bf63abe7997223b51",
+      "title": "A general-purpose material property data extraction pipeline from large polymer corpora using natural language processing",
+      "year": 2022,
+      "abstract": "The ever-increasing number of materials science articles makes it hard to\ninfer chemistry-structure-property relations from published literature. We used\nnatural language processing (NLP) methods to automatically extract material\nproperty data from the abstracts of polymer literature. As a component of our\npipeline, we trained MaterialsBERT, a language model, using 2.4 million\nmaterials science abstracts, which outperforms other baseline models in three\nout of five named entity recognition datasets when used as the encoder for\ntext. Using this pipeline, we obtained ~300,000 material property records from\n~130,000 abstracts in 60 hours. The extracted data was analyzed for a diverse\nrange of applications such as fuel cells, supercapacitors, and polymer solar\ncells to recover non-trivial insights. The data extracted through our pipeline\nis made available through a web platform at https://polymerscholar.org which\ncan be used to locate material property data recorded in abstracts\nconveniently. This work demonstrates the feasibility of an automatic pipeline\nthat starts from published literature and ends with a complete set of extracted\nmaterial property information.",
+      "externalIds": {
+        "ArXiv": "2209.13136",
+        "PubMedCentral": "10073792",
+        "DBLP": "journals/corr/abs-2209-13136",
+        "DOI": "10.1038/s41524-023-01003-w",
+        "CorpusId": 252544920,
+        "PubMed": "37033291"
+      },
+      "arxiv_id": "2209.13136",
+      "doi": "10.1038/s41524-023-01003-w",
+      "corpus_id": 252544920
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "27",
+      "ref_key": "S2:7d645a3fd276918374fd9483fd675c28e46506d1",
+      "paperId": "7d645a3fd276918374fd9483fd675c28e46506d1",
+      "title": "Galactica: A Large Language Model for Science",
+      "year": 2022,
+      "abstract": "Information overload is a major obstacle to scientific progress. The explosive growth in scientific literature and data has made it ever harder to discover useful insights in a large mass of information. Today scientific knowledge is accessed through search engines, but they are unable to organize scientific knowledge alone. In this paper we introduce Galactica: a large language model that can store, combine and reason about scientific knowledge. We train on a large scientific corpus of papers, reference material, knowledge bases and many other sources. We outperform existing models on a range of scientific tasks. On technical knowledge probes such as LaTeX equations, Galactica outperforms the latest GPT-3 by 68.2% versus 49.0%. Galactica also performs well on reasoning, outperforming Chinchilla on mathematical MMLU by 41.3% to 35.7%, and PaLM 540B on MATH with a score of 20.4% versus 8.8%. It also sets a new state-of-the-art on downstream tasks such as PubMedQA and MedMCQA dev of 77.6% and 52.9%. And despite not being trained on a general corpus, Galactica outperforms BLOOM and OPT-175B on BIG-bench. We believe these results demonstrate the potential for language models as a new interface for science. We open source the model for the benefit of the scientific community.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2211-09085",
+        "ArXiv": "2211.09085",
+        "CorpusId": 253553203
+      },
+      "arxiv_id": "2211.09085",
+      "doi": null,
+      "corpus_id": 253553203
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "28",
+      "ref_key": "S2:04ee9597be4d6d2457214334e495e591000b5542",
+      "paperId": "04ee9597be4d6d2457214334e495e591000b5542",
+      "title": "PMC-LLaMA: Towards Building Open-source Language Models for Medicine",
+      "year": 2023,
+      "abstract": "Recently, Large Language Models (LLMs) have showcased remarkable capabilities in natural language understanding. While demonstrating proficiency in everyday conversations and question-answering situations, these models frequently struggle in domains that require precision, such as medical applications, due to their lack of domain-specific knowledge. In this paper, we describe the procedure for building a powerful, open-source language model specifically designed for medicine applications, termed as PMC-LLaMA. Our contributions are threefold: (i) we systematically investigate the process of adapting a general-purpose foundation language model towards medical domain, this involves data-centric knowledge injection through the integration of 4.8M biomedical academic papers and 30K medical textbooks, as well as comprehensive fine-tuning for alignment with domain-specific instructions; (ii) we contribute a large-scale, comprehensive dataset for instruction tuning. This dataset encompasses medical question-answering (QA), rationale for reasoning, and conversational dialogues, comprising a total of 202M tokens; (iii) we conduct thorough ablation studies to demonstrate the effectiveness of each proposed component. While evaluating on various public medical question-answering benchmarks, our lightweight PMCLLaMA, which consists of only 13 billion parameters, exhibits superior performance, even surpassing ChatGPT. All models, codes, datasets can be found in https://github.com/chaoyi-wu/PMC-LLaMA.",
+      "externalIds": {
+        "ArXiv": "2304.14454",
+        "CorpusId": 258417843
+      },
+      "arxiv_id": "2304.14454",
+      "doi": null,
+      "corpus_id": 258417843
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "29",
+      "ref_key": "S2:4c6fb350e7769cb730a15c62927b6e9b563d0157",
+      "paperId": "4c6fb350e7769cb730a15c62927b6e9b563d0157",
+      "title": "DARWIN Series: Domain Specific Large Language Models for Natural Science",
+      "year": 2023,
+      "abstract": "Emerging tools bring forth fresh approaches to work, and the field of natural science is no different. In natural science, traditional manual, serial, and labour-intensive work is being augmented by automated, parallel, and iterative processes driven by artificial intelligence-based experimental automation and more. To add new capabilities in natural science, enabling the acceleration and enrichment of automation of the discovery process, we present DARWIN, a series of tailored LLMs for natural science, mainly in physics, chemistry, and material science. This series relies on open-source LLM, incorporating structured and unstructured scientific knowledge from public datasets and literature. We fine-tuned the models using over 60,000 instruction data points, emphasizing factual correctness. During the fine-tuning, we introduce the Scientific Instruction Generation (SIG) model, automating instruction generation from scientific texts. This eliminates the need for manual extraction or domain-specific knowledge graphs and efficiently injects scientific knowledge into the model. We also explore multi-task training strategies, revealing interconnections between scientific tasks. DARWIN series not only achieves state-of-the-art results on various scientific tasks but also diminishes reliance on closed-source AI models. Our research showcases the ability of LLM in the scientific domain, with the overarching goal of fostering prosperity within the broader AI for science community.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-13565",
+        "ArXiv": "2308.13565",
+        "DOI": "10.48550/arXiv.2308.13565",
+        "CorpusId": 274142505
+      },
+      "arxiv_id": "2308.13565",
+      "doi": "10.48550/arXiv.2308.13565",
+      "corpus_id": 274142505
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "30",
+      "ref_key": "S2:8489b55d992e6a3ac54aec7094a42ec8e333012f",
+      "paperId": "8489b55d992e6a3ac54aec7094a42ec8e333012f",
+      "title": "SELFormer: molecular representation learning via SELFIES language models",
+      "year": 2023,
+      "abstract": "Automated computational analysis of the vast chemical space is critical for numerous fields of research such as drug discovery and material science. Representation learning techniques have recently been employed with the primary objective of generating compact and informative numerical expressions of complex data, for efficient usage in subsequent prediction tasks. One approach to efficiently learn molecular representations is processing string-based notations of chemicals via natural language processing algorithms. Majority of the methods proposed so far utilize SMILES notations for this purpose, which is the most extensively used string-based encoding for molecules. However, SMILES is associated with numerous problems related to validity and robustness, which may prevent the model from effectively uncovering the knowledge hidden in the data. In this study, we propose SELFormer, a transformer architecture-based chemical language model (CLM) that utilizes a 100% valid, compact and expressive notation, SELFIES, as input, in order to learn flexible and high-quality molecular representations. SELFormer is pre-trained on two million drug-like compounds and fine-tuned for diverse molecular property prediction tasks. Our performance evaluation has revealed that, SELFormer outperforms all competing methods, including graph learning-based approaches and SMILES-based CLMs, on predicting aqueous solubility of molecules and adverse drug reactions, while producing comparable results for the remaining tasks. We also visualized molecular representations learned by SELFormer via dimensionality reduction, which indicated that even the pre-trained model can discriminate molecules with differing structural properties. We shared SELFormer as a programmatic tool, together with its datasets and pre-trained models at https://github.com/HUBioDataLab/SELFormer. Overall, our research demonstrates the benefit of using the SELFIES notations in the context of chemical language modeling and opens up new possibilities for the design and discovery of novel drug candidates with desired features.",
+      "externalIds": {
+        "ArXiv": "2304.04662",
+        "DBLP": "journals/corr/abs-2304-04662",
+        "DOI": "10.1088/2632-2153/acdb30",
+        "CorpusId": 258049084
+      },
+      "arxiv_id": "2304.04662",
+      "doi": "10.1088/2632-2153/acdb30",
+      "corpus_id": 258049084
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "31",
+      "ref_key": "S2:596afbae35cda1e2da5fdaec1cb21582374f65d9",
+      "paperId": "596afbae35cda1e2da5fdaec1cb21582374f65d9",
+      "title": "EpilepsyLLM: Domain-Specific Large Language Model Fine-tuned with Epilepsy Medical Knowledge",
+      "year": 2024,
+      "abstract": "With large training datasets and massive amounts of computing sources, large language models (LLMs) achieve remarkable performance in comprehensive and generative ability. Based on those powerful LLMs, the model fine-tuned with domain-specific datasets posseses more specialized knowledge and thus is more practical like medical LLMs. However, the existing fine-tuned medical LLMs are limited to general medical knowledge with English language. For disease-specific problems, the model's response is inaccurate and sometimes even completely irrelevant, especially when using a language other than English. In this work, we focus on the particular disease of Epilepsy with Japanese language and introduce a customized LLM termed as EpilepsyLLM. Our model is trained from the pre-trained LLM by fine-tuning technique using datasets from the epilepsy domain. The datasets contain knowledge of basic information about disease, common treatment methods and drugs, and important notes in life and work. The experimental results demonstrate that EpilepsyLLM can provide more reliable and specialized medical knowledge responses.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2401-05908",
+        "ArXiv": "2401.05908",
+        "DOI": "10.48550/arXiv.2401.05908",
+        "CorpusId": 266933419
+      },
+      "arxiv_id": "2401.05908",
+      "doi": "10.48550/arXiv.2401.05908",
+      "corpus_id": 266933419
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "32",
+      "ref_key": "S2:299e281cb6e2bfae6e8459d2ac354e11e40931be",
+      "paperId": "299e281cb6e2bfae6e8459d2ac354e11e40931be",
+      "title": "ChemBERTa-2: Towards Chemical Foundation Models",
+      "year": 2022,
+      "abstract": "Large pretrained models such as GPT-3 have had tremendous impact on modern natural language processing by leveraging self-supervised learning to learn salient representations that can be used to readily finetune on a wide variety of downstream tasks. We investigate the possibility of transferring such advances to molecular machine learning by building a chemical foundation model, ChemBERTa-2, using the language of SMILES. While labeled data for molecular prediction tasks is typically scarce, libraries of SMILES strings are readily available. In this work, we build upon ChemBERTa by optimizing the pretraining process. We compare multi-task and self-supervised pretraining by varying hyperparameters and pretraining dataset size, up to 77M compounds from PubChem. To our knowledge, the 77M set constitutes one of the largest datasets used for molecular pretraining to date. We find that with these pretraining improvements, we are competitive with existing state-of-the-art architectures on the MoleculeNet benchmark suite. We analyze the degree to which improvements in pretraining translate to improvement on downstream tasks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2209-01712",
+        "ArXiv": "2209.01712",
+        "DOI": "10.48550/arXiv.2209.01712",
+        "CorpusId": 252089745
+      },
+      "arxiv_id": "2209.01712",
+      "doi": "10.48550/arXiv.2209.01712",
+      "corpus_id": 252089745
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "33",
+      "ref_key": "S2:3f9f7f690e003176316d0ee56fbcbfed4b6b0948",
+      "paperId": "3f9f7f690e003176316d0ee56fbcbfed4b6b0948",
+      "title": "Chemformer: a pre-trained transformer for computational chemistry",
+      "year": 2021,
+      "abstract": "Transformer models coupled with a simplified molecular line entry system (SMILES) have recently proven to be a powerful combination for solving challenges in cheminformatics. These models, however, are often developed specifically for a single application and can be very resource-intensive to train. In this work we present the Chemformer model—a Transformer-based model which can be quickly applied to both sequence-to-sequence and discriminative cheminformatics tasks. Additionally, we show that self-supervised pre-training can improve performance and significantly speed up convergence on downstream tasks. On direct synthesis and retrosynthesis prediction benchmark datasets we publish state-of-the-art results for top-1 accuracy. We also improve on existing approaches for a molecular optimisation task and show that Chemformer can optimise on multiple discriminative tasks simultaneously. Models, datasets and code will be made available after publication.",
+      "externalIds": {
+        "DBLP": "journals/mlst/IrwinDHB22",
+        "MAG": "3178976598",
+        "DOI": "10.1088/2632-2153/ac3ffb",
+        "CorpusId": 237747003
+      },
+      "arxiv_id": null,
+      "doi": "10.1088/2632-2153/ac3ffb",
+      "corpus_id": 237747003
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "34",
+      "ref_key": "S2:1450e97c8088307fb43387e100f382b000bdf5ea",
+      "paperId": "1450e97c8088307fb43387e100f382b000bdf5ea",
+      "title": "ALL-IN-ONE: Multi-Task Learning BERT models for Evaluating Peer Assessments",
+      "year": 2021,
+      "abstract": "Peer assessment has been widely applied across diverse academic fields over the last few decades and has demonstrated its effectiveness. However, the advantages of peer assessment can only be achieved with high-quality peer reviews. Previous studies have found that high-quality review comments usually comprise several features (e.g., contain suggestions, mention problems, use a positive tone). Thus, researchers have attempted to evaluate peer-review comments by detecting different features using various machine learning and deep learning models. However, there is no single study that investigates using a multi-task learning (MTL) model to detect multiple features simultaneously. This paper presents two MTL models for evaluating peer-review comments by leveraging the state-of-the-art pre-trained language representation models BERT and DistilBERT. Our results demonstrate that BERT-based models significantly outperform previous GloVe-based methods by around 6% in F1-score on tasks of detecting a single feature, and MTL further improves performance while reducing model size.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2110-03895",
+        "ArXiv": "2110.03895",
+        "CorpusId": 238531697
+      },
+      "arxiv_id": "2110.03895",
+      "doi": null,
+      "corpus_id": 238531697
+    },
+    {
+      "paper_id": "2407.01603",
+      "ref_index": "35",
+      "ref_key": "S2:3d99747cc3e13d22f21e02c35e82b57d2e351e2a",
+      "paperId": "3d99747cc3e13d22f21e02c35e82b57d2e351e2a",
+      "title": "SMILES-BERT: Large Scale Unsupervised Pre-Training for Molecular Property Prediction",
+      "year": 2019,
+      "abstract": "With the rapid progress of AI in both academia and industry, Deep Learning has been widely introduced into various areas in drug discovery to accelerate its pace and cut R&D costs. Among all the problems in drug discovery, molecular property prediction has been one of the most important problems. Unlike general Deep Learning applications, the scale of labeled data is limited in molecular property prediction. To better solve this problem, Deep Learning methods have started focusing on how to utilize tremendous unlabeled data to improve the prediction performance on small-scale labeled data. In this paper, we propose a semi-supervised model named SMILES-BERT, which consists of attention mechanism based Transformer Layer. A large-scale unlabeled data has been used to pre-train the model through a Masked SMILES Recovery task. Then the pre-trained model could easily be generalized into different molecular property prediction tasks via fine-tuning. In the experiments, the proposed SMILES-BERT outperforms the state-of-the-art methods on all three datasets, showing the effectiveness of our unsupervised pre-training and great generalization capability of the pre-trained model.",
+      "externalIds": {
+        "DBLP": "conf/bcb/WangGWSH19",
+        "MAG": "2973114758",
+        "DOI": "10.1145/3307339.3342186",
+        "CorpusId": 202159174
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/3307339.3342186",
+      "corpus_id": 202159174
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "SciLLMs ": {
+        "Text2Text": {
+          "Question-answering": {
+            "1804ea0c26e9b038547ff7a7e3eedf8d9de9717d": {},
+            "13b8934468665ecb586f491d7f9f6c460cb095e5": {},
+            "d733c2d6e08f5b59ccc0af9188f1f86d0aa7a4c5": {},
+            "44279244407a64431810f982be6d0c7da4429dd7": {},
+            "e3fd89a7f6b28973cfc68bfc51caebd8fb93f0bc": {},
+            "2db51d392ba762af3703240325dc74df2c112b8f": {},
+            "7d645a3fd276918374fd9483fd675c28e46506d1": {},
+            "04ee9597be4d6d2457214334e495e591000b5542": {},
+            "4c6fb350e7769cb730a15c62927b6e9b563d0157": {},
+            "596afbae35cda1e2da5fdaec1cb21582374f65d9": {}
+          }
+        },
+        "Text2Mol": {
+          "Conditional de-novo generation": {
+            "b822f2abca1da6f990b2bd47ed43da0671bfc6f8": {},
+            "3b9b1aba877ecd3f7e508cbc78a41b623349902b": {},
+            "f740a2474b52675287166a003bd1313f8aabcd68": {},
+            "4c6fb350e7769cb730a15c62927b6e9b563d0157": {}
+          }
+        },
+        "Text2Number": {
+          "Document classification": {
+            "156d217b0a911af97fa1b5a71dc909ccef7a8028": {},
+            "a2f38d03fd363e920494ad65a5f0ad8bd18cd60b": {},
+            "b146be9e80c66a6e062a1525693311fac65ae19e": {},
+            "347bac45298f37cd83c3e79d99b826dc65a70c46": {},
+            "7d645a3fd276918374fd9483fd675c28e46506d1": {}
+          },
+          "Property prediction": {
+            "9ebd20a621ea9f458d4919c8e247932ddc7664fd": {},
+            "b3c2c9f53ab130f3eb76eaaab3afa481c5a405eb": {},
+            "596afbae35cda1e2da5fdaec1cb21582374f65d9": {}
+          },
+          "Named entity recognition": {
+            "156d217b0a911af97fa1b5a71dc909ccef7a8028": {},
+            "a2f38d03fd363e920494ad65a5f0ad8bd18cd60b": {},
+            "a280b17dc450866982dead4302d6cb6e92ea59f6": {},
+            "1e43c7084bdcb6b3102afaf301cce10faead2702": {},
+            "d733c2d6e08f5b59ccc0af9188f1f86d0aa7a4c5": {},
+            "347bac45298f37cd83c3e79d99b826dc65a70c46": {},
+            "e26197fb0fa409866b287f4bf63abe7997223b51": {}
+          }
+        },
+        "Mol2Text": {
+          "Molecule captioning": {
+            "b822f2abca1da6f990b2bd47ed43da0671bfc6f8": {},
+            "3b9b1aba877ecd3f7e508cbc78a41b623349902b": {},
+            "c3382fd533b9dd7f8ed7ba7766159079bc1d3935": {},
+            "f740a2474b52675287166a003bd1313f8aabcd68": {},
+            "7d645a3fd276918374fd9483fd675c28e46506d1": {}
+          }
+        },
+        "Mol2Mol": {
+          "Molecule tuning": {
+            "08a809f649ae9be9fe00cfad5c8c7a30a924d7d8": {},
+            "d733c2d6e08f5b59ccc0af9188f1f86d0aa7a4c5": {},
+            "3f9f7f690e003176316d0ee56fbcbfed4b6b0948": {}
+          },
+          "Synthesis prediction": {
+            "eee7997106834442f1704e4681a9a761df6696a1": {},
+            "acab584a22368f66f48fc3c461d315379b29b087": {},
+            "7d645a3fd276918374fd9483fd675c28e46506d1": {},
+            "3f9f7f690e003176316d0ee56fbcbfed4b6b0948": {}
+          },
+          "Retrosynthesis": {
+            "b822f2abca1da6f990b2bd47ed43da0671bfc6f8": {},
+            "eee7997106834442f1704e4681a9a761df6696a1": {}
+          }
+        },
+        "Mol2Number": {
+          "Property prediction": {
+            "08a809f649ae9be9fe00cfad5c8c7a30a924d7d8": {},
+            "95ce6f77e26b496ffb705a0a3b54f2fb7a6d2452": {},
+            "e4c5e81e6e337bb94af3eb719df5f029b40434fa": {},
+            "6289471f2eca01dbde71e4832f93891f54b91cfe": {},
+            "3281078bbe9378da68050cd8e29a82540bbad218": {},
+            "d733c2d6e08f5b59ccc0af9188f1f86d0aa7a4c5": {},
+            "df59d0098c1b2c1ee8995da802dd6b12d158c2b8": {},
+            "7d645a3fd276918374fd9483fd675c28e46506d1": {},
+            "4c6fb350e7769cb730a15c62927b6e9b563d0157": {},
+            "8489b55d992e6a3ac54aec7094a42ec8e333012f": {},
+            "299e281cb6e2bfae6e8459d2ac354e11e40931be": {},
+            "1450e97c8088307fb43387e100f382b000bdf5ea": {},
+            "3d99747cc3e13d22f21e02c35e82b57d2e351e2a": {}
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000001",
+        "paperId": "1804ea0c26e9b038547ff7a7e3eedf8d9de9717d",
+        "ref_index": "1",
+        "path": [
+          "SciLLMs ",
+          "Text2Text",
+          "Question-answering"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000002",
+        "paperId": "13b8934468665ecb586f491d7f9f6c460cb095e5",
+        "ref_index": "13",
+        "path": [
+          "SciLLMs ",
+          "Text2Text",
+          "Question-answering"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000003",
+        "paperId": "d733c2d6e08f5b59ccc0af9188f1f86d0aa7a4c5",
+        "ref_index": "16",
+        "path": [
+          "SciLLMs ",
+          "Text2Text",
+          "Question-answering"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000004",
+        "paperId": "44279244407a64431810f982be6d0c7da4429dd7",
+        "ref_index": "18",
+        "path": [
+          "SciLLMs ",
+          "Text2Text",
+          "Question-answering"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000005",
+        "paperId": "e3fd89a7f6b28973cfc68bfc51caebd8fb93f0bc",
+        "ref_index": "19",
+        "path": [
+          "SciLLMs ",
+          "Text2Text",
+          "Question-answering"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000006",
+        "paperId": "2db51d392ba762af3703240325dc74df2c112b8f",
+        "ref_index": "23",
+        "path": [
+          "SciLLMs ",
+          "Text2Text",
+          "Question-answering"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000007",
+        "paperId": "7d645a3fd276918374fd9483fd675c28e46506d1",
+        "ref_index": "27",
+        "path": [
+          "SciLLMs ",
+          "Text2Text",
+          "Question-answering"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000008",
+        "paperId": "04ee9597be4d6d2457214334e495e591000b5542",
+        "ref_index": "28",
+        "path": [
+          "SciLLMs ",
+          "Text2Text",
+          "Question-answering"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000009",
+        "paperId": "4c6fb350e7769cb730a15c62927b6e9b563d0157",
+        "ref_index": "29",
+        "path": [
+          "SciLLMs ",
+          "Text2Text",
+          "Question-answering"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000010",
+        "paperId": "596afbae35cda1e2da5fdaec1cb21582374f65d9",
+        "ref_index": "31",
+        "path": [
+          "SciLLMs ",
+          "Text2Text",
+          "Question-answering"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000011",
+        "paperId": "b822f2abca1da6f990b2bd47ed43da0671bfc6f8",
+        "ref_index": "4",
+        "path": [
+          "SciLLMs ",
+          "Text2Mol",
+          "Conditional de-novo generation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000012",
+        "paperId": "3b9b1aba877ecd3f7e508cbc78a41b623349902b",
+        "ref_index": "5",
+        "path": [
+          "SciLLMs ",
+          "Text2Mol",
+          "Conditional de-novo generation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000013",
+        "paperId": "f740a2474b52675287166a003bd1313f8aabcd68",
+        "ref_index": "21",
+        "path": [
+          "SciLLMs ",
+          "Text2Mol",
+          "Conditional de-novo generation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000014",
+        "paperId": "4c6fb350e7769cb730a15c62927b6e9b563d0157",
+        "ref_index": "29",
+        "path": [
+          "SciLLMs ",
+          "Text2Mol",
+          "Conditional de-novo generation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000015",
+        "paperId": "156d217b0a911af97fa1b5a71dc909ccef7a8028",
+        "ref_index": "0",
+        "path": [
+          "SciLLMs ",
+          "Text2Number",
+          "Document classification"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000016",
+        "paperId": "a2f38d03fd363e920494ad65a5f0ad8bd18cd60b",
+        "ref_index": "7",
+        "path": [
+          "SciLLMs ",
+          "Text2Number",
+          "Document classification"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000017",
+        "paperId": "b146be9e80c66a6e062a1525693311fac65ae19e",
+        "ref_index": "9",
+        "path": [
+          "SciLLMs ",
+          "Text2Number",
+          "Document classification"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000018",
+        "paperId": "347bac45298f37cd83c3e79d99b826dc65a70c46",
+        "ref_index": "22",
+        "path": [
+          "SciLLMs ",
+          "Text2Number",
+          "Document classification"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000019",
+        "paperId": "7d645a3fd276918374fd9483fd675c28e46506d1",
+        "ref_index": "27",
+        "path": [
+          "SciLLMs ",
+          "Text2Number",
+          "Document classification"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000020",
+        "paperId": "9ebd20a621ea9f458d4919c8e247932ddc7664fd",
+        "ref_index": "11",
+        "path": [
+          "SciLLMs ",
+          "Text2Number",
+          "Property prediction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000021",
+        "paperId": "b3c2c9f53ab130f3eb76eaaab3afa481c5a405eb",
+        "ref_index": "12",
+        "path": [
+          "SciLLMs ",
+          "Text2Number",
+          "Property prediction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000022",
+        "paperId": "596afbae35cda1e2da5fdaec1cb21582374f65d9",
+        "ref_index": "31",
+        "path": [
+          "SciLLMs ",
+          "Text2Number",
+          "Property prediction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000023",
+        "paperId": "156d217b0a911af97fa1b5a71dc909ccef7a8028",
+        "ref_index": "0",
+        "path": [
+          "SciLLMs ",
+          "Text2Number",
+          "Named entity recognition"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000024",
+        "paperId": "a2f38d03fd363e920494ad65a5f0ad8bd18cd60b",
+        "ref_index": "7",
+        "path": [
+          "SciLLMs ",
+          "Text2Number",
+          "Named entity recognition"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000025",
+        "paperId": "a280b17dc450866982dead4302d6cb6e92ea59f6",
+        "ref_index": "8",
+        "path": [
+          "SciLLMs ",
+          "Text2Number",
+          "Named entity recognition"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000026",
+        "paperId": "1e43c7084bdcb6b3102afaf301cce10faead2702",
+        "ref_index": "14",
+        "path": [
+          "SciLLMs ",
+          "Text2Number",
+          "Named entity recognition"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000027",
+        "paperId": "d733c2d6e08f5b59ccc0af9188f1f86d0aa7a4c5",
+        "ref_index": "16",
+        "path": [
+          "SciLLMs ",
+          "Text2Number",
+          "Named entity recognition"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000028",
+        "paperId": "347bac45298f37cd83c3e79d99b826dc65a70c46",
+        "ref_index": "22",
+        "path": [
+          "SciLLMs ",
+          "Text2Number",
+          "Named entity recognition"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000029",
+        "paperId": "e26197fb0fa409866b287f4bf63abe7997223b51",
+        "ref_index": "26",
+        "path": [
+          "SciLLMs ",
+          "Text2Number",
+          "Named entity recognition"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000030",
+        "paperId": "b822f2abca1da6f990b2bd47ed43da0671bfc6f8",
+        "ref_index": "4",
+        "path": [
+          "SciLLMs ",
+          "Mol2Text",
+          "Molecule captioning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000031",
+        "paperId": "3b9b1aba877ecd3f7e508cbc78a41b623349902b",
+        "ref_index": "5",
+        "path": [
+          "SciLLMs ",
+          "Mol2Text",
+          "Molecule captioning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000032",
+        "paperId": "c3382fd533b9dd7f8ed7ba7766159079bc1d3935",
+        "ref_index": "20",
+        "path": [
+          "SciLLMs ",
+          "Mol2Text",
+          "Molecule captioning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000033",
+        "paperId": "f740a2474b52675287166a003bd1313f8aabcd68",
+        "ref_index": "21",
+        "path": [
+          "SciLLMs ",
+          "Mol2Text",
+          "Molecule captioning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000034",
+        "paperId": "7d645a3fd276918374fd9483fd675c28e46506d1",
+        "ref_index": "27",
+        "path": [
+          "SciLLMs ",
+          "Mol2Text",
+          "Molecule captioning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000035",
+        "paperId": "08a809f649ae9be9fe00cfad5c8c7a30a924d7d8",
+        "ref_index": "2",
+        "path": [
+          "SciLLMs ",
+          "Mol2Mol",
+          "Molecule tuning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000036",
+        "paperId": "d733c2d6e08f5b59ccc0af9188f1f86d0aa7a4c5",
+        "ref_index": "16",
+        "path": [
+          "SciLLMs ",
+          "Mol2Mol",
+          "Molecule tuning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000037",
+        "paperId": "3f9f7f690e003176316d0ee56fbcbfed4b6b0948",
+        "ref_index": "33",
+        "path": [
+          "SciLLMs ",
+          "Mol2Mol",
+          "Molecule tuning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000038",
+        "paperId": "eee7997106834442f1704e4681a9a761df6696a1",
+        "ref_index": "17",
+        "path": [
+          "SciLLMs ",
+          "Mol2Mol",
+          "Synthesis prediction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000039",
+        "paperId": "acab584a22368f66f48fc3c461d315379b29b087",
+        "ref_index": "25",
+        "path": [
+          "SciLLMs ",
+          "Mol2Mol",
+          "Synthesis prediction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000040",
+        "paperId": "7d645a3fd276918374fd9483fd675c28e46506d1",
+        "ref_index": "27",
+        "path": [
+          "SciLLMs ",
+          "Mol2Mol",
+          "Synthesis prediction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000041",
+        "paperId": "3f9f7f690e003176316d0ee56fbcbfed4b6b0948",
+        "ref_index": "33",
+        "path": [
+          "SciLLMs ",
+          "Mol2Mol",
+          "Synthesis prediction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000042",
+        "paperId": "b822f2abca1da6f990b2bd47ed43da0671bfc6f8",
+        "ref_index": "4",
+        "path": [
+          "SciLLMs ",
+          "Mol2Mol",
+          "Retrosynthesis"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000043",
+        "paperId": "eee7997106834442f1704e4681a9a761df6696a1",
+        "ref_index": "17",
+        "path": [
+          "SciLLMs ",
+          "Mol2Mol",
+          "Retrosynthesis"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000044",
+        "paperId": "08a809f649ae9be9fe00cfad5c8c7a30a924d7d8",
+        "ref_index": "2",
+        "path": [
+          "SciLLMs ",
+          "Mol2Number",
+          "Property prediction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000045",
+        "paperId": "95ce6f77e26b496ffb705a0a3b54f2fb7a6d2452",
+        "ref_index": "3",
+        "path": [
+          "SciLLMs ",
+          "Mol2Number",
+          "Property prediction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000046",
+        "paperId": "e4c5e81e6e337bb94af3eb719df5f029b40434fa",
+        "ref_index": "6",
+        "path": [
+          "SciLLMs ",
+          "Mol2Number",
+          "Property prediction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000047",
+        "paperId": "6289471f2eca01dbde71e4832f93891f54b91cfe",
+        "ref_index": "10",
+        "path": [
+          "SciLLMs ",
+          "Mol2Number",
+          "Property prediction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000048",
+        "paperId": "3281078bbe9378da68050cd8e29a82540bbad218",
+        "ref_index": "15",
+        "path": [
+          "SciLLMs ",
+          "Mol2Number",
+          "Property prediction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000049",
+        "paperId": "d733c2d6e08f5b59ccc0af9188f1f86d0aa7a4c5",
+        "ref_index": "16",
+        "path": [
+          "SciLLMs ",
+          "Mol2Number",
+          "Property prediction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000050",
+        "paperId": "df59d0098c1b2c1ee8995da802dd6b12d158c2b8",
+        "ref_index": "24",
+        "path": [
+          "SciLLMs ",
+          "Mol2Number",
+          "Property prediction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000051",
+        "paperId": "7d645a3fd276918374fd9483fd675c28e46506d1",
+        "ref_index": "27",
+        "path": [
+          "SciLLMs ",
+          "Mol2Number",
+          "Property prediction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000052",
+        "paperId": "4c6fb350e7769cb730a15c62927b6e9b563d0157",
+        "ref_index": "29",
+        "path": [
+          "SciLLMs ",
+          "Mol2Number",
+          "Property prediction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000053",
+        "paperId": "8489b55d992e6a3ac54aec7094a42ec8e333012f",
+        "ref_index": "30",
+        "path": [
+          "SciLLMs ",
+          "Mol2Number",
+          "Property prediction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000054",
+        "paperId": "299e281cb6e2bfae6e8459d2ac354e11e40931be",
+        "ref_index": "32",
+        "path": [
+          "SciLLMs ",
+          "Mol2Number",
+          "Property prediction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000055",
+        "paperId": "1450e97c8088307fb43387e100f382b000bdf5ea",
+        "ref_index": "34",
+        "path": [
+          "SciLLMs ",
+          "Mol2Number",
+          "Property prediction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.01603",
+        "arxiv_id": "2407.01603",
+        "leaf_mention_id": "2407.01603::000056",
+        "paperId": "3d99747cc3e13d22f21e02c35e82b57d2e351e2a",
+        "ref_index": "35",
+        "path": [
+          "SciLLMs ",
+          "Mol2Number",
+          "Property prediction"
+        ],
+        "depth": 3,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 56,
+      "unique_leaf_paper_count": 36,
+      "multi_membership_extra_mentions": 20,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

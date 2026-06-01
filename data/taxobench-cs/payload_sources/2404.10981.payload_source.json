@@ -1,0 +1,1924 @@
+{
+  "paper_id": "2404.10981",
+  "arxiv_id": "2404.10981",
+  "title": "A Survey on Retrieval-Augmented Text Generation for Large Language Models",
+  "ref_meta": [
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "0",
+      "ref_key": "S2:ddbd8fe782ac98e9c64dd98710687a962195dd9b",
+      "paperId": "ddbd8fe782ac98e9c64dd98710687a962195dd9b",
+      "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "year": 2023,
+      "abstract": "Despite their remarkable capabilities, large language models (LLMs) often produce responses containing factual inaccuracies due to their sole reliance on the parametric knowledge they encapsulate. Retrieval-Augmented Generation (RAG), an ad hoc approach that augments LMs with retrieval of relevant knowledge, decreases such issues. However, indiscriminately retrieving and incorporating a fixed number of retrieved passages, regardless of whether retrieval is necessary, or passages are relevant, diminishes LM versatility or can lead to unhelpful response generation. We introduce a new framework called Self-Reflective Retrieval-Augmented Generation (Self-RAG) that enhances an LM's quality and factuality through retrieval and self-reflection. Our framework trains a single arbitrary LM that adaptively retrieves passages on-demand, and generates and reflects on retrieved passages and its own generations using special tokens, called reflection tokens. Generating reflection tokens makes the LM controllable during the inference phase, enabling it to tailor its behavior to diverse task requirements. Experiments show that Self-RAG (7B and 13B parameters) significantly outperforms state-of-the-art LLMs and retrieval-augmented models on a diverse set of tasks. Specifically, Self-RAG outperforms ChatGPT and retrieval-augmented Llama2-chat on Open-domain QA, reasoning and fact verification tasks, and it shows significant gains in improving factuality and citation accuracy for long-form generations relative to these models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-11511",
+        "ArXiv": "2310.11511",
+        "DOI": "10.48550/arXiv.2310.11511",
+        "CorpusId": 264288947
+      },
+      "arxiv_id": "2310.11511",
+      "doi": "10.48550/arXiv.2310.11511",
+      "corpus_id": 264288947
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "1",
+      "ref_key": "S2:c0aac09fe67c39fbb377e45e03e38cd0d9b24ab4",
+      "paperId": "c0aac09fe67c39fbb377e45e03e38cd0d9b24ab4",
+      "title": "Optimizing Retrieval-augmented Reader Models via Token Elimination",
+      "year": 2023,
+      "abstract": "Fusion-in-Decoder (FiD) is an effective retrieval-augmented language model applied across a variety of open-domain tasks, such as question answering, fact checking, etc. In FiD, supporting passages are first retrieved and then processed using a generative model (Reader), which can cause a significant bottleneck in decoding time, particularly with long outputs. In this work, we analyze the contribution and necessity of all the retrieved passages to the performance of reader models, and propose eliminating some of the retrieved information, at the token level, that might not contribute essential information to the answer generation process. We demonstrate that our method can reduce run-time by up to 62.2%, with only a 2% reduction in performance, and in some cases, even improve the performance results.",
+      "externalIds": {
+        "ArXiv": "2310.13682",
+        "DBLP": "conf/emnlp/BerchanskyICDW23",
+        "DOI": "10.48550/arXiv.2310.13682",
+        "CorpusId": 264405922
+      },
+      "arxiv_id": "2310.13682",
+      "doi": "10.48550/arXiv.2310.13682",
+      "corpus_id": 264405922
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "2",
+      "ref_key": "S2:002c256d30d6be4b23d365a8de8ae0e67e4c9641",
+      "paperId": "002c256d30d6be4b23d365a8de8ae0e67e4c9641",
+      "title": "Improving language models by retrieving from trillions of tokens",
+      "year": 2021,
+      "abstract": "We enhance auto-regressive language models by conditioning on document chunks retrieved from a large corpus, based on local similarity with preceding tokens. With a $2$ trillion token database, our Retrieval-Enhanced Transformer (RETRO) obtains comparable performance to GPT-3 and Jurassic-1 on the Pile, despite using 25$\\times$ fewer parameters. After fine-tuning, RETRO performance translates to downstream knowledge-intensive tasks such as question answering. RETRO combines a frozen Bert retriever, a differentiable encoder and a chunked cross-attention mechanism to predict tokens based on an order of magnitude more data than what is typically consumed during training. We typically train RETRO from scratch, yet can also rapidly RETROfit pre-trained transformers with retrieval and still achieve good performance. Our work opens up new avenues for improving language models through explicit memory at unprecedented scale.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2112-04426",
+        "ArXiv": "2112.04426",
+        "CorpusId": 244954723
+      },
+      "arxiv_id": "2112.04426",
+      "doi": null,
+      "corpus_id": 244954723
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "3",
+      "ref_key": "S2:746b96ee17e329f1085a047116c05e12eaa3925a",
+      "paperId": "746b96ee17e329f1085a047116c05e12eaa3925a",
+      "title": "RQ-RAG: Learning to Refine Queries for Retrieval Augmented Generation",
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) exhibit remarkable capabilities but are prone to generating inaccurate or hallucinatory responses. This limitation stems from their reliance on vast pretraining datasets, making them susceptible to errors in unseen scenarios. To tackle these challenges, Retrieval-Augmented Generation (RAG) addresses this by incorporating external, relevant documents into the response generation process, thus leveraging non-parametric knowledge alongside LLMs' in-context learning abilities. However, existing RAG implementations primarily focus on initial input for context retrieval, overlooking the nuances of ambiguous or complex queries that necessitate further clarification or decomposition for accurate responses. To this end, we propose learning to Refine Query for Retrieval Augmented Generation (RQ-RAG) in this paper, endeavoring to enhance the model by equipping it with capabilities for explicit rewriting, decomposition, and disambiguation. Our experimental results indicate that our method, when applied to a 7B Llama2 model, surpasses the previous state-of-the-art (SOTA) by an average of 1.9\\% across three single-hop QA datasets, and also demonstrates enhanced performance in handling complex, multi-hop QA datasets. Our code is available at https://github.com/chanchimin/RQ-RAG.",
+      "externalIds": {
+        "ArXiv": "2404.00610",
+        "DBLP": "journals/corr/abs-2404-00610",
+        "DOI": "10.48550/arXiv.2404.00610",
+        "CorpusId": 268819582
+      },
+      "arxiv_id": "2404.00610",
+      "doi": "10.48550/arXiv.2404.00610",
+      "corpus_id": 268819582
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "4",
+      "ref_key": "S2:1266477120913d274346b044b4cc72ea893b1382",
+      "paperId": "1266477120913d274346b044b4cc72ea893b1382",
+      "title": "Walking Down the Memory Maze: Beyond Context Limit through Interactive Reading",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have advanced in large strides due to the effectiveness of the self-attention mechanism that processes and compares all tokens at once. However, this mechanism comes with a fundamental issue -- the predetermined context window is bound to be limited. Despite attempts to extend the context window through methods like extrapolating the positional embedding, using recurrence, or selectively retrieving essential parts of the long sequence, long-text understanding continues to be a challenge. We propose an alternative approach which instead treats the LLM as an interactive agent, allowing it to decide how to read the text via iterative prompting. We introduce MemWalker, a method that first processes the long context into a tree of summary nodes. Upon receiving a query, the model navigates this tree in search of relevant information, and responds once it gathers sufficient information. On long-text question answering tasks our method outperforms baseline approaches that use long context windows, recurrence, and retrieval. We show that, beyond effective reading, MemWalker enhances explainability by highlighting the reasoning steps as it interactively reads the text; pinpointing the relevant text segments related to the query.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-05029",
+        "ArXiv": "2310.05029",
+        "DOI": "10.48550/arXiv.2310.05029",
+        "CorpusId": 263831502
+      },
+      "arxiv_id": "2310.05029",
+      "doi": "10.48550/arXiv.2310.05029",
+      "corpus_id": 263831502
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "5",
+      "ref_key": "S2:41b796b026a1d322de6ef0b280d3e2e68eee65bd",
+      "paperId": "41b796b026a1d322de6ef0b280d3e2e68eee65bd",
+      "title": "Lift Yourself Up: Retrieval-augmented Text Generation with Self Memory",
+      "year": 2023,
+      "abstract": "With direct access to human-written reference as memory, retrieval-augmented generation has achieved much progress in a wide range of text generation tasks. Since better memory would typically prompt better generation~(we define this as primal problem). The traditional approach for memory retrieval involves selecting memory that exhibits the highest similarity to the input. However, this method is constrained by the quality of the fixed corpus from which memory is retrieved. In this paper, by exploring the duality of the primal problem: better generation also prompts better memory, we propose a novel framework, selfmem, which addresses this limitation by iteratively employing a retrieval-augmented generator to create an unbounded memory pool and using a memory selector to choose one output as memory for the subsequent generation round. This enables the model to leverage its own output, referred to as self-memory, for improved generation. We evaluate the effectiveness of selfmem on three distinct text generation tasks: neural machine translation, abstractive text summarization, and dialogue generation, under two generation paradigms: fine-tuned small model and few-shot LLM. Our approach achieves state-of-the-art results in four directions in JRC-Acquis, XSum (50.3 ROUGE-1), and BigPatent (62.9 ROUGE-1), demonstrating the potential of self-memory in enhancing retrieval-augmented generation models. Furthermore, we conduct thorough analyses of each component in the selfmem framework to identify bottlenecks and provide insights for future research.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-02437",
+        "ArXiv": "2305.02437",
+        "DOI": "10.48550/arXiv.2305.02437",
+        "CorpusId": 258479968
+      },
+      "arxiv_id": "2305.02437",
+      "doi": "10.48550/arXiv.2305.02437",
+      "corpus_id": 258479968
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "6",
+      "ref_key": "S2:f7212245d3787c66b8dc1e9fa4bc48349cef1155",
+      "paperId": "f7212245d3787c66b8dc1e9fa4bc48349cef1155",
+      "title": "UPRISE: Universal Prompt Retrieval for Improving Zero-Shot Evaluation",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) are popular for their impressive abilities, but the need for model-specific fine-tuning or task-specific prompt engineering can hinder their generalization. We propose UPRISE (Universal Prompt Retrieval for Improving zero-Shot Evaluation), which tunes a lightweight and versatile retriever that automatically retrieves prompts for a given zero-shot task input. Specifically, we demonstrate universality in a cross-task and cross-model scenario: the retriever is tuned on a diverse set of tasks, but tested on unseen task types; we use a small frozen LLM, GPT-Neo-2.7B, for tuning the retriever, but test the retriever on different LLMs of much larger scales, such as BLOOM-7.1B, OPT-66B and GPT3-175B. Additionally, we show that UPRISE mitigates the hallucination problem in our experiments with ChatGPT, suggesting its potential to improve even the strongest LLMs. Our model and code are available at https://github.com/microsoft/LMOps.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/ChengHBZLW0WDZ23",
+        "ArXiv": "2303.08518",
+        "DOI": "10.48550/arXiv.2303.08518",
+        "CorpusId": 257532394
+      },
+      "arxiv_id": "2303.08518",
+      "doi": "10.48550/arXiv.2303.08518",
+      "corpus_id": 257532394
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "7",
+      "ref_key": "S2:e86009d9f9b1cdf083a48d087552bc4153784451",
+      "paperId": "e86009d9f9b1cdf083a48d087552bc4153784451",
+      "title": "Promptagator: Few-shot Dense Retrieval From 8 Examples",
+      "year": 2022,
+      "abstract": "Much recent research on information retrieval has focused on how to transfer from one task (typically with abundant supervised data) to various other tasks where supervision is limited, with the implicit assumption that it is possible to generalize from one task to all the rest. However, this overlooks the fact that there are many diverse and unique retrieval tasks, each targeting different search intents, queries, and search domains. In this paper, we suggest to work on Few-shot Dense Retrieval, a setting where each task comes with a short description and a few examples. To amplify the power of a few examples, we propose Prompt-base Query Generation for Retriever (Promptagator), which leverages large language models (LLM) as a few-shot query generator, and creates task-specific retrievers based on the generated data. Powered by LLM's generalization ability, Promptagator makes it possible to create task-specific end-to-end retrievers solely based on a few examples {without} using Natural Questions or MS MARCO to train %question generators or dual encoders. Surprisingly, LLM prompting with no more than 8 examples allows dual encoders to outperform heavily engineered models trained on MS MARCO like ColBERT v2 by more than 1.2 nDCG on average on 11 retrieval sets. Further training standard-size re-rankers using the same generated data yields another 5.0 point nDCG improvement. Our studies determine that query generation can be far more effective than previously observed, especially when a small amount of task-specific knowledge is given.",
+      "externalIds": {
+        "ArXiv": "2209.11755",
+        "DBLP": "conf/iclr/DaiZMLNLBGHC23",
+        "DOI": "10.48550/arXiv.2209.11755",
+        "CorpusId": 252519173
+      },
+      "arxiv_id": "2209.11755",
+      "doi": "10.48550/arXiv.2209.11755",
+      "corpus_id": 252519173
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "8",
+      "ref_key": "S2:08dd6f6adf5657516d53db1946780a5d31a10676",
+      "paperId": "08dd6f6adf5657516d53db1946780a5d31a10676",
+      "title": "Retrieval-Generation Synergy Augmented Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models augmented with task-relevant documents have demonstrated impressive performance on knowledge-intensive tasks. However, regarding how to obtain effective documents, the existing methods are mainly divided into two categories. One is to retrieve from an external knowledge base, and the other is to utilize large language models to generate documents. We propose an iterative retrieval-generation collaborative framework. It is not only able to leverage both parametric and non-parametric knowledge, but also helps to find the correct reasoning path through retrieval-generation interactions, which is very important for tasks that require multi-step reasoning. We conduct experiments on four question answering datasets, including single-hop QA and multi-hop QA tasks. Empirical results show that our method significantly improves the reasoning ability of large language models and outperforms previous baselines.",
+      "externalIds": {
+        "DBLP": "conf/icassp/FengFZY024",
+        "ArXiv": "2310.05149",
+        "DOI": "10.1109/ICASSP48485.2024.10448015",
+        "CorpusId": 263830898
+      },
+      "arxiv_id": "2310.05149",
+      "doi": "10.1109/ICASSP48485.2024.10448015",
+      "corpus_id": 263830898
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "9",
+      "ref_key": "S2:c406074e331fa11604059bdeb36433dc9d1e20de",
+      "paperId": "c406074e331fa11604059bdeb36433dc9d1e20de",
+      "title": "Re2G: Retrieve, Rerank, Generate",
+      "year": 2022,
+      "abstract": "As demonstrated by GPT-3 and T5, transformers grow in capability as parameter spaces become larger and larger. However, for tasks that require a large amount of knowledge, non-parametric memory allows models to grow dramatically with a sub-linear increase in computational cost and GPU memory requirements. Recent models such as RAG and REALM have introduced retrieval into conditional generation. These models incorporate neural initial retrieval from a corpus of passages. We build on this line of research, proposing Re2G, which combines both neural initial retrieval and reranking into a BART-based sequence-to-sequence generation. Our reranking approach also permits merging retrieval results from sources with incomparable scores, enabling an ensemble of BM25 and neural initial retrieval. To train our system end-to-end, we introduce a novel variation of knowledge distillation to train the initial retrieval, reranker and generation using only ground truth on the target sequence output. We find large gains in four diverse tasks: zero-shot slot filling, question answering, fact checking and dialog, with relative gains of 9% to 34% over the previous state-of-the-art on the KILT leaderboard. We make our code available as open source.",
+      "externalIds": {
+        "ACL": "2022.naacl-main.194",
+        "DBLP": "journals/corr/abs-2207-06300",
+        "ArXiv": "2207.06300",
+        "DOI": "10.48550/arXiv.2207.06300",
+        "CorpusId": 250391085
+      },
+      "arxiv_id": "2207.06300",
+      "doi": "10.48550/arXiv.2207.06300",
+      "corpus_id": 250391085
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "10",
+      "ref_key": "S2:832fff14d2ed50eb7969c4c4b976c35776548f56",
+      "paperId": "832fff14d2ed50eb7969c4c4b976c35776548f56",
+      "title": "REALM: Retrieval-Augmented Language Model Pre-Training",
+      "year": 2020,
+      "abstract": "Language model pre-training has been shown to capture a surprising amount of world knowledge, crucial for NLP tasks such as question answering. However, this knowledge is stored implicitly in the parameters of a neural network, requiring ever-larger networks to cover more facts. \nTo capture knowledge in a more modular and interpretable way, we augment language model pre-training with a latent knowledge retriever, which allows the model to retrieve and attend over documents from a large corpus such as Wikipedia, used during pre-training, fine-tuning and inference. For the first time, we show how to pre-train such a knowledge retriever in an unsupervised manner, using masked language modeling as the learning signal and backpropagating through a retrieval step that considers millions of documents. \nWe demonstrate the effectiveness of Retrieval-Augmented Language Model pre-training (REALM) by fine-tuning on the challenging task of Open-domain Question Answering (Open-QA). We compare against state-of-the-art models for both explicit and implicit knowledge storage on three popular Open-QA benchmarks, and find that we outperform all previous methods by a significant margin (4-16% absolute accuracy), while also providing qualitative benefits such as interpretability and modularity.",
+      "externalIds": {
+        "ArXiv": "2002.08909",
+        "MAG": "3034671305",
+        "DBLP": "conf/icml/GuuLTPC20",
+        "CorpusId": 211204736
+      },
+      "arxiv_id": "2002.08909",
+      "doi": null,
+      "corpus_id": 211204736
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "11",
+      "ref_key": "S2:fc74fe92fb9e34d3ae1237bf9a6e718c723f4f3e",
+      "paperId": "fc74fe92fb9e34d3ae1237bf9a6e718c723f4f3e",
+      "title": "FiD-Light: Efficient and Effective Retrieval-Augmented Text Generation",
+      "year": 2022,
+      "abstract": "Retrieval-augmented generation models offer many benefits over standalone language models: besides a textual answer to a given query they provide provenance items retrieved from an updateable knowledge base. However, they are also more complex systems and need to handle long inputs. In this work, we introduce FiD-Light to strongly increase the efficiency of the state-of-the-art retrieval-augmented FiD model, while maintaining the same level of effectiveness. Our FiD-Light model constrains the information flow from the encoder (which encodes passages separately) to the decoder (using concatenated encoded representations). Furthermore, we adapt FiD-Light with re-ranking capabilities through textual source pointers, to improve the top-ranked provenance precision. Our experiments on a diverse set of seven knowledge intensive tasks (KILT) show FiD-Light consistently improves the Pareto frontier between query latency and effectiveness. FiD-Light with source pointing sets substantial new state-of-the-art results on six KILT tasks for combined text generation and provenance retrieval evaluation, while maintaining high efficiency.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2209-14290",
+        "ArXiv": "2209.14290",
+        "DOI": "10.1145/3539618.3591687",
+        "CorpusId": 252568176
+      },
+      "arxiv_id": "2209.14290",
+      "doi": "10.1145/3539618.3591687",
+      "corpus_id": 252568176
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "12",
+      "ref_key": "S2:114dcd4be9eb6f5a7257fbfdb542cfab3153a292",
+      "paperId": "114dcd4be9eb6f5a7257fbfdb542cfab3153a292",
+      "title": "Learning Retrieval Augmentation for Personalized Dialogue Generation",
+      "year": 2024,
+      "abstract": "Personalized dialogue generation, focusing on generating highly tailored responses by leveraging persona profiles and dialogue context, has gained significant attention in conversational AI applications. However, persona profiles, a prevalent setting in current personalized dialogue datasets, typically composed of merely four to five sentences, may not offer comprehensive descriptions of the persona about the agent, posing a challenge to generate truly personalized dialogues. To handle this problem, we propose $\\textbf{L}$earning Retrieval $\\textbf{A}$ugmentation for $\\textbf{P}$ersonalized $\\textbf{D}$ial$\\textbf{O}$gue $\\textbf{G}$eneration ($\\textbf{LAPDOG}$), which studies the potential of leveraging external knowledge for persona dialogue generation. Specifically, the proposed LAPDOG model consists of a story retriever and a dialogue generator. The story retriever uses a given persona profile as queries to retrieve relevant information from the story document, which serves as a supplementary context to augment the persona profile. The dialogue generator utilizes both the dialogue history and the augmented persona profile to generate personalized responses. For optimization, we adopt a joint training framework that collaboratively learns the story retriever and dialogue generator, where the story retriever is optimized towards desired ultimate metrics (e.g., BLEU) to retrieve content for the dialogue generator to generate personalized responses. Experiments conducted on the CONVAI2 dataset with ROCStory as a supplementary data source show that the proposed LAPDOG method substantially outperforms the baselines, indicating the effectiveness of the proposed method. The LAPDOG model code is publicly available for further exploration. https://github.com/hqsiswiliam/LAPDOG",
+      "externalIds": {
+        "ArXiv": "2406.18847",
+        "DBLP": "journals/corr/abs-2406-18847",
+        "DOI": "10.18653/v1/2023.emnlp-main.154",
+        "CorpusId": 266164185
+      },
+      "arxiv_id": "2406.18847",
+      "doi": "10.18653/v1/2023.emnlp-main.154",
+      "corpus_id": 266164185
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "13",
+      "ref_key": "S2:1148782ef3582e18d32c0e354f8e88b8d7e71cc9",
+      "paperId": "1148782ef3582e18d32c0e354f8e88b8d7e71cc9",
+      "title": "Retrieval Augmented Generation with Rich Answer Encoding",
+      "year": 2023,
+      "abstract": "Knowledge-intensive generation tasks like generative question answering require models to retrieve appropriate passages from external knowledge sources to support answer generation. The generation quality relies heavily on the retrieved passages, which serve as contextual information. State-of-the-art Retrieval Augmented Generation models with marginalized output dominate this area but focus too much on label-relevant passages, rather than question-relevant passages and answers. This work addresses this issue by incorporating rich answer encoding through Dense Knowledge Similarity (DKS) and Retriever as Answer Classifier (RAC). We demonstrate the advantages of our proposed approach in open domain question answering (MSMARCO) and conversation (Wizard of Wikipedia) datasets, reporting both generation and retrieval metrics. In the MSMARCO development set, our best model achieves 12.1% relative improvement 1 on Recall@1 and 4.5% relative improvement on BLEU-4 compared to the baseline model. In the KILT-WoW leaderboard, our best model achieves 8.9% relative improvement on R-Precision and 13.3% relative improvement on KILT-RL compared to the baseline model. Our codes and models are available at https://github.com/hwy9855/rag-ae .",
+      "externalIds": {
+        "ACL": "2023.ijcnlp-main.65",
+        "DBLP": "conf/ijcnlp/HuangLVPP23",
+        "DOI": "10.18653/v1/2023.ijcnlp-main.65",
+        "CorpusId": 267053546
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2023.ijcnlp-main.65",
+      "corpus_id": 267053546
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "14",
+      "ref_key": "S2:ea8c46e193d5121e440daf96edfd15a47151c293",
+      "paperId": "ea8c46e193d5121e440daf96edfd15a47151c293",
+      "title": "Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering",
+      "year": 2020,
+      "abstract": "Generative models for open domain question answering have proven to be competitive, without resorting to external knowledge. While promising, this approach requires to use models with billions of parameters, which are expensive to train and query. In this paper, we investigate how much these models can benefit from retrieving text passages, potentially containing evidence. We obtain state-of-the-art results on the Natural Questions and TriviaQA open benchmarks. Interestingly, we observe that the performance of this method significantly improves when increasing the number of retrieved passages. This is evidence that sequence-to-sequence models offers a flexible framework to efficiently aggregate and combine evidence from multiple passages.",
+      "externalIds": {
+        "ArXiv": "2007.01282",
+        "DBLP": "conf/eacl/IzacardG21",
+        "MAG": "3039017601",
+        "ACL": "2021.eacl-main.74",
+        "DOI": "10.18653/v1/2021.eacl-main.74",
+        "CorpusId": 220302360
+      },
+      "arxiv_id": "2007.01282",
+      "doi": "10.18653/v1/2021.eacl-main.74",
+      "corpus_id": 220302360
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "15",
+      "ref_key": "S2:88884b8806262a4095036041e3567d450dba39f7",
+      "paperId": "88884b8806262a4095036041e3567d450dba39f7",
+      "title": "Active Retrieval Augmented Generation",
+      "year": 2023,
+      "abstract": "Despite the remarkable ability of large language models (LMs) to comprehend and generate language, they have a tendency to hallucinate and create factually inaccurate output. Augmenting LMs by retrieving information from external knowledge resources is one promising solution. Most existing retrieval augmented LMs employ a retrieve-and-generate setup that only retrieves information once based on the input. This is limiting, however, in more general scenarios involving generation of long texts, where continually gathering information throughout generation is essential. In this work, we provide a generalized view of active retrieval augmented generation, methods that actively decide when and what to retrieve across the course of the generation. We propose Forward-Looking Active REtrieval augmented generation (FLARE), a generic method which iteratively uses a prediction of the upcoming sentence to anticipate future content, which is then utilized as a query to retrieve relevant documents to regenerate the sentence if it contains low-confidence tokens. We test FLARE along with baselines comprehensively over 4 long-form knowledge-intensive generation tasks/datasets. FLARE achieves superior or competitive performance on all tasks, demonstrating the effectiveness of our method. Code and datasets are available at https://github.com/jzbjyb/FLARE.",
+      "externalIds": {
+        "ArXiv": "2305.06983",
+        "DBLP": "conf/emnlp/JiangXGSLDYCN23",
+        "DOI": "10.48550/arXiv.2305.06983",
+        "CorpusId": 258615731
+      },
+      "arxiv_id": "2305.06983",
+      "doi": "10.48550/arXiv.2305.06983",
+      "corpus_id": 258615731
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "16",
+      "ref_key": "S2:f163042aadc800489516f86475165543a62c88b1",
+      "paperId": "f163042aadc800489516f86475165543a62c88b1",
+      "title": "Chameleon: a Heterogeneous and Disaggregated Accelerator System for Retrieval-Augmented Language Models",
+      "year": 2023,
+      "abstract": "A Retrieval-Augmented Language Model (RALM) augments a generative language model by retrieving context-specific knowledge from an external database. This strategy facilitates impressive text generation quality even with smaller models, thus reducing orders of magnitude of computational demands. However, RALMs introduce unique system design challenges due to (a) the diverse workload characteristics between LM inference and retrieval and (b) the various system requirements and bottlenecks for different RALM configurations such as model sizes, database sizes, and retrieval frequencies. We propose Chameleon, a heterogeneous accelerator system that integrates both LM and retrieval accelerators in a disaggregated architecture. The heterogeneity ensures efficient acceleration of both LM inference and retrieval, while the accelerator disaggregation enables the system to independently scale both types of accelerators to fulfill diverse RALM requirements. Our Chameleon prototype implements retrieval accelerators on FPGAs and assigns LM inference to GPUs, with a CPU server orchestrating these accelerators over the network. Compared to CPU-based and CPU-GPU vector search systems, Chameleon achieves up to 23.72x speedup and 26.2x energy efficiency. Evaluated on various RALMs, Chameleon exhibits up to 2.16x reduction in latency and 3.18x speedup in throughput compared to the hybrid CPU-GPU architecture. These promising results pave the way for bringing accelerator heterogeneity and disaggregation into future RALM systems.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-09949",
+        "ArXiv": "2310.09949",
+        "DOI": "10.48550/arXiv.2310.09949",
+        "CorpusId": 265995137
+      },
+      "arxiv_id": "2310.09949",
+      "doi": "10.48550/arXiv.2310.09949",
+      "corpus_id": 265995137
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "17",
+      "ref_key": "S2:858cbd99d5a3d2658254d055cd26e06f81050927",
+      "paperId": "858cbd99d5a3d2658254d055cd26e06f81050927",
+      "title": "PipeRAG: Fast Retrieval-Augmented Generation via Algorithm-System Co-design",
+      "year": 2024,
+      "abstract": "Retrieval-augmented generation (RAG) can enhance the generation quality of large language models (LLMs) by incorporating external token databases. However, retrievals from large databases can constitute a substantial portion of the overall generation time, particularly when retrievals are periodically performed to align the retrieved content with the latest states of generation. In this paper, we introduce PipeRAG, a novel algorithm-system co-design approach to reduce generation latency and enhance generation quality. PipeRAG integrates (1) pipeline parallelism to enable concurrent retrieval and generation processes, (2) flexible retrieval intervals to maximize the efficiency of pipeline parallelism, and (3) a performance model to automatically balance retrieval quality and latency based on the generation states and underlying hardware. Our evaluation shows that, by combining the three aforementioned methods, PipeRAG achieves up to 2.6$\\times$ speedup in end-to-end generation latency while improving generation quality. These promising results showcase the effectiveness of co-designing algorithms with underlying systems, paving the way for the adoption of PipeRAG in future RAG systems.",
+      "externalIds": {
+        "ArXiv": "2403.05676",
+        "DBLP": "journals/corr/abs-2403-05676",
+        "DOI": "10.48550/arXiv.2403.05676",
+        "CorpusId": 268358441
+      },
+      "arxiv_id": "2403.05676",
+      "doi": "10.48550/arXiv.2403.05676",
+      "corpus_id": 268358441
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "18",
+      "ref_key": "S2:f70bf522a90c09ed06c32c9bf36b7ee14b8a9856",
+      "paperId": "f70bf522a90c09ed06c32c9bf36b7ee14b8a9856",
+      "title": "Knowledge Graph-Augmented Language Models for Knowledge-Grounded Dialogue Generation",
+      "year": 2023,
+      "abstract": "Language models have achieved impressive performances on dialogue generation tasks. However, when generating responses for a conversation that requires factual knowledge, they are far from perfect, due to an absence of mechanisms to retrieve, encode, and reflect the knowledge in the generated responses. Some knowledge-grounded dialogue generation methods tackle this problem by leveraging facts from Knowledge Graphs (KGs); however, they do not guarantee that the model utilizes a relevant piece of knowledge from the KG. To overcome this limitation, we propose SUbgraph Retrieval-augmented GEneration (SURGE), a framework for generating context-relevant and knowledge-grounded dialogues with the KG. Specifically, our SURGE framework first retrieves the relevant subgraph from the KG, and then enforces consistency across facts by perturbing their word embeddings conditioned by the retrieved subgraph. Then, we utilize contrastive learning to ensure that the generated texts have high similarity to the retrieved subgraphs. We validate our SURGE framework on OpendialKG and KOMODIS datasets, showing that it generates high-quality dialogues that faithfully reflect the knowledge from KG.",
+      "externalIds": {
+        "ArXiv": "2305.18846",
+        "DBLP": "journals/corr/abs-2305-18846",
+        "DOI": "10.48550/arXiv.2305.18846",
+        "CorpusId": 258967643
+      },
+      "arxiv_id": "2305.18846",
+      "doi": "10.48550/arXiv.2305.18846",
+      "corpus_id": 258967643
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "19",
+      "ref_key": "S2:7be8c119dbe065c52125ee7716601751f3116844",
+      "paperId": "7be8c119dbe065c52125ee7716601751f3116844",
+      "title": "Generalization through Memorization: Nearest Neighbor Language Models",
+      "year": 2019,
+      "abstract": "We introduce $k$NN-LMs, which extend a pre-trained neural language model (LM) by linearly interpolating it with a $k$-nearest neighbors ($k$NN) model. The nearest neighbors are computed according to distance in the pre-trained LM embedding space, and can be drawn from any text collection, including the original LM training data. Applying this augmentation to a strong Wikitext-103 LM, with neighbors drawn from the original training set, our $k$NN-LM achieves a new state-of-the-art perplexity of 15.79 - a 2.9 point improvement with no additional training. We also show that this approach has implications for efficiently scaling up to larger training sets and allows for effective domain adaptation, by simply varying the nearest neighbor datastore, again without further training. Qualitatively, the model is particularly helpful in predicting rare patterns, such as factual knowledge. Together, these results strongly suggest that learning similarity between sequences of text is easier than predicting the next word, and that nearest neighbor search is an effective approach for language modeling in the long tail.",
+      "externalIds": {
+        "MAG": "2988841832",
+        "ArXiv": "1911.00172",
+        "DBLP": "journals/corr/abs-1911-00172",
+        "CorpusId": 207870430
+      },
+      "arxiv_id": "1911.00172",
+      "doi": null,
+      "corpus_id": 207870430
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "20",
+      "ref_key": "S2:03532123ccffae8d411264320e8a5ae2b6eddea0",
+      "paperId": "03532123ccffae8d411264320e8a5ae2b6eddea0",
+      "title": "Demonstrate-Search-Predict: Composing retrieval and language models for knowledge-intensive NLP",
+      "year": 2022,
+      "abstract": "Retrieval-augmented in-context learning has emerged as a powerful approach for addressing knowledge-intensive tasks using frozen language models (LM) and retrieval models (RM). Existing work has combined these in simple\"retrieve-then-read\"pipelines in which the RM retrieves passages that are inserted into the LM prompt. To begin to fully realize the potential of frozen LMs and RMs, we propose Demonstrate-Search-Predict (DSP), a framework that relies on passing natural language texts in sophisticated pipelines between an LM and an RM. DSP can express high-level programs that bootstrap pipeline-aware demonstrations, search for relevant passages, and generate grounded predictions, systematically breaking down problems into small transformations that the LM and RM can handle more reliably. We have written novel DSP programs for answering questions in open-domain, multi-hop, and conversational settings, establishing in early evaluations new state-of-the-art in-context learning results and delivering 37-120%, 8-39%, and 80-290% relative gains against the vanilla LM (GPT-3.5), a standard retrieve-then-read pipeline, and a contemporaneous self-ask pipeline, respectively. We release DSP at https://github.com/stanfordnlp/dsp",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2212-14024",
+        "ArXiv": "2212.14024",
+        "DOI": "10.48550/arXiv.2212.14024",
+        "CorpusId": 255186555
+      },
+      "arxiv_id": "2212.14024",
+      "doi": "10.48550/arXiv.2212.14024",
+      "corpus_id": 255186555
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "21",
+      "ref_key": "S2:27f8af480211586d07ff5ee6441ff6724ce85f4e",
+      "paperId": "27f8af480211586d07ff5ee6441ff6724ce85f4e",
+      "title": "PlanRAG: A Plan-then-Retrieval Augmented Generation for Generative Large Language Models as Decision Makers",
+      "year": 2024,
+      "abstract": "In this paper, we conduct a study to utilize LLMs as a solution for decision making that requires complex data analysis. We define **Decision QA** as the task of answering the best decision, d_{best}, for a decision-making question Q, business rules R and a database D. Since there is no benchmark that can examine Decision QA, we propose Decision QA benchmark, **DQA**. It has two scenarios, Locating and Building, constructed from two video games (Europa Universalis IV and Victoria 3) that have almost the same goal as Decision QA. To address Decision QA effectively, we also propose a new RAG technique called the *iterative plan-then-retrieval augmented generation* (**PlanRAG**). Our PlanRAG-based LM generates the plan for decision making as the first step, and the retriever generates the queries for data analysis as the second step. The proposed method outperforms the state-of-the-art iterative RAG method by 15.8% in the Locating scenario and by 7.4% in the Building scenario, respectively. We release our code and benchmark at https://github.com/myeon9h/PlanRAG.",
+      "externalIds": {
+        "ArXiv": "2406.12430",
+        "DBLP": "conf/naacl/LeeAK24",
+        "ACL": "2024.naacl-long.364",
+        "DOI": "10.48550/arXiv.2406.12430",
+        "CorpusId": 270514562
+      },
+      "arxiv_id": "2406.12430",
+      "doi": "10.48550/arXiv.2406.12430",
+      "corpus_id": 270514562
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "22",
+      "ref_key": "S2:58ed1fbaabe027345f7bb3a6312d41c5aac63e22",
+      "paperId": "58ed1fbaabe027345f7bb3a6312d41c5aac63e22",
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "year": 2020,
+      "abstract": "Large pre-trained language models have been shown to store factual knowledge in their parameters, and achieve state-of-the-art results when fine-tuned on downstream NLP tasks. However, their ability to access and precisely manipulate knowledge is still limited, and hence on knowledge-intensive tasks, their performance lags behind task-specific architectures. Additionally, providing provenance for their decisions and updating their world knowledge remain open research problems. Pre-trained models with a differentiable access mechanism to explicit non-parametric memory can overcome this issue, but have so far been only investigated for extractive downstream tasks. We explore a general-purpose fine-tuning recipe for retrieval-augmented generation (RAG) -- models which combine pre-trained parametric and non-parametric memory for language generation. We introduce RAG models where the parametric memory is a pre-trained seq2seq model and the non-parametric memory is a dense vector index of Wikipedia, accessed with a pre-trained neural retriever. We compare two RAG formulations, one which conditions on the same retrieved passages across the whole generated sequence, the other can use different passages per token. We fine-tune and evaluate our models on a wide range of knowledge-intensive NLP tasks and set the state-of-the-art on three open domain QA tasks, outperforming parametric seq2seq models and task-specific retrieve-and-extract architectures. For language generation tasks, we find that RAG models generate more specific, diverse and factual language than a state-of-the-art parametric-only seq2seq baseline.",
+      "externalIds": {
+        "ArXiv": "2005.11401",
+        "MAG": "3027879771",
+        "DBLP": "conf/nips/LewisPPPKGKLYR020",
+        "CorpusId": 218869575
+      },
+      "arxiv_id": "2005.11401",
+      "doi": null,
+      "corpus_id": 218869575
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "23",
+      "ref_key": "S2:e468ed6b824e60f45ba9a20b034e4090c6630751",
+      "paperId": "e468ed6b824e60f45ba9a20b034e4090c6630751",
+      "title": "Chain-of-Knowledge: Grounding Large Language Models via Dynamic Knowledge Adapting over Heterogeneous Sources",
+      "year": 2023,
+      "abstract": "We present chain-of-knowledge (CoK), a novel framework that augments large language models (LLMs) by dynamically incorporating grounding information from heterogeneous sources. It results in more factual rationales and reduced hallucination in generation. Specifically, CoK consists of three stages: reasoning preparation, dynamic knowledge adapting, and answer consolidation. Given a knowledge-intensive question, CoK first prepares several preliminary rationales and answers while identifying the relevant knowledge domains. If there is no majority consensus among the answers from samples, CoK corrects the rationales step by step by adapting knowledge from the identified domains. These corrected rationales can plausibly serve as a better foundation for the final answer consolidation. Unlike prior studies that primarily use unstructured data, CoK also leverages structured knowledge sources such as Wikidata and tables that provide more reliable factual information. To access both unstructured and structured knowledge sources in the dynamic knowledge adapting stage, we propose an adaptive query generator that allows the generation of queries for various types of query languages, including SPARQL, SQL, and natural sentences. Moreover, to minimize error propagation between rationales, CoK corrects the rationales progressively using preceding corrected rationales to generate and correct subsequent rationales. Extensive experiments show that CoK consistently improves the performance of LLMs on knowledge-intensive tasks across different domains.",
+      "externalIds": {
+        "ArXiv": "2305.13269",
+        "DBLP": "conf/iclr/LiZCDJPB24",
+        "CorpusId": 263610099
+      },
+      "arxiv_id": "2305.13269",
+      "doi": null,
+      "corpus_id": 263610099
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "24",
+      "ref_key": "S2:368fb35a07076eba01c2e4700499323cd4524513",
+      "paperId": "368fb35a07076eba01c2e4700499323cd4524513",
+      "title": "RA-DIT: Retrieval-Augmented Dual Instruction Tuning",
+      "year": 2023,
+      "abstract": "Retrieval-augmented language models (RALMs) improve performance by accessing long-tail and up-to-date knowledge from external data stores, but are challenging to build. Existing approaches require either expensive retrieval-specific modifications to LM pre-training or use post-hoc integration of the data store that leads to suboptimal performance. We introduce Retrieval-Augmented Dual Instruction Tuning (RA-DIT), a lightweight fine-tuning methodology that provides a third option by retrofitting any LLM with retrieval capabilities. Our approach operates in two distinct fine-tuning steps: (1) one updates a pre-trained LM to better use retrieved information, while (2) the other updates the retriever to return more relevant results, as preferred by the LM. By fine-tuning over tasks that require both knowledge utilization and contextual awareness, we demonstrate that each stage yields significant performance improvements, and using both leads to additional gains. Our best model, RA-DIT 65B, achieves state-of-the-art performance across a range of knowledge-intensive zero- and few-shot learning benchmarks, significantly outperforming existing in-context RALM approaches by up to +8.9% in 0-shot setting and +1.4% in 5-shot setting on average.",
+      "externalIds": {
+        "ArXiv": "2310.01352",
+        "DBLP": "conf/iclr/Lin0CSL00KSLZY24",
+        "DOI": "10.48550/arXiv.2310.01352",
+        "CorpusId": 263605962
+      },
+      "arxiv_id": "2310.01352",
+      "doi": "10.48550/arXiv.2310.01352",
+      "corpus_id": 263605962
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "25",
+      "ref_key": "S2:06694e08d53dd1dc89067c6964d2c496bbe0a088",
+      "paperId": "06694e08d53dd1dc89067c6964d2c496bbe0a088",
+      "title": "Reconsidering Tree based Methods for k-Maximum Inner-Product Search: The LRUS-CoverTree",
+      "year": 2024,
+      "abstract": "Existing literature on k-Maximum Inner-Product Search has made it a common belief that tree based methods are less effective in terms of index construction time and query performance compared to locality sensitive hashing based, similarity graph based and quantization based methods. However, in this paper we partially roll over the existing assessments about tree based k- Maximum Inner-Product Search methods by our newly proposed tree structure named LRUS-CoverTree. The experimental results show that the new k- Maximum Inner-Product Search algorithm based on LRUS-CoverTree outperforms the state-of-the-art locality sensitive hashing based methods, and achieves comparable performance with similarity graph based and quantization based methods in terms of query time and accuracy. What's more important, the desirable query performance is attained with significantly lower index construction time compared to all the other methods. Besides the experimental evaluations, substantial theoretical results about the LRUS-CoverTree and the new k-Maximum Inner-Product Search algorithm are provided, including construction time and search time complexity, size and height of the tree, and so on. Furthermore, several new effective upper bounds on the inner-product value are provided to support the efficient branch-and-bound algorithm on LRUS-CoverTree. In summary, our novel tree structure and new algorithm significantly improve upon existing tree based methods, and it is hoped that this contribution can lead to a reconsideration of tree based k-Maximum Inner-Product Search methods.",
+      "externalIds": {
+        "DBLP": "conf/icde/Ma0Z24",
+        "DOI": "10.1109/ICDE60146.2024.00355",
+        "CorpusId": 271406208
+      },
+      "arxiv_id": null,
+      "doi": "10.1109/ICDE60146.2024.00355",
+      "corpus_id": 271406208
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "26",
+      "ref_key": "S2:2f3efe44083af91cef562c1a3451eee2f8601d22",
+      "paperId": "2f3efe44083af91cef562c1a3451eee2f8601d22",
+      "title": "WebGPT: Browser-assisted question-answering with human feedback",
+      "year": 2021,
+      "abstract": "We fine-tune GPT-3 to answer long-form questions using a text-based web-browsing environment, which allows the model to search and navigate the web. By setting up the task so that it can be performed by humans, we are able to train models on the task using imitation learning, and then optimize answer quality with human feedback. To make human evaluation of factual accuracy easier, models must collect references while browsing in support of their answers. We train and evaluate our models on ELI5, a dataset of questions asked by Reddit users. Our best model is obtained by fine-tuning GPT-3 using behavior cloning, and then performing rejection sampling against a reward model trained to predict human preferences. This model's answers are preferred by humans 56% of the time to those of our human demonstrators, and 69% of the time to the highest-voted answer from Reddit.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2112-09332",
+        "ArXiv": "2112.09332",
+        "CorpusId": 245329531
+      },
+      "arxiv_id": "2112.09332",
+      "doi": null,
+      "corpus_id": 245329531
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "27",
+      "ref_key": "S2:465471bb5bf1a945549d6291c2d23367966b4957",
+      "paperId": "465471bb5bf1a945549d6291c2d23367966b4957",
+      "title": "In-Context Retrieval-Augmented Language Models",
+      "year": 2023,
+      "abstract": "Abstract Retrieval-Augmented Language Modeling (RALM) methods, which condition a language model (LM) on relevant documents from a grounding corpus during generation, were shown to significantly improve language modeling performance. In addition, they can mitigate the problem of factually inaccurate text generation and provide natural source attribution mechanism. Existing RALM approaches focus on modifying the LM architecture in order to facilitate the incorporation of external information, significantly complicating deployment. This paper considers a simple alternative, which we dub In-Context RALM: leaving the LM architecture unchanged and prepending grounding documents to the input, without any further training of the LM. We show that In-Context RALM that builds on off-the-shelf general purpose retrievers provides surprisingly large LM gains across model sizes and diverse corpora. We also demonstrate that the document retrieval and ranking mechanism can be specialized to the RALM setting to further boost performance. We conclude that In-Context RALM has considerable potential to increase the prevalence of LM grounding, particularly in settings where a pretrained LM must be used without modification or even via API access.1",
+      "externalIds": {
+        "ArXiv": "2302.00083",
+        "DBLP": "journals/corr/abs-2302-00083",
+        "DOI": "10.1162/tacl_a_00605",
+        "CorpusId": 256459451
+      },
+      "arxiv_id": "2302.00083",
+      "doi": "10.1162/tacl_a_00605",
+      "corpus_id": 256459451
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "28",
+      "ref_key": "S2:dd416e705a68419edb1cb840a6daa43cc8822c2b",
+      "paperId": "dd416e705a68419edb1cb840a6daa43cc8822c2b",
+      "title": "Optimization Methods for Personalizing Large Language Models through Retrieval Augmentation",
+      "year": 2024,
+      "abstract": "This paper studies retrieval-augmented approaches for personalizing large language models (LLMs), which potentially have a substantial impact on various applications and domains. We propose the first attempt to optimize the retrieval models that deliver a limited number of personal documents to large language models for the purpose of personalized generation. We develop two optimization algorithms that solicit feedback from the downstream personalized generation tasks for retrieval optimization -- one based on reinforcement learning whose reward function is defined using any arbitrary metric for personalized generation and another based on knowledge distillation from the downstream LLM to the retrieval model. This paper also introduces a pre- and post-generation retriever selection model that decides what retriever to choose for each LLM input. Extensive experiments on diverse tasks from the language model personalization (LaMP) benchmark reveal statistically significant improvements in six out of seven datasets.",
+      "externalIds": {
+        "DBLP": "conf/sigir/SalemiKZ24",
+        "ArXiv": "2404.05970",
+        "DOI": "10.48550/arXiv.2404.05970",
+        "CorpusId": 269009728
+      },
+      "arxiv_id": "2404.05970",
+      "doi": "10.48550/arXiv.2404.05970",
+      "corpus_id": 269009728
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "29",
+      "ref_key": "S2:a1675f47125aa409525c5f759b5e6bcc1c8831aa",
+      "paperId": "a1675f47125aa409525c5f759b5e6bcc1c8831aa",
+      "title": "Enhancing Retrieval-Augmented Large Language Models with Iterative Retrieval-Generation Synergy",
+      "year": 2023,
+      "abstract": "Large language models are powerful text processors and reasoners, but are still subject to limitations including outdated knowledge and hallucinations, which necessitates connecting them to the world. Retrieval-augmented large language models have raised extensive attention for grounding model generation on external knowledge. However, retrievers struggle to capture relevance, especially for queries with complex information needs. Recent work has proposed to improve relevance modeling by having large language models actively involved in retrieval, i.e., to improve retrieval with generation. In this paper, we show that strong performance can be achieved by a method we call Iter-RetGen, which synergizes retrieval and generation in an iterative manner. A model output shows what might be needed to finish a task, and thus provides an informative context for retrieving more relevant knowledge which in turn helps generate a better output in the next iteration. Compared with recent work which interleaves retrieval with generation when producing an output, Iter-RetGen processes all retrieved knowledge as a whole and largely preserves the flexibility in generation without structural constraints. We evaluate Iter-RetGen on multi-hop question answering, fact verification, and commonsense reasoning, and show that it can flexibly leverage parametric knowledge and non-parametric knowledge, and is superior to or competitive with state-of-the-art retrieval-augmented baselines while causing fewer overheads of retrieval and generation. We can further improve performance via generation-augmented retrieval adaptation.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-15294",
+        "ArXiv": "2305.15294",
+        "DOI": "10.48550/arXiv.2305.15294",
+        "CorpusId": 258866037
+      },
+      "arxiv_id": "2305.15294",
+      "doi": "10.48550/arXiv.2305.15294",
+      "corpus_id": 258866037
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "30",
+      "ref_key": "S2:ec38c6183a5b45627e248268aff7050a95313857",
+      "paperId": "ec38c6183a5b45627e248268aff7050a95313857",
+      "title": "ERAGent: Enhancing Retrieval-Augmented Language Models with Improved Accuracy, Efficiency, and Personalization",
+      "year": 2024,
+      "abstract": "Retrieval-augmented generation (RAG) for language models significantly improves language understanding systems. The basic retrieval-then-read pipeline of response generation has evolved into a more extended process due to the integration of various components, sometimes even forming loop structures. Despite its advancements in improving response accuracy, challenges like poor retrieval quality for complex questions that require the search of multifaceted semantic information, inefficiencies in knowledge re-retrieval during long-term serving, and lack of personalized responses persist. Motivated by transcending these limitations, we introduce ERAGent, a cutting-edge framework that embodies an advancement in the RAG area. Our contribution is the introduction of the synergistically operated module: Enhanced Question Rewriter and Knowledge Filter, for better retrieval quality. Retrieval Trigger is incorporated to curtail extraneous external knowledge retrieval without sacrificing response quality. ERAGent also personalizes responses by incorporating a learned user profile. The efficiency and personalization characteristics of ERAGent are supported by the Experiential Learner module which makes the AI assistant being capable of expanding its knowledge and modeling user profile incrementally. Rigorous evaluations across six datasets and three question-answering tasks prove ERAGent's superior accuracy, efficiency, and personalization, emphasizing its potential to advance the RAG field and its applicability in practical systems.",
+      "externalIds": {
+        "ArXiv": "2405.06683",
+        "DBLP": "journals/corr/abs-2405-06683",
+        "DOI": "10.48550/arXiv.2405.06683",
+        "CorpusId": 269757277
+      },
+      "arxiv_id": "2405.06683",
+      "doi": "10.48550/arXiv.2405.06683",
+      "corpus_id": 269757277
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "31",
+      "ref_key": "S2:1cc6cc4960f7df59e7813d9a8e11098d0a0d0720",
+      "paperId": "1cc6cc4960f7df59e7813d9a8e11098d0a0d0720",
+      "title": "DRAGIN: Dynamic Retrieval Augmented Generation based on the Real-time Information Needs of Large Language Models",
+      "year": 2024,
+      "abstract": "Dynamic retrieval augmented generation (RAG) paradigm actively decides when and what to retrieve during the text generation process of Large Language Models (LLMs). There are two key elements of this paradigm: identifying the optimal moment to activate the retrieval module (deciding when to retrieve) and crafting the appropriate query once retrieval is triggered (determining what to retrieve). However, current dynamic RAG methods fall short in both aspects. Firstly, the strategies for deciding when to retrieve often rely on static rules. Moreover, the strategies for deciding what to retrieve typically limit themselves to the LLM's most recent sentence or the last few tokens, while the LLM's real-time information needs may span across the entire context. To overcome these limitations, we introduce a new framework, DRAGIN, i.e., Dynamic Retrieval Augmented Generation based on the real-time Information Needs of LLMs. Our framework is specifically designed to make decisions on when and what to retrieve based on the LLM's real-time information needs during the text generation process. We evaluate DRAGIN along with existing methods comprehensively over 4 knowledge-intensive generation datasets. Experimental results show that DRAGIN achieves superior performance on all tasks, demonstrating the effectiveness of our method. We have open-sourced all the code, data, and models in GitHub: https://github.com/oneal2000/DRAGIN/tree/main",
+      "externalIds": {
+        "ArXiv": "2403.10081",
+        "DBLP": "journals/corr/abs-2403-10081",
+        "DOI": "10.48550/arXiv.2403.10081",
+        "CorpusId": 268509926
+      },
+      "arxiv_id": "2403.10081",
+      "doi": "10.48550/arXiv.2403.10081",
+      "corpus_id": 268509926
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "32",
+      "ref_key": "S2:ed99a2572fb5f4240aa6068e3bf274832e831306",
+      "paperId": "ed99a2572fb5f4240aa6068e3bf274832e831306",
+      "title": "Recitation-Augmented Language Models",
+      "year": 2022,
+      "abstract": "We propose a new paradigm to help Large Language Models (LLMs) generate more accurate factual knowledge without retrieving from an external corpus, called RECITation-augmented gEneration (RECITE). Different from retrieval-augmented language models that retrieve relevant documents before generating the outputs, given an input, RECITE first recites one or several relevant passages from LLMs' own memory via sampling, and then produces the final answers. We show that RECITE is a powerful paradigm for knowledge-intensive NLP tasks. Specifically, we show that by utilizing recitation as the intermediate step, a recite-and-answer scheme can achieve new state-of-the-art performance in various closed-book question answering (CBQA) tasks. In experiments, we verify the effectiveness of \\method~on four pre-trained models (PaLM, UL2, OPT, and Codex) and three CBQA tasks (Natural Questions, TriviaQA, and HotpotQA). Our code is available at\"https://github.com/Edward-Sun/RECITE\".",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-01296",
+        "ArXiv": "2210.01296",
+        "DOI": "10.48550/arXiv.2210.01296",
+        "CorpusId": 252692968
+      },
+      "arxiv_id": "2210.01296",
+      "doi": "10.48550/arXiv.2210.01296",
+      "corpus_id": 252692968
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "33",
+      "ref_key": "S2:5ceacf55c063b91080a29196ccb858522ccd6c09",
+      "paperId": "5ceacf55c063b91080a29196ccb858522ccd6c09",
+      "title": "AiSAQ: All-in-Storage ANNS with Product Quantization for DRAM-free Information Retrieval",
+      "year": 2024,
+      "abstract": "In approximate nearest neighbor search (ANNS) methods based on approximate proximity graphs, DiskANN achieves good recall-speed balance for large-scale datasets using both of RAM and storage. Despite it claims to save memory usage by loading compressed vectors by product quantization (PQ), its memory usage increases in proportion to the scale of datasets. In this paper, we propose All-in-Storage ANNS with Product Quantization (AiSAQ), which offloads the compressed vectors to storage. Our method achieves $\\sim$10 MB memory usage in query search even with billion-scale datasets with minor performance degradation. AiSAQ also reduces the index load time before query search, which enables the index switch between muitiple billion-scale datasets and significantly enhances the flexibility of retrieval-augmented generation (RAG). This method is applicable to all graph-based ANNS algorithms and can be combined with higher-spec ANNS methods in the future.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2404-06004",
+        "ArXiv": "2404.06004",
+        "DOI": "10.48550/arXiv.2404.06004",
+        "CorpusId": 269010102
+      },
+      "arxiv_id": "2404.06004",
+      "doi": "10.48550/arXiv.2404.06004",
+      "corpus_id": 269010102
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "34",
+      "ref_key": "S2:f208ea909fa7f54fea82def9a92fd81dfc758c39",
+      "paperId": "f208ea909fa7f54fea82def9a92fd81dfc758c39",
+      "title": "Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions",
+      "year": 2022,
+      "abstract": "Prompting-based large language models (LLMs) are surprisingly powerful at generating natural language reasoning steps or Chains-of-Thoughts (CoT) for multi-step question answering (QA). They struggle, however, when the necessary knowledge is either unavailable to the LLM or not up-to-date within its parameters. While using the question to retrieve relevant text from an external knowledge source helps LLMs, we observe that this one-step retrieve-and-read approach is insufficient for multi-step QA. Here, what to retrieve depends on what has already been derived, which in turn may depend on what was previously retrieved. To address this, we propose IRCoT, a new approach for multi-step QA that interleaves retrieval with steps (sentences) in a CoT, guiding the retrieval with CoT and in turn using retrieved results to improve CoT. Using IRCoT with GPT3 substantially improves retrieval (up to 21 points) as well as downstream QA (up to 15 points) on four datasets: HotpotQA, 2WikiMultihopQA, MuSiQue, and IIRC. We observe similar substantial gains in out-of-distribution (OOD) settings as well as with much smaller models such as Flan-T5-large without additional training. IRCoT reduces model hallucination, resulting in factually more accurate CoT reasoning.",
+      "externalIds": {
+        "ArXiv": "2212.10509",
+        "DBLP": "journals/corr/abs-2212-10509",
+        "ACL": "2023.acl-long.557",
+        "DOI": "10.48550/arXiv.2212.10509",
+        "CorpusId": 254877499
+      },
+      "arxiv_id": "2212.10509",
+      "doi": "10.48550/arXiv.2212.10509",
+      "corpus_id": 254877499
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "35",
+      "ref_key": "S2:49408c5e1ac75854f1580e561384df2be870d559",
+      "paperId": "49408c5e1ac75854f1580e561384df2be870d559",
+      "title": "KnowledGPT: Enhancing Large Language Models with Retrieval and Storage Access on Knowledge Bases",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have demonstrated impressive impact in the field of natural language processing, but they still struggle with several issues regarding, such as completeness, timeliness, faithfulness and adaptability. While recent efforts have focuses on connecting LLMs with external knowledge sources, the integration of knowledge bases (KBs) remains understudied and faces several challenges. In this paper, we introduce KnowledGPT, a comprehensive framework to bridge LLMs with various knowledge bases, facilitating both the retrieval and storage of knowledge. The retrieval process employs the program of thought prompting, which generates search language for KBs in code format with pre-defined functions for KB operations. Besides retrieval, KnowledGPT offers the capability to store knowledge in a personalized KB, catering to individual user demands. With extensive experiments, we show that by integrating LLMs with KBs, KnowledGPT properly answers a broader range of questions requiring world knowledge compared with vanilla LLMs, utilizing both knowledge existing in widely-known KBs and extracted into personalized KBs.",
+      "externalIds": {
+        "ArXiv": "2308.11761",
+        "DBLP": "journals/corr/abs-2308-11761",
+        "DOI": "10.48550/arXiv.2308.11761",
+        "CorpusId": 261076315
+      },
+      "arxiv_id": "2308.11761",
+      "doi": "10.48550/arXiv.2308.11761",
+      "corpus_id": 261076315
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "36",
+      "ref_key": "S2:7848d4b4e6ba0897a85cebb6467e94eb0b60d583",
+      "paperId": "7848d4b4e6ba0897a85cebb6467e94eb0b60d583",
+      "title": "Learning to Filter Context for Retrieval-Augmented Generation",
+      "year": 2023,
+      "abstract": "On-the-fly retrieval of relevant knowledge has proven an essential element of reliable systems for tasks such as open-domain question answering and fact verification. However, because retrieval systems are not perfect, generation models are required to generate outputs given partially or entirely irrelevant passages. This can cause over- or under-reliance on context, and result in problems in the generated output such as hallucinations. To alleviate these problems, we propose FILCO, a method that improves the quality of the context provided to the generator by (1) identifying useful context based on lexical and information-theoretic approaches, and (2) training context filtering models that can filter retrieved contexts at test time. We experiment on six knowledge-intensive tasks with FLAN-T5 and LLaMa2, and demonstrate that our method outperforms existing approaches on extractive question answering (QA), complex multi-hop and long-form QA, fact verification, and dialog generation tasks. FILCO effectively improves the quality of context, whether or not it supports the canonical output.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-08377",
+        "ArXiv": "2311.08377",
+        "DOI": "10.48550/arXiv.2311.08377",
+        "CorpusId": 265157538
+      },
+      "arxiv_id": "2311.08377",
+      "doi": "10.48550/arXiv.2311.08377",
+      "corpus_id": 265157538
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "37",
+      "ref_key": "S2:ccc772d88c231275f24c4fac9b28bbe0942e1107",
+      "paperId": "ccc772d88c231275f24c4fac9b28bbe0942e1107",
+      "title": "Query2doc: Query Expansion with Large Language Models",
+      "year": 2023,
+      "abstract": "This paper introduces a simple yet effective query expansion approach, denoted as query2doc, to improve both sparse and dense retrieval systems. The proposed method first generates pseudo-documents by few-shot prompting large language models (LLMs), and then expands the query with generated pseudo-documents. LLMs are trained on web-scale text corpora and are adept at knowledge memorization. The pseudo-documents from LLMs often contain highly relevant information that can aid in query disambiguation and guide the retrievers. Experimental results demonstrate that query2doc boosts the performance of BM25 by 3% to 15% on ad-hoc IR datasets, such as MS-MARCO and TREC DL, without any model fine-tuning. Furthermore, our method also benefits state-of-the-art dense retrievers in terms of both in-domain and out-of-domain results.",
+      "externalIds": {
+        "ArXiv": "2303.07678",
+        "DBLP": "conf/emnlp/WangYW23",
+        "DOI": "10.48550/arXiv.2303.07678",
+        "CorpusId": 257505063
+      },
+      "arxiv_id": "2303.07678",
+      "doi": "10.48550/arXiv.2303.07678",
+      "corpus_id": 257505063
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "38",
+      "ref_key": "S2:d99fcc9136b60a824752a0ccb656bb9ae0c1c4ea",
+      "paperId": "d99fcc9136b60a824752a0ccb656bb9ae0c1c4ea",
+      "title": "BlendFilter: Advancing Retrieval-Augmented Large Language Models via Query Generation Blending and Knowledge Filtering",
+      "year": 2024,
+      "abstract": "Retrieval-augmented Large Language Models (LLMs) offer substantial benefits in enhancing performance across knowledge-intensive scenarios. However, these methods often struggle with complex inputs and encounter difficulties due to noisy knowledge retrieval, notably hindering model effectiveness. To address this issue, we introduce BlendFilter, a novel approach that elevates retrieval-augmented LLMs by integrating query generation blending with knowledge filtering. BlendFilter proposes the blending process through its query generation method, which integrates both external and internal knowledge augmentation with the original query, ensuring comprehensive information gathering. Additionally, our distinctive knowledge filtering module capitalizes on the intrinsic capabilities of the LLM, effectively eliminating extraneous data. We conduct extensive experiments on three open-domain question answering benchmarks, and the findings clearly indicate that our innovative BlendFilter surpasses state-of-the-art baselines significantly.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-11129",
+        "ACL": "2024.emnlp-main.58",
+        "ArXiv": "2402.11129",
+        "DOI": "10.48550/arXiv.2402.11129",
+        "CorpusId": 267751221
+      },
+      "arxiv_id": "2402.11129",
+      "doi": "10.48550/arXiv.2402.11129",
+      "corpus_id": 267751221
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "39",
+      "ref_key": "S2:83a1bfc3a86543d12e0dbbfea99a3cd65e57c6a1",
+      "paperId": "83a1bfc3a86543d12e0dbbfea99a3cd65e57c6a1",
+      "title": "List-aware Reranking-Truncation Joint Model for Search and Retrieval-augmented Generation",
+      "year": 2024,
+      "abstract": "The results of information retrieval (IR) are usually presented in the form of a ranking list of candidate documents, such as web search for humans and retrieval-augmented generation for large language models (LLMs). List-aware retrieval aims to capture the list-level contextual features to return a better list, mainly including reranking and truncation. Reranking finely re-scores the documents in the list. Truncation dynamically determines the cut-off point of the ranked list to achieve the trade-off between overall relevance and avoiding misinformation from irrelevant documents. Previous studies treat them as two separate tasks and model them separately. However, the separation is not optimal. First, it is hard to share the contextual information of the ranking list between the two tasks. Second, the separate pipeline usually meets the error accumulation problem, where the small error from the reranking stage can largely affect the truncation stage. To solve these problems, we propose a Reranking-Truncation joint model (GenRT) that can perform the two tasks concurrently. GenRT integrates reranking and truncation via a generative paradigm based on an encoder-decoder architecture with novel loss functions for joint optimization to learn both tasks. Sharing parameters by the joint model is conducive to making full use of the common modeling information of the two tasks. Besides, the two tasks are performed concurrently and co-optimized to solve the error accumulation problem between separate stages. Experiments on public learning-to-rank benchmarks and open-domain Q&A tasks show that our method achieves SOTA performance on both reranking and truncation tasks for web search and retrieval-augmented LLMs.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-02764",
+        "ArXiv": "2402.02764",
+        "DOI": "10.1145/3589334.3645336",
+        "CorpusId": 267412492
+      },
+      "arxiv_id": "2402.02764",
+      "doi": "10.1145/3589334.3645336",
+      "corpus_id": 267412492
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "40",
+      "ref_key": "S2:5bbc2b5aa6c63c6a2cfccf095d6020b063ad47ac",
+      "paperId": "5bbc2b5aa6c63c6a2cfccf095d6020b063ad47ac",
+      "title": "Corrective Retrieval Augmented Generation",
+      "year": 2024,
+      "abstract": "Large language models (LLMs) inevitably exhibit hallucinations since the accuracy of generated texts cannot be secured solely by the parametric knowledge they encapsulate. Although retrieval-augmented generation (RAG) is a practicable complement to LLMs, it relies heavily on the relevance of retrieved documents, raising concerns about how the model behaves if retrieval goes wrong. To this end, we propose the Corrective Retrieval Augmented Generation (CRAG) to improve the robustness of generation. Specifically, a lightweight retrieval evaluator is designed to assess the overall quality of retrieved documents for a query, returning a confidence degree based on which different knowledge retrieval actions can be triggered. Since retrieval from static and limited corpora can only return sub-optimal documents, large-scale web searches are utilized as an extension for augmenting the retrieval results. Besides, a decompose-then-recompose algorithm is designed for retrieved documents to selectively focus on key information and filter out irrelevant information in them. CRAG is plug-and-play and can be seamlessly coupled with various RAG-based approaches. Experiments on four datasets covering short- and long-form generation tasks show that CRAG can significantly improve the performance of RAG-based approaches.",
+      "externalIds": {
+        "ArXiv": "2401.15884",
+        "DBLP": "journals/corr/abs-2401-15884",
+        "DOI": "10.48550/arXiv.2401.15884",
+        "CorpusId": 267312595
+      },
+      "arxiv_id": "2401.15884",
+      "doi": "10.48550/arXiv.2401.15884",
+      "corpus_id": 267312595
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "41",
+      "ref_key": "S2:d824b7154ad6df729fef49030ee170466911414b",
+      "paperId": "d824b7154ad6df729fef49030ee170466911414b",
+      "title": "PRCA: Fitting Black-Box Large Language Models for Retrieval Question Answering via Pluggable Reward-Driven Contextual Adapter",
+      "year": 2023,
+      "abstract": "The Retrieval Question Answering (ReQA) task employs the retrieval-augmented framework, composed of a retriever and generator. The generator formulates the answer based on the documents retrieved by the retriever. Incorporating Large Language Models (LLMs) as generators is beneficial due to their advanced QA capabilities, but they are typically too large to be fine-tuned with budget constraints while some of them are only accessible via APIs. To tackle this issue and further improve ReQA performance, we propose a trainable Pluggable Reward-Driven Contextual Adapter (PRCA), keeping the generator as a black box. Positioned between the retriever and generator in a Pluggable manner, PRCA refines the retrieved information by operating in a token-autoregressive strategy via maximizing rewards of the reinforcement learning phase. Our experiments validate PRCA's effectiveness in enhancing ReQA performance on three datasets by up to 20% improvement to fit black-box LLMs into existing frameworks, demonstrating its considerable potential in the LLMs era.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/YangLZW0L023",
+        "ArXiv": "2310.18347",
+        "DOI": "10.48550/arXiv.2310.18347",
+        "CorpusId": 264590451
+      },
+      "arxiv_id": "2310.18347",
+      "doi": "10.48550/arXiv.2310.18347",
+      "corpus_id": 264590451
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "42",
+      "ref_key": "S2:24811cadf16519910f643b6084107164e6ca4219",
+      "paperId": "24811cadf16519910f643b6084107164e6ca4219",
+      "title": "Augmentation-Adapted Retriever Improves Generalization of Language Models as Generic Plug-In",
+      "year": 2023,
+      "abstract": "Retrieval augmentation can aid language models (LMs) in knowledge-intensive tasks by supplying them with external information. Prior works on retrieval augmentation usually jointly fine-tune the retriever and the LM, making them closely coupled. In this paper, we explore the scheme of generic retrieval plug-in: the retriever is to assist target LMs that may not be known beforehand or are unable to be fine-tuned together. To retrieve useful documents for unseen target LMs, we propose augmentation-adapted retriever (AAR), which learns LM’s preferences obtained from a known source LM. Experiments on the MMLU and PopQA datasets demonstrate that our AAR trained with a small source LM is able to significantly improve the zero-shot generalization of larger target LMs ranging from 250M Flan-T5 to 175B InstructGPT. Further analysis indicates that the preferences of different LMs overlap, enabling AAR trained with a single source LM to serve as a generic plug-in for various target LMs. Our code is open-sourced at https://github.com/OpenMatch/Augmentation-Adapted-Retriever.",
+      "externalIds": {
+        "DBLP": "conf/acl/YuXY023",
+        "ACL": "2023.acl-long.136",
+        "ArXiv": "2305.17331",
+        "DOI": "10.48550/arXiv.2305.17331",
+        "CorpusId": 258960666
+      },
+      "arxiv_id": "2305.17331",
+      "doi": "10.48550/arXiv.2305.17331",
+      "corpus_id": 258960666
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "43",
+      "ref_key": "S2:b2542a738b75ee9b7ce1a13d8b78f9095d212412",
+      "paperId": "b2542a738b75ee9b7ce1a13d8b78f9095d212412",
+      "title": "Generate rather than Retrieve: Large Language Models are Strong Context Generators",
+      "year": 2022,
+      "abstract": "Knowledge-intensive tasks, such as open-domain question answering (QA), require access to a large amount of world or domain knowledge. A common approach for knowledge-intensive tasks is to employ a retrieve-then-read pipeline that first retrieves a handful of relevant contextual documents from an external corpus such as Wikipedia and then predicts an answer conditioned on the retrieved documents. In this paper, we present a novel perspective for solving knowledge-intensive tasks by replacing document retrievers with large language model generators. We call our method generate-then-read (GenRead), which first prompts a large language model to generate contextutal documents based on a given question, and then reads the generated documents to produce the final answer. Furthermore, we propose a novel clustering-based prompting method that selects distinct prompts, resulting in the generated documents that cover different perspectives, leading to better recall over acceptable answers. We conduct extensive experiments on three different knowledge-intensive tasks, including open-domain QA, fact checking, and dialogue system. Notably, GenRead achieves 71.6 and 54.4 exact match scores on TriviaQA and WebQ, significantly outperforming the state-of-the-art retrieve-then-read pipeline DPR-FiD by +4.0 and +3.9, without retrieving any documents from any external knowledge source. Lastly, we demonstrate the model performance can be further improved by combining retrieval and generation. Our code and generated documents can be found at https://github.com/wyu97/GenRead.",
+      "externalIds": {
+        "ArXiv": "2209.10063",
+        "DBLP": "conf/iclr/0002IWXJ000023",
+        "CorpusId": 252408513
+      },
+      "arxiv_id": "2209.10063",
+      "doi": null,
+      "corpus_id": 252408513
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "44",
+      "ref_key": "S2:8f02e0ac92a0b34360eb12105f4b8d98ab91d45a",
+      "paperId": "8f02e0ac92a0b34360eb12105f4b8d98ab91d45a",
+      "title": "Evidence-Driven Retrieval Augmented Response Generation for Online Misinformation",
+      "year": 2024,
+      "abstract": "The proliferation of online misinformation has posed significant threats to public interest. While numerous online users actively participate in the combat against misinformation, many of such responses can be characterized by the lack of politeness and supporting facts. As a solution, text generation approaches are proposed to automatically produce counter-misinformation responses. Nevertheless, existing methods are often trained end-to-end without leveraging external knowledge, resulting in subpar text quality and excessively repetitive responses. In this paper, we propose retrieval augmented response generation for online misinformation (RARG), which collects supporting evidence from scientific sources and generates counter-misinformation responses based on the evidences. In particular, our RARG consists of two stages: (1) evidence collection, where we design a retrieval pipeline to retrieve and rerank evidence documents using a database comprising over 1M academic articles; (2) response generation, in which we align large language models (LLMs) to generate evidence-based responses via reinforcement learning from human feedback (RLHF). We propose a reward function to maximize the utilization of the retrieved evidence while maintaining the quality of the generated text, which yields polite and factual responses that clearly refutes misinformation. To demonstrate the effectiveness of our method, we study the case of COVID-19 and perform extensive experiments with both in- and cross-domain datasets, where RARG consistently outperforms baselines by generating high-quality counter-misinformation responses.",
+      "externalIds": {
+        "ACL": "2024.naacl-long.313",
+        "DBLP": "conf/naacl/YueZLSZW24",
+        "ArXiv": "2403.14952",
+        "DOI": "10.48550/arXiv.2403.14952",
+        "CorpusId": 268667523
+      },
+      "arxiv_id": "2403.14952",
+      "doi": "10.48550/arXiv.2403.14952",
+      "corpus_id": 268667523
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "45",
+      "ref_key": "S2:821e7c70e6637f07ab94a843c0de273f8618763b",
+      "paperId": "821e7c70e6637f07ab94a843c0de273f8618763b",
+      "title": "PersonaRAG: Enhancing Retrieval-Augmented Generation Systems with User-Centric Agents",
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) struggle with generating reliable outputs due to outdated knowledge and hallucinations. Retrieval-Augmented Generation (RAG) models address this by enhancing LLMs with external knowledge, but often fail to personalize the retrieval process. This paper introduces PersonaRAG, a novel framework incorporating user-centric agents to adapt retrieval and generation based on real-time user data and interactions. Evaluated across various question answering datasets, PersonaRAG demonstrates superiority over baseline models, providing tailored answers to user needs. The results suggest promising directions for user-adapted information retrieval systems.",
+      "externalIds": {
+        "DBLP": "conf/ir-rag/ZerhoudiG24",
+        "ArXiv": "2407.09394",
+        "DOI": "10.48550/arXiv.2407.09394",
+        "CorpusId": 271161731
+      },
+      "arxiv_id": "2407.09394",
+      "doi": "10.48550/arXiv.2407.09394",
+      "corpus_id": 271161731
+    },
+    {
+      "paper_id": "2404.10981",
+      "ref_index": "46",
+      "ref_key": "S2:0786c88990235414611478099e43611542d973b0",
+      "paperId": "0786c88990235414611478099e43611542d973b0",
+      "title": "Take a Step Back: Evoking Reasoning via Abstraction in Large Language Models",
+      "year": 2023,
+      "abstract": "We present Step-Back Prompting, a simple prompting technique that enables LLMs to do abstractions to derive high-level concepts and first principles from instances containing specific details. Using the concepts and principles to guide reasoning, LLMs significantly improve their abilities in following a correct reasoning path towards the solution. We conduct experiments of Step-Back Prompting with PaLM-2L, GPT-4 and Llama2-70B models, and observe substantial performance gains on various challenging reasoning-intensive tasks including STEM, Knowledge QA, and Multi-Hop Reasoning. For instance, Step-Back Prompting improves PaLM-2L performance on MMLU (Physics and Chemistry) by 7% and 11% respectively, TimeQA by 27%, and MuSiQue by 7%.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-06117",
+        "ArXiv": "2310.06117",
+        "DOI": "10.48550/arXiv.2310.06117",
+        "CorpusId": 263830368
+      },
+      "arxiv_id": "2310.06117",
+      "doi": "10.48550/arXiv.2310.06117",
+      "corpus_id": 263830368
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "RAG": {
+        "Pre-Retrieval": {
+          "Indexing": {
+            "002c256d30d6be4b23d365a8de8ae0e67e4c9641": {},
+            "1266477120913d274346b044b4cc72ea893b1382": {},
+            "832fff14d2ed50eb7969c4c4b976c35776548f56": {},
+            "f163042aadc800489516f86475165543a62c88b1": {},
+            "858cbd99d5a3d2658254d055cd26e06f81050927": {},
+            "7be8c119dbe065c52125ee7716601751f3116844": {},
+            "58ed1fbaabe027345f7bb3a6312d41c5aac63e22": {},
+            "06694e08d53dd1dc89067c6964d2c496bbe0a088": {},
+            "2f3efe44083af91cef562c1a3451eee2f8601d22": {},
+            "5ceacf55c063b91080a29196ccb858522ccd6c09": {}
+          },
+          "Query Manipulation": {
+            "746b96ee17e329f1085a047116c05e12eaa3925a": {},
+            "e86009d9f9b1cdf083a48d087552bc4153784451": {},
+            "88884b8806262a4095036041e3567d450dba39f7": {},
+            "03532123ccffae8d411264320e8a5ae2b6eddea0": {},
+            "e468ed6b824e60f45ba9a20b034e4090c6630751": {},
+            "2f3efe44083af91cef562c1a3451eee2f8601d22": {},
+            "1cc6cc4960f7df59e7813d9a8e11098d0a0d0720": {},
+            "f208ea909fa7f54fea82def9a92fd81dfc758c39": {},
+            "49408c5e1ac75854f1580e561384df2be870d559": {},
+            "ccc772d88c231275f24c4fac9b28bbe0942e1107": {},
+            "8f02e0ac92a0b34360eb12105f4b8d98ab91d45a": {},
+            "0786c88990235414611478099e43611542d973b0": {}
+          },
+          "Data Modification": {
+            "41b796b026a1d322de6ef0b280d3e2e68eee65bd": {},
+            "f7212245d3787c66b8dc1e9fa4bc48349cef1155": {},
+            "368fb35a07076eba01c2e4700499323cd4524513": {},
+            "ed99a2572fb5f4240aa6068e3bf274832e831306": {},
+            "49408c5e1ac75854f1580e561384df2be870d559": {},
+            "b2542a738b75ee9b7ce1a13d8b78f9095d212412": {},
+            "8f02e0ac92a0b34360eb12105f4b8d98ab91d45a": {}
+          },
+          "Retrieval": {
+            "Search \\& Ranking": {
+              "002c256d30d6be4b23d365a8de8ae0e67e4c9641": {},
+              "1266477120913d274346b044b4cc72ea893b1382": {},
+              "f7212245d3787c66b8dc1e9fa4bc48349cef1155": {},
+              "08dd6f6adf5657516d53db1946780a5d31a10676": {},
+              "832fff14d2ed50eb7969c4c4b976c35776548f56": {},
+              "ea8c46e193d5121e440daf96edfd15a47151c293": {},
+              "88884b8806262a4095036041e3567d450dba39f7": {},
+              "f70bf522a90c09ed06c32c9bf36b7ee14b8a9856": {},
+              "7be8c119dbe065c52125ee7716601751f3116844": {},
+              "27f8af480211586d07ff5ee6441ff6724ce85f4e": {},
+              "58ed1fbaabe027345f7bb3a6312d41c5aac63e22": {},
+              "368fb35a07076eba01c2e4700499323cd4524513": {},
+              "2f3efe44083af91cef562c1a3451eee2f8601d22": {},
+              "a1675f47125aa409525c5f759b5e6bcc1c8831aa": {},
+              "d824b7154ad6df729fef49030ee170466911414b": {},
+              "24811cadf16519910f643b6084107164e6ca4219": {}
+            },
+            "Post-Retrieval": {
+              "Re-Ranking": {
+                "c0aac09fe67c39fbb377e45e03e38cd0d9b24ab4": {},
+                "41b796b026a1d322de6ef0b280d3e2e68eee65bd": {},
+                "e86009d9f9b1cdf083a48d087552bc4153784451": {},
+                "c406074e331fa11604059bdeb36433dc9d1e20de": {},
+                "fc74fe92fb9e34d3ae1237bf9a6e718c723f4f3e": {},
+                "1148782ef3582e18d32c0e354f8e88b8d7e71cc9": {},
+                "03532123ccffae8d411264320e8a5ae2b6eddea0": {},
+                "e468ed6b824e60f45ba9a20b034e4090c6630751": {},
+                "465471bb5bf1a945549d6291c2d23367966b4957": {},
+                "a1675f47125aa409525c5f759b5e6bcc1c8831aa": {},
+                "83a1bfc3a86543d12e0dbbfea99a3cd65e57c6a1": {}
+              },
+              "Filtering": {
+                "ddbd8fe782ac98e9c64dd98710687a962195dd9b": {},
+                "c0aac09fe67c39fbb377e45e03e38cd0d9b24ab4": {},
+                "e86009d9f9b1cdf083a48d087552bc4153784451": {},
+                "1148782ef3582e18d32c0e354f8e88b8d7e71cc9": {},
+                "e468ed6b824e60f45ba9a20b034e4090c6630751": {},
+                "2f3efe44083af91cef562c1a3451eee2f8601d22": {},
+                "7848d4b4e6ba0897a85cebb6467e94eb0b60d583": {},
+                "d99fcc9136b60a824752a0ccb656bb9ae0c1c4ea": {},
+                "5bbc2b5aa6c63c6a2cfccf095d6020b063ad47ac": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000001",
+        "paperId": "002c256d30d6be4b23d365a8de8ae0e67e4c9641",
+        "ref_index": "2",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Indexing"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000002",
+        "paperId": "1266477120913d274346b044b4cc72ea893b1382",
+        "ref_index": "4",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Indexing"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000003",
+        "paperId": "832fff14d2ed50eb7969c4c4b976c35776548f56",
+        "ref_index": "10",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Indexing"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000004",
+        "paperId": "f163042aadc800489516f86475165543a62c88b1",
+        "ref_index": "16",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Indexing"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000005",
+        "paperId": "858cbd99d5a3d2658254d055cd26e06f81050927",
+        "ref_index": "17",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Indexing"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000006",
+        "paperId": "7be8c119dbe065c52125ee7716601751f3116844",
+        "ref_index": "19",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Indexing"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000007",
+        "paperId": "58ed1fbaabe027345f7bb3a6312d41c5aac63e22",
+        "ref_index": "22",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Indexing"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000008",
+        "paperId": "06694e08d53dd1dc89067c6964d2c496bbe0a088",
+        "ref_index": "25",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Indexing"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000009",
+        "paperId": "2f3efe44083af91cef562c1a3451eee2f8601d22",
+        "ref_index": "26",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Indexing"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000010",
+        "paperId": "5ceacf55c063b91080a29196ccb858522ccd6c09",
+        "ref_index": "33",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Indexing"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000011",
+        "paperId": "746b96ee17e329f1085a047116c05e12eaa3925a",
+        "ref_index": "3",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Query Manipulation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000012",
+        "paperId": "e86009d9f9b1cdf083a48d087552bc4153784451",
+        "ref_index": "7",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Query Manipulation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000013",
+        "paperId": "88884b8806262a4095036041e3567d450dba39f7",
+        "ref_index": "15",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Query Manipulation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000014",
+        "paperId": "03532123ccffae8d411264320e8a5ae2b6eddea0",
+        "ref_index": "20",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Query Manipulation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000015",
+        "paperId": "e468ed6b824e60f45ba9a20b034e4090c6630751",
+        "ref_index": "23",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Query Manipulation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000016",
+        "paperId": "2f3efe44083af91cef562c1a3451eee2f8601d22",
+        "ref_index": "26",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Query Manipulation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000017",
+        "paperId": "1cc6cc4960f7df59e7813d9a8e11098d0a0d0720",
+        "ref_index": "31",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Query Manipulation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000018",
+        "paperId": "f208ea909fa7f54fea82def9a92fd81dfc758c39",
+        "ref_index": "34",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Query Manipulation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000019",
+        "paperId": "49408c5e1ac75854f1580e561384df2be870d559",
+        "ref_index": "35",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Query Manipulation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000020",
+        "paperId": "ccc772d88c231275f24c4fac9b28bbe0942e1107",
+        "ref_index": "37",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Query Manipulation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000021",
+        "paperId": "8f02e0ac92a0b34360eb12105f4b8d98ab91d45a",
+        "ref_index": "44",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Query Manipulation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000022",
+        "paperId": "0786c88990235414611478099e43611542d973b0",
+        "ref_index": "46",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Query Manipulation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000023",
+        "paperId": "41b796b026a1d322de6ef0b280d3e2e68eee65bd",
+        "ref_index": "5",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Data Modification"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000024",
+        "paperId": "f7212245d3787c66b8dc1e9fa4bc48349cef1155",
+        "ref_index": "6",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Data Modification"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000025",
+        "paperId": "368fb35a07076eba01c2e4700499323cd4524513",
+        "ref_index": "24",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Data Modification"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000026",
+        "paperId": "ed99a2572fb5f4240aa6068e3bf274832e831306",
+        "ref_index": "32",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Data Modification"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000027",
+        "paperId": "49408c5e1ac75854f1580e561384df2be870d559",
+        "ref_index": "35",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Data Modification"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000028",
+        "paperId": "b2542a738b75ee9b7ce1a13d8b78f9095d212412",
+        "ref_index": "43",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Data Modification"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000029",
+        "paperId": "8f02e0ac92a0b34360eb12105f4b8d98ab91d45a",
+        "ref_index": "44",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Data Modification"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000030",
+        "paperId": "002c256d30d6be4b23d365a8de8ae0e67e4c9641",
+        "ref_index": "2",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Search \\& Ranking"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000031",
+        "paperId": "1266477120913d274346b044b4cc72ea893b1382",
+        "ref_index": "4",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Search \\& Ranking"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000032",
+        "paperId": "f7212245d3787c66b8dc1e9fa4bc48349cef1155",
+        "ref_index": "6",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Search \\& Ranking"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000033",
+        "paperId": "08dd6f6adf5657516d53db1946780a5d31a10676",
+        "ref_index": "8",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Search \\& Ranking"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000034",
+        "paperId": "832fff14d2ed50eb7969c4c4b976c35776548f56",
+        "ref_index": "10",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Search \\& Ranking"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000035",
+        "paperId": "ea8c46e193d5121e440daf96edfd15a47151c293",
+        "ref_index": "14",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Search \\& Ranking"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000036",
+        "paperId": "88884b8806262a4095036041e3567d450dba39f7",
+        "ref_index": "15",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Search \\& Ranking"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000037",
+        "paperId": "f70bf522a90c09ed06c32c9bf36b7ee14b8a9856",
+        "ref_index": "18",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Search \\& Ranking"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000038",
+        "paperId": "7be8c119dbe065c52125ee7716601751f3116844",
+        "ref_index": "19",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Search \\& Ranking"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000039",
+        "paperId": "27f8af480211586d07ff5ee6441ff6724ce85f4e",
+        "ref_index": "21",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Search \\& Ranking"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000040",
+        "paperId": "58ed1fbaabe027345f7bb3a6312d41c5aac63e22",
+        "ref_index": "22",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Search \\& Ranking"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000041",
+        "paperId": "368fb35a07076eba01c2e4700499323cd4524513",
+        "ref_index": "24",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Search \\& Ranking"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000042",
+        "paperId": "2f3efe44083af91cef562c1a3451eee2f8601d22",
+        "ref_index": "26",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Search \\& Ranking"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000043",
+        "paperId": "a1675f47125aa409525c5f759b5e6bcc1c8831aa",
+        "ref_index": "29",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Search \\& Ranking"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000044",
+        "paperId": "d824b7154ad6df729fef49030ee170466911414b",
+        "ref_index": "41",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Search \\& Ranking"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000045",
+        "paperId": "24811cadf16519910f643b6084107164e6ca4219",
+        "ref_index": "42",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Search \\& Ranking"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000046",
+        "paperId": "c0aac09fe67c39fbb377e45e03e38cd0d9b24ab4",
+        "ref_index": "1",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Post-Retrieval",
+          "Re-Ranking"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000047",
+        "paperId": "41b796b026a1d322de6ef0b280d3e2e68eee65bd",
+        "ref_index": "5",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Post-Retrieval",
+          "Re-Ranking"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000048",
+        "paperId": "e86009d9f9b1cdf083a48d087552bc4153784451",
+        "ref_index": "7",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Post-Retrieval",
+          "Re-Ranking"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000049",
+        "paperId": "c406074e331fa11604059bdeb36433dc9d1e20de",
+        "ref_index": "9",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Post-Retrieval",
+          "Re-Ranking"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000050",
+        "paperId": "fc74fe92fb9e34d3ae1237bf9a6e718c723f4f3e",
+        "ref_index": "11",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Post-Retrieval",
+          "Re-Ranking"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000051",
+        "paperId": "1148782ef3582e18d32c0e354f8e88b8d7e71cc9",
+        "ref_index": "13",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Post-Retrieval",
+          "Re-Ranking"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000052",
+        "paperId": "03532123ccffae8d411264320e8a5ae2b6eddea0",
+        "ref_index": "20",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Post-Retrieval",
+          "Re-Ranking"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000053",
+        "paperId": "e468ed6b824e60f45ba9a20b034e4090c6630751",
+        "ref_index": "23",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Post-Retrieval",
+          "Re-Ranking"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000054",
+        "paperId": "465471bb5bf1a945549d6291c2d23367966b4957",
+        "ref_index": "27",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Post-Retrieval",
+          "Re-Ranking"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000055",
+        "paperId": "a1675f47125aa409525c5f759b5e6bcc1c8831aa",
+        "ref_index": "29",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Post-Retrieval",
+          "Re-Ranking"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000056",
+        "paperId": "83a1bfc3a86543d12e0dbbfea99a3cd65e57c6a1",
+        "ref_index": "39",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Post-Retrieval",
+          "Re-Ranking"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000057",
+        "paperId": "ddbd8fe782ac98e9c64dd98710687a962195dd9b",
+        "ref_index": "0",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Post-Retrieval",
+          "Filtering"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000058",
+        "paperId": "c0aac09fe67c39fbb377e45e03e38cd0d9b24ab4",
+        "ref_index": "1",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Post-Retrieval",
+          "Filtering"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000059",
+        "paperId": "e86009d9f9b1cdf083a48d087552bc4153784451",
+        "ref_index": "7",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Post-Retrieval",
+          "Filtering"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000060",
+        "paperId": "1148782ef3582e18d32c0e354f8e88b8d7e71cc9",
+        "ref_index": "13",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Post-Retrieval",
+          "Filtering"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000061",
+        "paperId": "e468ed6b824e60f45ba9a20b034e4090c6630751",
+        "ref_index": "23",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Post-Retrieval",
+          "Filtering"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000062",
+        "paperId": "2f3efe44083af91cef562c1a3451eee2f8601d22",
+        "ref_index": "26",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Post-Retrieval",
+          "Filtering"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000063",
+        "paperId": "7848d4b4e6ba0897a85cebb6467e94eb0b60d583",
+        "ref_index": "36",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Post-Retrieval",
+          "Filtering"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000064",
+        "paperId": "d99fcc9136b60a824752a0ccb656bb9ae0c1c4ea",
+        "ref_index": "38",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Post-Retrieval",
+          "Filtering"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2404.10981",
+        "arxiv_id": "2404.10981",
+        "leaf_mention_id": "2404.10981::000065",
+        "paperId": "5bbc2b5aa6c63c6a2cfccf095d6020b063ad47ac",
+        "ref_index": "40",
+        "path": [
+          "RAG",
+          "Pre-Retrieval",
+          "Retrieval",
+          "Post-Retrieval",
+          "Filtering"
+        ],
+        "depth": 5,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 65,
+      "unique_leaf_paper_count": 43,
+      "multi_membership_extra_mentions": 22,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

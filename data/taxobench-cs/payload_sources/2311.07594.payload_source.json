@@ -1,0 +1,2414 @@
+{
+  "paper_id": "2311.07594",
+  "arxiv_id": "2311.07594",
+  "title": "How to Bridge the Gap between Modalities: Survey on Multimodal Large Language Model",
+  "ref_meta": [
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "0",
+      "ref_key": "S2:d98536f24272e258b1d399074b64284d64786099",
+      "paperId": "d98536f24272e258b1d399074b64284d64786099",
+      "title": "AVIS: Autonomous Visual Information Seeking with Large Language Models",
+      "year": 2023,
+      "abstract": "In this paper, we propose an autonomous information seeking visual question answering framework, AVIS. Our method leverages a Large Language Model (LLM) to dynamically strategize the utilization of external tools and to investigate their outputs, thereby acquiring the indispensable knowledge needed to provide answers to the posed questions. Responding to visual questions that necessitate external knowledge, such as\"What event is commemorated by the building depicted in this image?\", is a complex task. This task presents a combinatorial search space that demands a sequence of actions, including invoking APIs, analyzing their responses, and making informed decisions. We conduct a user study to collect a variety of instances of human decision-making when faced with this task. This data is then used to design a system comprised of three components: an LLM-powered planner that dynamically determines which tool to use next, an LLM-powered reasoner that analyzes and extracts key information from the tool outputs, and a working memory component that retains the acquired information throughout the process. The collected user behavior serves as a guide for our system in two key ways. First, we create a transition graph by analyzing the sequence of decisions made by users. This graph delineates distinct states and confines the set of actions available at each state. Second, we use examples of user decision-making to provide our LLM-powered planner and reasoner with relevant contextual instances, enhancing their capacity to make informed decisions. We show that AVIS achieves state-of-the-art results on knowledge-intensive visual question answering benchmarks such as Infoseek and OK-VQA.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2306-08129",
+        "ArXiv": "2306.08129",
+        "DOI": "10.48550/arXiv.2306.08129",
+        "CorpusId": 259164452
+      },
+      "arxiv_id": "2306.08129",
+      "doi": "10.48550/arXiv.2306.08129",
+      "corpus_id": 259164452
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "1",
+      "ref_key": "S2:966852963a88a28786b798c91b6662d6e501e590",
+      "paperId": "966852963a88a28786b798c91b6662d6e501e590",
+      "title": "AssistGPT: A General Multi-modal Assistant that can Plan, Execute, Inspect, and Learn",
+      "year": 2023,
+      "abstract": "Recent research on Large Language Models (LLMs) has led to remarkable advancements in general NLP AI assistants. Some studies have further explored the use of LLMs for planning and invoking models or APIs to address more general multi-modal user queries. Despite this progress, complex visual-based tasks still remain challenging due to the diverse nature of visual tasks. This diversity is reflected in two aspects: 1) Reasoning paths. For many real-life applications, it is hard to accurately decompose a query simply by examining the query itself. Planning based on the specific visual content and the results of each step is usually required. 2) Flexible inputs and intermediate results. Input forms could be flexible for in-the-wild cases, and involves not only a single image or video but a mixture of videos and images, e.g., a user-view image with some reference videos. Besides, a complex reasoning process will also generate diverse multimodal intermediate results, e.g., video narrations, segmented video clips, etc. To address such general cases, we propose a multi-modal AI assistant, AssistGPT, with an interleaved code and language reasoning approach called Plan, Execute, Inspect, and Learn (PEIL) to integrate LLMs with various tools. Specifically, the Planner is capable of using natural language to plan which tool in Executor should do next based on the current reasoning progress. Inspector is an efficient memory manager to assist the Planner to feed proper visual information into a specific tool. Finally, since the entire reasoning process is complex and flexible, a Learner is designed to enable the model to autonomously explore and discover the optimal solution. We conducted experiments on A-OKVQA and NExT-QA benchmarks, achieving state-of-the-art results. Moreover, showcases demonstrate the ability of our system to handle questions far more complex than those found in the benchmarks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2306-08640",
+        "ArXiv": "2306.08640",
+        "DOI": "10.48550/arXiv.2306.08640",
+        "CorpusId": 259164559
+      },
+      "arxiv_id": "2306.08640",
+      "doi": "10.48550/arXiv.2306.08640",
+      "corpus_id": 259164559
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "2",
+      "ref_key": "S2:722ad6ac92286507437b31486f47987d6ece05c9",
+      "paperId": "722ad6ac92286507437b31486f47987d6ece05c9",
+      "title": "BEiT: BERT Pre-Training of Image Transformers",
+      "year": 2021,
+      "abstract": "We introduce a self-supervised vision representation model BEiT, which stands for Bidirectional Encoder representation from Image Transformers. Following BERT developed in the natural language processing area, we propose a masked image modeling task to pretrain vision Transformers. Specifically, each image has two views in our pre-training, i.e, image patches (such as 16x16 pixels), and visual tokens (i.e., discrete tokens). We first\"tokenize\"the original image into visual tokens. Then we randomly mask some image patches and fed them into the backbone Transformer. The pre-training objective is to recover the original visual tokens based on the corrupted image patches. After pre-training BEiT, we directly fine-tune the model parameters on downstream tasks by appending task layers upon the pretrained encoder. Experimental results on image classification and semantic segmentation show that our model achieves competitive results with previous pre-training methods. For example, base-size BEiT achieves 83.2% top-1 accuracy on ImageNet-1K, significantly outperforming from-scratch DeiT training (81.8%) with the same setup. Moreover, large-size BEiT obtains 86.3% only using ImageNet-1K, even outperforming ViT-L with supervised pre-training on ImageNet-22K (85.2%). The code and pretrained models are available at https://aka.ms/beit.",
+      "externalIds": {
+        "DBLP": "conf/iclr/Bao0PW22",
+        "ArXiv": "2106.08254",
+        "CorpusId": 235436185
+      },
+      "arxiv_id": "2106.08254",
+      "doi": null,
+      "corpus_id": 235436185
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "3",
+      "ref_key": "S2:30cc95639cffca4ffa8c0eafbc502636c0c88fa5",
+      "paperId": "30cc95639cffca4ffa8c0eafbc502636c0c88fa5",
+      "title": "BLIVA: A Simple Multimodal LLM for Better Handling of Text-Rich Visual Questions",
+      "year": 2023,
+      "abstract": "Vision Language Models (VLMs), which extend Large Language Models (LLM) by incorporating visual understanding capability, have demonstrated significant advancements in addressing open-ended visual question-answering (VQA) tasks. However, these models cannot accurately interpret images infused with text, a common occurrence in real-world scenarios. Standard procedures for extracting information from images often involve learning a fixed set of query embeddings. These embeddings are designed to encapsulate image contexts and are later used as soft prompt inputs in LLMs. Yet, this process is limited to the token count, potentially curtailing the recognition of scenes with text-rich context. To improve upon them, the present study introduces BLIVA: an augmented version of InstructBLIP with Visual Assistant. BLIVA incorporates the query embeddings from InstructBLIP and also directly projects encoded patch embeddings into the LLM, a technique inspired by LLaVA. This approach assists the model to capture intricate details potentially missed during the query decoding process. Empirical evidence demonstrates that our model, BLIVA, significantly enhances performance in processing text-rich VQA benchmarks (up to 17.76% in OCR-VQA benchmark) and in undertaking general (not particularly text-rich) VQA benchmarks (up to 7.9% in Visual Spatial Reasoning benchmark), and achieved 17.72% overall improvement in a comprehensive multimodal LLM benchmark (MME), comparing to our baseline InstructBLIP. BLIVA demonstrates significant capability in decoding real-world images, irrespective of text presence. To demonstrate the broad industry applications enabled by BLIVA, we evaluate the model using a new dataset comprising YouTube thumbnails paired with question-answer sets across 11 diverse categories. For researchers interested in further exploration, our code and models are freely accessible at https://github.com/mlpc-ucsd/BLIVA.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-09936",
+        "ArXiv": "2308.09936",
+        "DOI": "10.48550/arXiv.2308.09936",
+        "CorpusId": 261049015
+      },
+      "arxiv_id": "2308.09936",
+      "doi": "10.48550/arXiv.2308.09936",
+      "corpus_id": 261049015
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "4",
+      "ref_key": "S2:6f8b9192b1f215254ee7625d752710182c05d2f9",
+      "paperId": "6f8b9192b1f215254ee7625d752710182c05d2f9",
+      "title": "Caption Anything: Interactive Image Description with Diverse Multimodal Controls",
+      "year": 2023,
+      "abstract": "Controllable image captioning is an emerging multimodal topic that aims to describe the image with natural language following human purpose, $\\textit{e.g.}$, looking at the specified regions or telling in a particular text style. State-of-the-art methods are trained on annotated pairs of input controls and output captions. However, the scarcity of such well-annotated multimodal data largely limits their usability and scalability for interactive AI systems. Leveraging unimodal instruction-following foundation models is a promising alternative that benefits from broader sources of data. In this paper, we present Caption AnyThing (CAT), a foundation model augmented image captioning framework supporting a wide range of multimodel controls: 1) visual controls, including points, boxes, and trajectories; 2) language controls, such as sentiment, length, language, and factuality. Powered by Segment Anything Model (SAM) and ChatGPT, we unify the visual and language prompts into a modularized framework, enabling the flexible combination between different controls. Extensive case studies demonstrate the user intention alignment capabilities of our framework, shedding light on effective user interaction modeling in vision-language applications. Our code is publicly available at https://github.com/ttengwang/Caption-Anything.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-02677",
+        "ArXiv": "2305.02677",
+        "DOI": "10.48550/arXiv.2305.02677",
+        "CorpusId": 258479994
+      },
+      "arxiv_id": "2305.02677",
+      "doi": "10.48550/arXiv.2305.02677",
+      "corpus_id": 258479994
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "5",
+      "ref_key": "S2:40795cf9508cc26e1fd47b71e14e40f2f1c71c11",
+      "paperId": "40795cf9508cc26e1fd47b71e14e40f2f1c71c11",
+      "title": "CancerGPT: Few-shot Drug Pair Synergy Prediction using Large Pre-trained Language Models",
+      "year": 2023,
+      "abstract": "Large pre-trained language models (LLMs) have been shown to have significant potential in few-shot learning across various fields, even with minimal training data. However, their ability to generalize to unseen tasks in more complex fields, such as biology, has yet to be fully evaluated. LLMs can offer a promising alternative approach for biological inference, particularly in cases where structured data and sample size are limited, by extracting prior knowledge from text corpora. Our proposed few-shot learning approach uses LLMs to predict the synergy of drug pairs in rare tissues that lack structured data and features. Our experiments, which involved seven rare tissues from different cancer types, demonstrated that the LLM-based prediction model achieved significant accuracy with very few or zero samples. Our proposed model, the CancerGPT (with ~ 124M parameters), was even comparable to the larger fine-tuned GPT-3 model (with ~ 175B parameters). Our research is the first to tackle drug pair synergy prediction in rare tissues with limited data. We are also the first to utilize an LLM-based prediction model for biological reaction prediction tasks.",
+      "externalIds": {
+        "ArXiv": "2304.10946",
+        "PubMedCentral": "10153348",
+        "DBLP": "journals/corr/abs-2304-10946",
+        "DOI": "10.48550/arXiv.2304.10946",
+        "CorpusId": 258291811,
+        "PubMed": "37131872"
+      },
+      "arxiv_id": "2304.10946",
+      "doi": "10.48550/arXiv.2304.10946",
+      "corpus_id": 258291811
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "6",
+      "ref_key": "S2:170c97c7215f42edfb20c2248f954879e91ef86e",
+      "paperId": "170c97c7215f42edfb20c2248f954879e91ef86e",
+      "title": "Chameleon: Plug-and-Play Compositional Reasoning with Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have achieved remarkable progress in solving various natural language processing tasks due to emergent reasoning abilities. However, LLMs have inherent limitations as they are incapable of accessing up-to-date information (stored on the Web or in task-specific knowledge bases), using external tools, and performing precise mathematical and logical reasoning. In this paper, we present Chameleon, an AI system that mitigates these limitations by augmenting LLMs with plug-and-play modules for compositional reasoning. Chameleon synthesizes programs by composing various tools (e.g., LLMs, off-the-shelf vision models, web search engines, Python functions, and heuristic-based modules) for accomplishing complex reasoning tasks. At the heart of Chameleon is an LLM-based planner that assembles a sequence of tools to execute to generate the final response. We showcase the effectiveness of Chameleon on two multi-modal knowledge-intensive reasoning tasks: ScienceQA and TabMWP. Chameleon, powered by GPT-4, achieves an 86.54% overall accuracy on ScienceQA, improving the best published few-shot result by 11.37%. On TabMWP, GPT-4-powered Chameleon improves the accuracy by 17.0%, lifting the state of the art to 98.78%. Our analysis also shows that the GPT-4-powered planner exhibits more consistent and rational tool selection via inferring potential constraints from instructions, compared to a ChatGPT-powered planner. The project is available at https://chameleon-llm.github.io.",
+      "externalIds": {
+        "DBLP": "conf/nips/LuPCGCWZG23",
+        "ArXiv": "2304.09842",
+        "DOI": "10.48550/arXiv.2304.09842",
+        "CorpusId": 258212542
+      },
+      "arxiv_id": "2304.09842",
+      "doi": "10.48550/arXiv.2304.09842",
+      "corpus_id": 258212542
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "7",
+      "ref_key": "S2:69cfdc8df16ae63b7acba4ac6f727f78b86893c3",
+      "paperId": "69cfdc8df16ae63b7acba4ac6f727f78b86893c3",
+      "title": "ChatGPT Asks, BLIP-2 Answers: Automatic Questioning Towards Enriched Visual Descriptions",
+      "year": 2023,
+      "abstract": "Asking insightful questions is crucial for acquiring knowledge and expanding our understanding of the world. However, the importance of questioning has been largely overlooked in AI research, where models have been primarily developed to answer questions. With the recent advancements of large language models (LLMs) like ChatGPT, we discover their capability to ask high-quality questions when provided with a suitable prompt. This discovery presents a new opportunity to develop an automatic questioning system. In this paper, we introduce ChatCaptioner, a novel automatic-questioning method deployed in image captioning. Here, ChatGPT is prompted to ask a series of informative questions about images to BLIP-2, a strong vision question-answering model. By keeping acquiring new visual information from BLIP-2's answers, ChatCaptioner is able to generate more enriched image descriptions. We conduct human-subject evaluations on common image caption datasets such as COCO, Conceptual Caption, and WikiArt, and compare ChatCaptioner with BLIP-2 as well as ground truth. Our results demonstrate that ChatCaptioner's captions are significantly more informative, receiving three times as many votes from human evaluators for providing the most image information. Besides, ChatCaptioner identifies 53% more objects within the image than BLIP-2 alone measured by WordNet synset matching. Code is available at https://github.com/Vision-CAIR/ChatCaptioner",
+      "externalIds": {
+        "DBLP": "journals/tmlr/Zhu0HSZE24",
+        "ArXiv": "2303.06594",
+        "DOI": "10.48550/arXiv.2303.06594",
+        "CorpusId": 257496234
+      },
+      "arxiv_id": "2303.06594",
+      "doi": "10.48550/arXiv.2303.06594",
+      "corpus_id": 257496234
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "8",
+      "ref_key": "S2:055e3aa78a542c6cec016169f3011c2bf4e46932",
+      "paperId": "055e3aa78a542c6cec016169f3011c2bf4e46932",
+      "title": "CoVLM: Composing Visual Entities and Relationships in Large Language Models Via Communicative Decoding",
+      "year": 2023,
+      "abstract": "A remarkable ability of human beings resides in compositional reasoning, i.e., the capacity to make\"infinite use of finite means\". However, current large vision-language foundation models (VLMs) fall short of such compositional abilities due to their\"bag-of-words\"behaviors and inability to construct words that correctly represent visual entities and the relations among the entities. To this end, we propose CoVLM, which can guide the LLM to explicitly compose visual entities and relationships among the text and dynamically communicate with the vision encoder and detection network to achieve vision-language communicative decoding. Specifically, we first devise a set of novel communication tokens for the LLM, for dynamic communication between the visual detection system and the language system. A communication token is generated by the LLM following a visual entity or a relation, to inform the detection network to propose regions that are relevant to the sentence generated so far. The proposed regions-of-interests (ROIs) are then fed back into the LLM for better language generation contingent on the relevant regions. The LLM is thus able to compose the visual entities and relationships through the communication tokens. The vision-to-language and language-to-vision communication are iteratively performed until the entire sentence is generated. Our framework seamlessly bridges the gap between visual perception and LLMs and outperforms previous VLMs by a large margin on compositional reasoning benchmarks (e.g., ~20% in HICO-DET mAP, ~14% in Cola top-1 accuracy, and ~3% on ARO top-1 accuracy). We also achieve state-of-the-art performances on traditional vision-language tasks such as referring expression comprehension and visual question answering.",
+      "externalIds": {
+        "ArXiv": "2311.03354",
+        "DBLP": "conf/iclr/LiCHCCSG24",
+        "DOI": "10.48550/arXiv.2311.03354",
+        "CorpusId": 265043790
+      },
+      "arxiv_id": "2311.03354",
+      "doi": "10.48550/arXiv.2311.03354",
+      "corpus_id": 265043790
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "9",
+      "ref_key": "S2:2313afae52d98e569da2dedbf14daf9efc74e7cf",
+      "paperId": "2313afae52d98e569da2dedbf14daf9efc74e7cf",
+      "title": "CogVLM: Visual Expert for Pretrained Language Models",
+      "year": 2023,
+      "abstract": "We introduce CogVLM, a powerful open-source visual language foundation model. Different from the popular shallow alignment method which maps image features into the input space of language model, CogVLM bridges the gap between the frozen pretrained language model and image encoder by a trainable visual expert module in the attention and FFN layers. As a result, CogVLM enables deep fusion of vision language features without sacrificing any performance on NLP tasks. CogVLM-17B achieves state-of-the-art performance on 10 classic cross-modal benchmarks, including NoCaps, Flicker30k captioning, RefCOCO, RefCOCO+, RefCOCOg, Visual7W, GQA, ScienceQA, VizWiz VQA and TDIUC, and ranks the 2nd on VQAv2, OKVQA, TextVQA, COCO captioning, etc., surpassing or matching PaLI-X 55B. Codes and checkpoints are available at https://github.com/THUDM/CogVLM.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-03079",
+        "ArXiv": "2311.03079",
+        "DOI": "10.48550/arXiv.2311.03079",
+        "CorpusId": 265034288
+      },
+      "arxiv_id": "2311.03079",
+      "doi": "10.48550/arXiv.2311.03079",
+      "corpus_id": 265034288
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "10",
+      "ref_key": "S2:7b689adb8c156d6158660f90d1c86888ee281f63",
+      "paperId": "7b689adb8c156d6158660f90d1c86888ee281f63",
+      "title": "DreamLLM: Synergistic Multimodal Comprehension and Creation",
+      "year": 2023,
+      "abstract": "This paper presents DreamLLM, a learning framework that first achieves versatile Multimodal Large Language Models (MLLMs) empowered with frequently overlooked synergy between multimodal comprehension and creation. DreamLLM operates on two fundamental principles. The first focuses on the generative modeling of both language and image posteriors by direct sampling in the raw multimodal space. This approach circumvents the limitations and information loss inherent to external feature extractors like CLIP, and a more thorough multimodal understanding is obtained. Second, DreamLLM fosters the generation of raw, interleaved documents, modeling both text and image contents, along with unstructured layouts. This allows DreamLLM to learn all conditional, marginal, and joint multimodal distributions effectively. As a result, DreamLLM is the first MLLM capable of generating free-form interleaved content. Comprehensive experiments highlight DreamLLM's superior performance as a zero-shot multimodal generalist, reaping from the enhanced learning synergy. Project page: https://dreamllm.github.io.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2309-11499",
+        "ArXiv": "2309.11499",
+        "DOI": "10.48550/arXiv.2309.11499",
+        "CorpusId": 261975252
+      },
+      "arxiv_id": "2309.11499",
+      "doi": "10.48550/arXiv.2309.11499",
+      "corpus_id": 261975252
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "11",
+      "ref_key": "S2:2b2d9ee18507aa89a7f1ecba0bf68844c7d9aa75",
+      "paperId": "2b2d9ee18507aa89a7f1ecba0bf68844c7d9aa75",
+      "title": "Grounding Language Models to Images for Multimodal Generation",
+      "year": 2023,
+      "abstract": "We propose an efﬁcient method to ground pre-trained text-only language models to the visual domain, enabling them to process and generate arbitrarily interleaved image-and-text data. Our method leverages the abilities of language models learnt from large scale text-only pretraining, such as in-context learning and free-form text generation. We keep the language model frozen, and ﬁnetune input and output linear layers to enable cross-modality interactions. This allows our model to process arbitrarily interleaved image-and-text inputs, and generate free-form text inter-leaved with retrieved images. We achieve strong zero-shot performance on grounded tasks such as contextual image retrieval and multimodal dialogue, and showcase compelling interactive abilities. Our approach works with any off-the-shelf language model and paves the way towards an effective, general solution for leveraging pretrained language models in visually grounded settings.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2301-13823",
+        "DOI": "10.48550/arXiv.2301.13823",
+        "CorpusId": 256416164
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2301.13823",
+      "corpus_id": 256416164
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "12",
+      "ref_key": "S2:84dc889beff9d51fe429cff8c92735e7410ee3c2",
+      "paperId": "84dc889beff9d51fe429cff8c92735e7410ee3c2",
+      "title": "Aligning Large Multi-Modal Model with Robust Instruction Tuning",
+      "year": 2023,
+      "abstract": "Despite the promising progress in multi-modal tasks, current large multi-modal models (LMM) are prone to hallucinating inconsistent descriptions with respect to the associated image and human instructions. This paper addresses this issue by introducing the first large and diverse visual instruction tuning dataset, named Large-scale Robust Visual (LRV)-Instruction . Our dataset consists of 120k visual instructions generated by GPT4, covering 16 vision-and-language tasks with open-ended instructions and answers. Unlike existing studies that primarily focus on positive instruction samples, we design LRV-Instruction to include both positive and negative instructions for more robust visual instruction tuning. Our negative instructions are designed at two semantic levels: (i) Nonexistent Element Manipulation and (ii) Existent Element Manipulation . To efficiently measure the hallucination generated by LMMs, we propose GPT4-Assisted Visual Instruction Evaluation (GAVIE) , a novel approach to evaluate visual instruction tuning without the need for human-annotated groundtruth answers and can adapt to diverse instruction formats. We conduct comprehensive experiments to investigate the hallucination of LMMs. Our results demonstrate that existing LMMs exhibit significant hallucination when presented with our negative instructions, particularly with Existent Element Manipulation instructions. Moreover, by finetuning MiniGPT4 on LRV-Instruction , we successfully mitigate hallucination while improving performance on public datasets using less training data compared to state-of-the-art methods. Additionally, we observed that a balanced ratio of positive and negative instances in the training data leads to a more robust model. Our project link is available at this link.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2306-14565",
+        "DOI": "10.48550/arXiv.2306.14565",
+        "CorpusId": 263860779
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2306.14565",
+      "corpus_id": 263860779
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "13",
+      "ref_key": "S2:6ae4705139494fcb6b790b6dd6c4225b40ee40f8",
+      "paperId": "6ae4705139494fcb6b790b6dd6c4225b40ee40f8",
+      "title": "GLaMM: Pixel Grounding Large Multimodal Model",
+      "year": 2023,
+      "abstract": "Large Multimodal Models (LMMs) extend Large Lan-guage Models to the vision domain. Initial LMMs used holistic images and text prompts to generate ungrounded textual responses. Recently, region-level LMMs have been used to generate visually grounded responses. However, they are limited to only referring to a single object category at a time, require users to specify the regions, or can-not offer dense pixel-wise object grounding. In this work, we present Grounding LMM (GLaMM), the first model that can generate natural language responses seamlessly in-tertwined with corresponding object segmentation masks. GLaMM not only grounds objects appearing in the con-versations but is flexible enough to accept both textual and optional visual prompts (region of interest) as input. This empowers users to interact with the model at various levels of granularity, both in textual and visual domains. Due to the lack of standard benchmarks for the novel setting of visually Grounded Conversation Generation (GCG), we in-troduce a comprehensive evaluation protocol with our curated grounded conversations. Our proposed GCG task requires densely grounded concepts in natural scenes at a large-scale. To this end, we propose a densely annotated Grounding-anything Dataset (GranD) using our proposed automated annotation pipeline that encompasses 7.5M unique concepts grounded in a total of 810M regions available with segmentation masks. Besides GCG, GLaMM also performs effectively on several downstream tasks, e.g., referring expression segmentation, image and region-level captioning and vision-language conversations.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-03356",
+        "ArXiv": "2311.03356",
+        "DOI": "10.1109/CVPR52733.2024.01236",
+        "CorpusId": 265043538
+      },
+      "arxiv_id": "2311.03356",
+      "doi": "10.1109/CVPR52733.2024.01236",
+      "corpus_id": 265043538
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "14",
+      "ref_key": "S2:094883e42bb9a41f602c0715c1059bc431e33fb2",
+      "paperId": "094883e42bb9a41f602c0715c1059bc431e33fb2",
+      "title": "GPT4RoI: Instruction Tuning Large Language Model on Region-of-Interest",
+      "year": 2023,
+      "abstract": "Visual instruction tuning large language model(LLM) on image-text pairs has achieved general-purpose vision-language abilities. However, the lack of region-text pairs limits their advancements to fine-grained multimodal understanding. In this paper, we propose spatial instruction tuning, which introduces the reference to the region-of-interest(RoI) in the instruction. Before sending to LLM, the reference is replaced by RoI features and interleaved with language embeddings as a sequence. Our model GPT4RoI, trained on 7 region-text pair datasets, brings an unprecedented interactive and conversational experience compared to previous image-level models. (1) Interaction beyond language: Users can interact with our model by both language and drawing bounding boxes to flexibly adjust the referring granularity. (2) Versatile multimodal abilities: A variety of attribute information within each RoI can be mined by GPT4RoI, e.g., color, shape, material, action, etc. Furthermore, it can reason about multiple RoIs based on common sense. On the Visual Commonsense Reasoning(VCR) dataset, GPT4RoI achieves a remarkable accuracy of 81.6%, surpassing all existing models by a significant margin (the second place is 75.6%) and almost reaching human-level performance of 85.0%. The code, dataset, and demo can be found at https://github.com/jshilong/GPT4RoI.",
+      "externalIds": {
+        "ArXiv": "2307.03601",
+        "DBLP": "journals/corr/abs-2307-03601",
+        "DOI": "10.48550/arXiv.2307.03601",
+        "CorpusId": 259375716
+      },
+      "arxiv_id": "2307.03601",
+      "doi": "10.48550/arXiv.2307.03601",
+      "corpus_id": 259375716
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "15",
+      "ref_key": "S2:60ee030773ba1b68eb222a265b052ca028353362",
+      "paperId": "60ee030773ba1b68eb222a265b052ca028353362",
+      "title": "GIT: A Generative Image-to-text Transformer for Vision and Language",
+      "year": 2022,
+      "abstract": "In this paper, we design and train a Generative Image-to-text Transformer, GIT, to unify vision-language tasks such as image/video captioning and question answering. While generative models provide a consistent network architecture between pre-training and fine-tuning, existing work typically contains complex structures (uni/multi-modal encoder/decoder) and depends on external modules such as object detectors/taggers and optical character recognition (OCR). In GIT, we simplify the architecture as one image encoder and one text decoder under a single language modeling task. We also scale up the pre-training data and the model size to boost the model performance. Without bells and whistles, our GIT establishes new state of the arts on 12 challenging benchmarks with a large margin. For instance, our model surpasses the human performance for the first time on TextCaps (138.2 vs. 125.5 in CIDEr). Furthermore, we present a new scheme of generation-based image classification and scene text recognition, achieving decent performance on standard benchmarks. Codes are released at \\url{https://github.com/microsoft/GenerativeImage2Text}.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2205-14100",
+        "ArXiv": "2205.14100",
+        "DOI": "10.48550/arXiv.2205.14100",
+        "CorpusId": 249152323
+      },
+      "arxiv_id": "2205.14100",
+      "doi": "10.48550/arXiv.2205.14100",
+      "corpus_id": 249152323
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "16",
+      "ref_key": "S2:d1120d67b700e4dfe8b39eb1e48fbdea4e1a0c43",
+      "paperId": "d1120d67b700e4dfe8b39eb1e48fbdea4e1a0c43",
+      "title": "HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face",
+      "year": 2023,
+      "abstract": "Solving complicated AI tasks with different domains and modalities is a key step toward artificial general intelligence. While there are numerous AI models available for various domains and modalities, they cannot handle complicated AI tasks autonomously. Considering large language models (LLMs) have exhibited exceptional abilities in language understanding, generation, interaction, and reasoning, we advocate that LLMs could act as a controller to manage existing AI models to solve complicated AI tasks, with language serving as a generic interface to empower this. Based on this philosophy, we present HuggingGPT, an LLM-powered agent that leverages LLMs (e.g., ChatGPT) to connect various AI models in machine learning communities (e.g., Hugging Face) to solve AI tasks. Specifically, we use ChatGPT to conduct task planning when receiving a user request, select models according to their function descriptions available in Hugging Face, execute each subtask with the selected AI model, and summarize the response according to the execution results. By leveraging the strong language capability of ChatGPT and abundant AI models in Hugging Face, HuggingGPT can tackle a wide range of sophisticated AI tasks spanning different modalities and domains and achieve impressive results in language, vision, speech, and other challenging tasks, which paves a new way towards the realization of artificial general intelligence.",
+      "externalIds": {
+        "ArXiv": "2303.17580",
+        "DBLP": "journals/corr/abs-2303-17580",
+        "DOI": "10.48550/arXiv.2303.17580",
+        "CorpusId": 257833781
+      },
+      "arxiv_id": "2303.17580",
+      "doi": "10.48550/arXiv.2303.17580",
+      "corpus_id": 257833781
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "17",
+      "ref_key": "S2:7cf64070fd3d7e53d80f260c10e6bd7018d580e1",
+      "paperId": "7cf64070fd3d7e53d80f260c10e6bd7018d580e1",
+      "title": "IdealGPT: Iteratively Decomposing Vision and Language Reasoning via Large Language Models",
+      "year": 2023,
+      "abstract": "The field of vision-and-language (VL) understanding has made unprecedented progress with end-to-end large pre-trained VL models (VLMs). However, they still fall short in zero-shot reasoning tasks that require multi-step inferencing. To achieve this goal, previous works resort to a divide-and-conquer pipeline. In this paper, we argue that previous efforts have several inherent shortcomings: 1) They rely on domain-specific sub-question decomposing models. 2) They force models to predict the final answer even if the sub-questions or sub-answers provide insufficient information. We address these limitations via IdealGPT, a framework that iteratively decomposes VL reasoning using large language models (LLMs). Specifically, IdealGPT utilizes an LLM to generate sub-questions, a VLM to provide corresponding sub-answers, and another LLM to reason to achieve the final answer. These three modules perform the divide-and-conquer procedure iteratively until the model is confident about the final answer to the main question. We evaluate IdealGPT on multiple challenging VL reasoning tasks under a zero-shot setting. In particular, our IdealGPT outperforms the best existing GPT-4-like models by an absolute 10% on VCR and 15% on SNLI-VE. Code is available at https://github.com/Hxyou/IdealGPT",
+      "externalIds": {
+        "DBLP": "conf/emnlp/YouSW0WACC23",
+        "ArXiv": "2305.14985",
+        "DOI": "10.48550/arXiv.2305.14985",
+        "CorpusId": 258865952
+      },
+      "arxiv_id": "2305.14985",
+      "doi": "10.48550/arXiv.2305.14985",
+      "corpus_id": 258865952
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "18",
+      "ref_key": "S2:54a8b153ed04a872da878d695239bdc413dc782c",
+      "paperId": "54a8b153ed04a872da878d695239bdc413dc782c",
+      "title": "InternGPT: Solving Vision-Centric Tasks by Interacting with Chatbots Beyond Language",
+      "year": 2023,
+      "abstract": "We present an interactive visual framework named InternGPT, or iGPT for short. The framework integrates chatbots that have planning and reasoning capabilities, such as ChatGPT, with non-verbal instructions like pointing movements that enable users to directly manipulate images or videos on the screen. Pointing (including gestures, cursors, etc.) movements can provide more flexibility and precision in performing vision-centric tasks that require fine-grained control, editing, and generation of visual content. The name InternGPT stands for \\textbf{inter}action, \\textbf{n}onverbal, and \\textbf{chat}bots. Different from existing interactive systems that rely on pure language, by incorporating pointing instructions, the proposed iGPT significantly improves the efficiency of communication between users and chatbots, as well as the accuracy of chatbots in vision-centric tasks, especially in complicated visual scenarios where the number of objects is greater than 2. Additionally, in iGPT, an auxiliary control mechanism is used to improve the control capability of LLM, and a large vision-language model termed Husky is fine-tuned for high-quality multi-modal dialogue (impressing ChatGPT-3.5-turbo with 93.89\\% GPT-4 Quality). We hope this work can spark new ideas and directions for future interactive visual systems. Welcome to watch the code at https://github.com/OpenGVLab/InternGPT.",
+      "externalIds": {
+        "ArXiv": "2305.05662",
+        "DBLP": "journals/corr/abs-2305-05662",
+        "DOI": "10.48550/arXiv.2305.05662",
+        "CorpusId": 258564914
+      },
+      "arxiv_id": "2305.05662",
+      "doi": "10.48550/arXiv.2305.05662",
+      "corpus_id": 258564914
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "19",
+      "ref_key": "S2:c1e450284e7d6cac1855330a1197df8537df653f",
+      "paperId": "c1e450284e7d6cac1855330a1197df8537df653f",
+      "title": "InternLM-XComposer: A Vision-Language Large Model for Advanced Text-image Comprehension and Composition",
+      "year": 2023,
+      "abstract": "We propose InternLM-XComposer, a vision-language large model that enables advanced image-text comprehension and composition. The innovative nature of our model is highlighted by three appealing properties: 1) Interleaved Text-Image Composition: InternLM-XComposer can effortlessly generate coherent and contextual articles that seamlessly integrate images, providing a more engaging and immersive reading experience. Simply provide a writing instruction, and our system will generate the corresponding manuscript. It can intelligently identify the areas in the text where images would enhance the content and automatically insert the most appropriate visual candidates. 2) Comprehension with Rich Multilingual Knowledge: The text-image comprehension is empowered by training on an extensive multi-modal multilingual database with carefully crafted strategies, resulting in a deep understanding of visual content. 3) State-of-the-art Performance: Our model consistently achieves state-of-the-art results across various mainstream benchmarks for vision-language foundational models, including MME Benchmark, MMBench, MMBench-CN, Seed-Bench, CCBench (Chinese Cultural Benchmark), QBench and Tiny LVLM. Owing to the absence of established metrics for quantitatively assessing text-image composition, we have devised a robust evaluation procedure that comprises both human and GPT4-Vision (GPT4-V) to ensure reliability. Notably, our InternLM-XComposer achieves competitive text-image composition scores compared to public solutions, including GPT4-V and GPT3.5. Collectively, InternLM-XComposer seamlessly blends advanced text-image comprehension and composition, revolutionizing vision-language interaction and offering new insights and opportunities. The InternLM-XComposer model series are publicly available at https://github.com/InternLM/InternLM-XComposer.",
+      "externalIds": {
+        "ArXiv": "2309.15112",
+        "DBLP": "journals/corr/abs-2309-15112",
+        "DOI": "10.48550/arXiv.2309.15112",
+        "CorpusId": 262824937
+      },
+      "arxiv_id": "2309.15112",
+      "doi": "10.48550/arXiv.2309.15112",
+      "corpus_id": 262824937
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "20",
+      "ref_key": "S2:ab8ee8d06ed581c876da3a2e7a5fdb1cbec21a45",
+      "paperId": "ab8ee8d06ed581c876da3a2e7a5fdb1cbec21a45",
+      "title": "KAT: A Knowledge Augmented Transformer for Vision-and-Language",
+      "year": 2021,
+      "abstract": "The primary focus of recent work with large-scale transformers has been on optimizing the amount of information packed into the model’s parameters. In this work, we ask a complementary question: Can multimodal transformers leverage explicit knowledge in their reasoning? Existing, primarily unimodal, methods have explored approaches under the paradigm of knowledge retrieval followed by answer prediction, but leave open questions about the quality and relevance of the retrieved knowledge used, and how the reasoning processes over implicit and explicit knowledge should be integrated. To address these challenges, we propose a - Knowledge Augmented Transformer (KAT) - which achieves a strong state-of-the-art result (+6% absolute) on the open-domain multimodal task of OK-VQA. Our approach integrates implicit and explicit knowledge in an encoder-decoder architecture, while still jointly reasoning over both knowledge sources during answer generation. Additionally, explicit knowledge integration improves interpretability of model predictions in our analysis.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2112-08614",
+        "ACL": "2022.naacl-main.70",
+        "ArXiv": "2112.08614",
+        "DOI": "10.18653/v1/2022.naacl-main.70",
+        "CorpusId": 245219268
+      },
+      "arxiv_id": "2112.08614",
+      "doi": "10.18653/v1/2022.naacl-main.70",
+      "corpus_id": 245219268
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "21",
+      "ref_key": "S2:efc694164312006c543ef745611348ef64e68dda",
+      "paperId": "efc694164312006c543ef745611348ef64e68dda",
+      "title": "Towards Language Models That Can See: Computer Vision Through the LENS of Natural Language",
+      "year": 2023,
+      "abstract": "We propose LENS, a modular approach for tackling computer vision problems by leveraging the power of large language models (LLMs). Our system uses a language model to reason over outputs from a set of independent and highly descriptive vision modules that provide exhaustive information about an image. We evaluate the approach on pure computer vision settings such as zero- and few-shot object recognition, as well as on vision and language problems. LENS can be applied to any off-the-shelf LLM and we find that the LLMs with LENS perform highly competitively with much bigger and much more sophisticated systems, without any multimodal training whatsoever. We open-source our code at https://github.com/ContextualAI/lens and provide an interactive demo.",
+      "externalIds": {
+        "ArXiv": "2306.16410",
+        "DBLP": "journals/corr/abs-2306-16410",
+        "DOI": "10.48550/arXiv.2306.16410",
+        "CorpusId": 259274632
+      },
+      "arxiv_id": "2306.16410",
+      "doi": "10.48550/arXiv.2306.16410",
+      "corpus_id": 259274632
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "22",
+      "ref_key": "S2:c020f15be1dee20f9e2e0c5a6f05f272b5508325",
+      "paperId": "c020f15be1dee20f9e2e0c5a6f05f272b5508325",
+      "title": "LLaVA-Interactive: An All-in-One Demo for Image Chat, Segmentation, Generation and Editing",
+      "year": 2023,
+      "abstract": "LLaVA-Interactive is a research prototype for multimodal human-AI interaction. The system can have multi-turn dialogues with human users by taking multimodal user inputs and generating multimodal responses. Importantly, LLaVA-Interactive goes beyond language prompt, where visual prompt is enabled to align human intents in the interaction. The development of LLaVA-Interactive is extremely cost-efficient as the system combines three multimodal skills of pre-built AI models without additional model training: visual chat of LLaVA, image segmentation from SEEM, as well as image generation and editing from GLIGEN. A diverse set of application scenarios is presented to demonstrate the promises of LLaVA-Interactive and to inspire future research in multimodal interactive systems.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-00571",
+        "ArXiv": "2311.00571",
+        "DOI": "10.48550/arXiv.2311.00571",
+        "CorpusId": 264833352
+      },
+      "arxiv_id": "2311.00571",
+      "doi": "10.48550/arXiv.2311.00571",
+      "corpus_id": 264833352
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "23",
+      "ref_key": "S2:ecfff30e570498b6c87c5d1319a0cbcdf7a8b86d",
+      "paperId": "ecfff30e570498b6c87c5d1319a0cbcdf7a8b86d",
+      "title": "LLaVA-Plus: Learning to Use Tools for Creating Multimodal Agents",
+      "year": 2023,
+      "abstract": "LLaVA-Plus is a general-purpose multimodal assistant that expands the capabilities of large multimodal models. It maintains a skill repository of pre-trained vision and vision-language models and can activate relevant tools based on users' inputs to fulfill real-world tasks. LLaVA-Plus is trained on multimodal instruction-following data to acquire the ability to use tools, covering visual understanding, generation, external knowledge retrieval, and compositions. Empirical results show that LLaVA-Plus outperforms LLaVA in existing capabilities and exhibits new ones. It is distinct in that the image query is directly grounded and actively engaged throughout the entire human-AI interaction sessions, significantly improving tool use performance and enabling new scenarios.",
+      "externalIds": {
+        "DBLP": "conf/eccv/LiuCLZLRZYSZZGL24",
+        "ArXiv": "2311.05437",
+        "DOI": "10.48550/arXiv.2311.05437",
+        "CorpusId": 265067489
+      },
+      "arxiv_id": "2311.05437",
+      "doi": "10.48550/arXiv.2311.05437",
+      "corpus_id": 265067489
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "24",
+      "ref_key": "S2:d3bc7ba19e274bb6fb5e055a3f1b62924c731432",
+      "paperId": "d3bc7ba19e274bb6fb5e055a3f1b62924c731432",
+      "title": "Language Quantized AutoEncoders: Towards Unsupervised Text-Image Alignment",
+      "year": 2023,
+      "abstract": "Recent progress in scaling up large language models has shown impressive capabilities in performing few-shot learning across a wide range of text-based tasks. However, a key limitation is that these language models fundamentally lack visual perception - a crucial attribute needed to extend these models to be able to interact with the real world and solve vision tasks, such as in visual-question answering and robotics. Prior works have largely connected image to text through pretraining and/or fine-tuning on curated image-text datasets, which can be a costly and expensive process. In order to resolve this limitation, we propose a simple yet effective approach called Language-Quantized AutoEncoder (LQAE), a modification of VQ-VAE that learns to align text-image data in an unsupervised manner by leveraging pretrained language models (e.g., BERT, RoBERTa). Our main idea is to encode image as sequences of text tokens by directly quantizing image embeddings using a pretrained language codebook. We then apply random masking followed by a BERT model, and have the decoder reconstruct the original image from BERT predicted text token embeddings. By doing so, LQAE learns to represent similar images with similar clusters of text tokens, thereby aligning these two modalities without the use of aligned text-image pairs. This enables few-shot image classification with large language models (e.g., GPT-3) as well as linear classification of images based on BERT text features. To the best of our knowledge, our work is the first work that uses unaligned images for multimodal tasks by leveraging the power of pretrained language models.",
+      "externalIds": {
+        "DBLP": "conf/nips/LiuYA23",
+        "ArXiv": "2302.00902",
+        "DOI": "10.48550/arXiv.2302.00902",
+        "CorpusId": 256504073
+      },
+      "arxiv_id": "2302.00902",
+      "doi": "10.48550/arXiv.2302.00902",
+      "corpus_id": 256504073
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "25",
+      "ref_key": "S2:f22d71c7ce9720ba1f717a4f1181488200e78198",
+      "paperId": "f22d71c7ce9720ba1f717a4f1181488200e78198",
+      "title": "LLaVA-Med: Training a Large Language-and-Vision Assistant for Biomedicine in One Day",
+      "year": 2023,
+      "abstract": "Conversational generative AI has demonstrated remarkable promise for empowering biomedical practitioners, but current investigations focus on unimodal text. Multimodal conversational AI has seen rapid progress by leveraging billions of image-text pairs from the public web, but such general-domain vision-language models still lack sophistication in understanding and conversing about biomedical images. In this paper, we propose a cost-efficient approach for training a vision-language conversational assistant that can answer open-ended research questions of biomedical images. The key idea is to leverage a large-scale, broad-coverage biomedical figure-caption dataset extracted from PubMed Central, use GPT-4 to self-instruct open-ended instruction-following data from the captions, and then fine-tune a large general-domain vision-language model using a novel curriculum learning method. Specifically, the model first learns to align biomedical vocabulary using the figure-caption pairs as is, then learns to master open-ended conversational semantics using GPT-4 generated instruction-following data, broadly mimicking how a layperson gradually acquires biomedical knowledge. This enables us to train a Large Language and Vision Assistant for BioMedicine (LLaVA-Med) in less than 15 hours (with eight A100s). LLaVA-Med exhibits excellent multimodal conversational capability and can follow open-ended instruction to assist with inquiries about a biomedical image. On three standard biomedical visual question answering datasets, LLaVA-Med outperforms previous supervised state-of-the-art on certain metrics. To facilitate biomedical multimodal research, we will release our instruction-following data and the LLaVA-Med model.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2306-00890",
+        "ArXiv": "2306.00890",
+        "DOI": "10.48550/arXiv.2306.00890",
+        "CorpusId": 258999820
+      },
+      "arxiv_id": "2306.00890",
+      "doi": "10.48550/arXiv.2306.00890",
+      "corpus_id": 258999820
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "26",
+      "ref_key": "S2:ebddfdc5d845a788e8062eddbbf7a335737cb99b",
+      "paperId": "ebddfdc5d845a788e8062eddbbf7a335737cb99b",
+      "title": "What Matters in Training a GPT4-Style Language Model with Multimodal Inputs?",
+      "year": 2023,
+      "abstract": "Recent advancements in GPT-4V have displayed remarkable multi-modal capabilities in processing image inputs and following open-ended instructions. Despite these advancements, there is considerable scope for enhancing open-source multi-modal LLMs, especially in terms of multi-modal understanding accuracy and instruction-following proficiency. In this paper, we conduct a comprehensive study on training GPT4-style models. We introduce Lynx a multi-modal LLM developed through a series of controlled experiments comparing various model variants. This process allowed us to identify and implement an optimal training strategy tailored for multi-modal LLMs. In addition to our model development, we propose a plug-and-play technique designed to augment the instruction-following capabilities of multi-modal LLMs. We have validated the performance of Lynx on multiple benchmarks. Results demonstrate that Lynx not only achieves strong image understanding accuracy but also excels in instruction-following tasks, paving the path for ongoing enhancements in multi-modal LLMs.",
+      "externalIds": {
+        "ArXiv": "2307.02469",
+        "ACL": "2024.naacl-long.440",
+        "DBLP": "conf/naacl/ZengZZXWWZKS24",
+        "DOI": "10.48550/arXiv.2307.02469",
+        "CorpusId": 259342291
+      },
+      "arxiv_id": "2307.02469",
+      "doi": "10.48550/arXiv.2307.02469",
+      "corpus_id": 259342291
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "27",
+      "ref_key": "S2:c7a9c7302a72301ed79a7c0696d5af2e03ad3ac4",
+      "paperId": "c7a9c7302a72301ed79a7c0696d5af2e03ad3ac4",
+      "title": "MM-REACT: Prompting ChatGPT for Multimodal Reasoning and Action",
+      "year": 2023,
+      "abstract": "We propose MM-REACT, a system paradigm that integrates ChatGPT with a pool of vision experts to achieve multimodal reasoning and action. In this paper, we define and explore a comprehensive list of advanced vision tasks that are intriguing to solve, but may exceed the capabilities of existing vision and vision-language models. To achieve such advanced visual intelligence, MM-REACT introduces a textual prompt design that can represent text descriptions, textualized spatial coordinates, and aligned file names for dense visual signals such as images and videos. MM-REACT's prompt design allows language models to accept, associate, and process multimodal information, thereby facilitating the synergetic combination of ChatGPT and various vision experts. Zero-shot experiments demonstrate MM-REACT's effectiveness in addressing the specified capabilities of interests and its wide application in different scenarios that require advanced visual understanding. Furthermore, we discuss and compare MM-REACT's system paradigm with an alternative approach that extends language models for multimodal scenarios through joint finetuning. Code, demo, video, and visualization are available at https://multimodal-react.github.io/",
+      "externalIds": {
+        "ArXiv": "2303.11381",
+        "DBLP": "journals/corr/abs-2303-11381",
+        "DOI": "10.48550/arXiv.2303.11381",
+        "CorpusId": 257637012
+      },
+      "arxiv_id": "2303.11381",
+      "doi": "10.48550/arXiv.2303.11381",
+      "corpus_id": 257637012
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "28",
+      "ref_key": "S2:3803d1f291e162bdaa4678a2c5a2bbcf63c050f4",
+      "paperId": "3803d1f291e162bdaa4678a2c5a2bbcf63c050f4",
+      "title": "MMICL: Empowering Vision-language Model with Multi-Modal In-Context Learning",
+      "year": 2023,
+      "abstract": "Since the resurgence of deep learning, vision-language models (VLMs) enhanced by large language models (LLMs) have grown exponentially in popularity. However, while LLMs can utilize extensive background knowledge and task information with in-context learning, most VLMs still struggle with understanding complex multi-modal prompts with multiple images, making VLMs less effective in downstream vision-language tasks. In this paper, we address the limitation above by 1) introducing vision-language Model with Multi-Modal In-Context Learning(MMICL), a new approach to allow the VLM to deal with multi-modal inputs efficiently; 2) proposing a novel context scheme to augment the in-context learning ability of the VLM; 3) constructing the Multi-modal In-Context Learning (MIC) dataset, designed to enhance the VLM's ability to understand complex multi-modal prompts. Our experiments confirm that MMICL achieves new state-of-the-art zero-shot performance on a wide range of general vision-language tasks, especially for complex benchmarks, including MME and MMBench. Our analysis demonstrates that MMICL effectively tackles the challenge of complex multi-modal prompt understanding and emerges the impressive ICL ability. Furthermore, we observe that MMICL successfully alleviates language bias in VLMs, a common issue for VLMs that often leads to hallucination when faced with extensive textual context. Our code, dataset, dataset tool, and model are available at https://github.com/PKUnlp-icler/MIC",
+      "externalIds": {
+        "DBLP": "conf/iclr/ZhaoCSMA0LWHC24",
+        "ArXiv": "2309.07915",
+        "DOI": "10.48550/arXiv.2309.07915",
+        "CorpusId": 261823391
+      },
+      "arxiv_id": "2309.07915",
+      "doi": "10.48550/arXiv.2309.07915",
+      "corpus_id": 261823391
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "29",
+      "ref_key": "S2:0983883619a0ca597d055d0e58da2f514052913d",
+      "paperId": "0983883619a0ca597d055d0e58da2f514052913d",
+      "title": "Macaw-LLM: Multi-Modal Language Modeling with Image, Audio, Video, and Text Integration",
+      "year": 2023,
+      "abstract": "Although instruction-tuned large language models (LLMs) have exhibited remarkable capabilities across various NLP tasks, their effectiveness on other data modalities beyond text has not been fully studied. In this work, we propose Macaw-LLM, a novel multi-modal LLM that seamlessly integrates visual, audio, and textual information. Macaw-LLM consists of three main components: a modality module for encoding multi-modal data, a cognitive module for harnessing pretrained LLMs, and an alignment module for harmonizing diverse representations. Our novel alignment module seamlessly bridges multi-modal features to textual features, simplifying the adaptation process from the modality modules to the cognitive module. In addition, we construct a large-scale multi-modal instruction dataset in terms of multi-turn dialogue, including 69K image instances and 50K video instances. We have made our data, code and model publicly available, which we hope can pave the way for future research in multi-modal LLMs and expand the capabilities of LLMs to handle diverse data modalities and address complex real-world scenarios.",
+      "externalIds": {
+        "ArXiv": "2306.09093",
+        "DBLP": "journals/corr/abs-2306-09093",
+        "DOI": "10.48550/arXiv.2306.09093",
+        "CorpusId": 259165461
+      },
+      "arxiv_id": "2306.09093",
+      "doi": "10.48550/arXiv.2306.09093",
+      "corpus_id": 259165461
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "30",
+      "ref_key": "S2:d7d712e507c1c6273b05c773c825a668c5cf1504",
+      "paperId": "d7d712e507c1c6273b05c773c825a668c5cf1504",
+      "title": "MindAgent: Emergent Gaming Interaction",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) have the capacity of performing complex scheduling in a multi-agent system and can coordinate these agents into completing sophisticated tasks that require extensive collaboration. However, despite the introduction of numerous gaming frameworks, the community has insufficient benchmarks towards building general multi-agents collaboration infrastructure that encompass both LLM and human-NPCs collaborations. In this work, we propose a novel infrastructure - MindAgent - to evaluate planning and coordination emergent capabilities for gaming interaction. In particular, our infrastructure leverages existing gaming framework, to i) require understanding of the coordinator for a multi-agent system, ii) collaborate with human players via un-finetuned proper instructions, and iii) establish an in-context learning on few-shot prompt with feedback. Furthermore, we introduce CUISINEWORLD, a new gaming scenario and related benchmark that dispatch a multi-agent collaboration efficiency and supervise multiple agents playing the game simultaneously. We conduct comprehensive evaluations with new auto-metric CoS for calculating the collaboration efficiency. Finally, our infrastructure can be deployed into real-world gaming scenarios in a customized VR version of CUISINEWORLD and adapted in existing broader Minecraft gaming domain. We hope our findings on LLMs and the new infrastructure for general-purpose scheduling and coordination can help shed light on how such skills can be obtained by learning from large language corpora.",
+      "externalIds": {
+        "DBLP": "conf/naacl/GongHMNDZTFGV24",
+        "ArXiv": "2309.09971",
+        "DOI": "10.48550/arXiv.2309.09971",
+        "CorpusId": 261898118
+      },
+      "arxiv_id": "2309.09971",
+      "doi": "10.48550/arXiv.2309.09971",
+      "corpus_id": 261898118
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "31",
+      "ref_key": "S2:e7d09b6f2bc878cf2c993acf675f409d0b55f35a",
+      "paperId": "e7d09b6f2bc878cf2c993acf675f409d0b55f35a",
+      "title": "MiniGPT-5: Interleaved Vision-and-Language Generation via Generative Vokens",
+      "year": 2023,
+      "abstract": "The effectiveness of Multimodal Large Language Models (MLLMs) demonstrates a profound capability in multimodal understanding. However, the simultaneous generation of images with coherent texts is still underdeveloped. Addressing this, we introduce a novel interleaved vision-and-language generation method, centered around the concept of ``generative vokens\". These vokens serve as pivotal elements contributing to coherent image-text outputs. Our method is marked by a unique two-stage training strategy for description-free multimodal generation, which does not necessitate extensive descriptions of images. We integrate classifier-free guidance to enhance the alignment of generated images and texts, ensuring more seamless and contextually relevant multimodal interactions. Our model, MiniGPT-5, exhibits substantial improvement over the baseline models on multimodal generation datasets, including MMDialog and VIST. The human evaluation shows MiniGPT-5 is better than the baseline model on more than 56\\% cases for multimodal generation, highlighting its efficacy across diverse benchmarks.",
+      "externalIds": {
+        "ArXiv": "2310.02239",
+        "DBLP": "journals/corr/abs-2310-02239",
+        "DOI": "10.48550/arXiv.2310.02239",
+        "CorpusId": 263608981
+      },
+      "arxiv_id": "2310.02239",
+      "doi": "10.48550/arXiv.2310.02239",
+      "corpus_id": 263608981
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "32",
+      "ref_key": "S2:ca6a2bc279be5a3349a22bfd6866ed633d18734b",
+      "paperId": "ca6a2bc279be5a3349a22bfd6866ed633d18734b",
+      "title": "MiniGPT-4: Enhancing Vision-Language Understanding with Advanced Large Language Models",
+      "year": 2023,
+      "abstract": "The recent GPT-4 has demonstrated extraordinary multi-modal abilities, such as directly generating websites from handwritten text and identifying humorous elements within images. These features are rarely observed in previous vision-language models. However, the technical details behind GPT-4 continue to remain undisclosed. We believe that the enhanced multi-modal generation capabilities of GPT-4 stem from the utilization of sophisticated large language models (LLM). To examine this phenomenon, we present MiniGPT-4, which aligns a frozen visual encoder with a frozen advanced LLM, Vicuna, using one projection layer. Our work, for the first time, uncovers that properly aligning the visual features with an advanced large language model can possess numerous advanced multi-modal abilities demonstrated by GPT-4, such as detailed image description generation and website creation from hand-drawn drafts. Furthermore, we also observe other emerging capabilities in MiniGPT-4, including writing stories and poems inspired by given images, teaching users how to cook based on food photos, and so on. In our experiment, we found that the model trained on short image caption pairs could produce unnatural language outputs (e.g., repetition and fragmentation). To address this problem, we curate a detailed image description dataset in the second stage to finetune the model, which consequently improves the model's generation reliability and overall usability. Our code, pre-trained model, and collected dataset are available at https://minigpt-4.github.io/.",
+      "externalIds": {
+        "ArXiv": "2304.10592",
+        "DBLP": "conf/iclr/Zhu0SLE24",
+        "DOI": "10.48550/arXiv.2304.10592",
+        "CorpusId": 258291930
+      },
+      "arxiv_id": "2304.10592",
+      "doi": "10.48550/arXiv.2304.10592",
+      "corpus_id": 258291930
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "33",
+      "ref_key": "S2:81e7e82245c2f230eeb8aaaa1a2b2604c143754a",
+      "paperId": "81e7e82245c2f230eeb8aaaa1a2b2604c143754a",
+      "title": "MultiModal-GPT: A Vision and Language Model for Dialogue with Humans",
+      "year": 2023,
+      "abstract": "We present a vision and language model named MultiModal-GPT to conduct multi-round dialogue with humans. MultiModal-GPT can follow various instructions from humans, such as generating a detailed caption, counting the number of interested objects, and answering general questions from users. MultiModal-GPT is parameter-efficiently fine-tuned from OpenFlamingo, with Low-rank Adapter (LoRA) added both in the cross-attention part and the self-attention part of the language model. We first construct instruction templates with vision and language data for multi-modality instruction tuning to make the model understand and follow human instructions. We find the quality of training data is vital for the dialogue performance, where few data containing short answers can lead the model to respond shortly to any instructions. To further enhance the ability to chat with humans of the MultiModal-GPT, we utilize language-only instruction-following data to train the MultiModal-GPT jointly. The joint training of language-only and visual-language instructions with the \\emph{same} instruction template effectively improves dialogue performance. Various demos show the ability of continuous dialogue of MultiModal-GPT with humans. Code, dataset, and demo are at https://github.com/open-mmlab/Multimodal-GPT",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-04790",
+        "ArXiv": "2305.04790",
+        "DOI": "10.48550/arXiv.2305.04790",
+        "CorpusId": 258557672
+      },
+      "arxiv_id": "2305.04790",
+      "doi": "10.48550/arXiv.2305.04790",
+      "corpus_id": 258557672
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "34",
+      "ref_key": "S2:fa75a55760e6ea49b39b83cb85c99a22e1088254",
+      "paperId": "fa75a55760e6ea49b39b83cb85c99a22e1088254",
+      "title": "NExT-GPT: Any-to-Any Multimodal LLM",
+      "year": 2023,
+      "abstract": "While recently Multimodal Large Language Models (MM-LLMs) have made exciting strides, they mostly fall prey to the limitation of only input-side multimodal understanding, without the ability to produce content in multiple modalities. As we humans always perceive the world and communicate with people through various modalities, developing any-to-any MM-LLMs capable of accepting and delivering content in any modality becomes essential to human-level AI. To fill the gap, we present an end-to-end general-purpose any-to-any MM-LLM system, NExT-GPT. We connect an LLM with multimodal adaptors and different diffusion decoders, enabling NExT-GPT to perceive inputs and generate outputs in arbitrary combinations of text, images, videos, and audio. By leveraging the existing well-trained highly-performing encoders and decoders, NExT-GPT is tuned with only a small amount of parameter (1%) of certain projection layers, which not only benefits low-cost training and also facilitates convenient expansion to more potential modalities. Moreover, we introduce a modality-switching instruction tuning (MosIT) and manually curate a high-quality dataset for MosIT, based on which NExT-GPT is empowered with complex cross-modal semantic understanding and content generation. Overall, our research showcases the promising possibility of building an AI agent capable of modeling universal modalities, paving the way for more human-like AI research in the community. Project page: https://next-gpt.github.io/",
+      "externalIds": {
+        "ArXiv": "2309.05519",
+        "DBLP": "journals/corr/abs-2309-05519",
+        "DOI": "10.48550/arXiv.2309.05519",
+        "CorpusId": 261696650
+      },
+      "arxiv_id": "2309.05519",
+      "doi": "10.48550/arXiv.2309.05519",
+      "corpus_id": 261696650
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "35",
+      "ref_key": "S2:7fbc502441d66daf1f53765d5d86a8dfba9ab0ce",
+      "paperId": "7fbc502441d66daf1f53765d5d86a8dfba9ab0ce",
+      "title": "OpenFlamingo: An Open-Source Framework for Training Large Autoregressive Vision-Language Models",
+      "year": 2023,
+      "abstract": "We introduce OpenFlamingo, a family of autoregressive vision-language models ranging from 3B to 9B parameters. OpenFlamingo is an ongoing effort to produce an open-source replication of DeepMind's Flamingo models. On seven vision-language datasets, OpenFlamingo models average between 80 - 89% of corresponding Flamingo performance. This technical report describes our models, training data, hyperparameters, and evaluation suite. We share our models and code at https://github.com/mlfoundations/open_flamingo.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-01390",
+        "ArXiv": "2308.01390",
+        "DOI": "10.48550/arXiv.2308.01390",
+        "CorpusId": 261043320
+      },
+      "arxiv_id": "2308.01390",
+      "doi": "10.48550/arXiv.2308.01390",
+      "corpus_id": 261043320
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "36",
+      "ref_key": "S2:2f566575a246752d59438e2bde22f88680927af9",
+      "paperId": "2f566575a246752d59438e2bde22f88680927af9",
+      "title": "OtterHD: A High-Resolution Multi-modality Model",
+      "year": 2023,
+      "abstract": "In this paper, we present OtterHD-8B, an innovative multimodal model evolved from Fuyu-8B, specifically engineered to interpret high-resolution visual inputs with granular precision. Unlike conventional models that are constrained by fixed-size vision encoders, OtterHD-8B boasts the ability to handle flexible input dimensions, ensuring its versatility across various inference requirements. Alongside this model, we introduce MagnifierBench, an evaluation framework designed to scrutinize models' ability to discern minute details and spatial relationships of small objects. Our comparative analysis reveals that while current leading models falter on this benchmark, OtterHD-8B, particularly when directly processing high-resolution inputs, outperforms its counterparts by a substantial margin. The findings illuminate the structural variances in visual information processing among different models and the influence that the vision encoders' pre-training resolution disparities have on model effectiveness within such benchmarks. Our study highlights the critical role of flexibility and high-resolution input capabilities in large multimodal models and also exemplifies the potential inherent in the Fuyu architecture's simplicity for handling complex visual data.",
+      "externalIds": {
+        "ArXiv": "2311.04219",
+        "DBLP": "journals/corr/abs-2311-04219",
+        "DOI": "10.48550/arXiv.2311.04219",
+        "CorpusId": 265043616
+      },
+      "arxiv_id": "2311.04219",
+      "doi": "10.48550/arXiv.2311.04219",
+      "corpus_id": 265043616
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "37",
+      "ref_key": "S2:2672777d25562c9df6fc13b653181db62d39bece",
+      "paperId": "2672777d25562c9df6fc13b653181db62d39bece",
+      "title": "An Empirical Study of GPT-3 for Few-Shot Knowledge-Based VQA",
+      "year": 2021,
+      "abstract": "Knowledge-based visual question answering (VQA) involves answering questions that require external knowledge not present in the image. Existing methods first retrieve knowledge from external resources, then reason over the selected knowledge, the input image, and question for answer prediction. However, this two-step approach could lead to mismatches that potentially limit the VQA performance. For example, the retrieved knowledge might be noisy and irrelevant to the question, and the re-embedded knowledge features during reasoning might deviate from their original meanings in the knowledge base (KB). To address this challenge, we propose PICa, a simple yet effective method that Prompts GPT3 via the use of Image Captions, for knowledge-based VQA. Inspired by GPT-3’s power in knowledge retrieval and question answering, instead of using structured KBs as in previous work, we treat GPT-3 as an implicit and unstructured KB that can jointly acquire and process relevant knowledge. Specifically, we first convert the image into captions (or tags) that GPT-3 can understand, then adapt GPT-3 to solve the VQA task in a few-shot manner by just providing a few in-context VQA examples. We further boost performance by carefully investigating: (i) what text formats best describe the image content, and (ii) how in-context examples can be better selected and used. PICa unlocks the first use of GPT-3 for multimodal tasks. By using only 16 examples, PICa surpasses the supervised state of the art by an absolute +8.6 points on the OK-VQA dataset. We also benchmark PICa on VQAv2, where PICa also shows a decent few-shot performance.",
+      "externalIds": {
+        "DBLP": "conf/aaai/YangGW0L0W22",
+        "ArXiv": "2109.05014",
+        "DOI": "10.1609/aaai.v36i3.20215",
+        "CorpusId": 237485500
+      },
+      "arxiv_id": "2109.05014",
+      "doi": "10.1609/aaai.v36i3.20215",
+      "corpus_id": 237485500
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "38",
+      "ref_key": "S2:d3f79210b54e168c76b8c311488f42d7d1048b81",
+      "paperId": "d3f79210b54e168c76b8c311488f42d7d1048b81",
+      "title": "PandaGPT: One Model To Instruction-Follow Them All",
+      "year": 2023,
+      "abstract": "We present PandaGPT, an approach to emPower large lANguage moDels with visual and Auditory instruction-following capabilities. Our pilot experiments show that PandaGPT can perform complex tasks such as detailed image description generation, writing stories inspired by videos, and answering questions about audios. More interestingly, PandaGPT can take multimodal inputs simultaneously and compose their semantics naturally. For example, PandaGPT can connect how objects look in an image/video and how they sound in an audio. To do so, PandaGPT combines the multimodal encoders from ImageBind and the large language models from Vicuna. Notably, only aligned image-text pairs are required for the training of PandaGPT. Thanks to the strong capability of ImageBind in embedding data from different modalities into the same space, PandaGPT displays emergent, i.e. zero-shot, cross-modal behaviors for data other than image and text (e.g., video, audio, depth, thermal, and IMU). We hope that PandaGPT serves as an initial step toward building AGI that can perceive and understand inputs in different modalities holistically, as we humans do.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-16355",
+        "ArXiv": "2305.16355",
+        "ACL": "2023.tllm-1.2",
+        "DOI": "10.48550/arXiv.2305.16355",
+        "CorpusId": 258947721
+      },
+      "arxiv_id": "2305.16355",
+      "doi": "10.48550/arXiv.2305.16355",
+      "corpus_id": 258947721
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "39",
+      "ref_key": "S2:57c64f233a0db4d17e0e750c12516364ca009fb2",
+      "paperId": "57c64f233a0db4d17e0e750c12516364ca009fb2",
+      "title": "REVIVE: Regional Visual Representation Matters in Knowledge-Based Visual Question Answering",
+      "year": 2022,
+      "abstract": "This paper revisits visual representation in knowledge-based visual question answering (VQA) and demonstrates that using regional information in a better way can significantly improve the performance. While visual representation is extensively studied in traditional VQA, it is under-explored in knowledge-based VQA even though these two tasks share the common spirit, i.e., rely on visual input to answer the question. Specifically, we observe that in most state-of-the-art knowledge-based VQA methods: 1) visual features are extracted either from the whole image or in a sliding window manner for retrieving knowledge, and the important relationship within/among object regions is neglected; 2) visual features are not well utilized in the final answering model, which is counter-intuitive to some extent. Based on these observations, we propose a new knowledge-based VQA method REVIVE, which tries to utilize the explicit information of object regions not only in the knowledge retrieval stage but also in the answering model. The key motivation is that object regions and inherent relationship are important for knowledge-based VQA. We perform extensive experiments on the standard OK-VQA dataset and achieve new state-of-the-art performance, i.e., 58.0% accuracy, surpassing previous state-of-the-art method by a large margin (+3.6%). We also conduct detailed analysis and show the necessity of regional information in different framework components for knowledge-based VQA. Code is publicly available at https://github.com/yzleroy/REVIVE.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2206-01201",
+        "ArXiv": "2206.01201",
+        "DOI": "10.48550/arXiv.2206.01201",
+        "CorpusId": 249282486
+      },
+      "arxiv_id": "2206.01201",
+      "doi": "10.48550/arXiv.2206.01201",
+      "corpus_id": 249282486
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "40",
+      "ref_key": "S2:0819c1e60c13b9797f937282d06b54d252d9d6ec",
+      "paperId": "0819c1e60c13b9797f937282d06b54d252d9d6ec",
+      "title": "Segment Everything Everywhere All at Once",
+      "year": 2023,
+      "abstract": "In this work, we present SEEM, a promptable and interactive model for segmenting everything everywhere all at once in an image, as shown in Fig.1. In SEEM, we propose a novel decoding mechanism that enables diverse prompting for all types of segmentation tasks, aiming at a universal segmentation interface that behaves like large language models (LLMs). More specifically, SEEM is designed with four desiderata: i) Versatility. We introduce a new visual prompt to unify different spatial queries including points, boxes, scribbles and masks, which can further generalize to a different referring image; ii) Compositionality. We learn a joint visual-semantic space between text and visual prompts, which facilitates the dynamic composition of two prompt types required for various segmentation tasks; iii) Interactivity. We further incorporate learnable memory prompts into the decoder to retain segmentation history through mask-guided cross-attention from decoder to image features; and iv) Semantic-awareness. We use a text encoder to encode text queries and mask labels into the same semantic space for open-vocabulary segmentation. We conduct a comprehensive empirical study to validate the effectiveness of SEEM across diverse segmentation tasks. Notably, our single SEEM model achieves competitive performance across interactive segmentation, generic segmentation, referring segmentation, and video object segmentation on 9 datasets with minimum 1/100 supervision. Furthermore, SEEM showcases a remarkable capacity for generalization to novel prompts or their combinations, rendering it a readily universal image segmentation interface.",
+      "externalIds": {
+        "ArXiv": "2304.06718",
+        "DBLP": "conf/nips/ZouYZLLWWGL23",
+        "DOI": "10.48550/arXiv.2304.06718",
+        "CorpusId": 258108410
+      },
+      "arxiv_id": "2304.06718",
+      "doi": "10.48550/arXiv.2304.06718",
+      "corpus_id": 258108410
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "41",
+      "ref_key": "S2:ada81a4de88a6ce474df2e2446ad11fea480616e",
+      "paperId": "ada81a4de88a6ce474df2e2446ad11fea480616e",
+      "title": "Socratic Models: Composing Zero-Shot Multimodal Reasoning with Language",
+      "year": 2022,
+      "abstract": "Large pretrained (e.g.,\"foundation\") models exhibit distinct capabilities depending on the domain of data they are trained on. While these domains are generic, they may only barely overlap. For example, visual-language models (VLMs) are trained on Internet-scale image captions, but large language models (LMs) are further trained on Internet-scale text with no images (e.g., spreadsheets, SAT questions, code). As a result, these models store different forms of commonsense knowledge across different domains. In this work, we show that this diversity is symbiotic, and can be leveraged through Socratic Models (SMs): a modular framework in which multiple pretrained models may be composed zero-shot i.e., via multimodal-informed prompting, to exchange information with each other and capture new multimodal capabilities, without requiring finetuning. With minimal engineering, SMs are not only competitive with state-of-the-art zero-shot image captioning and video-to-text retrieval, but also enable new applications such as (i) answering free-form questions about egocentric video, (ii) engaging in multimodal assistive dialogue with people (e.g., for cooking recipes) by interfacing with external APIs and databases (e.g., web search), and (iii) robot perception and planning.",
+      "externalIds": {
+        "ArXiv": "2204.00598",
+        "DBLP": "journals/corr/abs-2204-00598",
+        "CorpusId": 247922520
+      },
+      "arxiv_id": "2204.00598",
+      "doi": null,
+      "corpus_id": 247922520
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "42",
+      "ref_key": "S2:376f494126d1ea4f571ea0263c43ac2b6331800a",
+      "paperId": "376f494126d1ea4f571ea0263c43ac2b6331800a",
+      "title": "SPAE: Semantic Pyramid AutoEncoder for Multimodal Generation with Frozen LLMs",
+      "year": 2023,
+      "abstract": "In this work, we introduce Semantic Pyramid AutoEncoder (SPAE) for enabling frozen LLMs to perform both understanding and generation tasks involving non-linguistic modalities such as images or videos. SPAE converts between raw pixels and interpretable lexical tokens (or words) extracted from the LLM's vocabulary. The resulting tokens capture both the semantic meaning and the fine-grained details needed for visual reconstruction, effectively translating the visual content into a language comprehensible to the LLM, and empowering it to perform a wide array of multimodal tasks. Our approach is validated through in-context learning experiments with frozen PaLM 2 and GPT 3.5 on a diverse set of image understanding and generation tasks. Our method marks the first successful attempt to enable a frozen LLM to generate image content while surpassing state-of-the-art performance in image understanding tasks, under the same setting, by over 25%.",
+      "externalIds": {
+        "ArXiv": "2306.17842",
+        "DBLP": "journals/corr/abs-2306-17842",
+        "DOI": "10.48550/arXiv.2306.17842",
+        "CorpusId": 259308960
+      },
+      "arxiv_id": "2306.17842",
+      "doi": "10.48550/arXiv.2306.17842",
+      "corpus_id": 259308960
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "43",
+      "ref_key": "S2:76a3f4a79ae9a00db2f2b5f6877021d8deb96ada",
+      "paperId": "76a3f4a79ae9a00db2f2b5f6877021d8deb96ada",
+      "title": "SPHINX: The Joint Mixing of Weights, Tasks, and Visual Embeddings for Multi-modal Large Language Models",
+      "year": 2023,
+      "abstract": "We present SPHINX, a versatile multi-modal large language model (MLLM) with a joint mixing of model weights, tuning tasks, and visual embeddings. First, for stronger vision-language alignment, we unfreeze the large language model (LLM) during pre-training, and introduce a weight mix strategy between LLMs trained by real-world and synthetic data. By directly integrating the weights from two domains, the mixed LLM can efficiently incorporate diverse semantics with favorable robustness. Then, to enable multi-purpose capabilities, we mix a variety of tasks for joint visual instruction tuning, and design task-specific instructions to avoid inter-task conflict. In addition to the basic visual question answering, we include more challenging tasks such as region-level understanding, caption grounding, document layout detection, and human pose estimation, contributing to mutual enhancement over different scenarios. Additionally, we propose to extract comprehensive visual embeddings from various network architectures, pre-training paradigms, and information granularity, providing language models with more robust image representations. Based on our proposed joint mixing, SPHINX exhibits superior multi-modal understanding capabilities on a wide range of applications. On top of this, we further propose an efficient strategy aiming to better capture fine-grained appearances of high-resolution images. With a mixing of different scales and high-resolution sub-images, SPHINX attains exceptional visual parsing and reasoning performance on existing evaluation benchmarks. We hope our work may cast a light on the exploration of joint mixing in future MLLM research. Code is released at https://github.com/Alpha-VLLM/LLaMA2-Accessory.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-07575",
+        "ArXiv": "2311.07575",
+        "DOI": "10.48550/arXiv.2311.07575",
+        "CorpusId": 265150267
+      },
+      "arxiv_id": "2311.07575",
+      "doi": "10.48550/arXiv.2311.07575",
+      "corpus_id": 265150267
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "44",
+      "ref_key": "S2:f68f6f2a057c4e6e5a3c91fc8563533d9bf6e560",
+      "paperId": "f68f6f2a057c4e6e5a3c91fc8563533d9bf6e560",
+      "title": "ShareGPT4V: Improving Large Multi-Modal Models with Better Captions",
+      "year": 2023,
+      "abstract": "In the realm of large multi-modal models (LMMs), efficient modality alignment is crucial yet often constrained by the scarcity of high-quality image-text data. To address this bottleneck, we introduce the ShareGPT4V dataset, a pioneering large-scale resource featuring 1.2 million highly descriptive captions, which surpasses existing datasets in diversity and information content, covering world knowledge, object properties, spatial relationships, and aesthetic evaluations. Specifically, ShareGPT4V originates from a curated 100K high-quality captions collected from advanced GPT4-Vision and has been expanded to 1.2M with a superb caption model trained on this subset. ShareGPT4V first demonstrates its effectiveness for the Supervised Fine-Tuning (SFT) phase, by substituting an equivalent quantity of detailed captions in existing SFT datasets with a subset of our high-quality captions, significantly enhancing the LMMs like LLaVA-7B, LLaVA-1.5-13B, and Qwen-VL-Chat-7B on the MME and MMBench benchmarks, with respective gains of 222.8/22.0/22.3 and 2.7/1.3/1.5. We further incorporate ShareGPT4V data into both the pre-training and SFT phases, obtaining ShareGPT4V-7B, a superior LMM based on a simple architecture that has remarkable performance across a majority of the multi-modal benchmarks. This project is available at https://ShareGPT4V.github.io to serve as a pivotal resource for advancing the LMMs community.",
+      "externalIds": {
+        "DBLP": "conf/eccv/ChenLDZHWZL24",
+        "ArXiv": "2311.12793",
+        "DOI": "10.48550/arXiv.2311.12793",
+        "CorpusId": 265308687
+      },
+      "arxiv_id": "2311.12793",
+      "doi": "10.48550/arXiv.2311.12793",
+      "corpus_id": 265308687
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "45",
+      "ref_key": "S2:ee0c9e8a935e047f2c030ecbfad93c2d80d642d7",
+      "paperId": "ee0c9e8a935e047f2c030ecbfad93c2d80d642d7",
+      "title": "Sparkles: Unlocking Chats Across Multiple Images for Multimodal Instruction-Following Models",
+      "year": 2023,
+      "abstract": "Large language models exhibit enhanced zero-shot performance on various tasks when fine-tuned with instruction-following data. Multimodal instruction-following models extend these capabilities by integrating both text and images. However, existing models such as MiniGPT-4 and LLaVA face challenges in maintaining dialogue coherence in scenarios involving multiple images. A primary reason is the lack of a specialized dataset for this critical application. To bridge these gaps, we introduce SparklesDialogue, the first machine-generated dialogue dataset tailored for word-level interleaved multi-image and text interactions. Furthermore, we construct SparklesEval, a GPT-assisted benchmark for quantitatively assessing a model's conversational competence across multiple images and dialogue turns. We then present SparklesChat, a multimodal instruction-following model for open-ended dialogues across multiple images. Our experiments validate the effectiveness of training SparklesChat with SparklesDialogue based on MiniGPT-4 and LLaVA-v1.5, which enhances comprehension across multiple images and dialogue turns, and does not compromise single-image understanding capabilities. Qualitative evaluations further demonstrate SparklesChat's generality in handling real-world applications. All resources related to this study are publicly available at https://github.com/HYPJUDY/Sparkles.",
+      "externalIds": {
+        "ArXiv": "2308.16463",
+        "DBLP": "journals/corr/abs-2308-16463",
+        "DOI": "10.48550/arXiv.2308.16463",
+        "CorpusId": 261395170
+      },
+      "arxiv_id": "2308.16463",
+      "doi": "10.48550/arXiv.2308.16463",
+      "corpus_id": 261395170
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "46",
+      "ref_key": "S2:ac7771c332da42b29a913b116bd6ef622cbf89cf",
+      "paperId": "ac7771c332da42b29a913b116bd6ef622cbf89cf",
+      "title": "TaskMatrix.AI: Completing Tasks by Connecting Foundation Models with Millions of APIs",
+      "year": 2023,
+      "abstract": "Artificial Intelligence (AI) has made incredible progress recently. On the one hand, advanced foundation models like ChatGPT can offer powerful conversation, in-context learning and code generation abilities on a broad range of open-domain tasks. They can also generate high-level solution outlines for domain-specific tasks based on the common sense knowledge they have acquired. However, they still face difficulties with some specialized tasks because they lack enough domain-specific data during pre-training or they often have errors in their neural network computations on those tasks that need accurate executions. On the other hand, there are also many existing models and systems (symbolic-based or neural-based) that can do some domain-specific tasks very well. However, due to the different implementation or working mechanisms, they are not easily accessible or compatible with foundation models. Therefore, there is a clear and pressing need for a mechanism that can leverage foundation models to propose task solution outlines and then automatically match some of the sub-tasks in the outlines to the off-the-shelf models and systems with special functionalities to complete them. Inspired by this, we introduce TaskMatrix.AI as a new AI ecosystem that connects foundation models with millions of APIs for task completion. Unlike most previous work that aimed to improve a single AI model, TaskMatrix.AI focuses more on using existing foundation models (as a brain-like central system) and APIs of other AI models and systems (as sub-task solvers) to achieve diversified tasks in both digital and physical domains. As a position paper, we will present our vision of how to build such an ecosystem, explain each key component, and use study cases to illustrate both the feasibility of this vision and the main challenges we need to address next.",
+      "externalIds": {
+        "ArXiv": "2303.16434",
+        "DBLP": "journals/corr/abs-2303-16434",
+        "DOI": "10.48550/arXiv.2303.16434",
+        "CorpusId": 257804802
+      },
+      "arxiv_id": "2303.16434",
+      "doi": "10.48550/arXiv.2303.16434",
+      "corpus_id": 257804802
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "47",
+      "ref_key": "S2:af1c871282ec122869d03f5420ef5d9143358a91",
+      "paperId": "af1c871282ec122869d03f5420ef5d9143358a91",
+      "title": "Visual Programming: Compositional visual reasoning without training",
+      "year": 2022,
+      "abstract": "We present Visprog, a neuro-symbolic approach to solving complex and compositional visual tasks given natural language instructions. Visprog avoids the need for any task-specific training. Instead, it uses the incontext learning ability of large language models to generate python-like modular programs, which are then executed to get both the solution and a comprehensive and interpretable rationale. Each line of the generated program may invoke one of several off-the-shelf computer vision models, image processing subroutines, or python functions to produce intermediate outputs that may be consumed by subsequent parts of the program. We demonstrate the flexibility of VIsPROG on 4 diverse tasks - compositional visual question answering, zero-shot reasoning on image pairs, factual knowledge object tagging, and language-guided image editing. We believe neuro-symbolic approaches like Visprog are an exciting avenue to easily and effectively expand the scope of AI systems to serve the long tail of complex tasks that people may wish to perform.",
+      "externalIds": {
+        "DBLP": "conf/cvpr/GuptaK23",
+        "ArXiv": "2211.11559",
+        "DOI": "10.1109/CVPR52729.2023.01436",
+        "CorpusId": 253734854
+      },
+      "arxiv_id": "2211.11559",
+      "doi": "10.1109/CVPR52729.2023.01436",
+      "corpus_id": 253734854
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "48",
+      "ref_key": "S2:e3fe61ce7a3c013de8770f7a43f3666f9a8e2ce5",
+      "paperId": "e3fe61ce7a3c013de8770f7a43f3666f9a8e2ce5",
+      "title": "Empowering Vision-Language Models to Follow Interleaved Vision-Language Instructions",
+      "year": 2023,
+      "abstract": "with",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-04152",
+        "DOI": "10.48550/arXiv.2308.04152",
+        "CorpusId": 263878663
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2308.04152",
+      "corpus_id": 263878663
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "49",
+      "ref_key": "S2:5d321194696f1f75cf9da045e6022b2f20ba5b9c",
+      "paperId": "5d321194696f1f75cf9da045e6022b2f20ba5b9c",
+      "title": "Video-LLaMA: An Instruction-tuned Audio-Visual Language Model for Video Understanding",
+      "year": 2023,
+      "abstract": "We present Video-LLaMA a multi-modal framework that empowers Large Language Models (LLMs) with the capability of understanding both visual and auditory content in the video. Video-LLaMA bootstraps cross-modal training from the frozen pre-trained visual and audio encoders and the frozen LLMs. Unlike previous works that complement LLMs to process the visual or audio signals only, Video-LLaMA enables video comprehension by tackling two challenges: (1) capturing the temporal changes in visual scenes, (2) integrating audio-visual signals. To counter the first challenge, we propose a Video Q-former to assemble a pre-trained image encoder into our video encoder and introduce a video-to-text generation task to learn video-language correspondence. For the second challenge, we leverage ImageBind, a universal embedding model aligning multiple modalities, as the pre-trained audio encoder and introduce an Audio Q-former on top of ImageBind to learn reasonable auditory query embeddings for the LLM module. To align the output of both visual and audio encoders with LLM's embedding space, we first train Video-LLaMA on massive video/image-caption pairs and then tune our model with visual-instruction datasets of moderate amount but higher quality. We found Video-LLaMA shows the ability to perceive and comprehend video content and generate meaningful responses grounded in the visual and auditory information presented in the videos.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2306-02858",
+        "ArXiv": "2306.02858",
+        "DOI": "10.48550/arXiv.2306.02858",
+        "CorpusId": 259075356
+      },
+      "arxiv_id": "2306.02858",
+      "doi": "10.48550/arXiv.2306.02858",
+      "corpus_id": 259075356
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "50",
+      "ref_key": "S2:f9bfc6d9ba1665b73af3323d46c7642b852759ef",
+      "paperId": "f9bfc6d9ba1665b73af3323d46c7642b852759ef",
+      "title": "VideoLLM: Modeling Video Sequence with Large Language Models",
+      "year": 2023,
+      "abstract": "With the exponential growth of video data, there is an urgent need for automated technology to analyze and comprehend video content. However, existing video understanding models are often task-specific and lack a comprehensive capability of handling diverse tasks. The success of large language models (LLMs) like GPT has demonstrated their impressive abilities in sequence causal reasoning. Building upon this insight, we propose a novel framework called VideoLLM that leverages the sequence reasoning capabilities of pre-trained LLMs from natural language processing (NLP) for video sequence understanding. VideoLLM incorporates a carefully designed Modality Encoder and Semantic Translator, which convert inputs from various modalities into a unified token sequence. This token sequence is then fed into a decoder-only LLM. Subsequently, with the aid of a simple task head, our VideoLLM yields an effective unified framework for different kinds of video understanding tasks. To evaluate the efficacy of VideoLLM, we conduct extensive experiments using multiple LLMs and fine-tuning methods. We evaluate our VideoLLM on eight tasks sourced from four different datasets. The experimental results demonstrate that the understanding and reasoning capabilities of LLMs can be effectively transferred to video understanding tasks. We release the code at https://github.com/cg1177/VideoLLM.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-13292",
+        "ArXiv": "2305.13292",
+        "DOI": "10.48550/arXiv.2305.13292",
+        "CorpusId": 258832930
+      },
+      "arxiv_id": "2305.13292",
+      "doi": "10.48550/arXiv.2305.13292",
+      "corpus_id": 258832930
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "51",
+      "ref_key": "S2:d48cb91b9e555194f7494c4d4bb9815021d3ee45",
+      "paperId": "d48cb91b9e555194f7494c4d4bb9815021d3ee45",
+      "title": "VideoChat: Chat-Centric Video Understanding",
+      "year": 2023,
+      "abstract": "In this paper, we initiate an attempt of developing an end-to-end chat-centric video understanding system, coined as VideoChat. It integrates video foundation models and large language models via a learnable neural interface, excelling in spatiotemporal reasoning, event localization, and causal relationship inference. To instructively tune this system, we build a video-centric instruction dataset, composed of thousands of videos associated with detailed descriptions and conversations. This dataset emphasizes spatiotemporal reasoning and captures causal relationships, providing a valuable asset for training our chat-centric video understanding system. Preliminary qualitative experiments demonstrate the potential of our system across a broad spectrum of video applications, which could serve as a simple prototype system for future research on chat-centric video understanding. Access our code and data at https://github.com/OpenGVLab/Ask-Anything",
+      "externalIds": {
+        "ArXiv": "2305.06355",
+        "DBLP": "journals/corr/abs-2305-06355",
+        "DOI": "10.48550/arXiv.2305.06355",
+        "CorpusId": 258588306
+      },
+      "arxiv_id": "2305.06355",
+      "doi": "10.48550/arXiv.2305.06355",
+      "corpus_id": 258588306
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "52",
+      "ref_key": "S2:6e754273d54a91371efbc928cd6b156364d517da",
+      "paperId": "6e754273d54a91371efbc928cd6b156364d517da",
+      "title": "ViperGPT: Visual Inference via Python Execution for Reasoning",
+      "year": 2023,
+      "abstract": "Answering visual queries is a complex task that requires both visual processing and reasoning. End-to-end models, the dominant approach for this task, do not explicitly differentiate between the two, limiting interpretability and generalization. Learning modular programs presents a promising alternative, but has proven challenging due to the difficulty of learning both the programs and modules simultaneously. We introduce ${\\color{green}{\\text{ViperGPT}}}$, a framework that leverages code-generation models to compose vision-and-language models into subroutines to produce a result for any query. ${\\color{green}{\\text{ViperGPT}}}$ utilizes a provided API to access the available modules, and composes them by generating Python code that is later executed. This simple approach requires no further training, and achieves state-of-the-art results across various complex visual tasks.",
+      "externalIds": {
+        "DBLP": "conf/iccv/SurisMV23",
+        "ArXiv": "2303.08128",
+        "DOI": "10.1109/ICCV51070.2023.01092",
+        "CorpusId": 257505358
+      },
+      "arxiv_id": "2303.08128",
+      "doi": "10.1109/ICCV51070.2023.01092",
+      "corpus_id": 257505358
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "53",
+      "ref_key": "S2:1cd8373490efc2d74c2796f4b2aa27c7d4415ec9",
+      "paperId": "1cd8373490efc2d74c2796f4b2aa27c7d4415ec9",
+      "title": "VoxPoser: Composable 3D Value Maps for Robotic Manipulation with Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) are shown to possess a wealth of actionable knowledge that can be extracted for robot manipulation in the form of reasoning and planning. Despite the progress, most still rely on pre-defined motion primitives to carry out the physical interactions with the environment, which remains a major bottleneck. In this work, we aim to synthesize robot trajectories, i.e., a dense sequence of 6-DoF end-effector waypoints, for a large variety of manipulation tasks given an open-set of instructions and an open-set of objects. We achieve this by first observing that LLMs excel at inferring affordances and constraints given a free-form language instruction. More importantly, by leveraging their code-writing capabilities, they can interact with a vision-language model (VLM) to compose 3D value maps to ground the knowledge into the observation space of the agent. The composed value maps are then used in a model-based planning framework to zero-shot synthesize closed-loop robot trajectories with robustness to dynamic perturbations. We further demonstrate how the proposed framework can benefit from online experiences by efficiently learning a dynamics model for scenes that involve contact-rich interactions. We present a large-scale study of the proposed method in both simulated and real-robot environments, showcasing the ability to perform a large variety of everyday manipulation tasks specified in free-form natural language. Videos and code at https://voxposer.github.io",
+      "externalIds": {
+        "DBLP": "conf/corl/HuangWZL0023",
+        "ArXiv": "2307.05973",
+        "DOI": "10.48550/arXiv.2307.05973",
+        "CorpusId": 259837330
+      },
+      "arxiv_id": "2307.05973",
+      "doi": "10.48550/arXiv.2307.05973",
+      "corpus_id": 259837330
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "54",
+      "ref_key": "S2:3f5b31c4f7350dc88002c121aecbdc82f86eb5bb",
+      "paperId": "3f5b31c4f7350dc88002c121aecbdc82f86eb5bb",
+      "title": "BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models",
+      "year": 2023,
+      "abstract": "The cost of vision-and-language pre-training has become increasingly prohibitive due to end-to-end training of large-scale models. This paper proposes BLIP-2, a generic and efficient pre-training strategy that bootstraps vision-language pre-training from off-the-shelf frozen pre-trained image encoders and frozen large language models. BLIP-2 bridges the modality gap with a lightweight Querying Transformer, which is pre-trained in two stages. The first stage bootstraps vision-language representation learning from a frozen image encoder. The second stage bootstraps vision-to-language generative learning from a frozen language model. BLIP-2 achieves state-of-the-art performance on various vision-language tasks, despite having significantly fewer trainable parameters than existing methods. For example, our model outperforms Flamingo80B by 8.7% on zero-shot VQAv2 with 54x fewer trainable parameters. We also demonstrate the model's emerging capabilities of zero-shot image-to-text generation that can follow natural language instructions.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2301-12597",
+        "ArXiv": "2301.12597",
+        "DOI": "10.48550/arXiv.2301.12597",
+        "CorpusId": 256390509
+      },
+      "arxiv_id": "2301.12597",
+      "doi": "10.48550/arXiv.2301.12597",
+      "corpus_id": 256390509
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "55",
+      "ref_key": "S2:fd755dc7b5b206c17fd953db04e1c888d45b6e4e",
+      "paperId": "fd755dc7b5b206c17fd953db04e1c888d45b6e4e",
+      "title": "LAMM: Language-Assisted Multi-Modal Instruction-Tuning Dataset, Framework, and Benchmark",
+      "year": 2023,
+      "abstract": "Large language models have become a potential pathway toward achieving artificial general intelligence. Recent works on multi-modal large language models have demonstrated their effectiveness in handling visual modalities. In this work, we extend the research of MLLMs to point clouds and present the LAMM-Dataset and LAMM-Benchmark for 2D image and 3D point cloud understanding. We also establish an extensible framework to facilitate the extension of MLLMs to additional modalities. Our main contribution is three-fold: 1) We present the LAMM-Dataset and LAMM-Benchmark, which cover almost all high-level vision tasks for 2D and 3D vision. Extensive experiments validate the effectiveness of our dataset and benchmark. 2) We demonstrate the detailed methods of constructing instruction-tuning datasets and benchmarks for MLLMs, which will enable future research on MLLMs to scale up and extend to other domains, tasks, and modalities faster. 3) We provide a primary but potential MLLM training framework optimized for modalities' extension. We also provide baseline models, comprehensive experimental observations, and analysis to accelerate future research. Codes and datasets are now available at https://github.com/OpenLAMM/LAMM.",
+      "externalIds": {
+        "ArXiv": "2306.06687",
+        "DBLP": "conf/nips/YinWCSLLH0S0SO23",
+        "DOI": "10.48550/arXiv.2306.06687",
+        "CorpusId": 259138958
+      },
+      "arxiv_id": "2306.06687",
+      "doi": "10.48550/arXiv.2306.06687",
+      "corpus_id": 259138958
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "56",
+      "ref_key": "S2:a757999ed260d7bc45484dc6b4456bf33fe6f679",
+      "paperId": "a757999ed260d7bc45484dc6b4456bf33fe6f679",
+      "title": "LLaMA-Adapter: Efficient Fine-tuning of Language Models with Zero-init Attention",
+      "year": 2023,
+      "abstract": "We present LLaMA-Adapter, a lightweight adaption method to efficiently fine-tune LLaMA into an instruction-following model. Using 52K self-instruct demonstrations, LLaMA-Adapter only introduces 1.2M learnable parameters upon the frozen LLaMA 7B model, and costs less than one hour for fine-tuning on 8 A100 GPUs. Specifically, we adopt a set of learnable adaption prompts, and prepend them to the word tokens at higher transformer layers. Then, a zero-initialized attention mechanism with zero gating is proposed, which adaptively injects the new instructional cues into LLaMA, while effectively preserves its pre-trained knowledge. With our efficient training, LLaMA-Adapter can generate high-quality responses, comparable to Alpaca with fully fine-tuned 7B parameters. Besides language commands, our approach can be simply extended to multi-modal instructions for learning image-conditioned LLaMA model, which achieves superior reasoning performance on ScienceQA and COCO Caption benchmarks. Furthermore, we also evaluate the zero-initialized attention mechanism for fine-tuning other pre-trained models (ViT, RoBERTa) on traditional vision and language tasks, demonstrating the superior generalization capacity of our approach. Code is released at https://github.com/OpenGVLab/LLaMA-Adapter.",
+      "externalIds": {
+        "ArXiv": "2303.16199",
+        "DBLP": "journals/corr/abs-2303-16199",
+        "DOI": "10.48550/arXiv.2303.16199",
+        "CorpusId": 257771811
+      },
+      "arxiv_id": "2303.16199",
+      "doi": "10.48550/arXiv.2303.16199",
+      "corpus_id": 257771811
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "57",
+      "ref_key": "S2:570079bbdd8758dfe865097e05719313c9c1301a",
+      "paperId": "570079bbdd8758dfe865097e05719313c9c1301a",
+      "title": "LLaMA-Adapter V2: Parameter-Efficient Visual Instruction Model",
+      "year": 2023,
+      "abstract": "How to efficiently transform large language models (LLMs) into instruction followers is recently a popular research direction, while training LLM for multi-modal reasoning remains less explored. Although the recent LLaMA-Adapter demonstrates the potential to handle visual inputs with LLMs, it still cannot generalize well to open-ended visual instructions and lags behind GPT-4. In this paper, we present LLaMA-Adapter V2, a parameter-efficient visual instruction model. Specifically, we first augment LLaMA-Adapter by unlocking more learnable parameters (e.g., norm, bias and scale), which distribute the instruction-following ability across the entire LLaMA model besides adapters. Secondly, we propose an early fusion strategy to feed visual tokens only into the early LLM layers, contributing to better visual knowledge incorporation. Thirdly, a joint training paradigm of image-text pairs and instruction-following data is introduced by optimizing disjoint groups of learnable parameters. This strategy effectively alleviates the interference between the two tasks of image-text alignment and instruction following and achieves strong multi-modal reasoning with only a small-scale image-text and instruction dataset. During inference, we incorporate additional expert models (e.g. captioning/OCR systems) into LLaMA-Adapter to further enhance its image understanding capability without incurring training costs. Compared to the original LLaMA-Adapter, our LLaMA-Adapter V2 can perform open-ended multi-modal instructions by merely introducing 14M parameters over LLaMA. The newly designed framework also exhibits stronger language-only instruction-following capabilities and even excels in chat interactions. Our code and models are available at https://github.com/ZrrSkywalker/LLaMA-Adapter.",
+      "externalIds": {
+        "ArXiv": "2304.15010",
+        "DBLP": "journals/corr/abs-2304-15010",
+        "DOI": "10.48550/arXiv.2304.15010",
+        "CorpusId": 258418343
+      },
+      "arxiv_id": "2304.15010",
+      "doi": "10.48550/arXiv.2304.15010",
+      "corpus_id": 258418343
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "58",
+      "ref_key": "S2:a5036f31f0e629dc661f120b8c3b1f374d479ab8",
+      "paperId": "a5036f31f0e629dc661f120b8c3b1f374d479ab8",
+      "title": "Visual Instruction Tuning",
+      "year": 2023,
+      "abstract": "Instruction tuning large language models (LLMs) using machine-generated instruction-following data has improved zero-shot capabilities on new tasks, but the idea is less explored in the multimodal field. In this paper, we present the first attempt to use language-only GPT-4 to generate multimodal language-image instruction-following data. By instruction tuning on such generated data, we introduce LLaVA: Large Language and Vision Assistant, an end-to-end trained large multimodal model that connects a vision encoder and LLM for general-purpose visual and language understanding.Our early experiments show that LLaVA demonstrates impressive multimodel chat abilities, sometimes exhibiting the behaviors of multimodal GPT-4 on unseen images/instructions, and yields a 85.1% relative score compared with GPT-4 on a synthetic multimodal instruction-following dataset. When fine-tuned on Science QA, the synergy of LLaVA and GPT-4 achieves a new state-of-the-art accuracy of 92.53%. We make GPT-4 generated visual instruction tuning data, our model and code base publicly available.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2304-08485",
+        "ArXiv": "2304.08485",
+        "DOI": "10.48550/arXiv.2304.08485",
+        "CorpusId": 258179774
+      },
+      "arxiv_id": "2304.08485",
+      "doi": "10.48550/arXiv.2304.08485",
+      "corpus_id": 258179774
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "59",
+      "ref_key": "S2:7e32aac43e9f1df49e116add03327ee6f365dbf3",
+      "paperId": "7e32aac43e9f1df49e116add03327ee6f365dbf3",
+      "title": "mPLUG-Owl: Modularization Empowers Large Language Models with Multimodality",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have demonstrated impressive zero-shot abilities on a variety of open-ended tasks, while recent research has also explored the use of LLMs for multi-modal generation. In this study, we introduce mPLUG-Owl, a novel training paradigm that equips LLMs with multi-modal abilities through modularized learning of foundation LLM, a visual knowledge module, and a visual abstractor module. This approach can support multiple modalities and facilitate diverse unimodal and multimodal abilities through modality collaboration. The training paradigm of mPLUG-Owl involves a two-stage method for aligning image and text, which learns visual knowledge with the assistance of LLM while maintaining and even improving the generation abilities of LLM. In the first stage, the visual knowledge module and abstractor module are trained with a frozen LLM module to align the image and text. In the second stage, language-only and multi-modal supervised datasets are used to jointly fine-tune a low-rank adaption (LoRA) module on LLM and the abstractor module by freezing the visual knowledge module. We carefully build a visually-related instruction evaluation set OwlEval. Experimental results show that our model outperforms existing multi-modal models, demonstrating mPLUG-Owl's impressive instruction and visual understanding ability, multi-turn conversation ability, and knowledge reasoning ability. Besides, we observe some unexpected and exciting abilities such as multi-image correlation and scene text understanding, which makes it possible to leverage it for harder real scenarios, such as vision-only document comprehension. Our code, pre-trained model, instruction-tuned models, and evaluation set are available at https://github.com/X-PLUG/mPLUG-Owl. The online demo is available at https://www.modelscope.cn/studios/damo/mPLUG-Owl.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2304-14178",
+        "ArXiv": "2304.14178",
+        "DOI": "10.48550/arXiv.2304.14178",
+        "CorpusId": 258352455
+      },
+      "arxiv_id": "2304.14178",
+      "doi": "10.48550/arXiv.2304.14178",
+      "corpus_id": 258352455
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "60",
+      "ref_key": "S2:ad13b213681b6f634bc83a264df246e83dd9a9d9",
+      "paperId": "ad13b213681b6f634bc83a264df246e83dd9a9d9",
+      "title": "mPLUG-OwI2: Revolutionizing Multi-modal Large Language Model with Modality Collaboration",
+      "year": 2023,
+      "abstract": "Multi-modal Large Language Models (MLLMs) have demonstrated impressive instruction abilities across various open-ended tasks. However, previous methods primarily fo-cus on enhancing multi-modal capabilities. In this work, we introduce a versatile multi-modal large language model, mPLUG-Owl2, which effectively leverages modality collab-oration to improve performance in both text and multi-modal tasks. mPLUG-Owl2 utilizes a modularized network design, with the language decoder acting as a universal interface for managing different modalities. Specifically, mPLUG-Owl2 incorporates shared functional modules to facilitate modal-ity collaboration and introduces a modality-adaptive module that preserves modality-specific features. Extensive experi-ments reveal that mPLUG-Owl2 is capable of generalizing both text tasks and multi-modal tasks and achieving state-of-the-art performances with a single generic model. Notably, mPLUG-Owl2 is the first MLLM model that demonstrates the modality collaboration phenomenon in both pure-text and multi-modal scenarios, setting a pioneering path in the development of future multi-modal foundation models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-04257",
+        "ArXiv": "2311.04257",
+        "DOI": "10.1109/CVPR52733.2024.01239",
+        "CorpusId": 265050943
+      },
+      "arxiv_id": "2311.04257",
+      "doi": "10.1109/CVPR52733.2024.01239",
+      "corpus_id": 265050943
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "61",
+      "ref_key": "S2:d6d3604f369bb0415cbe814e43ca3131323b03e2",
+      "paperId": "d6d3604f369bb0415cbe814e43ca3131323b03e2",
+      "title": "Otter: A Multi-Modal Model with In-Context Instruction Tuning",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have demonstrated significant universal capabilities as few/zero-shot learners in various tasks due to their pre-training on vast amounts of text data, as exemplified by GPT-3, which boosted to InstrctGPT and ChatGPT, effectively following natural language instructions to accomplish real-world tasks. In this paper, we propose to introduce instruction tuning into multi-modal models, motivated by the Flamingo model's upstream interleaved format pretraining dataset. We adopt a similar approach to construct our MultI-Modal In-Context Instruction Tuning (MIMIC-IT) dataset. We then introduce Otter, a multi-modal model based on OpenFlamingo (open-sourced version of DeepMind's Flamingo), trained on MIMIC-IT and showcasing improved instruction-following ability and in-context learning. We also optimize OpenFlamingo's implementation for researchers, democratizing the required training resources from 1$\\times$ A100 GPU to 4$\\times$ RTX-3090 GPUs, and integrate both OpenFlamingo and Otter into Huggingface Transformers for more researchers to incorporate the models into their customized training and inference pipelines.",
+      "externalIds": {
+        "ArXiv": "2305.03726",
+        "DBLP": "journals/corr/abs-2305-03726",
+        "DOI": "10.48550/arXiv.2305.03726",
+        "CorpusId": 258547300
+      },
+      "arxiv_id": "2305.03726",
+      "doi": "10.48550/arXiv.2305.03726",
+      "corpus_id": 258547300
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "62",
+      "ref_key": "S2:6bcc6ab9c28805d4067e99b2cdc7524550fe80e1",
+      "paperId": "6bcc6ab9c28805d4067e99b2cdc7524550fe80e1",
+      "title": "PointLLM: Empowering Large Language Models to Understand Point Clouds",
+      "year": 2023,
+      "abstract": "The unprecedented advancements in Large Language Models (LLMs) have shown a profound impact on natural language processing but are yet to fully embrace the realm of 3D understanding. This paper introduces PointLLM, a preliminary effort to fill this gap, enabling LLMs to understand point clouds and offering a new avenue beyond 2D visual data. PointLLM understands colored object point clouds with human instructions and generates contextually appropriate responses, illustrating its grasp of point clouds and common sense. Specifically, it leverages a point cloud encoder with a powerful LLM to effectively fuse geometric, appearance, and linguistic information. We collect a novel dataset comprising 660K simple and 70K complex point-text instruction pairs to enable a two-stage training strategy: aligning latent spaces and subsequently instruction-tuning the unified model. To rigorously evaluate the perceptual and generalization capabilities of PointLLM, we establish two benchmarks: Generative 3D Object Classification and 3D Object Captioning, assessed through three different methods, including human evaluation, GPT-4/ChatGPT evaluation, and traditional metrics. Experimental results reveal PointLLM's superior performance over existing 2D and 3D baselines, with a notable achievement in human-evaluated object captioning tasks where it surpasses human annotators in over 50% of the samples. Codes, datasets, and benchmarks are available at https://github.com/OpenRobotLab/PointLLM .",
+      "externalIds": {
+        "DBLP": "conf/eccv/XuWWCPL24",
+        "ArXiv": "2308.16911",
+        "DOI": "10.48550/arXiv.2308.16911",
+        "CorpusId": 261397321
+      },
+      "arxiv_id": "2308.16911",
+      "doi": "10.48550/arXiv.2308.16911",
+      "corpus_id": 261397321
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "63",
+      "ref_key": "S2:5ddb51ae85deca14dc7fc8adc07305c22a1ebe0a",
+      "paperId": "5ddb51ae85deca14dc7fc8adc07305c22a1ebe0a",
+      "title": "Qwen-VL: A Frontier Large Vision-Language Model with Versatile Abilities",
+      "year": 2023,
+      "abstract": "We introduce the Qwen-VL series, a set of large-scale vision-language models designed to perceive and understand both text and images. Comprising Qwen-VL and Qwen-VL-Chat, these models exhibit remarkable performance in tasks like image captioning, question answering, visual localization, and flexible interaction. The evaluation covers a wide range of tasks including zero-shot captioning, visual or document visual question answering, and grounding. We demonstrate the Qwen-VL outperforms existing Large Vision Language Models (LVLMs). We present their architecture, training, capabilities, and performance, highlighting their contributions to advancing multimodal artificial intelligence. Code, demo and models are available at https://github.com/QwenLM/Qwen-VL .",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-12966",
+        "DOI": "10.48550/arXiv.2308.12966",
+        "CorpusId": 263875678
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2308.12966",
+      "corpus_id": 263875678
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "64",
+      "ref_key": "S2:e2a58fd18961c3941102989e3a3d0d27c615e015",
+      "paperId": "e2a58fd18961c3941102989e3a3d0d27c615e015",
+      "title": "Shikra: Unleashing Multimodal LLM's Referential Dialogue Magic",
+      "year": 2023,
+      "abstract": "In human conversations, individuals can indicate relevant regions within a scene while addressing others. In turn, the other person can then respond by referring to specific regions if necessary. This natural referential ability in dialogue remains absent in current Multimodal Large Language Models (MLLMs). To fill this gap, this paper proposes an MLLM called Shikra, which can handle spatial coordinate inputs and outputs in natural language. Its architecture consists of a vision encoder, an alignment layer, and a LLM. It is designed to be straightforward and simple, without the need for extra vocabularies, position encoder, pre-/post-detection modules, or external plug-in models. All inputs and outputs are in natural language form. Referential dialogue is a superset of various vision-language (VL) tasks. Shikra can naturally handle location-related tasks like REC and PointQA, as well as conventional VL tasks such as Image Captioning and VQA. Experimental results showcase Shikra's promising performance. Furthermore, it enables numerous exciting applications, like providing mentioned objects' coordinates in chains of thoughts and comparing user-pointed regions similarities. Our code, model and dataset are accessed at https://github.com/shikras/shikra.",
+      "externalIds": {
+        "ArXiv": "2306.15195",
+        "DBLP": "journals/corr/abs-2306-15195",
+        "DOI": "10.48550/arXiv.2306.15195",
+        "CorpusId": 259262082
+      },
+      "arxiv_id": "2306.15195",
+      "doi": "10.48550/arXiv.2306.15195",
+      "corpus_id": 259262082
+    },
+    {
+      "paper_id": "2311.07594",
+      "ref_index": "65",
+      "ref_key": "S2:42a30dc5470f54ec249f25d3c31e05d7c376c8e3",
+      "paperId": "42a30dc5470f54ec249f25d3c31e05d7c376c8e3",
+      "title": "VisionLLM: Large Language Model is also an Open-Ended Decoder for Vision-Centric Tasks",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have notably accelerated progress towards artificial general intelligence (AGI), with their impressive zero-shot capacity for user-tailored tasks, endowing them with immense potential across a range of applications. However, in the field of computer vision, despite the availability of numerous powerful vision foundation models (VFMs), they are still restricted to tasks in a pre-defined form, struggling to match the open-ended task capabilities of LLMs. In this work, we present an LLM-based framework for vision-centric tasks, termed VisionLLM. This framework provides a unified perspective for vision and language tasks by treating images as a foreign language and aligning vision-centric tasks with language tasks that can be flexibly defined and managed using language instructions. An LLM-based decoder can then make appropriate predictions based on these instructions for open-ended tasks. Extensive experiments show that the proposed VisionLLM can achieve different levels of task customization through language instructions, from fine-grained object-level to coarse-grained task-level customization, all with good results. It's noteworthy that, with a generalist LLM-based framework, our model can achieve over 60\\% mAP on COCO, on par with detection-specific models. We hope this model can set a new baseline for generalist vision and language models. The demo shall be released based on https://github.com/OpenGVLab/InternGPT. The code shall be released at https://github.com/OpenGVLab/VisionLLM.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-11175",
+        "ArXiv": "2305.11175",
+        "DOI": "10.48550/arXiv.2305.11175",
+        "CorpusId": 258762579
+      },
+      "arxiv_id": "2305.11175",
+      "doi": "10.48550/arXiv.2305.11175",
+      "corpus_id": 258762579
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "MLLM ": {
+        "\\textbf{Multi-Modal Convertor}": {
+          "Direct Mapping ": {
+            "30cc95639cffca4ffa8c0eafbc502636c0c88fa5": {},
+            "2313afae52d98e569da2dedbf14daf9efc74e7cf": {},
+            "7b689adb8c156d6158660f90d1c86888ee281f63": {},
+            "2b2d9ee18507aa89a7f1ecba0bf68844c7d9aa75": {},
+            "6ae4705139494fcb6b790b6dd6c4225b40ee40f8": {},
+            "60ee030773ba1b68eb222a265b052ca028353362": {},
+            "c020f15be1dee20f9e2e0c5a6f05f272b5508325": {},
+            "ebddfdc5d845a788e8062eddbbf7a335737cb99b": {},
+            "fa75a55760e6ea49b39b83cb85c99a22e1088254": {},
+            "2f566575a246752d59438e2bde22f88680927af9": {},
+            "f9bfc6d9ba1665b73af3323d46c7642b852759ef": {},
+            "d48cb91b9e555194f7494c4d4bb9815021d3ee45": {},
+            "a5036f31f0e629dc661f120b8c3b1f374d479ab8": {}
+          },
+          "Textual Conversion ": {
+            "ab8ee8d06ed581c876da3a2e7a5fdb1cbec21a45": {},
+            "efc694164312006c543ef745611348ef64e68dda": {},
+            "2672777d25562c9df6fc13b653181db62d39bece": {},
+            "57c64f233a0db4d17e0e750c12516364ca009fb2": {}
+          },
+          "Adapter-based adjustment ": {
+            "1cd8373490efc2d74c2796f4b2aa27c7d4415ec9": {},
+            "a757999ed260d7bc45484dc6b4456bf33fe6f679": {},
+            "570079bbdd8758dfe865097e05719313c9c1301a": {}
+          },
+          "\\textbf{Multi-Modal Perceiver}": {
+            "VAE Perceiver ": {
+              "722ad6ac92286507437b31486f47987d6ece05c9": {},
+              "d3bc7ba19e274bb6fb5e055a3f1b62924c731432": {},
+              "376f494126d1ea4f571ea0263c43ac2b6331800a": {}
+            },
+            "Q-former Perceiver ": {
+              "30cc95639cffca4ffa8c0eafbc502636c0c88fa5": {},
+              "c1e450284e7d6cac1855330a1197df8537df653f": {},
+              "3803d1f291e162bdaa4678a2c5a2bbcf63c050f4": {},
+              "e7d09b6f2bc878cf2c993acf675f409d0b55f35a": {},
+              "ca6a2bc279be5a3349a22bfd6866ed633d18734b": {},
+              "ee0c9e8a935e047f2c030ecbfad93c2d80d642d7": {},
+              "e3fe61ce7a3c013de8770f7a43f3666f9a8e2ce5": {},
+              "5d321194696f1f75cf9da045e6022b2f20ba5b9c": {},
+              "3f5b31c4f7350dc88002c121aecbdc82f86eb5bb": {},
+              "5ddb51ae85deca14dc7fc8adc07305c22a1ebe0a": {}
+            },
+            "Customization Perceiver ": {
+              "0983883619a0ca597d055d0e58da2f514052913d": {},
+              "81e7e82245c2f230eeb8aaaa1a2b2604c143754a": {},
+              "7fbc502441d66daf1f53765d5d86a8dfba9ab0ce": {},
+              "d3f79210b54e168c76b8c311488f42d7d1048b81": {},
+              "0819c1e60c13b9797f937282d06b54d252d9d6ec": {},
+              "76a3f4a79ae9a00db2f2b5f6877021d8deb96ada": {},
+              "7e32aac43e9f1df49e116add03327ee6f365dbf3": {},
+              "ad13b213681b6f634bc83a264df246e83dd9a9d9": {},
+              "d6d3604f369bb0415cbe814e43ca3131323b03e2": {},
+              "42a30dc5470f54ec249f25d3c31e05d7c376c8e3": {}
+            }
+          },
+          "\\textbf{Tools Learning}": {
+            "Natural language assisted ": {
+              "LLMs as coordinators": {
+                "d98536f24272e258b1d399074b64284d64786099": {},
+                "69cfdc8df16ae63b7acba4ac6f727f78b86893c3": {},
+                "055e3aa78a542c6cec016169f3011c2bf4e46932": {},
+                "7cf64070fd3d7e53d80f260c10e6bd7018d580e1": {},
+                "ecfff30e570498b6c87c5d1319a0cbcdf7a8b86d": {},
+                "c7a9c7302a72301ed79a7c0696d5af2e03ad3ac4": {},
+                "ada81a4de88a6ce474df2e2446ad11fea480616e": {},
+                "ac7771c332da42b29a913b116bd6ef622cbf89cf": {}
+              },
+              "LLMs as controllers": {
+                "6f8b9192b1f215254ee7625d752710182c05d2f9": {},
+                "170c97c7215f42edfb20c2248f954879e91ef86e": {},
+                "d1120d67b700e4dfe8b39eb1e48fbdea4e1a0c43": {},
+                "54a8b153ed04a872da878d695239bdc413dc782c": {},
+                "d7d712e507c1c6273b05c773c825a668c5cf1504": {}
+              }
+            },
+            "Code assisted ": {
+              "ac7771c332da42b29a913b116bd6ef622cbf89cf": {},
+              "af1c871282ec122869d03f5420ef5d9143358a91": {},
+              "6e754273d54a91371efbc928cd6b156364d517da": {},
+              "1cd8373490efc2d74c2796f4b2aa27c7d4415ec9": {}
+            },
+            "Both code and natural language assisted ": {
+              "966852963a88a28786b798c91b6662d6e501e590": {},
+              "ac7771c332da42b29a913b116bd6ef622cbf89cf": {}
+            }
+          },
+          "\\textbf{Data-driven}": {
+            "Disciplinary expertise ": {
+              "40795cf9508cc26e1fd47b71e14e40f2f1c71c11": {},
+              "f22d71c7ce9720ba1f717a4f1181488200e78198": {}
+            },
+            "Spatial comprehension ": {
+              "094883e42bb9a41f602c0715c1059bc431e33fb2": {},
+              "e2a58fd18961c3941102989e3a3d0d27c615e015": {}
+            },
+            "Enhanced image comprehension ": {
+              "84dc889beff9d51fe429cff8c92735e7410ee3c2": {},
+              "f68f6f2a057c4e6e5a3c91fc8563533d9bf6e560": {}
+            },
+            "Complex modalities ": {
+              "fd755dc7b5b206c17fd953db04e1c888d45b6e4e": {},
+              "6bcc6ab9c28805d4067e99b2cdc7524550fe80e1": {}
+            },
+            "Instruction-following ": {
+              "81e7e82245c2f230eeb8aaaa1a2b2604c143754a": {},
+              "2f566575a246752d59438e2bde22f88680927af9": {},
+              "d6d3604f369bb0415cbe814e43ca3131323b03e2": {}
+            }
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000001",
+        "paperId": "30cc95639cffca4ffa8c0eafbc502636c0c88fa5",
+        "ref_index": "3",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "Direct Mapping "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000002",
+        "paperId": "2313afae52d98e569da2dedbf14daf9efc74e7cf",
+        "ref_index": "9",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "Direct Mapping "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000003",
+        "paperId": "7b689adb8c156d6158660f90d1c86888ee281f63",
+        "ref_index": "10",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "Direct Mapping "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000004",
+        "paperId": "2b2d9ee18507aa89a7f1ecba0bf68844c7d9aa75",
+        "ref_index": "11",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "Direct Mapping "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000005",
+        "paperId": "6ae4705139494fcb6b790b6dd6c4225b40ee40f8",
+        "ref_index": "13",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "Direct Mapping "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000006",
+        "paperId": "60ee030773ba1b68eb222a265b052ca028353362",
+        "ref_index": "15",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "Direct Mapping "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000007",
+        "paperId": "c020f15be1dee20f9e2e0c5a6f05f272b5508325",
+        "ref_index": "22",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "Direct Mapping "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000008",
+        "paperId": "ebddfdc5d845a788e8062eddbbf7a335737cb99b",
+        "ref_index": "26",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "Direct Mapping "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000009",
+        "paperId": "fa75a55760e6ea49b39b83cb85c99a22e1088254",
+        "ref_index": "34",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "Direct Mapping "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000010",
+        "paperId": "2f566575a246752d59438e2bde22f88680927af9",
+        "ref_index": "36",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "Direct Mapping "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000011",
+        "paperId": "f9bfc6d9ba1665b73af3323d46c7642b852759ef",
+        "ref_index": "50",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "Direct Mapping "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000012",
+        "paperId": "d48cb91b9e555194f7494c4d4bb9815021d3ee45",
+        "ref_index": "51",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "Direct Mapping "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000013",
+        "paperId": "a5036f31f0e629dc661f120b8c3b1f374d479ab8",
+        "ref_index": "58",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "Direct Mapping "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000014",
+        "paperId": "ab8ee8d06ed581c876da3a2e7a5fdb1cbec21a45",
+        "ref_index": "20",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "Textual Conversion "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000015",
+        "paperId": "efc694164312006c543ef745611348ef64e68dda",
+        "ref_index": "21",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "Textual Conversion "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000016",
+        "paperId": "2672777d25562c9df6fc13b653181db62d39bece",
+        "ref_index": "37",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "Textual Conversion "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000017",
+        "paperId": "57c64f233a0db4d17e0e750c12516364ca009fb2",
+        "ref_index": "39",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "Textual Conversion "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000018",
+        "paperId": "1cd8373490efc2d74c2796f4b2aa27c7d4415ec9",
+        "ref_index": "53",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "Adapter-based adjustment "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000019",
+        "paperId": "a757999ed260d7bc45484dc6b4456bf33fe6f679",
+        "ref_index": "56",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "Adapter-based adjustment "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000020",
+        "paperId": "570079bbdd8758dfe865097e05719313c9c1301a",
+        "ref_index": "57",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "Adapter-based adjustment "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000021",
+        "paperId": "722ad6ac92286507437b31486f47987d6ece05c9",
+        "ref_index": "2",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "VAE Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000022",
+        "paperId": "d3bc7ba19e274bb6fb5e055a3f1b62924c731432",
+        "ref_index": "24",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "VAE Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000023",
+        "paperId": "376f494126d1ea4f571ea0263c43ac2b6331800a",
+        "ref_index": "42",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "VAE Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000024",
+        "paperId": "30cc95639cffca4ffa8c0eafbc502636c0c88fa5",
+        "ref_index": "3",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "Q-former Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000025",
+        "paperId": "c1e450284e7d6cac1855330a1197df8537df653f",
+        "ref_index": "19",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "Q-former Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000026",
+        "paperId": "3803d1f291e162bdaa4678a2c5a2bbcf63c050f4",
+        "ref_index": "28",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "Q-former Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000027",
+        "paperId": "e7d09b6f2bc878cf2c993acf675f409d0b55f35a",
+        "ref_index": "31",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "Q-former Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000028",
+        "paperId": "ca6a2bc279be5a3349a22bfd6866ed633d18734b",
+        "ref_index": "32",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "Q-former Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000029",
+        "paperId": "ee0c9e8a935e047f2c030ecbfad93c2d80d642d7",
+        "ref_index": "45",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "Q-former Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000030",
+        "paperId": "e3fe61ce7a3c013de8770f7a43f3666f9a8e2ce5",
+        "ref_index": "48",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "Q-former Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000031",
+        "paperId": "5d321194696f1f75cf9da045e6022b2f20ba5b9c",
+        "ref_index": "49",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "Q-former Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000032",
+        "paperId": "3f5b31c4f7350dc88002c121aecbdc82f86eb5bb",
+        "ref_index": "54",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "Q-former Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000033",
+        "paperId": "5ddb51ae85deca14dc7fc8adc07305c22a1ebe0a",
+        "ref_index": "63",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "Q-former Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000034",
+        "paperId": "0983883619a0ca597d055d0e58da2f514052913d",
+        "ref_index": "29",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "Customization Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000035",
+        "paperId": "81e7e82245c2f230eeb8aaaa1a2b2604c143754a",
+        "ref_index": "33",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "Customization Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000036",
+        "paperId": "7fbc502441d66daf1f53765d5d86a8dfba9ab0ce",
+        "ref_index": "35",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "Customization Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000037",
+        "paperId": "d3f79210b54e168c76b8c311488f42d7d1048b81",
+        "ref_index": "38",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "Customization Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000038",
+        "paperId": "0819c1e60c13b9797f937282d06b54d252d9d6ec",
+        "ref_index": "40",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "Customization Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000039",
+        "paperId": "76a3f4a79ae9a00db2f2b5f6877021d8deb96ada",
+        "ref_index": "43",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "Customization Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000040",
+        "paperId": "7e32aac43e9f1df49e116add03327ee6f365dbf3",
+        "ref_index": "59",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "Customization Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000041",
+        "paperId": "ad13b213681b6f634bc83a264df246e83dd9a9d9",
+        "ref_index": "60",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "Customization Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000042",
+        "paperId": "d6d3604f369bb0415cbe814e43ca3131323b03e2",
+        "ref_index": "61",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "Customization Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000043",
+        "paperId": "42a30dc5470f54ec249f25d3c31e05d7c376c8e3",
+        "ref_index": "65",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Multi-Modal Perceiver}",
+          "Customization Perceiver "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000044",
+        "paperId": "d98536f24272e258b1d399074b64284d64786099",
+        "ref_index": "0",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Tools Learning}",
+          "Natural language assisted ",
+          "LLMs as coordinators"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000045",
+        "paperId": "69cfdc8df16ae63b7acba4ac6f727f78b86893c3",
+        "ref_index": "7",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Tools Learning}",
+          "Natural language assisted ",
+          "LLMs as coordinators"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000046",
+        "paperId": "055e3aa78a542c6cec016169f3011c2bf4e46932",
+        "ref_index": "8",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Tools Learning}",
+          "Natural language assisted ",
+          "LLMs as coordinators"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000047",
+        "paperId": "7cf64070fd3d7e53d80f260c10e6bd7018d580e1",
+        "ref_index": "17",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Tools Learning}",
+          "Natural language assisted ",
+          "LLMs as coordinators"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000048",
+        "paperId": "ecfff30e570498b6c87c5d1319a0cbcdf7a8b86d",
+        "ref_index": "23",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Tools Learning}",
+          "Natural language assisted ",
+          "LLMs as coordinators"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000049",
+        "paperId": "c7a9c7302a72301ed79a7c0696d5af2e03ad3ac4",
+        "ref_index": "27",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Tools Learning}",
+          "Natural language assisted ",
+          "LLMs as coordinators"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000050",
+        "paperId": "ada81a4de88a6ce474df2e2446ad11fea480616e",
+        "ref_index": "41",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Tools Learning}",
+          "Natural language assisted ",
+          "LLMs as coordinators"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000051",
+        "paperId": "ac7771c332da42b29a913b116bd6ef622cbf89cf",
+        "ref_index": "46",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Tools Learning}",
+          "Natural language assisted ",
+          "LLMs as coordinators"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000052",
+        "paperId": "6f8b9192b1f215254ee7625d752710182c05d2f9",
+        "ref_index": "4",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Tools Learning}",
+          "Natural language assisted ",
+          "LLMs as controllers"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000053",
+        "paperId": "170c97c7215f42edfb20c2248f954879e91ef86e",
+        "ref_index": "6",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Tools Learning}",
+          "Natural language assisted ",
+          "LLMs as controllers"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000054",
+        "paperId": "d1120d67b700e4dfe8b39eb1e48fbdea4e1a0c43",
+        "ref_index": "16",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Tools Learning}",
+          "Natural language assisted ",
+          "LLMs as controllers"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000055",
+        "paperId": "54a8b153ed04a872da878d695239bdc413dc782c",
+        "ref_index": "18",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Tools Learning}",
+          "Natural language assisted ",
+          "LLMs as controllers"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000056",
+        "paperId": "d7d712e507c1c6273b05c773c825a668c5cf1504",
+        "ref_index": "30",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Tools Learning}",
+          "Natural language assisted ",
+          "LLMs as controllers"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000057",
+        "paperId": "ac7771c332da42b29a913b116bd6ef622cbf89cf",
+        "ref_index": "46",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Tools Learning}",
+          "Code assisted "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000058",
+        "paperId": "af1c871282ec122869d03f5420ef5d9143358a91",
+        "ref_index": "47",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Tools Learning}",
+          "Code assisted "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000059",
+        "paperId": "6e754273d54a91371efbc928cd6b156364d517da",
+        "ref_index": "52",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Tools Learning}",
+          "Code assisted "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000060",
+        "paperId": "1cd8373490efc2d74c2796f4b2aa27c7d4415ec9",
+        "ref_index": "53",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Tools Learning}",
+          "Code assisted "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000061",
+        "paperId": "966852963a88a28786b798c91b6662d6e501e590",
+        "ref_index": "1",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Tools Learning}",
+          "Both code and natural language assisted "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000062",
+        "paperId": "ac7771c332da42b29a913b116bd6ef622cbf89cf",
+        "ref_index": "46",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Tools Learning}",
+          "Both code and natural language assisted "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000063",
+        "paperId": "40795cf9508cc26e1fd47b71e14e40f2f1c71c11",
+        "ref_index": "5",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Data-driven}",
+          "Disciplinary expertise "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000064",
+        "paperId": "f22d71c7ce9720ba1f717a4f1181488200e78198",
+        "ref_index": "25",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Data-driven}",
+          "Disciplinary expertise "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000065",
+        "paperId": "094883e42bb9a41f602c0715c1059bc431e33fb2",
+        "ref_index": "14",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Data-driven}",
+          "Spatial comprehension "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000066",
+        "paperId": "e2a58fd18961c3941102989e3a3d0d27c615e015",
+        "ref_index": "64",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Data-driven}",
+          "Spatial comprehension "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000067",
+        "paperId": "84dc889beff9d51fe429cff8c92735e7410ee3c2",
+        "ref_index": "12",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Data-driven}",
+          "Enhanced image comprehension "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000068",
+        "paperId": "f68f6f2a057c4e6e5a3c91fc8563533d9bf6e560",
+        "ref_index": "44",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Data-driven}",
+          "Enhanced image comprehension "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000069",
+        "paperId": "fd755dc7b5b206c17fd953db04e1c888d45b6e4e",
+        "ref_index": "55",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Data-driven}",
+          "Complex modalities "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000070",
+        "paperId": "6bcc6ab9c28805d4067e99b2cdc7524550fe80e1",
+        "ref_index": "62",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Data-driven}",
+          "Complex modalities "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000071",
+        "paperId": "81e7e82245c2f230eeb8aaaa1a2b2604c143754a",
+        "ref_index": "33",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Data-driven}",
+          "Instruction-following "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000072",
+        "paperId": "2f566575a246752d59438e2bde22f88680927af9",
+        "ref_index": "36",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Data-driven}",
+          "Instruction-following "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07594",
+        "arxiv_id": "2311.07594",
+        "leaf_mention_id": "2311.07594::000073",
+        "paperId": "d6d3604f369bb0415cbe814e43ca3131323b03e2",
+        "ref_index": "61",
+        "path": [
+          "MLLM ",
+          "\\textbf{Multi-Modal Convertor}",
+          "\\textbf{Data-driven}",
+          "Instruction-following "
+        ],
+        "depth": 4,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 73,
+      "unique_leaf_paper_count": 66,
+      "multi_membership_extra_mentions": 7,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

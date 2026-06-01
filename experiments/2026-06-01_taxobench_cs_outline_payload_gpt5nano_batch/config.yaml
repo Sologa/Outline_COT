@@ -1,6 +1,6 @@
 experiment_id: 2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch
-default_run_id: 2026-06-01T0000_taipei_scaffold_only
-status: draft_data_pending_no_runs
+default_run_id: 2026-06-01T0000_taipei_data_staged_payloads_ready
+status: data_staged_payloads_ready_no_model_runs
 
 source_dataset:
   workspace_root: /Users/xjp/Desktop/TaxoBench-CS
@@ -10,12 +10,20 @@ source_dataset:
   mutation_policy: read_only
 
 staging:
-  status: not_created
+  status: canonical_created_and_validated
   intended_root: data/taxobench-cs
   local_scratch: .local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch
   results_root: results/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch
   manifest_name: input_manifest.jsonl
-  note: Do not create staging or results until the adapter is implemented and explicitly invoked.
+  note: Canonical staging and deterministic payloads were written after explicit approval on 2026-06-01; no model-run artifacts were written to results.
+  validated_2026_06_01:
+    manifest_rows: 156
+    ready_papers: 156
+    normalized_reference_rows: 11609
+    taxonomy_leaf_mentions: 13205
+    taxonomy_unresolved_leaf_mentions: 0
+    payload_files: 624
+    prompt_hygiene_violations: 0
 
 observed_source_snapshot_2026_06_01:
   ground_json_files: 156
@@ -48,7 +56,7 @@ observed_source_snapshot_2026_06_01:
   copied_outline_empty_title_nodes: 2
 
 paper_set:
-  status: pending_adapter_validation
+  status: adapter_validated_156_ready
   expected_source_count_from_snapshot: 156
   selection_policy: all_adapter_ready_records
   required_ready_fields:
@@ -104,7 +112,7 @@ prompt_contract:
     - tree_with_papers
 
 projection:
-  status: planned_not_implemented
+  status: implemented_and_validated
   source_payload: TaxoBench-CS taxo_tree
   definition_policy: do_not_generate_or_impute
   flat_concepts: remove parent-child hierarchy and keep concept labels plus descendant paper leaves
@@ -123,12 +131,12 @@ judge:
   max_retries: 2
 
 guardrails:
-  no_experiments_run_during_scaffold: true
+  no_model_runs_completed: true
   do_not_mutate_taxobench_cs: true
   do_not_write_google_sheets: true
   do_not_write_results_until_explicit_run: true
 
 notes:
   - human_written is an evaluation/reference arm and must not be sent as a generation request.
-  - tree_with_papers is a new planned arm and should remain TODO until an adapter/runner implements it.
-  - This scaffold records intended settings only; it is not evidence that the experiment is runnable.
+  - tree_with_papers is implemented as a TaxoBench-CS-specific deterministic renderer and excludes abstracts by default.
+  - Data staging and payload readiness are validated; live generation and evaluation remain unapproved.

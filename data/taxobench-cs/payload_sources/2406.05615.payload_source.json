@@ -1,0 +1,2063 @@
+{
+  "paper_id": "2406.05615",
+  "arxiv_id": "2406.05615",
+  "title": "Video-Language Understanding: A Survey from Model Architecture, Model Training, and Data Perspectives",
+  "ref_meta": [
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "0",
+      "ref_key": "S2:f0524b3005720bcff886bcb0227f7f0dd924ff07",
+      "paperId": "f0524b3005720bcff886bcb0227f7f0dd924ff07",
+      "title": "VATT: Transformers for Multimodal Self-Supervised Learning from Raw Video, Audio and Text",
+      "year": 2021,
+      "abstract": "We present a framework for learning multimodal representations from unlabeled data using convolution-free Transformer architectures. Specifically, our Video-Audio-Text Transformer (VATT) takes raw signals as inputs and extracts multimodal representations that are rich enough to benefit a variety of downstream tasks. We train VATT end-to-end from scratch using multimodal contrastive losses and evaluate its performance by the downstream tasks of video action recognition, audio event classification, image classification, and text-to-video retrieval. Furthermore, we study a modality-agnostic, single-backbone Transformer by sharing weights among the three modalities. We show that the convolution-free VATT outperforms state-of-the-art ConvNet-based architectures in the downstream tasks. Especially, VATT's vision Transformer achieves the top-1 accuracy of 82.1% on Kinetics-400, 83.6% on Kinetics-600, 72.7% on Kinetics-700, and 41.1% on Moments in Time, new records while avoiding supervised pre-training. Transferring to image classification leads to 78.7% top-1 accuracy on ImageNet compared to 64.7% by training the same Transformer from scratch, showing the generalizability of our model despite the domain gap between videos and images. VATT's audio Transformer also sets a new record on waveform-based audio event recognition by achieving the mAP of 39.4% on AudioSet without any supervised pre-training. VATT's source code is publicly available.",
+      "externalIds": {
+        "DBLP": "conf/nips/AkbariYQCCCG21",
+        "ArXiv": "2104.11178",
+        "CorpusId": 233346984
+      },
+      "arxiv_id": "2104.11178",
+      "doi": null,
+      "corpus_id": 233346984
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "1",
+      "ref_key": "S2:ee909ad489244016cf301bb7d7d8eeea423dbf35",
+      "paperId": "ee909ad489244016cf301bb7d7d8eeea423dbf35",
+      "title": "Localizing Moments in Video with Natural Language",
+      "year": 2017,
+      "abstract": "We consider retrieving a specific temporal segment, or moment, from a video given a natural language text description. Methods designed to retrieve whole video clips with natural language determine what occurs in a video but not when. To address this issue, we propose the Moment Context Network (MCN) which effectively localizes natural language queries in videos by integrating local and global video features over time. A key obstacle to training our MCN model is that current video datasets do not include pairs of localized video segments and referring expressions, or text descriptions which uniquely identify a corresponding moment. Therefore, we collect the Distinct Describable Moments (DiDeMo) dataset which consists of over 10,000 unedited, personal videos in diverse visual settings with pairs of localized video segments and referring expressions. We demonstrate that MCN outperforms several baseline methods and believe that our initial results together with the release of DiDeMo will inspire further research on localizing video moments with natural language.",
+      "externalIds": {
+        "MAG": "2963017553",
+        "DBLP": "conf/iccv/HendricksWSSDR17",
+        "ArXiv": "1708.01641",
+        "DOI": "10.1109/ICCV.2017.618",
+        "CorpusId": 1061352
+      },
+      "arxiv_id": "1708.01641",
+      "doi": "10.1109/ICCV.2017.618",
+      "corpus_id": 1061352
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "2",
+      "ref_key": "S2:bac87bdb1cabc35fafb8176a234d332ebcc02864",
+      "paperId": "bac87bdb1cabc35fafb8176a234d332ebcc02864",
+      "title": "Frozen in Time: A Joint Video and Image Encoder for End-to-End Retrieval",
+      "year": 2021,
+      "abstract": "Our objective in this work is video-text retrieval – in particular a joint embedding that enables efficient text-to-video retrieval. The challenges in this area include the design of the visual architecture and the nature of the training data, in that the available large scale video-text training datasets, such as HowTo100M, are noisy and hence competitive performance is achieved only at scale through large amounts of compute.We address both these challenges in this paper. We propose an end-to-end trainable model that is designed to take advantage of both large-scale image and video captioning datasets. Our model is an adaptation and extension of the recent ViT and Timesformer architectures, and consists of attention in both space and time. The model is flexible and can be trained on both image and video text datasets, either independently or in conjunction. It is trained with a curriculum learning schedule that begins by treating images as ‘frozen’ snapshots of video, and then gradually learns to attend to increasing temporal context when trained on video datasets. We also provide a new video-text pretraining dataset WebVid-2M, comprised of over two million videos with weak captions scraped from the internet. Despite training on datasets that are an order of magnitude smaller, we show that this approach yields state-of-the-art results on standard downstream video-retrieval benchmarks including MSR-VTT, MSVD, DiDeMo and LSMDC.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2104-00650",
+        "ArXiv": "2104.00650",
+        "DOI": "10.1109/ICCV48922.2021.00175",
+        "CorpusId": 232478955
+      },
+      "arxiv_id": "2104.00650",
+      "doi": "10.1109/ICCV48922.2021.00175",
+      "corpus_id": 232478955
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "3",
+      "ref_key": "S2:3ce35f5e08bdc558a264704b398e488fff9582a5",
+      "paperId": "3ce35f5e08bdc558a264704b398e488fff9582a5",
+      "title": "FIBER: Fill-in-the-Blanks as a Challenging Video Understanding Evaluation Framework",
+      "year": 2021,
+      "abstract": "We propose fill-in-the-blanks as a video understanding evaluation framework and introduce FIBER – a novel dataset consisting of 28,000 videos and descriptions in support of this evaluation framework. The fill-in-the-blanks setting tests a model’s understanding of a video by requiring it to predict a masked noun phrase in the caption of the video, given the video and the surrounding text. The FIBER benchmark does not share the weaknesses of the current state-of-the-art language-informed video understanding tasks, namely: (1) video question answering using multiple-choice questions, where models perform relatively well because they exploit linguistic biases in the task formulation, thus making our framework challenging for the current state-of-the-art systems to solve; and (2) video captioning, which relies on an open-ended evaluation framework that is often inaccurate because system answers may be perceived as incorrect if they differ in form from the ground truth. The FIBER dataset and our code are available at https://lit.eecs.umich.edu/fiber/.",
+      "externalIds": {
+        "ArXiv": "2104.04182",
+        "ACL": "2022.acl-long.209",
+        "DBLP": "conf/acl/CastroWHSILSM22",
+        "DOI": "10.18653/v1/2022.acl-long.209",
+        "CorpusId": 247614674
+      },
+      "arxiv_id": "2104.04182",
+      "doi": "10.18653/v1/2022.acl-long.209",
+      "corpus_id": 247614674
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "4",
+      "ref_key": "S2:d2729be3c1332640b3ae24758977aaf2a5adc1c2",
+      "paperId": "d2729be3c1332640b3ae24758977aaf2a5adc1c2",
+      "title": "In-the-Wild Video Question Answering",
+      "year": 2022,
+      "abstract": "Existing video understanding datasets mostly focus on human interactions, with little attention being paid to the “in the wild” settings, where the videos are recorded outdoors. We propose WILDQA, a video understanding dataset of videos recorded in outside settings. In addition to video question answering (Video QA), we also introduce the new task of identifying visual support for a given question and answer (Video Evidence Selection). Through evaluations using a wide range of baseline models, we show that WILDQA poses new challenges to the vision and language research communities. The dataset is available at https: //lit.eecs.umich.edu/wildqa/.",
+      "externalIds": {
+        "DBLP": "conf/coling/CastroDHBM22",
+        "ArXiv": "2209.06650",
+        "ACL": "2022.coling-1.496",
+        "DOI": "10.48550/arXiv.2209.06650",
+        "CorpusId": 252818917
+      },
+      "arxiv_id": "2209.06650",
+      "doi": "10.48550/arXiv.2209.06650",
+      "corpus_id": 252818917
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "5",
+      "ref_key": "S2:f9bfc6d9ba1665b73af3323d46c7642b852759ef",
+      "paperId": "f9bfc6d9ba1665b73af3323d46c7642b852759ef",
+      "title": "VideoLLM: Modeling Video Sequence with Large Language Models",
+      "year": 2023,
+      "abstract": "With the exponential growth of video data, there is an urgent need for automated technology to analyze and comprehend video content. However, existing video understanding models are often task-specific and lack a comprehensive capability of handling diverse tasks. The success of large language models (LLMs) like GPT has demonstrated their impressive abilities in sequence causal reasoning. Building upon this insight, we propose a novel framework called VideoLLM that leverages the sequence reasoning capabilities of pre-trained LLMs from natural language processing (NLP) for video sequence understanding. VideoLLM incorporates a carefully designed Modality Encoder and Semantic Translator, which convert inputs from various modalities into a unified token sequence. This token sequence is then fed into a decoder-only LLM. Subsequently, with the aid of a simple task head, our VideoLLM yields an effective unified framework for different kinds of video understanding tasks. To evaluate the efficacy of VideoLLM, we conduct extensive experiments using multiple LLMs and fine-tuning methods. We evaluate our VideoLLM on eight tasks sourced from four different datasets. The experimental results demonstrate that the understanding and reasoning capabilities of LLMs can be effectively transferred to video understanding tasks. We release the code at https://github.com/cg1177/VideoLLM.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-13292",
+        "ArXiv": "2305.13292",
+        "DOI": "10.48550/arXiv.2305.13292",
+        "CorpusId": 258832930
+      },
+      "arxiv_id": "2305.13292",
+      "doi": "10.48550/arXiv.2305.13292",
+      "corpus_id": 258832930
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "6",
+      "ref_key": "S2:c8dbf43fc20160814b9506de32be86ada91fa725",
+      "paperId": "c8dbf43fc20160814b9506de32be86ada91fa725",
+      "title": "VindLU: A Recipe for Effective Video-and-Language Pretraining",
+      "year": 2022,
+      "abstract": "The last several years have witnessed remarkable progress in video-and-language (VidL) understanding. However, most modern VidL approaches use complex and specialized model architectures and sophisticated pretraining protocols, making the reproducibility, analysis and comparisons of these frameworks difficult. Hence, instead of proposing yet another new VidL model, this paper conducts a thorough empirical study demystifying the most important factors in the VidL model design. Among the factors that we investigate are (i) the spatiotemporal architecture design, (ii) the multimodal fusion schemes, (iii) the pretraining objectives, (iv) the choice of pretraining data, (v) pretraining and finetuning protocols, and (vi) dataset and model scaling. Our empirical study reveals that the most important design factors include: temporal modeling, video-to-text multimodal fusion, masked modeling objectives, and joint training on images and videos. Using these empirical insights, we then develop a step-by-step recipe, dubbed VindLU, for effective VidL pretraining. Our final model trained using our recipe achieves comparable or better than state-of-the-art results on several VidL tasks without relying on external CLIP pretraining. In particular, on the text-to-video retrieval task, our approach obtains 61.2% on DiDeMo, and 55.0% on ActivityNet, outperforming current SOTA by 7.8% and 6.1% respectively. Furthermore, our model also obtains state-of-the-art video question-answering results on ActivityNet-QA, MSRVTT-QA, MSRVTT-MC and TVQA. Our code and pretrained models are publicly available at: https://github.com/klauscc/VindLU.",
+      "externalIds": {
+        "ArXiv": "2212.05051",
+        "DBLP": "conf/cvpr/ChengW0CBB23",
+        "DOI": "10.1109/CVPR52729.2023.01034",
+        "CorpusId": 254535929
+      },
+      "arxiv_id": "2212.05051",
+      "doi": "10.1109/CVPR52729.2023.01034",
+      "corpus_id": 254535929
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "7",
+      "ref_key": "S2:7a56a9e39de93bea868f3e1c8c344fb79c6e7f15",
+      "paperId": "7a56a9e39de93bea868f3e1c8c344fb79c6e7f15",
+      "title": "Reading-Strategy Inspired Visual Representation Learning for Text-to-Video Retrieval",
+      "year": 2022,
+      "abstract": "This paper aims for the task of text-to-video retrieval, where given a query in the form of a natural-language sentence, it is asked to retrieve videos which are semantically relevant to the given query, from a great number of unlabeled videos. The success of this task depends on cross-modal representation learning that projects both videos and sentences into common spaces for semantic similarity computation. In this work, we concentrate on video representation learning, an essential component for text-to-video retrieval. Inspired by the reading strategy of humans, we propose a Reading-strategy Inspired Visual Representation Learning (RIVRL) to represent videos, which consists of two branches: a previewing branch and an intensive-reading branch. The previewing branch is designed to briefly capture the overview information of videos, while the intensive-reading branch is designed to obtain more in-depth information. Moreover, the intensive-reading branch is aware of the video overview captured by the previewing branch. Such holistic information is found to be useful for the intensive-reading branch to extract more fine-grained features. Extensive experiments on three datasets are conducted, where our model RIVRL achieves a new state-of-the-art on TGIF and VATEX. Moreover, on MSR-VTT, our model using two video features shows comparable performance to the state-of-the-art using seven video features and even outperforms models pre-trained on the large-scale HowTo100M dataset. Code is available at https://github.com/LiJiaBei-7/rivrl.",
+      "externalIds": {
+        "ArXiv": "2201.09168",
+        "DBLP": "journals/tcsv/DongWCQLHW22",
+        "DOI": "10.1109/TCSVT.2022.3150959",
+        "CorpusId": 246240069
+      },
+      "arxiv_id": "2201.09168",
+      "doi": "10.1109/TCSVT.2022.3150959",
+      "corpus_id": 246240069
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "8",
+      "ref_key": "S2:9d9aced120e530484609164c836da64548693484",
+      "paperId": "9d9aced120e530484609164c836da64548693484",
+      "title": "Convolutional Two-Stream Network Fusion for Video Action Recognition",
+      "year": 2016,
+      "abstract": "Recent applications of Convolutional Neural Networks (ConvNets) for human action recognition in videos have proposed different solutions for incorporating the appearance and motion information. We study a number of ways of fusing ConvNet towers both spatially and temporally in order to best take advantage of this spatio-temporal information. We make the following findings: (i) that rather than fusing at the softmax layer, a spatial and temporal network can be fused at a convolution layer without loss of performance, but with a substantial saving in parameters, (ii) that it is better to fuse such networks spatially at the last convolutional layer than earlier, and that additionally fusing at the class prediction layer can boost accuracy, finally (iii) that pooling of abstract convolutional features over spatiotemporal neighbourhoods further boosts performance. Based on these studies we propose a new ConvNet architecture for spatiotemporal fusion of video snippets, and evaluate its performance on standard benchmarks where this architecture achieves state-of-the-art results.",
+      "externalIds": {
+        "ArXiv": "1604.06573",
+        "MAG": "2342662179",
+        "DBLP": "conf/cvpr/FeichtenhoferPZ16",
+        "DOI": "10.1109/CVPR.2016.213",
+        "CorpusId": 12289712
+      },
+      "arxiv_id": "1604.06573",
+      "doi": "10.1109/CVPR.2016.213",
+      "corpus_id": 12289712
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "9",
+      "ref_key": "S2:bac146e4f52df49ded741e4b31102b97c8b5847f",
+      "paperId": "bac146e4f52df49ded741e4b31102b97c8b5847f",
+      "title": "An Empirical Study of End-to-End Video-Language Transformers with Masked Visual Modeling",
+      "year": 2022,
+      "abstract": "Masked visual modeling (MVM) has been recently proven effective for visual pre-training. While similar reconstructive objectives on video inputs (e.g., masked frame modeling) have been explored in video-language (VidL) pre-training, previous studies fail to find a truly effective MVM strategy that can largely benefit the downstream performance. In this work, we systematically examine the potential of MVM in the context of VidL learning. Specifically, we base our study on a fully end-to-end VIdeO-LanguagE Transformer (VIOLET) [15], where the supervision from MVM training can be backpropogated to the video pixel space. In total, eight different reconstructive targets of MVM are explored, from low-level pixel values and oriented gradients to high-level depth maps, optical flow, discrete visual tokens and latent visual features. We conduct comprehensive experiments and provide insights into the factors leading to effective MVM training, resulting in an enhanced model VIOLETv2. Empirically, we show VIOLETv2 pre-trained with MVM objective achieves notable improvements on 13 VidL benchmarks, ranging from video question answering, video captioning, to text-to-video retrieval.11Code has been released at https://github.com/tsujuifu/pytorch_empirical-mvm",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2209-01540",
+        "ArXiv": "2209.01540",
+        "DOI": "10.1109/CVPR52729.2023.02193",
+        "CorpusId": 252089828
+      },
+      "arxiv_id": "2209.01540",
+      "doi": "10.1109/CVPR52729.2023.02193",
+      "corpus_id": 252089828
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "10",
+      "ref_key": "S2:3e75d9f13be996bd931a23cc1b119297ab25d165",
+      "paperId": "3e75d9f13be996bd931a23cc1b119297ab25d165",
+      "title": "CLIP2TV: Align, Match and Distill for Video-Text Retrieval",
+      "year": 2021,
+      "abstract": ". Modern video-text retrieval frameworks basically consist of three parts: video encoder, text encoder and the similarity head. With the success of both visual and textual representation learning, transformer-based encoders and fusion methods have also been adopted in the field of video-text retrieval. In this paper, We propose a new CLIP-based framework called CLIP2TV, which consists of a video-text alignment module and a video-text matching module. The two modules are trained end-to-end in a coordinated manner, and boost the performance to each other. Moreover, to address the impairment brought by data noise, especially false negatives introduced by vague description in some datasets, we propose similarity distillation to alleviate the problem. Extensive experimental results on various datasets validate the effectiveness of the proposed methods. Finally, on common datasets of various length of video clips, CLIP2TV achieves better or competitive results towards previous SOTA methods.",
+      "externalIds": {
+        "ArXiv": "2111.05610",
+        "CorpusId": 250906550
+      },
+      "arxiv_id": "2111.05610",
+      "doi": null,
+      "corpus_id": 250906550
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "11",
+      "ref_key": "S2:d27d44ed1caa7f973f9fedb11878e4b5ab452320",
+      "paperId": "d27d44ed1caa7f973f9fedb11878e4b5ab452320",
+      "title": "Multi-Scale Progressive Attention Network for Video Question Answering",
+      "year": 2021,
+      "abstract": "Understanding the multi-scale visual information in a video is essential for Video Question Answering (VideoQA). Therefore, we propose a novel Multi-Scale Progressive Attention Network (MSPAN) to achieve relational reasoning between cross-scale video information. We construct clips of different lengths to represent different scales of the video. Then, the clip-level features are aggregated into node features by using max-pool, and a graph is generated for each scale of clips. For cross-scale feature interaction, we design a message passing strategy between adjacent scale graphs, i.e., top-down scale interaction and bottom-up scale interaction. Under the question’s guidance of progressive attention, we realize the fusion of all-scale video features. Experimental evaluations on three benchmarks: TGIF-QA, MSVD-QA and MSRVTT-QA show our method has achieved state-of-the-art performance.",
+      "externalIds": {
+        "DBLP": "conf/acl/GuoZJ0L20",
+        "ACL": "2021.acl-short.122",
+        "DOI": "10.18653/v1/2021.acl-short.122",
+        "CorpusId": 236460112
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2021.acl-short.122",
+      "corpus_id": 236460112
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "12",
+      "ref_key": "S2:226ff50b10261693d89b8f7e35d838e31bbf0e66",
+      "paperId": "226ff50b10261693d89b8f7e35d838e31bbf0e66",
+      "title": "Meta-Explore: Exploratory Hierarchical Vision-and-Language Navigation Using Scene Object Spectrum Grounding",
+      "year": 2023,
+      "abstract": "The main challenge in vision-and-language navigation (VLN) is how to understand natural-language instructions in an unseen environment. The main limitation of conventional VLN algorithms is that if an action is mistaken, the agent fails to follow the instructions or explores unnecessary regions, leading the agent to an irrecoverable path. To tackle this problem, we propose Meta-Explore, a hierarchical navigation method deploying an exploitation policy to correct misled recent actions. We show that an exploitation policy, which moves the agent toward a well-chosen local goal among unvisited but observable states, outperforms a method which moves the agent to a previously visited state. We also highlight the demand for imagining regretful explorations with semantically meaningful clues. The key to our approach is understanding the object placements around the agent in spectral-domain. Specifically, we present a novel visual representation, called scene object spectrum (SOS), which performs category-wise 2D Fourier transform of detected objects. Combining exploitation policy and SOS features, the agent can correct its path by choosing a promising local goal. We evaluate our method in three VLN benchmarks: R2R, SOON, and REVERIE. Meta-Explore outper-forms other baselines and shows significant generalization performance. In addition, local goal search using the proposed spectral-domain SOS features significantly improves the success rate by 17.1% and SPL by 20. 6% against the state-of-the-art method of the SOON benchmark. Project page: https://rllab-snu.github.io/projects/Meta-Explore/doc.html",
+      "externalIds": {
+        "DBLP": "conf/cvpr/HwangJKOO23",
+        "ArXiv": "2303.04077",
+        "DOI": "10.1109/CVPR52729.2023.00646",
+        "CorpusId": 257378200
+      },
+      "arxiv_id": "2303.04077",
+      "doi": "10.1109/CVPR52729.2023.00646",
+      "corpus_id": 257378200
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "13",
+      "ref_key": "S2:96282f6456b10da5acfb8268632ef86645f4b339",
+      "paperId": "96282f6456b10da5acfb8268632ef86645f4b339",
+      "title": "Cross-Modal Adapter for Text-Video Retrieval",
+      "year": 2022,
+      "abstract": "Text-video retrieval is an important multi-modal learning task, where the goal is to retrieve the most relevant video for a given text query. Recently, pre-trained models, e.g., CLIP, show great potential on this task. However, as pre-trained models are scaling up, fully fine-tuning them on text-video retrieval datasets has a high risk of overfitting. Moreover, in practice, it would be costly to train and store a large model for each task. To overcome the above issues, we present a novel $\\textbf{Cross-Modal Adapter}$ for parameter-efficient fine-tuning. Inspired by adapter-based methods, we adjust the pre-trained model with a few parameterization layers. However, there are two notable differences. First, our method is designed for the multi-modal domain. Secondly, it allows early cross-modal interactions between CLIP's two encoders. Although surprisingly simple, our approach has three notable benefits: (1) reduces $\\textbf{99.6}\\%$ of fine-tuned parameters, and alleviates the problem of overfitting, (2) saves approximately 30% of training time, and (3) allows all the pre-trained parameters to be fixed, enabling the pre-trained model to be shared across datasets. Extensive experiments demonstrate that, without bells and whistles, it achieves superior or comparable performance compared to fully fine-tuned methods on MSR-VTT, MSVD, VATEX, ActivityNet, and DiDeMo datasets. The code will be available at \\url{https://github.com/LeapLabTHU/Cross-Modal-Adapter}.",
+      "externalIds": {
+        "ArXiv": "2211.09623",
+        "DBLP": "journals/corr/abs-2211-09623",
+        "DOI": "10.48550/arXiv.2211.09623",
+        "CorpusId": 253581476
+      },
+      "arxiv_id": "2211.09623",
+      "doi": "10.48550/arXiv.2211.09623",
+      "corpus_id": 253581476
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "14",
+      "ref_key": "S2:61ff7c259288b2f61f98ddc4ebed6cb723e4161b",
+      "paperId": "61ff7c259288b2f61f98ddc4ebed6cb723e4161b",
+      "title": "Semi-supervised Video Paragraph Grounding with Contrastive Encoder",
+      "year": 2022,
+      "abstract": "Video events grounding aims at retrieving the most relevant moments from an untrimmed video in terms of a given natural language query. Most previous works focus on Video Sentence Grounding (VSG), which localizes the moment with a sentence query. Recently, researchers extended this task to Video Paragraph Grounding (VPG) by retrieving multiple events with a paragraph. However, we find the existing VPG methods may not perform well on context modeling and highly rely on video-paragraph annotations. To tackle this problem, we propose a novel VPG method termed Semi-supervised Video-Paragraph TRansformer (SVPTR), which can more effectively exploit contextual information in paragraphs and significantly reduce the dependency on annotated data. Our SVPTR method consists of two key components: (1) a base model VPTR that learns the video-paragraph alignment with contrastive encoders and tackles the lack of sentence-level contextual interactions and (2) a semi-supervised learning framework with multimodal feature perturbations that reduces the requirements of annotated training data. We evaluate our model on three widely-used video grounding datasets, i.e., ActivityNet-Caption, Charades-CD-OOD, and TACoS. The experimental results show that our SVPTR method establishes the new state-of-the-art performance on all datasets. Even under the conditions of fewer annotations, it can also achieve competitive results compared with recent VPG methods.",
+      "externalIds": {
+        "DBLP": "conf/cvpr/JiangXZSCS22",
+        "DOI": "10.1109/CVPR52688.2022.00250",
+        "CorpusId": 250563967
+      },
+      "arxiv_id": null,
+      "doi": "10.1109/CVPR52688.2022.00250",
+      "corpus_id": 250563967
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "15",
+      "ref_key": "S2:e2d5f5a49d68c80a9108646587eb2f7b898e2831",
+      "paperId": "e2d5f5a49d68c80a9108646587eb2f7b898e2831",
+      "title": "DiffusionRet: Generative Text-Video Retrieval with Diffusion Model",
+      "year": 2023,
+      "abstract": "Existing text-video retrieval solutions are, in essence, discriminant models focused on maximizing the conditional likelihood, i.e., p(candidates|query). While straightforward, this de facto paradigm overlooks the underlying data distribution p(query), which makes it challenging to identify out-of-distribution data. To address this limitation, we creatively tackle this task from a generative viewpoint and model the correlation between the text and the video as their joint probability p(candidates,query). This is accomplished through a diffusion-based text-video retrieval framework (Diffusion-Ret), which models the retrieval task as a process of gradually generating joint distribution from noise. During training, DiffusionRet is optimized from both the generation and discrimination perspectives, with the generator being optimized by generation loss and the feature extractor trained with contrastive loss. In this way, DiffusionRet cleverly leverages the strengths of both generative and discriminative methods. Extensive experiments on five commonly used text-video retrieval benchmarks, including MSRVTT, LSMDC, MSVD, ActivityNet Captions, and DiDeMo, with superior performances, justify the efficacy of our method. More encouragingly, without any modification, DiffusionRet even performs well in out-domain retrieval settings. We believe this work brings fundamental insights into the related fields. Code is available at https://github.com/jpthu17/DiffusionRet.",
+      "externalIds": {
+        "ArXiv": "2303.09867",
+        "DBLP": "conf/iccv/0001LC0JL0023",
+        "DOI": "10.1109/ICCV51070.2023.00234",
+        "CorpusId": 257622679
+      },
+      "arxiv_id": "2303.09867",
+      "doi": "10.1109/ICCV51070.2023.00234",
+      "corpus_id": 257622679
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "16",
+      "ref_key": "S2:ba4a4d31d2af23eefadbf19e5efd5a7d4fd89143",
+      "paperId": "ba4a4d31d2af23eefadbf19e5efd5a7d4fd89143",
+      "title": "Less is More: CLIPBERT for Video-and-Language Learning via Sparse Sampling",
+      "year": 2021,
+      "abstract": "The canonical approach to video-and-language learning (e.g., video question answering) dictates a neural model to learn from offline-extracted dense video features from vision models and text features from language models. These feature extractors are trained independently and usually on tasks different from the target domains, rendering these fixed features sub-optimal for downstream tasks. Moreover, due to the high computational overload of dense video features, it is often difficult (or infeasible) to plug feature extractors directly into existing approaches for easy finetuning. To provide a remedy to this dilemma, we propose a generic framework CLIPBERT that enables affordable endto-end learning for video-and-language tasks, by employing sparse sampling, where only a single or a few sparsely sampled short clips from a video are used at each training step. Experiments on text-to-video retrieval and video question answering on six datasets demonstrate that CLIPBERT outperforms (or is on par with) existing methods that exploit full-length videos, suggesting that end-to-end learning with just a few sparsely sampled clips is often more accurate than using densely extracted offline features from full-length videos, proving the proverbial less-is-more principle. Videos in the datasets are from considerably different domains and lengths, ranging from 3-second genericdomain GIF videos to 180-second YouTube human activity videos, showing the generalization ability of our approach. Comprehensive ablation studies and thorough analyses are provided to dissect what factors lead to this success. Our code is publicly available.1",
+      "externalIds": {
+        "DBLP": "conf/cvpr/LeiLZGBB021",
+        "MAG": "3127384563",
+        "ArXiv": "2102.06183",
+        "DOI": "10.1109/CVPR46437.2021.00725",
+        "CorpusId": 231880022
+      },
+      "arxiv_id": "2102.06183",
+      "doi": "10.1109/CVPR46437.2021.00725",
+      "corpus_id": 231880022
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "17",
+      "ref_key": "S2:50d331ec9e1c620f69659371724c0e384fcbb01b",
+      "paperId": "50d331ec9e1c620f69659371724c0e384fcbb01b",
+      "title": "From Representation to Reasoning: Towards both Evidence and Commonsense Reasoning for Video Question-Answering",
+      "year": 2022,
+      "abstract": "Video understanding has achieved great success in representation learning, such as video caption, video object grounding, and video descriptive question-answer. However, current methods still struggle on video reasoning, including evidence reasoning and commonsense reasoning. To facilitate deeper video understanding towards video reasoning, we present the task of Causal-VidQA, which includes four types of questions ranging from scene description (description) to evidence reasoning (explanation) and commonsense reasoning (prediction and counterfactual). For commonsense reasoning, we set up a two-step solution by answering the question and providing a proper reason. Through extensive experiments on existing VideoQA methods, we find that the state-of-the-art methods are strong in descriptions but weak in reasoning. We hope that Causal-VidQA can guide the research of video understanding from representation learning to deeper reasoning. The dataset and related resources are available at https://github.com/bcmi/Causal-VidQA.git.",
+      "externalIds": {
+        "ArXiv": "2205.14895",
+        "DBLP": "journals/corr/abs-2205-14895",
+        "DOI": "10.1109/CVPR52688.2022.02059",
+        "CorpusId": 249192060
+      },
+      "arxiv_id": "2205.14895",
+      "doi": "10.1109/CVPR52688.2022.02059",
+      "corpus_id": 249192060
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "18",
+      "ref_key": "S2:4a91153f52869aa709f778e5e21814e237543542",
+      "paperId": "4a91153f52869aa709f778e5e21814e237543542",
+      "title": "Discovering Spatio-Temporal Rationales for Video Question Answering",
+      "year": 2023,
+      "abstract": "This paper strives to solve complex video question answering (VideoQA) which features long video containing multiple objects and events at different time. To tackle the challenge, we highlight the importance of identifying question-critical temporal moments and spatial objects from the vast amount of video content. Towards this, we propose a Spatio-Temporal Rationalization (STR), a differentiable selection module that adaptively collects question-critical moments and objects using cross-modal interaction. The discovered video moments and objects are then served as grounded rationales to support answer reasoning. Based on STR, we further propose TranSTR, a Transformerstyle neural network architecture that takes STR as the core and additionally underscores a novel answer interaction mechanism to coordinate STR for answer decoding. Experiments on four datasets show that TranSTR achieves new state-of-the-art (SoTA). Especially, on NExT-QA and Causal-VidQA which feature complex VideoQA, it significantly surpasses the previous SoTA by 5.8% and 6.8%, respectively. We then conduct extensive studies to verify the importance of STR as well as the proposed answer interaction mechanism. With the success of TranSTR and our comprehensive analysis, we hope this work can spark more future efforts in complex VideoQA. Code will be released at https://github.com/yl3800/TranSTR.",
+      "externalIds": {
+        "ArXiv": "2307.12058",
+        "DBLP": "journals/corr/abs-2307-12058",
+        "DOI": "10.1109/ICCV51070.2023.01275",
+        "CorpusId": 260125055
+      },
+      "arxiv_id": "2307.12058",
+      "doi": "10.1109/ICCV51070.2023.01275",
+      "corpus_id": 260125055
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "19",
+      "ref_key": "S2:cf5377c25bdc2f446c834d0e0ef644ff8ca0493b",
+      "paperId": "cf5377c25bdc2f446c834d0e0ef644ff8ca0493b",
+      "title": "LAVENDER: Unifying Video-Language Understanding as Masked Language Modeling",
+      "year": 2022,
+      "abstract": "Unified vision-language frameworks have greatly advanced in recent years, most of which adopt an encoder-decoder architecture to unify image-text tasks as sequence-to-sequence generation. However, existing video-language (VidL) models still require task-specific designs in model architecture and training objectives for each task. In this work, we explore a unified VidL framework LAVENDER, where Masked Language Modeling [13] (MLM) is used as the common interface for all pre-training and downstream tasks. Such unification leads to a simplified model architecture, where only a lightweight MLM head, instead of a decoder with much more parameters, is needed on top of the multimodal encoder. Surprisingly, experimental results show that this unified framework achieves competitive performance on 14 VidL benchmarks, covering video question answering, text-to-video retrieval and video captioning. Extensive analyses further demonstrate Lavender can (i) seamlessly support all downstream tasks with just a single set of parameter values when multi-task fine-tuned; (ii) generalize to various downstream tasks with limited training samples; and (iii) enable zero-shot evaluation on video question answering tasks. Code is available at https://github.com/microsoft/LAVENDER.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2206-07160",
+        "ArXiv": "2206.07160",
+        "DOI": "10.1109/CVPR52729.2023.02214",
+        "CorpusId": 249674556
+      },
+      "arxiv_id": "2206.07160",
+      "doi": "10.1109/CVPR52729.2023.02214",
+      "corpus_id": 249674556
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "20",
+      "ref_key": "S2:486c2df78cbb770a90a55f7fa3fe19102fba2c24",
+      "paperId": "486c2df78cbb770a90a55f7fa3fe19102fba2c24",
+      "title": "LLaMA-VID: An Image is Worth 2 Tokens in Large Language Models",
+      "year": 2023,
+      "abstract": "In this work, we present a novel method to tackle the token generation challenge in Vision Language Models (VLMs) for video and image understanding, called LLaMA-VID. Current VLMs, while proficient in tasks like image captioning and visual question answering, face computational burdens when processing long videos due to the excessive visual tokens. LLaMA-VID addresses this issue by representing each frame with two distinct tokens, namely context token and content token. The context token encodes the overall image context based on user input, whereas the content token encapsulates visual cues in each frame. This dual-token strategy significantly reduces the overload of long videos while preserving critical information. Generally, LLaMA-VID empowers existing frameworks to support hour-long videos and pushes their upper limit with an extra context token. It is proved to surpass previous methods on most of video- or image-based benchmarks. Code is available https://github.com/dvlab-research/LLaMA-VID}{https://github.com/dvlab-research/LLaMA-VID",
+      "externalIds": {
+        "ArXiv": "2311.17043",
+        "DBLP": "journals/corr/abs-2311-17043",
+        "DOI": "10.48550/arXiv.2311.17043",
+        "CorpusId": 265466723
+      },
+      "arxiv_id": "2311.17043",
+      "doi": "10.48550/arXiv.2311.17043",
+      "corpus_id": 265466723
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "21",
+      "ref_key": "S2:276d80c7bb09d32e364e633ed5b49ac26c191842",
+      "paperId": "276d80c7bb09d32e364e633ed5b49ac26c191842",
+      "title": "MomentDiff: Generative Video Moment Retrieval from Random to Real",
+      "year": 2023,
+      "abstract": "Video moment retrieval pursues an efficient and generalized solution to identify the specific temporal segments within an untrimmed video that correspond to a given language description. To achieve this goal, we provide a generative diffusion-based framework called MomentDiff, which simulates a typical human retrieval process from random browsing to gradual localization. Specifically, we first diffuse the real span to random noise, and learn to denoise the random noise to the original span with the guidance of similarity between text and video. This allows the model to learn a mapping from arbitrary random locations to real moments, enabling the ability to locate segments from random initialization. Once trained, MomentDiff could sample random temporal segments as initial guesses and iteratively refine them to generate an accurate temporal boundary. Different from discriminative works (e.g., based on learnable proposals or queries), MomentDiff with random initialized spans could resist the temporal location biases from datasets. To evaluate the influence of the temporal location biases, we propose two anti-bias datasets with location distribution shifts, named Charades-STA-Len and Charades-STA-Mom. The experimental results demonstrate that our efficient framework consistently outperforms state-of-the-art methods on three public benchmarks, and exhibits better generalization and robustness on the proposed anti-bias datasets. The code, model, and anti-bias evaluation datasets are available at https://github.com/IMCCretrieval/MomentDiff.",
+      "externalIds": {
+        "DBLP": "conf/nips/LiXXZZZZ023",
+        "ArXiv": "2307.02869",
+        "DOI": "10.48550/arXiv.2307.02869",
+        "CorpusId": 259360603
+      },
+      "arxiv_id": "2307.02869",
+      "doi": "10.48550/arXiv.2307.02869",
+      "corpus_id": 259360603
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "22",
+      "ref_key": "S2:d48cb91b9e555194f7494c4d4bb9815021d3ee45",
+      "paperId": "d48cb91b9e555194f7494c4d4bb9815021d3ee45",
+      "title": "VideoChat: Chat-Centric Video Understanding",
+      "year": 2023,
+      "abstract": "In this paper, we initiate an attempt of developing an end-to-end chat-centric video understanding system, coined as VideoChat. It integrates video foundation models and large language models via a learnable neural interface, excelling in spatiotemporal reasoning, event localization, and causal relationship inference. To instructively tune this system, we build a video-centric instruction dataset, composed of thousands of videos associated with detailed descriptions and conversations. This dataset emphasizes spatiotemporal reasoning and captures causal relationships, providing a valuable asset for training our chat-centric video understanding system. Preliminary qualitative experiments demonstrate the potential of our system across a broad spectrum of video applications, which could serve as a simple prototype system for future research on chat-centric video understanding. Access our code and data at https://github.com/OpenGVLab/Ask-Anything",
+      "externalIds": {
+        "ArXiv": "2305.06355",
+        "DBLP": "journals/corr/abs-2305-06355",
+        "DOI": "10.48550/arXiv.2305.06355",
+        "CorpusId": 258588306
+      },
+      "arxiv_id": "2305.06355",
+      "doi": "10.48550/arXiv.2305.06355",
+      "corpus_id": 258588306
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "23",
+      "ref_key": "S2:3263b941d0a77bbd2040612ec774ef063ef64c48",
+      "paperId": "3263b941d0a77bbd2040612ec774ef063ef64c48",
+      "title": "Semi-Supervised Learning for Video Captioning",
+      "year": 2020,
+      "abstract": "Deep neural networks have made great success on video captioning in supervised learning setting. However, annotating videos with descriptions is very expensive and time-consuming. If the video captioning algorithm can benefit from a large number of unlabeled videos, the cost of annotation can be reduced. In the proposed study, we make the first attempt to train the video captioning model on labeled data and unlabeled data jointly, in a semi-supervised learning manner. For labeled data, we train them with the traditional cross-entropy loss. For unlabeled data, we leverage a self-critical policy gradient method with the difference between the scores obtained by Monte-Carlo sampling and greedy decoding as the reward function, while the scores are the negative K-L divergence between output distributions of original video data and augmented video data. The final loss is the weighted sum of losses obtained by labeled data and unlabeled data. Experiments conducted on VATEX, MSR-VTT and MSVD dataset demonstrate that the introduction of unlabeled data can improve the performance of the video captioning model. The proposed semi-supervised learning algorithm also outperforms several state-of-the-art semi-supervised learning approaches.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/LinGW20",
+        "MAG": "3099999560",
+        "ACL": "2020.findings-emnlp.98",
+        "DOI": "10.18653/v1/2020.findings-emnlp.98",
+        "CorpusId": 226283879
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2020.findings-emnlp.98",
+      "corpus_id": 226283879
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "24",
+      "ref_key": "S2:13a84580708d1f5010fa5ef9bc1ee888240bf5bf",
+      "paperId": "13a84580708d1f5010fa5ef9bc1ee888240bf5bf",
+      "title": "ECLIPSE: Efficient Long-range Video Retrieval using Sight and Sound",
+      "year": 2022,
+      "abstract": "We introduce an audiovisual method for long-range text-to-video retrieval. Unlike previous approaches designed for short video retrieval (e.g., 5-15 seconds in duration), our approach aims to retrieve minute-long videos that capture complex human actions. One challenge of standard video-only approaches is the large computational cost associated with processing hundreds of densely extracted frames from such long videos. To address this issue, we propose to replace parts of the video with compact audio cues that succinctly summarize dynamic audio events and are cheap to process. Our method, named ECLIPSE (Efficient CLIP with Sound Encoding), adapts the popular CLIP model to an audiovisual video setting, by adding a unified audiovisual transformer block that captures complementary cues from the video and audio streams. In addition to being 2.92x faster and 2.34x memory-efficient than long-range video-only approaches, our method also achieves better text-to-video retrieval accuracy on several diverse long-range video datasets such as ActivityNet, QVHighlights, YouCook2, DiDeMo and Charades.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2204-02874",
+        "ArXiv": "2204.02874",
+        "DOI": "10.48550/arXiv.2204.02874",
+        "CorpusId": 247996595
+      },
+      "arxiv_id": "2204.02874",
+      "doi": "10.48550/arXiv.2204.02874",
+      "corpus_id": 247996595
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "25",
+      "ref_key": "S2:6f1aab7b3ca0a487e6a57571b4ef9993e6325435",
+      "paperId": "6f1aab7b3ca0a487e6a57571b4ef9993e6325435",
+      "title": "Learning Vision-and-Language Navigation from YouTube Videos",
+      "year": 2023,
+      "abstract": "Vision-and-language navigation (VLN) requires an embodied agent to navigate in realistic 3D environments using natural language instructions. Existing VLN methods suffer from training on small-scale environments or unreasonable path-instruction datasets, limiting the generalization to unseen environments. There are massive house tour videos on YouTube, providing abundant real navigation experiences and layout information. However, these videos have not been explored for VLN before. In this paper, we propose to learn an agent from these videos by creating a large-scale dataset which comprises reasonable path-instruction pairs from house tour videos and pre-training the agent on it. To achieve this, we have to tackle the challenges of automatically constructing path-instruction pairs and exploiting real layout knowledge from raw and unlabeled videos. To address these, we first leverage an entropy-based method to construct the nodes of a path trajectory. Then, we propose an action-aware generator for generating instructions from unlabeled trajectories. Last, we devise a trajectory judgment pretext task to encourage the agent to mine the layout knowledge. Experimental results show that our method achieves state-of-the-art performance on two popular benchmarks (R2R and REVERIE). Code is available at https://github.com/JeremyLinky/YouTube-VLN",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-11984",
+        "ArXiv": "2307.11984",
+        "DOI": "10.1109/ICCV51070.2023.00764",
+        "CorpusId": 260125181
+      },
+      "arxiv_id": "2307.11984",
+      "doi": "10.1109/ICCV51070.2023.00764",
+      "corpus_id": 260125181
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "26",
+      "ref_key": "S2:92dd395cc99890013946c6293b0417376e936f3e",
+      "paperId": "92dd395cc99890013946c6293b0417376e936f3e",
+      "title": "UMT: Unified Multi-modal Transformers for Joint Video Moment Retrieval and Highlight Detection",
+      "year": 2022,
+      "abstract": "Finding relevant moments and highlights in videos according to natural language queries is a natural and highly valuable common need in the current video content explosion era. Nevertheless, jointly conducting moment retrieval and highlight detection is an emerging research topic, even though its component problems and some related tasks have already been studied for a while. In this paper, we present the first unified framework, named Unified Multi-modal Transformers (UMT), capable of realizing such joint optimization while can also be easily degenerated for solving individual problems. As far as we are aware, this is the first scheme to integrate multi-modal (visual-audio) learning for either joint optimization or the individual moment retrieval task, and tackles moment retrieval as a keypoint detection problem using a novel query generator and query decoder. Extensive comparisons with existing methods and ablation studies on QVHighlights, Charades-STA, YouTube Highlights, and TVSum datasets demonstrate the effectiveness, superiority, and flexibility of the proposed method under various settings. Source code and pre-trained models are available at https://github.com/TencentARC/UMT.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2203-12745",
+        "ArXiv": "2203.12745",
+        "DOI": "10.1109/CVPR52688.2022.00305",
+        "CorpusId": 247627801
+      },
+      "arxiv_id": "2203.12745",
+      "doi": "10.1109/CVPR52688.2022.00305",
+      "corpus_id": 247627801
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "27",
+      "ref_key": "S2:281ad83e06d731d5d686acf07cd701576f1188c4",
+      "paperId": "281ad83e06d731d5d686acf07cd701576f1188c4",
+      "title": "CLIP4Clip: An Empirical Study of CLIP for End to End Video Clip Retrieval",
+      "year": 2021,
+      "abstract": "Video-text retrieval plays an essential role in multi-modal research and has\nbeen widely used in many real-world web applications. The CLIP (Contrastive\nLanguage-Image Pre-training), an image-language pre-training model, has\ndemonstrated the power of visual concepts learning from web collected\nimage-text datasets. In this paper, we propose a CLIP4Clip model to transfer\nthe knowledge of the CLIP model to video-language retrieval in an end-to-end\nmanner. Several questions are investigated via empirical studies: 1) Whether\nimage feature is enough for video-text retrieval? 2) How a post-pretraining on\na large-scale video-text dataset based on the CLIP affect the performance? 3)\nWhat is the practical mechanism to model temporal dependency between video\nframes? And 4) The Hyper-parameters sensitivity of the model on video-text\nretrieval task. Extensive experimental results present that the CLIP4Clip model\ntransferred from the CLIP can achieve SOTA results on various video-text\nretrieval datasets, including MSR-VTT, MSVC, LSMDC, ActivityNet, and DiDeMo. We\nrelease our code at https://github.com/ArrowLuo/CLIP4Clip.",
+      "externalIds": {
+        "ArXiv": "2104.08860",
+        "DBLP": "journals/corr/abs-2104-08860",
+        "DOI": "10.1016/j.neucom.2022.07.028",
+        "CorpusId": 233296206
+      },
+      "arxiv_id": "2104.08860",
+      "doi": "10.1016/j.neucom.2022.07.028",
+      "corpus_id": 233296206
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "28",
+      "ref_key": "S2:a444d32f30d38fb0cb811fa1a9b601511244fb5b",
+      "paperId": "a444d32f30d38fb0cb811fa1a9b601511244fb5b",
+      "title": "Spatio-Temporal Graph for Video Captioning With Knowledge Distillation",
+      "year": 2020,
+      "abstract": "Video captioning is a challenging task that requires a deep understanding of visual scenes. State-of-the-art methods generate captions using either scene-level or object-level information but without explicitly modeling object interactions. Thus, they often fail to make visually grounded predictions, and are sensitive to spurious correlations. In this paper, we propose a novel spatio-temporal graph model for video captioning that exploits object interactions in space and time. Our model builds interpretable links and is able to provide explicit visual grounding. To avoid unstable performance caused by the variable number of objects, we further propose an object-aware knowledge distillation mechanism, in which local object information is used to regularize global scene features. We demonstrate the efficacy of our approach through extensive experiments on two benchmarks, showing our approach yields competitive performance with interpretable predictions.",
+      "externalIds": {
+        "MAG": "3014258398",
+        "DBLP": "journals/corr/abs-2003-13942",
+        "ArXiv": "2003.13942",
+        "DOI": "10.1109/cvpr42600.2020.01088",
+        "CorpusId": 214728152
+      },
+      "arxiv_id": "2003.13942",
+      "doi": "10.1109/cvpr42600.2020.01088",
+      "corpus_id": 214728152
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "29",
+      "ref_key": "S2:1b407ec19693bdd8fe68453cd1ecdf7e9dfdc6a9",
+      "paperId": "1b407ec19693bdd8fe68453cd1ecdf7e9dfdc6a9",
+      "title": "ST-Adapter: Parameter-Efficient Image-to-Video Transfer Learning for Action Recognition",
+      "year": 2022,
+      "abstract": "Capitalizing on large pre-trained models for various downstream tasks of interest have recently emerged with promising performance. Due to the ever-growing model size, the standard full fine-tuning based task adaptation strategy becomes prohibitively costly in terms of model training and storage. This has led to a new research direction in parameter-efficient transfer learning. However, existing attempts typically focus on downstream tasks from the same modality (e.g., image understanding) of the pre-trained model. This creates a limit because in some specific modalities, (e.g., video understanding) such a strong pre-trained model with sufficient knowledge is less or not available. In this work, we investigate such a novel cross-modality transfer learning setting, namely parameter-efficient image-to-video transfer learning. To solve this problem, we propose a new Spatio-Temporal Adapter (ST-Adapter) for parameter-efficient fine-tuning per video task. With a built-in spatio-temporal reasoning capability in a compact design, ST-Adapter enables a pre-trained image model without temporal knowledge to reason about dynamic video content at a small (~8%) per-task parameter cost, requiring approximately 20 times fewer updated parameters compared to previous work. Extensive experiments on video action recognition tasks show that our ST-Adapter can match or even outperform the strong full fine-tuning strategy and state-of-the-art video models, whilst enjoying the advantage of parameter efficiency. The code and model are available at https://github.com/linziyi96/st-adapter",
+      "externalIds": {
+        "DBLP": "conf/nips/PanLZS022",
+        "ArXiv": "2206.13559",
+        "DOI": "10.48550/arXiv.2206.13559",
+        "CorpusId": 250243594
+      },
+      "arxiv_id": "2206.13559",
+      "doi": "10.48550/arXiv.2206.13559",
+      "corpus_id": 250243594
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "30",
+      "ref_key": "S2:08706687b02ae65e2303011d0013e96b79007d2c",
+      "paperId": "08706687b02ae65e2303011d0013e96b79007d2c",
+      "title": "Retrieving-to-Answer: Zero-Shot Video Question Answering with Frozen Large Language Models",
+      "year": 2023,
+      "abstract": "Video Question Answering (VideoQA) has been significantly advanced from the scaling of recent Large Language Models (LLMs). The key idea is to convert the visual information into the language feature space so that the capacity of LLMs can be fully exploited. Existing VideoQA methods typically take two paradigms: (1) learning cross-modal alignment, and (2) using an off-the-shelf captioning model to describe the visual data. However, the first design needs costly training on many extra multi-modal data, whilst the second is further limited by limited domain generalization. To address these limitations, a simple yet effective Retrieving-to-Answer (R2A) framework is proposed. Given an input video, R2A first retrieves a set of semantically similar texts from a generic text corpus using a pre-trained multi-modal model (e.g., CLIP). With both the question and the retrieved texts, a LLM (e.g., DeBERTa) can be directly used to yield a desired answer. Without the need for cross-modal fine-tuning, R2A allows for all the key components (e.g., LLM, retrieval model, and text corpus) to plug-and-play. Extensive experiments on several VideoQA benchmarks show that despite with 1.3B parameters and no fine-tuning, our R2A can outperform the 61× larger Flamingo-80B model [1] even additionally trained on nearly 2.1B multi-modal data.",
+      "externalIds": {
+        "DBLP": "conf/iccvw/PanLGZZWQL23",
+        "ArXiv": "2306.11732",
+        "DOI": "10.1109/ICCVW60793.2023.00035",
+        "CorpusId": 259203031
+      },
+      "arxiv_id": "2306.11732",
+      "doi": "10.1109/ICCVW60793.2023.00035",
+      "corpus_id": 259203031
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "31",
+      "ref_key": "S2:5b990c4e07e315b44a8e15c2e9d9290bbd5240b6",
+      "paperId": "5b990c4e07e315b44a8e15c2e9d9290bbd5240b6",
+      "title": "Bridge to Answer: Structure-aware Graph Interaction Network for Video Question Answering",
+      "year": 2021,
+      "abstract": "This paper presents a novel method, termed Bridge to Answer, to infer correct answers for questions about a given video by leveraging adequate graph interactions of heterogeneous crossmodal graphs. To realize this, we learn question conditioned visual graphs by exploiting the relation between video and question to enable each visual node using question-to-visual interactions to encompass both visual and linguistic cues. In addition, we propose bridged visual-to-visual interactions to incorporate two complementary visual information on appearance and motion by placing the question graph as an intermediate bridge. This bridged architecture allows reliable message passing through compositional semantics of the question to generate an appropriate answer. As a result, our method can learn the question conditioned visual representations attributed to appearance and motion that show powerful capability for video question answering. Extensive experiments prove that the proposed method provides effective and superior performance than state-of-the-art methods on several benchmarks.",
+      "externalIds": {
+        "ArXiv": "2104.14085",
+        "DBLP": "journals/corr/abs-2104-14085",
+        "DOI": "10.1109/CVPR46437.2021.01527",
+        "CorpusId": 233444349
+      },
+      "arxiv_id": "2104.14085",
+      "doi": "10.1109/CVPR46437.2021.01527",
+      "corpus_id": 233444349
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "32",
+      "ref_key": "S2:5aa2ff41c82ac5e7444abd65f014955c0fbb5209",
+      "paperId": "5aa2ff41c82ac5e7444abd65f014955c0fbb5209",
+      "title": "CLIPPING: Distilling CLIP-Based Models with a Student Base for Video-Language Retrieval",
+      "year": 2023,
+      "abstract": "Pre-training a vision-language model and then fine-tuning it on downstream tasks have become a popular paradigm. However, pre-trained vision-language models with the Transformer architecture usually take long inference time. Knowledge distillation has been an efficient technique to transfer the capability of a large model to a small one while maintaining the accuracy, which has achieved remarkable success in natural language processing. However, it faces many problems when applying KD to the multi-modality applications. In this paper, we propose a novel knowledge distillation method, named CLIPPING11In this paper, CLIPPING means cutting something to make it smaller through distilling., where the plentiful knowledge of a large teacher model that has been fine-tuned for video-language tasks with the powerful pre-trained CLIP can be effectively transferred to a small student only at the fine-tuning stage. Especially, a new layer-wise alignment with the student as the base is proposed for knowledge distillation of the intermediate layers in CLIPPING, which enables the student's layers to be the bases of the teacher, and thus allows the student to fully absorb the knowledge of the teacher. CLIPPING with MobileViT-v2 as the vision encoder without any vision-language pre-training achieves 88.1%-95.3% of the performance of its teacher on three video-language retrieval benchmarks, with its vision encoder being 19.5x smaller. CLIPPING also significantly outperforms a state-of-the-art small baseline (ALL-in-one-B) on the MSR-VTT dataset, obtaining relatively 7.4% performance gain, with 29% fewer parameters and 86.9% fewer flops. Moreover, CLIPPING is comparable or even superior to many large pre-training models.",
+      "externalIds": {
+        "DBLP": "conf/cvpr/PeiLLSXDLY23",
+        "DOI": "10.1109/CVPR52729.2023.01820",
+        "CorpusId": 261080741
+      },
+      "arxiv_id": null,
+      "doi": "10.1109/CVPR52729.2023.01820",
+      "corpus_id": 261080741
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "33",
+      "ref_key": "S2:0fe1d09fabeda89d6839c08f19a7350db9982d5e",
+      "paperId": "0fe1d09fabeda89d6839c08f19a7350db9982d5e",
+      "title": "Progressive Graph Attention Network for Video Question Answering",
+      "year": 2021,
+      "abstract": "Video question answering~(Video-QA) is a task of answering a natural language question related to the content of a video. Existing methods generally explore the single interactions between objects or between frames, which are insufficient to deal with the sophisticated scenes in videos. To tackle this problem, we propose a novel model, termed Progressive Graph Attention Network (PGAT), which can jointly explore the multiple visual relations on object-level, frame-level and clip-level. Specifically, in the object-level relation encoding, we design two kinds of complementary graphs, one for learning the spatial and semantic relations between objects from the same frame, the other for modeling the temporal relations between the same object from different frames. The frame-level graph explores the interactions between diverse frames to record the fine-grained appearance change, while the clip-level graph models the temporal and semantic relations between various actions from clips. These different-level graphs are concatenated in a progressive manner to learn the visual relations from low-level to high-level. Furthermore, we for the first time identified that there are serious answer biases with TGIF-QA, a very large Video-QA dataset, and reconstructed a new dataset based on it to overcome the biases, called TGIF-QA-R. We evaluate the proposed model on three benchmark datasets and the new TGIF-QA-R, and the experimental results demonstrate that our model significantly outperforms other state-of-the-art models. Our codes and dataset are available at https://github.com/PengLiang-cn/PGAT.",
+      "externalIds": {
+        "DBLP": "conf/mm/PengYBW21",
+        "DOI": "10.1145/3474085.3475193",
+        "CorpusId": 239012247
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/3474085.3475193",
+      "corpus_id": 239012247
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "34",
+      "ref_key": "S2:e8a72d29771d1a33b4a0e43c74adcee6c73d74c7",
+      "paperId": "e8a72d29771d1a33b4a0e43c74adcee6c73d74c7",
+      "title": "End-to-end Generative Pretraining for Multimodal Video Captioning",
+      "year": 2022,
+      "abstract": "Recent video and language pretraining frameworks lack the ability to generate sentences. We present Multimodal Video Generative Pretraining (MV-GPT), a new pretraining framework for learning from unlabelled videos which can be effectively used for generative tasks such as multimodal video captioning. Unlike recent video-language pretraining frameworks, our framework trains both a multimodal video encoder and a sentence decoder jointly. To overcome the lack of captions in unlabelled videos, we leverage the future utterance as an additional text source and propose a bidirectional generation objective - we generate future utterances given the present mulitmodal context, and also the present utterance given future observations. With this objective, we train an encoder-decoder model end-to-end to generate a caption from raw pixels and transcribed speech directly. Our model achieves state-of the-art performance for multimodal video captioning on four standard benchmarks, as well as for other video understanding tasks such as VideoQA, video retrieval and action classification.",
+      "externalIds": {
+        "ArXiv": "2201.08264",
+        "DBLP": "conf/cvpr/SeoNAS22",
+        "DOI": "10.1109/CVPR52688.2022.01743",
+        "CorpusId": 246063824
+      },
+      "arxiv_id": "2201.08264",
+      "doi": "10.1109/CVPR52688.2022.01743",
+      "corpus_id": 246063824
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "35",
+      "ref_key": "S2:d56a1311b2d73513415b028f148c11735aea8004",
+      "paperId": "d56a1311b2d73513415b028f148c11735aea8004",
+      "title": "DeCEMBERT: Learning from Noisy Instructional Videos via Dense Captions and Entropy Minimization",
+      "year": 2021,
+      "abstract": "Leveraging large-scale unlabeled web videos such as instructional videos for pre-training followed by task-specific finetuning has become the de facto approach for many video-and-language tasks. However, these instructional videos are very noisy, the accompanying ASR narrations are often incomplete, and can be irrelevant to or temporally misaligned with the visual content, limiting the performance of the models trained on such data. To address these issues, we propose an improved video-and-language pre-training method that first adds automatically-extracted dense region captions from the video frames as auxiliary text input, to provide informative visual cues for learning better video and language associations. Second, to alleviate the temporal misalignment issue, our method incorporates an entropy minimization-based constrained attention loss, to encourage the model to automatically focus on the correct caption from a pool of candidate ASR captions. Our overall approach is named DeCEMBERT (Dense Captions and Entropy Minimization). Comprehensive experiments on three video-and-language tasks (text-to-video retrieval, video captioning, and video question answering) across five datasets demonstrate that our approach outperforms previous state-of-the-art methods. Ablation studies on pre-training and downstream tasks show that adding dense captions and constrained attention loss help improve the model performance. Lastly, we also provide attention visualization to show the effect of applying the proposed constrained attention loss.",
+      "externalIds": {
+        "DBLP": "conf/naacl/TangLB21",
+        "MAG": "3167366812",
+        "ACL": "2021.naacl-main.193",
+        "DOI": "10.18653/V1/2021.NAACL-MAIN.193",
+        "CorpusId": 235097643
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/V1/2021.NAACL-MAIN.193",
+      "corpus_id": 235097643
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "36",
+      "ref_key": "S2:1b6e40c46f2e680620cf70218ae4edbc895d305f",
+      "paperId": "1b6e40c46f2e680620cf70218ae4edbc895d305f",
+      "title": "CoVR: Learning Composed Video Retrieval from Web Video Captions",
+      "year": 2024,
+      "abstract": "Composed Image Retrieval (CoIR) has recently gained popularity as a task that considers both text and image queries together, to search for relevant images in a database. Most CoIR approaches require manually annotated datasets, comprising image-text-image triplets, where the text describes a modification from the query image to the target image. However, manual curation of CoIR triplets is expensive and prevents scalability. In this work, we instead propose a scalable automatic dataset creation methodology that generates triplets given video-caption pairs, while also expanding the scope of the task to include composed video retrieval (CoVR). To this end, we mine paired videos with a similar caption from a large database, and leverage a large language model to generate the corresponding modification text. Applying this methodology to the extensive WebVid2M collection, we automatically construct our WebVid-CoVR dataset, resulting in 1.6 million triplets. Moreover, we introduce a new benchmark for CoVR with a manually annotated evaluation set, along with baseline results. Our experiments further demonstrate that training a CoVR model on our dataset effectively transfers to CoIR, leading to improved state-of-the-art performance in the zero-shot setup on both the CIRR and FashionIQ benchmarks. Our code, datasets, and models are publicly available at https://imagine.enpc.fr/~ventural/covr.",
+      "externalIds": {
+        "DBLP": "conf/aaai/VenturaYSV24",
+        "DOI": "10.48550/arXiv.2308.14746",
+        "CorpusId": 274342334
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2308.14746",
+      "corpus_id": 274342334
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "37",
+      "ref_key": "S2:b01db336a8ead672700a406f5c12d1edb9fb2697",
+      "paperId": "b01db336a8ead672700a406f5c12d1edb9fb2697",
+      "title": "Self-Supervised Learning for Semi-Supervised Temporal Action Proposal",
+      "year": 2021,
+      "abstract": "Self-supervised learning presents a remarkable performance to utilize unlabeled data for various video tasks. In this paper, we focus on applying the power of self-supervised methods to improve semi-supervised action proposal generation. Particularly, we design an effective Self-supervised Semi-supervised Temporal Action Proposal (SSTAP) framework. The SSTAP contains two crucial branches, i.e., temporal-aware semi-supervised branch and relation-aware self-supervised branch. The semi-supervised branch improves the proposal model by introducing two temporal perturbations, i.e., temporal feature shift and temporal feature flip, in the mean teacher framework. The self-supervised branch defines two pretext tasks, including masked feature reconstruction and clip-order prediction, to learn the relation of temporal clues. By this means, SSTAP can better explore unlabeled videos, and improve the discriminative abilities of learned action features. We extensively evaluate the proposed SSTAP on THUMOS14 and ActivityNet v1.3 datasets. The experimental results demonstrate that SSTAP significantly outperforms state-of-the-art semi-supervised methods and even matches fully-supervised methods. Code is available at https://github.com/wangxiang1230/SSTAP.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2104-03214",
+        "ArXiv": "2104.03214",
+        "DOI": "10.1109/CVPR46437.2021.00194",
+        "CorpusId": 233169065
+      },
+      "arxiv_id": "2104.03214",
+      "doi": "10.1109/CVPR46437.2021.00194",
+      "corpus_id": 233169065
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "38",
+      "ref_key": "S2:a13fcab4ee018339a720faea243415555e620e84",
+      "paperId": "a13fcab4ee018339a720faea243415555e620e84",
+      "title": "Weakly Supervised Dense Video Captioning via Jointly Usage of Knowledge Distillation and Cross-modal Matching",
+      "year": 2021,
+      "abstract": "This paper proposes an approach to Dense Video Captioning (DVC) without pairwise event-sentence annotation. First, we adopt the knowledge distilled from relevant and well solved tasks to generate high-quality event proposals. Then we incorporate contrastive loss and cycle-consistency loss typically applied to cross-modal retrieval tasks to build semantic matching between the proposals and sentences, which are eventually used to train the caption generation module. In addition, the parameters of matching module are initialized via pre-training based on annotated images to improve the matching performance. Extensive experiments on ActivityNet-Caption dataset reveal the significance of distillation-based event proposal generation and cross-modal retrieval-based semantic matching to weakly supervised DVC, and demonstrate the superiority of our method to existing state-of-the-art methods.",
+      "externalIds": {
+        "ArXiv": "2105.08252",
+        "DBLP": "journals/corr/abs-2105-08252",
+        "DOI": "10.24963/ijcai.2021/160",
+        "CorpusId": 234762986
+      },
+      "arxiv_id": "2105.08252",
+      "doi": "10.24963/ijcai.2021/160",
+      "corpus_id": 234762986
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "39",
+      "ref_key": "S2:1b937ff4b05e2b56c2c2fcdfa5baa3085cd5a08c",
+      "paperId": "1b937ff4b05e2b56c2c2fcdfa5baa3085cd5a08c",
+      "title": "NExT-QA: Next Phase of Question-Answering to Explaining Temporal Actions",
+      "year": 2021,
+      "abstract": "We introduce NExT-QA, a rigorously designed video question answering (VideoQA) benchmark to advance video understanding from describing to explaining the temporal actions. Based on the dataset, we set up multi-choice and open-ended QA tasks targeting causal action reasoning, temporal action reasoning, and common scene comprehension. Through extensive analysis of baselines and established VideoQA techniques, we find that top-performing methods excel at shallow scene descriptions but are weak in causal and temporal action reasoning. Furthermore, the models that are effective on multi-choice QA, when adapted to open-ended QA, still struggle in generalizing the answers. This raises doubt on the ability of these models to reason and highlights possibilities for improvement. With detailed results for different question types and heuristic observations for future works, we hope NExT-QA will guide the next generation of VQA research to go beyond superficial description towards a deeper understanding of videos. (The dataset and related resources are available at https://github.com/doc-doc/NExT-QA.git).",
+      "externalIds": {
+        "DBLP": "conf/cvpr/XiaoSYC21",
+        "ArXiv": "2105.08276",
+        "DOI": "10.1109/CVPR46437.2021.00965",
+        "CorpusId": 234763093
+      },
+      "arxiv_id": "2105.08276",
+      "doi": "10.1109/CVPR46437.2021.00965",
+      "corpus_id": 234763093
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "40",
+      "ref_key": "S2:009e40cdc9d98b9e5f6279d38b46936ceffcc124",
+      "paperId": "009e40cdc9d98b9e5f6279d38b46936ceffcc124",
+      "title": "Video Graph Transformer for Video Question Answering",
+      "year": 2022,
+      "abstract": "This paper proposes a Video Graph Transformer (VGT) model for Video Quetion Answering (VideoQA). VGT's uniqueness are two-fold: 1) it designs a dynamic graph transformer module which encodes video by explicitly capturing the visual objects, their relations, and dynamics for complex spatio-temporal reasoning; and 2) it exploits disentangled video and text Transformers for relevance comparison between the video and text to perform QA, instead of entangled cross-modal Transformer for answer classification. Vision-text communication is done by additional cross-modal interaction modules. With more reasonable video encoding and QA solution, we show that VGT can achieve much better performances on VideoQA tasks that challenge dynamic relation reasoning than prior arts in the pretraining-free scenario. Its performances even surpass those models that are pretrained with millions of external data. We further show that VGT can also benefit a lot from self-supervised cross-modal pretraining, yet with orders of magnitude smaller data. These results clearly demonstrate the effectiveness and superiority of VGT, and reveal its potential for more data-efficient pretraining. With comprehensive analyses and some heuristic observations, we hope that VGT can promote VQA research beyond coarse recognition/description towards fine-grained relation reasoning in realistic videos. Our code is available at https://github.com/sail-sg/VGT.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2207-05342",
+        "ArXiv": "2207.05342",
+        "DOI": "10.48550/arXiv.2207.05342",
+        "CorpusId": 250451482
+      },
+      "arxiv_id": "2207.05342",
+      "doi": "10.48550/arXiv.2207.05342",
+      "corpus_id": 250451482
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "41",
+      "ref_key": "S2:5b43ab59cbd57c3986fa9c9aa6f8c308ee393ef0",
+      "paperId": "5b43ab59cbd57c3986fa9c9aa6f8c308ee393ef0",
+      "title": "Contrastive Video Question Answering via Video Graph Transformer",
+      "year": 2023,
+      "abstract": "We propose to perform video question answering (VideoQA) in a Contrastive manner via a Video Graph Transformer model (CoVGT). CoVGT's uniqueness and superiority are three-fold: 1) It proposes a dynamic graph transformer module which encodes video by explicitly capturing the visual objects, their relations and dynamics, for complex spatio-temporal reasoning. 2) It designs separate video and text transformers for contrastive learning between the video and text to perform QA, instead of multi-modal transformer for answer classification. Fine-grained video-text communication is done by additional cross-modal interaction modules. 3) It is optimized by the joint fully- and self-supervised contrastive objectives between the correct and incorrect answers, as well as the relevant and irrelevant questions respectively. With superior video encoding and QA solution, we show that CoVGT can achieve much better performances than previous arts on video reasoning tasks. Its performances even surpass those models that are pretrained with millions of external data. We further show that CoVGT can also benefit from cross-modal pretraining, yet with orders of magnitude smaller data. The results demonstrate the effectiveness and superiority of CoVGT, and additionally reveal its potential for more data-efficient pretraining.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2302-13668",
+        "ArXiv": "2302.13668",
+        "DOI": "10.1109/TPAMI.2023.3292266",
+        "CorpusId": 257219910,
+        "PubMed": "37402185"
+      },
+      "arxiv_id": "2302.13668",
+      "doi": "10.1109/TPAMI.2023.3292266",
+      "corpus_id": 257219910
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "42",
+      "ref_key": "S2:672a8c7fe6d079c82758a45c7fdefa741bdc6ef5",
+      "paperId": "672a8c7fe6d079c82758a45c7fdefa741bdc6ef5",
+      "title": "SVFormer: Semi-supervised Video Transformer for Action Recognition",
+      "year": 2022,
+      "abstract": "Semi-supervised action recognition is a challenging but critical task due to the high cost of video annotations. Existing approaches mainly use convolutional neural networks, yet current revolutionary vision transformer models have been less explored. In this paper, we investigate the use of transformer models under the SSL setting for action recognition. To this end, we introduce SVFormer, which adopts a steady pseudo-labeling framework (i.e., EMA-Teacher) to cope with unlabeled video samples. While a wide range of data augmentations have been shown effective for semi-supervised image classification, they generally produce limited results for video recognition. We therefore introduce a novel augmentation strategy, Tube Token-Mix, tailored for video data where video clips are mixed via a mask with consistent masked tokens over the temporal axis. In addition, we propose a temporal warping augmentation to cover the complex temporal variation in videos, which stretches selected frames to various temporal durations in the clip. Extensive experiments on three datasets Kinetics-400, UCF-101, and HMDB-51 verify the advantage of SVFormer. In particular, SVFormer outperforms the state-of-the-art by 31.5% with fewer training epochs under the 1% labeling rate of Kinetics-400. Our method can hopefully serve as a strong benchmark and encourage future search on semi-supervised action recognition with Transformer networks. Code is released at https://github.com/ChenHsing/SVFormer.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2211-13222",
+        "ArXiv": "2211.13222",
+        "DOI": "10.1109/CVPR52729.2023.01804",
+        "CorpusId": 253801978
+      },
+      "arxiv_id": "2211.13222",
+      "doi": "10.1109/CVPR52729.2023.01804",
+      "corpus_id": 253801978
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "43",
+      "ref_key": "S2:83b2a55aecd5f917dbedbc0c5ef3ff3b61013958",
+      "paperId": "83b2a55aecd5f917dbedbc0c5ef3ff3b61013958",
+      "title": "Multilevel Language and Vision Integration for Text-to-Clip Retrieval",
+      "year": 2018,
+      "abstract": "We address the problem of text-based activity retrieval in video. Given a sentence describing an activity, our task is to retrieve matching clips from an untrimmed video. To capture the inherent structures present in both text and video, we introduce a multilevel model that integrates vision and language features earlier and more tightly than prior work. First, we inject text features early on when generating clip proposals, to help eliminate unlikely clips and thus speed up processing and boost performance. Second, to learn a fine-grained similarity metric for retrieval, we use visual features to modulate the processing of query sentences at the word level in a recurrent neural network. A multi-task loss is also employed by adding query re-generation as an auxiliary task. Our approach significantly outperforms prior work on two challenging benchmarks: Charades-STA and ActivityNet Captions.",
+      "externalIds": {
+        "MAG": "2952314753",
+        "DBLP": "conf/aaai/Xu0PSSS19",
+        "ArXiv": "1804.05113",
+        "DOI": "10.1609/AAAI.V33I01.33019062",
+        "CorpusId": 52877356
+      },
+      "arxiv_id": "1804.05113",
+      "doi": "10.1609/AAAI.V33I01.33019062",
+      "corpus_id": 52877356
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "44",
+      "ref_key": "S2:a6156a6e736d8da67a205122167444e1baffbab6",
+      "paperId": "a6156a6e736d8da67a205122167444e1baffbab6",
+      "title": "Deep Reinforcement Polishing Network for Video Captioning",
+      "year": 2021,
+      "abstract": "The video captioning task aims to describe video content using several natural-language sentences. Although one-step encoder-decoder models have achieved promising progress, the generations always involve many errors, which are mainly caused by the large semantic gap between the visual domain and the language domain and by the difficulty in long-sequence generation. The underlying challenge of video captioning, i.e., sequence-to-sequence mapping across different domains, is still not well handled. Inspired by the proofreading procedure of human beings, the generated caption can be gradually polished to improve its quality. In this paper, we propose a deep reinforcement polishing network (DRPN) to refine the caption candidates, which consists of a word-denoising network (WDN) to revise word errors and a grammar-checking network (GCN) to revise grammar errors. On the one hand, the long-term reward in deep reinforcement learning benefits the long-sequence generation, which takes the global quality of caption sentences into account. On the other hand, the caption candidate can be considered a bridge between visual and language domains, where the semantic gap is gradually reduced with better candidates generated by repeated revisions. In experiments, we present adequate evaluations to show that the proposed DRPN achieves comparable and even better performance than the state-of-the-art methods. Furthermore, the DRPN is model-irrelevant and can be integrated into any video captioning models to refine their generated caption sentences.",
+      "externalIds": {
+        "MAG": "3034464851",
+        "DBLP": "journals/tmm/XuYMWTJ21",
+        "DOI": "10.1109/TMM.2020.3002669",
+        "CorpusId": 226671201
+      },
+      "arxiv_id": null,
+      "doi": "10.1109/TMM.2020.3002669",
+      "corpus_id": 226671201
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "45",
+      "ref_key": "S2:e1a3e6856b6ac6af3600b5954392e5368603fd1b",
+      "paperId": "e1a3e6856b6ac6af3600b5954392e5368603fd1b",
+      "title": "Advancing High-Resolution Video-Language Representation with Large-Scale Video Transcriptions",
+      "year": 2021,
+      "abstract": "We study joint video and language (VL) pretraining to enable cross-modality learning and benefit plentiful downstream VL tasks. Existing works either extract low-quality video features or learn limited text embedding, while neglecting that high-resolution videos and diversified semantics can significantly improve cross-modality learning. In this paper, we propose a novel High-resolution and Diversified VIdeo-LAnguage pre-training model (HD-VILA) for many visual tasks. In particular, we collect a large dataset with two distinct properties: 1) the first high-resolution dataset including 371.5k hours of 720p videos, and 2) the most diversified dataset covering 15 popular YouTube categories. To enable VL pre-training, we jointly optimize the HD-VILA model by a hybrid Transformer that learns rich spatiotemporal features, and a multimodal Transformer that enforces interactions of the learned video features with diversified texts. Our pre-training model achieves new state-of-the-art results in 10 VL understanding tasks and 2 more novel text-to-visual generation tasks. For example, we outperform SOTA models with relative increases of 40.4% R@1 in zero-shot MSR-VTT text-to-video retrieval task, and 55.4% in high-resolution dataset LSMDC. The learned VL embedding is also effective in generating visually pleasing and semantically relevant results in text-to-visual editing and super-resolution tasks.",
+      "externalIds": {
+        "ArXiv": "2111.10337",
+        "DBLP": "conf/cvpr/XueHZS00FG22",
+        "DOI": "10.1109/CVPR52688.2022.00498",
+        "CorpusId": 244462849
+      },
+      "arxiv_id": "2111.10337",
+      "doi": "10.1109/CVPR52688.2022.00498",
+      "corpus_id": 244462849
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "46",
+      "ref_key": "S2:477ceb5c42bc83fb7d2856a3e6289f43f93f3f19",
+      "paperId": "477ceb5c42bc83fb7d2856a3e6289f43f93f3f19",
+      "title": "CLIP-ViP: Adapting Pre-trained Image-Text Model to Video-Language Representation Alignment",
+      "year": 2022,
+      "abstract": "The pre-trained image-text models, like CLIP, have demonstrated the strong power of vision-language representation learned from a large scale of web-collected image-text data. In light of the well-learned visual features, some existing works transfer image representation to video domain and achieve good results. However, how to utilize image-language pre-trained model (e.g., CLIP) for video-language pre-training (post-pretraining) is still under explored. In this paper, we investigate two questions: 1) what are the factors hindering post-pretraining CLIP to further improve the performance on video-language tasks? and 2) how to mitigate the impact of these factors? Through a series of comparative experiments and analyses, we ﬁnd that the data scale and domain gap between language sources have great impacts. Motivated by these, we propose a Om-nisource Cross-modal Learning method equipped with a Video Proxy mechanism on the basis of CLIP, namely CLIP-ViP. Extensive results show that our approach improves the performance of CLIP on video-text retrieval by a large margin. Our model also achieves SOTA results on a variety of datasets, including MSR-VTT, DiDeMo, LSMDC, and Ac-tivityNet. We will release our code and pre-trained CLIP-ViP models at https://github.com/microsoft/ XPretrain/tree/main/CLIP-ViP .",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2209-06430",
+        "DOI": "10.48550/arXiv.2209.06430",
+        "CorpusId": 265040160
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2209.06430",
+      "corpus_id": 265040160
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "47",
+      "ref_key": "S2:2db62ac8bc735133f746cc10439f419abf3b3a2c",
+      "paperId": "2db62ac8bc735133f746cc10439f419abf3b3a2c",
+      "title": "Tensor-Train Recurrent Neural Networks for Video Classification",
+      "year": 2017,
+      "abstract": "The Recurrent Neural Networks and their variants have shown promising performances in sequence modeling tasks such as Natural Language Processing. These models, however, turn out to be impractical and difficult to train when exposed to very high-dimensional inputs due to the large input-to-hidden weight matrix. This may have prevented RNNs' large-scale application in tasks that involve very high input dimensions such as video modeling; current approaches reduce the input dimensions using various feature extractors. To address this challenge, we propose a new, more general and efficient approach by factorizing the input-to-hidden weight matrix using Tensor-Train decomposition which is trained simultaneously with the weights themselves. We test our model on classification tasks using multiple real-world video datasets and achieve competitive performances with state-of-the-art models, even though our model architecture is orders of magnitude less complex. We believe that the proposed approach provides a novel and fundamental building block for modeling high-dimensional sequential data with RNN architectures and opens up many possibilities to transfer the expressive and advanced architectures from other domains such as NLP to modeling high-dimensional sequential data.",
+      "externalIds": {
+        "DBLP": "journals/corr/YangKT17aa",
+        "MAG": "2963704562",
+        "ArXiv": "1707.01786",
+        "CorpusId": 19757771
+      },
+      "arxiv_id": "1707.01786",
+      "doi": null,
+      "corpus_id": 19757771
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "48",
+      "ref_key": "S2:a521a3dd398e9f79d0bc074b7216e51dd663874e",
+      "paperId": "a521a3dd398e9f79d0bc074b7216e51dd663874e",
+      "title": "Deconfounded Video Moment Retrieval with Causal Intervention",
+      "year": 2021,
+      "abstract": "We tackle the task of video moment retrieval (VMR), which aims to localize a specific moment in a video according to a textual query. Existing methods primarily model the matching relationship between query and moment by complex cross-modal interactions. Despite their effectiveness, current models mostly exploit dataset biases while ignoring the video content, thus leading to poor generalizability. We argue that the issue is caused by the hidden confounder in VMR, i.e., temporal location of moments, that spuriously correlates the model input and prediction. How to design robust matching models against the temporal location biases is crucial but, as far as we know, has not been studied yet for VMR. To fill the research gap, we propose a causality-inspired VMR framework that builds structural causal model to capture the true effect of query and video content on the prediction. Specifically, we develop a Deconfounded Cross-modal Matching (DCM) method to remove the confounding effects of moment location. It first disentangles moment representation to infer the core feature of visual content, and then applies causal intervention on the disentangled multimodal input based on backdoor adjustment, which forces the model to fairly incorporate each possible location of the target into consideration. Extensive experiments clearly show that our approach can achieve significant improvement over the state-of-the-art methods in terms of both accuracy and generalization.",
+      "externalIds": {
+        "DBLP": "conf/sigir/YangFJWC21",
+        "ArXiv": "2106.01534",
+        "DOI": "10.1145/3404835.3462823",
+        "CorpusId": 235313588
+      },
+      "arxiv_id": "2106.01534",
+      "doi": "10.1145/3404835.3462823",
+      "corpus_id": 235313588
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "49",
+      "ref_key": "S2:a970c8fadef8497576660b288c52c0ec8eebdc12",
+      "paperId": "a970c8fadef8497576660b288c52c0ec8eebdc12",
+      "title": "Zero-Shot Video Question Answering via Frozen Bidirectional Language Models",
+      "year": 2022,
+      "abstract": "Video question answering (VideoQA) is a complex task that requires diverse multi-modal data for training. Manual annotation of question and answers for videos, however, is tedious and prohibits scalability. To tackle this problem, recent methods consider zero-shot settings with no manual annotation of visual question-answer. In particular, a promising approach adapts frozen autoregressive language models pretrained on Web-scale text-only data to multi-modal inputs. In contrast, we here build on frozen bidirectional language models (BiLM) and show that such an approach provides a stronger and cheaper alternative for zero-shot VideoQA. In particular, (i) we combine visual inputs with the frozen BiLM using light trainable modules, (ii) we train such modules using Web-scraped multi-modal data, and finally (iii) we perform zero-shot VideoQA inference through masked language modeling, where the masked text is the answer to a given question. Our proposed approach, FrozenBiLM, outperforms the state of the art in zero-shot VideoQA by a significant margin on a variety of datasets, including LSMDC-FiB, iVQA, MSRVTT-QA, MSVD-QA, ActivityNet-QA, TGIF-FrameQA, How2QA and TVQA. It also demonstrates competitive performance in the few-shot and fully-supervised setting. Our code and models are publicly available at https://github.com/antoyang/FrozenBiLM.",
+      "externalIds": {
+        "DBLP": "conf/nips/YangMSLS22",
+        "ArXiv": "2206.08155",
+        "DOI": "10.48550/arXiv.2206.08155",
+        "CorpusId": 249712016
+      },
+      "arxiv_id": "2206.08155",
+      "doi": "10.48550/arXiv.2206.08155",
+      "corpus_id": 249712016
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "50",
+      "ref_key": "S2:20f3ca16e2b54aa817c0d9ef3f4dc096de924113",
+      "paperId": "20f3ca16e2b54aa817c0d9ef3f4dc096de924113",
+      "title": "VidChapters-7M: Video Chapters at Scale",
+      "year": 2023,
+      "abstract": "Segmenting long videos into chapters enables users to quickly navigate to the information of their interest. This important topic has been understudied due to the lack of publicly released datasets. To address this issue, we present VidChapters-7M, a dataset of 817K user-chaptered videos including 7M chapters in total. VidChapters-7M is automatically created from videos online in a scalable manner by scraping user-annotated chapters and hence without any additional manual annotation. We introduce the following three tasks based on this data. First, the video chapter generation task consists of temporally segmenting the video and generating a chapter title for each segment. To further dissect the problem, we also define two variants of this task: video chapter generation given ground-truth boundaries, which requires generating a chapter title given an annotated video segment, and video chapter grounding, which requires temporally localizing a chapter given its annotated title. We benchmark both simple baselines and state-of-the-art video-language models for these three tasks. We also show that pretraining on VidChapters-7M transfers well to dense video captioning tasks in both zero-shot and finetuning settings, largely improving the state of the art on the YouCook2 and ViTT benchmarks. Finally, our experiments reveal that downstream performance scales well with the size of the pretraining dataset. Our dataset, code, and models are publicly available at https://antoyang.github.io/vidchapters.html.",
+      "externalIds": {
+        "DBLP": "conf/nips/YangNLSS23",
+        "ArXiv": "2309.13952",
+        "DOI": "10.48550/arXiv.2309.13952",
+        "CorpusId": 262465198
+      },
+      "arxiv_id": "2309.13952",
+      "doi": "10.48550/arXiv.2309.13952",
+      "corpus_id": 262465198
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "51",
+      "ref_key": "S2:d726f87a275dc7ff4ba4946abc3f8041b3af8b3a",
+      "paperId": "d726f87a275dc7ff4ba4946abc3f8041b3af8b3a",
+      "title": "Video Question Answering via Attribute-Augmented Attention Network Learning",
+      "year": 2017,
+      "abstract": "Video Question Answering is a challenging problem in visual information retrieval, which provides the answer to the referenced video content according to the question. However, the existing visual question answering approaches mainly tackle the problem of static image question, which may be ineffectively for video question answering due to the insufficiency of modeling the temporal dynamics of video contents. In this paper, we study the problem of video question answering by modeling its temporal dynamics with frame-level attention mechanism. We propose the attribute-augmented attention network learning framework that enables the joint frame-level attribute detection and unified video representation learning for video question answering. We then incorporate the multi-step reasoning process for our proposed attention network to further improve the performance. We construct a large-scale video question answering dataset. We conduct the experiments on both multiple-choice and open-ended video question answering tasks to show the effectiveness of the proposed method.",
+      "externalIds": {
+        "ArXiv": "1707.06355",
+        "DBLP": "journals/corr/YeZLCXZ17",
+        "MAG": "3099768435",
+        "DOI": "10.1145/3077136.3080655",
+        "CorpusId": 7039493
+      },
+      "arxiv_id": "1707.06355",
+      "doi": "10.1145/3077136.3080655",
+      "corpus_id": 7039493
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "52",
+      "ref_key": "S2:90357a6dc817e2f7cec477a51156675fbf545cf1",
+      "paperId": "90357a6dc817e2f7cec477a51156675fbf545cf1",
+      "title": "MERLOT: Multimodal Neural Script Knowledge Models",
+      "year": 2021,
+      "abstract": "As humans, we understand events in the visual world contextually, performing multimodal reasoning across time to make inferences about the past, present, and future. We introduce MERLOT, a model that learns multimodal script knowledge by watching millions of YouTube videos with transcribed speech -- in an entirely label-free, self-supervised manner. By pretraining with a mix of both frame-level (spatial) and video-level (temporal) objectives, our model not only learns to match images to temporally corresponding words, but also to contextualize what is happening globally over time. As a result, MERLOT exhibits strong out-of-the-box representations of temporal commonsense, and achieves state-of-the-art performance on 12 different video QA datasets when finetuned. It also transfers well to the world of static images, allowing models to reason about the dynamic context behind visual scenes. On Visual Commonsense Reasoning, MERLOT answers questions correctly with 80.6% accuracy, outperforming state-of-the-art models of similar size by over 3%, even those that make heavy use of auxiliary supervised data (like object bounding boxes). Ablation analyses demonstrate the complementary importance of: 1) training on videos versus static images; 2) scaling the magnitude and diversity of the pretraining video corpus; and 3) using diverse objectives that encourage full-stack multimodal reasoning, from the recognition to cognition level.",
+      "externalIds": {
+        "ArXiv": "2106.02636",
+        "DBLP": "conf/nips/ZellersLHYPCFC21",
+        "CorpusId": 235352775
+      },
+      "arxiv_id": "2106.02636",
+      "doi": null,
+      "corpus_id": 235352775
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "53",
+      "ref_key": "S2:1ce9d7a8eec5fd1cdc3646d5db566e39a2735ea4",
+      "paperId": "1ce9d7a8eec5fd1cdc3646d5db566e39a2735ea4",
+      "title": "Moment is Important: Language-Based Video Moment Retrieval via Adversarial Learning",
+      "year": 2022,
+      "abstract": "The newly emerging language-based video moment retrieval task aims at retrieving a target video moment from an untrimmed video given a natural language as the query. It is more applicable in reality since it is able to accurately localize a specific video moment, as compared to traditional whole video retrieval. In this work, we propose a novel solution to thoroughly investigate the language-based video moment retrieval issue under the adversarial learning. The key of our solution is to formulate the language-based video moment retrieval task as an adversarial learning problem with two tightly connected components. Specifically, a reinforcement learning is employed as a generator to produce a set of possible video moments. Meanwhile, a multi-task learning is utilized as a discriminator, which integrates inter-modal and intra-modal in a unified framework by employing a sequential update strategy. Finally, the generator and the discriminator are mutually reinforced in the adversarial learning, which is able to jointly optimize the performance of both video moment ranking and video moment localization. Extensive experimental results on two challenging benchmarks, i.e., Charades-STA and TACoS datasets, have well demonstrated the effectiveness and rationality of our proposed solution. Meanwhile, on the larger and unbiased datasets, i.e., ActivityNet Captions and ActivityNet-CD, our proposed framework exhibits excellent robustness.",
+      "externalIds": {
+        "DBLP": "journals/tomccap/ZengCLZXQ22",
+        "DOI": "10.1145/3478025",
+        "CorpusId": 246926460
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/3478025",
+      "corpus_id": 246926460
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "54",
+      "ref_key": "S2:f1dd557a8839733a5ee06d19989a265e61f603c1",
+      "paperId": "f1dd557a8839733a5ee06d19989a265e61f603c1",
+      "title": "Object Relational Graph With Teacher-Recommended Learning for Video Captioning",
+      "year": 2020,
+      "abstract": "Taking full advantage of the information from both vision and language is critical for the video captioning task. Existing models lack adequate visual representation due to the neglect of interaction between object, and sufficient training for content-related words due to long-tailed problems. In this paper, we propose a complete video captioning system including both a novel model and an effective training strategy. Specifically, we propose an object relational graph (ORG) based encoder, which captures more detailed interaction features to enrich visual representation. Meanwhile, we design a teacher-recommended learning (TRL) method to make full use of the successful external language model (ELM) to integrate the abundant linguistic knowledge into the caption model. The ELM generates more semantically similar word proposals which extend the groundtruth words used for training to deal with the long-tailed problem. Experimental evaluations on three benchmarks: MSVD, MSR-VTT and VATEX show the proposed ORG-TRL system achieves state-of-the-art performance. Extensive ablation studies and visualizations illustrate the effectiveness of our system.",
+      "externalIds": {
+        "MAG": "3006987161",
+        "DBLP": "conf/cvpr/ZhangSY0WHZ20",
+        "ArXiv": "2002.11566",
+        "DOI": "10.1109/cvpr42600.2020.01329",
+        "CorpusId": 211506001
+      },
+      "arxiv_id": "2002.11566",
+      "doi": "10.1109/cvpr42600.2020.01329",
+      "corpus_id": 211506001
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "55",
+      "ref_key": "S2:5d321194696f1f75cf9da045e6022b2f20ba5b9c",
+      "paperId": "5d321194696f1f75cf9da045e6022b2f20ba5b9c",
+      "title": "Video-LLaMA: An Instruction-tuned Audio-Visual Language Model for Video Understanding",
+      "year": 2023,
+      "abstract": "We present Video-LLaMA a multi-modal framework that empowers Large Language Models (LLMs) with the capability of understanding both visual and auditory content in the video. Video-LLaMA bootstraps cross-modal training from the frozen pre-trained visual and audio encoders and the frozen LLMs. Unlike previous works that complement LLMs to process the visual or audio signals only, Video-LLaMA enables video comprehension by tackling two challenges: (1) capturing the temporal changes in visual scenes, (2) integrating audio-visual signals. To counter the first challenge, we propose a Video Q-former to assemble a pre-trained image encoder into our video encoder and introduce a video-to-text generation task to learn video-language correspondence. For the second challenge, we leverage ImageBind, a universal embedding model aligning multiple modalities, as the pre-trained audio encoder and introduce an Audio Q-former on top of ImageBind to learn reasonable auditory query embeddings for the LLM module. To align the output of both visual and audio encoders with LLM's embedding space, we first train Video-LLaMA on massive video/image-caption pairs and then tune our model with visual-instruction datasets of moderate amount but higher quality. We found Video-LLaMA shows the ability to perceive and comprehend video content and generate meaningful responses grounded in the visual and auditory information presented in the videos.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2306-02858",
+        "ArXiv": "2306.02858",
+        "DOI": "10.48550/arXiv.2306.02858",
+        "CorpusId": 259075356
+      },
+      "arxiv_id": "2306.02858",
+      "doi": "10.48550/arXiv.2306.02858",
+      "corpus_id": 259075356
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "56",
+      "ref_key": "S2:1ba76761f551a044d3d1bebefc5cb3faccf77b27",
+      "paperId": "1ba76761f551a044d3d1bebefc5cb3faccf77b27",
+      "title": "Two-stream RNN/CNN for action recognition in 3D videos",
+      "year": 2017,
+      "abstract": "The recognition of actions from video sequences has many applications in health monitoring, assisted living, surveillance, and smart homes. Despite advances in sensing, in particular related to 3D video, the methodologies to process the data are still subject to research. We demonstrate superior results by a system which combines recurrent neural networks with convolutional neural networks in a voting approach. The gated-recurrent-unit-based neural networks are particularly well-suited to distinguish actions based on long-term information from optical tracking data; the 3D-CNNs focus more on detailed, recent information from video data. The resulting features are merged in an SVM which then classifies the movement. In this architecture, our method improves recognition rates of state-of-the-art methods by 14% on standard data sets.",
+      "externalIds": {
+        "MAG": "3100437087",
+        "ArXiv": "1703.09783",
+        "DBLP": "conf/iros/ZhaoAS17",
+        "DOI": "10.1109/IROS.2017.8206288",
+        "CorpusId": 2098173
+      },
+      "arxiv_id": "1703.09783",
+      "doi": "10.1109/IROS.2017.8206288",
+      "corpus_id": 2098173
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "57",
+      "ref_key": "S2:2411270f111a160c9289d56132651c896a5738f6",
+      "paperId": "2411270f111a160c9289d56132651c896a5738f6",
+      "title": "Video Question Answering via Hierarchical Dual-Level Attention Network Learning",
+      "year": 2017,
+      "abstract": "Video question answering is a challenging task in visual information retrieval, which provides the accurate answer from the referenced video contents according to the given question. However, the existing visual question answering approaches mainly tackle the problem of static image question answering, which may be ineffectively applied for video question answering directly, due to the insufficiency of modeling the video temporal dynamics. In this paper, we study the problem of video question answering from the viewpoint of hierarchical dual-level attention network learning. We obtain the object appearance and movement information in the video based on both frame-level and segment-level feature representation methods. We then develop the hierarchical duallevel attention networks to learn the question-aware video representations with word-level and question-level attention mechanisms. We next devise the question-level fusion attention mechanism for our proposed networks to learn the questionaware joint video representation for video question answering. We construct two large-scale video question answering datasets. The extensive experiments validate the effectiveness of our method.",
+      "externalIds": {
+        "DBLP": "conf/mm/ZhaoLJCHZ17",
+        "MAG": "2766690867",
+        "DOI": "10.1145/3123266.3123364",
+        "CorpusId": 28426205
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/3123266.3123364",
+      "corpus_id": 28426205
+    },
+    {
+      "paper_id": "2406.05615",
+      "ref_index": "58",
+      "ref_key": "S2:933b37b21e9d61139660088adb032ff3fdf56d86",
+      "paperId": "933b37b21e9d61139660088adb032ff3fdf56d86",
+      "title": "Learning Video Representations from Large Language Models",
+      "year": 2022,
+      "abstract": "We introduce LAVILA, a new approach to learning video-language representations by leveraging Large Language Models (LLMs). We repurpose pre-trained LLMs to be conditioned on visual input, and finetune them to create automatic video narrators. Our auto-generated narrations offer a number of advantages, including dense coverage of long videos, better temporal synchronization of the visual information and text, and much higher diversity of text. The video-language embedding learned contrastively with these narrations outperforms the previous state-of-the-art on multiple first-person and third-person video tasks, both in zero-shot and finetuned setups. Most notably, Lavilaobtains an absolute gain of 10.1% on EGTEA classification and 5.9% Epic-Kitchens-100 multi-instance retrieval benchmarks. Furthermore, LaVilatrained with only half the narrations from the Ego4D dataset outperforms models trained on the full set, and shows positive scaling behavior on increasing pre-training data and model size.",
+      "externalIds": {
+        "DBLP": "conf/cvpr/0006MKG23",
+        "ArXiv": "2212.04501",
+        "DOI": "10.1109/CVPR52729.2023.00637",
+        "CorpusId": 254408789
+      },
+      "arxiv_id": "2212.04501",
+      "doi": "10.1109/CVPR52729.2023.00637",
+      "corpus_id": 254408789
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "Video-Language Understanding": {
+        "Video-language   understanding tasks": {
+          "Text-video retrieval": {
+            "7a56a9e39de93bea868f3e1c8c344fb79c6e7f15": {},
+            "96282f6456b10da5acfb8268632ef86645f4b339": {},
+            "e2d5f5a49d68c80a9108646587eb2f7b898e2831": {},
+            "13a84580708d1f5010fa5ef9bc1ee888240bf5bf": {},
+            "5aa2ff41c82ac5e7444abd65f014955c0fbb5209": {}
+          },
+          "Video captioning": {
+            "3263b941d0a77bbd2040612ec774ef063ef64c48": {},
+            "a444d32f30d38fb0cb811fa1a9b601511244fb5b": {},
+            "e8a72d29771d1a33b4a0e43c74adcee6c73d74c7": {},
+            "a13fcab4ee018339a720faea243415555e620e84": {},
+            "a6156a6e736d8da67a205122167444e1baffbab6": {},
+            "f1dd557a8839733a5ee06d19989a265e61f603c1": {}
+          },
+          "VideoQA": {
+            "d27d44ed1caa7f973f9fedb11878e4b5ab452320": {},
+            "4a91153f52869aa709f778e5e21814e237543542": {},
+            "5b990c4e07e315b44a8e15c2e9d9290bbd5240b6": {},
+            "0fe1d09fabeda89d6839c08f19a7350db9982d5e": {},
+            "009e40cdc9d98b9e5f6279d38b46936ceffcc124": {},
+            "5b43ab59cbd57c3986fa9c9aa6f8c308ee393ef0": {},
+            "2411270f111a160c9289d56132651c896a5738f6": {}
+          },
+          "Other tasks": {
+            "226ff50b10261693d89b8f7e35d838e31bbf0e66": {},
+            "276d80c7bb09d32e364e633ed5b49ac26c191842": {},
+            "6f1aab7b3ca0a487e6a57571b4ef9993e6325435": {},
+            "92dd395cc99890013946c6293b0417376e936f3e": {},
+            "a521a3dd398e9f79d0bc074b7216e51dd663874e": {},
+            "1ce9d7a8eec5fd1cdc3646d5db566e39a2735ea4": {}
+          }
+        },
+        "Video-language   understanding methods": {
+          "Model Architecture": {
+            "Pre-transformer": {
+              "9d9aced120e530484609164c836da64548693484": {},
+              "2db62ac8bc735133f746cc10439f419abf3b3a2c": {},
+              "d726f87a275dc7ff4ba4946abc3f8041b3af8b3a": {},
+              "1ba76761f551a044d3d1bebefc5cb3faccf77b27": {}
+            },
+            "Transformer-based": {
+              "f0524b3005720bcff886bcb0227f7f0dd924ff07": {},
+              "cf5377c25bdc2f446c834d0e0ef644ff8ca0493b": {},
+              "281ad83e06d731d5d686acf07cd701576f1188c4": {},
+              "d56a1311b2d73513415b028f148c11735aea8004": {},
+              "477ceb5c42bc83fb7d2856a3e6289f43f93f3f19": {}
+            },
+            "LLM-augmented": {
+              "f9bfc6d9ba1665b73af3323d46c7642b852759ef": {},
+              "486c2df78cbb770a90a55f7fa3fe19102fba2c24": {},
+              "d48cb91b9e555194f7494c4d4bb9815021d3ee45": {},
+              "08706687b02ae65e2303011d0013e96b79007d2c": {},
+              "5d321194696f1f75cf9da045e6022b2f20ba5b9c": {}
+            }
+          },
+          "Model Training": {
+            "Pre-training": {
+              "bac87bdb1cabc35fafb8176a234d332ebcc02864": {},
+              "c8dbf43fc20160814b9506de32be86ada91fa725": {},
+              "bac146e4f52df49ded741e4b31102b97c8b5847f": {},
+              "3e75d9f13be996bd931a23cc1b119297ab25d165": {},
+              "ba4a4d31d2af23eefadbf19e5efd5a7d4fd89143": {}
+            },
+            "Fine-tuning": {
+              "ee909ad489244016cf301bb7d7d8eeea423dbf35": {},
+              "1b407ec19693bdd8fe68453cd1ecdf7e9dfdc6a9": {},
+              "83b2a55aecd5f917dbedbc0c5ef3ff3b61013958": {},
+              "a970c8fadef8497576660b288c52c0ec8eebdc12": {}
+            }
+          },
+          "Data perspective": {
+            "Data curation": {
+              "Manual collection": {
+                "3ce35f5e08bdc558a264704b398e488fff9582a5": {},
+                "e1a3e6856b6ac6af3600b5954392e5368603fd1b": {},
+                "90357a6dc817e2f7cec477a51156675fbf545cf1": {}
+              },
+              "Data augmentation": {
+                "61ff7c259288b2f61f98ddc4ebed6cb723e4161b": {},
+                "b01db336a8ead672700a406f5c12d1edb9fb2697": {},
+                "672a8c7fe6d079c82758a45c7fdefa741bdc6ef5": {}
+              }
+            },
+            "Label annotation": {
+              "Manual annotation": {
+                "d2729be3c1332640b3ae24758977aaf2a5adc1c2": {},
+                "50d331ec9e1c620f69659371724c0e384fcbb01b": {},
+                "1b937ff4b05e2b56c2c2fcdfa5baa3085cd5a08c": {}
+              },
+              "Automatic generation": {
+                "1b6e40c46f2e680620cf70218ae4edbc895d305f": {},
+                "20f3ca16e2b54aa817c0d9ef3f4dc096de924113": {},
+                "933b37b21e9d61139660088adb032ff3fdf56d86": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000001",
+        "paperId": "7a56a9e39de93bea868f3e1c8c344fb79c6e7f15",
+        "ref_index": "7",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "Text-video retrieval"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000002",
+        "paperId": "96282f6456b10da5acfb8268632ef86645f4b339",
+        "ref_index": "13",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "Text-video retrieval"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000003",
+        "paperId": "e2d5f5a49d68c80a9108646587eb2f7b898e2831",
+        "ref_index": "15",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "Text-video retrieval"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000004",
+        "paperId": "13a84580708d1f5010fa5ef9bc1ee888240bf5bf",
+        "ref_index": "24",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "Text-video retrieval"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000005",
+        "paperId": "5aa2ff41c82ac5e7444abd65f014955c0fbb5209",
+        "ref_index": "32",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "Text-video retrieval"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000006",
+        "paperId": "3263b941d0a77bbd2040612ec774ef063ef64c48",
+        "ref_index": "23",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "Video captioning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000007",
+        "paperId": "a444d32f30d38fb0cb811fa1a9b601511244fb5b",
+        "ref_index": "28",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "Video captioning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000008",
+        "paperId": "e8a72d29771d1a33b4a0e43c74adcee6c73d74c7",
+        "ref_index": "34",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "Video captioning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000009",
+        "paperId": "a13fcab4ee018339a720faea243415555e620e84",
+        "ref_index": "38",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "Video captioning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000010",
+        "paperId": "a6156a6e736d8da67a205122167444e1baffbab6",
+        "ref_index": "44",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "Video captioning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000011",
+        "paperId": "f1dd557a8839733a5ee06d19989a265e61f603c1",
+        "ref_index": "54",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "Video captioning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000012",
+        "paperId": "d27d44ed1caa7f973f9fedb11878e4b5ab452320",
+        "ref_index": "11",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "VideoQA"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000013",
+        "paperId": "4a91153f52869aa709f778e5e21814e237543542",
+        "ref_index": "18",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "VideoQA"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000014",
+        "paperId": "5b990c4e07e315b44a8e15c2e9d9290bbd5240b6",
+        "ref_index": "31",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "VideoQA"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000015",
+        "paperId": "0fe1d09fabeda89d6839c08f19a7350db9982d5e",
+        "ref_index": "33",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "VideoQA"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000016",
+        "paperId": "009e40cdc9d98b9e5f6279d38b46936ceffcc124",
+        "ref_index": "40",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "VideoQA"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000017",
+        "paperId": "5b43ab59cbd57c3986fa9c9aa6f8c308ee393ef0",
+        "ref_index": "41",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "VideoQA"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000018",
+        "paperId": "2411270f111a160c9289d56132651c896a5738f6",
+        "ref_index": "57",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "VideoQA"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000019",
+        "paperId": "226ff50b10261693d89b8f7e35d838e31bbf0e66",
+        "ref_index": "12",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "Other tasks"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000020",
+        "paperId": "276d80c7bb09d32e364e633ed5b49ac26c191842",
+        "ref_index": "21",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "Other tasks"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000021",
+        "paperId": "6f1aab7b3ca0a487e6a57571b4ef9993e6325435",
+        "ref_index": "25",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "Other tasks"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000022",
+        "paperId": "92dd395cc99890013946c6293b0417376e936f3e",
+        "ref_index": "26",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "Other tasks"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000023",
+        "paperId": "a521a3dd398e9f79d0bc074b7216e51dd663874e",
+        "ref_index": "48",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "Other tasks"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000024",
+        "paperId": "1ce9d7a8eec5fd1cdc3646d5db566e39a2735ea4",
+        "ref_index": "53",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding tasks",
+          "Other tasks"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000025",
+        "paperId": "9d9aced120e530484609164c836da64548693484",
+        "ref_index": "8",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Architecture",
+          "Pre-transformer"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000026",
+        "paperId": "2db62ac8bc735133f746cc10439f419abf3b3a2c",
+        "ref_index": "47",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Architecture",
+          "Pre-transformer"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000027",
+        "paperId": "d726f87a275dc7ff4ba4946abc3f8041b3af8b3a",
+        "ref_index": "51",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Architecture",
+          "Pre-transformer"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000028",
+        "paperId": "1ba76761f551a044d3d1bebefc5cb3faccf77b27",
+        "ref_index": "56",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Architecture",
+          "Pre-transformer"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000029",
+        "paperId": "f0524b3005720bcff886bcb0227f7f0dd924ff07",
+        "ref_index": "0",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Architecture",
+          "Transformer-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000030",
+        "paperId": "cf5377c25bdc2f446c834d0e0ef644ff8ca0493b",
+        "ref_index": "19",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Architecture",
+          "Transformer-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000031",
+        "paperId": "281ad83e06d731d5d686acf07cd701576f1188c4",
+        "ref_index": "27",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Architecture",
+          "Transformer-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000032",
+        "paperId": "d56a1311b2d73513415b028f148c11735aea8004",
+        "ref_index": "35",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Architecture",
+          "Transformer-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000033",
+        "paperId": "477ceb5c42bc83fb7d2856a3e6289f43f93f3f19",
+        "ref_index": "46",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Architecture",
+          "Transformer-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000034",
+        "paperId": "f9bfc6d9ba1665b73af3323d46c7642b852759ef",
+        "ref_index": "5",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Architecture",
+          "LLM-augmented"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000035",
+        "paperId": "486c2df78cbb770a90a55f7fa3fe19102fba2c24",
+        "ref_index": "20",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Architecture",
+          "LLM-augmented"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000036",
+        "paperId": "d48cb91b9e555194f7494c4d4bb9815021d3ee45",
+        "ref_index": "22",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Architecture",
+          "LLM-augmented"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000037",
+        "paperId": "08706687b02ae65e2303011d0013e96b79007d2c",
+        "ref_index": "30",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Architecture",
+          "LLM-augmented"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000038",
+        "paperId": "5d321194696f1f75cf9da045e6022b2f20ba5b9c",
+        "ref_index": "55",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Architecture",
+          "LLM-augmented"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000039",
+        "paperId": "bac87bdb1cabc35fafb8176a234d332ebcc02864",
+        "ref_index": "2",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Training",
+          "Pre-training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000040",
+        "paperId": "c8dbf43fc20160814b9506de32be86ada91fa725",
+        "ref_index": "6",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Training",
+          "Pre-training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000041",
+        "paperId": "bac146e4f52df49ded741e4b31102b97c8b5847f",
+        "ref_index": "9",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Training",
+          "Pre-training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000042",
+        "paperId": "3e75d9f13be996bd931a23cc1b119297ab25d165",
+        "ref_index": "10",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Training",
+          "Pre-training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000043",
+        "paperId": "ba4a4d31d2af23eefadbf19e5efd5a7d4fd89143",
+        "ref_index": "16",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Training",
+          "Pre-training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000044",
+        "paperId": "ee909ad489244016cf301bb7d7d8eeea423dbf35",
+        "ref_index": "1",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Training",
+          "Fine-tuning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000045",
+        "paperId": "1b407ec19693bdd8fe68453cd1ecdf7e9dfdc6a9",
+        "ref_index": "29",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Training",
+          "Fine-tuning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000046",
+        "paperId": "83b2a55aecd5f917dbedbc0c5ef3ff3b61013958",
+        "ref_index": "43",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Training",
+          "Fine-tuning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000047",
+        "paperId": "a970c8fadef8497576660b288c52c0ec8eebdc12",
+        "ref_index": "49",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Model Training",
+          "Fine-tuning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000048",
+        "paperId": "3ce35f5e08bdc558a264704b398e488fff9582a5",
+        "ref_index": "3",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Data perspective",
+          "Data curation",
+          "Manual collection"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000049",
+        "paperId": "e1a3e6856b6ac6af3600b5954392e5368603fd1b",
+        "ref_index": "45",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Data perspective",
+          "Data curation",
+          "Manual collection"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000050",
+        "paperId": "90357a6dc817e2f7cec477a51156675fbf545cf1",
+        "ref_index": "52",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Data perspective",
+          "Data curation",
+          "Manual collection"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000051",
+        "paperId": "61ff7c259288b2f61f98ddc4ebed6cb723e4161b",
+        "ref_index": "14",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Data perspective",
+          "Data curation",
+          "Data augmentation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000052",
+        "paperId": "b01db336a8ead672700a406f5c12d1edb9fb2697",
+        "ref_index": "37",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Data perspective",
+          "Data curation",
+          "Data augmentation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000053",
+        "paperId": "672a8c7fe6d079c82758a45c7fdefa741bdc6ef5",
+        "ref_index": "42",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Data perspective",
+          "Data curation",
+          "Data augmentation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000054",
+        "paperId": "d2729be3c1332640b3ae24758977aaf2a5adc1c2",
+        "ref_index": "4",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Data perspective",
+          "Label annotation",
+          "Manual annotation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000055",
+        "paperId": "50d331ec9e1c620f69659371724c0e384fcbb01b",
+        "ref_index": "17",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Data perspective",
+          "Label annotation",
+          "Manual annotation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000056",
+        "paperId": "1b937ff4b05e2b56c2c2fcdfa5baa3085cd5a08c",
+        "ref_index": "39",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Data perspective",
+          "Label annotation",
+          "Manual annotation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000057",
+        "paperId": "1b6e40c46f2e680620cf70218ae4edbc895d305f",
+        "ref_index": "36",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Data perspective",
+          "Label annotation",
+          "Automatic generation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000058",
+        "paperId": "20f3ca16e2b54aa817c0d9ef3f4dc096de924113",
+        "ref_index": "50",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Data perspective",
+          "Label annotation",
+          "Automatic generation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.05615",
+        "arxiv_id": "2406.05615",
+        "leaf_mention_id": "2406.05615::000059",
+        "paperId": "933b37b21e9d61139660088adb032ff3fdf56d86",
+        "ref_index": "58",
+        "path": [
+          "Video-Language Understanding",
+          "Video-language   understanding methods",
+          "Data perspective",
+          "Label annotation",
+          "Automatic generation"
+        ],
+        "depth": 5,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 59,
+      "unique_leaf_paper_count": 59,
+      "multi_membership_extra_mentions": 0,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

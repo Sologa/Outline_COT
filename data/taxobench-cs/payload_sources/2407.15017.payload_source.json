@@ -1,0 +1,2615 @@
+{
+  "paper_id": "2407.15017",
+  "arxiv_id": "2407.15017",
+  "title": "Knowledge Mechanisms in Large Language Models: A Survey and Perspective",
+  "ref_meta": [
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "0",
+      "ref_key": "S2:eefbd8b384a58f464827b19e30a6920ba976def9",
+      "paperId": "eefbd8b384a58f464827b19e30a6920ba976def9",
+      "title": "Towards Automated Circuit Discovery for Mechanistic Interpretability",
+      "year": 2023,
+      "abstract": "Through considerable effort and intuition, several recent works have reverse-engineered nontrivial behaviors of transformer models. This paper systematizes the mechanistic interpretability process they followed. First, researchers choose a metric and dataset that elicit the desired model behavior. Then, they apply activation patching to find which abstract neural network units are involved in the behavior. By varying the dataset, metric, and units under investigation, researchers can understand the functionality of each component. We automate one of the process' steps: to identify the circuit that implements the specified behavior in the model's computational graph. We propose several algorithms and reproduce previous interpretability results to validate them. For example, the ACDC algorithm rediscovered 5/5 of the component types in a circuit in GPT-2 Small that computes the Greater-Than operation. ACDC selected 68 of the 32,000 edges in GPT-2 Small, all of which were manually found by previous work. Our code is available at https://github.com/ArthurConmy/Automatic-Circuit-Discovery.",
+      "externalIds": {
+        "ArXiv": "2304.14997",
+        "DBLP": "conf/nips/ConmyMLHG23",
+        "DOI": "10.48550/arXiv.2304.14997",
+        "CorpusId": 258418244
+      },
+      "arxiv_id": "2304.14997",
+      "doi": "10.48550/arXiv.2304.14997",
+      "corpus_id": 258418244
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "1",
+      "ref_key": "S2:7e388155314475226bd001b84d8a9a69f35021a7",
+      "paperId": "7e388155314475226bd001b84d8a9a69f35021a7",
+      "title": "Language Models Represent Beliefs of Self and Others",
+      "year": 2024,
+      "abstract": "Understanding and attributing mental states, known as Theory of Mind (ToM), emerges as a fundamental capability for human social reasoning. While Large Language Models (LLMs) appear to possess certain ToM abilities, the mechanisms underlying these capabilities remain elusive. In this study, we discover that it is possible to linearly decode the belief status from the perspectives of various agents through neural activations of language models, indicating the existence of internal representations of self and others' beliefs. By manipulating these representations, we observe dramatic changes in the models' ToM performance, underscoring their pivotal role in the social reasoning process. Additionally, our findings extend to diverse social reasoning tasks that involve different causal inference patterns, suggesting the potential generalizability of these representations.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-18496",
+        "ArXiv": "2402.18496",
+        "DOI": "10.48550/arXiv.2402.18496",
+        "CorpusId": 268041304
+      },
+      "arxiv_id": "2402.18496",
+      "doi": "10.48550/arXiv.2402.18496",
+      "corpus_id": 268041304
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "2",
+      "ref_key": "S2:f44c1d2f1764bbf186c95af1b3b5a624b9801d18",
+      "paperId": "f44c1d2f1764bbf186c95af1b3b5a624b9801d18",
+      "title": "Characterizing Mechanisms for Factual Recall in Language Models",
+      "year": 2023,
+      "abstract": "Language Models (LMs) often must integrate facts they memorized in pretraining with new information that appears in a given context. These two sources can disagree, causing competition within the model, and it is unclear how an LM will resolve the conflict. On a dataset that queries for knowledge of world capitals, we investigate both distributional and mechanistic determinants of LM behavior in such situations. Specifically, we measure the proportion of the time an LM will use a counterfactual prefix (e.g.,\"The capital of Poland is London\") to overwrite what it learned in pretraining (\"Warsaw\"). On Pythia and GPT2, the training frequency of both the query country (\"Poland\") and the in-context city (\"London\") highly affect the models' likelihood of using the counterfactual. We then use head attribution to identify individual attention heads that either promote the memorized answer or the in-context answer in the logits. By scaling up or down the value vector of these heads, we can control the likelihood of using the in-context answer on new data. This method can increase the rate of generating the in-context answer to 88\\% of the time simply by scaling a single head at runtime. Our work contributes to a body of evidence showing that we can often localize model behaviors to specific components and provides a proof of concept for how future methods might control model behavior dynamically at runtime.",
+      "externalIds": {
+        "ArXiv": "2310.15910",
+        "DBLP": "journals/corr/abs-2310-15910",
+        "DOI": "10.48550/arXiv.2310.15910",
+        "CorpusId": 264439114
+      },
+      "arxiv_id": "2310.15910",
+      "doi": "10.48550/arXiv.2310.15910",
+      "corpus_id": 264439114
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "3",
+      "ref_key": "S2:ae16c93bf3a33c43e8f57293530069e77c89bcaa",
+      "paperId": "ae16c93bf3a33c43e8f57293530069e77c89bcaa",
+      "title": "Improving Alignment and Robustness with Circuit Breakers",
+      "year": 2024,
+      "abstract": "AI systems can take harmful actions and are highly vulnerable to adversarial attacks. We present an approach, inspired by recent advances in representation engineering, that interrupts the models as they respond with harmful outputs with\"circuit breakers.\"Existing techniques aimed at improving alignment, such as refusal training, are often bypassed. Techniques such as adversarial training try to plug these holes by countering specific attacks. As an alternative to refusal training and adversarial training, circuit-breaking directly controls the representations that are responsible for harmful outputs in the first place. Our technique can be applied to both text-only and multimodal language models to prevent the generation of harmful outputs without sacrificing utility -- even in the presence of powerful unseen attacks. Notably, while adversarial robustness in standalone image recognition remains an open challenge, circuit breakers allow the larger multimodal system to reliably withstand image\"hijacks\"that aim to produce harmful content. Finally, we extend our approach to AI agents, demonstrating considerable reductions in the rate of harmful actions when they are under attack. Our approach represents a significant step forward in the development of reliable safeguards to harmful behavior and adversarial attacks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2406-04313",
+        "ArXiv": "2406.04313",
+        "DOI": "10.48550/arXiv.2406.04313",
+        "CorpusId": 270286008
+      },
+      "arxiv_id": "2406.04313",
+      "doi": "10.48550/arXiv.2406.04313",
+      "corpus_id": 270286008
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "4",
+      "ref_key": "S2:184753b614b35cde3f2e221cea3bc60fe016d29e",
+      "paperId": "184753b614b35cde3f2e221cea3bc60fe016d29e",
+      "title": "Editing Conceptual Knowledge for Large Language Models",
+      "year": 2024,
+      "abstract": "Recently, there has been a growing interest in knowledge editing for Large Language Models (LLMs). Current approaches and evaluations merely explore the instance-level editing, while whether LLMs possess the capability to modify concepts remains unclear. This paper pioneers the investigation of editing conceptual knowledge for LLMs, by constructing a novel benchmark dataset ConceptEdit and establishing a suite of new metrics for evaluation. The experimental results reveal that, although existing editing methods can efficiently modify concept-level definition to some extent, they also have the potential to distort the related instantial knowledge in LLMs, leading to poor performance. We anticipate this can inspire further progress in better understanding LLMs. Our project homepage is available at https://zjunlp.github.io/project/ConceptEdit.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/WangMDYSLGC024",
+        "ArXiv": "2403.06259",
+        "DOI": "10.48550/arXiv.2403.06259",
+        "CorpusId": 268358212
+      },
+      "arxiv_id": "2403.06259",
+      "doi": "10.48550/arXiv.2403.06259",
+      "corpus_id": 268358212
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "5",
+      "ref_key": "S2:9e7227ae2fbccc4c54f986d4e72eae5d0f66387a",
+      "paperId": "9e7227ae2fbccc4c54f986d4e72eae5d0f66387a",
+      "title": "A Survey of Synthetic Data Generation for Machine Learning",
+      "year": 2021,
+      "abstract": "Data is the fuel of machine learning algorithms, therefore data generation in machine learning is becoming an important topic. The problem is that finding enough data for machine learning algorithms in some domains or situations is difficult. For example, some data may invade the privacy of people or some other datasets can be related to national security and difficult to be unveiled. This paper reviews the related work in synthetic data generation in terms of available methods for data generation (augmentation) and how the generated data helps in improving the performance of machine learning algorithms. The main focus of this paper is data synthetic methods in the healthcare domain.",
+      "externalIds": {
+        "DBLP": "conf/acit3/AbufaddaM21",
+        "DOI": "10.1109/acit53391.2021.9677302",
+        "CorpusId": 246038013
+      },
+      "arxiv_id": null,
+      "doi": "10.1109/acit53391.2021.9677302",
+      "corpus_id": 246038013
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "6",
+      "ref_key": "S2:6150a2dab1b63b246eb2cd418fcdb5a6b6b8ae62",
+      "paperId": "6150a2dab1b63b246eb2cd418fcdb5a6b6b8ae62",
+      "title": "exBERT: A Visual Analysis Tool to Explore Learned Representations in Transformer Models",
+      "year": 2020,
+      "abstract": "Large Transformer-based language models can route and reshape complex information via their multi-headed attention mechanism. Although the attention never receives explicit supervision, it can exhibit recognizable patterns following linguistic or positional information. Analyzing the learned representations and attentions is paramount to furthering our understanding of the inner workings of these models. However, analyses have to catch up with the rapid release of new models and the growing diversity of investigation techniques. To support analysis for a wide variety of models, we introduce exBERT, a tool to help humans conduct flexible, interactive investigations and formulate hypotheses for the model-internal reasoning process. exBERT provides insights into the meaning of the contextual representations and attention by matching a human-specified input to similar contexts in large annotated datasets. By aggregating the annotations of the matched contexts, exBERT can quickly replicate findings from literature and extend them to previously not analyzed models.",
+      "externalIds": {
+        "MAG": "3038035611",
+        "DBLP": "conf/acl/HooverSG20",
+        "ACL": "2020.acl-demos.22",
+        "DOI": "10.18653/v1/2020.acl-demos.22",
+        "CorpusId": 260539432
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2020.acl-demos.22",
+      "corpus_id": 260539432
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "7",
+      "ref_key": "S2:7b1a6db0909856a345f055a9607f43711b3df375",
+      "paperId": "7b1a6db0909856a345f055a9607f43711b3df375",
+      "title": "Art or Artifice? Large Language Models and the False Promise of Creativity",
+      "year": 2023,
+      "abstract": "Researchers have argued that large language models (LLMs) exhibit high-quality writing capabilities from blogs to stories. However, evaluating objectively the creativity of a piece of writing is challenging. Inspired by the Torrance Test of Creative Thinking (TTCT) [64], which measures creativity as a process, we use the Consensual Assessment Technique [3] and propose Torrance Test of Creative Writing (TTCW) to evaluate creativity as product. TTCW consists of 14 binary tests organized into the original dimensions of Fluency, Flexibility, Originality, and Elaboration. We recruit 10 creative writers and implement a human assessment of 48 stories written either by professional authors or LLMs using TTCW. Our analysis shows that LLM-generated stories pass 3-10X less TTCW tests than stories written by professionals. In addition, we explore the use of LLMs as assessors to automate the TTCW evaluation, revealing that none of the LLMs positively correlate with the expert assessments.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2309-14556",
+        "ArXiv": "2309.14556",
+        "DOI": "10.1145/3613904.3642731",
+        "CorpusId": 262826094
+      },
+      "arxiv_id": "2309.14556",
+      "doi": "10.1145/3613904.3642731",
+      "corpus_id": 262826094
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "8",
+      "ref_key": "S2:cf36236015c9f93f15bfafbf282f69e08bdc9c16",
+      "paperId": "cf36236015c9f93f15bfafbf282f69e08bdc9c16",
+      "title": "Transformer Feed-Forward Layers Build Predictions by Promoting Concepts in the Vocabulary Space",
+      "year": 2022,
+      "abstract": "Transformer-based language models (LMs) are at the core of modern NLP, but their internal prediction construction process is opaque and largely not understood. In this work, we make a substantial step towards unveiling this underlying prediction process, by reverse-engineering the operation of the feed-forward network (FFN) layers, one of the building blocks of transformer models. We view the token representation as a changing distribution over the vocabulary, and the output from each FFN layer as an additive update to that distribution. Then, we analyze the FFN updates in the vocabulary space, showing that each update can be decomposed to sub-updates corresponding to single FFN parameter vectors, each promoting concepts that are often human-interpretable. We then leverage these findings for controlling LM predictions, where we reduce the toxicity of GPT2 by almost 50%, and for improving computation efficiency with a simple early exit rule, saving 20% of computation on average.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/GevaCWG22",
+        "ArXiv": "2203.14680",
+        "ACL": "2022.emnlp-main.3",
+        "DOI": "10.48550/arXiv.2203.14680",
+        "CorpusId": 247762385
+      },
+      "arxiv_id": "2203.14680",
+      "doi": "10.48550/arXiv.2203.14680",
+      "corpus_id": 247762385
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "9",
+      "ref_key": "S2:203a297db586ffb4cd858fe5f219a9a1571c87b2",
+      "paperId": "203a297db586ffb4cd858fe5f219a9a1571c87b2",
+      "title": "A Confederacy of Models: a Comprehensive Evaluation of LLMs on Creative Writing",
+      "year": 2023,
+      "abstract": "We evaluate a range of recent LLMs on English creative writing, a challenging and complex task that requires imagination, coherence, and style. We use a difficult, open-ended scenario chosen to avoid training data reuse: an epic narration of a single combat between Ignatius J. Reilly, the protagonist of the Pulitzer Prize-winning novel A Confederacy of Dunces (1980), and a pterodactyl, a prehistoric flying reptile. We ask several LLMs and humans to write such a story and conduct a human evalution involving various criteria such as fluency, coherence, originality, humor, and style. Our results show that some state-of-the-art commercial LLMs match or slightly outperform our writers in most dimensions; whereas open-source LLMs lag behind. Humans retain an edge in creativity, while humor shows a binary divide between LLMs that can handle it comparably to humans and those that fail at it. We discuss the implications and limitations of our study and suggest directions for future research.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/Gomez-Rodriguez23a",
+        "ArXiv": "2310.08433",
+        "DOI": "10.48550/arXiv.2310.08433",
+        "CorpusId": 263908973
+      },
+      "arxiv_id": "2310.08433",
+      "doi": "10.48550/arXiv.2310.08433",
+      "corpus_id": 263908973
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "10",
+      "ref_key": "S2:2b72888cc3ff048038f6011b8e3d89ba106540b6",
+      "paperId": "2b72888cc3ff048038f6011b8e3d89ba106540b6",
+      "title": "Editing Common Sense in Transformers",
+      "year": 2023,
+      "abstract": "Editing model parameters directly in Transformers makes updating open-source transformer-based models possible without re-training (Meng et al., 2023). However, these editing methods have only been evaluated on statements about encyclopedic knowledge with a single correct answer. Commonsense knowledge with multiple correct answers, e.g., an apple can be green or red but not transparent, has not been studied but is as essential for enhancing transformers' reliability and usefulness. In this paper, we investigate whether commonsense judgments are causally associated with localized, editable parameters in Transformers, and we provide an affirmative answer. We find that directly applying the MEMIT editing algorithm results in sub-par performance and improve it for the commonsense domain by varying edit tokens and improving the layer selection strategy, i.e., $MEMIT_{CSK}$. GPT-2 Large and XL models edited using $MEMIT_{CSK}$ outperform best-fine-tuned baselines by 10.97% and 10.73% F1 scores on PEP3k and 20Q datasets. In addition, we propose a novel evaluation dataset, PROBE SET, that contains unaffected and affected neighborhoods, affected paraphrases, and affected reasoning challenges. $MEMIT_{CSK}$ performs well across the metrics while fine-tuning baselines show significant trade-offs between unaffected and affected metrics. These results suggest a compelling future direction for incorporating feedback about common sense into Transformers through direct model editing.",
+      "externalIds": {
+        "ArXiv": "2305.14956",
+        "DBLP": "conf/emnlp/GuptaMS00WT23",
+        "DOI": "10.18653/v1/2023.emnlp-main.511",
+        "CorpusId": 258865393
+      },
+      "arxiv_id": "2305.14956",
+      "doi": "10.18653/v1/2023.emnlp-main.511",
+      "corpus_id": 258865393
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "11",
+      "ref_key": "S2:d8355d1bc02ca6b11125027a5d85d0b32fa30f66",
+      "paperId": "d8355d1bc02ca6b11125027a5d85d0b32fa30f66",
+      "title": "Impact of Co-occurrence on Factual Knowledge of Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) often make factually incorrect responses despite their success in various applications. In this paper, we hypothesize that relying heavily on simple co-occurrence statistics of the pre-training corpora is one of the main factors that cause factual errors. Our results reveal that LLMs are vulnerable to the co-occurrence bias, defined as preferring frequently co-occurred words over the correct answer. Consequently, LLMs struggle to recall facts whose subject and object rarely co-occur in the pre-training dataset although they are seen during finetuning. We show that co-occurrence bias remains despite scaling up model sizes or finetuning. Therefore, we suggest finetuning on a debiased dataset to mitigate the bias by filtering out biased samples whose subject-object co-occurrence count is high. Although debiased finetuning allows LLMs to memorize rare facts in the training set, it is not effective in recalling rare facts unseen during finetuning. Further research in mitigation will help build reliable language models by preventing potential errors. The code is available at \\url{https://github.com/CheongWoong/impact_of_cooccurrence}.",
+      "externalIds": {
+        "ArXiv": "2310.08256",
+        "DBLP": "conf/emnlp/KangC23",
+        "DOI": "10.48550/arXiv.2310.08256",
+        "CorpusId": 263908902
+      },
+      "arxiv_id": "2310.08256",
+      "doi": "10.48550/arXiv.2310.08256",
+      "corpus_id": 263908902
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "12",
+      "ref_key": "S2:5dc15ac1c92ab7492f121471823fb13a95d273ba",
+      "paperId": "5dc15ac1c92ab7492f121471823fb13a95d273ba",
+      "title": "A Mechanistic Interpretation of Arithmetic Reasoning in Language Models using Causal Mediation Analysis",
+      "year": 2023,
+      "abstract": "Mathematical reasoning in large language models (LMs) has garnered significant attention in recent work, but there is a limited understanding of how these models process and store information related to arithmetic tasks within their architecture. In order to improve our understanding of this aspect of language models, we present a mechanistic interpretation of Transformer-based LMs on arithmetic questions using a causal mediation analysis framework. By intervening on the activations of specific model components and measuring the resulting changes in predicted probabilities, we identify the subset of parameters responsible for specific predictions. This provides insights into how information related to arithmetic is processed by LMs. Our experimental results indicate that LMs process the input by transmitting the information relevant to the query from mid-sequence early layers to the final token using the attention mechanism. Then, this information is processed by a set of MLP modules, which generate result-related information that is incorporated into the residual stream. To assess the specificity of the observed activation dynamics, we compare the effects of different model components on arithmetic queries with other tasks, including number retrieval from prompts and factual knowledge questions.",
+      "externalIds": {
+        "ArXiv": "2305.15054",
+        "DBLP": "conf/emnlp/StolfoBS23",
+        "DOI": "10.18653/v1/2023.emnlp-main.435",
+        "CorpusId": 258865170
+      },
+      "arxiv_id": "2305.15054",
+      "doi": "10.18653/v1/2023.emnlp-main.435",
+      "corpus_id": 258865170
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "13",
+      "ref_key": "S2:41a3c41ba1912e1384849e6898c241af89cc4a11",
+      "paperId": "41a3c41ba1912e1384849e6898c241af89cc4a11",
+      "title": "DEPN: Detecting and Editing Privacy Neurons in Pretrained Language Models",
+      "year": 2023,
+      "abstract": "Large language models pretrained on a huge amount of data capture rich knowledge and information in the training data. The ability of data memorization and regurgitation in pretrained language models, revealed in previous studies, brings the risk of data leakage. In order to effectively reduce these risks, we propose a framework DEPN to Detect and Edit Privacy Neurons in pretrained language models, partially inspired by knowledge neurons and model editing. In DEPN, we introduce a novel method, termed as privacy neuron detector, to locate neurons associated with private information, and then edit these detected privacy neurons by setting their activations to zero. Furthermore, we propose a privacy neuron aggregator dememorize private information in a batch processing manner. Experimental results show that our method can significantly and efficiently reduce the exposure of private data leakage without deteriorating the performance of the model. Additionally, we empirically demonstrate the relationship between model memorization and privacy neurons, from multiple perspectives, including model size, training time, prompts, privacy neuron distribution, illustrating the robustness of our approach.",
+      "externalIds": {
+        "ArXiv": "2310.20138",
+        "DBLP": "journals/corr/abs-2310-20138",
+        "DOI": "10.48550/arXiv.2310.20138",
+        "CorpusId": 264816202
+      },
+      "arxiv_id": "2310.20138",
+      "doi": "10.48550/arXiv.2310.20138",
+      "corpus_id": 264816202
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "14",
+      "ref_key": "S2:b0ceba96db8b7b71beb2f0906568ffc143fddbf9",
+      "paperId": "b0ceba96db8b7b71beb2f0906568ffc143fddbf9",
+      "title": "A Rigorous Study of Integrated Gradients Method and Extensions to Internal Neuron Attributions",
+      "year": 2022,
+      "abstract": "As deep learning (DL) efficacy grows, concerns for poor model explainability grow also. Attribution methods address the issue of explainability by quantifying the importance of an input feature for a model prediction. Among various methods, Integrated Gradients (IG) sets itself apart by claiming other methods failed to satisfy desirable axioms, while IG and methods like it uniquely satisfy said axioms. This paper comments on fundamental aspects of IG and its applications/extensions: 1) We identify key differences between IG function spaces and the supporting literature's function spaces which problematize previous claims of IG uniqueness. We show that with the introduction of an additional axiom, \\textit{non-decreasing positivity}, the uniqueness claims can be established. 2) We address the question of input sensitivity by identifying function classes where IG is/is not Lipschitz in the attributed input. 3) We show that axioms for single-baseline methods have analogous properties for methods with probability distribution baselines. 4) We introduce a computationally efficient method of identifying internal neurons that contribute to specified regions of an IG attribution map. Finally, we present experimental results validating this method.",
+      "externalIds": {
+        "ArXiv": "2202.11912",
+        "DBLP": "journals/corr/abs-2202-11912",
+        "CorpusId": 247084007
+      },
+      "arxiv_id": "2202.11912",
+      "doi": null,
+      "corpus_id": 247084007
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "15",
+      "ref_key": "S2:405f8f5f1c6df1b3343c812832479aad5180b65f",
+      "paperId": "405f8f5f1c6df1b3343c812832479aad5180b65f",
+      "title": "Inference-Time Intervention: Eliciting Truthful Answers from a Language Model",
+      "year": 2023,
+      "abstract": "We introduce Inference-Time Intervention (ITI), a technique designed to enhance the\"truthfulness\"of large language models (LLMs). ITI operates by shifting model activations during inference, following a set of directions across a limited number of attention heads. This intervention significantly improves the performance of LLaMA models on the TruthfulQA benchmark. On an instruction-finetuned LLaMA called Alpaca, ITI improves its truthfulness from 32.5% to 65.1%. We identify a tradeoff between truthfulness and helpfulness and demonstrate how to balance it by tuning the intervention strength. ITI is minimally invasive and computationally inexpensive. Moreover, the technique is data efficient: while approaches like RLHF require extensive annotations, ITI locates truthful directions using only few hundred examples. Our findings suggest that LLMs may have an internal representation of the likelihood of something being true, even as they produce falsehoods on the surface.",
+      "externalIds": {
+        "ArXiv": "2306.03341",
+        "DBLP": "journals/corr/abs-2306-03341",
+        "CorpusId": 259088877
+      },
+      "arxiv_id": "2306.03341",
+      "doi": null,
+      "corpus_id": 259088877
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "16",
+      "ref_key": "S2:0d1c76d45afa012ded7ab741194baf142117c495",
+      "paperId": "0d1c76d45afa012ded7ab741194baf142117c495",
+      "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+      "year": 2023,
+      "abstract": "While large-scale unsupervised language models (LMs) learn broad world knowledge and some reasoning skills, achieving precise control of their behavior is difficult due to the completely unsupervised nature of their training. Existing methods for gaining such steerability collect human labels of the relative quality of model generations and fine-tune the unsupervised LM to align with these preferences, often with reinforcement learning from human feedback (RLHF). However, RLHF is a complex and often unstable procedure, first fitting a reward model that reflects the human preferences, and then fine-tuning the large unsupervised LM using reinforcement learning to maximize this estimated reward without drifting too far from the original model. In this paper we introduce a new parameterization of the reward model in RLHF that enables extraction of the corresponding optimal policy in closed form, allowing us to solve the standard RLHF problem with only a simple classification loss. The resulting algorithm, which we call Direct Preference Optimization (DPO), is stable, performant, and computationally lightweight, eliminating the need for sampling from the LM during fine-tuning or performing significant hyperparameter tuning. Our experiments show that DPO can fine-tune LMs to align with human preferences as well as or better than existing methods. Notably, fine-tuning with DPO exceeds PPO-based RLHF in ability to control sentiment of generations, and matches or improves response quality in summarization and single-turn dialogue while being substantially simpler to implement and train.",
+      "externalIds": {
+        "DBLP": "conf/nips/RafailovSMMEF23",
+        "ArXiv": "2305.18290",
+        "DOI": "10.48550/arXiv.2305.18290",
+        "CorpusId": 258959321
+      },
+      "arxiv_id": "2305.18290",
+      "doi": "10.48550/arXiv.2305.18290",
+      "corpus_id": 258959321
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "17",
+      "ref_key": "S2:546d0624adfc6e18fb87d8cc77e7705bb9ea7445",
+      "paperId": "546d0624adfc6e18fb87d8cc77e7705bb9ea7445",
+      "title": "LIMA: Less Is More for Alignment",
+      "year": 2023,
+      "abstract": "Large language models are trained in two stages: (1) unsupervised pretraining from raw text, to learn general-purpose representations, and (2) large scale instruction tuning and reinforcement learning, to better align to end tasks and user preferences. We measure the relative importance of these two stages by training LIMA, a 65B parameter LLaMa language model fine-tuned with the standard supervised loss on only 1,000 carefully curated prompts and responses, without any reinforcement learning or human preference modeling. LIMA demonstrates remarkably strong performance, learning to follow specific response formats from only a handful of examples in the training data, including complex queries that range from planning trip itineraries to speculating about alternate history. Moreover, the model tends to generalize well to unseen tasks that did not appear in the training data. In a controlled human study, responses from LIMA are either equivalent or strictly preferred to GPT-4 in 43% of cases; this statistic is as high as 58% when compared to Bard and 65% versus DaVinci003, which was trained with human feedback. Taken together, these results strongly suggest that almost all knowledge in large language models is learned during pretraining, and only limited instruction tuning data is necessary to teach models to produce high quality output.",
+      "externalIds": {
+        "ArXiv": "2305.11206",
+        "DBLP": "conf/nips/ZhouLX0SMMEYYZG23",
+        "CorpusId": 258822910
+      },
+      "arxiv_id": "2305.11206",
+      "doi": null,
+      "corpus_id": 258822910
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "18",
+      "ref_key": "S2:7a15950dc71079285a4eaf195de5aadd87c41b40",
+      "paperId": "7a15950dc71079285a4eaf195de5aadd87c41b40",
+      "title": "Fine-Tuning Language Models from Human Preferences",
+      "year": 2019,
+      "abstract": "Reward learning enables the application of reinforcement learning (RL) to tasks where reward is defined by human judgment, building a model of reward by asking humans questions. Most work on reward learning has used simulated environments, but complex information about values is often expressed in natural language, and we believe reward learning for language is a key to making RL practical and safe for real-world tasks. In this paper, we build on advances in generative pretraining of language models to apply reward learning to four natural language tasks: continuing text with positive sentiment or physically descriptive language, and summarization tasks on the TL;DR and CNN/Daily Mail datasets. For stylistic continuation we achieve good results with only 5,000 comparisons evaluated by humans. For summarization, models trained with 60,000 comparisons copy whole sentences from the input but skip irrelevant preamble; this leads to reasonable ROUGE scores and very good performance according to our human labelers, but may be exploiting the fact that labelers rely on simple heuristics.",
+      "externalIds": {
+        "MAG": "2973379954",
+        "DBLP": "journals/corr/abs-1909-08593",
+        "ArXiv": "1909.08593",
+        "CorpusId": 202660943
+      },
+      "arxiv_id": "1909.08593",
+      "doi": null,
+      "corpus_id": 202660943
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "19",
+      "ref_key": "S2:0286b2736a114198b25fb5553c671c33aed5d477",
+      "paperId": "0286b2736a114198b25fb5553c671c33aed5d477",
+      "title": "Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback",
+      "year": 2022,
+      "abstract": "We apply preference modeling and reinforcement learning from human feedback (RLHF) to ﬁnetune language models to act as helpful and harmless assistants. We ﬁnd this alignment training improves performance on almost all NLP evaluations, and is fully compatible with training for specialized skills such as python coding and summarization. We explore an iterated online mode of training, where preference models and RL policies are updated on a weekly cadence with fresh human feedback data, efﬁciently improving our datasets and models. Finally, we investigate the robustness of RLHF training, and identify a roughly linear relation between the RL reward and the square root of the KL divergence between the policy and its initialization. Alongside our main results, we perform peripheral analyses on calibration, competing objectives, and the use of OOD detection, compare our models with human writers, and provide samples from our models using prompts appearing in recent related work. Figure These plots show that PM accuracy decreases as we focus exclusively on comparisons between pairs of samples with high score. We have normalized all preference models to have the same mean score on a held-out dataset so that they’re directly comparable, and then plotted accuracy for the comparisons where both samples have scores above a speciﬁc threshold.",
+      "externalIds": {
+        "ArXiv": "2204.05862",
+        "DBLP": "journals/corr/abs-2204-05862",
+        "DOI": "10.48550/arXiv.2204.05862",
+        "CorpusId": 248118878
+      },
+      "arxiv_id": "2204.05862",
+      "doi": "10.48550/arXiv.2204.05862",
+      "corpus_id": 248118878
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "20",
+      "ref_key": "S2:6052486bc9144dc1730c12bf35323af3792a1fd0",
+      "paperId": "6052486bc9144dc1730c12bf35323af3792a1fd0",
+      "title": "Large language models encode clinical knowledge",
+      "year": 2022,
+      "abstract": "Large language models (LLMs) have demonstrated impressive capabilities in\nnatural language understanding and generation, but the quality bar for medical\nand clinical applications is high. Today, attempts to assess models' clinical\nknowledge typically rely on automated evaluations on limited benchmarks. There\nis no standard to evaluate model predictions and reasoning across a breadth of\ntasks. To address this, we present MultiMedQA, a benchmark combining six\nexisting open question answering datasets spanning professional medical exams,\nresearch, and consumer queries; and HealthSearchQA, a new free-response dataset\nof medical questions searched online. We propose a framework for human\nevaluation of model answers along multiple axes including factuality,\nprecision, possible harm, and bias. In addition, we evaluate PaLM (a\n540-billion parameter LLM) and its instruction-tuned variant, Flan-PaLM, on\nMultiMedQA. Using a combination of prompting strategies, Flan-PaLM achieves\nstate-of-the-art accuracy on every MultiMedQA multiple-choice dataset (MedQA,\nMedMCQA, PubMedQA, MMLU clinical topics), including 67.6% accuracy on MedQA (US\nMedical License Exam questions), surpassing prior state-of-the-art by over 17%.\nHowever, human evaluation reveals key gaps in Flan-PaLM responses. To resolve\nthis we introduce instruction prompt tuning, a parameter-efficient approach for\naligning LLMs to new domains using a few exemplars. The resulting model,\nMed-PaLM, performs encouragingly, but remains inferior to clinicians. We show\nthat comprehension, recall of knowledge, and medical reasoning improve with\nmodel scale and instruction prompt tuning, suggesting the potential utility of\nLLMs in medicine. Our human evaluations reveal important limitations of today's\nmodels, reinforcing the importance of both evaluation frameworks and method\ndevelopment in creating safe, helpful LLM models for clinical applications.",
+      "externalIds": {
+        "ArXiv": "2212.13138",
+        "DBLP": "journals/corr/abs-2212-13138",
+        "PubMedCentral": "10396962",
+        "DOI": "10.1038/s41586-023-06291-2",
+        "CorpusId": 255124952,
+        "PubMed": "37438534"
+      },
+      "arxiv_id": "2212.13138",
+      "doi": "10.1038/s41586-023-06291-2",
+      "corpus_id": 255124952
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "21",
+      "ref_key": "S2:2b18e63caff82f1a688714aed099b8856db92581",
+      "paperId": "2b18e63caff82f1a688714aed099b8856db92581",
+      "title": "Domain-Agnostic Molecular Generation with Self-feedback",
+      "year": 2023,
+      "abstract": "The generation of molecules with desired properties has gained tremendous popularity, revolutionizing the way scientists design molecular structures and providing valuable support for chemical and drug design. However, despite the potential of language models in molecule generation, they face numerous challenges such as the generation of syntactically or chemically ﬂawed molecules, narrow domain focus, and limitations in creating diverse and directionally feasible molecules due to a dearth of annotated data or external molecular databases. To this end, we introduce M OL G EN , a pre-trained molecular language model tailored speciﬁcally for molecule generation. M OL G EN acquires intrinsic structural and grammatical insights by reconstructing over 100 million molecular SELFIES, while facilitating knowledge transfer between different domains through domain-agnostic molecular preﬁx tuning. Moreover, we present a self-feedback paradigm that inspires the pre-trained model to align with the ultimate goal of producing molecules with desirable properties. Extensive experiments demonstrate that M OL G EN achieves superior performance on well-known molecule generation benchmarks. Further analysis shows that M OL G EN can accurately capture molecule distributions, implicitly learn their structural characteristics, and efﬁciently explore chemical space. The pre-trained model, codes, and datasets are publicly available for future research 2 .",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2301-11259",
+        "DOI": "10.48550/arXiv.2301.11259",
+        "CorpusId": 258762849
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2301.11259",
+      "corpus_id": 258762849
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "22",
+      "ref_key": "S2:ca31b8584b6c022ef15ddfe994fe361e002b7729",
+      "paperId": "ca31b8584b6c022ef15ddfe994fe361e002b7729",
+      "title": "A Comprehensive Overview of Large Language Models",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) have recently demonstrated remarkable capabilities in natural language processing tasks and beyond. This success of LLMs has led to a large influx of research contributions in this direction. These works encompass diverse topics such as architectural innovations, better training strategies, context length improvements, fine-tuning, multi-modal LLMs, robotics, datasets, benchmarking, efficiency, and more. With the rapid development of techniques and regular breakthroughs in LLM research, it has become considerably challenging to perceive the bigger picture of the advances in this direction. Considering the rapidly emerging plethora of literature on LLMs, it is imperative that the research community is able to benefit from a concise yet comprehensive overview of the recent developments in this field. This article provides an overview of the existing literature on a broad range of LLM-related concepts. Our self-contained comprehensive overview of LLMs discusses relevant background concepts along with covering the advanced topics at the frontier of research in LLMs. This review article is intended to not only provide a systematic survey but also a quick comprehensive reference for the researchers and practitioners to draw insights from extensive informative summaries of the existing works to advance the LLM research.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-06435",
+        "ArXiv": "2307.06435",
+        "DOI": "10.48550/arXiv.2307.06435",
+        "CorpusId": 259847443
+      },
+      "arxiv_id": "2307.06435",
+      "doi": "10.48550/arXiv.2307.06435",
+      "corpus_id": 259847443
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "23",
+      "ref_key": "S2:e01ab53663e5df5961a021506a9cb09f4efc3788",
+      "paperId": "e01ab53663e5df5961a021506a9cb09f4efc3788",
+      "title": "Challenges and Applications of Large Language Models",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) went from non-existent to ubiquitous in the machine learning discourse within a few years. Due to the fast pace of the field, it is difficult to identify the remaining challenges and already fruitful application areas. In this paper, we aim to establish a systematic set of open problems and application successes so that ML researchers can comprehend the field's current state more quickly and become productive.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-10169",
+        "ArXiv": "2307.10169",
+        "DOI": "10.48550/arXiv.2307.10169",
+        "CorpusId": 259982665
+      },
+      "arxiv_id": "2307.10169",
+      "doi": "10.48550/arXiv.2307.10169",
+      "corpus_id": 259982665
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "24",
+      "ref_key": "S2:f0950a3f27c0fefffba60ae1c9a8ee360d5eb55f",
+      "paperId": "f0950a3f27c0fefffba60ae1c9a8ee360d5eb55f",
+      "title": "Instruction Tuning for Large Language Models: A Survey",
+      "year": 2023,
+      "abstract": "This paper surveys research works in the quickly advancing field of instruction tuning (IT), which can also be referred to as supervised fine-tuning (SFT)\\footnote{In this paper, unless specified otherwise, supervised fine-tuning (SFT) and instruction tuning (IT) are used interchangeably.}, a crucial technique to enhance the capabilities and controllability of large language models (LLMs). Instruction tuning refers to the process of further training LLMs on a dataset consisting of \\textsc{(instruction, output)} pairs in a supervised fashion, which bridges the gap between the next-word prediction objective of LLMs and the users' objective of having LLMs adhere to human instructions. In this work, we make a systematic review of the literature, including the general methodology of SFT, the construction of SFT datasets, the training of SFT models, and applications to different modalities, domains and application, along with analysis on aspects that influence the outcome of SFT (e.g., generation of instruction outputs, size of the instruction dataset, etc). We also review the potential pitfalls of SFT along with criticism against it, along with efforts pointing out current deficiencies of existing strategies and suggest some avenues for fruitful research. Project Page: github.com/xiaoya-li/Instruction-Tuning-Survey",
+      "externalIds": {
+        "ArXiv": "2308.10792",
+        "DBLP": "journals/corr/abs-2308-10792",
+        "DOI": "10.48550/arXiv.2308.10792",
+        "CorpusId": 261049152
+      },
+      "arxiv_id": "2308.10792",
+      "doi": "10.48550/arXiv.2308.10792",
+      "corpus_id": 261049152
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "25",
+      "ref_key": "S2:c0d9a48547d728dd320b453b01a0ab1ce2f96098",
+      "paperId": "c0d9a48547d728dd320b453b01a0ab1ce2f96098",
+      "title": "Circuit Component Reuse Across Tasks in Transformer Language Models",
+      "year": 2023,
+      "abstract": "Recent work in mechanistic interpretability has shown that behaviors in language models can be successfully reverse-engineered through circuit analysis. A common criticism, however, is that each circuit is task-specific, and thus such analysis cannot contribute to understanding the models at a higher level. In this work, we present evidence that insights (both low-level findings about specific heads and higher-level findings about general algorithms) can indeed generalize across tasks. Specifically, we study the circuit discovered in Wang et al. (2022) for the Indirect Object Identification (IOI) task and 1.) show that it reproduces on a larger GPT2 model, and 2.) that it is mostly reused to solve a seemingly different task: Colored Objects (Ippolito&Callison-Burch, 2023). We provide evidence that the process underlying both tasks is functionally very similar, and contains about a 78% overlap in in-circuit attention heads. We further present a proof-of-concept intervention experiment, in which we adjust four attention heads in middle layers in order to 'repair' the Colored Objects circuit and make it behave like the IOI circuit. In doing so, we boost accuracy from 49.6% to 93.7% on the Colored Objects task and explain most sources of error. The intervention affects downstream attention heads in specific ways predicted by their interactions in the IOI circuit, indicating that this subcircuit behavior is invariant to the different task inputs. Overall, our results provide evidence that it may yet be possible to explain large language models' behavior in terms of a relatively small number of interpretable task-general algorithmic building blocks and computational components.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-08744",
+        "ArXiv": "2310.08744",
+        "DOI": "10.48550/arXiv.2310.08744",
+        "CorpusId": 264127896
+      },
+      "arxiv_id": "2310.08744",
+      "doi": "10.48550/arXiv.2310.08744",
+      "corpus_id": 264127896
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "26",
+      "ref_key": "S2:b13947c7598aa91992cf04048afa19c7cfe69795",
+      "paperId": "b13947c7598aa91992cf04048afa19c7cfe69795",
+      "title": "Function Vectors in Large Language Models",
+      "year": 2023,
+      "abstract": "We report the presence of a simple neural mechanism that represents an input-output function as a vector within autoregressive transformer language models (LMs). Using causal mediation analysis on a diverse range of in-context-learning (ICL) tasks, we find that a small number attention heads transport a compact representation of the demonstrated task, which we call a function vector (FV). FVs are robust to changes in context, i.e., they trigger execution of the task on inputs such as zero-shot and natural text settings that do not resemble the ICL contexts from which they are collected. We test FVs across a range of tasks, models, and layers and find strong causal effects across settings in middle layers. We investigate the internal structure of FVs and find while that they often contain information that encodes the output space of the function, this information alone is not sufficient to reconstruct an FV. Finally, we test semantic vector composition in FVs, and find that to some extent they can be summed to create vectors that trigger new complex tasks. Our findings show that compact, causal internal vector representations of function abstractions can be explicitly extracted from LLMs. Our code and data are available at https://functions.baulab.info.",
+      "externalIds": {
+        "ArXiv": "2310.15213",
+        "DBLP": "conf/iclr/ToddLSMWB24",
+        "DOI": "10.48550/arXiv.2310.15213",
+        "CorpusId": 264439657
+      },
+      "arxiv_id": "2310.15213",
+      "doi": "10.48550/arXiv.2310.15213",
+      "corpus_id": 264439657
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "27",
+      "ref_key": "S2:42016f91e5b1da63174d45acb96bc89b64aa124d",
+      "paperId": "42016f91e5b1da63174d45acb96bc89b64aa124d",
+      "title": "Knowledge Editing for Large Language Models: A Survey",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) have recently transformed both the academic and industrial landscapes due to their remarkable capacity to understand, analyze, and generate texts based on their vast knowledge and reasoning ability. Nevertheless, one major drawback of LLMs is their substantial computational cost for pre-training due to their unprecedented amounts of parameters. The disadvantage is exacerbated when new knowledge frequently needs to be introduced into the pre-trained model. Therefore, it is imperative to develop effective and efficient techniques to update pre-trained LLMs. Traditional methods encode new knowledge in pre-trained LLMs through direct fine-tuning. However, naively re-training LLMs can be computationally intensive and risks degenerating valuable pre-trained knowledge irrelevant to the update in the model. Recently,\n Knowledge-based Model Editing\n (KME), also known as\n Knowledge Editing\n or\n Model Editing\n , has attracted increasing attention, which aims to precisely modify the LLMs to incorporate specific knowledge, without negatively influencing other irrelevant knowledge. In this survey, we aim to provide a comprehensive and in-depth overview of recent advances in the field of KME. We first introduce a general formulation of KME to encompass different KME strategies. Afterward, we provide an innovative taxonomy of KME techniques based on how the new knowledge is introduced into pre-trained LLMs, and investigate existing KME strategies while analyzing key insights, advantages, and limitations of methods from each category. Moreover, representative metrics, datasets, and applications of KME are introduced accordingly. Finally, we provide an in-depth analysis regarding the practicality and remaining challenges of KME and suggest promising research directions for further advancement in this field.",
+      "externalIds": {
+        "ArXiv": "2310.16218",
+        "DBLP": "journals/csur/WangZLZCL25",
+        "DOI": "10.48550/arXiv.2310.16218",
+        "CorpusId": 264487359
+      },
+      "arxiv_id": "2310.16218",
+      "doi": "10.48550/arXiv.2310.16218",
+      "corpus_id": 264487359
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "28",
+      "ref_key": "S2:0c4f46e4dcae5527018e6432fb60cfe8c3354e97",
+      "paperId": "0c4f46e4dcae5527018e6432fb60cfe8c3354e97",
+      "title": "VideoPoet: A Large Language Model for Zero-Shot Video Generation",
+      "year": 2023,
+      "abstract": "We present VideoPoet, a language model capable of synthesizing high-quality video, with matching audio, from a large variety of conditioning signals. VideoPoet employs a decoder-only transformer architecture that processes multimodal inputs -- including images, videos, text, and audio. The training protocol follows that of Large Language Models (LLMs), consisting of two stages: pretraining and task-specific adaptation. During pretraining, VideoPoet incorporates a mixture of multimodal generative objectives within an autoregressive Transformer framework. The pretrained LLM serves as a foundation that can be adapted for a range of video generation tasks. We present empirical results demonstrating the model's state-of-the-art capabilities in zero-shot video generation, specifically highlighting VideoPoet's ability to generate high-fidelity motions. Project page: http://sites.research.google/videopoet/",
+      "externalIds": {
+        "DBLP": "conf/icml/KondratyukYGLHS24",
+        "ArXiv": "2312.14125",
+        "DOI": "10.48550/arXiv.2312.14125",
+        "CorpusId": 266435847
+      },
+      "arxiv_id": "2312.14125",
+      "doi": "10.48550/arXiv.2312.14125",
+      "corpus_id": 266435847
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "29",
+      "ref_key": "S2:0251bb95be75d472c8d5b873751615e7fe2feb1d",
+      "paperId": "0251bb95be75d472c8d5b873751615e7fe2feb1d",
+      "title": "A Comprehensive Study of Knowledge Editing for Large Language Models",
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) have shown extraordinary capabilities in understanding and generating text that closely mirrors human communication. However, a primary limitation lies in the significant computational demands during training, arising from their extensive parameterization. This challenge is further intensified by the dynamic nature of the world, necessitating frequent updates to LLMs to correct outdated information or integrate new knowledge, thereby ensuring their continued relevance. Note that many applications demand continual model adjustments post-training to address deficiencies or undesirable behaviors. There is an increasing interest in efficient, lightweight methods for on-the-fly model modifications. To this end, recent years have seen a burgeoning in the techniques of knowledge editing for LLMs, which aim to efficiently modify LLMs' behaviors within specific domains while preserving overall performance across various inputs. In this paper, we first define the knowledge editing problem and then provide a comprehensive review of cutting-edge approaches. Drawing inspiration from educational and cognitive research theories, we propose a unified categorization criterion that classifies knowledge editing methods into three groups: resorting to external knowledge, merging knowledge into the model, and editing intrinsic knowledge. Furthermore, we introduce a new benchmark, KnowEdit, for a comprehensive empirical evaluation of representative knowledge editing approaches. Additionally, we provide an in-depth analysis of knowledge location, which can give a deeper understanding of the knowledge structures inherent within LLMs. Finally, we discuss several potential applications of knowledge editing, outlining its broad and impactful implications.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2401-01286",
+        "ArXiv": "2401.01286",
+        "DOI": "10.48550/arXiv.2401.01286",
+        "CorpusId": 266725300
+      },
+      "arxiv_id": "2401.01286",
+      "doi": "10.48550/arXiv.2401.01286",
+      "corpus_id": 266725300
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "30",
+      "ref_key": "S2:5cd671efa2af8456c615c5faf54d1be4950f3819",
+      "paperId": "5cd671efa2af8456c615c5faf54d1be4950f3819",
+      "title": "Hallucination is Inevitable: An Innate Limitation of Large Language Models",
+      "year": 2024,
+      "abstract": "Hallucination has been widely recognized to be a significant drawback for large language models (LLMs). There have been many works that attempt to reduce the extent of hallucination. These efforts have mostly been empirical so far, which cannot answer the fundamental question whether it can be completely eliminated. In this paper, we formalize the problem and show that it is impossible to eliminate hallucination in LLMs. Specifically, we define a formal world where hallucination is defined as inconsistencies between a computable LLM and a computable ground truth function. By employing results from learning theory, we show that LLMs cannot learn all of the computable functions and will therefore always hallucinate. Since the formal world is a part of the real world which is much more complicated, hallucinations are also inevitable for real world LLMs. Furthermore, for real world LLMs constrained by provable time complexity, we describe the hallucination-prone tasks and empirically validate our claims. Finally, using the formal world framework, we discuss the possible mechanisms and efficacies of existing hallucination mitigators as well as the practical implications on the safe deployment of LLMs.",
+      "externalIds": {
+        "ArXiv": "2401.11817",
+        "DBLP": "journals/corr/abs-2401-11817",
+        "DOI": "10.48550/arXiv.2401.11817",
+        "CorpusId": 267069207
+      },
+      "arxiv_id": "2401.11817",
+      "doi": "10.48550/arXiv.2401.11817",
+      "corpus_id": 267069207
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "31",
+      "ref_key": "S2:c0d8e5ee66c279299012cc3b8d0519011b3f4998",
+      "paperId": "c0d8e5ee66c279299012cc3b8d0519011b3f4998",
+      "title": "KTO: Model Alignment as Prospect Theoretic Optimization",
+      "year": 2024,
+      "abstract": "Kahneman&Tversky's $\\textit{prospect theory}$ tells us that humans perceive random variables in a biased but well-defined manner (1992); for example, humans are famously loss-averse. We show that objectives for aligning LLMs with human feedback implicitly incorporate many of these biases -- the success of these objectives (e.g., DPO) over cross-entropy minimization can partly be ascribed to them belonging to a family of loss functions that we call $\\textit{human-aware losses}$ (HALOs). However, the utility functions these methods attribute to humans still differ from those in the prospect theory literature. Using a Kahneman-Tversky model of human utility, we propose a HALO that directly maximizes the utility of generations instead of maximizing the log-likelihood of preferences, as current methods do. We call this approach KTO, and it matches or exceeds the performance of preference-based methods at scales from 1B to 30B, despite only learning from a binary signal of whether an output is desirable. More broadly, our work suggests that there is no one HALO that is universally superior; the best loss depends on the inductive biases most appropriate for a given setting, an oft-overlooked consideration.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-01306",
+        "ArXiv": "2402.01306",
+        "CorpusId": 267406810
+      },
+      "arxiv_id": "2402.01306",
+      "doi": null,
+      "corpus_id": 267406810
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "32",
+      "ref_key": "S2:d9a449e1123ca37375c9977f51b7ea6129905803",
+      "paperId": "d9a449e1123ca37375c9977f51b7ea6129905803",
+      "title": "RAVEL: Evaluating Interpretability Methods on Disentangling Language Model Representations",
+      "year": 2024,
+      "abstract": "Individual neurons participate in the representation of multiple high-level concepts. To what extent can different interpretability methods successfully disentangle these roles? To help address this question, we introduce RAVEL (Resolving Attribute-Value Entanglements in Language Models), a dataset that enables tightly controlled, quantitative comparisons between a variety of existing interpretability methods. We use the resulting conceptual framework to define the new method of Multi-task Distributed Alignment Search (MDAS), which allows us to find distributed representations satisfying multiple causal criteria. With Llama2-7B as the target language model, MDAS achieves state-of-the-art results on RAVEL, demonstrating the importance of going beyond neuron-level analyses to identify features distributed across activations. We release our benchmark at https://github.com/explanare/ravel.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-17700",
+        "ArXiv": "2402.17700",
+        "DOI": "10.48550/arXiv.2402.17700",
+        "CorpusId": 268032000
+      },
+      "arxiv_id": "2402.17700",
+      "doi": "10.48550/arXiv.2402.17700",
+      "corpus_id": 268032000
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "33",
+      "ref_key": "S2:97994e4526ef7eeea59190aa466fbab05fad9187",
+      "paperId": "97994e4526ef7eeea59190aa466fbab05fad9187",
+      "title": "How to think step-by-step: A mechanistic understanding of chain-of-thought reasoning",
+      "year": 2024,
+      "abstract": "Despite superior reasoning prowess demonstrated by Large Language Models (LLMs) with Chain-of-Thought (CoT) prompting, a lack of understanding prevails around the internal mechanisms of the models that facilitate CoT generation. This work investigates the neural sub-structures within LLMs that manifest CoT reasoning from a mechanistic point of view. From an analysis of Llama-2 7B applied to multistep reasoning over fictional ontologies, we demonstrate that LLMs deploy multiple parallel pathways of answer generation for step-by-step reasoning. These parallel pathways provide sequential answers from the input question context as well as the generated CoT. We observe a functional rift in the middle layers of the LLM. Token representations in the initial half remain strongly biased towards the pretraining prior, with the in-context prior taking over in the later half. This internal phase shift manifests in different functional components: attention heads that write the answer token appear in the later half, attention heads that move information along ontological relationships appear in the initial half, and so on. To the best of our knowledge, this is the first attempt towards mechanistic investigation of CoT reasoning in LLMs.",
+      "externalIds": {
+        "DBLP": "journals/tmlr/DuttaSC024",
+        "ArXiv": "2402.18312",
+        "DOI": "10.48550/arXiv.2402.18312",
+        "CorpusId": 268041831
+      },
+      "arxiv_id": "2402.18312",
+      "doi": "10.48550/arXiv.2402.18312",
+      "corpus_id": 268041831
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "34",
+      "ref_key": "S2:8c682857a38a0984f12cb2fb612a79aad6f98d3c",
+      "paperId": "8c682857a38a0984f12cb2fb612a79aad6f98d3c",
+      "title": "On the stochastics of human and artificial creativity",
+      "year": 2024,
+      "abstract": "What constitutes human creativity, and is it possible for computers to exhibit genuine creativity? We argue that achieving human-level intelligence in computers, or so-called Artificial General Intelligence, necessitates attaining also human-level creativity. We contribute to this discussion by developing a statistical representation of human creativity, incorporating prior insights from stochastic theory, psychology, philosophy, neuroscience, and chaos theory. This highlights the stochastic nature of the human creative process, which includes both a bias guided, random proposal step, and an evaluation step depending on a flexible or transformable bias structure. The acquired representation of human creativity is subsequently used to assess the creativity levels of various contemporary AI systems. Our analysis includes modern AI algorithms such as reinforcement learning, diffusion models, and large language models, addressing to what extent they measure up to human level creativity. We conclude that these technologies currently lack the capability for autonomous creative action at a human level.",
+      "externalIds": {
+        "ArXiv": "2403.06996",
+        "DBLP": "journals/corr/abs-2403-06996",
+        "DOI": "10.48550/arXiv.2403.06996",
+        "CorpusId": 268363643
+      },
+      "arxiv_id": "2403.06996",
+      "doi": "10.48550/arXiv.2403.06996",
+      "corpus_id": 268363643
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "35",
+      "ref_key": "S2:d96933cba676edbaad3a0564352ad29dbfe2c1f4",
+      "paperId": "d96933cba676edbaad3a0564352ad29dbfe2c1f4",
+      "title": "A survey of synthetic data augmentation methods in computer vision",
+      "year": 2024,
+      "abstract": "The standard approach to tackling computer vision problems is to train deep\nconvolutional neural network (CNN) models using large-scale image datasets\nwhich are representative of the target task. However, in many scenarios, it is\noften challenging to obtain sufficient image data for the target task. Data\naugmentation is a way to mitigate this challenge. A common practice is to\nexplicitly transform existing images in desired ways so as to create the\nrequired volume and variability of training data necessary to achieve good\ngeneralization performance. In situations where data for the target domain is\nnot accessible, a viable workaround is to synthesize training data from\nscratch--i.e., synthetic data augmentation. This paper presents an extensive\nreview of synthetic data augmentation techniques. It covers data synthesis\napproaches based on realistic 3D graphics modeling, neural style transfer\n(NST), differential neural rendering, and generative artificial intelligence\n(AI) techniques such as generative adversarial networks (GANs) and variational\nautoencoders (VAEs). For each of these classes of methods, we focus on the\nimportant data generation and augmentation techniques, general scope of\napplication and specific use-cases, as well as existing limitations and\npossible workarounds. Additionally, we provide a summary of common synthetic\ndatasets for training computer vision models, highlighting the main features,\napplication domains and supported tasks. Finally, we discuss the effectiveness\nof synthetic data augmentation methods. Since this is the first paper to\nexplore synthetic data augmentation methods in great detail, we are hoping to\nequip readers with the necessary background information and in-depth knowledge\nof existing methods and their attendant issues.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2403-10075",
+        "ArXiv": "2403.10075",
+        "DOI": "10.1007/s11633-022-1411-7",
+        "CorpusId": 268584668
+      },
+      "arxiv_id": "2403.10075",
+      "doi": "10.1007/s11633-022-1411-7",
+      "corpus_id": 268584668
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "36",
+      "ref_key": "S2:9cf6d8ad63fd43658d4cdae58a78013852a759ff",
+      "paperId": "9cf6d8ad63fd43658d4cdae58a78013852a759ff",
+      "title": "Interpreting Key Mechanisms of Factual Recall in Transformer-Based Language Models",
+      "year": 2024,
+      "abstract": "In this paper, we delve into several mechanisms employed by Transformer-based language models (LLMs) for factual recall tasks. We outline a pipeline consisting of three major steps: (1) Given a prompt ``The capital of France is,'' task-specific attention heads extract the topic token, such as ``France,'' from the context and pass it to subsequent MLPs. (2) As attention heads' outputs are aggregated with equal weight and added to the residual stream, the subsequent MLP acts as an ``activation,'' which either erases or amplifies the information originating from individual heads. As a result, the topic token ``France'' stands out in the residual stream. (3) A deep MLP takes ``France'' and generates a component that redirects the residual stream towards the direction of the correct answer, i.e., ``Paris.'' This procedure is akin to applying an implicit function such as ``get\\_capital($X$),'' and the argument $X$ is the topic token information passed by attention heads. To achieve the above quantitative and qualitative analysis for MLPs, we proposed a novel analytic method aimed at decomposing the outputs of the MLP into components understandable by humans. Additionally, we observed a universal anti-overconfidence mechanism in the final layer of models, which suppresses correct predictions. We mitigate this suppression by leveraging our interpretation to improve factual recall confidence. The above interpretations are evaluated across diverse tasks spanning various domains of factual knowledge, using various language models from the GPT-2 families, 1.3B OPT, up to 7B Llama-2, and in both zero- and few-shot setups.",
+      "externalIds": {
+        "ArXiv": "2403.19521",
+        "DBLP": "journals/corr/abs-2403-19521",
+        "DOI": "10.48550/arXiv.2403.19521",
+        "CorpusId": 268732668
+      },
+      "arxiv_id": "2403.19521",
+      "doi": "10.48550/arXiv.2403.19521",
+      "corpus_id": 268732668
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "37",
+      "ref_key": "S2:4a2f4cd788896d9e9b52eaf5ca303c5cdcb280c6",
+      "paperId": "4a2f4cd788896d9e9b52eaf5ca303c5cdcb280c6",
+      "title": "AI Knowledge and Reasoning: Emulating Expert Creativity in Scientific Research",
+      "year": 2024,
+      "abstract": "We investigate whether modern AI can emulate expert creativity in complex scientific endeavors. We introduce novel methodology that utilizes original research articles published after the AI's training cutoff, ensuring no prior exposure, mitigating concerns of rote memorization and prior training. The AI are tasked with redacting findings, predicting outcomes from redacted research, and assessing prediction accuracy against reported results. Analysis on 589 published studies in four leading psychology journals over a 28-month period, showcase the AI's proficiency in understanding specialized research, deductive reasoning, and evaluating evidentiary alignment--cognitive hallmarks of human subject matter expertise and creativity. These findings suggest the potential of general-purpose AI to transform academia, with roles requiring knowledge-based creativity become increasingly susceptible to technological substitution.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2404-04436",
+        "ArXiv": "2404.04436",
+        "DOI": "10.2139/ssrn.4738442",
+        "CorpusId": 268777266
+      },
+      "arxiv_id": "2404.04436",
+      "doi": "10.2139/ssrn.4738442",
+      "corpus_id": 268777266
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "38",
+      "ref_key": "S2:8c5aab75826620559d33e99652f4cac9f6efd2fc",
+      "paperId": "8c5aab75826620559d33e99652f4cac9f6efd2fc",
+      "title": "CreativEval: Evaluating Creativity of LLM-Based Hardware Code Generation",
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) have proved effective and efficient in generating code, leading to their utilization within the hardware design process. Prior works evaluating LLMs’ abilities for register transfer level code generation solely focus on functional correctness. However, the creativity associated with these LLMs, or the ability to generate novel and unique solutions, is a metric not as well understood, in part due to the challenge of quantifying this quality.To address this research gap, we present CreativEval, a framework for evaluating the creativity of LLMs within the context of generating hardware designs. We quantify four creative sub-components, fluency, flexibility, originality, and elaboration, through various prompting and post-processing techniques. We then evaluate multiple popular LLMs (including GPT models, CodeLlama, and VeriGen) upon this creativity metric, with results indicating GPT-3.5 as the most creative model in generating hardware designs.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2404-08806",
+        "ArXiv": "2404.08806",
+        "DOI": "10.1109/LAD62341.2024.10691798",
+        "CorpusId": 269148855
+      },
+      "arxiv_id": "2404.08806",
+      "doi": "10.1109/LAD62341.2024.10691798",
+      "corpus_id": 269148855
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "39",
+      "ref_key": "S2:94034fd2ed4b6cf41113abb7adc9ae469313c958",
+      "paperId": "94034fd2ed4b6cf41113abb7adc9ae469313c958",
+      "title": "A Survey on Retrieval-Augmented Text Generation for Large Language Models",
+      "year": 2024,
+      "abstract": "Retrieval-Augmented Generation (RAG) merges retrieval methods with deep learning advancements to address the static limitations of large language models (LLMs) by enabling the dynamic integration of up-to-date external information. This methodology, focusing primarily on the text domain, provides a cost-effective solution to the generation of plausible but possibly incorrect responses by LLMs, thereby enhancing the accuracy and reliability of their outputs through the use of real-world data. As RAG grows in complexity and incorporates multiple concepts that can influence its performance, this paper organizes the RAG paradigm into four categories: pre-retrieval, retrieval, post-retrieval, and generation, offering a detailed perspective from the retrieval viewpoint. It outlines RAG's evolution and discusses the field's progression through the analysis of significant studies. Additionally, the paper introduces evaluation methods for RAG, addressing the challenges faced and proposing future research directions. By offering an organized framework and categorization, the study aims to consolidate existing research on RAG, clarify its technological underpinnings, and highlight its potential to broaden the adaptability and applications of LLMs.",
+      "externalIds": {
+        "ArXiv": "2404.10981",
+        "DBLP": "journals/corr/abs-2404-10981",
+        "DOI": "10.48550/arXiv.2404.10981",
+        "CorpusId": 269188036
+      },
+      "arxiv_id": "2404.10981",
+      "doi": "10.48550/arXiv.2404.10981",
+      "corpus_id": 269188036
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "40",
+      "ref_key": "S2:f091acf9dc2cc486c253dcead3a74ba916c64eb7",
+      "paperId": "f091acf9dc2cc486c253dcead3a74ba916c64eb7",
+      "title": "IM-RAG: Multi-Round Retrieval-Augmented Generation Through Learning Inner Monologues",
+      "year": 2024,
+      "abstract": "Although the Retrieval-Augmented Generation (RAG) paradigms can use external knowledge to enhance and ground the outputs of Large Language Models (LLMs) to mitigate generative hallucinations and static knowledge base problems, they still suffer from limited flexibility in adopting Information Retrieval (IR) systems with varying capabilities, constrained interpretability during the multi-round retrieval process, and a lack of end-to-end optimization. To address these challenges, we propose a novel LLM-centric approach, IM-RAG, that integrates IR systems with LLMs to support multi-round RAG through learning Inner Monologues (IM, i.e., the human inner voice that narrates one's thoughts). During the IM process, the LLM serves as the core reasoning model (i.e., Reasoner) to either propose queries to collect more information via the Retriever or to provide a final answer based on the conversational context. We also introduce a Refiner that improves the outputs from the Retriever, effectively bridging the gap between the Reasoner and IR modules with varying capabilities and fostering multi-round communications. The entire IM process is optimized via Reinforcement Learning (RL) where a Progress Tracker is incorporated to provide mid-step rewards, and the answer prediction is further separately optimized via Supervised Fine-Tuning (SFT). We conduct extensive experiments with the HotPotQA dataset, a popular benchmark for retrieval-based, multi-step question-answering. The results show that our approach achieves state-of-the-art (SOTA) performance while providing high flexibility in integrating IR modules as well as strong interpretability exhibited in the learned inner monologues.",
+      "externalIds": {
+        "ArXiv": "2405.13021",
+        "DBLP": "journals/corr/abs-2405-13021",
+        "DOI": "10.48550/arXiv.2405.13021",
+        "CorpusId": 269983269
+      },
+      "arxiv_id": "2405.13021",
+      "doi": "10.48550/arXiv.2405.13021",
+      "corpus_id": 269983269
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "41",
+      "ref_key": "S2:c3f1fae241a3c2449e675ab750873d800f95513c",
+      "paperId": "c3f1fae241a3c2449e675ab750873d800f95513c",
+      "title": "SimPO: Simple Preference Optimization with a Reference-Free Reward",
+      "year": 2024,
+      "abstract": "Direct Preference Optimization (DPO) is a widely used offline preference optimization algorithm that reparameterizes reward functions in reinforcement learning from human feedback (RLHF) to enhance simplicity and training stability. In this work, we propose SimPO, a simpler yet more effective approach. The effectiveness of SimPO is attributed to a key design: using the average log probability of a sequence as the implicit reward. This reward formulation better aligns with model generation and eliminates the need for a reference model, making it more compute and memory efficient. Additionally, we introduce a target reward margin to the Bradley-Terry objective to encourage a larger margin between the winning and losing responses, further improving the algorithm's performance. We compare SimPO to DPO and its latest variants across various state-of-the-art training setups, including both base and instruction-tuned models such as Mistral, Llama 3, and Gemma 2. We evaluate on extensive chat-based evaluation benchmarks, including AlpacaEval 2, MT-Bench, and Arena-Hard. Our results demonstrate that SimPO consistently and significantly outperforms existing approaches without substantially increasing response length. Specifically, SimPO outperforms DPO by up to 6.4 points on AlpacaEval 2 and by up to 7.5 points on Arena-Hard. Our top-performing model, built on Gemma-2-9B-it, achieves a 72.4% length-controlled win rate on AlpacaEval 2, a 59.1% win rate on Arena-Hard, and ranks 1st on Chatbot Arena among<10B models with real user votes.",
+      "externalIds": {
+        "ArXiv": "2405.14734",
+        "DBLP": "journals/corr/abs-2405-14734",
+        "DOI": "10.48550/arXiv.2405.14734",
+        "CorpusId": 269983560
+      },
+      "arxiv_id": "2405.14734",
+      "doi": "10.48550/arXiv.2405.14734",
+      "corpus_id": 269983560
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "42",
+      "ref_key": "S2:4308208fac24626e0c927ee728038aadc4e87266",
+      "paperId": "4308208fac24626e0c927ee728038aadc4e87266",
+      "title": "HippoRAG: Neurobiologically Inspired Long-Term Memory for Large Language Models",
+      "year": 2024,
+      "abstract": "In order to thrive in hostile and ever-changing natural environments, mammalian brains evolved to store large amounts of knowledge about the world and continually integrate new information while avoiding catastrophic forgetting. Despite the impressive accomplishments, large language models (LLMs), even with retrieval-augmented generation (RAG), still struggle to efficiently and effectively integrate a large amount of new experiences after pre-training. In this work, we introduce HippoRAG, a novel retrieval framework inspired by the hippocampal indexing theory of human long-term memory to enable deeper and more efficient knowledge integration over new experiences. HippoRAG synergistically orchestrates LLMs, knowledge graphs, and the Personalized PageRank algorithm to mimic the different roles of neocortex and hippocampus in human memory. We compare HippoRAG with existing RAG methods on multi-hop question answering and show that our method outperforms the state-of-the-art methods remarkably, by up to 20%. Single-step retrieval with HippoRAG achieves comparable or better performance than iterative retrieval like IRCoT while being 10-30 times cheaper and 6-13 times faster, and integrating HippoRAG into IRCoT brings further substantial gains. Finally, we show that our method can tackle new types of scenarios that are out of reach of existing methods. Code and data are available at https://github.com/OSU-NLP-Group/HippoRAG.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2405-14831",
+        "ArXiv": "2405.14831",
+        "DOI": "10.48550/arXiv.2405.14831",
+        "CorpusId": 269982289
+      },
+      "arxiv_id": "2405.14831",
+      "doi": "10.48550/arXiv.2405.14831",
+      "corpus_id": 269982289
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "43",
+      "ref_key": "S2:77805d75199e7b9e580b4827f56a069ba0ddd13f",
+      "paperId": "77805d75199e7b9e580b4827f56a069ba0ddd13f",
+      "title": "MolGPT: Molecular Generation Using a Transformer-Decoder Model",
+      "year": 2021,
+      "abstract": "Application of deep learning techniques for de novo generation of molecules, termed as inverse molecular design, has been gaining enormous traction in drug design. The representation of molecules in SMILES notation as a string of characters enables the usage of state of the art models in natural language processing, such as Transformers, for molecular design in general. Inspired by generative pre-training (GPT) models that have been shown to be successful in generating meaningful text, we train a transformer-decoder on the next token prediction task using masked self-attention for the generation of druglike molecules in this study. We show that our model, MolGPT, performs on par with other previously proposed modern machine learning frameworks for molecular generation in terms of generating valid, unique, and novel molecules. Furthermore, we demonstrate that the model can be trained conditionally to control multiple properties of the generated molecules. We also show that the model can be used to generate molecules with desired scaffolds as well as desired molecular properties by conditioning the generation on scaffold SMILES strings of desired scaffolds and property values. Using saliency maps, we highlight the interpretability of the generative process of the model.",
+      "externalIds": {
+        "DBLP": "journals/jcisd/BagalAVP22",
+        "DOI": "10.1021/acs.jcim.1c00600",
+        "CorpusId": 263484152,
+        "PubMed": "34694798"
+      },
+      "arxiv_id": null,
+      "doi": "10.1021/acs.jcim.1c00600",
+      "corpus_id": 263484152
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "44",
+      "ref_key": "S2:26089bdfdbca1e6eaaceca71e3116b715bec6d47",
+      "paperId": "26089bdfdbca1e6eaaceca71e3116b715bec6d47",
+      "title": "Explainability for Large Language Models: A Survey",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have demonstrated impressive capabilities in natural language processing. However, their internal mechanisms are still unclear and this lack of transparency poses unwanted risks for downstream applications. Therefore, understanding and explaining these models is crucial for elucidating their behaviors, limitations, and social impacts. In this article, we introduce a taxonomy of explainability techniques and provide a structured overview of methods for explaining Transformer-based language models. We categorize techniques based on the training paradigms of LLMs: traditional fine-tuning-based paradigm and prompting-based paradigm. For each paradigm, we summarize the goals and dominant approaches for generating local explanations of individual predictions and global explanations of overall model knowledge. We also discuss metrics for evaluating generated explanations and discuss how explanations can be leveraged to debug models and improve performance. Lastly, we examine key challenges and emerging opportunities for explanation techniques in the era of LLMs in comparison to conventional deep learning models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2309-01029",
+        "ArXiv": "2309.01029",
+        "DOI": "10.1145/3639372",
+        "CorpusId": 261530292
+      },
+      "arxiv_id": "2309.01029",
+      "doi": "10.1145/3639372",
+      "corpus_id": 261530292
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "45",
+      "ref_key": "S2:33c8910107f3fcb17d140cc88554652508ae3674",
+      "paperId": "33c8910107f3fcb17d140cc88554652508ae3674",
+      "title": "Detoxifying Large Language Models via Knowledge Editing",
+      "year": 2024,
+      "abstract": "This paper investigates using knowledge editing techniques to detoxify Large Language Models (LLMs). We construct a benchmark, SafeEdit, which covers nine unsafe categories with various powerful attack prompts and equips comprehensive metrics for systematic evaluation. We conduct experiments with several knowledge editing approaches, indicating that knowledge editing has the potential to detoxify LLMs with a limited impact on general performance efficiently. Then, we propose a simple yet effective baseline, dubbed Detoxifying with Intraoperative Neural Monitoring (DINM), to diminish the toxicity of LLMs within a few tuning steps via only one instance. We further provide an in-depth analysis of the internal mechanism for various detoxifying approaches, demonstrating that previous methods like SFT and DPO may merely suppress the activations of toxic parameters, while DINM mitigates the toxicity of the toxic parameters to a certain extent, making permanent adjustments. We hope that these insights could shed light on future work of developing detoxifying approaches and the underlying knowledge mechanisms of LLMs. Code and benchmark are available at https://github.com/zjunlp/EasyEdit.",
+      "externalIds": {
+        "ArXiv": "2403.14472",
+        "DBLP": "conf/acl/Wang0XXDYZY0C24",
+        "DOI": "10.48550/arXiv.2403.14472",
+        "CorpusId": 268553537
+      },
+      "arxiv_id": "2403.14472",
+      "doi": "10.48550/arXiv.2403.14472",
+      "corpus_id": 268553537
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "46",
+      "ref_key": "S2:231c1fee5f0e48722f025961bf3016ca5e4c6072",
+      "paperId": "231c1fee5f0e48722f025961bf3016ca5e4c6072",
+      "title": "DecoderLens: Layerwise Interpretation of Encoder-Decoder Transformers",
+      "year": 2023,
+      "abstract": "In recent years, many interpretability methods have been proposed to help interpret the internal states of Transformer-models, at different levels of precision and complexity. Here, to analyze encoder-decoder Transformers, we propose a simple, new method: DecoderLens. Inspired by the LogitLens (for decoder-only Transformers), this method involves allowing the decoder to cross-attend representations of intermediate encoder layers instead of using the final encoder output, as is normally done in encoder-decoder models. The method thus maps previously uninterpretable vector representations to human-interpretable sequences of words or symbols. We report results from the DecoderLens applied to models trained on question answering, logical reasoning, speech recognition and machine translation. The DecoderLens reveals several specific subtasks that are solved at low or intermediate layers, shedding new light on the information flow inside the encoder component of this important class of models.",
+      "externalIds": {
+        "DBLP": "conf/naacl/LangedijkMSZJ24",
+        "ArXiv": "2310.03686",
+        "DOI": "10.48550/arXiv.2310.03686",
+        "CorpusId": 263671583
+      },
+      "arxiv_id": "2310.03686",
+      "doi": "10.48550/arXiv.2310.03686",
+      "corpus_id": 263671583
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "47",
+      "ref_key": "S2:5b1120f547d3969afc49b4a094e874d568e53aca",
+      "paperId": "5b1120f547d3969afc49b4a094e874d568e53aca",
+      "title": "Grokked Transformers are Implicit Reasoners: A Mechanistic Journey to the Edge of Generalization",
+      "year": 2024,
+      "abstract": "We study whether transformers can learn to implicitly reason over parametric knowledge, a skill that even the most capable language models struggle with. Focusing on two representative reasoning types, composition and comparison, we consistently find that transformers can learn implicit reasoning, but only through grokking, i.e., extended training far beyond overfitting. The levels of generalization also vary across reasoning types: when faced with out-of-distribution examples, transformers fail to systematically generalize for composition but succeed for comparison. We delve into the model's internals throughout training, conducting analytical experiments that reveal: 1) the mechanism behind grokking, such as the formation of the generalizing circuit and its relation to the relative efficiency of generalizing and memorizing circuits, and 2) the connection between systematicity and the configuration of the generalizing circuit. Our findings guide data and training setup to better induce implicit reasoning and suggest potential improvements to the transformer architecture, such as encouraging cross-layer knowledge sharing. Furthermore, we demonstrate that for a challenging reasoning task with a large search space, GPT-4-Turbo and Gemini-1.5-Pro based on non-parametric memory fail badly regardless of prompting styles or retrieval augmentation, while a fully grokked transformer can achieve near-perfect accuracy, showcasing the power of parametric memory for complex reasoning.",
+      "externalIds": {
+        "ArXiv": "2405.15071",
+        "DBLP": "journals/corr/abs-2405-15071",
+        "DOI": "10.48550/arXiv.2405.15071",
+        "CorpusId": 270045579
+      },
+      "arxiv_id": "2405.15071",
+      "doi": "10.48550/arXiv.2405.15071",
+      "corpus_id": 270045579
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "48",
+      "ref_key": "S2:2c871df72c52b58f05447fcb3afc838168d94505",
+      "paperId": "2c871df72c52b58f05447fcb3afc838168d94505",
+      "title": "Knowledge Neurons in Pretrained Transformers",
+      "year": 2021,
+      "abstract": "Large-scale pretrained language models are surprisingly good at recalling factual knowledge presented in the training corpus. In this paper, we present preliminary studies on how factual knowledge is stored in pretrained Transformers by introducing the concept of knowledge neurons. Specifically, we examine the fill-in-the-blank cloze task for BERT. Given a relational fact, we propose a knowledge attribution method to identify the neurons that express the fact. We find that the activation of such knowledge neurons is positively correlated to the expression of their corresponding facts. In our case studies, we attempt to leverage knowledge neurons to edit (such as update, and erase) specific factual knowledge without fine-tuning. Our results shed light on understanding the storage of knowledge within pretrained Transformers.",
+      "externalIds": {
+        "ArXiv": "2104.08696",
+        "DBLP": "journals/corr/abs-2104-08696",
+        "ACL": "2022.acl-long.581",
+        "DOI": "10.18653/v1/2022.acl-long.581",
+        "CorpusId": 233296761
+      },
+      "arxiv_id": "2104.08696",
+      "doi": "10.18653/v1/2022.acl-long.581",
+      "corpus_id": 233296761
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "49",
+      "ref_key": "S2:4a54d58a4b20e4f3af25cea3c188a12082a95e02",
+      "paperId": "4a54d58a4b20e4f3af25cea3c188a12082a95e02",
+      "title": "Transformer Feed-Forward Layers Are Key-Value Memories",
+      "year": 2020,
+      "abstract": "Feed-forward layers constitute two-thirds of a transformer model’s parameters, yet their role in the network remains under-explored. We show that feed-forward layers in transformer-based language models operate as key-value memories, where each key correlates with textual patterns in the training examples, and each value induces a distribution over the output vocabulary. Our experiments show that the learned patterns are human-interpretable, and that lower layers tend to capture shallow patterns, while upper layers learn more semantic ones. The values complement the keys’ input patterns by inducing output distributions that concentrate probability mass on tokens likely to appear immediately after each pattern, particularly in the upper layers. Finally, we demonstrate that the output of a feed-forward layer is a composition of its memories, which is subsequently refined throughout the model’s layers via residual connections to produce the final output distribution.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/GevaSBL21",
+        "ACL": "2021.emnlp-main.446",
+        "ArXiv": "2012.14913",
+        "DOI": "10.18653/v1/2021.emnlp-main.446",
+        "CorpusId": 229923720
+      },
+      "arxiv_id": "2012.14913",
+      "doi": "10.18653/v1/2021.emnlp-main.446",
+      "corpus_id": 229923720
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "50",
+      "ref_key": "S2:e6ecbf7b24fd10406416cd5e4e6c2839277f03a2",
+      "paperId": "e6ecbf7b24fd10406416cd5e4e6c2839277f03a2",
+      "title": "LM-Debugger: An Interactive Tool for Inspection and Intervention in Transformer-Based Language Models",
+      "year": 2022,
+      "abstract": "The opaque nature and unexplained behavior of transformer-based language models (LMs) have spurred a wide interest in interpreting their predictions. However, current interpretation methods mostly focus on probing models from outside, executing behavioral tests, and analyzing salience input features, while the internal prediction construction process is largely not understood. In this work, we introduce LM-Debugger, an interactive debugger tool for transformer-based LMs, which provides a fine-grained interpretation of the model's internal prediction process, as well as a powerful framework for intervening in LM behavior. For its backbone, LM-Debugger relies on a recent method that interprets the inner token representations and their updates by the feed-forward layers in the vocabulary space. We demonstrate the utility of LM-Debugger for single-prediction debugging, by inspecting the internal disambiguation process done by GPT2. Moreover, we show how easily LM-Debugger allows to shift model behavior in a direction of the user's choice, by identifying a few vectors in the network and inducing effective interventions to the prediction process. We release LM-Debugger as an open-source tool and a demo over GPT2 models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2204-12130",
+        "ArXiv": "2204.12130",
+        "DOI": "10.48550/arXiv.2204.12130",
+        "CorpusId": 248392008
+      },
+      "arxiv_id": "2204.12130",
+      "doi": "10.48550/arXiv.2204.12130",
+      "corpus_id": 248392008
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "51",
+      "ref_key": "S2:96edfa3441bb3624ea2b8bdfc5eec2c87efa9637",
+      "paperId": "96edfa3441bb3624ea2b8bdfc5eec2c87efa9637",
+      "title": "Language-Specific Neurons: The Key to Multilingual Capabilities in Large Language Models",
+      "year": 2024,
+      "abstract": "Large language models (LLMs) demonstrate remarkable multilingual capabilities without being pre-trained on specially curated multilingual parallel corpora. It remains a challenging problem to explain the underlying mechanisms by which LLMs process multilingual texts. In this paper, we delve into the composition of Transformer architectures in LLMs to pinpoint language-specific regions. Specially, we propose a novel detection method, language activation probability entropy (LAPE), to identify language-specific neurons within LLMs. Based on LAPE, we conduct comprehensive experiments on several representative LLMs, such as LLaMA-2, BLOOM, and Mistral. Our findings indicate that LLMs' proficiency in processing a particular language is predominantly due to a small subset of neurons, primarily situated in the models' top and bottom layers. Furthermore, we showcase the feasibility to\"steer\"the output language of LLMs by selectively activating or deactivating language-specific neurons. Our research provides important evidence to the understanding and exploration of the multilingual capabilities of LLMs.",
+      "externalIds": {
+        "DBLP": "conf/acl/TangLH0WZWW24",
+        "ArXiv": "2402.16438",
+        "DOI": "10.48550/arXiv.2402.16438",
+        "CorpusId": 268032136
+      },
+      "arxiv_id": "2402.16438",
+      "doi": "10.48550/arXiv.2402.16438",
+      "corpus_id": 268032136
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "52",
+      "ref_key": "S2:75f7e9e2b59fb640ef9d1dff94097175daf46c4d",
+      "paperId": "75f7e9e2b59fb640ef9d1dff94097175daf46c4d",
+      "title": "Large Language Models Struggle to Learn Long-Tail Knowledge",
+      "year": 2022,
+      "abstract": "The Internet contains a wealth of knowledge -- from the birthdays of historical figures to tutorials on how to code -- all of which may be learned by language models. However, while certain pieces of information are ubiquitous on the web, others appear extremely rarely. In this paper, we study the relationship between the knowledge memorized by large language models and the information in pre-training datasets scraped from the web. In particular, we show that a language model's ability to answer a fact-based question relates to how many documents associated with that question were seen during pre-training. We identify these relevant documents by entity linking pre-training datasets and counting documents that contain the same entities as a given question-answer pair. Our results demonstrate strong correlational and causal relationships between accuracy and relevant document count for numerous question answering datasets (e.g., TriviaQA), pre-training corpora (e.g., ROOTS), and model sizes (e.g., 176B parameters). Moreover, while larger models are better at learning long-tail knowledge, we estimate that today's models must be scaled by many orders of magnitude to reach competitive QA performance on questions with little support in the pre-training data. Finally, we show that retrieval-augmentation can reduce the dependence on relevant pre-training information, presenting a promising approach for capturing the long-tail.",
+      "externalIds": {
+        "ArXiv": "2211.08411",
+        "DBLP": "journals/corr/abs-2211-08411",
+        "DOI": "10.48550/arXiv.2211.08411",
+        "CorpusId": 253522998
+      },
+      "arxiv_id": "2211.08411",
+      "doi": "10.48550/arXiv.2211.08411",
+      "corpus_id": 253522998
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "53",
+      "ref_key": "S2:600ff4c4ae9fc506c86673c5ecce4fa90803e987",
+      "paperId": "600ff4c4ae9fc506c86673c5ecce4fa90803e987",
+      "title": "RLAIF vs. RLHF: Scaling Reinforcement Learning from Human Feedback with AI Feedback",
+      "year": 2023,
+      "abstract": "Reinforcement learning from human feedback (RLHF) has proven effective in aligning large language models (LLMs) with human preferences, but gathering high-quality preference labels is expensive. RL from AI Feedback (RLAIF), introduced in Bai et al., offers a promising alternative that trains the reward model (RM) on preferences generated by an off-the-shelf LLM. Across the tasks of summarization, helpful dialogue generation, and harmless dialogue generation, we show that RLAIF achieves comparable performance to RLHF. Furthermore, we take a step towards\"self-improvement\"by demonstrating that RLAIF can outperform a supervised fine-tuned baseline even when the AI labeler is the same size as the policy, or even the exact same checkpoint as the initial policy. Finally, we introduce direct-RLAIF (d-RLAIF) - a technique that circumvents RM training by obtaining rewards directly from an off-the-shelf LLM during RL, which achieves superior performance to canonical RLAIF. Our results suggest that RLAIF can achieve performance on-par with using human feedback, offering a potential solution to the scalability limitations of RLHF.",
+      "externalIds": {
+        "DBLP": "conf/icml/0001PMMFLBHCRP24",
+        "ArXiv": "2309.00267",
+        "CorpusId": 261493811
+      },
+      "arxiv_id": "2309.00267",
+      "doi": null,
+      "corpus_id": 261493811
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "54",
+      "ref_key": "S2:996445d847f06e99b0bd259345408a0cf1bce87e",
+      "paperId": "996445d847f06e99b0bd259345408a0cf1bce87e",
+      "title": "Locating and Editing Factual Associations in GPT",
+      "year": 2022,
+      "abstract": "We analyze the storage and recall of factual associations in autoregressive transformer language models, finding evidence that these associations correspond to localized, directly-editable computations. We first develop a causal intervention for identifying neuron activations that are decisive in a model's factual predictions. This reveals a distinct set of steps in middle-layer feed-forward modules that mediate factual predictions while processing subject tokens. To test our hypothesis that these computations correspond to factual association recall, we modify feed-forward weights to update specific factual associations using Rank-One Model Editing (ROME). We find that ROME is effective on a standard zero-shot relation extraction (zsRE) model-editing task, comparable to existing methods. To perform a more sensitive evaluation, we also evaluate ROME on a new dataset of counterfactual assertions, on which it simultaneously maintains both specificity and generalization, whereas other methods sacrifice one or another. Our results confirm an important role for mid-layer feed-forward modules in storing factual associations and suggest that direct manipulation of computational mechanisms may be a feasible approach for model editing. The code, dataset, visualizations, and an interactive demo notebook are available at https://rome.baulab.info/",
+      "externalIds": {
+        "DBLP": "conf/nips/MengBAB22",
+        "ArXiv": "2202.05262",
+        "CorpusId": 255825985
+      },
+      "arxiv_id": "2202.05262",
+      "doi": null,
+      "corpus_id": 255825985
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "55",
+      "ref_key": "S2:1bda8efbbf4abae6c8c1da97d6137396807b1e09",
+      "paperId": "1bda8efbbf4abae6c8c1da97d6137396807b1e09",
+      "title": "ReFT: Representation Finetuning for Language Models",
+      "year": 2024,
+      "abstract": "Parameter-efficient finetuning (PEFT) methods seek to adapt large neural models via updates to a small number of weights. However, much prior interpretability work has shown that representations encode rich semantic information, suggesting that editing representations might be a more powerful alternative. We pursue this hypothesis by developing a family of Representation Finetuning (ReFT) methods. ReFT methods operate on a frozen base model and learn task-specific interventions on hidden representations. We define a strong instance of the ReFT family, Low-rank Linear Subspace ReFT (LoReFT), and we identify an ablation of this method that trades some performance for increased efficiency. Both are drop-in replacements for existing PEFTs and learn interventions that are 15x--65x more parameter-efficient than LoRA. We showcase LoReFT on eight commonsense reasoning tasks, four arithmetic reasoning tasks, instruction-tuning, and GLUE. In all these evaluations, our ReFTs deliver the best balance of efficiency and performance, and almost always outperform state-of-the-art PEFTs. We release a generic ReFT training library publicly at https://github.com/stanfordnlp/pyreft.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2404-03592",
+        "ArXiv": "2404.03592",
+        "DOI": "10.48550/arXiv.2404.03592",
+        "CorpusId": 268889731
+      },
+      "arxiv_id": "2404.03592",
+      "doi": "10.48550/arXiv.2404.03592",
+      "corpus_id": 268889731
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "56",
+      "ref_key": "S2:aac3469581061cd5b46440c3eeca91c385d54ccf",
+      "paperId": "aac3469581061cd5b46440c3eeca91c385d54ccf",
+      "title": "Representation Engineering: A Top-Down Approach to AI Transparency",
+      "year": 2023,
+      "abstract": "In this paper, we identify and characterize the emerging area of representation engineering (RepE), an approach to enhancing the transparency of AI systems that draws on insights from cognitive neuroscience. RepE places population-level representations, rather than neurons or circuits, at the center of analysis, equipping us with novel methods for monitoring and manipulating high-level cognitive phenomena in deep neural networks (DNNs). We provide baselines and an initial analysis of RepE techniques, showing that they offer simple yet effective solutions for improving our understanding and control of large language models. We showcase how these methods can provide traction on a wide range of safety-relevant problems, including honesty, harmlessness, power-seeking, and more, demonstrating the promise of top-down transparency research. We hope that this work catalyzes further exploration of RepE and fosters advancements in the transparency and safety of AI systems.",
+      "externalIds": {
+        "ArXiv": "2310.01405",
+        "DBLP": "journals/corr/abs-2310-01405",
+        "DOI": "10.48550/arXiv.2310.01405",
+        "CorpusId": 263605618
+      },
+      "arxiv_id": "2310.01405",
+      "doi": "10.48550/arXiv.2310.01405",
+      "corpus_id": 263605618
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "57",
+      "ref_key": "S2:8b750488d139f9beba0815ff8f46ebe15ebb3e58",
+      "paperId": "8b750488d139f9beba0815ff8f46ebe15ebb3e58",
+      "title": "Mechanistic Interpretability for AI Safety - A Review",
+      "year": 2024,
+      "abstract": "Understanding AI systems' inner workings is critical for ensuring value alignment and safety. This review explores mechanistic interpretability: reverse engineering the computational mechanisms and representations learned by neural networks into human-understandable algorithms and concepts to provide a granular, causal understanding. We establish foundational concepts such as features encoding knowledge within neural activations and hypotheses about their representation and computation. We survey methodologies for causally dissecting model behaviors and assess the relevance of mechanistic interpretability to AI safety. We examine benefits in understanding, control, alignment, and risks such as capability gains and dual-use concerns. We investigate challenges surrounding scalability, automation, and comprehensive interpretation. We advocate for clarifying concepts, setting standards, and scaling techniques to handle complex models and behaviors and expand to domains such as vision and reinforcement learning. Mechanistic interpretability could help prevent catastrophic outcomes as AI systems become more powerful and inscrutable.",
+      "externalIds": {
+        "ArXiv": "2404.14082",
+        "DBLP": "journals/corr/abs-2404-14082",
+        "DOI": "10.48550/arXiv.2404.14082",
+        "CorpusId": 269293418
+      },
+      "arxiv_id": "2404.14082",
+      "doi": "10.48550/arXiv.2404.14082",
+      "corpus_id": 269293418
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "58",
+      "ref_key": "S2:6edd112383ad494f5f2eba72b6f4ffae122ce61f",
+      "paperId": "6edd112383ad494f5f2eba72b6f4ffae122ce61f",
+      "title": "Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small",
+      "year": 2022,
+      "abstract": "Research in mechanistic interpretability seeks to explain behaviors of machine learning models in terms of their internal components. However, most previous work either focuses on simple behaviors in small models, or describes complicated behaviors in larger models with broad strokes. In this work, we bridge this gap by presenting an explanation for how GPT-2 small performs a natural language task called indirect object identification (IOI). Our explanation encompasses 26 attention heads grouped into 7 main classes, which we discovered using a combination of interpretability approaches relying on causal interventions. To our knowledge, this investigation is the largest end-to-end attempt at reverse-engineering a natural behavior\"in the wild\"in a language model. We evaluate the reliability of our explanation using three quantitative criteria--faithfulness, completeness and minimality. Though these criteria support our explanation, they also point to remaining gaps in our understanding. Our work provides evidence that a mechanistic understanding of large ML models is feasible, opening opportunities to scale our understanding to both larger models and more complex tasks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2211-00593",
+        "ArXiv": "2211.00593",
+        "DOI": "10.48550/arXiv.2211.00593",
+        "CorpusId": 253244237
+      },
+      "arxiv_id": "2211.00593",
+      "doi": "10.48550/arXiv.2211.00593",
+      "corpus_id": 253244237
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "59",
+      "ref_key": "S2:eed787154cd7ae521d32033a599e48184e09b058",
+      "paperId": "eed787154cd7ae521d32033a599e48184e09b058",
+      "title": "Towards Tracing Factual Knowledge in Language Models Back to the Training Data",
+      "year": 2022,
+      "abstract": "Language models (LMs) have been shown to memorize a great deal of factual knowledge contained in their training data. But when an LM generates an assertion, it is often difficult to determine where it learned this information and whether it is true. In this paper, we propose the problem of fact tracing: identifying which training examples taught an LM to generate a particular factual assertion. Prior work on training data attribution (TDA) may offer effective tools for identifying such examples, known as\"proponents\". We present the first quantitative benchmark to evaluate this. We compare two popular families of TDA methods -- gradient-based and embedding-based -- and find that much headroom remains. For example, both methods have lower proponent-retrieval precision than an information retrieval baseline (BM25) that does not have access to the LM at all. We identify key challenges that may be necessary for further improvement such as overcoming the problem of gradient saturation, and also show how several nuanced implementation details of existing neural TDA methods can significantly improve overall fact tracing performance.",
+      "externalIds": {
+        "ArXiv": "2205.11482",
+        "CorpusId": 253107911
+      },
+      "arxiv_id": "2205.11482",
+      "doi": null,
+      "corpus_id": 253107911
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "60",
+      "ref_key": "S2:f5b077e01f6e3d91f58cb4ed7158fa61eec5a1f8",
+      "paperId": "f5b077e01f6e3d91f58cb4ed7158fa61eec5a1f8",
+      "title": "AutoAct: Automatic Agent Learning from Scratch for QA via Self-Planning",
+      "year": 2024,
+      "abstract": "Language agents have achieved considerable performance on various complex question-answering tasks by planning with external tools. Despite the incessant exploration in this field, existing language agent systems still struggle with costly, non-reproducible data reliance and face the challenge of compelling a single model for multiple functions. To this end, we introduce AutoAct, an automatic agent learning framework for QA that does not rely on large-scale annotated data and synthetic planning trajectories from closed-source models (e.g., GPT-4). Given limited data with a tool library, AutoAct first automatically synthesizes planning trajectories without any assistance from humans or strong closed-source models. Then, AutoAct leverages a division-of-labor strategy to automatically differentiate based on the target task information and synthesized trajectories, producing a sub-agent group to complete the task. We conduct comprehensive experiments with different LLMs, which demonstrates that AutoAct yields better or parallel performance compared to various strong baselines. Further analysis demonstrates the effectiveness of the division-of-labor strategy, with the trajectory quality generated by AutoAct generally outperforming that of others. Code will be available at https://github.com/zjunlp/AutoAct.",
+      "externalIds": {
+        "ArXiv": "2401.05268",
+        "DBLP": "conf/acl/Qiao0FLZJLC24",
+        "DOI": "10.18653/v1/2024.acl-long.165",
+        "CorpusId": 266902590
+      },
+      "arxiv_id": "2401.05268",
+      "doi": "10.18653/v1/2024.acl-long.165",
+      "corpus_id": 266902590
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "61",
+      "ref_key": "S2:7b7649b59d62d2ebfb3c34b7bc91204b9b7cefe8",
+      "paperId": "7b7649b59d62d2ebfb3c34b7bc91204b9b7cefe8",
+      "title": "Retentive or Forgetful? Diving into the Knowledge Memorizing Mechanism of Language Models",
+      "year": 2023,
+      "abstract": "Memory is one of the most essential cognitive functions serving as a repository of world knowledge and episodes of activities. In recent years, large-scale pre-trained language models have shown remarkable memorizing ability. On the contrary, vanilla neural networks without pre-training have been long observed suffering from the catastrophic forgetting problem. To investigate such a retentive-forgetful contradiction and understand the memorizing dynamic mechanism of language models, we conduct thorough experiments by controlling the target knowledge types, the learning strategies and the learning schedules. We find that: 1) Vanilla language models without pre-training are forgetful; 2) Pre-training leads to retentive language models; 3) Knowledge relevance and diversification significantly influence the memory formation. These conclusions are useful for understanding the abilities of pre-trained language models and shed light on designing and evaluating new learning and inference algorithms of language models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-09144",
+        "ArXiv": "2305.09144",
+        "ACL": "2024.lrec-main.1222",
+        "DOI": "10.48550/arXiv.2305.09144",
+        "CorpusId": 258715133
+      },
+      "arxiv_id": "2305.09144",
+      "doi": "10.48550/arXiv.2305.09144",
+      "corpus_id": 258715133
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "62",
+      "ref_key": "S2:4747e72c5bc706c50e76953188f0144df18992d0",
+      "paperId": "4747e72c5bc706c50e76953188f0144df18992d0",
+      "title": "Communicative Agents for Software Development",
+      "year": 2023,
+      "abstract": "agents from diverse social identities, including chief ofﬁcers, professional programmers, test engineers",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-07924",
+        "DOI": "10.48550/arXiv.2307.07924",
+        "CorpusId": 259936967
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2307.07924",
+      "corpus_id": 259936967
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "63",
+      "ref_key": "S2:385c74957858e7d6856d48e72b5a902b4c1aa28c",
+      "paperId": "385c74957858e7d6856d48e72b5a902b4c1aa28c",
+      "title": "Encouraging Divergent Thinking in Large Language Models through Multi-Agent Debate",
+      "year": 2023,
+      "abstract": "Modern large language models (LLMs) like ChatGPT have shown remarkable performance on general language tasks but still struggle on complex reasoning tasks, which drives the research on cognitive behaviors of LLMs to explore human-like problem-solving strategies. Along this direction, one representative strategy is self-reflection, which asks an LLM to refine the solution with the feedback generated by itself iteratively. However, our study shows that such reflection-style methods suffer from the Degeneration-of-Thought (DoT) problem: once the LLM has established confidence in its solutions, it is unable to generate novel thoughts later through reflection even if its initial stance is incorrect. To address the DoT problem, we propose a Multi-Agent Debate (MAD) framework, in which multiple agents express their arguments in the state of “tit for tat” and a judge manages the debate process to obtain a final solution. Clearly, our MAD framework encourages divergent thinking in LLMs which would be helpful for tasks that require deep levels of contemplation. Experiment results on two challenging datasets, commonsense machine translation and counter-intuitive arithmetic reasoning, demonstrate the effectiveness of our MAD framework. Extensive analyses suggest that the adaptive break of debate and the modest level of “tit for tat” state are required for MAD to obtain good performance. Moreover, we find that LLMs might not be a fair judge if different LLMs are used for agents.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-19118",
+        "ACL": "2024.emnlp-main.992",
+        "ArXiv": "2305.19118",
+        "DOI": "10.48550/arXiv.2305.19118",
+        "CorpusId": 258967540
+      },
+      "arxiv_id": "2305.19118",
+      "doi": "10.48550/arXiv.2305.19118",
+      "corpus_id": 258967540
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "64",
+      "ref_key": "S2:5c6eeda9cce18e6d468c1b8835e4161a0d789647",
+      "paperId": "5c6eeda9cce18e6d468c1b8835e4161a0d789647",
+      "title": "Do LLMs dream of elephants (when told not to)? Latent concept association and associative memory in transformers",
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) have the capacity to store and recall facts. Through experimentation with open-source models, we observe that this ability to retrieve facts can be easily manipulated by changing contexts, even without altering their factual meanings. These findings highlight that LLMs might behave like an associative memory model where certain tokens in the contexts serve as clues to retrieving facts. We mathematically explore this property by studying how transformers, the building blocks of LLMs, can complete such memory tasks. We study a simple latent concept association problem with a one-layer transformer and we show theoretically and empirically that the transformer gathers information using self-attention and uses the value matrix for associative memory.",
+      "externalIds": {
+        "ArXiv": "2406.18400",
+        "DBLP": "journals/corr/abs-2406-18400",
+        "DOI": "10.48550/arXiv.2406.18400",
+        "CorpusId": 270737871
+      },
+      "arxiv_id": "2406.18400",
+      "doi": "10.48550/arXiv.2406.18400",
+      "corpus_id": 270737871
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "65",
+      "ref_key": "S2:e0095740512aa1b1e991b6ee920ccba7f8beb569",
+      "paperId": "e0095740512aa1b1e991b6ee920ccba7f8beb569",
+      "title": "Unveiling A Core Linguistic Region in Large Language Models",
+      "year": 2023,
+      "abstract": "Brain localization, which describes the association between specific regions of the brain and their corresponding functions, is widely accepted in the field of cognitive science as an objective fact. Today's large language models (LLMs) possess human-level linguistic competence and can execute complex tasks requiring abstract knowledge and reasoning. To deeply understand the inherent mechanisms of intelligence emergence in LLMs, this paper conducts an analogical research using brain localization as a prototype. We have discovered a core region in LLMs that corresponds to linguistic competence, accounting for approximately 1% of the total model parameters. This core region exhibits significant dimension dependency, and perturbations to even a single parameter on specific dimensions can lead to a loss of linguistic competence. Furthermore, we observe that an improvement in linguistic competence does not necessarily accompany an elevation in the model's knowledge level, which might imply the existence of regions of domain knowledge that are dissociated from the linguistic region. Overall, exploring the LLMs' functional regions provides insights into the foundation of their intelligence. In the future, we will continue to investigate knowledge regions within LLMs and the interactions between them.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-14928",
+        "ArXiv": "2310.14928",
+        "DOI": "10.48550/arXiv.2310.14928",
+        "CorpusId": 264591406
+      },
+      "arxiv_id": "2310.14928",
+      "doi": "10.48550/arXiv.2310.14928",
+      "corpus_id": 264591406
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "66",
+      "ref_key": "S2:133b97e40017a9bbbadd10bcd7f13088a97ca3cc",
+      "paperId": "133b97e40017a9bbbadd10bcd7f13088a97ca3cc",
+      "title": "Dissecting Recall of Factual Associations in Auto-Regressive Language Models",
+      "year": 2023,
+      "abstract": "Transformer-based language models (LMs) are known to capture factual knowledge in their parameters. While previous work looked into where factual associations are stored, only little is known about how they are retrieved internally during inference. We investigate this question through the lens of information flow. Given a subject-relation query, we study how the model aggregates information about the subject and relation to predict the correct attribute. With interventions on attention edges, we first identify two critical points where information propagates to the prediction: one from the relation positions followed by another from the subject positions. Next, by analyzing the information at these points, we unveil a three-step internal mechanism for attribute extraction. First, the representation at the last-subject position goes through an enrichment process, driven by the early MLP sublayers, to encode many subject-related attributes. Second, information from the relation propagates to the prediction. Third, the prediction representation\"queries\"the enriched subject to extract the attribute. Perhaps surprisingly, this extraction is typically done via attention heads, which often encode subject-attribute mappings in their parameters. Overall, our findings introduce a comprehensive view of how factual associations are stored and extracted internally in LMs, facilitating future research on knowledge localization and editing.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/GevaBFG23",
+        "ArXiv": "2304.14767",
+        "DOI": "10.48550/arXiv.2304.14767",
+        "CorpusId": 258417932
+      },
+      "arxiv_id": "2304.14767",
+      "doi": "10.48550/arXiv.2304.14767",
+      "corpus_id": 258417932
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "67",
+      "ref_key": "S2:66de49b3dcbbf0cca535335d597f94b702e2b95a",
+      "paperId": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
+      "title": "The Platonic Representation Hypothesis",
+      "year": 2024,
+      "abstract": "We argue that representations in AI models, particularly deep networks, are converging. First, we survey many examples of convergence in the literature: over time and across multiple domains, the ways by which different neural networks represent data are becoming more aligned. Next, we demonstrate convergence across data modalities: as vision models and language models get larger, they measure distance between datapoints in a more and more alike way. We hypothesize that this convergence is driving toward a shared statistical model of reality, akin to Plato's concept of an ideal reality. We term such a representation the platonic representation and discuss several possible selective pressures toward it. Finally, we discuss the implications of these trends, their limitations, and counterexamples to our analysis.",
+      "externalIds": {
+        "ArXiv": "2405.07987",
+        "DBLP": "journals/corr/abs-2405-07987",
+        "DOI": "10.48550/arXiv.2405.07987",
+        "CorpusId": 269757765
+      },
+      "arxiv_id": "2405.07987",
+      "doi": "10.48550/arXiv.2405.07987",
+      "corpus_id": 269757765
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "68",
+      "ref_key": "S2:f1481b4eba72c1e1d355413af37352a0bcfc50e9",
+      "paperId": "f1481b4eba72c1e1d355413af37352a0bcfc50e9",
+      "title": "Knowledge Circuits in Pretrained Transformers",
+      "year": 2024,
+      "abstract": "The remarkable capabilities of modern large language models are rooted in their vast repositories of knowledge encoded within their parameters, enabling them to perceive the world and engage in reasoning. The inner workings of how these models store knowledge have long been a subject of intense interest and investigation among researchers. To date, most studies have concentrated on isolated components within these models, such as the Multilayer Perceptrons and attention head. In this paper, we delve into the computation graph of the language model to uncover the knowledge circuits that are instrumental in articulating specific knowledge. The experiments, conducted with GPT2 and TinyLLAMA, have allowed us to observe how certain information heads, relation heads, and Multilayer Perceptrons collaboratively encode knowledge within the model. Moreover, we evaluate the impact of current knowledge editing techniques on these knowledge circuits, providing deeper insights into the functioning and constraints of these editing methodologies. Finally, we utilize knowledge circuits to analyze and interpret language model behaviors such as hallucinations and in-context learning. We believe the knowledge circuits hold potential for advancing our understanding of Transformers and guiding the improved design of knowledge editing. Code and data are available in https://github.com/zjunlp/KnowledgeCircuits.",
+      "externalIds": {
+        "ArXiv": "2405.17969",
+        "DBLP": "journals/corr/abs-2405-17969",
+        "DOI": "10.48550/arXiv.2405.17969",
+        "CorpusId": 270068372
+      },
+      "arxiv_id": "2405.17969",
+      "doi": "10.48550/arXiv.2405.17969",
+      "corpus_id": 270068372
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "69",
+      "ref_key": "S2:aec826ff336ca442697d5f908ab1668f1ea18987",
+      "paperId": "aec826ff336ca442697d5f908ab1668f1ea18987",
+      "title": "How does GPT-2 compute greater-than?: Interpreting mathematical abilities in a pre-trained language model",
+      "year": 2023,
+      "abstract": "Pre-trained language models can be surprisingly adept at tasks they were not explicitly trained on, but how they implement these capabilities is poorly understood. In this paper, we investigate the basic mathematical abilities often acquired by pre-trained language models. Concretely, we use mechanistic interpretability techniques to explain the (limited) mathematical abilities of GPT-2 small. As a case study, we examine its ability to take in sentences such as\"The war lasted from the year 1732 to the year 17\", and predict valid two-digit end years (years>32). We first identify a circuit, a small subset of GPT-2 small's computational graph that computes this task's output. Then, we explain the role of each circuit component, showing that GPT-2 small's final multi-layer perceptrons boost the probability of end years greater than the start year. Finally, we find related tasks that activate our circuit. Our results suggest that GPT-2 small computes greater-than using a complex but general mechanism that activates across diverse contexts.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-00586",
+        "ArXiv": "2305.00586",
+        "DOI": "10.48550/arXiv.2305.00586",
+        "CorpusId": 258426987
+      },
+      "arxiv_id": "2305.00586",
+      "doi": "10.48550/arXiv.2305.00586",
+      "corpus_id": 258426987
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "70",
+      "ref_key": "S2:ead6121fbc787d508dc6a6d7106f72bf0d647d03",
+      "paperId": "ead6121fbc787d508dc6a6d7106f72bf0d647d03",
+      "title": "Multi-Agent Collaboration: Harnessing the Power of Intelligent LLM Agents",
+      "year": 2023,
+      "abstract": "In this paper, we present a novel framework for enhancing the capabilities of large language models (LLMs) by leveraging the power of multi-agent systems. Our framework introduces a collaborative environment where multiple intelligent agent components, each with distinctive attributes and roles, work together to handle complex tasks more efficiently and effectively. We demonstrate the practicality and versatility of our framework through case studies in artificial general intelligence (AGI), specifically focusing on the Auto-GPT and BabyAGI models. We also examine the\"Gorilla\"model, which integrates external APIs into the LLM. Our framework addresses limitations and challenges such as looping issues, security risks, scalability, system evaluation, and ethical considerations. By modeling various domains such as courtroom simulations and software development scenarios, we showcase the potential applications and benefits of our proposed multi-agent system. Our framework provides an avenue for advancing the capabilities and performance of LLMs through collaboration and knowledge exchange among intelligent agents.",
+      "externalIds": {
+        "ArXiv": "2306.03314",
+        "DBLP": "journals/corr/abs-2306-03314",
+        "DOI": "10.48550/arXiv.2306.03314",
+        "CorpusId": 259088724
+      },
+      "arxiv_id": "2306.03314",
+      "doi": "10.48550/arXiv.2306.03314",
+      "corpus_id": 259088724
+    },
+    {
+      "paper_id": "2407.15017",
+      "ref_index": "71",
+      "ref_key": "S2:b512451d431df9e411bea4c99f7135d010275445",
+      "paperId": "b512451d431df9e411bea4c99f7135d010275445",
+      "title": "Fine-Tuning or Retrieval? Comparing Knowledge Injection in LLMs",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) encapsulate a vast amount of factual information within their pre-trained weights, as evidenced by their ability to answer diverse questions across different domains. However, this knowledge is inherently limited, relying heavily on the characteristics of the training data. Consequently, using external datasets to incorporate new information or refine the capabilities of LLMs on previously seen information poses a significant challenge. In this study, we compare two common approaches: unsupervised fine-tuning and retrieval-augmented generation (RAG). We evaluate both approaches on a variety of knowledge-intensive tasks across different topics. Our findings reveal that while unsupervised fine-tuning offers some improvement, RAG consistently outperforms it, both for existing knowledge encountered during training and entirely new knowledge. Moreover, we find that LLMs struggle to learn new factual information through unsupervised fine-tuning, and that exposing them to numerous variations of the same fact during training could alleviate this problem.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2312-05934",
+        "ACL": "2024.emnlp-main.15",
+        "ArXiv": "2312.05934",
+        "DOI": "10.48550/arXiv.2312.05934",
+        "CorpusId": 266162497
+      },
+      "arxiv_id": "2312.05934",
+      "doi": "10.48550/arXiv.2312.05934",
+      "corpus_id": 266162497
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "Knowledge Mechanisms in LLMs": {
+        "Knowledge   Utilization ": {
+          "Memorization   ": {
+            "Modular  Region": {
+              "7e388155314475226bd001b84d8a9a69f35021a7": {},
+              "f44c1d2f1764bbf186c95af1b3b5a624b9801d18": {},
+              "184753b614b35cde3f2e221cea3bc60fe016d29e": {},
+              "6150a2dab1b63b246eb2cd418fcdb5a6b6b8ae62": {},
+              "cf36236015c9f93f15bfafbf282f69e08bdc9c16": {},
+              "2b72888cc3ff048038f6011b8e3d89ba106540b6": {},
+              "41a3c41ba1912e1384849e6898c241af89cc4a11": {},
+              "b0ceba96db8b7b71beb2f0906568ffc143fddbf9": {},
+              "d9a449e1123ca37375c9977f51b7ea6129905803": {},
+              "33c8910107f3fcb17d140cc88554652508ae3674": {},
+              "2c871df72c52b58f05447fcb3afc838168d94505": {},
+              "4a54d58a4b20e4f3af25cea3c188a12082a95e02": {},
+              "e6ecbf7b24fd10406416cd5e4e6c2839277f03a2": {},
+              "96edfa3441bb3624ea2b8bdfc5eec2c87efa9637": {},
+              "996445d847f06e99b0bd259345408a0cf1bce87e": {},
+              "5c6eeda9cce18e6d468c1b8835e4161a0d789647": {},
+              "e0095740512aa1b1e991b6ee920ccba7f8beb569": {}
+            },
+            "Connection": {
+              "eefbd8b384a58f464827b19e30a6920ba976def9": {},
+              "405f8f5f1c6df1b3343c812832479aad5180b65f": {},
+              "c0d9a48547d728dd320b453b01a0ab1ce2f96098": {},
+              "9cf6d8ad63fd43658d4cdae58a78013852a759ff": {},
+              "6edd112383ad494f5f2eba72b6f4ffae122ce61f": {},
+              "133b97e40017a9bbbadd10bcd7f13088a97ca3cc": {},
+              "f1481b4eba72c1e1d355413af37352a0bcfc50e9": {}
+            }
+          },
+          "Comprehension \\&  Application ": {
+            "Reusing  Module": {
+              "d8355d1bc02ca6b11125027a5d85d0b32fa30f66": {},
+              "5dc15ac1c92ab7492f121471823fb13a95d273ba": {},
+              "405f8f5f1c6df1b3343c812832479aad5180b65f": {},
+              "b13947c7598aa91992cf04048afa19c7cfe69795": {},
+              "9cf6d8ad63fd43658d4cdae58a78013852a759ff": {},
+              "26089bdfdbca1e6eaaceca71e3116b715bec6d47": {},
+              "231c1fee5f0e48722f025961bf3016ca5e4c6072": {},
+              "96edfa3441bb3624ea2b8bdfc5eec2c87efa9637": {},
+              "75f7e9e2b59fb640ef9d1dff94097175daf46c4d": {},
+              "e0095740512aa1b1e991b6ee920ccba7f8beb569": {},
+              "aec826ff336ca442697d5f908ab1668f1ea18987": {}
+            },
+            "Reusing  Connection": {
+              "c0d9a48547d728dd320b453b01a0ab1ce2f96098": {},
+              "97994e4526ef7eeea59190aa466fbab05fad9187": {},
+              "5b1120f547d3969afc49b4a094e874d568e53aca": {}
+            }
+          },
+          "Creation ": {
+            "Novel": {
+              "9e7227ae2fbccc4c54f986d4e72eae5d0f66387a": {},
+              "203a297db586ffb4cd858fe5f219a9a1571c87b2": {},
+              "2b18e63caff82f1a688714aed099b8856db92581": {},
+              "0c4f46e4dcae5527018e6432fb60cfe8c3354e97": {},
+              "d96933cba676edbaad3a0564352ad29dbfe2c1f4": {},
+              "8c5aab75826620559d33e99652f4cac9f6efd2fc": {},
+              "77805d75199e7b9e580b4827f56a069ba0ddd13f": {}
+            },
+            "Valuable": {
+              "7b1a6db0909856a345f055a9607f43711b3df375": {},
+              "5cd671efa2af8456c615c5faf54d1be4950f3819": {},
+              "8c682857a38a0984f12cb2fb612a79aad6f98d3c": {},
+              "4a2f4cd788896d9e9b52eaf5ca303c5cdcb280c6": {}
+            }
+          }
+        },
+        "Knowledge  Evolution ": {
+          "Individual  Evolution ": {
+            "Pre-training": {
+              "546d0624adfc6e18fb87d8cc77e7705bb9ea7445": {},
+              "6052486bc9144dc1730c12bf35323af3792a1fd0": {},
+              "ca31b8584b6c022ef15ddfe994fe361e002b7729": {},
+              "e01ab53663e5df5961a021506a9cb09f4efc3788": {},
+              "eed787154cd7ae521d32033a599e48184e09b058": {},
+              "7b7649b59d62d2ebfb3c34b7bc91204b9b7cefe8": {}
+            },
+            "Post-training": {
+              "Fine-tuning": {
+                "0d1c76d45afa012ded7ab741194baf142117c495": {},
+                "7a15950dc71079285a4eaf195de5aadd87c41b40": {},
+                "0286b2736a114198b25fb5553c671c33aed5d477": {},
+                "f0950a3f27c0fefffba60ae1c9a8ee360d5eb55f": {},
+                "c0d8e5ee66c279299012cc3b8d0519011b3f4998": {},
+                "c3f1fae241a3c2449e675ab750873d800f95513c": {},
+                "600ff4c4ae9fc506c86673c5ecce4fa90803e987": {},
+                "b512451d431df9e411bea4c99f7135d010275445": {}
+              },
+              "RAG": {
+                "94034fd2ed4b6cf41113abb7adc9ae469313c958": {},
+                "f091acf9dc2cc486c253dcead3a74ba916c64eb7": {},
+                "4308208fac24626e0c927ee728038aadc4e87266": {}
+              },
+              "Editing": {
+                "ae16c93bf3a33c43e8f57293530069e77c89bcaa": {},
+                "cf36236015c9f93f15bfafbf282f69e08bdc9c16": {},
+                "42016f91e5b1da63174d45acb96bc89b64aa124d": {},
+                "0251bb95be75d472c8d5b873751615e7fe2feb1d": {},
+                "1bda8efbbf4abae6c8c1da97d6137396807b1e09": {},
+                "aac3469581061cd5b46440c3eeca91c385d54ccf": {}
+              }
+            }
+          },
+          "Group  Evolution ": {
+            "8b750488d139f9beba0815ff8f46ebe15ebb3e58": {},
+            "f5b077e01f6e3d91f58cb4ed7158fa61eec5a1f8": {},
+            "4747e72c5bc706c50e76953188f0144df18992d0": {},
+            "385c74957858e7d6856d48e72b5a902b4c1aa28c": {},
+            "66de49b3dcbbf0cca535335d597f94b702e2b95a": {},
+            "ead6121fbc787d508dc6a6d7106f72bf0d647d03": {}
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000001",
+        "paperId": "7e388155314475226bd001b84d8a9a69f35021a7",
+        "ref_index": "1",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Modular  Region"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000002",
+        "paperId": "f44c1d2f1764bbf186c95af1b3b5a624b9801d18",
+        "ref_index": "2",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Modular  Region"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000003",
+        "paperId": "184753b614b35cde3f2e221cea3bc60fe016d29e",
+        "ref_index": "4",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Modular  Region"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000004",
+        "paperId": "6150a2dab1b63b246eb2cd418fcdb5a6b6b8ae62",
+        "ref_index": "6",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Modular  Region"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000005",
+        "paperId": "cf36236015c9f93f15bfafbf282f69e08bdc9c16",
+        "ref_index": "8",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Modular  Region"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000006",
+        "paperId": "2b72888cc3ff048038f6011b8e3d89ba106540b6",
+        "ref_index": "10",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Modular  Region"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000007",
+        "paperId": "41a3c41ba1912e1384849e6898c241af89cc4a11",
+        "ref_index": "13",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Modular  Region"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000008",
+        "paperId": "b0ceba96db8b7b71beb2f0906568ffc143fddbf9",
+        "ref_index": "14",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Modular  Region"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000009",
+        "paperId": "d9a449e1123ca37375c9977f51b7ea6129905803",
+        "ref_index": "32",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Modular  Region"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000010",
+        "paperId": "33c8910107f3fcb17d140cc88554652508ae3674",
+        "ref_index": "45",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Modular  Region"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000011",
+        "paperId": "2c871df72c52b58f05447fcb3afc838168d94505",
+        "ref_index": "48",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Modular  Region"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000012",
+        "paperId": "4a54d58a4b20e4f3af25cea3c188a12082a95e02",
+        "ref_index": "49",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Modular  Region"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000013",
+        "paperId": "e6ecbf7b24fd10406416cd5e4e6c2839277f03a2",
+        "ref_index": "50",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Modular  Region"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000014",
+        "paperId": "96edfa3441bb3624ea2b8bdfc5eec2c87efa9637",
+        "ref_index": "51",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Modular  Region"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000015",
+        "paperId": "996445d847f06e99b0bd259345408a0cf1bce87e",
+        "ref_index": "54",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Modular  Region"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000016",
+        "paperId": "5c6eeda9cce18e6d468c1b8835e4161a0d789647",
+        "ref_index": "64",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Modular  Region"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000017",
+        "paperId": "e0095740512aa1b1e991b6ee920ccba7f8beb569",
+        "ref_index": "65",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Modular  Region"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000018",
+        "paperId": "eefbd8b384a58f464827b19e30a6920ba976def9",
+        "ref_index": "0",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Connection"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000019",
+        "paperId": "405f8f5f1c6df1b3343c812832479aad5180b65f",
+        "ref_index": "15",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Connection"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000020",
+        "paperId": "c0d9a48547d728dd320b453b01a0ab1ce2f96098",
+        "ref_index": "25",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Connection"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000021",
+        "paperId": "9cf6d8ad63fd43658d4cdae58a78013852a759ff",
+        "ref_index": "36",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Connection"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000022",
+        "paperId": "6edd112383ad494f5f2eba72b6f4ffae122ce61f",
+        "ref_index": "58",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Connection"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000023",
+        "paperId": "133b97e40017a9bbbadd10bcd7f13088a97ca3cc",
+        "ref_index": "66",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Connection"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000024",
+        "paperId": "f1481b4eba72c1e1d355413af37352a0bcfc50e9",
+        "ref_index": "68",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Memorization   ",
+          "Connection"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000025",
+        "paperId": "d8355d1bc02ca6b11125027a5d85d0b32fa30f66",
+        "ref_index": "11",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Comprehension \\&  Application ",
+          "Reusing  Module"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000026",
+        "paperId": "5dc15ac1c92ab7492f121471823fb13a95d273ba",
+        "ref_index": "12",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Comprehension \\&  Application ",
+          "Reusing  Module"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000027",
+        "paperId": "405f8f5f1c6df1b3343c812832479aad5180b65f",
+        "ref_index": "15",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Comprehension \\&  Application ",
+          "Reusing  Module"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000028",
+        "paperId": "b13947c7598aa91992cf04048afa19c7cfe69795",
+        "ref_index": "26",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Comprehension \\&  Application ",
+          "Reusing  Module"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000029",
+        "paperId": "9cf6d8ad63fd43658d4cdae58a78013852a759ff",
+        "ref_index": "36",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Comprehension \\&  Application ",
+          "Reusing  Module"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000030",
+        "paperId": "26089bdfdbca1e6eaaceca71e3116b715bec6d47",
+        "ref_index": "44",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Comprehension \\&  Application ",
+          "Reusing  Module"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000031",
+        "paperId": "231c1fee5f0e48722f025961bf3016ca5e4c6072",
+        "ref_index": "46",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Comprehension \\&  Application ",
+          "Reusing  Module"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000032",
+        "paperId": "96edfa3441bb3624ea2b8bdfc5eec2c87efa9637",
+        "ref_index": "51",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Comprehension \\&  Application ",
+          "Reusing  Module"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000033",
+        "paperId": "75f7e9e2b59fb640ef9d1dff94097175daf46c4d",
+        "ref_index": "52",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Comprehension \\&  Application ",
+          "Reusing  Module"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000034",
+        "paperId": "e0095740512aa1b1e991b6ee920ccba7f8beb569",
+        "ref_index": "65",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Comprehension \\&  Application ",
+          "Reusing  Module"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000035",
+        "paperId": "aec826ff336ca442697d5f908ab1668f1ea18987",
+        "ref_index": "69",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Comprehension \\&  Application ",
+          "Reusing  Module"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000036",
+        "paperId": "c0d9a48547d728dd320b453b01a0ab1ce2f96098",
+        "ref_index": "25",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Comprehension \\&  Application ",
+          "Reusing  Connection"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000037",
+        "paperId": "97994e4526ef7eeea59190aa466fbab05fad9187",
+        "ref_index": "33",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Comprehension \\&  Application ",
+          "Reusing  Connection"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000038",
+        "paperId": "5b1120f547d3969afc49b4a094e874d568e53aca",
+        "ref_index": "47",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Comprehension \\&  Application ",
+          "Reusing  Connection"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000039",
+        "paperId": "9e7227ae2fbccc4c54f986d4e72eae5d0f66387a",
+        "ref_index": "5",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Creation ",
+          "Novel"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000040",
+        "paperId": "203a297db586ffb4cd858fe5f219a9a1571c87b2",
+        "ref_index": "9",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Creation ",
+          "Novel"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000041",
+        "paperId": "2b18e63caff82f1a688714aed099b8856db92581",
+        "ref_index": "21",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Creation ",
+          "Novel"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000042",
+        "paperId": "0c4f46e4dcae5527018e6432fb60cfe8c3354e97",
+        "ref_index": "28",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Creation ",
+          "Novel"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000043",
+        "paperId": "d96933cba676edbaad3a0564352ad29dbfe2c1f4",
+        "ref_index": "35",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Creation ",
+          "Novel"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000044",
+        "paperId": "8c5aab75826620559d33e99652f4cac9f6efd2fc",
+        "ref_index": "38",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Creation ",
+          "Novel"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000045",
+        "paperId": "77805d75199e7b9e580b4827f56a069ba0ddd13f",
+        "ref_index": "43",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Creation ",
+          "Novel"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000046",
+        "paperId": "7b1a6db0909856a345f055a9607f43711b3df375",
+        "ref_index": "7",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Creation ",
+          "Valuable"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000047",
+        "paperId": "5cd671efa2af8456c615c5faf54d1be4950f3819",
+        "ref_index": "30",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Creation ",
+          "Valuable"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000048",
+        "paperId": "8c682857a38a0984f12cb2fb612a79aad6f98d3c",
+        "ref_index": "34",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Creation ",
+          "Valuable"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000049",
+        "paperId": "4a2f4cd788896d9e9b52eaf5ca303c5cdcb280c6",
+        "ref_index": "37",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge   Utilization ",
+          "Creation ",
+          "Valuable"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000050",
+        "paperId": "546d0624adfc6e18fb87d8cc77e7705bb9ea7445",
+        "ref_index": "17",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Pre-training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000051",
+        "paperId": "6052486bc9144dc1730c12bf35323af3792a1fd0",
+        "ref_index": "20",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Pre-training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000052",
+        "paperId": "ca31b8584b6c022ef15ddfe994fe361e002b7729",
+        "ref_index": "22",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Pre-training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000053",
+        "paperId": "e01ab53663e5df5961a021506a9cb09f4efc3788",
+        "ref_index": "23",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Pre-training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000054",
+        "paperId": "eed787154cd7ae521d32033a599e48184e09b058",
+        "ref_index": "59",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Pre-training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000055",
+        "paperId": "7b7649b59d62d2ebfb3c34b7bc91204b9b7cefe8",
+        "ref_index": "61",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Pre-training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000056",
+        "paperId": "0d1c76d45afa012ded7ab741194baf142117c495",
+        "ref_index": "16",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Post-training",
+          "Fine-tuning"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000057",
+        "paperId": "7a15950dc71079285a4eaf195de5aadd87c41b40",
+        "ref_index": "18",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Post-training",
+          "Fine-tuning"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000058",
+        "paperId": "0286b2736a114198b25fb5553c671c33aed5d477",
+        "ref_index": "19",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Post-training",
+          "Fine-tuning"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000059",
+        "paperId": "f0950a3f27c0fefffba60ae1c9a8ee360d5eb55f",
+        "ref_index": "24",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Post-training",
+          "Fine-tuning"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000060",
+        "paperId": "c0d8e5ee66c279299012cc3b8d0519011b3f4998",
+        "ref_index": "31",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Post-training",
+          "Fine-tuning"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000061",
+        "paperId": "c3f1fae241a3c2449e675ab750873d800f95513c",
+        "ref_index": "41",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Post-training",
+          "Fine-tuning"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000062",
+        "paperId": "600ff4c4ae9fc506c86673c5ecce4fa90803e987",
+        "ref_index": "53",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Post-training",
+          "Fine-tuning"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000063",
+        "paperId": "b512451d431df9e411bea4c99f7135d010275445",
+        "ref_index": "71",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Post-training",
+          "Fine-tuning"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000064",
+        "paperId": "94034fd2ed4b6cf41113abb7adc9ae469313c958",
+        "ref_index": "39",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Post-training",
+          "RAG"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000065",
+        "paperId": "f091acf9dc2cc486c253dcead3a74ba916c64eb7",
+        "ref_index": "40",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Post-training",
+          "RAG"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000066",
+        "paperId": "4308208fac24626e0c927ee728038aadc4e87266",
+        "ref_index": "42",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Post-training",
+          "RAG"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000067",
+        "paperId": "ae16c93bf3a33c43e8f57293530069e77c89bcaa",
+        "ref_index": "3",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Post-training",
+          "Editing"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000068",
+        "paperId": "cf36236015c9f93f15bfafbf282f69e08bdc9c16",
+        "ref_index": "8",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Post-training",
+          "Editing"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000069",
+        "paperId": "42016f91e5b1da63174d45acb96bc89b64aa124d",
+        "ref_index": "27",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Post-training",
+          "Editing"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000070",
+        "paperId": "0251bb95be75d472c8d5b873751615e7fe2feb1d",
+        "ref_index": "29",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Post-training",
+          "Editing"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000071",
+        "paperId": "1bda8efbbf4abae6c8c1da97d6137396807b1e09",
+        "ref_index": "55",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Post-training",
+          "Editing"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000072",
+        "paperId": "aac3469581061cd5b46440c3eeca91c385d54ccf",
+        "ref_index": "56",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Individual  Evolution ",
+          "Post-training",
+          "Editing"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000073",
+        "paperId": "8b750488d139f9beba0815ff8f46ebe15ebb3e58",
+        "ref_index": "57",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Group  Evolution "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000074",
+        "paperId": "f5b077e01f6e3d91f58cb4ed7158fa61eec5a1f8",
+        "ref_index": "60",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Group  Evolution "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000075",
+        "paperId": "4747e72c5bc706c50e76953188f0144df18992d0",
+        "ref_index": "62",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Group  Evolution "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000076",
+        "paperId": "385c74957858e7d6856d48e72b5a902b4c1aa28c",
+        "ref_index": "63",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Group  Evolution "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000077",
+        "paperId": "66de49b3dcbbf0cca535335d597f94b702e2b95a",
+        "ref_index": "67",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Group  Evolution "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15017",
+        "arxiv_id": "2407.15017",
+        "leaf_mention_id": "2407.15017::000078",
+        "paperId": "ead6121fbc787d508dc6a6d7106f72bf0d647d03",
+        "ref_index": "70",
+        "path": [
+          "Knowledge Mechanisms in LLMs",
+          "Knowledge  Evolution ",
+          "Group  Evolution "
+        ],
+        "depth": 3,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 78,
+      "unique_leaf_paper_count": 72,
+      "multi_membership_extra_mentions": 6,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

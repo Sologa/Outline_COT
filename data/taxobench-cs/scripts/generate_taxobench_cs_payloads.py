@@ -242,14 +242,32 @@ def sha256_text(text: str) -> str:
 def projection_report(
     *,
     manifest_row: dict[str, Any],
+    payload_source: dict[str, Any],
     payloads: dict[str, str],
     experiment_id: str,
 ) -> dict[str, Any]:
+    concepts = collect_concepts(payload_source)
+    taxonomy_summary = payload_source.get("taxonomy", {}).get("summary", {})
     return {
         "created_at": utc_now_iso(),
         "experiment_id": experiment_id,
         "paper_id": manifest_row["paper_id"],
         "arxiv_id": manifest_row["arxiv_id"],
+        "taxonomy": {
+            "taxonomy_node_count": len(concepts) + int(taxonomy_summary.get("leaf_mention_count") or 0),
+            "concept_count": len(concepts),
+            "leaf_mention_count": int(taxonomy_summary.get("leaf_mention_count") or 0),
+            "unique_leaf_paper_count": int(taxonomy_summary.get("unique_leaf_paper_count") or 0),
+            "multi_membership_extra_mentions": int(taxonomy_summary.get("multi_membership_extra_mentions") or 0),
+            "unresolved_leaf_count": int(taxonomy_summary.get("unresolved_leaf_count") or 0),
+        },
+        "flat_concepts": {
+            "concept_count": len(concepts),
+        },
+        "random_hierarchy": {
+            "random_seed_int": random_seed_int(experiment_id=experiment_id, paper_id=str(manifest_row["paper_id"])),
+            "random_seed_source": "experiment_id:paper_id",
+        },
         "payloads": {
             variant: {
                 "character_count": len(text),
@@ -257,7 +275,6 @@ def projection_report(
             }
             for variant, text in payloads.items()
         },
-        "random_seed_int": random_seed_int(experiment_id=experiment_id, paper_id=str(manifest_row["paper_id"])),
     }
 
 
@@ -283,7 +300,12 @@ def generate_payloads(
         paper_id = str(row["paper_id"])
         for variant, text in payloads.items():
             atomic_write_text(output_root / "payloads" / paper_id / f"{variant}.txt", text, force=force)
-        report = projection_report(manifest_row=row, payloads=payloads, experiment_id=experiment_id)
+        report = projection_report(
+            manifest_row=row,
+            payload_source=payload_source,
+            payloads=payloads,
+            experiment_id=experiment_id,
+        )
         atomic_write_text(
             output_root / "projection_reports" / f"{paper_id}.projection_report.json",
             json.dumps(report, ensure_ascii=False, indent=2) + "\n",

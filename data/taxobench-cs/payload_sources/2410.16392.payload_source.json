@@ -1,0 +1,1401 @@
+{
+  "paper_id": "2410.16392",
+  "arxiv_id": "2410.16392",
+  "title": "LLM-based Optimization of Compound AI Systems: A Survey",
+  "ref_meta": [
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "0",
+      "ref_key": "S2:398a0625e8707a0b41ac58eaec51e8feb87dd7cb",
+      "paperId": "398a0625e8707a0b41ac58eaec51e8feb87dd7cb",
+      "title": "ALFWorld: Aligning Text and Embodied Environments for Interactive Learning",
+      "year": 2020,
+      "abstract": "Given a simple request (e.g., Put a washed apple in the kitchen fridge), humans can reason in purely abstract terms by imagining action sequences and scoring their likelihood of success, prototypicality, and efficiency, all without moving a muscle. Once we see the kitchen in question, we can update our abstract plans to fit the scene. Embodied agents require the same abilities, but existing work does not yet provide the infrastructure necessary for both reasoning abstractly and executing concretely. We address this limitation by introducing ALFWorld, a simulator that enables agents to learn abstract, text-based policies in TextWorld (Cote et al., 2018) and then execute goals from the ALFRED benchmark (Shridhar et al., 2020) in a rich visual environment. ALFWorld enables the creation of a new BUTLER agent whose abstract knowledge, learned in TextWorld, corresponds directly to concrete, visually grounded actions. In turn, as we demonstrate empirically, this fosters better agent generalization than training only in the visually grounded environment. BUTLER's simple, modular design factors the problem to allow researchers to focus on models for improving every piece of the pipeline (language understanding, planning, navigation, visual scene understanding, and so forth).",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2010-03768",
+        "MAG": "3092516542",
+        "ArXiv": "2010.03768",
+        "CorpusId": 222208810
+      },
+      "arxiv_id": "2010.03768",
+      "doi": null,
+      "corpus_id": 222208810
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "1",
+      "ref_key": "S2:23525374cfd3af714f3ffb7a203b1ef3253333fe",
+      "paperId": "23525374cfd3af714f3ffb7a203b1ef3253333fe",
+      "title": "WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents",
+      "year": 2022,
+      "abstract": "Existing benchmarks for grounding language in interactive environments either lack real-world linguistic elements, or prove difficult to scale up due to substantial human involvement in the collection of data or feedback signals. To bridge this gap, we develop WebShop -- a simulated e-commerce website environment with $1.18$ million real-world products and $12,087$ crowd-sourced text instructions. Given a text instruction specifying a product requirement, an agent needs to navigate multiple types of webpages and issue diverse actions to find, customize, and purchase an item. WebShop provides several challenges for language grounding including understanding compositional instructions, query (re-)formulation, comprehending and acting on noisy text in webpages, and performing strategic exploration. We collect over $1,600$ human demonstrations for the task, and train and evaluate a diverse range of agents using reinforcement learning, imitation learning, and pre-trained image and language models. Our best model achieves a task success rate of $29\\%$, which outperforms rule-based heuristics ($9.6\\%$) but is far lower than human expert performance ($59\\%$). We also analyze agent and human trajectories and ablate various model components to provide insights for developing future agents with stronger language understanding and decision making abilities. Finally, we show that agents trained on WebShop exhibit non-trivial sim-to-real transfer when evaluated on amazon.com and ebay.com, indicating the potential value of WebShop in developing practical web-based agents that can operate in the wild.",
+      "externalIds": {
+        "ArXiv": "2207.01206",
+        "DBLP": "journals/corr/abs-2207-01206",
+        "DOI": "10.48550/arXiv.2207.01206",
+        "CorpusId": 250264533
+      },
+      "arxiv_id": "2207.01206",
+      "doi": "10.48550/arXiv.2207.01206",
+      "corpus_id": 250264533
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "2",
+      "ref_key": "S2:90ee7c1d50793f7f0da731a1c07d6d2fc47324ac",
+      "paperId": "90ee7c1d50793f7f0da731a1c07d6d2fc47324ac",
+      "title": "Offline Training of Language Model Agents with Functions as Learnable Weights",
+      "year": 2024,
+      "abstract": "Researchers and practitioners have recently reframed powerful Large Language Models (LLMs) as agents, enabling them to automate complex tasks largely via the use of specialized functions. To facilitate the development of LLM agents, we present a novel paradigm of training LLM agents without modifying the LLM weights, which is particularly useful when the LLMs are difficult or inaccessible for modifications. Inspired by how humans continuously forge tools to adapt to real-world tasks, rather than change our biological structure to fit a static set of tools, we propose to progressively forge agent's functions to better solve the downstream tasks instead of modifying the LLM weights. By treating the functions as learnable `agent parameters' and leveraging the fundamental idea of model training in artificial intelligence, we develop AgentOptimizer that employs the LLM to update agents' functions and devise an agent training algorithm with two strategies, roll-back, and early-stop, to streamline the training process. With extensive experiments, we showcase that the agent training paradigm could significantly improve the performance of representative LLM agents in various downstream tasks. We also study the behavior of the agent training regarding aspects like the learning curve and domain transferability.",
+      "externalIds": {
+        "DBLP": "conf/icml/ZhangZLS0KW24",
+        "ArXiv": "2402.11359",
+        "CorpusId": 267750412
+      },
+      "arxiv_id": "2402.11359",
+      "doi": null,
+      "corpus_id": 267750412
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "3",
+      "ref_key": "S2:b6948a9e8b3eec5a56a80c69727154fcd7ececce",
+      "paperId": "b6948a9e8b3eec5a56a80c69727154fcd7ececce",
+      "title": "AgentPoison: Red-teaming LLM Agents via Poisoning Memory or Knowledge Bases",
+      "year": 2024,
+      "abstract": "LLM agents have demonstrated remarkable performance across various applications, primarily due to their advanced capabilities in reasoning, utilizing external knowledge and tools, calling APIs, and executing actions to interact with environments. Current agents typically utilize a memory module or a retrieval-augmented generation (RAG) mechanism, retrieving past knowledge and instances with similar embeddings from knowledge bases to inform task planning and execution. However, the reliance on unverified knowledge bases raises significant concerns about their safety and trustworthiness. To uncover such vulnerabilities, we propose a novel red teaming approach AgentPoison, the first backdoor attack targeting generic and RAG-based LLM agents by poisoning their long-term memory or RAG knowledge base. In particular, we form the trigger generation process as a constrained optimization to optimize backdoor triggers by mapping the triggered instances to a unique embedding space, so as to ensure that whenever a user instruction contains the optimized backdoor trigger, the malicious demonstrations are retrieved from the poisoned memory or knowledge base with high probability. In the meantime, benign instructions without the trigger will still maintain normal performance. Unlike conventional backdoor attacks, AgentPoison requires no additional model training or fine-tuning, and the optimized backdoor trigger exhibits superior transferability, in-context coherence, and stealthiness. Extensive experiments demonstrate AgentPoison's effectiveness in attacking three types of real-world LLM agents: RAG-based autonomous driving agent, knowledge-intensive QA agent, and healthcare EHRAgent. On each agent, AgentPoison achieves an average attack success rate higher than 80% with minimal impact on benign performance (less than 1%) with a poison rate less than 0.1%.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2407-12784",
+        "ArXiv": "2407.12784",
+        "DOI": "10.48550/arXiv.2407.12784",
+        "CorpusId": 271244867
+      },
+      "arxiv_id": "2407.12784",
+      "doi": "10.48550/arXiv.2407.12784",
+      "corpus_id": 271244867
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "4",
+      "ref_key": "S2:4610ffb1b016acaa82a2065ffd1a3adbae1ce722",
+      "paperId": "4610ffb1b016acaa82a2065ffd1a3adbae1ce722",
+      "title": "Large Language Models Are Human-Level Prompt Engineers",
+      "year": 2022,
+      "abstract": "By conditioning on natural language instructions, large language models (LLMs) have displayed impressive capabilities as general-purpose computers. However, task performance depends significantly on the quality of the prompt used to steer the model, and most effective prompts have been handcrafted by humans. Inspired by classical program synthesis and the human approach to prompt engineering, we propose Automatic Prompt Engineer (APE) for automatic instruction generation and selection. In our method, we treat the instruction as the\"program,\"optimized by searching over a pool of instruction candidates proposed by an LLM in order to maximize a chosen score function. To evaluate the quality of the selected instruction, we evaluate the zero-shot performance of another LLM following the selected instruction. Experiments on 24 NLP tasks show that our automatically generated instructions outperform the prior LLM baseline by a large margin and achieve better or comparable performance to the instructions generated by human annotators on 19/24 tasks. We conduct extensive qualitative and quantitative analyses to explore the performance of APE. We show that APE-engineered prompts can be applied to steer models toward truthfulness and/or informativeness, as well as to improve few-shot learning performance by simply prepending them to standard in-context learning prompts. Please check out our webpage at https://sites.google.com/view/automatic-prompt-engineer.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2211-01910",
+        "ArXiv": "2211.01910",
+        "DOI": "10.48550/arXiv.2211.01910",
+        "CorpusId": 253265328
+      },
+      "arxiv_id": "2211.01910",
+      "doi": "10.48550/arXiv.2211.01910",
+      "corpus_id": 253265328
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "5",
+      "ref_key": "S2:9474b463654fd92a62c103b21f95aed94b087907",
+      "paperId": "9474b463654fd92a62c103b21f95aed94b087907",
+      "title": "ChatDev: Communicative Agents for Software Development",
+      "year": 2023,
+      "abstract": "Software development is a complex task that necessitates cooperation among multiple members with diverse skills. Numerous studies used deep learning to improve specific phases in a waterfall model, such as design, coding, and testing. However, the deep learning model in each phase requires unique designs, leading to technical inconsistencies across various phases, which results in a fragmented and ineffective development process. In this paper, we introduce ChatDev, a chat-powered software development framework in which specialized agents driven by large language models (LLMs) are guided in what to communicate (via chat chain) and how to communicate (via communicative dehallucination). These agents actively contribute to the design, coding, and testing phases through unified language-based communication, with solutions derived from their multi-turn dialogues. We found their utilization of natural language is advantageous for system design, and communicating in programming language proves helpful in debugging. This paradigm demonstrates how linguistic communication facilitates multi-agent collaboration, establishing language as a unifying bridge for autonomous task-solving among LLM agents. The code and data are available at https://github.com/OpenBMB/ChatDev.",
+      "externalIds": {
+        "DBLP": "conf/acl/QianLLCDL0CSCXL24",
+        "ArXiv": "2307.07924",
+        "DOI": "10.18653/v1/2024.acl-long.810",
+        "CorpusId": 270257715
+      },
+      "arxiv_id": "2307.07924",
+      "doi": "10.18653/v1/2024.acl-long.810",
+      "corpus_id": 270257715
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "6",
+      "ref_key": "S2:78fbb6e7a1c568a04e8c935aa9909d0c942ea5f6",
+      "paperId": "78fbb6e7a1c568a04e8c935aa9909d0c942ea5f6",
+      "title": "Executable Code Actions Elicit Better LLM Agents",
+      "year": 2024,
+      "abstract": "Large Language Model (LLM) agents, capable of performing a broad range of actions, such as invoking tools and controlling robots, show great potential in tackling real-world challenges. LLM agents are typically prompted to produce actions by generating JSON or text in a pre-defined format, which is usually limited by constrained action space (e.g., the scope of pre-defined tools) and restricted flexibility (e.g., inability to compose multiple tools). This work proposes to use executable Python code to consolidate LLM agents' actions into a unified action space (CodeAct). Integrated with a Python interpreter, CodeAct can execute code actions and dynamically revise prior actions or emit new actions upon new observations through multi-turn interactions. Our extensive analysis of 17 LLMs on API-Bank and a newly curated benchmark shows that CodeAct outperforms widely used alternatives (up to 20% higher success rate). The encouraging performance of CodeAct motivates us to build an open-source LLM agent that interacts with environments by executing interpretable code and collaborates with users using natural language. To this end, we collect an instruction-tuning dataset CodeActInstruct that consists of 7k multi-turn interactions using CodeAct. We show that it can be used with existing data to improve models in agent-oriented tasks without compromising their general capability. CodeActAgent, finetuned from Llama2 and Mistral, is integrated with Python interpreter and uniquely tailored to perform sophisticated tasks (e.g., model training) using existing libraries and autonomously self-debug.",
+      "externalIds": {
+        "ArXiv": "2402.01030",
+        "DBLP": "journals/corr/abs-2402-01030",
+        "DOI": "10.48550/arXiv.2402.01030",
+        "CorpusId": 267406155
+      },
+      "arxiv_id": "2402.01030",
+      "doi": "10.48550/arXiv.2402.01030",
+      "corpus_id": 267406155
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "7",
+      "ref_key": "S2:a1426b13b74dbad17b34606d25aabe1d61f6e11a",
+      "paperId": "a1426b13b74dbad17b34606d25aabe1d61f6e11a",
+      "title": "CRAFT: Customizing LLMs by Creating and Retrieving from Specialized Toolsets",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) are often augmented with tools to solve complex tasks. By generating code snippets and executing them through task-specific Application Programming Interfaces (APIs), they can offload certain functions to dedicated external modules, such as image encoding and performing calculations. However, most existing approaches to augment LLMs with tools are constrained by general-purpose APIs and lack the flexibility for tailoring them to specific tasks. In this work, we present CRAFT, a general tool creation and retrieval framework for LLMs. It creates toolsets specifically curated for the tasks and equips LLMs with a component that retrieves tools from these sets to enhance their capability to solve complex tasks. For each task, we collect specific code solutions by prompting GPT-4 to solve the training examples. Following a validation step ensuring the correctness, these solutions are abstracted into code snippets to enhance reusability, and deduplicated for higher quality. At inference time, the language model retrieves snippets from the toolsets and then executes them or generates the output conditioning on the retrieved snippets. Our method is designed to be flexible and offers a plug-and-play approach to adapt off-the-shelf LLMs to unseen domains and modalities, without any finetuning. Experiments on vision-language, tabular processing, and mathematical reasoning tasks show that our approach achieves substantial improvements compared to strong baselines. In addition, our in-depth analysis reveals that: (1) consistent performance improvement can be achieved by scaling up the number of tools and the capability of the backbone models; (2) each component of our approach contributes to the performance gains; (3) the created tools are well-structured and reliable with low complexity and atomicity. The code is available at https://github.com/lifan-yuan/CRAFT.",
+      "externalIds": {
+        "ArXiv": "2309.17428",
+        "DBLP": "conf/iclr/YuanC000J24",
+        "DOI": "10.48550/arXiv.2309.17428",
+        "CorpusId": 263310662
+      },
+      "arxiv_id": "2309.17428",
+      "doi": "10.48550/arXiv.2309.17428",
+      "corpus_id": 263310662
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "8",
+      "ref_key": "S2:8deb5fd40e310dc4feb27f7db7019e734b44631b",
+      "paperId": "8deb5fd40e310dc4feb27f7db7019e734b44631b",
+      "title": "LLM Critics Help Catch LLM Bugs",
+      "year": 2024,
+      "abstract": "Reinforcement learning from human feedback (RLHF) is fundamentally limited by the capacity of humans to correctly evaluate model output. To improve human evaluation ability and overcome that limitation this work trains\"critic\"models that help humans to more accurately evaluate model-written code. These critics are themselves LLMs trained with RLHF to write natural language feedback highlighting problems in code from real-world assistant tasks. On code containing naturally occurring LLM errors model-written critiques are preferred over human critiques in 63% of cases, and human evaluation finds that models catch more bugs than human contractors paid for code review. We further confirm that our fine-tuned LLM critics can successfully identify hundreds of errors in ChatGPT training data rated as\"flawless\", even though the majority of those tasks are non-code tasks and thus out-of-distribution for the critic model. Critics can have limitations of their own, including hallucinated bugs that could mislead humans into making mistakes they might have otherwise avoided, but human-machine teams of critics and contractors catch similar numbers of bugs to LLM critics while hallucinating less than LLMs alone.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2407-00215",
+        "ArXiv": "2407.00215",
+        "DOI": "10.48550/arXiv.2407.00215",
+        "CorpusId": 270844127
+      },
+      "arxiv_id": "2407.00215",
+      "doi": "10.48550/arXiv.2407.00215",
+      "corpus_id": 270844127
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "9",
+      "ref_key": "S2:cc0f0cb09a73f82ed44d900f5ca710bec784acc1",
+      "paperId": "cc0f0cb09a73f82ed44d900f5ca710bec784acc1",
+      "title": "DIN-SQL: Decomposed In-Context Learning of Text-to-SQL with Self-Correction",
+      "year": 2023,
+      "abstract": "We study the problem of decomposing a complex text-to-sql task into smaller sub-tasks and how such a decomposition can significantly improve the performance of Large Language Models (LLMs) in the reasoning process. There is currently a significant gap between the performance of fine-tuned models and prompting approaches using LLMs on challenging text-to-sql datasets such as Spider. We show that SQL queries, despite their declarative structure, can be broken down into sub-problems and the solutions of those sub-problems can be fed into LLMs to significantly improve their performance. Our experiments with three LLMs show that this approach consistently improves their performance by roughly 10%, pushing the accuracy of LLMs towards state-of-the-art, and even beating large fine-tuned models on the holdout Spider dataset.",
+      "externalIds": {
+        "DBLP": "conf/nips/PourrezaR23",
+        "ArXiv": "2304.11015",
+        "DOI": "10.48550/arXiv.2304.11015",
+        "CorpusId": 258291425
+      },
+      "arxiv_id": "2304.11015",
+      "doi": "10.48550/arXiv.2304.11015",
+      "corpus_id": 258291425
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "10",
+      "ref_key": "S2:03532123ccffae8d411264320e8a5ae2b6eddea0",
+      "paperId": "03532123ccffae8d411264320e8a5ae2b6eddea0",
+      "title": "Demonstrate-Search-Predict: Composing retrieval and language models for knowledge-intensive NLP",
+      "year": 2022,
+      "abstract": "Retrieval-augmented in-context learning has emerged as a powerful approach for addressing knowledge-intensive tasks using frozen language models (LM) and retrieval models (RM). Existing work has combined these in simple\"retrieve-then-read\"pipelines in which the RM retrieves passages that are inserted into the LM prompt. To begin to fully realize the potential of frozen LMs and RMs, we propose Demonstrate-Search-Predict (DSP), a framework that relies on passing natural language texts in sophisticated pipelines between an LM and an RM. DSP can express high-level programs that bootstrap pipeline-aware demonstrations, search for relevant passages, and generate grounded predictions, systematically breaking down problems into small transformations that the LM and RM can handle more reliably. We have written novel DSP programs for answering questions in open-domain, multi-hop, and conversational settings, establishing in early evaluations new state-of-the-art in-context learning results and delivering 37-120%, 8-39%, and 80-290% relative gains against the vanilla LM (GPT-3.5), a standard retrieve-then-read pipeline, and a contemporaneous self-ask pipeline, respectively. We release DSP at https://github.com/stanfordnlp/dsp",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2212-14024",
+        "ArXiv": "2212.14024",
+        "DOI": "10.48550/arXiv.2212.14024",
+        "CorpusId": 255186555
+      },
+      "arxiv_id": "2212.14024",
+      "doi": "10.48550/arXiv.2212.14024",
+      "corpus_id": 255186555
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "11",
+      "ref_key": "S2:0789104dd0dfe229be1cff270e4c94d7791454bb",
+      "paperId": "0789104dd0dfe229be1cff270e4c94d7791454bb",
+      "title": "DSPy Assertions: Computational Constraints for Self-Refining Language Model Pipelines",
+      "year": 2023,
+      "abstract": "Chaining language model (LM) calls as composable modules is fueling a new way of programming, but ensuring LMs adhere to important constraints requires heuristic\"prompt engineering\". We introduce LM Assertions, a programming construct for expressing computational constraints that LMs should satisfy. We integrate our constructs into the recent DSPy programming model for LMs, and present new strategies that allow DSPy to compile programs with LM Assertions into more reliable and accurate systems. We also propose strategies to use assertions at inference time for automatic self-refinement with LMs. We report on four diverse case studies for text generation and find that LM Assertions improve not only compliance with imposed rules but also downstream task performance, passing constraints up to 164% more often and generating up to 37% more higher-quality responses. Our reference implementation of LM Assertions is integrated into DSPy at https://github.com/stanfordnlp/dspy",
+      "externalIds": {
+        "ArXiv": "2312.13382",
+        "DBLP": "journals/corr/abs-2312-13382",
+        "DOI": "10.48550/arXiv.2312.13382",
+        "CorpusId": 266436034
+      },
+      "arxiv_id": "2312.13382",
+      "doi": "10.48550/arXiv.2312.13382",
+      "corpus_id": 266436034
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "12",
+      "ref_key": "S2:57d1e7ac339e783898f2c3b1af55737cbeee9fc5",
+      "paperId": "57d1e7ac339e783898f2c3b1af55737cbeee9fc5",
+      "title": "Measuring Mathematical Problem Solving With the MATH Dataset",
+      "year": 2021,
+      "abstract": "Many intellectual endeavors require mathematical problem solving, but this skill remains beyond the capabilities of computers. To measure this ability in machine learning models, we introduce MATH, a new dataset of 12,500 challenging competition mathematics problems. Each problem in MATH has a full step-by-step solution which can be used to teach models to generate answer derivations and explanations. To facilitate future research and increase accuracy on MATH, we also contribute a large auxiliary pretraining dataset which helps teach models the fundamentals of mathematics. Even though we are able to increase accuracy on MATH, our results show that accuracy remains relatively low, even with enormous Transformer models. Moreover, we find that simply increasing budgets and model parameter counts will be impractical for achieving strong mathematical reasoning if scaling trends continue. While scaling Transformers is automatically solving most other text-based tasks, scaling is not currently solving MATH. To have more traction on mathematical problem solving we will likely need new algorithmic advancements from the broader research community.",
+      "externalIds": {
+        "DBLP": "conf/nips/HendrycksBKABTS21",
+        "ArXiv": "2103.03874",
+        "CorpusId": 232134851
+      },
+      "arxiv_id": "2103.03874",
+      "doi": null,
+      "corpus_id": 232134851
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "13",
+      "ref_key": "S2:f208ea909fa7f54fea82def9a92fd81dfc758c39",
+      "paperId": "f208ea909fa7f54fea82def9a92fd81dfc758c39",
+      "title": "Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions",
+      "year": 2022,
+      "abstract": "Prompting-based large language models (LLMs) are surprisingly powerful at generating natural language reasoning steps or Chains-of-Thoughts (CoT) for multi-step question answering (QA). They struggle, however, when the necessary knowledge is either unavailable to the LLM or not up-to-date within its parameters. While using the question to retrieve relevant text from an external knowledge source helps LLMs, we observe that this one-step retrieve-and-read approach is insufficient for multi-step QA. Here, what to retrieve depends on what has already been derived, which in turn may depend on what was previously retrieved. To address this, we propose IRCoT, a new approach for multi-step QA that interleaves retrieval with steps (sentences) in a CoT, guiding the retrieval with CoT and in turn using retrieved results to improve CoT. Using IRCoT with GPT3 substantially improves retrieval (up to 21 points) as well as downstream QA (up to 15 points) on four datasets: HotpotQA, 2WikiMultihopQA, MuSiQue, and IIRC. We observe similar substantial gains in out-of-distribution (OOD) settings as well as with much smaller models such as Flan-T5-large without additional training. IRCoT reduces model hallucination, resulting in factually more accurate CoT reasoning.",
+      "externalIds": {
+        "ArXiv": "2212.10509",
+        "DBLP": "journals/corr/abs-2212-10509",
+        "ACL": "2023.acl-long.557",
+        "DOI": "10.48550/arXiv.2212.10509",
+        "CorpusId": 254877499
+      },
+      "arxiv_id": "2212.10509",
+      "doi": "10.48550/arXiv.2212.10509",
+      "corpus_id": 254877499
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "14",
+      "ref_key": "S2:700bd9681f1b9e9e2212e10415d27b11c7e6836b",
+      "paperId": "700bd9681f1b9e9e2212e10415d27b11c7e6836b",
+      "title": "Language Agent Tree Search Unifies Reasoning Acting and Planning in Language Models",
+      "year": 2023,
+      "abstract": "While language models (LMs) have shown potential across a range of decision-making tasks, their reliance on simple acting processes limits their broad deployment as autonomous agents. In this paper, we introduce Language Agent Tree Search (LATS) -- the first general framework that synergizes the capabilities of LMs in reasoning, acting, and planning. By leveraging the in-context learning ability of LMs, we integrate Monte Carlo Tree Search into LATS to enable LMs as agents, along with LM-powered value functions and self-reflections for proficient exploration and enhanced decision-making. A key feature of our approach is the incorporation of an environment for external feedback, which offers a more deliberate and adaptive problem-solving mechanism that surpasses the constraints of existing techniques. Our experimental evaluation across diverse domains, including programming, interactive question-answering (QA), web navigation, and math, validates the effectiveness and generality of LATS in decision-making while maintaining competitive or improved reasoning performance. Notably, LATS achieves state-of-the-art pass@1 accuracy (92.7%) for programming on HumanEval with GPT-4 and demonstrates gradient-free performance (average score of 75.9) comparable to gradient-based fine-tuning for web navigation on WebShop with GPT-3.5. Code can be found at https://github.com/lapisrocks/LanguageAgentTreeSearch",
+      "externalIds": {
+        "ArXiv": "2310.04406",
+        "DBLP": "conf/icml/ZhouYSWW24",
+        "DOI": "10.48550/arXiv.2310.04406",
+        "CorpusId": 263829963
+      },
+      "arxiv_id": "2310.04406",
+      "doi": "10.48550/arXiv.2310.04406",
+      "corpus_id": 263829963
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "15",
+      "ref_key": "S2:9eaa62a2a45634c6e922ed1a3f2e44b4424398fb",
+      "paperId": "9eaa62a2a45634c6e922ed1a3f2e44b4424398fb",
+      "title": "Empowering Large Language Model Agents through Action Learning",
+      "year": 2024,
+      "abstract": "Large Language Model (LLM) Agents have recently garnered increasing interest yet they are limited in their ability to learn from trial and error, a key element of intelligent behavior. In this work, we argue that the capacity to learn new actions from experience is fundamental to the advancement of learning in LLM agents. While humans naturally expand their action spaces and develop skills through experiential learning, LLM agents typically operate within fixed action spaces, limiting their potential for growth. To address these challenges, our study explores open-action learning for language agents. We introduce a framework LearnAct with an iterative learning strategy to create and improve actions in the form of Python functions. In each iteration, LLM revises and updates the currently available actions based on the errors identified in unsuccessful training tasks, thereby enhancing action effectiveness. Our experimental evaluations across Robotic Planning and Alfworld environments reveal that after learning on a few training task instances, our approach to open-action learning markedly improves agent performance for the type of task (by 32 percent in AlfWorld compared to ReAct+Reflexion, for instance) highlighting the importance of experiential action learning in the development of more intelligent LLM agents.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-15809",
+        "ArXiv": "2402.15809",
+        "DOI": "10.48550/arXiv.2402.15809",
+        "CorpusId": 267938674
+      },
+      "arxiv_id": "2402.15809",
+      "doi": "10.48550/arXiv.2402.15809",
+      "corpus_id": 267938674
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "16",
+      "ref_key": "S2:c7ecb703d810dfb0794b7a168eb5e2a6b381a534",
+      "paperId": "c7ecb703d810dfb0794b7a168eb5e2a6b381a534",
+      "title": "MAgICoRe: Multi-Agent, Iterative, Coarse-to-Fine Refinement for Reasoning",
+      "year": 2024,
+      "abstract": "Large Language Models' (LLM) reasoning can be improved using test-time aggregation strategies, i.e., generating multiple samples and voting among generated samples. While these improve performance, they often reach a saturation point. Refinement offers an alternative by using LLM-generated feedback to improve solution quality. However, refinement introduces 3 key challenges: (1) Excessive refinement: Uniformly refining all instances can over-correct and reduce the overall performance. (2) Inability to localize and address errors: LLMs have a limited ability to self-correct and struggle to identify and correct their own mistakes. (3) Insufficient refinement: Deciding how many iterations of refinement are needed is non-trivial, and stopping too soon could leave errors unaddressed. To tackle these issues, we propose MAgICoRe, which avoids excessive refinement by categorizing problem difficulty as easy or hard, solving easy problems with coarse-grained aggregation and hard ones with fine-grained and iterative multi-agent refinement. To improve error localization, we incorporate external step-wise reward model (RM) scores. Moreover, to ensure effective refinement, we employ a multi-agent loop with three agents: Solver, Reviewer (which generates targeted feedback based on step-wise RM scores), and the Refiner (which incorporates feedback). To ensure sufficient refinement, we re-evaluate updated solutions, iteratively initiating further rounds of refinement. We evaluate MAgICoRe on Llama-3-8B and GPT-3.5 and show its effectiveness across 5 math datasets. Even one iteration of MAgICoRe beats Self-Consistency by 3.4%, Best-of-k by 3.2%, and Self-Refine by 4.0% while using less than half the samples. Unlike iterative refinement with baselines, MAgICoRe continues to improve with more iterations. Finally, our ablations highlight the importance of MAgICoRe's RMs and multi-agent communication.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2409-12147",
+        "ArXiv": "2409.12147",
+        "DOI": "10.48550/arXiv.2409.12147",
+        "CorpusId": 272708877
+      },
+      "arxiv_id": "2409.12147",
+      "doi": "10.48550/arXiv.2409.12147",
+      "corpus_id": 272708877
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "17",
+      "ref_key": "S2:8544160c4fb07e78a965a8223cff5c361e9df090",
+      "paperId": "8544160c4fb07e78a965a8223cff5c361e9df090",
+      "title": "Optimizing Instructions and Demonstrations for Multi-Stage Language Model Programs",
+      "year": 2024,
+      "abstract": "Language Model Programs, i.e. sophisticated pipelines of modular language model (LM) calls, are increasingly advancing NLP tasks, but they require crafting prompts that are jointly effective for all modules. We study prompt optimization for LM programs, i.e. how to update these prompts to maximize a downstream metric without access to module-level labels or gradients. To make this tractable, we factorize our problem into optimizing the free-form instructions and few-shot demonstrations of every module and introduce several strategies to craft task-grounded instructions and navigate credit assignment across modules. Our strategies include (i) program- and data-aware techniques for proposing effective instructions, (ii) a stochastic mini-batch evaluation function for learning a surrogate model of our objective, and (iii) a meta-optimization procedure in which we refine how LMs construct proposals over time. Using these insights we develop MIPRO, a novel algorithm for optimizing LM programs. MIPRO outperforms baseline optimizers on five of seven diverse multi-stage LM programs using a best-in-class open-source model (Llama-3-8B), by as high as 13% accuracy. We have released our new optimizers and benchmark in DSPy at [http://dspy.ai](http://dspy.ai).",
+      "externalIds": {
+        "DBLP": "conf/emnlp/Opsahl-OngRPBPZ24",
+        "ACL": "2024.emnlp-main.525",
+        "ArXiv": "2406.11695",
+        "DOI": "10.48550/arXiv.2406.11695",
+        "CorpusId": 270560679
+      },
+      "arxiv_id": "2406.11695",
+      "doi": "10.48550/arXiv.2406.11695",
+      "corpus_id": 270560679
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "18",
+      "ref_key": "S2:6c1e1cc1e0e1f8fd026fe517607b2d4535565fa7",
+      "paperId": "6c1e1cc1e0e1f8fd026fe517607b2d4535565fa7",
+      "title": "PAL: Program-aided Language Models",
+      "year": 2022,
+      "abstract": "Large language models (LLMs) have recently demonstrated an impressive ability to perform arithmetic and symbolic reasoning tasks, when provided with a few examples at test time (\"few-shot prompting\"). Much of this success can be attributed to prompting methods such as\"chain-of-thought'', which employ LLMs for both understanding the problem description by decomposing it into steps, as well as solving each step of the problem. While LLMs seem to be adept at this sort of step-by-step decomposition, LLMs often make logical and arithmetic mistakes in the solution part, even when the problem is decomposed correctly. In this paper, we present Program-Aided Language models (PAL): a novel approach that uses the LLM to read natural language problems and generate programs as the intermediate reasoning steps, but offloads the solution step to a runtime such as a Python interpreter. With PAL, decomposing the natural language problem into runnable steps remains the only learning task for the LLM, while solving is delegated to the interpreter. We demonstrate this synergy between a neural LLM and a symbolic interpreter across 13 mathematical, symbolic, and algorithmic reasoning tasks from BIG-Bench Hard and other benchmarks. In all these natural language reasoning tasks, generating code using an LLM and reasoning using a Python interpreter leads to more accurate results than much larger models. For example, PAL using Codex achieves state-of-the-art few-shot accuracy on the GSM8K benchmark of math word problems, surpassing PaLM-540B which uses chain-of-thought by absolute 15% top-1. Our code and data are publicly available at http://reasonwithpal.com/ .",
+      "externalIds": {
+        "ArXiv": "2211.10435",
+        "DBLP": "journals/corr/abs-2211-10435",
+        "DOI": "10.48550/arXiv.2211.10435",
+        "CorpusId": 253708270
+      },
+      "arxiv_id": "2211.10435",
+      "doi": "10.48550/arXiv.2211.10435",
+      "corpus_id": 253708270
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "19",
+      "ref_key": "S2:6c943670dca38bfc7c8b477ae7c2d1fba1ad3691",
+      "paperId": "6c943670dca38bfc7c8b477ae7c2d1fba1ad3691",
+      "title": "Program of Thoughts Prompting: Disentangling Computation from Reasoning for Numerical Reasoning Tasks",
+      "year": 2022,
+      "abstract": "Recently, there has been significant progress in teaching language models to perform step-by-step reasoning to solve complex numerical reasoning tasks. Chain-of-thoughts prompting (CoT) is by far the state-of-art method for these tasks. CoT uses language models to perform both reasoning and computation in the multi-step `thought' process. To disentangle computation from reasoning, we propose `Program of Thoughts' (PoT), which uses language models (mainly Codex) to express the reasoning process as a program. The computation is relegated to an external computer, which executes the generated programs to derive the answer. We evaluate PoT on five math word problem datasets (GSM, AQuA, SVAMP, TabMWP, MultiArith) and three financial-QA datasets (FinQA, ConvFinQA, TATQA) for both few-shot and zero-shot setups. Under both few-shot and zero-shot settings, PoT can show an average performance gain over CoT by around 12\\% across all the evaluated datasets. By combining PoT with self-consistency decoding, we can achieve SoTA performance on all math problem datasets and near-SoTA performance on financial datasets. All of our data and code are released in Github https://github.com/wenhuchen/Program-of-Thoughts",
+      "externalIds": {
+        "DBLP": "journals/tmlr/ChenM0C23",
+        "ArXiv": "2211.12588",
+        "CorpusId": 253801709
+      },
+      "arxiv_id": "2211.12588",
+      "doi": null,
+      "corpus_id": 253801709
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "20",
+      "ref_key": "S2:c76dd4a70361c3afd2e19d046343e2dedd16ecc3",
+      "paperId": "c76dd4a70361c3afd2e19d046343e2dedd16ecc3",
+      "title": "Automatic Prompt Optimization with \"Gradient Descent\" and Beam Search",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) have shown impressive performance as general purpose agents, but their abilities remain highly dependent on prompts which are hand written with onerous trial-and-error effort. We propose a simple and nonparametric solution to this problem, Automatic Prompt Optimization (APO), which is inspired by numerical gradient descent to automatically improve prompts, assuming access to training data and an LLM API. The algorithm uses minibatches of data to form natural language\"gradients\"that criticize the current prompt. The gradients are then\"propagated\"into the prompt by editing the prompt in the opposite semantic direction of the gradient. These gradient descent steps are guided by a beam search and bandit selection procedure which significantly improves algorithmic efficiency. Preliminary results across three benchmark NLP tasks and the novel problem of LLM jailbreak detection suggest that Automatic Prompt Optimization can outperform prior prompt editing techniques and improve an initial prompt's performance by up to 31%, by using data to rewrite vague task descriptions into more precise annotation instructions.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/PryzantI0L0023",
+        "ArXiv": "2305.03495",
+        "DOI": "10.48550/arXiv.2305.03495",
+        "CorpusId": 258546785
+      },
+      "arxiv_id": "2305.03495",
+      "doi": "10.48550/arXiv.2305.03495",
+      "corpus_id": 258546785
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "21",
+      "ref_key": "S2:5dbffedcabe3fa43060ebbe2b1789500edfd871f",
+      "paperId": "5dbffedcabe3fa43060ebbe2b1789500edfd871f",
+      "title": "Reasoning with Language Model is Planning with World Model",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have shown remarkable reasoning capabilities, especially when prompted to generate intermediate reasoning steps (e.g., Chain-of-Thought, CoT). However, LLMs can still struggle with problems that are easy for humans, such as generating action plans for executing tasks in a given environment, or performing complex math, logical, and commonsense reasoning. The deficiency stems from the key fact that LLMs lack an internal $\\textit{world model}$ to predict the world $\\textit{state}$ (e.g., environment status, intermediate variable values) and simulate long-term outcomes of actions. This prevents LLMs from performing deliberate planning akin to human brains, which involves exploring alternative reasoning paths, anticipating future states and rewards, and iteratively refining existing reasoning steps. To overcome the limitations, we propose a new LLM reasoning framework, $\\underline{R}$easoning vi$\\underline{a}$ $\\underline{P}$lanning $\\textbf{(RAP)}$. RAP repurposes the LLM as both a world model and a reasoning agent, and incorporates a principled planning algorithm (based on Monto Carlo Tree Search) for strategic exploration in the vast reasoning space. During reasoning, the LLM (as agent) incrementally builds a reasoning tree under the guidance of the LLM (as world model) and task-specific rewards, and obtains a high-reward reasoning path efficiently with a proper balance between exploration $\\textit{vs.}$ exploitation. We apply RAP to a variety of challenging reasoning problems including plan generation, math reasoning, and logical inference. Empirical results on these tasks demonstrate the superiority of RAP over various strong baselines, including CoT and least-to-most prompting with self-consistency. RAP on LLAMA-33B surpasses CoT on GPT-4 with 33% relative improvement in a plan generation setting.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/HaoGMHWWH23",
+        "ArXiv": "2305.14992",
+        "DOI": "10.48550/arXiv.2305.14992",
+        "CorpusId": 258865812
+      },
+      "arxiv_id": "2305.14992",
+      "doi": "10.48550/arXiv.2305.14992",
+      "corpus_id": 258865812
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "22",
+      "ref_key": "S2:99832586d55f540f603637e458a292406a0ed75d",
+      "paperId": "99832586d55f540f603637e458a292406a0ed75d",
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "year": 2022,
+      "abstract": "While large language models (LLMs) have demonstrated impressive capabilities across tasks in language understanding and interactive decision making, their abilities for reasoning (e.g. chain-of-thought prompting) and acting (e.g. action plan generation) have primarily been studied as separate topics. In this paper, we explore the use of LLMs to generate both reasoning traces and task-specific actions in an interleaved manner, allowing for greater synergy between the two: reasoning traces help the model induce, track, and update action plans as well as handle exceptions, while actions allow it to interface with external sources, such as knowledge bases or environments, to gather additional information. We apply our approach, named ReAct, to a diverse set of language and decision making tasks and demonstrate its effectiveness over state-of-the-art baselines, as well as improved human interpretability and trustworthiness over methods without reasoning or acting components. Concretely, on question answering (HotpotQA) and fact verification (Fever), ReAct overcomes issues of hallucination and error propagation prevalent in chain-of-thought reasoning by interacting with a simple Wikipedia API, and generates human-like task-solving trajectories that are more interpretable than baselines without reasoning traces. On two interactive decision making benchmarks (ALFWorld and WebShop), ReAct outperforms imitation and reinforcement learning methods by an absolute success rate of 34% and 10% respectively, while being prompted with only one or two in-context examples. Project site with code: https://react-lm.github.io",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-03629",
+        "ArXiv": "2210.03629",
+        "CorpusId": 252762395
+      },
+      "arxiv_id": "2210.03629",
+      "doi": null,
+      "corpus_id": 252762395
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "23",
+      "ref_key": "S2:0671fd553dd670a4e820553a974bc48040ba0819",
+      "paperId": "0671fd553dd670a4e820553a974bc48040ba0819",
+      "title": "Reflexion: language agents with verbal reinforcement learning",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have been increasingly used to interact with external environments (e.g., games, compilers, APIs) as goal-driven agents. However, it remains challenging for these language agents to quickly and efficiently learn from trial-and-error as traditional reinforcement learning methods require extensive training samples and expensive model fine-tuning. We propose Reflexion, a novel framework to reinforce language agents not by updating weights, but instead through linguistic feedback. Concretely, Reflexion agents verbally reflect on task feedback signals, then maintain their own reflective text in an episodic memory buffer to induce better decision-making in subsequent trials. Reflexion is flexible enough to incorporate various types (scalar values or free-form language) and sources (external or internally simulated) of feedback signals, and obtains significant improvements over a baseline agent across diverse tasks (sequential decision-making, coding, language reasoning). For example, Reflexion achieves a 91% pass@1 accuracy on the HumanEval coding benchmark, surpassing the previous state-of-the-art GPT-4 that achieves 80%. We also conduct ablation and analysis studies using different feedback signals, feedback incorporation methods, and agent types, and provide insights into how they affect performance.",
+      "externalIds": {
+        "DBLP": "conf/nips/ShinnCGNY23",
+        "ArXiv": "2303.11366",
+        "CorpusId": 258833055
+      },
+      "arxiv_id": "2303.11366",
+      "doi": null,
+      "corpus_id": 258833055
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "24",
+      "ref_key": "S2:5f19ae1135a9500940978104ec15a5b8751bc7d2",
+      "paperId": "5f19ae1135a9500940978104ec15a5b8751bc7d2",
+      "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
+      "year": 2022,
+      "abstract": "Chain-of-thought prompting combined with pre-trained large language models has achieved encouraging results on complex reasoning tasks. In this paper, we propose a new decoding strategy, self-consistency, to replace the naive greedy decoding used in chain-of-thought prompting. It first samples a diverse set of reasoning paths instead of only taking the greedy one, and then selects the most consistent answer by marginalizing out the sampled reasoning paths. Self-consistency leverages the intuition that a complex reasoning problem typically admits multiple different ways of thinking leading to its unique correct answer. Our extensive empirical evaluation shows that self-consistency boosts the performance of chain-of-thought prompting with a striking margin on a range of popular arithmetic and commonsense reasoning benchmarks, including GSM8K (+17.9%), SVAMP (+11.0%), AQuA (+12.2%), StrategyQA (+6.4%) and ARC-challenge (+3.9%).",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2203-11171",
+        "ArXiv": "2203.11171",
+        "DOI": "10.48550/arXiv.2203.11171",
+        "CorpusId": 247595263
+      },
+      "arxiv_id": "2203.11171",
+      "doi": "10.48550/arXiv.2203.11171",
+      "corpus_id": 247595263
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "25",
+      "ref_key": "S2:d2a01f9b2a565070ce64ff38eb7cdc26f3ed992a",
+      "paperId": "d2a01f9b2a565070ce64ff38eb7cdc26f3ed992a",
+      "title": "Self-Discover: Large Language Models Self-Compose Reasoning Structures",
+      "year": 2024,
+      "abstract": "We introduce SELF-DISCOVER, a general framework for LLMs to self-discover the task-intrinsic reasoning structures to tackle complex reasoning problems that are challenging for typical prompting methods. Core to the framework is a self-discovery process where LLMs select multiple atomic reasoning modules such as critical thinking and step-by-step thinking, and compose them into an explicit reasoning structure for LLMs to follow during decoding. SELF-DISCOVER substantially improves GPT-4 and PaLM 2's performance on challenging reasoning benchmarks such as BigBench-Hard, grounded agent reasoning, and MATH, by as much as 32% compared to Chain of Thought (CoT). Furthermore, SELF-DISCOVER outperforms inference-intensive methods such as CoT-Self-Consistency by more than 20%, while requiring 10-40x fewer inference compute. Finally, we show that the self-discovered reasoning structures are universally applicable across model families: from PaLM 2-L to GPT-4, and from GPT-4 to Llama2, and share commonalities with human reasoning patterns.",
+      "externalIds": {
+        "ArXiv": "2402.03620",
+        "DBLP": "journals/corr/abs-2402-03620",
+        "DOI": "10.48550/arXiv.2402.03620",
+        "CorpusId": 267500375
+      },
+      "arxiv_id": "2402.03620",
+      "doi": "10.48550/arXiv.2402.03620",
+      "corpus_id": 267500375
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "26",
+      "ref_key": "S2:3aaf6a2cbad5850ad81ab5c163599cb3d523436f",
+      "paperId": "3aaf6a2cbad5850ad81ab5c163599cb3d523436f",
+      "title": "Self-Refine: Iterative Refinement with Self-Feedback",
+      "year": 2023,
+      "abstract": "Like humans, large language models (LLMs) do not always generate the best output on their first try. Motivated by how humans refine their written text, we introduce Self-Refine, an approach for improving initial outputs from LLMs through iterative feedback and refinement. The main idea is to generate an initial output using an LLMs; then, the same LLMs provides feedback for its output and uses it to refine itself, iteratively. Self-Refine does not require any supervised training data, additional training, or reinforcement learning, and instead uses a single LLM as the generator, refiner, and feedback provider. We evaluate Self-Refine across 7 diverse tasks, ranging from dialog response generation to mathematical reasoning, using state-of-the-art (GPT-3.5, ChatGPT, and GPT-4) LLMs. Across all evaluated tasks, outputs generated with Self-Refine are preferred by humans and automatic metrics over those generated with the same LLM using conventional one-step generation, improving by ~20% absolute on average in task performance. Our work demonstrates that even state-of-the-art LLMs like GPT-4 can be further improved at test time using our simple, standalone approach.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2303-17651",
+        "ArXiv": "2303.17651",
+        "DOI": "10.48550/arXiv.2303.17651",
+        "CorpusId": 257900871
+      },
+      "arxiv_id": "2303.17651",
+      "doi": "10.48550/arXiv.2303.17651",
+      "corpus_id": 257900871
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "27",
+      "ref_key": "S2:48c9c29cc7f08012f98474acae912396412d58f3",
+      "paperId": "48c9c29cc7f08012f98474acae912396412d58f3",
+      "title": "Symbolic Learning Enables Self-Evolving Agents",
+      "year": 2024,
+      "abstract": "The AI community has been exploring a pathway to artificial general intelligence (AGI) by developing\"language agents\", which are complex large language models (LLMs) pipelines involving both prompting techniques and tool usage methods. While language agents have demonstrated impressive capabilities for many real-world tasks, a fundamental limitation of current language agents research is that they are model-centric, or engineering-centric. That's to say, the progress on prompts, tools, and pipelines of language agents requires substantial manual engineering efforts from human experts rather than automatically learning from data. We believe the transition from model-centric, or engineering-centric, to data-centric, i.e., the ability of language agents to autonomously learn and evolve in environments, is the key for them to possibly achieve AGI. In this work, we introduce agent symbolic learning, a systematic framework that enables language agents to optimize themselves on their own in a data-centric way using symbolic optimizers. Specifically, we consider agents as symbolic networks where learnable weights are defined by prompts, tools, and the way they are stacked together. Agent symbolic learning is designed to optimize the symbolic network within language agents by mimicking two fundamental algorithms in connectionist learning: back-propagation and gradient descent. Instead of dealing with numeric weights, agent symbolic learning works with natural language simulacrums of weights, loss, and gradients. We conduct proof-of-concept experiments on both standard benchmarks and complex real-world tasks and show that agent symbolic learning enables language agents to update themselves after being created and deployed in the wild, resulting in\"self-evolving agents\".",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2406-18532",
+        "ArXiv": "2406.18532",
+        "DOI": "10.48550/arXiv.2406.18532",
+        "CorpusId": 270737580
+      },
+      "arxiv_id": "2406.18532",
+      "doi": "10.48550/arXiv.2406.18532",
+      "corpus_id": 270737580
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "28",
+      "ref_key": "S2:3e565c544a8639cc9c7568833e484d7610f5e5d4",
+      "paperId": "3e565c544a8639cc9c7568833e484d7610f5e5d4",
+      "title": "Dynamic Prompt Learning via Policy Gradient for Semi-structured Mathematical Reasoning",
+      "year": 2022,
+      "abstract": "Mathematical reasoning, a core ability of human intelligence, presents unique challenges for machines in abstract thinking and logical reasoning. Recent large pre-trained language models such as GPT-3 have achieved remarkable progress on mathematical reasoning tasks written in text form, such as math word problems (MWP). However, it is unknown if the models can handle more complex problems that involve math reasoning over heterogeneous information, such as tabular data. To fill the gap, we present Tabular Math Word Problems (TabMWP), a new dataset containing 38,431 open-domain grade-level problems that require mathematical reasoning on both textual and tabular data. Each question in TabMWP is aligned with a tabular context, which is presented as an image, semi-structured text, and a structured table. There are two types of questions: free-text and multi-choice, and each problem is annotated with gold solutions to reveal the multi-step reasoning process. We evaluate different pre-trained models on TabMWP, including the GPT-3 model in a few-shot setting. As earlier studies suggest, since few-shot GPT-3 relies on the selection of in-context examples, its performance is unstable and can degrade to near chance. The unstable issue is more severe when handling complex problems like TabMWP. To mitigate this, we further propose a novel approach, PromptPG, which utilizes policy gradient to learn to select in-context examples from a small amount of training data and then constructs the corresponding prompt for the test example. Experimental results show that our method outperforms the best baseline by 5.31% on the accuracy metric and reduces the prediction variance significantly compared to random selection, which verifies its effectiveness in selecting in-context examples.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2209-14610",
+        "ArXiv": "2209.14610",
+        "DOI": "10.48550/arXiv.2209.14610",
+        "CorpusId": 252595921
+      },
+      "arxiv_id": "2209.14610",
+      "doi": "10.48550/arXiv.2209.14610",
+      "corpus_id": 252595921
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "29",
+      "ref_key": "S2:70aa016c1f68fd5c0261f26ad20017b8307650af",
+      "paperId": "70aa016c1f68fd5c0261f26ad20017b8307650af",
+      "title": "τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains",
+      "year": 2024,
+      "abstract": "Existing benchmarks do not test language agents on their interaction with human users or ability to follow domain-specific rules, both of which are vital for deploying them in real world applications. We propose $\\tau$-bench, a benchmark emulating dynamic conversations between a user (simulated by language models) and a language agent provided with domain-specific API tools and policy guidelines. We employ an efficient and faithful evaluation process that compares the database state at the end of a conversation with the annotated goal state. We also propose a new metric (pass^k) to evaluate the reliability of agent behavior over multiple trials. Our experiments show that even state-of-the-art function calling agents (like gpt-4o) succeed on<50% of the tasks, and are quite inconsistent (pass^8<25% in retail). Our findings point to the need for methods that can improve the ability of agents to act consistently and follow rules reliably.",
+      "externalIds": {
+        "ArXiv": "2406.12045",
+        "DBLP": "journals/corr/abs-2406-12045",
+        "DOI": "10.48550/arXiv.2406.12045",
+        "CorpusId": 270562578
+      },
+      "arxiv_id": "2406.12045",
+      "doi": "10.48550/arXiv.2406.12045",
+      "corpus_id": 270562578
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "30",
+      "ref_key": "S2:f91c987921cbb63666d7f22a9071693e51e8d16a",
+      "paperId": "f91c987921cbb63666d7f22a9071693e51e8d16a",
+      "title": "TextGrad: Automatic \"Differentiation\" via Text",
+      "year": 2024,
+      "abstract": "AI is undergoing a paradigm shift, with breakthroughs achieved by systems orchestrating multiple large language models (LLMs) and other complex components. As a result, developing principled and automated optimization methods for compound AI systems is one of the most important new challenges. Neural networks faced a similar challenge in its early days until backpropagation and automatic differentiation transformed the field by making optimization turn-key. Inspired by this, we introduce TextGrad, a powerful framework performing automatic ``differentiation'' via text. TextGrad backpropagates textual feedback provided by LLMs to improve individual components of a compound AI system. In our framework, LLMs provide rich, general, natural language suggestions to optimize variables in computation graphs, ranging from code snippets to molecular structures. TextGrad follows PyTorch's syntax and abstraction and is flexible and easy-to-use. It works out-of-the-box for a variety of tasks, where the users only provide the objective function without tuning components or prompts of the framework. We showcase TextGrad's effectiveness and generality across a diverse range of applications, from question answering and molecule optimization to radiotherapy treatment planning. Without modifying the framework, TextGrad improves the zero-shot accuracy of GPT-4o in Google-Proof Question Answering from $51\\%$ to $55\\%$, yields $20\\%$ relative performance gain in optimizing LeetCode-Hard coding problem solutions, improves prompts for reasoning, designs new druglike small molecules with desirable in silico binding, and designs radiation oncology treatment plans with high specificity. TextGrad lays a foundation to accelerate the development of the next-generation of AI systems.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2406-07496",
+        "ArXiv": "2406.07496",
+        "DOI": "10.48550/arXiv.2406.07496",
+        "CorpusId": 270380429
+      },
+      "arxiv_id": "2406.07496",
+      "doi": "10.48550/arXiv.2406.07496",
+      "corpus_id": 270380429
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "31",
+      "ref_key": "S2:2f3822eb380b5e753a6d579f31dfc3ec4c4a0820",
+      "paperId": "2f3822eb380b5e753a6d579f31dfc3ec4c4a0820",
+      "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+      "year": 2023,
+      "abstract": "Language models are increasingly being deployed for general problem solving across a wide range of tasks, but are still confined to token-level, left-to-right decision-making processes during inference. This means they can fall short in tasks that require exploration, strategic lookahead, or where initial decisions play a pivotal role. To surmount these challenges, we introduce a new framework for language model inference, Tree of Thoughts (ToT), which generalizes over the popular Chain of Thought approach to prompting language models, and enables exploration over coherent units of text (thoughts) that serve as intermediate steps toward problem solving. ToT allows LMs to perform deliberate decision making by considering multiple different reasoning paths and self-evaluating choices to decide the next course of action, as well as looking ahead or backtracking when necessary to make global choices. Our experiments show that ToT significantly enhances language models' problem-solving abilities on three novel tasks requiring non-trivial planning or search: Game of 24, Creative Writing, and Mini Crosswords. For instance, in Game of 24, while GPT-4 with chain-of-thought prompting only solved 4% of tasks, our method achieved a success rate of 74%. Code repo with all prompts: https://github.com/princeton-nlp/tree-of-thought-llm.",
+      "externalIds": {
+        "ArXiv": "2305.10601",
+        "DBLP": "conf/nips/YaoYZS00N23",
+        "DOI": "10.48550/arXiv.2305.10601",
+        "CorpusId": 258762525
+      },
+      "arxiv_id": "2305.10601",
+      "doi": "10.48550/arXiv.2305.10601",
+      "corpus_id": 258762525
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "32",
+      "ref_key": "S2:df10728e349ac97ce1e9cb64b6807bf9a660b07a",
+      "paperId": "df10728e349ac97ce1e9cb64b6807bf9a660b07a",
+      "title": "Trace is the Next AutoDiff: Generative Optimization with Rich Feedback, Execution Traces, and LLMs",
+      "year": 2024,
+      "abstract": "We study a class of optimization problems motivated by automating the design and update of AI systems like coding assistants, robots, and copilots. AutoDiff frameworks, like PyTorch, enable efficient end-to-end optimization of differentiable systems. However, general computational workflows can be non-differentiable and involve rich feedback (e.g. console output or user's responses), heterogeneous parameters (e.g. prompts, codes), and intricate objectives (beyond maximizing a score). We investigate end-to-end generative optimization -- using generative models such as LLMs within the optimizer for automatic updating of general computational workflows. We discover that workflow execution traces are akin to back-propagated gradients in AutoDiff and can provide key information to interpret feedback for efficient optimization. Formally, we frame a new mathematical setup, Optimization with Trace Oracle (OPTO). In OPTO, an optimizer receives an execution trace along with feedback on the computed output and updates parameters iteratively. We provide a Python library, Trace, that efficiently converts a workflow optimization problem into an OPTO instance using PyTorch-like syntax. Using Trace, we develop a general LLM-based generative optimizer called OptoPrime. In empirical studies, we find that OptoPrime is capable of first-order numerical optimization, prompt optimization, hyper-parameter tuning, robot controller design, code debugging, etc., and is often competitive with specialized optimizers for each domain. We envision Trace as an open research platform for devising novel generative optimizers and developing the next generation of interactive learning agents. Website: https://microsoft.github.io/Trace/.",
+      "externalIds": {
+        "ArXiv": "2406.16218",
+        "CorpusId": 270702672
+      },
+      "arxiv_id": "2406.16218",
+      "doi": null,
+      "corpus_id": 270702672
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "33",
+      "ref_key": "S2:a3e48720362eff96e17f6196ba1ebc632c98001e",
+      "paperId": "a3e48720362eff96e17f6196ba1ebc632c98001e",
+      "title": "Boosting LLM Agents with Recursive Contemplation for Effective Deception Handling",
+      "year": 2024,
+      "abstract": ",",
+      "externalIds": {
+        "DBLP": "conf/acl/WangLZQCYZWS024",
+        "DOI": "10.18653/v1/2024.findings-acl.591",
+        "CorpusId": 271886224
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2024.findings-acl.591",
+      "corpus_id": 271886224
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "34",
+      "ref_key": "S2:b8cc74d8c2a009cc99a8b285503d86be80d840d9",
+      "paperId": "b8cc74d8c2a009cc99a8b285503d86be80d840d9",
+      "title": "StateFlow: Enhancing LLM Task-Solving through State-Driven Workflows",
+      "year": 2024,
+      "abstract": "It is a notable trend to use Large Language Models (LLMs) to tackle complex tasks, e.g., tasks that require a sequence of actions and dynamic interaction with tools and external environments. In this paper, we propose StateFlow, a novel LLM-based task-solving paradigm that conceptualizes complex task-solving processes as state machines. In StateFlow, we distinguish between\"process grounding\"(via state and state transitions) and\"sub-task solving\"(through actions within a state), enhancing control and interpretability of the task-solving procedure. A state represents the status of a running process. The transitions between states are controlled by heuristic rules or decisions made by the LLM, allowing for a dynamic and adaptive progression. Upon entering a state, a series of actions is executed, involving not only calling LLMs guided by different prompts, but also the utilization of external tools as needed. Our results show that StateFlow significantly enhances LLMs' efficiency. For instance, StateFlow achieves 13% and 28% higher success rates compared to ReAct in InterCode SQL and ALFWorld benchmark, with 5x and 3x less cost respectively. We also show that StateFlow can be combined with iterative refining methods like Reflexion to further improve performance.",
+      "externalIds": {
+        "ArXiv": "2403.11322",
+        "DBLP": "journals/corr/abs-2403-11322",
+        "DOI": "10.48550/arXiv.2403.11322",
+        "CorpusId": 268513153
+      },
+      "arxiv_id": "2403.11322",
+      "doi": "10.48550/arXiv.2403.11322",
+      "corpus_id": 268513153
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "35",
+      "ref_key": "S2:22655979df781d222eaf812b0d325fa9adf11594",
+      "paperId": "22655979df781d222eaf812b0d325fa9adf11594",
+      "title": "HotpotQA: A Dataset for Diverse, Explainable Multi-hop Question Answering",
+      "year": 2018,
+      "abstract": "Existing question answering (QA) datasets fail to train QA systems to perform complex reasoning and provide explanations for answers. We introduce HotpotQA, a new dataset with 113k Wikipedia-based question-answer pairs with four key features: (1) the questions require finding and reasoning over multiple supporting documents to answer; (2) the questions are diverse and not constrained to any pre-existing knowledge bases or knowledge schemas; (3) we provide sentence-level supporting facts required for reasoning, allowing QA systems to reason with strong supervision and explain the predictions; (4) we offer a new type of factoid comparison questions to test QA systems’ ability to extract relevant facts and perform necessary comparison. We show that HotpotQA is challenging for the latest QA systems, and the supporting facts enable models to improve performance and make explainable predictions.",
+      "externalIds": {
+        "ACL": "D18-1259",
+        "ArXiv": "1809.09600",
+        "DBLP": "journals/corr/abs-1809-09600",
+        "MAG": "2889787757",
+        "DOI": "10.18653/v1/D18-1259",
+        "CorpusId": 52822214
+      },
+      "arxiv_id": "1809.09600",
+      "doi": "10.18653/v1/D18-1259",
+      "corpus_id": 52822214
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "36",
+      "ref_key": "S2:5e4597eb21a393b23e473cf66cb5ae8b27cab03e",
+      "paperId": "5e4597eb21a393b23e473cf66cb5ae8b27cab03e",
+      "title": "ExpeL: LLM Agents Are Experiential Learners",
+      "year": 2023,
+      "abstract": "The recent surge in research interest in applying large language models (LLMs) to decision-making tasks has flourished by leveraging the extensive world knowledge embedded in LLMs. While there is a growing demand to tailor LLMs for custom decision-making tasks, finetuning them for specific tasks is resource-intensive and may diminish the model's generalization capabilities. Moreover, state-of-the-art language models like GPT-4 and Claude are primarily accessible through API calls, with their parametric weights remaining proprietary and unavailable to the public. This scenario emphasizes the growing need for new methodologies that allow learning from agent experiences without requiring parametric updates. To address these problems, we introduce the Experiential Learning (ExpeL) agent. Our agent autonomously gathers experiences and extracts knowledge using natural language from a collection of training tasks. At inference, the agent recalls its extracted insights and past experiences to make informed decisions. Our empirical results highlight the robust learning efficacy of the ExpeL agent, indicating a consistent enhancement in its performance as it accumulates experiences. We further explore the emerging capabilities and transfer learning potential of the ExpeL agent through qualitative observations and additional experiments.",
+      "externalIds": {
+        "DBLP": "conf/aaai/Zhao0XLLH24",
+        "ArXiv": "2308.10144",
+        "DOI": "10.48550/arXiv.2308.10144",
+        "CorpusId": 261048772
+      },
+      "arxiv_id": "2308.10144",
+      "doi": "10.48550/arXiv.2308.10144",
+      "corpus_id": 261048772
+    },
+    {
+      "paper_id": "2410.16392",
+      "ref_index": "37",
+      "ref_key": "S2:e41482f4ee984f17382f6cdd900df094d928be06",
+      "paperId": "e41482f4ee984f17382f6cdd900df094d928be06",
+      "title": "WebArena: A Realistic Web Environment for Building Autonomous Agents",
+      "year": 2023,
+      "abstract": "With advances in generative AI, there is now potential for autonomous agents to manage daily tasks via natural language commands. However, current agents are primarily created and tested in simplified synthetic environments, leading to a disconnect with real-world scenarios. In this paper, we build an environment for language-guided agents that is highly realistic and reproducible. Specifically, we focus on agents that perform tasks on the web, and create an environment with fully functional websites from four common domains: e-commerce, social forum discussions, collaborative software development, and content management. Our environment is enriched with tools (e.g., a map) and external knowledge bases (e.g., user manuals) to encourage human-like task-solving. Building upon our environment, we release a set of benchmark tasks focusing on evaluating the functional correctness of task completions. The tasks in our benchmark are diverse, long-horizon, and designed to emulate tasks that humans routinely perform on the internet. We experiment with several baseline agents, integrating recent techniques such as reasoning before acting. The results demonstrate that solving complex tasks is challenging: our best GPT-4-based agent only achieves an end-to-end task success rate of 14.41%, significantly lower than the human performance of 78.24%. These results highlight the need for further development of robust agents, that current state-of-the-art large language models are far from perfect performance in these real-life tasks, and that WebArena can be used to measure such progress.",
+      "externalIds": {
+        "DBLP": "conf/iclr/ZhouX0ZLSCOBF0N24",
+        "ArXiv": "2307.13854",
+        "DOI": "10.48550/arXiv.2307.13854",
+        "CorpusId": 260164780
+      },
+      "arxiv_id": "2307.13854",
+      "doi": "10.48550/arXiv.2307.13854",
+      "corpus_id": 260164780
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "LLM-based Optimization of Compound AI Systems": {
+        "Workflows": {
+          "LLM with Tools": {
+            "a1426b13b74dbad17b34606d25aabe1d61f6e11a": {},
+            "9eaa62a2a45634c6e922ed1a3f2e44b4424398fb": {},
+            "70aa016c1f68fd5c0261f26ad20017b8307650af": {}
+          },
+          "LLM with Code Interpreter": {
+            "Reasoning": {
+              "6c1e1cc1e0e1f8fd026fe517607b2d4535565fa7": {},
+              "6c943670dca38bfc7c8b477ae7c2d1fba1ad3691": {}
+            },
+            "Acting": {
+              "78fbb6e7a1c568a04e8c935aa9909d0c942ea5f6": {},
+              "cc0f0cb09a73f82ed44d900f5ca710bec784acc1": {},
+              "b8cc74d8c2a009cc99a8b285503d86be80d840d9": {}
+            }
+          },
+          "RAG": {
+            "Multi-hop": {
+              "03532123ccffae8d411264320e8a5ae2b6eddea0": {},
+              "f208ea909fa7f54fea82def9a92fd81dfc758c39": {}
+            },
+            "Agentic": {
+              "99832586d55f540f603637e458a292406a0ed75d": {}
+            }
+          },
+          "Search with LLM calls": {
+            "Tree Search": {
+              "700bd9681f1b9e9e2212e10415d27b11c7e6836b": {},
+              "5dbffedcabe3fa43060ebbe2b1789500edfd871f": {},
+              "2f3822eb380b5e753a6d579f31dfc3ec4c4a0820": {}
+            },
+            "Majority Vote": {
+              "5f19ae1135a9500940978104ec15a5b8751bc7d2": {}
+            },
+            "Refine": {
+              "c7ecb703d810dfb0794b7a168eb5e2a6b381a534": {},
+              "0671fd553dd670a4e820553a974bc48040ba0819": {},
+              "3aaf6a2cbad5850ad81ab5c163599cb3d523436f": {}
+            }
+          }
+        },
+        "Optimization": {
+          "Supervision Signal": {
+            "Static Program Analysis": {
+              "Instruction": {
+                "4610ffb1b016acaa82a2065ffd1a3adbae1ce722": {}
+              },
+              "Reasoning": {
+                "d2a01f9b2a565070ce64ff38eb7cdc26f3ed992a": {}
+              },
+              "Tools": {
+                "a1426b13b74dbad17b34606d25aabe1d61f6e11a": {}
+              }
+            },
+            "Dynamic Program Analysis": {
+              "Instruction": {
+                "c76dd4a70361c3afd2e19d046343e2dedd16ecc3": {}
+              },
+              "Tools": {
+                "90ee7c1d50793f7f0da731a1c07d6d2fc47324ac": {}
+              },
+              "Insights": {
+                "5e4597eb21a393b23e473cf66cb5ae8b27cab03e": {}
+              }
+            }
+          },
+          "Credit Assignment with Dynamic Program Analysis": {
+            "Back-propagation": {
+              "48c9c29cc7f08012f98474acae912396412d58f3": {},
+              "f91c987921cbb63666d7f22a9071693e51e8d16a": {}
+            },
+            "Trace Propagation": {
+              "8544160c4fb07e78a965a8223cff5c361e9df090": {},
+              "df10728e349ac97ce1e9cb64b6807bf9a660b07a": {}
+            }
+          }
+        },
+        "Applications": {
+          "RAG ": {
+            "8544160c4fb07e78a965a8223cff5c361e9df090": {},
+            "22655979df781d222eaf812b0d325fa9adf11594": {}
+          },
+          "Algebra Tabular Processing": {
+            "57d1e7ac339e783898f2c3b1af55737cbeee9fc5": {},
+            "3e565c544a8639cc9c7568833e484d7610f5e5d4": {}
+          },
+          "Sequential Decision-Making": {
+            "398a0625e8707a0b41ac58eaec51e8feb87dd7cb": {},
+            "23525374cfd3af714f3ffb7a203b1ef3253333fe": {},
+            "9474b463654fd92a62c103b21f95aed94b087907": {},
+            "e41482f4ee984f17382f6cdd900df094d928be06": {}
+          }
+        },
+        "Discussion": {
+          "Process Supervision": {
+            "8deb5fd40e310dc4feb27f7db7019e734b44631b": {},
+            "0789104dd0dfe229be1cff270e4c94d7791454bb": {}
+          },
+          "Safety": {
+            "b6948a9e8b3eec5a56a80c69727154fcd7ececce": {},
+            "a3e48720362eff96e17f6196ba1ebc632c98001e": {}
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000001",
+        "paperId": "a1426b13b74dbad17b34606d25aabe1d61f6e11a",
+        "ref_index": "7",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Workflows",
+          "LLM with Tools"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000002",
+        "paperId": "9eaa62a2a45634c6e922ed1a3f2e44b4424398fb",
+        "ref_index": "15",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Workflows",
+          "LLM with Tools"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000003",
+        "paperId": "70aa016c1f68fd5c0261f26ad20017b8307650af",
+        "ref_index": "29",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Workflows",
+          "LLM with Tools"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000004",
+        "paperId": "6c1e1cc1e0e1f8fd026fe517607b2d4535565fa7",
+        "ref_index": "18",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Workflows",
+          "LLM with Code Interpreter",
+          "Reasoning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000005",
+        "paperId": "6c943670dca38bfc7c8b477ae7c2d1fba1ad3691",
+        "ref_index": "19",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Workflows",
+          "LLM with Code Interpreter",
+          "Reasoning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000006",
+        "paperId": "78fbb6e7a1c568a04e8c935aa9909d0c942ea5f6",
+        "ref_index": "6",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Workflows",
+          "LLM with Code Interpreter",
+          "Acting"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000007",
+        "paperId": "cc0f0cb09a73f82ed44d900f5ca710bec784acc1",
+        "ref_index": "9",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Workflows",
+          "LLM with Code Interpreter",
+          "Acting"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000008",
+        "paperId": "b8cc74d8c2a009cc99a8b285503d86be80d840d9",
+        "ref_index": "34",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Workflows",
+          "LLM with Code Interpreter",
+          "Acting"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000009",
+        "paperId": "03532123ccffae8d411264320e8a5ae2b6eddea0",
+        "ref_index": "10",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Workflows",
+          "RAG",
+          "Multi-hop"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000010",
+        "paperId": "f208ea909fa7f54fea82def9a92fd81dfc758c39",
+        "ref_index": "13",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Workflows",
+          "RAG",
+          "Multi-hop"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000011",
+        "paperId": "99832586d55f540f603637e458a292406a0ed75d",
+        "ref_index": "22",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Workflows",
+          "RAG",
+          "Agentic"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000012",
+        "paperId": "700bd9681f1b9e9e2212e10415d27b11c7e6836b",
+        "ref_index": "14",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Workflows",
+          "Search with LLM calls",
+          "Tree Search"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000013",
+        "paperId": "5dbffedcabe3fa43060ebbe2b1789500edfd871f",
+        "ref_index": "21",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Workflows",
+          "Search with LLM calls",
+          "Tree Search"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000014",
+        "paperId": "2f3822eb380b5e753a6d579f31dfc3ec4c4a0820",
+        "ref_index": "31",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Workflows",
+          "Search with LLM calls",
+          "Tree Search"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000015",
+        "paperId": "5f19ae1135a9500940978104ec15a5b8751bc7d2",
+        "ref_index": "24",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Workflows",
+          "Search with LLM calls",
+          "Majority Vote"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000016",
+        "paperId": "c7ecb703d810dfb0794b7a168eb5e2a6b381a534",
+        "ref_index": "16",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Workflows",
+          "Search with LLM calls",
+          "Refine"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000017",
+        "paperId": "0671fd553dd670a4e820553a974bc48040ba0819",
+        "ref_index": "23",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Workflows",
+          "Search with LLM calls",
+          "Refine"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000018",
+        "paperId": "3aaf6a2cbad5850ad81ab5c163599cb3d523436f",
+        "ref_index": "26",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Workflows",
+          "Search with LLM calls",
+          "Refine"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000019",
+        "paperId": "4610ffb1b016acaa82a2065ffd1a3adbae1ce722",
+        "ref_index": "4",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Optimization",
+          "Supervision Signal",
+          "Static Program Analysis",
+          "Instruction"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000020",
+        "paperId": "d2a01f9b2a565070ce64ff38eb7cdc26f3ed992a",
+        "ref_index": "25",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Optimization",
+          "Supervision Signal",
+          "Static Program Analysis",
+          "Reasoning"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000021",
+        "paperId": "a1426b13b74dbad17b34606d25aabe1d61f6e11a",
+        "ref_index": "7",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Optimization",
+          "Supervision Signal",
+          "Static Program Analysis",
+          "Tools"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000022",
+        "paperId": "c76dd4a70361c3afd2e19d046343e2dedd16ecc3",
+        "ref_index": "20",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Optimization",
+          "Supervision Signal",
+          "Dynamic Program Analysis",
+          "Instruction"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000023",
+        "paperId": "90ee7c1d50793f7f0da731a1c07d6d2fc47324ac",
+        "ref_index": "2",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Optimization",
+          "Supervision Signal",
+          "Dynamic Program Analysis",
+          "Tools"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000024",
+        "paperId": "5e4597eb21a393b23e473cf66cb5ae8b27cab03e",
+        "ref_index": "36",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Optimization",
+          "Supervision Signal",
+          "Dynamic Program Analysis",
+          "Insights"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000025",
+        "paperId": "48c9c29cc7f08012f98474acae912396412d58f3",
+        "ref_index": "27",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Optimization",
+          "Credit Assignment with Dynamic Program Analysis",
+          "Back-propagation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000026",
+        "paperId": "f91c987921cbb63666d7f22a9071693e51e8d16a",
+        "ref_index": "30",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Optimization",
+          "Credit Assignment with Dynamic Program Analysis",
+          "Back-propagation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000027",
+        "paperId": "8544160c4fb07e78a965a8223cff5c361e9df090",
+        "ref_index": "17",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Optimization",
+          "Credit Assignment with Dynamic Program Analysis",
+          "Trace Propagation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000028",
+        "paperId": "df10728e349ac97ce1e9cb64b6807bf9a660b07a",
+        "ref_index": "32",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Optimization",
+          "Credit Assignment with Dynamic Program Analysis",
+          "Trace Propagation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000029",
+        "paperId": "8544160c4fb07e78a965a8223cff5c361e9df090",
+        "ref_index": "17",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Applications",
+          "RAG "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000030",
+        "paperId": "22655979df781d222eaf812b0d325fa9adf11594",
+        "ref_index": "35",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Applications",
+          "RAG "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000031",
+        "paperId": "57d1e7ac339e783898f2c3b1af55737cbeee9fc5",
+        "ref_index": "12",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Applications",
+          "Algebra Tabular Processing"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000032",
+        "paperId": "3e565c544a8639cc9c7568833e484d7610f5e5d4",
+        "ref_index": "28",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Applications",
+          "Algebra Tabular Processing"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000033",
+        "paperId": "398a0625e8707a0b41ac58eaec51e8feb87dd7cb",
+        "ref_index": "0",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Applications",
+          "Sequential Decision-Making"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000034",
+        "paperId": "23525374cfd3af714f3ffb7a203b1ef3253333fe",
+        "ref_index": "1",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Applications",
+          "Sequential Decision-Making"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000035",
+        "paperId": "9474b463654fd92a62c103b21f95aed94b087907",
+        "ref_index": "5",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Applications",
+          "Sequential Decision-Making"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000036",
+        "paperId": "e41482f4ee984f17382f6cdd900df094d928be06",
+        "ref_index": "37",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Applications",
+          "Sequential Decision-Making"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000037",
+        "paperId": "8deb5fd40e310dc4feb27f7db7019e734b44631b",
+        "ref_index": "8",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Discussion",
+          "Process Supervision"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000038",
+        "paperId": "0789104dd0dfe229be1cff270e4c94d7791454bb",
+        "ref_index": "11",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Discussion",
+          "Process Supervision"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000039",
+        "paperId": "b6948a9e8b3eec5a56a80c69727154fcd7ececce",
+        "ref_index": "3",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Discussion",
+          "Safety"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16392",
+        "arxiv_id": "2410.16392",
+        "leaf_mention_id": "2410.16392::000040",
+        "paperId": "a3e48720362eff96e17f6196ba1ebc632c98001e",
+        "ref_index": "33",
+        "path": [
+          "LLM-based Optimization of Compound AI Systems",
+          "Discussion",
+          "Safety"
+        ],
+        "depth": 3,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 40,
+      "unique_leaf_paper_count": 38,
+      "multi_membership_extra_mentions": 2,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

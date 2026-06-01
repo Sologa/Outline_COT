@@ -1,0 +1,2300 @@
+{
+  "paper_id": "2301.00234",
+  "arxiv_id": "2301.00234",
+  "title": "A Survey on In-context Learning",
+  "ref_meta": [
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "0",
+      "ref_key": "S2:11ae58636a5daf0ea1297f1c4ee94042fcebefa8",
+      "paperId": "11ae58636a5daf0ea1297f1c4ee94042fcebefa8",
+      "title": "Birth of a Transformer: A Memory Viewpoint",
+      "year": 2023,
+      "abstract": "Large language models based on transformers have achieved great empirical successes. However, as they are deployed more widely, there is a growing need to better understand their internal mechanisms in order to make them more reliable. These models appear to store vast amounts of knowledge from their training data, and to adapt quickly to new information provided in their context or prompt. We study how transformers balance these two types of knowledge by considering a synthetic setup where tokens are generated from either global or context-specific bigram distributions. By a careful empirical analysis of the training process on a simplified two-layer transformer, we illustrate the fast learning of global bigrams and the slower development of an\"induction head\"mechanism for the in-context bigrams. We highlight the role of weight matrices as associative memories, provide theoretical insights on how gradients enable their learning during training, and study the role of data-distributional properties.",
+      "externalIds": {
+        "DBLP": "conf/nips/BiettiCBJB23",
+        "ArXiv": "2306.00802",
+        "DOI": "10.48550/arXiv.2306.00802",
+        "CorpusId": 258999187
+      },
+      "arxiv_id": "2306.00802",
+      "doi": "10.48550/arXiv.2306.00802",
+      "corpus_id": 258999187
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "1",
+      "ref_key": "S2:1eddc4e36632342309885131a63ebd0bac1d837f",
+      "paperId": "1eddc4e36632342309885131a63ebd0bac1d837f",
+      "title": "ICL Markup: Structuring In-Context Learning using Soft-Token Tags",
+      "year": 2023,
+      "abstract": "Large pretrained language models (LLMs) can be rapidly adapted to a wide variety of tasks via a text-to-text approach, where the instruction and input are fed to the model in natural language. Combined with in-context learning (ICL), this paradigm is impressively flexible and powerful. However, it also burdens users with an overwhelming number of choices, many of them arbitrary. Inspired by markup languages like HTML, we contribute a method of using soft-token tags to compose prompt templates. This approach reduces arbitrary decisions and streamlines the application of ICL. Our method is a form of meta-learning for ICL; it learns these tags in advance during a parameter-efficient fine-tuning ``warm-up'' process. The tags can subsequently be used in templates for ICL on new, unseen tasks without any additional fine-tuning. Our experiments with this approach yield promising initial results, improving LLM performance on important enterprise applications such as few-shot and open-world intent detection, as well as text classification in news and legal domains.",
+      "externalIds": {
+        "ArXiv": "2312.07405",
+        "DBLP": "journals/corr/abs-2312-07405",
+        "DOI": "10.48550/arXiv.2312.07405",
+        "CorpusId": 266174713
+      },
+      "arxiv_id": "2312.07405",
+      "doi": "10.48550/arXiv.2312.07405",
+      "corpus_id": 266174713
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "2",
+      "ref_key": "S2:0a9030dd6cc2d438509f7568c1081d58c2523d5c",
+      "paperId": "0a9030dd6cc2d438509f7568c1081d58c2523d5c",
+      "title": "Fine-tune Language Models to Approximate Unbiased In-context Learning",
+      "year": 2023,
+      "abstract": "In-context learning (ICL) is an astonishing emergent ability of large language models (LLMs). By presenting a prompt that includes multiple input-output pairs as examples and introducing a new query input, models can generate the corresponding output. However, the performance of models heavily relies on the quality of the input prompt when implementing in-context learning. Biased or imbalanced input prompts can significantly degrade the performance of language models. To address this issue, we introduce a reweighted algorithm called RICL (Reweighted In-context Learning). This algorithm fine-tunes language models using an unbiased validation set to determine the optimal weight for each input-output example to approximate unbiased in-context learning. Furthermore, we also introduce a low-cost reweighted algorithm, a linear optimal weight approximation algorithm called LARICL (Linear Approximation of Reweighted In-context Learning). This algorithm requires minimal training cost while providing effective results. We prove the convergence of our algorithm and validate its performance through experiments conducted on a numerical dataset. The experimental findings reveal a substantial improvement in comparison to benchmarks including the performance of casual prompt-based in-context learning and the performance of a classic fine-tuning method.",
+      "externalIds": {
+        "ArXiv": "2310.03331",
+        "DBLP": "journals/corr/abs-2310-03331",
+        "DOI": "10.48550/arXiv.2310.03331",
+        "CorpusId": 263672156
+      },
+      "arxiv_id": "2310.03331",
+      "doi": "10.48550/arXiv.2310.03331",
+      "corpus_id": 263672156
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "3",
+      "ref_key": "S2:3c8444cc4e96bdbe6853b886caf032afd1ee1d20",
+      "paperId": "3c8444cc4e96bdbe6853b886caf032afd1ee1d20",
+      "title": "CausalLM is not optimal for in-context learning",
+      "year": 2023,
+      "abstract": "Recent empirical evidence indicates that transformer based in-context learning performs better when using a prefix language model (prefixLM), in which in-context samples can all attend to each other, compared to causal language models (causalLM), which use auto-regressive attention that prohibits in-context samples to attend to future samples. While this result is intuitive, it is not understood from a theoretical perspective. In this paper we take a theoretical approach and analyze the convergence behavior of prefixLM and causalLM under a certain parameter construction. Our analysis shows that both LM types converge to their stationary points at a linear rate, but that while prefixLM converges to the optimal solution of linear regression, causalLM convergence dynamics follows that of an online gradient descent algorithm, which is not guaranteed to be optimal even as the number of samples grows infinitely. We supplement our theoretical claims with empirical experiments over synthetic and real tasks and using various types of transformers. Our experiments verify that causalLM consistently underperforms prefixLM in all settings.",
+      "externalIds": {
+        "ArXiv": "2308.06912",
+        "DBLP": "conf/iclr/0002LWGS24",
+        "CorpusId": 260887420
+      },
+      "arxiv_id": "2308.06912",
+      "doi": null,
+      "corpus_id": 260887420
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "4",
+      "ref_key": "S2:36f7bc27c9a37eb337c35df4ae86f148e13d4e9a",
+      "paperId": "36f7bc27c9a37eb337c35df4ae86f148e13d4e9a",
+      "title": "Understanding In-Context Learning via Supportive Pretraining Data",
+      "year": 2023,
+      "abstract": "In-context learning (ICL) improves language models’ performance on a variety of NLP tasks by simply demonstrating a handful of examples at inference time. It is not well understood why ICL ability emerges, as the model has never been specifically trained on such demonstrations. Unlike prior work that explores implicit mechanisms behind ICL, we study ICL via investigating the pretraining data. Specifically, we first adapt an iterative, gradient-based approach to find a small subset of pretraining data that supports ICL. We observe that a continued pretraining on this small subset significantly improves the model’s ICL ability, by up to 18%. We then compare the supportive subset constrastively with random subsets of pretraining data and discover: (1) The supportive pretraining data to ICL do not have a higher domain relevance to downstream tasks. (2) The supportive pretraining data have a higher mass of rarely occurring, long-tail tokens. (3) The supportive pretraining data are challenging examples where the information gain from long-range context is below average, indicating learning to incorporate difficult long-range context encourages ICL. Our work takes a first step towards understanding ICL via analyzing instance-level pretraining data. Our insights have a potential to enhance the ICL ability of language models by actively guiding the construction of pretraining data in the future.",
+      "externalIds": {
+        "ACL": "2023.acl-long.708",
+        "DBLP": "conf/acl/HanSMTCW23",
+        "ArXiv": "2306.15091",
+        "DOI": "10.48550/arXiv.2306.15091",
+        "CorpusId": 259262608
+      },
+      "arxiv_id": "2306.15091",
+      "doi": "10.48550/arXiv.2306.15091",
+      "corpus_id": 259262608
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "5",
+      "ref_key": "S2:663662fbd9be73f99c764a7b85982bf825acfe8a",
+      "paperId": "663662fbd9be73f99c764a7b85982bf825acfe8a",
+      "title": "The Dual Form of Neural Networks Revisited: Connecting Test Time Predictions to Training Patterns via Spotlights of Attention",
+      "year": 2022,
+      "abstract": "Linear layers in neural networks (NNs) trained by gradient descent can be expressed as a key-value memory system which stores all training datapoints and the initial weights, and produces outputs using unnormalised dot attention over the entire training experience. While this has been technically known since the 1960s, no prior work has effectively studied the operations of NNs in such a form, presumably due to prohibitive time and space complexities and impractical model sizes, all of them growing linearly with the number of training patterns which may get very large. However, this dual formulation offers a possibility of directly visualising how an NN makes use of training patterns at test time, by examining the corresponding attention weights. We conduct experiments on small scale supervised image classification tasks in single-task, multi-task, and continual learning settings, as well as language modelling, and discuss potentials and limits of this view for better understanding and interpreting how NNs exploit training patterns. Our code is public.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2202-05798",
+        "ArXiv": "2202.05798",
+        "CorpusId": 246823378
+      },
+      "arxiv_id": "2202.05798",
+      "doi": null,
+      "corpus_id": 246823378
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "6",
+      "ref_key": "S2:63914b58bb944edbccba8304fd3e5bccb232a964",
+      "paperId": "63914b58bb944edbccba8304fd3e5bccb232a964",
+      "title": "MEND: Meta dEmonstratioN Distillation for Efficient and Effective In-Context Learning",
+      "year": 2024,
+      "abstract": "Large Language models (LLMs) have demonstrated impressive in-context learning (ICL) capabilities, where a LLM makes predictions for a given test input together with a few input-output pairs (demonstrations). Nevertheless, the inclusion of demonstrations leads to a quadratic increase in the computational overhead of the self-attention mechanism. Existing solutions attempt to distill lengthy demonstrations into compact vectors. However, they often require task-specific retraining or compromise LLM's in-context learning performance. To mitigate these challenges, we present Meta dEmonstratioN Distillation (MEND), where a language model learns to distill any lengthy demonstrations into vectors without retraining for a new downstream task. We exploit the knowledge distillation to enhance alignment between MEND and LLM, achieving both efficiency and effectiveness simultaneously. MEND is endowed with the meta-knowledge of distilling demonstrations through a two-stage training process, which includes meta-distillation pretraining and fine-tuning. Comprehensive evaluations across seven diverse ICL task partitions using decoder-only (GPT-2) and encoder-decoder (T5) attest to MEND's prowess. It not only matches but often outperforms the Vanilla ICL as well as other state-of-the-art distillation models, while significantly reducing the computational demands. This innovation promises enhanced scalability and efficiency for the practical deployment of large language models",
+      "externalIds": {
+        "DBLP": "conf/iclr/0001MLLLG24",
+        "ArXiv": "2403.06914",
+        "DOI": "10.48550/arXiv.2403.06914",
+        "CorpusId": 268363458
+      },
+      "arxiv_id": "2403.06914",
+      "doi": "10.48550/arXiv.2403.06914",
+      "corpus_id": 268363458
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "7",
+      "ref_key": "S2:1733eb7792f7a43dd21f51f4d1017a1bffd217b5",
+      "paperId": "1733eb7792f7a43dd21f51f4d1017a1bffd217b5",
+      "title": "Lost in the Middle: How Language Models Use Long Contexts",
+      "year": 2023,
+      "abstract": "While recent language models have the ability to take long contexts as input, relatively little is known about how well they use longer context. We analyze the performance of language models on two tasks that require identifying relevant information in their input contexts: multi-document question answering and key-value retrieval. We find that performance can degrade significantly when changing the position of relevant information, indicating that current language models do not robustly make use of information in long input contexts. In particular, we observe that performance is often highest when relevant information occurs at the beginning or end of the input context, and significantly degrades when models must access relevant information in the middle of long contexts, even for explicitly long-context models. Our analysis provides a better understanding of how language models use their input context and provides new evaluation protocols for future long-context language models.",
+      "externalIds": {
+        "DBLP": "journals/tacl/LiuLHPBPL24a",
+        "ArXiv": "2307.03172",
+        "ACL": "2024.tacl-1.9",
+        "DOI": "10.1162/tacl_a_00638",
+        "CorpusId": 259360665
+      },
+      "arxiv_id": "2307.03172",
+      "doi": "10.1162/tacl_a_00638",
+      "corpus_id": 259360665
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "8",
+      "ref_key": "S2:7fa85f9c0fe44f1bf9e58a55f0f009296578c2f0",
+      "paperId": "7fa85f9c0fe44f1bf9e58a55f0f009296578c2f0",
+      "title": "What In-Context Learning \"Learns\" In-Context: Disentangling Task Recognition and Task Learning",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) exploit in-context learning (ICL) to solve tasks with only a few demonstrations, but its mechanisms are not yet well-understood. Some works suggest that LLMs only recall already learned concepts from pre-training, while others hint that ICL performs implicit learning over demonstrations. We characterize two ways through which ICL leverages demonstrations. Task recognition (TR) captures the extent to which LLMs can recognize a task through demonstrations -- even without ground-truth labels -- and apply their pre-trained priors, whereas task learning (TL) is the ability to capture new input-label mappings unseen in pre-training. Using a wide range of classification datasets and three LLM families (GPT-3, LLaMA and OPT), we design controlled experiments to disentangle the roles of TR and TL in ICL. We show that (1) models can achieve non-trivial performance with only TR, and TR does not further improve with larger models or more demonstrations; (2) LLMs acquire TL as the model scales, and TL's performance consistently improves with more demonstrations in context. Our findings unravel two different forces behind ICL and we advocate for discriminating them in future ICL research due to their distinct nature.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-09731",
+        "ArXiv": "2305.09731",
+        "DOI": "10.48550/arXiv.2305.09731",
+        "CorpusId": 258740972
+      },
+      "arxiv_id": "2305.09731",
+      "doi": "10.48550/arXiv.2305.09731",
+      "corpus_id": 258740972
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "9",
+      "ref_key": "S2:d395c771f6537259610497ba218cce5b9bfc2c50",
+      "paperId": "d395c771f6537259610497ba218cce5b9bfc2c50",
+      "title": "In-Context Pretraining: Language Modeling Beyond Document Boundaries",
+      "year": 2023,
+      "abstract": "Large language models (LMs) are currently trained to predict tokens given document prefixes, enabling them to directly perform long-form generation and prompting-style tasks which can be reduced to document completion. Existing pretraining pipelines train LMs by concatenating random sets of short documents to create input contexts but the prior documents provide no signal for predicting the next document. We instead present In-Context Pretraining, a new approach where language models are pretrained on a sequence of related documents, thereby explicitly encouraging them to read and reason across document boundaries. We can do In-Context Pretraining by simply changing the document ordering so that each context contains related documents, and directly applying existing pretraining pipelines. However, this document sorting problem is challenging. There are billions of documents and we would like the sort to maximize contextual similarity for every document without repeating any data. To do this, we introduce approximate algorithms for finding related documents with efficient nearest neighbor search and constructing coherent input contexts with a graph traversal algorithm. Our experiments show In-Context Pretraining offers a simple and scalable approach to significantly enhance LMs'performance: we see notable improvements in tasks that require more complex contextual reasoning, including in-context learning (+8%), reading comprehension (+15%), faithfulness to previous contexts (+16%), long-context reasoning (+5%), and retrieval augmentation (+9%).",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-10638",
+        "ArXiv": "2310.10638",
+        "DOI": "10.48550/arXiv.2310.10638",
+        "CorpusId": 264172290
+      },
+      "arxiv_id": "2310.10638",
+      "doi": "10.48550/arXiv.2310.10638",
+      "corpus_id": 264172290
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "10",
+      "ref_key": "S2:8f936af93fb2b52b9678ff8f17c1ebe8de236a88",
+      "paperId": "8f936af93fb2b52b9678ff8f17c1ebe8de236a88",
+      "title": "Large Language Models Can be Lazy Learners: Analyze Shortcuts in In-Context Learning",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have recently shown great potential for in-context learning, where LLMs learn a new task simply by conditioning on a few input-label pairs (prompts). Despite their potential, our understanding of the factors influencing end-task performance and the robustness of in-context learning remains limited. This paper aims to bridge this knowledge gap by investigating the reliance of LLMs on shortcuts or spurious correlations within prompts. Through comprehensive experiments on classification and extraction tasks, we reveal that LLMs are\"lazy learners\"that tend to exploit shortcuts in prompts for downstream tasks. Additionally, we uncover a surprising finding that larger models are more likely to utilize shortcuts in prompts during inference. Our findings provide a new perspective on evaluating robustness in in-context learning and pose new challenges for detecting and mitigating the use of shortcuts in prompts.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-17256",
+        "ArXiv": "2305.17256",
+        "DOI": "10.18653/v1/2023.findings-acl.284",
+        "CorpusId": 258959244
+      },
+      "arxiv_id": "2305.17256",
+      "doi": "10.18653/v1/2023.findings-acl.284",
+      "corpus_id": 258959244
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "11",
+      "ref_key": "S2:3d5922d71a370f32b7f232a596def914f67eebd1",
+      "paperId": "3d5922d71a370f32b7f232a596def914f67eebd1",
+      "title": "Self-Adaptive In-Context Learning: An Information Compression Perspective for In-Context Example Selection and Ordering",
+      "year": 2022,
+      "abstract": "Despite the surprising few-shot performance of in-context learning (ICL), it is still a common practice to randomly sample examples to serve as context. This paper advocates a new principle for ICL: self-adaptive in-context learning. The self-adaption mechanism is introduced to help each sample find an in-context example organization (i.e., selection and permutation) that can derive the correct prediction, thus maximizing performance. To validate the effectiveness of self-adaptive ICL, we propose a general select-then-rank framework and instantiate it with new selection and ranking algorithms. Upon extensive evaluation on eight different NLP datasets, our self-adaptive ICL method achieves a 40% relative improvement over the common practice setting. Further analysis reveals the enormous potential of self-adaptive ICL that it might be able to close the gap between ICL and finetuning given more advanced algorithms. Our code will be released to facilitate future research.",
+      "externalIds": {
+        "ACL": "2023.acl-long.79",
+        "ArXiv": "2212.10375",
+        "DBLP": "journals/corr/abs-2212-10375",
+        "DOI": "10.48550/arXiv.2212.10375",
+        "CorpusId": 254877590
+      },
+      "arxiv_id": "2212.10375",
+      "doi": "10.48550/arXiv.2212.10375",
+      "corpus_id": 254877590
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "12",
+      "ref_key": "S2:419a7e9df13a3a03234aba0f05f48291261b8e59",
+      "paperId": "419a7e9df13a3a03234aba0f05f48291261b8e59",
+      "title": "Pretraining Data Mixtures Enable Narrow Model Selection Capabilities in Transformer Models",
+      "year": 2023,
+      "abstract": "Transformer models, notably large language models (LLMs), have the remarkable ability to perform in-context learning (ICL) -- to perform new tasks when prompted with unseen input-output examples without any explicit model training. In this work, we study how effectively transformers can bridge between their pretraining data mixture, comprised of multiple distinct task families, to identify and learn new tasks in-context which are both inside and outside the pretraining distribution. Building on previous work, we investigate this question in a controlled setting, where we study transformer models trained on sequences of $(x, f(x))$ pairs rather than natural language. Our empirical results show transformers demonstrate near-optimal unsupervised model selection capabilities, in their ability to first in-context identify different task families and in-context learn within them when the task families are well-represented in their pretraining data. However when presented with tasks or functions which are out-of-domain of their pretraining data, we demonstrate various failure modes of transformers and degradation of their generalization for even simple extrapolation tasks. Together our results highlight that the impressive ICL abilities of high-capacity sequence models may be more closely tied to the coverage of their pretraining data mixtures than inductive biases that create fundamental generalization capabilities.",
+      "externalIds": {
+        "ArXiv": "2311.00871",
+        "DBLP": "journals/corr/abs-2311-00871",
+        "DOI": "10.48550/arXiv.2311.00871",
+        "CorpusId": 264935329
+      },
+      "arxiv_id": "2311.00871",
+      "doi": "10.48550/arXiv.2311.00871",
+      "corpus_id": 264935329
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "13",
+      "ref_key": "S2:b8bd29a6104d26a16687400049a4e7e026ae6258",
+      "paperId": "b8bd29a6104d26a16687400049a4e7e026ae6258",
+      "title": "Active Example Selection for In-Context Learning",
+      "year": 2022,
+      "abstract": "With a handful of demonstration examples, large-scale language models demonstrate strong capability to perform various tasks by in-context learning from these examples, without any fine-tuning. We demonstrate that in-context learning performance can be highly unstable across samples of examples, indicating the idiosyncrasies of how language models acquire information. We formulate example selection for in-context learning as a sequential decision problem, and propose a reinforcement learning algorithm for identifying generalizable policies to select demonstration examples. For GPT-2, our learned policies demonstrate strong abilities of generalizing to unseen tasks in training, with a 5.8% improvement on average. Examples selected from our learned policies can even achieve a small improvement on GPT-3 Ada. However, the improvement diminishes on larger GPT-3 models, suggesting emerging capabilities of large language models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2211-04486",
+        "ACL": "2022.emnlp-main.622",
+        "ArXiv": "2211.04486",
+        "DOI": "10.48550/arXiv.2211.04486",
+        "CorpusId": 253420743
+      },
+      "arxiv_id": "2211.04486",
+      "doi": "10.48550/arXiv.2211.04486",
+      "corpus_id": 253420743
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "14",
+      "ref_key": "S2:7aa801b907b59b8ee4cfb1296d9dac22c5164c5d",
+      "paperId": "7aa801b907b59b8ee4cfb1296d9dac22c5164c5d",
+      "title": "What learning algorithm is in-context learning? Investigations with linear models",
+      "year": 2022,
+      "abstract": "Neural sequence models, especially transformers, exhibit a remarkable capacity for in-context learning. They can construct new predictors from sequences of labeled examples $(x, f(x))$ presented in the input without further parameter updates. We investigate the hypothesis that transformer-based in-context learners implement standard learning algorithms implicitly, by encoding smaller models in their activations, and updating these implicit models as new examples appear in the context. Using linear regression as a prototypical problem, we offer three sources of evidence for this hypothesis. First, we prove by construction that transformers can implement learning algorithms for linear models based on gradient descent and closed-form ridge regression. Second, we show that trained in-context learners closely match the predictors computed by gradient descent, ridge regression, and exact least-squares regression, transitioning between different predictors as transformer depth and dataset noise vary, and converging to Bayesian estimators for large widths and depths. Third, we present preliminary evidence that in-context learners share algorithmic features with these predictors: learners' late layers non-linearly encode weight vectors and moment matrices. These results suggest that in-context learning is understandable in algorithmic terms, and that (at least in the linear case) learners may rediscover standard estimation algorithms. Code and reference implementations are released at https://github.com/ekinakyurek/google-research/blob/master/incontext.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2211-15661",
+        "ArXiv": "2211.15661",
+        "DOI": "10.48550/arXiv.2211.15661",
+        "CorpusId": 254043800
+      },
+      "arxiv_id": "2211.15661",
+      "doi": "10.48550/arXiv.2211.15661",
+      "corpus_id": 254043800
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "15",
+      "ref_key": "S2:10bd4160b44803ada6a3d2e366c44b7e2a4ffe90",
+      "paperId": "10bd4160b44803ada6a3d2e366c44b7e2a4ffe90",
+      "title": "An Explanation of In-context Learning as Implicit Bayesian Inference",
+      "year": 2021,
+      "abstract": "Large language models (LMs) such as GPT-3 have the surprising ability to do in-context learning, where the model learns to do a downstream task simply by conditioning on a prompt consisting of input-output examples. The LM learns from these examples without being explicitly pretrained to learn. Thus, it is unclear what enables in-context learning. In this paper, we study how in-context learning can emerge when pretraining documents have long-range coherence. Here, the LM must infer a latent document-level concept to generate coherent next tokens during pretraining. At test time, in-context learning occurs when the LM also infers a shared latent concept between examples in a prompt. We prove when this occurs despite a distribution mismatch between prompts and pretraining data in a setting where the pretraining distribution is a mixture of HMMs. In contrast to messy large-scale datasets used to train LMs capable of in-context learning, we generate a small-scale synthetic dataset (GINC) where Transformers and LSTMs both exhibit in-context learning. Beyond the theory, experiments on GINC exhibit large-scale real-world phenomena including improved in-context performance with model scaling (despite the same pretraining loss), sensitivity to example order, and instances where zero-shot is better than few-shot in-context learning.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2111-02080",
+        "ArXiv": "2111.02080",
+        "CorpusId": 241035330
+      },
+      "arxiv_id": "2111.02080",
+      "doi": null,
+      "corpus_id": 241035330
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "16",
+      "ref_key": "S2:56fa0b9cba4d9aee5ccc327365b3b3a721031c69",
+      "paperId": "56fa0b9cba4d9aee5ccc327365b3b3a721031c69",
+      "title": "Calibrate Before Use: Improving Few-Shot Performance of Language Models",
+      "year": 2021,
+      "abstract": "GPT-3 can perform numerous tasks when provided a natural language prompt that contains a few training examples. We show that this type of few-shot learning can be unstable: the choice of prompt format, training examples, and even the order of the training examples can cause accuracy to vary from near chance to near state-of-the-art. We demonstrate that this instability arises from the bias of language models towards predicting certain answers, e.g., those that are placed near the end of the prompt or are common in the pre-training data. To mitigate this, we first estimate the model's bias towards each answer by asking for its prediction when given the training prompt and a content-free test input such as \"N/A\". We then fit calibration parameters that cause the prediction for this input to be uniform across answers. On a diverse set of tasks, this contextual calibration procedure substantially improves GPT-3 and GPT-2's average accuracy (up to 30.0% absolute) and reduces variance across different choices of the prompt.",
+      "externalIds": {
+        "MAG": "3132736064",
+        "ArXiv": "2102.09690",
+        "DBLP": "journals/corr/abs-2102-09690",
+        "CorpusId": 231979430
+      },
+      "arxiv_id": "2102.09690",
+      "doi": null,
+      "corpus_id": 231979430
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "17",
+      "ref_key": "S2:3a6e67c28c9563c187d93b57cff1ca41ec4c245b",
+      "paperId": "3a6e67c28c9563c187d93b57cff1ca41ec4c245b",
+      "title": "Grimoire is All You Need for Enhancing Large Language Models",
+      "year": 2024,
+      "abstract": "In-context Learning (ICL) is one of the key methods for enhancing the performance of large language models on specific tasks by providing a set of few-shot examples. However, the ICL capability of different types of models shows significant variation due to factors such as model architecture, volume of learning data, and the size of parameters. Generally, the larger the model's parameter size and the more extensive the learning data, the stronger its ICL capability. In this paper, we propose a method SLEICL that involves learning from examples using strong language models and then summarizing and transferring these learned skills to weak language models for inference and application. This ensures the stability and effectiveness of ICL. Compared to directly enabling weak language models to learn from prompt examples, SLEICL reduces the difficulty of ICL for these models. Our experiments, conducted on up to eight datasets with five language models, demonstrate that weak language models achieve consistent improvement over their own zero-shot or few-shot capabilities using the SLEICL method. Some weak language models even surpass the performance of GPT4-1106-preview (zero-shot) with the aid of SLEICL.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2401-03385",
+        "ArXiv": "2401.03385",
+        "DOI": "10.48550/arXiv.2401.03385",
+        "CorpusId": 266843853
+      },
+      "arxiv_id": "2401.03385",
+      "doi": "10.48550/arXiv.2401.03385",
+      "corpus_id": 266843853
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "18",
+      "ref_key": "S2:cdbd4f9b6ab2e2fd1ddf5400d5ed2c18960635d1",
+      "paperId": "cdbd4f9b6ab2e2fd1ddf5400d5ed2c18960635d1",
+      "title": "Scaling Instruction-Finetuned Language Models",
+      "year": 2022,
+      "abstract": "Finetuning language models on a collection of datasets phrased as instructions has been shown to improve model performance and generalization to unseen tasks. In this paper we explore instruction finetuning with a particular focus on (1) scaling the number of tasks, (2) scaling the model size, and (3) finetuning on chain-of-thought data. We find that instruction finetuning with the above aspects dramatically improves performance on a variety of model classes (PaLM, T5, U-PaLM), prompting setups (zero-shot, few-shot, CoT), and evaluation benchmarks (MMLU, BBH, TyDiQA, MGSM, open-ended generation). For instance, Flan-PaLM 540B instruction-finetuned on 1.8K tasks outperforms PALM 540B by a large margin (+9.4% on average). Flan-PaLM 540B achieves state-of-the-art performance on several benchmarks, such as 75.2% on five-shot MMLU. We also publicly release Flan-T5 checkpoints, which achieve strong few-shot performance even compared to much larger models, such as PaLM 62B. Overall, instruction finetuning is a general method for improving the performance and usability of pretrained language models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-11416",
+        "ArXiv": "2210.11416",
+        "DOI": "10.48550/arXiv.2210.11416",
+        "CorpusId": 253018554
+      },
+      "arxiv_id": "2210.11416",
+      "doi": "10.48550/arXiv.2210.11416",
+      "corpus_id": 253018554
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "19",
+      "ref_key": "S2:500cfab9345de174644d7534bb39695f17920601",
+      "paperId": "500cfab9345de174644d7534bb39695f17920601",
+      "title": "How Do In-Context Examples Affect Compositional Generalization?",
+      "year": 2023,
+      "abstract": "Compositional generalization–understanding unseen combinations of seen primitives–is an essential reasoning capability in human intelligence.The AI community mainly studies this capability by fine-tuning neural networks on lots of training samples, while it is still unclear whether and how in-context learning–the prevailing few-shot paradigm based on large language models–exhibits compositional generalization.In this paper, we present CoFe, a test suite to investigate in-context compositional generalization.We find that the compositional generalization performance can be easily affected by the selection of in-context examples, thus raising the research question what the key factors are to make good in-context examples for compositional generalization.We study three potential factors: similarity, diversity and complexity. Our systematic experiments indicate that in-context examples should be structurally similar to the test case, diverse from each other, and individually simple.Furthermore, two strong limitations are observed: in-context compositional generalization on fictional words is much weaker than that on commonly used ones; it is still critical that the in-context examples should cover required linguistic structures, even though the backbone model has been pre-trained on large corpus.We hope our analysis would facilitate the understanding and utilization of in-context learning paradigm.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-04835",
+        "ACL": "2023.acl-long.618",
+        "ArXiv": "2305.04835",
+        "DOI": "10.48550/arXiv.2305.04835",
+        "CorpusId": 258558112
+      },
+      "arxiv_id": "2305.04835",
+      "doi": "10.48550/arXiv.2305.04835",
+      "corpus_id": 258558112
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "20",
+      "ref_key": "S2:d86ca0894cb4d165eb5ef45b73526ca8b4cdd725",
+      "paperId": "d86ca0894cb4d165eb5ef45b73526ca8b4cdd725",
+      "title": "Why Can GPT Learn In-Context? Language Models Secretly Perform Gradient Descent as Meta-Optimizers",
+      "year": 2023,
+      "abstract": "Large pretrained language models have shown surprising In-Context Learning (ICL) ability. With a few demonstration input-label pairs, they can predict the label for an unseen input without additional parameter updates. Despite the great success in performance, the working mechanism of ICL still remains an open problem. In order to better understand how ICL works, this paper explains language models as meta-optimizers and understands ICL as a kind of implicit ﬁnetuning. Theoretically, we ﬁgure out that the Transformer attention has a dual form of gradient descent based optimization. On top of it, we understand ICL as follows: GPT ﬁrst produces meta-gradients according to the demonstration examples, and then these meta-gradients are applied to the original GPT to build an ICL model. Experimentally, we comprehensively compare the behavior of ICL and explicit ﬁnetuning based on real tasks to provide empirical evidence that supports our understanding. The results prove that ICL behaves similarly to explicit ﬁnetuning at the prediction level, the representation level, and the attention behavior level. Further, inspired by our understanding of meta-optimization, we design a momentum-based attention by analogy with the momentum-based gradient descent algorithm. Its consistently better performance over vanilla attention supports our understanding again from another aspect, and more impor-tantly, it shows the potential to utilize our understanding for future model designing.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2212-10559",
+        "DOI": "10.48550/arXiv.2212.10559",
+        "CorpusId": 254877715
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2212.10559",
+      "corpus_id": 254877715
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "21",
+      "ref_key": "S2:146e9e1238ff6caf18f0bd936ffcfbe1e65d2afd",
+      "paperId": "146e9e1238ff6caf18f0bd936ffcfbe1e65d2afd",
+      "title": "Data Distributional Properties Drive Emergent In-Context Learning in Transformers",
+      "year": 2022,
+      "abstract": "Large transformer-based models are able to perform in-context few-shot learning, without being explicitly trained for it. This observation raises the question: what aspects of the training regime lead to this emergent behavior? Here, we show that this behavior is driven by the distributions of the training data itself. In-context learning emerges when the training data exhibits particular distributional properties such as burstiness (items appear in clusters rather than being uniformly distributed over time) and having large numbers of rarely occurring classes. In-context learning also emerges more strongly when item meanings or interpretations are dynamic rather than fixed. These properties are exemplified by natural language, but are also inherent to naturalistic data in a wide range of other domains. They also depart significantly from the uniform, i.i.d. training distributions typically used for standard supervised learning. In our initial experiments, we found that in-context learning traded off against more conventional weight-based learning, and models were unable to achieve both simultaneously. However, our later experiments uncovered that the two modes of learning could co-exist in a single model when it was trained on data following a skewed Zipfian distribution -- another common property of naturalistic data, including language. In further experiments, we found that naturalistic data distributions were only able to elicit in-context learning in transformers, and not in recurrent models. In sum, our findings indicate how the transformer architecture works together with particular properties of the training data to drive the intriguing emergent in-context learning behaviour of large language models, and how future work might encourage both in-context and in-weights learning in domains beyond language.",
+      "externalIds": {
+        "DBLP": "conf/nips/ChanSLWSRMH22",
+        "ArXiv": "2205.05055",
+        "DOI": "10.48550/arXiv.2205.05055",
+        "CorpusId": 248665718
+      },
+      "arxiv_id": "2205.05055",
+      "doi": "10.48550/arXiv.2205.05055",
+      "corpus_id": 248665718
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "22",
+      "ref_key": "S2:ff0b2681d7b05e16c46dfb71d980cc2f605907cd",
+      "paperId": "ff0b2681d7b05e16c46dfb71d980cc2f605907cd",
+      "title": "Finetuned Language Models Are Zero-Shot Learners",
+      "year": 2021,
+      "abstract": "This paper explores a simple method for improving the zero-shot learning abilities of language models. We show that instruction tuning -- finetuning language models on a collection of tasks described via instructions -- substantially improves zero-shot performance on unseen tasks. We take a 137B parameter pretrained language model and instruction-tune it on over 60 NLP tasks verbalized via natural language instruction templates. We evaluate this instruction-tuned model, which we call FLAN, on unseen task types. FLAN substantially improves the performance of its unmodified counterpart and surpasses zero-shot 175B GPT-3 on 20 of 25 tasks that we evaluate. FLAN even outperforms few-shot GPT-3 by a large margin on ANLI, RTE, BoolQ, AI2-ARC, OpenbookQA, and StoryCloze. Ablation studies reveal that number of finetuning datasets, model scale, and natural language instructions are key to the success of instruction tuning.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2109-01652",
+        "ArXiv": "2109.01652",
+        "CorpusId": 237416585
+      },
+      "arxiv_id": "2109.01652",
+      "doi": null,
+      "corpus_id": 237416585
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "23",
+      "ref_key": "S2:de32da8f5c6a50a6c311e9357ba16aa7d05a1bc9",
+      "paperId": "de32da8f5c6a50a6c311e9357ba16aa7d05a1bc9",
+      "title": "What Can Transformers Learn In-Context? A Case Study of Simple Function Classes",
+      "year": 2022,
+      "abstract": "In-context learning refers to the ability of a model to condition on a prompt sequence consisting of in-context examples (input-output pairs corresponding to some task) along with a new query input, and generate the corresponding output. Crucially, in-context learning happens only at inference time without any parameter updates to the model. While large language models such as GPT-3 exhibit some ability to perform in-context learning, it is unclear what the relationship is between tasks on which this succeeds and what is present in the training data. To make progress towards understanding in-context learning, we consider the well-defined problem of training a model to in-context learn a function class (e.g., linear functions): that is, given data derived from some functions in the class, can we train a model to in-context learn\"most\"functions from this class? We show empirically that standard Transformers can be trained from scratch to perform in-context learning of linear functions -- that is, the trained model is able to learn unseen linear functions from in-context examples with performance comparable to the optimal least squares estimator. In fact, in-context learning is possible even under two forms of distribution shift: (i) between the training data of the model and inference-time prompts, and (ii) between the in-context examples and the query input during inference. We also show that we can train Transformers to in-context learn more complex function classes -- namely sparse linear functions, two-layer neural networks, and decision trees -- with performance that matches or exceeds task-specific learning algorithms. Our code and models are available at https://github.com/dtsip/in-context-learning .",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2208-01066",
+        "ArXiv": "2208.01066",
+        "DOI": "10.48550/arXiv.2208.01066",
+        "CorpusId": 251253368
+      },
+      "arxiv_id": "2208.01066",
+      "doi": "10.48550/arXiv.2208.01066",
+      "corpus_id": 251253368
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "24",
+      "ref_key": "S2:d03a9b2a0e090cc9fd2ba0a457ecea35372f1018",
+      "paperId": "d03a9b2a0e090cc9fd2ba0a457ecea35372f1018",
+      "title": "Demystifying Prompts in Language Models via Perplexity Estimation",
+      "year": 2022,
+      "abstract": "Language models can be prompted to perform a wide variety of zero- and few-shot learning problems. However, performance varies significantly with the choice of prompt, and we do not yet understand why this happens or how to pick the best prompts. In this work, we analyze the factors that contribute to this variance and establish a new empirical hypothesis: the performance of a prompt is coupled with the extent to which the model is familiar with the language it contains. Over a wide range of tasks, we show that the lower the perplexity of the prompt is, the better the prompt is able to perform the task. As a result, we devise a method for creating prompts: (1) automatically extend a small seed set of manually written prompts by paraphrasing using GPT3 and backtranslation and (2) choose the lowest perplexity prompts to get significant gains in performance.",
+      "externalIds": {
+        "ArXiv": "2212.04037",
+        "DBLP": "journals/corr/abs-2212-04037",
+        "DOI": "10.48550/arXiv.2212.04037",
+        "CorpusId": 254408772
+      },
+      "arxiv_id": "2212.04037",
+      "doi": "10.48550/arXiv.2212.04037",
+      "corpus_id": 254408772
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "25",
+      "ref_key": "S2:90abbc2cf38462b954ae1b772fac9532e2ccd8b0",
+      "paperId": "90abbc2cf38462b954ae1b772fac9532e2ccd8b0",
+      "title": "Language Models are Few-Shot Learners",
+      "year": 2020,
+      "abstract": "Recent work has demonstrated substantial gains on many NLP tasks and benchmarks by pre-training on a large corpus of text followed by fine-tuning on a specific task. While typically task-agnostic in architecture, this method still requires task-specific fine-tuning datasets of thousands or tens of thousands of examples. By contrast, humans can generally perform a new language task from only a few examples or from simple instructions - something which current NLP systems still largely struggle to do. Here we show that scaling up language models greatly improves task-agnostic, few-shot performance, sometimes even reaching competitiveness with prior state-of-the-art fine-tuning approaches. Specifically, we train GPT-3, an autoregressive language model with 175 billion parameters, 10x more than any previous non-sparse language model, and test its performance in the few-shot setting. For all tasks, GPT-3 is applied without any gradient updates or fine-tuning, with tasks and few-shot demonstrations specified purely via text interaction with the model. GPT-3 achieves strong performance on many NLP datasets, including translation, question-answering, and cloze tasks, as well as several tasks that require on-the-fly reasoning or domain adaptation, such as unscrambling words, using a novel word in a sentence, or performing 3-digit arithmetic. At the same time, we also identify some datasets where GPT-3's few-shot learning still struggles, as well as some datasets where GPT-3 faces methodological issues related to training on large web corpora. Finally, we find that GPT-3 can generate samples of news articles which human evaluators have difficulty distinguishing from articles written by humans. We discuss broader societal impacts of this finding and of GPT-3 in general.",
+      "externalIds": {
+        "ArXiv": "2005.14165",
+        "DBLP": "conf/nips/BrownMRSKDNSSAA20",
+        "MAG": "3030163527",
+        "CorpusId": 218971783
+      },
+      "arxiv_id": "2005.14165",
+      "doi": null,
+      "corpus_id": 218971783
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "26",
+      "ref_key": "S2:316206a2f89eb94ce02a81fba1dc304586f21b39",
+      "paperId": "316206a2f89eb94ce02a81fba1dc304586f21b39",
+      "title": "Ground-Truth Labels Matter: A Deeper Look into Input-Label Demonstrations",
+      "year": 2022,
+      "abstract": "Despite recent explosion of interests in in-context learning, the underlying mechanism and the precise impact of the quality of demonstrations remain elusive.Intuitively, ground-truth labels should have as much impact in in-context learning (ICL) as supervised learning, but recent work reported that the input-label correspondence is significantly less important than previously thought.Intrigued by this counter-intuitive observation, we re-examine the importance of ground-truth labels in in-context learning.With the introduction of two novel metrics, namely Label-Correctness Sensitivity and Ground-truth Label Effect Ratio (GLER), we were able to conduct quantifiable analysis on the impact of ground-truth label demonstrations.Through extensive analyses, we find that the correct input-label mappings can have varying impacts on the downstream in-context learning performances, depending on the experimental configuration.Through additional studies, we identify key components, such as the verbosity of prompt templates and the language model size, as the controlling factor to achieve more noise-resilient ICL.",
+      "externalIds": {
+        "ArXiv": "2205.12685",
+        "DBLP": "conf/emnlp/YooKKCJLLK22",
+        "ACL": "2022.emnlp-main.155",
+        "DOI": "10.48550/arXiv.2205.12685",
+        "CorpusId": 249062718
+      },
+      "arxiv_id": "2205.12685",
+      "doi": "10.48550/arXiv.2205.12685",
+      "corpus_id": 249062718
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "27",
+      "ref_key": "S2:a569b9daa3606952dbcfdaa310ddfe6ad4eb95f3",
+      "paperId": "a569b9daa3606952dbcfdaa310ddfe6ad4eb95f3",
+      "title": "The Closeness of In-Context Learning and Weight Shifting for Softmax Regression",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) are known for their exceptional performance in natural language processing, making them highly effective in many human life-related or even job-related tasks. The attention mechanism in the Transformer architecture is a critical component of LLMs, as it allows the model to selectively focus on specific input parts. The softmax unit, which is a key part of the attention mechanism, normalizes the attention scores. Hence, the performance of LLMs in various NLP tasks depends significantly on the crucial role played by the attention mechanism with the softmax unit. In-context learning, as one of the celebrated abilities of recent LLMs, is an important concept in querying LLMs such as ChatGPT. Without further parameter updates, Transformers can learn to predict based on few in-context examples. However, the reason why Transformers becomes in-context learners is not well understood. Recently, several works [ASA+22,GTLV22,ONR+22] have studied the in-context learning from a mathematical perspective based on a linear regression formulation $\\min_x\\| Ax - b \\|_2$, which show Transformers' capability of learning linear functions in context. In this work, we study the in-context learning based on a softmax regression formulation $\\min_{x} \\| \\langle \\exp(Ax), {\\bf 1}_n \\rangle^{-1} \\exp(Ax) - b \\|_2$ of Transformer's attention mechanism. We show the upper bounds of the data transformations induced by a single self-attention layer and by gradient-descent on a $\\ell_2$ regression loss for softmax prediction function, which imply that when training self-attention-only Transformers for fundamental regression tasks, the models learned by gradient-descent and Transformers show great similarity.",
+      "externalIds": {
+        "ArXiv": "2304.13276",
+        "DBLP": "journals/corr/abs-2304-13276",
+        "DOI": "10.48550/arXiv.2304.13276",
+        "CorpusId": 258331729
+      },
+      "arxiv_id": "2304.13276",
+      "doi": "10.48550/arXiv.2304.13276",
+      "corpus_id": 258331729
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "28",
+      "ref_key": "S2:4e5f7cd537a1bbcd090f9887b1b59f39a3715dba",
+      "paperId": "4e5f7cd537a1bbcd090f9887b1b59f39a3715dba",
+      "title": "Instruction Induction: From Few Examples to Natural Language Task Descriptions",
+      "year": 2022,
+      "abstract": "Large language models are able to perform a task by conditioning on a few input-output demonstrations - a paradigm known as in-context learning. We show that language models can explicitly infer an underlying task from a few demonstrations by prompting them to generate a natural language instruction that fits the examples. To explore this ability, we introduce the instruction induction challenge, compile a dataset consisting of 24 tasks, and define a novel evaluation metric based on executing the generated instruction. We discover that, to a large extent, the ability to generate instructions does indeed emerge when using a model that is both large enough and aligned to follow instructions; InstructGPT achieves 65.7% of human performance in our execution-based metric, while the original GPT-3 model reaches only 9.8% of human performance. This surprising result suggests that instruction induction might be a viable learning paradigm in and of itself, where instead of fitting a set of latent continuous parameters to the data, one searches for the best description in the natural language hypothesis space.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2205-10782",
+        "ACL": "2023.acl-long.108",
+        "ArXiv": "2205.10782",
+        "DOI": "10.48550/arXiv.2205.10782",
+        "CorpusId": 248986755
+      },
+      "arxiv_id": "2205.10782",
+      "doi": "10.48550/arXiv.2205.10782",
+      "corpus_id": 248986755
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "29",
+      "ref_key": "S2:dd889342b0de45f7434cdfa7543e3bd46ec824cb",
+      "paperId": "dd889342b0de45f7434cdfa7543e3bd46ec824cb",
+      "title": "Measuring Inductive Biases of In-Context Learning with Underspecified Demonstrations",
+      "year": 2023,
+      "abstract": "In-context learning (ICL) is an important paradigm for adapting large language models (LLMs) to new tasks, but the generalization behavior of ICL remains poorly understood. We investigate the inductive biases of ICL from the perspective of feature bias: which feature ICL is more likely to use given a set of underspecified demonstrations in which two features are equally predictive of the labels. First, we characterize the feature biases of GPT-3 models by constructing underspecified demonstrations from a range of NLP datasets and feature combinations. We find that LLMs exhibit clear feature biases—for example, demonstrating a strong bias to predict labels according to sentiment rather than shallow lexical features, like punctuation. Second, we evaluate the effect of different interventions that are designed to impose an inductive bias in favor of a particular feature, such as adding a natural language instruction or using semantically relevant label words. We find that, while many interventions can influence the learner to prefer a particular feature, it can be difficult to overcome strong prior biases. Overall, our results provide a broader picture of the types of features that ICL may be more likely to exploit and how to impose inductive biases that are better aligned with the intended task.",
+      "externalIds": {
+        "ACL": "2023.acl-long.632",
+        "DBLP": "conf/acl/SiFJFC023",
+        "ArXiv": "2305.13299",
+        "DOI": "10.48550/arXiv.2305.13299",
+        "CorpusId": 258833064
+      },
+      "arxiv_id": "2305.13299",
+      "doi": "10.48550/arXiv.2305.13299",
+      "corpus_id": 258833064
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "30",
+      "ref_key": "S2:70ece7b4ba8f3b67f5a797daed544fb6a0b627bf",
+      "paperId": "70ece7b4ba8f3b67f5a797daed544fb6a0b627bf",
+      "title": "A Latent Space Theory for Emergent Abilities in Large Language Models",
+      "year": 2023,
+      "abstract": "Languages are not created randomly but rather to communicate information. There is a strong association between languages and their underlying meanings, resulting in a sparse joint distribution that is heavily peaked according to their correlations. Moreover, these peak values happen to match with the marginal distribution of languages due to the sparsity. With the advent of LLMs trained on big data and large models, we can now precisely assess the marginal distribution of languages, providing a convenient means of exploring the sparse structures in the joint distribution for effective inferences. In this paper, we categorize languages as either unambiguous or {\\epsilon}-ambiguous and present quantitative results to demonstrate that the emergent abilities of LLMs, such as language understanding, in-context learning, chain-of-thought prompting, and effective instruction fine-tuning, can all be attributed to Bayesian inference on the sparse joint distribution of languages.",
+      "externalIds": {
+        "ArXiv": "2304.09960",
+        "DBLP": "journals/corr/abs-2304-09960",
+        "DOI": "10.48550/arXiv.2304.09960",
+        "CorpusId": 258236342
+      },
+      "arxiv_id": "2304.09960",
+      "doi": "10.48550/arXiv.2304.09960",
+      "corpus_id": 258236342
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "31",
+      "ref_key": "S2:dcbf62f17dad0f4554f91c822d141fb92f78429a",
+      "paperId": "dcbf62f17dad0f4554f91c822d141fb92f78429a",
+      "title": "Self-Generated In-Context Learning: Leveraging Auto-regressive Language Models as a Demonstration Generator",
+      "year": 2022,
+      "abstract": "Large-scale pre-trained language models (PLMs) are well-known for being capable of solving a task simply by conditioning a few input-label pairs dubbed demonstrations on a prompt without being explicitly tuned for the desired downstream task. Such a process (i.e., in-context learning), however, naturally leads to high reliance on the demonstrations which are usually selected from external datasets. In this paper, we propose self-generated in-context learning (SG-ICL), which generates demonstrations for in-context learning from PLM itself to minimize the reliance on the external demonstration. We conduct experiments on four different text classification tasks and show SG-ICL significantly outperforms zero-shot learning and is generally worth approximately 0.6 gold training samples. Moreover, our generated demonstrations show more consistent performance with low variance compared to randomly selected demonstrations from the training dataset.",
+      "externalIds": {
+        "ArXiv": "2206.08082",
+        "DBLP": "journals/corr/abs-2206-08082",
+        "DOI": "10.48550/arXiv.2206.08082",
+        "CorpusId": 249712501
+      },
+      "arxiv_id": "2206.08082",
+      "doi": "10.48550/arXiv.2206.08082",
+      "corpus_id": 249712501
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "32",
+      "ref_key": "S2:7bd4ca8706a79983d31ab74e6c79bfdfd949602e",
+      "paperId": "7bd4ca8706a79983d31ab74e6c79bfdfd949602e",
+      "title": "Label Words are Anchors: An Information Flow Perspective for Understanding In-Context Learning",
+      "year": 2023,
+      "abstract": "In-context learning (ICL) emerges as a promising capability of large language models (LLMs) by providing them with demonstration examples to perform diverse tasks. However, the underlying mechanism of how LLMs learn from the provided context remains under-explored. In this paper, we investigate the working mechanism of ICL through an information flow lens. Our findings reveal that label words in the demonstration examples function as anchors: (1) semantic information aggregates into label word representations during the shallow computation layers' processing; (2) the consolidated information in label words serves as a reference for LLMs' final predictions. Based on these insights, we introduce an anchor re-weighting method to improve ICL performance, a demonstration compression technique to expedite inference, and an analysis framework for diagnosing ICL errors in GPT2-XL. The promising applications of our findings again validate the uncovered ICL working mechanism and pave the way for future studies.",
+      "externalIds": {
+        "ArXiv": "2305.14160",
+        "DBLP": "journals/corr/abs-2305-14160",
+        "DOI": "10.48550/arXiv.2305.14160",
+        "CorpusId": 258841117
+      },
+      "arxiv_id": "2305.14160",
+      "doi": "10.48550/arXiv.2305.14160",
+      "corpus_id": 258841117
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "33",
+      "ref_key": "S2:dc385646887a3669ae0ee506a263d592f4f7c7a6",
+      "paperId": "dc385646887a3669ae0ee506a263d592f4f7c7a6",
+      "title": "Finding Support Examples for In-Context Learning",
+      "year": 2023,
+      "abstract": "Additionally, the strong dependency among in-context examples makes it an NP-hard combinatorial optimization problem and enumerating all permutations is infeasible. Hence we propose LENS, a fiLter-thEN-Search method to tackle this challenge in two stages: First we filter the dataset to obtain informative in-context examples individually. Specifically, we propose a novel metric, InfoScore, to evaluate the example's in-context informativeness based on the language model's feedback, and further propose a progressive filtering process to filter out uninformative examples. Then we propose diversity-guided example search which iteratively refines and evaluates the selected example permutations, to find examples that fully depict the task. The experimental results show that LENS significantly outperforms a wide range of baselines.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/LiQ23a",
+        "ArXiv": "2302.13539",
+        "DOI": "10.18653/v1/2023.findings-emnlp.411",
+        "CorpusId": 257219778
+      },
+      "arxiv_id": "2302.13539",
+      "doi": "10.18653/v1/2023.findings-emnlp.411",
+      "corpus_id": 257219778
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "34",
+      "ref_key": "S2:59641c10ed7431a3cf841f308367dc2dc0281b74",
+      "paperId": "59641c10ed7431a3cf841f308367dc2dc0281b74",
+      "title": "What Makes Good In-Context Examples for GPT-3?",
+      "year": 2021,
+      "abstract": "GPT-3 has attracted lots of attention due to its superior performance across a wide range of NLP tasks, especially with its in-context learning abilities. Despite its success, we found that the empirical results of GPT-3 depend heavily on the choice of in-context examples. In this work, we investigate whether there are more effective strategies for judiciously selecting in-context examples (relative to random sampling) that better leverage GPT-3’s in-context learning capabilities.Inspired by the recent success of leveraging a retrieval module to augment neural networks, we propose to retrieve examples that are semantically-similar to a test query sample to formulate its corresponding prompt. Intuitively, the examples selected with such a strategy may serve as more informative inputs to unleash GPT-3’s power of text generation. We evaluate the proposed approach on several natural language understanding and generation benchmarks, where the retrieval-based prompt selection approach consistently outperforms the random selection baseline. Moreover, it is observed that the sentence encoders fine-tuned on task-related datasets yield even more helpful retrieval results. Notably, significant gains are observed on tasks such as table-to-text generation (44.3% on the ToTTo dataset) and open-domain question answering (45.5% on the NQ dataset).",
+      "externalIds": {
+        "DBLP": "conf/acl-deelio/LiuSZDCC22",
+        "ArXiv": "2101.06804",
+        "ACL": "2022.deelio-1.10",
+        "DOI": "10.18653/v1/2022.deelio-1.10",
+        "CorpusId": 231632658
+      },
+      "arxiv_id": "2101.06804",
+      "doi": "10.18653/v1/2022.deelio-1.10",
+      "corpus_id": 231632658
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "35",
+      "ref_key": "S2:267ef391ebaa4fc3c8ec62cb92107e8efe82a5db",
+      "paperId": "267ef391ebaa4fc3c8ec62cb92107e8efe82a5db",
+      "title": "In-context Vectors: Making In Context Learning More Effective and Controllable Through Latent Space Steering",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) demonstrate emergent in-context learning capabilities, where they adapt to new tasks based on example demonstrations. However, in-context learning has seen limited effectiveness in many settings, is difficult to quantitatively control and takes up context window space. To overcome these limitations, we propose an alternative approach that recasts in-context learning as in-context vectors (ICV). Using ICV has two steps. We first use a forward pass on demonstration examples to create the in-context vector from the latent embedding of the LLM. This vector captures essential information about the intended task. On a new query, instead of adding demonstrations to the prompt, we shift the latent states of the LLM using the ICV. The ICV approach has several benefits: 1) it enables the LLM to more effectively follow the demonstration examples; 2) it's easy to control by adjusting the magnitude of the ICV; 3) it reduces the length of the prompt by removing the in-context demonstrations; 4) ICV is computationally much more efficient than fine-tuning. We demonstrate that ICV achieves better performance compared to standard in-context learning and fine-tuning on diverse tasks including safety, style transfer, role-playing and formatting. Moreover, we show that we can flexibly teach LLM to simultaneously follow different types of instructions by simple vector arithmetics on the corresponding ICVs.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-06668",
+        "ArXiv": "2311.06668",
+        "DOI": "10.48550/arXiv.2311.06668",
+        "CorpusId": 265149781
+      },
+      "arxiv_id": "2311.06668",
+      "doi": "10.48550/arXiv.2311.06668",
+      "corpus_id": 265149781
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "36",
+      "ref_key": "S2:29eadc8a20594dcf62d505cf478149c4d4ec647e",
+      "paperId": "29eadc8a20594dcf62d505cf478149c4d4ec647e",
+      "title": "Let's Learn Step by Step: Enhancing In-Context Learning Ability with Curriculum Learning",
+      "year": 2024,
+      "abstract": "Demonstration ordering, which is an important strategy for in-context learning (ICL), can significantly affects the performance of large language models (LLMs). However, most of the current approaches of ordering require high computational costs to introduce the priori knowledge. In this paper, inspired by the human learning process, we propose a simple but effective demonstration ordering method for ICL, named the few-shot In-Context Curriculum Learning (ICCL). The ICCL implies gradually increasing the complexity of prompt demonstrations during the inference process. The difficulty can be assessed by human experts or LLMs-driven metrics, such as perplexity. Then we design extensive experiments to discuss the effectiveness of the ICCL at both corpus-level and instance-level. Moreover, we also investigate the formation mechanism of LLM's ICCL capability. Experimental results demonstrate that ICCL, developed during the instruction-tuning stage, is effective for representative open-source LLMs. To facilitate further research and applications by other scholars, we make the code publicly available.",
+      "externalIds": {
+        "ArXiv": "2402.10738",
+        "DBLP": "journals/corr/abs-2402-10738",
+        "DOI": "10.48550/arXiv.2402.10738",
+        "CorpusId": 267740729
+      },
+      "arxiv_id": "2402.10738",
+      "doi": "10.48550/arXiv.2402.10738",
+      "corpus_id": 267740729
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "37",
+      "ref_key": "S2:0adec918885dff698acf359988ed79a543157f80",
+      "paperId": "0adec918885dff698acf359988ed79a543157f80",
+      "title": "Fantastically Ordered Prompts and Where to Find Them: Overcoming Few-Shot Prompt Order Sensitivity",
+      "year": 2021,
+      "abstract": "When primed with only a handful of training samples, very large, pretrained language models such as GPT-3 have shown competitive results when compared to fully-supervised, fine-tuned, large, pretrained language models. We demonstrate that the order in which the samples are provided can make the difference between near state-of-the-art and random guess performance: essentially some permutations are “fantastic” and some not. We analyse this phenomenon in detail, establishing that: it is present across model sizes (even for the largest current models), it is not related to a specific subset of samples, and that a given good permutation for one model is not transferable to another. While one could use a development set to determine which permutations are performant, this would deviate from the true few-shot setting as it requires additional annotated data. Instead, we use the generative nature of language models to construct an artificial development set and based on entropy statistics of the candidate permutations on this set, we identify performant prompts. Our method yields a 13% relative improvement for GPT-family models across eleven different established text classification tasks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2104-08786",
+        "ArXiv": "2104.08786",
+        "ACL": "2022.acl-long.556",
+        "DOI": "10.18653/v1/2022.acl-long.556",
+        "CorpusId": 233296494
+      },
+      "arxiv_id": "2104.08786",
+      "doi": "10.18653/v1/2022.acl-long.556",
+      "corpus_id": 233296494
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "38",
+      "ref_key": "S2:cbec8bf16a459b0ae38856f604a6a14cd1343477",
+      "paperId": "cbec8bf16a459b0ae38856f604a6a14cd1343477",
+      "title": "One Step of Gradient Descent is Provably the Optimal In-Context Learner with One Layer of Linear Self-Attention",
+      "year": 2023,
+      "abstract": "Recent works have empirically analyzed in-context learning and shown that transformers trained on synthetic linear regression tasks can learn to implement ridge regression, which is the Bayes-optimal predictor, given sufficient capacity [Aky\\\"urek et al., 2023], while one-layer transformers with linear self-attention and no MLP layer will learn to implement one step of gradient descent (GD) on a least-squares linear regression objective [von Oswald et al., 2022]. However, the theory behind these observations remains poorly understood. We theoretically study transformers with a single layer of linear self-attention, trained on synthetic noisy linear regression data. First, we mathematically show that when the covariates are drawn from a standard Gaussian distribution, the one-layer transformer which minimizes the pre-training loss will implement a single step of GD on the least-squares linear regression objective. Then, we find that changing the distribution of the covariates and weight vector to a non-isotropic Gaussian distribution has a strong impact on the learned algorithm: the global minimizer of the pre-training loss now implements a single step of $\\textit{pre-conditioned}$ GD. However, if only the distribution of the responses is changed, then this does not have a large effect on the learned algorithm: even when the response comes from a more general family of $\\textit{nonlinear}$ functions, the global minimizer of the pre-training loss still implements a single step of GD on a least-squares linear regression objective.",
+      "externalIds": {
+        "DBLP": "conf/iclr/MahankaliH024",
+        "ArXiv": "2307.03576",
+        "DOI": "10.48550/arXiv.2307.03576",
+        "CorpusId": 259375820
+      },
+      "arxiv_id": "2307.03576",
+      "doi": "10.48550/arXiv.2307.03576",
+      "corpus_id": 259375820
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "39",
+      "ref_key": "S2:03613effe356d2a8815f899027d6a5868822fd93",
+      "paperId": "03613effe356d2a8815f899027d6a5868822fd93",
+      "title": "Which Examples to Annotate for In-Context Learning? Towards Effective and Efficient Selection",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) can adapt to new tasks via in-context learning (ICL). ICL is efficient as it does not require any parameter updates to the trained LLM, but only few annotated examples as input for the LLM. In this work, we investigate an active learning approach for ICL, where there is a limited budget for annotating examples. We propose a model-adaptive optimization-free algorithm, termed AdaICL, which identifies examples that the model is uncertain about, and performs semantic diversity-based example selection. Diversity-based sampling improves overall effectiveness, while uncertainty sampling improves budget efficiency and helps the LLM learn new information. Moreover, AdaICL poses its sampling strategy as a Maximum Coverage problem, that dynamically adapts based on the model's feedback and can be approximately solved via greedy algorithms. Extensive experiments on nine datasets and seven LLMs show that AdaICL improves performance by 4.4% accuracy points over SOTA (7.7% relative improvement), is up to 3x more budget-efficient than performing annotations uniformly at random, while it outperforms SOTA with 2x fewer ICL examples.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-20046",
+        "ArXiv": "2310.20046",
+        "DOI": "10.48550/arXiv.2310.20046",
+        "CorpusId": 264829036
+      },
+      "arxiv_id": "2310.20046",
+      "doi": "10.48550/arXiv.2310.20046",
+      "corpus_id": 264829036
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "40",
+      "ref_key": "S2:47df3fd32d00220c85c2c51a571254fd99b2ecc7",
+      "paperId": "47df3fd32d00220c85c2c51a571254fd99b2ecc7",
+      "title": "MetaICL: Learning to Learn In Context",
+      "year": 2021,
+      "abstract": "We introduce MetaICL (Meta-training for In-Context Learning), a new meta-training framework for few-shot learning where a pretrained language model is tuned to do in-context learning on a large set of training tasks. This meta-training enables the model to more effectively learn a new task in context at test time, by simply conditioning on a few training examples with no parameter updates or task-specific templates. We experiment on a large, diverse collection of tasks consisting of 142 NLP datasets including classification, question answering, natural language inference, paraphrase detection and more, across seven different meta-training/target splits. MetaICL outperforms a range of baselines including in-context learning without meta-training and multi-task learning followed by zero-shot transfer. We find that the gains are particularly significant for target tasks that have domain shifts from the meta-training tasks, and that using a diverse set of the meta-training tasks is key to improvements. We also show that MetaICL approaches (and sometimes beats) the performance of models fully finetuned on the target task training data, and outperforms much bigger models with nearly 8x parameters.",
+      "externalIds": {
+        "ArXiv": "2110.15943",
+        "ACL": "2022.naacl-main.201",
+        "DBLP": "journals/corr/abs-2110-15943",
+        "DOI": "10.18653/v1/2022.naacl-main.201",
+        "CorpusId": 240288835
+      },
+      "arxiv_id": "2110.15943",
+      "doi": "10.18653/v1/2022.naacl-main.201",
+      "corpus_id": 240288835
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "41",
+      "ref_key": "S2:eea7bca03bda3ee2448cd012bbcb2b33822861d8",
+      "paperId": "eea7bca03bda3ee2448cd012bbcb2b33822861d8",
+      "title": "Noisy Channel Language Model Prompting for Few-Shot Text Classification",
+      "year": 2021,
+      "abstract": "We introduce a noisy channel approach for language model prompting in few-shot text classification. Instead of computing the likelihood of the label given the input (referred as direct models), channel models compute the conditional probability of the input given the label, and are thereby required to explain every word in the input. We use channel models for recently proposed few-shot learning methods with no or very limited updates to the language model parameters, via either in-context demonstration or prompt tuning. Our experiments show that, for both methods, channel models significantly outperform their direct counterparts, which we attribute to their stability, i.e., lower variance and higher worst-case accuracy. We also present extensive ablations that provide recommendations for when to use channel prompt tuning instead of other competitive models (e.g., direct head tuning): channel prompt tuning is preferred when the number of training examples is small, labels in the training data are imbalanced, or generalization to unseen labels is required.",
+      "externalIds": {
+        "DBLP": "conf/acl/MinLHZ22",
+        "ArXiv": "2108.04106",
+        "ACL": "2022.acl-long.365",
+        "DOI": "10.18653/v1/2022.acl-long.365",
+        "CorpusId": 236956577
+      },
+      "arxiv_id": "2108.04106",
+      "doi": "10.18653/v1/2022.acl-long.365",
+      "corpus_id": 236956577
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "42",
+      "ref_key": "S2:f4df78183261538e718066331898ee5cad7cad05",
+      "paperId": "f4df78183261538e718066331898ee5cad7cad05",
+      "title": "Rethinking the Role of Demonstrations: What Makes In-Context Learning Work?",
+      "year": 2022,
+      "abstract": "Large language models (LMs) are able to in-context learn—perform a new task via inference alone by conditioning on a few input-label pairs (demonstrations) and making predictions for new inputs. However, there has been little understanding of how the model learns and which aspects of the demonstrations contribute to end task performance. In this paper, we show that ground truth demonstrations are in fact not required—randomly replacing labels in the demonstrations barely hurts performance on a range of classification and multi-choce tasks, consistently over 12 different models including GPT-3. Instead, we find that other aspects of the demonstrations are the key drivers of endtask performance, including the fact that they provide a few examples of (1) the label space, (2) the distribution of the input text, and (3) the overall format of the sequence. Together, our analysis provides a new way of understanding how and why in-context learning works, while opening up new questions about how much can be learned from large language models through inference alone.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2202-12837",
+        "ArXiv": "2202.12837",
+        "ACL": "2022.emnlp-main.759",
+        "DOI": "10.18653/v1/2022.emnlp-main.759",
+        "CorpusId": 247155069
+      },
+      "arxiv_id": "2202.12837",
+      "doi": "10.18653/v1/2022.emnlp-main.759",
+      "corpus_id": 247155069
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "43",
+      "ref_key": "S2:06d7cb8c8816360feb33c3367073e0ef66d7d0b0",
+      "paperId": "06d7cb8c8816360feb33c3367073e0ef66d7d0b0",
+      "title": "Super-NaturalInstructions: Generalization via Declarative Instructions on 1600+ NLP Tasks",
+      "year": 2022,
+      "abstract": "How well can NLP models generalize to a variety of unseen tasks when provided with task instructions? To address this question, we first introduce Super-NaturalInstructions, a benchmark of 1,616 diverse NLP tasks and their expert-written instructions. Our collection covers 76 distinct task types, including but not limited to classification, extraction, infilling, sequence tagging, text rewriting, and text composition. This large and diverse collection of tasks enables rigorous benchmarking of cross-task generalization under instructions—training models to follow instructions on a subset of tasks and evaluating them on the remaining unseen ones.Furthermore, we build Tk-Instruct, a transformer model trained to follow a variety of in-context instructions (plain language task definitions or k-shot examples). Our experiments show that Tk-Instruct outperforms existing instruction-following models such as InstructGPT by over 9% on our benchmark despite being an order of magnitude smaller. We further analyze generalization as a function of various scaling parameters, such as the number of observed tasks, the number of instances per task, and model sizes. We hope our dataset and model facilitate future progress towards more general-purpose NLP models.",
+      "externalIds": {
+        "ACL": "2022.emnlp-main.340",
+        "ArXiv": "2204.07705",
+        "DBLP": "conf/emnlp/WangMAKMNADASPK22",
+        "DOI": "10.18653/v1/2022.emnlp-main.340",
+        "CorpusId": 253098274
+      },
+      "arxiv_id": "2204.07705",
+      "doi": "10.18653/v1/2022.emnlp-main.340",
+      "corpus_id": 253098274
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "44",
+      "ref_key": "S2:c90a99eeb57019732a6cc996bb9eaf13faedf00f",
+      "paperId": "c90a99eeb57019732a6cc996bb9eaf13faedf00f",
+      "title": "In-context Learning and Induction Heads",
+      "year": 2022,
+      "abstract": "“Induction heads” are attention heads that implement a simple algorithm to complete token sequences like [A][B] ... [A] → [B]. In this work, we present preliminary and indirect evidence for a hypothesis that induction heads might constitute the mechanism for the majority of all “incontext learning” in large transformer models (i.e. decreasing loss at increasing token indices). We find that induction heads develop at precisely the same point as a sudden sharp increase in incontext learning ability, visible as a bump in the training loss. We present six complementary lines of evidence, arguing that induction heads may be the mechanistic source of general in-context learning in transformer models of any size. For small attention-only models, we present strong, causal evidence; for larger models with MLPs, we present correlational evidence. We recommend reading this paper as an HTML article. As Transformer generative models continue to scale and gain increasing real world use, addressing their associated safety problems becomes increasingly important. Mechanistic interpretability – attempting to reverse engineer the detailed computations performed by the model – offers one possible avenue for addressing these safety issues. If we can understand the internal structures that cause Transformer models to produce the outputs they do, then we may be able to address current safety problems more systematically, as well as anticipating safety problems in future more powerful models. [1, 2, 3, 4, 5]",
+      "externalIds": {
+        "ArXiv": "2209.11895",
+        "DBLP": "journals/corr/abs-2209-11895",
+        "DOI": "10.48550/arXiv.2209.11895",
+        "CorpusId": 252532078
+      },
+      "arxiv_id": "2209.11895",
+      "doi": "10.48550/arXiv.2209.11895",
+      "corpus_id": 252532078
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "45",
+      "ref_key": "S2:e965e93e76a9e6c4e4863d145b5c007b540d575d",
+      "paperId": "e965e93e76a9e6c4e4863d145b5c007b540d575d",
+      "title": "OPT-IML: Scaling Language Model Instruction Meta Learning through the Lens of Generalization",
+      "year": 2022,
+      "abstract": "Recent work has shown that fine-tuning large pre-trained language models on a collection of tasks described via instructions, a.k.a. instruction-tuning, improves their zero and few-shot generalization to unseen tasks. However, there is a limited understanding of the performance trade-offs of different decisions made during the instruction-tuning process. These decisions include the scale and diversity of the instruction-tuning benchmark, different task sampling strategies, fine-tuning with and without demonstrations, training using specialized datasets for reasoning and dialogue, and finally, the fine-tuning objectives themselves. In this paper, we characterize the effect of instruction-tuning decisions on downstream task performance when scaling both model and benchmark sizes. To this end, we create OPT-IML Bench: a large benchmark for Instruction Meta-Learning (IML) of 2000 NLP tasks consolidated into task categories from 8 existing benchmarks, and prepare an evaluation framework to measure three types of model generalizations: to tasks from fully held-out categories, to held-out tasks from seen categories, and to held-out instances from seen tasks. Through the lens of this framework, we first present insights about instruction-tuning decisions as applied to OPT-30B and further exploit these insights to train OPT-IML 30B and 175B, which are instruction-tuned versions of OPT. OPT-IML demonstrates all three generalization abilities at both scales on four different evaluation benchmarks with diverse tasks and input formats -- PromptSource, FLAN, Super-NaturalInstructions, and UnifiedSKG. Not only does it significantly outperform OPT on all benchmarks but is also highly competitive with existing models fine-tuned on each specific benchmark. We release OPT-IML at both scales, together with the OPT-IML Bench evaluation framework.",
+      "externalIds": {
+        "ArXiv": "2212.12017",
+        "DBLP": "journals/corr/abs-2212-12017",
+        "CorpusId": 255096269
+      },
+      "arxiv_id": "2212.12017",
+      "doi": null,
+      "corpus_id": 255096269
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "46",
+      "ref_key": "S2:3fb0731538c59f8520a309996a0567b58965f0fe",
+      "paperId": "3fb0731538c59f8520a309996a0567b58965f0fe",
+      "title": "Pre-Training to Learn in Context",
+      "year": 2023,
+      "abstract": "In-context learning, where pre-trained language models learn to perform tasks from task examples and instructions in their contexts, has attracted much attention in the NLP community. However, the ability of in-context learning is not fully exploited because language models are not explicitly trained to learn in context. To this end, we propose PICL (Pre-training for In-Context Learning), a framework to enhance the language models’ in-context learning ability by pre-training the model on a large collection of “intrinsic tasks” in the general plain-text corpus using the simple language modeling objective. PICL encourages the model to infer and perform tasks by conditioning on the contexts while maintaining task generalization of pre-trained models. We evaluate the in-context learning performance of the model trained with PICL on seven widely-used text classification datasets and the Super-NaturalInstrctions benchmark, which contains 100+ NLP tasks formulated to text generation. Our experiments show that PICL is more effective and task-generalizable than a range of baselines, outperforming larger language models with nearly 4x parameters. The code is publicly available at https://github.com/thu-coai/PICL.",
+      "externalIds": {
+        "ArXiv": "2305.09137",
+        "DBLP": "conf/acl/Gu0WH23",
+        "ACL": "2023.acl-long.267",
+        "DOI": "10.48550/arXiv.2305.09137",
+        "CorpusId": 258715048
+      },
+      "arxiv_id": "2305.09137",
+      "doi": "10.48550/arXiv.2305.09137",
+      "corpus_id": 258715048
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "47",
+      "ref_key": "S2:b217b6bc340af9a10bebbf8acc36ea30871769bd",
+      "paperId": "b217b6bc340af9a10bebbf8acc36ea30871769bd",
+      "title": "In-Context Learning with Iterative Demonstration Selection",
+      "year": 2023,
+      "abstract": "Spurred by advancements in scale, large language models (LLMs) have demonstrated strong few-shot learning ability via in-context learning (ICL). However, the performance of ICL has been shown to be highly sensitive to the selection of few-shot demonstrations. Selecting the most suitable examples as context remains an ongoing challenge and an open problem. Existing literature has highlighted the importance of selecting examples that are diverse or semantically similar to the test sample while ignoring the fact that the optimal selection dimension, i.e., diversity or similarity, is task-specific. Based on how the test sample is answered, we propose Iterative Demonstration Selection (IDS) to leverage the merits of both dimensions. Using zero-shot chain-of-thought reasoning (Zero-shot-CoT), IDS iteratively selects examples that are diverse but still strongly correlated with the test sample as ICL demonstrations. Specifically, IDS applies Zero-shot-CoT to the test sample before demonstration selection. The output reasoning path is then used to choose demonstrations that are prepended to the test sample for inference. The generated answer is followed by its corresponding reasoning path for extracting a new set of demonstrations in the next iteration. After several iterations, IDS adopts majority voting to obtain the final result. Through extensive experiments on tasks including reasoning, question answering, and topic classification, we demonstrate that IDS can consistently outperform existing ICL demonstration selection methods.",
+      "externalIds": {
+        "ArXiv": "2310.09881",
+        "DBLP": "journals/corr/abs-2310-09881",
+        "DOI": "10.48550/arXiv.2310.09881",
+        "CorpusId": 264146526
+      },
+      "arxiv_id": "2310.09881",
+      "doi": "10.48550/arXiv.2310.09881",
+      "corpus_id": 264146526
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "48",
+      "ref_key": "S2:f9838a3be5c94bb2674a0e224de349b50e18f3c4",
+      "paperId": "f9838a3be5c94bb2674a0e224de349b50e18f3c4",
+      "title": "Learning To Retrieve Prompts for In-Context Learning",
+      "year": 2021,
+      "abstract": "In-context learning is a recent paradigm in natural language understanding, where a large pre-trained language model (LM) observes a test instance and a few training examples as its input, and directly decodes the output without any update to its parameters. However, performance has been shown to strongly depend on the selected training examples (termed prompts). In this work, we propose an efficient method for retrieving prompts for in-context learning using annotated data and an LM. Given an input-output pair, we estimate the probability of the output given the input and a candidate training example as the prompt, and label training examples as positive or negative based on this probability. We then train an efficient dense retriever from this data, which is used to retrieve training examples as prompts at test time. We evaluate our approach on three sequence-to-sequence tasks where language utterances are mapped to meaning representations, and find that it substantially outperforms prior work and multiple baselines across the board.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2112-08633",
+        "ACL": "2022.naacl-main.191",
+        "ArXiv": "2112.08633",
+        "DOI": "10.18653/v1/2022.naacl-main.191",
+        "CorpusId": 245218561
+      },
+      "arxiv_id": "2112.08633",
+      "doi": "10.18653/v1/2022.naacl-main.191",
+      "corpus_id": 245218561
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "49",
+      "ref_key": "S2:81986b8a3d3fe6c5be06fc4527953fb514ad12e8",
+      "paperId": "81986b8a3d3fe6c5be06fc4527953fb514ad12e8",
+      "title": "Improving In-Context Few-Shot Learning via Self-Supervised Training",
+      "year": 2022,
+      "abstract": "Self-supervised pretraining has made few-shot learning possible for many NLP tasks. But the pretraining objectives are not typically adapted specifically for in-context few-shot learning. In this paper, we propose to use self-supervision in an intermediate training stage between pretraining and downstream few-shot usage with the goal to teach the model to perform in-context few shot learning. We propose and evaluate four self-supervised objectives on two benchmarks. We find that the intermediate self-supervision stage produces models that outperform strong baselines. Ablation study shows that several factors affect the downstream performance, such as the amount of training data and the diversity of the self-supervised objectives. Human-annotated cross-task supervision and self-supervision are complementary. Qualitative analysis suggests that the self-supervised-trained models are better at following task requirements.",
+      "externalIds": {
+        "DBLP": "conf/naacl/ChenDPMISK22",
+        "ACL": "2022.naacl-main.260",
+        "ArXiv": "2205.01703",
+        "DOI": "10.48550/arXiv.2205.01703",
+        "CorpusId": 248512524
+      },
+      "arxiv_id": "2205.01703",
+      "doi": "10.48550/arXiv.2205.01703",
+      "corpus_id": 248512524
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "50",
+      "ref_key": "S2:1fafaccebc4a74898a74c606f846318c4c2c7536",
+      "paperId": "1fafaccebc4a74898a74c606f846318c4c2c7536",
+      "title": "On the Effect of Pretraining Corpora on In-context Learning by a Large-scale Language Model",
+      "year": 2022,
+      "abstract": "Many recent studies on large-scale language models have reported successful in-context zero- and few-shot learning ability. However, the in-depth analysis of when in-context learning occurs is still lacking. For example, it is unknown how in-context learning performance changes as the training corpus varies. Here, we investigate the effects of the source and size of the pretraining corpus on in-context learning in HyperCLOVA, a Korean-centric GPT-3 model. From our in-depth investigation, we introduce the following observations: (1) in-context learning performance heavily depends on the corpus domain source, and the size of the pretraining corpus does not necessarily determine the emergence of in-context learning, (2) in-context learning ability can emerge when a language model is trained on a combination of multiple corpora, even when each corpus does not result in in-context learning on its own, (3) pretraining with a corpus related to a downstream task does not always guarantee the competitive in-context learning performance of the downstream task, especially in the few-shot setting, and (4) the relationship between language modeling (measured in perplexity) and in-context learning does not always correlate: e.g., low perplexity does not always imply high in-context few-shot learning performance.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2204-13509",
+        "ACL": "2022.naacl-main.380",
+        "ArXiv": "2204.13509",
+        "DOI": "10.48550/arXiv.2204.13509",
+        "CorpusId": 248427215
+      },
+      "arxiv_id": "2204.13509",
+      "doi": "10.48550/arXiv.2204.13509",
+      "corpus_id": 248427215
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "51",
+      "ref_key": "S2:86d0d3855f94105e25d81cab9f3d269c6062a9c4",
+      "paperId": "86d0d3855f94105e25d81cab9f3d269c6062a9c4",
+      "title": "Selective Annotation Makes Language Models Better Few-Shot Learners",
+      "year": 2022,
+      "abstract": "Many recent approaches to natural language tasks are built on the remarkable abilities of large language models. Large language models can perform in-context learning, where they learn a new task from a few task demonstrations, without any parameter updates. This work examines the implications of in-context learning for the creation of datasets for new natural language tasks. Departing from recent in-context learning methods, we formulate an annotation-efficient, two-step framework: selective annotation that chooses a pool of examples to annotate from unlabeled data in advance, followed by prompt retrieval that retrieves task examples from the annotated pool at test time. Based on this framework, we propose an unsupervised, graph-based selective annotation method, voke-k, to select diverse, representative examples to annotate. Extensive experiments on 10 datasets (covering classification, commonsense reasoning, dialogue, and text/code generation) demonstrate that our selective annotation method improves the task performance by a large margin. On average, vote-k achieves a 12.9%/11.4% relative gain under an annotation budget of 18/100, as compared to randomly selecting examples to annotate. Compared to state-of-the-art supervised finetuning approaches, it yields similar performance with 10-100x less annotation cost across 10 tasks. We further analyze the effectiveness of our framework in various scenarios: language models with varying sizes, alternative selective annotation methods, and cases where there is a test data domain shift. We hope that our studies will serve as a basis for data annotations as large language models are increasingly applied to new tasks. Our code is available at https://github.com/HKUNLP/icl-selective-annotation.",
+      "externalIds": {
+        "DBLP": "conf/iclr/SuKWSWX0OZS023",
+        "ArXiv": "2209.01975",
+        "DOI": "10.48550/arXiv.2209.01975",
+        "CorpusId": 252089424
+      },
+      "arxiv_id": "2209.01975",
+      "doi": "10.48550/arXiv.2209.01975",
+      "corpus_id": 252089424
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "52",
+      "ref_key": "S2:3db1219429c3f04e88347d41269bdc83c457fbf9",
+      "paperId": "3db1219429c3f04e88347d41269bdc83c457fbf9",
+      "title": "Symbol tuning improves in-context learning in language models",
+      "year": 2023,
+      "abstract": "We present symbol tuning - finetuning language models on in-context input-label pairs where natural language labels (e.g.,\"positive/negative sentiment\") are replaced with arbitrary symbols (e.g.,\"foo/bar\"). Symbol tuning leverages the intuition that when a model cannot use instructions or natural language labels to figure out a task, it must instead do so by learning the input-label mappings. We experiment with symbol tuning across Flan-PaLM models up to 540B parameters and observe benefits across various settings. First, symbol tuning boosts performance on unseen in-context learning tasks and is much more robust to underspecified prompts, such as those without instructions or without natural language labels. Second, symbol-tuned models are much stronger at algorithmic reasoning tasks, with up to 18.2% better performance on the List Functions benchmark and up to 15.3% better performance on the Simple Turing Concepts benchmark. Finally, symbol-tuned models show large improvements in following flipped-labels presented in-context, meaning that they are more capable of using in-context information to override prior semantic knowledge.",
+      "externalIds": {
+        "ArXiv": "2305.08298",
+        "DBLP": "conf/emnlp/WeiHLCHTCLZ0L23",
+        "DOI": "10.48550/arXiv.2305.08298",
+        "CorpusId": 258686712
+      },
+      "arxiv_id": "2305.08298",
+      "doi": "10.48550/arXiv.2305.08298",
+      "corpus_id": 258686712
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "53",
+      "ref_key": "S2:ab4467bd55ddfe7b575aad37df11720ec93965d6",
+      "paperId": "ab4467bd55ddfe7b575aad37df11720ec93965d6",
+      "title": "Large Language Models Are Implicitly Topic Models: Explaining and Finding Good Demonstrations for In-Context Learning",
+      "year": 2023,
+      "abstract": "In recent years, pre-trained large language models have demonstrated remarkable efﬁciency in achieving an inference-time few-shot learning capability known as in-context learning. However, existing literature has highlighted the sensitivity of this capability to the selection of few-shot demonstrations. The underlying mechanisms by which this capability arises from regular language model pretraining objectives remain poorly understood. In this study, we aim to examine the in-context learning phenomenon through a Bayesian lens, viewing large language models as topic models that implicitly infer task-related information from demonstrations. On this premise, we propose an algorithm for selecting optimal demonstrations from a set of annotated data and demonstrate a signiﬁcant 12.5% improvement relative to the random selection baseline, averaged over eight GPT2 and GPT3 models on eight different real-world text classiﬁcation datasets. Our empirical ﬁndings support our hypothesis that large language models implicitly infer a latent concept variable. 1",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2301-11916",
+        "DOI": "10.48550/arXiv.2301.11916",
+        "CorpusId": 270973586
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2301.11916",
+      "corpus_id": 270973586
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "54",
+      "ref_key": "S2:a7fa71dc6856ebef79f354597128d1c68b19b6e4",
+      "paperId": "a7fa71dc6856ebef79f354597128d1c68b19b6e4",
+      "title": "Transformers as Algorithms: Generalization and Stability in In-context Learning",
+      "year": 2023,
+      "abstract": "In-context learning (ICL) is a type of prompting where a transformer model operates on a sequence of (input, output) examples and performs inference on-the-fly. In this work, we formalize in-context learning as an algorithm learning problem where a transformer model implicitly constructs a hypothesis function at inference-time. We first explore the statistical aspects of this abstraction through the lens of multitask learning: We obtain generalization bounds for ICL when the input prompt is (1) a sequence of i.i.d. (input, label) pairs or (2) a trajectory arising from a dynamical system. The crux of our analysis is relating the excess risk to the stability of the algorithm implemented by the transformer. We characterize when transformer/attention architecture provably obeys the stability condition and also provide empirical verification. For generalization on unseen tasks, we identify an inductive bias phenomenon in which the transfer learning risk is governed by the task complexity and the number of MTL tasks in a highly predictable manner. Finally, we provide numerical evaluations that (1) demonstrate transformers can indeed implement near-optimal algorithms on classical regression problems with i.i.d. and dynamic data, (2) provide insights on stability, and (3) verify our theoretical predictions.",
+      "externalIds": {
+        "DBLP": "conf/icml/LiIPO23",
+        "ArXiv": "2301.07067",
+        "CorpusId": 256616253
+      },
+      "arxiv_id": "2301.07067",
+      "doi": null,
+      "corpus_id": 256616253
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "55",
+      "ref_key": "S2:6a2d96d2a7adde6349f15c1e680b67d114e7b67c",
+      "paperId": "6a2d96d2a7adde6349f15c1e680b67d114e7b67c",
+      "title": "Unified Demonstration Retriever for In-Context Learning",
+      "year": 2023,
+      "abstract": "In-context learning is a new learning paradigm where a language model conditions on a few input-output pairs (demonstrations) and a test input, and directly outputs the prediction. It has been shown sensitive to the provided demonstrations and thus promotes the research of demonstration retrieval: given a test input, relevant examples are retrieved from the training set to serve as informative demonstrations for in-context learning. While previous works train task-specific retrievers for several tasks separately, these methods are hard to transfer and scale on various tasks, and separately trained retrievers will cause a lot of parameter storage and deployment cost. In this paper, we propose Unified Demonstration Retriever (UDR), a single model to retrieve demonstrations for a wide range of tasks. To train UDR, we cast various tasks’ training signals into a unified list-wise ranking formulation by language model’s feedback. Then we propose a multi-task list-wise ranking training framework with an iterative mining strategy to find high-quality candidates, which can help UDR fully incorporate various tasks’ signals. Experiments on 30+ tasks across 13 task families and multiple data domains show that UDR significantly outperforms baselines. Further analyses show the effectiveness of each proposed component and UDR’s strong ability in various scenarios including different LMs (1.3B 175B), unseen datasets, varying demonstration quantities, etc. We will release the code and model checkpoint after review.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-04320",
+        "ACL": "2023.acl-long.256",
+        "ArXiv": "2305.04320",
+        "DOI": "10.48550/arXiv.2305.04320",
+        "CorpusId": 258557751
+      },
+      "arxiv_id": "2305.04320",
+      "doi": "10.48550/arXiv.2305.04320",
+      "corpus_id": 258557751
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "56",
+      "ref_key": "S2:e65b346d442e9962a4276dc1c1af2956d9d5f1eb",
+      "paperId": "e65b346d442e9962a4276dc1c1af2956d9d5f1eb",
+      "title": "Self-Instruct: Aligning Language Models with Self-Generated Instructions",
+      "year": 2022,
+      "abstract": "Large “instruction-tuned” language models (i.e., finetuned to respond to instructions) have demonstrated a remarkable ability to generalize zero-shot to new tasks. Nevertheless, they depend heavily on human-written instruction data that is often limited in quantity, diversity, and creativity, therefore hindering the generality of the tuned model. We introduce Self-Instruct, a framework for improving the instruction-following capabilities of pretrained language models by bootstrapping off their own generations. Our pipeline generates instructions, input, and output samples from a language model, then filters invalid or similar ones before using them to finetune the original model. Applying our method to the vanilla GPT3, we demonstrate a 33% absolute improvement over the original model on Super-NaturalInstructions, on par with the performance of InstructGPT-001, which was trained with private user data and human annotations. For further evaluation, we curate a set of expert-written instructions for novel tasks, and show through human evaluation that tuning GPT3 with Self-Instruct outperforms using existing public instruction datasets by a large margin, leaving only a 5% absolute gap behind InstructGPT-001. Self-Instruct provides an almost annotation-free method for aligning pre-trained language models with instructions, and we release our large synthetic dataset to facilitate future studies on instruction tuning.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2212-10560",
+        "ArXiv": "2212.10560",
+        "ACL": "2023.acl-long.754",
+        "DOI": "10.48550/arXiv.2212.10560",
+        "CorpusId": 254877310
+      },
+      "arxiv_id": "2212.10560",
+      "doi": "10.48550/arXiv.2212.10560",
+      "corpus_id": 254877310
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "57",
+      "ref_key": "S2:dac3a172b504f4e33c029655e9befb3386e5f63a",
+      "paperId": "dac3a172b504f4e33c029655e9befb3386e5f63a",
+      "title": "Emergent Abilities of Large Language Models",
+      "year": 2022,
+      "abstract": "Scaling up language models has been shown to predictably improve performance and sample efficiency on a wide range of downstream tasks. This paper instead discusses an unpredictable phenomenon that we refer to as emergent abilities of large language models. We consider an ability to be emergent if it is not present in smaller models but is present in larger models. Thus, emergent abilities cannot be predicted simply by extrapolating the performance of smaller models. The existence of such emergence implies that additional scaling could further expand the range of capabilities of language models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2206-07682",
+        "ArXiv": "2206.07682",
+        "DOI": "10.48550/arXiv.2206.07682",
+        "CorpusId": 249674500
+      },
+      "arxiv_id": "2206.07682",
+      "doi": "10.48550/arXiv.2206.07682",
+      "corpus_id": 249674500
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "58",
+      "ref_key": "S2:da3aca9d7b50da823f669c983edeb60445720fe0",
+      "paperId": "da3aca9d7b50da823f669c983edeb60445720fe0",
+      "title": "The Learnability of In-Context Learning",
+      "year": 2023,
+      "abstract": "In-context learning is a surprising and important phenomenon that emerged when modern language models were scaled to billions of learned parameters. Without modifying a large language model's weights, it can be tuned to perform various downstream natural language tasks simply by including concatenated training examples of these tasks in its input. Though disruptive for many practical applications of large language models, this emergent learning paradigm is not well understood from a theoretical perspective. In this paper, we propose a first-of-its-kind PAC based framework for in-context learnability, and use it to provide the first finite sample complexity results for the in-context learning setup. Our framework includes an initial pretraining phase, which fits a function to the pretraining distribution, and then a second in-context learning phase, which keeps this function constant and concatenates training examples of the downstream task in its input. We use our framework in order to prove that, under mild assumptions, when the pretraining distribution is a mixture of latent tasks (a model often considered for natural language pretraining), these tasks can be efficiently learned via in-context learning, even though the model's weights are unchanged and the input significantly diverges from the pretraining distribution. Our theoretical analysis reveals that in this setting, in-context learning is more about identifying the task than about learning it, a result which is in line with a series of recent empirical findings. We hope that the in-context learnability framework presented in this paper will facilitate future progress towards a deeper understanding of this important new learning paradigm.",
+      "externalIds": {
+        "DBLP": "conf/nips/WiesLS23",
+        "ArXiv": "2303.07895",
+        "DOI": "10.48550/arXiv.2303.07895",
+        "CorpusId": 257505009
+      },
+      "arxiv_id": "2303.07895",
+      "doi": "10.48550/arXiv.2303.07895",
+      "corpus_id": 257505009
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "59",
+      "ref_key": "S2:600c842b141a4c92b4e1306ff1cdba04ab61e2ff",
+      "paperId": "600c842b141a4c92b4e1306ff1cdba04ab61e2ff",
+      "title": "Auto-ICL: In-Context Learning without Human Supervision",
+      "year": 2023,
+      "abstract": "With in-context learning ability, the performance of large language models can be significantly boosted when provided with appropriate context. However, existing in-context learning methods mainly rely on human-provided contexts, such as labeled examples and explicit instructions. Writing context by humans is labor-intensive on various tasks and limits the model to tasks manageable by humans. To overcome these limitations, we propose Automatic In-Context Learning framework that enables the model to autonomously generate examples and instructions for problem-solving. With experiments across various models and datasets, results show that model-generated contexts outperform human-annotated contexts, including Few-Shot and Few-Shot-CoT methods, and surpass existing self-generated context methods like Zero-CoT and Auto-CoT.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-09263",
+        "ArXiv": "2311.09263",
+        "DOI": "10.48550/arXiv.2311.09263",
+        "CorpusId": 265221442
+      },
+      "arxiv_id": "2311.09263",
+      "doi": "10.48550/arXiv.2311.09263",
+      "corpus_id": 265221442
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "60",
+      "ref_key": "S2:380ba3def262f92e44c95ea9ff0eac755db34c59",
+      "paperId": "380ba3def262f92e44c95ea9ff0eac755db34c59",
+      "title": "Not All Demonstration Examples are Equally Beneficial: Reweighting Demonstration Examples for In-Context Learning",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) have recently gained the In-Context Learning (ICL) ability with the models scaling up, allowing them to quickly adapt to downstream tasks with only a few demonstration examples prepended in the input sequence. Nonetheless, the current practice of ICL treats all demonstration examples equally, which still warrants improvement, as the quality of examples is usually uneven. In this paper, we investigate how to determine approximately optimal weights for demonstration examples and how to apply them during ICL. To assess the quality of weights in the absence of additional validation data, we design a masked self-prediction (MSP) score that exhibits a strong correlation with the final ICL performance. To expedite the weight-searching process, we discretize the continuous weight space and adopt beam search. With approximately optimal weights obtained, we further propose two strategies to apply them to demonstrations at different model positions. Experimental results on 8 text classification tasks show that our approach outperforms conventional ICL by a large margin. Our code are publicly available at https:github.com/Zhe-Young/WICL.",
+      "externalIds": {
+        "ArXiv": "2310.08309",
+        "DBLP": "conf/emnlp/YangDWS23",
+        "DOI": "10.48550/arXiv.2310.08309",
+        "CorpusId": 263909494
+      },
+      "arxiv_id": "2310.08309",
+      "doi": "10.48550/arXiv.2310.08309",
+      "corpus_id": 263909494
+    },
+    {
+      "paper_id": "2301.00234",
+      "ref_index": "61",
+      "ref_key": "S2:4610ffb1b016acaa82a2065ffd1a3adbae1ce722",
+      "paperId": "4610ffb1b016acaa82a2065ffd1a3adbae1ce722",
+      "title": "Large Language Models Are Human-Level Prompt Engineers",
+      "year": 2022,
+      "abstract": "By conditioning on natural language instructions, large language models (LLMs) have displayed impressive capabilities as general-purpose computers. However, task performance depends significantly on the quality of the prompt used to steer the model, and most effective prompts have been handcrafted by humans. Inspired by classical program synthesis and the human approach to prompt engineering, we propose Automatic Prompt Engineer (APE) for automatic instruction generation and selection. In our method, we treat the instruction as the\"program,\"optimized by searching over a pool of instruction candidates proposed by an LLM in order to maximize a chosen score function. To evaluate the quality of the selected instruction, we evaluate the zero-shot performance of another LLM following the selected instruction. Experiments on 24 NLP tasks show that our automatically generated instructions outperform the prior LLM baseline by a large margin and achieve better or comparable performance to the instructions generated by human annotators on 19/24 tasks. We conduct extensive qualitative and quantitative analyses to explore the performance of APE. We show that APE-engineered prompts can be applied to steer models toward truthfulness and/or informativeness, as well as to improve few-shot learning performance by simply prepending them to standard in-context learning prompts. Please check out our webpage at https://sites.google.com/view/automatic-prompt-engineer.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2211-01910",
+        "ArXiv": "2211.01910",
+        "DOI": "10.48550/arXiv.2211.01910",
+        "CorpusId": 253265328
+      },
+      "arxiv_id": "2211.01910",
+      "doi": "10.48550/arXiv.2211.01910",
+      "corpus_id": 253265328
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "In-context Learning": {
+        "Training": {
+          "Pre-training ": {
+            "63914b58bb944edbccba8304fd3e5bccb232a964": {},
+            "d395c771f6537259610497ba218cce5b9bfc2c50": {},
+            "3fb0731538c59f8520a309996a0567b58965f0fe": {}
+          },
+          "Warmup ": {
+            "1eddc4e36632342309885131a63ebd0bac1d837f": {},
+            "0a9030dd6cc2d438509f7568c1081d58c2523d5c": {},
+            "cdbd4f9b6ab2e2fd1ddf5400d5ed2c18960635d1": {},
+            "ff0b2681d7b05e16c46dfb71d980cc2f605907cd": {},
+            "47df3fd32d00220c85c2c51a571254fd99b2ecc7": {},
+            "06d7cb8c8816360feb33c3367073e0ef66d7d0b0": {},
+            "e965e93e76a9e6c4e4863d145b5c007b540d575d": {},
+            "81986b8a3d3fe6c5be06fc4527953fb514ad12e8": {},
+            "3db1219429c3f04e88347d41269bdc83c457fbf9": {}
+          }
+        },
+        "Inference": {
+          "Demonstration  ": {
+            "Selection   ": {
+              "Unsupervised": {
+                "3d5922d71a370f32b7f232a596def914f67eebd1": {},
+                "d03a9b2a0e090cc9fd2ba0a457ecea35372f1018": {},
+                "dcbf62f17dad0f4554f91c822d141fb92f78429a": {},
+                "dc385646887a3669ae0ee506a263d592f4f7c7a6": {},
+                "59641c10ed7431a3cf841f308367dc2dc0281b74": {},
+                "b217b6bc340af9a10bebbf8acc36ea30871769bd": {},
+                "86d0d3855f94105e25d81cab9f3d269c6062a9c4": {}
+              },
+              "Supervised": {
+                "03613effe356d2a8815f899027d6a5868822fd93": {},
+                "f9838a3be5c94bb2674a0e224de349b50e18f3c4": {},
+                "ab4467bd55ddfe7b575aad37df11720ec93965d6": {},
+                "6a2d96d2a7adde6349f15c1e680b67d114e7b67c": {},
+                "b8bd29a6104d26a16687400049a4e7e026ae6258": {}
+              }
+            },
+            "Reformatting   ": {
+              "dcbf62f17dad0f4554f91c822d141fb92f78429a": {},
+              "267ef391ebaa4fc3c8ec62cb92107e8efe82a5db": {},
+              "600c842b141a4c92b4e1306ff1cdba04ab61e2ff": {},
+              "380ba3def262f92e44c95ea9ff0eac755db34c59": {}
+            },
+            "Ordering   ": {
+              "29eadc8a20594dcf62d505cf478149c4d4ec647e": {},
+              "0adec918885dff698acf359988ed79a543157f80": {}
+            }
+          },
+          "Instruction": {
+            "3a6e67c28c9563c187d93b57cff1ca41ec4c245b": {},
+            "4e5f7cd537a1bbcd090f9887b1b59f39a3715dba": {},
+            "e65b346d442e9962a4276dc1c1af2956d9d5f1eb": {},
+            "4610ffb1b016acaa82a2065ffd1a3adbae1ce722": {}
+          },
+          "Scoring   Function ": {
+            "56fa0b9cba4d9aee5ccc327365b3b3a721031c69": {},
+            "eea7bca03bda3ee2448cd012bbcb2b33822861d8": {}
+          }
+        },
+        "Analysis": {
+          "Influencing  Factors ": {
+            "Pre-training  Stage ": {
+              "Pre-Training  Data": {
+                "36f7bc27c9a37eb337c35df4ae86f148e13d4e9a": {},
+                "419a7e9df13a3a03234aba0f05f48291261b8e59": {},
+                "146e9e1238ff6caf18f0bd936ffcfbe1e65d2afd": {},
+                "1fafaccebc4a74898a74c606f846318c4c2c7536": {},
+                "da3aca9d7b50da823f669c983edeb60445720fe0": {}
+              },
+              "Model and Training": {
+                "3c8444cc4e96bdbe6853b886caf032afd1ee1d20": {},
+                "90abbc2cf38462b954ae1b772fac9532e2ccd8b0": {},
+                "dac3a172b504f4e33c029655e9befb3386e5f63a": {}
+              }
+            },
+            "Inference  Stage ": {
+              "Input Labels": {
+                "7fa85f9c0fe44f1bf9e58a55f0f009296578c2f0": {},
+                "8f936af93fb2b52b9678ff8f17c1ebe8de236a88": {},
+                "316206a2f89eb94ce02a81fba1dc304586f21b39": {},
+                "f4df78183261538e718066331898ee5cad7cad05": {}
+              },
+              "Demonstration  Examples": {
+                "1733eb7792f7a43dd21f51f4d1017a1bffd217b5": {},
+                "b8bd29a6104d26a16687400049a4e7e026ae6258": {},
+                "500cfab9345de174644d7534bb39695f17920601": {},
+                "dd889342b0de45f7434cdfa7543e3bd46ec824cb": {},
+                "59641c10ed7431a3cf841f308367dc2dc0281b74": {},
+                "0adec918885dff698acf359988ed79a543157f80": {}
+              }
+            }
+          },
+          "Learning  Mechanism ": {
+            "Functional  Modules ": {
+              "11ae58636a5daf0ea1297f1c4ee94042fcebefa8": {},
+              "a569b9daa3606952dbcfdaa310ddfe6ad4eb95f3": {},
+              "7bd4ca8706a79983d31ab74e6c79bfdfd949602e": {},
+              "c90a99eeb57019732a6cc996bb9eaf13faedf00f": {}
+            },
+            "Theoretical  Interpretation ": {
+              "663662fbd9be73f99c764a7b85982bf825acfe8a": {},
+              "7aa801b907b59b8ee4cfb1296d9dac22c5164c5d": {},
+              "10bd4160b44803ada6a3d2e366c44b7e2a4ffe90": {},
+              "d86ca0894cb4d165eb5ef45b73526ca8b4cdd725": {},
+              "de32da8f5c6a50a6c311e9357ba16aa7d05a1bc9": {},
+              "70ece7b4ba8f3b67f5a797daed544fb6a0b627bf": {},
+              "cbec8bf16a459b0ae38856f604a6a14cd1343477": {},
+              "ab4467bd55ddfe7b575aad37df11720ec93965d6": {},
+              "7fa85f9c0fe44f1bf9e58a55f0f009296578c2f0": {},
+              "a7fa71dc6856ebef79f354597128d1c68b19b6e4": {}
+            }
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000001",
+        "paperId": "63914b58bb944edbccba8304fd3e5bccb232a964",
+        "ref_index": "6",
+        "path": [
+          "In-context Learning",
+          "Training",
+          "Pre-training "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000002",
+        "paperId": "d395c771f6537259610497ba218cce5b9bfc2c50",
+        "ref_index": "9",
+        "path": [
+          "In-context Learning",
+          "Training",
+          "Pre-training "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000003",
+        "paperId": "3fb0731538c59f8520a309996a0567b58965f0fe",
+        "ref_index": "46",
+        "path": [
+          "In-context Learning",
+          "Training",
+          "Pre-training "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000004",
+        "paperId": "1eddc4e36632342309885131a63ebd0bac1d837f",
+        "ref_index": "1",
+        "path": [
+          "In-context Learning",
+          "Training",
+          "Warmup "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000005",
+        "paperId": "0a9030dd6cc2d438509f7568c1081d58c2523d5c",
+        "ref_index": "2",
+        "path": [
+          "In-context Learning",
+          "Training",
+          "Warmup "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000006",
+        "paperId": "cdbd4f9b6ab2e2fd1ddf5400d5ed2c18960635d1",
+        "ref_index": "18",
+        "path": [
+          "In-context Learning",
+          "Training",
+          "Warmup "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000007",
+        "paperId": "ff0b2681d7b05e16c46dfb71d980cc2f605907cd",
+        "ref_index": "22",
+        "path": [
+          "In-context Learning",
+          "Training",
+          "Warmup "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000008",
+        "paperId": "47df3fd32d00220c85c2c51a571254fd99b2ecc7",
+        "ref_index": "40",
+        "path": [
+          "In-context Learning",
+          "Training",
+          "Warmup "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000009",
+        "paperId": "06d7cb8c8816360feb33c3367073e0ef66d7d0b0",
+        "ref_index": "43",
+        "path": [
+          "In-context Learning",
+          "Training",
+          "Warmup "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000010",
+        "paperId": "e965e93e76a9e6c4e4863d145b5c007b540d575d",
+        "ref_index": "45",
+        "path": [
+          "In-context Learning",
+          "Training",
+          "Warmup "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000011",
+        "paperId": "81986b8a3d3fe6c5be06fc4527953fb514ad12e8",
+        "ref_index": "49",
+        "path": [
+          "In-context Learning",
+          "Training",
+          "Warmup "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000012",
+        "paperId": "3db1219429c3f04e88347d41269bdc83c457fbf9",
+        "ref_index": "52",
+        "path": [
+          "In-context Learning",
+          "Training",
+          "Warmup "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000013",
+        "paperId": "3d5922d71a370f32b7f232a596def914f67eebd1",
+        "ref_index": "11",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Demonstration  ",
+          "Selection   ",
+          "Unsupervised"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000014",
+        "paperId": "d03a9b2a0e090cc9fd2ba0a457ecea35372f1018",
+        "ref_index": "24",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Demonstration  ",
+          "Selection   ",
+          "Unsupervised"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000015",
+        "paperId": "dcbf62f17dad0f4554f91c822d141fb92f78429a",
+        "ref_index": "31",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Demonstration  ",
+          "Selection   ",
+          "Unsupervised"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000016",
+        "paperId": "dc385646887a3669ae0ee506a263d592f4f7c7a6",
+        "ref_index": "33",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Demonstration  ",
+          "Selection   ",
+          "Unsupervised"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000017",
+        "paperId": "59641c10ed7431a3cf841f308367dc2dc0281b74",
+        "ref_index": "34",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Demonstration  ",
+          "Selection   ",
+          "Unsupervised"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000018",
+        "paperId": "b217b6bc340af9a10bebbf8acc36ea30871769bd",
+        "ref_index": "47",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Demonstration  ",
+          "Selection   ",
+          "Unsupervised"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000019",
+        "paperId": "86d0d3855f94105e25d81cab9f3d269c6062a9c4",
+        "ref_index": "51",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Demonstration  ",
+          "Selection   ",
+          "Unsupervised"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000020",
+        "paperId": "03613effe356d2a8815f899027d6a5868822fd93",
+        "ref_index": "39",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Demonstration  ",
+          "Selection   ",
+          "Supervised"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000021",
+        "paperId": "f9838a3be5c94bb2674a0e224de349b50e18f3c4",
+        "ref_index": "48",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Demonstration  ",
+          "Selection   ",
+          "Supervised"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000022",
+        "paperId": "ab4467bd55ddfe7b575aad37df11720ec93965d6",
+        "ref_index": "53",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Demonstration  ",
+          "Selection   ",
+          "Supervised"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000023",
+        "paperId": "6a2d96d2a7adde6349f15c1e680b67d114e7b67c",
+        "ref_index": "55",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Demonstration  ",
+          "Selection   ",
+          "Supervised"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000024",
+        "paperId": "b8bd29a6104d26a16687400049a4e7e026ae6258",
+        "ref_index": "13",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Demonstration  ",
+          "Selection   ",
+          "Supervised"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000025",
+        "paperId": "dcbf62f17dad0f4554f91c822d141fb92f78429a",
+        "ref_index": "31",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Demonstration  ",
+          "Reformatting   "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000026",
+        "paperId": "267ef391ebaa4fc3c8ec62cb92107e8efe82a5db",
+        "ref_index": "35",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Demonstration  ",
+          "Reformatting   "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000027",
+        "paperId": "600c842b141a4c92b4e1306ff1cdba04ab61e2ff",
+        "ref_index": "59",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Demonstration  ",
+          "Reformatting   "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000028",
+        "paperId": "380ba3def262f92e44c95ea9ff0eac755db34c59",
+        "ref_index": "60",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Demonstration  ",
+          "Reformatting   "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000029",
+        "paperId": "29eadc8a20594dcf62d505cf478149c4d4ec647e",
+        "ref_index": "36",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Demonstration  ",
+          "Ordering   "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000030",
+        "paperId": "0adec918885dff698acf359988ed79a543157f80",
+        "ref_index": "37",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Demonstration  ",
+          "Ordering   "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000031",
+        "paperId": "3a6e67c28c9563c187d93b57cff1ca41ec4c245b",
+        "ref_index": "17",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Instruction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000032",
+        "paperId": "4e5f7cd537a1bbcd090f9887b1b59f39a3715dba",
+        "ref_index": "28",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Instruction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000033",
+        "paperId": "e65b346d442e9962a4276dc1c1af2956d9d5f1eb",
+        "ref_index": "56",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Instruction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000034",
+        "paperId": "4610ffb1b016acaa82a2065ffd1a3adbae1ce722",
+        "ref_index": "61",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Instruction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000035",
+        "paperId": "56fa0b9cba4d9aee5ccc327365b3b3a721031c69",
+        "ref_index": "16",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Scoring   Function "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000036",
+        "paperId": "eea7bca03bda3ee2448cd012bbcb2b33822861d8",
+        "ref_index": "41",
+        "path": [
+          "In-context Learning",
+          "Inference",
+          "Scoring   Function "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000037",
+        "paperId": "36f7bc27c9a37eb337c35df4ae86f148e13d4e9a",
+        "ref_index": "4",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Influencing  Factors ",
+          "Pre-training  Stage ",
+          "Pre-Training  Data"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000038",
+        "paperId": "419a7e9df13a3a03234aba0f05f48291261b8e59",
+        "ref_index": "12",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Influencing  Factors ",
+          "Pre-training  Stage ",
+          "Pre-Training  Data"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000039",
+        "paperId": "146e9e1238ff6caf18f0bd936ffcfbe1e65d2afd",
+        "ref_index": "21",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Influencing  Factors ",
+          "Pre-training  Stage ",
+          "Pre-Training  Data"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000040",
+        "paperId": "1fafaccebc4a74898a74c606f846318c4c2c7536",
+        "ref_index": "50",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Influencing  Factors ",
+          "Pre-training  Stage ",
+          "Pre-Training  Data"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000041",
+        "paperId": "da3aca9d7b50da823f669c983edeb60445720fe0",
+        "ref_index": "58",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Influencing  Factors ",
+          "Pre-training  Stage ",
+          "Pre-Training  Data"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000042",
+        "paperId": "3c8444cc4e96bdbe6853b886caf032afd1ee1d20",
+        "ref_index": "3",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Influencing  Factors ",
+          "Pre-training  Stage ",
+          "Model and Training"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000043",
+        "paperId": "90abbc2cf38462b954ae1b772fac9532e2ccd8b0",
+        "ref_index": "25",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Influencing  Factors ",
+          "Pre-training  Stage ",
+          "Model and Training"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000044",
+        "paperId": "dac3a172b504f4e33c029655e9befb3386e5f63a",
+        "ref_index": "57",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Influencing  Factors ",
+          "Pre-training  Stage ",
+          "Model and Training"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000045",
+        "paperId": "7fa85f9c0fe44f1bf9e58a55f0f009296578c2f0",
+        "ref_index": "8",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Influencing  Factors ",
+          "Inference  Stage ",
+          "Input Labels"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000046",
+        "paperId": "8f936af93fb2b52b9678ff8f17c1ebe8de236a88",
+        "ref_index": "10",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Influencing  Factors ",
+          "Inference  Stage ",
+          "Input Labels"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000047",
+        "paperId": "316206a2f89eb94ce02a81fba1dc304586f21b39",
+        "ref_index": "26",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Influencing  Factors ",
+          "Inference  Stage ",
+          "Input Labels"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000048",
+        "paperId": "f4df78183261538e718066331898ee5cad7cad05",
+        "ref_index": "42",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Influencing  Factors ",
+          "Inference  Stage ",
+          "Input Labels"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000049",
+        "paperId": "1733eb7792f7a43dd21f51f4d1017a1bffd217b5",
+        "ref_index": "7",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Influencing  Factors ",
+          "Inference  Stage ",
+          "Demonstration  Examples"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000050",
+        "paperId": "b8bd29a6104d26a16687400049a4e7e026ae6258",
+        "ref_index": "13",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Influencing  Factors ",
+          "Inference  Stage ",
+          "Demonstration  Examples"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000051",
+        "paperId": "500cfab9345de174644d7534bb39695f17920601",
+        "ref_index": "19",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Influencing  Factors ",
+          "Inference  Stage ",
+          "Demonstration  Examples"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000052",
+        "paperId": "dd889342b0de45f7434cdfa7543e3bd46ec824cb",
+        "ref_index": "29",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Influencing  Factors ",
+          "Inference  Stage ",
+          "Demonstration  Examples"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000053",
+        "paperId": "59641c10ed7431a3cf841f308367dc2dc0281b74",
+        "ref_index": "34",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Influencing  Factors ",
+          "Inference  Stage ",
+          "Demonstration  Examples"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000054",
+        "paperId": "0adec918885dff698acf359988ed79a543157f80",
+        "ref_index": "37",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Influencing  Factors ",
+          "Inference  Stage ",
+          "Demonstration  Examples"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000055",
+        "paperId": "11ae58636a5daf0ea1297f1c4ee94042fcebefa8",
+        "ref_index": "0",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Learning  Mechanism ",
+          "Functional  Modules "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000056",
+        "paperId": "a569b9daa3606952dbcfdaa310ddfe6ad4eb95f3",
+        "ref_index": "27",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Learning  Mechanism ",
+          "Functional  Modules "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000057",
+        "paperId": "7bd4ca8706a79983d31ab74e6c79bfdfd949602e",
+        "ref_index": "32",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Learning  Mechanism ",
+          "Functional  Modules "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000058",
+        "paperId": "c90a99eeb57019732a6cc996bb9eaf13faedf00f",
+        "ref_index": "44",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Learning  Mechanism ",
+          "Functional  Modules "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000059",
+        "paperId": "663662fbd9be73f99c764a7b85982bf825acfe8a",
+        "ref_index": "5",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Learning  Mechanism ",
+          "Theoretical  Interpretation "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000060",
+        "paperId": "7aa801b907b59b8ee4cfb1296d9dac22c5164c5d",
+        "ref_index": "14",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Learning  Mechanism ",
+          "Theoretical  Interpretation "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000061",
+        "paperId": "10bd4160b44803ada6a3d2e366c44b7e2a4ffe90",
+        "ref_index": "15",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Learning  Mechanism ",
+          "Theoretical  Interpretation "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000062",
+        "paperId": "d86ca0894cb4d165eb5ef45b73526ca8b4cdd725",
+        "ref_index": "20",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Learning  Mechanism ",
+          "Theoretical  Interpretation "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000063",
+        "paperId": "de32da8f5c6a50a6c311e9357ba16aa7d05a1bc9",
+        "ref_index": "23",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Learning  Mechanism ",
+          "Theoretical  Interpretation "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000064",
+        "paperId": "70ece7b4ba8f3b67f5a797daed544fb6a0b627bf",
+        "ref_index": "30",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Learning  Mechanism ",
+          "Theoretical  Interpretation "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000065",
+        "paperId": "cbec8bf16a459b0ae38856f604a6a14cd1343477",
+        "ref_index": "38",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Learning  Mechanism ",
+          "Theoretical  Interpretation "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000066",
+        "paperId": "ab4467bd55ddfe7b575aad37df11720ec93965d6",
+        "ref_index": "53",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Learning  Mechanism ",
+          "Theoretical  Interpretation "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000067",
+        "paperId": "7fa85f9c0fe44f1bf9e58a55f0f009296578c2f0",
+        "ref_index": "8",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Learning  Mechanism ",
+          "Theoretical  Interpretation "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2301.00234",
+        "arxiv_id": "2301.00234",
+        "leaf_mention_id": "2301.00234::000068",
+        "paperId": "a7fa71dc6856ebef79f354597128d1c68b19b6e4",
+        "ref_index": "54",
+        "path": [
+          "In-context Learning",
+          "Analysis",
+          "Learning  Mechanism ",
+          "Theoretical  Interpretation "
+        ],
+        "depth": 4,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 68,
+      "unique_leaf_paper_count": 62,
+      "multi_membership_extra_mentions": 6,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

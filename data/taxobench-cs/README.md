@@ -1,8 +1,8 @@
 # TaxoBench-CS Staging Store
 
-Status: `reference_outlines_copied_no_payloads`
+Status: `data_staged_payloads_ready_no_model_runs`
 
-This directory is the planned Outline_COT-local staging store for TaxoBench-CS
+This directory is the Outline_COT-local staging store for TaxoBench-CS
 outline-generation experiments.
 
 Source workspace:
@@ -59,9 +59,22 @@ data/taxobench-cs/
   scripts/
 ```
 
-`reference_outlines/<arxiv_id>.outline.json` has been populated from the exact
-outline extraction source. The remaining JSON/JSONL/TXT data files listed above
-are future adapter outputs.
+Canonical staging was written after explicit approval on 2026-06-01.
+
+Validated canonical contents:
+
+- `156` manifest rows
+- `156` ready papers
+- `11609` normalized reference rows
+- `13205` taxonomy leaf paper-id mentions
+- `0` unresolved taxonomy leaf mentions
+- `624` deterministic payload files
+- `156` projection reports
+
+`reference_outlines/<arxiv_id>.outline.json` was populated from the exact
+outline extraction source. The normalized JSON/JSONL/TXT files listed above are
+derived adapter outputs and deterministic prompt payloads. They are not model
+outputs.
 
 ## Conversion Boundary
 

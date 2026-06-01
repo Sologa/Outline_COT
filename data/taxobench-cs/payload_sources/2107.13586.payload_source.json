@@ -1,0 +1,1388 @@
+{
+  "paper_id": "2107.13586",
+  "arxiv_id": "2107.13586",
+  "title": "Pre-train, Prompt, and Predict: A Systematic Survey of Prompting Methods in Natural Language Processing",
+  "ref_meta": [
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "0",
+      "ref_key": "S2:3caf34532597683c980134579b156cd0d7db2f40",
+      "paperId": "3caf34532597683c980134579b156cd0d7db2f40",
+      "title": "Universal Adversarial Triggers for Attacking and Analyzing NLP",
+      "year": 2019,
+      "abstract": "Adversarial examples highlight model vulnerabilities and are useful for evaluation and interpretation. We define universal adversarial triggers: input-agnostic sequences of tokens that trigger a model to produce a specific prediction when concatenated to any input from a dataset. We propose a gradient-guided search over tokens which finds short trigger sequences (e.g., one word for classification and four words for language modeling) that successfully trigger the target prediction. For example, triggers cause SNLI entailment accuracy to drop from 89.94% to 0.55%, 72% of “why” questions in SQuAD to be answered “to kill american people”, and the GPT-2 language model to spew racist output even when conditioned on non-racial contexts. Furthermore, although the triggers are optimized using white-box access to a specific model, they transfer to other models for all tasks we consider. Finally, since triggers are input-agnostic, they provide an analysis of global model behavior. For instance, they confirm that SNLI models exploit dataset biases and help to diagnose heuristics learned by reading comprehension models.",
+      "externalIds": {
+        "MAG": "2970290563",
+        "ArXiv": "1908.07125",
+        "DBLP": "conf/emnlp/WallaceFKGS19",
+        "ACL": "D19-1221",
+        "DOI": "10.18653/v1/D19-1221",
+        "CorpusId": 201698258
+      },
+      "arxiv_id": "1908.07125",
+      "doi": "10.18653/v1/D19-1221",
+      "corpus_id": 201698258
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "1",
+      "ref_key": "S2:f64e1d6bc13aae99aab5449fc9ae742a9ba7761e",
+      "paperId": "f64e1d6bc13aae99aab5449fc9ae742a9ba7761e",
+      "title": "UniLMv2: Pseudo-Masked Language Models for Unified Language Model Pre-Training",
+      "year": 2020,
+      "abstract": "We propose to pre-train a unified language model for both autoencoding and partially autoregressive language modeling tasks using a novel training procedure, referred to as a pseudo-masked language model (PMLM). Given an input text with masked tokens, we rely on conventional masks to learn inter-relations between corrupted tokens and context via autoencoding, and pseudo masks to learn intra-relations between masked spans via partially autoregressive modeling. With well-designed position embeddings and self-attention masks, the context encodings are reused to avoid redundant computation. Moreover, conventional masks used for autoencoding provide global masking information, so that all the position embeddings are accessible in partially autoregressive language modeling. In addition, the two tasks pre-train a unified language model as a bidirectional encoder and a sequence-to-sequence decoder, respectively. Our experiments show that the unified language models pre-trained using PMLM achieve new state-of-the-art results on a wide range of natural language understanding and generation tasks across several widely used benchmarks.",
+      "externalIds": {
+        "ArXiv": "2002.12804",
+        "DBLP": "journals/corr/abs-2002-12804",
+        "MAG": "3035606497",
+        "CorpusId": 211572655
+      },
+      "arxiv_id": "2002.12804",
+      "doi": null,
+      "corpus_id": 211572655
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "2",
+      "ref_key": "S2:145b8b5d99a2beba6029418ca043585b90138d12",
+      "paperId": "145b8b5d99a2beba6029418ca043585b90138d12",
+      "title": "MASS: Masked Sequence to Sequence Pre-training for Language Generation",
+      "year": 2019,
+      "abstract": "Pre-training and fine-tuning, e.g., BERT, have achieved great success in language understanding by transferring knowledge from rich-resource pre-training task to the low/zero-resource downstream tasks. Inspired by the success of BERT, we propose MAsked Sequence to Sequence pre-training (MASS) for the encoder-decoder based language generation tasks. MASS adopts the encoder-decoder framework to reconstruct a sentence fragment given the remaining part of the sentence: its encoder takes a sentence with randomly masked fragment (several consecutive tokens) as input, and its decoder tries to predict this masked fragment. In this way, MASS can jointly train the encoder and decoder to develop the capability of representation extraction and language modeling. By further fine-tuning on a variety of zero/low-resource language generation tasks, including neural machine translation, text summarization and conversational response generation (3 tasks and totally 8 datasets), MASS achieves significant improvements over the baselines without pre-training or with other pre-training methods. Specially, we achieve the state-of-the-art accuracy (37.5 in terms of BLEU score) on the unsupervised English-French translation, even beating the early attention-based supervised model.",
+      "externalIds": {
+        "MAG": "2944815030",
+        "ArXiv": "1905.02450",
+        "DBLP": "journals/corr/abs-1905-02450",
+        "CorpusId": 146808476
+      },
+      "arxiv_id": "1905.02450",
+      "doi": null,
+      "corpus_id": 146808476
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "3",
+      "ref_key": "S2:1c71771c701aadfd72c5866170a9f5d71464bb88",
+      "paperId": "1c71771c701aadfd72c5866170a9f5d71464bb88",
+      "title": "Unified Language Model Pre-training for Natural Language Understanding and Generation",
+      "year": 2019,
+      "abstract": "This paper presents a new Unified pre-trained Language Model (UniLM) that can be fine-tuned for both natural language understanding and generation tasks. The model is pre-trained using three types of language modeling tasks: unidirectional, bidirectional, and sequence-to-sequence prediction. The unified modeling is achieved by employing a shared Transformer network and utilizing specific self-attention masks to control what context the prediction conditions on. UniLM compares favorably with BERT on the GLUE benchmark, and the SQuAD 2.0 and CoQA question answering tasks. Moreover, UniLM achieves new state-of-the-art results on five natural language generation datasets, including improving the CNN/DailyMail abstractive summarization ROUGE-L to 40.51 (2.04 absolute improvement), the Gigaword abstractive summarization ROUGE-L to 35.75 (0.86 absolute improvement), the CoQA generative question answering F1 score to 82.5 (37.1 absolute improvement), the SQuAD question generation BLEU-4 to 22.12 (3.75 absolute improvement), and the DSTC7 document-grounded dialog response generation NIST-4 to 2.67 (human performance is 2.65). The code and pre-trained models are available at this https URL.",
+      "externalIds": {
+        "MAG": "2971274815",
+        "ArXiv": "1905.03197",
+        "DBLP": "journals/corr/abs-1905-03197",
+        "CorpusId": 147704286
+      },
+      "arxiv_id": "1905.03197",
+      "doi": null,
+      "corpus_id": 147704286
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "4",
+      "ref_key": "S2:2404aecd866cfa15fee6ada095667980a63c4172",
+      "paperId": "2404aecd866cfa15fee6ada095667980a63c4172",
+      "title": "AdaPrompt: Adaptive Prompt-based Finetuning for Relation Extraction",
+      "year": 2021,
+      "abstract": "In this paper, we reformulate the relation extraction task as mask language modeling and propose a novel adaptive prompt-based ﬁne-tuning approach. We propose an adaptive label words selection mechanism that scatters the relation label into variable number of label tokens to handle the complex multiple label space. We further introduce an auxiliary entity discriminator object to encourage the model to focus on context representation learning. Extensive experiments on benchmark datasets demonstrate that our approach can achieve better performance on both the few-shot and supervised setting 1 .",
+      "externalIds": {
+        "CorpusId": 233240688
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 233240688
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "5",
+      "ref_key": "S2:5a2e45ce35fb26ab70a61b424a49f8e5b4532a8e",
+      "paperId": "5a2e45ce35fb26ab70a61b424a49f8e5b4532a8e",
+      "title": "WARP: Word-level Adversarial ReProgramming",
+      "year": 2021,
+      "abstract": "Transfer learning from pretrained language models recently became the dominant approach for solving many NLP tasks. A common approach to transfer learning for multiple tasks that maximize parameter sharing trains one or more task-specific layers on top of the language model. In this paper, we present an alternative approach based on adversarial reprogramming, which extends earlier work on automatic prompt generation. Adversarial reprogramming attempts to learn task-specific word embeddings that, when concatenated to the input text, instruct the language model to solve the specified task. Using up to 25K trainable parameters per task, this approach outperforms all existing methods with up to 25M trainable parameters on the public leaderboard of the GLUE benchmark. Our method, initialized with task-specific human-readable prompts, also works in a few-shot setting, outperforming GPT-3 on two SuperGLUE tasks with just 32 training samples.",
+      "externalIds": {
+        "DBLP": "conf/acl/HambardzumyanKM20",
+        "ACL": "2021.acl-long.381",
+        "ArXiv": "2101.00121",
+        "DOI": "10.18653/v1/2021.acl-long.381",
+        "CorpusId": 230437613
+      },
+      "arxiv_id": "2101.00121",
+      "doi": "10.18653/v1/2021.acl-long.381",
+      "corpus_id": 230437613
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "6",
+      "ref_key": "S2:6c4b76232bb72897685d19b3d264c6ee3005bc2b",
+      "paperId": "6c4b76232bb72897685d19b3d264c6ee3005bc2b",
+      "title": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "year": 2019,
+      "abstract": "Transfer learning, where a model is first pre-trained on a data-rich task before being fine-tuned on a downstream task, has emerged as a powerful technique in natural language processing (NLP). The effectiveness of transfer learning has given rise to a diversity of approaches, methodology, and practice. In this paper, we explore the landscape of transfer learning techniques for NLP by introducing a unified framework that converts every language problem into a text-to-text format. Our systematic study compares pre-training objectives, architectures, unlabeled datasets, transfer approaches, and other factors on dozens of language understanding tasks. By combining the insights from our exploration with scale and our new \"Colossal Clean Crawled Corpus\", we achieve state-of-the-art results on many benchmarks covering summarization, question answering, text classification, and more. To facilitate future work on transfer learning for NLP, we release our dataset, pre-trained models, and code.",
+      "externalIds": {
+        "MAG": "2981852735",
+        "DBLP": "journals/corr/abs-1910-10683",
+        "ArXiv": "1910.10683",
+        "CorpusId": 204838007
+      },
+      "arxiv_id": "1910.10683",
+      "doi": null,
+      "corpus_id": 204838007
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "7",
+      "ref_key": "S2:077f8329a7b6fa3b7c877a57b81eb6c18b5f87de",
+      "paperId": "077f8329a7b6fa3b7c877a57b81eb6c18b5f87de",
+      "title": "RoBERTa: A Robustly Optimized BERT Pretraining Approach",
+      "year": 2019,
+      "abstract": "Language model pretraining has led to significant performance gains but careful comparison between different approaches is challenging. Training is computationally expensive, often done on private datasets of different sizes, and, as we will show, hyperparameter choices have significant impact on the final results. We present a replication study of BERT pretraining (Devlin et al., 2019) that carefully measures the impact of many key hyperparameters and training data size. We find that BERT was significantly undertrained, and can match or exceed the performance of every model published after it. Our best model achieves state-of-the-art results on GLUE, RACE and SQuAD. These results highlight the importance of previously overlooked design choices, and raise questions about the source of recently reported improvements. We release our models and code.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1907-11692",
+        "ArXiv": "1907.11692",
+        "MAG": "2965373594",
+        "CorpusId": 198953378
+      },
+      "arxiv_id": "1907.11692",
+      "doi": null,
+      "corpus_id": 198953378
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "8",
+      "ref_key": "S2:cd18800a0fe0b668a1cc19f2ec95b5003d0a5035",
+      "paperId": "cd18800a0fe0b668a1cc19f2ec95b5003d0a5035",
+      "title": "Improving Language Understanding by Generative Pre-Training",
+      "year": 2018,
+      "abstract": "Natural language understanding comprises a wide range of diverse tasks such as textual entailment, question answering, semantic similarity assessment, and document classiﬁcation. Although large unlabeled text corpora are abundant, labeled data for learning these speciﬁc tasks is scarce, making it challenging for discriminatively trained models to perform adequately. We demonstrate that large gains on these tasks can be realized by generative pre-training of a language model on a diverse corpus of unlabeled text, followed by discriminative ﬁne-tuning on each speciﬁc task. In contrast to previous approaches, we make use of task-aware input transformations during ﬁne-tuning to achieve effective transfer while requiring minimal changes to the model architecture. We demonstrate the effectiveness of our approach on a wide range of benchmarks for natural language understanding. Our general task-agnostic model outperforms discriminatively trained models that use architectures speciﬁcally crafted for each task, signiﬁcantly improving upon the state of the art in 9 out of the 12 tasks studied. For instance, we achieve absolute improvements of 8.9% on commonsense reasoning (Stories Cloze Test), 5.7% on question answering (RACE), and 1.5% on textual entailment (MultiNLI).",
+      "externalIds": {
+        "MAG": "2965425874",
+        "CorpusId": 49313245
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 49313245
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "9",
+      "ref_key": "S2:9405cc0d6169988371b2755e573cc28650d14dfe",
+      "paperId": "9405cc0d6169988371b2755e573cc28650d14dfe",
+      "title": "Language Models are Unsupervised Multitask Learners",
+      "year": 2019,
+      "abstract": "Natural language processing tasks, such as question answering, machine translation, reading comprehension, and summarization, are typically approached with supervised learning on taskspecific datasets. We demonstrate that language models begin to learn these tasks without any explicit supervision when trained on a new dataset of millions of webpages called WebText. When conditioned on a document plus questions, the answers generated by the language model reach 55 F1 on the CoQA dataset matching or exceeding the performance of 3 out of 4 baseline systems without using the 127,000+ training examples. The capacity of the language model is essential to the success of zero-shot task transfer and increasing it improves performance in a log-linear fashion across tasks. Our largest model, GPT-2, is a 1.5B parameter Transformer that achieves state of the art results on 7 out of 8 tested language modeling datasets in a zero-shot setting but still underfits WebText. Samples from the model reflect these improvements and contain coherent paragraphs of text. These findings suggest a promising path towards building language processing systems which learn to perform tasks from their naturally occurring demonstrations.",
+      "externalIds": {
+        "MAG": "2955855238",
+        "CorpusId": 160025533
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 160025533
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "10",
+      "ref_key": "S2:90abbc2cf38462b954ae1b772fac9532e2ccd8b0",
+      "paperId": "90abbc2cf38462b954ae1b772fac9532e2ccd8b0",
+      "title": "Language Models are Few-Shot Learners",
+      "year": 2020,
+      "abstract": "Recent work has demonstrated substantial gains on many NLP tasks and benchmarks by pre-training on a large corpus of text followed by fine-tuning on a specific task. While typically task-agnostic in architecture, this method still requires task-specific fine-tuning datasets of thousands or tens of thousands of examples. By contrast, humans can generally perform a new language task from only a few examples or from simple instructions - something which current NLP systems still largely struggle to do. Here we show that scaling up language models greatly improves task-agnostic, few-shot performance, sometimes even reaching competitiveness with prior state-of-the-art fine-tuning approaches. Specifically, we train GPT-3, an autoregressive language model with 175 billion parameters, 10x more than any previous non-sparse language model, and test its performance in the few-shot setting. For all tasks, GPT-3 is applied without any gradient updates or fine-tuning, with tasks and few-shot demonstrations specified purely via text interaction with the model. GPT-3 achieves strong performance on many NLP datasets, including translation, question-answering, and cloze tasks, as well as several tasks that require on-the-fly reasoning or domain adaptation, such as unscrambling words, using a novel word in a sentence, or performing 3-digit arithmetic. At the same time, we also identify some datasets where GPT-3's few-shot learning still struggles, as well as some datasets where GPT-3 faces methodological issues related to training on large web corpora. Finally, we find that GPT-3 can generate samples of news articles which human evaluators have difficulty distinguishing from articles written by humans. We discuss broader societal impacts of this finding and of GPT-3 in general.",
+      "externalIds": {
+        "ArXiv": "2005.14165",
+        "DBLP": "conf/nips/BrownMRSKDNSSAA20",
+        "MAG": "3030163527",
+        "CorpusId": 218971783
+      },
+      "arxiv_id": "2005.14165",
+      "doi": null,
+      "corpus_id": 218971783
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "11",
+      "ref_key": "S2:ce498651107588db67adcfbb5479bdb416f4de2f",
+      "paperId": "ce498651107588db67adcfbb5479bdb416f4de2f",
+      "title": "Template-Based Named Entity Recognition Using BART",
+      "year": 2021,
+      "abstract": "There is a recent interest in investigating few-shot NER, where the low-resource target domain has different label sets compared with a resource-rich source domain. Existing methods use a similarity-based metric. However, they cannot make full use of knowledge transfer in NER model parameters. To address the issue, we propose a template-based method for NER, treating NER as a language model ranking problem in a sequence-to-sequence framework, where original sentences and statement templates filled by candidate named entity span are regarded as the source sequence and the target sequence, respectively. For inference, the model is required to classify each candidate span based on the corresponding template scores. Our experiments demonstrate that the proposed method achieves 92.55% F1 score on the CoNLL03 (rich-resource task), and significantly better than fine-tuning BERT 10.88%, 15.34%, and 11.73% F1 score on the MIT Movie, the MIT Restaurant, and the ATIS (low-resource task), respectively.",
+      "externalIds": {
+        "ACL": "2021.findings-acl.161",
+        "DBLP": "journals/corr/abs-2106-01760",
+        "ArXiv": "2106.01760",
+        "DOI": "10.18653/v1/2021.findings-acl.161",
+        "CorpusId": 235313658
+      },
+      "arxiv_id": "2106.01760",
+      "doi": "10.18653/v1/2021.findings-acl.161",
+      "corpus_id": 235313658
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "12",
+      "ref_key": "S2:df2b0e26d0599ce3e70df8a9da02e51594e0e992",
+      "paperId": "df2b0e26d0599ce3e70df8a9da02e51594e0e992",
+      "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+      "year": 2019,
+      "abstract": "We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. Unlike recent language representation models (Peters et al., 2018a; Radford et al., 2018), BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial task-specific architecture modifications. BERT is conceptually simple and empirically powerful. It obtains new state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5 (7.7 point absolute improvement), MultiNLI accuracy to 86.7% (4.6% absolute improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1 (5.1 point absolute improvement).",
+      "externalIds": {
+        "MAG": "2951055169",
+        "ACL": "N19-1423",
+        "DBLP": "journals/corr/abs-1810-04805",
+        "ArXiv": "1810.04805",
+        "DOI": "10.18653/v1/N19-1423",
+        "CorpusId": 52967399
+      },
+      "arxiv_id": "1810.04805",
+      "doi": "10.18653/v1/N19-1423",
+      "corpus_id": 52967399
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "13",
+      "ref_key": "S2:85e7d63f75c0916bd350a229e040c5fbb1472e7a",
+      "paperId": "85e7d63f75c0916bd350a229e040c5fbb1472e7a",
+      "title": "Making Pre-trained Language Models Better Few-shot Learners",
+      "year": 2021,
+      "abstract": "The recent GPT-3 model (Brown et al., 2020) achieves remarkable few-shot performance solely by leveraging a natural-language prompt and a few task demonstrations as input context. Inspired by their findings, we study few-shot learning in a more practical scenario, where we use smaller language models for which fine-tuning is computationally efficient. We present LM-BFF—better few-shot fine-tuning of language models—a suite of simple and complementary techniques for fine-tuning language models on a small number of annotated examples. Our approach includes (1) prompt-based fine-tuning together with a novel pipeline for automating prompt generation; and (2) a refined strategy for dynamically and selectively incorporating demonstrations into each context. Finally, we present a systematic evaluation for analyzing few-shot performance on a range of NLP tasks, including classification and regression. Our experiments demonstrate that our methods combine to dramatically outperform standard fine-tuning procedures in this low resource setting, achieving up to 30% absolute improvement, and 11% on average across all tasks. Our approach makes minimal assumptions on task resources and domain expertise, and hence constitutes a strong task-agnostic method for few-shot learning.",
+      "externalIds": {
+        "ArXiv": "2012.15723",
+        "DBLP": "conf/acl/GaoFC20",
+        "ACL": "2021.acl-long.295",
+        "DOI": "10.18653/v1/2021.acl-long.295",
+        "CorpusId": 229923710
+      },
+      "arxiv_id": "2012.15723",
+      "doi": "10.18653/v1/2021.acl-long.295",
+      "corpus_id": 229923710
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "14",
+      "ref_key": "S2:da454295392cf4caaa39cc465734237ffe55392f",
+      "paperId": "da454295392cf4caaa39cc465734237ffe55392f",
+      "title": "PTR: Prompt Tuning with Rules for Text Classification",
+      "year": 2021,
+      "abstract": "Fine-tuned pre-trained language models (PLMs) have achieved awesome\nperformance on almost all NLP tasks. By using additional prompts to fine-tune\nPLMs, we can further stimulate the rich knowledge distributed in PLMs to better\nserve downstream tasks. Prompt tuning has achieved promising results on some\nfew-class classification tasks such as sentiment classification and natural\nlanguage inference. However, manually designing lots of language prompts is\ncumbersome and fallible. For those auto-generated prompts, it is also expensive\nand time-consuming to verify their effectiveness in non-few-shot scenarios.\nHence, it is still challenging for prompt tuning to address many-class\nclassification tasks. To this end, we propose prompt tuning with rules (PTR)\nfor many-class text classification and apply logic rules to construct prompts\nwith several sub-prompts. In this way, PTR is able to encode prior knowledge of\neach class into prompt tuning. We conduct experiments on relation\nclassification, a typical and complicated many-class classification task, and\nthe results show that PTR can significantly and consistently outperform\nexisting state-of-the-art baselines. This indicates that PTR is a promising\napproach to take advantage of both human prior knowledge and PLMs for those\ncomplicated classification tasks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2105-11259",
+        "ArXiv": "2105.11259",
+        "DOI": "10.1016/j.aiopen.2022.11.003",
+        "CorpusId": 235166723
+      },
+      "arxiv_id": "2105.11259",
+      "doi": "10.1016/j.aiopen.2022.11.003",
+      "corpus_id": 235166723
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "15",
+      "ref_key": "S2:a75649771901a4881b44c0ceafa469fcc6e6f968",
+      "paperId": "a75649771901a4881b44c0ceafa469fcc6e6f968",
+      "title": "How Can We Know What Language Models Know?",
+      "year": 2019,
+      "abstract": "Abstract Recent work has presented intriguing results examining the knowledge contained in language models (LMs) by having the LM fill in the blanks of prompts such as “Obama is a __ by profession”. These prompts are usually manually created, and quite possibly sub-optimal; another prompt such as “Obama worked as a __ ” may result in more accurately predicting the correct profession. Because of this, given an inappropriate prompt, we might fail to retrieve facts that the LM does know, and thus any given prompt only provides a lower bound estimate of the knowledge contained in an LM. In this paper, we attempt to more accurately estimate the knowledge contained in LMs by automatically discovering better prompts to use in this querying process. Specifically, we propose mining-based and paraphrasing-based methods to automatically generate high-quality and diverse prompts, as well as ensemble methods to combine answers from different prompts. Extensive experiments on the LAMA benchmark for extracting relational knowledge from LMs demonstrate that our methods can improve accuracy from 31.1% to 39.6%, providing a tighter lower bound on what LMs know. We have released the code and the resulting LM Prompt And Query Archive (LPAQA) at https://github.com/jzbjyb/LPAQA.",
+      "externalIds": {
+        "MAG": "3044438666",
+        "ArXiv": "1911.12543",
+        "DBLP": "journals/tacl/JiangXAN20",
+        "DOI": "10.1162/tacl_a_00324",
+        "CorpusId": 208513249
+      },
+      "arxiv_id": "1911.12543",
+      "doi": "10.1162/tacl_a_00324",
+      "corpus_id": 208513249
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "16",
+      "ref_key": "S2:708dcd8456426cd609c89a86344e0007c04c80bf",
+      "paperId": "708dcd8456426cd609c89a86344e0007c04c80bf",
+      "title": "X-FACTR: Multilingual Factual Knowledge Retrieval from Pretrained Language Models",
+      "year": 2020,
+      "abstract": "Language models (LMs) have proven surprisingly successful at capturing factual knowledge by completing cloze-style fill-in-the-blank questions such as \"Punta Cana is located in _.\" However, while knowledge is both written and queried in many languages, studies on LMs' factual representation ability have almost invariably been performed on English. To assess factual knowledge retrieval in LMs in different languages, we create a multilingual benchmark of cloze-style probes for 23 typologically diverse languages. To properly handle language variations, we expand probing methods from single- to multi-word entities, and develop several decoding algorithms to generate multi-token predictions. Extensive experimental results provide insights about how well (or poorly) current state-of-the-art LMs perform at this task in languages with more or fewer available resources. We further propose a code-switching-based method to improve the ability of multilingual LMs to access knowledge, and verify its effectiveness on several benchmark languages. Benchmark data and code have been released at https://x-factr.github.io.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/JiangAADN20",
+        "MAG": "3092939616",
+        "ACL": "2020.emnlp-main.479",
+        "ArXiv": "2010.06189",
+        "DOI": "10.18653/v1/2020.emnlp-main.479",
+        "CorpusId": 222310559
+      },
+      "arxiv_id": "2010.06189",
+      "doi": "10.18653/v1/2020.emnlp-main.479",
+      "corpus_id": 222310559
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "17",
+      "ref_key": "S2:ffdbd7f0b03b85747b001b4734d5ee31b5229aa4",
+      "paperId": "ffdbd7f0b03b85747b001b4734d5ee31b5229aa4",
+      "title": "The Power of Scale for Parameter-Efficient Prompt Tuning",
+      "year": 2021,
+      "abstract": "In this work, we explore “prompt tuning,” a simple yet effective mechanism for learning “soft prompts” to condition frozen language models to perform specific downstream tasks. Unlike the discrete text prompts used by GPT-3, soft prompts are learned through backpropagation and can be tuned to incorporate signals from any number of labeled examples. Our end-to-end learned approach outperforms GPT-3’s few-shot learning by a large margin. More remarkably, through ablations on model size using T5, we show that prompt tuning becomes more competitive with scale: as models exceed billions of parameters, our method “closes the gap” and matches the strong performance of model tuning (where all model weights are tuned). This finding is especially relevant because large models are costly to share and serve and the ability to reuse one frozen model for multiple downstream tasks can ease this burden. Our method can be seen as a simplification of the recently proposed “prefix tuning” of Li and Liang (2021) and we provide a comparison to this and other similar approaches. Finally, we show that conditioning a frozen model with soft prompts confers benefits in robustness to domain transfer and enables efficient “prompt ensembling.” We release code and model checkpoints to reproduce our experiments.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2104-08691",
+        "ArXiv": "2104.08691",
+        "ACL": "2021.emnlp-main.243",
+        "DOI": "10.18653/v1/2021.emnlp-main.243",
+        "CorpusId": 233296808
+      },
+      "arxiv_id": "2104.08691",
+      "doi": "10.18653/v1/2021.emnlp-main.243",
+      "corpus_id": 233296808
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "18",
+      "ref_key": "S2:395de0bd3837fdf4b4b5e5f04835bcc69c279481",
+      "paperId": "395de0bd3837fdf4b4b5e5f04835bcc69c279481",
+      "title": "BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension",
+      "year": 2019,
+      "abstract": "We present BART, a denoising autoencoder for pretraining sequence-to-sequence models. BART is trained by (1) corrupting text with an arbitrary noising function, and (2) learning a model to reconstruct the original text. It uses a standard Tranformer-based neural machine translation architecture which, despite its simplicity, can be seen as generalizing BERT (due to the bidirectional encoder), GPT (with the left-to-right decoder), and other recent pretraining schemes. We evaluate a number of noising approaches, finding the best performance by both randomly shuffling the order of sentences and using a novel in-filling scheme, where spans of text are replaced with a single mask token. BART is particularly effective when fine tuned for text generation but also works well for comprehension tasks. It matches the performance of RoBERTa on GLUE and SQuAD, and achieves new state-of-the-art results on a range of abstractive dialogue, question answering, and summarization tasks, with gains of up to 3.5 ROUGE. BART also provides a 1.1 BLEU increase over a back-translation system for machine translation, with only target language pretraining. We also replicate other pretraining schemes within the BART framework, to understand their effect on end-task performance.",
+      "externalIds": {
+        "MAG": "2982399380",
+        "DBLP": "conf/acl/LewisLGGMLSZ20",
+        "ACL": "2020.acl-main.703",
+        "ArXiv": "1910.13461",
+        "DOI": "10.18653/v1/2020.acl-main.703",
+        "CorpusId": 204960716
+      },
+      "arxiv_id": "1910.13461",
+      "doi": "10.18653/v1/2020.acl-main.703",
+      "corpus_id": 204960716
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "19",
+      "ref_key": "S2:53d8b356551a2361020a948f64454a6d599af69f",
+      "paperId": "53d8b356551a2361020a948f64454a6d599af69f",
+      "title": "Prefix-Tuning: Optimizing Continuous Prompts for Generation",
+      "year": 2021,
+      "abstract": "Fine-tuning is the de facto way of leveraging large pretrained language models for downstream tasks. However, fine-tuning modifies all the language model parameters and therefore necessitates storing a full copy for each task. In this paper, we propose prefix-tuning, a lightweight alternative to fine-tuning for natural language generation tasks, which keeps language model parameters frozen and instead optimizes a sequence of continuous task-specific vectors, which we call the prefix. Prefix-tuning draws inspiration from prompting for language models, allowing subsequent tokens to attend to this prefix as if it were “virtual tokens”. We apply prefix-tuning to GPT-2 for table-to-text generation and to BART for summarization. We show that by learning only 0.1% of the parameters, prefix-tuning obtains comparable performance in the full data setting, outperforms fine-tuning in low-data settings, and extrapolates better to examples with topics that are unseen during training.",
+      "externalIds": {
+        "DBLP": "conf/acl/LiL20",
+        "ACL": "2021.acl-long.353",
+        "ArXiv": "2101.00190",
+        "DOI": "10.18653/v1/2021.acl-long.353",
+        "CorpusId": 230433941
+      },
+      "arxiv_id": "2101.00190",
+      "doi": "10.18653/v1/2021.acl-long.353",
+      "corpus_id": 230433941
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "20",
+      "ref_key": "S2:59641c10ed7431a3cf841f308367dc2dc0281b74",
+      "paperId": "59641c10ed7431a3cf841f308367dc2dc0281b74",
+      "title": "What Makes Good In-Context Examples for GPT-3?",
+      "year": 2021,
+      "abstract": "GPT-3 has attracted lots of attention due to its superior performance across a wide range of NLP tasks, especially with its in-context learning abilities. Despite its success, we found that the empirical results of GPT-3 depend heavily on the choice of in-context examples. In this work, we investigate whether there are more effective strategies for judiciously selecting in-context examples (relative to random sampling) that better leverage GPT-3’s in-context learning capabilities.Inspired by the recent success of leveraging a retrieval module to augment neural networks, we propose to retrieve examples that are semantically-similar to a test query sample to formulate its corresponding prompt. Intuitively, the examples selected with such a strategy may serve as more informative inputs to unleash GPT-3’s power of text generation. We evaluate the proposed approach on several natural language understanding and generation benchmarks, where the retrieval-based prompt selection approach consistently outperforms the random selection baseline. Moreover, it is observed that the sentence encoders fine-tuned on task-related datasets yield even more helpful retrieval results. Notably, significant gains are observed on tasks such as table-to-text generation (44.3% on the ToTTo dataset) and open-domain question answering (45.5% on the NQ dataset).",
+      "externalIds": {
+        "DBLP": "conf/acl-deelio/LiuSZDCC22",
+        "ArXiv": "2101.06804",
+        "ACL": "2022.deelio-1.10",
+        "DOI": "10.18653/v1/2022.deelio-1.10",
+        "CorpusId": 231632658
+      },
+      "arxiv_id": "2101.06804",
+      "doi": "10.18653/v1/2022.deelio-1.10",
+      "corpus_id": 231632658
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "21",
+      "ref_key": "S2:bc37c6bdb8f39929a58b30464f72d6aa46cddc17",
+      "paperId": "bc37c6bdb8f39929a58b30464f72d6aa46cddc17",
+      "title": "GPT Understands, Too",
+      "year": 2021,
+      "abstract": "Prompting a pretrained language model with natural language patterns has been\nproved effective for natural language understanding (NLU). However, our\npreliminary study reveals that manual discrete prompts often lead to unstable\nperformance -- e.g., changing a single word in the prompt might result in\nsubstantial performance drop. We propose a novel method P-Tuning that employs\ntrainable continuous prompt embeddings in concatenation with discrete prompts.\nEmpirically, P-Tuning not only stabilizes training by minimizing the gap\nbetween various discrete prompts, but also improves performance by a sizeable\nmargin on a wide range of NLU tasks including LAMA and SuperGLUE. P-Tuning is\ngenerally effective for both frozen and tuned language models, under both the\nfully-supervised and few-shot settings.",
+      "externalIds": {
+        "ArXiv": "2103.10385",
+        "DBLP": "journals/corr/abs-2103-10385",
+        "DOI": "10.1016/j.aiopen.2023.08.012",
+        "CorpusId": 232269696
+      },
+      "arxiv_id": "2103.10385",
+      "doi": "10.1016/j.aiopen.2023.08.012",
+      "corpus_id": 232269696
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "22",
+      "ref_key": "S2:d0086b86103a620a86bc918746df0aa642e2a8a3",
+      "paperId": "d0086b86103a620a86bc918746df0aa642e2a8a3",
+      "title": "Language Models as Knowledge Bases?",
+      "year": 2019,
+      "abstract": "Recent progress in pretraining language models on large textual corpora led to a surge of improvements for downstream NLP tasks. Whilst learning linguistic knowledge, these models may also be storing relational knowledge present in the training data, and may be able to answer queries structured as “fill-in-the-blank” cloze statements. Language models have many advantages over structured knowledge bases: they require no schema engineering, allow practitioners to query about an open class of relations, are easy to extend to more data, and require no human supervision to train. We present an in-depth analysis of the relational knowledge already present (without fine-tuning) in a wide range of state-of-the-art pretrained language models. We find that (i) without fine-tuning, BERT contains relational knowledge competitive with traditional NLP methods that have some access to oracle knowledge, (ii) BERT also does remarkably well on open-domain question answering against a supervised baseline, and (iii) certain types of factual knowledge are learned much more readily than others by standard language model pretraining approaches. The surprisingly strong ability of these models to recall factual knowledge without any fine-tuning demonstrates their potential as unsupervised open-domain QA systems. The code to reproduce our analysis is available at https://github.com/facebookresearch/LAMA.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1909-01066",
+        "MAG": "2996758945",
+        "ArXiv": "1909.01066",
+        "ACL": "D19-1250",
+        "DOI": "10.18653/v1/D19-1250",
+        "CorpusId": 202539551
+      },
+      "arxiv_id": "1909.01066",
+      "doi": "10.18653/v1/D19-1250",
+      "corpus_id": 202539551
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "23",
+      "ref_key": "S2:8ae9a17c87a4518b513e860683a0ef7824be994d",
+      "paperId": "8ae9a17c87a4518b513e860683a0ef7824be994d",
+      "title": "Exploiting Cloze-Questions for Few-Shot Text Classification and Natural Language Inference",
+      "year": 2020,
+      "abstract": "Some NLP tasks can be solved in a fully unsupervised fashion by providing a pretrained language model with “task descriptions” in natural language (e.g., Radford et al., 2019). While this approach underperforms its supervised counterpart, we show in this work that the two ideas can be combined: We introduce Pattern-Exploiting Training (PET), a semi-supervised training procedure that reformulates input examples as cloze-style phrases to help language models understand a given task. These phrases are then used to assign soft labels to a large set of unlabeled examples. Finally, standard supervised training is performed on the resulting training set. For several tasks and languages, PET outperforms supervised training and strong semi-supervised approaches in low-resource settings by a large margin.",
+      "externalIds": {
+        "MAG": "3002104146",
+        "ArXiv": "2001.07676",
+        "ACL": "2021.eacl-main.20",
+        "DBLP": "journals/corr/abs-2001-07676",
+        "DOI": "10.18653/v1/2021.eacl-main.20",
+        "CorpusId": 210838924
+      },
+      "arxiv_id": "2001.07676",
+      "doi": "10.18653/v1/2021.eacl-main.20",
+      "corpus_id": 210838924
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "24",
+      "ref_key": "S2:f30444fbb6ad806168e2564db4815cd27faa7fd9",
+      "paperId": "f30444fbb6ad806168e2564db4815cd27faa7fd9",
+      "title": "It’s Not Just Size That Matters: Small Language Models Are Also Few-Shot Learners",
+      "year": 2020,
+      "abstract": "When scaled to hundreds of billions of parameters, pretrained language models such as GPT-3 (Brown et al., 2020) achieve remarkable few-shot performance. However, enormous amounts of compute are required for training and applying such big models, resulting in a large carbon footprint and making it difficult for researchers and practitioners to use them. We show that performance similar to GPT-3 can be obtained with language models that are much “greener” in that their parameter count is several orders of magnitude smaller. This is achieved by converting textual inputs into cloze questions that contain a task description, combined with gradient-based optimization; exploiting unlabeled data gives further improvements. We identify key factors required for successful natural language understanding with small language models.",
+      "externalIds": {
+        "ArXiv": "2009.07118",
+        "MAG": "3085177480",
+        "DBLP": "conf/naacl/SchickS21",
+        "ACL": "2021.naacl-main.185",
+        "DOI": "10.18653/V1/2021.NAACL-MAIN.185",
+        "CorpusId": 221703107
+      },
+      "arxiv_id": "2009.07118",
+      "doi": "10.18653/V1/2021.NAACL-MAIN.185",
+      "corpus_id": 221703107
+    },
+    {
+      "paper_id": "2107.13586",
+      "ref_index": "25",
+      "ref_key": "S2:a6a7724763d8adba466519489b0b9d209e7f2d15",
+      "paperId": "a6a7724763d8adba466519489b0b9d209e7f2d15",
+      "title": "BARTScore: Evaluating Generated Text as Text Generation",
+      "year": 2021,
+      "abstract": "A wide variety of NLP applications, such as machine translation, summarization, and dialog, involve text generation. One major challenge for these applications is how to evaluate whether such generated texts are actually fluent, accurate, or effective. In this work, we conceptualize the evaluation of generated text as a text generation problem, modeled using pre-trained sequence-to-sequence models. The general idea is that models trained to convert the generated text to/from a reference output or the source text will achieve higher scores when the generated text is better. We operationalize this idea using BART, an encoder-decoder based pre-trained model, and propose a metric BARTScore with a number of variants that can be flexibly applied in an unsupervised fashion to evaluation of text from different perspectives (e.g. informativeness, fluency, or factuality). BARTScore is conceptually simple and empirically effective. It can outperform existing top-scoring metrics in 16 of 22 test settings, covering evaluation of 16 datasets (e.g., machine translation, text summarization) and 7 different perspectives (e.g., informativeness, factuality). Code to calculate BARTScore is available at https://github.com/neulab/BARTScore, and we have released an interactive leaderboard for meta-evaluation at http://explainaboard.nlpedia.ai/leaderboard/task-meval/ on the ExplainaBoard platform, which allows us to interactively understand the strengths, weaknesses, and complementarity of each metric.",
+      "externalIds": {
+        "DBLP": "conf/nips/YuanNL21",
+        "ArXiv": "2106.11520",
+        "CorpusId": 235593404
+      },
+      "arxiv_id": "2106.11520",
+      "doi": null,
+      "corpus_id": 235593404
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "Prompting Method ": {
+        "Pre-trained Models": {
+          "Left-to-Right LM": {
+            "cd18800a0fe0b668a1cc19f2ec95b5003d0a5035": {},
+            "9405cc0d6169988371b2755e573cc28650d14dfe": {},
+            "90abbc2cf38462b954ae1b772fac9532e2ccd8b0": {}
+          },
+          "Masked LM": {
+            "077f8329a7b6fa3b7c877a57b81eb6c18b5f87de": {},
+            "df2b0e26d0599ce3e70df8a9da02e51594e0e992": {}
+          },
+          "Prefix LM": {
+            "f64e1d6bc13aae99aab5449fc9ae742a9ba7761e": {},
+            "1c71771c701aadfd72c5866170a9f5d71464bb88": {}
+          },
+          "Encoder-Decoder": {
+            "145b8b5d99a2beba6029418ca043585b90138d12": {},
+            "6c4b76232bb72897685d19b3d264c6ee3005bc2b": {},
+            "395de0bd3837fdf4b4b5e5f04835bcc69c279481": {}
+          }
+        },
+        "Prompt Engineering": {
+          "Shape": {
+            "Cloze": {
+              "ce498651107588db67adcfbb5479bdb416f4de2f": {},
+              "d0086b86103a620a86bc918746df0aa642e2a8a3": {}
+            },
+            "Prefix": {
+              "ffdbd7f0b03b85747b001b4734d5ee31b5229aa4": {},
+              "53d8b356551a2361020a948f64454a6d599af69f": {}
+            }
+          },
+          "Human Effort": {
+            "Hand-crafted": {
+              "90abbc2cf38462b954ae1b772fac9532e2ccd8b0": {},
+              "d0086b86103a620a86bc918746df0aa642e2a8a3": {}
+            },
+            "Automated": {
+              "Discrete": {
+                "3caf34532597683c980134579b156cd0d7db2f40": {}
+              },
+              "Continuous": {
+                "ffdbd7f0b03b85747b001b4734d5ee31b5229aa4": {},
+                "53d8b356551a2361020a948f64454a6d599af69f": {}
+              }
+            }
+          }
+        },
+        "Answer Engineering}": {
+          "Shape": {
+            "Token": {
+              "5a2e45ce35fb26ab70a61b424a49f8e5b4532a8e": {},
+              "d0086b86103a620a86bc918746df0aa642e2a8a3": {}
+            },
+            "Span": {
+              "708dcd8456426cd609c89a86344e0007c04c80bf": {},
+              "f30444fbb6ad806168e2564db4815cd27faa7fd9": {}
+            },
+            "Sentence": {
+              "90abbc2cf38462b954ae1b772fac9532e2ccd8b0": {},
+              "53d8b356551a2361020a948f64454a6d599af69f": {}
+            }
+          },
+          "Human Effort": {
+            "Hand-crafted": {
+              "8ae9a17c87a4518b513e860683a0ef7824be994d": {},
+              "f30444fbb6ad806168e2564db4815cd27faa7fd9": {}
+            },
+            "Automated": {
+              "Discrete": {
+                "85e7d63f75c0916bd350a229e040c5fbb1472e7a": {}
+              },
+              "Continuous": {
+                "5a2e45ce35fb26ab70a61b424a49f8e5b4532a8e": {}
+              }
+            }
+          }
+        },
+        "Multi-Prompt Learning": {
+          "Prompt Ensemble, multiple": {
+            "a75649771901a4881b44c0ceafa469fcc6e6f968": {},
+            "8ae9a17c87a4518b513e860683a0ef7824be994d": {},
+            "a6a7724763d8adba466519489b0b9d209e7f2d15": {}
+          },
+          "Prompt Augmentation, multiple": {
+            "90abbc2cf38462b954ae1b772fac9532e2ccd8b0": {},
+            "85e7d63f75c0916bd350a229e040c5fbb1472e7a": {},
+            "59641c10ed7431a3cf841f308367dc2dc0281b74": {}
+          },
+          "Prompt Composition, multiple": {
+            "da454295392cf4caaa39cc465734237ffe55392f": {}
+          },
+          "Prompt Decomposition, multiple": {
+            "ce498651107588db67adcfbb5479bdb416f4de2f": {}
+          }
+        },
+        "Prompt-based Training Strategies": {
+          "Parameter Updating": {
+            "Promptless Fine-tuning": {
+              "077f8329a7b6fa3b7c877a57b81eb6c18b5f87de": {},
+              "df2b0e26d0599ce3e70df8a9da02e51594e0e992": {}
+            },
+            "Tuning-free Prompting": {
+              "90abbc2cf38462b954ae1b772fac9532e2ccd8b0": {},
+              "a6a7724763d8adba466519489b0b9d209e7f2d15": {}
+            },
+            "Fixed-LM Prompt Tuning": {
+              "5a2e45ce35fb26ab70a61b424a49f8e5b4532a8e": {},
+              "53d8b356551a2361020a948f64454a6d599af69f": {}
+            },
+            "Fixed-prompt LM Tuning": {
+              "6c4b76232bb72897685d19b3d264c6ee3005bc2b": {},
+              "f30444fbb6ad806168e2564db4815cd27faa7fd9": {}
+            },
+            "Prompt+LM Tuning": {
+              "da454295392cf4caaa39cc465734237ffe55392f": {},
+              "bc37c6bdb8f39929a58b30464f72d6aa46cddc17": {}
+            }
+          },
+          "Training Sample Size": {
+            "Few/zero-shot": {
+              "90abbc2cf38462b954ae1b772fac9532e2ccd8b0": {},
+              "8ae9a17c87a4518b513e860683a0ef7824be994d": {}
+            },
+            "Full-data": {
+              "2404aecd866cfa15fee6ada095667980a63c4172": {},
+              "da454295392cf4caaa39cc465734237ffe55392f": {}
+            }
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000001",
+        "paperId": "cd18800a0fe0b668a1cc19f2ec95b5003d0a5035",
+        "ref_index": "8",
+        "path": [
+          "Prompting Method ",
+          "Pre-trained Models",
+          "Left-to-Right LM"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000002",
+        "paperId": "9405cc0d6169988371b2755e573cc28650d14dfe",
+        "ref_index": "9",
+        "path": [
+          "Prompting Method ",
+          "Pre-trained Models",
+          "Left-to-Right LM"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000003",
+        "paperId": "90abbc2cf38462b954ae1b772fac9532e2ccd8b0",
+        "ref_index": "10",
+        "path": [
+          "Prompting Method ",
+          "Pre-trained Models",
+          "Left-to-Right LM"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000004",
+        "paperId": "077f8329a7b6fa3b7c877a57b81eb6c18b5f87de",
+        "ref_index": "7",
+        "path": [
+          "Prompting Method ",
+          "Pre-trained Models",
+          "Masked LM"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000005",
+        "paperId": "df2b0e26d0599ce3e70df8a9da02e51594e0e992",
+        "ref_index": "12",
+        "path": [
+          "Prompting Method ",
+          "Pre-trained Models",
+          "Masked LM"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000006",
+        "paperId": "f64e1d6bc13aae99aab5449fc9ae742a9ba7761e",
+        "ref_index": "1",
+        "path": [
+          "Prompting Method ",
+          "Pre-trained Models",
+          "Prefix LM"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000007",
+        "paperId": "1c71771c701aadfd72c5866170a9f5d71464bb88",
+        "ref_index": "3",
+        "path": [
+          "Prompting Method ",
+          "Pre-trained Models",
+          "Prefix LM"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000008",
+        "paperId": "145b8b5d99a2beba6029418ca043585b90138d12",
+        "ref_index": "2",
+        "path": [
+          "Prompting Method ",
+          "Pre-trained Models",
+          "Encoder-Decoder"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000009",
+        "paperId": "6c4b76232bb72897685d19b3d264c6ee3005bc2b",
+        "ref_index": "6",
+        "path": [
+          "Prompting Method ",
+          "Pre-trained Models",
+          "Encoder-Decoder"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000010",
+        "paperId": "395de0bd3837fdf4b4b5e5f04835bcc69c279481",
+        "ref_index": "18",
+        "path": [
+          "Prompting Method ",
+          "Pre-trained Models",
+          "Encoder-Decoder"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000011",
+        "paperId": "ce498651107588db67adcfbb5479bdb416f4de2f",
+        "ref_index": "11",
+        "path": [
+          "Prompting Method ",
+          "Prompt Engineering",
+          "Shape",
+          "Cloze"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000012",
+        "paperId": "d0086b86103a620a86bc918746df0aa642e2a8a3",
+        "ref_index": "22",
+        "path": [
+          "Prompting Method ",
+          "Prompt Engineering",
+          "Shape",
+          "Cloze"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000013",
+        "paperId": "ffdbd7f0b03b85747b001b4734d5ee31b5229aa4",
+        "ref_index": "17",
+        "path": [
+          "Prompting Method ",
+          "Prompt Engineering",
+          "Shape",
+          "Prefix"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000014",
+        "paperId": "53d8b356551a2361020a948f64454a6d599af69f",
+        "ref_index": "19",
+        "path": [
+          "Prompting Method ",
+          "Prompt Engineering",
+          "Shape",
+          "Prefix"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000015",
+        "paperId": "90abbc2cf38462b954ae1b772fac9532e2ccd8b0",
+        "ref_index": "10",
+        "path": [
+          "Prompting Method ",
+          "Prompt Engineering",
+          "Human Effort",
+          "Hand-crafted"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000016",
+        "paperId": "d0086b86103a620a86bc918746df0aa642e2a8a3",
+        "ref_index": "22",
+        "path": [
+          "Prompting Method ",
+          "Prompt Engineering",
+          "Human Effort",
+          "Hand-crafted"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000017",
+        "paperId": "3caf34532597683c980134579b156cd0d7db2f40",
+        "ref_index": "0",
+        "path": [
+          "Prompting Method ",
+          "Prompt Engineering",
+          "Human Effort",
+          "Automated",
+          "Discrete"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000018",
+        "paperId": "ffdbd7f0b03b85747b001b4734d5ee31b5229aa4",
+        "ref_index": "17",
+        "path": [
+          "Prompting Method ",
+          "Prompt Engineering",
+          "Human Effort",
+          "Automated",
+          "Continuous"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000019",
+        "paperId": "53d8b356551a2361020a948f64454a6d599af69f",
+        "ref_index": "19",
+        "path": [
+          "Prompting Method ",
+          "Prompt Engineering",
+          "Human Effort",
+          "Automated",
+          "Continuous"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000020",
+        "paperId": "5a2e45ce35fb26ab70a61b424a49f8e5b4532a8e",
+        "ref_index": "5",
+        "path": [
+          "Prompting Method ",
+          "Answer Engineering}",
+          "Shape",
+          "Token"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000021",
+        "paperId": "d0086b86103a620a86bc918746df0aa642e2a8a3",
+        "ref_index": "22",
+        "path": [
+          "Prompting Method ",
+          "Answer Engineering}",
+          "Shape",
+          "Token"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000022",
+        "paperId": "708dcd8456426cd609c89a86344e0007c04c80bf",
+        "ref_index": "16",
+        "path": [
+          "Prompting Method ",
+          "Answer Engineering}",
+          "Shape",
+          "Span"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000023",
+        "paperId": "f30444fbb6ad806168e2564db4815cd27faa7fd9",
+        "ref_index": "24",
+        "path": [
+          "Prompting Method ",
+          "Answer Engineering}",
+          "Shape",
+          "Span"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000024",
+        "paperId": "90abbc2cf38462b954ae1b772fac9532e2ccd8b0",
+        "ref_index": "10",
+        "path": [
+          "Prompting Method ",
+          "Answer Engineering}",
+          "Shape",
+          "Sentence"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000025",
+        "paperId": "53d8b356551a2361020a948f64454a6d599af69f",
+        "ref_index": "19",
+        "path": [
+          "Prompting Method ",
+          "Answer Engineering}",
+          "Shape",
+          "Sentence"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000026",
+        "paperId": "8ae9a17c87a4518b513e860683a0ef7824be994d",
+        "ref_index": "23",
+        "path": [
+          "Prompting Method ",
+          "Answer Engineering}",
+          "Human Effort",
+          "Hand-crafted"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000027",
+        "paperId": "f30444fbb6ad806168e2564db4815cd27faa7fd9",
+        "ref_index": "24",
+        "path": [
+          "Prompting Method ",
+          "Answer Engineering}",
+          "Human Effort",
+          "Hand-crafted"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000028",
+        "paperId": "85e7d63f75c0916bd350a229e040c5fbb1472e7a",
+        "ref_index": "13",
+        "path": [
+          "Prompting Method ",
+          "Answer Engineering}",
+          "Human Effort",
+          "Automated",
+          "Discrete"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000029",
+        "paperId": "5a2e45ce35fb26ab70a61b424a49f8e5b4532a8e",
+        "ref_index": "5",
+        "path": [
+          "Prompting Method ",
+          "Answer Engineering}",
+          "Human Effort",
+          "Automated",
+          "Continuous"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000030",
+        "paperId": "a75649771901a4881b44c0ceafa469fcc6e6f968",
+        "ref_index": "15",
+        "path": [
+          "Prompting Method ",
+          "Multi-Prompt Learning",
+          "Prompt Ensemble, multiple"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000031",
+        "paperId": "8ae9a17c87a4518b513e860683a0ef7824be994d",
+        "ref_index": "23",
+        "path": [
+          "Prompting Method ",
+          "Multi-Prompt Learning",
+          "Prompt Ensemble, multiple"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000032",
+        "paperId": "a6a7724763d8adba466519489b0b9d209e7f2d15",
+        "ref_index": "25",
+        "path": [
+          "Prompting Method ",
+          "Multi-Prompt Learning",
+          "Prompt Ensemble, multiple"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000033",
+        "paperId": "90abbc2cf38462b954ae1b772fac9532e2ccd8b0",
+        "ref_index": "10",
+        "path": [
+          "Prompting Method ",
+          "Multi-Prompt Learning",
+          "Prompt Augmentation, multiple"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000034",
+        "paperId": "85e7d63f75c0916bd350a229e040c5fbb1472e7a",
+        "ref_index": "13",
+        "path": [
+          "Prompting Method ",
+          "Multi-Prompt Learning",
+          "Prompt Augmentation, multiple"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000035",
+        "paperId": "59641c10ed7431a3cf841f308367dc2dc0281b74",
+        "ref_index": "20",
+        "path": [
+          "Prompting Method ",
+          "Multi-Prompt Learning",
+          "Prompt Augmentation, multiple"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000036",
+        "paperId": "da454295392cf4caaa39cc465734237ffe55392f",
+        "ref_index": "14",
+        "path": [
+          "Prompting Method ",
+          "Multi-Prompt Learning",
+          "Prompt Composition, multiple"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000037",
+        "paperId": "ce498651107588db67adcfbb5479bdb416f4de2f",
+        "ref_index": "11",
+        "path": [
+          "Prompting Method ",
+          "Multi-Prompt Learning",
+          "Prompt Decomposition, multiple"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000038",
+        "paperId": "077f8329a7b6fa3b7c877a57b81eb6c18b5f87de",
+        "ref_index": "7",
+        "path": [
+          "Prompting Method ",
+          "Prompt-based Training Strategies",
+          "Parameter Updating",
+          "Promptless Fine-tuning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000039",
+        "paperId": "df2b0e26d0599ce3e70df8a9da02e51594e0e992",
+        "ref_index": "12",
+        "path": [
+          "Prompting Method ",
+          "Prompt-based Training Strategies",
+          "Parameter Updating",
+          "Promptless Fine-tuning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000040",
+        "paperId": "90abbc2cf38462b954ae1b772fac9532e2ccd8b0",
+        "ref_index": "10",
+        "path": [
+          "Prompting Method ",
+          "Prompt-based Training Strategies",
+          "Parameter Updating",
+          "Tuning-free Prompting"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000041",
+        "paperId": "a6a7724763d8adba466519489b0b9d209e7f2d15",
+        "ref_index": "25",
+        "path": [
+          "Prompting Method ",
+          "Prompt-based Training Strategies",
+          "Parameter Updating",
+          "Tuning-free Prompting"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000042",
+        "paperId": "5a2e45ce35fb26ab70a61b424a49f8e5b4532a8e",
+        "ref_index": "5",
+        "path": [
+          "Prompting Method ",
+          "Prompt-based Training Strategies",
+          "Parameter Updating",
+          "Fixed-LM Prompt Tuning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000043",
+        "paperId": "53d8b356551a2361020a948f64454a6d599af69f",
+        "ref_index": "19",
+        "path": [
+          "Prompting Method ",
+          "Prompt-based Training Strategies",
+          "Parameter Updating",
+          "Fixed-LM Prompt Tuning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000044",
+        "paperId": "6c4b76232bb72897685d19b3d264c6ee3005bc2b",
+        "ref_index": "6",
+        "path": [
+          "Prompting Method ",
+          "Prompt-based Training Strategies",
+          "Parameter Updating",
+          "Fixed-prompt LM Tuning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000045",
+        "paperId": "f30444fbb6ad806168e2564db4815cd27faa7fd9",
+        "ref_index": "24",
+        "path": [
+          "Prompting Method ",
+          "Prompt-based Training Strategies",
+          "Parameter Updating",
+          "Fixed-prompt LM Tuning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000046",
+        "paperId": "da454295392cf4caaa39cc465734237ffe55392f",
+        "ref_index": "14",
+        "path": [
+          "Prompting Method ",
+          "Prompt-based Training Strategies",
+          "Parameter Updating",
+          "Prompt+LM Tuning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000047",
+        "paperId": "bc37c6bdb8f39929a58b30464f72d6aa46cddc17",
+        "ref_index": "21",
+        "path": [
+          "Prompting Method ",
+          "Prompt-based Training Strategies",
+          "Parameter Updating",
+          "Prompt+LM Tuning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000048",
+        "paperId": "90abbc2cf38462b954ae1b772fac9532e2ccd8b0",
+        "ref_index": "10",
+        "path": [
+          "Prompting Method ",
+          "Prompt-based Training Strategies",
+          "Training Sample Size",
+          "Few/zero-shot"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000049",
+        "paperId": "8ae9a17c87a4518b513e860683a0ef7824be994d",
+        "ref_index": "23",
+        "path": [
+          "Prompting Method ",
+          "Prompt-based Training Strategies",
+          "Training Sample Size",
+          "Few/zero-shot"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000050",
+        "paperId": "2404aecd866cfa15fee6ada095667980a63c4172",
+        "ref_index": "4",
+        "path": [
+          "Prompting Method ",
+          "Prompt-based Training Strategies",
+          "Training Sample Size",
+          "Full-data"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2107.13586",
+        "arxiv_id": "2107.13586",
+        "leaf_mention_id": "2107.13586::000051",
+        "paperId": "da454295392cf4caaa39cc465734237ffe55392f",
+        "ref_index": "14",
+        "path": [
+          "Prompting Method ",
+          "Prompt-based Training Strategies",
+          "Training Sample Size",
+          "Full-data"
+        ],
+        "depth": 4,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 51,
+      "unique_leaf_paper_count": 26,
+      "multi_membership_extra_mentions": 25,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

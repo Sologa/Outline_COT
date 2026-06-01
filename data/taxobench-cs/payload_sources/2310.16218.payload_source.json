@@ -1,0 +1,982 @@
+{
+  "paper_id": "2310.16218",
+  "arxiv_id": "2310.16218",
+  "title": "Knowledge Editing for Large Language Models: A Survey",
+  "ref_meta": [
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "0",
+      "ref_key": "S2:7471cb40a33e9d971a922b5dff5ca9b4a73ca609",
+      "paperId": "7471cb40a33e9d971a922b5dff5ca9b4a73ca609",
+      "title": "Calibrating Factual Knowledge in Pretrained Language Models",
+      "year": 2022,
+      "abstract": "Previous literature has proved that Pretrained Language Models (PLMs) can store factual knowledge. However, we find that facts stored in the PLMs are not always correct. It motivates us to explore a fundamental question: How do we calibrate factual knowledge in PLMs without re-training from scratch? In this work, we propose a simple and lightweight method CaliNet to achieve this goal. To be specific, we first detect whether PLMs can learn the right facts via a contrastive score between right and fake facts. If not, we then use a lightweight method to add and adapt new parameters to specific factual texts. Experiments on the knowledge probing task show the calibration effectiveness and efficiency. In addition, through closed-book question answering, we find that the calibrated PLM possesses knowledge generalization ability after fine-tuning. Beyond the calibration performance, we further investigate and visualize the knowledge calibration mechanism.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-03329",
+        "ArXiv": "2210.03329",
+        "DOI": "10.48550/arXiv.2210.03329",
+        "CorpusId": 252762125
+      },
+      "arxiv_id": "2210.03329",
+      "doi": "10.48550/arXiv.2210.03329",
+      "corpus_id": 252762125
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "1",
+      "ref_key": "S2:ff2a0fb125e7f03428420230c6ecbeafd4cf07a8",
+      "paperId": "ff2a0fb125e7f03428420230c6ecbeafd4cf07a8",
+      "title": "Can We Edit Factual Knowledge by In-Context Learning?",
+      "year": 2023,
+      "abstract": "Previous studies have shown that large language models (LLMs) like GPTs store massive factual knowledge in their parameters. However, the stored knowledge could be false or out-dated. Traditional knowledge editing methods refine LLMs via fine-tuning on texts containing specific knowledge. However, with the increasing scales of LLMs, these gradient-based approaches bring large computation costs. The trend of model-as-a-service also makes it impossible to modify knowledge in black-box LMs. Inspired by in-context learning (ICL), a new paradigm based on demonstration contexts without parameter updating, we explore whether ICL can edit factual knowledge. To answer this question, we give a comprehensive empirical study of ICL strategies. Experiments show that in-context knowledge editing (IKE), without any gradient and parameter updating, achieves a competitive success rate compared to gradient-based methods on GPT-J (6B) but with much fewer side effects, including less over-editing on similar but unrelated facts and less knowledge forgetting on previously stored knowledge. We also apply the method to larger LMs with tens or hundreds of parameters like OPT-175B, which shows the scalability of our method. The code is available at https://github.com/Zce1112zslx/IKE.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-12740",
+        "ArXiv": "2305.12740",
+        "DOI": "10.48550/arXiv.2305.12740",
+        "CorpusId": 258832407
+      },
+      "arxiv_id": "2305.12740",
+      "doi": "10.48550/arXiv.2305.12740",
+      "corpus_id": 258832407
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "2",
+      "ref_key": "S2:ee8de585183763ff64cb3c81ecda2fc75fa81507",
+      "paperId": "ee8de585183763ff64cb3c81ecda2fc75fa81507",
+      "title": "Large Language Models with Controllable Working Memory",
+      "year": 2022,
+      "abstract": "Large language models (LLMs) have led to a series of breakthroughs in natural language processing (NLP), owing to their excellent understanding and generation abilities. Remarkably, what further sets these models apart is the massive amounts of world knowledge they internalize during pretraining. While many downstream applications provide the model with an informational context to aid its performance on the underlying task, how the model's world knowledge interacts with the factual information presented in the context remains under explored. As a desirable behavior, an LLM should give precedence to the context whenever it contains task-relevant information that conflicts with the model's memorized knowledge. This enables model predictions to be grounded in the context, which can then be used to update or correct specific model predictions without frequent retraining. By contrast, when the context is irrelevant to the task, the model should ignore it and fall back on its internal knowledge. In this paper, we undertake a first joint study of the aforementioned two properties, namely controllability and robustness, in the context of LLMs. We demonstrate that state-of-the-art T5 and PaLM (both pretrained and finetuned) could exhibit poor controllability and robustness, which do not scale with increasing model size. As a solution, we propose a novel method - Knowledge Aware FineTuning (KAFT) - to strengthen both controllability and robustness by incorporating counterfactual and irrelevant contexts to standard supervised datasets. Our comprehensive evaluation showcases the utility of KAFT across model architectures and sizes.",
+      "externalIds": {
+        "ArXiv": "2211.05110",
+        "DBLP": "journals/corr/abs-2211-05110",
+        "DOI": "10.48550/arXiv.2211.05110",
+        "CorpusId": 253420654
+      },
+      "arxiv_id": "2211.05110",
+      "doi": "10.48550/arXiv.2211.05110",
+      "corpus_id": 253420654
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "3",
+      "ref_key": "S2:56e952fd463accff09cf2e35432aaabd7c7c57f3",
+      "paperId": "56e952fd463accff09cf2e35432aaabd7c7c57f3",
+      "title": "MQuAKE: Assessing Knowledge Editing in Language Models via Multi-Hop Questions",
+      "year": 2023,
+      "abstract": "The information stored in large language models (LLMs) falls out of date quickly, and retraining from scratch is often not an option. This has recently given rise to a range of techniques for injecting new facts through updating model weights. Current evaluation paradigms are extremely limited, mainly validating the recall of edited facts, but changing one fact should cause rippling changes to the model's related beliefs. If we edit the UK Prime Minister to now be Rishi Sunak, then we should get a different answer to Who is married to the British Prime Minister? In this work, we present a benchmark, MQuAKE (Multi-hop Question Answering for Knowledge Editing), comprising multi-hop questions that assess whether edited models correctly answer questions where the answer should change as an entailed consequence of edited facts. While we find that current knowledge-editing approaches can recall edited facts accurately, they fail catastrophically on the constructed multi-hop questions. We thus propose a simple memory-based approach, MeLLo, which stores all edited facts externally while prompting the language model iteratively to generate answers that are consistent with the edited facts. While MQuAKE remains challenging, we show that MeLLo scales well with LLMs (e.g., OpenAI GPT-3.5-turbo) and outperforms previous model editors by a large margin.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/ZhongWMPC23",
+        "ArXiv": "2305.14795",
+        "DOI": "10.48550/arXiv.2305.14795",
+        "CorpusId": 258865984
+      },
+      "arxiv_id": "2305.14795",
+      "doi": "10.48550/arXiv.2305.14795",
+      "corpus_id": 258865984
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "4",
+      "ref_key": "S2:448e1493034dafe35699ae054ff4480b31dcf64a",
+      "paperId": "448e1493034dafe35699ae054ff4480b31dcf64a",
+      "title": "Memory-assisted prompt editing to improve GPT-3 after deployment",
+      "year": 2022,
+      "abstract": "Large LMs such as GPT -3 are powerful, but can commit mistakes that are obvious to humans. For example, GPT -3 would mistakenly interpret \"What word is similar to good ?\" to mean a homonym, while the user intended a synonym. Our goal is to effectively correct such errors via user interactions with the sys-tem but without retraining, which will be pro-hibitively costly. We pair GPT -3 with a growing memory of recorded cases where the model misunderstood the user’s intents, along with user feedback for clarification. Such a memory allows our system to produce enhanced prompts for any new query based on the user feedback for error correction on similar cases in the past. On four tasks (two lexical tasks, two advanced ethical reasoning tasks), we show how a (simulated) user can interactively teach a deployed GPT -3, substantially increasing its accuracy over the queries with different kinds of misunderstandings by the GPT -3. Our approach is a step towards the low-cost utility enhancement for very large pre-trained LMs. 1",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2201-06009",
+        "DOI": "10.18653/v1/2022.emnlp-main.183",
+        "CorpusId": 246016194
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2022.emnlp-main.183",
+      "corpus_id": 246016194
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "5",
+      "ref_key": "S2:61ddf932488405ab1c7b275460d2b3c5dfa274a0",
+      "paperId": "61ddf932488405ab1c7b275460d2b3c5dfa274a0",
+      "title": "Fixing Model Bugs with Natural Language Patches",
+      "year": 2022,
+      "abstract": "Current approaches for fixing systematic problems in NLP models (e.g., regex patches, finetuning on more data) are either brittle, or labor-intensive and liable to shortcuts. In contrast, humans often provide corrections to each other through natural language. Taking inspiration from this, we explore natural language patches—declarative statements that allow developers to provide corrective feedback at the right level of abstraction, either overriding the model (“if a review gives 2 stars, the sentiment is negative”) or providing additional information the model may lack (“if something is described as the bomb, then it is good”). We model the task of determining if a patch applies separately from the task of integrating patch information, and show that with a small amount of synthetic data, we can teach models to effectively use real patches on real data—1 to 7 patches improve accuracy by ~1–4 accuracy points on different slices of a sentiment analysis dataset, and F1 by 7 points on a relation extraction dataset. Finally, we show that finetuning on as many as 100 labeled examples may be needed to match the performance of a small set of language patches.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2211-03318",
+        "ArXiv": "2211.03318",
+        "ACL": "2022.emnlp-main.797",
+        "DOI": "10.48550/arXiv.2211.03318",
+        "CorpusId": 249147353
+      },
+      "arxiv_id": "2211.03318",
+      "doi": "10.48550/arXiv.2211.03318",
+      "corpus_id": 249147353
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "6",
+      "ref_key": "S2:1d650f1afd45c59ff907396fe8b678595dcb85ea",
+      "paperId": "1d650f1afd45c59ff907396fe8b678595dcb85ea",
+      "title": "Memory-Based Model Editing at Scale",
+      "year": 2022,
+      "abstract": "Even the largest neural networks make errors, and once-correct predictions can become invalid as the world changes. Model editors make local updates to the behavior of base (pre-trained) models to inject updated knowledge or correct undesirable behaviors. Existing model editors have shown promise, but also suffer from insufficient expressiveness: they struggle to accurately model an edit's intended scope (examples affected by the edit), leading to inaccurate predictions for test inputs loosely related to the edit, and they often fail altogether after many edits. As a higher-capacity alternative, we propose Semi-Parametric Editing with a Retrieval-Augmented Counterfactual Model (SERAC), which stores edits in an explicit memory and learns to reason over them to modulate the base model's predictions as needed. To enable more rigorous evaluation of model editors, we introduce three challenging language model editing problems based on question answering, fact-checking, and dialogue generation. We find that only SERAC achieves high performance on all three problems, consistently outperforming existing approaches to model editing by a significant margin. Code, data, and additional project information will be made available at https://sites.google.com/view/serac-editing.",
+      "externalIds": {
+        "DBLP": "conf/icml/MitchellLBMF22",
+        "ArXiv": "2206.06520",
+        "CorpusId": 249642147
+      },
+      "arxiv_id": "2206.06520",
+      "doi": null,
+      "corpus_id": 249642147
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "7",
+      "ref_key": "S2:a9be51698e7c2247853b7b6f1f70fc4d6d7ef605",
+      "paperId": "a9be51698e7c2247853b7b6f1f70fc4d6d7ef605",
+      "title": "Transformer-Patcher: One Mistake worth One Neuron",
+      "year": 2023,
+      "abstract": "Large Transformer-based Pretrained Language Models (PLMs) dominate almost all Natural Language Processing (NLP) tasks. Nevertheless, they still make mistakes from time to time. For a model deployed in an industrial environment, fixing these mistakes quickly and robustly is vital to improve user experiences. Previous works formalize such problems as Model Editing (ME) and mostly focus on fixing one mistake. However, the one-mistake-fixing scenario is not an accurate abstraction of the real-world challenge. In the deployment of AI services, there are ever-emerging mistakes, and the same mistake may recur if not corrected in time. Thus a preferable solution is to rectify the mistakes as soon as they appear nonstop. Therefore, we extend the existing ME into Sequential Model Editing (SME) to help develop more practical editing methods. Our study shows that most current ME methods could yield unsatisfying results in this scenario. We then introduce Transformer-Patcher, a novel model editor that can shift the behavior of transformer-based models by simply adding and training a few neurons in the last Feed-Forward Network layer. Experimental results on both classification and generation tasks show that Transformer-Patcher can successively correct up to thousands of errors (Reliability) and generalize to their equivalent inputs (Generality) while retaining the model's accuracy on irrelevant inputs (Locality). Our method outperforms previous fine-tuning and HyperNetwork-based methods and achieves state-of-the-art performance for Sequential Model Editing (SME). The code is available at https://github.com/ZeroYuHuang/Transformer-Patcher.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2301-09785",
+        "ArXiv": "2301.09785",
+        "DOI": "10.48550/arXiv.2301.09785",
+        "CorpusId": 256194369
+      },
+      "arxiv_id": "2301.09785",
+      "doi": "10.48550/arXiv.2301.09785",
+      "corpus_id": 256194369
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "8",
+      "ref_key": "S2:240b0caabb415578bdea4da7d0a32bdff2e8163f",
+      "paperId": "240b0caabb415578bdea4da7d0a32bdff2e8163f",
+      "title": "Editing Factual Knowledge in Language Models",
+      "year": 2021,
+      "abstract": "The factual knowledge acquired during pre-training and stored in the parameters of Language Models (LMs) can be useful in downstream tasks (e.g., question answering or textual inference). However, some facts can be incorrectly induced or become obsolete over time. We present KnowledgeEditor, a method which can be used to edit this knowledge and, thus, fix ‘bugs’ or unexpected predictions without the need for expensive re-training or fine-tuning. Besides being computationally efficient, KnowledgeEditordoes not require any modifications in LM pre-training (e.g., the use of meta-learning). In our approach, we train a hyper-network with constrained optimization to modify a fact without affecting the rest of the knowledge; the trained hyper-network is then used to predict the weight update at test time. We show KnowledgeEditor’s efficacy with two popular architectures and knowledge-intensive tasks: i) a BERT model fine-tuned for fact-checking, and ii) a sequence-to-sequence BART model for question answering. With our method, changing a prediction on the specific wording of a query tends to result in a consistent change in predictions also for its paraphrases. We show that this can be further encouraged by exploiting (e.g., automatically-generated) paraphrases during training. Interestingly, our hyper-network can be regarded as a ‘probe’ revealing which components need to be changed to manipulate factual knowledge; our analysis shows that the updates tend to be concentrated on a small subset of components. Source code available at https://github.com/nicola-decao/KnowledgeEditor",
+      "externalIds": {
+        "ACL": "2021.emnlp-main.522",
+        "ArXiv": "2104.08164",
+        "DBLP": "journals/corr/abs-2104-08164",
+        "DOI": "10.18653/v1/2021.emnlp-main.522",
+        "CorpusId": 233289412
+      },
+      "arxiv_id": "2104.08164",
+      "doi": "10.18653/v1/2021.emnlp-main.522",
+      "corpus_id": 233289412
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "9",
+      "ref_key": "S2:f2f3c83db919a2429c4fcad2d0a0ed4e5294354a",
+      "paperId": "f2f3c83db919a2429c4fcad2d0a0ed4e5294354a",
+      "title": "Recall and Learn: Fine-tuning Deep Pretrained Language Models with Less Forgetting",
+      "year": 2020,
+      "abstract": "Deep pretrained language models have achieved great success in the way of pretraining first and then fine-tuning. But such a sequential transfer learning paradigm often confronts the catastrophic forgetting problem and leads to sub-optimal performance. To fine-tune with less forgetting, we propose a recall and learn mechanism, which adopts the idea of multi-task learning and jointly learns pretraining tasks and downstream tasks. Specifically, we propose a Pretraining Simulation mechanism to recall the knowledge from pretraining tasks without data, and an Objective Shifting mechanism to focus the learning on downstream tasks gradually. Experiments show that our method achieves state-of-the-art performance on the GLUE benchmark. Our method also enables BERT-base to achieve better performance than directly fine-tuning of BERT-large. Further, we provide the open-source RecAdam optimizer, which integrates the proposed mechanisms into Adam optimizer, to facility the NLP community.",
+      "externalIds": {
+        "ACL": "2020.emnlp-main.634",
+        "MAG": "3104215796",
+        "DBLP": "conf/emnlp/ChenHCCLY20",
+        "ArXiv": "2004.12651",
+        "DOI": "10.18653/v1/2020.emnlp-main.634",
+        "CorpusId": 216553067
+      },
+      "arxiv_id": "2004.12651",
+      "doi": "10.18653/v1/2020.emnlp-main.634",
+      "corpus_id": 216553067
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "10",
+      "ref_key": "S2:8bbdf825e6ccd197adfff5ebeecc9a5a5210e02f",
+      "paperId": "8bbdf825e6ccd197adfff5ebeecc9a5a5210e02f",
+      "title": "Editing Language Model-based Knowledge Graph Embeddings",
+      "year": 2023,
+      "abstract": "Recently decades have witnessed the empirical success of framing Knowledge Graph (KG) embeddings via language models. However, language model-based KG embeddings are usually deployed as static artifacts, making them difficult to modify post-deployment without re-training after deployment. To address this issue, we propose a new task of editing language model-based KG embeddings in this paper. This task is designed to facilitate rapid, data-efficient updates to KG embeddings without compromising the performance of other aspects. We build four new datasets: E-FB15k237, A-FB15k237, E-WN18RR, and A-WN18RR, and evaluate several knowledge editing baselines demonstrating the limited ability of previous models to handle the proposed challenging task. We further propose a simple yet strong baseline dubbed KGEditor, which utilizes additional parametric layers of the hypernetwork to edit/add facts. Our comprehensive experimental results reveal that KGEditor excels in updating specific facts without impacting the overall performance, even when faced with limited training resources. Code and datasets will be available at https://github.com/AnonymousForPapers/DeltaKG.",
+      "externalIds": {
+        "ArXiv": "2301.10405",
+        "DBLP": "journals/corr/abs-2301-10405",
+        "DOI": "10.48550/arXiv.2301.10405",
+        "CorpusId": 256231427
+      },
+      "arxiv_id": "2301.10405",
+      "doi": "10.48550/arXiv.2301.10405",
+      "corpus_id": 256231427
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "11",
+      "ref_key": "S2:2c871df72c52b58f05447fcb3afc838168d94505",
+      "paperId": "2c871df72c52b58f05447fcb3afc838168d94505",
+      "title": "Knowledge Neurons in Pretrained Transformers",
+      "year": 2021,
+      "abstract": "Large-scale pretrained language models are surprisingly good at recalling factual knowledge presented in the training corpus. In this paper, we present preliminary studies on how factual knowledge is stored in pretrained Transformers by introducing the concept of knowledge neurons. Specifically, we examine the fill-in-the-blank cloze task for BERT. Given a relational fact, we propose a knowledge attribution method to identify the neurons that express the fact. We find that the activation of such knowledge neurons is positively correlated to the expression of their corresponding facts. In our case studies, we attempt to leverage knowledge neurons to edit (such as update, and erase) specific factual knowledge without fine-tuning. Our results shed light on understanding the storage of knowledge within pretrained Transformers.",
+      "externalIds": {
+        "ArXiv": "2104.08696",
+        "DBLP": "journals/corr/abs-2104-08696",
+        "ACL": "2022.acl-long.581",
+        "DOI": "10.18653/v1/2022.acl-long.581",
+        "CorpusId": 233296761
+      },
+      "arxiv_id": "2104.08696",
+      "doi": "10.18653/v1/2022.acl-long.581",
+      "corpus_id": 233296761
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "12",
+      "ref_key": "S2:fe2303d338109be0f25bcf5479f5a2cb88255299",
+      "paperId": "fe2303d338109be0f25bcf5479f5a2cb88255299",
+      "title": "Consecutive Batch Model Editing with HooK Layers",
+      "year": 2024,
+      "abstract": "As the typical retraining paradigm is unacceptably time- and resource-consuming, researchers are turning to model editing to find an effective way that supports both consecutive and batch scenarios to edit the model behavior directly. Despite all these practical expectations, existing model editing methods fail to realize all of them. Furthermore, the memory demands for such sequential model editing approaches tend to be prohibitive, frequently necessitating an external memory that grows incrementally over time. To cope with these challenges, we propose CoachHooK, a model editing method that simultaneously supports sequential and batch editing. CoachHooK is memory-friendly as it only needs a small amount of it to store several hook layers whose size remains unchanged over time. Experimental results demonstrate the superiority of our method over other batch-supportive model editing methods under both single-round and consecutive batch editing scenarios. Extensive analyses of CoachHooK have been conducted to verify the stability of our method over a number of consecutive steps.",
+      "externalIds": {
+        "ArXiv": "2403.05330",
+        "DBLP": "conf/emnlp/Li00LCL24",
+        "ACL": "2024.emnlp-main.765",
+        "DOI": "10.18653/v1/2024.emnlp-main.765",
+        "CorpusId": 268297415
+      },
+      "arxiv_id": "2403.05330",
+      "doi": "10.18653/v1/2024.emnlp-main.765",
+      "corpus_id": 268297415
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "13",
+      "ref_key": "S2:305856f630fb6172ba3ebfb350927c525d363867",
+      "paperId": "305856f630fb6172ba3ebfb350927c525d363867",
+      "title": "SWEA: Updating Factual Knowledge in Large Language Models via Subject Word Embedding Altering",
+      "year": 2024,
+      "abstract": "The general capabilities of large language models (LLMs) make them the infrastructure for various AI applications, but updating their inner knowledge requires significant resources. Recent model editing is a promising technique for efficiently updating a small amount of knowledge of LLMs and has attracted much attention. In particular, local editing methods, which directly update model parameters, are more suitable for updating a small amount of knowledge. Local editing methods update weights by computing least squares closed-form solutions and identify edited knowledge by vector-level matching in inference, which achieve promising results. However, these methods still require a lot of time and resources to complete the computation. Moreover, vector-level matching lacks reliability, and such updates disrupt the original organization of the model's parameters. To address these issues, we propose an detachable and expandable Subject Word Embedding Altering (SWEA) framework, which finds the editing embeddings through token-level matching and adds them to the subject word embeddings in Transformer input. To get these editing embeddings, we propose optimizing then suppressing fusion method, which first optimizes learnable embedding vectors for the editing target and then suppresses the Knowledge Embedding Dimensions (KEDs) to obtain final editing embeddings. We thus propose SWEA$\\oplus$OS method for editing factual knowledge in LLMs. We demonstrate the overall state-of-the-art (SOTA) performance of SWEA$\\oplus$OS on the \\textsc{CounterFact} and zsRE datasets. To further validate the reasoning ability of SWEA$\\oplus$OS in editing knowledge, we evaluate it on the more complex \\textsc{RippleEdits} benchmark. The results demonstrate that SWEA$\\oplus$OS possesses SOTA reasoning ability.",
+      "externalIds": {
+        "ArXiv": "2401.17809",
+        "CorpusId": 267334765
+      },
+      "arxiv_id": "2401.17809",
+      "doi": null,
+      "corpus_id": 267334765
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "14",
+      "ref_key": "S2:d2b48bcee27974c10025422b76c8943ed524722c",
+      "paperId": "d2b48bcee27974c10025422b76c8943ed524722c",
+      "title": "Model Editing Harms General Abilities of Large Language Models: Regularization to the Rescue",
+      "year": 2024,
+      "abstract": "Model editing is a technique that edits the large language models (LLMs) with updated knowledge to alleviate hallucinations without resource-intensive retraining. While current model editing methods can effectively modify a model’s behavior within a specific area of interest, they often overlook the potential unintended side effects on the general abilities of LLMs such as reasoning, natural language inference, and question answering. In this paper, we raise concerns that model editing’s improvements on factuality may come at the cost of a significant degradation of the model’s general abilities. We systematically analyze the side effects by evaluating four popular editing methods on three LLMs across eight representative tasks. Our extensive empirical experiments show that it is challenging for current editing methods to simultaneously improve factuality of LLMs and maintain their general abilities. Our analysis reveals that the side effects are caused by model editing altering the original model weights excessively, leading to overfitting to the edited facts. To mitigate this, a method named RECT is proposed to regularize the edit update weights by imposing constraints on their complexity based on the RElative Change in weighT. Evaluation results show that RECT can significantly mitigate the side effects of editing while still maintaining over 94% editing performance.",
+      "externalIds": {
+        "ArXiv": "2401.04700",
+        "DBLP": "conf/emnlp/GuXMLLCP24",
+        "ACL": "2024.emnlp-main.934",
+        "DOI": "10.18653/v1/2024.emnlp-main.934",
+        "CorpusId": 266899568
+      },
+      "arxiv_id": "2401.04700",
+      "doi": "10.18653/v1/2024.emnlp-main.934",
+      "corpus_id": 266899568
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "15",
+      "ref_key": "S2:2b72888cc3ff048038f6011b8e3d89ba106540b6",
+      "paperId": "2b72888cc3ff048038f6011b8e3d89ba106540b6",
+      "title": "Editing Common Sense in Transformers",
+      "year": 2023,
+      "abstract": "Editing model parameters directly in Transformers makes updating open-source transformer-based models possible without re-training (Meng et al., 2023). However, these editing methods have only been evaluated on statements about encyclopedic knowledge with a single correct answer. Commonsense knowledge with multiple correct answers, e.g., an apple can be green or red but not transparent, has not been studied but is as essential for enhancing transformers' reliability and usefulness. In this paper, we investigate whether commonsense judgments are causally associated with localized, editable parameters in Transformers, and we provide an affirmative answer. We find that directly applying the MEMIT editing algorithm results in sub-par performance and improve it for the commonsense domain by varying edit tokens and improving the layer selection strategy, i.e., $MEMIT_{CSK}$. GPT-2 Large and XL models edited using $MEMIT_{CSK}$ outperform best-fine-tuned baselines by 10.97% and 10.73% F1 scores on PEP3k and 20Q datasets. In addition, we propose a novel evaluation dataset, PROBE SET, that contains unaffected and affected neighborhoods, affected paraphrases, and affected reasoning challenges. $MEMIT_{CSK}$ performs well across the metrics while fine-tuning baselines show significant trade-offs between unaffected and affected metrics. These results suggest a compelling future direction for incorporating feedback about common sense into Transformers through direct model editing.",
+      "externalIds": {
+        "ArXiv": "2305.14956",
+        "DBLP": "conf/emnlp/GuptaMS00WT23",
+        "DOI": "10.18653/v1/2023.emnlp-main.511",
+        "CorpusId": 258865393
+      },
+      "arxiv_id": "2305.14956",
+      "doi": "10.18653/v1/2023.emnlp-main.511",
+      "corpus_id": 258865393
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "16",
+      "ref_key": "S2:65d9e725278da08fa29144b4f9a80d7d31f1c27f",
+      "paperId": "65d9e725278da08fa29144b4f9a80d7d31f1c27f",
+      "title": "A Unified Framework for Model Editing",
+      "year": 2024,
+      "abstract": "ROME and MEMIT are largely believed to be two different model editing algorithms, with the major difference between them being the ability to perform batched edits. In this paper, we unify these two algorithms under a single conceptual umbrella, optimizing for the same goal, which we call the preservation-memorization objective. ROME uses an equality constraint to optimize this objective to perform one edit at a time, whereas MEMIT employs a more flexible least-square constraint that allows for batched edits. We generalize ROME and enable batched editing with equality constraint in the form of EMMET - an Equality-constrained Mass Model Editing algorithm for Transformers, a new batched memory-editing algorithm. EMMET can perform batched-edits up to a batch-size of 10,000, with very similar performance to MEMIT across multiple dimensions. With the introduction of EMMET, we truly unify ROME and MEMIT and show that both algorithms are equivalent in terms of their optimization objective, their abilities (singular and batched editing), their model editing performance and their limitations.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/GuptaSA24",
+        "ArXiv": "2403.14236",
+        "DOI": "10.48550/arXiv.2403.14236",
+        "CorpusId": 268553573
+      },
+      "arxiv_id": "2403.14236",
+      "doi": "10.48550/arXiv.2403.14236",
+      "corpus_id": 268553573
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "17",
+      "ref_key": "S2:560b1bc012588731b26748e33236570df777baa0",
+      "paperId": "560b1bc012588731b26748e33236570df777baa0",
+      "title": "Aging with GRACE: Lifelong Model Editing with Discrete Key-Value Adaptors",
+      "year": 2022,
+      "abstract": "Deployed language models decay over time due to shifting inputs, changing user needs, or emergent world-knowledge gaps. When such problems are identified, we want to make targeted edits while avoiding expensive retraining. However, current model editors, which modify such behaviors of pre-trained models, degrade model performance quickly across multiple, sequential edits. We propose GRACE, a lifelong model editing method, which implements spot-fixes on streaming errors of a deployed model, ensuring minimal impact on unrelated inputs. GRACE writes new mappings into a pre-trained model's latent space, creating a discrete, local codebook of edits without altering model weights. This is the first method enabling thousands of sequential edits using only streaming errors. Our experiments on T5, BERT, and GPT models show GRACE's state-of-the-art performance in making and retaining edits, while generalizing to unseen inputs. Our code is available at https://www.github.com/thartvigsen/grace}.",
+      "externalIds": {
+        "ArXiv": "2211.11031",
+        "DBLP": "conf/nips/HartvigsenSPKG23",
+        "DOI": "10.48550/arXiv.2211.11031",
+        "CorpusId": 253735429
+      },
+      "arxiv_id": "2211.11031",
+      "doi": "10.48550/arXiv.2211.11031",
+      "corpus_id": 253735429
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "18",
+      "ref_key": "S2:f727f928e7e179307d8d4a1da2387393f2bd7915",
+      "paperId": "f727f928e7e179307d8d4a1da2387393f2bd7915",
+      "title": "Methods for Measuring, Updating, and Visualizing Factual Beliefs in Language Models",
+      "year": 2023,
+      "abstract": "Language models can memorize a considerable amount of factual information during pretraining that can be elicited through prompting or finetuning models on tasks like question answering. In this paper, we discuss approaches to measuring model factual beliefs, updating incorrect factual beliefs in models, and visualizing graphical relationships between factual beliefs. Our main contributions include: (1) new metrics for evaluating belief-updating methods focusing on the logical consistency of beliefs, (2) a training objective for Sequential, Local, and Generalizing updates (SLAG) that improves the performance of existing hypernetwork approaches, and (3) the introduction of the belief graph, a new form of visualization for language models that shows relationships between stored model beliefs. Our experiments suggest that models show only limited consistency between factual beliefs, but update methods can both fix incorrect model beliefs and greatly improve their consistency. Although off-the-shelf optimizers are surprisingly strong belief-updating baselines, our learned optimizers can outperform them in more difficult settings than have been considered in past work.",
+      "externalIds": {
+        "ACL": "2023.eacl-main.199",
+        "DBLP": "conf/eacl/HaseDCLKSBI23",
+        "DOI": "10.18653/v1/2023.eacl-main.199",
+        "CorpusId": 258378150
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2023.eacl-main.199",
+      "corpus_id": 258378150
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "19",
+      "ref_key": "S2:bd742d976aa0a7dfa91eb3e4a9136a00d763efd1",
+      "paperId": "bd742d976aa0a7dfa91eb3e4a9136a00d763efd1",
+      "title": "Plug-and-Play Adaptation for Continuously-updated QA",
+      "year": 2022,
+      "abstract": "Language models (LMs) have shown great potential as implicit knowledge bases (KBs). And for their practical use, knowledge in LMs need to be updated periodically. However, existing tasks to assess LMs’ efficacy as KBs do not adequately consider multiple large-scale updates. To this end, we first propose a novel task—Continuously-updated QA (CuQA)—in which multiple large-scale updates are made to LMs, and the performance is measured with respect to the success in adding and updating knowledge while retaining existing knowledge. We then present LMs with plug-in modules that effectively handle the updates. Experiments conducted on zsRE QA and NQ datasets show that our method outperforms existing approaches. We find that our method is 4x more effective in terms of updates/forgets ratio, compared to a fine-tuning baseline.",
+      "externalIds": {
+        "ACL": "2022.findings-acl.37",
+        "DBLP": "journals/corr/abs-2204-12785",
+        "ArXiv": "2204.12785",
+        "DOI": "10.48550/arXiv.2204.12785",
+        "CorpusId": 248405835
+      },
+      "arxiv_id": "2204.12785",
+      "doi": "10.48550/arXiv.2204.12785",
+      "corpus_id": 248405835
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "20",
+      "ref_key": "S2:a95ee02fd85a3734bf19bb4bbc6ef3ea22c96cc9",
+      "paperId": "a95ee02fd85a3734bf19bb4bbc6ef3ea22c96cc9",
+      "title": "PMET: Precise Model Editing in a Transformer",
+      "year": 2023,
+      "abstract": "Model editing techniques modify a minor proportion of knowledge in Large Language Models (LLMs) at a relatively low cost, which have demonstrated notable success. Existing methods assume Transformer Layer (TL) hidden states are values of key-value memories of the Feed-Forward Network (FFN). They usually optimize the TL hidden states to memorize target knowledge and use it to update the weights of the FFN in LLMs. However, the information flow of TL hidden states comes from three parts: Multi-Head Self-Attention (MHSA), FFN, and residual connections. Existing methods neglect the fact that the TL hidden states contains information not specifically required for FFN. Consequently, the performance of model editing decreases. To achieve more precise model editing, we analyze hidden states of MHSA and FFN, finding that MHSA encodes certain general knowledge extraction patterns. This implies that MHSA weights do not require updating when new knowledge is introduced. Based on above findings, we introduce PMET, which simultaneously optimizes Transformer Component (TC, namely MHSA and FFN) hidden states, while only using the optimized TC hidden states of FFN to precisely update FFN weights. Our experiments demonstrate that PMET exhibits state-of-the-art performance on both the \\textsc{counterfact} and zsRE datasets. Our ablation experiments substantiate the effectiveness of our enhancements, further reinforcing the finding that the MHSA encodes certain general knowledge extraction patterns and indicating its storage of a small amount of factual knowledge. Our code is available at \\url{https://github.com/xpq-tech/PMET}.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-08742",
+        "ArXiv": "2308.08742",
+        "DOI": "10.48550/arXiv.2308.08742",
+        "CorpusId": 261030625
+      },
+      "arxiv_id": "2308.08742",
+      "doi": "10.48550/arXiv.2308.08742",
+      "corpus_id": 261030625
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "21",
+      "ref_key": "S2:1256cd7ecea1c312b854c6673fab0c2908276d8a",
+      "paperId": "1256cd7ecea1c312b854c6673fab0c2908276d8a",
+      "title": "Untying the Reversal Curse via Bidirectional Language Model Editing",
+      "year": 2023,
+      "abstract": "Recent studies have demonstrated that large language models (LLMs) store massive factual knowledge within their parameters. But existing LLMs are prone to hallucinate unintended text due to false or outdated knowledge. Since retraining LLMs is resource intensive, there has been a growing interest in the concept of model editing. Despite the emergence of benchmarks and approaches, these unidirectional editing and evaluation have failed to explore the reversal curse. Intuitively, if\"The capital of France is\"is edited to be a counterfact\"London\"within a model, then it should be able to naturally reason and recall the reverse fact, i.e.,\"London is the capital of\"followed by\"France\"instead of\"England\". In this paper, we study bidirectional language model editing, aiming to provide rigorous model editing evaluation to assess if edited LLMs can recall the editing knowledge bidirectionally. A new evaluation metric of reversibility is introduced, and a benchmark dubbed as Bidirectional Assessment for Knowledge Editing (BAKE) is constructed to evaluate the reversibility of edited models in recalling knowledge in the reverse direction of editing. We surprisingly observe that while current editing methods and LLMs can effectively recall editing facts in the direction of editing, they suffer serious deficiencies when evaluated in the reverse direction. To mitigate the reversal curse, a method named Bidirectionally Inversible Relationship moDeling (BIRD) is proposed. A set of editing objectives that incorporate bidirectional relationships between subject and object into the updated model weights are designed. Experiments show that BIRD improves the performance of four representative LLMs of different sizes via question answering and judgement.",
+      "externalIds": {
+        "ArXiv": "2310.10322",
+        "DBLP": "journals/corr/abs-2310-10322",
+        "DOI": "10.48550/arXiv.2310.10322",
+        "CorpusId": 264146289
+      },
+      "arxiv_id": "2310.10322",
+      "doi": "10.48550/arXiv.2310.10322",
+      "corpus_id": 264146289
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "22",
+      "ref_key": "S2:996445d847f06e99b0bd259345408a0cf1bce87e",
+      "paperId": "996445d847f06e99b0bd259345408a0cf1bce87e",
+      "title": "Locating and Editing Factual Associations in GPT",
+      "year": 2022,
+      "abstract": "We analyze the storage and recall of factual associations in autoregressive transformer language models, finding evidence that these associations correspond to localized, directly-editable computations. We first develop a causal intervention for identifying neuron activations that are decisive in a model's factual predictions. This reveals a distinct set of steps in middle-layer feed-forward modules that mediate factual predictions while processing subject tokens. To test our hypothesis that these computations correspond to factual association recall, we modify feed-forward weights to update specific factual associations using Rank-One Model Editing (ROME). We find that ROME is effective on a standard zero-shot relation extraction (zsRE) model-editing task, comparable to existing methods. To perform a more sensitive evaluation, we also evaluate ROME on a new dataset of counterfactual assertions, on which it simultaneously maintains both specificity and generalization, whereas other methods sacrifice one or another. Our results confirm an important role for mid-layer feed-forward modules in storing factual associations and suggest that direct manipulation of computational mechanisms may be a feasible approach for model editing. The code, dataset, visualizations, and an interactive demo notebook are available at https://rome.baulab.info/",
+      "externalIds": {
+        "DBLP": "conf/nips/MengBAB22",
+        "ArXiv": "2202.05262",
+        "CorpusId": 255825985
+      },
+      "arxiv_id": "2202.05262",
+      "doi": null,
+      "corpus_id": 255825985
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "23",
+      "ref_key": "S2:2fe1ac0b09cc0f50eb83eef6c7c6b45ac8b12413",
+      "paperId": "2fe1ac0b09cc0f50eb83eef6c7c6b45ac8b12413",
+      "title": "Mass-Editing Memory in a Transformer",
+      "year": 2022,
+      "abstract": "Recent work has shown exciting promise in updating large language models with new memories, so as to replace obsolete information or add specialized knowledge. However, this line of work is predominantly limited to updating single associations. We develop MEMIT, a method for directly updating a language model with many memories, demonstrating experimentally that it can scale up to thousands of associations for GPT-J (6B) and GPT-NeoX (20B), exceeding prior work by orders of magnitude. Our code and data are at https://memit.baulab.info.",
+      "externalIds": {
+        "DBLP": "conf/iclr/MengSABB23",
+        "ArXiv": "2210.07229",
+        "DOI": "10.48550/arXiv.2210.07229",
+        "CorpusId": 252873467
+      },
+      "arxiv_id": "2210.07229",
+      "doi": "10.48550/arXiv.2210.07229",
+      "corpus_id": 252873467
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "24",
+      "ref_key": "S2:9286ac6e9b1aacd7d93496eb4615ae7678876d2a",
+      "paperId": "9286ac6e9b1aacd7d93496eb4615ae7678876d2a",
+      "title": "Fast Model Editing at Scale",
+      "year": 2021,
+      "abstract": "While large pre-trained models have enabled impressive results on a variety of downstream tasks, the largest existing models still make errors, and even accurate predictions may become outdated over time. Because detecting all such failures at training time is impossible, enabling both developers and end users of such models to correct inaccurate outputs while leaving the model otherwise intact is desirable. However, the distributed, black-box nature of the representations learned by large neural networks makes producing such targeted edits difficult. If presented with only a single problematic input and new desired output, fine-tuning approaches tend to overfit; other editing algorithms are either computationally infeasible or simply ineffective when applied to very large models. To enable easy post-hoc editing at scale, we propose Model Editor Networks using Gradient Decomposition (MEND), a collection of small auxiliary editing networks that use a single desired input-output pair to make fast, local edits to a pre-trained model's behavior. MEND learns to transform the gradient obtained by standard fine-tuning, using a low-rank decomposition of the gradient to make the parameterization of this transformation tractable. MEND can be trained on a single GPU in less than a day even for 10 billion+ parameter models; once trained MEND enables rapid application of new edits to the pre-trained model. Our experiments with T5, GPT, BERT, and BART models show that MEND is the only approach to model editing that effectively edits the behavior of models with more than 10 billion parameters. Code and data available at https://sites.google.com/view/mend-editing.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2110-11309",
+        "ArXiv": "2110.11309",
+        "CorpusId": 239050360
+      },
+      "arxiv_id": "2110.11309",
+      "doi": null,
+      "corpus_id": 239050360
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "25",
+      "ref_key": "S2:e0b3cdd6639cc702e106f708bd3ba934e646ffba",
+      "paperId": "e0b3cdd6639cc702e106f708bd3ba934e646ffba",
+      "title": "Forgetting before Learning: Utilizing Parametric Arithmetic for Knowledge Updating in Large Language Models",
+      "year": 2023,
+      "abstract": "Recent advancements in Large Language Models (LLMs) have showcased their remarkable capabilities in text understanding and generation. However, even stronger LLMs are susceptible to acquiring erroneous or obsolete information from the training corpus. Direct secondary fine-tuning with data containing new knowledge may be ineffective in updating knowledge due to the conflict between old and new knowledge. In this paper, we propose a new paradigm for fine-tuning called F-Learning (Forgetting before Learning), which employs parametric arithmetic to facilitate the forgetting of old knowledge and learning of new knowledge. Experimental results on two publicly available datasets demonstrate that our proposed F-Learning can obviously improve the knowledge updating performance of both full fine-tuning and LoRA fine-tuning, simultaneously outperforming the existing baselines in most cases. Moreover, we have also discovered that forgetting old knowledge by subtracting the parameters of LoRA can yield a similar effect to subtracting the parameters of full fine-tuning, and occasionally even surpass it significantly.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-08011",
+        "ArXiv": "2311.08011",
+        "DOI": "10.48550/arXiv.2311.08011",
+        "CorpusId": 265158175
+      },
+      "arxiv_id": "2311.08011",
+      "doi": "10.48550/arXiv.2311.08011",
+      "corpus_id": 265158175
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "26",
+      "ref_key": "S2:e165b379f983152874299e0f5a6e0c9596c9a3e8",
+      "paperId": "e165b379f983152874299e0f5a6e0c9596c9a3e8",
+      "title": "Editable Neural Networks",
+      "year": 2020,
+      "abstract": "These days deep neural networks are ubiquitously used in a wide range of tasks, from image classification and machine translation to face identification and self-driving cars. In many applications, a single model error can lead to devastating financial, reputational and even life-threatening consequences. Therefore, it is crucially important to correct model mistakes quickly as they appear. In this work, we investigate the problem of neural network editing - how one can efficiently patch a mistake of the model on a particular sample, without influencing the model behavior on other samples. Namely, we propose Editable Training, a model-agnostic training technique that encourages fast editing of the trained model. We empirically demonstrate the effectiveness of this method on large-scale image classification and machine translation tasks.",
+      "externalIds": {
+        "MAG": "3014924543",
+        "DBLP": "journals/corr/abs-2004-00345",
+        "ArXiv": "2004.00345",
+        "CorpusId": 213938729
+      },
+      "arxiv_id": "2004.00345",
+      "doi": null,
+      "corpus_id": 213938729
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "27",
+      "ref_key": "S2:33c8910107f3fcb17d140cc88554652508ae3674",
+      "paperId": "33c8910107f3fcb17d140cc88554652508ae3674",
+      "title": "Detoxifying Large Language Models via Knowledge Editing",
+      "year": 2024,
+      "abstract": "This paper investigates using knowledge editing techniques to detoxify Large Language Models (LLMs). We construct a benchmark, SafeEdit, which covers nine unsafe categories with various powerful attack prompts and equips comprehensive metrics for systematic evaluation. We conduct experiments with several knowledge editing approaches, indicating that knowledge editing has the potential to detoxify LLMs with a limited impact on general performance efficiently. Then, we propose a simple yet effective baseline, dubbed Detoxifying with Intraoperative Neural Monitoring (DINM), to diminish the toxicity of LLMs within a few tuning steps via only one instance. We further provide an in-depth analysis of the internal mechanism for various detoxifying approaches, demonstrating that previous methods like SFT and DPO may merely suppress the activations of toxic parameters, while DINM mitigates the toxicity of the toxic parameters to a certain extent, making permanent adjustments. We hope that these insights could shed light on future work of developing detoxifying approaches and the underlying knowledge mechanisms of LLMs. Code and benchmark are available at https://github.com/zjunlp/EasyEdit.",
+      "externalIds": {
+        "ArXiv": "2403.14472",
+        "DBLP": "conf/acl/Wang0XXDYZY0C24",
+        "DOI": "10.48550/arXiv.2403.14472",
+        "CorpusId": 268553537
+      },
+      "arxiv_id": "2403.14472",
+      "doi": "10.48550/arXiv.2403.14472",
+      "corpus_id": 268553537
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "28",
+      "ref_key": "S2:41a3c41ba1912e1384849e6898c241af89cc4a11",
+      "paperId": "41a3c41ba1912e1384849e6898c241af89cc4a11",
+      "title": "DEPN: Detecting and Editing Privacy Neurons in Pretrained Language Models",
+      "year": 2023,
+      "abstract": "Large language models pretrained on a huge amount of data capture rich knowledge and information in the training data. The ability of data memorization and regurgitation in pretrained language models, revealed in previous studies, brings the risk of data leakage. In order to effectively reduce these risks, we propose a framework DEPN to Detect and Edit Privacy Neurons in pretrained language models, partially inspired by knowledge neurons and model editing. In DEPN, we introduce a novel method, termed as privacy neuron detector, to locate neurons associated with private information, and then edit these detected privacy neurons by setting their activations to zero. Furthermore, we propose a privacy neuron aggregator dememorize private information in a batch processing manner. Experimental results show that our method can significantly and efficiently reduce the exposure of private data leakage without deteriorating the performance of the model. Additionally, we empirically demonstrate the relationship between model memorization and privacy neurons, from multiple perspectives, including model size, training time, prompts, privacy neuron distribution, illustrating the robustness of our approach.",
+      "externalIds": {
+        "ArXiv": "2310.20138",
+        "DBLP": "journals/corr/abs-2310-20138",
+        "DOI": "10.48550/arXiv.2310.20138",
+        "CorpusId": 264816202
+      },
+      "arxiv_id": "2310.20138",
+      "doi": "10.48550/arXiv.2310.20138",
+      "corpus_id": 264816202
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "29",
+      "ref_key": "S2:0b9eea26e5818981c173d03209adb472b8e3a38e",
+      "paperId": "0b9eea26e5818981c173d03209adb472b8e3a38e",
+      "title": "MELO: Enhancing Model Editing with Neuron-Indexed Dynamic LoRA",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have shown great success in various Natural Language Processing (NLP) tasks, whist they still need updates after deployment to fix errors or keep pace with the changing knowledge in the world. Researchers formulate such problem as Model Editing and have developed various editors focusing on different axes of editing properties. However, current editors can hardly support all properties and rely on heavy computational resources. In this paper, we propose a plug-in Model Editing method based on neuron-indexed dynamic LoRA (MELO), which alters the behavior of language models by dynamically activating certain LoRA blocks according to the index built in an inner vector database. Our method satisfies various editing properties with high efficiency and can be easily integrated into multiple LLM backbones. Experimental results show that our proposed MELO achieves state-of-the-art editing performance on three sequential editing tasks (document classification, question answering and hallucination correction), while requires the least trainable parameters and computational cost.",
+      "externalIds": {
+        "DBLP": "conf/aaai/YuCZH24",
+        "ArXiv": "2312.11795",
+        "DOI": "10.48550/arXiv.2312.11795",
+        "CorpusId": 266362196
+      },
+      "arxiv_id": "2312.11795",
+      "doi": "10.48550/arXiv.2312.11795",
+      "corpus_id": 266362196
+    },
+    {
+      "paper_id": "2310.16218",
+      "ref_index": "30",
+      "ref_key": "S2:5270b626feb66c8c363e93ba6608daae93c5003b",
+      "paperId": "5270b626feb66c8c363e93ba6608daae93c5003b",
+      "title": "Modifying Memories in Transformer Models",
+      "year": 2020,
+      "abstract": "Large Transformer models have achieved impressive performance in many natural language tasks. In particular, Transformer based language models have been shown to have great capabilities in encoding factual knowledge in their vast amount of parameters. While the tasks of improving the memorization and generalization of Transformers have been widely studied, it is not well known how to make transformers forget specific old facts and memorize new ones. In this paper, we propose a new task of \\emph{explicitly modifying specific factual knowledge in Transformer models while ensuring the model performance does not degrade on the unmodified facts}. This task is useful in many scenarios, such as updating stale knowledge, protecting privacy, and eliminating unintended biases stored in the models. We benchmarked several approaches that provide natural baseline performances on this task. This leads to the discovery of key components of a Transformer model that are especially effective for knowledge modifications. The work also provides insights into the role that different training phases (such as pretraining and fine-tuning) play towards memorization and knowledge modification.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2012-00363",
+        "ArXiv": "2012.00363",
+        "MAG": "3107969673",
+        "CorpusId": 227238659
+      },
+      "arxiv_id": "2012.00363",
+      "doi": null,
+      "corpus_id": 227238659
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "\\textbf{KME}": {
+        "External Memorization": {
+          "Memory-based, external-middle": {
+            "ff2a0fb125e7f03428420230c6ecbeafd4cf07a8": {},
+            "ee8de585183763ff64cb3c81ecda2fc75fa81507": {},
+            "56e952fd463accff09cf2e35432aaabd7c7c57f3": {},
+            "448e1493034dafe35699ae054ff4480b31dcf64a": {},
+            "61ddf932488405ab1c7b275460d2b3c5dfa274a0": {},
+            "1d650f1afd45c59ff907396fe8b678595dcb85ea": {}
+          },
+          "Extension-based, external-middle": {
+            "7471cb40a33e9d971a922b5dff5ca9b4a73ca609": {},
+            "a9be51698e7c2247853b7b6f1f70fc4d6d7ef605": {},
+            "fe2303d338109be0f25bcf5479f5a2cb88255299": {},
+            "305856f630fb6172ba3ebfb350927c525d363867": {},
+            "560b1bc012588731b26748e33236570df777baa0": {}
+          }
+        },
+        "Global Optimization": {
+          "Constrained Fine-tuning": {
+            "f2f3c83db919a2429c4fcad2d0a0ed4e5294354a": {},
+            "d2b48bcee27974c10025422b76c8943ed524722c": {},
+            "bd742d976aa0a7dfa91eb3e4a9136a00d763efd1": {},
+            "e0b3cdd6639cc702e106f708bd3ba934e646ffba": {},
+            "e165b379f983152874299e0f5a6e0c9596c9a3e8": {},
+            "0b9eea26e5818981c173d03209adb472b8e3a38e": {},
+            "5270b626feb66c8c363e93ba6608daae93c5003b": {}
+          },
+          "Local Modification": {
+            "Groundtruth-svd_based_methods": {
+              "2c871df72c52b58f05447fcb3afc838168d94505": {},
+              "65d9e725278da08fa29144b4f9a80d7d31f1c27f": {},
+              "a95ee02fd85a3734bf19bb4bbc6ef3ea22c96cc9": {},
+              "996445d847f06e99b0bd259345408a0cf1bce87e": {},
+              "2fe1ac0b09cc0f50eb83eef6c7c6b45ac8b12413": {},
+              "33c8910107f3fcb17d140cc88554652508ae3674": {},
+              "41a3c41ba1912e1384849e6898c241af89cc4a11": {}
+            }
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000001",
+        "paperId": "ff2a0fb125e7f03428420230c6ecbeafd4cf07a8",
+        "ref_index": "1",
+        "path": [
+          "\\textbf{KME}",
+          "External Memorization",
+          "Memory-based, external-middle"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000002",
+        "paperId": "ee8de585183763ff64cb3c81ecda2fc75fa81507",
+        "ref_index": "2",
+        "path": [
+          "\\textbf{KME}",
+          "External Memorization",
+          "Memory-based, external-middle"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000003",
+        "paperId": "56e952fd463accff09cf2e35432aaabd7c7c57f3",
+        "ref_index": "3",
+        "path": [
+          "\\textbf{KME}",
+          "External Memorization",
+          "Memory-based, external-middle"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000004",
+        "paperId": "448e1493034dafe35699ae054ff4480b31dcf64a",
+        "ref_index": "4",
+        "path": [
+          "\\textbf{KME}",
+          "External Memorization",
+          "Memory-based, external-middle"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000005",
+        "paperId": "61ddf932488405ab1c7b275460d2b3c5dfa274a0",
+        "ref_index": "5",
+        "path": [
+          "\\textbf{KME}",
+          "External Memorization",
+          "Memory-based, external-middle"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000006",
+        "paperId": "1d650f1afd45c59ff907396fe8b678595dcb85ea",
+        "ref_index": "6",
+        "path": [
+          "\\textbf{KME}",
+          "External Memorization",
+          "Memory-based, external-middle"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000007",
+        "paperId": "7471cb40a33e9d971a922b5dff5ca9b4a73ca609",
+        "ref_index": "0",
+        "path": [
+          "\\textbf{KME}",
+          "External Memorization",
+          "Extension-based, external-middle"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000008",
+        "paperId": "a9be51698e7c2247853b7b6f1f70fc4d6d7ef605",
+        "ref_index": "7",
+        "path": [
+          "\\textbf{KME}",
+          "External Memorization",
+          "Extension-based, external-middle"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000009",
+        "paperId": "fe2303d338109be0f25bcf5479f5a2cb88255299",
+        "ref_index": "12",
+        "path": [
+          "\\textbf{KME}",
+          "External Memorization",
+          "Extension-based, external-middle"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000010",
+        "paperId": "305856f630fb6172ba3ebfb350927c525d363867",
+        "ref_index": "13",
+        "path": [
+          "\\textbf{KME}",
+          "External Memorization",
+          "Extension-based, external-middle"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000011",
+        "paperId": "560b1bc012588731b26748e33236570df777baa0",
+        "ref_index": "17",
+        "path": [
+          "\\textbf{KME}",
+          "External Memorization",
+          "Extension-based, external-middle"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000012",
+        "paperId": "f2f3c83db919a2429c4fcad2d0a0ed4e5294354a",
+        "ref_index": "9",
+        "path": [
+          "\\textbf{KME}",
+          "Global Optimization",
+          "Constrained Fine-tuning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000013",
+        "paperId": "d2b48bcee27974c10025422b76c8943ed524722c",
+        "ref_index": "14",
+        "path": [
+          "\\textbf{KME}",
+          "Global Optimization",
+          "Constrained Fine-tuning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000014",
+        "paperId": "bd742d976aa0a7dfa91eb3e4a9136a00d763efd1",
+        "ref_index": "19",
+        "path": [
+          "\\textbf{KME}",
+          "Global Optimization",
+          "Constrained Fine-tuning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000015",
+        "paperId": "e0b3cdd6639cc702e106f708bd3ba934e646ffba",
+        "ref_index": "25",
+        "path": [
+          "\\textbf{KME}",
+          "Global Optimization",
+          "Constrained Fine-tuning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000016",
+        "paperId": "e165b379f983152874299e0f5a6e0c9596c9a3e8",
+        "ref_index": "26",
+        "path": [
+          "\\textbf{KME}",
+          "Global Optimization",
+          "Constrained Fine-tuning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000017",
+        "paperId": "0b9eea26e5818981c173d03209adb472b8e3a38e",
+        "ref_index": "29",
+        "path": [
+          "\\textbf{KME}",
+          "Global Optimization",
+          "Constrained Fine-tuning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000018",
+        "paperId": "5270b626feb66c8c363e93ba6608daae93c5003b",
+        "ref_index": "30",
+        "path": [
+          "\\textbf{KME}",
+          "Global Optimization",
+          "Constrained Fine-tuning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000019",
+        "paperId": "2c871df72c52b58f05447fcb3afc838168d94505",
+        "ref_index": "11",
+        "path": [
+          "\\textbf{KME}",
+          "Global Optimization",
+          "Local Modification",
+          "Groundtruth-svd_based_methods"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000020",
+        "paperId": "65d9e725278da08fa29144b4f9a80d7d31f1c27f",
+        "ref_index": "16",
+        "path": [
+          "\\textbf{KME}",
+          "Global Optimization",
+          "Local Modification",
+          "Groundtruth-svd_based_methods"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000021",
+        "paperId": "a95ee02fd85a3734bf19bb4bbc6ef3ea22c96cc9",
+        "ref_index": "20",
+        "path": [
+          "\\textbf{KME}",
+          "Global Optimization",
+          "Local Modification",
+          "Groundtruth-svd_based_methods"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000022",
+        "paperId": "996445d847f06e99b0bd259345408a0cf1bce87e",
+        "ref_index": "22",
+        "path": [
+          "\\textbf{KME}",
+          "Global Optimization",
+          "Local Modification",
+          "Groundtruth-svd_based_methods"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000023",
+        "paperId": "2fe1ac0b09cc0f50eb83eef6c7c6b45ac8b12413",
+        "ref_index": "23",
+        "path": [
+          "\\textbf{KME}",
+          "Global Optimization",
+          "Local Modification",
+          "Groundtruth-svd_based_methods"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000024",
+        "paperId": "33c8910107f3fcb17d140cc88554652508ae3674",
+        "ref_index": "27",
+        "path": [
+          "\\textbf{KME}",
+          "Global Optimization",
+          "Local Modification",
+          "Groundtruth-svd_based_methods"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.16218",
+        "arxiv_id": "2310.16218",
+        "leaf_mention_id": "2310.16218::000025",
+        "paperId": "41a3c41ba1912e1384849e6898c241af89cc4a11",
+        "ref_index": "28",
+        "path": [
+          "\\textbf{KME}",
+          "Global Optimization",
+          "Local Modification",
+          "Groundtruth-svd_based_methods"
+        ],
+        "depth": 4,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 25,
+      "unique_leaf_paper_count": 25,
+      "multi_membership_extra_mentions": 0,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

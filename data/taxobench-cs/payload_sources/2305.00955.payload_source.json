@@ -1,0 +1,988 @@
+{
+  "paper_id": "2305.00955",
+  "arxiv_id": "2305.00955",
+  "title": "Bridging the Gap: A Survey on Integrating (Human) Feedback for Natural Language Generation",
+  "ref_meta": [
+    {
+      "paper_id": "2305.00955",
+      "ref_index": "0",
+      "ref_key": "S2:a938ff4539b09a785a66669844f1a35f76169218",
+      "paperId": "a938ff4539b09a785a66669844f1a35f76169218",
+      "title": "PEER: A Collaborative Language Model",
+      "year": 2022,
+      "abstract": "Textual content is often the output of a collaborative writing process: We start with an initial draft, ask for suggestions, and repeatedly make changes. Agnostic of this process, today's language models are trained to generate only the final result. As a consequence, they lack several abilities crucial for collaborative writing: They are unable to update existing texts, difficult to control and incapable of verbally planning or explaining their actions. To address these shortcomings, we introduce PEER, a collaborative language model that is trained to imitate the entire writing process itself: PEER can write drafts, add suggestions, propose edits and provide explanations for its actions. Crucially, we train multiple instances of PEER able to infill various parts of the writing process, enabling the use of self-training techniques for increasing the quality, amount and diversity of training data. This unlocks PEER's full potential by making it applicable in domains for which no edit histories are available and improving its ability to follow instructions, to write useful comments, and to explain its actions. We show that PEER achieves strong performance across various domains and editing tasks.",
+      "externalIds": {
+        "DBLP": "conf/iclr/SchickYJPLIYNG023",
+        "ArXiv": "2208.11663",
+        "DOI": "10.48550/arXiv.2208.11663",
+        "CorpusId": 251765117
+      },
+      "arxiv_id": "2208.11663",
+      "doi": "10.48550/arXiv.2208.11663",
+      "corpus_id": 251765117
+    },
+    {
+      "paper_id": "2305.00955",
+      "ref_index": "1",
+      "ref_key": "S2:cdecefa737544971b72c5b5ef60f9eb9772fa051",
+      "paperId": "cdecefa737544971b72c5b5ef60f9eb9772fa051",
+      "title": "Re3: Generating Longer Stories With Recursive Reprompting and Revision",
+      "year": 2022,
+      "abstract": "We consider the problem of automatically generating longer stories of over two thousand words. Compared to prior work on shorter stories, long-range plot coherence and relevance are more central challenges here. We propose the Recursive Reprompting and Revision framework (Re3) to address these challenges by (a) prompting a general-purpose language model to construct a structured overarching plan, and (b) generating story passages by repeatedly injecting contextual information from both the plan and current story state into a language model prompt. We then revise by (c) reranking different continuations for plot coherence and premise relevance, and finally (d) editing the best continuation for factual consistency. Compared to similar-length stories generated directly from the same base model, human evaluators judged substantially more of Re3’s stories as having a coherent overarching plot (by 14% absolute increase), and relevant to the given initial premise (by 20%).",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-06774",
+        "ACL": "2022.emnlp-main.296",
+        "ArXiv": "2210.06774",
+        "DOI": "10.48550/arXiv.2210.06774",
+        "CorpusId": 252873593
+      },
+      "arxiv_id": "2210.06774",
+      "doi": "10.48550/arXiv.2210.06774",
+      "corpus_id": 252873593
+    },
+    {
+      "paper_id": "2305.00955",
+      "ref_index": "2",
+      "ref_key": "S2:3dc7dc1bea9a4f70c02b6759a0bda7aca0005a9e",
+      "paperId": "3dc7dc1bea9a4f70c02b6759a0bda7aca0005a9e",
+      "title": "A General Language Assistant as a Laboratory for Alignment",
+      "year": 2021,
+      "abstract": "Given the broad capabilities of large language models, it should be possible to work towards a general-purpose, text-based assistant that is aligned with human values, meaning that it is helpful, honest, and harmless. As an initial foray in this direction we study simple baseline techniques and evaluations, such as prompting. We find that the benefits from modest interventions increase with model size, generalize to a variety of alignment evaluations, and do not compromise the performance of large models. Next we investigate scaling trends for several training objectives relevant to alignment, comparing imitation learning, binary discrimination, and ranked preference modeling. We find that ranked preference modeling performs much better than imitation learning, and often scales more favorably with model size. In contrast, binary discrimination typically performs and scales very similarly to imitation learning. Finally we study a `preference model pre-training' stage of training, with the goal of improving sample efficiency when finetuning on human preferences.",
+      "externalIds": {
+        "ArXiv": "2112.00861",
+        "DBLP": "journals/corr/abs-2112-00861",
+        "CorpusId": 244799619
+      },
+      "arxiv_id": "2112.00861",
+      "doi": null,
+      "corpus_id": 244799619
+    },
+    {
+      "paper_id": "2305.00955",
+      "ref_index": "3",
+      "ref_key": "S2:3936fd3c6187f606c6e4e2e20b196dbc41cc4654",
+      "paperId": "3936fd3c6187f606c6e4e2e20b196dbc41cc4654",
+      "title": "Constitutional AI: Harmlessness from AI Feedback",
+      "year": 2022,
+      "abstract": "As AI systems become more capable, we would like to enlist their help to supervise other AIs. We experiment with methods for training a harmless AI assistant through self-improvement, without any human labels identifying harmful outputs. The only human oversight is provided through a list of rules or principles, and so we refer to the method as 'Constitutional AI'. The process involves both a supervised learning and a reinforcement learning phase. In the supervised phase we sample from an initial model, then generate self-critiques and revisions, and then finetune the original model on revised responses. In the RL phase, we sample from the finetuned model, use a model to evaluate which of the two samples is better, and then train a preference model from this dataset of AI preferences. We then train with RL using the preference model as the reward signal, i.e. we use 'RL from AI Feedback' (RLAIF). As a result we are able to train a harmless but non-evasive AI assistant that engages with harmful queries by explaining its objections to them. Both the SL and RL methods can leverage chain-of-thought style reasoning to improve the human-judged performance and transparency of AI decision making. These methods make it possible to control AI behavior more precisely and with far fewer human labels.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2212-08073",
+        "ArXiv": "2212.08073",
+        "DOI": "10.48550/arXiv.2212.08073",
+        "CorpusId": 254823489
+      },
+      "arxiv_id": "2212.08073",
+      "doi": "10.48550/arXiv.2212.08073",
+      "corpus_id": 254823489
+    },
+    {
+      "paper_id": "2305.00955",
+      "ref_index": "4",
+      "ref_key": "S2:0286b2736a114198b25fb5553c671c33aed5d477",
+      "paperId": "0286b2736a114198b25fb5553c671c33aed5d477",
+      "title": "Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback",
+      "year": 2022,
+      "abstract": "We apply preference modeling and reinforcement learning from human feedback (RLHF) to ﬁnetune language models to act as helpful and harmless assistants. We ﬁnd this alignment training improves performance on almost all NLP evaluations, and is fully compatible with training for specialized skills such as python coding and summarization. We explore an iterated online mode of training, where preference models and RL policies are updated on a weekly cadence with fresh human feedback data, efﬁciently improving our datasets and models. Finally, we investigate the robustness of RLHF training, and identify a roughly linear relation between the RL reward and the square root of the KL divergence between the policy and its initialization. Alongside our main results, we perform peripheral analyses on calibration, competing objectives, and the use of OOD detection, compare our models with human writers, and provide samples from our models using prompts appearing in recent related work. Figure These plots show that PM accuracy decreases as we focus exclusively on comparisons between pairs of samples with high score. We have normalized all preference models to have the same mean score on a held-out dataset so that they’re directly comparable, and then plotted accuracy for the comparisons where both samples have scores above a speciﬁc threshold.",
+      "externalIds": {
+        "ArXiv": "2204.05862",
+        "DBLP": "journals/corr/abs-2204-05862",
+        "DOI": "10.48550/arXiv.2204.05862",
+        "CorpusId": 248118878
+      },
+      "arxiv_id": "2204.05862",
+      "doi": "10.48550/arXiv.2204.05862",
+      "corpus_id": 248118878
+    },
+    {
+      "paper_id": "2305.00955",
+      "ref_index": "5",
+      "ref_key": "S2:0cceebb6b796c210b55ebf6b98032b5c631db0e1",
+      "paperId": "0cceebb6b796c210b55ebf6b98032b5c631db0e1",
+      "title": "Quality-Aware Decoding for Neural Machine Translation",
+      "year": 2022,
+      "abstract": "Despite the progress in machine translation quality estimation and evaluation in the last years, decoding in neural machine translation (NMT) is mostly oblivious to this and centers around finding the most probable translation according to the model (MAP decoding), approximated with beam search. In this paper, we bring together these two lines of research and propose quality-aware decoding for NMT, by leveraging recent breakthroughs in reference-free and reference-based MT evaluation through various inference methods like N-best reranking and minimum Bayes risk decoding. We perform an extensive comparison of various possible candidate generation and ranking methods across four datasets and two model classes and find that quality-aware decoding consistently outperforms MAP-based decoding according both to state-of-the-art automatic metrics (COMET and BLEURT) and to human assessments.",
+      "externalIds": {
+        "DBLP": "conf/naacl/FernandesFRSONM22",
+        "ArXiv": "2205.00978",
+        "ACL": "2022.naacl-main.100",
+        "DOI": "10.48550/arXiv.2205.00978",
+        "CorpusId": 248496443
+      },
+      "arxiv_id": "2205.00978",
+      "doi": "10.48550/arXiv.2205.00978",
+      "corpus_id": 248496443
+    },
+    {
+      "paper_id": "2305.00955",
+      "ref_index": "6",
+      "ref_key": "S2:cc7d5cf6e37cfec9e100418d54c2deb89a05b53c",
+      "paperId": "cc7d5cf6e37cfec9e100418d54c2deb89a05b53c",
+      "title": "APRIL: Interactively Learning to Summarise by Combining Active Preference Learning and Reinforcement Learning",
+      "year": 2018,
+      "abstract": "We propose a method to perform automatic document summarisation without using reference summaries. Instead, our method interactively learns from users’ preferences. The merit of preference-based interactive summarisation is that preferences are easier for users to provide than reference summaries. Existing preference-based interactive learning methods suffer from high sample complexity, i.e. they need to interact with the oracle for many rounds in order to converge. In this work, we propose a new objective function, which enables us to leverage active learning, preference learning and reinforcement learning techniques in order to reduce the sample complexity. Both simulation and real-user experiments suggest that our method significantly advances the state of the art. Our source code is freely available at https://github.com/UKPLab/emnlp2018-april.",
+      "externalIds": {
+        "MAG": "2889314060",
+        "ACL": "D18-1445",
+        "DBLP": "conf/emnlp/GaoMG18",
+        "ArXiv": "1808.09658",
+        "DOI": "10.18653/v1/D18-1445",
+        "CorpusId": 52119858
+      },
+      "arxiv_id": "1808.09658",
+      "doi": "10.18653/v1/D18-1445",
+      "corpus_id": 52119858
+    },
+    {
+      "paper_id": "2305.00955",
+      "ref_index": "7",
+      "ref_key": "S2:fb3dc5e20e0a71134ca916f0d6d8d41f01225b4b",
+      "paperId": "fb3dc5e20e0a71134ca916f0d6d8d41f01225b4b",
+      "title": "Scaling Laws for Reward Model Overoptimization",
+      "year": 2022,
+      "abstract": "In reinforcement learning from human feedback, it is common to optimize against a reward model trained to predict human preferences. Because the reward model is an imperfect proxy, optimizing its value too much can hinder ground truth performance, in accordance with Goodhart's law. This effect has been frequently observed, but not carefully measured due to the expense of collecting human preference data. In this work, we use a synthetic setup in which a fixed\"gold-standard\"reward model plays the role of humans, providing labels used to train a proxy reward model. We study how the gold reward model score changes as we optimize against the proxy reward model using either reinforcement learning or best-of-$n$ sampling. We find that this relationship follows a different functional form depending on the method of optimization, and that in both cases its coefficients scale smoothly with the number of reward model parameters. We also study the effect on this relationship of the size of the reward model dataset, the number of reward model and policy parameters, and the coefficient of the KL penalty added to the reward in the reinforcement learning setup. We explore the implications of these empirical results for theoretical considerations in AI alignment.",
+      "externalIds": {
+        "DBLP": "conf/icml/GaoSH23",
+        "ArXiv": "2210.10760",
+        "CorpusId": 252992904
+      },
+      "arxiv_id": "2210.10760",
+      "doi": null,
+      "corpus_id": 252992904
+    },
+    {
+      "paper_id": "2305.00955",
+      "ref_index": "8",
+      "ref_key": "S2:c5120b546f1bd99df5bd2e2bf44db5c7c46d1545",
+      "paperId": "c5120b546f1bd99df5bd2e2bf44db5c7c46d1545",
+      "title": "Pretraining Language Models with Human Preferences",
+      "year": 2023,
+      "abstract": "Language models (LMs) are pretrained to imitate internet text, including content that would violate human preferences if generated by an LM: falsehoods, offensive comments, personally identifiable information, low-quality or buggy code, and more. Here, we explore alternative objectives for pretraining LMs in a way that also guides them to generate text aligned with human preferences. We benchmark five objectives for pretraining with human feedback across three tasks and study how they affect the trade-off between alignment and capabilities of pretrained LMs. We find a Pareto-optimal and simple approach among those we explored: conditional training, or learning distribution over tokens conditional on their human preference scores given by a reward model. Conditional training reduces the rate of undesirable content by up to an order of magnitude, both when generating without a prompt and with an adversarially-chosen prompt. Moreover, conditional training maintains the downstream task performance of standard LM pretraining, both before and after task-specific finetuning. Pretraining with human feedback results in much better preference satisfaction than standard LM pretraining followed by finetuning with feedback, i.e., learning and then unlearning undesirable behavior. Our results suggest that we should move beyond imitation learning when pretraining LMs and incorporate human preferences from the start of training.",
+      "externalIds": {
+        "DBLP": "conf/icml/KorbakSCBBPBP23",
+        "ArXiv": "2302.08582",
+        "DOI": "10.48550/arXiv.2302.08582",
+        "CorpusId": 257020046
+      },
+      "arxiv_id": "2302.08582",
+      "doi": "10.48550/arXiv.2302.08582",
+      "corpus_id": 257020046
+    },
+    {
+      "paper_id": "2305.00955",
+      "ref_index": "9",
+      "ref_key": "S2:270e9b0681e895ae5adf937ea0cca9eb3718c721",
+      "paperId": "270e9b0681e895ae5adf937ea0cca9eb3718c721",
+      "title": "Can Neural Machine Translation be Improved with User Feedback?",
+      "year": 2018,
+      "abstract": "We present the first real-world application of methods for improving neural machine translation (NMT) with human reinforcement, based on explicit and implicit user feedback collected on the eBay e-commerce platform. Previous work has been confined to simulation experiments, whereas in this paper we work with real logged feedback for offline bandit learning of NMT parameters. We conduct a thorough analysis of the available explicit user judgments—five-star ratings of translation quality—and show that they are not reliable enough to yield significant improvements in bandit learning. In contrast, we successfully utilize implicit task-based feedback collected in a cross-lingual search task to improve task-specific and machine translation quality metrics.",
+      "externalIds": {
+        "MAG": "2798047776",
+        "DBLP": "conf/naacl/KreutzerKMR18",
+        "ACL": "N18-3012",
+        "ArXiv": "1804.05958",
+        "DOI": "10.18653/v1/N18-3012",
+        "CorpusId": 4950709
+      },
+      "arxiv_id": "1804.05958",
+      "doi": "10.18653/v1/N18-3012",
+      "corpus_id": 4950709
+    },
+    {
+      "paper_id": "2305.00955",
+      "ref_index": "10",
+      "ref_key": "S2:ca5409a7f6a4cd2a47862bc46b1d4f3117f3a070",
+      "paperId": "ca5409a7f6a4cd2a47862bc46b1d4f3117f3a070",
+      "title": "Dialogue Learning with Human Teaching and Feedback in End-to-End Trainable Task-Oriented Dialogue Systems",
+      "year": 2018,
+      "abstract": "In this work, we present a hybrid learning method for training task-oriented dialogue systems through online user interactions. Popular methods for learning task-oriented dialogues include applying reinforcement learning with user feedback on supervised pre-training models. Efficiency of such learning method may suffer from the mismatch of dialogue state distribution between offline training and online interactive learning stages. To address this challenge, we propose a hybrid imitation and reinforcement learning method, with which a dialogue agent can effectively learn from its interaction with users by learning from human teaching and feedback. We design a neural network based task-oriented dialogue agent that can be optimized end-to-end with the proposed learning method. Experimental results show that our end-to-end dialogue agent can learn effectively from the mistake it makes via imitation learning from user teaching. Applying reinforcement learning with user feedback after the imitation learning stage further improves the agent’s capability in successfully completing a task.",
+      "externalIds": {
+        "MAG": "2951296652",
+        "DBLP": "conf/naacl/LiuTHSH18",
+        "ArXiv": "1804.06512",
+        "ACL": "N18-1187",
+        "DOI": "10.18653/v1/N18-1187",
+        "CorpusId": 4938015
+      },
+      "arxiv_id": "1804.06512",
+      "doi": "10.18653/v1/N18-1187",
+      "corpus_id": 4938015
+    },
+    {
+      "paper_id": "2305.00955",
+      "ref_index": "11",
+      "ref_key": "S2:448e1493034dafe35699ae054ff4480b31dcf64a",
+      "paperId": "448e1493034dafe35699ae054ff4480b31dcf64a",
+      "title": "Memory-assisted prompt editing to improve GPT-3 after deployment",
+      "year": 2022,
+      "abstract": "Large LMs such as GPT -3 are powerful, but can commit mistakes that are obvious to humans. For example, GPT -3 would mistakenly interpret \"What word is similar to good ?\" to mean a homonym, while the user intended a synonym. Our goal is to effectively correct such errors via user interactions with the sys-tem but without retraining, which will be pro-hibitively costly. We pair GPT -3 with a growing memory of recorded cases where the model misunderstood the user’s intents, along with user feedback for clarification. Such a memory allows our system to produce enhanced prompts for any new query based on the user feedback for error correction on similar cases in the past. On four tasks (two lexical tasks, two advanced ethical reasoning tasks), we show how a (simulated) user can interactively teach a deployed GPT -3, substantially increasing its accuracy over the queries with different kinds of misunderstandings by the GPT -3. Our approach is a step towards the low-cost utility enhancement for very large pre-trained LMs. 1",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2201-06009",
+        "DOI": "10.18653/v1/2022.emnlp-main.183",
+        "CorpusId": 246016194
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2022.emnlp-main.183",
+      "corpus_id": 246016194
+    },
+    {
+      "paper_id": "2305.00955",
+      "ref_index": "12",
+      "ref_key": "S2:3aaf6a2cbad5850ad81ab5c163599cb3d523436f",
+      "paperId": "3aaf6a2cbad5850ad81ab5c163599cb3d523436f",
+      "title": "Self-Refine: Iterative Refinement with Self-Feedback",
+      "year": 2023,
+      "abstract": "Like humans, large language models (LLMs) do not always generate the best output on their first try. Motivated by how humans refine their written text, we introduce Self-Refine, an approach for improving initial outputs from LLMs through iterative feedback and refinement. The main idea is to generate an initial output using an LLMs; then, the same LLMs provides feedback for its output and uses it to refine itself, iteratively. Self-Refine does not require any supervised training data, additional training, or reinforcement learning, and instead uses a single LLM as the generator, refiner, and feedback provider. We evaluate Self-Refine across 7 diverse tasks, ranging from dialog response generation to mathematical reasoning, using state-of-the-art (GPT-3.5, ChatGPT, and GPT-4) LLMs. Across all evaluated tasks, outputs generated with Self-Refine are preferred by humans and automatic metrics over those generated with the same LLM using conventional one-step generation, improving by ~20% absolute on average in task performance. Our work demonstrates that even state-of-the-art LLMs like GPT-4 can be further improved at test time using our simple, standalone approach.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2303-17651",
+        "ArXiv": "2303.17651",
+        "DOI": "10.48550/arXiv.2303.17651",
+        "CorpusId": 257900871
+      },
+      "arxiv_id": "2303.17651",
+      "doi": "10.48550/arXiv.2303.17651",
+      "corpus_id": 257900871
+    },
+    {
+      "paper_id": "2305.00955",
+      "ref_index": "13",
+      "ref_key": "S2:774e33248ef2bc5971e17702a5ad6308a16de551",
+      "paperId": "774e33248ef2bc5971e17702a5ad6308a16de551",
+      "title": "Multidimensional Quality Metrics (MQM): A Framework for Declaring and Describing Translation Quality Metrics",
+      "year": 2014,
+      "abstract": "En els ultims anys l'avaluacio de la qualitat de la traduccio s'ha convertit en un tema rellevant i a la vegada que, de vegades, polemic. La perspectiva de la industria sobre la qualitat esta altament fragmentada, en part perque diferents tipus de projectes de traduccio requereixen metodes molt diferents d'avaluacio. A mes, els metodes d'avaluacio de la qualitat de les traduccions humanes i de les traduccions elaborades amb traduccio automatica (TA) son d'indole diferent. La manca de claredat provoca incertesa sobre si una traduccio compleix amb les necessitats del seu promotor o l'usuari final, i deixa als proveidors amb dubtes sobre el que els clients volen i necessiten. Com a resposta a aquest fet, el projecte QTLaunchPad, financat per la Unio Europea, ha desenvolupat el marc denominat Multidimensional Quality Metrics (MQM), un sistema obert i ampliable per declarar i descriure les metriques sobre qualitat en traduccio utilitzant un vocabulari compartit de \"classes de problemes”.",
+      "externalIds": {
+        "MAG": "1654441844",
+        "DOI": "10.5565/REV/TRADUMATICA.77",
+        "CorpusId": 55606096
+      },
+      "arxiv_id": null,
+      "doi": "10.5565/REV/TRADUMATICA.77",
+      "corpus_id": 55606096
+    },
+    {
+      "paper_id": "2305.00955",
+      "ref_index": "14",
+      "ref_key": "S2:65c5e3e3be6e881c7d2feef4c0c3d07323f3aeff",
+      "paperId": "65c5e3e3be6e881c7d2feef4c0c3d07323f3aeff",
+      "title": "Make The Most of Prior Data: A Solution for Interactive Text Summarization with Preference Feedback",
+      "year": 2022,
+      "abstract": "For summarization, human preference is critical to tame outputs of the summarizer in favor of human interests, as ground-truth summaries are scarce and ambiguous. Practical settings require dynamic exchanges between human and AI agent wherein feedback is provided in an online manner, a few at a time. In this paper, we introduce a new framework to train summarization models with preference feedback interactively. By properly leveraging offline data and a novel reward model, we improve the performance regarding ROUGE scores and sample-efficiency. Our experiments on three various datasets confirm the benefit of the proposed framework in active, few-shot and online settings of preference learning.",
+      "externalIds": {
+        "ArXiv": "2204.05512",
+        "DBLP": "journals/corr/abs-2204-05512",
+        "DOI": "10.48550/arXiv.2204.05512",
+        "CorpusId": 248118566
+      },
+      "arxiv_id": "2204.05512",
+      "doi": "10.48550/arXiv.2204.05512",
+      "corpus_id": 248118566
+    },
+    {
+      "paper_id": "2305.00955",
+      "ref_index": "15",
+      "ref_key": "S2:d766bffc357127e0dc86dd69561d5aeb520d6f4c",
+      "paperId": "d766bffc357127e0dc86dd69561d5aeb520d6f4c",
+      "title": "Training language models to follow instructions with human feedback",
+      "year": 2022,
+      "abstract": "Making language models bigger does not inherently make them better at following a user's intent. For example, large language models can generate outputs that are untruthful, toxic, or simply not helpful to the user. In other words, these models are not aligned with their users. In this paper, we show an avenue for aligning language models with user intent on a wide range of tasks by fine-tuning with human feedback. Starting with a set of labeler-written prompts and prompts submitted through the OpenAI API, we collect a dataset of labeler demonstrations of the desired model behavior, which we use to fine-tune GPT-3 using supervised learning. We then collect a dataset of rankings of model outputs, which we use to further fine-tune this supervised model using reinforcement learning from human feedback. We call the resulting models InstructGPT. In human evaluations on our prompt distribution, outputs from the 1.3B parameter InstructGPT model are preferred to outputs from the 175B GPT-3, despite having 100x fewer parameters. Moreover, InstructGPT models show improvements in truthfulness and reductions in toxic output generation while having minimal performance regressions on public NLP datasets. Even though InstructGPT still makes simple mistakes, our results show that fine-tuning with human feedback is a promising direction for aligning language models with human intent.",
+      "externalIds": {
+        "DBLP": "conf/nips/Ouyang0JAWMZASR22",
+        "ArXiv": "2203.02155",
+        "CorpusId": 246426909
+      },
+      "arxiv_id": "2203.02155",
+      "doi": null,
+      "corpus_id": 246426909
+    },
+    {
+      "paper_id": "2305.00955",
+      "ref_index": "16",
+      "ref_key": "S2:5060f52fb1b8241f8bca8c0e5c563193d2c69bf5",
+      "paperId": "5060f52fb1b8241f8bca8c0e5c563193d2c69bf5",
+      "title": "A Neural Network based Approach to Automatic Post-Editing",
+      "year": 2016,
+      "abstract": "We present a neural network based automatic post-editing (APE) system to improve raw machine translation (MT) output. Our neural model of APE (NNAPE) is based on a bidirectional recurrent neural network (RNN) model and consists of an encoder that encodes an MT output into a ﬁxed-length vector from which a de-coder provides a post-edited (PE) translation. APE translations produced by NNAPE show statistically signiﬁcant improvements of 3.96, 2.68 and 1.35 BLEU points absolute over the original MT, phrase-based APE and hierarchical APE outputs, respectively. Furthermore, human evaluation shows that the NNAPE generated PE translations are much better than the original MT output.",
+      "externalIds": {
+        "ACL": "P16-2046",
+        "DBLP": "conf/acl/PalNVG16",
+        "MAG": "2514996388",
+        "DOI": "10.18653/v1/P16-2046",
+        "CorpusId": 17827619
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/P16-2046",
+      "corpus_id": 17827619
+    },
+    {
+      "paper_id": "2305.00955",
+      "ref_index": "17",
+      "ref_key": "S2:c11810fa8887b678facea62da4607c4898360308",
+      "paperId": "c11810fa8887b678facea62da4607c4898360308",
+      "title": "Training Language Models with Language Feedback at Scale",
+      "year": 2023,
+      "abstract": "Pretrained language models often generate outputs that are not in line with human preferences, such as harmful text or factually incorrect summaries. Recent work approaches the above issues by learning from a simple form of human feedback: comparisons between pairs of model-generated outputs. However, comparison feedback only conveys limited information about human preferences. In this paper, we introduce Imitation learning from Language Feedback (ILF), a new approach that utilizes more informative language feedback. ILF consists of three steps that are applied iteratively: first, conditioning the language model on the input, an initial LM output, and feedback to generate refinements. Second, selecting the refinement incorporating the most feedback. Third, finetuning the language model to maximize the likelihood of the chosen refinement given the input. We show theoretically that ILF can be viewed as Bayesian Inference, similar to Reinforcement Learning from human feedback. We evaluate ILF's effectiveness on a carefully-controlled toy task and a realistic summarization task. Our experiments demonstrate that large language models accurately incorporate feedback and that finetuning with ILF scales well with the dataset size, even outperforming finetuning on human summaries. Learning from both language and comparison feedback outperforms learning from each alone, achieving human-level summarization performance.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2303-16755",
+        "ArXiv": "2303.16755",
+        "DOI": "10.48550/arXiv.2303.16755",
+        "CorpusId": 257805110
+      },
+      "arxiv_id": "2303.16755",
+      "doi": "10.48550/arXiv.2303.16755",
+      "corpus_id": 257805110
+    },
+    {
+      "paper_id": "2305.00955",
+      "ref_index": "18",
+      "ref_key": "S2:053b1d7b97eb2c91fc3921d589c160b0923c70b1",
+      "paperId": "053b1d7b97eb2c91fc3921d589c160b0923c70b1",
+      "title": "Learning to summarize from human feedback",
+      "year": 2020,
+      "abstract": "As language models become more powerful, training and evaluation are increasingly bottlenecked by the data and metrics used for a particular task. For example, summarization models are often trained to predict human reference summaries and evaluated using ROUGE, but both of these metrics are rough proxies for what we really care about---summary quality. In this work, we show that it is possible to significantly improve summary quality by training a model to optimize for human preferences. We collect a large, high-quality dataset of human comparisons between summaries, train a model to predict the human-preferred summary, and use that model as a reward function to fine-tune a summarization policy using reinforcement learning. We apply our method to a version of the TL;DR dataset of Reddit posts and find that our models significantly outperform both human reference summaries and much larger models fine-tuned with supervised learning alone. Our models also transfer to CNN/DM news articles, producing summaries nearly as good as the human reference without any news-specific fine-tuning. We conduct extensive analyses to understand our human feedback dataset and fine-tuned models We establish that our reward model generalizes to new datasets, and that optimizing our reward model results in better summaries than optimizing ROUGE according to humans. We hope the evidence from our paper motivates machine learning researchers to pay closer attention to how their training loss affects the model behavior they actually want.",
+      "externalIds": {
+        "MAG": "3082115681",
+        "DBLP": "journals/corr/abs-2009-01325",
+        "ArXiv": "2009.01325",
+        "CorpusId": 221665105
+      },
+      "arxiv_id": "2009.01325",
+      "doi": null,
+      "corpus_id": 221665105
+    },
+    {
+      "paper_id": "2305.00955",
+      "ref_index": "19",
+      "ref_key": "S2:748698bd4387afd08594e0dc8150c2afa210d9ae",
+      "paperId": "748698bd4387afd08594e0dc8150c2afa210d9ae",
+      "title": "RRHF: Rank Responses to Align Language Models with Human Feedback without tears",
+      "year": 2023,
+      "abstract": "Reinforcement Learning from Human Feedback (RLHF) facilitates the alignment of large language models with human preferences, significantly enhancing the quality of interactions between humans and models. InstructGPT implements RLHF through several stages, including Supervised Fine-Tuning (SFT), reward model training, and Proximal Policy Optimization (PPO). However, PPO is sensitive to hyperparameters and requires multiple models in its standard implementation, making it hard to train and scale up to larger parameter counts. In contrast, we propose a novel learning paradigm called RRHF, which scores sampled responses from different sources via a logarithm of conditional probabilities and learns to align these probabilities with human preferences through ranking loss. RRHF can leverage sampled responses from various sources including the model responses from itself, other large language model responses, and human expert responses to learn to rank them. RRHF only needs 1 to 2 models during tuning and can efficiently align language models with human preferences robustly without complex hyperparameter tuning. Additionally, RRHF can be considered an extension of SFT and reward model training while being simpler than PPO in terms of coding, model counts, and hyperparameters. We evaluate RRHF on the Helpful and Harmless dataset, demonstrating comparable alignment performance with PPO by reward model score and human labeling. Extensive experiments show that the performance of RRHF is highly related to sampling quality which suggests RRHF is a best-of-n learner. Codes available at https://github.com/GanjinZero/RRHF.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2304-05302",
+        "ArXiv": "2304.05302",
+        "DOI": "10.48550/arXiv.2304.05302",
+        "CorpusId": 258059818
+      },
+      "arxiv_id": "2304.05302",
+      "doi": "10.48550/arXiv.2304.05302",
+      "corpus_id": 258059818
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "methods that leverage human-feedback": {
+        "Format ": {
+          "Numerical ": {
+            "0cceebb6b796c210b55ebf6b98032b5c631db0e1": {},
+            "270e9b0681e895ae5adf937ea0cca9eb3718c721": {},
+            "ca5409a7f6a4cd2a47862bc46b1d4f3117f3a070": {}
+          },
+          "Ranking ": {
+            "0286b2736a114198b25fb5553c671c33aed5d477": {},
+            "d766bffc357127e0dc86dd69561d5aeb520d6f4c": {},
+            "053b1d7b97eb2c91fc3921d589c160b0923c70b1": {}
+          },
+          "Natural Language ": {
+            "3aaf6a2cbad5850ad81ab5c163599cb3d523436f": {},
+            "c11810fa8887b678facea62da4607c4898360308": {}
+          },
+          "Others ": {
+            "774e33248ef2bc5971e17702a5ad6308a16de551": {},
+            "65c5e3e3be6e881c7d2feef4c0c3d07323f3aeff": {},
+            "5060f52fb1b8241f8bca8c0e5c563193d2c69bf5": {}
+          }
+        },
+        "Objective ": {
+          "Helpfulness ": {
+            "Task Performance ": {
+              "270e9b0681e895ae5adf937ea0cca9eb3718c721": {},
+              "053b1d7b97eb2c91fc3921d589c160b0923c70b1": {}
+            },
+            "Instruction-Following ": {
+              "3dc7dc1bea9a4f70c02b6759a0bda7aca0005a9e": {},
+              "d766bffc357127e0dc86dd69561d5aeb520d6f4c": {}
+            }
+          },
+          "Harmlessness ": {
+            "3936fd3c6187f606c6e4e2e20b196dbc41cc4654": {},
+            "0286b2736a114198b25fb5553c671c33aed5d477": {},
+            "d766bffc357127e0dc86dd69561d5aeb520d6f4c": {}
+          }
+        },
+        "Usage": {
+          "Training ": {
+            "Feedback-Based Imitation Learning": {
+              "c11810fa8887b678facea62da4607c4898360308": {}
+            },
+            "Joint Feedback Modelling ": {
+              "c5120b546f1bd99df5bd2e2bf44db5c7c46d1545": {},
+              "748698bd4387afd08594e0dc8150c2afa210d9ae": {}
+            },
+            "Reinforcement Learning ": {
+              "3dc7dc1bea9a4f70c02b6759a0bda7aca0005a9e": {},
+              "270e9b0681e895ae5adf937ea0cca9eb3718c721": {},
+              "053b1d7b97eb2c91fc3921d589c160b0923c70b1": {}
+            }
+          },
+          "Decoding ": {
+            "Reranking": {
+              "0cceebb6b796c210b55ebf6b98032b5c631db0e1": {},
+              "fb3dc5e20e0a71134ca916f0d6d8d41f01225b4b": {}
+            },
+            "Feedback-Conditioning": {
+              "a938ff4539b09a785a66669844f1a35f76169218": {},
+              "448e1493034dafe35699ae054ff4480b31dcf64a": {}
+            }
+          }
+        },
+        "Modeling": {
+          "\\textit{None} ": {
+            "270e9b0681e895ae5adf937ea0cca9eb3718c721": {},
+            "448e1493034dafe35699ae054ff4480b31dcf64a": {}
+          },
+          "Feedback-Modeling ": {
+            "0286b2736a114198b25fb5553c671c33aed5d477": {},
+            "cc7d5cf6e37cfec9e100418d54c2deb89a05b53c": {},
+            "053b1d7b97eb2c91fc3921d589c160b0923c70b1": {}
+          },
+          "AI Feedback ": {
+            "cdecefa737544971b72c5b5ef60f9eb9772fa051": {},
+            "3936fd3c6187f606c6e4e2e20b196dbc41cc4654": {},
+            "3aaf6a2cbad5850ad81ab5c163599cb3d523436f": {}
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000001",
+        "paperId": "0cceebb6b796c210b55ebf6b98032b5c631db0e1",
+        "ref_index": "5",
+        "path": [
+          "methods that leverage human-feedback",
+          "Format ",
+          "Numerical "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000002",
+        "paperId": "270e9b0681e895ae5adf937ea0cca9eb3718c721",
+        "ref_index": "9",
+        "path": [
+          "methods that leverage human-feedback",
+          "Format ",
+          "Numerical "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000003",
+        "paperId": "ca5409a7f6a4cd2a47862bc46b1d4f3117f3a070",
+        "ref_index": "10",
+        "path": [
+          "methods that leverage human-feedback",
+          "Format ",
+          "Numerical "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000004",
+        "paperId": "0286b2736a114198b25fb5553c671c33aed5d477",
+        "ref_index": "4",
+        "path": [
+          "methods that leverage human-feedback",
+          "Format ",
+          "Ranking "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000005",
+        "paperId": "d766bffc357127e0dc86dd69561d5aeb520d6f4c",
+        "ref_index": "15",
+        "path": [
+          "methods that leverage human-feedback",
+          "Format ",
+          "Ranking "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000006",
+        "paperId": "053b1d7b97eb2c91fc3921d589c160b0923c70b1",
+        "ref_index": "18",
+        "path": [
+          "methods that leverage human-feedback",
+          "Format ",
+          "Ranking "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000007",
+        "paperId": "3aaf6a2cbad5850ad81ab5c163599cb3d523436f",
+        "ref_index": "12",
+        "path": [
+          "methods that leverage human-feedback",
+          "Format ",
+          "Natural Language "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000008",
+        "paperId": "c11810fa8887b678facea62da4607c4898360308",
+        "ref_index": "17",
+        "path": [
+          "methods that leverage human-feedback",
+          "Format ",
+          "Natural Language "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000009",
+        "paperId": "774e33248ef2bc5971e17702a5ad6308a16de551",
+        "ref_index": "13",
+        "path": [
+          "methods that leverage human-feedback",
+          "Format ",
+          "Others "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000010",
+        "paperId": "65c5e3e3be6e881c7d2feef4c0c3d07323f3aeff",
+        "ref_index": "14",
+        "path": [
+          "methods that leverage human-feedback",
+          "Format ",
+          "Others "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000011",
+        "paperId": "5060f52fb1b8241f8bca8c0e5c563193d2c69bf5",
+        "ref_index": "16",
+        "path": [
+          "methods that leverage human-feedback",
+          "Format ",
+          "Others "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000012",
+        "paperId": "270e9b0681e895ae5adf937ea0cca9eb3718c721",
+        "ref_index": "9",
+        "path": [
+          "methods that leverage human-feedback",
+          "Objective ",
+          "Helpfulness ",
+          "Task Performance "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000013",
+        "paperId": "053b1d7b97eb2c91fc3921d589c160b0923c70b1",
+        "ref_index": "18",
+        "path": [
+          "methods that leverage human-feedback",
+          "Objective ",
+          "Helpfulness ",
+          "Task Performance "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000014",
+        "paperId": "3dc7dc1bea9a4f70c02b6759a0bda7aca0005a9e",
+        "ref_index": "2",
+        "path": [
+          "methods that leverage human-feedback",
+          "Objective ",
+          "Helpfulness ",
+          "Instruction-Following "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000015",
+        "paperId": "d766bffc357127e0dc86dd69561d5aeb520d6f4c",
+        "ref_index": "15",
+        "path": [
+          "methods that leverage human-feedback",
+          "Objective ",
+          "Helpfulness ",
+          "Instruction-Following "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000016",
+        "paperId": "3936fd3c6187f606c6e4e2e20b196dbc41cc4654",
+        "ref_index": "3",
+        "path": [
+          "methods that leverage human-feedback",
+          "Objective ",
+          "Harmlessness "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000017",
+        "paperId": "0286b2736a114198b25fb5553c671c33aed5d477",
+        "ref_index": "4",
+        "path": [
+          "methods that leverage human-feedback",
+          "Objective ",
+          "Harmlessness "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000018",
+        "paperId": "d766bffc357127e0dc86dd69561d5aeb520d6f4c",
+        "ref_index": "15",
+        "path": [
+          "methods that leverage human-feedback",
+          "Objective ",
+          "Harmlessness "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000019",
+        "paperId": "c11810fa8887b678facea62da4607c4898360308",
+        "ref_index": "17",
+        "path": [
+          "methods that leverage human-feedback",
+          "Usage",
+          "Training ",
+          "Feedback-Based Imitation Learning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000020",
+        "paperId": "c5120b546f1bd99df5bd2e2bf44db5c7c46d1545",
+        "ref_index": "8",
+        "path": [
+          "methods that leverage human-feedback",
+          "Usage",
+          "Training ",
+          "Joint Feedback Modelling "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000021",
+        "paperId": "748698bd4387afd08594e0dc8150c2afa210d9ae",
+        "ref_index": "19",
+        "path": [
+          "methods that leverage human-feedback",
+          "Usage",
+          "Training ",
+          "Joint Feedback Modelling "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000022",
+        "paperId": "3dc7dc1bea9a4f70c02b6759a0bda7aca0005a9e",
+        "ref_index": "2",
+        "path": [
+          "methods that leverage human-feedback",
+          "Usage",
+          "Training ",
+          "Reinforcement Learning "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000023",
+        "paperId": "270e9b0681e895ae5adf937ea0cca9eb3718c721",
+        "ref_index": "9",
+        "path": [
+          "methods that leverage human-feedback",
+          "Usage",
+          "Training ",
+          "Reinforcement Learning "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000024",
+        "paperId": "053b1d7b97eb2c91fc3921d589c160b0923c70b1",
+        "ref_index": "18",
+        "path": [
+          "methods that leverage human-feedback",
+          "Usage",
+          "Training ",
+          "Reinforcement Learning "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000025",
+        "paperId": "0cceebb6b796c210b55ebf6b98032b5c631db0e1",
+        "ref_index": "5",
+        "path": [
+          "methods that leverage human-feedback",
+          "Usage",
+          "Decoding ",
+          "Reranking"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000026",
+        "paperId": "fb3dc5e20e0a71134ca916f0d6d8d41f01225b4b",
+        "ref_index": "7",
+        "path": [
+          "methods that leverage human-feedback",
+          "Usage",
+          "Decoding ",
+          "Reranking"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000027",
+        "paperId": "a938ff4539b09a785a66669844f1a35f76169218",
+        "ref_index": "0",
+        "path": [
+          "methods that leverage human-feedback",
+          "Usage",
+          "Decoding ",
+          "Feedback-Conditioning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000028",
+        "paperId": "448e1493034dafe35699ae054ff4480b31dcf64a",
+        "ref_index": "11",
+        "path": [
+          "methods that leverage human-feedback",
+          "Usage",
+          "Decoding ",
+          "Feedback-Conditioning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000029",
+        "paperId": "270e9b0681e895ae5adf937ea0cca9eb3718c721",
+        "ref_index": "9",
+        "path": [
+          "methods that leverage human-feedback",
+          "Modeling",
+          "\\textit{None} "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000030",
+        "paperId": "448e1493034dafe35699ae054ff4480b31dcf64a",
+        "ref_index": "11",
+        "path": [
+          "methods that leverage human-feedback",
+          "Modeling",
+          "\\textit{None} "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000031",
+        "paperId": "0286b2736a114198b25fb5553c671c33aed5d477",
+        "ref_index": "4",
+        "path": [
+          "methods that leverage human-feedback",
+          "Modeling",
+          "Feedback-Modeling "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000032",
+        "paperId": "cc7d5cf6e37cfec9e100418d54c2deb89a05b53c",
+        "ref_index": "6",
+        "path": [
+          "methods that leverage human-feedback",
+          "Modeling",
+          "Feedback-Modeling "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000033",
+        "paperId": "053b1d7b97eb2c91fc3921d589c160b0923c70b1",
+        "ref_index": "18",
+        "path": [
+          "methods that leverage human-feedback",
+          "Modeling",
+          "Feedback-Modeling "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000034",
+        "paperId": "cdecefa737544971b72c5b5ef60f9eb9772fa051",
+        "ref_index": "1",
+        "path": [
+          "methods that leverage human-feedback",
+          "Modeling",
+          "AI Feedback "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000035",
+        "paperId": "3936fd3c6187f606c6e4e2e20b196dbc41cc4654",
+        "ref_index": "3",
+        "path": [
+          "methods that leverage human-feedback",
+          "Modeling",
+          "AI Feedback "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2305.00955",
+        "arxiv_id": "2305.00955",
+        "leaf_mention_id": "2305.00955::000036",
+        "paperId": "3aaf6a2cbad5850ad81ab5c163599cb3d523436f",
+        "ref_index": "12",
+        "path": [
+          "methods that leverage human-feedback",
+          "Modeling",
+          "AI Feedback "
+        ],
+        "depth": 3,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 36,
+      "unique_leaf_paper_count": 20,
+      "multi_membership_extra_mentions": 16,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

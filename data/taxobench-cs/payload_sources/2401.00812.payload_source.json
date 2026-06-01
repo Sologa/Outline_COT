@@ -1,0 +1,2508 @@
+{
+  "paper_id": "2401.00812",
+  "arxiv_id": "2401.00812",
+  "title": "If LLM Is the Wizard, Then Code Is the Wand: A Survey on How Code Empowers Large Language Models to Serve as Intelligent Agents",
+  "ref_meta": [
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "0",
+      "ref_key": "S2:ae6a4cd221684be6ca3082b6f526a7901281490b",
+      "paperId": "ae6a4cd221684be6ca3082b6f526a7901281490b",
+      "title": "Emergent autonomous scientific research capabilities of large language models",
+      "year": 2023,
+      "abstract": "Transformer-based large language models are rapidly advancing in the field of machine learning research, with applications spanning natural language, biology, chemistry, and computer programming. Extreme scaling and reinforcement learning from human feedback have significantly improved the quality of generated text, enabling these models to perform various tasks and reason about their choices. In this paper, we present an Intelligent Agent system that combines multiple large language models for autonomous design, planning, and execution of scientific experiments. We showcase the Agent's scientific research capabilities with three distinct examples, with the most complex being the successful performance of catalyzed cross-coupling reactions. Finally, we discuss the safety implications of such systems and propose measures to prevent their misuse.",
+      "externalIds": {
+        "ArXiv": "2304.05332",
+        "DBLP": "journals/corr/abs-2304-05332",
+        "DOI": "10.48550/arXiv.2304.05332",
+        "CorpusId": 258059651
+      },
+      "arxiv_id": "2304.05332",
+      "doi": "10.48550/arXiv.2304.05332",
+      "corpus_id": 258059651
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "1",
+      "ref_key": "S2:32dcd0887537cece54e214f531d2c384470b023f",
+      "paperId": "32dcd0887537cece54e214f531d2c384470b023f",
+      "title": "Large Language Models as Tool Makers",
+      "year": 2023,
+      "abstract": "Recent research has highlighted the potential of large language models (LLMs) to improve their problem-solving capabilities with the aid of suitable external tools. In our work, we further advance this concept by introducing a closed-loop framework, referred to as LLMs A s Tool Makers (LATM), where LLMs create their own reusable tools for problem-solving. Our approach consists of two phases: 1) tool making: an LLM acts as the tool maker that crafts tools for a set of tasks. 2) tool using: another LLM acts as the tool user, which applies the tool built by the tool maker for problem-solving. On the problem-solving server side, tool-making enables continual tool generation and caching as new requests emerge. This framework enables subsequent requests to access cached tools via their corresponding APIs, enhancing the efficiency of task resolution. Recognizing that tool-making requires more sophisticated capabilities, we assign this task to a powerful, albeit resource-intensive, model. Conversely, the simpler tool-using phase is delegated to a lightweight model. This strategic division of labor allows the once-off cost of tool-making to be spread over multiple instances of tool-using, significantly reducing average costs while maintaining strong performance. Furthermore, our method offers a functional cache through the caching and reuse of tools, which stores the functionality of a class of requests instead of the natural language responses from LLMs, thus extending the applicability of the conventional cache mechanism. We evaluate our approach across various complex reasoning tasks, including Big-Bench tasks. With GPT-4 as the tool maker and GPT-3.5 as the tool user, LATM demonstrates performance equivalent to using GPT-4 for both roles, but with a significantly reduced inference cost.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-17126",
+        "ArXiv": "2305.17126",
+        "DOI": "10.48550/arXiv.2305.17126",
+        "CorpusId": 258947222
+      },
+      "arxiv_id": "2305.17126",
+      "doi": "10.48550/arXiv.2305.17126",
+      "corpus_id": 258947222
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "2",
+      "ref_key": "S2:58f8925a8b87054ad0635a6398a7fe24935b1604",
+      "paperId": "58f8925a8b87054ad0635a6398a7fe24935b1604",
+      "title": "Mind2Web: Towards a Generalist Agent for the Web",
+      "year": 2023,
+      "abstract": "We introduce Mind2Web, the first dataset for developing and evaluating generalist agents for the web that can follow language instructions to complete complex tasks on any website. Existing datasets for web agents either use simulated websites or only cover a limited set of websites and tasks, thus not suitable for generalist web agents. With over 2,000 open-ended tasks collected from 137 websites spanning 31 domains and crowdsourced action sequences for the tasks, Mind2Web provides three necessary ingredients for building generalist web agents: 1) diverse domains, websites, and tasks, 2) use of real-world websites instead of simulated and simplified ones, and 3) a broad spectrum of user interaction patterns. Based on Mind2Web, we conduct an initial exploration of using large language models (LLMs) for building generalist web agents. While the raw HTML of real-world websites are often too large to be fed to LLMs, we show that first filtering it with a small LM significantly improves the effectiveness and efficiency of LLMs. Our solution demonstrates a decent level of performance, even on websites or entire domains the model has never seen before, but there is still a substantial room to improve towards truly generalizable agents. We open-source our dataset, model implementation, and trained models (https://osu-nlp-group.github.io/Mind2Web) to facilitate further research on building a generalist agent for the web.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2306-06070",
+        "ArXiv": "2306.06070",
+        "DOI": "10.48550/arXiv.2306.06070",
+        "CorpusId": 259129428
+      },
+      "arxiv_id": "2306.06070",
+      "doi": "10.48550/arXiv.2306.06070",
+      "corpus_id": 259129428
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "3",
+      "ref_key": "S2:a95817df43516f5ff9cfc447209def1fcd569afc",
+      "paperId": "a95817df43516f5ff9cfc447209def1fcd569afc",
+      "title": "CodeScore: Evaluating Code Generation by Learning Code Execution",
+      "year": 2023,
+      "abstract": "A proper code evaluation metric (CEM) profoundly impacts the evolution of code generation, which is an important research field in NLP and software engineering. Prevailing match-based CEMs (e.g., BLEU, Accuracy, and CodeBLEU) suffer from two significant drawbacks. 1. They primarily measure the surface differences between codes without considering their functional equivalence. However, functional equivalence is pivotal in evaluating the effectiveness of code generation, as different codes can perform identical operations. 2. They are predominantly designed for the Ref-only input format. However, code evaluation necessitates versatility in input formats. Aside from Ref-only, there are NL-only and Ref&NL formats, which existing match-based CEMs cannot effectively accommodate. In this paper, we propose CodeScore, a large language model (LLM)-based CEM, which estimates the functional correctness of generated code on three input types. To acquire CodeScore, we present UniCE, a unified code generation learning framework, for LLMs to learn code execution (i.e., learning PassRatio and Executability of generated code) with unified input. Extensive experimental results on multiple code evaluation datasets demonstrate that CodeScore absolutely improves up to 58.87% correlation with functional correctness compared to other CEMs, achieves state-of-the-art performance, and effectively handles three input formats.",
+      "externalIds": {
+        "ArXiv": "2301.09043",
+        "DBLP": "journals/corr/abs-2301-09043",
+        "DOI": "10.48550/arXiv.2301.09043",
+        "CorpusId": 256105296
+      },
+      "arxiv_id": "2301.09043",
+      "doi": "10.48550/arXiv.2301.09043",
+      "corpus_id": 256105296
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "4",
+      "ref_key": "S2:257aee73d83a87921fd2d56b524de394dcf6a264",
+      "paperId": "257aee73d83a87921fd2d56b524de394dcf6a264",
+      "title": "A neural network solves, explains, and generates university math problems by program synthesis and few-shot learning at human level",
+      "year": 2021,
+      "abstract": "Significance We demonstrate that a neural network automatically solves, explains, and generates university-level problems from the largest Massachusetts Institute of Technology (MIT) mathematics courses at a human level. Our methods combine three innovations: 1) using recent neural networks pretrained on text and fine-tuned on code rather than pretrained on text; 2) few-shot learning synthesizing programs that correctly solve course problems automatically; and 3) a pipeline to solve questions, explain solutions, and generate new questions indistinguishable by students from course questions. Our work solves university-level mathematics courses and improves upon state-of-the-art, increasing automatic accuracy on randomly sampled questions on a benchmark by order of magnitude. Implications for higher education include roles of artificial intelligence (AI) in automated course evaluation and content generation.",
+      "externalIds": {
+        "ArXiv": "2112.15594",
+        "PubMedCentral": "9371704",
+        "DOI": "10.1073/pnas.2123433119",
+        "CorpusId": 247997008,
+        "PubMed": "35917350"
+      },
+      "arxiv_id": "2112.15594",
+      "doi": "10.1073/pnas.2123433119",
+      "corpus_id": 247997008
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "5",
+      "ref_key": "S2:c7a3f9cc61cfafdc307f8ae24430b6b1121f9b2c",
+      "paperId": "c7a3f9cc61cfafdc307f8ae24430b6b1121f9b2c",
+      "title": "ToolkenGPT: Augmenting Frozen Language Models with Massive Tools via Tool Embeddings",
+      "year": 2023,
+      "abstract": "Augmenting large language models (LLMs) with external tools has emerged as a promising approach to solving complex problems. However, traditional methods, which finetune LLMs with tool demonstration data, can be both costly and restricted to a predefined set of tools. Recent in-context learning paradigm alleviates these issues, but the limited context length only allows for a few shots of demonstrations, leading to suboptimal understandings of the tools. Moreover, when there are numerous tools to choose from, in-context learning could completely fail to work. In this paper, we propose an alternative approach, $\\textbf{ToolkenGPT}$, which combines the benefits of both sides. Our approach represents each $\\underline{tool}$ as a to$\\underline{ken}$ ($\\textit{toolken}$) and learns an embedding for it, enabling tool calls in the same way as generating a regular word token. Once a toolken is triggered, the LLM is prompted to complete arguments for the tool to execute. ToolkenGPT offers the flexibility to plug in an arbitrary number of tools by expanding the set of toolkens on the fly. In addition, it improves tool use by allowing extensive demonstration data for learning the toolken embeddings. In diverse domains, including numerical reasoning, knowledge-based question answering, and embodied plan generation, our approach effectively augments LLMs with tools and substantially outperforms various latest baselines. ToolkenGPT demonstrates the promising ability to use relevant tools from a large tool set in complex scenarios.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-11554",
+        "ArXiv": "2305.11554",
+        "DOI": "10.48550/arXiv.2305.11554",
+        "CorpusId": 258823133
+      },
+      "arxiv_id": "2305.11554",
+      "doi": "10.48550/arXiv.2305.11554",
+      "corpus_id": 258823133
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "6",
+      "ref_key": "S2:5dbf93a68b7fda600521f046dea35ea8ba9e884f",
+      "paperId": "5dbf93a68b7fda600521f046dea35ea8ba9e884f",
+      "title": "AgentBench: Evaluating LLMs as Agents",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) are becoming increasingly smart and autonomous, targeting real-world pragmatic missions beyond traditional NLP tasks. As a result, there has been an urgent need to evaluate LLMs as agents on challenging tasks in interactive environments. We present AgentBench, a multi-dimensional evolving benchmark that currently consists of 8 distinct environments to assess LLM-as-Agent's reasoning and decision-making abilities in a multi-turn open-ended generation setting. Our extensive test over 27 API-based and open-sourced (OSS) LLMs shows that, while top commercial LLMs present a strong ability of acting as agents in complex environments, there is a significant disparity in performance between them and OSS competitors. We identify the typical reasons of failures in environments and LLMs, showing that poor long-term reasoning, decision-making, and instruction following abilities are the main obstacles for developing usable LLM agents. Training on code and high quality multi-turn alignment data could improve agent performance. Datasets, environments, and an integrated evaluation package for AgentBench are released at \\url{https://github.com/THUDM/AgentBench}.",
+      "externalIds": {
+        "ArXiv": "2308.03688",
+        "DBLP": "conf/iclr/0036YZXLL0DMYZ024",
+        "DOI": "10.48550/arXiv.2308.03688",
+        "CorpusId": 260682249
+      },
+      "arxiv_id": "2308.03688",
+      "doi": "10.48550/arXiv.2308.03688",
+      "corpus_id": 260682249
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "7",
+      "ref_key": "S2:354bf043179e3e9f05df73e3f04517e53c326d1f",
+      "paperId": "354bf043179e3e9f05df73e3f04517e53c326d1f",
+      "title": "TALM: Tool Augmented Language Models",
+      "year": 2022,
+      "abstract": "Transformer based language models (LMs) demonstrate increasing performance with scale across a wide variety of tasks. Scale alone however cannot enable models to solve tasks that require access to ephemeral, changing, or private data that was unavailable at training time. Many useful tasks may also benefit from LMs being able to access APIs that read or modify state. In this work, we present Tool Augmented Language Models (TALM), combining a text-only approach to augment language models with non-differentiable tools, and an iterative\"self-play\"technique to bootstrap performance starting from few tool demonstrations. TALM exhibits strong performance on both a knowledge-heavy QA task and a reasoning oriented math task with simple tools. At a given model scale, TALM significantly outperforms non-augmented LMs. We further demonstrate that TALM successfully performs out-of-distribution inferences on both QA and math tasks, where non-augmented LMs fail. Our results suggest that Tool Augmented Language Models are a promising direction to enrich LMs' capabilities, with less dependence on scale.",
+      "externalIds": {
+        "ArXiv": "2205.12255",
+        "DBLP": "journals/corr/abs-2205-12255",
+        "DOI": "10.48550/arXiv.2205.12255",
+        "CorpusId": 249017698
+      },
+      "arxiv_id": "2205.12255",
+      "doi": "10.48550/arXiv.2205.12255",
+      "corpus_id": 249017698
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "8",
+      "ref_key": "S2:7d8905a1fd288068f12c8347caeabefd36d0dd6c",
+      "paperId": "7d8905a1fd288068f12c8347caeabefd36d0dd6c",
+      "title": "Gorilla: Large Language Model Connected with Massive APIs",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) have seen an impressive wave of advances recently, with models now excelling in a variety of tasks, such as mathematical reasoning and program synthesis. However, their potential to effectively use tools via API calls remains unfulfilled. This is a challenging task even for today's state-of-the-art LLMs such as GPT-4, largely due to their inability to generate accurate input arguments and their tendency to hallucinate the wrong usage of an API call. We release Gorilla, a finetuned LLaMA-based model that surpasses the performance of GPT-4 on writing API calls. When combined with a document retriever, Gorilla demonstrates a strong capability to adapt to test-time document changes, enabling flexible user updates or version changes. It also substantially mitigates the issue of hallucination, commonly encountered when prompting LLMs directly. To evaluate the model's ability, we introduce APIBench, a comprehensive dataset consisting of HuggingFace, TorchHub, and TensorHub APIs. The successful integration of the retrieval system with Gorilla demonstrates the potential for LLMs to use tools more accurately, keep up with frequently updated documentation, and consequently increase the reliability and applicability of their outputs. Gorilla's code, model, data, and demo are available at https://gorilla.cs.berkeley.edu",
+      "externalIds": {
+        "ArXiv": "2305.15334",
+        "DBLP": "journals/corr/abs-2305-15334",
+        "CorpusId": 258865184
+      },
+      "arxiv_id": "2305.15334",
+      "doi": null,
+      "corpus_id": 258865184
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "9",
+      "ref_key": "S2:8da9b1436212b233fc49c7daf1ba15c22874ff5a",
+      "paperId": "8da9b1436212b233fc49c7daf1ba15c22874ff5a",
+      "title": "CREATOR: Tool Creation for Disentangling Abstract and Concrete Reasoning of Large Language Models",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) have made significant progress in utilizing tools, but their ability is limited by API availability and the instability of implicit reasoning, particularly when both planning and execution are involved. To overcome these limitations, we propose CREATOR, a novel framework that enables LLMs to create their own tools using documentation and code realization. CREATOR disentangles abstract tool creation and concrete decision execution, resulting in improved performance. We evaluate CREATOR on MATH and TabMWP benchmarks, respectively consisting of challenging math competition problems and diverse tabular contents. Remarkably, CREATOR outperforms existing chain-of-thought, program-of-thought, and tool-using baselines. Additionally, we introduce the Creation Challenge dataset, featuring 2K diverse questions, to emphasize the necessity and benefits of LLMs' tool creation ability. Further research demonstrates that leveraging LLMs as tool creators facilitates knowledge transfer, and LLMs exhibit varying levels of tool creation abilities, enabling them to adapt to diverse situations. The tool creation ability revolutionizes the LLM's problem-solving paradigm, driving us closer to the next frontier of artificial intelligence. All the codes and data are released.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/QianH0Q0J23",
+        "ArXiv": "2305.14318",
+        "DOI": "10.18653/v1/2023.findings-emnlp.462",
+        "CorpusId": 258841653
+      },
+      "arxiv_id": "2305.14318",
+      "doi": "10.18653/v1/2023.findings-emnlp.462",
+      "corpus_id": 258841653
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "10",
+      "ref_key": "S2:53d128ea815bcc0526856eb5a9c42cc977cb36a7",
+      "paperId": "53d128ea815bcc0526856eb5a9c42cc977cb36a7",
+      "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+      "year": 2023,
+      "abstract": "Language models (LMs) exhibit remarkable abilities to solve new tasks from just a few examples or textual instructions, especially at scale. They also, paradoxically, struggle with basic functionality, such as arithmetic or factual lookup, where much simpler and smaller models excel. In this paper, we show that LMs can teach themselves to use external tools via simple APIs and achieve the best of both worlds. We introduce Toolformer, a model trained to decide which APIs to call, when to call them, what arguments to pass, and how to best incorporate the results into future token prediction. This is done in a self-supervised way, requiring nothing more than a handful of demonstrations for each API. We incorporate a range of tools, including a calculator, a Q\\&A system, two different search engines, a translation system, and a calendar. Toolformer achieves substantially improved zero-shot performance across a variety of downstream tasks, often competitive with much larger models, without sacrificing its core language modeling abilities.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2302-04761",
+        "ArXiv": "2302.04761",
+        "DOI": "10.48550/arXiv.2302.04761",
+        "CorpusId": 256697342
+      },
+      "arxiv_id": "2302.04761",
+      "doi": "10.48550/arXiv.2302.04761",
+      "corpus_id": 256697342
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "11",
+      "ref_key": "S2:ed30969f0e4811473144ffe83c1baa6d54f02202",
+      "paperId": "ed30969f0e4811473144ffe83c1baa6d54f02202",
+      "title": "RestGPT: Connecting Large Language Models with Real-World RESTful APIs",
+      "year": 2023,
+      "abstract": "Tool-augmented large language models (LLMs) have achieved remarkable progress in tackling a broad range of tasks. However, existing methods are mainly restricted to specifically designed tools and fail to fulfill complex instructions, having great limitations when confronted with real-world scenarios. In this paper, we explore a more realistic scenario by connecting LLMs with RESTful APIs, which adhere to the widely adopted REST software architectural style for web service development. To address the practical challenges of tackling complex instructions, we propose RestGPT, which exploits the power of LLMs and conducts a coarse-to-fine online planning mechanism to enhance the abilities of task decomposition and API selection. RestGPT also contains an API executor tailored for calling RESTful APIs, which can meticulously formulate parameters and parse API responses. To fully evaluate the performance of RestGPT, we propose RestBench, a high-quality benchmark which consists of two real-world scenarios and human-annotated instructions with gold solution paths. Experiments show that RestGPT is able to achieve impressive results in complex tasks and has strong robustness, which paves a new way towards AGI. RestGPT and RestBench is publicly available at https://restgpt.github.io/.",
+      "externalIds": {
+        "ArXiv": "2306.06624",
+        "CorpusId": 261241602
+      },
+      "arxiv_id": "2306.06624",
+      "doi": null,
+      "corpus_id": 261241602
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "12",
+      "ref_key": "S2:90fff3e6c55fc43f81e96fea1dc63f114cc036c1",
+      "paperId": "90fff3e6c55fc43f81e96fea1dc63f114cc036c1",
+      "title": "Math Agents: Computational Infrastructure, Mathematical Embedding, and Genomics",
+      "year": 2023,
+      "abstract": "The advancement in generative AI could be boosted with more accessible mathematics. Beyond human-AI chat, large language models (LLMs) are emerging in programming, algorithm discovery, and theorem proving, yet their genomics application is limited. This project introduces Math Agents and mathematical embedding as fresh entries to the\"Moore's Law of Mathematics\", using a GPT-based workflow to convert equations from literature into LaTeX and Python formats. While many digital equation representations exist, there's a lack of automated large-scale evaluation tools. LLMs are pivotal as linguistic user interfaces, providing natural language access for human-AI chat and formal languages for large-scale AI-assisted computational infrastructure. Given the infinite formal possibility spaces, Math Agents, which interact with math, could potentially shift us from\"big data\"to\"big math\". Math, unlike the more flexible natural language, has properties subject to proof, enabling its use beyond traditional applications like high-validation math-certified icons for AI alignment aims. This project aims to use Math Agents and mathematical embeddings to address the ageing issue in information systems biology by applying multiscalar physics mathematics to disease models and genomic data. Generative AI with episodic memory could help analyse causal relations in longitudinal health records, using SIR Precision Health models. Genomic data is suggested for addressing the unsolved Alzheimer's disease problem.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-02502",
+        "ArXiv": "2307.02502",
+        "DOI": "10.48550/arXiv.2307.02502",
+        "CorpusId": 259360593
+      },
+      "arxiv_id": "2307.02502",
+      "doi": "10.48550/arXiv.2307.02502",
+      "corpus_id": 259360593
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "13",
+      "ref_key": "S2:455866ca838f356b53a7e3e5b344834f9e93dbbc",
+      "paperId": "455866ca838f356b53a7e3e5b344834f9e93dbbc",
+      "title": "ToolAlpaca: Generalized Tool Learning for Language Models with 3000 Simulated Cases",
+      "year": 2023,
+      "abstract": "Enabling large language models to utilize real-world tools effectively is crucial for achieving embodied intelligence. Existing approaches to tool learning have either primarily relied on extremely large language models, such as GPT-4, to attain generalized tool-use abilities in a zero-shot manner, or utilized supervised learning to train limited scopes of tools on compact models. However, it remains uncertain whether smaller language models can achieve generalized tool-use abilities without tool-specific training. To address this question, this paper introduces ToolAlpaca, a novel framework designed to automatically generate a diverse tool-use corpus and learn generalized tool-use abilities on compact language models with minimal human intervention. Specifically, ToolAlpaca first automatically creates a highly diversified tool-use corpus by building a multi-agent simulation environment. The corpus contains 3938 tool-use instances from more than 400 real-world tool APIs spanning 50 distinct categories. Subsequently, the constructed corpus is employed to fine-tune compact language models, resulting in two models, namely ToolAlpaca-7B and ToolAlpaca-13B, respectively. Finally, we evaluate the ability of these models to utilize previously unseen tools without specific training. Experimental results demonstrate that ToolAlpaca achieves effective generalized tool-use capabilities comparable to those of extremely large language models like GPT-3.5, demonstrating that learning generalized tool-use ability is feasible for compact language models.",
+      "externalIds": {
+        "ArXiv": "2306.05301",
+        "DBLP": "journals/corr/abs-2306-05301",
+        "DOI": "10.48550/arXiv.2306.05301",
+        "CorpusId": 259108190
+      },
+      "arxiv_id": "2306.05301",
+      "doi": "10.48550/arXiv.2306.05301",
+      "corpus_id": 259108190
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "14",
+      "ref_key": "S2:23525374cfd3af714f3ffb7a203b1ef3253333fe",
+      "paperId": "23525374cfd3af714f3ffb7a203b1ef3253333fe",
+      "title": "WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents",
+      "year": 2022,
+      "abstract": "Existing benchmarks for grounding language in interactive environments either lack real-world linguistic elements, or prove difficult to scale up due to substantial human involvement in the collection of data or feedback signals. To bridge this gap, we develop WebShop -- a simulated e-commerce website environment with $1.18$ million real-world products and $12,087$ crowd-sourced text instructions. Given a text instruction specifying a product requirement, an agent needs to navigate multiple types of webpages and issue diverse actions to find, customize, and purchase an item. WebShop provides several challenges for language grounding including understanding compositional instructions, query (re-)formulation, comprehending and acting on noisy text in webpages, and performing strategic exploration. We collect over $1,600$ human demonstrations for the task, and train and evaluate a diverse range of agents using reinforcement learning, imitation learning, and pre-trained image and language models. Our best model achieves a task success rate of $29\\%$, which outperforms rule-based heuristics ($9.6\\%$) but is far lower than human expert performance ($59\\%$). We also analyze agent and human trajectories and ablate various model components to provide insights for developing future agents with stronger language understanding and decision making abilities. Finally, we show that agents trained on WebShop exhibit non-trivial sim-to-real transfer when evaluated on amazon.com and ebay.com, indicating the potential value of WebShop in developing practical web-based agents that can operate in the wild.",
+      "externalIds": {
+        "ArXiv": "2207.01206",
+        "DBLP": "journals/corr/abs-2207-01206",
+        "DOI": "10.48550/arXiv.2207.01206",
+        "CorpusId": 250264533
+      },
+      "arxiv_id": "2207.01206",
+      "doi": "10.48550/arXiv.2207.01206",
+      "corpus_id": 250264533
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "15",
+      "ref_key": "S2:a1426b13b74dbad17b34606d25aabe1d61f6e11a",
+      "paperId": "a1426b13b74dbad17b34606d25aabe1d61f6e11a",
+      "title": "CRAFT: Customizing LLMs by Creating and Retrieving from Specialized Toolsets",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) are often augmented with tools to solve complex tasks. By generating code snippets and executing them through task-specific Application Programming Interfaces (APIs), they can offload certain functions to dedicated external modules, such as image encoding and performing calculations. However, most existing approaches to augment LLMs with tools are constrained by general-purpose APIs and lack the flexibility for tailoring them to specific tasks. In this work, we present CRAFT, a general tool creation and retrieval framework for LLMs. It creates toolsets specifically curated for the tasks and equips LLMs with a component that retrieves tools from these sets to enhance their capability to solve complex tasks. For each task, we collect specific code solutions by prompting GPT-4 to solve the training examples. Following a validation step ensuring the correctness, these solutions are abstracted into code snippets to enhance reusability, and deduplicated for higher quality. At inference time, the language model retrieves snippets from the toolsets and then executes them or generates the output conditioning on the retrieved snippets. Our method is designed to be flexible and offers a plug-and-play approach to adapt off-the-shelf LLMs to unseen domains and modalities, without any finetuning. Experiments on vision-language, tabular processing, and mathematical reasoning tasks show that our approach achieves substantial improvements compared to strong baselines. In addition, our in-depth analysis reveals that: (1) consistent performance improvement can be achieved by scaling up the number of tools and the capability of the backbone models; (2) each component of our approach contributes to the performance gains; (3) the created tools are well-structured and reliable with low complexity and atomicity. The code is available at https://github.com/lifan-yuan/CRAFT.",
+      "externalIds": {
+        "ArXiv": "2309.17428",
+        "DBLP": "conf/iclr/YuanC000J24",
+        "DOI": "10.48550/arXiv.2309.17428",
+        "CorpusId": 263310662
+      },
+      "arxiv_id": "2309.17428",
+      "doi": "10.48550/arXiv.2309.17428",
+      "corpus_id": 263310662
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "16",
+      "ref_key": "S2:1bf21dabbdfc81fd4f9e92b1201ecce744cabb6a",
+      "paperId": "1bf21dabbdfc81fd4f9e92b1201ecce744cabb6a",
+      "title": "SantaCoder: don't reach for the stars!",
+      "year": 2023,
+      "abstract": "The BigCode project is an open-scientific collaboration working on the responsible development of large language models for code. This tech report describes the progress of the collaboration until December 2022, outlining the current state of the Personally Identifiable Information (PII) redaction pipeline, the experiments conducted to de-risk the model architecture, and the experiments investigating better preprocessing methods for the training data. We train 1.1B parameter models on the Java, JavaScript, and Python subsets of The Stack and evaluate them on the MultiPL-E text-to-code benchmark. We find that more aggressive filtering of near-duplicates can further boost performance and, surprisingly, that selecting files from repositories with 5+ GitHub stars deteriorates performance significantly. Our best model outperforms previous open-source multilingual code generation models (InCoder-6.7B and CodeGen-Multi-2.7B) in both left-to-right generation and infilling on the Java, JavaScript, and Python portions of MultiPL-E, despite being a substantially smaller model. All models are released under an OpenRAIL license at https://hf.co/bigcode.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2301-03988",
+        "ArXiv": "2301.03988",
+        "DOI": "10.48550/arXiv.2301.03988",
+        "CorpusId": 255570209
+      },
+      "arxiv_id": "2301.03988",
+      "doi": "10.48550/arXiv.2301.03988",
+      "corpus_id": 255570209
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "17",
+      "ref_key": "S2:edc11420b3f2aa6638d78cceb3b12778fe07bb85",
+      "paperId": "edc11420b3f2aa6638d78cceb3b12778fe07bb85",
+      "title": "ChemCrow: Augmenting large-language models with chemistry tools",
+      "year": 2023,
+      "abstract": "Large-language models (LLMs) have recently shown strong performance in tasks across domains, but struggle with chemistry-related problems. Moreover, these models lack access to external knowledge sources, limiting their usefulness in scientiﬁc applications. In this study, we introduce ChemCrow, an LLM chemistry agent designed to accomplish tasks across organic synthesis, drug discovery, and materials design. By integrating 13 expert-designed tools, ChemCrow augments the LLM performance in chemistry, and new capabilities emerge. Our evaluation, including both LLM and expert human assessments, demonstrates ChemCrow’s effectiveness in automating a diverse set of chemical tasks. Surprisingly, we ﬁnd that GPT-4 as an evaluator cannot distinguish between clearly wrong GPT-4 completions and GPT-4 + ChemCrow performance. There is a signiﬁcant risk of misuse of tools like ChemCrow and we discuss their potential harms. Employed responsibly, ChemCrow not only aids expert chemists and lowers barriers for non-experts, but also fosters scientiﬁc advancement by bridging the gap between experimental and computational chemistry.",
+      "externalIds": {
+        "CorpusId": 271293795
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 271293795
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "18",
+      "ref_key": "S2:acbdbf49f9bc3f151b93d9ca9a06009f4f6eb269",
+      "paperId": "acbdbf49f9bc3f151b93d9ca9a06009f4f6eb269",
+      "title": "Evaluating Large Language Models Trained on Code",
+      "year": 2021,
+      "abstract": "We introduce Codex, a GPT language model fine-tuned on publicly available code from GitHub, and study its Python code-writing capabilities. A distinct production version of Codex powers GitHub Copilot. On HumanEval, a new evaluation set we release to measure functional correctness for synthesizing programs from docstrings, our model solves 28.8% of the problems, while GPT-3 solves 0% and GPT-J solves 11.4%. Furthermore, we find that repeated sampling from the model is a surprisingly effective strategy for producing working solutions to difficult prompts. Using this method, we solve 70.2% of our problems with 100 samples per problem. Careful investigation of our model reveals its limitations, including difficulty with docstrings describing long chains of operations and with binding operations to variables. Finally, we discuss the potential broader impacts of deploying powerful code generation technologies, covering safety, security, and economics.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2107-03374",
+        "ArXiv": "2107.03374",
+        "CorpusId": 235755472
+      },
+      "arxiv_id": "2107.03374",
+      "doi": null,
+      "corpus_id": 235755472
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "19",
+      "ref_key": "S2:876eb375cb7b365475040046df669c039ad54202",
+      "paperId": "876eb375cb7b365475040046df669c039ad54202",
+      "title": "CodeT: Code Generation with Generated Tests",
+      "year": 2022,
+      "abstract": "The task of generating code solutions for a given programming problem can benefit from the use of pre-trained language models such as Codex, which can produce multiple diverse samples. However, a major challenge for this task is to select the most appropriate solution from the multiple samples generated by the pre-trained language models. A natural way to evaluate the quality and correctness of a code solution is to run it against a set of test cases, but the manual creation of such test cases is often costly and time-consuming. In this paper, we propose a novel method, CodeT, that leverages the same pre-trained language models to automatically generate test cases for the code samples, thus reducing the human effort and increasing the coverage of the test scenarios. CodeT then executes the code samples using the generated test cases, and performs a dual execution agreement, which considers both the consistency of the outputs against the generated test cases and the agreement of the outputs with other code samples. We conduct comprehensive experiments on four benchmarks, HumanEval, MBPP, APPS and CodeContests, using five different pre-trained language models with varying sizes and capabilities. Our results show that CodeT can significantly improve the performance of code solution selection over previous methods, achieving remarkable and consistent gains across different models and benchmarks. For instance, CodeT improves the pass@1 metric on HumanEval to 65.8%, which represents an absolute improvement of 18.8% over the code-davinci-002 model, and an absolute improvement of more than 20% over the previous state-of-the-art results.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2207-10397",
+        "ArXiv": "2207.10397",
+        "DOI": "10.48550/arXiv.2207.10397",
+        "CorpusId": 250920542
+      },
+      "arxiv_id": "2207.10397",
+      "doi": "10.48550/arXiv.2207.10397",
+      "corpus_id": 250920542
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "20",
+      "ref_key": "S2:28dafb94a87daa71ad3edf9f04f3c8c32753398b",
+      "paperId": "28dafb94a87daa71ad3edf9f04f3c8c32753398b",
+      "title": "Improving Code Generation by Training with Natural Language Feedback",
+      "year": 2023,
+      "abstract": "The potential for pre-trained large language models (LLMs) to use natural language feedback at inference time has been an exciting recent development. We build upon this observation by formalizing an algorithm for learning from natural language feedback at training time instead, which we call Imitation learning from Language Feedback (ILF). ILF requires only a small amount of human-written feedback during training and does not require the same feedback at test time, making it both user-friendly and sample-efficient. We further show that ILF can be seen as a form of minimizing the KL divergence to the ground truth distribution and demonstrate a proof-of-concept on a neural program synthesis task. We use ILF to improve a Codegen-Mono 6.1B model's pass@1 rate by 38% relative (and 10% absolute) on the Mostly Basic Python Problems (MBPP) benchmark, outperforming both fine-tuning on MBPP and fine-tuning on repaired programs written by humans. Overall, our results suggest that learning from human-written natural language feedback is both more effective and sample-efficient than training exclusively on demonstrations for improving an LLM's performance on code generation tasks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2303-16749",
+        "ArXiv": "2303.16749",
+        "DOI": "10.48550/arXiv.2303.16749",
+        "CorpusId": 257804798
+      },
+      "arxiv_id": "2303.16749",
+      "doi": "10.48550/arXiv.2303.16749",
+      "corpus_id": 257804798
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "21",
+      "ref_key": "S2:6c943670dca38bfc7c8b477ae7c2d1fba1ad3691",
+      "paperId": "6c943670dca38bfc7c8b477ae7c2d1fba1ad3691",
+      "title": "Program of Thoughts Prompting: Disentangling Computation from Reasoning for Numerical Reasoning Tasks",
+      "year": 2022,
+      "abstract": "Recently, there has been significant progress in teaching language models to perform step-by-step reasoning to solve complex numerical reasoning tasks. Chain-of-thoughts prompting (CoT) is by far the state-of-art method for these tasks. CoT uses language models to perform both reasoning and computation in the multi-step `thought' process. To disentangle computation from reasoning, we propose `Program of Thoughts' (PoT), which uses language models (mainly Codex) to express the reasoning process as a program. The computation is relegated to an external computer, which executes the generated programs to derive the answer. We evaluate PoT on five math word problem datasets (GSM, AQuA, SVAMP, TabMWP, MultiArith) and three financial-QA datasets (FinQA, ConvFinQA, TATQA) for both few-shot and zero-shot setups. Under both few-shot and zero-shot settings, PoT can show an average performance gain over CoT by around 12\\% across all the evaluated datasets. By combining PoT with self-consistency decoding, we can achieve SoTA performance on all math problem datasets and near-SoTA performance on financial datasets. All of our data and code are released in Github https://github.com/wenhuchen/Program-of-Thoughts",
+      "externalIds": {
+        "DBLP": "journals/tmlr/ChenM0C23",
+        "ArXiv": "2211.12588",
+        "CorpusId": 253801709
+      },
+      "arxiv_id": "2211.12588",
+      "doi": null,
+      "corpus_id": 253801709
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "22",
+      "ref_key": "S2:9e3c493fb09dcd61bb05e8c5659f23327b7b6340",
+      "paperId": "9e3c493fb09dcd61bb05e8c5659f23327b7b6340",
+      "title": "Teaching Large Language Models to Self-Debug",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have achieved impressive performance on code generation. However, for complex programming tasks, generating the correct solution in one go becomes challenging, thus some prior works have designed program repair approaches to improve code generation performance. In this work, we propose Self-Debugging, which teaches a large language model to debug its predicted program via few-shot demonstrations. In particular, we demonstrate that Self-Debugging can teach the large language model to perform rubber duck debugging; i.e., without any human feedback on the code correctness or error messages, the model is able to identify its mistakes by investigating the execution results and explaining the generated code in natural language. Self-Debugging achieves the state-of-the-art performance on several code generation benchmarks, including the Spider dataset for text-to-SQL generation, TransCoder for C++-to-Python translation, and MBPP for text-to-Python generation. On the Spider benchmark where there are no unit tests to verify the correctness of predictions, Self-Debugging with code explanation consistently improves the baseline by 2-3%, and improves the prediction accuracy on problems of the hardest level by 9%. On TransCoder and MBPP where unit tests are available, Self-Debugging improves the baseline accuracy by up to 12%. Meanwhile, by leveraging feedback messages and reusing failed predictions, Self-Debugging notably improves sample efficiency, and can match or outperform baseline models that generate more than 10x candidate programs.",
+      "externalIds": {
+        "ArXiv": "2304.05128",
+        "DBLP": "journals/corr/abs-2304-05128",
+        "DOI": "10.48550/arXiv.2304.05128",
+        "CorpusId": 258059885
+      },
+      "arxiv_id": "2304.05128",
+      "doi": "10.48550/arXiv.2304.05128",
+      "corpus_id": 258059885
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "23",
+      "ref_key": "S2:033607afc2e08a58383ad78deb98c844017109c1",
+      "paperId": "033607afc2e08a58383ad78deb98c844017109c1",
+      "title": "ViStruct: Visual Structural Knowledge Extraction via Curriculum Guided Code-Vision Representation",
+      "year": 2023,
+      "abstract": "State-of-the-art vision-language models (VLMs) still have limited performance in structural knowledge extraction, such as relations between objects. In this work, we present ViStruct, a training framework to learn VLMs for effective visual structural knowledge extraction. Two novel designs are incorporated. First, we propose to leverage the inherent structure of programming language to depict visual structural information. This approach enables explicit and consistent representation of visual structural information of multiple granularities, such as concepts, relations, and events, in a well-organized structured format. Second, we introduce curriculum-based learning for VLMs to progressively comprehend visual structures, from fundamental visual concepts to intricate event structures. Our intuition is that lower-level knowledge may contribute to complex visual structure understanding. Furthermore, we compile and release a collection of datasets tailored for visual structural knowledge extraction. We adopt a weakly-supervised approach to directly generate visual event structures from captions for ViStruct training, capitalizing on abundant image-caption pairs from the web. In experiments, we evaluate ViStruct on visual structure prediction tasks, demonstrating its effectiveness in improving the understanding of visual structures. The code is public at \\url{https://github.com/Yangyi-Chen/vi-struct}.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/Chen0LHJ23",
+        "ArXiv": "2311.13258",
+        "DOI": "10.48550/arXiv.2311.13258",
+        "CorpusId": 265351905
+      },
+      "arxiv_id": "2311.13258",
+      "doi": "10.48550/arXiv.2311.13258",
+      "corpus_id": 265351905
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "24",
+      "ref_key": "S2:f58ca7ba4a08b7082e86b7a5989b4b0fda2107ab",
+      "paperId": "f58ca7ba4a08b7082e86b7a5989b4b0fda2107ab",
+      "title": "Binding Language Models in Symbolic Languages",
+      "year": 2022,
+      "abstract": "Though end-to-end neural approaches have recently been dominating NLP tasks in both performance and ease-of-use, they lack interpretability and robustness. We propose Binder, a training-free neural-symbolic framework that maps the task input to a program, which (1) allows binding a unified API of language model (LM) functionalities to a programming language (e.g., SQL, Python) to extend its grammar coverage and thus tackle more diverse questions, (2) adopts an LM as both the program parser and the underlying model called by the API during execution, and (3) requires only a few in-context exemplar annotations. Specifically, we employ GPT-3 Codex as the LM. In the parsing stage, with only a few in-context exemplars, Codex is able to identify the part of the task input that cannot be answerable by the original programming language, correctly generate API calls to prompt Codex to solve the unanswerable part, and identify where to place the API calls while being compatible with the original grammar. In the execution stage, Codex can perform versatile functionalities (e.g., commonsense QA, information extraction) given proper prompts in the API calls. Binder achieves state-of-the-art results on WikiTableQuestions and TabFact datasets, with explicit output programs that benefit human debugging. Note that previous best systems are all finetuned on tens of thousands of task-specific samples, while Binder only uses dozens of annotations as in-context exemplars without any training. Our code is available at https://github.com/HKUNLP/Binder .",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-02875",
+        "ArXiv": "2210.02875",
+        "DOI": "10.48550/arXiv.2210.02875",
+        "CorpusId": 252734772
+      },
+      "arxiv_id": "2210.02875",
+      "doi": "10.48550/arXiv.2210.02875",
+      "corpus_id": 252734772
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "25",
+      "ref_key": "S2:9837349417e36ef5be06da0fd6c74042148bdaa2",
+      "paperId": "9837349417e36ef5be06da0fd6c74042148bdaa2",
+      "title": "Visual Programming for Text-to-Image Generation and Evaluation",
+      "year": 2023,
+      "abstract": "As large language models have demonstrated impressive performance in many domains, recent works have adopted language models (LMs) as controllers of visual modules for vision-and-language tasks. While existing work focuses on equipping LMs with visual understanding, we propose two novel interpretable/explainable visual programming frameworks for text-to-image (T2I) generation and evaluation. First, we introduce VPGen, an interpretable step-by-step T2I generation framework that decomposes T2I generation into three steps: object/count generation, layout generation, and image generation. We employ an LM to handle the first two steps (object/count generation and layout generation), by finetuning it on text-layout pairs. Our step-by-step T2I generation framework provides stronger spatial control than end-to-end models, the dominant approach for this task. Furthermore, we leverage the world knowledge of pretrained LMs, overcoming the limitation of previous layout-guided T2I works that can only handle predefined object classes. We demonstrate that our VPGen has improved control in counts/spatial relations/scales of objects than state-of-the-art T2I generation models. Second, we introduce VPEval, an interpretable and explainable evaluation framework for T2I generation based on visual programming. Unlike previous T2I evaluations with a single scoring model that is accurate in some skills but unreliable in others, VPEval produces evaluation programs that invoke a set of visual modules that are experts in different skills, and also provides visual+textual explanations of the evaluation results. Our analysis shows that VPEval provides a more human-correlated evaluation for skill-specific and open-ended prompts than widely used single model-based evaluation. We hope that our work encourages future progress on interpretable/explainable generation and evaluation for T2I models.",
+      "externalIds": {
+        "ArXiv": "2305.15328",
+        "DBLP": "journals/corr/abs-2305-15328",
+        "DOI": "10.48550/arXiv.2305.15328",
+        "CorpusId": 258865230
+      },
+      "arxiv_id": "2305.15328",
+      "doi": "10.48550/arXiv.2305.15328",
+      "corpus_id": 258865230
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "26",
+      "ref_key": "S2:10158879cdb64ce7d3f7bb5572c4617ea808602e",
+      "paperId": "10158879cdb64ce7d3f7bb5572c4617ea808602e",
+      "title": "Receive, Reason, and React: Drive as You Say, With Large Language Models in Autonomous Vehicles",
+      "year": 2023,
+      "abstract": "The fusion of human-centric design and artificial intelligence capabilities has opened up new possibilities for next-generation autonomous vehicles that go beyond traditional transportation. These vehicles can dynamically interact with passengers and adapt to their preferences. This article proposes a novel framework that leverages large language models (LLMs) to enhance the decision-making process in autonomous vehicles. By utilizing LLMs’ contextual understanding abilities with specialized tools, we aim to integrate the language and reasoning capabilities of LLMs into autonomous vehicles. Our research includes experiments in HighwayEnv, a collection of environments for autonomous driving and tactical decision-making tasks, to explore LLMs’ interpretation, interaction, and reasoning in various scenarios. We also examine some well-defined real-time personalized driving tasks, demonstrating how LLMs can influence driving behaviors based on drivers’ verbal commands. Our empirical results highlight the substantial advantages of utilizing chain-of-thought prompting, leading to improved driving decisions and showing the potential for LLMs to enhance personalized driving experiences through ongoing verbal feedback. The proposed framework aims to transform autonomous vehicle operations, offering personalized support, transparent decision making, and continuous learning to enhance safety and effectiveness. We achieve user-centric, transparent, and adaptive autonomous driving ecosystems supported by the integration of LLMs into autonomous vehicles. Experiment videos are available at https://youtube.com/playlist?list=PLgcRcf9w8BmLJi_fqTGq-7KCZsbpEIE4a&si=dhH9lgaeSmB5K94t.",
+      "externalIds": {
+        "DBLP": "journals/itsm/CuiMCYW24",
+        "ArXiv": "2310.08034",
+        "DOI": "10.1109/MITS.2024.3381793",
+        "CorpusId": 263908840
+      },
+      "arxiv_id": "2310.08034",
+      "doi": "10.1109/MITS.2024.3381793",
+      "corpus_id": 263908840
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "27",
+      "ref_key": "S2:b85f3a66245d483f3eb3447eaf9950bd55f2b21e",
+      "paperId": "b85f3a66245d483f3eb3447eaf9950bd55f2b21e",
+      "title": "PentestGPT: An LLM-empowered Automatic Penetration Testing Tool",
+      "year": 2023,
+      "abstract": "Penetration testing, a crucial industrial practice for ensuring system security, has traditionally resisted automation due to the extensive expertise required by human professionals. Large Language Models (LLMs) have shown significant advancements in various domains, and their emergent abilities suggest their potential to revolutionize industries. In this research, we evaluate the performance of LLMs on real-world penetration testing tasks using a robust benchmark created from test machines with platforms. Our findings reveal that while LLMs demonstrate proficiency in specific sub-tasks within the penetration testing process, such as using testing tools, interpreting outputs, and proposing subsequent actions, they also encounter difficulties maintaining an integrated understanding of the overall testing scenario. In response to these insights, we introduce PentestGPT, an LLM-empowered automatic penetration testing tool that leverages the abundant domain knowledge inherent in LLMs. PentestGPT is meticulously designed with three self-interacting modules, each addressing individual sub-tasks of penetration testing, to mitigate the challenges related to context loss. Our evaluation shows that PentestGPT not only outperforms LLMs with a task-completion increase of 228.6\\% compared to the \\gptthree model among the benchmark targets but also proves effective in tackling real-world penetration testing challenges. Having been open-sourced on GitHub, PentestGPT has garnered over 4,700 stars and fostered active community engagement, attesting to its value and impact in both the academic and industrial spheres.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-06782",
+        "ArXiv": "2308.06782",
+        "DOI": "10.48550/arXiv.2308.06782",
+        "CorpusId": 260887370
+      },
+      "arxiv_id": "2308.06782",
+      "doi": "10.48550/arXiv.2308.06782",
+      "corpus_id": 260887370
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "28",
+      "ref_key": "S2:5692501c10d0c1762842f92c66fcf0bffe2c0342",
+      "paperId": "5692501c10d0c1762842f92c66fcf0bffe2c0342",
+      "title": "Multimodal Web Navigation with Instruction-Finetuned Foundation Models",
+      "year": 2023,
+      "abstract": "The progress of autonomous web navigation has been hindered by the dependence on billions of exploratory interactions via online reinforcement learning, and domain-specific model designs that make it difficult to leverage generalization from rich out-of-domain data. In this work, we study data-driven offline training for web agents with vision-language foundation models. We propose an instruction-following multimodal agent, WebGUM, that observes both webpage screenshots and HTML pages and outputs web navigation actions, such as click and type. WebGUM is trained by jointly finetuning an instruction-finetuned language model and a vision encoder with temporal and local perception on a large corpus of demonstrations. We empirically demonstrate this recipe improves the agent's ability of grounded multimodal perception, HTML comprehension, and multi-step reasoning, outperforming prior works by a significant margin. On the MiniWoB, we improve over the previous best offline methods by more than 45.8%, even outperforming online-finetuned SoTA, humans, and GPT-4-based agent. On the WebShop benchmark, our 3-billion-parameter model achieves superior performance to the existing SoTA, PaLM-540B. Furthermore, WebGUM exhibits strong positive transfer to the real-world planning tasks on the Mind2Web. We also collect 347K high-quality demonstrations using our trained models, 38 times larger than prior work, and make them available to promote future research in this direction.",
+      "externalIds": {
+        "DBLP": "conf/iclr/FurutaLNMFGG24",
+        "ArXiv": "2305.11854",
+        "DOI": "10.48550/arXiv.2305.11854",
+        "CorpusId": 258823350
+      },
+      "arxiv_id": "2305.11854",
+      "doi": "10.48550/arXiv.2305.11854",
+      "corpus_id": 258823350
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "29",
+      "ref_key": "S2:6c1e1cc1e0e1f8fd026fe517607b2d4535565fa7",
+      "paperId": "6c1e1cc1e0e1f8fd026fe517607b2d4535565fa7",
+      "title": "PAL: Program-aided Language Models",
+      "year": 2022,
+      "abstract": "Large language models (LLMs) have recently demonstrated an impressive ability to perform arithmetic and symbolic reasoning tasks, when provided with a few examples at test time (\"few-shot prompting\"). Much of this success can be attributed to prompting methods such as\"chain-of-thought'', which employ LLMs for both understanding the problem description by decomposing it into steps, as well as solving each step of the problem. While LLMs seem to be adept at this sort of step-by-step decomposition, LLMs often make logical and arithmetic mistakes in the solution part, even when the problem is decomposed correctly. In this paper, we present Program-Aided Language models (PAL): a novel approach that uses the LLM to read natural language problems and generate programs as the intermediate reasoning steps, but offloads the solution step to a runtime such as a Python interpreter. With PAL, decomposing the natural language problem into runnable steps remains the only learning task for the LLM, while solving is delegated to the interpreter. We demonstrate this synergy between a neural LLM and a symbolic interpreter across 13 mathematical, symbolic, and algorithmic reasoning tasks from BIG-Bench Hard and other benchmarks. In all these natural language reasoning tasks, generating code using an LLM and reasoning using a Python interpreter leads to more accurate results than much larger models. For example, PAL using Codex achieves state-of-the-art few-shot accuracy on the GSM8K benchmark of math word problems, surpassing PaLM-540B which uses chain-of-thought by absolute 15% top-1. Our code and data are publicly available at http://reasonwithpal.com/ .",
+      "externalIds": {
+        "ArXiv": "2211.10435",
+        "DBLP": "journals/corr/abs-2211-10435",
+        "DOI": "10.48550/arXiv.2211.10435",
+        "CorpusId": 253708270
+      },
+      "arxiv_id": "2211.10435",
+      "doi": "10.48550/arXiv.2211.10435",
+      "corpus_id": 253708270
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "30",
+      "ref_key": "S2:af1c871282ec122869d03f5420ef5d9143358a91",
+      "paperId": "af1c871282ec122869d03f5420ef5d9143358a91",
+      "title": "Visual Programming: Compositional visual reasoning without training",
+      "year": 2022,
+      "abstract": "We present Visprog, a neuro-symbolic approach to solving complex and compositional visual tasks given natural language instructions. Visprog avoids the need for any task-specific training. Instead, it uses the incontext learning ability of large language models to generate python-like modular programs, which are then executed to get both the solution and a comprehensive and interpretable rationale. Each line of the generated program may invoke one of several off-the-shelf computer vision models, image processing subroutines, or python functions to produce intermediate outputs that may be consumed by subsequent parts of the program. We demonstrate the flexibility of VIsPROG on 4 diverse tasks - compositional visual question answering, zero-shot reasoning on image pairs, factual knowledge object tagging, and language-guided image editing. We believe neuro-symbolic approaches like Visprog are an exciting avenue to easily and effectively expand the scope of AI systems to serve the long tail of complex tasks that people may wish to perform.",
+      "externalIds": {
+        "DBLP": "conf/cvpr/GuptaK23",
+        "ArXiv": "2211.11559",
+        "DOI": "10.1109/CVPR52729.2023.01436",
+        "CorpusId": 253734854
+      },
+      "arxiv_id": "2211.11559",
+      "doi": "10.1109/CVPR52729.2023.01436",
+      "corpus_id": 253734854
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "31",
+      "ref_key": "S2:703035b483c181953de1b55b5fd59cd4cd4cf211",
+      "paperId": "703035b483c181953de1b55b5fd59cd4cd4cf211",
+      "title": "MetaGPT: Meta Programming for Multi-Agent Collaborative Framework",
+      "year": 2023,
+      "abstract": "Recently, remarkable progress has been made in automated task-solving through the use of multi-agent driven by large language models (LLMs). However, existing LLM-based multi-agent works primarily focus on solving simple dialogue tasks, and complex tasks are rarely studied, mainly due to the LLM hallucination problem. This type of hallucination becomes cascading when naively chaining multiple intelligent agents, resulting in a failure to effectively address complex problems. Therefore, we introduce MetaGPT, an innovative framework that incorporates efficient human workflows as a meta programming approach into LLM-based multi-agent collaboration. Specifically, MetaGPT encodes Standardized Operating Procedures (SOPs) into prompts to enhance structured coordination. Subsequently, it mandates modular outputs, empowering agents with domain expertise comparable to human professionals, to validate outputs and minimize compounded errors. In this way, MetaGPT leverages the assembly line paradigm to assign diverse roles to various agents, thereby establishing a framework that can effectively and cohesively deconstruct complex multi-agent collaborative problems. Our experiments on collaborative software engineering benchmarks demonstrate that MetaGPT generates more coherent and correct solutions compared to existing chat-based multi-agent systems. This highlights the potential of integrating human domain knowledge into multi-agent systems, thereby creating new opportunities to tackle complex real-world challenges. The GitHub repository of this project is publicly available on:https://github.com/geekan/MetaGPT.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-00352",
+        "DOI": "10.48550/arXiv.2308.00352",
+        "CorpusId": 260351380
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2308.00352",
+      "corpus_id": 260351380
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "32",
+      "ref_key": "S2:1cd8373490efc2d74c2796f4b2aa27c7d4415ec9",
+      "paperId": "1cd8373490efc2d74c2796f4b2aa27c7d4415ec9",
+      "title": "VoxPoser: Composable 3D Value Maps for Robotic Manipulation with Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) are shown to possess a wealth of actionable knowledge that can be extracted for robot manipulation in the form of reasoning and planning. Despite the progress, most still rely on pre-defined motion primitives to carry out the physical interactions with the environment, which remains a major bottleneck. In this work, we aim to synthesize robot trajectories, i.e., a dense sequence of 6-DoF end-effector waypoints, for a large variety of manipulation tasks given an open-set of instructions and an open-set of objects. We achieve this by first observing that LLMs excel at inferring affordances and constraints given a free-form language instruction. More importantly, by leveraging their code-writing capabilities, they can interact with a vision-language model (VLM) to compose 3D value maps to ground the knowledge into the observation space of the agent. The composed value maps are then used in a model-based planning framework to zero-shot synthesize closed-loop robot trajectories with robustness to dynamic perturbations. We further demonstrate how the proposed framework can benefit from online experiences by efficiently learning a dynamics model for scenes that involve contact-rich interactions. We present a large-scale study of the proposed method in both simulated and real-robot environments, showcasing the ability to perform a large variety of everyday manipulation tasks specified in free-form natural language. Videos and code at https://voxposer.github.io",
+      "externalIds": {
+        "DBLP": "conf/corl/HuangWZL0023",
+        "ArXiv": "2307.05973",
+        "DOI": "10.48550/arXiv.2307.05973",
+        "CorpusId": 259837330
+      },
+      "arxiv_id": "2307.05973",
+      "doi": "10.48550/arXiv.2307.05973",
+      "corpus_id": 259837330
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "33",
+      "ref_key": "S2:47c3b8dd2c8a9326249ac98900b2c3fc71f46ab1",
+      "paperId": "47c3b8dd2c8a9326249ac98900b2c3fc71f46ab1",
+      "title": "Self-planning Code Generation with Large Language Models",
+      "year": 2023,
+      "abstract": "Although large language models (LLMs) have demonstrated impressive ability in code generation, they are still struggling to address the complicated intent provided by humans. It is widely acknowledged that humans typically employ planning to decompose complex problems and schedule solution steps prior to implementation. To this end, we introduce planning into code generation to help the model understand complex intent and reduce the difficulty of problem-solving. This paper proposes a self-planning code generation approach with large language models, which consists of two phases, namely planning phase and implementation phase. Specifically, in the planning phase, LLM plans out concise solution steps from the intent combined with few-shot prompting. Subsequently, in the implementation phase, the model generates code step by step, guided by the preceding solution steps. We conduct extensive experiments on various code-generation benchmarks across multiple programming languages. Experimental results show that self-planning code generation achieves a relative improvement of up to 25.4% in Pass@1 compared to direct code generation, and up to 11.9% compared to Chain-of-Thought of code generation. Moreover, our self-planning approach also enhances the quality of the generated code with respect to correctness, readability, and robustness, as assessed by humans.",
+      "externalIds": {
+        "ArXiv": "2303.06689",
+        "DBLP": "journals/corr/abs-2303-06689",
+        "DOI": "10.1145/3672456",
+        "CorpusId": 257495755
+      },
+      "arxiv_id": "2303.06689",
+      "doi": "10.1145/3672456",
+      "corpus_id": 257495755
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "34",
+      "ref_key": "S2:ce8de3902a583e1eb6062d4453ed90fe6b9d4558",
+      "paperId": "ce8de3902a583e1eb6062d4453ed90fe6b9d4558",
+      "title": "Large Language Models are Few-shot Testers: Exploring LLM-based General Bug Reproduction",
+      "year": 2022,
+      "abstract": "Many automated test generation techniques have been developed to aid developers with writing tests. To facilitate full automation, most existing techniques aim to either increase coverage, or generate exploratory inputs. However, existing test generation techniques largely fall short of achieving more semantic objectives, such as generating tests to reproduce a given bug report. Reproducing bugs is nonetheless important, as our empirical study shows that the number of tests added in open source repositories due to issues was about 28% of the corresponding project test suite size. Meanwhile, due to the difficulties of transforming the expected program semantics in bug reports into test oracles, existing failure reproduction techniques tend to deal exclusively with program crashes, a small subset of all bug reports. To automate test generation from general bug reports, we propose Libro, a framework that uses Large Language Models (LLMs), which have been shown to be capable of performing code-related tasks. Since LLMs themselves cannot execute the target buggy code, we focus on post-processing steps that help us discern when LLMs are effective, and rank the produced tests according to their validity. Our evaluation of Libro shows that, on the widely studied Defects4J benchmark, Libro can generate failure reproducing test cases for 33% of all studied cases (251 out of 750), while suggesting a bug reproducing test in first place for 149 bugs. To mitigate data contamination (i.e., the possibility of the LLM simply remembering the test code either partially or in whole), we also evaluate Libro against 31 bug reports submitted after the collection of the LLM training data terminated: Libro produces bug reproducing tests for 32% of the studied bug reports. Overall, our results show Libro has the potential to significantly enhance developer efficiency by automatically generating tests from bug reports.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2209-11515",
+        "ArXiv": "2209.11515",
+        "DOI": "10.1109/ICSE48619.2023.00194",
+        "CorpusId": 252519508
+      },
+      "arxiv_id": "2209.11515",
+      "doi": "10.1109/ICSE48619.2023.00194",
+      "corpus_id": 252519508
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "35",
+      "ref_key": "S2:8a4fc5f00cd4aca61e148e46a2125c3a406719f1",
+      "paperId": "8a4fc5f00cd4aca61e148e46a2125c3a406719f1",
+      "title": "DS-1000: A Natural and Reliable Benchmark for Data Science Code Generation",
+      "year": 2022,
+      "abstract": "We introduce DS-1000, a code generation benchmark with a thousand data science problems spanning seven Python libraries, such as NumPy and Pandas. Compared to prior works, DS-1000 incorporates three core features. First, our problems reflect diverse, realistic, and practical use cases since we collected them from StackOverflow. Second, our automatic evaluation is highly specific (reliable) -- across all Codex-002-predicted solutions that our evaluation accept, only 1.8% of them are incorrect; we achieve this with multi-criteria metrics, checking both functional correctness by running test cases and surface-form constraints by restricting API usages or keywords. Finally, we proactively defend against memorization by slightly modifying our problems to be different from the original StackOverflow source; consequently, models cannot answer them correctly by memorizing the solutions from pre-training. The current best public system (Codex-002) achieves 43.3% accuracy, leaving ample room for improvement. We release our benchmark at https://ds1000-code-gen.github.io.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2211-11501",
+        "ArXiv": "2211.11501",
+        "DOI": "10.48550/arXiv.2211.11501",
+        "CorpusId": 253734939
+      },
+      "arxiv_id": "2211.11501",
+      "doi": "10.48550/arXiv.2211.11501",
+      "corpus_id": 253734939
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "36",
+      "ref_key": "S2:6d994b4f5a46cd14e8f09f1e9e49120546b15e31",
+      "paperId": "6d994b4f5a46cd14e8f09f1e9e49120546b15e31",
+      "title": "CodeRL: Mastering Code Generation through Pretrained Models and Deep Reinforcement Learning",
+      "year": 2022,
+      "abstract": "Program synthesis or code generation aims to generate a program that satisfies a problem specification. Recent approaches using large-scale pretrained language models (LMs) have shown promising results, yet they have some critical limitations. In particular, they often follow a standard supervised fine-tuning procedure to train a code generation model only from the pairs of natural-language problem descriptions and ground-truth programs. Such paradigm largely ignores some important but potentially useful signals in the problem specification such as unit tests, which thus often results in poor performance when solving complex unseen coding tasks. To address the limitations, we propose\"CodeRL\", a new framework for program synthesis tasks through pretrained LMs and deep reinforcement learning (RL). Specifically, during training, we treat the code-generating LM as an actor network, and introduce a critic network that is trained to predict the functional correctness of generated programs and provide dense feedback signals to the actor. During inference, we introduce a new generation procedure with a critical sampling strategy that allows a model to automatically regenerate programs based on feedback from example unit tests and critic scores. For the model backbones, we extended the encoder-decoder architecture of CodeT5 with enhanced learning objectives, larger model sizes, and better pretraining data. Our method not only achieves new SOTA results on the challenging APPS benchmark, but also shows strong zero-shot transfer capability with new SOTA results on the simpler MBPP benchmark.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2207-01780",
+        "ArXiv": "2207.01780",
+        "DOI": "10.48550/arXiv.2207.01780",
+        "CorpusId": 250280117
+      },
+      "arxiv_id": "2207.01780",
+      "doi": "10.48550/arXiv.2207.01780",
+      "corpus_id": 250280117
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "37",
+      "ref_key": "S2:e1484706c0fab932fc9804df328044b3cb2f110d",
+      "paperId": "e1484706c0fab932fc9804df328044b3cb2f110d",
+      "title": "Pix2Struct: Screenshot Parsing as Pretraining for Visual Language Understanding",
+      "year": 2022,
+      "abstract": "Visually-situated language is ubiquitous -- sources range from textbooks with diagrams to web pages with images and tables, to mobile apps with buttons and forms. Perhaps due to this diversity, previous work has typically relied on domain-specific recipes with limited sharing of the underlying data, model architectures, and objectives. We present Pix2Struct, a pretrained image-to-text model for purely visual language understanding, which can be finetuned on tasks containing visually-situated language. Pix2Struct is pretrained by learning to parse masked screenshots of web pages into simplified HTML. The web, with its richness of visual elements cleanly reflected in the HTML structure, provides a large source of pretraining data well suited to the diversity of downstream tasks. Intuitively, this objective subsumes common pretraining signals such as OCR, language modeling, image captioning. In addition to the novel pretraining strategy, we introduce a variable-resolution input representation and a more flexible integration of language and vision inputs, where language prompts such as questions are rendered directly on top of the input image. For the first time, we show that a single pretrained model can achieve state-of-the-art results in six out of nine tasks across four domains: documents, illustrations, user interfaces, and natural images.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-03347",
+        "ArXiv": "2210.03347",
+        "DOI": "10.48550/arXiv.2210.03347",
+        "CorpusId": 252762394
+      },
+      "arxiv_id": "2210.03347",
+      "doi": "10.48550/arXiv.2210.03347",
+      "corpus_id": 252762394
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "38",
+      "ref_key": "S2:5cbe278b65a81602a864184bbca37de91448a5f5",
+      "paperId": "5cbe278b65a81602a864184bbca37de91448a5f5",
+      "title": "Competition-level code generation with AlphaCode",
+      "year": 2022,
+      "abstract": "Programming is a powerful and ubiquitous problem-solving tool. Systems that can assist programmers or even generate programs themselves could make programming more productive and accessible. Recent transformer-based neural network models show impressive code generation abilities yet still perform poorly on more complex tasks requiring problem-solving skills, such as competitive programming problems. Here, we introduce AlphaCode, a system for code generation that achieved an average ranking in the top 54.3% in simulated evaluations on recent programming competitions on the Codeforces platform. AlphaCode solves problems by generating millions of diverse programs using specially trained transformer-based networks and then filtering and clustering those programs to a maximum of just 10 submissions. This result marks the first time an artificial intelligence system has performed competitively in programming competitions. Description Machine learning systems can program too Computer programming competitions are popular tests among programmers that require critical thinking informed by experience and creating solutions to unforeseen problems, both of which are key aspects of human intelligence but challenging to mimic by machine learning models. Using self-supervised learning and an encoder-decoder transformer architecture, Li et al. developed AlphaCode, a deep-learning model that can achieve approximately human-level performance on the Codeforces platform, which regularly hosts these competitions and attracts numerous participants worldwide (see the Perspective by Kolter). The development of such coding platforms could have a huge impact on programmers’ productivity. It may even change the culture of programming by shifting human work to formulating problems, with machine learning being the main one responsible for generating and executing codes. —YS Modern machine learning systems can achieve average human-level performance in popular competitive programming contests.",
+      "externalIds": {
+        "ArXiv": "2203.07814",
+        "DBLP": "journals/corr/abs-2203-07814",
+        "DOI": "10.1126/science.abq1158",
+        "CorpusId": 246527904,
+        "PubMed": "36480631"
+      },
+      "arxiv_id": "2203.07814",
+      "doi": "10.1126/science.abq1158",
+      "corpus_id": 246527904
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "39",
+      "ref_key": "S2:91deaf9d324c8feafc189da0da03e60a60287bca",
+      "paperId": "91deaf9d324c8feafc189da0da03e60a60287bca",
+      "title": "Code as Policies: Language Model Programs for Embodied Control",
+      "year": 2022,
+      "abstract": "Large language models (LLMs) trained on code-completion have been shown to be capable of synthesizing simple Python programs from docstrings [1]. We find that these code-writing LLMs can be re-purposed to write robot policy code, given natural language commands. Specifically, policy code can express functions or feedback loops that process perception outputs (e.g., from object detectors [2], [3]) and parameterize control primitive APIs. When provided as input several example language commands (formatted as comments) followed by corresponding policy code (via few-shot prompting), LLMs can take in new commands and autonomously re-compose API calls to generate new policy code respectively. By chaining classic logic structures and referencing third-party libraries (e.g., NumPy, Shapely) to perform arithmetic, LLMs used in this way can write robot policies that (i) exhibit spatial-geometric reasoning, (ii) generalize to new instructions, and (iii) prescribe precise values (e.g., velocities) to ambiguous descriptions (‘faster’) depending on context (i.e., behavioral commonsense). This paper presents Code as Policies: a robot-centric formulation of language model generated programs (LMPs) that can represent reactive policies (e.g., impedance controllers), as well as waypoint-based policies (vision-based pick and place, trajectory-based control), demonstrated across multiple real robot platforms. Central to our approach is prompting hierarchical code-gen (recursively defining undefined functions), which can write more complex code and also improves state-of-the-art to solve 39.8% of problems on the HumanEval [1] benchmark. Code and videos are available at https://code-as-policies.github.io",
+      "externalIds": {
+        "ArXiv": "2209.07753",
+        "DBLP": "conf/icra/LiangHXXHIFZ23",
+        "DOI": "10.1109/ICRA48891.2023.10160591",
+        "CorpusId": 252355542
+      },
+      "arxiv_id": "2209.07753",
+      "doi": "10.1109/ICRA48891.2023.10160591",
+      "corpus_id": 252355542
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "40",
+      "ref_key": "S2:ac7771c332da42b29a913b116bd6ef622cbf89cf",
+      "paperId": "ac7771c332da42b29a913b116bd6ef622cbf89cf",
+      "title": "TaskMatrix.AI: Completing Tasks by Connecting Foundation Models with Millions of APIs",
+      "year": 2023,
+      "abstract": "Artificial Intelligence (AI) has made incredible progress recently. On the one hand, advanced foundation models like ChatGPT can offer powerful conversation, in-context learning and code generation abilities on a broad range of open-domain tasks. They can also generate high-level solution outlines for domain-specific tasks based on the common sense knowledge they have acquired. However, they still face difficulties with some specialized tasks because they lack enough domain-specific data during pre-training or they often have errors in their neural network computations on those tasks that need accurate executions. On the other hand, there are also many existing models and systems (symbolic-based or neural-based) that can do some domain-specific tasks very well. However, due to the different implementation or working mechanisms, they are not easily accessible or compatible with foundation models. Therefore, there is a clear and pressing need for a mechanism that can leverage foundation models to propose task solution outlines and then automatically match some of the sub-tasks in the outlines to the off-the-shelf models and systems with special functionalities to complete them. Inspired by this, we introduce TaskMatrix.AI as a new AI ecosystem that connects foundation models with millions of APIs for task completion. Unlike most previous work that aimed to improve a single AI model, TaskMatrix.AI focuses more on using existing foundation models (as a brain-like central system) and APIs of other AI models and systems (as sub-task solvers) to achieve diversified tasks in both digital and physical domains. As a position paper, we will present our vision of how to build such an ecosystem, explain each key component, and use study cases to illustrate both the feasibility of this vision and the main challenges we need to address next.",
+      "externalIds": {
+        "ArXiv": "2303.16434",
+        "DBLP": "journals/corr/abs-2303-16434",
+        "DOI": "10.48550/arXiv.2303.16434",
+        "CorpusId": 257804802
+      },
+      "arxiv_id": "2303.16434",
+      "doi": "10.48550/arXiv.2303.16434",
+      "corpus_id": 257804802
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "41",
+      "ref_key": "S2:95e184e2668ad49b5ea7c1c185727ef2d2c30de6",
+      "paperId": "95e184e2668ad49b5ea7c1c185727ef2d2c30de6",
+      "title": "MatCha: Enhancing Visual Language Pretraining with Math Reasoning and Chart Derendering",
+      "year": 2022,
+      "abstract": "Visual language data such as plots, charts, and infographics are ubiquitous in the human world. However, state-of-the-art vision-language models do not perform well on these data. We propose MatCha (Math reasoning and Chart derendering pretraining) to enhance visual language models’ capabilities in jointly modeling charts/plots and language data. Specifically, we propose several pretraining tasks that cover plot deconstruction and numerical reasoning which are the key capabilities in visual language modeling. We perform the MatCha pretraining starting from Pix2Struct, a recently proposed image-to-text visual language model. On standard benchmarks such as PlotQA and ChartQA, the MatCha model outperforms state-of-the-art methods by as much as nearly 20%. We also examine how well MatCha pretraining transfers to domains such as screenshots, textbook diagrams, and document figures and observe overall improvement, verifying the usefulness of MatCha pretraining on broader visual language tasks.",
+      "externalIds": {
+        "ArXiv": "2212.09662",
+        "DBLP": "conf/acl/0001PKPLJACE23",
+        "ACL": "2023.acl-long.714",
+        "DOI": "10.48550/arXiv.2212.09662",
+        "CorpusId": 254854495
+      },
+      "arxiv_id": "2212.09662",
+      "doi": "10.48550/arXiv.2212.09662",
+      "corpus_id": 254854495
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "42",
+      "ref_key": "S2:170c97c7215f42edfb20c2248f954879e91ef86e",
+      "paperId": "170c97c7215f42edfb20c2248f954879e91ef86e",
+      "title": "Chameleon: Plug-and-Play Compositional Reasoning with Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have achieved remarkable progress in solving various natural language processing tasks due to emergent reasoning abilities. However, LLMs have inherent limitations as they are incapable of accessing up-to-date information (stored on the Web or in task-specific knowledge bases), using external tools, and performing precise mathematical and logical reasoning. In this paper, we present Chameleon, an AI system that mitigates these limitations by augmenting LLMs with plug-and-play modules for compositional reasoning. Chameleon synthesizes programs by composing various tools (e.g., LLMs, off-the-shelf vision models, web search engines, Python functions, and heuristic-based modules) for accomplishing complex reasoning tasks. At the heart of Chameleon is an LLM-based planner that assembles a sequence of tools to execute to generate the final response. We showcase the effectiveness of Chameleon on two multi-modal knowledge-intensive reasoning tasks: ScienceQA and TabMWP. Chameleon, powered by GPT-4, achieves an 86.54% overall accuracy on ScienceQA, improving the best published few-shot result by 11.37%. On TabMWP, GPT-4-powered Chameleon improves the accuracy by 17.0%, lifting the state of the art to 98.78%. Our analysis also shows that the GPT-4-powered planner exhibits more consistent and rational tool selection via inferring potential constraints from instructions, compared to a ChatGPT-powered planner. The project is available at https://chameleon-llm.github.io.",
+      "externalIds": {
+        "DBLP": "conf/nips/LuPCGCWZG23",
+        "ArXiv": "2304.09842",
+        "DOI": "10.48550/arXiv.2304.09842",
+        "CorpusId": 258212542
+      },
+      "arxiv_id": "2304.09842",
+      "doi": "10.48550/arXiv.2304.09842",
+      "corpus_id": 258212542
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "43",
+      "ref_key": "S2:1e0caa706e9d9fdad82d6713fa20b52975a1703b",
+      "paperId": "1e0caa706e9d9fdad82d6713fa20b52975a1703b",
+      "title": "At Which Training Stage Does Code Data Help LLMs Reasoning?",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) have exhibited remarkable reasoning capabilities and become the foundation of language technologies. Inspired by the great success of code data in training LLMs, we naturally wonder at which training stage introducing code data can really help LLMs reasoning. To this end, this paper systematically explores the impact of code data on LLMs at different stages. Concretely, we introduce the code data at the pre-training stage, instruction-tuning stage, and both of them, respectively. Then, the reasoning capability of LLMs is comprehensively and fairly evaluated via six reasoning tasks in five domains. We critically analyze the experimental results and provide conclusions with insights. First, pre-training LLMs with the mixture of code and text can significantly enhance LLMs' general reasoning capability almost without negative transfer on other tasks. Besides, at the instruction-tuning stage, code data endows LLMs the task-specific reasoning capability. Moreover, the dynamic mixing strategy of code and text data assists LLMs to learn reasoning capability step-by-step during training. These insights deepen the understanding of LLMs regarding reasoning ability for their application, such as scientific question answering, legal support, etc. The source code and model parameters are released at the link:~\\url{https://github.com/yingweima2022/CodeLLM}.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2309-16298",
+        "ArXiv": "2309.16298",
+        "DOI": "10.48550/arXiv.2309.16298",
+        "CorpusId": 263134628
+      },
+      "arxiv_id": "2309.16298",
+      "doi": "10.48550/arXiv.2309.16298",
+      "corpus_id": 263134628
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "44",
+      "ref_key": "S2:10578bc0bdb3ebf9232931dd4961f55ba470caad",
+      "paperId": "10578bc0bdb3ebf9232931dd4961f55ba470caad",
+      "title": "LaMPilot: An Open Benchmark Dataset for Autonomous Driving with Language Model Programs",
+      "year": 2023,
+      "abstract": "Autonomous driving (AD) has made significant strides in recent years. However, existing frameworks struggle to interpret and execute spontaneous user instructions, such as \"overtake the car ahead.” Large Language Models (LLMs) have demonstrated impressive reasoning capabilities showing potential to bridge this gap. In this paper, we present LaMPilot, a novel framework that integrates LLMs into AD systems, enabling them to follow user instructions by generating code that leverages established functional primitives. We also introduce LaMPilot-Bench, the first bench-mark dataset specifically designed to quantitatively evaluate the efficacy of language model programs in AD. Adopting the LaMPilot framework, we conduct extensive experiments to assess the performance of off-the-shelf LLMs on LaMPilot-Bench. Our results demonstrate the potential of LLMs in handling diverse driving scenarios and following user instructions in driving. To facilitate further research in this area, we release our code and data at GitHub.com/PurdueDigitalTwin/LaMPilot.",
+      "externalIds": {
+        "DBLP": "conf/cvpr/MaCCYLLAGHBRW24",
+        "ArXiv": "2312.04372",
+        "DOI": "10.1109/CVPR52733.2024.01434",
+        "CorpusId": 266055179
+      },
+      "arxiv_id": "2312.04372",
+      "doi": "10.1109/CVPR52733.2024.01434",
+      "corpus_id": 266055179
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "45",
+      "ref_key": "S2:39e40821b7207125e54e6ed7112e55cd38c6f0c3",
+      "paperId": "39e40821b7207125e54e6ed7112e55cd38c6f0c3",
+      "title": "Language Models of Code are Few-Shot Commonsense Learners",
+      "year": 2022,
+      "abstract": "We address the general task of structured commonsense reasoning: given a natural language input, the goal is to generate a graph such as an event or a reasoning-graph.To employ large language models (LMs) for this task, existing approaches ‘serialize’ the output graph as a flat list of nodes and edges.Although feasible, these serialized graphs strongly deviate from the natural language corpora that LMs were pre-trained on, hindering LMs from generating them correctly. In this paper, we show that when we instead frame structured commonsense reasoning tasks as code generation tasks, pre-trained LMs of code are better structured commonsense reasoners than LMs of natural language, even when the downstream task does not involve source code at all.We demonstrate our approach across three diverse structured commonsense reasoning tasks. In all these natural language tasks, we show that using our approach, a code generation LM (codex) outperforms natural-LMs that are fine-tuned on the target task (T5) and other strong LMs such as GPT-3 in the few-shot setting.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/MadaanZ0YN22",
+        "ACL": "2022.emnlp-main.90",
+        "ArXiv": "2210.07128",
+        "DOI": "10.48550/arXiv.2210.07128",
+        "CorpusId": 252873120
+      },
+      "arxiv_id": "2210.07128",
+      "doi": "10.48550/arXiv.2210.07128",
+      "corpus_id": 252873120
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "46",
+      "ref_key": "S2:4edbf94314bbc4fee6822810c73efe23db07ad79",
+      "paperId": "4edbf94314bbc4fee6822810c73efe23db07ad79",
+      "title": "SkipAnalyzer: An Embodied Agent for Code Analysis with Large Language Models",
+      "year": 2023,
+      "abstract": "—We introduce SkipAnalyzer, the first large language model (LLM)-powered embodied agent for static code analysis. It can detect bugs, filter false positive warnings, and patch the detected bugs without human intervention. SkipAnalyzer consists of three components, 1) an LLM-based static bug detector that scans source code and reports specific types of bugs, 2) an LLM-based false-positive filter that can identify false-positive bugs in the results of static bug detectors (e.g., the result of step 1) to improve detection accuracy, and 3) an LLM-based patch generator that can generate patches for the detected bugs above. As a proof-of-concept, SkipAnalyzer is built on ChatGPT, which has exhibited outstanding performance in various software engineering tasks. To evaluate SkipAnalyzer, we focus on two types of typical and critical bugs that are targeted by static bug detection, i.e., Null Dereference and Resource Leak as our subjects. We employ Infer to aid the gathering of these two bug types from 10 open-source projects. Consequently, our experiment dataset contains 222 instances of Null Dereference bugs and 46 instances of Resource Leak bugs. Our study demonstrates that SkipAnalyzer achieves remarkable performance in the mentioned static analysis tasks, including bug detection, false-positive warning removal, and bug repair. In static bug detection, SkipAnalyzer achieves accuracy values of up to 68.37% for detecting Null Dereference bugs and 76.95% for detecting Resource Leak bugs, outperforming the current leading bug detector, Infer. For removing false-positive warnings, SkipAnalyzer can reach a precision of up to 93.88% for Null Dereference bugs and 63.33% for Resource Leak bugs. Additionally, SkipAnalyzer surpasses state-of-the-art false-positive warning removal tools. Furthermore, in bug repair, SkipAnalyzer can generate syntactically correct patches to fix its detected bugs with a success rate of up to 97.30%.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-18532",
+        "DOI": "10.48550/arXiv.2310.18532",
+        "CorpusId": 266359872
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2310.18532",
+      "corpus_id": 266359872
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "47",
+      "ref_key": "S2:59fe7cb560651281cfc5db6b8940da0e3ba9dea6",
+      "paperId": "59fe7cb560651281cfc5db6b8940da0e3ba9dea6",
+      "title": "LEVER: Learning to Verify Language-to-Code Generation with Execution",
+      "year": 2023,
+      "abstract": "The advent of large language models trained on code (code LLMs) has led to significant progress in language-to-code generation. State-of-the-art approaches in this area combine LLM decoding with sample pruning and reranking using test cases or heuristics based on the execution results. However, it is challenging to obtain test cases for many real-world language-to-code applications, and heuristics cannot well capture the semantic features of the execution results, such as data type and value range, which often indicates the correctness of the program. In this work, we propose LEVER, a simple approach to improve language-to-code generation by learning to verify the generated programs with their execution results. Specifically, we train verifiers to determine whether a program sampled from the LLMs is correct or not based on the natural language input, the program itself and its execution results. The sampled programs are reranked by combining the verification score with the LLM generation probability, and marginalizing over programs with the same execution results. On four datasets across the domains of table QA, math QA and basic Python programming, LEVER consistently improves over the base code LLMs(4.6% to 10.9% with code-davinci-002) and achieves new state-of-the-art results on all of them.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2302-08468",
+        "ArXiv": "2302.08468",
+        "DOI": "10.48550/arXiv.2302.08468",
+        "CorpusId": 256900680
+      },
+      "arxiv_id": "2302.08468",
+      "doi": "10.48550/arXiv.2302.08468",
+      "corpus_id": 256900680
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "48",
+      "ref_key": "S2:38115e80d805fb0fb8f090dc88ced4b24be07878",
+      "paperId": "38115e80d805fb0fb8f090dc88ced4b24be07878",
+      "title": "CodeGen: An Open Large Language Model for Code with Multi-Turn Program Synthesis",
+      "year": 2022,
+      "abstract": "Program synthesis strives to generate a computer program as a solution to a given problem specification, expressed with input-output examples or natural language descriptions. The prevalence of large language models advances the state-of-the-art for program synthesis, though limited training resources and data impede open access to such models. To democratize this, we train and release a family of large language models up to 16.1B parameters, called CODEGEN, on natural language and programming language data, and open source the training library JAXFORMER. We show the utility of the trained model by demonstrating that it is competitive with the previous state-of-the-art on zero-shot Python code generation on HumanEval. We further investigate the multi-step paradigm for program synthesis, where a single program is factorized into multiple prompts specifying subproblems. To this end, we construct an open benchmark, Multi-Turn Programming Benchmark (MTPB), consisting of 115 diverse problem sets that are factorized into multi-turn prompts. Our analysis on MTPB shows that the same intent provided to CODEGEN in multi-turn fashion significantly improves program synthesis over that provided as a single turn. We make the training library JAXFORMER and model checkpoints available as open source contribution: https://github.com/salesforce/CodeGen.",
+      "externalIds": {
+        "ArXiv": "2203.13474",
+        "DBLP": "conf/iclr/NijkampPHTWZSX23",
+        "CorpusId": 252668917
+      },
+      "arxiv_id": "2203.13474",
+      "doi": null,
+      "corpus_id": 252668917
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "49",
+      "ref_key": "S2:5fe0a4af3bd1479d5e39fbda2215c86bce54722b",
+      "paperId": "5fe0a4af3bd1479d5e39fbda2215c86bce54722b",
+      "title": "Generative Language Modeling for Automated Theorem Proving",
+      "year": 2020,
+      "abstract": "We explore the application of transformer-based language models to automated theorem proving. This work is motivated by the possibility that a major limitation of automated theorem provers compared to humans -- the generation of original mathematical terms -- might be addressable via generation from language models. We present an automated prover and proof assistant, GPT-f, for the Metamath formalization language, and analyze its performance. GPT-f found new short proofs that were accepted into the main Metamath library, which is to our knowledge, the first time a deep-learning based system has contributed proofs that were adopted by a formal mathematics community.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2009-03393",
+        "MAG": "3083835029",
+        "ArXiv": "2009.03393",
+        "CorpusId": 221535103
+      },
+      "arxiv_id": "2009.03393",
+      "doi": null,
+      "corpus_id": 221535103
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "50",
+      "ref_key": "S2:4747e72c5bc706c50e76953188f0144df18992d0",
+      "paperId": "4747e72c5bc706c50e76953188f0144df18992d0",
+      "title": "Communicative Agents for Software Development",
+      "year": 2023,
+      "abstract": "agents from diverse social identities, including chief ofﬁcers, professional programmers, test engineers",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-07924",
+        "DOI": "10.48550/arXiv.2307.07924",
+        "CorpusId": 259936967
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2307.07924",
+      "corpus_id": 259936967
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "51",
+      "ref_key": "S2:d1120d67b700e4dfe8b39eb1e48fbdea4e1a0c43",
+      "paperId": "d1120d67b700e4dfe8b39eb1e48fbdea4e1a0c43",
+      "title": "HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face",
+      "year": 2023,
+      "abstract": "Solving complicated AI tasks with different domains and modalities is a key step toward artificial general intelligence. While there are numerous AI models available for various domains and modalities, they cannot handle complicated AI tasks autonomously. Considering large language models (LLMs) have exhibited exceptional abilities in language understanding, generation, interaction, and reasoning, we advocate that LLMs could act as a controller to manage existing AI models to solve complicated AI tasks, with language serving as a generic interface to empower this. Based on this philosophy, we present HuggingGPT, an LLM-powered agent that leverages LLMs (e.g., ChatGPT) to connect various AI models in machine learning communities (e.g., Hugging Face) to solve AI tasks. Specifically, we use ChatGPT to conduct task planning when receiving a user request, select models according to their function descriptions available in Hugging Face, execute each subtask with the selected AI model, and summarize the response according to the execution results. By leveraging the strong language capability of ChatGPT and abundant AI models in Hugging Face, HuggingGPT can tackle a wide range of sophisticated AI tasks spanning different modalities and domains and achieve impressive results in language, vision, speech, and other challenging tasks, which paves a new way towards the realization of artificial general intelligence.",
+      "externalIds": {
+        "ArXiv": "2303.17580",
+        "DBLP": "journals/corr/abs-2303-17580",
+        "DOI": "10.48550/arXiv.2303.17580",
+        "CorpusId": 257833781
+      },
+      "arxiv_id": "2303.17580",
+      "doi": "10.48550/arXiv.2303.17580",
+      "corpus_id": 257833781
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "52",
+      "ref_key": "S2:c03fa01fbb9c77fe3d10609ba5f1dee33a723867",
+      "paperId": "c03fa01fbb9c77fe3d10609ba5f1dee33a723867",
+      "title": "ProgPrompt: Generating Situated Robot Task Plans using Large Language Models",
+      "year": 2022,
+      "abstract": "Task planning can require defining myriad domain knowledge about the world in which a robot needs to act. To ameliorate that effort, large language models (LLMs) can be used to score potential next actions during task planning, and even generate action sequences directly, given an instruction in natural language with no additional domain information. However, such methods either require enumerating all possible next steps for scoring, or generate free-form text that may contain actions not possible on a given robot in its current context. We present a programmatic LLM prompt structure that enables plan generation functional across situated environments, robot capabilities, and tasks. Our key insight is to prompt the LLM with program-like specifications of the available actions and objects in an environment, as well as with example programs that can be executed. We make concrete recommendations about prompt structure and generation constraints through ablation experiments, demonstrate state of the art success rates in VirtualHome household tasks, and deploy our method on a physical robot arm for tabletop tasks. Website at progprompt.github.io",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2209-11302",
+        "ArXiv": "2209.11302",
+        "DOI": "10.1109/ICRA48891.2023.10161317",
+        "CorpusId": 252519594
+      },
+      "arxiv_id": "2209.11302",
+      "doi": "10.1109/ICRA48891.2023.10161317",
+      "corpus_id": 252519594
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "53",
+      "ref_key": "S2:6e754273d54a91371efbc928cd6b156364d517da",
+      "paperId": "6e754273d54a91371efbc928cd6b156364d517da",
+      "title": "ViperGPT: Visual Inference via Python Execution for Reasoning",
+      "year": 2023,
+      "abstract": "Answering visual queries is a complex task that requires both visual processing and reasoning. End-to-end models, the dominant approach for this task, do not explicitly differentiate between the two, limiting interpretability and generalization. Learning modular programs presents a promising alternative, but has proven challenging due to the difficulty of learning both the programs and modules simultaneously. We introduce ${\\color{green}{\\text{ViperGPT}}}$, a framework that leverages code-generation models to compose vision-and-language models into subroutines to produce a result for any query. ${\\color{green}{\\text{ViperGPT}}}$ utilizes a provided API to access the available modules, and composes them by generating Python code that is later executed. This simple approach requires no further training, and achieves state-of-the-art results across various complex visual tasks.",
+      "externalIds": {
+        "DBLP": "conf/iccv/SurisMV23",
+        "ArXiv": "2303.08128",
+        "DOI": "10.1109/ICCV51070.2023.01092",
+        "CorpusId": 257505358
+      },
+      "arxiv_id": "2303.08128",
+      "doi": "10.1109/ICCV51070.2023.01092",
+      "corpus_id": 257505358
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "54",
+      "ref_key": "S2:0ba581718f294db1d7b3dbc159cc3d3380f74606",
+      "paperId": "0ba581718f294db1d7b3dbc159cc3d3380f74606",
+      "title": "ChatGPT for Robotics: Design Principles and Model Abilities",
+      "year": 2023,
+      "abstract": "This paper presents an experimental study regarding the use of OpenAI’s ChatGPT for robotics applications. We outline a strategy that combines design principles for prompt engineering and the creation of a high-level function library which allows ChatGPT to adapt to different robotics tasks, simulators, and form factors. We focus our evaluations on the effectiveness of different prompt engineering techniques and dialog strategies towards the execution of various types of robotics tasks. We explore ChatGPT’s ability to use free-form dialog, parse XML tags, and to synthesize code, in addition to the use of task-specific prompting functions and closed-loop reasoning through dialogues. Our study encompasses a range of tasks within the robotics domain, from basic logical, geometrical, and mathematical reasoning all the way to complex domains such as aerial navigation, manipulation, and embodied agents. We show that ChatGPT can be effective at solving several of such tasks, while allowing users to interact with it primarily via natural language instructions. In addition to these studies, we introduce an open-sourced research tool called PromptCraft, which contains a platform where researchers can collaboratively upload and vote on examples of good prompting schemes for robotics applications, as well as a sample robotics simulator with ChatGPT integration, making it easier for users to get started with using ChatGPT for robotics. Videos and blog: aka.ms/ChatGPT-Robotics PromptCraft, AirSim-ChatGPT code: https://github.com/microsoft/PromptCraft-Robotics",
+      "externalIds": {
+        "ArXiv": "2306.17582",
+        "DBLP": "journals/corr/abs-2306-17582",
+        "DOI": "10.1109/ACCESS.2024.3387941",
+        "CorpusId": 259141622
+      },
+      "arxiv_id": "2306.17582",
+      "doi": "10.1109/ACCESS.2024.3387941",
+      "corpus_id": 259141622
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "55",
+      "ref_key": "S2:7a1069dafaeb484e22f2473d5545f1e45ce30656",
+      "paperId": "7a1069dafaeb484e22f2473d5545f1e45ce30656",
+      "title": "Compilable Neural Code Generation with Compiler Feedback",
+      "year": 2022,
+      "abstract": "Automatically generating compilable programs with (or without) natural language descriptions has always been a touchstone problem for computational linguistics and automated software engineering. Existing deep-learning approaches model code generation as text generation, either constrained by grammar structures in decoder, or driven by pre-trained language models on large-scale code corpus (e.g., CodeGPT, PLBART, and CodeT5). However, few of them account for compilability of the generated programs. To improve compilability of the generated programs, this paper proposes COMPCODER, a three-stage pipeline utilizing compiler feedback for compilable code generation, including language model fine-tuning, compilability reinforcement, and compilability discrimination. Comprehensive experiments on two code generation tasks demonstrate the effectiveness of our proposed approach, improving the success rate of compilation from 44.18 to 89.18 in code completion on average and from 70.3 to 96.2 in text-to-code generation, respectively, when comparing with the state-of-the-art CodeGPT.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2203-05132",
+        "ArXiv": "2203.05132",
+        "ACL": "2022.findings-acl.2",
+        "DOI": "10.48550/arXiv.2203.05132",
+        "CorpusId": 247362946
+      },
+      "arxiv_id": "2203.05132",
+      "doi": "10.48550/arXiv.2203.05132",
+      "corpus_id": 247362946
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "56",
+      "ref_key": "S2:5b745be118ae6e8678725698ffaa336ecffd31c0",
+      "paperId": "5b745be118ae6e8678725698ffaa336ecffd31c0",
+      "title": "Code4Struct: Code Generation for Few-Shot Event Structure Prediction",
+      "year": 2022,
+      "abstract": "Large Language Model (LLM) trained on a mixture of text and code has demonstrated impressive capability in translating natural language (NL) into structured code.We observe that semantic structures can be conveniently translated into code and propose Code4Struct to leverage such text-to-structure translation capability to tackle structured prediction tasks.As a case study, we formulate Event Argument Extraction (EAE) as converting text into event-argument structures that can be represented as a class object using code.This alignment between structures and code enables us to take advantage of Programming Language (PL) features such as inheritance and type annotation to introduce external knowledge or add constraints.We show that, with sufficient in-context examples, formulating EAE as a code generation problem is advantageous over using variants of text-based prompts.Despite only using 20 training event instances for each event type, Code4Struct is comparable to supervised models trained on 4,202 instances and outperforms current state-of-the-art (SOTA) trained on 20-shot data by 29.5% absolute F1. Code4Struct can use 10-shot training data from a sibling event type to predict arguments for zero-resource event types and outperforms the zero-shot baseline by 12% absolute F1.",
+      "externalIds": {
+        "ACL": "2023.acl-long.202",
+        "DBLP": "conf/acl/0002LJ23",
+        "ArXiv": "2210.12810",
+        "DOI": "10.18653/v1/2023.acl-long.202",
+        "CorpusId": 258887711
+      },
+      "arxiv_id": "2210.12810",
+      "doi": "10.18653/v1/2023.acl-long.202",
+      "corpus_id": 258887711
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "57",
+      "ref_key": "S2:018e943ba0452b05edd903c3eaf746068ebca138",
+      "paperId": "018e943ba0452b05edd903c3eaf746068ebca138",
+      "title": "LeTI: Learning to Generate from Textual Interactions",
+      "year": 2023,
+      "abstract": "Fine-tuning pre-trained language models (LMs) is essential for enhancing their capabilities. Existing techniques commonly fine-tune on input-output pairs (e.g., instruction tuning) or with numerical rewards that gauge the output quality (e.g., RLHF). We explore LMs' potential to learn from textual interactions (LETI) that not only check their correctness with binary labels but also pinpoint and explain errors in their outputs through textual feedback. Our focus is the code generation task, where the model produces code based on natural language instructions. This setting invites a natural and scalable way to acquire textual feedback: the error messages and stack traces from code execution using a Python interpreter. LETI iteratively fine-tunes the model, using the LM objective, on a concatenation of natural language instructions, LM-generated programs, and textual feedback. Prepended to this fine-tuning text, a binary reward token is used to differentiate correct and buggy solutions. LETI requires no ground-truth outputs for training and even outperforms a fine-tuned baseline that does. LETI not only improves the performance of LMs on a code generation dataset MBPP, but also generalizes to other datasets. Trained on MBPP, it achieves comparable or better performance than the base LMs on unseen problems in HumanEval. Furthermore, compared to binary feedback, we observe that textual feedback leads to improved generation quality and sample efficiency, achieving the same performance with fewer than half of the gradient steps. LETI is equally applicable in natural language tasks when they can be formulated as code generation, which we empirically verified on event argument extraction.",
+      "externalIds": {
+        "ArXiv": "2305.10314",
+        "DBLP": "conf/naacl/WangPJJ24",
+        "DOI": "10.48550/arXiv.2305.10314",
+        "CorpusId": 258741301
+      },
+      "arxiv_id": "2305.10314",
+      "doi": "10.48550/arXiv.2305.10314",
+      "corpus_id": 258741301
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "58",
+      "ref_key": "S2:12b233752c7097ea6525622bed238ae2d2193c5a",
+      "paperId": "12b233752c7097ea6525622bed238ae2d2193c5a",
+      "title": "MINT: Evaluating LLMs in Multi-turn Interaction with Tools and Language Feedback",
+      "year": 2023,
+      "abstract": "To solve complex tasks, large language models (LLMs) often require multiple rounds of interactions with the user, sometimes assisted by external tools. However, current evaluation protocols often emphasize benchmark performance with single-turn exchanges, neglecting the nuanced interactions among the user, LLMs, and external tools, while also underestimating the importance of natural language feedback from users. These oversights contribute to discrepancies between research benchmark evaluations and real-world use cases. We introduce MINT, a benchmark that evaluates LLMs' ability to solve tasks with multi-turn interactions by (1) using tools and (2) leveraging natural language feedback. To ensure reproducibility, we provide an evaluation framework where LLMs can access tools by executing Python code and receive users' natural language feedback simulated by GPT-4. We repurpose a diverse set of established evaluation datasets focusing on reasoning, coding, and decision-making and carefully curate them into a compact subset for efficient evaluation. Our analysis of 20 open- and closed-source LLMs offers intriguing findings. (a) LLMs generally benefit from tools and language feedback, with performance gains (absolute, same below) of 1-8% for each turn of tool use and 2-17% with natural language feedback. (b) Better single-turn performance does not guarantee better multi-turn performance. (c) Surprisingly, on the LLMs evaluated, supervised instruction-finetuning (SIFT) and reinforcement learning from human feedback (RLHF) generally hurt multi-turn capabilities. We expect MINT can help measure progress and incentivize research in improving LLMs' capabilities in multi-turn interactions, especially for open-source communities where multi-turn human evaluation can be less accessible compared to commercial LLMs with a larger user base.",
+      "externalIds": {
+        "DBLP": "conf/iclr/00020LCYPJ24",
+        "ArXiv": "2309.10691",
+        "DOI": "10.48550/arXiv.2309.10691",
+        "CorpusId": 262053695
+      },
+      "arxiv_id": "2309.10691",
+      "doi": "10.48550/arXiv.2309.10691",
+      "corpus_id": 262053695
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "59",
+      "ref_key": "S2:f197bf0fc2f228483f6af3285000d54d8d97f9eb",
+      "paperId": "f197bf0fc2f228483f6af3285000d54d8d97f9eb",
+      "title": "Voyager: An Open-Ended Embodied Agent with Large Language Models",
+      "year": 2023,
+      "abstract": "We introduce Voyager, the first LLM-powered embodied lifelong learning agent in Minecraft that continuously explores the world, acquires diverse skills, and makes novel discoveries without human intervention. Voyager consists of three key components: 1) an automatic curriculum that maximizes exploration, 2) an ever-growing skill library of executable code for storing and retrieving complex behaviors, and 3) a new iterative prompting mechanism that incorporates environment feedback, execution errors, and self-verification for program improvement. Voyager interacts with GPT-4 via blackbox queries, which bypasses the need for model parameter fine-tuning. The skills developed by Voyager are temporally extended, interpretable, and compositional, which compounds the agent's abilities rapidly and alleviates catastrophic forgetting. Empirically, Voyager shows strong in-context lifelong learning capability and exhibits exceptional proficiency in playing Minecraft. It obtains 3.3x more unique items, travels 2.3x longer distances, and unlocks key tech tree milestones up to 15.3x faster than prior SOTA. Voyager is able to utilize the learned skill library in a new Minecraft world to solve novel tasks from scratch, while other techniques struggle to generalize. We open-source our full codebase and prompts at https://voyager.minedojo.org/.",
+      "externalIds": {
+        "ArXiv": "2305.16291",
+        "DBLP": "journals/corr/abs-2305-16291",
+        "DOI": "10.48550/arXiv.2305.16291",
+        "CorpusId": 258887849
+      },
+      "arxiv_id": "2305.16291",
+      "doi": "10.48550/arXiv.2305.16291",
+      "corpus_id": 258887849
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "60",
+      "ref_key": "S2:1a4c6856292b8c64d19a812a77f0aa6fd47cb96c",
+      "paperId": "1a4c6856292b8c64d19a812a77f0aa6fd47cb96c",
+      "title": "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation Framework",
+      "year": 2023,
+      "abstract": "This technical report presents AutoGen , 1 a new framework that enables development of LLM applications using multiple agents that can converse with each other to solve tasks. AutoGen agents are customizable, conversable , and seamlessly allow human participation. They can operate in various modes that employ combinations of LLMs, human inputs, and tools. AutoGen ’s design offers multiple advantages: a) it gracefully navigates the strong but imperfect generation and reasoning abilities of these LLMs; b) it leverages human understanding and intelligence, while providing valuable automation through conversations between agents; c) it simplifies and unifies the implementation of complex LLM workflows as automated agent chats. We provide many diverse examples of how developers can easily use AutoGen to effectively solve tasks or build applications, ranging from coding, mathematics, operations research, entertainment, online decision-making, question answering, etc.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-08155",
+        "CorpusId": 260925901
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 260925901
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "61",
+      "ref_key": "S2:b32a6f6ef7dd775e0f876b4713ceccebc56e651e",
+      "paperId": "b32a6f6ef7dd775e0f876b4713ceccebc56e651e",
+      "title": "A systematic evaluation of large language models of code",
+      "year": 2022,
+      "abstract": "Large language models (LMs) of code have recently shown tremendous promise in completing code and synthesizing code from natural language descriptions. However, the current state-of-the-art code LMs (e.g., Codex) are not publicly available, leaving many questions about their model and data design decisions. We aim to fill in some of these blanks through a systematic evaluation of the largest existing models: Codex, GPT-J, GPT-Neo, GPT-NeoX-20B, and CodeParrot, across various programming languages. Although Codex itself is not open-source, we find that existing opensource models do achieve close results in some programming languages, although targeted mainly for natural language modeling. We further identify an important missing piece in the form of a large open-source model trained exclusively on a multi-lingual corpus of code. We release a new model, PolyCoder, with 2.7B parameters based on the GPT-2 architecture, that was trained on 249GB of code across 12 programming languages on a single machine. In the C programming language, PolyCoder outperforms all models including Codex. Our trained models are open-source and publicly available at https://github.com/VHellendoorn/Code-LMs, which enables future research and application in this area. We have an online appendix at https://arxiv.org/abs/2202.13169.",
+      "externalIds": {
+        "DBLP": "conf/pldi/Xu0NH22",
+        "ArXiv": "2202.13169",
+        "DOI": "10.1145/3520312.3534862",
+        "CorpusId": 247158549
+      },
+      "arxiv_id": "2202.13169",
+      "doi": "10.1145/3520312.3534862",
+      "corpus_id": 247158549
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "62",
+      "ref_key": "S2:5988806996e8d12f5d4aa911960d842cf7be0c24",
+      "paperId": "5988806996e8d12f5d4aa911960d842cf7be0c24",
+      "title": "Large Language Models are Versatile Decomposers: Decomposing Evidence and Questions for Table-based Reasoning",
+      "year": 2023,
+      "abstract": "Table-based reasoning has shown remarkable progress in a wide range of table-based tasks. It is a challenging task, which requires reasoning over both free-form natural language (NL) questions and (semi-)structured tabular data. However, previous table-based reasoning solutions usually suffer from significant performance degradation on ''huge'' evidence (tables). In addition, most existing methods struggle to reason over complex questions since the essential information is scattered in different places. To alleviate the above challenges, we exploit large language models (LLMs) as decomposers for effective table-based reasoning, which (i) decompose huge evidence (a huge table) into sub-evidence (a small table) to mitigate the interference of useless information for table reasoning, and (ii) decompose a complex question into simpler sub-questions for text reasoning. First, we use a powerful LLM to decompose the evidence involved in the current question into the sub-evidence that retains the relevant information and excludes the remaining irrelevant information from the ''huge'' evidence. Second, we propose a novel ''parsing-execution-filling'' strategy to decompose a complex question into simper step-by-step sub-questions by generating intermediate SQL queries as a bridge to produce numerical and logical sub-questions with a powerful LLM. Finally, we leverage the decomposed sub-evidence and sub-questions to get the final answer with a few in-context prompting examples. Extensive experiments on three benchmark datasets (TabFact, WikiTableQuestion, and FetaQA) demonstrate that our method achieves significantly better results than competitive baselines for table-based reasoning. Notably, our method outperforms human performance for the first time on the TabFact dataset. In addition to impressive overall performance, our method also has the advantage of interpretability, where the returned results are to some extent tractable with the generated sub-evidence and sub-questions. For reproducibility, we release our source code and data at: https://github.com/AlibabaResearch/DAMO-ConvAI.",
+      "externalIds": {
+        "DBLP": "conf/sigir/YeHYLHL23",
+        "ArXiv": "2301.13808",
+        "DOI": "10.1145/3539618.3591708",
+        "CorpusId": 256416408
+      },
+      "arxiv_id": "2301.13808",
+      "doi": "10.1145/3539618.3591708",
+      "corpus_id": 256416408
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "63",
+      "ref_key": "S2:2f0028060a3a3187d3cbecc3b423dbcf8c8387c3",
+      "paperId": "2f0028060a3a3187d3cbecc3b423dbcf8c8387c3",
+      "title": "Self-Edit: Fault-Aware Code Editor for Code Generation",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have demonstrated an impressive ability to generate codes on competitive programming tasks. However, with limited sample numbers, LLMs still suffer from poor accuracy. Inspired by the process of human programming, we propose a generate-and-edit approach named Self-Edit that utilizes execution results of the generated code from LLMs to improve the code quality on the competitive programming task. We execute the generated code on the example test case provided in the question and wrap execution results into a supplementary comment. Utilizing this comment as guidance, our fault-aware code editor is employed to correct errors in the generated code.We perform extensive evaluations across two competitive programming datasets with nine different LLMs. Compared to directly generating from LLMs, our approach can improve the average of pass@1 by 89% on APPS-dev, 31% on APPS-test, and 48% on HumanEval over nine popular code generation LLMs with parameter sizes ranging from 110M to 175B. Compared to other post-processing methods, our method demonstrates superior accuracy and efficiency.",
+      "externalIds": {
+        "DBLP": "conf/acl/ZhangLLLJ23",
+        "ACL": "2023.acl-long.45",
+        "ArXiv": "2305.04087",
+        "DOI": "10.48550/arXiv.2305.04087",
+        "CorpusId": 258557186
+      },
+      "arxiv_id": "2305.04087",
+      "doi": "10.48550/arXiv.2305.04087",
+      "corpus_id": 258557186
+    },
+    {
+      "paper_id": "2401.00812",
+      "ref_index": "64",
+      "ref_key": "S2:a6e53935e313caf68a4c51e4ddb90893005fdb3d",
+      "paperId": "a6e53935e313caf68a4c51e4ddb90893005fdb3d",
+      "title": "Large Language Models Are State-of-the-Art Evaluators of Code Generation",
+      "year": 2023,
+      "abstract": "Recent advancements in the field of natural language generation have facilitated the use of large language models to assess the quality of generated text. Although these models have shown promising results in tasks such as machine translation and summarization, their applicability in code generation tasks remains limited without human involvement. The complexity of programming concepts required for such tasks makes it difficult to develop evaluation metrics that align with human judgment. Token-matching-based metrics, such as BLEU, have demonstrated weak correlations with human practitioners in code generation tasks. Moreover, the utilization of human-written test suites to evaluate functional correctness can be challenging in domains with low resources. To overcome these obstacles, we propose a new evaluation framework based on the GPT-3.5 (GPT-3.5-turbo), for code generation assessments. Our framework addresses the limitations of existing approaches by achieving superior correlations with functional correctness and human preferences, without the need for test oracles or references. We evaluate the efficacy of our framework on two different aspects (human preference and execution success) and four programming languages, comparing its performance with the state-of-the-art CodeBERTScore metric, which relies on a pre-trained model. Our results demonstrate that our framework surpasses CodeBERTScore, delivering high levels of accuracy and consistency across various programming languages and tasks. We also make our evaluation framework and datasets available to the public at https://github.com/terryyz/llm-code-eval, encouraging further research in the evaluation of code generation.1",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2304-14317",
+        "DOI": "10.48550/arXiv.2304.14317",
+        "CorpusId": 268691566
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2304.14317",
+      "corpus_id": 268691566
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "How Code Empowers LLMs to Serve as IAs": {
+        "How Code   Assists LLMs": {
+          "Boost LLMs'   Performance ": {
+            "Strengthen LLMs'   Programming Skills   ": {
+              "LLM as a Strong Coder": {
+                "1bf21dabbdfc81fd4f9e92b1201ecce744cabb6a": {},
+                "acbdbf49f9bc3f151b93d9ca9a06009f4f6eb269": {},
+                "5cbe278b65a81602a864184bbca37de91448a5f5": {},
+                "38115e80d805fb0fb8f090dc88ced4b24be07878": {},
+                "b32a6f6ef7dd775e0f876b4713ceccebc56e651e": {}
+              },
+              "LLM as a SOTA Code   Evaluator": {
+                "b85f3a66245d483f3eb3447eaf9950bd55f2b21e": {},
+                "ce8de3902a583e1eb6062d4453ed90fe6b9d4558": {},
+                "4edbf94314bbc4fee6822810c73efe23db07ad79": {},
+                "a6e53935e313caf68a4c51e4ddb90893005fdb3d": {}
+              },
+              "Collaboration Coding   Solves Complex Tasks": {
+                "703035b483c181953de1b55b5fd59cd4cd4cf211": {},
+                "47c3b8dd2c8a9326249ac98900b2c3fc71f46ab1": {},
+                "4747e72c5bc706c50e76953188f0144df18992d0": {},
+                "1a4c6856292b8c64d19a812a77f0aa6fd47cb96c": {}
+              }
+            },
+            "Empower LLMs'   Complex Reasoning   ": {
+              "Enhancing Task Deco- mposition with Chain   of Thought": {
+                "1e0caa706e9d9fdad82d6713fa20b52975a1703b": {}
+              },
+              "Program-of-Thought": {
+                "257aee73d83a87921fd2d56b524de394dcf6a264": {},
+                "6c943670dca38bfc7c8b477ae7c2d1fba1ad3691": {},
+                "f58ca7ba4a08b7082e86b7a5989b4b0fda2107ab": {},
+                "6c1e1cc1e0e1f8fd026fe517607b2d4535565fa7": {},
+                "5fe0a4af3bd1479d5e39fbda2215c86bce54722b": {},
+                "5988806996e8d12f5d4aa911960d842cf7be0c24": {}
+              }
+            },
+            "Enhances LLMs in   Capturing Structured   Knowledge ": {
+              "Commonsense Reason-   ing Graph": {
+                "033607afc2e08a58383ad78deb98c844017109c1": {},
+                "39e40821b7207125e54e6ed7112e55cd38c6f0c3": {},
+                "5b745be118ae6e8678725698ffaa336ecffd31c0": {}
+              },
+              "Visually Situated Natu-   ral Language": {
+                "5692501c10d0c1762842f92c66fcf0bffe2c0342": {},
+                "e1484706c0fab932fc9804df328044b3cb2f110d": {},
+                "95e184e2668ad49b5ea7c1c185727ef2d2c30de6": {}
+              }
+            }
+          },
+          "Connect LLMs to   Other Functional   Ends ": {
+            "Relate LLMs to   Digital Ends ": {
+              "Text-based Tools": {
+                "c7a3f9cc61cfafdc307f8ae24430b6b1121f9b2c": {},
+                "354bf043179e3e9f05df73e3f04517e53c326d1f": {},
+                "7d8905a1fd288068f12c8347caeabefd36d0dd6c": {},
+                "53d128ea815bcc0526856eb5a9c42cc977cb36a7": {},
+                "ed30969f0e4811473144ffe83c1baa6d54f02202": {},
+                "455866ca838f356b53a7e3e5b344834f9e93dbbc": {}
+              },
+              "Multimodality Tools": {
+                "9837349417e36ef5be06da0fd6c74042148bdaa2": {},
+                "af1c871282ec122869d03f5420ef5d9143358a91": {},
+                "ac7771c332da42b29a913b116bd6ef622cbf89cf": {},
+                "d1120d67b700e4dfe8b39eb1e48fbdea4e1a0c43": {},
+                "6e754273d54a91371efbc928cd6b156364d517da": {}
+              }
+            },
+            "Relate LLMs to   Physical Ends ": {
+              "10158879cdb64ce7d3f7bb5572c4617ea808602e": {},
+              "1cd8373490efc2d74c2796f4b2aa27c7d4415ec9": {},
+              "91deaf9d324c8feafc189da0da03e60a60287bca": {},
+              "10578bc0bdb3ebf9232931dd4961f55ba470caad": {},
+              "c03fa01fbb9c77fe3d10609ba5f1dee33a723867": {},
+              "0ba581718f294db1d7b3dbc159cc3d3380f74606": {}
+            }
+          },
+          "Provide LLM with   an Executable Envi- ronment for Automa- ted Feedback ": {
+            "Feedbacks from   Code Execution   ": {
+              "9e3c493fb09dcd61bb05e8c5659f23327b7b6340": {},
+              "8a4fc5f00cd4aca61e148e46a2125c3a406719f1": {},
+              "6d994b4f5a46cd14e8f09f1e9e49120546b15e31": {},
+              "018e943ba0452b05edd903c3eaf746068ebca138": {}
+            },
+            "Methods for Enhan- cing LLM's Perform- ance with Feedback   ": {
+              "Selection-based Meth.": {
+                "876eb375cb7b365475040046df669c039ad54202": {},
+                "59fe7cb560651281cfc5db6b8940da0e3ba9dea6": {}
+              },
+              "Prompting-based Meth.": {
+                "9e3c493fb09dcd61bb05e8c5659f23327b7b6340": {},
+                "12b233752c7097ea6525622bed238ae2d2193c5a": {}
+              },
+              "Finetuning-based Meth.": {
+                "a95817df43516f5ff9cfc447209def1fcd569afc": {},
+                "28dafb94a87daa71ad3edf9f04f3c8c32753398b": {},
+                "6d994b4f5a46cd14e8f09f1e9e49120546b15e31": {},
+                "7a1069dafaeb484e22f2473d5545f1e45ce30656": {},
+                "018e943ba0452b05edd903c3eaf746068ebca138": {},
+                "2f0028060a3a3187d3cbecc3b423dbcf8c8387c3": {}
+              }
+            }
+          }
+        },
+        "How Code- LLMs benefit  IAs ": {
+          "Decision-making   ": {
+            "Environment   Perception": {
+              "58f8925a8b87054ad0635a6398a7fe24935b1604": {},
+              "23525374cfd3af714f3ffb7a203b1ef3253333fe": {},
+              "c03fa01fbb9c77fe3d10609ba5f1dee33a723867": {}
+            },
+            "Planning": {
+              "ae6a4cd221684be6ca3082b6f526a7901281490b": {},
+              "91deaf9d324c8feafc189da0da03e60a60287bca": {},
+              "c03fa01fbb9c77fe3d10609ba5f1dee33a723867": {}
+            }
+          },
+          "Execution ": {
+            "Action Grounding": {
+              "5dbf93a68b7fda600521f046dea35ea8ba9e884f": {},
+              "c03fa01fbb9c77fe3d10609ba5f1dee33a723867": {},
+              "12b233752c7097ea6525622bed238ae2d2193c5a": {},
+              "f197bf0fc2f228483f6af3285000d54d8d97f9eb": {}
+            },
+            "Memory   Organization": {
+              "32dcd0887537cece54e214f531d2c384470b023f": {},
+              "8da9b1436212b233fc49c7daf1ba15c22874ff5a": {},
+              "a1426b13b74dbad17b34606d25aabe1d61f6e11a": {},
+              "f197bf0fc2f228483f6af3285000d54d8d97f9eb": {}
+            }
+          },
+          "Self-improvement  ": {
+            "90fff3e6c55fc43f81e96fea1dc63f114cc036c1": {},
+            "edc11420b3f2aa6638d78cceb3b12778fe07bb85": {},
+            "170c97c7215f42edfb20c2248f954879e91ef86e": {},
+            "f197bf0fc2f228483f6af3285000d54d8d97f9eb": {},
+            "1a4c6856292b8c64d19a812a77f0aa6fd47cb96c": {}
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000001",
+        "paperId": "1bf21dabbdfc81fd4f9e92b1201ecce744cabb6a",
+        "ref_index": "16",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Strengthen LLMs'   Programming Skills   ",
+          "LLM as a Strong Coder"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000002",
+        "paperId": "acbdbf49f9bc3f151b93d9ca9a06009f4f6eb269",
+        "ref_index": "18",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Strengthen LLMs'   Programming Skills   ",
+          "LLM as a Strong Coder"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000003",
+        "paperId": "5cbe278b65a81602a864184bbca37de91448a5f5",
+        "ref_index": "38",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Strengthen LLMs'   Programming Skills   ",
+          "LLM as a Strong Coder"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000004",
+        "paperId": "38115e80d805fb0fb8f090dc88ced4b24be07878",
+        "ref_index": "48",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Strengthen LLMs'   Programming Skills   ",
+          "LLM as a Strong Coder"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000005",
+        "paperId": "b32a6f6ef7dd775e0f876b4713ceccebc56e651e",
+        "ref_index": "61",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Strengthen LLMs'   Programming Skills   ",
+          "LLM as a Strong Coder"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000006",
+        "paperId": "b85f3a66245d483f3eb3447eaf9950bd55f2b21e",
+        "ref_index": "27",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Strengthen LLMs'   Programming Skills   ",
+          "LLM as a SOTA Code   Evaluator"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000007",
+        "paperId": "ce8de3902a583e1eb6062d4453ed90fe6b9d4558",
+        "ref_index": "34",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Strengthen LLMs'   Programming Skills   ",
+          "LLM as a SOTA Code   Evaluator"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000008",
+        "paperId": "4edbf94314bbc4fee6822810c73efe23db07ad79",
+        "ref_index": "46",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Strengthen LLMs'   Programming Skills   ",
+          "LLM as a SOTA Code   Evaluator"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000009",
+        "paperId": "a6e53935e313caf68a4c51e4ddb90893005fdb3d",
+        "ref_index": "64",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Strengthen LLMs'   Programming Skills   ",
+          "LLM as a SOTA Code   Evaluator"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000010",
+        "paperId": "703035b483c181953de1b55b5fd59cd4cd4cf211",
+        "ref_index": "31",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Strengthen LLMs'   Programming Skills   ",
+          "Collaboration Coding   Solves Complex Tasks"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000011",
+        "paperId": "47c3b8dd2c8a9326249ac98900b2c3fc71f46ab1",
+        "ref_index": "33",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Strengthen LLMs'   Programming Skills   ",
+          "Collaboration Coding   Solves Complex Tasks"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000012",
+        "paperId": "4747e72c5bc706c50e76953188f0144df18992d0",
+        "ref_index": "50",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Strengthen LLMs'   Programming Skills   ",
+          "Collaboration Coding   Solves Complex Tasks"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000013",
+        "paperId": "1a4c6856292b8c64d19a812a77f0aa6fd47cb96c",
+        "ref_index": "60",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Strengthen LLMs'   Programming Skills   ",
+          "Collaboration Coding   Solves Complex Tasks"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000014",
+        "paperId": "1e0caa706e9d9fdad82d6713fa20b52975a1703b",
+        "ref_index": "43",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Empower LLMs'   Complex Reasoning   ",
+          "Enhancing Task Deco- mposition with Chain   of Thought"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000015",
+        "paperId": "257aee73d83a87921fd2d56b524de394dcf6a264",
+        "ref_index": "4",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Empower LLMs'   Complex Reasoning   ",
+          "Program-of-Thought"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000016",
+        "paperId": "6c943670dca38bfc7c8b477ae7c2d1fba1ad3691",
+        "ref_index": "21",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Empower LLMs'   Complex Reasoning   ",
+          "Program-of-Thought"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000017",
+        "paperId": "f58ca7ba4a08b7082e86b7a5989b4b0fda2107ab",
+        "ref_index": "24",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Empower LLMs'   Complex Reasoning   ",
+          "Program-of-Thought"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000018",
+        "paperId": "6c1e1cc1e0e1f8fd026fe517607b2d4535565fa7",
+        "ref_index": "29",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Empower LLMs'   Complex Reasoning   ",
+          "Program-of-Thought"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000019",
+        "paperId": "5fe0a4af3bd1479d5e39fbda2215c86bce54722b",
+        "ref_index": "49",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Empower LLMs'   Complex Reasoning   ",
+          "Program-of-Thought"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000020",
+        "paperId": "5988806996e8d12f5d4aa911960d842cf7be0c24",
+        "ref_index": "62",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Empower LLMs'   Complex Reasoning   ",
+          "Program-of-Thought"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000021",
+        "paperId": "033607afc2e08a58383ad78deb98c844017109c1",
+        "ref_index": "23",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Enhances LLMs in   Capturing Structured   Knowledge ",
+          "Commonsense Reason-   ing Graph"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000022",
+        "paperId": "39e40821b7207125e54e6ed7112e55cd38c6f0c3",
+        "ref_index": "45",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Enhances LLMs in   Capturing Structured   Knowledge ",
+          "Commonsense Reason-   ing Graph"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000023",
+        "paperId": "5b745be118ae6e8678725698ffaa336ecffd31c0",
+        "ref_index": "56",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Enhances LLMs in   Capturing Structured   Knowledge ",
+          "Commonsense Reason-   ing Graph"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000024",
+        "paperId": "5692501c10d0c1762842f92c66fcf0bffe2c0342",
+        "ref_index": "28",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Enhances LLMs in   Capturing Structured   Knowledge ",
+          "Visually Situated Natu-   ral Language"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000025",
+        "paperId": "e1484706c0fab932fc9804df328044b3cb2f110d",
+        "ref_index": "37",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Enhances LLMs in   Capturing Structured   Knowledge ",
+          "Visually Situated Natu-   ral Language"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000026",
+        "paperId": "95e184e2668ad49b5ea7c1c185727ef2d2c30de6",
+        "ref_index": "41",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Boost LLMs'   Performance ",
+          "Enhances LLMs in   Capturing Structured   Knowledge ",
+          "Visually Situated Natu-   ral Language"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000027",
+        "paperId": "c7a3f9cc61cfafdc307f8ae24430b6b1121f9b2c",
+        "ref_index": "5",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Connect LLMs to   Other Functional   Ends ",
+          "Relate LLMs to   Digital Ends ",
+          "Text-based Tools"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000028",
+        "paperId": "354bf043179e3e9f05df73e3f04517e53c326d1f",
+        "ref_index": "7",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Connect LLMs to   Other Functional   Ends ",
+          "Relate LLMs to   Digital Ends ",
+          "Text-based Tools"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000029",
+        "paperId": "7d8905a1fd288068f12c8347caeabefd36d0dd6c",
+        "ref_index": "8",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Connect LLMs to   Other Functional   Ends ",
+          "Relate LLMs to   Digital Ends ",
+          "Text-based Tools"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000030",
+        "paperId": "53d128ea815bcc0526856eb5a9c42cc977cb36a7",
+        "ref_index": "10",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Connect LLMs to   Other Functional   Ends ",
+          "Relate LLMs to   Digital Ends ",
+          "Text-based Tools"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000031",
+        "paperId": "ed30969f0e4811473144ffe83c1baa6d54f02202",
+        "ref_index": "11",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Connect LLMs to   Other Functional   Ends ",
+          "Relate LLMs to   Digital Ends ",
+          "Text-based Tools"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000032",
+        "paperId": "455866ca838f356b53a7e3e5b344834f9e93dbbc",
+        "ref_index": "13",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Connect LLMs to   Other Functional   Ends ",
+          "Relate LLMs to   Digital Ends ",
+          "Text-based Tools"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000033",
+        "paperId": "9837349417e36ef5be06da0fd6c74042148bdaa2",
+        "ref_index": "25",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Connect LLMs to   Other Functional   Ends ",
+          "Relate LLMs to   Digital Ends ",
+          "Multimodality Tools"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000034",
+        "paperId": "af1c871282ec122869d03f5420ef5d9143358a91",
+        "ref_index": "30",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Connect LLMs to   Other Functional   Ends ",
+          "Relate LLMs to   Digital Ends ",
+          "Multimodality Tools"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000035",
+        "paperId": "ac7771c332da42b29a913b116bd6ef622cbf89cf",
+        "ref_index": "40",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Connect LLMs to   Other Functional   Ends ",
+          "Relate LLMs to   Digital Ends ",
+          "Multimodality Tools"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000036",
+        "paperId": "d1120d67b700e4dfe8b39eb1e48fbdea4e1a0c43",
+        "ref_index": "51",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Connect LLMs to   Other Functional   Ends ",
+          "Relate LLMs to   Digital Ends ",
+          "Multimodality Tools"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000037",
+        "paperId": "6e754273d54a91371efbc928cd6b156364d517da",
+        "ref_index": "53",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Connect LLMs to   Other Functional   Ends ",
+          "Relate LLMs to   Digital Ends ",
+          "Multimodality Tools"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000038",
+        "paperId": "10158879cdb64ce7d3f7bb5572c4617ea808602e",
+        "ref_index": "26",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Connect LLMs to   Other Functional   Ends ",
+          "Relate LLMs to   Physical Ends "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000039",
+        "paperId": "1cd8373490efc2d74c2796f4b2aa27c7d4415ec9",
+        "ref_index": "32",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Connect LLMs to   Other Functional   Ends ",
+          "Relate LLMs to   Physical Ends "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000040",
+        "paperId": "91deaf9d324c8feafc189da0da03e60a60287bca",
+        "ref_index": "39",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Connect LLMs to   Other Functional   Ends ",
+          "Relate LLMs to   Physical Ends "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000041",
+        "paperId": "10578bc0bdb3ebf9232931dd4961f55ba470caad",
+        "ref_index": "44",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Connect LLMs to   Other Functional   Ends ",
+          "Relate LLMs to   Physical Ends "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000042",
+        "paperId": "c03fa01fbb9c77fe3d10609ba5f1dee33a723867",
+        "ref_index": "52",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Connect LLMs to   Other Functional   Ends ",
+          "Relate LLMs to   Physical Ends "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000043",
+        "paperId": "0ba581718f294db1d7b3dbc159cc3d3380f74606",
+        "ref_index": "54",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Connect LLMs to   Other Functional   Ends ",
+          "Relate LLMs to   Physical Ends "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000044",
+        "paperId": "9e3c493fb09dcd61bb05e8c5659f23327b7b6340",
+        "ref_index": "22",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Provide LLM with   an Executable Envi- ronment for Automa- ted Feedback ",
+          "Feedbacks from   Code Execution   "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000045",
+        "paperId": "8a4fc5f00cd4aca61e148e46a2125c3a406719f1",
+        "ref_index": "35",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Provide LLM with   an Executable Envi- ronment for Automa- ted Feedback ",
+          "Feedbacks from   Code Execution   "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000046",
+        "paperId": "6d994b4f5a46cd14e8f09f1e9e49120546b15e31",
+        "ref_index": "36",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Provide LLM with   an Executable Envi- ronment for Automa- ted Feedback ",
+          "Feedbacks from   Code Execution   "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000047",
+        "paperId": "018e943ba0452b05edd903c3eaf746068ebca138",
+        "ref_index": "57",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Provide LLM with   an Executable Envi- ronment for Automa- ted Feedback ",
+          "Feedbacks from   Code Execution   "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000048",
+        "paperId": "876eb375cb7b365475040046df669c039ad54202",
+        "ref_index": "19",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Provide LLM with   an Executable Envi- ronment for Automa- ted Feedback ",
+          "Methods for Enhan- cing LLM's Perform- ance with Feedback   ",
+          "Selection-based Meth."
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000049",
+        "paperId": "59fe7cb560651281cfc5db6b8940da0e3ba9dea6",
+        "ref_index": "47",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Provide LLM with   an Executable Envi- ronment for Automa- ted Feedback ",
+          "Methods for Enhan- cing LLM's Perform- ance with Feedback   ",
+          "Selection-based Meth."
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000050",
+        "paperId": "9e3c493fb09dcd61bb05e8c5659f23327b7b6340",
+        "ref_index": "22",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Provide LLM with   an Executable Envi- ronment for Automa- ted Feedback ",
+          "Methods for Enhan- cing LLM's Perform- ance with Feedback   ",
+          "Prompting-based Meth."
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000051",
+        "paperId": "12b233752c7097ea6525622bed238ae2d2193c5a",
+        "ref_index": "58",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Provide LLM with   an Executable Envi- ronment for Automa- ted Feedback ",
+          "Methods for Enhan- cing LLM's Perform- ance with Feedback   ",
+          "Prompting-based Meth."
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000052",
+        "paperId": "a95817df43516f5ff9cfc447209def1fcd569afc",
+        "ref_index": "3",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Provide LLM with   an Executable Envi- ronment for Automa- ted Feedback ",
+          "Methods for Enhan- cing LLM's Perform- ance with Feedback   ",
+          "Finetuning-based Meth."
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000053",
+        "paperId": "28dafb94a87daa71ad3edf9f04f3c8c32753398b",
+        "ref_index": "20",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Provide LLM with   an Executable Envi- ronment for Automa- ted Feedback ",
+          "Methods for Enhan- cing LLM's Perform- ance with Feedback   ",
+          "Finetuning-based Meth."
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000054",
+        "paperId": "6d994b4f5a46cd14e8f09f1e9e49120546b15e31",
+        "ref_index": "36",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Provide LLM with   an Executable Envi- ronment for Automa- ted Feedback ",
+          "Methods for Enhan- cing LLM's Perform- ance with Feedback   ",
+          "Finetuning-based Meth."
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000055",
+        "paperId": "7a1069dafaeb484e22f2473d5545f1e45ce30656",
+        "ref_index": "55",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Provide LLM with   an Executable Envi- ronment for Automa- ted Feedback ",
+          "Methods for Enhan- cing LLM's Perform- ance with Feedback   ",
+          "Finetuning-based Meth."
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000056",
+        "paperId": "018e943ba0452b05edd903c3eaf746068ebca138",
+        "ref_index": "57",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Provide LLM with   an Executable Envi- ronment for Automa- ted Feedback ",
+          "Methods for Enhan- cing LLM's Perform- ance with Feedback   ",
+          "Finetuning-based Meth."
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000057",
+        "paperId": "2f0028060a3a3187d3cbecc3b423dbcf8c8387c3",
+        "ref_index": "63",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code   Assists LLMs",
+          "Provide LLM with   an Executable Envi- ronment for Automa- ted Feedback ",
+          "Methods for Enhan- cing LLM's Perform- ance with Feedback   ",
+          "Finetuning-based Meth."
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000058",
+        "paperId": "58f8925a8b87054ad0635a6398a7fe24935b1604",
+        "ref_index": "2",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code- LLMs benefit  IAs ",
+          "Decision-making   ",
+          "Environment   Perception"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000059",
+        "paperId": "23525374cfd3af714f3ffb7a203b1ef3253333fe",
+        "ref_index": "14",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code- LLMs benefit  IAs ",
+          "Decision-making   ",
+          "Environment   Perception"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000060",
+        "paperId": "c03fa01fbb9c77fe3d10609ba5f1dee33a723867",
+        "ref_index": "52",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code- LLMs benefit  IAs ",
+          "Decision-making   ",
+          "Environment   Perception"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000061",
+        "paperId": "ae6a4cd221684be6ca3082b6f526a7901281490b",
+        "ref_index": "0",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code- LLMs benefit  IAs ",
+          "Decision-making   ",
+          "Planning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000062",
+        "paperId": "91deaf9d324c8feafc189da0da03e60a60287bca",
+        "ref_index": "39",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code- LLMs benefit  IAs ",
+          "Decision-making   ",
+          "Planning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000063",
+        "paperId": "c03fa01fbb9c77fe3d10609ba5f1dee33a723867",
+        "ref_index": "52",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code- LLMs benefit  IAs ",
+          "Decision-making   ",
+          "Planning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000064",
+        "paperId": "5dbf93a68b7fda600521f046dea35ea8ba9e884f",
+        "ref_index": "6",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code- LLMs benefit  IAs ",
+          "Execution ",
+          "Action Grounding"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000065",
+        "paperId": "c03fa01fbb9c77fe3d10609ba5f1dee33a723867",
+        "ref_index": "52",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code- LLMs benefit  IAs ",
+          "Execution ",
+          "Action Grounding"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000066",
+        "paperId": "12b233752c7097ea6525622bed238ae2d2193c5a",
+        "ref_index": "58",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code- LLMs benefit  IAs ",
+          "Execution ",
+          "Action Grounding"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000067",
+        "paperId": "f197bf0fc2f228483f6af3285000d54d8d97f9eb",
+        "ref_index": "59",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code- LLMs benefit  IAs ",
+          "Execution ",
+          "Action Grounding"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000068",
+        "paperId": "32dcd0887537cece54e214f531d2c384470b023f",
+        "ref_index": "1",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code- LLMs benefit  IAs ",
+          "Execution ",
+          "Memory   Organization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000069",
+        "paperId": "8da9b1436212b233fc49c7daf1ba15c22874ff5a",
+        "ref_index": "9",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code- LLMs benefit  IAs ",
+          "Execution ",
+          "Memory   Organization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000070",
+        "paperId": "a1426b13b74dbad17b34606d25aabe1d61f6e11a",
+        "ref_index": "15",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code- LLMs benefit  IAs ",
+          "Execution ",
+          "Memory   Organization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000071",
+        "paperId": "f197bf0fc2f228483f6af3285000d54d8d97f9eb",
+        "ref_index": "59",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code- LLMs benefit  IAs ",
+          "Execution ",
+          "Memory   Organization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000072",
+        "paperId": "90fff3e6c55fc43f81e96fea1dc63f114cc036c1",
+        "ref_index": "12",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code- LLMs benefit  IAs ",
+          "Self-improvement  "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000073",
+        "paperId": "edc11420b3f2aa6638d78cceb3b12778fe07bb85",
+        "ref_index": "17",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code- LLMs benefit  IAs ",
+          "Self-improvement  "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000074",
+        "paperId": "170c97c7215f42edfb20c2248f954879e91ef86e",
+        "ref_index": "42",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code- LLMs benefit  IAs ",
+          "Self-improvement  "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000075",
+        "paperId": "f197bf0fc2f228483f6af3285000d54d8d97f9eb",
+        "ref_index": "59",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code- LLMs benefit  IAs ",
+          "Self-improvement  "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.00812",
+        "arxiv_id": "2401.00812",
+        "leaf_mention_id": "2401.00812::000076",
+        "paperId": "1a4c6856292b8c64d19a812a77f0aa6fd47cb96c",
+        "ref_index": "60",
+        "path": [
+          "How Code Empowers LLMs to Serve as IAs",
+          "How Code- LLMs benefit  IAs ",
+          "Self-improvement  "
+        ],
+        "depth": 3,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 76,
+      "unique_leaf_paper_count": 65,
+      "multi_membership_extra_mentions": 11,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

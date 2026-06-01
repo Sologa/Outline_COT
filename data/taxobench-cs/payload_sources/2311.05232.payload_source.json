@@ -1,0 +1,1945 @@
+{
+  "paper_id": "2311.05232",
+  "arxiv_id": "2311.05232",
+  "title": "A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions",
+  "ref_meta": [
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "0",
+      "ref_key": "S2:66242baf48b0f6b828e7547ac39ffaa5e1b2cb3e",
+      "paperId": "66242baf48b0f6b828e7547ac39ffaa5e1b2cb3e",
+      "title": "RARR: Researching and Revising What Language Models Say, Using Language Models",
+      "year": 2022,
+      "abstract": "Language models (LMs) now excel at many tasks such as question answering, reasoning, and dialog. However, they sometimes generate unsupported or misleading content. A user cannot easily determine whether their outputs are trustworthy or not, because most LMs do not have any built-in mechanism for attribution to external evidence. To enable attribution while still preserving all the powerful advantages of recent generation models, we propose RARR (Retrofit Attribution using Research and Revision), a system that 1) automatically finds attribution for the output of any text generation model, and 2) post-edits the output to fix unsupported content while preserving the original output as much as possible. When applied to the output of several state-of-the-art LMs on a diverse set of generation tasks, we find that RARR significantly improves attribution while otherwise preserving the original input to a much greater degree than previously explored edit models. Furthermore, the implementation of RARR requires only a handful of training examples, a large language model, and standard web search.",
+      "externalIds": {
+        "ArXiv": "2210.08726",
+        "DBLP": "conf/acl/GaoDPCCFZLLJG23",
+        "ACL": "2023.acl-long.910",
+        "DOI": "10.18653/v1/2023.acl-long.910",
+        "CorpusId": 254247260
+      },
+      "arxiv_id": "2210.08726",
+      "doi": "10.18653/v1/2023.acl-long.910",
+      "corpus_id": 254247260
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "1",
+      "ref_key": "S2:77d956cdab4508d569ae5741549b78e715fd0749",
+      "paperId": "77d956cdab4508d569ae5741549b78e715fd0749",
+      "title": "TruthfulQA: Measuring How Models Mimic Human Falsehoods",
+      "year": 2021,
+      "abstract": "We propose a benchmark to measure whether a language model is truthful in generating answers to questions. The benchmark comprises 817 questions that span 38 categories, including health, law, finance and politics. We crafted questions that some humans would answer falsely due to a false belief or misconception. To perform well, models must avoid generating false answers learned from imitating human texts. We tested GPT-3, GPT-Neo/J, GPT-2 and a T5-based model. The best model was truthful on 58% of questions, while human performance was 94%. Models generated many false answers that mimic popular misconceptions and have the potential to deceive humans. The largest models were generally the least truthful. This contrasts with other NLP tasks, where performance improves with model size. However, this result is expected if false answers are learned from the training distribution. We suggest that scaling up models alone is less promising for improving truthfulness than fine-tuning using training objectives other than imitation of text from the web.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2109-07958",
+        "ACL": "2022.acl-long.229",
+        "ArXiv": "2109.07958",
+        "DOI": "10.18653/v1/2022.acl-long.229",
+        "CorpusId": 237532606
+      },
+      "arxiv_id": "2109.07958",
+      "doi": "10.18653/v1/2022.acl-long.229",
+      "corpus_id": 237532606
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "2",
+      "ref_key": "S2:465471bb5bf1a945549d6291c2d23367966b4957",
+      "paperId": "465471bb5bf1a945549d6291c2d23367966b4957",
+      "title": "In-Context Retrieval-Augmented Language Models",
+      "year": 2023,
+      "abstract": "Abstract Retrieval-Augmented Language Modeling (RALM) methods, which condition a language model (LM) on relevant documents from a grounding corpus during generation, were shown to significantly improve language modeling performance. In addition, they can mitigate the problem of factually inaccurate text generation and provide natural source attribution mechanism. Existing RALM approaches focus on modifying the LM architecture in order to facilitate the incorporation of external information, significantly complicating deployment. This paper considers a simple alternative, which we dub In-Context RALM: leaving the LM architecture unchanged and prepending grounding documents to the input, without any further training of the LM. We show that In-Context RALM that builds on off-the-shelf general purpose retrievers provides surprisingly large LM gains across model sizes and diverse corpora. We also demonstrate that the document retrieval and ranking mechanism can be specialized to the RALM setting to further boost performance. We conclude that In-Context RALM has considerable potential to increase the prevalence of LM grounding, particularly in settings where a pretrained LM must be used without modification or even via API access.1",
+      "externalIds": {
+        "ArXiv": "2302.00083",
+        "DBLP": "journals/corr/abs-2302-00083",
+        "DOI": "10.1162/tacl_a_00605",
+        "CorpusId": 256459451
+      },
+      "arxiv_id": "2302.00083",
+      "doi": "10.1162/tacl_a_00605",
+      "corpus_id": 256459451
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "3",
+      "ref_key": "S2:7c1707db9aafd209aa93db3251e7ebd593d55876",
+      "paperId": "7c1707db9aafd209aa93db3251e7ebd593d55876",
+      "title": "SelfCheckGPT: Zero-Resource Black-Box Hallucination Detection for Generative Large Language Models",
+      "year": 2023,
+      "abstract": "Generative Large Language Models (LLMs) such as GPT-3 are capable of generating highly fluent responses to a wide variety of user prompts. However, LLMs are known to hallucinate facts and make non-factual statements which can undermine trust in their output. Existing fact-checking approaches either require access to the output probability distribution (which may not be available for systems such as ChatGPT) or external databases that are interfaced via separate, often complex, modules. In this work, we propose\"SelfCheckGPT\", a simple sampling-based approach that can be used to fact-check the responses of black-box models in a zero-resource fashion, i.e. without an external database. SelfCheckGPT leverages the simple idea that if an LLM has knowledge of a given concept, sampled responses are likely to be similar and contain consistent facts. However, for hallucinated facts, stochastically sampled responses are likely to diverge and contradict one another. We investigate this approach by using GPT-3 to generate passages about individuals from the WikiBio dataset, and manually annotate the factuality of the generated passages. We demonstrate that SelfCheckGPT can: i) detect non-factual and factual sentences; and ii) rank passages in terms of factuality. We compare our approach to several baselines and show that our approach has considerably higher AUC-PR scores in sentence-level hallucination detection and higher correlation scores in passage-level factuality assessment compared to grey-box methods.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/ManakulLG23",
+        "ArXiv": "2303.08896",
+        "DOI": "10.48550/arXiv.2303.08896",
+        "CorpusId": 257557820
+      },
+      "arxiv_id": "2303.08896",
+      "doi": "10.48550/arXiv.2303.08896",
+      "corpus_id": 257557820
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "4",
+      "ref_key": "S2:bd5deadc58ee45b5e004378ba1d54a96bc947b4a",
+      "paperId": "bd5deadc58ee45b5e004378ba1d54a96bc947b4a",
+      "title": "FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation",
+      "year": 2023,
+      "abstract": "Evaluating the factuality of long-form text generated by large language models (LMs) is non-trivial because (1) generations often contain a mixture of supported and unsupported pieces of information, making binary judgments of quality inadequate, and (2) human evaluation is time-consuming and costly. In this paper, we introduce FACTSCORE, a new evaluation that breaks a generation into a series of atomic facts and computes the percentage of atomic facts supported by a reliable knowledge source. We conduct an extensive human evaluation to obtain FACTSCOREs of people biographies generated by several state-of-the-art commercial LMs -- InstructGPT, ChatGPT, and the retrieval-augmented PerplexityAI -- and report new analysis demonstrating the need for such a fine-grained score (e.g., ChatGPT only achieves 58%). Since human evaluation is costly, we also introduce an automated model that estimates FACTSCORE using retrieval and a strong language model, with less than a 2% error rate. Finally, we use this automated metric to evaluate 6,500 generations from a new set of 13 recent LMs that would have cost $26K if evaluated by humans, with various findings: GPT-4 and ChatGPT are more factual than public models, and Vicuna and Alpaca are some of the best public models. FACTSCORE is available for public use via `pip install factscore`.",
+      "externalIds": {
+        "ArXiv": "2305.14251",
+        "DBLP": "conf/emnlp/MinKLLYKIZH23",
+        "DOI": "10.48550/arXiv.2305.14251",
+        "CorpusId": 258841470
+      },
+      "arxiv_id": "2305.14251",
+      "doi": "10.48550/arXiv.2305.14251",
+      "corpus_id": 258841470
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "5",
+      "ref_key": "S2:984d4a1d41bfc8184fb77b8aa0eb8e96d536d048",
+      "paperId": "984d4a1d41bfc8184fb77b8aa0eb8e96d536d048",
+      "title": "Trusting Your Evidence: Hallucinate Less with Context-aware Decoding",
+      "year": 2023,
+      "abstract": "Language models (LMs) often struggle to pay enough attention to the input context, and generate texts that are unfaithful or contain hallucinations. To mitigate this issue, we present context-aware decoding (CAD), which follows a contrastive output distribution that amplifies the difference between the output probabilities when a model is used with and without context. Our experiments show that CAD, without additional training, significantly improves the faithfulness of different LM families, including OPT, GPT, LLaMA, and FLAN-T5 for summarization tasks (e.g., 14.3% gain for LLaMA in factuality metrics). Furthermore, CAD is particularly effective in overriding a model’s prior knowledge when it contradicts the provided context, leading to substantial improvements in tasks where resolving the knowledge conflict is essential. Our code is publicly released at https://github.com/xhan77/context-aware-decoding.",
+      "externalIds": {
+        "DBLP": "conf/naacl/ShiHLTZY24",
+        "ArXiv": "2305.14739",
+        "ACL": "2024.naacl-short.69",
+        "DOI": "10.48550/arXiv.2305.14739",
+        "CorpusId": 258866080
+      },
+      "arxiv_id": "2305.14739",
+      "doi": "10.48550/arXiv.2305.14739",
+      "corpus_id": 258866080
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "6",
+      "ref_key": "S2:3a16c8594096df0921d177e52494e5307a794ce3",
+      "paperId": "3a16c8594096df0921d177e52494e5307a794ce3",
+      "title": "KL-Divergence Guided Temperature Sampling",
+      "year": 2023,
+      "abstract": "Temperature sampling is a conventional approach to diversify large language model predictions. As temperature increases, the prediction becomes diverse but also vulnerable to hallucinations -- generating tokens that are sensible but not factual. One common approach to mitigate hallucinations is to provide source/grounding documents and the model is trained to produce predictions that bind to and are attributable to the provided source. It appears that there is a trade-off between diversity and attribution. To mitigate any such trade-off, we propose to relax the constraint of having a fixed temperature over decoding steps, and a mechanism to guide the dynamic temperature according to its relevance to the source through KL-divergence. Our experiments justifies the trade-off, and shows that our sampling algorithm outperforms the conventional top-k and top-p algorithms in conversational question-answering and summarization tasks.",
+      "externalIds": {
+        "ArXiv": "2306.01286",
+        "DBLP": "journals/corr/abs-2306-01286",
+        "DOI": "10.48550/arXiv.2306.01286",
+        "CorpusId": 259063711
+      },
+      "arxiv_id": "2306.01286",
+      "doi": "10.48550/arXiv.2306.01286",
+      "corpus_id": 259063711
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "7",
+      "ref_key": "S2:1733eb7792f7a43dd21f51f4d1017a1bffd217b5",
+      "paperId": "1733eb7792f7a43dd21f51f4d1017a1bffd217b5",
+      "title": "Lost in the Middle: How Language Models Use Long Contexts",
+      "year": 2023,
+      "abstract": "While recent language models have the ability to take long contexts as input, relatively little is known about how well they use longer context. We analyze the performance of language models on two tasks that require identifying relevant information in their input contexts: multi-document question answering and key-value retrieval. We find that performance can degrade significantly when changing the position of relevant information, indicating that current language models do not robustly make use of information in long input contexts. In particular, we observe that performance is often highest when relevant information occurs at the beginning or end of the input context, and significantly degrades when models must access relevant information in the middle of long contexts, even for explicitly long-context models. Our analysis provides a better understanding of how language models use their input context and provides new evaluation protocols for future long-context language models.",
+      "externalIds": {
+        "DBLP": "journals/tacl/LiuLHPBPL24a",
+        "ArXiv": "2307.03172",
+        "ACL": "2024.tacl-1.9",
+        "DOI": "10.1162/tacl_a_00638",
+        "CorpusId": 259360665
+      },
+      "arxiv_id": "2307.03172",
+      "doi": "10.1162/tacl_a_00638",
+      "corpus_id": 259360665
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "8",
+      "ref_key": "S2:638b08154fbb71fd34db2aae6cb40045577fe0de",
+      "paperId": "638b08154fbb71fd34db2aae6cb40045577fe0de",
+      "title": "SemDeDup: Data-efficient learning at web-scale through semantic deduplication",
+      "year": 2023,
+      "abstract": "Progress in machine learning has been driven in large part by massive increases in data. However, large web-scale datasets such as LAION are largely uncurated beyond searches for exact duplicates, potentially leaving much redundancy. Here, we introduce SemDeDup, a method which leverages embeddings from pre-trained models to identify and remove semantic duplicates: data pairs which are semantically similar, but not exactly identical. Removing semantic duplicates preserves performance and speeds up learning. Analyzing a subset of LAION, we show that SemDeDup can remove 50% of the data with minimal performance loss, effectively halving training time. Moreover, performance increases out of distribution. Also, analyzing language models trained on C4, a partially curated dataset, we show that SemDeDup improves over prior approaches while providing efficiency gains. SemDeDup provides an example of how simple ways of leveraging quality embeddings can be used to make models learn faster with less data.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2303-09540",
+        "ArXiv": "2303.09540",
+        "DOI": "10.48550/arXiv.2303.09540",
+        "CorpusId": 257557221
+      },
+      "arxiv_id": "2303.09540",
+      "doi": "10.48550/arXiv.2303.09540",
+      "corpus_id": 257557221
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "9",
+      "ref_key": "S2:ca2f1088d3e581b2c6c75cf0ebc96506d620f64d",
+      "paperId": "ca2f1088d3e581b2c6c75cf0ebc96506d620f64d",
+      "title": "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? 🦜",
+      "year": 2021,
+      "abstract": "The past 3 years of work in NLP have been characterized by the development and deployment of ever larger language models, especially for English. BERT, its variants, GPT-2/3, and others, most recently Switch-C, have pushed the boundaries of the possible both through architectural innovations and through sheer size. Using these pretrained models and the methodology of fine-tuning them for specific tasks, researchers have extended the state of the art on a wide array of tasks as measured by leaderboards on specific benchmarks for English. In this paper, we take a step back and ask: How big is too big? What are the possible risks associated with this technology and what paths are available for mitigating those risks? We provide recommendations including weighing the environmental and financial costs first, investing resources into curating and carefully documenting datasets rather than ingesting everything on the web, carrying out pre-development exercises evaluating how the planned approach fits into research and development goals and supports stakeholder values, and encouraging research directions beyond ever larger language models.",
+      "externalIds": {
+        "DBLP": "conf/fat/BenderGMS21",
+        "DOI": "10.1145/3442188.3445922",
+        "CorpusId": 262580630
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/3442188.3445922",
+      "corpus_id": 262580630
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "10",
+      "ref_key": "S2:8eafec7014d08043517834b5a2ed26384f188873",
+      "paperId": "8eafec7014d08043517834b5a2ed26384f188873",
+      "title": "The Reversal Curse: LLMs trained on \"A is B\" fail to learn \"B is A\"",
+      "year": 2023,
+      "abstract": "We expose a surprising failure of generalization in auto-regressive large language models (LLMs). If a model is trained on a sentence of the form\"A is B\", it will not automatically generalize to the reverse direction\"B is A\". This is the Reversal Curse. For instance, if a model is trained on\"Valentina Tereshkova was the first woman to travel to space\", it will not automatically be able to answer the question,\"Who was the first woman to travel to space?\". Moreover, the likelihood of the correct answer (\"Valentina Tershkova\") will not be higher than for a random name. Thus, models do not generalize a prevalent pattern in their training set: if\"A is B\"occurs,\"B is A\"is more likely to occur. It is worth noting, however, that if\"A is B\"appears in-context, models can deduce the reverse relationship. We provide evidence for the Reversal Curse by finetuning GPT-3 and Llama-1 on fictitious statements such as\"Uriah Hawthorne is the composer of Abyssal Melodies\"and showing that they fail to correctly answer\"Who composed Abyssal Melodies?\". The Reversal Curse is robust across model sizes and model families and is not alleviated by data augmentation. We also evaluate ChatGPT (GPT-3.5 and GPT-4) on questions about real-world celebrities, such as\"Who is Tom Cruise's mother? [A: Mary Lee Pfeiffer]\"and the reverse\"Who is Mary Lee Pfeiffer's son?\". GPT-4 correctly answers questions like the former 79% of the time, compared to 33% for the latter. Code available at: https://github.com/lukasberglund/reversal_curse.",
+      "externalIds": {
+        "ArXiv": "2309.12288",
+        "DBLP": "journals/corr/abs-2309-12288",
+        "CorpusId": 262083829
+      },
+      "arxiv_id": "2309.12288",
+      "doi": null,
+      "corpus_id": 262083829
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "11",
+      "ref_key": "S2:7450a612ef291216b0cd48e09b8879be4675c6eb",
+      "paperId": "7450a612ef291216b0cd48e09b8879be4675c6eb",
+      "title": "Softmax Bottleneck Makes Language Models Unable to Represent Multi-mode Word Distributions",
+      "year": 2022,
+      "abstract": "Neural language models (LMs) such as GPT-2 estimate the probability distribution over the next word by a softmax over the vocabulary. The softmax layer produces the distribution based on the dot products of a single hidden state and the embeddings of words in the vocabulary. However, we discover that this single hidden state cannot produce all probability distributions regardless of the LM size or training data size because the single hidden state embedding cannot be close to the embeddings of all the possible next words simultaneously when there are other interfering word embeddings between them. In this work, we demonstrate the importance of this limitation both theoretically and practically. Our work not only deepens our understanding of softmax bottleneck and mixture of softmax (MoS) but also inspires us to propose multi-facet softmax (MFS) to address the limitations of MoS. Extensive empirical analyses confirm our findings and show that against MoS, the proposed MFS achieves two-fold improvements in the perplexity of GPT-2 and BERT.",
+      "externalIds": {
+        "ACL": "2022.acl-long.554",
+        "DBLP": "conf/acl/ChangM22",
+        "DOI": "10.18653/v1/2022.acl-long.554",
+        "CorpusId": 248780434
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2022.acl-long.554",
+      "corpus_id": 248780434
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "12",
+      "ref_key": "S2:51b21f6c9f6a7d6887b9a027bc159747d7a57199",
+      "paperId": "51b21f6c9f6a7d6887b9a027bc159747d7a57199",
+      "title": "Towards Improving Faithfulness in Abstractive Summarization",
+      "year": 2022,
+      "abstract": "Despite the success achieved in neural abstractive summarization based on pre-trained language models, one unresolved issue is that the generated summaries are not always faithful to the input document. There are two possible causes of the unfaithfulness problem: (1) the summarization model fails to understand or capture the gist of the input text, and (2) the model over-relies on the language model to generate fluent but inadequate words. In this work, we propose a Faithfulness Enhanced Summarization model (FES), which is designed for addressing these two problems and improving faithfulness in abstractive summarization. For the first problem, we propose to use question-answering (QA) to examine whether the encoder fully grasps the input document and can answer the questions on the key information in the input. The QA attention on the proper input words can also be used to stipulate how the decoder should attend to the source. For the second problem, we introduce a max-margin loss defined on the difference between the language and the summarization model, aiming to prevent the overconfidence of the language model. Extensive experiments on two benchmark summarization datasets, CNN/DM and XSum, demonstrate that our model significantly outperforms strong baselines. The evaluation of factual consistency also shows that our model generates more faithful summaries than baselines.",
+      "externalIds": {
+        "DBLP": "conf/nips/ChenL0022",
+        "ArXiv": "2210.01877",
+        "DOI": "10.48550/arXiv.2210.01877",
+        "CorpusId": 252715398
+      },
+      "arxiv_id": "2210.01877",
+      "doi": "10.48550/arXiv.2210.01877",
+      "corpus_id": 252715398
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "13",
+      "ref_key": "S2:837a3c0417fb677d4f22c346b345a450ec417f2c",
+      "paperId": "837a3c0417fb677d4f22c346b345a450ec417f2c",
+      "title": "FELM: Benchmarking Factuality Evaluation of Large Language Models",
+      "year": 2023,
+      "abstract": "Assessing factuality of text generated by large language models (LLMs) is an emerging yet crucial research area, aimed at alerting users to potential errors and guiding the development of more reliable LLMs. Nonetheless, the evaluators assessing factuality necessitate suitable evaluation themselves to gauge progress and foster advancements. This direction remains under-explored, resulting in substantial impediments to the progress of factuality evaluators. To mitigate this issue, we introduce a benchmark for Factuality Evaluation of large Language Models, referred to as felm. In this benchmark, we collect responses generated from LLMs and annotate factuality labels in a fine-grained manner. Contrary to previous studies that primarily concentrate on the factuality of world knowledge (e.g.~information from Wikipedia), felm focuses on factuality across diverse domains, spanning from world knowledge to math and reasoning. Our annotation is based on text segments, which can help pinpoint specific factual errors. The factuality annotations are further supplemented by predefined error types and reference links that either support or contradict the statement. In our experiments, we investigate the performance of several LLM-based factuality evaluators on felm, including both vanilla LLMs and those augmented with retrieval mechanisms and chain-of-thought processes. Our findings reveal that while retrieval aids factuality evaluation, current LLMs are far from satisfactory to faithfully detect factual errors.",
+      "externalIds": {
+        "DBLP": "conf/nips/ChenZZCG0H23",
+        "ArXiv": "2310.00741",
+        "DOI": "10.48550/arXiv.2310.00741",
+        "CorpusId": 263334039
+      },
+      "arxiv_id": "2310.00741",
+      "doi": "10.48550/arXiv.2310.00741",
+      "corpus_id": 263334039
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "14",
+      "ref_key": "S2:92221598758165d1679c8c9792435bb5a9a547a0",
+      "paperId": "92221598758165d1679c8c9792435bb5a9a547a0",
+      "title": "Improving Translation Faithfulness of Large Language Models via Augmenting Instructions",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) present strong general capabilities, and a current compelling challenge is stimulating their specialized capabilities, such as machine translation, through low-cost instruction tuning. The standard instruction-following data is sequentially organized as the concatenation of an instruction, an input, and a response. As the attention mechanism of LLMs has limitations on local focus, LLMs tend to focus more on the words or sentences nearby at each position. This leads to a high risk of instruction forgetting during decoding. To alleviate the above issues, We propose SWIE (Segment-Weighted Instruction Embedding) and an instruction-following dataset OVERMISS. SWIE improves the model instruction understanding by adding a global instruction representation on the following input and response representations. OVERMISS improves model faithfulness by comparing over-translation and miss-translation results with the correct translation. We apply our methods to two main-stream open-source LLMs, BLOOM and LLaMA. The experimental results demonstrate significant improvements in translation performance with SWIE based on BLOOMZ-3b, particularly in zero-shot and long text translations due to reduced instruction forgetting risk. Additionally, OVERMISS outperforms the baseline in translation performance (e.g. an increase in BLEU scores from 0.69 to 3.12 and an average improvement of 0.48 percentage comet scores for LLaMA-7b) with further enhancements seen in models combining OVERMISS and SWIE (e.g. the BLUE scores increase up to 0.56 from English to German across three different backbones), and both exhibit improvements in the faithfulness metric based on word alignment.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-12674",
+        "ArXiv": "2308.12674",
+        "DOI": "10.48550/arXiv.2308.12674",
+        "CorpusId": 261101210
+      },
+      "arxiv_id": "2308.12674",
+      "doi": "10.48550/arXiv.2308.12674",
+      "corpus_id": 261101210
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "15",
+      "ref_key": "S2:29652bb2dc0396ab27c0be0c5f24c114c757df0f",
+      "paperId": "29652bb2dc0396ab27c0be0c5f24c114c757df0f",
+      "title": "Evaluating Hallucinations in Chinese Large Language Models",
+      "year": 2023,
+      "abstract": "In this paper, we establish a benchmark named HalluQA (Chinese Hallucination Question-Answering) to measure the hallucination phenomenon in Chinese large language models. HalluQA contains 450 meticulously designed adversarial questions, spanning multiple domains, and takes into account Chinese historical culture, customs, and social phenomena. During the construction of HalluQA, we consider two types of hallucinations: imitative falsehoods and factual errors, and we construct adversarial samples based on GLM-130B and ChatGPT. For evaluation, we design an automated evaluation method using GPT-4 to judge whether a model output is hallucinated. We conduct extensive experiments on 24 large language models, including ERNIE-Bot, Baichuan2, ChatGLM, Qwen, SparkDesk and etc. Out of the 24 models, 18 achieved non-hallucination rates lower than 50%. This indicates that HalluQA is highly challenging. We analyze the primary types of hallucinations in different types of models and their causes. Additionally, we discuss which types of hallucinations should be prioritized for different types of models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-03368",
+        "ArXiv": "2310.03368",
+        "DOI": "10.48550/arXiv.2310.03368",
+        "CorpusId": 263671602
+      },
+      "arxiv_id": "2310.03368",
+      "doi": "10.48550/arXiv.2310.03368",
+      "corpus_id": 263671602
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "16",
+      "ref_key": "S2:ed5020eeda1fbe8c29b1282d654b34abee22d90f",
+      "paperId": "ed5020eeda1fbe8c29b1282d654b34abee22d90f",
+      "title": "DoLa: Decoding by Contrasting Layers Improves Factuality in Large Language Models",
+      "year": 2023,
+      "abstract": "Despite their impressive capabilities, large language models (LLMs) are prone to hallucinations, i.e., generating content that deviates from facts seen during pretraining. We propose a simple decoding strategy for reducing hallucinations with pretrained LLMs that does not require conditioning on retrieved external knowledge nor additional fine-tuning. Our approach obtains the next-token distribution by contrasting the differences in logits obtained from projecting the later layers versus earlier layers to the vocabulary space, exploiting the fact that factual knowledge in an LLMs has generally been shown to be localized to particular transformer layers. We find that this Decoding by Contrasting Layers (DoLa) approach is able to better surface factual knowledge and reduce the generation of incorrect facts. DoLa consistently improves the truthfulness across multiple choices tasks and open-ended generation tasks, for example improving the performance of LLaMA family models on TruthfulQA by 12-17% absolute points, demonstrating its potential in making LLMs reliably generate truthful facts.",
+      "externalIds": {
+        "DBLP": "conf/iclr/ChuangXLKGH24",
+        "ArXiv": "2309.03883",
+        "DOI": "10.48550/arXiv.2309.03883",
+        "CorpusId": 261582463
+      },
+      "arxiv_id": "2309.03883",
+      "doi": "10.48550/arXiv.2309.03883",
+      "corpus_id": 261582463
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "17",
+      "ref_key": "S2:422d8c989adeb904563d0c96d5038f6c8596fa99",
+      "paperId": "422d8c989adeb904563d0c96d5038f6c8596fa99",
+      "title": "Neural Knowledge Bank for Pretrained Transformers",
+      "year": 2022,
+      "abstract": "The ability of pretrained Transformers to remember factual knowledge is essential but still limited for existing models. Inspired by existing work that regards Feed-Forward Networks (FFNs) in Transformers as key-value memories, we design a Neural Knowledge Bank (NKB) and a knowledge injection strategy to introduce extra factual knowledge for pretrained Transformers. The NKB is in the form of additional knowledgeable memory slots to the FFN and the memory-like architecture makes it highly interpretable and flexible. When injecting extra knowledge with the Salient Span Masking (SSM) pretraining objective, we fix the original pretrained model and train only the NKB. This training strategy makes sure the general language modeling ability of the original pretrained model is not influenced. By mounting the NKB onto the T5 model, we verify its strong ability to store extra factual knowledge based on three closed-book question answering datasets. Also, we prove that mounting the NKB will not degrade the general language modeling ability of T5 through two representative tasks, summarization and machine translation. Further, we thoroughly analyze the interpretability of the NKB and reveal the meaning of its keys and values in a human-readable way. Finally, we show the flexibility of the NKB by directly modifying its value vectors to update the factual knowledge stored in it.",
+      "externalIds": {
+        "DBLP": "conf/nlpcc/DaiJDLS23",
+        "ArXiv": "2208.00399",
+        "DOI": "10.48550/arXiv.2208.00399",
+        "CorpusId": 251223709
+      },
+      "arxiv_id": "2208.00399",
+      "doi": "10.48550/arXiv.2208.00399",
+      "corpus_id": 251223709
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "18",
+      "ref_key": "S2:4b0b56be0ae9479d2bd5c2f0943db1906343c10f",
+      "paperId": "4b0b56be0ae9479d2bd5c2f0943db1906343c10f",
+      "title": "Chain-of-Verification Reduces Hallucination in Large Language Models",
+      "year": 2023,
+      "abstract": "Generation of plausible yet incorrect factual information, termed hallucination, is an unsolved issue in large language models. We study the ability of language models to deliberate on the responses they give in order to correct their mistakes. We develop the Chain-of-Verification (CoVe) method whereby the model first (i) drafts an initial response; then (ii) plans verification questions to fact-check its draft; (iii) answers those questions independently so the answers are not biased by other responses; and (iv) generates its final verified response. In experiments, we show CoVe decreases hallucinations across a variety of tasks, from list-based questions from Wikidata, closed book MultiSpanQA and longform text generation.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2309-11495",
+        "ArXiv": "2309.11495",
+        "DOI": "10.48550/arXiv.2309.11495",
+        "CorpusId": 262062565
+      },
+      "arxiv_id": "2309.11495",
+      "doi": "10.48550/arXiv.2309.11495",
+      "corpus_id": 262062565
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "19",
+      "ref_key": "S2:73401891d210bb6509f09e845589bca66ac57baa",
+      "paperId": "73401891d210bb6509f09e845589bca66ac57baa",
+      "title": "QAFactEval: Improved QA-Based Factual Consistency Evaluation for Summarization",
+      "year": 2021,
+      "abstract": "Factual consistency is an essential quality of text summarization models in practical settings. Existing work in evaluating this dimension can be broadly categorized into two lines of research, entailment-based and question answering (QA)-based metrics, and different experimental setups often lead to contrasting conclusions as to which paradigm performs the best. In this work, we conduct an extensive comparison of entailment and QA-based metrics, demonstrating that carefully choosing the components of a QA-based metric, especially question generation and answerability classification, is critical to performance. Building on those insights, we propose an optimized metric, which we call QAFactEval, that leads to a 14% average improvement over previous QA-based metrics on the SummaC factual consistency benchmark, and also outperforms the best-performing entailment-based metric. Moreover, we find that QA-based and entailment-based metrics can offer complementary signals and be combined into a single metric for a further performance boost.",
+      "externalIds": {
+        "DBLP": "conf/naacl/FabbriWLX22",
+        "ACL": "2022.naacl-main.187",
+        "ArXiv": "2112.08542",
+        "DOI": "10.18653/v1/2022.naacl-main.187",
+        "CorpusId": 245218667
+      },
+      "arxiv_id": "2112.08542",
+      "doi": "10.18653/v1/2022.naacl-main.187",
+      "corpus_id": 245218667
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "20",
+      "ref_key": "S2:54972b2e4304d2164a61036ae947df2503c07009",
+      "paperId": "54972b2e4304d2164a61036ae947df2503c07009",
+      "title": "Does Fine-Tuning LLMs on New Knowledge Encourage Hallucinations?",
+      "year": 2024,
+      "abstract": "When large language models are aligned via supervised fine-tuning, they may encounter new factual information that was not acquired through pre-training. It is often conjectured that this can teach the model the behavior of hallucinating factually incorrect responses, as the model is trained to generate facts that are not grounded in its pre-existing knowledge. In this work, we study the impact of such exposure to new knowledge on the capability of the fine-tuned model to utilize its pre-existing knowledge. To this end, we design a controlled setup, focused on closed-book QA, where we vary the proportion of the fine-tuning examples that introduce new knowledge. We demonstrate that large language models struggle to acquire new factual knowledge through fine-tuning, as fine-tuning examples that introduce new knowledge are learned significantly slower than those consistent with the model’s knowledge. However, we also find that as the examples with new knowledge are eventually learned, they linearly increase the model’s tendency to hallucinate. Taken together, our results highlight the risk in introducing new factual knowledge through fine-tuning, and support the view that large language models mostly acquire factual knowledge through pre-training, whereas fine-tuning teaches them to use it more efficiently.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/GekhmanYAEFRH24",
+        "ACL": "2024.emnlp-main.444",
+        "ArXiv": "2405.05904",
+        "DOI": "10.48550/arXiv.2405.05904",
+        "CorpusId": 269635770
+      },
+      "arxiv_id": "2405.05904",
+      "doi": "10.48550/arXiv.2405.05904",
+      "corpus_id": 269635770
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "21",
+      "ref_key": "S2:2922768fd451ecdb45f48c1a83eb57f54a91221b",
+      "paperId": "2922768fd451ecdb45f48c1a83eb57f54a91221b",
+      "title": "Textbooks Are All You Need",
+      "year": 2023,
+      "abstract": "We introduce phi-1, a new large language model for code, with significantly smaller size than competing models: phi-1 is a Transformer-based model with 1.3B parameters, trained for 4 days on 8 A100s, using a selection of ``textbook quality\"data from the web (6B tokens) and synthetically generated textbooks and exercises with GPT-3.5 (1B tokens). Despite this small scale, phi-1 attains pass@1 accuracy 50.6% on HumanEval and 55.5% on MBPP. It also displays surprising emergent properties compared to phi-1-base, our model before our finetuning stage on a dataset of coding exercises, and phi-1-small, a smaller model with 350M parameters trained with the same pipeline as phi-1 that still achieves 45% on HumanEval.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2306-11644",
+        "ArXiv": "2306.11644",
+        "CorpusId": 259203998
+      },
+      "arxiv_id": "2306.11644",
+      "doi": null,
+      "corpus_id": 259203998
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "22",
+      "ref_key": "S2:cf4aa38ae31b43fd07abe13b4ffdb265babb7be1",
+      "paperId": "cf4aa38ae31b43fd07abe13b4ffdb265babb7be1",
+      "title": "The Curious Case of Neural Text Degeneration",
+      "year": 2019,
+      "abstract": "Despite considerable advancements with deep neural language models, the enigma of neural text degeneration persists when these models are tested as text generators. The counter-intuitive empirical observation is that even though the use of likelihood as training objective leads to high quality models for a broad range of language understanding tasks, using likelihood as a decoding objective leads to text that is bland and strangely repetitive. \nIn this paper, we reveal surprising distributional differences between human text and machine text. In addition, we find that decoding strategies alone can dramatically effect the quality of machine text, even when generated from exactly the same neural language model. Our findings motivate Nucleus Sampling, a simple but effective method to draw the best out of neural generation. By sampling text from the dynamic nucleus of the probability distribution, which allows for diversity while effectively truncating the less reliable tail of the distribution, the resulting text better demonstrates the quality of human text, yielding enhanced diversity without sacrificing fluency and coherence.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1904-09751",
+        "MAG": "2938704169",
+        "ArXiv": "1904.09751",
+        "CorpusId": 127986954
+      },
+      "arxiv_id": "1904.09751",
+      "doi": null,
+      "corpus_id": 127986954
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "23",
+      "ref_key": "S2:a9be51698e7c2247853b7b6f1f70fc4d6d7ef605",
+      "paperId": "a9be51698e7c2247853b7b6f1f70fc4d6d7ef605",
+      "title": "Transformer-Patcher: One Mistake worth One Neuron",
+      "year": 2023,
+      "abstract": "Large Transformer-based Pretrained Language Models (PLMs) dominate almost all Natural Language Processing (NLP) tasks. Nevertheless, they still make mistakes from time to time. For a model deployed in an industrial environment, fixing these mistakes quickly and robustly is vital to improve user experiences. Previous works formalize such problems as Model Editing (ME) and mostly focus on fixing one mistake. However, the one-mistake-fixing scenario is not an accurate abstraction of the real-world challenge. In the deployment of AI services, there are ever-emerging mistakes, and the same mistake may recur if not corrected in time. Thus a preferable solution is to rectify the mistakes as soon as they appear nonstop. Therefore, we extend the existing ME into Sequential Model Editing (SME) to help develop more practical editing methods. Our study shows that most current ME methods could yield unsatisfying results in this scenario. We then introduce Transformer-Patcher, a novel model editor that can shift the behavior of transformer-based models by simply adding and training a few neurons in the last Feed-Forward Network layer. Experimental results on both classification and generation tasks show that Transformer-Patcher can successively correct up to thousands of errors (Reliability) and generalize to their equivalent inputs (Generality) while retaining the model's accuracy on irrelevant inputs (Locality). Our method outperforms previous fine-tuning and HyperNetwork-based methods and achieves state-of-the-art performance for Sequential Model Editing (SME). The code is available at https://github.com/ZeroYuHuang/Transformer-Patcher.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2301-09785",
+        "ArXiv": "2301.09785",
+        "DOI": "10.48550/arXiv.2301.09785",
+        "CorpusId": 256194369
+      },
+      "arxiv_id": "2301.09785",
+      "doi": "10.48550/arXiv.2301.09785",
+      "corpus_id": 256194369
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "24",
+      "ref_key": "S2:0e8297549b4ec852ce8fd55dee9ae21501805af2",
+      "paperId": "0e8297549b4ec852ce8fd55dee9ae21501805af2",
+      "title": "GPT-4 passes the bar exam",
+      "year": 2024,
+      "abstract": "In this paper, we experimentally evaluate the zero-shot performance of GPT-4 against prior generations of GPT on the entire uniform bar examination (UBE), including not only the multiple-choice multistate bar examination (MBE), but also the open-ended multistate essay exam (MEE) and multistate performance test (MPT) components. On the MBE, GPT-4 significantly outperforms both human test-takers and prior models, demonstrating a 26% increase over ChatGPT and beating humans in five of seven subject areas. On the MEE and MPT, which have not previously been evaluated by scholars, GPT-4 scores an average of 4.2/6.0 when compared with much lower scores for ChatGPT. Graded across the UBE components, in the manner in which a human test-taker would be, GPT-4 scores approximately 297 points, significantly in excess of the passing threshold for all UBE jurisdictions. These findings document not just the rapid and remarkable advance of large language model performance generally, but also the potential for such models to support the delivery of legal services in society. This article is part of the theme issue ‘A complexity science approach to law and governance’.",
+      "externalIds": {
+        "PubMedCentral": "10894685",
+        "DOI": "10.1098/rsta.2023.0254",
+        "CorpusId": 257572753,
+        "PubMed": "38403056"
+      },
+      "arxiv_id": null,
+      "doi": "10.1098/rsta.2023.0254",
+      "corpus_id": 257572753
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "25",
+      "ref_key": "S2:4566c0d22ebf3c31180066ab23b6c445aeec78d5",
+      "paperId": "4566c0d22ebf3c31180066ab23b6c445aeec78d5",
+      "title": "Deduplicating Training Data Makes Language Models Better",
+      "year": 2021,
+      "abstract": "We find that existing language modeling datasets contain many near-duplicate examples and long repetitive substrings.As a result, over 1% of the unprompted output of language models trained on these datasets is copied verbatim from the training data.We develop two tools that allow us to deduplicate training datasets—for example removing from C4 a single 61 word English sentence that is repeated over 60,000 times.Deduplication allows us to train models that emit memorized text ten times less frequently and require fewer training steps to achieve the same or better accuracy.We can also reduce train-test overlap, which affects over 4% of the validation set of standard datasets, thus allowing for more accurate evaluation.Code for deduplication is released at https://github.com/google-research/deduplicate-text-datasets.",
+      "externalIds": {
+        "ACL": "2022.acl-long.577",
+        "DBLP": "journals/corr/abs-2107-06499",
+        "ArXiv": "2107.06499",
+        "DOI": "10.18653/v1/2022.acl-long.577",
+        "CorpusId": 235829052
+      },
+      "arxiv_id": "2107.06499",
+      "doi": "10.18653/v1/2022.acl-long.577",
+      "corpus_id": 235829052
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "26",
+      "ref_key": "S2:f12a6168ed8de1aee69fee51b469b1aecd5f903e",
+      "paperId": "f12a6168ed8de1aee69fee51b469b1aecd5f903e",
+      "title": "Factuality Enhanced Language Models for Open-Ended Text Generation",
+      "year": 2022,
+      "abstract": "Pretrained language models (LMs) are susceptible to generate text with nonfactual information. In this work, we measure and improve the factual accuracy of large-scale LMs for open-ended text generation. We design the FactualityPrompts test set and metrics to measure the factuality of LM generations. Based on that, we study the factual accuracy of LMs with parameter sizes ranging from 126M to 530B. Interestingly, we find that larger LMs are more factual than smaller ones, although a previous study suggests that larger LMs can be less truthful in terms of misconceptions. In addition, popular sampling algorithms (e.g., top-p) in open-ended text generation can harm the factuality due to the ''uniform randomness'' introduced at every sampling step. We propose the factual-nucleus sampling algorithm that dynamically adapts the randomness to improve the factuality of generation while maintaining quality. Furthermore, we analyze the inefficiencies of the standard training method in learning correct associations between entities from factual text corpus (e.g., Wikipedia). We propose a factuality-enhanced training method that uses TopicPrefix for better awareness of facts and sentence completion as the training objective, which can vastly reduce the factual errors. We release our code and FactualityPrompts benchmark at: https://github.com/nayeon7lee/FactualityPrompt.",
+      "externalIds": {
+        "ArXiv": "2206.04624",
+        "DBLP": "conf/nips/LeePXPFSC22",
+        "DOI": "10.48550/arXiv.2206.04624",
+        "CorpusId": 249538460
+      },
+      "arxiv_id": "2206.04624",
+      "doi": "10.48550/arXiv.2206.04624",
+      "corpus_id": 249538460
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "27",
+      "ref_key": "S2:1b173d9b8b0a2529259b6fa16376aff11c1ac08f",
+      "paperId": "1b173d9b8b0a2529259b6fa16376aff11c1ac08f",
+      "title": "BatGPT: A Bidirectional Autoregessive Talker from Generative Pre-trained Transformer",
+      "year": 2023,
+      "abstract": "BatGPT is a large-scale language model designed and trained jointly by Wuhan University and Shanghai Jiao Tong University. It is capable of generating highly natural and fluent text in response to various types of input, including text prompts, images, and audio. In the modeling level, we employ a bidirectional autoregressive architecture that allows the model to efficiently capture the complex dependencies of natural language, making it highly effective in tasks such as language generation, dialog systems, and question answering. Moreover, the bidirectional autoregressive modeling not only operates from left to right but also from right to left, effectively reducing fixed memory effects and alleviating model hallucinations. In the training aspect, we propose a novel parameter expansion method for leveraging the pre-training of smaller models and employ reinforcement learning from both AI and human feedback, aimed at improving the model's alignment performance. Overall, these approaches significantly improve the effectiveness of BatGPT, and the model can be utilized for a wide range of natural language applications.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-00360",
+        "ArXiv": "2307.00360",
+        "DOI": "10.48550/arXiv.2307.00360",
+        "CorpusId": 259317198
+      },
+      "arxiv_id": "2307.00360",
+      "doi": "10.48550/arXiv.2307.00360",
+      "corpus_id": 259317198
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "28",
+      "ref_key": "S2:e0384ba36555232c587d4a80d527895a095a9001",
+      "paperId": "e0384ba36555232c587d4a80d527895a095a9001",
+      "title": "HaluEval: A Large-Scale Hallucination Evaluation Benchmark for Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs), such as ChatGPT, are prone to generate hallucinations, i.e., content that conflicts with the source or cannot be verified by the factual knowledge. To understand what types of content and to which extent LLMs are apt to hallucinate, we introduce the Hallucination Evaluation benchmark for Large Language Models (HaluEval), a large collection of generated and human-annotated hallucinated samples for evaluating the performance of LLMs in recognizing hallucination. To generate these samples, we propose a ChatGPT-based two-step framework, i.e., sampling-then-filtering. Besides, we also hire some human labelers to annotate the hallucinations in ChatGPT responses. The empirical results suggest that ChatGPT is likely to generate hallucinated content in specific topics by fabricating unverifiable information (i.e., about $19.5\\%$ responses). Moreover, existing LLMs face great challenges in recognizing the hallucinations in texts. However, our experiments also prove that providing external knowledge or adding reasoning steps can help LLMs recognize hallucinations. Our benchmark can be accessed at https://github.com/RUCAIBox/HaluEval.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/LiCZNW23",
+        "ArXiv": "2305.11747",
+        "DOI": "10.48550/arXiv.2305.11747",
+        "CorpusId": 258832847
+      },
+      "arxiv_id": "2305.11747",
+      "doi": "10.48550/arXiv.2305.11747",
+      "corpus_id": 258832847
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "29",
+      "ref_key": "S2:405f8f5f1c6df1b3343c812832479aad5180b65f",
+      "paperId": "405f8f5f1c6df1b3343c812832479aad5180b65f",
+      "title": "Inference-Time Intervention: Eliciting Truthful Answers from a Language Model",
+      "year": 2023,
+      "abstract": "We introduce Inference-Time Intervention (ITI), a technique designed to enhance the\"truthfulness\"of large language models (LLMs). ITI operates by shifting model activations during inference, following a set of directions across a limited number of attention heads. This intervention significantly improves the performance of LLaMA models on the TruthfulQA benchmark. On an instruction-finetuned LLaMA called Alpaca, ITI improves its truthfulness from 32.5% to 65.1%. We identify a tradeoff between truthfulness and helpfulness and demonstrate how to balance it by tuning the intervention strength. ITI is minimally invasive and computationally inexpensive. Moreover, the technique is data efficient: while approaches like RLHF require extensive annotations, ITI locates truthful directions using only few hundred examples. Our findings suggest that LLMs may have an internal representation of the likelihood of something being true, even as they produce falsehoods on the surface.",
+      "externalIds": {
+        "ArXiv": "2306.03341",
+        "DBLP": "journals/corr/abs-2306-03341",
+        "CorpusId": 259088877
+      },
+      "arxiv_id": "2306.03341",
+      "doi": null,
+      "corpus_id": 259088877
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "30",
+      "ref_key": "S2:1b387e3fbec0447c8bf2dcee21f6db59cdddf698",
+      "paperId": "1b387e3fbec0447c8bf2dcee21f6db59cdddf698",
+      "title": "The Dawn After the Dark: An Empirical Study on Factuality Hallucination in Large Language Models",
+      "year": 2024,
+      "abstract": "In the era of large language models (LLMs), hallucination (i.e., the tendency to generate factually incorrect content) poses great challenge to trustworthy and reliable deployment of LLMs in real-world applications. To tackle the LLM hallucination, three key questions should be well studied: how to detect hallucinations (detection), why do LLMs hallucinate (source), and what can be done to mitigate them (mitigation). To address these challenges, this work presents a systematic empirical study on LLM hallucination, focused on the the three aspects of hallucination detection, source and mitigation. Specially, we construct a new hallucination benchmark HaluEval 2.0, and designs a simple yet effective detection method for LLM hallucination. Furthermore, we zoom into the different training or utilization stages of LLMs and extensively analyze the potential factors that lead to the LLM hallucination. Finally, we implement and examine a series of widely used techniques to mitigate the hallucinations in LLMs. Our work has led to several important findings to understand the hallucination origin and mitigate the hallucinations in LLMs. Our code and data can be accessed at https://github.com/RUCAIBox/HaluEval-2.0.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2401-03205",
+        "ArXiv": "2401.03205",
+        "DOI": "10.48550/arXiv.2401.03205",
+        "CorpusId": 266844012
+      },
+      "arxiv_id": "2401.03205",
+      "doi": "10.48550/arXiv.2401.03205",
+      "corpus_id": 266844012
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "31",
+      "ref_key": "S2:d40dbe668d5b68419e934dfa4c5851ffa1c24aa2",
+      "paperId": "d40dbe668d5b68419e934dfa4c5851ffa1c24aa2",
+      "title": "Exposing Attention Glitches with Flip-Flop Language Modeling",
+      "year": 2023,
+      "abstract": "Why do large language models sometimes output factual inaccuracies and exhibit erroneous reasoning? The brittleness of these models, particularly when executing long chains of reasoning, currently seems to be an inevitable price to pay for their advanced capabilities of coherently synthesizing knowledge, pragmatics, and abstract thought. Towards making sense of this fundamentally unsolved problem, this work identifies and analyzes the phenomenon of attention glitches, in which the Transformer architecture's inductive biases intermittently fail to capture robust reasoning. To isolate the issue, we introduce flip-flop language modeling (FFLM), a parametric family of synthetic benchmarks designed to probe the extrapolative behavior of neural language models. This simple generative task requires a model to copy binary symbols over long-range dependencies, ignoring the tokens in between. We find that Transformer FFLMs suffer from a long tail of sporadic reasoning errors, some of which we can eliminate using various regularization techniques. Our preliminary mechanistic analyses show why the remaining errors may be very difficult to diagnose and resolve. We hypothesize that attention glitches account for (some of) the closed-domain hallucinations in natural LLMs.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2306-00946",
+        "ArXiv": "2306.00946",
+        "DOI": "10.48550/arXiv.2306.00946",
+        "CorpusId": 258999835
+      },
+      "arxiv_id": "2306.00946",
+      "doi": "10.48550/arXiv.2306.00946",
+      "corpus_id": 258999835
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "32",
+      "ref_key": "S2:dbeeca8466e0c177ec67c60d529899232415ca87",
+      "paperId": "dbeeca8466e0c177ec67c60d529899232415ca87",
+      "title": "On Faithfulness and Factuality in Abstractive Summarization",
+      "year": 2020,
+      "abstract": "It is well known that the standard likelihood training and approximate decoding objectives in neural text generation models lead to less human-like responses for open-ended tasks such as language modeling and story generation. In this paper we have analyzed limitations of these models for abstractive document summarization and found that these models are highly prone to hallucinate content that is unfaithful to the input document. We conducted a large scale human evaluation of several neural abstractive summarization systems to better understand the types of hallucinations they produce. Our human annotators found substantial amounts of hallucinated content in all model generated summaries. However, our analysis does show that pretrained models are better summarizers not only in terms of raw metrics, i.e., ROUGE, but also in generating faithful and factual summaries as evaluated by humans. Furthermore, we show that textual entailment measures better correlate with faithfulness than standard metrics, potentially leading the way to automatic evaluation metrics as well as training and decoding criteria.",
+      "externalIds": {
+        "DBLP": "conf/acl/MaynezNBM20",
+        "MAG": "3021338988",
+        "ArXiv": "2005.00661",
+        "ACL": "2020.acl-main.173",
+        "DOI": "10.18653/v1/2020.acl-main.173",
+        "CorpusId": 218487034
+      },
+      "arxiv_id": "2005.00661",
+      "doi": "10.18653/v1/2020.acl-main.173",
+      "corpus_id": 218487034
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "33",
+      "ref_key": "S2:82b57e0ed286fd8bc591c77b5301c1414055244c",
+      "paperId": "82b57e0ed286fd8bc591c77b5301c1414055244c",
+      "title": "Prevent the Language Model from being Overconfident in Neural Machine Translation",
+      "year": 2021,
+      "abstract": "The Neural Machine Translation (NMT) model is essentially a joint language model conditioned on both the source sentence and partial translation. Therefore, the NMT model naturally involves the mechanism of the Language Model (LM) that predicts the next token only based on partial translation. Despite its success, NMT still suffers from the hallucination problem, generating fluent but inadequate translations. The main reason is that NMT pays excessive attention to the partial translation while neglecting the source sentence to some extent, namely overconfidence of the LM. Accordingly, we define the Margin between the NMT and the LM, calculated by subtracting the predicted probability of the LM from that of the NMT model for each token. The Margin is negatively correlated to the overconfidence degree of the LM. Based on the property, we propose a Margin-based Token-level Objective (MTO) and a Margin-based Sentence-level Objective (MSO) to maximize the Margin for preventing the LM from being overconfident. Experiments on WMT14 English-to-German, WMT19 Chinese-to-English, and WMT14 English-to-French translation tasks demonstrate the effectiveness of our approach, with 1.36, 1.50, and 0.63 BLEU improvements, respectively, compared to the Transformer baseline. The human evaluation further verifies that our approaches improve translation adequacy as well as fluency.",
+      "externalIds": {
+        "DBLP": "conf/acl/MiaoMLZ020",
+        "ACL": "2021.acl-long.268",
+        "ArXiv": "2105.11098",
+        "DOI": "10.18653/v1/2021.acl-long.268",
+        "CorpusId": 235166394
+      },
+      "arxiv_id": "2105.11098",
+      "doi": "10.18653/v1/2021.acl-long.268",
+      "corpus_id": 235166394
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "34",
+      "ref_key": "S2:1e6102c981b9464c632ef0b00dbd11dfb0564e4e",
+      "paperId": "1e6102c981b9464c632ef0b00dbd11dfb0564e4e",
+      "title": "SelfCheck: Using LLMs to Zero-Shot Check Their Own Step-by-Step Reasoning",
+      "year": 2023,
+      "abstract": "The recent progress in large language models (LLMs), especially the invention of chain-of-thought prompting, has made it possible to automatically answer questions by stepwise reasoning. However, when faced with more complicated problems that require non-linear thinking, even the strongest LLMs make mistakes. To address this, we explore whether LLMs are able to recognize errors in their own step-by-step reasoning, without resorting to external resources. To this end, we propose SelfCheck, a general-purpose zero-shot verification schema for recognizing such errors. We then use the results of these checks to improve question-answering performance by conducting weighted voting on multiple solutions to the question. We test SelfCheck on three datasets (GSM8K, MathQA, and MATH) and find that it successfully recognizes errors and, in turn, increases final answer accuracies.",
+      "externalIds": {
+        "DBLP": "conf/iclr/MiaoTR24",
+        "ArXiv": "2308.00436",
+        "DOI": "10.48550/arXiv.2308.00436",
+        "CorpusId": 260350986
+      },
+      "arxiv_id": "2308.00436",
+      "doi": "10.48550/arXiv.2308.00436",
+      "corpus_id": 260350986
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "35",
+      "ref_key": "S2:1d650f1afd45c59ff907396fe8b678595dcb85ea",
+      "paperId": "1d650f1afd45c59ff907396fe8b678595dcb85ea",
+      "title": "Memory-Based Model Editing at Scale",
+      "year": 2022,
+      "abstract": "Even the largest neural networks make errors, and once-correct predictions can become invalid as the world changes. Model editors make local updates to the behavior of base (pre-trained) models to inject updated knowledge or correct undesirable behaviors. Existing model editors have shown promise, but also suffer from insufficient expressiveness: they struggle to accurately model an edit's intended scope (examples affected by the edit), leading to inaccurate predictions for test inputs loosely related to the edit, and they often fail altogether after many edits. As a higher-capacity alternative, we propose Semi-Parametric Editing with a Retrieval-Augmented Counterfactual Model (SERAC), which stores edits in an explicit memory and learns to reason over them to modulate the base model's predictions as needed. To enable more rigorous evaluation of model editors, we introduce three challenging language model editing problems based on question answering, fact-checking, and dialogue generation. We find that only SERAC achieves high performance on all three problems, consistently outperforming existing approaches to model editing by a significant margin. Code, data, and additional project information will be made available at https://sites.google.com/view/serac-editing.",
+      "externalIds": {
+        "DBLP": "conf/icml/MitchellLBMF22",
+        "ArXiv": "2206.06520",
+        "CorpusId": 249642147
+      },
+      "arxiv_id": "2206.06520",
+      "doi": null,
+      "corpus_id": 249642147
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "36",
+      "ref_key": "S2:00642bcfa319e0da3e2f56b59e9e0614fffd02de",
+      "paperId": "00642bcfa319e0da3e2f56b59e9e0614fffd02de",
+      "title": "Entity Cloze By Date: What LMs Know About Unseen Entities",
+      "year": 2022,
+      "abstract": "Language models (LMs) are typically trained once on a large-scale corpus and used for years without being updated. However, in a dynamic world, new entities constantly arise. We propose a framework to analyze what LMs can infer about new entities that did not exist when the LMs were pretrained. We derive a dataset of entities indexed by their origination date and paired with their English Wikipedia articles, from which we can find sentences about each entity. We evaluate LMs' perplexity on masked spans within these sentences. We show that models more informed about the entities, such as those with access to a textual definition of them, achieve lower perplexity on this benchmark. Our experimental results demonstrate that making inferences about new entities remains difficult for LMs. Given its wide coverage on entity knowledge and temporal indexing, our dataset can be used to evaluate LMs and techniques designed to modify or extend their knowledge. Our automatic data collection pipeline can be easily used to continually update our benchmark.",
+      "externalIds": {
+        "ArXiv": "2205.02832",
+        "DBLP": "journals/corr/abs-2205-02832",
+        "DOI": "10.48550/arXiv.2205.02832",
+        "CorpusId": 248525074
+      },
+      "arxiv_id": "2205.02832",
+      "doi": "10.48550/arXiv.2205.02832",
+      "corpus_id": 248525074
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "37",
+      "ref_key": "S2:cef330bacf014d60daabbd489647b2006af130ca",
+      "paperId": "cef330bacf014d60daabbd489647b2006af130ca",
+      "title": "Discovering Language Model Behaviors with Model-Written Evaluations",
+      "year": 2022,
+      "abstract": "As language models (LMs) scale, they develop many novel behaviors, good and bad, exacerbating the need to evaluate how they behave. Prior work creates evaluations with crowdwork (which is time-consuming and expensive) or existing data sources (which are not always available). Here, we automatically generate evaluations with LMs. We explore approaches with varying amounts of human effort, from instructing LMs to write yes/no questions to making complex Winogender schemas with multiple stages of LM-based generation and filtering. Crowdworkers rate the examples as highly relevant and agree with 90-100% of labels, sometimes more so than corresponding human-written datasets. We generate 154 datasets and discover new cases of inverse scaling where LMs get worse with size. Larger LMs repeat back a dialog user's preferred answer (\"sycophancy\") and express greater desire to pursue concerning goals like resource acquisition and goal preservation. We also find some of the first examples of inverse scaling in RL from Human Feedback (RLHF), where more RLHF makes LMs worse. For example, RLHF makes LMs express stronger political views (on gun rights and immigration) and a greater desire to avoid shut down. Overall, LM-written evaluations are high-quality and let us quickly discover many novel LM behaviors.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2212-09251",
+        "ArXiv": "2212.09251",
+        "DOI": "10.48550/arXiv.2212.09251",
+        "CorpusId": 254854519
+      },
+      "arxiv_id": "2212.09251",
+      "doi": "10.48550/arXiv.2212.09251",
+      "corpus_id": 254854519
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "38",
+      "ref_key": "S2:6ca07b95e6b68798e89888d3c2f5f43938feb419",
+      "paperId": "6ca07b95e6b68798e89888d3c2f5f43938feb419",
+      "title": "QuestEval: Summarization Asks for Fact-based Evaluation",
+      "year": 2021,
+      "abstract": "Summarization evaluation remains an open research problem: current metrics such as ROUGE are known to be limited and to correlate poorly with human judgments. To alleviate this issue, recent work has proposed evaluation metrics which rely on question answering models to assess whether a summary contains all the relevant information in its source document. Though promising, the proposed approaches have so far failed to correlate better than ROUGE with human judgments. In this paper, we extend previous approaches and propose a unified framework, named QuestEval. In contrast to established metrics such as ROUGE or BERTScore, QuestEval does not require any ground-truth reference. Nonetheless, QuestEval substantially improves the correlation with human judgments over four evaluation dimensions (consistency, coherence, fluency, and relevance), as shown in extensive experiments.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/ScialomDLPSWG21",
+        "ArXiv": "2103.12693",
+        "ACL": "2021.emnlp-main.529",
+        "DOI": "10.18653/v1/2021.emnlp-main.529",
+        "CorpusId": 233219059
+      },
+      "arxiv_id": "2103.12693",
+      "doi": "10.18653/v1/2021.emnlp-main.529",
+      "corpus_id": 233219059
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "39",
+      "ref_key": "S2:e6423c211fea2945aa71e1ac5ea24f8f595b4b0a",
+      "paperId": "e6423c211fea2945aa71e1ac5ea24f8f595b4b0a",
+      "title": "Towards Understanding Sycophancy in Language Models",
+      "year": 2023,
+      "abstract": "Human feedback is commonly utilized to finetune AI assistants. But human feedback may also encourage model responses that match user beliefs over truthful ones, a behaviour known as sycophancy. We investigate the prevalence of sycophancy in models whose finetuning procedure made use of human feedback, and the potential role of human preference judgments in such behavior. We first demonstrate that five state-of-the-art AI assistants consistently exhibit sycophancy across four varied free-form text-generation tasks. To understand if human preferences drive this broadly observed behavior, we analyze existing human preference data. We find that when a response matches a user's views, it is more likely to be preferred. Moreover, both humans and preference models (PMs) prefer convincingly-written sycophantic responses over correct ones a non-negligible fraction of the time. Optimizing model outputs against PMs also sometimes sacrifices truthfulness in favor of sycophancy. Overall, our results indicate that sycophancy is a general behavior of state-of-the-art AI assistants, likely driven in part by human preference judgments favoring sycophantic responses.",
+      "externalIds": {
+        "DBLP": "conf/iclr/SharmaTKDABDHJK24",
+        "ArXiv": "2310.13548",
+        "DOI": "10.48550/arXiv.2310.13548",
+        "CorpusId": 264405698
+      },
+      "arxiv_id": "2310.13548",
+      "doi": "10.48550/arXiv.2310.13548",
+      "corpus_id": 264405698
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "40",
+      "ref_key": "S2:d395c771f6537259610497ba218cce5b9bfc2c50",
+      "paperId": "d395c771f6537259610497ba218cce5b9bfc2c50",
+      "title": "In-Context Pretraining: Language Modeling Beyond Document Boundaries",
+      "year": 2023,
+      "abstract": "Large language models (LMs) are currently trained to predict tokens given document prefixes, enabling them to directly perform long-form generation and prompting-style tasks which can be reduced to document completion. Existing pretraining pipelines train LMs by concatenating random sets of short documents to create input contexts but the prior documents provide no signal for predicting the next document. We instead present In-Context Pretraining, a new approach where language models are pretrained on a sequence of related documents, thereby explicitly encouraging them to read and reason across document boundaries. We can do In-Context Pretraining by simply changing the document ordering so that each context contains related documents, and directly applying existing pretraining pipelines. However, this document sorting problem is challenging. There are billions of documents and we would like the sort to maximize contextual similarity for every document without repeating any data. To do this, we introduce approximate algorithms for finding related documents with efficient nearest neighbor search and constructing coherent input contexts with a graph traversal algorithm. Our experiments show In-Context Pretraining offers a simple and scalable approach to significantly enhance LMs'performance: we see notable improvements in tasks that require more complex contextual reasoning, including in-context learning (+8%), reading comprehension (+15%), faithfulness to previous contexts (+16%), long-context reasoning (+5%), and retrieval augmentation (+9%).",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-10638",
+        "ArXiv": "2310.10638",
+        "DOI": "10.48550/arXiv.2310.10638",
+        "CorpusId": 264172290
+      },
+      "arxiv_id": "2310.10638",
+      "doi": "10.48550/arXiv.2310.10638",
+      "corpus_id": 264172290
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "41",
+      "ref_key": "S2:ea72fb2a0d340f9d14fbcf300cd5f5fbbe1050bb",
+      "paperId": "ea72fb2a0d340f9d14fbcf300cd5f5fbbe1050bb",
+      "title": "Towards Expert-Level Medical Question Answering with Large Language Models",
+      "year": 2023,
+      "abstract": "Recent artificial intelligence (AI) systems have reached milestones in\"grand challenges\"ranging from Go to protein-folding. The capability to retrieve medical knowledge, reason over it, and answer medical questions comparably to physicians has long been viewed as one such grand challenge. Large language models (LLMs) have catalyzed significant progress in medical question answering; Med-PaLM was the first model to exceed a\"passing\"score in US Medical Licensing Examination (USMLE) style questions with a score of 67.2% on the MedQA dataset. However, this and other prior work suggested significant room for improvement, especially when models' answers were compared to clinicians' answers. Here we present Med-PaLM 2, which bridges these gaps by leveraging a combination of base LLM improvements (PaLM 2), medical domain finetuning, and prompting strategies including a novel ensemble refinement approach. Med-PaLM 2 scored up to 86.5% on the MedQA dataset, improving upon Med-PaLM by over 19% and setting a new state-of-the-art. We also observed performance approaching or exceeding state-of-the-art across MedMCQA, PubMedQA, and MMLU clinical topics datasets. We performed detailed human evaluations on long-form questions along multiple axes relevant to clinical applications. In pairwise comparative ranking of 1066 consumer medical questions, physicians preferred Med-PaLM 2 answers to those produced by physicians on eight of nine axes pertaining to clinical utility (p<0.001). We also observed significant improvements compared to Med-PaLM on every evaluation axis (p<0.001) on newly introduced datasets of 240 long-form\"adversarial\"questions to probe LLM limitations. While further studies are necessary to validate the efficacy of these models in real-world settings, these results highlight rapid progress towards physician-level performance in medical question answering.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-09617",
+        "ArXiv": "2305.09617",
+        "DOI": "10.48550/arXiv.2305.09617",
+        "CorpusId": 258715226
+      },
+      "arxiv_id": "2305.09617",
+      "doi": "10.48550/arXiv.2305.09617",
+      "corpus_id": 258715226
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "42",
+      "ref_key": "S2:d3231772937a2182b2377d028417245c49868dd1",
+      "paperId": "d3231772937a2182b2377d028417245c49868dd1",
+      "title": "On NMT Search Errors and Model Errors: Cat Got Your Tongue?",
+      "year": 2019,
+      "abstract": "We report on search errors and model errors in neural machine translation (NMT). We present an exact inference procedure for neural sequence models based on a combination of beam search and depth-first search. We use our exact search to find the global best model scores under a Transformer base model for the entire WMT15 English-German test set. Surprisingly, beam search fails to find these global best model scores in most cases, even with a very large beam size of 100. For more than 50% of the sentences, the model in fact assigns its global best score to the empty translation, revealing a massive failure of neural models in properly accounting for adequacy. We show by constraining search with a minimum translation length that at the root of the problem of empty translations lies an inherent bias towards shorter translations. We conclude that vanilla NMT in its current form requires just the right amount of beam search errors, which, from a modelling perspective, is a highly unsatisfactory conclusion indeed, as the model often prefers an empty translation.",
+      "externalIds": {
+        "ACL": "D19-1331",
+        "DBLP": "journals/corr/abs-1908-10090",
+        "MAG": "2971351767",
+        "ArXiv": "1908.10090",
+        "DOI": "10.18653/v1/D19-1331",
+        "CorpusId": 201646223
+      },
+      "arxiv_id": "1908.10090",
+      "doi": "10.18653/v1/D19-1331",
+      "corpus_id": 201646223
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "43",
+      "ref_key": "S2:104b0bb1da562d53cbda87aec79ef6a2827d191a",
+      "paperId": "104b0bb1da562d53cbda87aec79ef6a2827d191a",
+      "title": "Llama 2: Open Foundation and Fine-Tuned Chat Models",
+      "year": 2023,
+      "abstract": "In this work, we develop and release Llama 2, a collection of pretrained and fine-tuned large language models (LLMs) ranging in scale from 7 billion to 70 billion parameters. Our fine-tuned LLMs, called Llama 2-Chat, are optimized for dialogue use cases. Our models outperform open-source chat models on most benchmarks we tested, and based on our human evaluations for helpfulness and safety, may be a suitable substitute for closed-source models. We provide a detailed description of our approach to fine-tuning and safety improvements of Llama 2-Chat in order to enable the community to build on our work and contribute to the responsible development of LLMs.",
+      "externalIds": {
+        "ArXiv": "2307.09288",
+        "DBLP": "journals/corr/abs-2307-09288",
+        "CorpusId": 259950998
+      },
+      "arxiv_id": "2307.09288",
+      "doi": null,
+      "corpus_id": 259950998
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "44",
+      "ref_key": "S2:a4f116e63c30fb8ac11d90ed4d106cc6e9dc30cf",
+      "paperId": "a4f116e63c30fb8ac11d90ed4d106cc6e9dc30cf",
+      "title": "Faithfulness-Aware Decoding Strategies for Abstractive Summarization",
+      "year": 2023,
+      "abstract": "Despite significant progress in understanding and improving faithfulness in abstractive summarization, the question of how decoding strategies affect faithfulness is less studied. We present a systematic study of the effect of generation techniques such as beam search and nucleus sampling on faithfulness in abstractive summarization. We find a consistent trend where beam search with large beam sizes produces the most faithful summaries while nucleus sampling generates the least faithful ones. We propose two faithfulness-aware generation methods to further improve faithfulness over current generation techniques: (1) ranking candidates generated by beam search using automatic faithfulness metrics and (2) incorporating lookahead heuristics that produce a faithfulness score on the future summary. We show that both generation methods significantly improve faithfulness across two datasets as evaluated by four automatic faithfulness metrics and human evaluation. To reduce computational cost, we demonstrate a simple distillation approach that allows the model to generate faithful summaries with just greedy decoding.",
+      "externalIds": {
+        "ACL": "2023.eacl-main.210",
+        "ArXiv": "2303.03278",
+        "DBLP": "journals/corr/abs-2303-03278",
+        "DOI": "10.48550/arXiv.2303.03278",
+        "CorpusId": 257365979
+      },
+      "arxiv_id": "2303.03278",
+      "doi": "10.48550/arXiv.2303.03278",
+      "corpus_id": 257365979
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "45",
+      "ref_key": "S2:0b15c6acfc9f7f92c52aa6a185a829f88975c743",
+      "paperId": "0b15c6acfc9f7f92c52aa6a185a829f88975c743",
+      "title": "On Exposure Bias, Hallucination and Domain Shift in Neural Machine Translation",
+      "year": 2020,
+      "abstract": "The standard training algorithm in neural machine translation (NMT) suffers from exposure bias, and alternative algorithms have been proposed to mitigate this. However, the practical impact of exposure bias is under debate. In this paper, we link exposure bias to another well-known problem in NMT, namely the tendency to generate hallucinations under domain shift. In experiments on three datasets with multiple test domains, we show that exposure bias is partially to blame for hallucinations, and that training with Minimum Risk Training, which avoids exposure bias, can mitigate this. Our analysis explains why exposure bias is more problematic under domain shift, and also links exposure bias to the beam search problem, i.e. performance deterioration with increasing beam size. Our results provide a new justification for methods that reduce exposure bias: even if they do not increase performance on in-domain test sets, they can increase model robustness to domain shift.",
+      "externalIds": {
+        "MAG": "3022463379",
+        "ArXiv": "2005.03642",
+        "ACL": "2020.acl-main.326",
+        "DBLP": "journals/corr/abs-2005-03642",
+        "DOI": "10.18653/v1/2020.acl-main.326",
+        "CorpusId": 218538004
+      },
+      "arxiv_id": "2005.03642",
+      "doi": "10.18653/v1/2020.acl-main.326",
+      "corpus_id": 218538004
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "46",
+      "ref_key": "S2:a37d5620210276e47cf0c9dd2898c2a82c9d0422",
+      "paperId": "a37d5620210276e47cf0c9dd2898c2a82c9d0422",
+      "title": "Simple synthetic data reduces sycophancy in large language models",
+      "year": 2023,
+      "abstract": "Sycophancy is an undesirable behavior where models tailor their responses to follow a human user's view even when that view is not objectively correct (e.g., adapting liberal views once a user reveals that they are liberal). In this paper, we study the prevalence of sycophancy in language models and propose a simple synthetic-data intervention to reduce this behavior. First, on a set of three sycophancy tasks (Perez et al., 2022) where models are asked for an opinion on statements with no correct answers (e.g., politics), we observe that both model scaling and instruction tuning significantly increase sycophancy for PaLM models up to 540B parameters. Second, we extend sycophancy evaluations to simple addition statements that are objectively incorrect, finding that despite knowing that these statements are wrong, language models will still agree with them if the user does as well. To reduce sycophancy, we present a straightforward synthetic-data intervention that takes public NLP tasks and encourages models to be robust to user opinions on these tasks. Adding these data in a lightweight finetuning step can significantly reduce sycophantic behavior on held-out prompts. Code for generating synthetic data for intervention can be found at https://github.com/google/sycophancy-intervention.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-03958",
+        "ArXiv": "2308.03958",
+        "DOI": "10.48550/arXiv.2308.03958",
+        "CorpusId": 260704246
+      },
+      "arxiv_id": "2308.03958",
+      "doi": "10.48550/arXiv.2308.03958",
+      "corpus_id": 260704246
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "47",
+      "ref_key": "S2:6cfbbf7604adda1df65932e3c4d157770a2df000",
+      "paperId": "6cfbbf7604adda1df65932e3c4d157770a2df000",
+      "title": "Alignment for Honesty",
+      "year": 2023,
+      "abstract": "Recent research has made significant strides in aligning large language models (LLMs) with helpfulness and harmlessness. In this paper, we argue for the importance of alignment for \\emph{honesty}, ensuring that LLMs proactively refuse to answer questions when they lack knowledge, while still not being overly conservative. However, a pivotal aspect of alignment for honesty involves discerning an LLM's knowledge boundaries, which demands comprehensive solutions in terms of metric development, benchmark creation, and training methodologies. We address these challenges by first establishing a precise problem definition and defining ``honesty'' inspired by the Analects of Confucius. This serves as a cornerstone for developing metrics that effectively measure an LLM's honesty by quantifying its progress post-alignment. Furthermore, we introduce a flexible training framework which is further instantiated by several efficient fine-tuning techniques that emphasize honesty without sacrificing performance on other tasks. Our extensive experiments reveal that these aligned models show a marked increase in honesty, as indicated by our proposed metrics. We open-source all relevant resources to facilitate future research at \\url{https://github.com/GAIR-NLP/alignment-for-honesty}.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2312-07000",
+        "ArXiv": "2312.07000",
+        "DOI": "10.48550/arXiv.2312.07000",
+        "CorpusId": 266174420
+      },
+      "arxiv_id": "2312.07000",
+      "doi": "10.48550/arXiv.2312.07000",
+      "corpus_id": 266174420
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "48",
+      "ref_key": "S2:4115a24474ef5f184f5cbae3f43aca4d3bb07bea",
+      "paperId": "4115a24474ef5f184f5cbae3f43aca4d3bb07bea",
+      "title": "Improving Language Models via Plug-and-Play Retrieval Feedback",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) exhibit remarkable performance across various NLP tasks. However, they often generate incorrect or hallucinated information, which hinders their practical applicability in real-world scenarios. Human feedback has been shown to effectively enhance the factuality and quality of generated content, addressing some of these limitations. However, this approach is resource-intensive, involving manual input and supervision, which can be time-consuming and expensive. Moreover, it cannot be provided during inference, further limiting its practical utility in dynamic and interactive applications. In this paper, we introduce ReFeed, a novel pipeline designed to enhance LLMs by providing automatic retrieval feedback in a plug-and-play framework without the need for expensive fine-tuning. ReFeed first generates initial outputs, then utilizes a retrieval model to acquire relevant information from large document collections, and finally incorporates the retrieved information into the in-context demonstration for output refinement, thereby addressing the limitations of LLMs in a more efficient and cost-effective manner. Experiments on four knowledge-intensive benchmark datasets demonstrate our proposed ReFeed could improve over +6.0% under zero-shot setting and +2.5% under few-shot setting, compared to baselines without using retrieval feedback.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-14002",
+        "ArXiv": "2305.14002",
+        "DOI": "10.48550/arXiv.2305.14002",
+        "CorpusId": 258841029
+      },
+      "arxiv_id": "2305.14002",
+      "doi": "10.48550/arXiv.2305.14002",
+      "corpus_id": 258841029
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "49",
+      "ref_key": "S2:95dc92fe93ebb187e00f0137920241e8b5d34b1e",
+      "paperId": "95dc92fe93ebb187e00f0137920241e8b5d34b1e",
+      "title": "Why Does ChatGPT Fall Short in Answering Questions Faithfully?",
+      "year": 2023,
+      "abstract": "Recent advancements in Large Language Models, such as ChatGPT, have demonstrated signiﬁcant potential to impact various aspects of human life. However, ChatGPT still faces challenges in aspects like faithfulness. Taking question answering as a representative application, we seek to understand why ChatGPT falls short in answering questions faithfully . To address this question, we attempt to analyze the failures of ChatGPT in complex open-domain question answering and identiﬁes the abilities under the failures. Speciﬁcally, we categorize ChatGPT’s failures into four types: comprehension , factualness , speciﬁcity , and inference . We further pinpoint three critical abilities associated with QA failures: knowledge mem-orization , knowledge association , and knowledge reasoning . Additionally, we conduct experiments centered on these abilities and pro-pose potential approaches to enhance faithfulness. The results indicate that furnishing the model with ﬁne-grained external knowledge, hints for knowledge association, and guidance for reasoning can empower the model to answer questions more faithfully.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2304-10513",
+        "DOI": "10.48550/arXiv.2304.10513",
+        "CorpusId": 258236218
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2304.10513",
+      "corpus_id": 258236218
+    },
+    {
+      "paper_id": "2311.05232",
+      "ref_index": "50",
+      "ref_key": "S2:639928ed560350e2700cd582057a675e86707ddb",
+      "paperId": "639928ed560350e2700cd582057a675e86707ddb",
+      "title": "Instruction Position Matters in Sequence Generation with Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) are capable of performing conditional sequence generation tasks, such as translation or summarization, through instruction fine-tuning. The fine-tuning data is generally sequentially concatenated from a specific task instruction, an input sentence, and the corresponding response. Considering the locality modeled by the self-attention mechanism of LLMs, these models face the risk of instruction forgetting when generating responses for long input sentences. To mitigate this issue, we propose enhancing the instruction-following capability of LLMs by shifting the position of task instructions after the input sentences. Theoretical analysis suggests that our straightforward method can alter the model's learning focus, thereby emphasizing the training of instruction-following capabilities. Concurrently, experimental results demonstrate that our approach consistently outperforms traditional settings across various model scales (1B / 7B / 13B) and different sequence generation tasks (translation and summarization), without any additional data or annotation costs. Notably, our method significantly improves the zero-shot performance on conditional sequence generation, e.g., up to 9.7 BLEU points on WMT zero-shot translation tasks.",
+      "externalIds": {
+        "ArXiv": "2308.12097",
+        "DBLP": "journals/corr/abs-2308-12097",
+        "DOI": "10.48550/arXiv.2308.12097",
+        "CorpusId": 261076308
+      },
+      "arxiv_id": "2308.12097",
+      "doi": "10.48550/arXiv.2308.12097",
+      "corpus_id": 261076308
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "Hallucinations in Large Language Models": {
+        "Hallucination   Causes": {
+          "Hallucination from Data": {
+            "Misinformation and   Biases": {
+              "77d956cdab4508d569ae5741549b78e715fd0749": {},
+              "ca2f1088d3e581b2c6c75cf0ebc96506d620f64d": {},
+              "4566c0d22ebf3c31180066ab23b6c445aeec78d5": {}
+            },
+            "Knowledge Boundary": {
+              "0e8297549b4ec852ce8fd55dee9ae21501805af2": {},
+              "00642bcfa319e0da3e2f56b59e9e0614fffd02de": {},
+              "ea72fb2a0d340f9d14fbcf300cd5f5fbbe1050bb": {}
+            },
+            "Inferior Alignment Data": {
+              "54972b2e4304d2164a61036ae947df2503c07009": {},
+              "1b387e3fbec0447c8bf2dcee21f6db59cdddf698": {}
+            }
+          },
+          "Hallucination from   Training": {
+            "Hallucination from   Pre-training": {
+              "1b173d9b8b0a2529259b6fa16376aff11c1ac08f": {},
+              "d40dbe668d5b68419e934dfa4c5851ffa1c24aa2": {},
+              "0b15c6acfc9f7f92c52aa6a185a829f88975c743": {}
+            },
+            "Hallucination from SFT": {
+              "6cfbbf7604adda1df65932e3c4d157770a2df000": {}
+            },
+            "Hallucination from RLHF": {
+              "cef330bacf014d60daabbd489647b2006af130ca": {},
+              "e6423c211fea2945aa71e1ac5ea24f8f595b4b0a": {},
+              "a37d5620210276e47cf0c9dd2898c2a82c9d0422": {}
+            }
+          },
+          "Hallucination from   Inference": {
+            "Imperfect Decoding   Strategies": {
+              "cf4aa38ae31b43fd07abe13b4ffdb265babb7be1": {},
+              "d3231772937a2182b2377d028417245c49868dd1": {}
+            },
+            "Over-confidence": {
+              "51b21f6c9f6a7d6887b9a027bc159747d7a57199": {},
+              "92221598758165d1679c8c9792435bb5a9a547a0": {},
+              "639928ed560350e2700cd582057a675e86707ddb": {},
+              "82b57e0ed286fd8bc591c77b5301c1414055244c": {}
+            },
+            "Softmax Bottleneck": {
+              "7450a612ef291216b0cd48e09b8879be4675c6eb": {},
+              "82b57e0ed286fd8bc591c77b5301c1414055244c": {}
+            },
+            "Reasoning Failure": {
+              "8eafec7014d08043517834b5a2ed26384f188873": {},
+              "95dc92fe93ebb187e00f0137920241e8b5d34b1e": {}
+            }
+          }
+        },
+        "Hallucination   Detection and   Benchmarks": {
+          "Hallucination Detection": {
+            "Factuality Hallucination   Detection": {
+              "7c1707db9aafd209aa93db3251e7ebd593d55876": {},
+              "bd5deadc58ee45b5e004378ba1d54a96bc947b4a": {},
+              "4b0b56be0ae9479d2bd5c2f0943db1906343c10f": {}
+            },
+            "Faithfulness Hallucination   Detection": {
+              "73401891d210bb6509f09e845589bca66ac57baa": {},
+              "dbeeca8466e0c177ec67c60d529899232415ca87": {},
+              "6ca07b95e6b68798e89888d3c2f5f43938feb419": {}
+            }
+          },
+          "Hallucination Benchmarks": {
+            "Hallucination Evaluation   Benchmarks": {
+              "77d956cdab4508d569ae5741549b78e715fd0749": {},
+              "29652bb2dc0396ab27c0be0c5f24c114c757df0f": {},
+              "1b387e3fbec0447c8bf2dcee21f6db59cdddf698": {}
+            },
+            "Hallucination Detection   Benchmarks": {
+              "837a3c0417fb677d4f22c346b345a450ec417f2c": {},
+              "e0384ba36555232c587d4a80d527895a095a9001": {},
+              "1e6102c981b9464c632ef0b00dbd11dfb0564e4e": {}
+            }
+          }
+        },
+        "Hallucination   Mitigation": {
+          "Mitigating Data-related   Hallucinations": {
+            "Data Filtering": {
+              "638b08154fbb71fd34db2aae6cb40045577fe0de": {},
+              "2922768fd451ecdb45f48c1a83eb57f54a91221b": {},
+              "104b0bb1da562d53cbda87aec79ef6a2827d191a": {}
+            },
+            "Model Editing": {
+              "422d8c989adeb904563d0c96d5038f6c8596fa99": {},
+              "a9be51698e7c2247853b7b6f1f70fc4d6d7ef605": {},
+              "1d650f1afd45c59ff907396fe8b678595dcb85ea": {}
+            },
+            "Retrieval-Augmented   Generation": {
+              "66242baf48b0f6b828e7547ac39ffaa5e1b2cb3e": {},
+              "465471bb5bf1a945549d6291c2d23367966b4957": {},
+              "4115a24474ef5f184f5cbae3f43aca4d3bb07bea": {}
+            }
+          },
+          "Mitigating Training-related   Hallucinations": {
+            "Mitigating Pre-training- related Hallucination": {
+              "1733eb7792f7a43dd21f51f4d1017a1bffd217b5": {},
+              "1b173d9b8b0a2529259b6fa16376aff11c1ac08f": {},
+              "d40dbe668d5b68419e934dfa4c5851ffa1c24aa2": {},
+              "d395c771f6537259610497ba218cce5b9bfc2c50": {}
+            },
+            "Mitigating Misalignment   Hallucination": {
+              "e6423c211fea2945aa71e1ac5ea24f8f595b4b0a": {},
+              "a37d5620210276e47cf0c9dd2898c2a82c9d0422": {}
+            }
+          },
+          "Mitigating Inference-related   Hallucinations": {
+            "Factuality Enhanced   Decoding": {
+              "ed5020eeda1fbe8c29b1282d654b34abee22d90f": {},
+              "f12a6168ed8de1aee69fee51b469b1aecd5f903e": {},
+              "405f8f5f1c6df1b3343c812832479aad5180b65f": {}
+            },
+            "Faithfulness Enhanced   Decoding": {
+              "984d4a1d41bfc8184fb77b8aa0eb8e96d536d048": {},
+              "3a16c8594096df0921d177e52494e5307a794ce3": {},
+              "a4f116e63c30fb8ac11d90ed4d106cc6e9dc30cf": {}
+            }
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000001",
+        "paperId": "77d956cdab4508d569ae5741549b78e715fd0749",
+        "ref_index": "1",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from Data",
+          "Misinformation and   Biases"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000002",
+        "paperId": "ca2f1088d3e581b2c6c75cf0ebc96506d620f64d",
+        "ref_index": "9",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from Data",
+          "Misinformation and   Biases"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000003",
+        "paperId": "4566c0d22ebf3c31180066ab23b6c445aeec78d5",
+        "ref_index": "25",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from Data",
+          "Misinformation and   Biases"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000004",
+        "paperId": "0e8297549b4ec852ce8fd55dee9ae21501805af2",
+        "ref_index": "24",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from Data",
+          "Knowledge Boundary"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000005",
+        "paperId": "00642bcfa319e0da3e2f56b59e9e0614fffd02de",
+        "ref_index": "36",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from Data",
+          "Knowledge Boundary"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000006",
+        "paperId": "ea72fb2a0d340f9d14fbcf300cd5f5fbbe1050bb",
+        "ref_index": "41",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from Data",
+          "Knowledge Boundary"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000007",
+        "paperId": "54972b2e4304d2164a61036ae947df2503c07009",
+        "ref_index": "20",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from Data",
+          "Inferior Alignment Data"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000008",
+        "paperId": "1b387e3fbec0447c8bf2dcee21f6db59cdddf698",
+        "ref_index": "30",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from Data",
+          "Inferior Alignment Data"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000009",
+        "paperId": "1b173d9b8b0a2529259b6fa16376aff11c1ac08f",
+        "ref_index": "27",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from   Training",
+          "Hallucination from   Pre-training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000010",
+        "paperId": "d40dbe668d5b68419e934dfa4c5851ffa1c24aa2",
+        "ref_index": "31",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from   Training",
+          "Hallucination from   Pre-training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000011",
+        "paperId": "0b15c6acfc9f7f92c52aa6a185a829f88975c743",
+        "ref_index": "45",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from   Training",
+          "Hallucination from   Pre-training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000012",
+        "paperId": "6cfbbf7604adda1df65932e3c4d157770a2df000",
+        "ref_index": "47",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from   Training",
+          "Hallucination from SFT"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000013",
+        "paperId": "cef330bacf014d60daabbd489647b2006af130ca",
+        "ref_index": "37",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from   Training",
+          "Hallucination from RLHF"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000014",
+        "paperId": "e6423c211fea2945aa71e1ac5ea24f8f595b4b0a",
+        "ref_index": "39",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from   Training",
+          "Hallucination from RLHF"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000015",
+        "paperId": "a37d5620210276e47cf0c9dd2898c2a82c9d0422",
+        "ref_index": "46",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from   Training",
+          "Hallucination from RLHF"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000016",
+        "paperId": "cf4aa38ae31b43fd07abe13b4ffdb265babb7be1",
+        "ref_index": "22",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from   Inference",
+          "Imperfect Decoding   Strategies"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000017",
+        "paperId": "d3231772937a2182b2377d028417245c49868dd1",
+        "ref_index": "42",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from   Inference",
+          "Imperfect Decoding   Strategies"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000018",
+        "paperId": "51b21f6c9f6a7d6887b9a027bc159747d7a57199",
+        "ref_index": "12",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from   Inference",
+          "Over-confidence"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000019",
+        "paperId": "92221598758165d1679c8c9792435bb5a9a547a0",
+        "ref_index": "14",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from   Inference",
+          "Over-confidence"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000020",
+        "paperId": "639928ed560350e2700cd582057a675e86707ddb",
+        "ref_index": "50",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from   Inference",
+          "Over-confidence"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000021",
+        "paperId": "82b57e0ed286fd8bc591c77b5301c1414055244c",
+        "ref_index": "33",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from   Inference",
+          "Over-confidence"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000022",
+        "paperId": "7450a612ef291216b0cd48e09b8879be4675c6eb",
+        "ref_index": "11",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from   Inference",
+          "Softmax Bottleneck"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000023",
+        "paperId": "82b57e0ed286fd8bc591c77b5301c1414055244c",
+        "ref_index": "33",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from   Inference",
+          "Softmax Bottleneck"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000024",
+        "paperId": "8eafec7014d08043517834b5a2ed26384f188873",
+        "ref_index": "10",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from   Inference",
+          "Reasoning Failure"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000025",
+        "paperId": "95dc92fe93ebb187e00f0137920241e8b5d34b1e",
+        "ref_index": "49",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Causes",
+          "Hallucination from   Inference",
+          "Reasoning Failure"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000026",
+        "paperId": "7c1707db9aafd209aa93db3251e7ebd593d55876",
+        "ref_index": "3",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Detection and   Benchmarks",
+          "Hallucination Detection",
+          "Factuality Hallucination   Detection"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000027",
+        "paperId": "bd5deadc58ee45b5e004378ba1d54a96bc947b4a",
+        "ref_index": "4",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Detection and   Benchmarks",
+          "Hallucination Detection",
+          "Factuality Hallucination   Detection"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000028",
+        "paperId": "4b0b56be0ae9479d2bd5c2f0943db1906343c10f",
+        "ref_index": "18",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Detection and   Benchmarks",
+          "Hallucination Detection",
+          "Factuality Hallucination   Detection"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000029",
+        "paperId": "73401891d210bb6509f09e845589bca66ac57baa",
+        "ref_index": "19",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Detection and   Benchmarks",
+          "Hallucination Detection",
+          "Faithfulness Hallucination   Detection"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000030",
+        "paperId": "dbeeca8466e0c177ec67c60d529899232415ca87",
+        "ref_index": "32",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Detection and   Benchmarks",
+          "Hallucination Detection",
+          "Faithfulness Hallucination   Detection"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000031",
+        "paperId": "6ca07b95e6b68798e89888d3c2f5f43938feb419",
+        "ref_index": "38",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Detection and   Benchmarks",
+          "Hallucination Detection",
+          "Faithfulness Hallucination   Detection"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000032",
+        "paperId": "77d956cdab4508d569ae5741549b78e715fd0749",
+        "ref_index": "1",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Detection and   Benchmarks",
+          "Hallucination Benchmarks",
+          "Hallucination Evaluation   Benchmarks"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000033",
+        "paperId": "29652bb2dc0396ab27c0be0c5f24c114c757df0f",
+        "ref_index": "15",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Detection and   Benchmarks",
+          "Hallucination Benchmarks",
+          "Hallucination Evaluation   Benchmarks"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000034",
+        "paperId": "1b387e3fbec0447c8bf2dcee21f6db59cdddf698",
+        "ref_index": "30",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Detection and   Benchmarks",
+          "Hallucination Benchmarks",
+          "Hallucination Evaluation   Benchmarks"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000035",
+        "paperId": "837a3c0417fb677d4f22c346b345a450ec417f2c",
+        "ref_index": "13",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Detection and   Benchmarks",
+          "Hallucination Benchmarks",
+          "Hallucination Detection   Benchmarks"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000036",
+        "paperId": "e0384ba36555232c587d4a80d527895a095a9001",
+        "ref_index": "28",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Detection and   Benchmarks",
+          "Hallucination Benchmarks",
+          "Hallucination Detection   Benchmarks"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000037",
+        "paperId": "1e6102c981b9464c632ef0b00dbd11dfb0564e4e",
+        "ref_index": "34",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Detection and   Benchmarks",
+          "Hallucination Benchmarks",
+          "Hallucination Detection   Benchmarks"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000038",
+        "paperId": "638b08154fbb71fd34db2aae6cb40045577fe0de",
+        "ref_index": "8",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Mitigation",
+          "Mitigating Data-related   Hallucinations",
+          "Data Filtering"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000039",
+        "paperId": "2922768fd451ecdb45f48c1a83eb57f54a91221b",
+        "ref_index": "21",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Mitigation",
+          "Mitigating Data-related   Hallucinations",
+          "Data Filtering"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000040",
+        "paperId": "104b0bb1da562d53cbda87aec79ef6a2827d191a",
+        "ref_index": "43",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Mitigation",
+          "Mitigating Data-related   Hallucinations",
+          "Data Filtering"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000041",
+        "paperId": "422d8c989adeb904563d0c96d5038f6c8596fa99",
+        "ref_index": "17",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Mitigation",
+          "Mitigating Data-related   Hallucinations",
+          "Model Editing"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000042",
+        "paperId": "a9be51698e7c2247853b7b6f1f70fc4d6d7ef605",
+        "ref_index": "23",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Mitigation",
+          "Mitigating Data-related   Hallucinations",
+          "Model Editing"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000043",
+        "paperId": "1d650f1afd45c59ff907396fe8b678595dcb85ea",
+        "ref_index": "35",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Mitigation",
+          "Mitigating Data-related   Hallucinations",
+          "Model Editing"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000044",
+        "paperId": "66242baf48b0f6b828e7547ac39ffaa5e1b2cb3e",
+        "ref_index": "0",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Mitigation",
+          "Mitigating Data-related   Hallucinations",
+          "Retrieval-Augmented   Generation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000045",
+        "paperId": "465471bb5bf1a945549d6291c2d23367966b4957",
+        "ref_index": "2",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Mitigation",
+          "Mitigating Data-related   Hallucinations",
+          "Retrieval-Augmented   Generation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000046",
+        "paperId": "4115a24474ef5f184f5cbae3f43aca4d3bb07bea",
+        "ref_index": "48",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Mitigation",
+          "Mitigating Data-related   Hallucinations",
+          "Retrieval-Augmented   Generation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000047",
+        "paperId": "1733eb7792f7a43dd21f51f4d1017a1bffd217b5",
+        "ref_index": "7",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Mitigation",
+          "Mitigating Training-related   Hallucinations",
+          "Mitigating Pre-training- related Hallucination"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000048",
+        "paperId": "1b173d9b8b0a2529259b6fa16376aff11c1ac08f",
+        "ref_index": "27",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Mitigation",
+          "Mitigating Training-related   Hallucinations",
+          "Mitigating Pre-training- related Hallucination"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000049",
+        "paperId": "d40dbe668d5b68419e934dfa4c5851ffa1c24aa2",
+        "ref_index": "31",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Mitigation",
+          "Mitigating Training-related   Hallucinations",
+          "Mitigating Pre-training- related Hallucination"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000050",
+        "paperId": "d395c771f6537259610497ba218cce5b9bfc2c50",
+        "ref_index": "40",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Mitigation",
+          "Mitigating Training-related   Hallucinations",
+          "Mitigating Pre-training- related Hallucination"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000051",
+        "paperId": "e6423c211fea2945aa71e1ac5ea24f8f595b4b0a",
+        "ref_index": "39",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Mitigation",
+          "Mitigating Training-related   Hallucinations",
+          "Mitigating Misalignment   Hallucination"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000052",
+        "paperId": "a37d5620210276e47cf0c9dd2898c2a82c9d0422",
+        "ref_index": "46",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Mitigation",
+          "Mitigating Training-related   Hallucinations",
+          "Mitigating Misalignment   Hallucination"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000053",
+        "paperId": "ed5020eeda1fbe8c29b1282d654b34abee22d90f",
+        "ref_index": "16",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Mitigation",
+          "Mitigating Inference-related   Hallucinations",
+          "Factuality Enhanced   Decoding"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000054",
+        "paperId": "f12a6168ed8de1aee69fee51b469b1aecd5f903e",
+        "ref_index": "26",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Mitigation",
+          "Mitigating Inference-related   Hallucinations",
+          "Factuality Enhanced   Decoding"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000055",
+        "paperId": "405f8f5f1c6df1b3343c812832479aad5180b65f",
+        "ref_index": "29",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Mitigation",
+          "Mitigating Inference-related   Hallucinations",
+          "Factuality Enhanced   Decoding"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000056",
+        "paperId": "984d4a1d41bfc8184fb77b8aa0eb8e96d536d048",
+        "ref_index": "5",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Mitigation",
+          "Mitigating Inference-related   Hallucinations",
+          "Faithfulness Enhanced   Decoding"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000057",
+        "paperId": "3a16c8594096df0921d177e52494e5307a794ce3",
+        "ref_index": "6",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Mitigation",
+          "Mitigating Inference-related   Hallucinations",
+          "Faithfulness Enhanced   Decoding"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.05232",
+        "arxiv_id": "2311.05232",
+        "leaf_mention_id": "2311.05232::000058",
+        "paperId": "a4f116e63c30fb8ac11d90ed4d106cc6e9dc30cf",
+        "ref_index": "44",
+        "path": [
+          "Hallucinations in Large Language Models",
+          "Hallucination   Mitigation",
+          "Mitigating Inference-related   Hallucinations",
+          "Faithfulness Enhanced   Decoding"
+        ],
+        "depth": 4,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 58,
+      "unique_leaf_paper_count": 51,
+      "multi_membership_extra_mentions": 7,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

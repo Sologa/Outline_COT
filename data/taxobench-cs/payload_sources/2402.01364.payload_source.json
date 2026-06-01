@@ -1,0 +1,989 @@
+{
+  "paper_id": "2402.01364",
+  "arxiv_id": "2402.01364",
+  "title": "Continual Learning for Large Language Models: A Survey",
+  "ref_meta": [
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "0",
+      "ref_key": "S2:448c377dfd28ceb9c1e55dbdc55872fb6e34ba57",
+      "paperId": "448c377dfd28ceb9c1e55dbdc55872fb6e34ba57",
+      "title": "Learning to Solve NLP Tasks in an Incremental Number of Languages",
+      "year": 2021,
+      "abstract": "In real scenarios, a multilingual model trained to solve NLP tasks on a set of languages can be required to support new languages over time. Unfortunately, the straightforward retraining on a dataset containing annotated examples for all the languages is both expensive and time-consuming, especially when the number of target languages grows. Moreover, the original annotated material may no longer be available due to storage or business constraints. Re-training only with the new language data will inevitably result in Catastrophic Forgetting of previously acquired knowledge. We propose a Continual Learning strategy that updates a model to support new languages over time, while maintaining consistent results on previously learned languages. We define a Teacher-Student framework where the existing model “teaches” to a student model its knowledge about the languages it supports, while the student is also trained on a new language. We report an experimental evaluation in several tasks including Sentence Classification, Relational Learning and Sequence Labeling.",
+      "externalIds": {
+        "DBLP": "conf/acl/CastellucciFC020",
+        "ACL": "2021.acl-short.106",
+        "DOI": "10.18653/v1/2021.acl-short.106",
+        "CorpusId": 236460265
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2021.acl-short.106",
+      "corpus_id": 236460265
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "1",
+      "ref_key": "S2:a3ba7fdf789bcef381acd0d277a086428153bb9f",
+      "paperId": "a3ba7fdf789bcef381acd0d277a086428153bb9f",
+      "title": "TemporalWiki: A Lifelong Benchmark for Training and Evaluating Ever-Evolving Language Models",
+      "year": 2022,
+      "abstract": "Language Models (LMs) become outdated as the world changes; they often fail to perform tasks requiring recent factual information which was absent or different during training, a phenomenon called temporal misalignment. This is especially a challenging problem because the research community still lacks a coherent dataset for assessing the adaptability of LMs to frequently-updated knowledge corpus such as Wikipedia. To this end, we introduce TemporalWiki, a lifelong benchmark for ever-evolving LMs that utilizes the difference between consecutive snapshots of English Wikipedia and English Wikidata for training and evaluation, respectively. The benchmark hence allows researchers to periodically track an LM’s ability to retain previous knowledge and acquire updated/new knowledge at each point in time. We also find that training an LM on the diff data through continual learning methods achieves similar or better perplexity than on the entire snapshot in our benchmark with 12 times less computational cost, which verifies that factual knowledge in LMs can be safely updated with minimal training data via continual learning.",
+      "externalIds": {
+        "ACL": "2022.emnlp-main.418",
+        "DBLP": "journals/corr/abs-2204-14211",
+        "ArXiv": "2204.14211",
+        "DOI": "10.48550/arXiv.2204.14211",
+        "CorpusId": 248476156
+      },
+      "arxiv_id": "2204.14211",
+      "doi": "10.48550/arXiv.2204.14211",
+      "corpus_id": 248476156
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "2",
+      "ref_key": "S2:ce828f9986b196308a3e40b1de58af1e8e68d728",
+      "paperId": "ce828f9986b196308a3e40b1de58af1e8e68d728",
+      "title": "Towards Continual Knowledge Learning of Language Models",
+      "year": 2021,
+      "abstract": "Large Language Models (LMs) are known to encode world knowledge in their parameters as they pretrain on a vast amount of web corpus, which is often utilized for performing knowledge-dependent downstream tasks such as question answering, fact-checking, and open dialogue. In real-world scenarios, the world knowledge stored in the LMs can quickly become outdated as the world changes, but it is non-trivial to avoid catastrophic forgetting and reliably acquire new knowledge while preserving invariant knowledge. To push the community towards better maintenance of ever-changing LMs, we formulate a new continual learning (CL) problem called Continual Knowledge Learning (CKL). We construct a new benchmark and metric to quantify the retention of time-invariant world knowledge, the update of outdated knowledge, and the acquisition of new knowledge. We adopt applicable recent methods from literature to create several strong baselines. Through extensive experiments, we find that CKL exhibits unique challenges that are not addressed in previous CL setups, where parameter expansion is necessary to reliably retain and learn knowledge simultaneously. By highlighting the critical causes of knowledge forgetting, we show that CKL is a challenging and important problem that helps us better understand and train ever-changing LMs. The benchmark datasets, evaluation script, and baseline code to reproduce our results are available at https://github.com/joeljang/continual-knowledge-learning.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2110-03215",
+        "ArXiv": "2110.03215",
+        "CorpusId": 238419458
+      },
+      "arxiv_id": "2110.03215",
+      "doi": null,
+      "corpus_id": 238419458
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "3",
+      "ref_key": "S2:e3ec55e9e6720194a0ed5d4033d93a941c8a4f99",
+      "paperId": "e3ec55e9e6720194a0ed5d4033d93a941c8a4f99",
+      "title": "Continual Pre-training of Language Models",
+      "year": 2023,
+      "abstract": "Language models (LMs) have been instrumental for the rapid advance of natural language processing. This paper studies continual pre-training of LMs, in particular, continual domain-adaptive pre-training (or continual DAP-training). Existing research has shown that further pre-training an LM using a domain corpus to adapt the LM to the domain can improve the end-task performance in the domain. This paper proposes a novel method to continually DAP-train an LM with a sequence of unlabeled domain corpora to adapt the LM to these domains to improve their end-task performances. The key novelty of our method is a soft-masking mechanism that directly controls the update to the LM. A novel proxy is also proposed to preserve the general knowledge in the original LM. Additionally, it contrasts the representations of the previously learned domain knowledge (including the general knowledge in the pre-trained LM) and the knowledge from the current full network to achieve knowledge integration. The method not only overcomes catastrophic forgetting, but also achieves knowledge transfer to improve end-task performances. Empirical evaluation demonstrates the effectiveness of the proposed method.",
+      "externalIds": {
+        "DBLP": "conf/iclr/KeSLKK023",
+        "ArXiv": "2302.03241",
+        "CorpusId": 258079422
+      },
+      "arxiv_id": "2302.03241",
+      "doi": null,
+      "corpus_id": 258079422
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "4",
+      "ref_key": "S2:b05cfda924a147dfc100dc0b3eea451c6db32868",
+      "paperId": "b05cfda924a147dfc100dc0b3eea451c6db32868",
+      "title": "Recyclable Tuning for Continual Pre-training",
+      "year": 2023,
+      "abstract": "Continual pre-training is the paradigm where pre-trained language models (PLMs) continually acquire fresh knowledge from growing data and gradually get upgraded. Before an upgraded PLM is released, we may have tuned the original PLM for various tasks and stored the adapted weights. However, when tuning the upgraded PLM, these outdated adapted weights will typically be ignored and discarded, causing a potential waste of resources. We bring this issue to the forefront and contend that proper algorithms for recycling outdated adapted weights should be developed. To this end, we formulate the task of recyclable tuning for continual pre-training. In pilot studies, we find that after continual pre-training, the upgraded PLM remains compatible with the outdated adapted weights to some extent. Motivated by this finding, we analyze the connection between continually pre-trained PLMs from two novel aspects, i.e., mode connectivity, and functional similarity. Based on the corresponding findings, we propose both an initialization-based method and a distillation-based method for our task. We demonstrate their feasibility in improving the convergence and performance for tuning the upgraded PLM. We also show that both methods can be combined to achieve better performance. The source codes are publicly available at https://github.com/thunlp/RecyclableTuning.",
+      "externalIds": {
+        "DBLP": "conf/acl/QinQHLWXLSZ23",
+        "ArXiv": "2305.08702",
+        "DOI": "10.48550/arXiv.2305.08702",
+        "CorpusId": 258686422
+      },
+      "arxiv_id": "2305.08702",
+      "doi": "10.48550/arXiv.2305.08702",
+      "corpus_id": 258686422
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "5",
+      "ref_key": "S2:80f9f109d1564cb8f82aa440a5f6f3fbe220c9ef",
+      "paperId": "80f9f109d1564cb8f82aa440a5f6f3fbe220c9ef",
+      "title": "ERNIE 2.0: A Continual Pre-training Framework for Language Understanding",
+      "year": 2019,
+      "abstract": "Recently pre-trained models have achieved state-of-the-art results in various language understanding tasks. Current pre-training procedures usually focus on training the model with several simple tasks to grasp the co-occurrence of words or sentences. However, besides co-occurring information, there exists other valuable lexical, syntactic and semantic information in training corpora, such as named entities, semantic closeness and discourse relations. In order to extract the lexical, syntactic and semantic information from training corpora, we propose a continual pre-training framework named ERNIE 2.0 which incrementally builds pre-training tasks and then learn pre-trained models on these constructed tasks via continual multi-task learning. Based on this framework, we construct several tasks and train the ERNIE 2.0 model to capture lexical, syntactic and semantic aspects of information in the training data. Experimental results demonstrate that ERNIE 2.0 model outperforms BERT and XLNet on 16 tasks including English tasks on GLUE benchmarks and several similar tasks in Chinese. The source codes and pre-trained models have been released at https://github.com/PaddlePaddle/ERNIE.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1907-12412",
+        "ArXiv": "1907.12412",
+        "MAG": "2965210982",
+        "DOI": "10.1609/AAAI.V34I05.6428",
+        "CorpusId": 198968327
+      },
+      "arxiv_id": "1907.12412",
+      "doi": "10.1609/AAAI.V34I05.6428",
+      "corpus_id": 198968327
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "6",
+      "ref_key": "S2:72e46cabbe8fcb8c25ba83c516bebd3c857943a3",
+      "paperId": "72e46cabbe8fcb8c25ba83c516bebd3c857943a3",
+      "title": "Exploring Continual Learning for Code Generation Models",
+      "year": 2023,
+      "abstract": "Large-scale code generation models such as Copilot and CodeT5 have achieved impressive performance. However, libraries are upgraded or deprecated very frequently and re-training large-scale language models is computationally expensive. Therefore, Continual Learning (CL) is an important aspect that remains under-explored in the code domain. In this paper, we introduce a benchmark called CodeTask-CL that covers a wide range of tasks, including code generation, translation, summarization, and refinement, with different input and output programming languages. Next, on our CodeTask-CL benchmark, we compare popular CL techniques from NLP and Vision domains. We find that effective methods like Prompt Pooling (PP) suffer from catastrophic forgetting due to the unstable training of the prompt selection mechanism caused by stark distribution shifts in coding tasks. We address this issue with our proposed method, Prompt Pooling with Teacher Forcing (PP-TF), that stabilizes training by enforcing constraints on the prompt selection mechanism and leads to a 21.54% improvement over Prompt Pooling. Along with the benchmark, we establish a training pipeline that can be used for CL on code models, which we believe can motivate further development of CL methods for code models.",
+      "externalIds": {
+        "ACL": "2023.acl-short.68",
+        "DBLP": "conf/acl/YadavSDLZTBMNRB23",
+        "ArXiv": "2307.02435",
+        "DOI": "10.48550/arXiv.2307.02435",
+        "CorpusId": 259341641
+      },
+      "arxiv_id": "2307.02435",
+      "doi": "10.48550/arXiv.2307.02435",
+      "corpus_id": 259341641
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "7",
+      "ref_key": "S2:a08a3b08a5a1de6462a7da2906b1cd81691d6c18",
+      "paperId": "a08a3b08a5a1de6462a7da2906b1cd81691d6c18",
+      "title": "CERT: Continual Pre-Training on Sketches for Library-Oriented Code Generation",
+      "year": 2022,
+      "abstract": "Code generation is a longstanding challenge, aiming to generate a code snippet based on a natural language description. Usually, expensive text-code paired data is essential for training a code generation model. Recently, thanks to the success of pre-training techniques, large language models are trained on large unlabelled code corpora and perform well in generating code. In this paper, we investigate how to leverage an unlabelled code corpus to train a model for library-oriented code generation. Since it is a common practice for programmers to reuse third-party libraries, in which case the text-code paired data are harder to obtain due to the huge number of libraries. We observe that library-oriented code snippets are more likely to share similar code sketches. Hence, we present CERT with two steps: a sketcher generates the sketch, then a generator fills the details in the sketch. Both the sketcher and generator are continually pre-trained upon a base model using unlabelled data. Also, we carefully craft two benchmarks to evaluate library-oriented code generation named PandasEval and NumpyEval. Experimental results have shown the impressive performance of CERT. For example, it surpasses the base model by an absolute 15.67% improvement in terms of pass@1 on PandasEval. Our work is available at https://github.com/microsoft/PyCodeGPT.",
+      "externalIds": {
+        "DBLP": "conf/ijcai/ZanCYLKGWCL22",
+        "ArXiv": "2206.06888",
+        "DOI": "10.48550/arXiv.2206.06888",
+        "CorpusId": 249642442
+      },
+      "arxiv_id": "2206.06888",
+      "doi": "10.48550/arXiv.2206.06888",
+      "corpus_id": 249642442
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "8",
+      "ref_key": "S2:b3bc37a15aa74c523d656ad89b1896651f5eef72",
+      "paperId": "b3bc37a15aa74c523d656ad89b1896651f5eef72",
+      "title": "Continual Pre-Training Mitigates Forgetting in Language and Vision",
+      "year": 2022,
+      "abstract": "Pre-trained models are commonly used in Continual Learning to initialize the model before training on the stream of non-stationary data. However, pre-training is rarely applied during Continual Learning. We investigate the characteristics of the Continual Pre-Training scenario, where a model is continually pre-trained on a stream of incoming data and only later fine-tuned to different downstream tasks. We introduce an evaluation protocol for Continual Pre-Training which monitors forgetting against a Forgetting Control dataset not present in the continual stream. We disentangle the impact on forgetting of 3 main factors: the input modality (NLP, Vision), the architecture type (Transformer, ResNet) and the pre-training protocol (supervised, self-supervised). Moreover, we propose a Sample-Efficient Pre-training method (SEP) that speeds up the pre-training phase. We show that the pre-training protocol is the most important factor accounting for forgetting. Surprisingly, we discovered that self-supervised continual pre-training in both NLP and Vision is sufficient to mitigate forgetting without the use of any Continual Learning strategy. Other factors, like model depth, input modality and architecture type are not as crucial.",
+      "externalIds": {
+        "ArXiv": "2205.09357",
+        "DBLP": "journals/corr/abs-2205-09357",
+        "DOI": "10.48550/arXiv.2205.09357",
+        "CorpusId": 248887419,
+        "PubMed": "38986187"
+      },
+      "arxiv_id": "2205.09357",
+      "doi": "10.48550/arXiv.2205.09357",
+      "corpus_id": 248887419
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "9",
+      "ref_key": "S2:739cf040ed2c2af49077db48d489a46be5fb6157",
+      "paperId": "739cf040ed2c2af49077db48d489a46be5fb6157",
+      "title": "Efficient Continual Pre-training for Building Domain Specific Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have demonstrated remarkable open-domain capabilities. Traditionally, LLMs tailored for a domain are trained from scratch to excel at handling domain-specific tasks. In this work, we explore an alternative strategy of continual pre-training as a means to develop domain-specific LLMs. We introduce FinPythia-6.9B, developed through domain-adaptive continual pre-training on the financial domain. Continual pre-trained FinPythia showcases consistent improvements on financial tasks over the original foundational model. We further explore simple but effective data selection strategies for continual pre-training. Our data selection strategies outperforms vanilla continual pre-training's performance with just 10% of corpus size and cost, without any degradation on open-domain standard tasks. Our work proposes an alternative solution to building domain-specific LLMs from scratch in a cost-effective manner.",
+      "externalIds": {
+        "ArXiv": "2311.08545",
+        "DBLP": "journals/corr/abs-2311-08545",
+        "DOI": "10.48550/arXiv.2311.08545",
+        "CorpusId": 265213147
+      },
+      "arxiv_id": "2311.08545",
+      "doi": "10.48550/arXiv.2311.08545",
+      "corpus_id": 265213147
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "10",
+      "ref_key": "S2:e88d72202d449ad198308e21e7fa28680a8d2a21",
+      "paperId": "e88d72202d449ad198308e21e7fa28680a8d2a21",
+      "title": "EcomGPT-CT: Continual Pre-training of E-commerce Large Language Models with Semi-structured Data",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) pre-trained on massive corpora have exhibited remarkable performance on various NLP tasks. However, applying these models to specific domains still poses significant challenges, such as lack of domain knowledge, limited capacity to leverage domain knowledge and inadequate adaptation to domain-specific data formats. Considering the exorbitant cost of training LLMs from scratch and the scarcity of annotated data within particular domains, in this work, we focus on domain-specific continual pre-training of LLMs using E-commerce domain as an exemplar. Specifically, we explore the impact of continual pre-training on LLMs employing unlabeled general and E-commercial corpora. Furthermore, we design a mixing strategy among different data sources to better leverage E-commercial semi-structured data. We construct multiple tasks to assess LLMs' few-shot In-context Learning ability and their zero-shot performance after instruction tuning in E-commerce domain. Experimental results demonstrate the effectiveness of continual pre-training of E-commerce LLMs and the efficacy of our devised data mixing strategy.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2312-15696",
+        "ArXiv": "2312.15696",
+        "DOI": "10.48550/arXiv.2312.15696",
+        "CorpusId": 266551564
+      },
+      "arxiv_id": "2312.15696",
+      "doi": "10.48550/arXiv.2312.15696",
+      "corpus_id": 266551564
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "11",
+      "ref_key": "S2:04a340b15945c70e642227bf249639b171beb3f8",
+      "paperId": "04a340b15945c70e642227bf249639b171beb3f8",
+      "title": "PLLaMa: An Open-source Large Language Model for Plant Science",
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) have exhibited remarkable capabilities in understanding and interacting with natural language across various sectors. However, their effectiveness is limited in specialized areas requiring high accuracy, such as plant science, due to a lack of specific expertise in these fields. This paper introduces PLLaMa, an open-source language model that evolved from LLaMa-2. It's enhanced with a comprehensive database, comprising more than 1.5 million scholarly articles in plant science. This development significantly enriches PLLaMa with extensive knowledge and proficiency in plant and agricultural sciences. Our initial tests, involving specific datasets related to plants and agriculture, show that PLLaMa substantially improves its understanding of plant science-related topics. Moreover, we have formed an international panel of professionals, including plant scientists, agricultural engineers, and plant breeders. This team plays a crucial role in verifying the accuracy of PLLaMa's responses to various academic inquiries, ensuring its effective and reliable application in the field. To support further research and development, we have made the model's checkpoints and source codes accessible to the scientific community. These resources are available for download at \\url{https://github.com/Xianjun-Yang/PLLaMa}.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2401-01600",
+        "ArXiv": "2401.01600",
+        "DOI": "10.48550/arXiv.2401.01600",
+        "CorpusId": 266741610
+      },
+      "arxiv_id": "2401.01600",
+      "doi": "10.48550/arXiv.2401.01600",
+      "corpus_id": 266741610
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "12",
+      "ref_key": "S2:c2f1fbc5e829a8b667470bb4f61698f25210442b",
+      "paperId": "c2f1fbc5e829a8b667470bb4f61698f25210442b",
+      "title": "CPPO: Continual Learning for Reinforcement Learning with Human Feedback",
+      "year": 2024,
+      "abstract": "The approach of Reinforcement Learning from Human Feedback (RLHF) is widely used for enhancing pre-trained Language Models (LM), enabling them to better align with human preferences. Existing RLHF-based LMs however require complete retraining whenever new queries or feedback are introduced, as human preferences may differ across different domains or topics. LM retraining is often impracticable in most real-world scenarios, due to the substantial time and computational costs involved, as well as data privacy concerns. To address this limitation, we propose C ontinual P roximal P olicy O ptimization (CPPO), a novel method that is able to continually align LM with dynamic human preferences. Specifically, CPPO adopts a weighting strategy to decide which samples should be utilized for enhancing policy learning and which should be used for solidifying past experiences. This seeks a good trade-off between policy learning and knowledge retention. Our experimental results show that CPPO outperforms strong Continuous learning (CL) baselines when it comes to consistently aligning with human preferences. Furthermore, compared to PPO, CPPO offers more efficient and stable learning in non-continual scenarios.",
+      "externalIds": {
+        "DBLP": "conf/iclr/0025L000WX24",
+        "CorpusId": 271746234
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 271746234
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "13",
+      "ref_key": "S2:d0a21c79996815953f933286d848f11eca42f097",
+      "paperId": "d0a21c79996815953f933286d848f11eca42f097",
+      "title": "Scalable Language Model with Generalized Continual Learning",
+      "year": 2024,
+      "abstract": "Continual learning has gained increasing importance as it facilitates the acquisition and refinement of scalable knowledge and skills in language models. However, existing methods typically encounter strict limitations and challenges in real-world scenarios, such as reliance on experience replay, optimization constraints, and inference task-ID. In this study, we introduce the Scalable Language Model (SLM) to overcome these limitations within a more challenging and generalized setting, representing a significant advancement toward practical applications for continual learning. Specifically, we propose the Joint Adaptive Re-Parameterization (JARe), integrated with Dynamic Task-related Knowledge Retrieval (DTKR), to enable adaptive adjustment of language models based on specific downstream tasks. This approach leverages the task distribution within the vector space, aiming to achieve a smooth and effortless continual learning process. Our method demonstrates state-of-the-art performance on diverse backbones and benchmarks, achieving effective continual learning in both full-set and few-shot scenarios with minimal forgetting. Moreover, while prior research primarily focused on a single task type such as classification, our study goes beyond, with the large language model, i.e., LLaMA-2, to explore the effects across diverse domains and task types, such that a single language model can be decently scaled to broader applications.",
+      "externalIds": {
+        "ArXiv": "2404.07470",
+        "DBLP": "journals/corr/abs-2404-07470",
+        "DOI": "10.48550/arXiv.2404.07470",
+        "CorpusId": 269043382
+      },
+      "arxiv_id": "2404.07470",
+      "doi": "10.48550/arXiv.2404.07470",
+      "corpus_id": 269043382
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "14",
+      "ref_key": "S2:2f4bfc41704a090138afa4174c461896d5d9c98f",
+      "paperId": "2f4bfc41704a090138afa4174c461896d5d9c98f",
+      "title": "Adapting Large Language Models via Reading Comprehension",
+      "year": 2024,
+      "abstract": "We explore how continued pre-training on domain-specific corpora influences large language models, revealing that training on the raw corpora endows the model with domain knowledge, but drastically hurts its prompting ability for question answering. Taken inspiration from human learning via reading comprehension—practice after reading improves the ability to answer questions based on the learned knowledge—we propose a simple method for transforming raw corpora into reading comprehension texts. Each raw text is enriched with a series of tasks related to its content. Our method, highly scalable and applicable to any pre-training corpora, consistently enhances performance across various tasks in three different domains: biomedicine, finance",
+      "externalIds": {
+        "DBLP": "conf/iclr/ChengHW24",
+        "DOI": "10.48550/arXiv.2309.09530",
+        "CorpusId": 271745635
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2309.09530",
+      "corpus_id": 271745635
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "15",
+      "ref_key": "S2:c7a3f9cc61cfafdc307f8ae24430b6b1121f9b2c",
+      "paperId": "c7a3f9cc61cfafdc307f8ae24430b6b1121f9b2c",
+      "title": "ToolkenGPT: Augmenting Frozen Language Models with Massive Tools via Tool Embeddings",
+      "year": 2023,
+      "abstract": "Augmenting large language models (LLMs) with external tools has emerged as a promising approach to solving complex problems. However, traditional methods, which finetune LLMs with tool demonstration data, can be both costly and restricted to a predefined set of tools. Recent in-context learning paradigm alleviates these issues, but the limited context length only allows for a few shots of demonstrations, leading to suboptimal understandings of the tools. Moreover, when there are numerous tools to choose from, in-context learning could completely fail to work. In this paper, we propose an alternative approach, $\\textbf{ToolkenGPT}$, which combines the benefits of both sides. Our approach represents each $\\underline{tool}$ as a to$\\underline{ken}$ ($\\textit{toolken}$) and learns an embedding for it, enabling tool calls in the same way as generating a regular word token. Once a toolken is triggered, the LLM is prompted to complete arguments for the tool to execute. ToolkenGPT offers the flexibility to plug in an arbitrary number of tools by expanding the set of toolkens on the fly. In addition, it improves tool use by allowing extensive demonstration data for learning the toolken embeddings. In diverse domains, including numerical reasoning, knowledge-based question answering, and embodied plan generation, our approach effectively augments LLMs with tools and substantially outperforms various latest baselines. ToolkenGPT demonstrates the promising ability to use relevant tools from a large tool set in complex scenarios.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-11554",
+        "ArXiv": "2305.11554",
+        "DOI": "10.48550/arXiv.2305.11554",
+        "CorpusId": 258823133
+      },
+      "arxiv_id": "2305.11554",
+      "doi": "10.48550/arXiv.2305.11554",
+      "corpus_id": 258823133
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "16",
+      "ref_key": "S2:86d03160e6f05deb17d0169e515f5a55d6361f7c",
+      "paperId": "86d03160e6f05deb17d0169e515f5a55d6361f7c",
+      "title": "Exploring the Benefits of Training Expert Language Models over Instruction Tuning",
+      "year": 2023,
+      "abstract": "Recently, Language Models (LMs) instruction-tuned on multiple tasks, also known as multitask-prompted fine-tuning (MT), have shown the capability to generalize to unseen tasks. Previous work has shown that scaling the number of training tasks is the key component in making stronger MT LMs. In this work, we report an unexpected finding that an expert LM fine-tuned on just a single task can outperform an MT LM trained with 300+ different tasks on 11 different unseen datasets and on 13 datasets of the BIG-bench benchmark by a mean accuracy of 3.20% and 1.29%, respectively. This finding casts doubt on the previously held belief that simply scaling the number of tasks makes stronger MT LMs. Leveraging this finding, we further show that this distributed approach of training a separate expert LM per training task instead of a single MT LM for zero-shot inference possesses many benefits including (1) avoiding negative task transfer that often occurs during instruction tuning, (2) being able to continually learn new tasks without having to re-train on previous tasks to avoid catastrophic forgetting, and (3) showing compositional capabilities when merging individual experts together. The code is available at https://github.com/joeljang/ELM.",
+      "externalIds": {
+        "DBLP": "conf/icml/JangKYKLLLS23",
+        "ArXiv": "2302.03202",
+        "DOI": "10.48550/arXiv.2302.03202",
+        "CorpusId": 256627673
+      },
+      "arxiv_id": "2302.03202",
+      "doi": "10.48550/arXiv.2302.03202",
+      "corpus_id": 256627673
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "17",
+      "ref_key": "S2:05e003a34148d4663734d3f39deefa0979d2a0e6",
+      "paperId": "05e003a34148d4663734d3f39deefa0979d2a0e6",
+      "title": "GeneGPT: Augmenting Large Language Models with Domain Tools for Improved Access to Biomedical Information",
+      "year": 2023,
+      "abstract": "While large language models (LLMs) have been successfully applied to various tasks, they still face challenges with hallucinations. Augmenting LLMs with domain-specific tools such as database utilities can facilitate easier and more precise access to specialized knowledge. In this paper, we present GeneGPT, a novel method for teaching LLMs to use the Web APIs of the National Center for Biotechnology Information (NCBI) for answering genomics questions. Specifically, we prompt Codex to solve the GeneTuring tests with NCBI Web APIs by in-context learning and an augmented decoding algorithm that can detect and execute API calls. Experimental results show that GeneGPT achieves state-of-the-art performance on eight tasks in the GeneTuring benchmark with an average score of 0.83, largely surpassing retrieval-augmented LLMs such as the new Bing (0.44), biomedical LLMs such as BioMedLM (0.08) and BioGPT (0.04), as well as GPT-3 (0.16) and ChatGPT (0.12). Our further analyses suggest that: (1) API demonstrations have good cross-task generalizability and are more useful than documentations for in-context learning; (2) GeneGPT can generalize to longer chains of API calls and answer multi-hop questions in GeneHop, a novel dataset introduced in this work; (3) Different types of errors are enriched in different tasks, providing valuable insights for future improvements.",
+      "externalIds": {
+        "PubMedCentral": "10153281",
+        "DBLP": "journals/corr/abs-2304-09667",
+        "ArXiv": "2304.09667",
+        "DOI": "10.1093/bioinformatics/btae075",
+        "CorpusId": 258298113,
+        "PubMed": "38341654"
+      },
+      "arxiv_id": "2304.09667",
+      "doi": "10.1093/bioinformatics/btae075",
+      "corpus_id": 258298113
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "18",
+      "ref_key": "S2:33eed6ea6805b59617fed7c41ef5825b5e4d1621",
+      "paperId": "33eed6ea6805b59617fed7c41ef5825b5e4d1621",
+      "title": "TPTU-v2: Boosting Task Planning and Tool Usage of Large Language Model-based Agents in Real-world Systems",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) have demonstrated proficiency in addressing tasks that necessitate a combination of task planning and the usage of external tools that require a blend of task planning and the utilization of external tools, such as APIs. However, real-world complex systems present three prevalent challenges concerning task planning and tool usage: (1) The real system usually has a vast array of APIs, so it is impossible to feed the descriptions of all APIs to the prompt of LLMs as the token length is limited; (2) the real system is designed for handling complex tasks, and the base LLMs can hardly plan a correct sub-task order and API-calling order for such tasks; (3) Similar semantics and functionalities among APIs in real systems create challenges for both LLMs and even humans in distinguishing between them. In response, this paper introduces a comprehensive framework aimed at enhancing the Task Planning and Tool Usage (TPTU) abilities of LLM-based agents operating within real-world systems. Our framework comprises three key components designed to address these challenges: (1) the API Retriever selects the most pertinent APIs for the user task among the extensive array available; (2) LLM Finetuner tunes a base LLM so that the finetuned LLM can be more capable for task planning and API calling; (3) the Demo Selector adaptively retrieves different demonstrations related to hard-to-distinguish APIs, which is further used for in-context learning to boost the final performance. We validate our methods using a real-world commercial system as well as an open-sourced academic dataset, and the outcomes clearly showcase the efficacy of each individual component as well as the integrated framework.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-11315",
+        "ArXiv": "2311.11315",
+        "DOI": "10.48550/arXiv.2311.11315",
+        "CorpusId": 265294410
+      },
+      "arxiv_id": "2311.11315",
+      "doi": "10.48550/arXiv.2311.11315",
+      "corpus_id": 265294410
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "19",
+      "ref_key": "S2:85a5c0bb6660990c7b5e348c165c552c1d4a2c2a",
+      "paperId": "85a5c0bb6660990c7b5e348c165c552c1d4a2c2a",
+      "title": "Large-scale Lifelong Learning of In-context Instructions and How to Tackle It",
+      "year": 2023,
+      "abstract": "Jointly fine-tuning a Pre-trained Language Model (PLM) on a pre-defined set of tasks with in-context instructions has been proven to improve its generalization performance, allowing us to build a universal language model that can be deployed across task boundaries. In this work, we explore for the first time whether this attractive property of in-context instruction learning can be extended to a scenario in which tasks are fed to the target PLM in a sequential manner. The primary objective of so-called lifelong in-context instruction learning is to improve the target PLM’s instance- and task-level generalization performance as it observes more tasks. DynaInst, the proposed method to lifelong in-context instruction learning, achieves noticeable improvements in both types of generalization, nearly reaching the upper bound performance obtained through joint training.",
+      "externalIds": {
+        "ACL": "2023.acl-long.703",
+        "DBLP": "conf/acl/MokDLTYY23",
+        "DOI": "10.18653/v1/2023.acl-long.703",
+        "CorpusId": 259370786
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2023.acl-long.703",
+      "corpus_id": 259370786
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "20",
+      "ref_key": "S2:0bfc804e31eecfd77f45e4ee7f4d629fffdcd628",
+      "paperId": "0bfc804e31eecfd77f45e4ee7f4d629fffdcd628",
+      "title": "ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs",
+      "year": 2023,
+      "abstract": "Despite the advancements of open-source large language models (LLMs), e.g., LLaMA, they remain significantly limited in tool-use capabilities, i.e., using external tools (APIs) to fulfill human instructions. The reason is that current instruction tuning largely focuses on basic language tasks but ignores the tool-use domain. This is in contrast to the excellent tool-use capabilities of state-of-the-art (SOTA) closed-source LLMs, e.g., ChatGPT. To bridge this gap, we introduce ToolLLM, a general tool-use framework encompassing data construction, model training, and evaluation. We first present ToolBench, an instruction-tuning dataset for tool use, which is constructed automatically using ChatGPT. Specifically, the construction can be divided into three stages: (i) API collection: we collect 16,464 real-world RESTful APIs spanning 49 categories from RapidAPI Hub; (ii) instruction generation: we prompt ChatGPT to generate diverse instructions involving these APIs, covering both single-tool and multi-tool scenarios; (iii) solution path annotation: we use ChatGPT to search for a valid solution path (chain of API calls) for each instruction. To enhance the reasoning capabilities of LLMs, we develop a novel depth-first search-based decision tree algorithm. It enables LLMs to evaluate multiple reasoning traces and expand the search space. Moreover, to evaluate the tool-use capabilities of LLMs, we develop an automatic evaluator: ToolEval. Based on ToolBench, we fine-tune LLaMA to obtain an LLM ToolLLaMA, and equip it with a neural API retriever to recommend appropriate APIs for each instruction. Experiments show that ToolLLaMA demonstrates a remarkable ability to execute complex instructions and generalize to unseen APIs, and exhibits comparable performance to ChatGPT. Our ToolLLaMA also demonstrates strong zero-shot generalization ability in an out-of-distribution tool-use dataset: APIBench.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-16789",
+        "ArXiv": "2307.16789",
+        "DOI": "10.48550/arXiv.2307.16789",
+        "CorpusId": 260334759
+      },
+      "arxiv_id": "2307.16789",
+      "doi": "10.48550/arXiv.2307.16789",
+      "corpus_id": 260334759
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "21",
+      "ref_key": "S2:86478f285356b5c8d27423e6b939634d9e010fba",
+      "paperId": "86478f285356b5c8d27423e6b939634d9e010fba",
+      "title": "Progressive Prompts: Continual Learning for Language Models",
+      "year": 2023,
+      "abstract": "We introduce Progressive Prompts - a simple and efficient approach for continual learning in language models. Our method allows forward transfer and resists catastrophic forgetting, without relying on data replay or a large number of task-specific parameters. Progressive Prompts learns a new soft prompt for each task and sequentially concatenates it with the previously learned prompts, while keeping the base model frozen. Experiments on standard continual learning benchmarks show that our approach outperforms state-of-the-art methods, with an improvement>20% in average test accuracy over the previous best-preforming method on T5 model. We also explore a more challenging continual learning setup with longer sequences of tasks and show that Progressive Prompts significantly outperforms prior methods.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2301-12314",
+        "ArXiv": "2301.12314",
+        "DOI": "10.48550/arXiv.2301.12314",
+        "CorpusId": 256390383
+      },
+      "arxiv_id": "2301.12314",
+      "doi": "10.48550/arXiv.2301.12314",
+      "corpus_id": 256390383
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "22",
+      "ref_key": "S2:352244ac7602f13e16a08424db322364d0a2cef1",
+      "paperId": "352244ac7602f13e16a08424db322364d0a2cef1",
+      "title": "ConPET: Continual Parameter-Efficient Tuning for Large Language Models",
+      "year": 2023,
+      "abstract": "Continual learning necessitates the continual adaptation of models to newly emerging tasks while minimizing the catastrophic forgetting of old ones. This is extremely challenging for large language models (LLMs) with vanilla full-parameter tuning due to high computation costs, memory consumption, and forgetting issue. Inspired by the success of parameter-efficient tuning (PET), we propose Continual Parameter-Efficient Tuning (ConPET), a generalizable paradigm for continual task adaptation of LLMs with task-number-independent training complexity. ConPET includes two versions with different application scenarios. First, Static ConPET can adapt former continual learning methods originally designed for relatively smaller models to LLMs through PET and a dynamic replay strategy, which largely reduces the tuning costs and alleviates the over-fitting and forgetting issue. Furthermore, to maintain scalability, Dynamic ConPET adopts separate PET modules for different tasks and a PET module selector for dynamic optimal selection. In our extensive experiments, the adaptation of Static ConPET helps multiple former methods reduce the scale of tunable parameters by over 3,000 times and surpass the PET-only baseline by at least 5 points on five smaller benchmarks, while Dynamic ConPET gains its advantage on the largest dataset. The codes and datasets are available at https://github.com/Raincleared-Song/ConPET.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2309-14763",
+        "ArXiv": "2309.14763",
+        "DOI": "10.48550/arXiv.2309.14763",
+        "CorpusId": 262822572
+      },
+      "arxiv_id": "2309.14763",
+      "doi": "10.48550/arXiv.2309.14763",
+      "corpus_id": 262822572
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "23",
+      "ref_key": "S2:6ba3e4172e5c22c8c3ace05a31e9b119a2e3c33c",
+      "paperId": "6ba3e4172e5c22c8c3ace05a31e9b119a2e3c33c",
+      "title": "Continual Learning for Instruction Following from Realtime Feedback",
+      "year": 2022,
+      "abstract": "We propose and deploy an approach to continually train an instruction-following agent from feedback provided by users during collaborative interactions. During interaction, human users instruct an agent using natural language, and provide realtime binary feedback as they observe the agent following their instructions. We design a contextual bandit learning approach, converting user feedback to immediate reward. We evaluate through thousands of human-agent interactions, demonstrating 15.4% absolute improvement in instruction execution accuracy over time. We also show our approach is robust to several design variations, and that the feedback signal is roughly equivalent to the learning signal of supervised demonstration data.",
+      "externalIds": {
+        "ArXiv": "2212.09710",
+        "DBLP": "journals/corr/abs-2212-09710",
+        "DOI": "10.48550/arXiv.2212.09710",
+        "CorpusId": 254854278
+      },
+      "arxiv_id": "2212.09710",
+      "doi": "10.48550/arXiv.2212.09710",
+      "corpus_id": 254854278
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "24",
+      "ref_key": "S2:28fde851680a40fbbc5c6a44bd3ac6f5ca4ad284",
+      "paperId": "28fde851680a40fbbc5c6a44bd3ac6f5ca4ad284",
+      "title": "Orthogonal Subspace Learning for Language Model Continual Learning",
+      "year": 2023,
+      "abstract": "Benefiting from massive corpora and advanced hardware, large language models (LLMs) exhibit remarkable capabilities in language understanding and generation. However, their performance degrades in scenarios where multiple tasks are encountered sequentially, also known as catastrophic forgetting. In this paper, we propose orthogonal low-rank adaptation (O-LoRA), a simple and efficient approach for continual learning in language models, effectively mitigating catastrophic forgetting while learning new tasks. Specifically, O-LoRA learns tasks in different (low-rank) vector subspaces that are kept orthogonal to each other in order to minimize interference. Our method induces only marginal additional parameter costs and requires no user data storage for replay. Experimental results on continual learning benchmarks show that our method outperforms state-of-the-art methods. Furthermore, compared to previous approaches, our method excels in preserving the generalization ability of LLMs on unseen tasks.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/WangCGXBZZGH23",
+        "ArXiv": "2310.14152",
+        "DOI": "10.48550/arXiv.2310.14152",
+        "CorpusId": 264426441
+      },
+      "arxiv_id": "2310.14152",
+      "doi": "10.48550/arXiv.2310.14152",
+      "corpus_id": 264426441
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "25",
+      "ref_key": "S2:a64067c6c4286fc60f4430829ae6b18519c088e3",
+      "paperId": "a64067c6c4286fc60f4430829ae6b18519c088e3",
+      "title": "TRACE: A Comprehensive Benchmark for Continual Learning in Large Language Models",
+      "year": 2023,
+      "abstract": "Aligned large language models (LLMs) demonstrate exceptional capabilities in task-solving, following instructions, and ensuring safety. However, the continual learning aspect of these aligned LLMs has been largely overlooked. Existing continual learning benchmarks lack sufficient challenge for leading aligned LLMs, owing to both their simplicity and the models' potential exposure during instruction tuning. In this paper, we introduce TRACE, a novel benchmark designed to evaluate continual learning in LLMs. TRACE consists of 8 distinct datasets spanning challenging tasks including domain-specific tasks, multilingual capabilities, code generation, and mathematical reasoning. All datasets are standardized into a unified format, allowing for effortless automatic evaluation of LLMs. Our experiments show that after training on TRACE, aligned LLMs exhibit significant declines in both general ability and instruction-following capabilities. For example, the accuracy of llama2-chat 13B on gsm8k dataset declined precipitously from 28.8\\% to 2\\% after training on our datasets. This highlights the challenge of finding a suitable tradeoff between achieving performance on specific tasks while preserving the original prowess of LLMs. Empirical findings suggest that tasks inherently equipped with reasoning paths contribute significantly to preserving certain capabilities of LLMs against potential declines. Motivated by this, we introduce the Reasoning-augmented Continual Learning (RCL) approach. RCL integrates task-specific cues with meta-rationales, effectively reducing catastrophic forgetting in LLMs while expediting convergence on novel tasks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-06762",
+        "ArXiv": "2310.06762",
+        "DOI": "10.48550/arXiv.2310.06762",
+        "CorpusId": 263830425
+      },
+      "arxiv_id": "2310.06762",
+      "doi": "10.48550/arXiv.2310.06762",
+      "corpus_id": 263830425
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "26",
+      "ref_key": "S2:b6a2f5f0c41ae933bebb6cd09bf5d065d7f675b0",
+      "paperId": "b6a2f5f0c41ae933bebb6cd09bf5d065d7f675b0",
+      "title": "COPF: Continual Learning Human Preference through Optimal Policy Fitting",
+      "year": 2023,
+      "abstract": ",",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-15694",
+        "DOI": "10.48550/arXiv.2310.15694",
+        "CorpusId": 264439275
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2310.15694",
+      "corpus_id": 264439275
+    },
+    {
+      "paper_id": "2402.01364",
+      "ref_index": "27",
+      "ref_key": "S2:d78a2e6155fc9afd927850ca2d58f7b790a470dd",
+      "paperId": "d78a2e6155fc9afd927850ca2d58f7b790a470dd",
+      "title": "Reformulating Domain Adaptation of Large Language Models as Adapt-Retrieve-Revise",
+      "year": 2023,
+      "abstract": "While large language models (LLMs) like GPT-4 have recently demonstrated astonishing zero-shot capabilities in general domain tasks, they often generate content with hallucinations in specific domains such as Chinese law, hindering their application in these areas. This is typically due to the absence of training data that encompasses such a specific domain, preventing GPT-4 from acquiring in-domain knowledge. A pressing challenge is that it's not plausible to continue training LLMs of such scale on in-domain data. This paper introduces a simple and effective domain adaptation framework for GPT-4 by reformulating generation as an \\textbf{adapt-retrieve-revise} process. The initial step is to \\textbf{adapt} an affordable 7B LLM to the target domain by continuing learning on in-domain data. When solving a task, we leverage the adapted LLM to generate a draft answer given a task query. Then, the draft answer will be used to \\textbf{retrieve} supporting evidence candidates from an external in-domain knowledge base. Finally, the draft answer and retrieved evidence are concatenated into a whole prompt to let GPT-4 assess the evidence and \\textbf{revise} the draft answer to generate the final answer. Our proposal combines the advantages of the efficiency of adapting a smaller 7B model with the evidence-assessing capability of GPT-4 and effectively prevents GPT-4 from generating hallucinatory content. In the zero-shot setting of four Chinese legal tasks, our method improves accuracy by 33.3\\% compared to the direct generation by GPT-4. When compared to two stronger retrieval-based baselines, our method outperforms them by 15.4\\% and 23.9\\%. Our code will be released",
+      "externalIds": {
+        "DBLP": "conf/acl/WanZWCK24",
+        "ArXiv": "2310.03328",
+        "DOI": "10.48550/arXiv.2310.03328",
+        "CorpusId": 263672135
+      },
+      "arxiv_id": "2310.03328",
+      "doi": "10.48550/arXiv.2310.03328",
+      "corpus_id": 263672135
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "Continual Learning for Large Language Models ": {
+        "Continual Pre-training": {
+          "Update Fact ": {
+            "a3ba7fdf789bcef381acd0d277a086428153bb9f": {},
+            "ce828f9986b196308a3e40b1de58af1e8e68d728": {},
+            "80f9f109d1564cb8f82aa440a5f6f3fbe220c9ef": {}
+          },
+          "Update Domain": {
+            "Domain-Incremental   Pre-training": {
+              "e3ec55e9e6720194a0ed5d4033d93a941c8a4f99": {},
+              "b05cfda924a147dfc100dc0b3eea451c6db32868": {},
+              "b3bc37a15aa74c523d656ad89b1896651f5eef72": {}
+            },
+            "Domain-Specific   Continual Pre-training": {
+              "739cf040ed2c2af49077db48d489a46be5fb6157": {},
+              "e88d72202d449ad198308e21e7fa28680a8d2a21": {},
+              "04a340b15945c70e642227bf249639b171beb3f8": {}
+            }
+          },
+          "Update Language ": {
+            "Natural Language": {
+              "448c377dfd28ceb9c1e55dbdc55872fb6e34ba57": {}
+            },
+            "Programming Language": {
+              "72e46cabbe8fcb8c25ba83c516bebd3c857943a3": {},
+              "a08a3b08a5a1de6462a7da2906b1cd81691d6c18": {}
+            }
+          }
+        },
+        "Continual Instruction Tuning": {
+          "Update Task ": {
+            "d0a21c79996815953f933286d848f11eca42f097": {},
+            "86d03160e6f05deb17d0169e515f5a55d6361f7c": {},
+            "85a5c0bb6660990c7b5e348c165c552c1d4a2c2a": {},
+            "86478f285356b5c8d27423e6b939634d9e010fba": {},
+            "28fde851680a40fbbc5c6a44bd3ac6f5ca4ad284": {}
+          },
+          "Update Domain ": {
+            "2f4bfc41704a090138afa4174c461896d5d9c98f": {},
+            "352244ac7602f13e16a08424db322364d0a2cef1": {},
+            "a64067c6c4286fc60f4430829ae6b18519c088e3": {},
+            "d78a2e6155fc9afd927850ca2d58f7b790a470dd": {}
+          },
+          "Update Skill ": {
+            "c7a3f9cc61cfafdc307f8ae24430b6b1121f9b2c": {},
+            "05e003a34148d4663734d3f39deefa0979d2a0e6": {},
+            "33eed6ea6805b59617fed7c41ef5825b5e4d1621": {},
+            "0bfc804e31eecfd77f45e4ee7f4d629fffdcd628": {}
+          }
+        },
+        "Continual Alignment ": {
+          "Update Values ": {
+            "c2f1fbc5e829a8b667470bb4f61698f25210442b": {},
+            "b6a2f5f0c41ae933bebb6cd09bf5d065d7f675b0": {}
+          },
+          "Update Preference ": {
+            "6ba3e4172e5c22c8c3ace05a31e9b119a2e3c33c": {}
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000001",
+        "paperId": "a3ba7fdf789bcef381acd0d277a086428153bb9f",
+        "ref_index": "1",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Pre-training",
+          "Update Fact "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000002",
+        "paperId": "ce828f9986b196308a3e40b1de58af1e8e68d728",
+        "ref_index": "2",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Pre-training",
+          "Update Fact "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000003",
+        "paperId": "80f9f109d1564cb8f82aa440a5f6f3fbe220c9ef",
+        "ref_index": "5",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Pre-training",
+          "Update Fact "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000004",
+        "paperId": "e3ec55e9e6720194a0ed5d4033d93a941c8a4f99",
+        "ref_index": "3",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Pre-training",
+          "Update Domain",
+          "Domain-Incremental   Pre-training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000005",
+        "paperId": "b05cfda924a147dfc100dc0b3eea451c6db32868",
+        "ref_index": "4",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Pre-training",
+          "Update Domain",
+          "Domain-Incremental   Pre-training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000006",
+        "paperId": "b3bc37a15aa74c523d656ad89b1896651f5eef72",
+        "ref_index": "8",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Pre-training",
+          "Update Domain",
+          "Domain-Incremental   Pre-training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000007",
+        "paperId": "739cf040ed2c2af49077db48d489a46be5fb6157",
+        "ref_index": "9",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Pre-training",
+          "Update Domain",
+          "Domain-Specific   Continual Pre-training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000008",
+        "paperId": "e88d72202d449ad198308e21e7fa28680a8d2a21",
+        "ref_index": "10",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Pre-training",
+          "Update Domain",
+          "Domain-Specific   Continual Pre-training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000009",
+        "paperId": "04a340b15945c70e642227bf249639b171beb3f8",
+        "ref_index": "11",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Pre-training",
+          "Update Domain",
+          "Domain-Specific   Continual Pre-training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000010",
+        "paperId": "448c377dfd28ceb9c1e55dbdc55872fb6e34ba57",
+        "ref_index": "0",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Pre-training",
+          "Update Language ",
+          "Natural Language"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000011",
+        "paperId": "72e46cabbe8fcb8c25ba83c516bebd3c857943a3",
+        "ref_index": "6",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Pre-training",
+          "Update Language ",
+          "Programming Language"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000012",
+        "paperId": "a08a3b08a5a1de6462a7da2906b1cd81691d6c18",
+        "ref_index": "7",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Pre-training",
+          "Update Language ",
+          "Programming Language"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000013",
+        "paperId": "d0a21c79996815953f933286d848f11eca42f097",
+        "ref_index": "13",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Instruction Tuning",
+          "Update Task "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000014",
+        "paperId": "86d03160e6f05deb17d0169e515f5a55d6361f7c",
+        "ref_index": "16",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Instruction Tuning",
+          "Update Task "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000015",
+        "paperId": "85a5c0bb6660990c7b5e348c165c552c1d4a2c2a",
+        "ref_index": "19",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Instruction Tuning",
+          "Update Task "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000016",
+        "paperId": "86478f285356b5c8d27423e6b939634d9e010fba",
+        "ref_index": "21",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Instruction Tuning",
+          "Update Task "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000017",
+        "paperId": "28fde851680a40fbbc5c6a44bd3ac6f5ca4ad284",
+        "ref_index": "24",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Instruction Tuning",
+          "Update Task "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000018",
+        "paperId": "2f4bfc41704a090138afa4174c461896d5d9c98f",
+        "ref_index": "14",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Instruction Tuning",
+          "Update Domain "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000019",
+        "paperId": "352244ac7602f13e16a08424db322364d0a2cef1",
+        "ref_index": "22",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Instruction Tuning",
+          "Update Domain "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000020",
+        "paperId": "a64067c6c4286fc60f4430829ae6b18519c088e3",
+        "ref_index": "25",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Instruction Tuning",
+          "Update Domain "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000021",
+        "paperId": "d78a2e6155fc9afd927850ca2d58f7b790a470dd",
+        "ref_index": "27",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Instruction Tuning",
+          "Update Domain "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000022",
+        "paperId": "c7a3f9cc61cfafdc307f8ae24430b6b1121f9b2c",
+        "ref_index": "15",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Instruction Tuning",
+          "Update Skill "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000023",
+        "paperId": "05e003a34148d4663734d3f39deefa0979d2a0e6",
+        "ref_index": "17",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Instruction Tuning",
+          "Update Skill "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000024",
+        "paperId": "33eed6ea6805b59617fed7c41ef5825b5e4d1621",
+        "ref_index": "18",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Instruction Tuning",
+          "Update Skill "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000025",
+        "paperId": "0bfc804e31eecfd77f45e4ee7f4d629fffdcd628",
+        "ref_index": "20",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Instruction Tuning",
+          "Update Skill "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000026",
+        "paperId": "c2f1fbc5e829a8b667470bb4f61698f25210442b",
+        "ref_index": "12",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Alignment ",
+          "Update Values "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000027",
+        "paperId": "b6a2f5f0c41ae933bebb6cd09bf5d065d7f675b0",
+        "ref_index": "26",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Alignment ",
+          "Update Values "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.01364",
+        "arxiv_id": "2402.01364",
+        "leaf_mention_id": "2402.01364::000028",
+        "paperId": "6ba3e4172e5c22c8c3ace05a31e9b119a2e3c33c",
+        "ref_index": "23",
+        "path": [
+          "Continual Learning for Large Language Models ",
+          "Continual Alignment ",
+          "Update Preference "
+        ],
+        "depth": 3,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 28,
+      "unique_leaf_paper_count": 28,
+      "multi_membership_extra_mentions": 0,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

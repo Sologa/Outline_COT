@@ -1,0 +1,1040 @@
+{
+  "paper_id": "2212.13465",
+  "arxiv_id": "2212.13465",
+  "title": "A Survey on Table-and-Text HybridQA: Concepts, Methods, Challenges and Future Directions",
+  "ref_meta": [
+    {
+      "paper_id": "2212.13465",
+      "ref_index": "0",
+      "ref_key": "S2:084c5afc5b16b0c50c53390f550a13f4ed4c7d3c",
+      "paperId": "084c5afc5b16b0c50c53390f550a13f4ed4c7d3c",
+      "title": "TSQA: Tabular Scenario Based Question Answering",
+      "year": 2021,
+      "abstract": "Scenario-based question answering (SQA) has attracted an increasing research interest. Compared with the well-studied machine reading comprehension (MRC), SQA is a more challenging task: a scenario may contain not only a textual passage to read but also structured data like tables, i.e., tabular scenario based question answering (TSQA). AI applications of TSQA such as answering multiple-choice questions in high-school exams require synthesizing data in multiple cells and combining tables with texts and domain knowledge to infer answers. To support the study of this task, we construct GeoTSQA. This dataset contains 1k real questions contextualized by tabular scenarios in the geography domain. To solve the task, we extend state-of-the-art MRC methods with TTGen, a novel table-to-text generator. It generates sentences from variously synthesized tabular data and feeds the downstream MRC method with the most useful sentences. Its sentence ranking model fuses the information in the scenario, question, and domain knowledge. Our approach outperforms a variety of strong baseline methods on GeoTSQA.",
+      "externalIds": {
+        "ArXiv": "2101.11429",
+        "DBLP": "conf/aaai/LiS021",
+        "DOI": "10.1609/aaai.v35i15.17570",
+        "CorpusId": 231719096
+      },
+      "arxiv_id": "2101.11429",
+      "doi": "10.1609/aaai.v35i15.17570",
+      "corpus_id": 231719096
+    },
+    {
+      "paper_id": "2212.13465",
+      "ref_index": "1",
+      "ref_key": "S2:27db72a2f643f9dfebc0cc2e8b98a9db307f0f07",
+      "paperId": "27db72a2f643f9dfebc0cc2e8b98a9db307f0f07",
+      "title": "HybridQA: A Dataset of Multi-Hop Question Answering over Tabular and Textual Data",
+      "year": 2020,
+      "abstract": "Existing question answering datasets focus on dealing with homogeneous information, based either only on text or KB/Table information alone. However, as human knowledge is distributed over heterogeneous forms, using homogeneous information alone might lead to severe coverage problems. To fill in the gap, we present HybridQA, a new large-scale question-answering dataset that requires reasoning on heterogeneous information. Each question is aligned with a Wikipedia table and multiple free-form corpora linked with the entities in the table. The questions are designed to aggregate both tabular information and text information, i.e., lack of either form would render the question unanswerable. We test with three different models: 1) a table-only model. 2) text-only model. 3) a hybrid model that combines heterogeneous information to find the answer. The experimental results show that the EM scores obtained by two baselines are below 20%, while the hybrid model can achieve an EM over 40%. This gap suggests the necessity to aggregate heterogeneous information in HybridQA. However, the hybrid model’s score is still far behind human performance. Hence, HybridQA can serve as a challenging benchmark to study question answering with heterogeneous information.",
+      "externalIds": {
+        "MAG": "3101082165",
+        "DBLP": "conf/emnlp/ChenZCXWW20",
+        "ACL": "2020.findings-emnlp.91",
+        "ArXiv": "2004.07347",
+        "DOI": "10.18653/v1/2020.findings-emnlp.91",
+        "CorpusId": 215785913
+      },
+      "arxiv_id": "2004.07347",
+      "doi": "10.18653/v1/2020.findings-emnlp.91",
+      "corpus_id": 215785913
+    },
+    {
+      "paper_id": "2212.13465",
+      "ref_index": "2",
+      "ref_key": "S2:99053e3a708fc27709c9dab33110dc98b187c158",
+      "paperId": "99053e3a708fc27709c9dab33110dc98b187c158",
+      "title": "FinQA: A Dataset of Numerical Reasoning over Financial Data",
+      "year": 2021,
+      "abstract": "The sheer volume of financial statements makes it difficult for humans to access and analyze a business’s financials. Robust numerical reasoning likewise faces unique challenges in this domain. In this work, we focus on answering deep questions over financial data, aiming to automate the analysis of a large corpus of financial documents. In contrast to existing tasks on general domain, the finance domain includes complex numerical reasoning and understanding of heterogeneous representations. To facilitate analytical progress, we propose a new large-scale dataset, FinQA, with Question-Answering pairs over Financial reports, written by financial experts. We also annotate the gold reasoning programs to ensure full explainability. We further introduce baselines and conduct comprehensive experiments in our dataset. The results demonstrate that popular, large, pre-trained models fall far short of expert humans in acquiring finance knowledge and in complex multi-step numerical reasoning on that knowledge. Our dataset – the first of its kind – should therefore enable significant, new community research into complex application domains. The dataset and code are publicly available at https://github.com/czyssrs/FinQA.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2109-00122",
+        "ArXiv": "2109.00122",
+        "ACL": "2021.emnlp-main.300",
+        "DOI": "10.18653/v1/2021.emnlp-main.300",
+        "CorpusId": 235399966
+      },
+      "arxiv_id": "2109.00122",
+      "doi": "10.18653/v1/2021.emnlp-main.300",
+      "corpus_id": 235399966
+    },
+    {
+      "paper_id": "2212.13465",
+      "ref_index": "3",
+      "ref_key": "S2:93d3e45395117e21214d404c8753b578c29266d1",
+      "paperId": "93d3e45395117e21214d404c8753b578c29266d1",
+      "title": "Open Question Answering over Tables and Text",
+      "year": 2020,
+      "abstract": "In open question answering (QA), the answer to a question is produced by retrieving and then analyzing documents that might contain answers to the question. Most open QA systems have considered only retrieving information from unstructured text. Here we consider for the first time open QA over both tabular and textual data and present a new large-scale dataset Open Table-and-Text Question Answering (OTT-QA) to evaluate performance on this task. Most questions in OTT-QA require multi-hop inference across tabular data and unstructured text, and the evidence required to answer a question can be distributed in different ways over these two types of input, making evidence retrieval challenging -- our baseline model using an iterative retriever and BERT-based reader achieves an exact match score less than 10%. We then propose two novel techniques to address the challenge of retrieving and aggregating evidence for OTT-QA. The first technique is to use \"early fusion\" to group multiple highly relevant tabular and textual units into a fused block, which provides more context for the retriever to search for. The second technique is to use a cross-block reader to model the cross-dependency between multiple retrieved evidence with global-local sparse attention. Combining these two techniques improves the score significantly, to above 27%.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2010-10439",
+        "MAG": "3094282562",
+        "ArXiv": "2010.10439",
+        "CorpusId": 224803601
+      },
+      "arxiv_id": "2010.10439",
+      "doi": null,
+      "corpus_id": 224803601
+    },
+    {
+      "paper_id": "2212.13465",
+      "ref_index": "4",
+      "ref_key": "S2:395aae6e7a79e5760457ca38e868acc970016230",
+      "paperId": "395aae6e7a79e5760457ca38e868acc970016230",
+      "title": "MATE: Multi-view Attention for Table Transformer Efficiency",
+      "year": 2021,
+      "abstract": "This work presents a sparse-attention Transformer architecture for modeling documents that contain large tables. Tables are ubiquitous on the web, and are rich in information. However, more than 20% of relational tables on the web have 20 or more rows (Cafarella et al., 2008), and these large tables present a challenge for current Transformer models, which are typically limited to 512 tokens. Here we propose MATE, a novel Transformer architecture designed to model the structure of web tables. MATE uses sparse attention in a way that allows heads to efficiently attend to either rows or columns in a table. This architecture scales linearly with respect to speed and memory, and can handle documents containing more than 8000 tokens with current accelerators. MATE also has a more appropriate inductive bias for tabular data, and sets a new state-of-the-art for three table reasoning datasets. For HybridQA (Chen et al., 2020), a dataset that involves large documents containing tables, we improve the best prior result by 19 points.",
+      "externalIds": {
+        "ACL": "2021.emnlp-main.600",
+        "DBLP": "conf/emnlp/EisenschlosG0C21",
+        "ArXiv": "2109.04312",
+        "DOI": "10.18653/v1/2021.emnlp-main.600",
+        "CorpusId": 237453543
+      },
+      "arxiv_id": "2109.04312",
+      "doi": "10.18653/v1/2021.emnlp-main.600",
+      "corpus_id": 237453543
+    },
+    {
+      "paper_id": "2212.13465",
+      "ref_index": "5",
+      "ref_key": "S2:d58d5172fbe7b40e9c2da382da5507fb3483bcc3",
+      "paperId": "d58d5172fbe7b40e9c2da382da5507fb3483bcc3",
+      "title": "Multi-Hop Open-Domain Question Answering over Structured and Unstructured Knowledge",
+      "year": 2022,
+      "abstract": ",",
+      "externalIds": {
+        "DBLP": "conf/naacl/FengHS022",
+        "DOI": "10.18653/v1/2022.findings-naacl.12",
+        "CorpusId": 250562707
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2022.findings-naacl.12",
+      "corpus_id": 250562707
+    },
+    {
+      "paper_id": "2212.13465",
+      "ref_index": "6",
+      "ref_key": "S2:6f8ffdf8493323baadb2eb4b8c70f2d7084474f8",
+      "paperId": "6f8ffdf8493323baadb2eb4b8c70f2d7084474f8",
+      "title": "Mixed-modality Representation Learning and Pre-training for Joint Table-and-Text Retrieval in OpenQA",
+      "year": 2022,
+      "abstract": "Retrieving evidences from tabular and textual resources is essential for open-domain question answering (OpenQA), which provides more comprehensive information. However, training an effective dense table-text retriever is difficult due to the challenges of table-text discrepancy and data sparsity problem. To address the above challenges, we introduce an optimized OpenQA Table-Text Retriever (OTTeR) to jointly retrieve tabular and textual evidences. Firstly, we propose to enhance mixed-modality representation learning via two mechanisms: modality-enhanced representation and mixed-modality negative sampling strategy. Secondly, to alleviate data sparsity problem and enhance the general retrieval ability, we conduct retrieval-centric mixed-modality synthetic pre-training. Experimental results demonstrate that OTTeR substantially improves the performance of table-and-text retrieval on the OTT-QA dataset. Comprehensive analyses examine the effectiveness of all the proposed mechanisms. Besides, equipped with OTTeR, our OpenQA system achieves the state-of-the-art result on the downstream QA task, with 10.1% absolute improvement in terms of the exact match over the previous best system. All the code and data are available at https://github.com/Jun-jie-Huang/OTTeR.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-05197",
+        "ArXiv": "2210.05197",
+        "DOI": "10.48550/arXiv.2210.05197",
+        "CorpusId": 252815910
+      },
+      "arxiv_id": "2210.05197",
+      "doi": "10.48550/arXiv.2210.05197",
+      "corpus_id": 252815910
+    },
+    {
+      "paper_id": "2212.13465",
+      "ref_index": "7",
+      "ref_key": "S2:aa50ea18f39a136ad6ecb6ec63d7595674950bdf",
+      "paperId": "aa50ea18f39a136ad6ecb6ec63d7595674950bdf",
+      "title": "Multi-Instance Training for Question Answering Across Table and Linked Text",
+      "year": 2021,
+      "abstract": "Answering natural language questions using information from tables (TableQA) is of considerable recent interest. In many applications, tables occur not in isolation, but embedded in, or linked to unstructured text. Often, a question is best answered by matching its parts to either table cell contents or unstructured text spans, and extracting answers from either source. This leads to a new space of TextTableQA problems that was introduced by the HybridQA dataset. Existing adaptations of table representation to transformer-based reading comprehension (RC) architectures fail to tackle the diverse modalities of the two representations through a single sys-tem. Training such systems is further challenged by the need for distant supervision. To reduce cognitive burden, training instances usually include just the question and answer, the latter matching multiple table rows and text passages. This leads to a noisy multi-instance training regime involving not only rows of the table, but also spans of linked text. We respond to these challenges by proposing MITQA, a new TextTableQA system that explicitly models the different but closely-related probability spaces of table row selection and text span selection. Our experiments indicate the superiority of our approach compared to recent baselines. The proposed method is currently at the top of the HybridQA leaderboard with a held out test set, achieving 21% absolute improvement on both EM and F1 scores over previous published results.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2112-07337",
+        "CorpusId": 245131051
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 245131051
+    },
+    {
+      "paper_id": "2212.13465",
+      "ref_index": "8",
+      "ref_key": "S2:d84643c9f0289df5f9373480025da8f76f6df79c",
+      "paperId": "d84643c9f0289df5f9373480025da8f76f6df79c",
+      "title": "Answering Numerical Reasoning Questions in Table-Text Hybrid Contents with Graph-based Encoder and Tree-based Decoder",
+      "year": 2022,
+      "abstract": "In the real-world question answering scenarios, hybrid form combining both tabular and textual contents has attracted more and more attention, among which numerical reasoning problem is one of the most typical and challenging problems. Existing methods usually adopt encoder-decoder framework to represent hybrid contents and generate answers. However, it can not capture the rich relationship among numerical value, table schema, and text information on the encoder side. The decoder uses a simple predefined operator classifier which is not flexible enough to handle numerical reasoning processes with diverse expressions. To address these problems, this paper proposes a Relational Graph enhanced Hybrid table-text Numerical reasoning model with Tree decoder (RegHNT). It models the numerical question answering over table-text hybrid contents as an expression tree generation task. Moreover, we propose a novel relational graph modeling method, which models alignment between questions, tables, and paragraphs. We validated our model on the publicly available table-text hybrid QA benchmark (TAT-QA). The proposed RegHNT significantly outperform the baseline model and achieve state-of-the-art results.",
+      "externalIds": {
+        "ArXiv": "2209.07692",
+        "DBLP": "journals/corr/abs-2209-07692",
+        "ACL": "2022.coling-1.118",
+        "DOI": "10.48550/arXiv.2209.07692",
+        "CorpusId": 252355548
+      },
+      "arxiv_id": "2209.07692",
+      "doi": "10.48550/arXiv.2209.07692",
+      "corpus_id": 252355548
+    },
+    {
+      "paper_id": "2212.13465",
+      "ref_index": "9",
+      "ref_key": "S2:285428daf56a1530b11b6deb515f10c8f1dc5739",
+      "paperId": "285428daf56a1530b11b6deb515f10c8f1dc5739",
+      "title": "Dual Reader-Parser on Hybrid Textual and Tabular Evidence for Open Domain Question Answering",
+      "year": 2021,
+      "abstract": "The current state-of-the-art generative models for open-domain question answering (ODQA) have focused on generating direct answers from unstructured textual information. However, a large amount of world’s knowledge is stored in structured databases, and need to be accessed using query languages such as SQL. Furthermore, query languages can answer questions that require complex reasoning, as well as offering full explainability. In this paper, we propose a hybrid framework that takes both textual and tabular evidences as input and generates either direct answers or SQL queries depending on which form could better answer the question. The generated SQL queries can then be executed on the associated databases to obtain the final answers. To the best of our knowledge, this is the first paper that applies Text2SQL to ODQA tasks. Empirically, we demonstrate that on several ODQA datasets, the hybrid methods consistently outperforms the baseline models that only takes homogeneous input by a large margin. Specifically we achieve the state-of-the-art performance on OpenSQuAD dataset using a T5-base model. In a detailed analysis, we demonstrate that the being able to generate structural SQL queries can always bring gains, especially for those questions that requires complex reasoning.",
+      "externalIds": {
+        "DBLP": "conf/acl/LiNXZWX20",
+        "ACL": "2021.acl-long.315",
+        "ArXiv": "2108.02866",
+        "DOI": "10.18653/v1/2021.acl-long.315",
+        "CorpusId": 236459854
+      },
+      "arxiv_id": "2108.02866",
+      "doi": "10.18653/v1/2021.acl-long.315",
+      "corpus_id": 236459854
+    },
+    {
+      "paper_id": "2212.13465",
+      "ref_index": "10",
+      "ref_key": "S2:cc8417aa578016203cb52efc63592bba64b08bb3",
+      "paperId": "cc8417aa578016203cb52efc63592bba64b08bb3",
+      "title": "FinMath: Injecting a Tree-structured Solver for Question Answering over Financial Reports",
+      "year": 2022,
+      "abstract": "Answering questions over financial reports containing both tabular and textual data (hybrid data) is challenging as it requires models to select information from financial reports and perform complex quantitative analyses. Although current models have demonstrated a solid capability to solve simple questions, they struggle with complex questions that require a multiple-step numerical reasoning process. This paper proposes a new framework named FinMath, which improves the model’s numerical reasoning capacity by injecting a tree-structured neural model to perform multi-step numerical reasoning. Specifically, FinMath extracts supporting evidence from the financial reports given the question in the first phase. In the second phase, a tree-structured neural model is applied to generate a tree expression in a top-down recursive way. Experiments on the TAT-QA dataset show that our proposed approach improves the previous best result by 8.5% absolute for Exact Match (EM) score (50.1% to 58.6%) and 6.1% absolute for numeracy-focused F1 score (58.0% to 64.1%).",
+      "externalIds": {
+        "DBLP": "conf/lrec/LiYZ22",
+        "ACL": "2022.lrec-1.661",
+        "CorpusId": 252432931
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 252432931
+    },
+    {
+      "paper_id": "2212.13465",
+      "ref_index": "11",
+      "ref_key": "S2:80fd13b8ad610572ff83b8aa77a264a188711e7a",
+      "paperId": "80fd13b8ad610572ff83b8aa77a264a188711e7a",
+      "title": "Learning to Imagine: Integrating Counterfactual Thinking in Neural Discrete Reasoning",
+      "year": 2022,
+      "abstract": "Neural discrete reasoning (NDR) has shown remarkable progress in combining deep models with discrete reasoning. However, we find that existing NDR solution suffers from large performance drop on hypothetical questions, e.g. “what the annualized rate of return would be if the revenue in 2020 was doubled”. The key to hypothetical question answering (HQA) is counterfactual thinking, which is a natural ability of human reasoning but difficult for deep models. In this work, we devise a Learning to Imagine (L2I) module, which can be seamlessly incorporated into NDR models to perform the imagination of unseen counterfactual. In particular, we formulate counterfactual thinking into two steps: 1) identifying the fact to intervene, and 2) deriving the counterfactual from the fact and assumption, which are designed as neural networks. Based on TAT-QA, we construct a very challenging HQA dataset with 8,283 hypothetical questions. We apply the proposed L2I to TAGOP, the state-of-the-art solution on TAT-QA, validating the rationality and effectiveness of our approach.",
+      "externalIds": {
+        "DBLP": "conf/acl/LiFZ0ZC22",
+        "ACL": "2022.acl-long.5",
+        "DOI": "10.18653/v1/2022.acl-long.5",
+        "CorpusId": 248780430
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2022.acl-long.5",
+      "corpus_id": 248780430
+    },
+    {
+      "paper_id": "2212.13465",
+      "ref_index": "12",
+      "ref_key": "S2:fff24425c8eaa3af4422261b9e108374ded678f0",
+      "paperId": "fff24425c8eaa3af4422261b9e108374ded678f0",
+      "title": "Open-domain Question Answering via Chain of Reasoning over Heterogeneous Knowledge",
+      "year": 2022,
+      "abstract": "We propose a novel open-domain question answering (ODQA) framework for answering single/multi-hop questions across heterogeneous knowledge sources. The key novelty of our method is the introduction of the intermediary modules into the current retriever-reader pipeline. Unlike previous methods that solely rely on the retriever for gathering all evidence in isolation, our intermediary performs a chain of reasoning over the retrieved set. Specifically, our method links the retrieved evidence with its related global context into graphs and organizes them into a candidate list of evidence chains. Built upon pretrained language models, our system achieves competitive performance on two ODQA datasets, OTT-QA and NQ, against tables and passages from Wikipedia. In particular, our model substantially outperforms the previous state-of-the-art on OTT-QA with an exact match score of 47.3 (45 % relative gain).",
+      "externalIds": {
+        "ArXiv": "2210.12338",
+        "DBLP": "journals/corr/abs-2210-12338",
+        "DOI": "10.48550/arXiv.2210.12338",
+        "CorpusId": 253098174
+      },
+      "arxiv_id": "2210.12338",
+      "doi": "10.48550/arXiv.2210.12338",
+      "corpus_id": 253098174
+    },
+    {
+      "paper_id": "2212.13465",
+      "ref_index": "13",
+      "ref_key": "S2:27ea9e929ae0132acfceb8cca9c98089478824d2",
+      "paperId": "27ea9e929ae0132acfceb8cca9c98089478824d2",
+      "title": "KIQA: Knowledge-Infused Question Answering Model for Financial Table-Text Data",
+      "year": 2022,
+      "abstract": "While entity retrieval models continue to advance their capabilities, our understanding of their wide-ranging applications is limited, especially in domain-specific settings. We highlighted this issue by using recent general-domain entity-linking models, LUKE and GENRE, to inject external knowledge into a question-answering (QA) model for a financial QA task with a hybrid tabular-textual dataset. We found that both models improved the baseline model by 1.57% overall and 8.86% on textual data. Nonetheless, the challenge remains as they still struggle to handle tabular inputs. We subsequently conducted a comprehensive attention-weight analysis, revealing how LUKE utilizes external knowledge supplied by GENRE. The analysis also elaborates how the injection of symbolic knowledge can be helpful and what needs further improvement, paving the way for future research on this challenging QA task and advancing our understanding of how a language model incorporates external knowledge.",
+      "externalIds": {
+        "ACL": "2022.deelio-1.6",
+        "DBLP": "conf/acl-deelio/NararatwongKI22",
+        "DOI": "10.18653/v1/2022.deelio-1.6",
+        "CorpusId": 248780482
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2022.deelio-1.6",
+      "corpus_id": 248780482
+    },
+    {
+      "paper_id": "2212.13465",
+      "ref_index": "14",
+      "ref_key": "S2:03488f1a193066b5ea8b9b800e119f07df5c1d9e",
+      "paperId": "03488f1a193066b5ea8b9b800e119f07df5c1d9e",
+      "title": "Reasoning Like Program Executors",
+      "year": 2022,
+      "abstract": "Reasoning over natural language is a long-standing goal for the research community. However, studies have shown that existing language models are inadequate in reasoning. To address the issue, we present POET, a novel reasoning pre-training paradigm. Through pre-training language models with programs and their execution results, POET empowers language models to harvest the reasoning knowledge possessed by program executors via a data-driven approach. POET is conceptually simple and can be instantiated by different kinds of program executors. In this paper, we showcase two simple instances POET-Math and POET-Logic, in addition to a complex instance, POET-SQL. Experimental results on six benchmarks demonstrate that POET can significantly boost model performance in natural language reasoning, such as numerical reasoning, logical reasoning, and multi-hop reasoning. POET opens a new gate on reasoning-enhancement pre-training, and we hope our analysis would shed light on the future research of reasoning like program executors.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/PiLCZLF0LC22",
+        "ArXiv": "2201.11473",
+        "ACL": "2022.emnlp-main.48",
+        "DOI": "10.18653/v1/2022.emnlp-main.48",
+        "CorpusId": 246294995
+      },
+      "arxiv_id": "2201.11473",
+      "doi": "10.18653/v1/2022.emnlp-main.48",
+      "corpus_id": 246294995
+    },
+    {
+      "paper_id": "2212.13465",
+      "ref_index": "15",
+      "ref_key": "S2:ab17c315f7ee4fe69fde2f3d8ae0e30e4e2f3a2b",
+      "paperId": "ab17c315f7ee4fe69fde2f3d8ae0e30e4e2f3a2b",
+      "title": "Iterative Hierarchical Attention for Answering Complex Questions over Long Documents",
+      "year": 2021,
+      "abstract": "We propose a new model, DocHopper, that iteratively attends to different parts of long, hierarchically structured documents to answer complex questions. Similar to multi-hop question-answering (QA) systems, at each step, DocHopper uses a query $q$ to attend to information from a document, combines this ``retrieved'' information with $q$ to produce the next query. However, in contrast to most previous multi-hop QA systems, DocHopper is able to ``retrieve'' either short passages or long sections of the document, thus emulating a multi-step process of ``navigating'' through a long document to answer a question. To enable this novel behavior, DocHopper does not combine document information with $q$ by concatenating text to the text of $q$, but by combining a compact neural representation of $q$ with a compact neural representation of a hierarchical part of the document, which can potentially be quite large. We experiment with DocHopper on four different QA tasks that require reading long and complex documents to answer multi-hop questions, and show that DocHopper achieves state-of-the-art results on three of the datasets. Additionally, DocHopper is efficient at inference time, being 3--10 times faster than the baselines.",
+      "externalIds": {
+        "ArXiv": "2106.00200",
+        "CorpusId": 239616544
+      },
+      "arxiv_id": "2106.00200",
+      "doi": null,
+      "corpus_id": 239616544
+    },
+    {
+      "paper_id": "2212.13465",
+      "ref_index": "16",
+      "ref_key": "S2:c63296d9907dd522271cb60cf525a7d66aa1c25e",
+      "paperId": "c63296d9907dd522271cb60cf525a7d66aa1c25e",
+      "title": "MuGER2: Multi-Granularity Evidence Retrieval and Reasoning for Hybrid Question Answering",
+      "year": 2022,
+      "abstract": "Hybrid question answering (HQA) aims to answer questions over heterogeneous data, including tables and passages linked to table cells. The heterogeneous data can provide different granularity evidence to HQA models, e.t., column, row, cell, and link. Conventional HQA models usually retrieve coarse- or fine-grained evidence to reason the answer. Through comparison, we find that coarse-grained evidence is easier to retrieve but contributes less to the reasoner, while fine-grained evidence is the opposite. To preserve the advantage and eliminate the disadvantage of different granularity evidence, we propose MuGER$^2$, a Multi-Granularity Evidence Retrieval and Reasoning approach. In evidence retrieval, a unified retriever is designed to learn the multi-granularity evidence from the heterogeneous data. In answer reasoning, an evidence selector is proposed to navigate the fine-grained evidence for the answer reader based on the learned multi-granularity evidence. Experiment results on the HybridQA dataset show that MuGER$^2$ significantly boosts the HQA performance. Further ablation analysis verifies the effectiveness of both the retrieval and reasoning designs.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-10350",
+        "ArXiv": "2210.10350",
+        "DOI": "10.48550/arXiv.2210.10350",
+        "CorpusId": 252992766
+      },
+      "arxiv_id": "2210.10350",
+      "doi": "10.48550/arXiv.2210.10350",
+      "corpus_id": 252992766
+    },
+    {
+      "paper_id": "2212.13465",
+      "ref_index": "17",
+      "ref_key": "S2:0b7e9b6b588baa3f24fdde06feec26a067aa74bd",
+      "paperId": "0b7e9b6b588baa3f24fdde06feec26a067aa74bd",
+      "title": "MultiHiertt: Numerical Reasoning over Multi Hierarchical Tabular and Textual Data",
+      "year": 2022,
+      "abstract": "Numerical reasoning over hybrid data containing both textual and tabular content (e.g., financial reports) has recently attracted much attention in the NLP community. However, existing question answering (QA) benchmarks over hybrid data only include a single flat table in each document and thus lack examples of multi-step numerical reasoning across multiple hierarchical tables. To facilitate data analytical progress, we construct a new large-scale benchmark, MultiHiertt, with QA pairs over Multi Hierarchical Tabular and Textual data. MultiHiertt is built from a wealth of financial reports and has the following unique characteristics: 1) each document contain multiple tables and longer unstructured texts; 2) most of tables contained are hierarchical; 3) the reasoning process required for each question is more complex and challenging than existing benchmarks; and 4) fine-grained annotations of reasoning processes and supporting facts are provided to reveal complex numerical reasoning. We further introduce a novel QA model termed MT2Net, which first applies facts retrieving to extract relevant supporting facts from both tables and text and then uses a reasoning module to perform symbolic reasoning over retrieved facts. We conduct comprehensive experiments on various baselines. The experimental results show that MultiHiertt presents a strong challenge for existing baselines whose results lag far behind the performance of human experts. The dataset and code are publicly available at https://github.com/psunlpgroup/MultiHiertt.",
+      "externalIds": {
+        "ArXiv": "2206.01347",
+        "DBLP": "conf/acl/ZhaoLLZ22",
+        "ACL": "2022.acl-long.454",
+        "DOI": "10.18653/v1/2022.acl-long.454",
+        "CorpusId": 248780469
+      },
+      "arxiv_id": "2206.01347",
+      "doi": "10.18653/v1/2022.acl-long.454",
+      "corpus_id": 248780469
+    },
+    {
+      "paper_id": "2212.13465",
+      "ref_index": "18",
+      "ref_key": "S2:c7cf2ed6b9ca5aff7d2db7769b6cafaf22ef6ad3",
+      "paperId": "c7cf2ed6b9ca5aff7d2db7769b6cafaf22ef6ad3",
+      "title": "Reasoning over Hybrid Chain for Table-and-Text Open Domain Question Answering",
+      "year": 2022,
+      "abstract": "Tabular and textual question answering requires systems to perform reasoning over heterogeneous information, considering table structure, and the connections among table and text. In this paper, we propose a ChAin-centric Reasoning and Pre-training framework (CARP). CARP utilizes hybrid chain to model the explicit intermediate reasoning process across table and text for question answering. We also propose a novel chain-centric pre-training method, to enhance the pre-trained model in identifying the cross-modality reasoning process and alleviating the data sparsity problem. This method constructs the large-scale reasoning corpus by synthesizing pseudo heterogeneous reasoning paths from Wikipedia and generating corresponding questions. We evaluate our system on OTT-QA, a large-scale table-and-text open-domain question answering benchmark, and our system achieves the state-of-the-art performance. Further analyses illustrate that the explicit hybrid chain offers substantial performance improvement and interpretablity of the intermediate reasoning process, and the chain-centric pre-training boosts the performance on the chain extraction.",
+      "externalIds": {
+        "DBLP": "conf/ijcai/ZhongHL0W0D22",
+        "DOI": "10.24963/ijcai.2022/629",
+        "CorpusId": 250632077
+      },
+      "arxiv_id": null,
+      "doi": "10.24963/ijcai.2022/629",
+      "corpus_id": 250632077
+    },
+    {
+      "paper_id": "2212.13465",
+      "ref_index": "19",
+      "ref_key": "S2:52b3087525b262f6f467453e22fdfa843353d40c",
+      "paperId": "52b3087525b262f6f467453e22fdfa843353d40c",
+      "title": "TaCube: Pre-computing Data Cubes for Answering Numerical-Reasoning Questions over Tabular Data",
+      "year": 2022,
+      "abstract": "Existing auto-regressive pre-trained language models (PLMs) like T5 and BART, have been well applied to table question answering by UNIFIEDSKG and TAPEX, respectively, and demonstrated state-of-the-art results on multiple benchmarks. However, auto-regressive PLMs are challenged by recent emerging numerical reasoning datasets, such as TAT-QA, due to the error-prone implicit calculation. In this paper, we present TaCube, to pre-compute aggregation/arithmetic results for the table in advance, so that they are handy and readily available for PLMs to answer numerical reasoning questions. TaCube systematically and comprehensively covers a collection of computational operations over table segments. By simply concatenating TaCube to the input sequence of PLMs, it shows significant experimental effectiveness. TaCube promotes the F1 score from 49.6% to 66.2% on TAT-QA and achieves new state-of-the-art results on WikiTQ (59.6% denotation accuracy). TaCube’s improvements on numerical reasoning cases are even more notable: on TAT-QA, TaCube promotes the exact match accuracy of BART-large by 39.6% on sum, 52.5% on average, 36.6% on substraction, and 22.2% on division. We believe that TaCube is a general and portable pre-computation solution that can be potentially integrated to various numerical reasoning frameworks",
+      "externalIds": {
+        "ArXiv": "2205.12682",
+        "DBLP": "journals/corr/abs-2205-12682",
+        "ACL": "2022.emnlp-main.145",
+        "DOI": "10.48550/arXiv.2205.12682",
+        "CorpusId": 249062802
+      },
+      "arxiv_id": "2205.12682",
+      "doi": "10.48550/arXiv.2205.12682",
+      "corpus_id": 249062802
+    },
+    {
+      "paper_id": "2212.13465",
+      "ref_index": "20",
+      "ref_key": "S2:6876e7b5526a93462f9b3e0b55a93b5561f1c993",
+      "paperId": "6876e7b5526a93462f9b3e0b55a93b5561f1c993",
+      "title": "UniRPG: Unified Discrete Reasoning over Table and Text as Program Generation",
+      "year": 2022,
+      "abstract": "Question answering requiring discrete reasoning, e.g., arithmetic computing, comparison, and counting, over knowledge is a challenging task.In this paper, we propose UniRPG, a semantic-parsing-based approach advanced in interpretability and scalability, to perform Unified discrete Reasoning over heterogeneous knowledge resources, i.e., table and text, as Program Generation. Concretely, UniRPG consists of a neural programmer and a symbolic program executor,where a program is the composition of a set of pre-defined general atomic and higher-order operations and arguments extracted from table and text.First, the programmer parses a question into a program by generating operations and copying arguments, and then, the executor derives answers from table and text based on the program.To alleviate the costly program annotation issue, we design a distant supervision approach for programmer learning, where pseudo programs are automatically constructed without annotated derivations.Extensive experiments on the TAT-QA dataset show that UniRPG achieves tremendous improvements and enhances interpretability and scalability compared with previous state-of-the-art methods, even without derivation annotation.Moreover, it achieves promising performance on the textual dataset DROP without derivation annotation.",
+      "externalIds": {
+        "ACL": "2022.emnlp-main.508",
+        "DBLP": "journals/corr/abs-2210-08249",
+        "ArXiv": "2210.08249",
+        "DOI": "10.48550/arXiv.2210.08249",
+        "CorpusId": 252918014
+      },
+      "arxiv_id": "2210.08249",
+      "doi": "10.48550/arXiv.2210.08249",
+      "corpus_id": 252918014
+    },
+    {
+      "paper_id": "2212.13465",
+      "ref_index": "21",
+      "ref_key": "S2:b3213c84a6ff7a2f11099de783c93166e4fc02a4",
+      "paperId": "b3213c84a6ff7a2f11099de783c93166e4fc02a4",
+      "title": "TAT-QA: A Question Answering Benchmark on a Hybrid of Tabular and Textual Content in Finance",
+      "year": 2021,
+      "abstract": "Hybrid data combining both tabular and textual content (e.g., financial reports) are quite pervasive in the real world. However, Question Answering (QA) over such hybrid data is largely neglected in existing research. In this work, we extract samples from real financial reports to build a new large-scale QA dataset containing both Tabular And Textual data, named TAT-QA, where numerical reasoning is usually required to infer the answer, such as addition, subtraction, multiplication, division, counting, comparison/sorting, and the compositions. We further propose a novel QA model termed TAGOP, which is capable of reasoning over both tables and text. It adopts sequence tagging to extract relevant cells from the table along with relevant spans from the text to infer their semantics, and then applies symbolic reasoning over them with a set of aggregation operators to arrive at the final answer. TAGOP achieves 58.0% inF1, which is an 11.1% absolute increase over the previous best baseline model, according to our experiments on TAT-QA. But this result still lags far behind performance of expert human, i.e.90.8% in F1. It is demonstrated that our TAT-QA is very challenging and can serve as a benchmark for training and testing powerful QA models that address hybrid form data.",
+      "externalIds": {
+        "DBLP": "conf/acl/ZhuLHWZLFC20",
+        "ArXiv": "2105.07624",
+        "ACL": "2021.acl-long.254",
+        "DOI": "10.18653/v1/2021.acl-long.254",
+        "CorpusId": 234741852
+      },
+      "arxiv_id": "2105.07624",
+      "doi": "10.18653/v1/2021.acl-long.254",
+      "corpus_id": 234741852
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "HybridQA": {
+        "Datasets ": {
+          "084c5afc5b16b0c50c53390f550a13f4ed4c7d3c": {},
+          "27db72a2f643f9dfebc0cc2e8b98a9db307f0f07": {},
+          "99053e3a708fc27709c9dab33110dc98b187c158": {},
+          "93d3e45395117e21214d404c8753b578c29266d1": {},
+          "80fd13b8ad610572ff83b8aa77a264a188711e7a": {},
+          "0b7e9b6b588baa3f24fdde06feec26a067aa74bd": {},
+          "b3213c84a6ff7a2f11099de783c93166e4fc02a4": {}
+        },
+        "Methods": {
+          "Retriever": {
+            "Individual": {
+              "Cell-Based": {
+                "395aae6e7a79e5760457ca38e868acc970016230": {},
+                "0b7e9b6b588baa3f24fdde06feec26a067aa74bd": {}
+              },
+              "Row-Based": {
+                "285428daf56a1530b11b6deb515f10c8f1dc5739": {}
+              }
+            },
+            "Joint": {
+              "Cell-Based": {
+                "27db72a2f643f9dfebc0cc2e8b98a9db307f0f07": {},
+                "fff24425c8eaa3af4422261b9e108374ded678f0": {},
+                "c63296d9907dd522271cb60cf525a7d66aa1c25e": {},
+                "c7cf2ed6b9ca5aff7d2db7769b6cafaf22ef6ad3": {}
+              },
+              "Row-Based": {
+                "084c5afc5b16b0c50c53390f550a13f4ed4c7d3c": {},
+                "6f8ffdf8493323baadb2eb4b8c70f2d7084474f8": {},
+                "aa50ea18f39a136ad6ecb6ec63d7595674950bdf": {},
+                "ab17c315f7ee4fe69fde2f3d8ae0e30e4e2f3a2b": {}
+              },
+              "Table-Based": {
+                "93d3e45395117e21214d404c8753b578c29266d1": {}
+              }
+            }
+          },
+          "Reader": {
+            "Encoder-Improvement": {
+              "Relation-Modeling": {
+                "d58d5172fbe7b40e9c2da382da5507fb3483bcc3": {},
+                "d84643c9f0289df5f9373480025da8f76f6df79c": {}
+              },
+              "Knowledge-Injection": {
+                "084c5afc5b16b0c50c53390f550a13f4ed4c7d3c": {},
+                "27ea9e929ae0132acfceb8cca9c98089478824d2": {}
+              }
+            },
+            "Decoder-Improvement": {
+              "Answer-Specific": {
+                "99053e3a708fc27709c9dab33110dc98b187c158": {},
+                "cc8417aa578016203cb52efc63592bba64b08bb3": {},
+                "80fd13b8ad610572ff83b8aa77a264a188711e7a": {},
+                "0b7e9b6b588baa3f24fdde06feec26a067aa74bd": {}
+              },
+              "Multi-Hop": {
+                "fff24425c8eaa3af4422261b9e108374ded678f0": {},
+                "ab17c315f7ee4fe69fde2f3d8ae0e30e4e2f3a2b": {},
+                "c7cf2ed6b9ca5aff7d2db7769b6cafaf22ef6ad3": {}
+              }
+            },
+            "Data-Manipulation": {
+              "Pre-Training": {
+                "03488f1a193066b5ea8b9b800e119f07df5c1d9e": {}
+              },
+              "Format-Modification": {
+                "99053e3a708fc27709c9dab33110dc98b187c158": {},
+                "285428daf56a1530b11b6deb515f10c8f1dc5739": {},
+                "52b3087525b262f6f467453e22fdfa843353d40c": {},
+                "6876e7b5526a93462f9b3e0b55a93b5561f1c993": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000001",
+        "paperId": "084c5afc5b16b0c50c53390f550a13f4ed4c7d3c",
+        "ref_index": "0",
+        "path": [
+          "HybridQA",
+          "Datasets "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000002",
+        "paperId": "27db72a2f643f9dfebc0cc2e8b98a9db307f0f07",
+        "ref_index": "1",
+        "path": [
+          "HybridQA",
+          "Datasets "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000003",
+        "paperId": "99053e3a708fc27709c9dab33110dc98b187c158",
+        "ref_index": "2",
+        "path": [
+          "HybridQA",
+          "Datasets "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000004",
+        "paperId": "93d3e45395117e21214d404c8753b578c29266d1",
+        "ref_index": "3",
+        "path": [
+          "HybridQA",
+          "Datasets "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000005",
+        "paperId": "80fd13b8ad610572ff83b8aa77a264a188711e7a",
+        "ref_index": "11",
+        "path": [
+          "HybridQA",
+          "Datasets "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000006",
+        "paperId": "0b7e9b6b588baa3f24fdde06feec26a067aa74bd",
+        "ref_index": "17",
+        "path": [
+          "HybridQA",
+          "Datasets "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000007",
+        "paperId": "b3213c84a6ff7a2f11099de783c93166e4fc02a4",
+        "ref_index": "21",
+        "path": [
+          "HybridQA",
+          "Datasets "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000008",
+        "paperId": "395aae6e7a79e5760457ca38e868acc970016230",
+        "ref_index": "4",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Retriever",
+          "Individual",
+          "Cell-Based"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000009",
+        "paperId": "0b7e9b6b588baa3f24fdde06feec26a067aa74bd",
+        "ref_index": "17",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Retriever",
+          "Individual",
+          "Cell-Based"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000010",
+        "paperId": "285428daf56a1530b11b6deb515f10c8f1dc5739",
+        "ref_index": "9",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Retriever",
+          "Individual",
+          "Row-Based"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000011",
+        "paperId": "27db72a2f643f9dfebc0cc2e8b98a9db307f0f07",
+        "ref_index": "1",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Retriever",
+          "Joint",
+          "Cell-Based"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000012",
+        "paperId": "fff24425c8eaa3af4422261b9e108374ded678f0",
+        "ref_index": "12",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Retriever",
+          "Joint",
+          "Cell-Based"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000013",
+        "paperId": "c63296d9907dd522271cb60cf525a7d66aa1c25e",
+        "ref_index": "16",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Retriever",
+          "Joint",
+          "Cell-Based"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000014",
+        "paperId": "c7cf2ed6b9ca5aff7d2db7769b6cafaf22ef6ad3",
+        "ref_index": "18",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Retriever",
+          "Joint",
+          "Cell-Based"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000015",
+        "paperId": "084c5afc5b16b0c50c53390f550a13f4ed4c7d3c",
+        "ref_index": "0",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Retriever",
+          "Joint",
+          "Row-Based"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000016",
+        "paperId": "6f8ffdf8493323baadb2eb4b8c70f2d7084474f8",
+        "ref_index": "6",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Retriever",
+          "Joint",
+          "Row-Based"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000017",
+        "paperId": "aa50ea18f39a136ad6ecb6ec63d7595674950bdf",
+        "ref_index": "7",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Retriever",
+          "Joint",
+          "Row-Based"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000018",
+        "paperId": "ab17c315f7ee4fe69fde2f3d8ae0e30e4e2f3a2b",
+        "ref_index": "15",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Retriever",
+          "Joint",
+          "Row-Based"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000019",
+        "paperId": "93d3e45395117e21214d404c8753b578c29266d1",
+        "ref_index": "3",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Retriever",
+          "Joint",
+          "Table-Based"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000020",
+        "paperId": "d58d5172fbe7b40e9c2da382da5507fb3483bcc3",
+        "ref_index": "5",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Reader",
+          "Encoder-Improvement",
+          "Relation-Modeling"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000021",
+        "paperId": "d84643c9f0289df5f9373480025da8f76f6df79c",
+        "ref_index": "8",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Reader",
+          "Encoder-Improvement",
+          "Relation-Modeling"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000022",
+        "paperId": "084c5afc5b16b0c50c53390f550a13f4ed4c7d3c",
+        "ref_index": "0",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Reader",
+          "Encoder-Improvement",
+          "Knowledge-Injection"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000023",
+        "paperId": "27ea9e929ae0132acfceb8cca9c98089478824d2",
+        "ref_index": "13",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Reader",
+          "Encoder-Improvement",
+          "Knowledge-Injection"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000024",
+        "paperId": "99053e3a708fc27709c9dab33110dc98b187c158",
+        "ref_index": "2",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Reader",
+          "Decoder-Improvement",
+          "Answer-Specific"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000025",
+        "paperId": "cc8417aa578016203cb52efc63592bba64b08bb3",
+        "ref_index": "10",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Reader",
+          "Decoder-Improvement",
+          "Answer-Specific"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000026",
+        "paperId": "80fd13b8ad610572ff83b8aa77a264a188711e7a",
+        "ref_index": "11",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Reader",
+          "Decoder-Improvement",
+          "Answer-Specific"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000027",
+        "paperId": "0b7e9b6b588baa3f24fdde06feec26a067aa74bd",
+        "ref_index": "17",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Reader",
+          "Decoder-Improvement",
+          "Answer-Specific"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000028",
+        "paperId": "fff24425c8eaa3af4422261b9e108374ded678f0",
+        "ref_index": "12",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Reader",
+          "Decoder-Improvement",
+          "Multi-Hop"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000029",
+        "paperId": "ab17c315f7ee4fe69fde2f3d8ae0e30e4e2f3a2b",
+        "ref_index": "15",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Reader",
+          "Decoder-Improvement",
+          "Multi-Hop"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000030",
+        "paperId": "c7cf2ed6b9ca5aff7d2db7769b6cafaf22ef6ad3",
+        "ref_index": "18",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Reader",
+          "Decoder-Improvement",
+          "Multi-Hop"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000031",
+        "paperId": "03488f1a193066b5ea8b9b800e119f07df5c1d9e",
+        "ref_index": "14",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Reader",
+          "Data-Manipulation",
+          "Pre-Training"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000032",
+        "paperId": "99053e3a708fc27709c9dab33110dc98b187c158",
+        "ref_index": "2",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Reader",
+          "Data-Manipulation",
+          "Format-Modification"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000033",
+        "paperId": "285428daf56a1530b11b6deb515f10c8f1dc5739",
+        "ref_index": "9",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Reader",
+          "Data-Manipulation",
+          "Format-Modification"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000034",
+        "paperId": "52b3087525b262f6f467453e22fdfa843353d40c",
+        "ref_index": "19",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Reader",
+          "Data-Manipulation",
+          "Format-Modification"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2212.13465",
+        "arxiv_id": "2212.13465",
+        "leaf_mention_id": "2212.13465::000035",
+        "paperId": "6876e7b5526a93462f9b3e0b55a93b5561f1c993",
+        "ref_index": "20",
+        "path": [
+          "HybridQA",
+          "Methods",
+          "Reader",
+          "Data-Manipulation",
+          "Format-Modification"
+        ],
+        "depth": 5,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 35,
+      "unique_leaf_paper_count": 22,
+      "multi_membership_extra_mentions": 13,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

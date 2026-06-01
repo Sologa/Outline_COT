@@ -1,0 +1,1580 @@
+{
+  "paper_id": "2209.00099",
+  "arxiv_id": "2209.00099",
+  "title": "Efficient Methods for Natural Language Processing: A Survey",
+  "ref_meta": [
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "0",
+      "ref_key": "S2:5824756ace91f1dd552caab2365ed734cc303b2a",
+      "paperId": "5824756ace91f1dd552caab2365ed734cc303b2a",
+      "title": "Balancing Cost and Benefit with Tied-Multi Transformers",
+      "year": 2020,
+      "abstract": "We propose a novel procedure for training multiple Transformers with tied parameters which compresses multiple models into one enabling the dynamic choice of the number of encoder and decoder layers during decoding. In training an encoder-decoder model, typically, the output of the last layer of the N-layer encoder is fed to the M-layer decoder, and the output of the last decoder layer is used to compute loss. Instead, our method computes a single loss consisting of NxM losses, where each loss is computed from the output of one of the M decoder layers connected to one of the N encoder layers. Such a model subsumes NxM models with different number of encoder and decoder layers, and can be used for decoding with fewer than the maximum number of encoder and decoder layers. Given our flexible tied model, we also address to a-priori selection of the number of encoder and decoder layers for faster decoding, and explore recurrent stacking of layers and knowledge distillation for model compression. We present a cost-benefit analysis of applying the proposed approaches for neural machine translation and show that they reduce decoding costs while preserving translation quality.",
+      "externalIds": {
+        "MAG": "3045789554",
+        "ACL": "2020.ngt-1.3",
+        "ArXiv": "2002.08614",
+        "DBLP": "conf/aclnmt/DabreRF20",
+        "DOI": "10.18653/v1/2020.ngt-1.3",
+        "CorpusId": 211204667
+      },
+      "arxiv_id": "2002.08614",
+      "doi": "10.18653/v1/2020.ngt-1.3",
+      "corpus_id": 211204667
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "1",
+      "ref_key": "S2:df2b0e26d0599ce3e70df8a9da02e51594e0e992",
+      "paperId": "df2b0e26d0599ce3e70df8a9da02e51594e0e992",
+      "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+      "year": 2019,
+      "abstract": "We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. Unlike recent language representation models (Peters et al., 2018a; Radford et al., 2018), BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial task-specific architecture modifications. BERT is conceptually simple and empirically powerful. It obtains new state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5 (7.7 point absolute improvement), MultiNLI accuracy to 86.7% (4.6% absolute improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1 (5.1 point absolute improvement).",
+      "externalIds": {
+        "MAG": "2951055169",
+        "ACL": "N19-1423",
+        "DBLP": "journals/corr/abs-1810-04805",
+        "ArXiv": "1810.04805",
+        "DOI": "10.18653/v1/N19-1423",
+        "CorpusId": 52967399
+      },
+      "arxiv_id": "1810.04805",
+      "doi": "10.18653/v1/N19-1423",
+      "corpus_id": 52967399
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "2",
+      "ref_key": "S2:4585611042d2be0d997ee135e3fe219d668db9ec",
+      "paperId": "4585611042d2be0d997ee135e3fe219d668db9ec",
+      "title": "Depth-Adaptive Transformer",
+      "year": 2019,
+      "abstract": "State of the art sequence-to-sequence models for large scale tasks perform a fixed number of computations for each input sequence regardless of whether it is easy or hard to process. In this paper, we train Transformer models which can make output predictions at different stages of the network and we investigate different ways to predict how much computation is required for a particular sequence. Unlike dynamic computation in Universal Transformers, which applies the same set of layers iteratively, we apply different layers at every step to adjust both the amount of computation as well as the model capacity. On IWSLT German-English translation our approach matches the accuracy of a well tuned baseline Transformer while using less than a quarter of the decoder layers.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1910-10073",
+        "MAG": "2981757109",
+        "ArXiv": "1910.10073",
+        "CorpusId": 204824061
+      },
+      "arxiv_id": "1910.10073",
+      "doi": null,
+      "corpus_id": 204824061
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "3",
+      "ref_key": "S2:3366e9eb81880d172752d4397cb8e9e6de02b935",
+      "paperId": "3366e9eb81880d172752d4397cb8e9e6de02b935",
+      "title": "Efficient 8-Bit Quantization of Transformer Neural Machine Language Translation Model",
+      "year": 2019,
+      "abstract": "In this work, we quantize a trained Transformer machine language translation model leveraging INT8/VNNI instructions in the latest Intel$^\\circledR$ Xeon$^\\circledR$ Cascade Lake processors to improve inference performance while maintaining less than 0.5$\\%$ drop in accuracy. To the best of our knowledge, this is the first attempt in the industry to quantize the Transformer model. This has high impact as it clearly demonstrates the various complexities of quantizing the language translation model. We present novel quantization techniques directly in TensorFlow to opportunistically replace 32-bit floating point (FP32) computations with 8-bit integers (INT8) and transform the FP32 computational graph. We also present a bin-packing parallel batching technique to maximize CPU utilization. Overall, our optimizations with INT8/VNNI deliver 1.5X improvement over the best FP32 performance. Furthermore, it reveals the opportunities and challenges to boost performance of quantized deep learning inference and establishes best practices to run inference with high efficiency on Intel CPUs.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1906-00532",
+        "ArXiv": "1906.00532",
+        "MAG": "2947946877",
+        "CorpusId": 173990430
+      },
+      "arxiv_id": "1906.00532",
+      "doi": null,
+      "corpus_id": 173990430
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "4",
+      "ref_key": "S2:002c256d30d6be4b23d365a8de8ae0e67e4c9641",
+      "paperId": "002c256d30d6be4b23d365a8de8ae0e67e4c9641",
+      "title": "Improving language models by retrieving from trillions of tokens",
+      "year": 2021,
+      "abstract": "We enhance auto-regressive language models by conditioning on document chunks retrieved from a large corpus, based on local similarity with preceding tokens. With a $2$ trillion token database, our Retrieval-Enhanced Transformer (RETRO) obtains comparable performance to GPT-3 and Jurassic-1 on the Pile, despite using 25$\\times$ fewer parameters. After fine-tuning, RETRO performance translates to downstream knowledge-intensive tasks such as question answering. RETRO combines a frozen Bert retriever, a differentiable encoder and a chunked cross-attention mechanism to predict tokens based on an order of magnitude more data than what is typically consumed during training. We typically train RETRO from scratch, yet can also rapidly RETROfit pre-trained transformers with retrieval and still achieve good performance. Our work opens up new avenues for improving language models through explicit memory at unprecedented scale.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2112-04426",
+        "ArXiv": "2112.04426",
+        "CorpusId": 244954723
+      },
+      "arxiv_id": "2112.04426",
+      "doi": null,
+      "corpus_id": 244954723
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "5",
+      "ref_key": "S2:90abbc2cf38462b954ae1b772fac9532e2ccd8b0",
+      "paperId": "90abbc2cf38462b954ae1b772fac9532e2ccd8b0",
+      "title": "Language Models are Few-Shot Learners",
+      "year": 2020,
+      "abstract": "Recent work has demonstrated substantial gains on many NLP tasks and benchmarks by pre-training on a large corpus of text followed by fine-tuning on a specific task. While typically task-agnostic in architecture, this method still requires task-specific fine-tuning datasets of thousands or tens of thousands of examples. By contrast, humans can generally perform a new language task from only a few examples or from simple instructions - something which current NLP systems still largely struggle to do. Here we show that scaling up language models greatly improves task-agnostic, few-shot performance, sometimes even reaching competitiveness with prior state-of-the-art fine-tuning approaches. Specifically, we train GPT-3, an autoregressive language model with 175 billion parameters, 10x more than any previous non-sparse language model, and test its performance in the few-shot setting. For all tasks, GPT-3 is applied without any gradient updates or fine-tuning, with tasks and few-shot demonstrations specified purely via text interaction with the model. GPT-3 achieves strong performance on many NLP datasets, including translation, question-answering, and cloze tasks, as well as several tasks that require on-the-fly reasoning or domain adaptation, such as unscrambling words, using a novel word in a sentence, or performing 3-digit arithmetic. At the same time, we also identify some datasets where GPT-3's few-shot learning still struggles, as well as some datasets where GPT-3 faces methodological issues related to training on large web corpora. Finally, we find that GPT-3 can generate samples of news articles which human evaluators have difficulty distinguishing from articles written by humans. We discuss broader societal impacts of this finding and of GPT-3 in general.",
+      "externalIds": {
+        "ArXiv": "2005.14165",
+        "DBLP": "conf/nips/BrownMRSKDNSSAA20",
+        "MAG": "3030163527",
+        "CorpusId": 218971783
+      },
+      "arxiv_id": "2005.14165",
+      "doi": null,
+      "corpus_id": 218971783
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "6",
+      "ref_key": "S2:3fbf6339273c50b04e886fa9bd4ad18c952a683d",
+      "paperId": "3fbf6339273c50b04e886fa9bd4ad18c952a683d",
+      "title": "Rethinking Attention with Performers",
+      "year": 2020,
+      "abstract": "We introduce Performers, Transformer architectures which can estimate regular (softmax) full-rank-attention Transformers with provable accuracy, but using only linear (as opposed to quadratic) space and time complexity, without relying on any priors such as sparsity or low-rankness. To approximate softmax attention-kernels, Performers use a novel Fast Attention Via positive Orthogonal Random features approach (FAVOR+), which may be of independent interest for scalable kernel methods. FAVOR+ can be also used to efficiently model kernelizable attention mechanisms beyond softmax. This representational power is crucial to accurately compare softmax with other kernels for the first time on large-scale tasks, beyond the reach of regular Transformers, and investigate optimal attention-kernels. Performers are linear architectures fully compatible with regular Transformers and with strong theoretical guarantees: unbiased or nearly-unbiased estimation of the attention matrix, uniform convergence and low estimation variance. We tested Performers on a rich set of tasks stretching from pixel-prediction through text models to protein sequence modeling. We demonstrate competitive results with other examined efficient sparse and dense attention methods, showcasing effectiveness of the novel attention-learning paradigm leveraged by Performers.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2009-14794",
+        "ArXiv": "2009.14794",
+        "MAG": "3091156754",
+        "CorpusId": 222067132
+      },
+      "arxiv_id": "2009.14794",
+      "doi": null,
+      "corpus_id": 222067132
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "7",
+      "ref_key": "S2:c4744a7c2bb298e4a52289a1e085c71cc3d37bc6",
+      "paperId": "c4744a7c2bb298e4a52289a1e085c71cc3d37bc6",
+      "title": "Transformer-XL: Attentive Language Models beyond a Fixed-Length Context",
+      "year": 2019,
+      "abstract": "Transformers have a potential of learning longer-term dependency, but are limited by a fixed-length context in the setting of language modeling. We propose a novel neural architecture Transformer-XL that enables learning dependency beyond a fixed length without disrupting temporal coherence. It consists of a segment-level recurrence mechanism and a novel positional encoding scheme. Our method not only enables capturing longer-term dependency, but also resolves the context fragmentation problem. As a result, Transformer-XL learns dependency that is 80% longer than RNNs and 450% longer than vanilla Transformers, achieves better performance on both short and long sequences, and is up to 1,800+ times faster than vanilla Transformers during evaluation. Notably, we improve the state-of-the-art results of bpc/perplexity to 0.99 on enwiki8, 1.08 on text8, 18.3 on WikiText-103, 21.8 on One Billion Word, and 54.5 on Penn Treebank (without finetuning). When trained only on WikiText-103, Transformer-XL manages to generate reasonably coherent, novel text articles with thousands of tokens. Our code, pretrained models, and hyperparameters are available in both Tensorflow and PyTorch.",
+      "externalIds": {
+        "ArXiv": "1901.02860",
+        "DBLP": "conf/acl/DaiYYCLS19",
+        "ACL": "P19-1285",
+        "MAG": "2911109671",
+        "DOI": "10.18653/v1/P19-1285",
+        "CorpusId": 57759363
+      },
+      "arxiv_id": "1901.02860",
+      "doi": "10.18653/v1/P19-1285",
+      "corpus_id": 57759363
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "8",
+      "ref_key": "S2:11fe37ab6faf6bf85ad2f5746c154dec5412bd04",
+      "paperId": "11fe37ab6faf6bf85ad2f5746c154dec5412bd04",
+      "title": "8-bit Optimizers via Block-wise Quantization",
+      "year": 2021,
+      "abstract": "Stateful optimizers maintain gradient statistics over time, e.g., the exponentially smoothed sum (SGD with momentum) or squared sum (Adam) of past gradient values. This state can be used to accelerate optimization compared to plain stochastic gradient descent but uses memory that might otherwise be allocated to model parameters, thereby limiting the maximum size of models trained in practice. In this paper, we develop the first optimizers that use 8-bit statistics while maintaining the performance levels of using 32-bit optimizer states. To overcome the resulting computational, quantization, and stability challenges, we develop block-wise dynamic quantization. Block-wise quantization divides input tensors into smaller blocks that are independently quantized. Each block is processed in parallel across cores, yielding faster optimization and high precision quantization. To maintain stability and performance, we combine block-wise quantization with two additional changes: (1) dynamic quantization, a form of non-linear optimization that is precise for both large and small magnitude values, and (2) a stable embedding layer to reduce gradient variance that comes from the highly non-uniform distribution of input tokens in language models. As a result, our 8-bit optimizers maintain 32-bit performance with a small fraction of the memory footprint on a range of tasks, including 1.5B parameter language modeling, GLUE finetuning, ImageNet classification, WMT’14 machine translation, MoCo v2 contrastive ImageNet pretraining+finetuning, and RoBERTa pretraining, without changes to the original optimizer hyperparameters. We open-sourceour 8-bit optimizers as a drop-in replacement that only requires a two-line code change. Increasing model size is an effective way to achieve better performance for given resources (Kaplan et al., 2020; Henighan et al., 2020; Raffel et al., 2019; Lewis et al., 2021). However, training such large models requires storing the model, gradient, and state of the optimizer (e.g., exponentially smoothed sum and squared sum of previous gradients for Adam), all in a fixed amount of available memory. Although significant research has focused on enabling larger model training by reducing or efficiently distributing the memory required for the model parameters (Shoeybi et al., 2019; Lepikhin et al., 2020; Fedus et al., 2021; Brown et al., 2020; Rajbhandari et al., 2020), reducing the memory footprint of optimizer gradient statistics is much less studied. This is a significant missed opportunity since these optimizer states use 33-75% of the total memory footprint during training. For example, the Adam optimizer states for the largest GPT-2 (Radford et al., 2019) and T5 (Raffel et al., 2019) models are 11 GB and 41 GB in size. In this paper, we develop a fast, high-precision non-linear quantization method – block-wise dynamic quantization – that enables stable 8-bit optimizers (e.g., Adam, AdamW, and Momentum) which maintain 32-bit performance at a fraction of the memory footprint and without any changes to the original hyperparameters.1 While most current work uses 32-bit optimizer states, recent high-profile efforts to use 16-bit optimizers report difficultly for large models with more than 1B parameters (Ramesh et al., 2021). Going from 16-bit optimizers to 8-bit optimizers reduces the range of possible values from 2 = 65536 values to just 2 = 256. To our knowledge, this has not been attempted before. Effectively using this very limited range is challenging for three reasons: quantization accuracy, computational efficiency, and large-scale stability. To maintain accuracy, it is critical to introduce some form of non-linear quantization to reduce errors for both common small magnitude values We study 8-bit optimization with current best practice model and gradient representations (typically 16-bit mixed precision), to isolate optimization challenges. Future work could explore further compressing all three. 1 ar X iv :2 11 0. 02 86 1v 2 [ cs .L G ] 2 0 Ju n 20 22 Published as a conference paper at ICLR 2022",
+      "externalIds": {
+        "DBLP": "conf/iclr/DettmersLSZ22",
+        "ArXiv": "2110.02861",
+        "CorpusId": 238408308
+      },
+      "arxiv_id": "2110.02861",
+      "doi": null,
+      "corpus_id": 238408308
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "9",
+      "ref_key": "S2:05c22ede1e011c551ab0639ef52c8c852d7833b1",
+      "paperId": "05c22ede1e011c551ab0639ef52c8c852d7833b1",
+      "title": "Active Learning for BERT: An Empirical Study",
+      "year": 2020,
+      "abstract": "Real world scenarios present a challenge for text classification, since labels are usually expensive and the data is often characterized by class imbalance. Active Learning (AL) is a ubiquitous paradigm to cope with data scarcity. Recently, pre-trained NLP models, and BERT in particular, are receiving massive attention due to their outstanding performance in various NLP tasks. However, the use of AL with deep pre-trained models has so far received little consideration. Here, we present a large-scale empirical study on active learning techniques for BERT-based classification, addressing a diverse set of AL strategies and datasets. We focus on practical scenarios of binary text classification, where the annotation budget is very small, and the data is often skewed. Our results demonstrate that AL can boost BERT performance, especially in the most realistic scenario in which the initial set of labeled examples is created using keyword-based queries, resulting in a biased sample of the minority class. We release our research framework, aiming to facilitate future research along the lines explored here.",
+      "externalIds": {
+        "ACL": "2020.emnlp-main.638",
+        "MAG": "3105522431",
+        "DBLP": "conf/emnlp/Ein-DorHGSDCDAK20",
+        "DOI": "10.18653/v1/2020.emnlp-main.638",
+        "CorpusId": 226262191
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2020.emnlp-main.638",
+      "corpus_id": 226262191
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "10",
+      "ref_key": "S2:fdacf2a732f55befdc410ea927091cad3b791f13",
+      "paperId": "fdacf2a732f55befdc410ea927091cad3b791f13",
+      "title": "Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity",
+      "year": 2021,
+      "abstract": "In deep learning, models typically reuse the same parameters for all inputs. Mixture of Experts (MoE) defies this and instead selects different parameters for each incoming example. The result is a sparsely-activated model -- with outrageous numbers of parameters -- but a constant computational cost. However, despite several notable successes of MoE, widespread adoption has been hindered by complexity, communication costs and training instability -- we address these with the Switch Transformer. We simplify the MoE routing algorithm and design intuitive improved models with reduced communication and computational costs. Our proposed training techniques help wrangle the instabilities and we show large sparse models may be trained, for the first time, with lower precision (bfloat16) formats. We design models based off T5-Base and T5-Large to obtain up to 7x increases in pre-training speed with the same computational resources. These improvements extend into multilingual settings where we measure gains over the mT5-Base version across all 101 languages. Finally, we advance the current scale of language models by pre-training up to trillion parameter models on the\"Colossal Clean Crawled Corpus\"and achieve a 4x speedup over the T5-XXL model.",
+      "externalIds": {
+        "DBLP": "journals/jmlr/FedusZS22",
+        "ArXiv": "2101.03961",
+        "CorpusId": 231573431
+      },
+      "arxiv_id": "2101.03961",
+      "doi": null,
+      "corpus_id": 231573431
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "11",
+      "ref_key": "S2:d9b824dbecbe3a1f0b1489f9e4521a532a63818d",
+      "paperId": "d9b824dbecbe3a1f0b1489f9e4521a532a63818d",
+      "title": "Compressing BERT: Studying the Effects of Weight Pruning on Transfer Learning",
+      "year": 2020,
+      "abstract": "Pre-trained universal feature extractors, such as BERT for natural language processing and VGG for computer vision, have become effective methods for improving deep learning models without requiring more labeled data. While effective, feature extractors like BERT may be prohibitively large for some deployment scenarios. We explore weight pruning for BERT and ask: how does compression during pre-training affect transfer learning? We find that pruning affects transfer learning in three broad regimes. Low levels of pruning (30-40%) do not affect pre-training loss or transfer to downstream tasks at all. Medium levels of pruning increase the pre-training loss and prevent useful pre-training information from being transferred to downstream tasks. High levels of pruning additionally prevent models from fitting downstream datasets, leading to further degradation. Finally, we observe that fine-tuning BERT on a specific task does not improve its prunability. We conclude that BERT can be pruned once during pre-training rather than separately for each task without affecting performance.",
+      "externalIds": {
+        "DBLP": "conf/rep4nlp/GordonDA20",
+        "ACL": "2020.repl4nlp-1.18",
+        "ArXiv": "2002.08307",
+        "MAG": "2997710335",
+        "DOI": "10.18653/v1/2020.repl4nlp-1.18",
+        "CorpusId": 211171709
+      },
+      "arxiv_id": "2002.08307",
+      "doi": "10.18653/v1/2020.repl4nlp-1.18",
+      "corpus_id": 211171709
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "12",
+      "ref_key": "S2:29ddc1f43f28af7c846515e32cc167bc66886d0c",
+      "paperId": "29ddc1f43f28af7c846515e32cc167bc66886d0c",
+      "title": "Parameter-Efficient Transfer Learning for NLP",
+      "year": 2019,
+      "abstract": "Fine-tuning large pre-trained models is an effective transfer mechanism in NLP. However, in the presence of many downstream tasks, fine-tuning is parameter inefficient: an entire new model is required for every task. As an alternative, we propose transfer with adapter modules. Adapter modules yield a compact and extensible model; they add only a few trainable parameters per task, and new tasks can be added without revisiting previous ones. The parameters of the original network remain fixed, yielding a high degree of parameter sharing. To demonstrate adapter's effectiveness, we transfer the recently proposed BERT Transformer model to 26 diverse text classification tasks, including the GLUE benchmark. Adapters attain near state-of-the-art performance, whilst adding only a few parameters per task. On GLUE, we attain within 0.4% of the performance of full fine-tuning, adding only 3.6% parameters per task. By contrast, fine-tuning trains 100% of the parameters per task.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1902-00751",
+        "ArXiv": "1902.00751",
+        "MAG": "2964303773",
+        "CorpusId": 59599816
+      },
+      "arxiv_id": "1902.00751",
+      "doi": null,
+      "corpus_id": 59599816
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "13",
+      "ref_key": "S2:a8ca46b171467ceb2d7652fbfb67fe701ad86092",
+      "paperId": "a8ca46b171467ceb2d7652fbfb67fe701ad86092",
+      "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+      "year": 2021,
+      "abstract": "An important paradigm of natural language processing consists of large-scale pre-training on general domain data and adaptation to particular tasks or domains. As we pre-train larger models, full fine-tuning, which retrains all model parameters, becomes less feasible. Using GPT-3 175B as an example -- deploying independent instances of fine-tuned models, each with 175B parameters, is prohibitively expensive. We propose Low-Rank Adaptation, or LoRA, which freezes the pre-trained model weights and injects trainable rank decomposition matrices into each layer of the Transformer architecture, greatly reducing the number of trainable parameters for downstream tasks. Compared to GPT-3 175B fine-tuned with Adam, LoRA can reduce the number of trainable parameters by 10,000 times and the GPU memory requirement by 3 times. LoRA performs on-par or better than fine-tuning in model quality on RoBERTa, DeBERTa, GPT-2, and GPT-3, despite having fewer trainable parameters, a higher training throughput, and, unlike adapters, no additional inference latency. We also provide an empirical investigation into rank-deficiency in language model adaptation, which sheds light on the efficacy of LoRA. We release a package that facilitates the integration of LoRA with PyTorch models and provide our implementations and model checkpoints for RoBERTa, DeBERTa, and GPT-2 at https://github.com/microsoft/LoRA.",
+      "externalIds": {
+        "DBLP": "conf/iclr/HuSWALWWC22",
+        "ArXiv": "2106.09685",
+        "CorpusId": 235458009
+      },
+      "arxiv_id": "2106.09685",
+      "doi": null,
+      "corpus_id": 235458009
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "14",
+      "ref_key": "S2:eb1602ecba96beadeb7d2f05e1b57fa6b339fc69",
+      "paperId": "eb1602ecba96beadeb7d2f05e1b57fa6b339fc69",
+      "title": "SqueezeBERT: What can computer vision teach NLP about efficient neural networks?",
+      "year": 2020,
+      "abstract": "Humans read and write hundreds of billions of messages every day. Further, due to the availability of large datasets, large computing systems, and better neural network models, natural language processing (NLP) technology has made significant strides in understanding, proofreading, and organizing these messages. Thus, there is a significant opportunity to deploy NLP in myriad applications to help web users, social networks, and businesses. Toward this end, we consider smartphones and other mobile devices as crucial platforms for deploying NLP models at scale. However, today’s highly-accurate NLP neural network models such as BERT and RoBERTa are extremely computationally expensive, with BERT-base taking 1.7 seconds to classify a text snippet on a Pixel 3 smartphone. To begin to address this problem, we draw inspiration from the computer vision community, where work such as MobileNet has demonstrated that grouped convolutions (e.g. depthwise convolutions) can enable speedups without sacrificing accuracy. We demonstrate how to replace several operations in self-attention layers with grouped convolutions, and we use this technique in a novel network architecture called SqueezeBERT, which runs 4.3x faster than BERT-base on the Pixel 3 while achieving competitive accuracy on the GLUE test set. A PyTorch-based implementation of SqueezeBERT is available as part of the Hugging Face Transformers library: https://huggingface.co/squeezebert",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2006-11316",
+        "ArXiv": "2006.11316",
+        "ACL": "2020.sustainlp-1.17",
+        "MAG": "3036463250",
+        "DOI": "10.18653/v1/2020.sustainlp-1.17",
+        "CorpusId": 219966938
+      },
+      "arxiv_id": "2006.11316",
+      "doi": "10.18653/v1/2020.sustainlp-1.17",
+      "corpus_id": 219966938
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "15",
+      "ref_key": "S2:b3bf9fe13195e9aa70e1dac04e01fcff7008e812",
+      "paperId": "b3bf9fe13195e9aa70e1dac04e01fcff7008e812",
+      "title": "Perceiver: General Perception with Iterative Attention",
+      "year": 2021,
+      "abstract": "Biological systems perceive the world by simultaneously processing high-dimensional inputs from modalities as diverse as vision, audition, touch, proprioception, etc. The perception models used in deep learning on the other hand are designed for individual modalities, often relying on domain-specific assumptions such as the local grid structures exploited by virtually all existing vision models. These priors introduce helpful inductive biases, but also lock models to individual modalities. In this paper we introduce the Perceiver - a model that builds upon Transformers and hence makes few architectural assumptions about the relationship between its inputs, but that also scales to hundreds of thousands of inputs, like ConvNets. The model leverages an asymmetric attention mechanism to iteratively distill inputs into a tight latent bottleneck, allowing it to scale to handle very large inputs. We show that this architecture is competitive with or outperforms strong, specialized models on classification tasks across various modalities: images, point clouds, audio, video, and video+audio. The Perceiver obtains performance comparable to ResNet-50 and ViT on ImageNet without 2D convolutions by directly attending to 50,000 pixels. It is also competitive in all modalities in AudioSet.",
+      "externalIds": {
+        "ArXiv": "2103.03206",
+        "DBLP": "conf/icml/JaegleGBVZC21",
+        "CorpusId": 232110866
+      },
+      "arxiv_id": "2103.03206",
+      "doi": null,
+      "corpus_id": 232110866
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "16",
+      "ref_key": "S2:0cbf97173391b0430140117027edcaf1a37968c7",
+      "paperId": "0cbf97173391b0430140117027edcaf1a37968c7",
+      "title": "TinyBERT: Distilling BERT for Natural Language Understanding",
+      "year": 2019,
+      "abstract": "Language model pre-training, such as BERT, has significantly improved the performances of many natural language processing tasks. However, pre-trained language models are usually computationally expensive, so it is difficult to efficiently execute them on resource-restricted devices. To accelerate inference and reduce model size while maintaining accuracy, we first propose a novel Transformer distillation method that is specially designed for knowledge distillation (KD) of the Transformer-based models. By leveraging this new KD method, the plenty of knowledge encoded in a large “teacher” BERT can be effectively transferred to a small “student” TinyBERT. Then, we introduce a new two-stage learning framework for TinyBERT, which performs Transformer distillation at both the pre-training and task-specific learning stages. This framework ensures that TinyBERT can capture the general-domain as well as the task-specific knowledge in BERT. TinyBERT4 with 4 layers is empirically effective and achieves more than 96.8% the performance of its teacher BERT-Base on GLUE benchmark, while being 7.5x smaller and 9.4x faster on inference. TinyBERT4 is also significantly better than 4-layer state-of-the-art baselines on BERT distillation, with only ~28% parameters and ~31% inference time of them. Moreover, TinyBERT6 with 6 layers performs on-par with its teacher BERT-Base.",
+      "externalIds": {
+        "MAG": "3105966348",
+        "ACL": "2020.findings-emnlp.372",
+        "DBLP": "conf/emnlp/JiaoYSJCL0L20",
+        "ArXiv": "1909.10351",
+        "DOI": "10.18653/v1/2020.findings-emnlp.372",
+        "CorpusId": 202719327
+      },
+      "arxiv_id": "1909.10351",
+      "doi": "10.18653/v1/2020.findings-emnlp.372",
+      "corpus_id": 202719327
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "17",
+      "ref_key": "S2:7be8c119dbe065c52125ee7716601751f3116844",
+      "paperId": "7be8c119dbe065c52125ee7716601751f3116844",
+      "title": "Generalization through Memorization: Nearest Neighbor Language Models",
+      "year": 2019,
+      "abstract": "We introduce $k$NN-LMs, which extend a pre-trained neural language model (LM) by linearly interpolating it with a $k$-nearest neighbors ($k$NN) model. The nearest neighbors are computed according to distance in the pre-trained LM embedding space, and can be drawn from any text collection, including the original LM training data. Applying this augmentation to a strong Wikitext-103 LM, with neighbors drawn from the original training set, our $k$NN-LM achieves a new state-of-the-art perplexity of 15.79 - a 2.9 point improvement with no additional training. We also show that this approach has implications for efficiently scaling up to larger training sets and allows for effective domain adaptation, by simply varying the nearest neighbor datastore, again without further training. Qualitatively, the model is particularly helpful in predicting rare patterns, such as factual knowledge. Together, these results strongly suggest that learning similarity between sequences of text is easier than predicting the next word, and that nearest neighbor search is an effective approach for language modeling in the long tail.",
+      "externalIds": {
+        "MAG": "2988841832",
+        "ArXiv": "1911.00172",
+        "DBLP": "journals/corr/abs-1911-00172",
+        "CorpusId": 207870430
+      },
+      "arxiv_id": "1911.00172",
+      "doi": null,
+      "corpus_id": 207870430
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "18",
+      "ref_key": "S2:055fd6a9f7293269f1b22c1470e63bd02d8d9500",
+      "paperId": "055fd6a9f7293269f1b22c1470e63bd02d8d9500",
+      "title": "Reformer: The Efficient Transformer",
+      "year": 2020,
+      "abstract": "Large Transformer models routinely achieve state-of-the-art results on a number of tasks but training these models can be prohibitively costly, especially on long sequences. We introduce two techniques to improve the efficiency of Transformers. For one, we replace dot-product attention by one that uses locality-sensitive hashing, changing its complexity from O($L^2$) to O($L\\log L$), where $L$ is the length of the sequence. Furthermore, we use reversible residual layers instead of the standard residuals, which allows storing activations only once in the training process instead of $N$ times, where $N$ is the number of layers. The resulting model, the Reformer, performs on par with Transformer models while being much more memory-efficient and much faster on long sequences.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2001-04451",
+        "MAG": "2994673210",
+        "ArXiv": "2001.04451",
+        "CorpusId": 209315300
+      },
+      "arxiv_id": "2001.04451",
+      "doi": null,
+      "corpus_id": 209315300
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "19",
+      "ref_key": "S2:7a064df1aeada7e69e5173f7d4c8606f4470365b",
+      "paperId": "7a064df1aeada7e69e5173f7d4c8606f4470365b",
+      "title": "ALBERT: A Lite BERT for Self-supervised Learning of Language Representations",
+      "year": 2019,
+      "abstract": "Increasing model size when pretraining natural language representations often results in improved performance on downstream tasks. However, at some point further model increases become harder due to GPU/TPU memory limitations and longer training times. To address these problems, we present two parameter-reduction techniques to lower memory consumption and increase the training speed of BERT. Comprehensive empirical evidence shows that our proposed methods lead to models that scale much better compared to the original BERT. We also use a self-supervised loss that focuses on modeling inter-sentence coherence, and show it consistently helps downstream tasks with multi-sentence inputs. As a result, our best model establishes new state-of-the-art results on the GLUE, RACE, and \\squad benchmarks while having fewer parameters compared to BERT-large. The code and the pretrained models are available at this https URL.",
+      "externalIds": {
+        "MAG": "2996428491",
+        "DBLP": "journals/corr/abs-1909-11942",
+        "ArXiv": "1909.11942",
+        "CorpusId": 202888986
+      },
+      "arxiv_id": "1909.11942",
+      "doi": null,
+      "corpus_id": 202888986
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "20",
+      "ref_key": "S2:876d5d01dd9404d58a3ddd4cc7b497cd37b72bc4",
+      "paperId": "876d5d01dd9404d58a3ddd4cc7b497cd37b72bc4",
+      "title": "Annotation Curricula to Implicitly Train Non-Expert Annotators",
+      "year": 2021,
+      "abstract": "Abstract Annotation studies often require annotators to familiarize themselves with the task, its annotation scheme, and the data domain. This can be overwhelming in the beginning, mentally taxing, and induce errors into the resulting annotations; especially in citizen science or crowdsourcing scenarios where domain expertise is not required. To alleviate these issues, this work proposes annotation curricula, a novel approach to implicitly train annotators. The goal is to gradually introduce annotators into the task by ordering instances to be annotated according to a learning curriculum. To do so, this work formalizes annotation curricula for sentence- and paragraph-level annotation tasks, defines an ordering strategy, and identifies well-performing heuristics and interactively trained models on three existing English datasets. Finally, we provide a proof of concept for annotation curricula in a carefully designed user study with 40 voluntary participants who are asked to identify the most fitting misconception for English tweets about the Covid-19 pandemic. The results indicate that using a simple heuristic to order instances can already significantly reduce the total annotation time while preserving a high annotation quality. Annotation curricula thus can be a promising research direction to improve data collection. To facilitate future research—for instance, to adapt annotation curricula to specific tasks and expert annotation scenarios—all code and data from the user study consisting of 2,400 annotations is made available.1",
+      "externalIds": {
+        "ArXiv": "2106.02382",
+        "DBLP": "journals/coling/LeeKG22",
+        "DOI": "10.1162/coli_a_00436",
+        "CorpusId": 235353014
+      },
+      "arxiv_id": "2106.02382",
+      "doi": "10.1162/coli_a_00436",
+      "corpus_id": 235353014
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "21",
+      "ref_key": "S2:395de0bd3837fdf4b4b5e5f04835bcc69c279481",
+      "paperId": "395de0bd3837fdf4b4b5e5f04835bcc69c279481",
+      "title": "BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension",
+      "year": 2019,
+      "abstract": "We present BART, a denoising autoencoder for pretraining sequence-to-sequence models. BART is trained by (1) corrupting text with an arbitrary noising function, and (2) learning a model to reconstruct the original text. It uses a standard Tranformer-based neural machine translation architecture which, despite its simplicity, can be seen as generalizing BERT (due to the bidirectional encoder), GPT (with the left-to-right decoder), and other recent pretraining schemes. We evaluate a number of noising approaches, finding the best performance by both randomly shuffling the order of sentences and using a novel in-filling scheme, where spans of text are replaced with a single mask token. BART is particularly effective when fine tuned for text generation but also works well for comprehension tasks. It matches the performance of RoBERTa on GLUE and SQuAD, and achieves new state-of-the-art results on a range of abstractive dialogue, question answering, and summarization tasks, with gains of up to 3.5 ROUGE. BART also provides a 1.1 BLEU increase over a back-translation system for machine translation, with only target language pretraining. We also replicate other pretraining schemes within the BART framework, to understand their effect on end-task performance.",
+      "externalIds": {
+        "MAG": "2982399380",
+        "DBLP": "conf/acl/LewisLGGMLSZ20",
+        "ACL": "2020.acl-main.703",
+        "ArXiv": "1910.13461",
+        "DOI": "10.18653/v1/2020.acl-main.703",
+        "CorpusId": 204960716
+      },
+      "arxiv_id": "1910.13461",
+      "doi": "10.18653/v1/2020.acl-main.703",
+      "corpus_id": 204960716
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "22",
+      "ref_key": "S2:b62d4f3e06fdda6c3c09c0225be420d1e8f7c8ba",
+      "paperId": "b62d4f3e06fdda6c3c09c0225be420d1e8f7c8ba",
+      "title": "Efficient Methods for Mapping Neural Machine Translator on FPGAs",
+      "year": 2021,
+      "abstract": "Neural machine translation (NMT) is one of the most critical applications in natural language processing (NLP) with the main idea of converting text in one language to another using deep neural networks. In recent year, we have seen continuous development of NMT by integrating more emerging technologies, such as bidirectional gated recurrent units (GRU), attention mechanisms, and beam-search algorithms, for improved translation quality. However, with the increasing problem size, the real-life NMT models have become much more complicated and difficult to implement on hardware for acceleration opportunities. In this article, we aim to exploit the capability of FPGAs to deliver highly efficient implementations for real-life NMT applications. We map the inference of a large-scale NMT model with total computation of 172 GFLOP to a highly optimized high-level synthesis (HLS) IP and integrate the IP into Xilinx VCU118 FPGA platform. The model has widely used key features for NMTs, including the bidirectional GRU layer, attention mechanism, and beam search. We quantize the model to mixed-precision representation in which parameters and portions of calculations are in 16-bit half precision, and others remain as 32-bit floating-point. Compared to the float NMT implementation on FPGA, we achieve 13.1× speedup with an end-to-end performance of 22.0 GFLOPS without any accuracy degradation. Based on our knowledge, this is the first work that successfully implements a real-life end-to-end NMT model to an FPGA on board.",
+      "externalIds": {
+        "DBLP": "journals/tpds/LiZXHC21",
+        "DOI": "10.1109/TPDS.2020.3047371",
+        "CorpusId": 232042626
+      },
+      "arxiv_id": null,
+      "doi": "10.1109/TPDS.2020.3047371",
+      "corpus_id": 232042626
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "23",
+      "ref_key": "S2:7cdaa08890895e1ad92afb5fad429690ad7b1dac",
+      "paperId": "7cdaa08890895e1ad92afb5fad429690ad7b1dac",
+      "title": "Few-Shot Parameter-Efficient Fine-Tuning is Better and Cheaper than In-Context Learning",
+      "year": 2022,
+      "abstract": "Few-shot in-context learning (ICL) enables pre-trained language models to perform a previously-unseen task without any gradient-based training by feeding a small number of training examples as part of the input. ICL incurs substantial computational, memory, and storage costs because it involves processing all of the training examples every time a prediction is made. Parameter-efficient fine-tuning (PEFT) (e.g. adapter modules, prompt tuning, sparse update methods, etc.) offers an alternative paradigm where a small set of parameters are trained to enable a model to perform the new task. In this paper, we rigorously compare few-shot ICL and PEFT and demonstrate that the latter offers better accuracy as well as dramatically lower computational costs. Along the way, we introduce a new PEFT method called (IA)$^3$ that scales activations by learned vectors, attaining stronger performance while only introducing a relatively tiny amount of new parameters. We also propose a simple recipe based on the T0 model called T-Few that can be applied to new tasks without task-specific tuning or modifications. We validate the effectiveness of T-Few on completely unseen tasks by applying it to the RAFT benchmark, attaining super-human performance for the first time and outperforming the state-of-the-art by 6% absolute. All of the code used in our experiments is publicly available.",
+      "externalIds": {
+        "DBLP": "conf/nips/LiuTMMHBR22",
+        "ArXiv": "2205.05638",
+        "DOI": "10.48550/arXiv.2205.05638",
+        "CorpusId": 248693283
+      },
+      "arxiv_id": "2205.05638",
+      "doi": "10.48550/arXiv.2205.05638",
+      "corpus_id": 248693283
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "24",
+      "ref_key": "S2:83238f3402fc4a7c4efa48bae180d81cabed23ee",
+      "paperId": "83238f3402fc4a7c4efa48bae180d81cabed23ee",
+      "title": "\\infty-former: Infinite Memory Transformer",
+      "year": 2021,
+      "abstract": "Transformers are unable to model long-term memories effectively, since the amount of computation they need to perform grows with the context length. While variations of efficient transformers have been proposed, they all have a finite memory capacity and are forced to drop old information. In this paper, we propose the \\infty-former, which extends the vanilla transformer with an unbounded long-term memory. By making use of a continuous-space attention mechanism to attend over the long-term memory, the \\infty-former’s attention complexity becomes independent of the context length, trading off memory length with precision.In order to control where precision is more important, \\infty-former maintains “sticky memories,” being able to model arbitrarily long contexts while keeping the computation budget fixed.Experiments on a synthetic sorting task, language modeling, and document grounded dialogue generation demonstrate the \\infty-former’s ability to retain information from long sequences.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2109-00301",
+        "ArXiv": "2109.00301",
+        "ACL": "2022.acl-long.375",
+        "CorpusId": 237412971
+      },
+      "arxiv_id": "2109.00301",
+      "doi": null,
+      "corpus_id": 237412971
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "25",
+      "ref_key": "S2:327b12c21e7b8f2126bd7d64ebc2ede0db220c88",
+      "paperId": "327b12c21e7b8f2126bd7d64ebc2ede0db220c88",
+      "title": "Do We Need to Create Big Datasets to Learn a Task?",
+      "year": 2020,
+      "abstract": "Deep Learning research has been largely accelerated by the development of huge datasets such as Imagenet. The general trend has been to create big datasets to make a deep neural network learn. A huge amount of resources is being spent in creating these big datasets, developing models, training them, and iterating this process to dominate leaderboards. We argue that the trend of creating bigger datasets needs to be revised by better leveraging the power of pre-trained language models. Since the language models have already been pre-trained with huge amount of data and have basic linguistic knowledge, there is no need to create big datasets to learn a task. Instead, we need to create a dataset that is sufficient for the model to learn various task-specific terminologies, such as ‘Entailment’, ‘Neutral’, and ‘Contradiction’ for NLI. As evidence, we show that RoBERTA is able to achieve near-equal performance on 2% data of SNLI. We also observe competitive zero-shot generalization on several OOD datasets. In this paper, we propose a baseline algorithm to find the optimal dataset for learning a task.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/MishraS20",
+        "ACL": "2020.sustainlp-1.23",
+        "MAG": "3104537233",
+        "DOI": "10.18653/v1/2020.sustainlp-1.23",
+        "CorpusId": 226283739
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2020.sustainlp-1.23",
+      "corpus_id": 226283739
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "26",
+      "ref_key": "S2:094ff971d6a8b8ff870946c9b3ce5aa173617bfb",
+      "paperId": "094ff971d6a8b8ff870946c9b3ce5aa173617bfb",
+      "title": "PaLM: Scaling Language Modeling with Pathways",
+      "year": 2022,
+      "abstract": "Large language models have been shown to achieve remarkable performance across a variety of natural language tasks using few-shot learning, which drastically reduces the number of task-specific training examples needed to adapt the model to a particular application. To further our understanding of the impact of scale on few-shot learning, we trained a 540-billion parameter, densely activated, Transformer language model, which we call Pathways Language Model PaLM. We trained PaLM on 6144 TPU v4 chips using Pathways, a new ML system which enables highly efficient training across multiple TPU Pods. We demonstrate continued benefits of scaling by achieving state-of-the-art few-shot learning results on hundreds of language understanding and generation benchmarks. On a number of these tasks, PaLM 540B achieves breakthrough performance, outperforming the finetuned state-of-the-art on a suite of multi-step reasoning tasks, and outperforming average human performance on the recently released BIG-bench benchmark. A significant number of BIG-bench tasks showed discontinuous improvements from model scale, meaning that performance steeply increased as we scaled to our largest model. PaLM also has strong capabilities in multilingual tasks and source code generation, which we demonstrate on a wide array of benchmarks. We additionally provide a comprehensive analysis on bias and toxicity, and study the extent of training data memorization with respect to model scale. Finally, we discuss the ethical considerations related to large language models and discuss potential mitigation strategies.",
+      "externalIds": {
+        "ArXiv": "2204.02311",
+        "DBLP": "journals/corr/abs-2204-02311",
+        "CorpusId": 247951931
+      },
+      "arxiv_id": "2204.02311",
+      "doi": null,
+      "corpus_id": 247951931
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "27",
+      "ref_key": "S2:0822f8d7e6a72a65e65f147d3a8d8fccd485da40",
+      "paperId": "0822f8d7e6a72a65e65f147d3a8d8fccd485da40",
+      "title": "Shortformer: Better Language Modeling using Shorter Inputs",
+      "year": 2021,
+      "abstract": "Increasing the input length has been a driver of progress in language modeling with transformers. We identify conditions where shorter inputs are not harmful, and achieve perplexity and efficiency improvements through two new methods that decrease input length. First, we show that initially training a model on short subsequences before moving on to longer ones both reduces overall training time and, surprisingly, substantially improves perplexity. Second, we show how to improve the efficiency of recurrence methods in transformers, which let models condition on previously processed tokens when generating sequences that exceed the maximal length the transformer can handle at once. Existing methods require computationally expensive relative position embeddings; we introduce a simple alternative of adding absolute position embeddings to queries and keys instead of to word embeddings, which efficiently produces superior results. We show that these recurrent models also benefit from short input lengths. Combining these techniques speeds up training by a factor of 1.65, reduces memory usage, and substantially improves perplexity on WikiText-103, without adding any parameters.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2012-15832",
+        "ACL": "2021.acl-long.427",
+        "ArXiv": "2012.15832",
+        "DOI": "10.18653/v1/2021.acl-long.427",
+        "CorpusId": 229924221
+      },
+      "arxiv_id": "2012.15832",
+      "doi": "10.18653/v1/2021.acl-long.427",
+      "corpus_id": 229924221
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "28",
+      "ref_key": "S2:2babc9ba9dd301d6e61117302bd2a200f7b422e2",
+      "paperId": "2babc9ba9dd301d6e61117302bd2a200f7b422e2",
+      "title": "DOTA: detect and omit weak attentions for scalable transformer acceleration",
+      "year": 2022,
+      "abstract": "Transformer Neural Networks have demonstrated leading performance in many applications spanning over language understanding, image processing, and generative modeling. Despite the impressive performance, long-sequence Transformer processing is expensive due to quadratic computation complexity and memory consumption of self-attention. In this paper, we present DOTA, an algorithm-architecture co-design that effectively addresses the challenges of scalable Transformer inference. Based on the insight that not all connections in an attention graph are equally important, we propose to jointly optimize a lightweight Detector with the Transformer model to accurately detect and omit weak connections during runtime. Furthermore, we design a specialized system architecture for end-to-end Transformer acceleration using the proposed attention detection mechanism. Experiments on a wide range of benchmarks demonstrate the superior performance of DOTA over other solutions. In summary, DOTA achieves 152.6x and 4.5x performance speedup and orders of magnitude energy-efficiency improvements over GPU and customized hardware, respectively.",
+      "externalIds": {
+        "DBLP": "conf/asplos/Qu0TCD022",
+        "DOI": "10.1145/3503222.3507738",
+        "CorpusId": 247026660
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/3503222.3507738",
+      "corpus_id": 247026660
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "29",
+      "ref_key": "S2:6c4b76232bb72897685d19b3d264c6ee3005bc2b",
+      "paperId": "6c4b76232bb72897685d19b3d264c6ee3005bc2b",
+      "title": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "year": 2019,
+      "abstract": "Transfer learning, where a model is first pre-trained on a data-rich task before being fine-tuned on a downstream task, has emerged as a powerful technique in natural language processing (NLP). The effectiveness of transfer learning has given rise to a diversity of approaches, methodology, and practice. In this paper, we explore the landscape of transfer learning techniques for NLP by introducing a unified framework that converts every language problem into a text-to-text format. Our systematic study compares pre-training objectives, architectures, unlabeled datasets, transfer approaches, and other factors on dozens of language understanding tasks. By combining the insights from our exploration with scale and our new \"Colossal Clean Crawled Corpus\", we achieve state-of-the-art results on many benchmarks covering summarization, question answering, text classification, and more. To facilitate future work on transfer learning for NLP, we release our dataset, pre-trained models, and code.",
+      "externalIds": {
+        "MAG": "2981852735",
+        "DBLP": "journals/corr/abs-1910-10683",
+        "ArXiv": "1910.10683",
+        "CorpusId": 204838007
+      },
+      "arxiv_id": "1910.10683",
+      "doi": null,
+      "corpus_id": 204838007
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "30",
+      "ref_key": "S2:12b71736392209b4292471b7da0aed71ba2aa545",
+      "paperId": "12b71736392209b4292471b7da0aed71ba2aa545",
+      "title": "ZeRO-Offload: Democratizing Billion-Scale Model Training",
+      "year": 2021,
+      "abstract": "Large-scale model training has been a playing ground for a limited few requiring complex model refactoring and access to prohibitively expensive GPU clusters. ZeRO-Offload changes the large model training landscape by making large model training accessible to nearly everyone. It can train models with over 13 billion parameters on a single GPU, a 10x increase in size compared to popular framework such as PyTorch, and it does so without requiring any model change from the data scientists or sacrificing computational efficiency. ZeRO-Offload enables large model training by offloading data and compute to CPU. To preserve compute efficiency, it is designed to minimize the data movement to/from GPU, and reduce CPU compute time while maximizing memory savings on GPU. As a result, ZeRO-Offload can achieve 40 TFlops/GPU on a single NVIDIA V100 GPU for 10B parameter model compared to 30TF using PyTorch alone for a 1.4B parameter model, the largest that can be trained without running out of memory. ZeRO-Offload is also designed to scale on multiple-GPUs when available, offering near linear speedup on up to 128 GPUs. Additionally, it can work together with model parallelism to train models with over 70 billion parameters on a single DGX-2 box, a 4.5x increase in model size compared to using model parallelism alone. By combining compute and memory efficiency with ease-of-use, ZeRO-Offload democratizes large-scale model training making it accessible to even data scientists with access to just a single GPU.",
+      "externalIds": {
+        "DBLP": "conf/usenix/0015RARYZ0H21",
+        "MAG": "3121562065",
+        "ArXiv": "2101.06840",
+        "CorpusId": 231632857
+      },
+      "arxiv_id": "2101.06840",
+      "doi": null,
+      "corpus_id": 231632857
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "31",
+      "ref_key": "S2:17dd3555fd1ccf1141cf984347fa1b3fd6b009ca",
+      "paperId": "17dd3555fd1ccf1141cf984347fa1b3fd6b009ca",
+      "title": "Multitask Prompted Training Enables Zero-Shot Task Generalization",
+      "year": 2021,
+      "abstract": "Large language models have recently been shown to attain reasonable zero-shot generalization on a diverse set of tasks (Brown et al., 2020). It has been hypothesized that this is a consequence of implicit multitask learning in language models' pretraining (Radford et al., 2019). Can zero-shot generalization instead be directly induced by explicit multitask learning? To test this question at scale, we develop a system for easily mapping any natural language tasks into a human-readable prompted form. We convert a large set of supervised datasets, each with multiple prompts with diverse wording. These prompted datasets allow for benchmarking the ability of a model to perform completely held-out tasks. We fine-tune a pretrained encoder-decoder model (Raffel et al., 2020; Lester et al., 2021) on this multitask mixture covering a wide variety of tasks. The model attains strong zero-shot performance on several standard datasets, often outperforming models up to 16x its size. Further, our approach attains strong performance on a subset of tasks from the BIG-bench benchmark, outperforming models up to 6x its size. All trained models are available at https://github.com/bigscience-workshop/t-zero and all prompts are available at https://github.com/bigscience-workshop/promptsource.",
+      "externalIds": {
+        "ArXiv": "2110.08207",
+        "DBLP": "conf/iclr/SanhWRBSACSRDBX22",
+        "CorpusId": 239009562
+      },
+      "arxiv_id": "2110.08207",
+      "doi": null,
+      "corpus_id": 239009562
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "32",
+      "ref_key": "S2:66f0f35fc78bdf2af9de46093d49a428970cde2e",
+      "paperId": "66f0f35fc78bdf2af9de46093d49a428970cde2e",
+      "title": "Movement Pruning: Adaptive Sparsity by Fine-Tuning",
+      "year": 2020,
+      "abstract": "Magnitude pruning is a widely used strategy for reducing model size in pure supervised learning; however, it is less effective in the transfer learning regime that has become standard for state-of-the-art natural language processing applications. We propose the use of movement pruning, a simple, deterministic first-order weight pruning method that is more adaptive to pretrained model fine-tuning. We give mathematical foundations to the method and compare it to existing zeroth- and first-order pruning methods. Experiments show that when pruning large pretrained language models, movement pruning shows significant improvements in high-sparsity regimes. When combined with distillation, the approach achieves minimal accuracy loss with down to only 3% of the model parameters.",
+      "externalIds": {
+        "MAG": "3099715410",
+        "DBLP": "conf/nips/Sanh0R20",
+        "ArXiv": "2005.07683",
+        "CorpusId": 218665313
+      },
+      "arxiv_id": "2005.07683",
+      "doi": null,
+      "corpus_id": 218665313
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "33",
+      "ref_key": "S2:05a6fa3bb47bd283c95b3d86ba4cbbc471cbd6ac",
+      "paperId": "05a6fa3bb47bd283c95b3d86ba4cbbc471cbd6ac",
+      "title": "ProFormer: Towards On-Device LSH Projection Based Transformers",
+      "year": 2020,
+      "abstract": "At the heart of text based neural models lay word representations, which are powerful but occupy a lot of memory making it challenging to deploy to devices with memory constraints such as mobile phones, watches and IoT. To surmount these challenges, we introduce ProFormer – a projection based transformer architecture that is faster and lighter making it suitable to deploy to memory constraint devices and preserve user privacy. We use LSH projection layer to dynamically generate word representations on-the-fly without embedding lookup tables leading to significant memory footprint reduction from O(V.d) to O(T), where V is the vocabulary size, d is the embedding dimension size and T is the dimension of the LSH projection representation.We also propose a local projection attention (LPA) layer, which uses self-attention to transform the input sequence of N LSH word projections into a sequence of N/K representations reducing the computations quadratically by O(Kˆ2). We evaluate ProFormer on multiple text classification tasks and observed improvements over prior state-of-the-art on-device approaches for short text classification and comparable performance for long text classification tasks. ProFormer is also competitive with other popular but highly resource-intensive approaches like BERT and even outperforms small-sized BERT variants with significant resource savings – reduces the embedding memory footprint from 92.16 MB to 1.7 KB and requires 16x less computation overhead, which is very impressive making it the fastest and smallest on-device model.",
+      "externalIds": {
+        "MAG": "3015648683",
+        "ArXiv": "2004.05801",
+        "DBLP": "journals/corr/abs-2004-05801",
+        "ACL": "2021.eacl-main.246",
+        "DOI": "10.18653/v1/2021.eacl-main.246",
+        "CorpusId": 215745312
+      },
+      "arxiv_id": "2004.05801",
+      "doi": "10.18653/v1/2021.eacl-main.246",
+      "corpus_id": 215745312
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "34",
+      "ref_key": "S2:f30444fbb6ad806168e2564db4815cd27faa7fd9",
+      "paperId": "f30444fbb6ad806168e2564db4815cd27faa7fd9",
+      "title": "It’s Not Just Size That Matters: Small Language Models Are Also Few-Shot Learners",
+      "year": 2020,
+      "abstract": "When scaled to hundreds of billions of parameters, pretrained language models such as GPT-3 (Brown et al., 2020) achieve remarkable few-shot performance. However, enormous amounts of compute are required for training and applying such big models, resulting in a large carbon footprint and making it difficult for researchers and practitioners to use them. We show that performance similar to GPT-3 can be obtained with language models that are much “greener” in that their parameter count is several orders of magnitude smaller. This is achieved by converting textual inputs into cloze questions that contain a task description, combined with gradient-based optimization; exploiting unlabeled data gives further improvements. We identify key factors required for successful natural language understanding with small language models.",
+      "externalIds": {
+        "ArXiv": "2009.07118",
+        "MAG": "3085177480",
+        "DBLP": "conf/naacl/SchickS21",
+        "ACL": "2021.naacl-main.185",
+        "DOI": "10.18653/V1/2021.NAACL-MAIN.185",
+        "CorpusId": 221703107
+      },
+      "arxiv_id": "2009.07118",
+      "doi": "10.18653/V1/2021.NAACL-MAIN.185",
+      "corpus_id": 221703107
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "35",
+      "ref_key": "S2:745e4b36a1759177871288cae51fbae0b873b5e5",
+      "paperId": "745e4b36a1759177871288cae51fbae0b873b5e5",
+      "title": "Q-BERT: Hessian Based Ultra Low Precision Quantization of BERT",
+      "year": 2019,
+      "abstract": "Transformer based architectures have become de-facto models used for a range of Natural Language Processing tasks. In particular, the BERT based models achieved significant accuracy gain for GLUE tasks, CoNLL-03 and SQuAD. However, BERT based models have a prohibitive memory footprint and latency. As a result, deploying BERT based models in resource constrained environments has become a challenging task. In this work, we perform an extensive analysis of fine-tuned BERT models using second order Hessian information, and we use our results to propose a novel method for quantizing BERT models to ultra low precision. In particular, we propose a new group-wise quantization scheme, and we use Hessian-based mix-precision method to compress the model further. We extensively test our proposed method on BERT downstream tasks of SST-2, MNLI, CoNLL-03, and SQuAD. We can achieve comparable performance to baseline with at most 2.3% performance degradation, even with ultra-low precision quantization down to 2 bits, corresponding up to 13× compression of the model parameters, and up to 4× compression of the embedding table as well as activations. Among all tasks, we observed the highest performance loss for BERT fine-tuned on SQuAD. By probing into the Hessian based analysis as well as visualization, we show that this is related to the fact that current training/fine-tuning strategy of BERT does not converge for SQuAD.",
+      "externalIds": {
+        "MAG": "2973061659",
+        "DBLP": "conf/aaai/ShenDYMYGMK20",
+        "ArXiv": "1909.05840",
+        "DOI": "10.1609/AAAI.V34I05.6409",
+        "CorpusId": 202565587
+      },
+      "arxiv_id": "1909.05840",
+      "doi": "10.1609/AAAI.V34I05.6409",
+      "corpus_id": 202565587
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "36",
+      "ref_key": "S2:2573af4e13d9a5dddb257d22cd38a600528d9a8b",
+      "paperId": "2573af4e13d9a5dddb257d22cd38a600528d9a8b",
+      "title": "MobileBERT: a Compact Task-Agnostic BERT for Resource-Limited Devices",
+      "year": 2020,
+      "abstract": "Natural Language Processing (NLP) has recently achieved great success by using huge pre-trained models with hundreds of millions of parameters. However, these models suffer from heavy model sizes and high latency such that they cannot be deployed to resource-limited mobile devices. In this paper, we propose MobileBERT for compressing and accelerating the popular BERT model. Like the original BERT, MobileBERT is task-agnostic, that is, it can be generically applied to various downstream NLP tasks via simple fine-tuning. Basically, MobileBERT is a thin version of BERT_LARGE, while equipped with bottleneck structures and a carefully designed balance between self-attentions and feed-forward networks. To train MobileBERT, we first train a specially designed teacher model, an inverted-bottleneck incorporated BERT_LARGE model. Then, we conduct knowledge transfer from this teacher to MobileBERT. Empirical studies show that MobileBERT is 4.3x smaller and 5.5x faster than BERT_BASE while achieving competitive results on well-known benchmarks. On the natural language inference tasks of GLUE, MobileBERT achieves a GLUE score of 77.7 (0.6 lower than BERT_BASE), and 62 ms latency on a Pixel 4 phone. On the SQuAD v1.1/v2.0 question answering task, MobileBERT achieves a dev F1 score of 90.0/79.2 (1.5/2.1 higher than BERT_BASE).",
+      "externalIds": {
+        "MAG": "3034457371",
+        "DBLP": "journals/corr/abs-2004-02984",
+        "ArXiv": "2004.02984",
+        "ACL": "2020.acl-main.195",
+        "DOI": "10.18653/v1/2020.acl-main.195",
+        "CorpusId": 215238853
+      },
+      "arxiv_id": "2004.02984",
+      "doi": "10.18653/v1/2020.acl-main.195",
+      "corpus_id": 215238853
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "37",
+      "ref_key": "S2:3af8a493cf756f9fe72623204a11e378a9cd71a5",
+      "paperId": "3af8a493cf756f9fe72623204a11e378a9cd71a5",
+      "title": "EdgeBERT: Sentence-Level Energy Optimizations for Latency-Aware Multi-Task NLP Inference",
+      "year": 2020,
+      "abstract": "Transformer-based language models such as BERT provide significant accuracy improvement to a multitude of natural language processing (NLP) tasks. However, their hefty computational and memory demands make them challenging to deploy to resource-constrained edge platforms with strict latency requirements. We present EdgeBERT, an in-depth algorithm-hardware co-design for latency-aware energy optimizations for multi-task NLP. EdgeBERT employs entropy-based early exit predication in order to perform dynamic voltage-frequency scaling (DVFS), at a sentence granularity, for minimal energy consumption while adhering to a prescribed target latency. Computation and memory footprint overheads are further alleviated by employing a calibrated combination of adaptive attention span, selective network pruning, and floating-point quantization. Furthermore, in order to maximize the synergistic benefits of these algorithms in always-on and intermediate edge computing settings, we specialize a 12nm scalable hardware accelerator system, integrating a fast-switching low-dropout voltage regulator (LDO), an all-digital phase-locked loop (ADPLL), as well as, high-density embedded non-volatile memories (eNVMs) wherein the sparse floating-point bit encodings of the shared multi-task parameters are carefully stored. Altogether, latency-aware multi-task NLP inference acceleration on the EdgeBERT hardware system generates up to 7 ×, 2.5 ×, and 53 × lower energy compared to the conventional inference without early stopping, the latency-unbounded early exit approach, and CUDA adaptations on an Nvidia Jetson Tegra X2 mobile GPU, respectively.",
+      "externalIds": {
+        "ArXiv": "2011.14203",
+        "DBLP": "conf/micro/TambeHPJYDSWR0W21",
+        "DOI": "10.1145/3466752.3480095",
+        "CorpusId": 237421361
+      },
+      "arxiv_id": "2011.14203",
+      "doi": "10.1145/3466752.3480095",
+      "corpus_id": 237421361
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "38",
+      "ref_key": "S2:d291149a75d7ac194382bd61e515eb40ed0aa106",
+      "paperId": "d291149a75d7ac194382bd61e515eb40ed0aa106",
+      "title": "Predicting Attention Sparsity in Transformers",
+      "year": 2021,
+      "abstract": "Transformers’ quadratic complexity with respect to the input sequence length has motivated a body of work on efficient sparse approximations to softmax. An alternative path, used by entmax transformers, consists of having built-in exact sparse attention; however this approach still requires quadratic computation. In this paper, we propose Sparsefinder, a simple model trained to identify the sparsity pattern of entmax attention before computing it. We experiment with three variants of our method, based on distances, quantization, and clustering, on two tasks: machine translation (attention in the decoder) and masked language modeling (encoder-only). Our work provides a new angle to study model efficiency by doing extensive analysis of the tradeoff between the sparsity and recall of the predicted attention graph. This allows for detailed comparison between different models along their Pareto curves, important to guide future benchmarks for sparse attention models.",
+      "externalIds": {
+        "ACL": "2022.spnlp-1.7",
+        "DBLP": "journals/corr/abs-2109-12188",
+        "ArXiv": "2109.12188",
+        "DOI": "10.18653/v1/2022.spnlp-1.7",
+        "CorpusId": 237940880
+      },
+      "arxiv_id": "2109.12188",
+      "doi": "10.18653/v1/2022.spnlp-1.7",
+      "corpus_id": 237940880
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "39",
+      "ref_key": "S2:47e1dd3da7ae1b8e7ba283e46d0ea5f0927c9c91",
+      "paperId": "47e1dd3da7ae1b8e7ba283e46d0ea5f0927c9c91",
+      "title": "Self-Paced Learning for Neural Machine Translation",
+      "year": 2020,
+      "abstract": "Recent studies have proven that the training of neural machine translation (NMT) can be facilitated by mimicking the learning process of humans. Nevertheless, achievements of such kind of curriculum learning rely on the quality of artificial schedule drawn up with the handcrafted features, e.g. sentence length or word rarity. We ameliorate this procedure with a more flexible manner by proposing self-paced learning, where NMT model is allowed to 1) automatically quantify the learning confidence over training examples; and 2) flexibly govern its learning via regulating the loss in each iteration step. Experimental results over multiple translation tasks demonstrate that the proposed model yields better performance than strong baselines and those models trained with human-designed curricula on both translation quality and convergence speed.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2010-04505",
+        "MAG": "3091807498",
+        "ACL": "2020.emnlp-main.80",
+        "ArXiv": "2010.04505",
+        "DOI": "10.18653/v1/2020.emnlp-main.80",
+        "CorpusId": 222272176
+      },
+      "arxiv_id": "2010.04505",
+      "doi": "10.18653/v1/2020.emnlp-main.80",
+      "corpus_id": 222272176
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "40",
+      "ref_key": "S2:ff0b2681d7b05e16c46dfb71d980cc2f605907cd",
+      "paperId": "ff0b2681d7b05e16c46dfb71d980cc2f605907cd",
+      "title": "Finetuned Language Models Are Zero-Shot Learners",
+      "year": 2021,
+      "abstract": "This paper explores a simple method for improving the zero-shot learning abilities of language models. We show that instruction tuning -- finetuning language models on a collection of tasks described via instructions -- substantially improves zero-shot performance on unseen tasks. We take a 137B parameter pretrained language model and instruction-tune it on over 60 NLP tasks verbalized via natural language instruction templates. We evaluate this instruction-tuned model, which we call FLAN, on unseen task types. FLAN substantially improves the performance of its unmodified counterpart and surpasses zero-shot 175B GPT-3 on 20 of 25 tasks that we evaluate. FLAN even outperforms few-shot GPT-3 by a large margin on ANLI, RTE, BoolQ, AI2-ARC, OpenbookQA, and StoryCloze. Ablation studies reveal that number of finetuning datasets, model scale, and natural language instructions are key to the success of instruction tuning.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2109-01652",
+        "ArXiv": "2109.01652",
+        "CorpusId": 237416585
+      },
+      "arxiv_id": "2109.01652",
+      "doi": null,
+      "corpus_id": 237416585
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "41",
+      "ref_key": "S2:92229aed195bc08ecf3b58f1f7638898da39d491",
+      "paperId": "92229aed195bc08ecf3b58f1f7638898da39d491",
+      "title": "Adapting Coreference Resolution Models through Active Learning",
+      "year": 2021,
+      "abstract": "Neural coreference resolution models trained on one dataset may not transfer to new, low-resource domains. Active learning mitigates this problem by sampling a small subset of data for annotators to label. While active learning is well-defined for classification tasks, its application to coreference resolution is neither well-defined nor fully understood. This paper explores how to actively label coreference, examining sources of model uncertainty and document reading costs. We compare uncertainty sampling strategies and their advantages through thorough error analysis. In both synthetic and human experiments, labeling spans within the same document is more effective than annotating spans across documents. The findings contribute to a more realistic development of coreference resolution models.",
+      "externalIds": {
+        "ACL": "2022.acl-long.519",
+        "ArXiv": "2104.07611",
+        "DBLP": "conf/acl/YuanXMDB22",
+        "DOI": "10.18653/v1/2022.acl-long.519",
+        "CorpusId": 247778877
+      },
+      "arxiv_id": "2104.07611",
+      "doi": "10.18653/v1/2022.acl-long.519",
+      "corpus_id": 247778877
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "42",
+      "ref_key": "S2:13a0d8bb38f739990c8cd65a44061c6534f17221",
+      "paperId": "13a0d8bb38f739990c8cd65a44061c6534f17221",
+      "title": "OPT: Open Pre-trained Transformer Language Models",
+      "year": 2022,
+      "abstract": "Large language models, which are often trained for hundreds of thousands of compute days, have shown remarkable capabilities for zero- and few-shot learning. Given their computational cost, these models are difficult to replicate without significant capital. For the few that are available through APIs, no access is granted to the full model weights, making them difficult to study. We present Open Pre-trained Transformers (OPT), a suite of decoder-only pre-trained transformers ranging from 125M to 175B parameters, which we aim to fully and responsibly share with interested researchers. We show that OPT-175B is comparable to GPT-3, while requiring only 1/7th the carbon footprint to develop. We are also releasing our logbook detailing the infrastructure challenges we faced, along with code for experimenting with all of the released models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2205-01068",
+        "ArXiv": "2205.01068",
+        "CorpusId": 248496292
+      },
+      "arxiv_id": "2205.01068",
+      "doi": null,
+      "corpus_id": 248496292
+    },
+    {
+      "paper_id": "2209.00099",
+      "ref_index": "43",
+      "ref_key": "S2:ecd12726118b95117bf339ad069c0a87a102cbcc",
+      "paperId": "ecd12726118b95117bf339ad069c0a87a102cbcc",
+      "title": "Combining Curriculum Learning and Knowledge Distillation for Dialogue Generation",
+      "year": 2021,
+      "abstract": "Curriculum learning, a machine training strategy that feeds training instances to the model from easy to hard, has been proven to facili-tate the dialogue generation task. Meanwhile, knowledge distillation, a knowledge transformation methodology among teachers and students networks can yield signiﬁcant performance boost for student models. Hence, in this paper, we introduce a combination of curriculum learning and knowledge distillation for efﬁcient dialogue generation models, where curriculum learning can help knowledge distillation from data and model aspects. To start with, from the data aspect, we cluster the training cases according to their complexity, which is calculated by various types of features such as sentence length and coherence between dialog pairs. Furthermore, we employ an adversarial training strategy to identify the complexity of cases from model level. The intuition is that, if a discriminator can tell the generated response is from the teacher or the student, then the case is difﬁcult that the student model has not adapted to yet. Finally, we use self-paced learning, which is an extension to curriculum learning to assign weights for distillation. In conclusion, we arrange a hierarchical curriculum based on the above two aspects for the student model under the guidance from the teacher model. Experimental results demon-strate that our methods achieve improvements compared with competitive baselines.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/ZhuCWL021",
+        "DOI": "10.18653/v1/2021.findings-emnlp.111",
+        "CorpusId": 244119160
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2021.findings-emnlp.111",
+      "corpus_id": 244119160
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "efficient NLP methods": {
+        "Data ": {
+          "Filtering": {
+            "327b12c21e7b8f2126bd7d64ebc2ede0db220c88": {},
+            "13a0d8bb38f739990c8cd65a44061c6534f17221": {}
+          },
+          "Curriculum Learning ": {
+            "0822f8d7e6a72a65e65f147d3a8d8fccd485da40": {},
+            "47e1dd3da7ae1b8e7ba283e46d0ea5f0927c9c91": {},
+            "ecd12726118b95117bf339ad069c0a87a102cbcc": {}
+          },
+          "Active Learning ": {
+            "05c22ede1e011c551ab0639ef52c8c852d7833b1": {},
+            "876d5d01dd9404d58a3ddd4cc7b497cd37b72bc4": {},
+            "92229aed195bc08ecf3b58f1f7638898da39d491": {}
+          }
+        },
+        "Model Design ": {
+          "Compres. Attention": {
+            "c4744a7c2bb298e4a52289a1e085c71cc3d37bc6": {},
+            "83238f3402fc4a7c4efa48bae180d81cabed23ee": {}
+          },
+          "Fast Attention": {
+            "3fbf6339273c50b04e886fa9bd4ad18c952a683d": {},
+            "055fd6a9f7293269f1b22c1470e63bd02d8d9500": {}
+          },
+          "Sparse \\\\Modeling": {
+            "fdacf2a732f55befdc410ea927091cad3b791f13": {},
+            "d291149a75d7ac194382bd61e515eb40ed0aa106": {}
+          },
+          "Parameter Efficiency": {
+            "b3bf9fe13195e9aa70e1dac04e01fcff7008e812": {},
+            "7a064df1aeada7e69e5173f7d4c8606f4470365b": {}
+          },
+          "Retrieval-based": {
+            "002c256d30d6be4b23d365a8de8ae0e67e4c9641": {},
+            "7be8c119dbe065c52125ee7716601751f3116844": {}
+          }
+        },
+        "Pre-training ": {
+          "Decoder only": {
+            "90abbc2cf38462b954ae1b772fac9532e2ccd8b0": {},
+            "094ff971d6a8b8ff870946c9b3ce5aa173617bfb": {}
+          },
+          "Encoder only": {
+            "df2b0e26d0599ce3e70df8a9da02e51594e0e992": {}
+          },
+          "Encoder-Decoder": {
+            "395de0bd3837fdf4b4b5e5f04835bcc69c279481": {},
+            "6c4b76232bb72897685d19b3d264c6ee3005bc2b": {}
+          }
+        },
+        "Fine-tuning ": {
+          "Parameter-Efficiency": {
+            "29ddc1f43f28af7c846515e32cc167bc66886d0c": {},
+            "a8ca46b171467ceb2d7652fbfb67fe701ad86092": {}
+          },
+          "Multi-task Learning": {
+            "7cdaa08890895e1ad92afb5fad429690ad7b1dac": {},
+            "6c4b76232bb72897685d19b3d264c6ee3005bc2b": {}
+          },
+          "Zero-shot Learning": {
+            "17dd3555fd1ccf1141cf984347fa1b3fd6b009ca": {},
+            "ff0b2681d7b05e16c46dfb71d980cc2f605907cd": {}
+          },
+          "Prompting": {
+            "90abbc2cf38462b954ae1b772fac9532e2ccd8b0": {},
+            "f30444fbb6ad806168e2564db4815cd27faa7fd9": {}
+          }
+        },
+        "Inference \\& Compression ": {
+          "Pruning, inference": {
+            "d9b824dbecbe3a1f0b1489f9e4521a532a63818d": {},
+            "66f0f35fc78bdf2af9de46093d49a428970cde2e": {}
+          },
+          "Distillation, inference": {
+            "0cbf97173391b0430140117027edcaf1a37968c7": {},
+            "2573af4e13d9a5dddb257d22cd38a600528d9a8b": {}
+          },
+          "Adaptive Computation, inference": {
+            "5824756ace91f1dd552caab2365ed734cc303b2a": {},
+            "4585611042d2be0d997ee135e3fe219d668db9ec": {}
+          },
+          "Quantiza\\-tion, inference": {
+            "3366e9eb81880d172752d4397cb8e9e6de02b935": {},
+            "745e4b36a1759177871288cae51fbae0b873b5e5": {}
+          }
+        },
+        "Hardware Utilization ": {
+          "Libraries": {
+            "11fe37ab6faf6bf85ad2f5746c154dec5412bd04": {},
+            "12b71736392209b4292471b7da0aed71ba2aa545": {}
+          },
+          "Specialized Hardware": {
+            "b62d4f3e06fdda6c3c09c0225be420d1e8f7c8ba": {},
+            "2babc9ba9dd301d6e61117302bd2a200f7b422e2": {},
+            "3af8a493cf756f9fe72623204a11e378a9cd71a5": {}
+          },
+          "Edge Devices": {
+            "eb1602ecba96beadeb7d2f05e1b57fa6b339fc69": {},
+            "05a6fa3bb47bd283c95b3d86ba4cbbc471cbd6ac": {}
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000001",
+        "paperId": "327b12c21e7b8f2126bd7d64ebc2ede0db220c88",
+        "ref_index": "25",
+        "path": [
+          "efficient NLP methods",
+          "Data ",
+          "Filtering"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000002",
+        "paperId": "13a0d8bb38f739990c8cd65a44061c6534f17221",
+        "ref_index": "42",
+        "path": [
+          "efficient NLP methods",
+          "Data ",
+          "Filtering"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000003",
+        "paperId": "0822f8d7e6a72a65e65f147d3a8d8fccd485da40",
+        "ref_index": "27",
+        "path": [
+          "efficient NLP methods",
+          "Data ",
+          "Curriculum Learning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000004",
+        "paperId": "47e1dd3da7ae1b8e7ba283e46d0ea5f0927c9c91",
+        "ref_index": "39",
+        "path": [
+          "efficient NLP methods",
+          "Data ",
+          "Curriculum Learning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000005",
+        "paperId": "ecd12726118b95117bf339ad069c0a87a102cbcc",
+        "ref_index": "43",
+        "path": [
+          "efficient NLP methods",
+          "Data ",
+          "Curriculum Learning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000006",
+        "paperId": "05c22ede1e011c551ab0639ef52c8c852d7833b1",
+        "ref_index": "9",
+        "path": [
+          "efficient NLP methods",
+          "Data ",
+          "Active Learning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000007",
+        "paperId": "876d5d01dd9404d58a3ddd4cc7b497cd37b72bc4",
+        "ref_index": "20",
+        "path": [
+          "efficient NLP methods",
+          "Data ",
+          "Active Learning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000008",
+        "paperId": "92229aed195bc08ecf3b58f1f7638898da39d491",
+        "ref_index": "41",
+        "path": [
+          "efficient NLP methods",
+          "Data ",
+          "Active Learning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000009",
+        "paperId": "c4744a7c2bb298e4a52289a1e085c71cc3d37bc6",
+        "ref_index": "7",
+        "path": [
+          "efficient NLP methods",
+          "Model Design ",
+          "Compres. Attention"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000010",
+        "paperId": "83238f3402fc4a7c4efa48bae180d81cabed23ee",
+        "ref_index": "24",
+        "path": [
+          "efficient NLP methods",
+          "Model Design ",
+          "Compres. Attention"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000011",
+        "paperId": "3fbf6339273c50b04e886fa9bd4ad18c952a683d",
+        "ref_index": "6",
+        "path": [
+          "efficient NLP methods",
+          "Model Design ",
+          "Fast Attention"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000012",
+        "paperId": "055fd6a9f7293269f1b22c1470e63bd02d8d9500",
+        "ref_index": "18",
+        "path": [
+          "efficient NLP methods",
+          "Model Design ",
+          "Fast Attention"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000013",
+        "paperId": "fdacf2a732f55befdc410ea927091cad3b791f13",
+        "ref_index": "10",
+        "path": [
+          "efficient NLP methods",
+          "Model Design ",
+          "Sparse \\\\Modeling"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000014",
+        "paperId": "d291149a75d7ac194382bd61e515eb40ed0aa106",
+        "ref_index": "38",
+        "path": [
+          "efficient NLP methods",
+          "Model Design ",
+          "Sparse \\\\Modeling"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000015",
+        "paperId": "b3bf9fe13195e9aa70e1dac04e01fcff7008e812",
+        "ref_index": "15",
+        "path": [
+          "efficient NLP methods",
+          "Model Design ",
+          "Parameter Efficiency"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000016",
+        "paperId": "7a064df1aeada7e69e5173f7d4c8606f4470365b",
+        "ref_index": "19",
+        "path": [
+          "efficient NLP methods",
+          "Model Design ",
+          "Parameter Efficiency"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000017",
+        "paperId": "002c256d30d6be4b23d365a8de8ae0e67e4c9641",
+        "ref_index": "4",
+        "path": [
+          "efficient NLP methods",
+          "Model Design ",
+          "Retrieval-based"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000018",
+        "paperId": "7be8c119dbe065c52125ee7716601751f3116844",
+        "ref_index": "17",
+        "path": [
+          "efficient NLP methods",
+          "Model Design ",
+          "Retrieval-based"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000019",
+        "paperId": "90abbc2cf38462b954ae1b772fac9532e2ccd8b0",
+        "ref_index": "5",
+        "path": [
+          "efficient NLP methods",
+          "Pre-training ",
+          "Decoder only"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000020",
+        "paperId": "094ff971d6a8b8ff870946c9b3ce5aa173617bfb",
+        "ref_index": "26",
+        "path": [
+          "efficient NLP methods",
+          "Pre-training ",
+          "Decoder only"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000021",
+        "paperId": "df2b0e26d0599ce3e70df8a9da02e51594e0e992",
+        "ref_index": "1",
+        "path": [
+          "efficient NLP methods",
+          "Pre-training ",
+          "Encoder only"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000022",
+        "paperId": "395de0bd3837fdf4b4b5e5f04835bcc69c279481",
+        "ref_index": "21",
+        "path": [
+          "efficient NLP methods",
+          "Pre-training ",
+          "Encoder-Decoder"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000023",
+        "paperId": "6c4b76232bb72897685d19b3d264c6ee3005bc2b",
+        "ref_index": "29",
+        "path": [
+          "efficient NLP methods",
+          "Pre-training ",
+          "Encoder-Decoder"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000024",
+        "paperId": "29ddc1f43f28af7c846515e32cc167bc66886d0c",
+        "ref_index": "12",
+        "path": [
+          "efficient NLP methods",
+          "Fine-tuning ",
+          "Parameter-Efficiency"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000025",
+        "paperId": "a8ca46b171467ceb2d7652fbfb67fe701ad86092",
+        "ref_index": "13",
+        "path": [
+          "efficient NLP methods",
+          "Fine-tuning ",
+          "Parameter-Efficiency"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000026",
+        "paperId": "7cdaa08890895e1ad92afb5fad429690ad7b1dac",
+        "ref_index": "23",
+        "path": [
+          "efficient NLP methods",
+          "Fine-tuning ",
+          "Multi-task Learning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000027",
+        "paperId": "6c4b76232bb72897685d19b3d264c6ee3005bc2b",
+        "ref_index": "29",
+        "path": [
+          "efficient NLP methods",
+          "Fine-tuning ",
+          "Multi-task Learning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000028",
+        "paperId": "17dd3555fd1ccf1141cf984347fa1b3fd6b009ca",
+        "ref_index": "31",
+        "path": [
+          "efficient NLP methods",
+          "Fine-tuning ",
+          "Zero-shot Learning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000029",
+        "paperId": "ff0b2681d7b05e16c46dfb71d980cc2f605907cd",
+        "ref_index": "40",
+        "path": [
+          "efficient NLP methods",
+          "Fine-tuning ",
+          "Zero-shot Learning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000030",
+        "paperId": "90abbc2cf38462b954ae1b772fac9532e2ccd8b0",
+        "ref_index": "5",
+        "path": [
+          "efficient NLP methods",
+          "Fine-tuning ",
+          "Prompting"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000031",
+        "paperId": "f30444fbb6ad806168e2564db4815cd27faa7fd9",
+        "ref_index": "34",
+        "path": [
+          "efficient NLP methods",
+          "Fine-tuning ",
+          "Prompting"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000032",
+        "paperId": "d9b824dbecbe3a1f0b1489f9e4521a532a63818d",
+        "ref_index": "11",
+        "path": [
+          "efficient NLP methods",
+          "Inference \\& Compression ",
+          "Pruning, inference"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000033",
+        "paperId": "66f0f35fc78bdf2af9de46093d49a428970cde2e",
+        "ref_index": "32",
+        "path": [
+          "efficient NLP methods",
+          "Inference \\& Compression ",
+          "Pruning, inference"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000034",
+        "paperId": "0cbf97173391b0430140117027edcaf1a37968c7",
+        "ref_index": "16",
+        "path": [
+          "efficient NLP methods",
+          "Inference \\& Compression ",
+          "Distillation, inference"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000035",
+        "paperId": "2573af4e13d9a5dddb257d22cd38a600528d9a8b",
+        "ref_index": "36",
+        "path": [
+          "efficient NLP methods",
+          "Inference \\& Compression ",
+          "Distillation, inference"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000036",
+        "paperId": "5824756ace91f1dd552caab2365ed734cc303b2a",
+        "ref_index": "0",
+        "path": [
+          "efficient NLP methods",
+          "Inference \\& Compression ",
+          "Adaptive Computation, inference"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000037",
+        "paperId": "4585611042d2be0d997ee135e3fe219d668db9ec",
+        "ref_index": "2",
+        "path": [
+          "efficient NLP methods",
+          "Inference \\& Compression ",
+          "Adaptive Computation, inference"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000038",
+        "paperId": "3366e9eb81880d172752d4397cb8e9e6de02b935",
+        "ref_index": "3",
+        "path": [
+          "efficient NLP methods",
+          "Inference \\& Compression ",
+          "Quantiza\\-tion, inference"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000039",
+        "paperId": "745e4b36a1759177871288cae51fbae0b873b5e5",
+        "ref_index": "35",
+        "path": [
+          "efficient NLP methods",
+          "Inference \\& Compression ",
+          "Quantiza\\-tion, inference"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000040",
+        "paperId": "11fe37ab6faf6bf85ad2f5746c154dec5412bd04",
+        "ref_index": "8",
+        "path": [
+          "efficient NLP methods",
+          "Hardware Utilization ",
+          "Libraries"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000041",
+        "paperId": "12b71736392209b4292471b7da0aed71ba2aa545",
+        "ref_index": "30",
+        "path": [
+          "efficient NLP methods",
+          "Hardware Utilization ",
+          "Libraries"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000042",
+        "paperId": "b62d4f3e06fdda6c3c09c0225be420d1e8f7c8ba",
+        "ref_index": "22",
+        "path": [
+          "efficient NLP methods",
+          "Hardware Utilization ",
+          "Specialized Hardware"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000043",
+        "paperId": "2babc9ba9dd301d6e61117302bd2a200f7b422e2",
+        "ref_index": "28",
+        "path": [
+          "efficient NLP methods",
+          "Hardware Utilization ",
+          "Specialized Hardware"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000044",
+        "paperId": "3af8a493cf756f9fe72623204a11e378a9cd71a5",
+        "ref_index": "37",
+        "path": [
+          "efficient NLP methods",
+          "Hardware Utilization ",
+          "Specialized Hardware"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000045",
+        "paperId": "eb1602ecba96beadeb7d2f05e1b57fa6b339fc69",
+        "ref_index": "14",
+        "path": [
+          "efficient NLP methods",
+          "Hardware Utilization ",
+          "Edge Devices"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2209.00099",
+        "arxiv_id": "2209.00099",
+        "leaf_mention_id": "2209.00099::000046",
+        "paperId": "05a6fa3bb47bd283c95b3d86ba4cbbc471cbd6ac",
+        "ref_index": "33",
+        "path": [
+          "efficient NLP methods",
+          "Hardware Utilization ",
+          "Edge Devices"
+        ],
+        "depth": 3,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 46,
+      "unique_leaf_paper_count": 44,
+      "multi_membership_extra_mentions": 2,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

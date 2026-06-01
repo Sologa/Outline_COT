@@ -1,0 +1,2989 @@
+{
+  "paper_id": "2401.07518",
+  "arxiv_id": "2401.07518",
+  "title": "Survey of Natural Language Processing for Education: Taxonomy, Systematic Review, and Future Trends",
+  "ref_meta": [
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "0",
+      "ref_key": "S2:0646bb09db4d1ba24150e69b71edcd4aff691b3c",
+      "paperId": "0646bb09db4d1ba24150e69b71edcd4aff691b3c",
+      "title": "Unified Pre-training for Program Understanding and Generation",
+      "year": 2021,
+      "abstract": "Code summarization and generation empower conversion between programming language (PL) and natural language (NL), while code translation avails the migration of legacy code from one PL to another. This paper introduces PLBART, a sequence-to-sequence model capable of performing a broad spectrum of program and language understanding and generation tasks. PLBART is pre-trained on an extensive collection of Java and Python functions and associated NL text via denoising autoencoding. Experiments on code summarization in the English language, code generation, and code translation in seven programming languages show that PLBART outperforms or rivals state-of-the-art models. Moreover, experiments on discriminative tasks, e.g., program repair, clone detection, and vulnerable code detection, demonstrate PLBART’s effectiveness in program understanding. Furthermore, analysis reveals that PLBART learns program syntax, style (e.g., identifier naming convention), logical flow (e.g., “if“ block inside an “else“ block is equivalent to “else if“ block) that are crucial to program semantics and thus excels even with limited annotations.",
+      "externalIds": {
+        "ACL": "2021.naacl-main.211",
+        "MAG": "3170092793",
+        "ArXiv": "2103.06333",
+        "DBLP": "conf/naacl/AhmadCRC21",
+        "DOI": "10.18653/V1/2021.NAACL-MAIN.211",
+        "CorpusId": 232185260
+      },
+      "arxiv_id": "2103.06333",
+      "doi": "10.18653/V1/2021.NAACL-MAIN.211",
+      "corpus_id": 232185260
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "1",
+      "ref_key": "S2:9da95e99afd4ea899bd1fb40dd350e0be0a12a84",
+      "paperId": "9da95e99afd4ea899bd1fb40dd350e0be0a12a84",
+      "title": "Parallel Iterative Edit Models for Local Sequence Transduction",
+      "year": 2019,
+      "abstract": "We present a Parallel Iterative Edit (PIE) model for the problem of local sequence transduction arising in tasks like Grammatical error correction (GEC). Recent approaches are based on the popular encoder-decoder (ED) model for sequence to sequence learning. The ED model auto-regressively captures full dependency among output tokens but is slow due to sequential decoding. The PIE model does parallel decoding, giving up the advantage of modeling full dependency in the output, yet it achieves accuracy competitive with the ED model for four reasons: 1. predicting edits instead of tokens, 2. labeling sequences instead of generating sequences, 3. iteratively refining predictions to capture dependencies, and 4. factorizing logits over edits and their token argument to harness pre-trained language models like BERT. Experiments on tasks spanning GEC, OCR correction and spell correction demonstrate that the PIE model is an accurate and significantly faster alternative for local sequence transduction.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1910-02893",
+        "ACL": "D19-1435",
+        "MAG": "2977610714",
+        "ArXiv": "1910.02893",
+        "DOI": "10.18653/v1/D19-1435",
+        "CorpusId": 202765548
+      },
+      "arxiv_id": "1910.02893",
+      "doi": "10.18653/v1/D19-1435",
+      "corpus_id": 202765548
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "2",
+      "ref_key": "S2:dcd535f10cb3fe5502fa65a4dfe5766f779c34f2",
+      "paperId": "dcd535f10cb3fe5502fa65a4dfe5766f779c34f2",
+      "title": "CSynGEC: Incorporating Constituent-based Syntax for Grammatical Error Correction with a Tailored GEC-Oriented Parser",
+      "year": 2022,
+      "abstract": "Recently, Zhang et al. (2022) propose a syntax-aware grammatical error correction (GEC) approach, named SynGEC, showing that incorporating tailored dependency-based syntax of the input sentence is quite beneficial to GEC. This work considers another mainstream syntax formalism, i.e., constituent-based syntax. By drawing on the successful experience of SynGEC, we first propose an extended constituent-based syntax scheme to accommodate errors in ungrammatical sentences. Then, we automatically obtain constituency trees of ungrammatical sentences to train a GEC-oriented constituency parser by using parallel GEC data as a pivot. For syntax encoding, we employ the graph convolutional network (GCN). Experimental results show that our method, named CSynGEC, yields substantial improvements over strong baselines. Moreover, we investigate the integration of constituent-based and dependency-based syntax for GEC in two ways: 1) intra-model combination, which means using separate GCNs to encode both kinds of syntax for decoding in a single model; 2)inter-model combination, which means gathering and selecting edits predicted by different models to achieve final corrections. We find that the former method improves recall over using one standalone syntax formalism while the latter improves precision, and both lead to better F0.5 values.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2211-08158",
+        "ArXiv": "2211.08158",
+        "DOI": "10.48550/arXiv.2211.08158",
+        "CorpusId": 253522971
+      },
+      "arxiv_id": "2211.08158",
+      "doi": "10.48550/arXiv.2211.08158",
+      "corpus_id": 253522971
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "3",
+      "ref_key": "S2:3cba16fc46ac5b35c1cc72a822208aa0097384cc",
+      "paperId": "3cba16fc46ac5b35c1cc72a822208aa0097384cc",
+      "title": "CodePAD: Sequence-based Code Generation with Pushdown Automaton",
+      "year": 2022,
+      "abstract": "In the process of code generation, it is essential to guarantee the generated code satisfies grammar constraints of programming language (PL). However, neglecting grammar constraints is a fatal drawback of commonly used sequence-based code generation. In this paper, we devise a pushdown automaton (PDA)-based methodology to address this problem, exploiting the principle that PL is a subset of PDA recognizable language and code accepted by PDA is grammatical. Specifically, we construct a PDA module and design an algorithm to constrain the generation of sequence-based models to ensure grammatical correctness. Guided by this methodology, we further propose CodePAD, a sequence-based code generation framework equipped with a PDA module, to integrate the deduction of PDA into deep learning. Additionally, this framework can leverage states of PDA deduction (including state representation, state prediction task, and joint prediction with state) to assist models in learning PDA deduction. To comprehensively evaluate CodePAD, we construct a PDA for Python and conduct extensive experiments on four public benchmark datasets. CodePAD can leverage existing sequence-based models, and we show that it can achieve 100\\% grammatical correctness percentage on these benchmark datasets. Thus, it relatively improve 17\\% CodeBLEU on CONALA, 8\\% EM on DJANGO, and 15\\% CodeBLEU on JUICE-10K compared to base models. In addition, our method significantly enhances pre-trained models, e.g., CodeBLEU of CodeGen-350M improvement from 3.21 to 21.54 on MBPP in zero-shot setting.",
+      "externalIds": {
+        "ArXiv": "2211.00818",
+        "CorpusId": 255546659
+      },
+      "arxiv_id": "2211.00818",
+      "doi": null,
+      "corpus_id": 255546659
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "4",
+      "ref_key": "S2:4b27f18bff43d605805c92696a979714ced0b805",
+      "paperId": "4b27f18bff43d605805c92696a979714ced0b805",
+      "title": "UniXcoder: Unified Cross-Modal Pre-training for Code Representation",
+      "year": 2022,
+      "abstract": "Pre-trained models for programming languages have recently demonstrated great success on code intelligence. To support both code-related understanding and generation tasks, recent works attempt to pre-train unified encoder-decoder models. However, such encoder-decoder framework is sub-optimal for auto-regressive tasks, especially code completion that requires a decoder-only manner for efficient inference. In this paper, we present UniXcoder, a unified cross-modal pre-trained model for programming language. The model utilizes mask attention matrices with prefix adapters to control the behavior of the model and leverages cross-modal contents like AST and code comment to enhance code representation. To encode AST that is represented as a tree in parallel, we propose a one-to-one mapping method to transform AST in a sequence structure that retains all structural information from the tree. Furthermore, we propose to utilize multi-modal contents to learn representation of code fragment with contrastive learning, and then align representations among programming languages using a cross-modal generation task. We evaluate UniXcoder on five code-related tasks over nine datasets. To further evaluate the performance of code fragment representation, we also construct a dataset for a new task, called zero-shot code-to-code search. Results show that our model achieves state-of-the-art performance on most tasks and analysis reveals that comment and AST can both enhance UniXcoder.",
+      "externalIds": {
+        "DBLP": "conf/acl/GuoLDW0022",
+        "ACL": "2022.acl-long.499",
+        "ArXiv": "2203.03850",
+        "DOI": "10.48550/arXiv.2203.03850",
+        "CorpusId": 247315559
+      },
+      "arxiv_id": "2203.03850",
+      "doi": "10.48550/arXiv.2203.03850",
+      "corpus_id": 247315559
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "5",
+      "ref_key": "S2:4083958684292f6fa2f5c7fd4f9be975e80145b6",
+      "paperId": "4083958684292f6fa2f5c7fd4f9be975e80145b6",
+      "title": "GraphCodeBERT: Pre-training Code Representations with Data Flow",
+      "year": 2020,
+      "abstract": "Pre-trained models for programming language have achieved dramatic empirical improvements on a variety of code-related tasks such as code search, code completion, code summarization, etc. However, existing pre-trained models regard a code snippet as a sequence of tokens, while ignoring the inherent structure of code, which provides crucial code semantics and would enhance the code understanding process. We present GraphCodeBERT, a pre-trained model for programming language that considers the inherent structure of code. Instead of taking syntactic-level structure of code like abstract syntax tree (AST), we use data flow in the pre-training stage, which is a semantic-level structure of code that encodes the relation of \"where-the-value-comes-from\" between variables. Such a semantic-level structure is neat and does not bring an unnecessarily deep hierarchy of AST, the property of which makes the model more efficient. We develop GraphCodeBERT based on Transformer. In addition to using the task of masked language modeling, we introduce two structure-aware pre-training tasks. One is to predict code structure edges, and the other is to align representations between source code and code structure. We implement the model in an efficient way with a graph-guided masked attention function to incorporate the code structure. We evaluate our model on four tasks, including code search, clone detection, code translation, and code refinement. Results show that code structure and newly introduced pre-training tasks can improve GraphCodeBERT and achieves state-of-the-art performance on the four downstream tasks. We further show that the model prefers structure-level attentions over token-level attentions in the task of code search.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2009-08366",
+        "ArXiv": "2009.08366",
+        "MAG": "3086007799",
+        "CorpusId": 221761146
+      },
+      "arxiv_id": "2009.08366",
+      "doi": null,
+      "corpus_id": 221761146
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "6",
+      "ref_key": "S2:2a488da9560d9466edfe76adb484179f83fa3e9b",
+      "paperId": "2a488da9560d9466edfe76adb484179f83fa3e9b",
+      "title": "Interpretability for Language Learners Using Example-Based Grammatical Error Correction",
+      "year": 2022,
+      "abstract": "Grammatical Error Correction (GEC) should not focus only on high accuracy of corrections but also on interpretability for language learning.However, existing neural-based GEC models mainly aim at improving accuracy, and their interpretability has not been explored.A promising approach for improving interpretability is an example-based method, which uses similar retrieved examples to generate corrections. In addition, examples are beneficial in language learning, helping learners understand the basis of grammatically incorrect/correct texts and improve their confidence in writing.Therefore, we hypothesize that incorporating an example-based method into GEC can improve interpretability as well as support language learners.In this study, we introduce an Example-Based GEC (EB-GEC) that presents examples to language learners as a basis for a correction result.The examples consist of pairs of correct and incorrect sentences similar to a given input and its predicted correction.Experiments demonstrate that the examples presented by EB-GEC help language learners decide to accept or refuse suggestions from the GEC output.Furthermore, the experiments also show that retrieved examples improve the accuracy of corrections.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2203-07085",
+        "ArXiv": "2203.07085",
+        "ACL": "2022.acl-long.496",
+        "DOI": "10.48550/arXiv.2203.07085",
+        "CorpusId": 247447305
+      },
+      "arxiv_id": "2203.07085",
+      "doi": "10.48550/arXiv.2203.07085",
+      "corpus_id": 247447305
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "7",
+      "ref_key": "S2:d7399e6914bd7b341f565275816022b1e97f1564",
+      "paperId": "d7399e6914bd7b341f565275816022b1e97f1564",
+      "title": "Automated Postediting of Documents",
+      "year": 1994,
+      "abstract": "Large amounts of low- to medium-quality English texts are now being produced by machine translation (MT) systems, optical character readers (OCR), and non-native speakers of English. Most of this text must be postedited by hand before it sees the light of day. Improving text quality is tedious work, but its automation has not received much research attention. \n \nAnyone who has postedited a technical report or thesis written by a non-native speaker of English knows the potential of an automated postediting system. For the case of MT-generated text, we argue for the construction of postediting modules that are portable across MT systems, as an alternative to hardcoding improvements inside any one system. As an example, we have built a complete self-contained postediting module for the task of article selection (a, an, the) for English noun phrases. This is a notoriously difficult problem for Japanese-English MT. Our system contains over 200,000 rules derived automatically from online text resources. We report on learning algorithms, accuracy, and comparisons with human performance.",
+      "externalIds": {
+        "MAG": "2159086733",
+        "DBLP": "conf/aaai/KnightC94",
+        "ArXiv": "cmp-lg/9407028",
+        "CorpusId": 263491204
+      },
+      "arxiv_id": "cmp-lg/9407028",
+      "doi": null,
+      "corpus_id": 263491204
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "8",
+      "ref_key": "S2:a3707f5ce5cde48960475f6c6013f10d2e851f15",
+      "paperId": "a3707f5ce5cde48960475f6c6013f10d2e851f15",
+      "title": "Encode, Tag, Realize: High-Precision Text Editing",
+      "year": 2019,
+      "abstract": "We propose LaserTagger - a sequence tagging approach that casts text generation as a text editing task. Target texts are reconstructed from the inputs using three main edit operations: keeping a token, deleting it, and adding a phrase before the token. To predict the edit operations, we propose a novel model, which combines a BERT encoder with an autoregressive Transformer decoder. This approach is evaluated on English text on four tasks: sentence fusion, sentence splitting, abstractive summarization, and grammar correction. LaserTagger achieves new state-of-the-art results on three of these tasks, performs comparably to a set of strong seq2seq baselines with a large number of training examples, and outperforms them when the number of examples is limited. Furthermore, we show that at inference time tagging can be more than two orders of magnitude faster than comparable seq2seq models, making it more attractive for running in a live environment.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1909-01187",
+        "MAG": "2971505041",
+        "ACL": "D19-1510",
+        "ArXiv": "1909.01187",
+        "DOI": "10.18653/v1/D19-1510",
+        "CorpusId": 202541578
+      },
+      "arxiv_id": "1909.01187",
+      "doi": "10.18653/v1/D19-1510",
+      "corpus_id": 202541578
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "9",
+      "ref_key": "S2:9f6b659033da6fff11da1af64fea7c0d728ab433",
+      "paperId": "9f6b659033da6fff11da1af64fea7c0d728ab433",
+      "title": "GECToR – Grammatical Error Correction: Tag, Not Rewrite",
+      "year": 2020,
+      "abstract": "In this paper, we present a simple and efficient GEC sequence tagger using a Transformer encoder. Our system is pre-trained on synthetic data and then fine-tuned in two stages: first on errorful corpora, and second on a combination of errorful and error-free parallel corpora. We design custom token-level transformations to map input tokens to target corrections. Our best single-model/ensemble GEC tagger achieves an F_0.5 of 65.3/66.5 on CONLL-2014 (test) and F_0.5 of 72.4/73.6 on BEA-2019 (test). Its inference speed is up to 10 times as fast as a Transformer-based seq2seq GEC system.",
+      "externalIds": {
+        "DBLP": "conf/bea/OmelianchukACS20",
+        "MAG": "3029282628",
+        "ACL": "2020.bea-1.16",
+        "ArXiv": "2005.12592",
+        "DOI": "10.18653/v1/2020.bea-1.16",
+        "CorpusId": 218889746
+      },
+      "arxiv_id": "2005.12592",
+      "doi": "10.18653/v1/2020.bea-1.16",
+      "corpus_id": 218889746
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "10",
+      "ref_key": "S2:1a40105b9eda0cecdd596b5758fb4ad85b7f636b",
+      "paperId": "1a40105b9eda0cecdd596b5758fb4ad85b7f636b",
+      "title": "The Illinois-Columbia System in the CoNLL-2014 Shared Task",
+      "year": 2014,
+      "abstract": "The CoNLL-2014 shared task is an extension of last year’s shared task and focuses on correcting grammatical errors in essays written by non-native learners of English. In this paper, we describe the Illinois-Columbia system that participated in the shared task. Our system ranked second on the original annotations and first on the revised annotations. The core of the system is based on the University of Illinois model that placed first in the CoNLL-2013 shared task. This baseline model has been improved and expanded for this year’s competition in several respects. We describe our underlying approach, which relates to our previous work, and describe the novel aspects of the system in more detail.",
+      "externalIds": {
+        "MAG": "2127672659",
+        "ACL": "W14-1704",
+        "DBLP": "conf/conll/RozovskayaCSRH14",
+        "DOI": "10.3115/v1/W14-1704",
+        "CorpusId": 1547333
+      },
+      "arxiv_id": null,
+      "doi": "10.3115/v1/W14-1704",
+      "corpus_id": 1547333
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "11",
+      "ref_key": "S2:62176de125738e3b95850d1227bac81fd646b78e",
+      "paperId": "62176de125738e3b95850d1227bac81fd646b78e",
+      "title": "Plan-and-Solve Prompting: Improving Zero-Shot Chain-of-Thought Reasoning by Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have recently been shown to deliver impressive performance in various NLP tasks. To tackle multi-step reasoning tasks, Few-shot chain-of-thought (CoT) prompting includes a few manually crafted step-by-step reasoning demonstrations which enable LLMs to explicitly generate reasoning steps and improve their reasoning task accuracy. To eliminate the manual efforts, Zero-shot-CoT concatenates the target problem statement with “Let’s think step by step” as an input prompt to LLMs. Despite the success of Zero-shot-CoT, it still suffers from three pitfalls: calculation errors, missing-step errors, and semantic misunderstanding errors. To address the missing-step errors, we propose Plan-and-Solve (PS) Prompting. It consists of two components: first, devising a plan to divide the entire task into smaller subtasks, and then carrying out the subtasks according to the plan. To address the calculation errors and improve the quality of generated reasoning steps, we extend PS prompting with more detailed instructions and derive PS+ prompting. We evaluate our proposed prompting strategy on ten datasets across three reasoning problems. The experimental results over GPT-3 show that our proposed zero-shot prompting consistently outperforms Zero-shot-CoT across all datasets by a large margin, is comparable to or exceeds Zero-shot-Program-of-Thought Prompting, and has comparable performance with 8-shot CoT prompting on the math reasoning problem. The code can be found at https://github.com/AGI-Edgerunners/Plan-and-Solve-Prompting.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-04091",
+        "ACL": "2023.acl-long.147",
+        "ArXiv": "2305.04091",
+        "DOI": "10.48550/arXiv.2305.04091",
+        "CorpusId": 258558102
+      },
+      "arxiv_id": "2305.04091",
+      "doi": "10.48550/arXiv.2305.04091",
+      "corpus_id": 258558102
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "12",
+      "ref_key": "S2:90350aa626bed47b02d0c162462e5b0ca82be6b2",
+      "paperId": "90350aa626bed47b02d0c162462e5b0ca82be6b2",
+      "title": "Automatic Chain of Thought Prompting in Large Language Models",
+      "year": 2022,
+      "abstract": "Large language models (LLMs) can perform complex reasoning by generating intermediate reasoning steps. Providing these steps for prompting demonstrations is called chain-of-thought (CoT) prompting. CoT prompting has two major paradigms. One leverages a simple prompt like\"Let's think step by step\"to facilitate step-by-step thinking before answering a question. The other uses a few manual demonstrations one by one, each composed of a question and a reasoning chain that leads to an answer. The superior performance of the second paradigm hinges on the hand-crafting of task-specific demonstrations one by one. We show that such manual efforts may be eliminated by leveraging LLMs with the\"Let's think step by step\"prompt to generate reasoning chains for demonstrations one by one, i.e., let's think not just step by step, but also one by one. However, these generated chains often come with mistakes. To mitigate the effect of such mistakes, we find that diversity matters for automatically constructing demonstrations. We propose an automatic CoT prompting method: Auto-CoT. It samples questions with diversity and generates reasoning chains to construct demonstrations. On ten public benchmark reasoning tasks with GPT-3, Auto-CoT consistently matches or exceeds the performance of the CoT paradigm that requires manual designs of demonstrations. Code is available at https://github.com/amazon-research/auto-cot",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-03493",
+        "ArXiv": "2210.03493",
+        "CorpusId": 252762275
+      },
+      "arxiv_id": "2210.03493",
+      "doi": null,
+      "corpus_id": 252762275
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "13",
+      "ref_key": "S2:73c852f073c2d1a3b55a8465d33ae212e4fd7d59",
+      "paperId": "73c852f073c2d1a3b55a8465d33ae212e4fd7d59",
+      "title": "SynGEC: Syntax-Enhanced Grammatical Error Correction with a Tailored GEC-Oriented Parser",
+      "year": 2022,
+      "abstract": "This work proposes a syntax-enhanced grammatical error correction (GEC) approach named SynGEC that effectively incorporates dependency syntactic information into the encoder part of GEC models. The key challenge for this idea is that off-the-shelf parsers are unreliable when processing ungrammatical sentences. To confront this challenge, we propose to build a tailored GEC-oriented parser (GOPar) using parallel GEC training data as a pivot. First, we design an extended syntax representation scheme that allows us to represent both grammatical errors and syntax in a unified tree structure. Then, we obtain parse trees of the source incorrect sentences by projecting trees of the target correct sentences. Finally, we train GOPar with such projected trees. For GEC, we employ the graph convolution network to encode source-side syntactic information produced by GOPar, and fuse them with the outputs of the Transformer encoder. Experiments on mainstream English and Chinese GEC datasets show that our proposed SynGEC approach consistently and substantially outperforms strong baselines and achieves competitive performance. Our code and data are all publicly available at https://github.com/HillZhang1999/SynGEC.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-12484",
+        "ArXiv": "2210.12484",
+        "ACL": "2022.emnlp-main.162",
+        "DOI": "10.48550/arXiv.2210.12484",
+        "CorpusId": 249009330
+      },
+      "arxiv_id": "2210.12484",
+      "doi": "10.48550/arXiv.2210.12484",
+      "corpus_id": 249009330
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "14",
+      "ref_key": "S2:261549439aebdda72b648ecc462448fd24857ac1",
+      "paperId": "261549439aebdda72b648ecc462448fd24857ac1",
+      "title": "Progressive-Hint Prompting Improves Reasoning in Large Language Models",
+      "year": 2023,
+      "abstract": "The performance of Large Language Models (LLMs) in reasoning tasks depends heavily on prompt design, with Chain-of-Thought (CoT) and self-consistency being critical methods that enhance this ability. However, these methods do not fully exploit the answers generated by the LLM to guide subsequent responses. This paper proposes a new prompting method, named Progressive-Hint Prompting (PHP), that enables automatic multiple interactions between users and LLMs by using previously generated answers as hints to progressively guide toward the correct answers. PHP is orthogonal to CoT and self-consistency, making it easy to combine with state-of-the-art techniques to further improve performance. We conducted extensive and comprehensive experiments on seven benchmarks. The results show that PHP significantly improves accuracy while remaining highly efficient. For instance, with text-davinci-003, we observed a 4.2% improvement on GSM8K with greedy decoding compared to Complex CoT, and a 46.17% reduction in sample paths with self-consistency. With GPT-4 and PHP, we achieve state-of-the-art performances on SVAMP (89.1% ->91.9%), GSM8K (92% ->95.5%), AQuA (76.4% ->79.9%) and MATH (50.3% ->53.9%).",
+      "externalIds": {
+        "ArXiv": "2304.09797",
+        "DBLP": "journals/corr/abs-2304-09797",
+        "DOI": "10.48550/arXiv.2304.09797",
+        "CorpusId": 258212839
+      },
+      "arxiv_id": "2304.09797",
+      "doi": "10.48550/arXiv.2304.09797",
+      "corpus_id": 258212839
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "15",
+      "ref_key": "S2:5437e8adab596d7294124c0e798708e050e25321",
+      "paperId": "5437e8adab596d7294124c0e798708e050e25321",
+      "title": "Least-to-Most Prompting Enables Complex Reasoning in Large Language Models",
+      "year": 2022,
+      "abstract": "Chain-of-thought prompting has demonstrated remarkable performance on various natural language reasoning tasks. However, it tends to perform poorly on tasks which requires solving problems harder than the exemplars shown in the prompts. To overcome this challenge of easy-to-hard generalization, we propose a novel prompting strategy, least-to-most prompting. The key idea in this strategy is to break down a complex problem into a series of simpler subproblems and then solve them in sequence. Solving each subproblem is facilitated by the answers to previously solved subproblems. Our experimental results on tasks related to symbolic manipulation, compositional generalization, and math reasoning reveal that least-to-most prompting is capable of generalizing to more difficult problems than those seen in the prompts. A notable finding is that when the GPT-3 code-davinci-002 model is used with least-to-most prompting, it can solve the compositional generalization benchmark SCAN in any split (including length split) with an accuracy of at least 99% using just 14 exemplars, compared to only 16% accuracy with chain-of-thought prompting. This is particularly noteworthy because neural-symbolic models in the literature that specialize in solving SCAN are trained on the entire training set containing over 15,000 examples. We have included prompts for all the tasks in the Appendix.",
+      "externalIds": {
+        "ArXiv": "2205.10625",
+        "DBLP": "conf/iclr/ZhouSHWS0SCBLC23",
+        "DOI": "10.48550/arXiv.2205.10625",
+        "CorpusId": 248986239
+      },
+      "arxiv_id": "2205.10625",
+      "doi": "10.48550/arXiv.2205.10625",
+      "corpus_id": 248986239
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "16",
+      "ref_key": "S2:98ea4abc9bf0e30eb020db2075c9c8a039a848a3",
+      "paperId": "98ea4abc9bf0e30eb020db2075c9c8a039a848a3",
+      "title": "Learning to Compose Neural Networks for Question Answering",
+      "year": 2016,
+      "abstract": "We describe a question answering model that applies to both images and structured knowledge bases. The model uses natural language strings to automatically assemble neural networks from a collection of composable modules. Parameters for these modules are learned jointly with network-assembly parameters via reinforcement learning, with only (world, question, answer) triples as supervision. Our approach, which we term a dynamic neural model network, achieves state-of-the-art results on benchmark datasets in both visual and structured domains.",
+      "externalIds": {
+        "MAG": "2963143606",
+        "ACL": "N16-1181",
+        "ArXiv": "1601.01705",
+        "DBLP": "conf/naacl/AndreasRDK16",
+        "DOI": "10.18653/v1/N16-1181",
+        "CorpusId": 3130692
+      },
+      "arxiv_id": "1601.01705",
+      "doi": "10.18653/v1/N16-1181",
+      "corpus_id": 3130692
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "17",
+      "ref_key": "S2:97ad70a9fa3f99adf18030e5e38ebe3d90daa2db",
+      "paperId": "97ad70a9fa3f99adf18030e5e38ebe3d90daa2db",
+      "title": "VQA: Visual Question Answering",
+      "year": 2015,
+      "abstract": "We propose the task of free-form and open-ended Visual Question Answering\n(VQA). Given an image and a natural language question about the image, the task\nis to provide an accurate natural language answer. Mirroring real-world\nscenarios, such as helping the visually impaired, both the questions and\nanswers are open-ended. Visual questions selectively target different areas of\nan image, including background details and underlying context. As a result, a\nsystem that succeeds at VQA typically needs a more detailed understanding of\nthe image and complex reasoning than a system producing generic image captions.\nMoreover, VQA is amenable to automatic evaluation, since many open-ended\nanswers contain only a few words or a closed set of answers that can be\nprovided in a multiple-choice format. We provide a dataset containing ~0.25M\nimages, ~0.76M questions, and ~10M answers (www.visualqa.org), and discuss the\ninformation it provides. Numerous baselines and methods for VQA are provided\nand compared with human performance. Our VQA demo is available on CloudCV\n(http://cloudcv.org/vqa).",
+      "externalIds": {
+        "MAG": "1933349210",
+        "DBLP": "journals/corr/AntolALMBZP15",
+        "ArXiv": "1505.00468",
+        "DOI": "10.1007/s11263-016-0966-6",
+        "CorpusId": 3180429
+      },
+      "arxiv_id": "1505.00468",
+      "doi": "10.1007/s11263-016-0966-6",
+      "corpus_id": 3180429
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "18",
+      "ref_key": "S2:6e100eec500e7bd726f7ee843c097eb58408543f",
+      "paperId": "6e100eec500e7bd726f7ee843c097eb58408543f",
+      "title": "Hyperstyle: A Tool for Assessing the Code Quality of Solutions to Programming Assignments",
+      "year": 2021,
+      "abstract": "In software engineering, it is not enough to simply write code that only works as intended, even if it is free from vulnerabilities and bugs. Every programming language has a style guide and a set of best practices defined by its community, which help practitioners to build solutions that have a clear structure and therefore are easy to read and maintain. To introduce assessment of code quality into the educational process, we developed a tool called Hyperstyle. To make it reflect the needs of the programming community and at the same time be easily extendable, we built it upon several existing professional linters and code checkers. Hyperstyle supports four programming languages (Python, Java, Kotlin, and Javascript) and can be used as a standalone tool or integrated into a MOOC platform. We have integrated the tool into two educational platforms, Stepik and JetBrains Academy, and it has been used to process about one million submissions every week since May 2021.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2112-02963",
+        "ArXiv": "2112.02963",
+        "DOI": "10.1145/3478431.3499294",
+        "CorpusId": 244909098
+      },
+      "arxiv_id": "2112.02963",
+      "doi": "10.1145/3478431.3499294",
+      "corpus_id": 244909098
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "19",
+      "ref_key": "S2:f1bb5051965a3a4c9288f0123dd03c26a08e1378",
+      "paperId": "f1bb5051965a3a4c9288f0123dd03c26a08e1378",
+      "title": "Distractor generation for multiple-choice questions with predictive prompting and large language models",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) such as ChatGPT have demonstrated remarkable performance across various tasks and have garnered significant attention from both researchers and practitioners. However, in an educational context, we still observe a performance gap in generating distractors -- i.e., plausible yet incorrect answers -- with LLMs for multiple-choice questions (MCQs). In this study, we propose a strategy for guiding LLMs such as ChatGPT, in generating relevant distractors by prompting them with question items automatically retrieved from a question bank as well-chosen in-context examples. We evaluate our LLM-based solutions using a quantitative assessment on an existing test set, as well as through quality annotations by human experts, i.e., teachers. We found that on average 53% of the generated distractors presented to the teachers were rated as high-quality, i.e., suitable for immediate use as is, outperforming the state-of-the-art model. We also show the gains of our approach 1 in generating high-quality distractors by comparing it with a zero-shot ChatGPT and a few-shot ChatGPT prompted with static examples.",
+      "externalIds": {
+        "DBLP": "conf/pkdd/BitewDDD23",
+        "ArXiv": "2307.16338",
+        "DOI": "10.48550/arXiv.2307.16338",
+        "CorpusId": 260334191
+      },
+      "arxiv_id": "2307.16338",
+      "doi": "10.48550/arXiv.2307.16338",
+      "corpus_id": 260334191
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "20",
+      "ref_key": "S2:2f9e088b58b1fa5da2539a9e4158570039473a69",
+      "paperId": "2f9e088b58b1fa5da2539a9e4158570039473a69",
+      "title": "Automatic Question Generation for Vocabulary Assessment",
+      "year": 2005,
+      "abstract": "In the REAP system, users are automatically provided with texts to read targeted to their individual reading levels. To find appropriate texts, the user's vocabulary knowledge must be assessed. We describe an approach to automatically generating questions for vocabulary assessment. Traditionally, these assessments have been hand-written. Using data from WordNet, we generate 6 types of vocabulary questions. They can have several forms, including wordbank and multiple-choice. We present experimental results that suggest that these automatically-generated questions give a measure of vocabulary skill that correlates well with subject performance on independently developed human-written questions. In addition, strong correlations with standardized vocabulary tests point to the validity of our approach to automatic assessment of word knowledge.",
+      "externalIds": {
+        "DBLP": "conf/naacl/BrownFE05",
+        "MAG": "2161325192",
+        "ACL": "H05-1103",
+        "DOI": "10.3115/1220575.1220678",
+        "CorpusId": 1973351
+      },
+      "arxiv_id": null,
+      "doi": "10.3115/1220575.1220678",
+      "corpus_id": 1973351
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "21",
+      "ref_key": "S2:9edec81cfcb6d17a72abd3fa31c97999b8515902",
+      "paperId": "9edec81cfcb6d17a72abd3fa31c97999b8515902",
+      "title": "Natural Question Generation with Reinforcement Learning Based Graph-to-Sequence Model",
+      "year": 2019,
+      "abstract": "Natural question generation (QG) aims to generate questions from a passage and an answer. In this paper, we propose a novel reinforcement learning (RL) based graph-to-sequence (Graph2Seq) model for QG. Our model consists of a Graph2Seq generator where a novel Bidirectional Gated Graph Neural Network is proposed to embed the passage, and a hybrid evaluator with a mixed objective combining both cross-entropy and RL losses to ensure the generation of syntactically and semantically valid text. The proposed model outperforms previous state-of-the-art methods by a large margin on the SQuAD dataset.",
+      "externalIds": {
+        "ArXiv": "1910.08832",
+        "DBLP": "journals/corr/abs-1910-08832",
+        "MAG": "2980360329",
+        "CorpusId": 204801008
+      },
+      "arxiv_id": "1910.08832",
+      "doi": null,
+      "corpus_id": 204801008
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "22",
+      "ref_key": "S2:a52dd1e900200e0733eea927edc7d6c27aeba187",
+      "paperId": "a52dd1e900200e0733eea927edc7d6c27aeba187",
+      "title": "TheoremQA: A Theorem-driven Question Answering dataset",
+      "year": 2023,
+      "abstract": "The recent LLMs like GPT-4 and PaLM-2 have made tremendous progress in solving fundamental math problems like GSM8K by achieving over 90% accuracy. However, their capabilities to solve more challenging math problems which require domain-specific knowledge (i.e. theorem) have yet to be investigated. In this paper, we introduce TheoremQA, the first theorem-driven question-answering dataset designed to evaluate AI models' capabilities to apply theorems to solve challenging science problems. TheoremQA is curated by domain experts containing 800 high-quality questions covering 350 theorems (e.g. Taylor's theorem, Lagrange's theorem, Huffman coding, Quantum Theorem, Elasticity Theorem, etc) from Math, Physics, EE&CS, and Finance. We evaluate a wide spectrum of 16 large language and code models with different prompting strategies like Chain-of-Thoughts and Program-of-Thoughts. We found that GPT-4's capabilities to solve these problems are unparalleled, achieving an accuracy of 51% with Program-of-Thoughts Prompting. All the existing open-sourced models are below 15%, barely surpassing the random-guess baseline. Given the diversity and broad coverage of TheoremQA, we believe it can be used as a better benchmark to evaluate LLMs' capabilities to solve challenging science problems. The data and code are released in https://github.com/wenhuchen/TheoremQA.",
+      "externalIds": {
+        "ArXiv": "2305.12524",
+        "DBLP": "journals/corr/abs-2305-12524",
+        "DOI": "10.48550/arXiv.2305.12524",
+        "CorpusId": 258833200
+      },
+      "arxiv_id": "2305.12524",
+      "doi": "10.48550/arXiv.2305.12524",
+      "corpus_id": 258833200
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "23",
+      "ref_key": "S2:02fc310d7032e56e242a8e560a99df869f172930",
+      "paperId": "02fc310d7032e56e242a8e560a99df869f172930",
+      "title": "Automated Essay Scoring by Maximizing Human-Machine Agreement",
+      "year": 2013,
+      "abstract": "Previous approaches for automated essay scoring (AES) learn a rating model by minimizing either the classification, regression, or pairwise classification loss, depending on the learning algorithm used. In this paper, we argue that the current AES systems can be further improved by taking into account the agreement between human and machine raters. To this end, we propose a rankbased approach that utilizes listwise learning to rank algorithms for learning a rating model, where the agreement between the human and machine raters is directly incorporated into the loss function. Various linguistic and statistical features are utilized to facilitate the learning algorithms. Experiments on the publicly available English essay dataset, Automated Student Assessment Prize (ASAP), show that our proposed approach outperforms the state-of-the-art algorithms, and achieves performance comparable to professional human raters, which suggests the effectiveness of our proposed method for automated essay scoring.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/ChenH13",
+        "ACL": "D13-1180",
+        "MAG": "2251191978",
+        "DOI": "10.18653/v1/d13-1180",
+        "CorpusId": 11658861
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/d13-1180",
+      "corpus_id": 11658861
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "24",
+      "ref_key": "S2:a63fbdc2fae25777f74b633685ae56f3ceb546ed",
+      "paperId": "a63fbdc2fae25777f74b633685ae56f3ceb546ed",
+      "title": "Pass-Tuning: Towards Structure-Aware Parameter-Efficient Tuning for Code Representation Learning",
+      "year": 2023,
+      "abstract": ",",
+      "externalIds": {
+        "DBLP": "conf/emnlp/ChenSWLG23",
+        "DOI": "10.18653/v1/2023.findings-emnlp.42",
+        "CorpusId": 259305899
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2023.findings-emnlp.42",
+      "corpus_id": 259305899
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "25",
+      "ref_key": "S2:6c943670dca38bfc7c8b477ae7c2d1fba1ad3691",
+      "paperId": "6c943670dca38bfc7c8b477ae7c2d1fba1ad3691",
+      "title": "Program of Thoughts Prompting: Disentangling Computation from Reasoning for Numerical Reasoning Tasks",
+      "year": 2022,
+      "abstract": "Recently, there has been significant progress in teaching language models to perform step-by-step reasoning to solve complex numerical reasoning tasks. Chain-of-thoughts prompting (CoT) is by far the state-of-art method for these tasks. CoT uses language models to perform both reasoning and computation in the multi-step `thought' process. To disentangle computation from reasoning, we propose `Program of Thoughts' (PoT), which uses language models (mainly Codex) to express the reasoning process as a program. The computation is relegated to an external computer, which executes the generated programs to derive the answer. We evaluate PoT on five math word problem datasets (GSM, AQuA, SVAMP, TabMWP, MultiArith) and three financial-QA datasets (FinQA, ConvFinQA, TATQA) for both few-shot and zero-shot setups. Under both few-shot and zero-shot settings, PoT can show an average performance gain over CoT by around 12\\% across all the evaluated datasets. By combining PoT with self-consistency decoding, we can achieve SoTA performance on all math problem datasets and near-SoTA performance on financial datasets. All of our data and code are released in Github https://github.com/wenhuchen/Program-of-Thoughts",
+      "externalIds": {
+        "DBLP": "journals/tmlr/ChenM0C23",
+        "ArXiv": "2211.12588",
+        "CorpusId": 253801709
+      },
+      "arxiv_id": "2211.12588",
+      "doi": null,
+      "corpus_id": 253801709
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "26",
+      "ref_key": "S2:694d83d3430d054a99eed027f58ebfe00de6e46f",
+      "paperId": "694d83d3430d054a99eed027f58ebfe00de6e46f",
+      "title": "Guiding the Growth: Difficulty-Controllable Question Generation through Step-by-Step Rewriting",
+      "year": 2021,
+      "abstract": "This paper explores the task of Difficulty-Controllable Question Generation (DCQG), which aims at generating questions with required difficulty levels. Previous research on this task mainly defines the difficulty of a question as whether it can be correctly answered by a Question Answering (QA) system, lacking interpretability and controllability. In our work, we redefine question difficulty as the number of inference steps required to answer it and argue that Question Generation (QG) systems should have stronger control over the logic of generated questions. To this end, we propose a novel framework that progressively increases question difficulty through step-by-step rewriting under the guidance of an extracted reasoning chain. A dataset is automatically constructed to facilitate the research, on which extensive experiments are conducted to test the performance of our method.",
+      "externalIds": {
+        "ACL": "2021.acl-long.465",
+        "ArXiv": "2105.11698",
+        "DBLP": "journals/corr/abs-2105-11698",
+        "DOI": "10.18653/v1/2021.acl-long.465",
+        "CorpusId": 235186933
+      },
+      "arxiv_id": "2105.11698",
+      "doi": "10.18653/v1/2021.acl-long.465",
+      "corpus_id": 235186933
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "27",
+      "ref_key": "S2:f67ede490780f939103d4cc4e9c6866b83ee59b3",
+      "paperId": "f67ede490780f939103d4cc4e9c6866b83ee59b3",
+      "title": "Semantically-Aligned Equation Generation for Solving and Reasoning Math Word Problems",
+      "year": 2018,
+      "abstract": "Solving math word problems is a challenging task that requires accurate natural language understanding to bridge natural language texts and math expressions. Motivated by the intuition about how human generates the equations given the problem texts, this paper presents a neural approach to automatically solve math word problems by operating symbols according to their semantic meanings in texts. This paper views the process of generating equation as a bridge between the semantic world and the symbolic world, where the proposed neural math solver is based on an encoder-decoder framework. In the proposed model, the encoder is designed to understand the semantics of problems, and the decoder focuses on tracking semantic meanings of the generated symbols and then deciding which symbol to generate next. The preliminary experiments are conducted in a dataset Math23K, and our model significantly outperforms both the state-of-the-art single model and the best non-retrieval-based model over about 10% accuracy, demonstrating the effectiveness of bridging the symbolic and semantic worlds from math word problems.",
+      "externalIds": {
+        "MAG": "2952049600",
+        "ACL": "N19-1272",
+        "DBLP": "journals/corr/abs-1811-00720",
+        "ArXiv": "1811.00720",
+        "DOI": "10.18653/v1/N19-1272",
+        "CorpusId": 53298878
+      },
+      "arxiv_id": "1811.00720",
+      "doi": "10.18653/v1/N19-1272",
+      "corpus_id": 53298878
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "28",
+      "ref_key": "S2:340b59e6ee93d30c055b5e89a7cfbc88874c9958",
+      "paperId": "340b59e6ee93d30c055b5e89a7cfbc88874c9958",
+      "title": "EditNTS: An Neural Programmer-Interpreter Model for Sentence Simplification through Explicit Editing",
+      "year": 2019,
+      "abstract": "We present the first sentence simplification model that learns explicit edit operations (ADD, DELETE, and KEEP) via a neural programmer-interpreter approach. Most current neural sentence simplification systems are variants of sequence-to-sequence models adopted from machine translation. These methods learn to simplify sentences as a byproduct of the fact that they are trained on complex-simple sentence pairs. By contrast, our neural programmer-interpreter is directly trained to predict explicit edit operations on targeted parts of the input sentence, resembling the way that humans perform simplification and revision. Our model outperforms previous state-of-the-art neural sentence simplification models (without external knowledge) by large margins on three benchmark text simplification corpora in terms of SARI (+0.95 WikiLarge, +1.89 WikiSmall, +1.41 Newsela), and is judged by humans to produce overall better and simpler output sentences.",
+      "externalIds": {
+        "DBLP": "conf/acl/DongLRC19",
+        "ACL": "P19-1331",
+        "ArXiv": "1906.08104",
+        "MAG": "2949806279",
+        "DOI": "10.18653/v1/P19-1331",
+        "CorpusId": 195068920
+      },
+      "arxiv_id": "1906.08104",
+      "doi": "10.18653/v1/P19-1331",
+      "corpus_id": 195068920
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "29",
+      "ref_key": "S2:a453863082a7fb42c9b402023294390eb4167fbe",
+      "paperId": "a453863082a7fb42c9b402023294390eb4167fbe",
+      "title": "Identifying Where to Focus in Reading Comprehension for Neural Question Generation",
+      "year": 2017,
+      "abstract": "A first step in the task of automatically generating questions for testing reading comprehension is to identify question-worthy sentences, i.e. sentences in a text passage that humans find it worthwhile to ask questions about. We propose a hierarchical neural sentence-level sequence tagging model for this task, which existing approaches to question generation have ignored. The approach is fully data-driven — with no sophisticated NLP pipelines or any hand-crafted rules/features — and compares favorably to a number of baselines when evaluated on the SQuAD data set. When incorporated into an existing neural question generation system, the resulting end-to-end system achieves state-of-the-art performance for paragraph-level question generation for reading comprehension.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/DuC17",
+        "ACL": "D17-1219",
+        "MAG": "2757715585",
+        "DOI": "10.18653/v1/D17-1219",
+        "CorpusId": 20969045
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/D17-1219",
+      "corpus_id": 20969045
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "30",
+      "ref_key": "S2:12f7de07f9b00315418e381b2bd797d21f12b419",
+      "paperId": "12f7de07f9b00315418e381b2bd797d21f12b419",
+      "title": "Multimodal Compact Bilinear Pooling for Visual Question Answering and Visual Grounding",
+      "year": 2016,
+      "abstract": "Modeling textual or visual information with vector representations trained from large language or visual datasets has been successfully explored in recent years. However, tasks such as visual question answering require combining these vector representations with each other. Approaches to multimodal pooling include element-wise product or sum, as well as concatenation of the visual and textual representations. We hypothesize that these methods are not as expressive as an outer product of the visual and textual vectors. As the outer product is typically infeasible due to its high dimensionality, we instead propose utilizing Multimodal Compact Bilinear pooling (MCB) to efficiently and expressively combine multimodal features. We extensively evaluate MCB on the visual question answering and grounding tasks. We consistently show the benefit of MCB over ablations without MCB. For visual question answering, we present an architecture which uses MCB twice, once for predicting attention over spatial features and again to combine the attended representation with the question representation. This model outperforms the state-of-the-art on the Visual7W dataset and the VQA challenge.",
+      "externalIds": {
+        "MAG": "2952140939",
+        "DBLP": "journals/corr/FukuiPYRDR16",
+        "ACL": "D16-1044",
+        "ArXiv": "1606.01847",
+        "DOI": "10.18653/v1/D16-1044",
+        "CorpusId": 2840197
+      },
+      "arxiv_id": "1606.01847",
+      "doi": "10.18653/v1/D16-1044",
+      "corpus_id": 2840197
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "31",
+      "ref_key": "S2:bd39ac452ebede84fb849cf1df86269e330309cc",
+      "paperId": "bd39ac452ebede84fb849cf1df86269e330309cc",
+      "title": "Difficulty Controllable Generation of Reading Comprehension Questions",
+      "year": 2018,
+      "abstract": "We investigate the difficulty levels of questions in reading comprehension datasets such as SQuAD, and propose a new question generation setting, named Difficulty-controllable Question Generation (DQG). Taking as input a sentence in the reading comprehension paragraph and some of its text fragments (i.e., answers) that we want to ask questions about, a DQG method needs to generate questions each of which has a given text fragment as its answer, and meanwhile the generation is under the control of specified difficulty labels---the output questions should satisfy the specified difficulty as much as possible. To solve this task, we propose an end-to-end framework to generate questions of designated difficulty levels by exploring a few important intuitions. For evaluation, we prepared the first dataset of reading comprehension questions with difficulty labels. The results show that the question generated by our framework not only have better quality under the metrics like BLEU, but also comply with the specified difficulty labels.",
+      "externalIds": {
+        "MAG": "2964912036",
+        "DBLP": "conf/ijcai/GaoBCLK19",
+        "DOI": "10.24963/ijcai.2019/690",
+        "CorpusId": 71147311
+      },
+      "arxiv_id": null,
+      "doi": "10.24963/ijcai.2019/690",
+      "corpus_id": 71147311
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "32",
+      "ref_key": "S2:94049a7e481998792e4ba36855fce2a7674dd409",
+      "paperId": "94049a7e481998792e4ba36855fce2a7674dd409",
+      "title": "Generating Distractors for Reading Comprehension Questions from Real Examinations",
+      "year": 2018,
+      "abstract": "We investigate the task of distractor generation for multiple choice reading comprehension questions from examinations. In contrast to all previous works, we do not aim at preparing words or short phrases distractors, instead, we endeavor to generate longer and semantic-rich distractors which are closer to distractors in real reading comprehension from examinations. Taking a reading comprehension article, a pair of question and its correct option as input, our goal is to generate several distractors which are somehow related to the answer, consistent with the semantic context of the question and have some trace in the article. We propose a hierarchical encoderdecoder framework with static and dynamic attention mechanisms to tackle this task. Specifically, the dynamic attention can combine sentence-level and word-level attention varying at each recurrent time step to generate a more readable sequence. The static attention is to modulate the dynamic attention not to focus on question irrelevant sentences or sentences which contribute to the correct option. Our proposed framework outperforms several strong baselines on the first prepared distractor generation dataset of real reading comprehension questions. For human evaluation, compared with those distractors generated by baselines, our generated distractors are more functional to confuse the annotators.",
+      "externalIds": {
+        "MAG": "2952879038",
+        "DBLP": "journals/corr/abs-1809-02768",
+        "ArXiv": "1809.02768",
+        "DOI": "10.1609/aaai.v33i01.33016423",
+        "CorpusId": 52180311
+      },
+      "arxiv_id": "1809.02768",
+      "doi": "10.1609/aaai.v33i01.33016423",
+      "corpus_id": 52180311
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "33",
+      "ref_key": "S2:71767eb25146b8e79925361b3caf54c36cb5ac7e",
+      "paperId": "71767eb25146b8e79925361b3caf54c36cb5ac7e",
+      "title": "OverCode: visualizing variation in student solutions to programming problems at scale",
+      "year": 2014,
+      "abstract": "In MOOCs, a single programming exercise may produce thousands of solutions from learners. Understanding solution variation is important for providing appropriate feedback to students at scale. The wide variation among these solutions can be a source of pedagogically valuable examples, and can be used to refine the autograder for the exercise by exposing corner cases. We present OverCode, a system for visualizing and exploring thousands of programming solutions. OverCode uses both static and dynamic analysis to cluster similar solutions, and lets instructors further filter and cluster solutions based on different criteria. We evaluated OverCode against a non-clustering baseline in a within-subjects study with 24 teaching assistants, and found that the OverCode interface allows teachers to more quickly develop a high-level view of students' understanding and misconceptions, and to provide feedback that is relevant to more students.",
+      "externalIds": {
+        "MAG": "2020638820",
+        "DBLP": "journals/tochi/GlassmanSSGM15",
+        "DOI": "10.1145/2658779.2658809",
+        "CorpusId": 15993106
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/2658779.2658809",
+      "corpus_id": 15993106
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "34",
+      "ref_key": "S2:ea4bd6c2b223c5da0a7f37903fc05421a435560a",
+      "paperId": "ea4bd6c2b223c5da0a7f37903fc05421a435560a",
+      "title": "Diverse Content Selection for Educational Question Generation",
+      "year": 2023,
+      "abstract": "Question Generation (QG) systems have shown promising results in reducing the time and effort required to create questions for students. Typically, a first step in QG is to select the content to design a question for. In an educational setting, it is crucial that the resulting questions cover the most relevant/important pieces of knowledge the student should have acquired. Yet, current QG systems either consider just a single sentence or paragraph (thus do not include a selection step), or do not consider this educational viewpoint of content selection. Aiming to fill this research gap with a solution for educational document level QG, we thus propose to select contents for QG based on relevance and topic diversity. We demonstrate the effectiveness of our proposed content selection strategy for QG on 2 educational datasets. In our performance assessment, we also highlight limitations of existing QG evaluation metrics in light of the content selection problem.",
+      "externalIds": {
+        "DBLP": "conf/eacl/HadifarBDHDD23",
+        "ACL": "2023.eacl-srw.13",
+        "DOI": "10.18653/v1/2023.eacl-srw.13",
+        "CorpusId": 258378249
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2023.eacl-srw.13",
+      "corpus_id": 258378249
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "35",
+      "ref_key": "S2:d831b021a4e4241acdfc4409fbd91308503c0a0f",
+      "paperId": "d831b021a4e4241acdfc4409fbd91308503c0a0f",
+      "title": "ErrorCLR: Semantic Error Classification, Localization and Repair for Introductory Programming Assignments",
+      "year": 2023,
+      "abstract": "Programming education at scale increasingly relies on automated feedback to help students learn to program. An important form of feedback is to point out semantic errors in student programs and provide hints for program repair. Such automated feedback depends essentially on solving the tasks of classification, localization and repair of semantic errors. Although there are datasets for the tasks, we observe that they do not have the annotations supporting all three tasks. As such, existing approaches for semantic error feedback treat error classification, localization and repair as independent tasks, resulting in sub-optimal performance on each task. Moreover, existing datasets either contain few programming assignments or have few programs for each assignment. Therefore, existing approaches often leverage rule-based methods and evaluate them with a small number of programming assignments. To tackle the problems, we first describe the creation of a new dataset COJ2022 that contains 5,914 C programs with semantic errors submitted to 498 different assignments in an introductory programming course, where each program is annotated with the error types and locations and is coupled with the repaired program submitted by the same student. We show the advantages of COJ2022 over existing datasets on various aspects. Second, we treat semantic error classification, localization and repair as dependent tasks, and propose a novel two-stage method ErrorCLR to solve them. Specifically, in the first stage we train a model based on graph matching networks to jointly classify and localize potential semantic errors in student programs, and in the second stage we mask error spans in buggy programs using information of error types and locations and train a CodeT5 model to predict correct spans. The predicted spans replace the error spans to form repaired programs. Experimental results show that ErrorCLR remarkably outperforms the comparative methods for all three tasks on COJ2022 and other public datasets. We also conduct a case study to visualize and interpret what is learned by the graph matching network in ErrorCLR. We have released the source code and COJ2022 at https://github.com/DaSESmartEdu/ErrorCLR.",
+      "externalIds": {
+        "DBLP": "conf/sigir/HanWL23",
+        "DOI": "10.1145/3539618.3591680",
+        "CorpusId": 259949912
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/3539618.3591680",
+      "corpus_id": 259949912
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "36",
+      "ref_key": "S2:e9e737485329d233d78069b7b7677b65e035c15d",
+      "paperId": "e9e737485329d233d78069b7b7677b65e035c15d",
+      "title": "Neural Generation of Diverse Questions using Answer Focus, Contextual and Linguistic Features",
+      "year": 2018,
+      "abstract": "Question Generation is the task of automatically creating questions from textual input. In this work we present a new Attentional Encoder–Decoder Recurrent Neural Network model for automatic question generation. Our model incorporates linguistic features and an additional sentence embedding to capture meaning at both sentence and word levels. The linguistic features are designed to capture information related to named entity recognition, word case, and entity coreference resolution. In addition our model uses a copying mechanism and a special answer signal that enables generation of numerous diverse questions on a given sentence. Our model achieves state of the art results of 19.98 Bleu_4 on a benchmark Question Generation dataset, outperforming all previously published results by a significant margin. A human evaluation also shows that the added features improve the quality of the generated questions.",
+      "externalIds": {
+        "MAG": "2963627339",
+        "ArXiv": "1809.02637",
+        "DBLP": "conf/inlg/HarrisonW18",
+        "ACL": "W18-6536",
+        "DOI": "10.18653/v1/W18-6536",
+        "CorpusId": 52185631
+      },
+      "arxiv_id": "1809.02637",
+      "doi": "10.18653/v1/W18-6536",
+      "corpus_id": 52185631
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "37",
+      "ref_key": "S2:edaafec59b651d503ac7c8a86f8e2335273e1f7a",
+      "paperId": "edaafec59b651d503ac7c8a86f8e2335273e1f7a",
+      "title": "Learning by Fixing: Solving Math Word Problems with Weak Supervision",
+      "year": 2020,
+      "abstract": "Previous neural solvers of math word problems (MWPs) are learned with full supervision and fail to generate diverse solutions. In this paper, we address this issue by introducing a weakly-supervised paradigm for learning MWPs. Our method only requires the annotations of the final answers and can generate various solutions for a single problem. To boost weakly-supervised learning, we propose a novel learning-by-fixing (LBF) framework, which corrects the misperceptions of the neural network via symbolic reasoning. Specifically, for an incorrect solution tree generated by the neural network, the fixing mechanism propagates the error from the root node to the leaf nodes and infers the most probable fix that can be executed to get the desired answer. To generate more diverse solutions, tree regularization is applied to guide the efficient shrinkage and exploration of the solution space, and a memory buffer is designed to track and save the discovered various fixes for each problem. Experimental results on the Math23K dataset show the proposed LBF framework significantly outperforms reinforcement learning baselines in weakly-supervised learning. Furthermore, it achieves comparable top-1 and much better top-3/5 answer accuracies than fully-supervised methods, demonstrating its strength in producing diverse solutions.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2012-10582",
+        "ArXiv": "2012.10582",
+        "DOI": "10.1609/aaai.v35i6.16629",
+        "CorpusId": 229340317
+      },
+      "arxiv_id": "2012.10582",
+      "doi": "10.1609/aaai.v35i6.16629",
+      "corpus_id": 229340317
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "38",
+      "ref_key": "S2:7289a240c9425bc7cad87b3b835e5f0cac22f488",
+      "paperId": "7289a240c9425bc7cad87b3b835e5f0cac22f488",
+      "title": "DVQA: Understanding Data Visualizations via Question Answering",
+      "year": 2018,
+      "abstract": "Bar charts are an effective way to convey numeric information, but today's algorithms cannot parse them. Existing methods fail when faced with even minor variations in appearance. Here, we present DVQA, a dataset that tests many aspects of bar chart understanding in a question answering framework. Unlike visual question answering (VQA), DVQA requires processing words and answers that are unique to a particular bar chart. State-of-the-art VQA algorithms perform poorly on DVQA, and we propose two strong baselines that perform considerably better. Our work will enable algorithms to automatically extract numeric and semantic information from vast quantities of bar charts found in scientific publications, Internet articles, business reports, and many other areas.",
+      "externalIds": {
+        "DBLP": "conf/cvpr/KaflePCK18",
+        "MAG": "2963420691",
+        "ArXiv": "1801.08163",
+        "DOI": "10.1109/CVPR.2018.00592",
+        "CorpusId": 4445015
+      },
+      "arxiv_id": "1801.08163",
+      "doi": "10.1109/CVPR.2018.00592",
+      "corpus_id": 4445015
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "39",
+      "ref_key": "S2:e18ec2c9f0b4a817b8cf0435822bbc879d7db698",
+      "paperId": "e18ec2c9f0b4a817b8cf0435822bbc879d7db698",
+      "title": "A Diagram is Worth a Dozen Images",
+      "year": 2016,
+      "abstract": "Diagrams are common tools for representing complex concepts, relationships\nand events, often when it would be difficult to portray the same information\nwith natural images. Understanding natural images has been extensively studied\nin computer vision, while diagram understanding has received little attention.\nIn this paper, we study the problem of diagram interpretation and reasoning,\nthe challenging task of identifying the structure of a diagram and the\nsemantics of its constituents and their relationships. We introduce Diagram\nParse Graphs (DPG) as our representation to model the structure of diagrams. We\ndefine syntactic parsing of diagrams as learning to infer DPGs for diagrams and\nstudy semantic interpretation and reasoning of diagrams in the context of\ndiagram question answering. We devise an LSTM-based method for syntactic\nparsing of diagrams and introduce a DPG-based attention model for diagram\nquestion answering. We compile a new dataset of diagrams with exhaustive\nannotations of constituents and relationships for over 5,000 diagrams and\n15,000 questions and answers. Our results show the significance of our models\nfor syntactic parsing and question answering in diagrams using DPGs.",
+      "externalIds": {
+        "MAG": "2307512708",
+        "DBLP": "journals/corr/KembhaviSKSHF16",
+        "ArXiv": "1603.07396",
+        "DOI": "10.1007/978-3-319-46493-0_15",
+        "CorpusId": 2682274
+      },
+      "arxiv_id": "1603.07396",
+      "doi": "10.1007/978-3-319-46493-0_15",
+      "corpus_id": 2682274
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "40",
+      "ref_key": "S2:b641b879aac35bba0e5d43223416a1689b40127f",
+      "paperId": "b641b879aac35bba0e5d43223416a1689b40127f",
+      "title": "A Tutoring System to Learn Code Refactoring",
+      "year": 2021,
+      "abstract": "In the last few decades, numerous tutoring systems and assessment tools have been developed to support students with learning programming, giving hints on correcting errors, showing which test cases do not succeed, and grading their overall solutions. The focus has been less on helping students write code with good style and quality. There are several professional tools that can help, but they are not targeted at novice programmers. This paper describes a tutoring system that lets students practice with improving small programs that are already functionally correct. The system is based on rules that are extracted from input by teachers collected in a preliminary study, a subset of rules taken from professional tools, and other literature. Rules define how a code construct can be rewritten into a better variant, without changing its functionality. Rules can be combined to form rewrite strategies, similar to refactorings offered by most IDEs. The student can ask for hints and feedback at each step. We describe the design of the system, show example sessions, and evaluate and discuss its contribution and limitations.",
+      "externalIds": {
+        "DBLP": "conf/sigcse/KeuningHJ21",
+        "DOI": "10.1145/3408877.3432526",
+        "CorpusId": 232126370
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/3408877.3432526",
+      "corpus_id": 232126370
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "41",
+      "ref_key": "S2:314793e319bd152b3648d0e23e99a05060b0de40",
+      "paperId": "314793e319bd152b3648d0e23e99a05060b0de40",
+      "title": "Automated Question Generation Methods for Intelligent English Learning Systems and its Evaluation",
+      "year": 2001,
+      "abstract": "This paper presents methods of automated generation of questions about the contents of an English story. The methods are used for realizing adaptive Question and Answer functions which give suitable questions to learners of different understanding states. To realize adaptive Question and Answer, our methods generate five kinds of questions; to ask about the content of one sentence, to use antonyms and synonyms, to use modifiers appeared in plural sentences, to ask the contents represented by plural sentences by using a relative pronoun, and to ask time and space relationships. Our methods cover 80% of questions in collection books of problems for novices. The result of an experiment shows that the question generation module generates 1977 question sentences from 301 sentences in textbooks for Japanese junior high school students, and 1848 of the generated question sentences are semantically competent.",
+      "externalIds": {
+        "CorpusId": 1536529
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 1536529
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "42",
+      "ref_key": "S2:1e8305c9b703464ed2f4e35beef868318cb4b7a1",
+      "paperId": "1e8305c9b703464ed2f4e35beef868318cb4b7a1",
+      "title": "Proposed Assessment Framework Based on Bloom Taxonomy Cognitive Competency: Introduction to Programming",
+      "year": 2018,
+      "abstract": "Programming is a difficult course and often the result of its assessment is not encouraging. Programming skill is very important to graduate in order to get job and to success in the industry. A careful assessment is required to help the student learning. It is proved that the assessment itself will improve the learning. The review showed to-date that there are several automatic assessment for programming skills, however, there is no common grading being applied. This paper, is proposing an assessment framework based on Bloom Taxonomy cognitive domain to assess students programming skills. The focus is on basic programming course which introduce the programming concept to students.",
+      "externalIds": {
+        "DBLP": "conf/icsca/LajisNA18",
+        "MAG": "2803597832",
+        "DOI": "10.1145/3185089.3185149",
+        "CorpusId": 29163456
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/3185089.3185149",
+      "corpus_id": 29163456
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "43",
+      "ref_key": "S2:fe5ce0d118ec60a886600331927fc7fbc0379b09",
+      "paperId": "fe5ce0d118ec60a886600331927fc7fbc0379b09",
+      "title": "Domain-agnostic Question-Answering with Adversarial Training",
+      "year": 2019,
+      "abstract": "Adapting models to new domain without finetuning is a challenging problem in deep learning. In this paper, we utilize an adversarial training framework for domain generalization in Question Answering (QA) task. Our model consists of a conventional QA model and a discriminator. The training is performed in the adversarial manner, where the two models constantly compete, so that QA model can learn domain-invariant features. We apply this approach in MRQA Shared Task 2019 and show better performance compared to the baseline model.",
+      "externalIds": {
+        "MAG": "2984402309",
+        "DBLP": "conf/acl-mrqa/LeeKP19",
+        "ACL": "D19-5826",
+        "ArXiv": "1910.09342",
+        "DOI": "10.18653/v1/D19-5826",
+        "CorpusId": 204800552
+      },
+      "arxiv_id": "1910.09342",
+      "doi": "10.18653/v1/D19-5826",
+      "corpus_id": 204800552
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "44",
+      "ref_key": "S2:395de0bd3837fdf4b4b5e5f04835bcc69c279481",
+      "paperId": "395de0bd3837fdf4b4b5e5f04835bcc69c279481",
+      "title": "BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension",
+      "year": 2019,
+      "abstract": "We present BART, a denoising autoencoder for pretraining sequence-to-sequence models. BART is trained by (1) corrupting text with an arbitrary noising function, and (2) learning a model to reconstruct the original text. It uses a standard Tranformer-based neural machine translation architecture which, despite its simplicity, can be seen as generalizing BERT (due to the bidirectional encoder), GPT (with the left-to-right decoder), and other recent pretraining schemes. We evaluate a number of noising approaches, finding the best performance by both randomly shuffling the order of sentences and using a novel in-filling scheme, where spans of text are replaced with a single mask token. BART is particularly effective when fine tuned for text generation but also works well for comprehension tasks. It matches the performance of RoBERTa on GLUE and SQuAD, and achieves new state-of-the-art results on a range of abstractive dialogue, question answering, and summarization tasks, with gains of up to 3.5 ROUGE. BART also provides a 1.1 BLEU increase over a back-translation system for machine translation, with only target language pretraining. We also replicate other pretraining schemes within the BART framework, to understand their effect on end-task performance.",
+      "externalIds": {
+        "MAG": "2982399380",
+        "DBLP": "conf/acl/LewisLGGMLSZ20",
+        "ACL": "2020.acl-main.703",
+        "ArXiv": "1910.13461",
+        "DOI": "10.18653/v1/2020.acl-main.703",
+        "CorpusId": 204960716
+      },
+      "arxiv_id": "1910.13461",
+      "doi": "10.18653/v1/2020.acl-main.703",
+      "corpus_id": 204960716
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "45",
+      "ref_key": "S2:632450585c7243c095ca9828ae68ac7c31b45019",
+      "paperId": "632450585c7243c095ca9828ae68ac7c31b45019",
+      "title": "Distractor Generation for Multiple Choice Questions Using Learning to Rank",
+      "year": 2018,
+      "abstract": "We investigate how machine learning models, specifically ranking models, can be used to select useful distractors for multiple choice questions. Our proposed models can learn to select distractors that resemble those in actual exam questions, which is different from most existing unsupervised ontology-based and similarity-based methods. We empirically study feature-based and neural net (NN) based ranking models with experiments on the recently released SciQ dataset and our MCQL dataset. Experimental results show that feature-based ensemble learning methods (random forest and LambdaMART) outperform both the NN-based method and unsupervised baselines. These two datasets can also be used as benchmarks for distractor generation.",
+      "externalIds": {
+        "ACL": "W18-0533",
+        "DBLP": "conf/bea/LiangYDWPG18",
+        "MAG": "2805070499",
+        "DOI": "10.18653/v1/W18-0533",
+        "CorpusId": 19260966
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/W18-0533",
+      "corpus_id": 19260966
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "46",
+      "ref_key": "S2:680b0467861a70be41c31e4f2415fe5e2958fbc0",
+      "paperId": "680b0467861a70be41c31e4f2415fe5e2958fbc0",
+      "title": "HMS: A Hierarchical Solver with Dependency-Enhanced Understanding for Math Word Problem",
+      "year": 2021,
+      "abstract": "Automatically solving math word problems is a crucial task for exploring the intelligence levels of machines in the general AI domain. It is highly challenging since it requires not only natural language understanding but also mathematical expression inference. Existing solutions usually explore sequence-to-sequence models to generate expressions, where the problems are simply encoded sequentially. However, such models are generally far from enough for understanding problems as similar to humans and lead to incorrect answers. To this end, in this paper, we propose a novel Hierarchical Math Solver (HMS) to make deep understanding and exploitation of problems. In problem understanding, imitating human reading habits, we propose a hierarchical word-clause-problem encoder. Specifically, we first split each problem into several clauses and learn problem semantics from the local clause level to the global problem level. Then, in clause understanding, we propose a dependency-based module to enhance clause semantics with the dependency structure of the problem. Next, in expression inference, we propose a novel tree-based decoder to generate the mathematical expression for the answer. In the decoder, we apply a hierarchical attention mechanism to enhance the problem semantics with context from different levels, and a pointer-generator network to guide the model to copy existing information and infer extra knowledge. Extensive experimental results on two widely used datasets demonstrate that HMS achieves not only better answers but also more reasonable inference.",
+      "externalIds": {
+        "DBLP": "conf/aaai/LinHZCLWW21",
+        "DOI": "10.1609/aaai.v35i5.16547",
+        "CorpusId": 235306541
+      },
+      "arxiv_id": null,
+      "doi": "10.1609/aaai.v35i5.16547",
+      "corpus_id": 235306541
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "47",
+      "ref_key": "S2:a5036f31f0e629dc661f120b8c3b1f374d479ab8",
+      "paperId": "a5036f31f0e629dc661f120b8c3b1f374d479ab8",
+      "title": "Visual Instruction Tuning",
+      "year": 2023,
+      "abstract": "Instruction tuning large language models (LLMs) using machine-generated instruction-following data has improved zero-shot capabilities on new tasks, but the idea is less explored in the multimodal field. In this paper, we present the first attempt to use language-only GPT-4 to generate multimodal language-image instruction-following data. By instruction tuning on such generated data, we introduce LLaVA: Large Language and Vision Assistant, an end-to-end trained large multimodal model that connects a vision encoder and LLM for general-purpose visual and language understanding.Our early experiments show that LLaVA demonstrates impressive multimodel chat abilities, sometimes exhibiting the behaviors of multimodal GPT-4 on unseen images/instructions, and yields a 85.1% relative score compared with GPT-4 on a synthetic multimodal instruction-following dataset. When fine-tuned on Science QA, the synergy of LLaVA and GPT-4 achieves a new state-of-the-art accuracy of 92.53%. We make GPT-4 generated visual instruction tuning data, our model and code base publicly available.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2304-08485",
+        "ArXiv": "2304.08485",
+        "DOI": "10.48550/arXiv.2304.08485",
+        "CorpusId": 258179774
+      },
+      "arxiv_id": "2304.08485",
+      "doi": "10.48550/arXiv.2304.08485",
+      "corpus_id": 258179774
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "48",
+      "ref_key": "S2:cd36b981e39edc5517d2a508e879b4d9bdc1b1c6",
+      "paperId": "cd36b981e39edc5517d2a508e879b4d9bdc1b1c6",
+      "title": "Tree-structured Decoding for Solving Math Word Problems",
+      "year": 2019,
+      "abstract": "Automatically solving math word problems is an interesting research topic that needs to bridge natural language descriptions and formal math equations. Previous studies introduced end-to-end neural network methods, but these approaches did not efficiently consider an important characteristic of the equation, i.e., an abstract syntax tree. To address this problem, we propose a tree-structured decoding method that generates the abstract syntax tree of the equation in a top-down manner. In addition, our approach can automatically stop during decoding without a redundant stop token. The experimental results show that our method achieves single model state-of-the-art performance on Math23K, which is the largest dataset on this task.",
+      "externalIds": {
+        "MAG": "2971094176",
+        "DBLP": "conf/emnlp/LiuGLK19",
+        "ACL": "D19-1241",
+        "DOI": "10.18653/v1/D19-1241",
+        "CorpusId": 202771662
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/D19-1241",
+      "corpus_id": 202771662
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "49",
+      "ref_key": "S2:0e57ae84af1b9361a60ae005f32a1fcb41bb62b2",
+      "paperId": "0e57ae84af1b9361a60ae005f32a1fcb41bb62b2",
+      "title": "Off-topic essay detection using short prompt texts",
+      "year": 2010,
+      "abstract": "Our work addresses the problem of predicting whether an essay is off-topic to a given prompt or question without any previously-seen essays as training data. Prior work has used similarity between essay vocabulary and prompt words to estimate the degree of ontopic content. In our corpus of opinion essays, prompts are very short, and using similarity with such prompts to detect off-topic essays yields error rates of about 10%. We propose two methods to enable better comparison of prompt and essay text. We automatically expand short prompts before comparison, with words likely to appear in an essay to that prompt. We also apply spelling correction to the essay texts. Both methods reduce the error rates during off-topic essay detection and turn out to be complementary, leading to even better performance when used in unison.",
+      "externalIds": {
+        "ACL": "W10-1013",
+        "MAG": "162015621",
+        "CorpusId": 7541741
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 7541741
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "50",
+      "ref_key": "S2:170c97c7215f42edfb20c2248f954879e91ef86e",
+      "paperId": "170c97c7215f42edfb20c2248f954879e91ef86e",
+      "title": "Chameleon: Plug-and-Play Compositional Reasoning with Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have achieved remarkable progress in solving various natural language processing tasks due to emergent reasoning abilities. However, LLMs have inherent limitations as they are incapable of accessing up-to-date information (stored on the Web or in task-specific knowledge bases), using external tools, and performing precise mathematical and logical reasoning. In this paper, we present Chameleon, an AI system that mitigates these limitations by augmenting LLMs with plug-and-play modules for compositional reasoning. Chameleon synthesizes programs by composing various tools (e.g., LLMs, off-the-shelf vision models, web search engines, Python functions, and heuristic-based modules) for accomplishing complex reasoning tasks. At the heart of Chameleon is an LLM-based planner that assembles a sequence of tools to execute to generate the final response. We showcase the effectiveness of Chameleon on two multi-modal knowledge-intensive reasoning tasks: ScienceQA and TabMWP. Chameleon, powered by GPT-4, achieves an 86.54% overall accuracy on ScienceQA, improving the best published few-shot result by 11.37%. On TabMWP, GPT-4-powered Chameleon improves the accuracy by 17.0%, lifting the state of the art to 98.78%. Our analysis also shows that the GPT-4-powered planner exhibits more consistent and rational tool selection via inferring potential constraints from instructions, compared to a ChatGPT-powered planner. The project is available at https://chameleon-llm.github.io.",
+      "externalIds": {
+        "DBLP": "conf/nips/LuPCGCWZG23",
+        "ArXiv": "2304.09842",
+        "DOI": "10.48550/arXiv.2304.09842",
+        "CorpusId": 258212542
+      },
+      "arxiv_id": "2304.09842",
+      "doi": "10.48550/arXiv.2304.09842",
+      "corpus_id": 258212542
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "51",
+      "ref_key": "S2:fb9d253258d6b3beceb9d6cd7bba6e0a29ab875b",
+      "paperId": "fb9d253258d6b3beceb9d6cd7bba6e0a29ab875b",
+      "title": "Hierarchical Question-Image Co-Attention for Visual Question Answering",
+      "year": 2016,
+      "abstract": "A number of recent works have proposed attention models for Visual Question Answering (VQA) that generate spatial maps highlighting image regions relevant to answering the question. In this paper, we argue that in addition to modeling \"where to look\" or visual attention, it is equally important to model \"what words to listen to\" or question attention. We present a novel co-attention model for VQA that jointly reasons about image and question attention. In addition, our model reasons about the question (and consequently the image via the co-attention mechanism) in a hierarchical fashion via a novel 1-dimensional convolution neural networks (CNN). Our model improves the state-of-the-art on the VQA dataset from 60.3% to 60.5%, and from 61.6% to 63.3% on the COCO-QA dataset. By using ResNet, the performance is further improved to 62.1% for VQA and 65.4% for COCO-QA.",
+      "externalIds": {
+        "MAG": "2963668159",
+        "ArXiv": "1606.00061",
+        "DBLP": "journals/corr/LuYBP16",
+        "CorpusId": 868693
+      },
+      "arxiv_id": "1606.00061",
+      "doi": null,
+      "corpus_id": 868693
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "52",
+      "ref_key": "S2:d3135733aa39dec20ce72aa138589dda27c8406d",
+      "paperId": "d3135733aa39dec20ce72aa138589dda27c8406d",
+      "title": "Learn to Explain: Multimodal Reasoning via Thought Chains for Science Question Answering",
+      "year": 2022,
+      "abstract": "When answering a question, humans utilize the information available across different modalities to synthesize a consistent and complete chain of thought (CoT). This process is normally a black box in the case of deep learning models like large-scale language models. Recently, science question benchmarks have been used to diagnose the multi-hop reasoning ability and interpretability of an AI system. However, existing datasets fail to provide annotations for the answers, or are restricted to the textual-only modality, small scales, and limited domain diversity. To this end, we present Science Question Answering (ScienceQA), a new benchmark that consists of ~21k multimodal multiple choice questions with a diverse set of science topics and annotations of their answers with corresponding lectures and explanations. We further design language models to learn to generate lectures and explanations as the chain of thought (CoT) to mimic the multi-hop reasoning process when answering ScienceQA questions. ScienceQA demonstrates the utility of CoT in language models, as CoT improves the question answering performance by 1.20% in few-shot GPT-3 and 3.99% in fine-tuned UnifiedQA. We also explore the upper bound for models to leverage explanations by feeding those in the input; we observe that it improves the few-shot performance of GPT-3 by 18.96%. Our analysis further shows that language models, similar to humans, benefit from explanations to learn from fewer data and achieve the same performance with just 40% of the data. The data and code are available at https://scienceqa.github.io.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2209-09513",
+        "ArXiv": "2209.09513",
+        "DOI": "10.48550/arXiv.2209.09513",
+        "CorpusId": 252383606
+      },
+      "arxiv_id": "2209.09513",
+      "doi": "10.48550/arXiv.2209.09513",
+      "corpus_id": 252383606
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "53",
+      "ref_key": "S2:bd7bd1d2945a58cdcc1797ba9698b8810fe68f60",
+      "paperId": "bd7bd1d2945a58cdcc1797ba9698b8810fe68f60",
+      "title": "Ask Your Neurons: A Neural-Based Approach to Answering Questions about Images",
+      "year": 2015,
+      "abstract": "We address a question answering task on real-world images that is set up as a Visual Turing Test. By combining latest advances in image representation and natural language processing, we propose Neural-Image-QA, an end-to-end formulation to this problem for which all parts are trained jointly. In contrast to previous efforts, we are facing a multi-modal problem where the language output (answer) is conditioned on visual and natural language input (image and question). Our approach Neural-Image-QA doubles the performance of the previous best approach on this problem. We provide additional insights into the problem by analyzing how much information is contained only in the language part for which we provide a new human baseline. To study human consensus, which is related to the ambiguities inherent in this challenging task, we propose two novel metrics and collect additional answers which extends the original DAQUAR dataset to DAQUAR-Consensus.",
+      "externalIds": {
+        "DBLP": "conf/iccv/MalinowskiRF15",
+        "ArXiv": "1505.01121",
+        "MAG": "2142192571",
+        "DOI": "10.1109/ICCV.2015.9",
+        "CorpusId": 738850
+      },
+      "arxiv_id": "1505.01121",
+      "doi": "10.1109/ICCV.2015.9",
+      "corpus_id": 738850
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "54",
+      "ref_key": "S2:956c1680fd3c600bd5358898571b927ea78e841d",
+      "paperId": "956c1680fd3c600bd5358898571b927ea78e841d",
+      "title": "Computer-Aided Generation of Multiple-Choice Tests",
+      "year": 2003,
+      "abstract": "Summary form only given. The paper describes a novel automatic procedure for the generation of multiple-choice tests from electronic documents. In addition to employing various NLP techniques including term extraction and shallow parsing, the system makes use of language resources such as corpora and ontologies. The system operates in a fully automatic mode and also a semiautomatic environment where the user is offered the option to post-edit the generated test items. The results from the conducted evaluation suggest that the new procedure is very effective saving time and labour considerably and that the test items produced with the help of the program are not of inferior quality to those produced manually.",
+      "externalIds": {
+        "MAG": "2540636186",
+        "ACL": "W03-0203",
+        "DOI": "10.3115/1118894.1118897",
+        "CorpusId": 173900
+      },
+      "arxiv_id": null,
+      "doi": "10.3115/1118894.1118897",
+      "corpus_id": 173900
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "55",
+      "ref_key": "S2:19265db4b61efba7a6a882e89dc43f86ba98b3b6",
+      "paperId": "19265db4b61efba7a6a882e89dc43f86ba98b3b6",
+      "title": "Question Generation Using Sequence-to-Sequence Model with Semantic Role Labels",
+      "year": 2023,
+      "abstract": "Automatic generation of questions from text has gained increasing attention due to its useful applications. We propose a novel question generation method that combines the benefits of rule-based and neural sequence-to-sequence (Seq2Seq) models. The proposed method can automatically generate multiple questions from an input sentence covering different views of the sentence as in rule-based methods, while more complicated “rules” can be learned via the Seq2Seq model. The method utilizes semantic role labeling to convert training examples into their semantic representations, and then trains a Seq2Seq model over the semantic representations. Our extensive experiments on three real-world data sets show that the proposed method significantly improves the state-of-the-art neural question generation approaches.",
+      "externalIds": {
+        "ACL": "2023.eacl-main.207",
+        "DBLP": "conf/eacl/NaeijiADDA23",
+        "DOI": "10.18653/v1/2023.eacl-main.207",
+        "CorpusId": 258378315
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2023.eacl-main.207",
+      "corpus_id": 258378315
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "56",
+      "ref_key": "S2:b58e08741fb9803fa2a870eee139137d3bade332",
+      "paperId": "b58e08741fb9803fa2a870eee139137d3bade332",
+      "title": "Training Recurrent Answering Units with Joint Loss Minimization for VQA",
+      "year": 2016,
+      "abstract": "We propose a novel algorithm for visual question answering based on a recurrent deep neural network, where every module in the network corresponds to a complete answering unit with attention mechanism by itself. The network is optimized by minimizing loss aggregated from all the units, which share model parameters while receiving different information to compute attention probability. For training, our model attends to a region within image feature map, updates its memory based on the question and attended image feature, and answers the question based on its memory state. This procedure is performed to compute loss in each step. The motivation of this approach is our observation that multi-step inferences are often required to answer questions while each problem may have a unique desirable number of steps, which is difficult to identify in practice. Hence, we always make the first unit in the network solve problems, but allow it to learn the knowledge from the rest of units by backpropagation unless it degrades the model. To implement this idea, we early-stop training each unit as soon as it starts to overfit. Note that, since more complex models tend to overfit on easier questions quickly, the last answering unit in the unfolded recurrent neural network is typically killed first while the first one remains last. We make a single-step prediction for a new question using the shared model. This strategy works better than the other options within our framework since the selected model is trained effectively from all units without overfitting. The proposed algorithm outperforms other multi-step attention based approaches using a single step prediction in VQA dataset.",
+      "externalIds": {
+        "DBLP": "journals/corr/NohH16",
+        "ArXiv": "1606.03647",
+        "MAG": "2439787475",
+        "CorpusId": 2952957
+      },
+      "arxiv_id": "1606.03647",
+      "doi": null,
+      "corpus_id": 2952957
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "57",
+      "ref_key": "S2:05ec69f38cbe4b34a65b9d51f7f3e145d832f2d5",
+      "paperId": "05ec69f38cbe4b34a65b9d51f7f3e145d832f2d5",
+      "title": "Modeling Thesis Clarity in Student Essays",
+      "year": 2013,
+      "abstract": "Recently, researchers have begun exploring methods of scoring student essays with respect to particular dimensions of quality such as coherence, technical errors, and relevance to prompt, but there is relatively little work on modeling thesis clarity. We present a new annotated corpus and propose a learning-based approach to scoring essays along the thesis clarity dimension. Additionally, in order to provide more valuable feedback on why an essay is scored as it is, we propose a second learning-based approach to identifying what kinds of errors an essay has that may lower its thesis clarity score.",
+      "externalIds": {
+        "ACL": "P13-1026",
+        "DBLP": "conf/acl/PersingN13",
+        "MAG": "2154664215",
+        "CorpusId": 5894019
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 5894019
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "58",
+      "ref_key": "S2:158bf8afb14cc3ca07dd209535cb9aeeb05a104a",
+      "paperId": "158bf8afb14cc3ca07dd209535cb9aeeb05a104a",
+      "title": "Modeling Prompt Adherence in Student Essays",
+      "year": 2014,
+      "abstract": "Recently, researchers have begun exploring methods of scoring student essays with respect to particular dimensions of quality such as coherence, technical errors, and prompt adherence. The work on modeling prompt adherence, however, has been focused mainly on whether individual sentences adhere to the prompt. We present a new annotated corpus of essaylevel prompt adherence scores and propose a feature-rich approach to scoring essays along the prompt adherence dimension. Our approach significantly outperforms a knowledge-lean baseline prompt adherence scoring system yielding improvements of up to 16.6%.",
+      "externalIds": {
+        "ACL": "P14-1144",
+        "DBLP": "conf/acl/PersingN14",
+        "MAG": "2096879700",
+        "DOI": "10.3115/v1/P14-1144",
+        "CorpusId": 6390419
+      },
+      "arxiv_id": null,
+      "doi": "10.3115/v1/P14-1144",
+      "corpus_id": 6390419
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "59",
+      "ref_key": "S2:6152458a696ab71060785fe57ffaa3e2e6743b85",
+      "paperId": "6152458a696ab71060785fe57ffaa3e2e6743b85",
+      "title": "Flexible Domain Adaptation for Automated Essay Scoring Using Correlated Linear Regression",
+      "year": 2015,
+      "abstract": "Most of the current automated essay scoring (AES) systems are trained using manually graded essays from a specific prompt. These systems experience a drop in accuracy when used to grade an essay from a different prompt. Obtaining a large number of manually graded essays each time a new prompt is introduced is costly and not viable. We propose domain adaptation as a solution to adapt an AES system from an initial prompt to a new prompt. We also propose a novel domain adaptation technique that uses Bayesian linear ridge regression. We evaluate our domain adaptation technique on the publicly available Automated Student Assessment Prize (ASAP) dataset and show that our proposed technique is a competitive default domain adaptation algorithm for the AES task.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/PhandiCN15",
+        "MAG": "2250372169",
+        "ACL": "D15-1049",
+        "DOI": "10.18653/v1/D15-1049",
+        "CorpusId": 8012781
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/D15-1049",
+      "corpus_id": 8012781
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "60",
+      "ref_key": "S2:dbe437cb28f6d3be4149a503cf71f60847dfd2ae",
+      "paperId": "dbe437cb28f6d3be4149a503cf71f60847dfd2ae",
+      "title": "Reverse‐Engineering Visualizations: Recovering Visual Encodings from Chart Images",
+      "year": 2017,
+      "abstract": "We investigate how to automatically recover visual encodings from a chart image, primarily using inferred text elements. We contribute an end‐to‐end pipeline which takes a bitmap image as input and returns a visual encoding specification as output. We present a text analysis pipeline which detects text elements in a chart, classifies their role (e.g., chart title, x‐axis label, y‐axis title, etc.), and recovers the text content using optical character recognition. We also train a Convolutional Neural Network for mark type classification. Using the identified text elements and graphical mark type, we can then infer the encoding specification of an input chart image. We evaluate our techniques on three chart corpora: a set of automatically labeled charts generated using Vega, charts from the Quartz news website, and charts extracted from academic papers. We demonstrate accurate automatic inference of text elements, mark types, and chart specifications across a variety of input chart types.",
+      "externalIds": {
+        "MAG": "2725765016",
+        "DBLP": "journals/cgf/PocoH17",
+        "DOI": "10.1111/cgf.13193",
+        "CorpusId": 7045290
+      },
+      "arxiv_id": null,
+      "doi": "10.1111/cgf.13193",
+      "corpus_id": 7045290
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "61",
+      "ref_key": "S2:211e452561b69d87acc6baaee0b237363b4f6c99",
+      "paperId": "211e452561b69d87acc6baaee0b237363b4f6c99",
+      "title": "PETCHA: a programming exercises teaching assistant",
+      "year": 2012,
+      "abstract": "This paper presents a tool called Petcha that acts as an automated Teaching Assistant in computer programming courses. The ultimate objective of Petcha is to increase the number of programming exercises effectively solved by students. Petcha meets this objective by helping both teachers to author programming exercises and students to solve them. It also coordinates a network of heterogeneous systems, integrating automatic program evaluators, learning management systems, learning object repositories and integrated programming environments. This paper presents the concept and the design of Petcha and sets this tool in a service oriented architecture for managing learning processes based on the automatic evaluation of programming exercises. The paper presents also a case study that validates the use of Petcha and of the proposed architecture.",
+      "externalIds": {
+        "DBLP": "conf/iticse/QueirosL12",
+        "MAG": "2111215649",
+        "DOI": "10.1145/2325296.2325344",
+        "CorpusId": 13166068
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/2325296.2325344",
+      "corpus_id": 13166068
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "62",
+      "ref_key": "S2:6c4b76232bb72897685d19b3d264c6ee3005bc2b",
+      "paperId": "6c4b76232bb72897685d19b3d264c6ee3005bc2b",
+      "title": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "year": 2019,
+      "abstract": "Transfer learning, where a model is first pre-trained on a data-rich task before being fine-tuned on a downstream task, has emerged as a powerful technique in natural language processing (NLP). The effectiveness of transfer learning has given rise to a diversity of approaches, methodology, and practice. In this paper, we explore the landscape of transfer learning techniques for NLP by introducing a unified framework that converts every language problem into a text-to-text format. Our systematic study compares pre-training objectives, architectures, unlabeled datasets, transfer approaches, and other factors on dozens of language understanding tasks. By combining the insights from our exploration with scale and our new \"Colossal Clean Crawled Corpus\", we achieve state-of-the-art results on many benchmarks covering summarization, question answering, text classification, and more. To facilitate future work on transfer learning for NLP, we release our dataset, pre-trained models, and code.",
+      "externalIds": {
+        "MAG": "2981852735",
+        "DBLP": "journals/corr/abs-1910-10683",
+        "ArXiv": "1910.10683",
+        "CorpusId": 204838007
+      },
+      "arxiv_id": "1910.10683",
+      "doi": null,
+      "corpus_id": 204838007
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "63",
+      "ref_key": "S2:06047017f7a2b4dee6d8078786a21c8f67590a22",
+      "paperId": "06047017f7a2b4dee6d8078786a21c8f67590a22",
+      "title": "Few-Shot Question Answering by Pretraining Span Selection",
+      "year": 2021,
+      "abstract": "In several question answering benchmarks, pretrained models have reached human parity through fine-tuning on an order of 100,000 annotated questions and answers. We explore the more realistic few-shot setting, where only a few hundred training examples are available, and observe that standard models perform poorly, highlighting the discrepancy between current pretraining objectives and question answering. We propose a new pretraining scheme tailored for question answering: recurring span selection. Given a passage with multiple sets of recurring spans, we mask in each set all recurring spans but one, and ask the model to select the correct span in the passage for each masked span. Masked spans are replaced with a special token, viewed as a question representation, that is later used during fine-tuning to select the answer span. The resulting model obtains surprisingly good results on multiple benchmarks (e.g., 72.7 F1 on SQuAD with only 128 training examples), while maintaining competitive performance in the high-resource setting.",
+      "externalIds": {
+        "ArXiv": "2101.00438",
+        "DBLP": "conf/acl/RamKBGL20",
+        "ACL": "2021.acl-long.239",
+        "DOI": "10.18653/v1/2021.acl-long.239",
+        "CorpusId": 230433978
+      },
+      "arxiv_id": "2101.00438",
+      "doi": "10.18653/v1/2021.acl-long.239",
+      "corpus_id": 230433978
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "64",
+      "ref_key": "S2:a335fe8acbfa3d41c169425c5d761a2d1a02b0a7",
+      "paperId": "a335fe8acbfa3d41c169425c5d761a2d1a02b0a7",
+      "title": "Ranking Multiple Choice Question Distractors using Semantically Informed Neural Networks",
+      "year": 2020,
+      "abstract": "Automatically generating or ranking distractors for multiple-choice questions (MCQs) is still a challenging problem. In this work, we have focused towards automatic ranking of distractors for MCQs. Accordingly, we have proposed an semantically aware CNN-BiLSTM model. We evaluate our model with different word level embeddings as input over two different openly available datasets. Experimental results demonstrate our proposed model surpasses the performance of the existing baseline models. Furthermore, we have observed that intelligently incorporating word level semantic information along with context specific word embeddings boost up the predictive performance of distractors, which is a promising direction for further research.",
+      "externalIds": {
+        "DBLP": "conf/cikm/SinhaDM20",
+        "MAG": "3094276714",
+        "DOI": "10.1145/3340531.3417468",
+        "CorpusId": 224281460
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/3340531.3417468",
+      "corpus_id": 224281460
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "65",
+      "ref_key": "S2:390f174d102c72172249254f3f1048721c0c3161",
+      "paperId": "390f174d102c72172249254f3f1048721c0c3161",
+      "title": "Question Generation for Adaptive Education",
+      "year": 2021,
+      "abstract": "Intelligent and adaptive online education systems aim to make high-quality education available for a diverse range of students. However, existing systems usually depend on a pool of hand-made questions, limiting how fine-grained and open-ended they can be in adapting to individual students. We explore targeted question generation as a controllable sequence generation task. We first show how to fine-tune pre-trained language models for deep knowledge tracing (LM-KT). This model accurately predicts the probability of a student answering a question correctly, and generalizes to questions not seen in training. We then use LM-KT to specify the objective and data for training a model to generate questions conditioned on the student and target difficulty. Our results show we succeed at generating novel, well-calibrated language translation questions for second language learners from a real online education platform.",
+      "externalIds": {
+        "DBLP": "conf/acl/SrivastavaG20",
+        "ACL": "2021.acl-short.88",
+        "ArXiv": "2106.04262",
+        "DOI": "10.18653/v1/2021.acl-short.88",
+        "CorpusId": 235368201
+      },
+      "arxiv_id": "2106.04262",
+      "doi": "10.18653/v1/2021.acl-short.88",
+      "corpus_id": 235368201
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "66",
+      "ref_key": "S2:a0fd69c2540158fe79ff8cdba3d36a71e737211a",
+      "paperId": "a0fd69c2540158fe79ff8cdba3d36a71e737211a",
+      "title": "I Do Not Understand What I Cannot Define: Automatic Question Generation With Pedagogically-Driven Content Selection",
+      "year": 2021,
+      "abstract": "Most learners fail to develop deep text comprehension when reading textbooks passively. Posing questions about what learners have read is a well-established way of fostering their text comprehension. However, many textbooks lack self-assessment questions because authoring them is timeconsuming and expensive. Automatic question generators may alleviate this scarcity by generating sound pedagogical questions. However, generating questions automatically poses linguistic and pedagogical challenges. What should we ask? And, how do we phrase the question automatically? We address those challenges with an automatic question generator grounded in learning theory. The paper introduces a novel pedagogically meaningful content selection mechanism to find question-worthy sentences and answers in arbitrary textbook contents. We conducted an empirical evaluation study with educational experts, annotating 150 generated questions in six different domains. Results indicate a high linguistic quality of the generated questions. Furthermore, the evaluation results imply that the majority of the generated questions inquire central information related to the given text and may foster text comprehension in specific learning scenarios.",
+      "externalIds": {
+        "ArXiv": "2110.04123",
+        "DBLP": "journals/corr/abs-2110-04123",
+        "CorpusId": 238531395
+      },
+      "arxiv_id": "2110.04123",
+      "doi": null,
+      "corpus_id": 238531395
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "67",
+      "ref_key": "S2:5f355644094b15230c23ed08260b5b12348a65fd",
+      "paperId": "5f355644094b15230c23ed08260b5b12348a65fd",
+      "title": "Re-use of programming patterns or problem solving?: representation of scratch programs by TGraphs to support static code analysis",
+      "year": 2020,
+      "abstract": "Novice programmers seem to learn basic programming skills amazingly fast by using visual programming environments like Scratch or Snap. Yet at a second glance, in many cases, the students' programming projects make use of pre-learned solution patterns like collision detection. Aiming to investigate how far such pre-learned patterns are used and adapted, we have to analyze the program structure of a substantially large number of Scratch projects, e.g. from the Scratch repository, in a very detailed way. To automate the static code analysis of these projects, we developed a scheme to transform Scratch projects into a common graph format (TGraph), which was used up to now to analyze programs in Java and Haskell as well as UML diagrams and mathematical solutions. In a second step, this representation enabled us to apply a SQL-like query language for graphs (GReQL) to detect programming patterns in students' Scratch projects. This paper describes the design of our TGraph scheme for Scratch as well as how to query patterns in Scratch code using GReQL, in order to stimulate the use of this methodology by other researchers. As a feasibility study, we report its application on the outcomes of one of our Scratch courses attended by 143 children aged 8-12 years. The study showed that with the presented methodology any code structure can be detected in Scratch projects. To check the validity of the methodology, the programs were additionally checked manually for the occurrence of two patterns - the results were consistent.",
+      "externalIds": {
+        "MAG": "3095025081",
+        "DBLP": "conf/wipsce/TalbotGSH20",
+        "DOI": "10.1145/3421590.3421604",
+        "CorpusId": 225073966
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/3421590.3421604",
+      "corpus_id": 225073966
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "68",
+      "ref_key": "S2:8b4dd0ea15f36ffbb72ad6558db210c7dfbf4fd0",
+      "paperId": "8b4dd0ea15f36ffbb72ad6558db210c7dfbf4fd0",
+      "title": "Automated Critique of Early Programming Antipatterns",
+      "year": 2019,
+      "abstract": "The introductory programming lab, with small cycles of teaching, coding, testing, and critique from instructors, is an extraordinarily productive learning experience for novice programmers. We wish to extend the availability of such critique through automation, capturing the essence of interaction between student and instructor as closely as possible. Integrated Development Environments and Automated Grading Systems provide constant feedback through static analysis and unit testing. But we also wish to tailor automated feedback to acknowledge commonly recurring issues with novice programmers, in keeping with the practice of a human instructor. We argue that the kinds of mistakes that novice programmers make, and the way they are reported to the novices, deserve special care. In this paper we provide examples of early programming antipatterns that have arisen from our teaching experience, and describe different ways of identifying and dealing with them automatically through our tool WebTA. Novice students may produce code that is close to a correct solution but contains syntactic errors; WebTA attempts to salvage the promising portions of the student's submission and suggest repairs that are more meaningful than typical compiler error messages. Alternatively, a student misunderstanding may result in well-formed code that passes unit tests yet contains clear design flaws; through additional analysis, WebTA can identify and flag them. Finally, certain types of antipattern can be anticipated and flagged by the instructor, based on the context of the course and the programming exercise; WebTA allows for customizable critique triggers and messages.",
+      "externalIds": {
+        "DBLP": "conf/sigcse/UreelW20",
+        "MAG": "2916594277",
+        "DOI": "10.1145/3287324.3287463",
+        "CorpusId": 67866189
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/3287324.3287463",
+      "corpus_id": 67866189
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "69",
+      "ref_key": "S2:4697e6d3a63f02a055fd236bc3e5b1ad8c45f6a3",
+      "paperId": "4697e6d3a63f02a055fd236bc3e5b1ad8c45f6a3",
+      "title": "Difficulty-Controllable Neural Question Generation for Reading Comprehension using Item Response Theory",
+      "year": 2023,
+      "abstract": "Question generation (QG) for reading comprehension, a technology for automatically generating questions related to given reading passages, has been used in various applications, including in education. Recently, QG methods based on deep neural networks have succeeded in generating fluent questions that are pertinent to given reading passages. One example of how QG can be applied in education is a reading tutor that automatically offers reading comprehension questions related to various reading materials. In such an application, QG methods should provide questions with difficulty levels appropriate for each learner’s reading ability in order to improve learning efficiency. Several difficulty-controllable QG methods have been proposed for doing so. However, conventional methods focus only on generating questions and cannot generate answers to them. Furthermore, they ignore the relation between question difficulty and learner ability, making it hard to determine an appropriate difficulty for each learner. To resolve these problems, we propose a new method for generating question–answer pairs that considers their difficulty, estimated using item response theory. The proposed difficulty-controllable generation is realized by extending two pre-trained transformer models: BERT and GPT-2.",
+      "externalIds": {
+        "DBLP": "conf/bea/UtoTS23",
+        "ACL": "2023.bea-1.10",
+        "DOI": "10.18653/v1/2023.bea-1.10",
+        "CorpusId": 259376913
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2023.bea-1.10",
+      "corpus_id": 259376913
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "70",
+      "ref_key": "S2:1e55ad27df154ee546a2cabf47cfd09f1f12e214",
+      "paperId": "1e55ad27df154ee546a2cabf47cfd09f1f12e214",
+      "title": "CodeMaster - Automatic Assessment and Grading of App Inventor and Snap! Programs",
+      "year": 2018,
+      "abstract": ". The development of computational thinking is a major topic in K-12 education. Many of these experiences focus on teaching programming using block-based languages. As part of these activities, it is important for students to receive feedback on their assignments. Yet, in practice it may be difficult to provide personalized, objective and consistent feedback. In this context, automatic assessment and grading has become important. While there exist diverse graders for text-based languages, support for block-based programming languages is still scarce. This article presents CodeMaster, a free web application that in a problem-based learning context allows to automatically assess and grade projects programmed with App Inventor and Snap!. It uses a rubric measuring computational thinking based on a static code analysis. Students can use the tool to get feedback to encourage them to improve their programming competencies. It can also be used by teachers for assessing whole classes easing their workload.",
+      "externalIds": {
+        "MAG": "2799461297",
+        "DBLP": "journals/iie/WangenheimHDPAB18",
+        "DOI": "10.15388/INFEDU.2018.08",
+        "CorpusId": 13683941
+      },
+      "arxiv_id": null,
+      "doi": "10.15388/INFEDU.2018.08",
+      "corpus_id": 13683941
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "71",
+      "ref_key": "S2:a30f912f8c5e2a2bfb06351d4578e1ba3fa37896",
+      "paperId": "a30f912f8c5e2a2bfb06351d4578e1ba3fa37896",
+      "title": "CodeT5: Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation",
+      "year": 2021,
+      "abstract": "Pre-trained models for Natural Languages (NL) like BERT and GPT have been recently shown to transfer well to Programming Languages (PL) and largely benefit a broad set of code-related tasks. Despite their success, most current methods either rely on an encoder-only (or decoder-only) pre-training that is suboptimal for generation (resp. understanding) tasks or process the code snippet in the same way as NL, neglecting the special characteristics of PL such as token types. We present CodeT5, a unified pre-trained encoder-decoder Transformer model that better leverages the code semantics conveyed from the developer-assigned identifiers. Our model employs a unified framework to seamlessly support both code understanding and generation tasks and allows for multi-task learning. Besides, we propose a novel identifier-aware pre-training task that enables the model to distinguish which code tokens are identifiers and to recover them when they are masked. Furthermore, we propose to exploit the user-written code comments with a bimodal dual generation task for better NL-PL alignment. Comprehensive experiments show that CodeT5 significantly outperforms prior methods on understanding tasks such as code defect detection and clone detection, and generation tasks across various directions including PL-NL, NL-PL, and PL-PL. Further analysis reveals that our model can better capture semantic information from code. Our code and pre-trained models are released at https://github.com/salesforce/CodeT5.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/0034WJH21",
+        "ACL": "2021.emnlp-main.685",
+        "ArXiv": "2109.00859",
+        "DOI": "10.18653/v1/2021.emnlp-main.685",
+        "CorpusId": 237386541
+      },
+      "arxiv_id": "2109.00859",
+      "doi": "10.18653/v1/2021.emnlp-main.685",
+      "corpus_id": 237386541
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "72",
+      "ref_key": "S2:edb69f4bcb598e86acdf547c90631c8c9d177942",
+      "paperId": "edb69f4bcb598e86acdf547c90631c8c9d177942",
+      "title": "Multisource Soft Labeling and Hard Negative Sampling for Retrieval Distractor Ranking",
+      "year": 2024,
+      "abstract": "Multiple-choice questions (MCQs) are a kind of widely adopted approaches in learning assessment. Recently, the automatic generation of MCQs has become a popular research area. In this task, distractor ranking (DR) is one of the most meaningful and challenging subtasks, where the DR models learn to select high-quality distractors from numerous candidates. Currently, some DR methods adopt a two-stage ranking strategy, which brings about a complex process and error propagation. Others directly use the single-encoder-based model to improve the overall performance, which, however, suffers from low efficiency. To tackle these problems, we propose a retrieval distractor ranking (ReDR) task to meet the requirements for practical distractor retrieval scenarios, in which the models should achieve relatively high performance within an acceptable time. In this research, we develop an end-to-end way based on the dual-encoder framework to solve the ReDR task. Besides, we propose multiple kinds of relevance scores, including context–context, context–distractor, and distractor–distractor, which have been employed in two strategies: 1) multisource soft labeling, which assigns each candidate an appropriate soft label from multiple kinds of relevance scores to better simulate the sample distribution of the ReDR task and 2) multisource hard negative sampling, which selects the hard negative samples according to multiple kinds of relevance scores and further distinguishes the difference between them and the positive samples. The extensive experiments on two well-known MCQ benchmarks have proven the effectiveness of our method.",
+      "externalIds": {
+        "DBLP": "journals/tlt/WangRBSOX24",
+        "DOI": "10.1109/TLT.2023.3325549",
+        "CorpusId": 264365338
+      },
+      "arxiv_id": null,
+      "doi": "10.1109/TLT.2023.3325549",
+      "corpus_id": 264365338
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "73",
+      "ref_key": "S2:ef4b604fca0c62dcd0d5caf7ca24ad74e285632d",
+      "paperId": "ef4b604fca0c62dcd0d5caf7ca24ad74e285632d",
+      "title": "MultiQG-TI: Towards Question Generation from Multi-modal Sources",
+      "year": 2023,
+      "abstract": "We study the new problem of automatic question generation (QG) from multi-modal sources containing images and texts, significantly expanding the scope of most of the existing work that focuses exclusively on QG from only textual sources. We propose a simple solution for our new problem, called MultiQG-TI, which enables a text-only question generator to process visual input in addition to textual input. Specifically, we leverage an image-to-text model and an optical character recognition model to obtain the textual description of the image and extract any texts in the image, respectively, and then feed them together with the input texts to the question generator. We only fine-tune the question generator while keeping the other components fixed. On the challenging ScienceQA dataset, we demonstrate that MultiQG-TI significantly outperforms ChatGPT with few-shot prompting, despite having hundred-times less trainable parameters. Additional analyses empirically confirm the necessity of both visual and textual signals for QG and show the impact of various modeling choices. Code is available at https://anonymous.4open.science/r/multimodal-QG-47F2/",
+      "externalIds": {
+        "DBLP": "conf/bea/0001B23",
+        "ACL": "2023.bea-1.55",
+        "ArXiv": "2307.04643",
+        "DOI": "10.48550/arXiv.2307.04643",
+        "CorpusId": 259376829
+      },
+      "arxiv_id": "2307.04643",
+      "doi": "10.48550/arXiv.2307.04643",
+      "corpus_id": 259376829
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "74",
+      "ref_key": "S2:c8ebc96d0991e7f7257338328973b6e2eb317fbc",
+      "paperId": "c8ebc96d0991e7f7257338328973b6e2eb317fbc",
+      "title": "Aggregating Multiple Heuristic Signals as Supervision for Unsupervised Automated Essay Scoring",
+      "year": 2023,
+      "abstract": "Automated Essay Scoring (AES) aims to evaluate the quality score for input essays. In this work, we propose a novel unsupervised AES approach ULRA, which does not require groundtruth scores of essays for training. The core idea of our ULRA is to use multiple heuristic quality signals as the pseudo-groundtruth, and then train a neural AES model by learning from the aggregation of these quality signals. To aggregate these inconsistent quality signals into a unified supervision, we view the AES task as a ranking problem, and design a special Deep Pairwise Rank Aggregation (DPRA) loss for training. In the DPRA loss, we set a learnable confidence weight for each signal to address the conflicts among signals, and train the neural AES model in a pairwise way to disentangle the cascade effect among partial-order pairs. Experiments on eight prompts of ASPA dataset show that ULRA achieves the state-of-the-art performance compared with previous unsupervised methods in terms of both transductive and inductive settings. Further, our approach achieves comparable performance with many existing domain-adapted supervised models, showing the effectiveness of ULRA. The code is available at https://github.com/tenvence/ulra.",
+      "externalIds": {
+        "DBLP": "conf/acl/WangJYCGG23",
+        "ACL": "2023.acl-long.782",
+        "DOI": "10.18653/v1/2023.acl-long.782",
+        "CorpusId": 259370642
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2023.acl-long.782",
+      "corpus_id": 259370642
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "75",
+      "ref_key": "S2:678fd7c48efe21434148b4b3482c2b8b3ee618fc",
+      "paperId": "678fd7c48efe21434148b4b3482c2b8b3ee618fc",
+      "title": "Deep Neural Solver for Math Word Problems",
+      "year": 2017,
+      "abstract": "This paper presents a deep neural solver to automatically solve math word problems. In contrast to previous statistical learning approaches, we directly translate math word problems to equation templates using a recurrent neural network (RNN) model, without sophisticated feature engineering. We further design a hybrid model that combines the RNN model and a similarity-based retrieval model to achieve additional performance improvement. Experiments conducted on a large dataset show that the RNN model and the hybrid model significantly outperform state-of-the-art statistical learning methods for math word problem solving.",
+      "externalIds": {
+        "ACL": "D17-1088",
+        "DBLP": "conf/emnlp/WangLS17",
+        "MAG": "2757276219",
+        "DOI": "10.18653/v1/D17-1088",
+        "CorpusId": 910689
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/D17-1088",
+      "corpus_id": 910689
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "76",
+      "ref_key": "S2:6605bba6e0caabda06b090d67698a5683eba4dfa",
+      "paperId": "6605bba6e0caabda06b090d67698a5683eba4dfa",
+      "title": "Translating a Math Word Problem to an Expression Tree",
+      "year": 2018,
+      "abstract": "Sequence-to-sequence (SEQ2SEQ) models have been successfully applied to automatic math word problem solving. Despite its simplicity, a drawback still remains: a math word problem can be correctly solved by more than one equations. This non-deterministic transduction harms the performance of maximum likelihood estimation. In this paper, by considering the uniqueness of expression tree, we propose an equation normalization method to normalize the duplicated equations. Moreover, we analyze the performance of three popular SEQ2SEQ models on the math word problem solving. We find that each model has its own specialty in solving problems, consequently an ensemble model is then proposed to combine their advantages. Experiments on dataset Math23K show that the ensemble model with equation normalization significantly outperforms the previous state-of-the-art methods.",
+      "externalIds": {
+        "ArXiv": "1811.05632",
+        "DBLP": "journals/corr/abs-1811-05632",
+        "MAG": "2950318578",
+        "CorpusId": 53080258
+      },
+      "arxiv_id": "1811.05632",
+      "doi": null,
+      "corpus_id": 53080258
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "77",
+      "ref_key": "S2:5e761e9f5cd9672a181b256299cd2916a8079461",
+      "paperId": "5e761e9f5cd9672a181b256299cd2916a8079461",
+      "title": "Augmenting Black-box LLMs with Medical Textbooks for Clinical Question Answering",
+      "year": 2023,
+      "abstract": "Large-scale language models (LLMs), such as ChatGPT, are capable of generating human-like responses for various downstream tasks, such as task-oriented dialogues and question answering. However, applying LLMs to medical domains remains challenging due to their inability to leverage domain-speciﬁc knowledge. In this study, we present the Large-scale Language Models Augmented with Medical Textbooks (LLM-AMT) , which integrates authoritative medical textbooks as the cornerstone of its design, enhancing its proﬁciency in the specialized domain through plug-and-play modules, comprised of a Hybrid Textbook Re-triever, supplemented by the Query Augmenter and the LLM Reader. Experimental evaluation on three open-domain medical question-answering tasks reveals a substantial enhancement in both the professionalism and accuracy of the LLM responses when utilizing LLM-AMT, exhibiting an improvement ranging from 11.4% to 13.2%. Despite being 100 × smaller, we found that medical textbooks as the retrieval corpus serves as a more valuable external knowledge source than Wikipedia in the medical domain. Our experiments show that textbook augmentation results in a performance improvement ranging from 9.7% to 12.2% over Wikipedia augmentation.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2309-02233",
+        "DOI": "10.48550/arXiv.2309.02233",
+        "CorpusId": 261557644
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2309.02233",
+      "corpus_id": 261557644
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "78",
+      "ref_key": "S2:3f758a13d3703b02bdf977f9189230276064da42",
+      "paperId": "3f758a13d3703b02bdf977f9189230276064da42",
+      "title": "T-SciQ: Teaching Multimodal Chain-of-Thought Reasoning via Large Language Model Signals for Science Question Answering",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) have recently demonstrated exceptional performance in various Natural Language Processing (NLP) tasks. They have also shown the ability to perform chain-of-thought (CoT) reasoning to solve complex problems. Recent studies have explored CoT reasoning in complex multimodal scenarios, such as the science question answering task, by fine-tuning multimodal models with high-quality human-annotated CoT rationales. However, collecting high-quality COT rationales is usually time-consuming and costly. Besides, the annotated rationales are hardly accurate due to the external essential information missed. To address these issues, we propose a novel method termed T-SciQ that aims at teaching science question answering with LLM signals. The T-SciQ approach generates high-quality CoT rationales as teaching signals and is advanced to train much smaller models to perform CoT reasoning in complex modalities. Additionally, we introduce a novel data mixing strategy to produce more effective teaching data samples for simple and complex science question answer problems. Extensive experimental results show that our T-SciQ method achieves a new state-of-the-art performance on the ScienceQA benchmark, with an accuracy of 96.18%. Moreover, our approach outperforms the most powerful fine-tuned baseline by 4.5%. The code is publicly available at https://github.com/T-SciQ/T-SciQ.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-03453",
+        "ArXiv": "2305.03453",
+        "DOI": "10.48550/arXiv.2305.03453",
+        "CorpusId": 258546810
+      },
+      "arxiv_id": "2305.03453",
+      "doi": "10.48550/arXiv.2305.03453",
+      "corpus_id": 258546810
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "79",
+      "ref_key": "S2:5bf6ca86a4f21d07014ce60f3cd09345ad3414e2",
+      "paperId": "5bf6ca86a4f21d07014ce60f3cd09345ad3414e2",
+      "title": "A Goal-Driven Tree-Structured Neural Model for Math Word Problems",
+      "year": 2019,
+      "abstract": "Most existing neural models for math word problems exploit Seq2Seq model to generate solution expressions sequentially from left to right, whose results are far from satisfactory due to the lack of goal-driven mechanism commonly seen in human problem solving. This paper proposes a tree-structured neural model to generate expression tree in a goal-driven manner. Given a math word problem, the model first identifies and encodes its goal to achieve, and then the goal gets decomposed into sub-goals combined by an operator in a top-down recursive way. The whole process is repeated until the goal is simple enough to be realized by a known quantity as leaf node. During the process, two-layer gated-feedforward networks are designed to implement each step of goal decomposition, and a recursive neural network is used to encode fulfilled subtrees into subtree embeddings, which provides a better representation of subtrees than the simple goals of subtrees. Experimental results on the dataset Math23K have shown that our tree-structured model outperforms significantly several state-of-the-art models.",
+      "externalIds": {
+        "MAG": "2964710271",
+        "DBLP": "conf/ijcai/XieS19",
+        "DOI": "10.24963/ijcai.2019/736",
+        "CorpusId": 199466101
+      },
+      "arxiv_id": null,
+      "doi": "10.24963/ijcai.2019/736",
+      "corpus_id": 199466101
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "80",
+      "ref_key": "S2:4d8f2d14af5991d4f0d050d22216825cac3157bd",
+      "paperId": "4d8f2d14af5991d4f0d050d22216825cac3157bd",
+      "title": "Show, Attend and Tell: Neural Image Caption Generation with Visual Attention",
+      "year": 2015,
+      "abstract": "Inspired by recent work in machine translation and object detection, we introduce an attention based model that automatically learns to describe the content of images. We describe how we can train this model in a deterministic manner using standard backpropagation techniques and stochastically by maximizing a variational lower bound. We also show through visualization how the model is able to automatically learn to fix its gaze on salient objects while generating the corresponding words in the output sequence. We validate the use of attention with state-of-the-art performance on three benchmark datasets: Flickr9k, Flickr30k and MS COCO.",
+      "externalIds": {
+        "MAG": "2950178297",
+        "DBLP": "conf/icml/XuBKCCSZB15",
+        "ArXiv": "1502.03044",
+        "CorpusId": 1055111
+      },
+      "arxiv_id": "1502.03044",
+      "doi": null,
+      "corpus_id": 1055111
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "81",
+      "ref_key": "S2:2c1890864c1c2b750f48316dc8b650ba4772adc5",
+      "paperId": "2c1890864c1c2b750f48316dc8b650ba4772adc5",
+      "title": "Stacked Attention Networks for Image Question Answering",
+      "year": 2015,
+      "abstract": "This paper presents stacked attention networks (SANs) that learn to answer natural language questions from images. SANs use semantic representation of a question as query to search for the regions in an image that are related to the answer. We argue that image question answering (QA) often requires multiple steps of reasoning. Thus, we develop a multiple-layer SAN in which we query an image multiple times to infer the answer progressively. Experiments conducted on four image QA data sets demonstrate that the proposed SANs significantly outperform previous state-of-the-art approaches. The visualization of the attention layers illustrates the progress that the SAN locates the relevant visual clues that lead to the answer of the question layer-by-layer.",
+      "externalIds": {
+        "MAG": "2950318722",
+        "DBLP": "conf/cvpr/YangHGDS16",
+        "ArXiv": "1511.02274",
+        "DOI": "10.1109/CVPR.2016.10",
+        "CorpusId": 8849206
+      },
+      "arxiv_id": "1511.02274",
+      "doi": "10.1109/CVPR.2016.10",
+      "corpus_id": 8849206
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "82",
+      "ref_key": "S2:aa394cd41651027edd70bdd1f7f909e648bc5a2e",
+      "paperId": "aa394cd41651027edd70bdd1f7f909e648bc5a2e",
+      "title": "On the Effectiveness of Curriculum Learning in Educational Text Scoring",
+      "year": 2023,
+      "abstract": "Automatic Text Scoring (ATS) is a widely-investigated task in education. Existing approaches often stressed the structure design of an ATS model and neglected the training process of the model. Considering the difficult nature of this task, we argued that the performance of an ATS model could be potentially boosted by carefully selecting data of varying complexities in the training process. Therefore, we aimed to investigate the effectiveness of curriculum learning (CL) in scoring educational text. Specifically, we designed two types of difficulty measurers: (i) pre-defined, calculated by measuring a sample's readability, length, the number of grammatical errors or unique words it contains; and (ii) automatic, calculated based on whether a model in a training epoch can accurately score the samples. These measurers were tested in both the easy-to-hard to hard-to-easy training paradigms. Through extensive evaluations on two widely-used datasets (one for short answer scoring and the other for long essay scoring), we demonstrated that (a) CL indeed could boost the performance of state-of-the-art ATS models, and the maximum improvement could be up to 4.5%, but most improvements were achieved when assessing short and easy answers; (b) the pre-defined measurer calculated based on the number of grammatical errors contained in a text sample tended to outperform the other difficulty measurers across different training paradigms.",
+      "externalIds": {
+        "DBLP": "conf/aaai/ZengGC23",
+        "DOI": "10.1609/aaai.v37i12.26707",
+        "CorpusId": 259593617
+      },
+      "arxiv_id": null,
+      "doi": "10.1609/aaai.v37i12.26707",
+      "corpus_id": 259593617
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "83",
+      "ref_key": "S2:c42f0ff4bdab33c5b89c3e25d731f86ffbda88fb",
+      "paperId": "c42f0ff4bdab33c5b89c3e25d731f86ffbda88fb",
+      "title": "Task-Independent Features for Automated Essay Grading",
+      "year": 2015,
+      "abstract": "Automated scoring of student essays is increasingly used to reduce manual grading effort. State-of-the-art approaches use supervised machine learning which makes it complicated to transfer a system trained on one task to another. We investigate which currently used features are task-independent and evaluate their transferability on English and German datasets. We find that, by using our task-independent feature set, models transfer better between tasks. We also find that the transfer works even better between tasks of the same type.",
+      "externalIds": {
+        "DBLP": "conf/bea/ZeschWS15",
+        "MAG": "2250290162",
+        "ACL": "W15-0626",
+        "DOI": "10.3115/v1/W15-0626",
+        "CorpusId": 8624752
+      },
+      "arxiv_id": null,
+      "doi": "10.3115/v1/W15-0626",
+      "corpus_id": 8624752
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "84",
+      "ref_key": "S2:ac9173e4b8b34dc24c18980ee32be6bf15e7b38d",
+      "paperId": "ac9173e4b8b34dc24c18980ee32be6bf15e7b38d",
+      "title": "Graph-to-Tree Learning for Solving Math Word Problems",
+      "year": 2020,
+      "abstract": "While the recent tree-based neural models have demonstrated promising results in generating solution expression for the math word problem (MWP), most of these models do not capture the relationships and order information among the quantities well. This results in poor quantity representations and incorrect solution expressions. In this paper, we propose Graph2Tree, a novel deep learning architecture that combines the merits of the graph-based encoder and tree-based decoder to generate better solution expressions. Included in our Graph2Tree framework are two graphs, namely the Quantity Cell Graph and Quantity Comparison Graph, which are designed to address limitations of existing methods by effectively representing the relationships and order information among the quantities in MWPs. We conduct extensive experiments on two available datasets. Our experiment results show that Graph2Tree outperforms the state-of-the-art baselines on two benchmark datasets significantly. We also discuss case studies and empirically examine Graph2Tree’s effectiveness in translating the MWP text into solution expressions.",
+      "externalIds": {
+        "MAG": "3035498813",
+        "DBLP": "conf/acl/ZhangWLBWSL20",
+        "ACL": "2020.acl-main.362",
+        "DOI": "10.18653/v1/2020.acl-main.362",
+        "CorpusId": 220046465
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2020.acl-main.362",
+      "corpus_id": 220046465
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "85",
+      "ref_key": "S2:a8b21f72bdc251689f636d3d7ff52a6b85ab7ce9",
+      "paperId": "a8b21f72bdc251689f636d3d7ff52a6b85ab7ce9",
+      "title": "Neural Question Generation from Text: A Preliminary Study",
+      "year": 2017,
+      "abstract": "Automatic question generation aims to generate questions from a text passage\nwhere the generated questions can be answered by certain sub-spans of the given\npassage. Traditional methods mainly use rigid heuristic rules to transform a\nsentence into related questions. In this work, we propose to apply the neural\nencoder-decoder model to generate meaningful and diverse questions from natural\nlanguage sentences. The encoder reads the input text and the answer position,\nto produce an answer-aware input representation, which is fed to the decoder to\ngenerate an answer focused question. We conduct a preliminary study on neural\nquestion generation from text with the SQuAD dataset, and the experiment\nresults show that our method can produce fluent and diverse questions.",
+      "externalIds": {
+        "DBLP": "conf/nlpcc/ZhouYWTBZ17",
+        "MAG": "2606333299",
+        "ArXiv": "1704.01792",
+        "DOI": "10.1007/978-3-319-73618-1_56",
+        "CorpusId": 9745861
+      },
+      "arxiv_id": "1704.01792",
+      "doi": "10.1007/978-3-319-73618-1_56",
+      "corpus_id": 9745861
+    },
+    {
+      "paper_id": "2401.07518",
+      "ref_index": "86",
+      "ref_key": "S2:20fd615a6ce1193db9260fe23914c73373611095",
+      "paperId": "20fd615a6ce1193db9260fe23914c73373611095",
+      "title": "Multi-Task Learning with Language Modeling for Question Generation",
+      "year": 2019,
+      "abstract": "This paper explores the task of answer-aware questions generation. Based on the attention-based pointer generator model, we propose to incorporate an auxiliary task of language modeling to help question generation in a hierarchical multi-task learning structure. Our joint-learning model enables the encoder to learn a better representation of the input sequence, which will guide the decoder to generate more coherent and fluent questions. On both SQuAD and MARCO datasets, our multi-task learning model boosts the performance, achieving state-of-the-art results. Moreover, human evaluation further proves the high quality of our generated questions.",
+      "externalIds": {
+        "MAG": "2970705401",
+        "DBLP": "journals/corr/abs-1908-11813",
+        "ArXiv": "1908.11813",
+        "ACL": "D19-1337",
+        "DOI": "10.18653/v1/D19-1337",
+        "CorpusId": 201698198
+      },
+      "arxiv_id": "1908.11813",
+      "doi": "10.18653/v1/D19-1337",
+      "corpus_id": 201698198
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "NLP Applications for Education": {
+        "Textbook Question Answering": {
+          "Comprehend the multi-modal contexts and complex questions": {
+            "98ea4abc9bf0e30eb020db2075c9c8a039a848a3": {},
+            "97ad70a9fa3f99adf18030e5e38ebe3d90daa2db": {},
+            "12f7de07f9b00315418e381b2bd797d21f12b419": {},
+            "fb9d253258d6b3beceb9d6cd7bba6e0a29ab875b": {},
+            "bd7bd1d2945a58cdcc1797ba9698b8810fe68f60": {},
+            "b58e08741fb9803fa2a870eee139137d3bade332": {},
+            "4d8f2d14af5991d4f0d050d22216825cac3157bd": {},
+            "2c1890864c1c2b750f48316dc8b650ba4772adc5": {}
+          },
+          "Supplement domain-specific knowledge": {
+            "7289a240c9425bc7cad87b3b835e5f0cac22f488": {},
+            "e18ec2c9f0b4a817b8cf0435822bbc879d7db698": {},
+            "fe5ce0d118ec60a886600331927fc7fbc0379b09": {},
+            "dbe437cb28f6d3be4149a503cf71f60847dfd2ae": {},
+            "06047017f7a2b4dee6d8078786a21c8f67590a22": {}
+          },
+          "Strengthen zero-shot capabilities": {
+            "a52dd1e900200e0733eea927edc7d6c27aeba187": {},
+            "a5036f31f0e629dc661f120b8c3b1f374d479ab8": {},
+            "170c97c7215f42edfb20c2248f954879e91ef86e": {},
+            "d3135733aa39dec20ce72aa138589dda27c8406d": {},
+            "5e761e9f5cd9672a181b256299cd2916a8079461": {},
+            "3f758a13d3703b02bdf977f9189230276064da42": {}
+          }
+        },
+        "Math Word Problem Solving": {
+          "Understand the gap between natural language and abstract expression": {
+            "f67ede490780f939103d4cc4e9c6866b83ee59b3": {},
+            "edaafec59b651d503ac7c8a86f8e2335273e1f7a": {},
+            "680b0467861a70be41c31e4f2415fe5e2958fbc0": {},
+            "cd36b981e39edc5517d2a508e879b4d9bdc1b1c6": {},
+            "678fd7c48efe21434148b4b3482c2b8b3ee618fc": {},
+            "6605bba6e0caabda06b090d67698a5683eba4dfa": {},
+            "5bf6ca86a4f21d07014ce60f3cd09345ad3414e2": {},
+            "ac9173e4b8b34dc24c18980ee32be6bf15e7b38d": {}
+          },
+          "Solve MWPs under zero/few-shot setting": {
+            "62176de125738e3b95850d1227bac81fd646b78e": {},
+            "90350aa626bed47b02d0c162462e5b0ca82be6b2": {},
+            "261549439aebdda72b648ecc462448fd24857ac1": {},
+            "5437e8adab596d7294124c0e798708e050e25321": {},
+            "6c943670dca38bfc7c8b477ae7c2d1fba1ad3691": {},
+            "170c97c7215f42edfb20c2248f954879e91ef86e": {}
+          }
+        },
+        "Question Generation": {
+          "Identify the key statement from the context and generate the corresponding question": {
+            "9edec81cfcb6d17a72abd3fa31c97999b8515902": {},
+            "a453863082a7fb42c9b402023294390eb4167fbe": {},
+            "e9e737485329d233d78069b7b7677b65e035c15d": {},
+            "314793e319bd152b3648d0e23e99a05060b0de40": {},
+            "19265db4b61efba7a6a882e89dc43f86ba98b3b6": {},
+            "ef4b604fca0c62dcd0d5caf7ca24ad74e285632d": {},
+            "a8b21f72bdc251689f636d3d7ff52a6b85ab7ce9": {},
+            "20fd615a6ce1193db9260fe23914c73373611095": {}
+          },
+          "Generate more flexible questions for adaptive education": {
+            "694d83d3430d054a99eed027f58ebfe00de6e46f": {},
+            "bd39ac452ebede84fb849cf1df86269e330309cc": {},
+            "ea4bd6c2b223c5da0a7f37903fc05421a435560a": {},
+            "390f174d102c72172249254f3f1048721c0c3161": {},
+            "a0fd69c2540158fe79ff8cdba3d36a71e737211a": {},
+            "4697e6d3a63f02a055fd236bc3e5b1ad8c45f6a3": {}
+          }
+        },
+        "Distractor Generation": {
+          "Design context-consistent and deceptive false answers": {
+            "f1bb5051965a3a4c9288f0123dd03c26a08e1378": {},
+            "2f9e088b58b1fa5da2539a9e4158570039473a69": {},
+            "94049a7e481998792e4ba36855fce2a7674dd409": {},
+            "632450585c7243c095ca9828ae68ac7c31b45019": {},
+            "956c1680fd3c600bd5358898571b927ea78e841d": {},
+            "a335fe8acbfa3d41c169425c5d761a2d1a02b0a7": {},
+            "edb69f4bcb598e86acdf547c90631c8c9d177942": {}
+          }
+        },
+        "Automated Essay Scoring": {
+          "Model different facets of the essay": {
+            "02fc310d7032e56e242a8e560a99df869f172930": {},
+            "0e57ae84af1b9361a60ae005f32a1fcb41bb62b2": {},
+            "6152458a696ab71060785fe57ffaa3e2e6743b85": {},
+            "aa394cd41651027edd70bdd1f7f909e648bc5a2e": {},
+            "c42f0ff4bdab33c5b89c3e25d731f86ffbda88fb": {}
+          },
+          "Sparse annotation of essays": {
+            "05ec69f38cbe4b34a65b9d51f7f3e145d832f2d5": {},
+            "158bf8afb14cc3ca07dd209535cb9aeeb05a104a": {},
+            "c8ebc96d0991e7f7257338328973b6e2eb317fbc": {}
+          }
+        },
+        "Automated Code Scoring": {
+          "Understanding of the long-dependency of code": {
+            "6e100eec500e7bd726f7ee843c097eb58408543f": {},
+            "71767eb25146b8e79925361b3caf54c36cb5ac7e": {},
+            "b641b879aac35bba0e5d43223416a1689b40127f": {},
+            "1e8305c9b703464ed2f4e35beef868318cb4b7a1": {},
+            "211e452561b69d87acc6baaee0b237363b4f6c99": {},
+            "5f355644094b15230c23ed08260b5b12348a65fd": {},
+            "8b4dd0ea15f36ffbb72ad6558db210c7dfbf4fd0": {},
+            "1e55ad27df154ee546a2cabf47cfd09f1f12e214": {}
+          }
+        },
+        "Language Error Correction": {
+          "Identify and correct grammar errors accurately": {
+            "9da95e99afd4ea899bd1fb40dd350e0be0a12a84": {},
+            "dcd535f10cb3fe5502fa65a4dfe5766f779c34f2": {},
+            "2a488da9560d9466edfe76adb484179f83fa3e9b": {},
+            "d7399e6914bd7b341f565275816022b1e97f1564": {},
+            "a3707f5ce5cde48960475f6c6013f10d2e851f15": {},
+            "9f6b659033da6fff11da1af64fea7c0d728ab433": {},
+            "1a40105b9eda0cecdd596b5758fb4ad85b7f636b": {},
+            "73c852f073c2d1a3b55a8465d33ae212e4fd7d59": {},
+            "340b59e6ee93d30c055b5e89a7cfbc88874c9958": {},
+            "395de0bd3837fdf4b4b5e5f04835bcc69c279481": {},
+            "6c4b76232bb72897685d19b3d264c6ee3005bc2b": {}
+          }
+        },
+        "Code Error Correction": {
+          "Identify and correct errors in the long-distance dependency of the code": {
+            "0646bb09db4d1ba24150e69b71edcd4aff691b3c": {},
+            "3cba16fc46ac5b35c1cc72a822208aa0097384cc": {},
+            "4b27f18bff43d605805c92696a979714ced0b805": {},
+            "4083958684292f6fa2f5c7fd4f9be975e80145b6": {},
+            "a63fbdc2fae25777f74b633685ae56f3ceb546ed": {},
+            "d831b021a4e4241acdfc4409fbd91308503c0a0f": {},
+            "a30f912f8c5e2a2bfb06351d4578e1ba3fa37896": {}
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000001",
+        "paperId": "98ea4abc9bf0e30eb020db2075c9c8a039a848a3",
+        "ref_index": "16",
+        "path": [
+          "NLP Applications for Education",
+          "Textbook Question Answering",
+          "Comprehend the multi-modal contexts and complex questions"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000002",
+        "paperId": "97ad70a9fa3f99adf18030e5e38ebe3d90daa2db",
+        "ref_index": "17",
+        "path": [
+          "NLP Applications for Education",
+          "Textbook Question Answering",
+          "Comprehend the multi-modal contexts and complex questions"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000003",
+        "paperId": "12f7de07f9b00315418e381b2bd797d21f12b419",
+        "ref_index": "30",
+        "path": [
+          "NLP Applications for Education",
+          "Textbook Question Answering",
+          "Comprehend the multi-modal contexts and complex questions"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000004",
+        "paperId": "fb9d253258d6b3beceb9d6cd7bba6e0a29ab875b",
+        "ref_index": "51",
+        "path": [
+          "NLP Applications for Education",
+          "Textbook Question Answering",
+          "Comprehend the multi-modal contexts and complex questions"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000005",
+        "paperId": "bd7bd1d2945a58cdcc1797ba9698b8810fe68f60",
+        "ref_index": "53",
+        "path": [
+          "NLP Applications for Education",
+          "Textbook Question Answering",
+          "Comprehend the multi-modal contexts and complex questions"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000006",
+        "paperId": "b58e08741fb9803fa2a870eee139137d3bade332",
+        "ref_index": "56",
+        "path": [
+          "NLP Applications for Education",
+          "Textbook Question Answering",
+          "Comprehend the multi-modal contexts and complex questions"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000007",
+        "paperId": "4d8f2d14af5991d4f0d050d22216825cac3157bd",
+        "ref_index": "80",
+        "path": [
+          "NLP Applications for Education",
+          "Textbook Question Answering",
+          "Comprehend the multi-modal contexts and complex questions"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000008",
+        "paperId": "2c1890864c1c2b750f48316dc8b650ba4772adc5",
+        "ref_index": "81",
+        "path": [
+          "NLP Applications for Education",
+          "Textbook Question Answering",
+          "Comprehend the multi-modal contexts and complex questions"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000009",
+        "paperId": "7289a240c9425bc7cad87b3b835e5f0cac22f488",
+        "ref_index": "38",
+        "path": [
+          "NLP Applications for Education",
+          "Textbook Question Answering",
+          "Supplement domain-specific knowledge"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000010",
+        "paperId": "e18ec2c9f0b4a817b8cf0435822bbc879d7db698",
+        "ref_index": "39",
+        "path": [
+          "NLP Applications for Education",
+          "Textbook Question Answering",
+          "Supplement domain-specific knowledge"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000011",
+        "paperId": "fe5ce0d118ec60a886600331927fc7fbc0379b09",
+        "ref_index": "43",
+        "path": [
+          "NLP Applications for Education",
+          "Textbook Question Answering",
+          "Supplement domain-specific knowledge"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000012",
+        "paperId": "dbe437cb28f6d3be4149a503cf71f60847dfd2ae",
+        "ref_index": "60",
+        "path": [
+          "NLP Applications for Education",
+          "Textbook Question Answering",
+          "Supplement domain-specific knowledge"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000013",
+        "paperId": "06047017f7a2b4dee6d8078786a21c8f67590a22",
+        "ref_index": "63",
+        "path": [
+          "NLP Applications for Education",
+          "Textbook Question Answering",
+          "Supplement domain-specific knowledge"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000014",
+        "paperId": "a52dd1e900200e0733eea927edc7d6c27aeba187",
+        "ref_index": "22",
+        "path": [
+          "NLP Applications for Education",
+          "Textbook Question Answering",
+          "Strengthen zero-shot capabilities"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000015",
+        "paperId": "a5036f31f0e629dc661f120b8c3b1f374d479ab8",
+        "ref_index": "47",
+        "path": [
+          "NLP Applications for Education",
+          "Textbook Question Answering",
+          "Strengthen zero-shot capabilities"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000016",
+        "paperId": "170c97c7215f42edfb20c2248f954879e91ef86e",
+        "ref_index": "50",
+        "path": [
+          "NLP Applications for Education",
+          "Textbook Question Answering",
+          "Strengthen zero-shot capabilities"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000017",
+        "paperId": "d3135733aa39dec20ce72aa138589dda27c8406d",
+        "ref_index": "52",
+        "path": [
+          "NLP Applications for Education",
+          "Textbook Question Answering",
+          "Strengthen zero-shot capabilities"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000018",
+        "paperId": "5e761e9f5cd9672a181b256299cd2916a8079461",
+        "ref_index": "77",
+        "path": [
+          "NLP Applications for Education",
+          "Textbook Question Answering",
+          "Strengthen zero-shot capabilities"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000019",
+        "paperId": "3f758a13d3703b02bdf977f9189230276064da42",
+        "ref_index": "78",
+        "path": [
+          "NLP Applications for Education",
+          "Textbook Question Answering",
+          "Strengthen zero-shot capabilities"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000020",
+        "paperId": "f67ede490780f939103d4cc4e9c6866b83ee59b3",
+        "ref_index": "27",
+        "path": [
+          "NLP Applications for Education",
+          "Math Word Problem Solving",
+          "Understand the gap between natural language and abstract expression"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000021",
+        "paperId": "edaafec59b651d503ac7c8a86f8e2335273e1f7a",
+        "ref_index": "37",
+        "path": [
+          "NLP Applications for Education",
+          "Math Word Problem Solving",
+          "Understand the gap between natural language and abstract expression"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000022",
+        "paperId": "680b0467861a70be41c31e4f2415fe5e2958fbc0",
+        "ref_index": "46",
+        "path": [
+          "NLP Applications for Education",
+          "Math Word Problem Solving",
+          "Understand the gap between natural language and abstract expression"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000023",
+        "paperId": "cd36b981e39edc5517d2a508e879b4d9bdc1b1c6",
+        "ref_index": "48",
+        "path": [
+          "NLP Applications for Education",
+          "Math Word Problem Solving",
+          "Understand the gap between natural language and abstract expression"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000024",
+        "paperId": "678fd7c48efe21434148b4b3482c2b8b3ee618fc",
+        "ref_index": "75",
+        "path": [
+          "NLP Applications for Education",
+          "Math Word Problem Solving",
+          "Understand the gap between natural language and abstract expression"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000025",
+        "paperId": "6605bba6e0caabda06b090d67698a5683eba4dfa",
+        "ref_index": "76",
+        "path": [
+          "NLP Applications for Education",
+          "Math Word Problem Solving",
+          "Understand the gap between natural language and abstract expression"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000026",
+        "paperId": "5bf6ca86a4f21d07014ce60f3cd09345ad3414e2",
+        "ref_index": "79",
+        "path": [
+          "NLP Applications for Education",
+          "Math Word Problem Solving",
+          "Understand the gap between natural language and abstract expression"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000027",
+        "paperId": "ac9173e4b8b34dc24c18980ee32be6bf15e7b38d",
+        "ref_index": "84",
+        "path": [
+          "NLP Applications for Education",
+          "Math Word Problem Solving",
+          "Understand the gap between natural language and abstract expression"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000028",
+        "paperId": "62176de125738e3b95850d1227bac81fd646b78e",
+        "ref_index": "11",
+        "path": [
+          "NLP Applications for Education",
+          "Math Word Problem Solving",
+          "Solve MWPs under zero/few-shot setting"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000029",
+        "paperId": "90350aa626bed47b02d0c162462e5b0ca82be6b2",
+        "ref_index": "12",
+        "path": [
+          "NLP Applications for Education",
+          "Math Word Problem Solving",
+          "Solve MWPs under zero/few-shot setting"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000030",
+        "paperId": "261549439aebdda72b648ecc462448fd24857ac1",
+        "ref_index": "14",
+        "path": [
+          "NLP Applications for Education",
+          "Math Word Problem Solving",
+          "Solve MWPs under zero/few-shot setting"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000031",
+        "paperId": "5437e8adab596d7294124c0e798708e050e25321",
+        "ref_index": "15",
+        "path": [
+          "NLP Applications for Education",
+          "Math Word Problem Solving",
+          "Solve MWPs under zero/few-shot setting"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000032",
+        "paperId": "6c943670dca38bfc7c8b477ae7c2d1fba1ad3691",
+        "ref_index": "25",
+        "path": [
+          "NLP Applications for Education",
+          "Math Word Problem Solving",
+          "Solve MWPs under zero/few-shot setting"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000033",
+        "paperId": "170c97c7215f42edfb20c2248f954879e91ef86e",
+        "ref_index": "50",
+        "path": [
+          "NLP Applications for Education",
+          "Math Word Problem Solving",
+          "Solve MWPs under zero/few-shot setting"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000034",
+        "paperId": "9edec81cfcb6d17a72abd3fa31c97999b8515902",
+        "ref_index": "21",
+        "path": [
+          "NLP Applications for Education",
+          "Question Generation",
+          "Identify the key statement from the context and generate the corresponding question"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000035",
+        "paperId": "a453863082a7fb42c9b402023294390eb4167fbe",
+        "ref_index": "29",
+        "path": [
+          "NLP Applications for Education",
+          "Question Generation",
+          "Identify the key statement from the context and generate the corresponding question"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000036",
+        "paperId": "e9e737485329d233d78069b7b7677b65e035c15d",
+        "ref_index": "36",
+        "path": [
+          "NLP Applications for Education",
+          "Question Generation",
+          "Identify the key statement from the context and generate the corresponding question"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000037",
+        "paperId": "314793e319bd152b3648d0e23e99a05060b0de40",
+        "ref_index": "41",
+        "path": [
+          "NLP Applications for Education",
+          "Question Generation",
+          "Identify the key statement from the context and generate the corresponding question"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000038",
+        "paperId": "19265db4b61efba7a6a882e89dc43f86ba98b3b6",
+        "ref_index": "55",
+        "path": [
+          "NLP Applications for Education",
+          "Question Generation",
+          "Identify the key statement from the context and generate the corresponding question"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000039",
+        "paperId": "ef4b604fca0c62dcd0d5caf7ca24ad74e285632d",
+        "ref_index": "73",
+        "path": [
+          "NLP Applications for Education",
+          "Question Generation",
+          "Identify the key statement from the context and generate the corresponding question"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000040",
+        "paperId": "a8b21f72bdc251689f636d3d7ff52a6b85ab7ce9",
+        "ref_index": "85",
+        "path": [
+          "NLP Applications for Education",
+          "Question Generation",
+          "Identify the key statement from the context and generate the corresponding question"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000041",
+        "paperId": "20fd615a6ce1193db9260fe23914c73373611095",
+        "ref_index": "86",
+        "path": [
+          "NLP Applications for Education",
+          "Question Generation",
+          "Identify the key statement from the context and generate the corresponding question"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000042",
+        "paperId": "694d83d3430d054a99eed027f58ebfe00de6e46f",
+        "ref_index": "26",
+        "path": [
+          "NLP Applications for Education",
+          "Question Generation",
+          "Generate more flexible questions for adaptive education"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000043",
+        "paperId": "bd39ac452ebede84fb849cf1df86269e330309cc",
+        "ref_index": "31",
+        "path": [
+          "NLP Applications for Education",
+          "Question Generation",
+          "Generate more flexible questions for adaptive education"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000044",
+        "paperId": "ea4bd6c2b223c5da0a7f37903fc05421a435560a",
+        "ref_index": "34",
+        "path": [
+          "NLP Applications for Education",
+          "Question Generation",
+          "Generate more flexible questions for adaptive education"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000045",
+        "paperId": "390f174d102c72172249254f3f1048721c0c3161",
+        "ref_index": "65",
+        "path": [
+          "NLP Applications for Education",
+          "Question Generation",
+          "Generate more flexible questions for adaptive education"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000046",
+        "paperId": "a0fd69c2540158fe79ff8cdba3d36a71e737211a",
+        "ref_index": "66",
+        "path": [
+          "NLP Applications for Education",
+          "Question Generation",
+          "Generate more flexible questions for adaptive education"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000047",
+        "paperId": "4697e6d3a63f02a055fd236bc3e5b1ad8c45f6a3",
+        "ref_index": "69",
+        "path": [
+          "NLP Applications for Education",
+          "Question Generation",
+          "Generate more flexible questions for adaptive education"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000048",
+        "paperId": "f1bb5051965a3a4c9288f0123dd03c26a08e1378",
+        "ref_index": "19",
+        "path": [
+          "NLP Applications for Education",
+          "Distractor Generation",
+          "Design context-consistent and deceptive false answers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000049",
+        "paperId": "2f9e088b58b1fa5da2539a9e4158570039473a69",
+        "ref_index": "20",
+        "path": [
+          "NLP Applications for Education",
+          "Distractor Generation",
+          "Design context-consistent and deceptive false answers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000050",
+        "paperId": "94049a7e481998792e4ba36855fce2a7674dd409",
+        "ref_index": "32",
+        "path": [
+          "NLP Applications for Education",
+          "Distractor Generation",
+          "Design context-consistent and deceptive false answers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000051",
+        "paperId": "632450585c7243c095ca9828ae68ac7c31b45019",
+        "ref_index": "45",
+        "path": [
+          "NLP Applications for Education",
+          "Distractor Generation",
+          "Design context-consistent and deceptive false answers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000052",
+        "paperId": "956c1680fd3c600bd5358898571b927ea78e841d",
+        "ref_index": "54",
+        "path": [
+          "NLP Applications for Education",
+          "Distractor Generation",
+          "Design context-consistent and deceptive false answers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000053",
+        "paperId": "a335fe8acbfa3d41c169425c5d761a2d1a02b0a7",
+        "ref_index": "64",
+        "path": [
+          "NLP Applications for Education",
+          "Distractor Generation",
+          "Design context-consistent and deceptive false answers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000054",
+        "paperId": "edb69f4bcb598e86acdf547c90631c8c9d177942",
+        "ref_index": "72",
+        "path": [
+          "NLP Applications for Education",
+          "Distractor Generation",
+          "Design context-consistent and deceptive false answers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000055",
+        "paperId": "02fc310d7032e56e242a8e560a99df869f172930",
+        "ref_index": "23",
+        "path": [
+          "NLP Applications for Education",
+          "Automated Essay Scoring",
+          "Model different facets of the essay"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000056",
+        "paperId": "0e57ae84af1b9361a60ae005f32a1fcb41bb62b2",
+        "ref_index": "49",
+        "path": [
+          "NLP Applications for Education",
+          "Automated Essay Scoring",
+          "Model different facets of the essay"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000057",
+        "paperId": "6152458a696ab71060785fe57ffaa3e2e6743b85",
+        "ref_index": "59",
+        "path": [
+          "NLP Applications for Education",
+          "Automated Essay Scoring",
+          "Model different facets of the essay"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000058",
+        "paperId": "aa394cd41651027edd70bdd1f7f909e648bc5a2e",
+        "ref_index": "82",
+        "path": [
+          "NLP Applications for Education",
+          "Automated Essay Scoring",
+          "Model different facets of the essay"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000059",
+        "paperId": "c42f0ff4bdab33c5b89c3e25d731f86ffbda88fb",
+        "ref_index": "83",
+        "path": [
+          "NLP Applications for Education",
+          "Automated Essay Scoring",
+          "Model different facets of the essay"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000060",
+        "paperId": "05ec69f38cbe4b34a65b9d51f7f3e145d832f2d5",
+        "ref_index": "57",
+        "path": [
+          "NLP Applications for Education",
+          "Automated Essay Scoring",
+          "Sparse annotation of essays"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000061",
+        "paperId": "158bf8afb14cc3ca07dd209535cb9aeeb05a104a",
+        "ref_index": "58",
+        "path": [
+          "NLP Applications for Education",
+          "Automated Essay Scoring",
+          "Sparse annotation of essays"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000062",
+        "paperId": "c8ebc96d0991e7f7257338328973b6e2eb317fbc",
+        "ref_index": "74",
+        "path": [
+          "NLP Applications for Education",
+          "Automated Essay Scoring",
+          "Sparse annotation of essays"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000063",
+        "paperId": "6e100eec500e7bd726f7ee843c097eb58408543f",
+        "ref_index": "18",
+        "path": [
+          "NLP Applications for Education",
+          "Automated Code Scoring",
+          "Understanding of the long-dependency of code"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000064",
+        "paperId": "71767eb25146b8e79925361b3caf54c36cb5ac7e",
+        "ref_index": "33",
+        "path": [
+          "NLP Applications for Education",
+          "Automated Code Scoring",
+          "Understanding of the long-dependency of code"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000065",
+        "paperId": "b641b879aac35bba0e5d43223416a1689b40127f",
+        "ref_index": "40",
+        "path": [
+          "NLP Applications for Education",
+          "Automated Code Scoring",
+          "Understanding of the long-dependency of code"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000066",
+        "paperId": "1e8305c9b703464ed2f4e35beef868318cb4b7a1",
+        "ref_index": "42",
+        "path": [
+          "NLP Applications for Education",
+          "Automated Code Scoring",
+          "Understanding of the long-dependency of code"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000067",
+        "paperId": "211e452561b69d87acc6baaee0b237363b4f6c99",
+        "ref_index": "61",
+        "path": [
+          "NLP Applications for Education",
+          "Automated Code Scoring",
+          "Understanding of the long-dependency of code"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000068",
+        "paperId": "5f355644094b15230c23ed08260b5b12348a65fd",
+        "ref_index": "67",
+        "path": [
+          "NLP Applications for Education",
+          "Automated Code Scoring",
+          "Understanding of the long-dependency of code"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000069",
+        "paperId": "8b4dd0ea15f36ffbb72ad6558db210c7dfbf4fd0",
+        "ref_index": "68",
+        "path": [
+          "NLP Applications for Education",
+          "Automated Code Scoring",
+          "Understanding of the long-dependency of code"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000070",
+        "paperId": "1e55ad27df154ee546a2cabf47cfd09f1f12e214",
+        "ref_index": "70",
+        "path": [
+          "NLP Applications for Education",
+          "Automated Code Scoring",
+          "Understanding of the long-dependency of code"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000071",
+        "paperId": "9da95e99afd4ea899bd1fb40dd350e0be0a12a84",
+        "ref_index": "1",
+        "path": [
+          "NLP Applications for Education",
+          "Language Error Correction",
+          "Identify and correct grammar errors accurately"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000072",
+        "paperId": "dcd535f10cb3fe5502fa65a4dfe5766f779c34f2",
+        "ref_index": "2",
+        "path": [
+          "NLP Applications for Education",
+          "Language Error Correction",
+          "Identify and correct grammar errors accurately"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000073",
+        "paperId": "2a488da9560d9466edfe76adb484179f83fa3e9b",
+        "ref_index": "6",
+        "path": [
+          "NLP Applications for Education",
+          "Language Error Correction",
+          "Identify and correct grammar errors accurately"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000074",
+        "paperId": "d7399e6914bd7b341f565275816022b1e97f1564",
+        "ref_index": "7",
+        "path": [
+          "NLP Applications for Education",
+          "Language Error Correction",
+          "Identify and correct grammar errors accurately"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000075",
+        "paperId": "a3707f5ce5cde48960475f6c6013f10d2e851f15",
+        "ref_index": "8",
+        "path": [
+          "NLP Applications for Education",
+          "Language Error Correction",
+          "Identify and correct grammar errors accurately"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000076",
+        "paperId": "9f6b659033da6fff11da1af64fea7c0d728ab433",
+        "ref_index": "9",
+        "path": [
+          "NLP Applications for Education",
+          "Language Error Correction",
+          "Identify and correct grammar errors accurately"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000077",
+        "paperId": "1a40105b9eda0cecdd596b5758fb4ad85b7f636b",
+        "ref_index": "10",
+        "path": [
+          "NLP Applications for Education",
+          "Language Error Correction",
+          "Identify and correct grammar errors accurately"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000078",
+        "paperId": "73c852f073c2d1a3b55a8465d33ae212e4fd7d59",
+        "ref_index": "13",
+        "path": [
+          "NLP Applications for Education",
+          "Language Error Correction",
+          "Identify and correct grammar errors accurately"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000079",
+        "paperId": "340b59e6ee93d30c055b5e89a7cfbc88874c9958",
+        "ref_index": "28",
+        "path": [
+          "NLP Applications for Education",
+          "Language Error Correction",
+          "Identify and correct grammar errors accurately"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000080",
+        "paperId": "395de0bd3837fdf4b4b5e5f04835bcc69c279481",
+        "ref_index": "44",
+        "path": [
+          "NLP Applications for Education",
+          "Language Error Correction",
+          "Identify and correct grammar errors accurately"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000081",
+        "paperId": "6c4b76232bb72897685d19b3d264c6ee3005bc2b",
+        "ref_index": "62",
+        "path": [
+          "NLP Applications for Education",
+          "Language Error Correction",
+          "Identify and correct grammar errors accurately"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000082",
+        "paperId": "0646bb09db4d1ba24150e69b71edcd4aff691b3c",
+        "ref_index": "0",
+        "path": [
+          "NLP Applications for Education",
+          "Code Error Correction",
+          "Identify and correct errors in the long-distance dependency of the code"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000083",
+        "paperId": "3cba16fc46ac5b35c1cc72a822208aa0097384cc",
+        "ref_index": "3",
+        "path": [
+          "NLP Applications for Education",
+          "Code Error Correction",
+          "Identify and correct errors in the long-distance dependency of the code"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000084",
+        "paperId": "4b27f18bff43d605805c92696a979714ced0b805",
+        "ref_index": "4",
+        "path": [
+          "NLP Applications for Education",
+          "Code Error Correction",
+          "Identify and correct errors in the long-distance dependency of the code"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000085",
+        "paperId": "4083958684292f6fa2f5c7fd4f9be975e80145b6",
+        "ref_index": "5",
+        "path": [
+          "NLP Applications for Education",
+          "Code Error Correction",
+          "Identify and correct errors in the long-distance dependency of the code"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000086",
+        "paperId": "a63fbdc2fae25777f74b633685ae56f3ceb546ed",
+        "ref_index": "24",
+        "path": [
+          "NLP Applications for Education",
+          "Code Error Correction",
+          "Identify and correct errors in the long-distance dependency of the code"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000087",
+        "paperId": "d831b021a4e4241acdfc4409fbd91308503c0a0f",
+        "ref_index": "35",
+        "path": [
+          "NLP Applications for Education",
+          "Code Error Correction",
+          "Identify and correct errors in the long-distance dependency of the code"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2401.07518",
+        "arxiv_id": "2401.07518",
+        "leaf_mention_id": "2401.07518::000088",
+        "paperId": "a30f912f8c5e2a2bfb06351d4578e1ba3fa37896",
+        "ref_index": "71",
+        "path": [
+          "NLP Applications for Education",
+          "Code Error Correction",
+          "Identify and correct errors in the long-distance dependency of the code"
+        ],
+        "depth": 3,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 88,
+      "unique_leaf_paper_count": 87,
+      "multi_membership_extra_mentions": 1,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

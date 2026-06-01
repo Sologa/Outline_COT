@@ -1,0 +1,1475 @@
+{
+  "paper_id": "2410.16676",
+  "arxiv_id": "2410.16676",
+  "title": "Improving Causal Reasoning in Large Language Models: A Survey",
+  "ref_meta": [
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "0",
+      "ref_key": "S2:7e1a823a3ee88e0964a18b89015614d8cc82d560",
+      "paperId": "7e1a823a3ee88e0964a18b89015614d8cc82d560",
+      "title": "Extracting Self-Consistent Causal Insights from Users Feedback with LLMs and In-context Learning",
+      "year": 2023,
+      "abstract": "Microsoft Windows Feedback Hub is designed to receive customer feedback on a wide variety of subjects including critical topics such as power and battery. Feedback is one of the most effective ways to have a grasp of users' experience with Windows and its ecosystem. However, the sheer volume of feedback received by Feedback Hub makes it immensely challenging to diagnose the actual cause of reported issues. To better understand and triage issues, we leverage Double Machine Learning (DML) to associate users' feedback with telemetry signals. One of the main challenges we face in the DML pipeline is the necessity of domain knowledge for model design (e.g., causal graph), which sometimes is either not available or hard to obtain. In this work, we take advantage of reasoning capabilities in Large Language Models (LLMs) to generate a prior model that which to some extent compensates for the lack of domain knowledge and could be used as a heuristic for measuring feedback informativeness. Our LLM-based approach is able to extract previously known issues, uncover new bugs, and identify sequences of events that lead to a bug, while minimizing out-of-domain outputs.",
+      "externalIds": {
+        "ArXiv": "2312.06820",
+        "DBLP": "journals/corr/abs-2312-06820",
+        "DOI": "10.48550/arXiv.2312.06820",
+        "CorpusId": 266174756
+      },
+      "arxiv_id": "2312.06820",
+      "doi": "10.48550/arXiv.2312.06820",
+      "corpus_id": 266174756
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "1",
+      "ref_key": "S2:00f67ddfa49027517b90f491757220abcabdbaea",
+      "paperId": "00f67ddfa49027517b90f491757220abcabdbaea",
+      "title": "A Unified Causal View of Instruction Tuning",
+      "year": 2024,
+      "abstract": "Instruction tuning on a mixture of tasks has improved zero-shot capabilities in natural language processing (NLP). Nevertheless, existing methods often learn features that exhibit correlations between instruction-formatted samples and target labels, rather than causal relationships. Termed as ``spurious correlation'' in statistics, such a correlation may change drastically in a new task, making the effect from the learned features to be misleading. To this end, we develop a meta Structural Causal Model (meta-SCM) to integrate different NLP tasks under a single causal structure of the data. Specifically, the meta-SCM introduces multiple latent factors that represent properties of source context, only some of which causally influence the target labels for a specific task. The key idea is to learn task-required causal factors and only use those to make predictions for a given task. Theoretically, we prove the causal factor can be identified without mixing information from others. Guided by the identifiability, we propose a Structural Instruction Tuning (SIT) method to learn the task-required causal representations that can mimic the causal factors for each task. The utility of our approach is verified by improvements of zero-shot ability on a range of unseen datasets and tasks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-06220",
+        "ArXiv": "2402.06220",
+        "DOI": "10.48550/arXiv.2402.06220",
+        "CorpusId": 267616815
+      },
+      "arxiv_id": "2402.06220",
+      "doi": "10.48550/arXiv.2402.06220",
+      "corpus_id": 267616815
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "2",
+      "ref_key": "S2:a66ade2f872e726e4ea58278058c4b6df4cbc2be",
+      "paperId": "a66ade2f872e726e4ea58278058c4b6df4cbc2be",
+      "title": "Faithfulness Tests for Natural Language Explanations",
+      "year": 2023,
+      "abstract": "Explanations of neural models aim to reveal a model’s decision-making process for its predictions. However, recent work shows that current methods giving explanations such as saliency maps or counterfactuals can be misleading, as they are prone to present reasons that are unfaithful to the model’s inner workings. This work explores the challenging question of evaluating the faithfulness of natural language explanations (NLEs). To this end, we present two tests. First, we propose a counterfactual input editor for inserting reasons that lead to counterfactual predictions but are not reflected by the NLEs. Second, we reconstruct inputs from the reasons stated in the generated NLEs and check how often they lead to the same predictions. Our tests can evaluate emerging NLE models, proving a fundamental tool in the development of faithful NLEs.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-18029",
+        "ACL": "2023.acl-short.25",
+        "ArXiv": "2305.18029",
+        "DOI": "10.48550/arXiv.2305.18029",
+        "CorpusId": 258960511
+      },
+      "arxiv_id": "2305.18029",
+      "doi": "10.48550/arXiv.2305.18029",
+      "corpus_id": 258960511
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "3",
+      "ref_key": "S2:9e557a199972b963d8ac064ac6e625c115c03cde",
+      "paperId": "9e557a199972b963d8ac064ac6e625c115c03cde",
+      "title": "Causal Structure Learning Supervised by Large Language Model",
+      "year": 2023,
+      "abstract": "Causal discovery from observational data is pivotal for deciphering complex relationships. Causal Structure Learning (CSL), which focuses on deriving causal Directed Acyclic Graphs (DAGs) from data, faces challenges due to vast DAG spaces and data sparsity. The integration of Large Language Models (LLMs), recognized for their causal reasoning capabilities, offers a promising direction to enhance CSL by infusing it with knowledge-based causal inferences. However, existing approaches utilizing LLMs for CSL have encountered issues, including unreliable constraints from imperfect LLM inferences and the computational intensity of full pairwise variable analyses. In response, we introduce the Iterative LLM Supervised CSL (ILS-CSL) framework. ILS-CSL innovatively integrates LLM-based causal inference with CSL in an iterative process, refining the causal DAG using feedback from LLMs. This method not only utilizes LLM resources more efficiently but also generates more robust and high-quality structural constraints compared to previous methodologies. Our comprehensive evaluation across eight real-world datasets demonstrates ILS-CSL's superior performance, setting a new standard in CSL efficacy and showcasing its potential to significantly advance the field of causal discovery. The codes are available at \\url{https://github.com/tyMadara/ILS-CSL}.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-11689",
+        "ArXiv": "2311.11689",
+        "DOI": "10.48550/arXiv.2311.11689",
+        "CorpusId": 265294904
+      },
+      "arxiv_id": "2311.11689",
+      "doi": "10.48550/arXiv.2311.11689",
+      "corpus_id": 265294904
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "4",
+      "ref_key": "S2:5f705919c2f25303d5df0178dd8bc3d1ceabe75f",
+      "paperId": "5f705919c2f25303d5df0178dd8bc3d1ceabe75f",
+      "title": "CausalQA: A Benchmark for Causal Question Answering",
+      "year": 2022,
+      "abstract": "At least 5% of questions submitted to search engines ask about cause-effect relationships in some way. To support the development of tailored approaches that can answer such questions, we construct Webis-CausalQA-22, a benchmark corpus of 1.1 million causal questions with answers. We distinguish different types of causal questions using a novel typology derived from a data-driven, manual analysis of questions from ten large question answering (QA) datasets. Using high-precision lexical rules, we extract causal questions of each type from these datasets to create our corpus. As an initial baseline, the state-of-the-art QA model UnifiedQA achieves a ROUGE-L F1 score of 0.48 on our new benchmark.",
+      "externalIds": {
+        "DBLP": "conf/coling/0001WHBN0BHP22",
+        "ACL": "2022.coling-1.291",
+        "CorpusId": 252819460
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 252819460
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "5",
+      "ref_key": "S2:95ca67ba607d7859ee8eec457f4b59b115d69bf5",
+      "paperId": "95ca67ba607d7859ee8eec457f4b59b115d69bf5",
+      "title": "ChatCoT: Tool-Augmented Chain-of-Thought Reasoning on Chat-based Large Language Models",
+      "year": 2023,
+      "abstract": "Although large language models (LLMs) have achieved excellent performance in a variety of evaluation benchmarks, they still struggle in complex reasoning tasks which require specific knowledge and multi-hop reasoning. To improve the reasoning abilities, we propose \\textbf{ChatCoT}, a tool-augmented chain-of-thought reasoning framework for chat-based LLMs. In ChatCoT, we model the chain-of-thought~(CoT) reasoning as multi-turn conversations, to utilize tools in a more natural way through chatting. At each turn, LLMs can either interact with tools or perform the reasoning. Our approach can effectively leverage the multi-turn conversation ability of chat-based LLMs, and integrate the thought chain following and tools manipulation in a unified way. Specially, we initialize the early turns of the conversation by the tools, tasks and reasoning format, and propose an iterative \\emph{tool-augmented reasoning} step to perform step-by-step tool-augmented reasoning. The experiment results on two complex reasoning datasets (MATH and HotpotQA) have shown the effectiveness of ChatCoT on complex reasoning tasks, achieving a 6.8\\% relative improvement over the state-of-the-art baseline. Our code and data are available at: \\url{https://github.com/RUCAIBOX/ChatCoT}.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/ChenZZGZW23",
+        "ArXiv": "2305.14323",
+        "DOI": "10.48550/arXiv.2305.14323",
+        "CorpusId": 258841374
+      },
+      "arxiv_id": "2305.14323",
+      "doi": "10.48550/arXiv.2305.14323",
+      "corpus_id": 258841374
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "6",
+      "ref_key": "S2:f0a0e8b6e84207f50db4d24cc4016e40601214ef",
+      "paperId": "f0a0e8b6e84207f50db4d24cc4016e40601214ef",
+      "title": "Faithful Reasoning Using Large Language Models",
+      "year": 2022,
+      "abstract": "Although contemporary large language models (LMs) demonstrate impressive question-answering capabilities, their answers are typically the product of a single call to the model. This entails an unwelcome degree of opacity and compromises performance, especially on problems that are inherently multi-step. To address these limitations, we show how LMs can be made to perform faithful multi-step reasoning via a process whose causal structure mirrors the underlying logical structure of the problem. Our approach works by chaining together reasoning steps, where each step results from calls to two fine-tuned LMs, one for selection and one for inference, to produce a valid reasoning trace. Our method carries out a beam search through the space of reasoning traces to improve reasoning quality. We demonstrate the effectiveness of our model on multi-step logical deduction and scientific question-answering, showing that it outperforms baselines on final answer accuracy, and generates humanly interpretable reasoning traces whose validity can be checked by the user.",
+      "externalIds": {
+        "ArXiv": "2208.14271",
+        "DBLP": "journals/corr/abs-2208-14271",
+        "DOI": "10.48550/arXiv.2208.14271",
+        "CorpusId": 251929296
+      },
+      "arxiv_id": "2208.14271",
+      "doi": "10.48550/arXiv.2208.14271",
+      "corpus_id": 251929296
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "7",
+      "ref_key": "S2:d48b29889241551e1ee6622fa78c3fa4159255dd",
+      "paperId": "d48b29889241551e1ee6622fa78c3fa4159255dd",
+      "title": "Selection-Inference: Exploiting Large Language Models for Interpretable Logical Reasoning",
+      "year": 2022,
+      "abstract": "Large language models (LLMs) have been shown to be capable of impressive few-shot generalisation to new tasks. However, they still tend to perform poorly on multi-step logical reasoning problems. Here we carry out a comprehensive evaluation of LLMs on 50 tasks that probe different aspects of logical reasoning. We show that language models tend to perform fairly well at single step inference or entailment tasks, but struggle to chain together multiple reasoning steps to solve more complex problems. In light of this, we propose a Selection-Inference (SI) framework that exploits pre-trained LLMs as general processing modules, and alternates between selection and inference to generate a series of interpretable, casual reasoning steps leading to the final answer. We show that a 7B parameter LLM used within the SI framework in a 5-shot generalisation setting, with no fine-tuning, yields a performance improvement of over 100% compared to an equivalent vanilla baseline on a suite of 10 logical reasoning tasks. The same model in the same setting even outperforms a significantly larger 280B parameter baseline on the same suite of tasks. Moreover, answers produced by the SI framework are accompanied by a causal natural-language-based reasoning trace, which has important implications for the safety and trustworthiness of the system.",
+      "externalIds": {
+        "ArXiv": "2205.09712",
+        "DBLP": "journals/corr/abs-2205-09712",
+        "DOI": "10.48550/arXiv.2205.09712",
+        "CorpusId": 248887351
+      },
+      "arxiv_id": "2205.09712",
+      "doi": "10.48550/arXiv.2205.09712",
+      "corpus_id": 248887351
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "8",
+      "ref_key": "S2:f9b94bcaf706892904c058c37d0087628f371df4",
+      "paperId": "f9b94bcaf706892904c058c37d0087628f371df4",
+      "title": "e-CARE: a New Dataset for Exploring Explainable Causal Reasoning",
+      "year": 2022,
+      "abstract": "Understanding causality has vital importance for various Natural Language Processing (NLP) applications. Beyond the labeled instances, conceptual explanations of the causality can provide deep understanding of the causal fact to facilitate the causal reasoning process. However, such explanation information still remains absent in existing causal reasoning resources. In this paper, we fill this gap by presenting a human-annotated explainable CAusal REasoning dataset (e-CARE), which contains over 20K causal reasoning questions, together with natural language formed explanations of the causal questions. Experimental results show that generating valid explanations for causal facts still remains especially challenging for the state-of-the-art models, and the explanation information can be helpful for promoting the accuracy and stability of causal reasoning models.",
+      "externalIds": {
+        "ACL": "2022.acl-long.33",
+        "ArXiv": "2205.05849",
+        "DBLP": "journals/corr/abs-2205-05849",
+        "DOI": "10.48550/arXiv.2205.05849",
+        "CorpusId": 248722161
+      },
+      "arxiv_id": "2205.05849",
+      "doi": "10.48550/arXiv.2205.05849",
+      "corpus_id": 248722161
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "9",
+      "ref_key": "S2:4780d0a027c5c5a8e01d7cf697f6296880ffc945",
+      "paperId": "4780d0a027c5c5a8e01d7cf697f6296880ffc945",
+      "title": "Improving Factuality and Reasoning in Language Models through Multiagent Debate",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have demonstrated remarkable capabilities in language generation, understanding, and few-shot learning in recent years. An extensive body of work has explored how their performance may be further improved through the tools of prompting, ranging from verification, self-consistency, or intermediate scratchpads. In this paper, we present a complementary approach to improve language responses where multiple language model instances propose and debate their individual responses and reasoning processes over multiple rounds to arrive at a common final answer. Our findings indicate that this approach significantly enhances mathematical and strategic reasoning across a number of tasks. We also demonstrate that our approach improves the factual validity of generated content, reducing fallacious answers and hallucinations that contemporary models are prone to. Our approach may be directly applied to existing black-box models and uses identical procedure and prompts for all tasks we investigate. Overall, our findings suggest that such\"society of minds\"approach has the potential to significantly advance the capabilities of LLMs and pave the way for further breakthroughs in language generation and understanding.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-14325",
+        "ArXiv": "2305.14325",
+        "DOI": "10.48550/arXiv.2305.14325",
+        "CorpusId": 258841118
+      },
+      "arxiv_id": "2305.14325",
+      "doi": "10.48550/arXiv.2305.14325",
+      "corpus_id": 258841118
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "10",
+      "ref_key": "S2:eebdf7303256f081ab1f6a36ff0ea6126e4da484",
+      "paperId": "eebdf7303256f081ab1f6a36ff0ea6126e4da484",
+      "title": "CRASS: A Novel Data Set and Benchmark to Test Counterfactual Reasoning of Large Language Models",
+      "year": 2021,
+      "abstract": "We introduce the CRASS (counterfactual reasoning assessment) data set and benchmark utilizing questionized counterfactual conditionals as a novel and powerful tool to evaluate large language models. We present the data set design and benchmark. We test six state-of-the-art models against our benchmark. Our results show that it poses a valid challenge for these models and opens up considerable room for their improvement.",
+      "externalIds": {
+        "ArXiv": "2112.11941",
+        "DBLP": "conf/lrec/FrohbergB22",
+        "ACL": "2022.lrec-1.229",
+        "CorpusId": 245385766
+      },
+      "arxiv_id": "2112.11941",
+      "doi": null,
+      "corpus_id": 245385766
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "11",
+      "ref_key": "S2:fa4ea8b773ffd6706ba5cf427f9671f81b04dcdd",
+      "paperId": "fa4ea8b773ffd6706ba5cf427f9671f81b04dcdd",
+      "title": "ALLURE: Auditing and Improving LLM-based Evaluation of Text using Iterative In-Context-Learning",
+      "year": 2023,
+      "abstract": "From grading papers to summarizing medical documents, large language models (LLMs) are evermore used for evaluation of text generated by humans and AI alike. However, despite their extensive utility, LLMs exhibit distinct failure modes, necessitating a thorough audit and improvement of their text evaluation capabilities. Here we introduce ALLURE, a systematic approach to Auditing Large Language Models Understanding and Reasoning Errors. ALLURE involves comparing LLM-generated evaluations with annotated data, and iteratively incorporating instances of significant deviation into the evaluator, which leverages in-context learning (ICL) to enhance and improve robust evaluation of text by LLMs. Through this iterative process, we refine the performance of the evaluator LLM, ultimately reducing reliance on human annotators in the evaluation process. We anticipate ALLURE to serve diverse applications of LLMs in various domains related to evaluation of textual data, such as medical summarization, education, and and productivity.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2309-13701",
+        "ArXiv": "2309.13701",
+        "DOI": "10.48550/arXiv.2309.13701",
+        "CorpusId": 262464455
+      },
+      "arxiv_id": "2309.13701",
+      "doi": "10.48550/arXiv.2309.13701",
+      "corpus_id": 262464455
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "12",
+      "ref_key": "S2:7c4be464e68a11c8f254d9608f31280e9bcda85c",
+      "paperId": "7c4be464e68a11c8f254d9608f31280e9bcda85c",
+      "title": "CPL: Counterfactual Prompt Learning for Vision and Language Models",
+      "year": 2022,
+      "abstract": "Prompt tuning is a new few-shot transfer learning technique that only tunes the learnable prompt for pre-trained vision and language models such as CLIP. However, existing prompt tuning methods tend to learn spurious or entangled representations, which leads to poor generalization to unseen concepts.Towards non-spurious and efficient prompt learning from limited examples, this paper presents a novel Counterfactual Prompt Learning (CPL) method for vision and language models, which simultaneously employs counterfactual generation and contrastive learning in a joint optimization framework.Particularly, CPL constructs counterfactual by identifying minimal non-spurious feature change between semantically-similar positive and negative samples that causes concept change, and learns more generalizable prompt representation from both factual and counterfactual examples via contrastive learning. Extensive experiments demonstrate that CPL can obtain superior few-shot performance on different vision and language tasks than previous prompt tuning methods on CLIP. On image classification, we achieve 3.55% average relative improvement on unseen classes across seven datasets; on image-text retrieval and visual question answering, we gain up to 4.09% and 25.08% relative improvements across three few-shot scenarios on unseen test sets respectively.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/HeYFFAJNBW022",
+        "ACL": "2022.emnlp-main.224",
+        "ArXiv": "2210.10362",
+        "DOI": "10.48550/arXiv.2210.10362",
+        "CorpusId": 252992654
+      },
+      "arxiv_id": "2210.10362",
+      "doi": "10.48550/arXiv.2210.10362",
+      "corpus_id": 252992654
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "13",
+      "ref_key": "S2:b39074c68ac53f258fb340d3d24ef868c514310b",
+      "paperId": "b39074c68ac53f258fb340d3d24ef868c514310b",
+      "title": "Guided Generation of Cause and Effect",
+      "year": 2020,
+      "abstract": "We present a conditional text generation framework that posits sentential expressions of possible causes and effects. This framework depends on two novel resources we develop in the course of this work: a very large-scale collection of English sentences expressing causal patterns (CausalBank); and a refinement over previous work on constructing large lexical causal knowledge graphs (Cause Effect Graph). Further, we extend prior work in lexically-constrained decoding to support disjunctive positive constraints. Human assessment conﬁrms that our approach gives high-quality and diverse outputs. Finally, we use CausalBank to perform continued training of an encoder supporting a recent state-of-the-art model for causal reasoning, leading to a 3-point improvement on the COPA challenge set, with no change in model architecture.",
+      "externalIds": {
+        "ArXiv": "2107.09846",
+        "DBLP": "journals/corr/abs-2107-09846",
+        "MAG": "3034385177",
+        "DOI": "10.24963/ijcai.2020/502",
+        "CorpusId": 220485081
+      },
+      "arxiv_id": "2107.09846",
+      "doi": "10.24963/ijcai.2020/502",
+      "corpus_id": 220485081
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "14",
+      "ref_key": "S2:0a94fbb5e1c93513523f00e75d672ef4553861f9",
+      "paperId": "0a94fbb5e1c93513523f00e75d672ef4553861f9",
+      "title": "Can Large Language Models Infer Causation from Correlation?",
+      "year": 2023,
+      "abstract": "Causal inference is one of the hallmarks of human intelligence. While the field of CausalNLP has attracted much interest in the recent years, existing causal inference datasets in NLP primarily rely on discovering causality from empirical knowledge (e.g., commonsense knowledge). In this work, we propose the first benchmark dataset to test the pure causal inference skills of large language models (LLMs). Specifically, we formulate a novel task Corr2Cause, which takes a set of correlational statements and determines the causal relationship between the variables. We curate a large-scale dataset of more than 200K samples, on which we evaluate seventeen existing LLMs. Through our experiments, we identify a key shortcoming of LLMs in terms of their causal inference skills, and show that these models achieve almost close to random performance on the task. This shortcoming is somewhat mitigated when we try to re-purpose LLMs for this skill via finetuning, but we find that these models still fail to generalize -- they can only perform causal inference in in-distribution settings when variable names and textual expressions used in the queries are similar to those in the training set, but fail in out-of-distribution settings generated by perturbing these queries. Corr2Cause is a challenging task for LLMs, and would be helpful in guiding future research on improving LLMs' pure reasoning skills and generalizability. Our data is at https://huggingface.co/datasets/causalnlp/corr2cause. Our code is at https://github.com/causalNLP/corr2cause.",
+      "externalIds": {
+        "ArXiv": "2306.05836",
+        "DBLP": "conf/iclr/Jin0LPSMDS24",
+        "DOI": "10.48550/arXiv.2306.05836",
+        "CorpusId": 259129342
+      },
+      "arxiv_id": "2306.05836",
+      "doi": "10.48550/arXiv.2306.05836",
+      "corpus_id": 259129342
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "15",
+      "ref_key": "S2:6ac627f57b26354ab537734d820da4a6a7dde2c6",
+      "paperId": "6ac627f57b26354ab537734d820da4a6a7dde2c6",
+      "title": "CLadder: Assessing Causal Reasoning in Language Models",
+      "year": 2023,
+      "abstract": "The ability to perform causal reasoning is widely considered a core feature of intelligence. In this work, we investigate whether large language models (LLMs) can coherently reason about causality. Much of the existing work in natural language processing (NLP) focuses on evaluating commonsense causal reasoning in LLMs, thus failing to assess whether a model can perform causal inference in accordance with a set of well-defined formal rules. To address this, we propose a new NLP task, causal inference in natural language, inspired by the\"causal inference engine\"postulated by Judea Pearl et al. We compose a large dataset, CLadder, with 10K samples: based on a collection of causal graphs and queries (associational, interventional, and counterfactual), we obtain symbolic questions and ground-truth answers, through an oracle causal inference engine. These are then translated into natural language. We evaluate multiple LLMs on our dataset, and we introduce and evaluate a bespoke chain-of-thought prompting strategy, CausalCoT. We show that our task is highly challenging for LLMs, and we conduct an in-depth analysis to gain deeper insights into the causal reasoning abilities of LLMs. Our data is open-sourced at https://huggingface.co/datasets/causalNLP/cladder, and our code can be found at https://github.com/causalNLP/cladder.",
+      "externalIds": {
+        "ArXiv": "2312.04350",
+        "CorpusId": 266044166
+      },
+      "arxiv_id": "2312.04350",
+      "doi": null,
+      "corpus_id": 266044166
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "16",
+      "ref_key": "S2:99ad0533f84c110da2d0713d5798e6e14080b159",
+      "paperId": "99ad0533f84c110da2d0713d5798e6e14080b159",
+      "title": "Looking Beyond the Surface: A Challenge Set for Reading Comprehension over Multiple Sentences",
+      "year": 2018,
+      "abstract": "We present a reading comprehension challenge in which questions can only be answered by taking into account information from multiple sentences. We solicit and verify questions and answers for this challenge through a 4-step crowdsourcing experiment. Our challenge dataset contains 6,500+ questions for 1000+ paragraphs across 7 different domains (elementary school science, news, travel guides, fiction stories, etc) bringing in linguistic diversity to the texts and to the questions wordings. On a subset of our dataset, we found human solvers to achieve an F1-score of 88.1%. We analyze a range of baselines, including a recent state-of-art reading comprehension system, and demonstrate the difficulty of this challenge, despite a high human performance. The dataset is the first to study multi-sentence inference at scale, with an open-ended set of question types that requires reasoning skills.",
+      "externalIds": {
+        "MAG": "2804897457",
+        "DBLP": "conf/naacl/KhashabiCRUR18",
+        "ACL": "N18-1023",
+        "DOI": "10.18653/v1/N18-1023",
+        "CorpusId": 5112038
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/N18-1023",
+      "corpus_id": 5112038
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "17",
+      "ref_key": "S2:de549c1592a62c129b8d49c8c0137aa6859b103f",
+      "paperId": "de549c1592a62c129b8d49c8c0137aa6859b103f",
+      "title": "Internet-Augmented Dialogue Generation",
+      "year": 2021,
+      "abstract": "The largest store of continually updating knowledge on our planet can be accessed via internet search. In this work we study giving access to this information to conversational agents. Large language models, even though they store an impressive amount of knowledge within their weights, are known to hallucinate facts when generating dialogue (Shuster et al., 2021); moreover, those facts are frozen in time at the point of model training. In contrast, we propose an approach that learns to generate an internet search query based on the context, and then conditions on the search results to finally generate a response, a method that can employ up-to-the-minute relevant information. We train and evaluate such models on a newly collected dataset of human-human conversations whereby one of the speakers is given access to internet search during knowledgedriven discussions in order to ground their responses. We find that search-query based access of the internet in conversation provides superior performance compared to existing approaches that either use no augmentation or FAISS-based retrieval (Lewis et al., 2020b).",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2107-07566",
+        "ACL": "2022.acl-long.579",
+        "ArXiv": "2107.07566",
+        "DOI": "10.18653/v1/2022.acl-long.579",
+        "CorpusId": 236034557
+      },
+      "arxiv_id": "2107.07566",
+      "doi": "10.18653/v1/2022.acl-long.579",
+      "corpus_id": 236034557
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "18",
+      "ref_key": "S2:ff2f48fe6438adcaf860aac0f41c584568beafb5",
+      "paperId": "ff2f48fe6438adcaf860aac0f41c584568beafb5",
+      "title": "CausalBERT: Injecting Causal Knowledge Into Pre-trained Models with Minimal Supervision",
+      "year": 2021,
+      "abstract": "Recent work has shown success in incorporating pre-trained models like BERT to improve NLP systems. However, existing pre-trained models lack of causal knowledge which prevents today's NLP systems from thinking like humans. In this paper, we investigate the problem of injecting causal knowledge into pre-trained models. There are two fundamental problems: 1) how to collect various granularities of causal pairs from unstructured texts; 2) how to effectively inject causal knowledge into pre-trained models. To address these issues, we extend the idea of CausalBERT from previous studies, and conduct experiments on various datasets to evaluate its effectiveness. In addition, we adopt a regularization-based method to preserve the already learned knowledge with an extra regularization term while injecting causal knowledge. Extensive experiments on 7 datasets, including four causal pair classification tasks, two causal QA tasks and a causal inference task, demonstrate that CausalBERT captures rich causal knowledge and outperforms all pre-trained models-based state-of-the-art methods, achieving a new causal inference benchmark.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2107-09852",
+        "ArXiv": "2107.09852",
+        "CorpusId": 236155000
+      },
+      "arxiv_id": "2107.09852",
+      "doi": null,
+      "corpus_id": 236155000
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "19",
+      "ref_key": "S2:38977b3ffc5edd84f9ce942f2299ce65b966e6f8",
+      "paperId": "38977b3ffc5edd84f9ce942f2299ce65b966e6f8",
+      "title": "LLM-Enhanced Causal Discovery in Temporal Domain from Interventional Data",
+      "year": 2024,
+      "abstract": "In the field of Artificial Intelligence for Information Technology Operations (AIOps), causal discovery is pivotal for operation and maintenance of graph construction, facilitating downstream industrial tasks such as root cause analysis. Temporal causal discovery, as an emerging method, aims to identify temporal causal relationships between variables directly from observations by utilizing interventional data. However, existing methods mainly focus on synthetic datasets with heavy reliance on interventional targets and ignore the textual information hidden in real-world systems, failing to conduct causal discovery for real industrial scenarios. To tackle this problem, in this paper we propose to investigate temporal causal discovery in industrial scenarios, which faces two critical challenges: 1) how to discover causal relationships without the interventional targets that are costly to obtain in practice, and 2) how to discover causal relations via leveraging the textual information in systems which can be complex yet abundant in industrial contexts. To address these challenges, we propose the RealTCD framework, which is able to leverage domain knowledge to discover temporal causal relationships without interventional targets. Specifically, we first develop a score-based temporal causal discovery method capable of discovering causal relations for root cause analysis without relying on interventional targets through",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2404-14786",
+        "DOI": "10.48550/arXiv.2404.14786",
+        "CorpusId": 271908929
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2404.14786",
+      "corpus_id": 271908929
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "20",
+      "ref_key": "S2:71fd336f1ca337a638dffb236b432c29cdd19f3d",
+      "paperId": "71fd336f1ca337a638dffb236b432c29cdd19f3d",
+      "title": "Neuro-Symbolic Causal Language Planning with Commonsense Prompting",
+      "year": 2022,
+      "abstract": "Language planning aims to implement complex high-level goals by decomposition into sequential simpler low-level steps. Such procedural reasoning ability is essential for applications such as household robots and virtual assistants. Although language planning is a basic skill set for humans in daily life, it remains a challenge for large language models (LLMs) that lack deep-level commonsense knowledge in the real world. Previous methods require either manual exemplars or annotated programs to acquire such ability from LLMs. In contrast, this paper proposes Neuro-Symbolic C ausal LA nguage P lanner (CLAP) that elicits procedural knowledge from the LLMs with commonsense-infused prompting. Pre-trained knowledge in LLMs is essentially an unobserved confounder that causes spurious correlations between tasks and action plans. Through the lens of a Structural Causal Model (SCM), we propose an effective strategy in CLAP to construct prompts as a causal intervention toward our SCM. Using graph sampling techniques and symbolic program executors, our strategy formalizes the structured causal prompts from commonsense knowledge bases. CLAP obtains state-of-the-art performance on WikiHow and RobotHow, achieving a relative improvement of 5 . 28% in human evaluations under the counterfactual setting. This indicates the superiority of CLAP in causal language planning semantically and sequentially.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2206-02928",
+        "DOI": "10.48550/arXiv.2206.02928",
+        "CorpusId": 249431735
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2206.02928",
+      "corpus_id": 249431735
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "21",
+      "ref_key": "S2:3446a23e07529bdf963dd5a66468ecc770543e6e",
+      "paperId": "3446a23e07529bdf963dd5a66468ecc770543e6e",
+      "title": "Commonsense Causal Reasoning between Short Texts",
+      "year": 2016,
+      "abstract": "Commonsense causal reasoning is the process of capturing and understanding the causal dependencies amongst events and actions. Such events and actions can be expressed in terms, phrases or sentences in natural language text. Therefore, one possible way of obtaining causal knowledge is by extracting causal relations between terms or phrases from a large text corpus. However, causal relations in text are sparse, ambiguous, and sometimes implicit, and thus difficult to obtain. This paper attacks the problem of commonsense causality reasoning between short texts (phrases and sentences) using a data driven approach. We propose a framework that automatically harvests a network of causal-effect terms from a large web corpus. Backed by this network, we propose a novel and effective metric to properly model the causality strength between terms. We show these signals can be aggregated for causality reasonings between short texts, including sentences and phrases. In particular, our approach outperforms all previously reported results in the standard SE-MEVAL COPA task by substantial margins.",
+      "externalIds": {
+        "DBLP": "conf/kr/LuoSZHW16",
+        "MAG": "2485674475",
+        "CorpusId": 27965578
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 27965578
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "22",
+      "ref_key": "S2:025a1a10674d6a1712e59f1fc4800da3b27cdf94",
+      "paperId": "025a1a10674d6a1712e59f1fc4800da3b27cdf94",
+      "title": "Distinguishing Cause from Effect Using Observational Data: Methods and Benchmarks",
+      "year": 2014,
+      "abstract": "The discovery of causal relationships from purely observational data is a fundamental problem in science. The most elementary form of such a causal discovery problem is to decide whether X causes Y or, alternatively, Y causes X, given joint observations of two variables X,Y. An example is to decide whether altitude causes temperature, or vice versa, given only joint measurements of both variables. Even under the simplifying assumptions of no confounding, no feedback loops, and no selection bias, such bivariate causal discovery problems are challenging. Nevertheless, several approaches for addressing those problems have been proposed in recent years. We review two families of such methods: methods based on Additive Noise Models (ANMs) and Information Geometric Causal Inference (IGCI). We present the benchmark CAUSEEFFECTPAIRS that consists of data for 100 different causee ffect pairs selected from 37 data sets from various domains (e.g., meteorology, biology, medicine, engineering, economy, etc.) and motivate our decisions regarding the \"ground truth\" causal directions of all pairs. We evaluate the performance of several bivariate causal discovery methods on these real-world benchmark data and in addition on artificially simulated data. Our empirical results on real-world data indicate that certain methods are indeed able to distinguish cause from effect using only purely observational data, although more benchmark data would be needed to obtain statistically significant conclusions. One of the best performing methods overall is the method based on Additive Noise Models that has originally been proposed by Hoyer et al. (2009), which obtains an accuracy of 63 ± 10 % and an AUC of 0.74 ± 0.05 on the real-world benchmark. As the main theoretical contribution of this work we prove the consistency of that method.",
+      "externalIds": {
+        "CorpusId": 333683
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 333683
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "23",
+      "ref_key": "S2:85b68477a6e031d88b963833e15a4b4fc6855264",
+      "paperId": "85b68477a6e031d88b963833e15a4b4fc6855264",
+      "title": "A Corpus and Cloze Evaluation for Deeper Understanding of Commonsense Stories",
+      "year": 2016,
+      "abstract": "Representation and learning of commonsense knowledge is one of the foundational problems in the quest to enable deep language understanding. This issue is particularly challenging for understanding casual and correlational relationships between events. While this topic has received a lot of interest in the NLP community, research has been hindered by the lack of a proper evaluation framework. This paper attempts to address this problem with a new framework for evaluating story understanding and script learning: the 'Story Cloze Test'. This test requires a system to choose the correct ending to a four-sentence story. We created a new corpus of ~50k five-sentence commonsense stories, ROCStories, to enable this evaluation. This corpus is unique in two ways: (1) it captures a rich set of causal and temporal commonsense relations between daily events, and (2) it is a high quality collection of everyday life stories that can also be used for story generation. Experimental evaluation shows that a host of baselines and state-of-the-art models based on shallow language understanding struggle to achieve a high score on the Story Cloze Test. We discuss these implications for script and story learning, and offer suggestions for deeper language understanding.",
+      "externalIds": {
+        "MAG": "2891014615",
+        "DBLP": "conf/naacl/MostafazadehCHP16",
+        "ACL": "N16-1098",
+        "ArXiv": "1604.01696",
+        "DOI": "10.18653/v1/N16-1098",
+        "CorpusId": 1726501
+      },
+      "arxiv_id": "1604.01696",
+      "doi": "10.18653/v1/N16-1098",
+      "corpus_id": 1726501
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "24",
+      "ref_key": "S2:3065d646367f0d894bfb65b7a3a01b448db20b4f",
+      "paperId": "3065d646367f0d894bfb65b7a3a01b448db20b4f",
+      "title": "GLUCOSE: GeneraLized and COntextualized Story Explanations",
+      "year": 2020,
+      "abstract": "When humans read or listen, they make implicit commonsense inferences that frame their understanding of what happened and why. As a step toward AI systems that can build similar mental models, we introduce GLUCOSE, a large-scale dataset of implicit commonsense causal knowledge, encoded as causal mini-theories about the world, each grounded in a narrative context. To construct GLUCOSE, we drew on cognitive psychology to identify ten dimensions of causal explanation, focusing on events, states, motivations, and emotions. Each GLUCOSE entry includes a story-specific causal statement paired with an inference rule generalized from the statement. This paper details two concrete contributions: First, we present our platform for effectively crowdsourcing GLUCOSE data at scale, which uses semi-structured templates to elicit causal explanations. Using this platform, we collected 440K specific statements and general rules that capture implicit commonsense knowledge about everyday situations. Second, we show that existing knowledge resources and pretrained language models do not include or readily predict GLUCOSE's rich inferential content. However, when state-of-the-art neural models are trained on this knowledge, they can start to make commonsense inferences on unseen stories that match humans' mental models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2009-07758",
+        "ArXiv": "2009.07758",
+        "ACL": "2020.emnlp-main.370",
+        "MAG": "3098323839",
+        "DOI": "10.18653/v1/2020.emnlp-main.370",
+        "CorpusId": 221739295
+      },
+      "arxiv_id": "2009.07758",
+      "doi": "10.18653/v1/2020.emnlp-main.370",
+      "corpus_id": 221739295
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "25",
+      "ref_key": "S2:708450b22ed062da7fa577e10088f25023b1437c",
+      "paperId": "708450b22ed062da7fa577e10088f25023b1437c",
+      "title": "MoCa: Measuring Human-Language Model Alignment on Causal and Moral Judgment Tasks",
+      "year": 2023,
+      "abstract": "Human commonsense understanding of the physical and social world is organized around intuitive theories. These theories support making causal and moral judgments. When something bad happens, we naturally ask: who did what, and why? A rich literature in cognitive science has studied people's causal and moral intuitions. This work has revealed a number of factors that systematically influence people's judgments, such as the violation of norms and whether the harm is avoidable or inevitable. We collected a dataset of stories from 24 cognitive science papers and developed a system to annotate each story with the factors they investigated. Using this dataset, we test whether large language models (LLMs) make causal and moral judgments about text-based scenarios that align with those of human participants. On the aggregate level, alignment has improved with more recent LLMs. However, using statistical analyses, we find that LLMs weigh the different factors quite differently from human participants. These results show how curated, challenge datasets combined with insights from cognitive science can help us go beyond comparisons based merely on aggregate metrics: we uncover LLMs implicit tendencies and show to what extent these align with human intuitions.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-19677",
+        "ArXiv": "2310.19677",
+        "DOI": "10.48550/arXiv.2310.19677",
+        "CorpusId": 264802129
+      },
+      "arxiv_id": "2310.19677",
+      "doi": "10.48550/arXiv.2310.19677",
+      "corpus_id": 264802129
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "26",
+      "ref_key": "S2:34901b737b11aa51b688fa18c2eab47639d7b8c6",
+      "paperId": "34901b737b11aa51b688fa18c2eab47639d7b8c6",
+      "title": "Joint Reasoning for Temporal and Causal Relations",
+      "year": 2018,
+      "abstract": "Understanding temporal and causal relations between events is a fundamental natural language understanding task. Because a cause must occur earlier than its effect, temporal and causal relations are closely related and one relation often dictates the value of the other. However, limited attention has been paid to studying these two relations jointly. This paper presents a joint inference framework for them using constrained conditional models (CCMs). Specifically, we formulate the joint problem as an integer linear programming (ILP) problem, enforcing constraints that are inherent in the nature of time and causality. We show that the joint inference framework results in statistically significant improvement in the extraction of both temporal and causal relations from text.",
+      "externalIds": {
+        "DBLP": "conf/acl/RothWNF18",
+        "MAG": "2798865369",
+        "ArXiv": "1906.04941",
+        "ACL": "P18-1212",
+        "DOI": "10.18653/v1/P18-1212",
+        "CorpusId": 51878335
+      },
+      "arxiv_id": "1906.04941",
+      "doi": "10.18653/v1/P18-1212",
+      "corpus_id": 51878335
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "27",
+      "ref_key": "S2:4d16457cded23bce6eaa91cd17aefd22af2279f0",
+      "paperId": "4d16457cded23bce6eaa91cd17aefd22af2279f0",
+      "title": "Counterfactual Story Reasoning and Generation",
+      "year": 2019,
+      "abstract": "Counterfactual reasoning requires predicting how alternative events, contrary to what actually happened, might have resulted in different outcomes. Despite being considered a necessary component of AI-complete systems, few resources have been developed for evaluating counterfactual reasoning in narratives. In this paper, we propose Counterfactual Story Rewriting: given an original story and an intervening counterfactual event, the task is to minimally revise the story to make it compatible with the given counterfactual event. Solving this task will require deep understanding of causal narrative chains and counterfactual invariance, and integration of such story reasoning capabilities into conditional language generation models. We present TIMETRAVEL, a new dataset of 29,849 counterfactual rewritings, each with the original story, a counterfactual event, and human-generated revision of the original story compatible with the counterfactual event. Additionally, we include 81,407 counterfactual “branches” without a rewritten storyline to support future work on semi- or un-supervised approaches to counterfactual story rewriting. Finally, we evaluate the counterfactual rewriting capacities of several competitive baselines based on pretrained language models, and assess whether common overlap and model-based automatic metrics for text generation correlate well with human scores for counterfactual rewriting.",
+      "externalIds": {
+        "ArXiv": "1909.04076",
+        "DBLP": "conf/emnlp/QinBHBCC19",
+        "ACL": "D19-1509",
+        "MAG": "2970453125",
+        "DOI": "10.18653/v1/D19-1509",
+        "CorpusId": 202542404
+      },
+      "arxiv_id": "1909.04076",
+      "doi": "10.18653/v1/D19-1509",
+      "corpus_id": 202542404
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "28",
+      "ref_key": "S2:5cfbbf3cdff0f905874589bcd21b2646340a5447",
+      "paperId": "5cfbbf3cdff0f905874589bcd21b2646340a5447",
+      "title": "Choice of Plausible Alternatives: An Evaluation of Commonsense Causal Reasoning",
+      "year": 2011,
+      "abstract": "Research in open-domain commonsense reasoning has been hindered by the lack of evaluation metrics for judging progress and comparing alternative approaches. Taking inspiration from large-scale question sets used in natural language processing research, we authored one thousand English-language questions that directly assess commonsense causal reasoning, called the Choice Of Plausible Alternatives (COPA) evaluation. Using a forced-choice format, each question gives a premise and two plausible causes or effects, where the correct choice is the alternative that is more plausible than the other. This paper describes the authoring methodology that we used to develop a validated question set with sufficient breadth to advance open-domain commonsense reasoning research. We discuss the design decisions made during the authoring process, and explain how these decisions will affect the design of high-scoring systems. We also present the performance of multiple baseline approaches that use statistical natural language processing techniques, establishing initial benchmarks for future systems.",
+      "externalIds": {
+        "MAG": "2145755360",
+        "DBLP": "conf/aaaiss/RoemmeleBG11",
+        "CorpusId": 434646
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 434646
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "29",
+      "ref_key": "S2:00147fc393e1f66dbdc8efb2347ae2445a81e9cd",
+      "paperId": "00147fc393e1f66dbdc8efb2347ae2445a81e9cd",
+      "title": "CRAB: Assessing the Strength of Causal Relationships Between Real-world Events",
+      "year": 2023,
+      "abstract": "Understanding narratives requires reasoning about the cause-and-effect relationships between events mentioned in the text. While existing foundation models yield impressive results in many NLP tasks requiring reasoning, it is unclear whether they understand the complexity of the underlying network of causal relationships of events in narratives. In this work, we present CRAB, a new Causal Reasoning Assessment Benchmark designed to evaluate causal understanding of events in real-world narratives. CRAB contains fine-grained, contextual causality annotations for ~2.7K pairs of real-world events that describe various newsworthy event timelines (e.g., the acquisition of Twitter by Elon Musk). Using CRAB, we measure the performance of several large language models, demonstrating that most systems achieve poor performance on the task. Motivated by classical causal principles, we also analyze the causal structures of groups of events in CRAB, and find that models perform worse on causal reasoning when events are derived from complex causal structures compared to simple linear causal chains. We make our dataset and code available to the research community.",
+      "externalIds": {
+        "ArXiv": "2311.04284",
+        "DBLP": "conf/emnlp/RomanouMPLAB23",
+        "DOI": "10.48550/arXiv.2311.04284",
+        "CorpusId": 265050972
+      },
+      "arxiv_id": "2311.04284",
+      "doi": "10.48550/arXiv.2311.04284",
+      "corpus_id": 265050972
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "30",
+      "ref_key": "S2:53d128ea815bcc0526856eb5a9c42cc977cb36a7",
+      "paperId": "53d128ea815bcc0526856eb5a9c42cc977cb36a7",
+      "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+      "year": 2023,
+      "abstract": "Language models (LMs) exhibit remarkable abilities to solve new tasks from just a few examples or textual instructions, especially at scale. They also, paradoxically, struggle with basic functionality, such as arithmetic or factual lookup, where much simpler and smaller models excel. In this paper, we show that LMs can teach themselves to use external tools via simple APIs and achieve the best of both worlds. We introduce Toolformer, a model trained to decide which APIs to call, when to call them, what arguments to pass, and how to best incorporate the results into future token prediction. This is done in a self-supervised way, requiring nothing more than a handful of demonstrations for each API. We incorporate a range of tools, including a calculator, a Q\\&A system, two different search engines, a translation system, and a calendar. Toolformer achieves substantially improved zero-shot performance across a variety of downstream tasks, often competitive with much larger models, without sacrificing its core language modeling abilities.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2302-04761",
+        "ArXiv": "2302.04761",
+        "DOI": "10.48550/arXiv.2302.04761",
+        "CorpusId": 256697342
+      },
+      "arxiv_id": "2302.04761",
+      "doi": "10.48550/arXiv.2302.04761",
+      "corpus_id": 256697342
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "31",
+      "ref_key": "S2:be5c4cbde12db1c7bb89e3775e41e207aa4f9ed3",
+      "paperId": "be5c4cbde12db1c7bb89e3775e41e207aa4f9ed3",
+      "title": "Improving Commonsense Causal Reasoning by Adversarial Training and Data Augmentation",
+      "year": 2021,
+      "abstract": "Determining the plausibility of causal relations between clauses is a commonsense reasoning task that requires complex inference ability. The general approach to this task is to train a large pretrained language model on a specific dataset. However, the available training data for the task is often scarce, which leads to instability of model training or reliance on the shallow features of the dataset. This paper presents a number of techniques for making models more robust in the domain of causal reasoning. Firstly, we perform adversarial training by generating perturbed inputs through synonym substitution. Secondly, based on a linguistic theory of discourse connectives, we perform data augmentation using a discourse parser for detecting causally linked clauses in large text, and a generative language model for generating distractors. Both methods boost model performance on the Choice of Plausible Alternatives (COPA) dataset, as well as on a Balanced COPA dataset, which is a modified version of the original data that has been developed to avoid superficial cues, leading to a more challenging benchmark. We show a statistically significant improvement in performance and robustness on both datasets, even with only a small number of additionally generated data points.",
+      "externalIds": {
+        "DBLP": "conf/aaai/StaliunaiteGI21",
+        "ArXiv": "2101.04966",
+        "DOI": "10.1609/aaai.v35i15.17630",
+        "CorpusId": 231592613
+      },
+      "arxiv_id": "2101.04966",
+      "doi": "10.1609/aaai.v35i15.17630",
+      "corpus_id": 231592613
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "32",
+      "ref_key": "S2:04dd492b506e48b7dd91ecb1e1fdb80c1ce30e34",
+      "paperId": "04dd492b506e48b7dd91ecb1e1fdb80c1ce30e34",
+      "title": "Towards CausalGPT: A Multi-Agent Approach for Faithful Knowledge Reasoning via Promoting Causal Consistency in LLMs",
+      "year": 2023,
+      "abstract": "Despite advancements in LLMs, knowledge-based reasoning remains a longstanding issue due to the fragility of knowledge recall and inference. Existing methods primarily encourage LLMs to autonomously plan and solve problems or to extensively sample reasoning chains without addressing the conceptual and inferential fallacies. Attempting to alleviate inferential fallacies and drawing inspiration from multi-agent collaboration, we present a framework to increase faithfulness and causality for knowledge-based reasoning. Specifically, we propose to employ multiple intelligent agents (i.e., reasoners and an evaluator ) to work collaboratively in a reasoning-and-consensus paradigm for elevated reasoning faithfulness. The reasoners focus on providing solutions with human-like causality to solve open-domain problems. On the other hand, the evaluator agent scrutinizes if a solution is deducible from a non-causal perspective and if it still holds when challenged by a counterfactual candidate. According to the extensive and comprehensive evaluations on a variety of knowledge reasoning tasks (e.g., science question answering and commonsense reasoning), our framework outperforms all compared state-of-the-art approaches by large margins.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-11914",
+        "DOI": "10.48550/arXiv.2308.11914",
+        "CorpusId": 261076364
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2308.11914",
+      "corpus_id": 261076364
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "33",
+      "ref_key": "S2:9f1e2407cce09219fae2fbcd67d0e91bd3135932",
+      "paperId": "9f1e2407cce09219fae2fbcd67d0e91bd3135932",
+      "title": "Neuropathic Pain Diagnosis Simulator for Causal Discovery Algorithm Evaluation",
+      "year": 2019,
+      "abstract": "Discovery of causal relations from observational data is essential for many disciplines of science and real-world applications. However, unlike other machine learning algorithms, whose development has been greatly fostered by a large amount of available benchmark datasets, causal discovery algorithms are notoriously difficult to be systematically evaluated because few datasets with known ground-truth causal relations are available. In this work, we handle the problem of evaluating causal discovery algorithms by building a flexible simulator in the medical setting. We develop a neuropathic pain diagnosis simulator, inspired by the fact that the biological processes of neuropathic pathophysiology are well studied with well-understood causal influences. Our simulator exploits the causal graph of the neuropathic pain pathology and its parameters in the generator are estimated from real-life patient cases. We show that the data generated from our simulator have similar statistics as real-world data. As a clear advantage, the simulator can produce infinite samples without jeopardizing the privacy of real-world patients. Our simulator provides a natural tool for evaluating various types of causal discovery algorithms, including those to deal with practical issues in causal discovery, such as unknown confounders, selection bias, and missing data. Using our simulator, we have evaluated extensively causal discovery algorithms under various settings.",
+      "externalIds": {
+        "MAG": "2948113956",
+        "ArXiv": "1906.01732",
+        "DBLP": "journals/corr/abs-1906-01732",
+        "CorpusId": 174799604
+      },
+      "arxiv_id": "1906.01732",
+      "doi": null,
+      "corpus_id": 174799604
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "34",
+      "ref_key": "S2:3aafd3e3876cf576c387088dc8ff2b57e962ef6e",
+      "paperId": "3aafd3e3876cf576c387088dc8ff2b57e962ef6e",
+      "title": "COLA: Contextualized Commonsense Causal Reasoning from the Causal Inference Perspective",
+      "year": 2023,
+      "abstract": "Detecting commonsense causal relations (causation) between events has long been an essential yet challenging task. Given that events are complicated, an event may have different causes under various contexts. Thus, exploiting context plays an essential role in detecting causal relations. Meanwhile, previous works about commonsense causation only consider two events and ignore their context, simplifying the task formulation. This paper proposes a new task to detect commonsense causation between two events in an event sequence (i.e., context), called contextualized commonsense causal reasoning. We also design a zero-shot framework: COLA (Contextualized Commonsense Causality Reasoner) to solve the task from the causal inference perspective. This framework obtains rich incidental supervision from temporality and balances covariates from multiple timestamps to remove confounding effects. Our extensive experiments show that COLA can detect commonsense causality more accurately than baselines.",
+      "externalIds": {
+        "ArXiv": "2305.05191",
+        "ACL": "2023.acl-long.288",
+        "DBLP": "journals/corr/abs-2305-05191",
+        "DOI": "10.48550/arXiv.2305.05191",
+        "CorpusId": 258564290
+      },
+      "arxiv_id": "2305.05191",
+      "doi": "10.48550/arXiv.2305.05191",
+      "corpus_id": 258564290
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "35",
+      "ref_key": "S2:64e87fc4d7733d4592d2dbd1c08d33ea07551c8d",
+      "paperId": "64e87fc4d7733d4592d2dbd1c08d33ea07551c8d",
+      "title": "Contextualized Multi-Step Commonsense Reasoning through Context Extension",
+      "year": 2023,
+      "abstract": "Commonsense reasoning is essential for AIs to understand, predict, and respond to human behaviors in social situations. Recent advancements in deep learning bring promising re-sults in AI commonsense reasoning. Nevertheless, a young child often has more sophisticated commonsense reasoning ability than state-of-the-art AI systems. This observation motivates us to investigate if AIs can learn from interacting with children in developing human-level commonsense reasoning capability. As a first step to launching this line of investigation, we develop a novel approach to generate contextualized multi-step commonsense reasoning paths for social situations conveyed via short stories. The resulting reasoning paths are intended to serve as an explainable media to enable layper-sons to understand the underlying reasoning process behind AI predictions and provide feedback to help align AIs with human ways of thinking in commonsense reasoning.",
+      "externalIds": {
+        "CorpusId": 263626920
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 263626920
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "36",
+      "ref_key": "S2:811f451f1991ec5508e67d00375ca4f5d05e0eeb",
+      "paperId": "811f451f1991ec5508e67d00375ca4f5d05e0eeb",
+      "title": "TRAM: Benchmarking Temporal Reasoning for Large Language Models",
+      "year": 2023,
+      "abstract": "Reasoning about time is essential for understanding the nuances of events described in natural language. Previous research on this topic has been limited in scope, characterized by a lack of standardized benchmarks that would allow for consistent evaluations across different studies. In this paper, we introduce TRAM, a temporal reasoning benchmark composed of ten datasets, encompassing various temporal aspects of events such as order, arithmetic, frequency, and duration, designed to facilitate a comprehensive evaluation of the TeR capabilities of large language models (LLMs). We evaluate popular LLMs like GPT-4 and Llama2 in zero-shot and few-shot scenarios, and establish baselines with BERT-based and domain-specific models. Our findings indicate that the best-performing model lags significantly behind human performance. It is our aspiration that TRAM will spur further progress in enhancing the TeR capabilities of LLMs.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-00835",
+        "ArXiv": "2310.00835",
+        "DOI": "10.48550/arXiv.2310.00835",
+        "CorpusId": 263605698
+      },
+      "arxiv_id": "2310.00835",
+      "doi": "10.48550/arXiv.2310.00835",
+      "corpus_id": 263605698
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "37",
+      "ref_key": "S2:a26fa1983e4bc7c5b55cd5a1296afe6f876baa03",
+      "paperId": "a26fa1983e4bc7c5b55cd5a1296afe6f876baa03",
+      "title": "Neuro-Symbolic Integration Brings Causal and Reliable Reasoning Proofs",
+      "year": 2023,
+      "abstract": "Two lines of approaches are adopted for complex reasoning with LLMs. One line of work prompts LLMs with various reasoning structures, while the structural outputs can be naturally regarded as intermediate reasoning steps. Another line of work adopt LLM-free declarative solvers to do the reasoning task, rendering higher reasoning accuracy but lacking interpretability due to the black-box nature of the solvers. Aiming to resolve the trade-off between answer accuracy and interpretability, we present a simple extension to the latter line of work. Specifically, we showcase that the intermediate search logs generated by Prolog interpreters can be accessed and interpreted into human-readable reasoning proofs. As long as LLMs correctly translate problem descriptions into Prolog representations, the corresponding reasoning proofs are ensured to be causal and reliable. On two logical reasoning and one arithmetic reasoning datasets, our framework obtains significant improvements in terms of both answer accuracy and reasoning proof accuracy. Our code is released at https://github.com/DAMO-NLP-SG/CaRing",
+      "externalIds": {
+        "ArXiv": "2311.09802",
+        "DBLP": "journals/corr/abs-2311-09802",
+        "DOI": "10.48550/arXiv.2311.09802",
+        "CorpusId": 265221449
+      },
+      "arxiv_id": "2311.09802",
+      "doi": "10.48550/arXiv.2311.09802",
+      "corpus_id": 265221449
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "38",
+      "ref_key": "S2:00cccb9065f0a59e845d5b4d360ce31cf25036be",
+      "paperId": "00cccb9065f0a59e845d5b4d360ce31cf25036be",
+      "title": "Large Language Model Cascades with Mixture of Thoughts Representations for Cost-efficient Reasoning",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) such as GPT-4 have exhibited remarkable performance in a variety of tasks, but this strong performance often comes with the high expense of using paid API services. In this paper, we are motivated to study building an LLM cascade to save the cost of using LLMs, particularly for performing reasoning (e.g., mathematical, causal) tasks. Our cascade pipeline follows the intuition that simpler questions can be addressed by a weaker but more affordable LLM, whereas only the challenging questions necessitate the stronger and more expensive LLM. To realize this decision-making, we consider the\"answer consistency\"of the weaker LLM as a signal of the question difficulty and propose several methods for the answer sampling and consistency checking, including one leveraging a mixture of two thought representations (i.e., Chain-of-Thought and Program-of-Thought). Through experiments on six reasoning benchmark datasets, with GPT-3.5-turbo and GPT-4 being the weaker and stronger LLMs, respectively, we demonstrate that our proposed LLM cascades can achieve performance comparable to using solely the stronger LLM but require only 40% of its cost.",
+      "externalIds": {
+        "DBLP": "conf/iclr/YueZZDY24",
+        "ArXiv": "2310.03094",
+        "DOI": "10.48550/arXiv.2310.03094",
+        "CorpusId": 263671564
+      },
+      "arxiv_id": "2310.03094",
+      "doi": "10.48550/arXiv.2310.03094",
+      "corpus_id": 263671564
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "39",
+      "ref_key": "S2:014e5492e28afd79e97637d12852a1c01a3fb7de",
+      "paperId": "014e5492e28afd79e97637d12852a1c01a3fb7de",
+      "title": "Discovering the Real Association: Multimodal Causal Reasoning in Video Question Answering",
+      "year": 2023,
+      "abstract": "Video Question Answering (VideoQA) is challenging as it requires capturing accurate correlations between modalities from redundant information. Recent methods focus on the explicit challenges of the task, e.g. multimodal feature extraction, video-text alignment and fusion. Their frameworks reason the answer relying on statistical evidence causes, which ignores potential bias in the multimodal data. In our work, we investigate relational structure from a causal representation perspective on multimodal data and propose a novel inference framework. For visual data, question-irrelevant objects may establish simple matching associations with the answer. For textual data, the model prefers the local phrase semantics which may deviate from the global semantics in long sentences. Therefore, to enhance the generalization of the model, we discover the real association by explicitly capturing visual features that are causally related to the question semantics and weakening the impact of local language semantics on question answering. The experimental results on two large causal VideoQA datasets verify that our proposed framework 1) improves the accuracy of the existing VideoQA backbone, 2) demonstrates robustness on complex scenes and questions. The code will be released at https://github.com/Chuanqi-Zang/Discovering-the-Real-Association.",
+      "externalIds": {
+        "DBLP": "conf/cvpr/ZangWPL23",
+        "DOI": "10.1109/CVPR52729.2023.01824",
+        "CorpusId": 260873275
+      },
+      "arxiv_id": null,
+      "doi": "10.1109/CVPR52729.2023.01824",
+      "corpus_id": 260873275
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "40",
+      "ref_key": "S2:c43a4a7b7ea4f4889de051321cb0073fd577f843",
+      "paperId": "c43a4a7b7ea4f4889de051321cb0073fd577f843",
+      "title": "Causal Reasoning of Entities and Events in Procedural Texts",
+      "year": 2023,
+      "abstract": "Entities and events are crucial to natural language reasoning and common in procedural texts. Existing work has focused either exclusively on entity state tracking (e.g., whether a pan is hot) or on event reasoning (e.g., whether one would burn themselves by touching the pan), while these two tasks are often causally related. We propose CREPE, the first benchmark on causal reasoning of event plausibility and entity states. We show that most language models, including GPT-3, perform close to chance at .35 F1, lagging far behind human at .87 F1. We boost model performance to .59 F1 by creatively representing events as programming languages while prompting language models pretrained on code. By injecting the causal relations between entities and events as intermediate reasoning steps in our representation, we further boost the performance to .67 F1. Our findings indicate not only the challenge that CREPE brings for language models, but also the efficacy of code-like prompting combined with chain-of-thought prompting for multihop event reasoning.",
+      "externalIds": {
+        "DBLP": "conf/eacl/ZhangXYZYAC23",
+        "ACL": "2023.findings-eacl.31",
+        "ArXiv": "2301.10896",
+        "DOI": "10.48550/arXiv.2301.10896",
+        "CorpusId": 256274941
+      },
+      "arxiv_id": "2301.10896",
+      "doi": "10.48550/arXiv.2301.10896",
+      "corpus_id": 256274941
+    },
+    {
+      "paper_id": "2410.16676",
+      "ref_index": "41",
+      "ref_key": "S2:dcb43c2b28f8991a97f391e6b79d267b411cccfd",
+      "paperId": "dcb43c2b28f8991a97f391e6b79d267b411cccfd",
+      "title": "Preserving Commonsense Knowledge from Pre-trained Language Models via Causal Inference",
+      "year": 2023,
+      "abstract": "Fine-tuning has been proven to be a simple and effective technique to transfer the learned knowledge of Pre-trained Language Models (PLMs) to downstream tasks. However, vanilla fine-tuning easily overfits the target data and degrades the generalization ability. Most existing studies attribute it to catastrophic forgetting, and they retain the pre-trained knowledge indiscriminately without identifying what knowledge is transferable. Motivated by this, we frame fine-tuning into a causal graph and discover that the crux of catastrophic forgetting lies in the missing causal effects from the pre-trained data. Based on the causal view, we propose a unified objective for fine-tuning to retrieve the causality back. Intriguingly, the unified objective can be seen as the sum of the vanilla fine-tuning objective, which learns new knowledge from target data, and the causal objective, which preserves old knowledge from PLMs. Therefore, our method is flexible and can mitigate negative transfer while preserving knowledge. Since endowing models with commonsense is a long-standing challenge, we implement our method on commonsense QA with a proposed heuristic estimation to verify its effectiveness. In the experiments, our method outperforms state-of-the-art fine-tuning methods on all six commonsense QA datasets and can be implemented as a plug-in module to inflate the performance of existing QA models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2306-10790",
+        "ArXiv": "2306.10790",
+        "ACL": "2023.acl-long.509",
+        "DOI": "10.48550/arXiv.2306.10790",
+        "CorpusId": 259203213
+      },
+      "arxiv_id": "2306.10790",
+      "doi": "10.48550/arXiv.2306.10790",
+      "corpus_id": 259203213
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "LLMs for Causal Reasoning": {
+        "Methodology   ": {
+          "LLMs as Reasoning  Engines ": {
+            "Fine-tuning   ": {
+              "00f67ddfa49027517b90f491757220abcabdbaea": {},
+              "ff2f48fe6438adcaf860aac0f41c584568beafb5": {},
+              "dcb43c2b28f8991a97f391e6b79d267b411cccfd": {}
+            },
+            "Prompt Engineering  ": {
+              "7c4be464e68a11c8f254d9608f31280e9bcda85c": {},
+              "6ac627f57b26354ab537734d820da4a6a7dde2c6": {},
+              "64e87fc4d7733d4592d2dbd1c08d33ea07551c8d": {},
+              "014e5492e28afd79e97637d12852a1c01a3fb7de": {},
+              "c43a4a7b7ea4f4889de051321cb0073fd577f843": {}
+            },
+            "Tools Integration  ": {
+              "95ca67ba607d7859ee8eec457f4b59b115d69bf5": {},
+              "de549c1592a62c129b8d49c8c0137aa6859b103f": {},
+              "71fd336f1ca337a638dffb236b432c29cdd19f3d": {},
+              "53d128ea815bcc0526856eb5a9c42cc977cb36a7": {}
+            },
+            "Alternative Approach  ": {
+              "a66ade2f872e726e4ea58278058c4b6df4cbc2be": {},
+              "f0a0e8b6e84207f50db4d24cc4016e40601214ef": {},
+              "d48b29889241551e1ee6622fa78c3fa4159255dd": {},
+              "4780d0a027c5c5a8e01d7cf697f6296880ffc945": {},
+              "fa4ea8b773ffd6706ba5cf427f9671f81b04dcdd": {},
+              "04dd492b506e48b7dd91ecb1e1fdb80c1ce30e34": {},
+              "00cccb9065f0a59e845d5b4d360ce31cf25036be": {}
+            }
+          },
+          "LLMs as Helper to   traditional method ": {
+            "Information  Extractor ": {
+              "7e1a823a3ee88e0964a18b89015614d8cc82d560": {},
+              "38977b3ffc5edd84f9ce942f2299ce65b966e6f8": {},
+              "a26fa1983e4bc7c5b55cd5a1296afe6f876baa03": {}
+            },
+            "Data Generator  ": {
+              "9e557a199972b963d8ac064ac6e625c115c03cde": {},
+              "b39074c68ac53f258fb340d3d24ef868c514310b": {},
+              "be5c4cbde12db1c7bb89e3775e41e207aa4f9ed3": {}
+            }
+          }
+        },
+        "Evaluation  ": {
+          "Tasks \\& Benchmarks ": {
+            "5f705919c2f25303d5df0178dd8bc3d1ceabe75f": {},
+            "f9b94bcaf706892904c058c37d0087628f371df4": {},
+            "eebdf7303256f081ab1f6a36ff0ea6126e4da484": {},
+            "0a94fbb5e1c93513523f00e75d672ef4553861f9": {},
+            "6ac627f57b26354ab537734d820da4a6a7dde2c6": {},
+            "99ad0533f84c110da2d0713d5798e6e14080b159": {},
+            "3446a23e07529bdf963dd5a66468ecc770543e6e": {},
+            "025a1a10674d6a1712e59f1fc4800da3b27cdf94": {},
+            "85b68477a6e031d88b963833e15a4b4fc6855264": {},
+            "3065d646367f0d894bfb65b7a3a01b448db20b4f": {},
+            "708450b22ed062da7fa577e10088f25023b1437c": {},
+            "34901b737b11aa51b688fa18c2eab47639d7b8c6": {},
+            "4d16457cded23bce6eaa91cd17aefd22af2279f0": {},
+            "5cfbbf3cdff0f905874589bcd21b2646340a5447": {},
+            "00147fc393e1f66dbdc8efb2347ae2445a81e9cd": {},
+            "9f1e2407cce09219fae2fbcd67d0e91bd3135932": {},
+            "3aafd3e3876cf576c387088dc8ff2b57e962ef6e": {},
+            "811f451f1991ec5508e67d00375ca4f5d05e0eeb": {}
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000001",
+        "paperId": "00f67ddfa49027517b90f491757220abcabdbaea",
+        "ref_index": "1",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Reasoning  Engines ",
+          "Fine-tuning   "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000002",
+        "paperId": "ff2f48fe6438adcaf860aac0f41c584568beafb5",
+        "ref_index": "18",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Reasoning  Engines ",
+          "Fine-tuning   "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000003",
+        "paperId": "dcb43c2b28f8991a97f391e6b79d267b411cccfd",
+        "ref_index": "41",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Reasoning  Engines ",
+          "Fine-tuning   "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000004",
+        "paperId": "7c4be464e68a11c8f254d9608f31280e9bcda85c",
+        "ref_index": "12",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Reasoning  Engines ",
+          "Prompt Engineering  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000005",
+        "paperId": "6ac627f57b26354ab537734d820da4a6a7dde2c6",
+        "ref_index": "15",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Reasoning  Engines ",
+          "Prompt Engineering  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000006",
+        "paperId": "64e87fc4d7733d4592d2dbd1c08d33ea07551c8d",
+        "ref_index": "35",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Reasoning  Engines ",
+          "Prompt Engineering  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000007",
+        "paperId": "014e5492e28afd79e97637d12852a1c01a3fb7de",
+        "ref_index": "39",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Reasoning  Engines ",
+          "Prompt Engineering  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000008",
+        "paperId": "c43a4a7b7ea4f4889de051321cb0073fd577f843",
+        "ref_index": "40",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Reasoning  Engines ",
+          "Prompt Engineering  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000009",
+        "paperId": "95ca67ba607d7859ee8eec457f4b59b115d69bf5",
+        "ref_index": "5",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Reasoning  Engines ",
+          "Tools Integration  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000010",
+        "paperId": "de549c1592a62c129b8d49c8c0137aa6859b103f",
+        "ref_index": "17",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Reasoning  Engines ",
+          "Tools Integration  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000011",
+        "paperId": "71fd336f1ca337a638dffb236b432c29cdd19f3d",
+        "ref_index": "20",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Reasoning  Engines ",
+          "Tools Integration  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000012",
+        "paperId": "53d128ea815bcc0526856eb5a9c42cc977cb36a7",
+        "ref_index": "30",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Reasoning  Engines ",
+          "Tools Integration  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000013",
+        "paperId": "a66ade2f872e726e4ea58278058c4b6df4cbc2be",
+        "ref_index": "2",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Reasoning  Engines ",
+          "Alternative Approach  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000014",
+        "paperId": "f0a0e8b6e84207f50db4d24cc4016e40601214ef",
+        "ref_index": "6",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Reasoning  Engines ",
+          "Alternative Approach  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000015",
+        "paperId": "d48b29889241551e1ee6622fa78c3fa4159255dd",
+        "ref_index": "7",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Reasoning  Engines ",
+          "Alternative Approach  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000016",
+        "paperId": "4780d0a027c5c5a8e01d7cf697f6296880ffc945",
+        "ref_index": "9",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Reasoning  Engines ",
+          "Alternative Approach  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000017",
+        "paperId": "fa4ea8b773ffd6706ba5cf427f9671f81b04dcdd",
+        "ref_index": "11",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Reasoning  Engines ",
+          "Alternative Approach  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000018",
+        "paperId": "04dd492b506e48b7dd91ecb1e1fdb80c1ce30e34",
+        "ref_index": "32",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Reasoning  Engines ",
+          "Alternative Approach  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000019",
+        "paperId": "00cccb9065f0a59e845d5b4d360ce31cf25036be",
+        "ref_index": "38",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Reasoning  Engines ",
+          "Alternative Approach  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000020",
+        "paperId": "7e1a823a3ee88e0964a18b89015614d8cc82d560",
+        "ref_index": "0",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Helper to   traditional method ",
+          "Information  Extractor "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000021",
+        "paperId": "38977b3ffc5edd84f9ce942f2299ce65b966e6f8",
+        "ref_index": "19",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Helper to   traditional method ",
+          "Information  Extractor "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000022",
+        "paperId": "a26fa1983e4bc7c5b55cd5a1296afe6f876baa03",
+        "ref_index": "37",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Helper to   traditional method ",
+          "Information  Extractor "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000023",
+        "paperId": "9e557a199972b963d8ac064ac6e625c115c03cde",
+        "ref_index": "3",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Helper to   traditional method ",
+          "Data Generator  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000024",
+        "paperId": "b39074c68ac53f258fb340d3d24ef868c514310b",
+        "ref_index": "13",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Helper to   traditional method ",
+          "Data Generator  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000025",
+        "paperId": "be5c4cbde12db1c7bb89e3775e41e207aa4f9ed3",
+        "ref_index": "31",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Methodology   ",
+          "LLMs as Helper to   traditional method ",
+          "Data Generator  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000026",
+        "paperId": "5f705919c2f25303d5df0178dd8bc3d1ceabe75f",
+        "ref_index": "4",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Evaluation  ",
+          "Tasks \\& Benchmarks "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000027",
+        "paperId": "f9b94bcaf706892904c058c37d0087628f371df4",
+        "ref_index": "8",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Evaluation  ",
+          "Tasks \\& Benchmarks "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000028",
+        "paperId": "eebdf7303256f081ab1f6a36ff0ea6126e4da484",
+        "ref_index": "10",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Evaluation  ",
+          "Tasks \\& Benchmarks "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000029",
+        "paperId": "0a94fbb5e1c93513523f00e75d672ef4553861f9",
+        "ref_index": "14",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Evaluation  ",
+          "Tasks \\& Benchmarks "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000030",
+        "paperId": "6ac627f57b26354ab537734d820da4a6a7dde2c6",
+        "ref_index": "15",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Evaluation  ",
+          "Tasks \\& Benchmarks "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000031",
+        "paperId": "99ad0533f84c110da2d0713d5798e6e14080b159",
+        "ref_index": "16",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Evaluation  ",
+          "Tasks \\& Benchmarks "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000032",
+        "paperId": "3446a23e07529bdf963dd5a66468ecc770543e6e",
+        "ref_index": "21",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Evaluation  ",
+          "Tasks \\& Benchmarks "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000033",
+        "paperId": "025a1a10674d6a1712e59f1fc4800da3b27cdf94",
+        "ref_index": "22",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Evaluation  ",
+          "Tasks \\& Benchmarks "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000034",
+        "paperId": "85b68477a6e031d88b963833e15a4b4fc6855264",
+        "ref_index": "23",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Evaluation  ",
+          "Tasks \\& Benchmarks "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000035",
+        "paperId": "3065d646367f0d894bfb65b7a3a01b448db20b4f",
+        "ref_index": "24",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Evaluation  ",
+          "Tasks \\& Benchmarks "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000036",
+        "paperId": "708450b22ed062da7fa577e10088f25023b1437c",
+        "ref_index": "25",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Evaluation  ",
+          "Tasks \\& Benchmarks "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000037",
+        "paperId": "34901b737b11aa51b688fa18c2eab47639d7b8c6",
+        "ref_index": "26",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Evaluation  ",
+          "Tasks \\& Benchmarks "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000038",
+        "paperId": "4d16457cded23bce6eaa91cd17aefd22af2279f0",
+        "ref_index": "27",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Evaluation  ",
+          "Tasks \\& Benchmarks "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000039",
+        "paperId": "5cfbbf3cdff0f905874589bcd21b2646340a5447",
+        "ref_index": "28",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Evaluation  ",
+          "Tasks \\& Benchmarks "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000040",
+        "paperId": "00147fc393e1f66dbdc8efb2347ae2445a81e9cd",
+        "ref_index": "29",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Evaluation  ",
+          "Tasks \\& Benchmarks "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000041",
+        "paperId": "9f1e2407cce09219fae2fbcd67d0e91bd3135932",
+        "ref_index": "33",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Evaluation  ",
+          "Tasks \\& Benchmarks "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000042",
+        "paperId": "3aafd3e3876cf576c387088dc8ff2b57e962ef6e",
+        "ref_index": "34",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Evaluation  ",
+          "Tasks \\& Benchmarks "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.16676",
+        "arxiv_id": "2410.16676",
+        "leaf_mention_id": "2410.16676::000043",
+        "paperId": "811f451f1991ec5508e67d00375ca4f5d05e0eeb",
+        "ref_index": "36",
+        "path": [
+          "LLMs for Causal Reasoning",
+          "Evaluation  ",
+          "Tasks \\& Benchmarks "
+        ],
+        "depth": 3,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 43,
+      "unique_leaf_paper_count": 42,
+      "multi_membership_extra_mentions": 1,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

@@ -1,0 +1,757 @@
+{
+  "paper_id": "2409.13385",
+  "arxiv_id": "2409.13385",
+  "title": "Contextual Compression in Retrieval-Augmented Generation for Large Language Models: A Survey",
+  "ref_meta": [
+    {
+      "paper_id": "2409.13385",
+      "ref_index": "0",
+      "ref_key": "S2:f843233f76a5dff07bfa93a71a1cf13d8aa6a94a",
+      "paperId": "f843233f76a5dff07bfa93a71a1cf13d8aa6a94a",
+      "title": "Exploring Length Generalization in Large Language Models",
+      "year": 2022,
+      "abstract": "The ability to extrapolate from short problem instances to longer ones is an important form of out-of-distribution generalization in reasoning tasks, and is crucial when learning from datasets where longer problem instances are rare. These include theorem proving, solving quantitative mathematics problems, and reading/summarizing novels. In this paper, we run careful empirical studies exploring the length generalization capabilities of transformer-based language models. We first establish that naively finetuning transformers on length generalization tasks shows significant generalization deficiencies independent of model scale. We then show that combining pretrained large language models' in-context learning abilities with scratchpad prompting (asking the model to output solution steps before producing an answer) results in a dramatic improvement in length generalization. We run careful failure analyses on each of the learning modalities and identify common sources of mistakes that highlight opportunities in equipping language models with the ability to generalize to longer problems.",
+      "externalIds": {
+        "ArXiv": "2207.04901",
+        "DBLP": "conf/nips/AnilWALMRSGDN22",
+        "DOI": "10.48550/arXiv.2207.04901",
+        "CorpusId": 250425737
+      },
+      "arxiv_id": "2207.04901",
+      "doi": "10.48550/arXiv.2207.04901",
+      "corpus_id": 250425737
+    },
+    {
+      "paper_id": "2409.13385",
+      "ref_index": "1",
+      "ref_key": "S2:925ad2897d1b5decbea320d07e99afa9110e09b2",
+      "paperId": "925ad2897d1b5decbea320d07e99afa9110e09b2",
+      "title": "Longformer: The Long-Document Transformer",
+      "year": 2020,
+      "abstract": "Transformer-based models are unable to process long sequences due to their self-attention operation, which scales quadratically with the sequence length. To address this limitation, we introduce the Longformer with an attention mechanism that scales linearly with sequence length, making it easy to process documents of thousands of tokens or longer. Longformer's attention mechanism is a drop-in replacement for the standard self-attention and combines a local windowed attention with a task motivated global attention. Following prior work on long-sequence transformers, we evaluate Longformer on character-level language modeling and achieve state-of-the-art results on text8 and enwik8. In contrast to most prior work, we also pretrain Longformer and finetune it on a variety of downstream tasks. Our pretrained Longformer consistently outperforms RoBERTa on long document tasks and sets new state-of-the-art results on WikiHop and TriviaQA. We finally introduce the Longformer-Encoder-Decoder (LED), a Longformer variant for supporting long document generative sequence-to-sequence tasks, and demonstrate its effectiveness on the arXiv summarization dataset.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2004-05150",
+        "MAG": "3015468748",
+        "ArXiv": "2004.05150",
+        "CorpusId": 215737171
+      },
+      "arxiv_id": "2004.05150",
+      "doi": null,
+      "corpus_id": 215737171
+    },
+    {
+      "paper_id": "2409.13385",
+      "ref_index": "2",
+      "ref_key": "S2:f5afaccfe90268485a9961c5771ec5e71e9b806c",
+      "paperId": "f5afaccfe90268485a9961c5771ec5e71e9b806c",
+      "title": "Extending Context Window of Large Language Models via Positional Interpolation",
+      "year": 2023,
+      "abstract": "We present Position Interpolation (PI) that extends the context window sizes of RoPE-based pretrained LLMs such as LLaMA models to up to 32768 with minimal fine-tuning (within 1000 steps), while demonstrating strong empirical results on various tasks that require long context, including passkey retrieval, language modeling, and long document summarization from LLaMA 7B to 65B. Meanwhile, the extended model by Position Interpolation preserve quality relatively well on tasks within its original context window. To achieve this goal, Position Interpolation linearly down-scales the input position indices to match the original context window size, rather than extrapolating beyond the trained context length which may lead to catastrophically high attention scores that completely ruin the self-attention mechanism. Our theoretical study shows that the upper bound of interpolation is at least $\\sim 600 \\times$ smaller than that of extrapolation, further demonstrating its stability. Models extended via Position Interpolation retain its original architecture and can reuse most pre-existing optimization and infrastructure.",
+      "externalIds": {
+        "ArXiv": "2306.15595",
+        "DBLP": "journals/corr/abs-2306-15595",
+        "DOI": "10.48550/arXiv.2306.15595",
+        "CorpusId": 259262376
+      },
+      "arxiv_id": "2306.15595",
+      "doi": "10.48550/arXiv.2306.15595",
+      "corpus_id": 259262376
+    },
+    {
+      "paper_id": "2409.13385",
+      "ref_index": "3",
+      "ref_key": "S2:b6346f9fa093b8e85df712485a2b851b9f680dac",
+      "paperId": "b6346f9fa093b8e85df712485a2b851b9f680dac",
+      "title": "LongLoRA: Efficient Fine-tuning of Long-Context Large Language Models",
+      "year": 2023,
+      "abstract": "We present LongLoRA, an efficient fine-tuning approach that extends the context sizes of pre-trained large language models (LLMs), with limited computation cost. Typically, training LLMs with long context sizes is computationally expensive, requiring extensive training hours and GPU resources. For example, training on the context length of 8192 needs 16x computational costs in self-attention layers as that of 2048. In this paper, we speed up the context extension of LLMs in two aspects. On the one hand, although dense global attention is needed during inference, fine-tuning the model can be effectively and efficiently done by sparse local attention. The proposed shifted sparse attention effectively enables context extension, leading to non-trivial computation saving with similar performance to fine-tuning with vanilla attention. Particularly, it can be implemented with only two lines of code in training, while being optional in inference. On the other hand, we revisit the parameter-efficient fine-tuning regime for context expansion. Notably, we find that LoRA for context extension works well under the premise of trainable embedding and normalization. LongLoRA combines this improved LoRA with S^2-Attn. LongLoRA demonstrates strong empirical results on various tasks on Llama2 models from 7B/13B to 70B. LongLoRA extends Llama2 7B from 4k context to 100k, or Llama2 70B to 32k on a single 8x A100 machine. LongLoRA extends models' context while retaining their original architectures, and is compatible with most existing techniques, like Flash-Attention2. In addition, we further conduct supervised fine-tuning with LongLoRA and our long instruction-following LongAlpaca dataset.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2309-12307",
+        "ArXiv": "2309.12307",
+        "DOI": "10.48550/arXiv.2309.12307",
+        "CorpusId": 262084134
+      },
+      "arxiv_id": "2309.12307",
+      "doi": "10.48550/arXiv.2309.12307",
+      "corpus_id": 262084134
+    },
+    {
+      "paper_id": "2409.13385",
+      "ref_index": "4",
+      "ref_key": "S2:2f7364d8e5cf94315bf8905f57de9c5543e9a4bf",
+      "paperId": "2f7364d8e5cf94315bf8905f57de9c5543e9a4bf",
+      "title": "Adapting Language Models to Compress Contexts",
+      "year": 2023,
+      "abstract": "Transformer-based language models (LMs) are powerful and widely-applicable tools, but their usefulness is constrained by a finite context window and the expensive computational cost of processing long text documents. We propose to adapt pre-trained LMs into AutoCompressors. These models are capable of compressing long contexts into compact summary vectors, which are then accessible to the model as soft prompts. Summary vectors are trained with an unsupervised objective, whereby long documents are processed in segments and summary vectors from all previous segments are used in language modeling. We fine-tune OPT models on sequences of up to 30,720 tokens and show that AutoCompressors can utilize long contexts to improve perplexity. We evaluate AutoCompressors on in-context learning by compressing task demonstrations. We find that summary vectors are good substitutes for plain-text demonstrations, increasing accuracy while reducing inference cost. Finally, we explore the benefits of pre-computing summary vectors for large corpora by applying summary vectors to retrieval-augmented language modeling. Overall, AutoCompressors emerge as a simple and inexpensive solution for extending the context window of LMs while speeding up inference over long contexts.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-14788",
+        "ArXiv": "2305.14788",
+        "DOI": "10.48550/arXiv.2305.14788",
+        "CorpusId": 258865249
+      },
+      "arxiv_id": "2305.14788",
+      "doi": "10.48550/arXiv.2305.14788",
+      "corpus_id": 258865249
+    },
+    {
+      "paper_id": "2409.13385",
+      "ref_index": "5",
+      "ref_key": "S2:c4744a7c2bb298e4a52289a1e085c71cc3d37bc6",
+      "paperId": "c4744a7c2bb298e4a52289a1e085c71cc3d37bc6",
+      "title": "Transformer-XL: Attentive Language Models beyond a Fixed-Length Context",
+      "year": 2019,
+      "abstract": "Transformers have a potential of learning longer-term dependency, but are limited by a fixed-length context in the setting of language modeling. We propose a novel neural architecture Transformer-XL that enables learning dependency beyond a fixed length without disrupting temporal coherence. It consists of a segment-level recurrence mechanism and a novel positional encoding scheme. Our method not only enables capturing longer-term dependency, but also resolves the context fragmentation problem. As a result, Transformer-XL learns dependency that is 80% longer than RNNs and 450% longer than vanilla Transformers, achieves better performance on both short and long sequences, and is up to 1,800+ times faster than vanilla Transformers during evaluation. Notably, we improve the state-of-the-art results of bpc/perplexity to 0.99 on enwiki8, 1.08 on text8, 18.3 on WikiText-103, 21.8 on One Billion Word, and 54.5 on Penn Treebank (without finetuning). When trained only on WikiText-103, Transformer-XL manages to generate reasonably coherent, novel text articles with thousands of tokens. Our code, pretrained models, and hyperparameters are available in both Tensorflow and PyTorch.",
+      "externalIds": {
+        "ArXiv": "1901.02860",
+        "DBLP": "conf/acl/DaiYYCLS19",
+        "ACL": "P19-1285",
+        "MAG": "2911109671",
+        "DOI": "10.18653/v1/P19-1285",
+        "CorpusId": 57759363
+      },
+      "arxiv_id": "1901.02860",
+      "doi": "10.18653/v1/P19-1285",
+      "corpus_id": 57759363
+    },
+    {
+      "paper_id": "2409.13385",
+      "ref_index": "6",
+      "ref_key": "S2:87c5b281fa43e6f27191b20a8dd694eda1126336",
+      "paperId": "87c5b281fa43e6f27191b20a8dd694eda1126336",
+      "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+      "year": 2022,
+      "abstract": "Transformers are slow and memory-hungry on long sequences, since the time and memory complexity of self-attention are quadratic in sequence length. Approximate attention methods have attempted to address this problem by trading off model quality to reduce the compute complexity, but often do not achieve wall-clock speedup. We argue that a missing principle is making attention algorithms IO-aware -- accounting for reads and writes between levels of GPU memory. We propose FlashAttention, an IO-aware exact attention algorithm that uses tiling to reduce the number of memory reads/writes between GPU high bandwidth memory (HBM) and GPU on-chip SRAM. We analyze the IO complexity of FlashAttention, showing that it requires fewer HBM accesses than standard attention, and is optimal for a range of SRAM sizes. We also extend FlashAttention to block-sparse attention, yielding an approximate attention algorithm that is faster than any existing approximate attention method. FlashAttention trains Transformers faster than existing baselines: 15% end-to-end wall-clock speedup on BERT-large (seq. length 512) compared to the MLPerf 1.1 training speed record, 3$\\times$ speedup on GPT-2 (seq. length 1K), and 2.4$\\times$ speedup on long-range arena (seq. length 1K-4K). FlashAttention and block-sparse FlashAttention enable longer context in Transformers, yielding higher quality models (0.7 better perplexity on GPT-2 and 6.4 points of lift on long-document classification) and entirely new capabilities: the first Transformers to achieve better-than-chance performance on the Path-X challenge (seq. length 16K, 61.4% accuracy) and Path-256 (seq. length 64K, 63.1% accuracy).",
+      "externalIds": {
+        "DBLP": "conf/nips/DaoFERR22",
+        "ArXiv": "2205.14135",
+        "CorpusId": 249151871
+      },
+      "arxiv_id": "2205.14135",
+      "doi": null,
+      "corpus_id": 249151871
+    },
+    {
+      "paper_id": "2409.13385",
+      "ref_index": "7",
+      "ref_key": "S2:a3dd3adc37cdb8991936f3feb109c20b6f892f3d",
+      "paperId": "a3dd3adc37cdb8991936f3feb109c20b6f892f3d",
+      "title": "Extending Context Window of Large Language Models via Semantic Compression",
+      "year": 2023,
+      "abstract": "Transformer-based Large Language Models (LLMs) often impose limitations on the length of the text input to ensure the generation of fluent and relevant responses. This constraint restricts their applicability in scenarios involving long texts. We propose a novel semantic compression method that enables generalization to texts that are 6-8 times longer, without incurring significant computational costs or requiring fine-tuning. Our proposed framework draws inspiration from source coding in information theory and employs a pre-trained model to reduce the semantic redundancy of long inputs before passing them to the LLMs for downstream tasks. Experimental results demonstrate that our method effectively extends the context window of LLMs across a range of tasks including question answering, summarization, few-shot learning, and information retrieval. Furthermore, the proposed semantic compression method exhibits consistent fluency in text generation while reducing the associated computational overhead.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2312-09571",
+        "ArXiv": "2312.09571",
+        "DOI": "10.48550/arXiv.2312.09571",
+        "CorpusId": 266335580
+      },
+      "arxiv_id": "2312.09571",
+      "doi": "10.48550/arXiv.2312.09571",
+      "corpus_id": 266335580
+    },
+    {
+      "paper_id": "2409.13385",
+      "ref_index": "8",
+      "ref_key": "S2:60b0476a97c00e355df28ba35422764a7fbe88e8",
+      "paperId": "60b0476a97c00e355df28ba35422764a7fbe88e8",
+      "title": "In-context Autoencoder for Context Compression in a Large Language Model",
+      "year": 2023,
+      "abstract": "We propose the In-context Autoencoder (ICAE), leveraging the power of a large language model (LLM) to compress a long context into short compact memory slots that can be directly conditioned on by the LLM for various purposes. ICAE is first pretrained using both autoencoding and language modeling objectives on massive text data, enabling it to generate memory slots that accurately and comprehensively represent the original context. Then, it is fine-tuned on instruction data for producing desirable responses to various prompts. Experiments demonstrate that our lightweight ICAE, introducing about 1% additional parameters, effectively achieves $4\\times$ context compression based on Llama, offering advantages in both improved latency and GPU memory cost during inference, and showing an interesting insight in memorization as well as potential for scalability. These promising results imply a novel perspective on the connection between working memory in cognitive science and representation learning in LLMs, revealing ICAE's significant implications in addressing the long context problem and suggesting further research in LLM context management. Our data, code and models are available at https://github.com/getao/icae.",
+      "externalIds": {
+        "DBLP": "conf/iclr/00010WWCW24",
+        "ArXiv": "2307.06945",
+        "DOI": "10.48550/arXiv.2307.06945",
+        "CorpusId": 259847425
+      },
+      "arxiv_id": "2307.06945",
+      "doi": "10.48550/arXiv.2307.06945",
+      "corpus_id": 259847425
+    },
+    {
+      "paper_id": "2409.13385",
+      "ref_index": "9",
+      "ref_key": "S2:2392b6d3a5cad9e5cf349169eaeee848266adf6a",
+      "paperId": "2392b6d3a5cad9e5cf349169eaeee848266adf6a",
+      "title": "LLMLingua: Compressing Prompts for Accelerated Inference of Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have been applied in various applications due to their astonishing capabilities. With advancements in technologies such as chain-of-thought (CoT) prompting and in-context learning (ICL), the prompts fed to LLMs are becoming increasingly lengthy, even exceeding tens of thousands of tokens. To accelerate model inference and reduce cost, this paper presents LLMLingua, a coarse-to-fine prompt compression method that involves a budget controller to maintain semantic integrity under high compression ratios, a token-level iterative compression algorithm to better model the interdependence between compressed contents, and an instruction tuning based method for distribution alignment between language models. We conduct experiments and analysis over four datasets from different scenarios, i.e., GSM8K, BBH, ShareGPT, and Arxiv-March23; showing that the proposed approach yields state-of-the-art performance and allows for up to 20x compression with little performance loss. Our code is available at https://aka.ms/LLMLingua.",
+      "externalIds": {
+        "ArXiv": "2310.05736",
+        "DBLP": "journals/corr/abs-2310-05736",
+        "DOI": "10.48550/arXiv.2310.05736",
+        "CorpusId": 263830701
+      },
+      "arxiv_id": "2310.05736",
+      "doi": "10.48550/arXiv.2310.05736",
+      "corpus_id": 263830701
+    },
+    {
+      "paper_id": "2409.13385",
+      "ref_index": "10",
+      "ref_key": "S2:4c0428917aeee6aa7bd434f337d039f35996b736",
+      "paperId": "4c0428917aeee6aa7bd434f337d039f35996b736",
+      "title": "LongLLMLingua: Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression",
+      "year": 2023,
+      "abstract": "In long context scenarios, large language models (LLMs) face three main challenges: higher computational cost, performance reduction, and position bias. Research indicates that LLM performance hinges on the density and position of key information in the input prompt. Inspired by these findings, we propose LongLLMLingua for prompt compression towards improving LLMs' perception of the key information to simultaneously address the three challenges. Our extensive evaluation across various long context scenarios demonstrates that LongLLMLingua not only enhances performance but also significantly reduces costs and latency. For instance, in the NaturalQuestions benchmark, LongLLMLingua boosts performance by up to 21.4% with around 4x fewer tokens in GPT-3.5-Turbo, leading to substantial cost savings. It achieves a 94.0% cost reduction in the LooGLE benchmark. Moreover, when compressing prompts of about 10k tokens at ratios of 2x-6x, LongLLMLingua can accelerate end-to-end latency by 1.4x-2.6x. Our code is available at https://aka.ms/LongLLMLingua.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-06839",
+        "ArXiv": "2310.06839",
+        "DOI": "10.48550/arXiv.2310.06839",
+        "CorpusId": 263830692
+      },
+      "arxiv_id": "2310.06839",
+      "doi": "10.48550/arXiv.2310.06839",
+      "corpus_id": 263830692
+    },
+    {
+      "paper_id": "2409.13385",
+      "ref_index": "11",
+      "ref_key": "S2:ffdbd7f0b03b85747b001b4734d5ee31b5229aa4",
+      "paperId": "ffdbd7f0b03b85747b001b4734d5ee31b5229aa4",
+      "title": "The Power of Scale for Parameter-Efficient Prompt Tuning",
+      "year": 2021,
+      "abstract": "In this work, we explore “prompt tuning,” a simple yet effective mechanism for learning “soft prompts” to condition frozen language models to perform specific downstream tasks. Unlike the discrete text prompts used by GPT-3, soft prompts are learned through backpropagation and can be tuned to incorporate signals from any number of labeled examples. Our end-to-end learned approach outperforms GPT-3’s few-shot learning by a large margin. More remarkably, through ablations on model size using T5, we show that prompt tuning becomes more competitive with scale: as models exceed billions of parameters, our method “closes the gap” and matches the strong performance of model tuning (where all model weights are tuned). This finding is especially relevant because large models are costly to share and serve and the ability to reuse one frozen model for multiple downstream tasks can ease this burden. Our method can be seen as a simplification of the recently proposed “prefix tuning” of Li and Liang (2021) and we provide a comparison to this and other similar approaches. Finally, we show that conditioning a frozen model with soft prompts confers benefits in robustness to domain transfer and enables efficient “prompt ensembling.” We release code and model checkpoints to reproduce our experiments.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2104-08691",
+        "ArXiv": "2104.08691",
+        "ACL": "2021.emnlp-main.243",
+        "DOI": "10.18653/v1/2021.emnlp-main.243",
+        "CorpusId": 233296808
+      },
+      "arxiv_id": "2104.08691",
+      "doi": "10.18653/v1/2021.emnlp-main.243",
+      "corpus_id": 233296808
+    },
+    {
+      "paper_id": "2409.13385",
+      "ref_index": "12",
+      "ref_key": "S2:ec936b808e0fab9281c050ad4010cddec92c8cbe",
+      "paperId": "ec936b808e0fab9281c050ad4010cddec92c8cbe",
+      "title": "P-Tuning: Prompt Tuning Can Be Comparable to Fine-tuning Across Scales and Tasks",
+      "year": 2022,
+      "abstract": "Prompt tuning, which only tunes continuous prompts with a frozen language model, substantially reduces per-task storage and memory usage at training. However, in the context of NLU, prior work reveals that prompt tuning does not perform well for normal-sized pretrained models. We also find that existing methods of prompt tuning cannot handle hard sequence labeling tasks, indicating a lack of universality. We present a novel empirical finding that properly optimized prompt tuning can be universally effective across a wide range of model scales and NLU tasks. It matches the performance of finetuning while having only 0.1%-3% tuned parameters. Our method P-Tuning v2 is an implementation of Deep Prompt Tuning (CITATION) optimized and adapted for NLU. Given the universality and simplicity of P-Tuning v2, we believe it can serve as an alternative to finetuning and a strong baseline for future research.",
+      "externalIds": {
+        "DBLP": "conf/acl/LiuJFTDY022",
+        "ACL": "2022.acl-short.8",
+        "DOI": "10.18653/v1/2022.acl-short.8",
+        "CorpusId": 248780177
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2022.acl-short.8",
+      "corpus_id": 248780177
+    },
+    {
+      "paper_id": "2409.13385",
+      "ref_index": "13",
+      "ref_key": "S2:b9870e130f61ff900fe00dbcc5782c9b31773d32",
+      "paperId": "b9870e130f61ff900fe00dbcc5782c9b31773d32",
+      "title": "Learning to Compress Prompts with Gist Tokens",
+      "year": 2023,
+      "abstract": "Prompting is the primary way to utilize the multitask capabilities of language models (LMs), but prompts occupy valuable space in the input context window, and repeatedly encoding the same prompt is computationally inefficient. Finetuning and distillation methods allow for specialization of LMs without prompting, but require retraining the model for each task. To avoid this trade-off entirely, we present gisting, which trains an LM to compress prompts into smaller sets of\"gist\"tokens which can be cached and reused for compute efficiency. Gist models can be trained with no additional cost over standard instruction finetuning by simply modifying Transformer attention masks to encourage prompt compression. On decoder (LLaMA-7B) and encoder-decoder (FLAN-T5-XXL) LMs, gisting enables up to 26x compression of prompts, resulting in up to 40% FLOPs reductions, 4.2% wall time speedups, and storage savings, all with minimal loss in output quality.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2304-08467",
+        "ArXiv": "2304.08467",
+        "DOI": "10.48550/arXiv.2304.08467",
+        "CorpusId": 258179012
+      },
+      "arxiv_id": "2304.08467",
+      "doi": "10.48550/arXiv.2304.08467",
+      "corpus_id": 258179012
+    },
+    {
+      "paper_id": "2409.13385",
+      "ref_index": "14",
+      "ref_key": "S2:819bbdc2dac9e13d9ca3e2508a6e063186ce5e40",
+      "paperId": "819bbdc2dac9e13d9ca3e2508a6e063186ce5e40",
+      "title": "YaRN: Efficient Context Window Extension of Large Language Models",
+      "year": 2023,
+      "abstract": "Rotary Position Embeddings (RoPE) have been shown to effectively encode positional information in transformer-based language models. However, these models fail to generalize past the sequence length they were trained on. We present YaRN (Yet another RoPE extensioN method), a compute-efficient method to extend the context window of such models, requiring 10x less tokens and 2.5x less training steps than previous methods. Using YaRN, we show that LLaMA models can effectively utilize and extrapolate to context lengths much longer than their original pre-training would allow, while also surpassing previous the state-of-the-art at context window extension. In addition, we demonstrate that YaRN exhibits the capability to extrapolate beyond the limited context of a fine-tuning dataset. The models fine-tuned using YaRN has been made available and reproduced online up to 128k context length at https://github.com/jquesnelle/yarn",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2309-00071",
+        "ArXiv": "2309.00071",
+        "DOI": "10.48550/arXiv.2309.00071",
+        "CorpusId": 261493986
+      },
+      "arxiv_id": "2309.00071",
+      "doi": "10.48550/arXiv.2309.00071",
+      "corpus_id": 261493986
+    },
+    {
+      "paper_id": "2409.13385",
+      "ref_index": "15",
+      "ref_key": "S2:ddea71bb0d42a0ec0c490cabf7c9e48850b7d610",
+      "paperId": "ddea71bb0d42a0ec0c490cabf7c9e48850b7d610",
+      "title": "Compressing Long Context for Enhancing RAG with AMR-based Concept Distillation",
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) have made significant strides in information acquisition. However, their overreliance on potentially flawed parametric knowledge leads to hallucinations and inaccuracies, particularly when handling long-tail, domain-specific queries. Retrieval Augmented Generation (RAG) addresses this limitation by incorporating external, non-parametric knowledge. Nevertheless, the retrieved long-context documents often contain noisy, irrelevant information alongside vital knowledge, negatively diluting LLMs' attention. Inspired by the supportive role of essential concepts in individuals' reading comprehension, we propose a novel concept-based RAG framework with the Abstract Meaning Representation (AMR)-based concept distillation algorithm. The proposed algorithm compresses the cluttered raw retrieved documents into a compact set of crucial concepts distilled from the informative nodes of AMR by referring to reliable linguistic features. The concepts explicitly constrain LLMs to focus solely on vital information in the inference process. We conduct extensive experiments on open-domain question-answering datasets to empirically evaluate the proposed method's effectiveness. The results indicate that the concept-based RAG framework outperforms other baseline methods, particularly as the number of supporting documents increases, while also exhibiting robustness across various backbone LLMs. This emphasizes the distilled concepts are informative for augmenting the RAG process by filtering out interference information. To the best of our knowledge, this is the first work introducing AMR to enhance the RAG, presenting a potential solution to augment inference performance with semantic-based context compression.",
+      "externalIds": {
+        "ArXiv": "2405.03085",
+        "DBLP": "journals/corr/abs-2405-03085",
+        "DOI": "10.48550/arXiv.2405.03085",
+        "CorpusId": 269605470
+      },
+      "arxiv_id": "2405.03085",
+      "doi": "10.48550/arXiv.2405.03085",
+      "corpus_id": 269605470
+    },
+    {
+      "paper_id": "2409.13385",
+      "ref_index": "16",
+      "ref_key": "S2:8fbd7ddf1ea30c991f3b1152a245df77caa18e16",
+      "paperId": "8fbd7ddf1ea30c991f3b1152a245df77caa18e16",
+      "title": "Learning by Distilling Context",
+      "year": 2022,
+      "abstract": "Language models significantly benefit from context tokens, such as prompts or scratchpads. They perform better when prompted with informative instructions, and they acquire new reasoning capabilities by generating a scratch-pad before predicting the final answers. However, they do not \\textit{internalize} these performance gains, which disappear when the context tokens are gone. Our work proposes to apply context distillation so that a language model can improve itself by internalizing these gains. Concretely, given a synthetic unlabeled input for the target task, we condition the model on ``[instructions] + [task-input]'' to predict ``[scratch-pad] + [final answer]''; then we fine-tune the same model to predict its own ``[final answer]'' conditioned on the ``[task-input]'', without seeing the ``[instructions]'' or using the ``[scratch-pad]''. We show that context distillation is a general method to train language models, and it can effectively internalize 3 types of training signals. First, it can internalize abstract task instructions and explanations, so we can iteratively update the model parameters with new instructions and overwrite old ones. Second, it can internalize step-by-step reasoning for complex tasks (e.g., 8-digit addition), and such a newly acquired capability proves to be useful for other downstream tasks. Finally, it can internalize concrete training examples, and it outperforms directly learning with gradient descent by 9\\% on the SPIDER Text-to-SQL dataset; furthermore, combining context distillation operations can internalize more training examples than the context window size allows.",
+      "externalIds": {
+        "ArXiv": "2209.15189",
+        "DBLP": "journals/corr/abs-2209-15189",
+        "DOI": "10.48550/arXiv.2209.15189",
+        "CorpusId": 252668389
+      },
+      "arxiv_id": "2209.15189",
+      "doi": "10.48550/arXiv.2209.15189",
+      "corpus_id": 252668389
+    },
+    {
+      "paper_id": "2409.13385",
+      "ref_index": "17",
+      "ref_key": "S2:4afda39036206dcb3f97829dccb897f1fc80f459",
+      "paperId": "4afda39036206dcb3f97829dccb897f1fc80f459",
+      "title": "Prompt Compression and Contrastive Conditioning for Controllability and Toxicity Reduction in Language Models",
+      "year": 2022,
+      "abstract": "We explore the idea of compressing the prompts used to condition language models, and show that compressed prompts can retain a substantive amount of information about the original prompt. For severely compressed prompts, while fine-grained information is lost, abstract information and general sentiments can be retained with surprisingly few parameters, which can be useful in the context of decode-time algorithms for controllability and toxicity reduction. We explore contrastive conditioning to steer language model generation towards desirable text and away from undesirable text, and find that some complex prompts can be effectively compressed into a single token to guide generation. We also show that compressed prompts are largely compositional, and can be constructed such that they can be used to control independent aspects of generated text.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-03162",
+        "ArXiv": "2210.03162",
+        "DOI": "10.48550/arXiv.2210.03162",
+        "CorpusId": 252762169
+      },
+      "arxiv_id": "2210.03162",
+      "doi": "10.48550/arXiv.2210.03162",
+      "corpus_id": 252762169
+    },
+    {
+      "paper_id": "2409.13385",
+      "ref_index": "18",
+      "ref_key": "S2:3d45fc603e34934fc589b9547307815f7723de34",
+      "paperId": "3d45fc603e34934fc589b9547307815f7723de34",
+      "title": "LLMLingua-2: Data Distillation for Efficient and Faithful Task-Agnostic Prompt Compression",
+      "year": 2024,
+      "abstract": "This paper focuses on task-agnostic prompt compression for better generalizability and efficiency. Considering the redundancy in natural language, existing approaches compress prompts by removing tokens or lexical units according to their information entropy obtained from a causal language model such as LLaMa-7B. The challenge is that information entropy may be a suboptimal compression metric: (i) it only leverages unidirectional context and may fail to capture all essential information needed for prompt compression; (ii) it is not aligned with the prompt compression objective. To address these issues, we propose a data distillation procedure to derive knowledge from an LLM to compress prompts without losing crucial information, and meantime, introduce an extractive text compression dataset. We formulate prompt compression as a token classification problem to guarantee the faithfulness of the compressed prompt to the original one, and use a Transformer encoder as the base architecture to capture all essential information for prompt compression from the full bidirectional context. Our approach leads to lower latency by explicitly learning the compression objective with smaller models such as XLM-RoBERTa-large and mBERT. We evaluate our method on both in-domain and out-of-domain datasets, including MeetingBank, LongBench, ZeroScrolls, GSM8K, and BBH. Despite its small size, our model shows significant performance gains over strong baselines and demonstrates robust generalization ability across different LLMs. Additionally, our model is 3x-6x faster than existing prompt compression methods, while accelerating the end-to-end latency by 1.6x-2.9x with compression ratios of 2x-5x. Our code is available at https://aka.ms/LLMLingua-2.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2403-12968",
+        "ArXiv": "2403.12968",
+        "DOI": "10.48550/arXiv.2403.12968",
+        "CorpusId": 268531237
+      },
+      "arxiv_id": "2403.12968",
+      "doi": "10.48550/arXiv.2403.12968",
+      "corpus_id": 268531237
+    },
+    {
+      "paper_id": "2409.13385",
+      "ref_index": "19",
+      "ref_key": "S2:f2885c6a25756cf81aa23b41bc62696a5be5c94d",
+      "paperId": "f2885c6a25756cf81aa23b41bc62696a5be5c94d",
+      "title": "Factual Probing Is [MASK]: Learning vs. Learning to Recall",
+      "year": 2021,
+      "abstract": "Petroni et al. (2019) demonstrated that it is possible to retrieve world facts from a pre-trained language model by expressing them as cloze-style prompts and interpret the model’s prediction accuracy as a lower bound on the amount of factual information it encodes. Subsequent work has attempted to tighten the estimate by searching for better prompts, using a disjoint set of facts as training data. In this work, we make two complementary contributions to better understand these factual probing techniques. First, we propose OptiPrompt, a novel and efficient method which directly optimizes in continuous embedding space. We find this simple method is able to predict an additional 6.4% of facts in the LAMA benchmark. Second, we raise a more important question: Can we really interpret these probing results as a lower bound? Is it possible that these prompt-search methods learn from the training data too? We find, somewhat surprisingly, that the training data used by these methods contains certain regularities of the underlying fact distribution, and all the existing prompt methods, including ours, are able to exploit them for better fact prediction. We conduct a set of control experiments to disentangle “learning” from “learning to recall”, providing a more detailed picture of what different prompts can reveal about pre-trained language models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2104-05240",
+        "MAG": "3166986030",
+        "ACL": "2021.naacl-main.398",
+        "ArXiv": "2104.05240",
+        "DOI": "10.18653/V1/2021.NAACL-MAIN.398",
+        "CorpusId": 233210199
+      },
+      "arxiv_id": "2104.05240",
+      "doi": "10.18653/V1/2021.NAACL-MAIN.398",
+      "corpus_id": 233210199
+    },
+    {
+      "paper_id": "2409.13385",
+      "ref_index": "20",
+      "ref_key": "S2:d9964ab436eefd21f923a4bc833c6b66692c7f00",
+      "paperId": "d9964ab436eefd21f923a4bc833c6b66692c7f00",
+      "title": "RecurrentGPT: Interactive Generation of (Arbitrarily) Long Text",
+      "year": 2023,
+      "abstract": "The fixed-size context of Transformer makes GPT models incapable of generating arbitrarily long text. In this paper, we introduce RecurrentGPT, a language-based simulacrum of the recurrence mechanism in RNNs. RecurrentGPT is built upon a large language model (LLM) such as ChatGPT and uses natural language to simulate the Long Short-Term Memory mechanism in an LSTM. At each timestep, RecurrentGPT generates a paragraph of text and updates its language-based long-short term memory stored on the hard drive and the prompt, respectively. This recurrence mechanism enables RecurrentGPT to generate texts of arbitrary length without forgetting. Since human users can easily observe and edit the natural language memories, RecurrentGPT is interpretable and enables interactive generation of long text. RecurrentGPT is an initial step towards next-generation computer-assisted writing systems beyond local editing suggestions. In addition to producing AI-generated content (AIGC), we also demonstrate the possibility of using RecurrentGPT as an interactive fiction that directly interacts with consumers. We call this usage of generative models by ``AI As Contents'' (AIAC), which we believe is the next form of conventional AIGC. We further demonstrate the possibility of using RecurrentGPT to create personalized interactive fiction that directly interacts with readers instead of interacting with writers. More broadly, RecurrentGPT demonstrates the utility of borrowing ideas from popular model designs in cognitive science and deep learning for prompting LLMs. Our code is available at https://github.com/aiwaves-cn/RecurrentGPT and an online demo is available at https://www.aiwaves.org/recurrentgpt.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-13304",
+        "ArXiv": "2305.13304",
+        "DOI": "10.48550/arXiv.2305.13304",
+        "CorpusId": 258832617
+      },
+      "arxiv_id": "2305.13304",
+      "doi": "10.48550/arXiv.2305.13304",
+      "corpus_id": 258832617
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "Contextual Compression for Large Language Models": {
+        "Semantic  Compression": {
+          "Context Distillation": {
+            "b9870e130f61ff900fe00dbcc5782c9b31773d32": {},
+            "8fbd7ddf1ea30c991f3b1152a245df77caa18e16": {}
+          },
+          "Concept Distillation": {
+            "ddea71bb0d42a0ec0c490cabf7c9e48850b7d610": {}
+          },
+          "Prompting": {
+            "Soft Prompts": {
+              "ffdbd7f0b03b85747b001b4734d5ee31b5229aa4": {},
+              "ec936b808e0fab9281c050ad4010cddec92c8cbe": {},
+              "f2885c6a25756cf81aa23b41bc62696a5be5c94d": {},
+              "d9964ab436eefd21f923a4bc833c6b66692c7f00": {}
+            },
+            "Prompt Compression": {
+              "4afda39036206dcb3f97829dccb897f1fc80f459": {}
+            },
+            "Task-Agnostic  Prompt Compression": {
+              "2392b6d3a5cad9e5cf349169eaeee848266adf6a": {},
+              "4c0428917aeee6aa7bd434f337d039f35996b736": {},
+              "3d45fc603e34934fc589b9547307815f7723de34": {}
+            }
+          },
+          "Efficient Attention  Operations": {
+            "925ad2897d1b5decbea320d07e99afa9110e09b2": {},
+            "b6346f9fa093b8e85df712485a2b851b9f680dac": {},
+            "c4744a7c2bb298e4a52289a1e085c71cc3d37bc6": {},
+            "87c5b281fa43e6f27191b20a8dd694eda1126336": {}
+          },
+          "Extrapolation and  Interpolation": {
+            "f843233f76a5dff07bfa93a71a1cf13d8aa6a94a": {},
+            "f5afaccfe90268485a9961c5771ec5e71e9b806c": {},
+            "819bbdc2dac9e13d9ca3e2508a6e063186ce5e40": {}
+          },
+          "Context Window  Extension": {
+            "a3dd3adc37cdb8991936f3feb109c20b6f892f3d": {}
+          }
+        },
+        "Pre-Trained  Language Models": {
+          "AutoCompressors": {
+            "2f7364d8e5cf94315bf8905f57de9c5543e9a4bf": {}
+          },
+          "In-Context Auto-Encoders": {
+            "60b0476a97c00e355df28ba35422764a7fbe88e8": {}
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2409.13385",
+        "arxiv_id": "2409.13385",
+        "leaf_mention_id": "2409.13385::000001",
+        "paperId": "b9870e130f61ff900fe00dbcc5782c9b31773d32",
+        "ref_index": "13",
+        "path": [
+          "Contextual Compression for Large Language Models",
+          "Semantic  Compression",
+          "Context Distillation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.13385",
+        "arxiv_id": "2409.13385",
+        "leaf_mention_id": "2409.13385::000002",
+        "paperId": "8fbd7ddf1ea30c991f3b1152a245df77caa18e16",
+        "ref_index": "16",
+        "path": [
+          "Contextual Compression for Large Language Models",
+          "Semantic  Compression",
+          "Context Distillation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.13385",
+        "arxiv_id": "2409.13385",
+        "leaf_mention_id": "2409.13385::000003",
+        "paperId": "ddea71bb0d42a0ec0c490cabf7c9e48850b7d610",
+        "ref_index": "15",
+        "path": [
+          "Contextual Compression for Large Language Models",
+          "Semantic  Compression",
+          "Concept Distillation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.13385",
+        "arxiv_id": "2409.13385",
+        "leaf_mention_id": "2409.13385::000004",
+        "paperId": "ffdbd7f0b03b85747b001b4734d5ee31b5229aa4",
+        "ref_index": "11",
+        "path": [
+          "Contextual Compression for Large Language Models",
+          "Semantic  Compression",
+          "Prompting",
+          "Soft Prompts"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.13385",
+        "arxiv_id": "2409.13385",
+        "leaf_mention_id": "2409.13385::000005",
+        "paperId": "ec936b808e0fab9281c050ad4010cddec92c8cbe",
+        "ref_index": "12",
+        "path": [
+          "Contextual Compression for Large Language Models",
+          "Semantic  Compression",
+          "Prompting",
+          "Soft Prompts"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.13385",
+        "arxiv_id": "2409.13385",
+        "leaf_mention_id": "2409.13385::000006",
+        "paperId": "f2885c6a25756cf81aa23b41bc62696a5be5c94d",
+        "ref_index": "19",
+        "path": [
+          "Contextual Compression for Large Language Models",
+          "Semantic  Compression",
+          "Prompting",
+          "Soft Prompts"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.13385",
+        "arxiv_id": "2409.13385",
+        "leaf_mention_id": "2409.13385::000007",
+        "paperId": "d9964ab436eefd21f923a4bc833c6b66692c7f00",
+        "ref_index": "20",
+        "path": [
+          "Contextual Compression for Large Language Models",
+          "Semantic  Compression",
+          "Prompting",
+          "Soft Prompts"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.13385",
+        "arxiv_id": "2409.13385",
+        "leaf_mention_id": "2409.13385::000008",
+        "paperId": "4afda39036206dcb3f97829dccb897f1fc80f459",
+        "ref_index": "17",
+        "path": [
+          "Contextual Compression for Large Language Models",
+          "Semantic  Compression",
+          "Prompting",
+          "Prompt Compression"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.13385",
+        "arxiv_id": "2409.13385",
+        "leaf_mention_id": "2409.13385::000009",
+        "paperId": "2392b6d3a5cad9e5cf349169eaeee848266adf6a",
+        "ref_index": "9",
+        "path": [
+          "Contextual Compression for Large Language Models",
+          "Semantic  Compression",
+          "Prompting",
+          "Task-Agnostic  Prompt Compression"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.13385",
+        "arxiv_id": "2409.13385",
+        "leaf_mention_id": "2409.13385::000010",
+        "paperId": "4c0428917aeee6aa7bd434f337d039f35996b736",
+        "ref_index": "10",
+        "path": [
+          "Contextual Compression for Large Language Models",
+          "Semantic  Compression",
+          "Prompting",
+          "Task-Agnostic  Prompt Compression"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.13385",
+        "arxiv_id": "2409.13385",
+        "leaf_mention_id": "2409.13385::000011",
+        "paperId": "3d45fc603e34934fc589b9547307815f7723de34",
+        "ref_index": "18",
+        "path": [
+          "Contextual Compression for Large Language Models",
+          "Semantic  Compression",
+          "Prompting",
+          "Task-Agnostic  Prompt Compression"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.13385",
+        "arxiv_id": "2409.13385",
+        "leaf_mention_id": "2409.13385::000012",
+        "paperId": "925ad2897d1b5decbea320d07e99afa9110e09b2",
+        "ref_index": "1",
+        "path": [
+          "Contextual Compression for Large Language Models",
+          "Semantic  Compression",
+          "Efficient Attention  Operations"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.13385",
+        "arxiv_id": "2409.13385",
+        "leaf_mention_id": "2409.13385::000013",
+        "paperId": "b6346f9fa093b8e85df712485a2b851b9f680dac",
+        "ref_index": "3",
+        "path": [
+          "Contextual Compression for Large Language Models",
+          "Semantic  Compression",
+          "Efficient Attention  Operations"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.13385",
+        "arxiv_id": "2409.13385",
+        "leaf_mention_id": "2409.13385::000014",
+        "paperId": "c4744a7c2bb298e4a52289a1e085c71cc3d37bc6",
+        "ref_index": "5",
+        "path": [
+          "Contextual Compression for Large Language Models",
+          "Semantic  Compression",
+          "Efficient Attention  Operations"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.13385",
+        "arxiv_id": "2409.13385",
+        "leaf_mention_id": "2409.13385::000015",
+        "paperId": "87c5b281fa43e6f27191b20a8dd694eda1126336",
+        "ref_index": "6",
+        "path": [
+          "Contextual Compression for Large Language Models",
+          "Semantic  Compression",
+          "Efficient Attention  Operations"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.13385",
+        "arxiv_id": "2409.13385",
+        "leaf_mention_id": "2409.13385::000016",
+        "paperId": "f843233f76a5dff07bfa93a71a1cf13d8aa6a94a",
+        "ref_index": "0",
+        "path": [
+          "Contextual Compression for Large Language Models",
+          "Semantic  Compression",
+          "Extrapolation and  Interpolation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.13385",
+        "arxiv_id": "2409.13385",
+        "leaf_mention_id": "2409.13385::000017",
+        "paperId": "f5afaccfe90268485a9961c5771ec5e71e9b806c",
+        "ref_index": "2",
+        "path": [
+          "Contextual Compression for Large Language Models",
+          "Semantic  Compression",
+          "Extrapolation and  Interpolation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.13385",
+        "arxiv_id": "2409.13385",
+        "leaf_mention_id": "2409.13385::000018",
+        "paperId": "819bbdc2dac9e13d9ca3e2508a6e063186ce5e40",
+        "ref_index": "14",
+        "path": [
+          "Contextual Compression for Large Language Models",
+          "Semantic  Compression",
+          "Extrapolation and  Interpolation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.13385",
+        "arxiv_id": "2409.13385",
+        "leaf_mention_id": "2409.13385::000019",
+        "paperId": "a3dd3adc37cdb8991936f3feb109c20b6f892f3d",
+        "ref_index": "7",
+        "path": [
+          "Contextual Compression for Large Language Models",
+          "Semantic  Compression",
+          "Context Window  Extension"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.13385",
+        "arxiv_id": "2409.13385",
+        "leaf_mention_id": "2409.13385::000020",
+        "paperId": "2f7364d8e5cf94315bf8905f57de9c5543e9a4bf",
+        "ref_index": "4",
+        "path": [
+          "Contextual Compression for Large Language Models",
+          "Pre-Trained  Language Models",
+          "AutoCompressors"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.13385",
+        "arxiv_id": "2409.13385",
+        "leaf_mention_id": "2409.13385::000021",
+        "paperId": "60b0476a97c00e355df28ba35422764a7fbe88e8",
+        "ref_index": "8",
+        "path": [
+          "Contextual Compression for Large Language Models",
+          "Pre-Trained  Language Models",
+          "In-Context Auto-Encoders"
+        ],
+        "depth": 3,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 21,
+      "unique_leaf_paper_count": 21,
+      "multi_membership_extra_mentions": 0,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

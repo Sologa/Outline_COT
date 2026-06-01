@@ -1,0 +1,349 @@
+{
+  "paper_id": "2402.08259",
+  "arxiv_id": "2402.08259",
+  "title": "A Survey of Table Reasoning with Large Language Models",
+  "ref_meta": [
+    {
+      "paper_id": "2402.08259",
+      "ref_index": "0",
+      "ref_key": "S2:39e0bf77300bb6df8716ce83eb8a3f6a5e3d6b20",
+      "paperId": "39e0bf77300bb6df8716ce83eb8a3f6a5e3d6b20",
+      "title": "Chain-of-Table: Evolving Tables in the Reasoning Chain for Table Understanding",
+      "year": 2024,
+      "abstract": "Table-based reasoning with large language models (LLMs) is a promising direction to tackle many table understanding tasks, such as table-based question answering and fact verification. Compared with generic reasoning, table-based reasoning requires the extraction of underlying semantics from both free-form questions and semi-structured tabular data. Chain-of-Thought and its similar approaches incorporate the reasoning chain in the form of textual context, but it is still an open question how to effectively leverage tabular data in the reasoning chain. We propose the Chain-of-Table framework, where tabular data is explicitly used in the reasoning chain as a proxy for intermediate thoughts. Specifically, we guide LLMs using in-context learning to iteratively generate operations and update the table to represent a tabular reasoning chain. LLMs can therefore dynamically plan the next operation based on the results of the previous ones. This continuous evolution of the table forms a chain, showing the reasoning process for a given tabular problem. The chain carries structured information of the intermediate results, enabling more accurate and reliable predictions. Chain-of-Table achieves new state-of-the-art performance on WikiTQ, FeTaQA, and TabFact benchmarks across multiple LLM choices.",
+      "externalIds": {
+        "DBLP": "conf/iclr/0002ZLEP0MFSLP24",
+        "ArXiv": "2401.04398",
+        "DOI": "10.48550/arXiv.2401.04398",
+        "CorpusId": 266899992
+      },
+      "arxiv_id": "2401.04398",
+      "doi": "10.48550/arXiv.2401.04398",
+      "corpus_id": 266899992
+    },
+    {
+      "paper_id": "2402.08259",
+      "ref_index": "1",
+      "ref_key": "S2:f58ca7ba4a08b7082e86b7a5989b4b0fda2107ab",
+      "paperId": "f58ca7ba4a08b7082e86b7a5989b4b0fda2107ab",
+      "title": "Binding Language Models in Symbolic Languages",
+      "year": 2022,
+      "abstract": "Though end-to-end neural approaches have recently been dominating NLP tasks in both performance and ease-of-use, they lack interpretability and robustness. We propose Binder, a training-free neural-symbolic framework that maps the task input to a program, which (1) allows binding a unified API of language model (LM) functionalities to a programming language (e.g., SQL, Python) to extend its grammar coverage and thus tackle more diverse questions, (2) adopts an LM as both the program parser and the underlying model called by the API during execution, and (3) requires only a few in-context exemplar annotations. Specifically, we employ GPT-3 Codex as the LM. In the parsing stage, with only a few in-context exemplars, Codex is able to identify the part of the task input that cannot be answerable by the original programming language, correctly generate API calls to prompt Codex to solve the unanswerable part, and identify where to place the API calls while being compatible with the original grammar. In the execution stage, Codex can perform versatile functionalities (e.g., commonsense QA, information extraction) given proper prompts in the API calls. Binder achieves state-of-the-art results on WikiTableQuestions and TabFact datasets, with explicit output programs that benefit human debugging. Note that previous best systems are all finetuned on tens of thousands of task-specific samples, while Binder only uses dozens of annotations as in-context exemplars without any training. Our code is available at https://github.com/HKUNLP/Binder .",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-02875",
+        "ArXiv": "2210.02875",
+        "DOI": "10.48550/arXiv.2210.02875",
+        "CorpusId": 252734772
+      },
+      "arxiv_id": "2210.02875",
+      "doi": "10.48550/arXiv.2210.02875",
+      "corpus_id": 252734772
+    },
+    {
+      "paper_id": "2402.08259",
+      "ref_index": "2",
+      "ref_key": "S2:6cfcdf82ee19afb9cb5cfa9452d195bd03e3c3be",
+      "paperId": "6cfcdf82ee19afb9cb5cfa9452d195bd03e3c3be",
+      "title": "Selective Demonstrations for Cross-domain Text-to-SQL",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) with in-context learning have demonstrated impressive generalization capabilities in the cross-domain text-to-SQL task, without the use of in-domain annotations. However, incorporating in-domain demonstration examples has been found to greatly enhance LLMs' performance. In this paper, we delve into the key factors within in-domain examples that contribute to the improvement and explore whether we can harness these benefits without relying on in-domain annotations. Based on our findings, we propose a demonstration selection framework ODIS which utilizes both out-of-domain examples and synthetically generated in-domain examples to construct demonstrations. By retrieving demonstrations from hybrid sources, ODIS leverages the advantages of both, showcasing its effectiveness compared to baseline methods that rely on a single data source. Furthermore, ODIS outperforms state-of-the-art approaches on two cross-domain text-to-SQL datasets, with improvements of 1.1 and 11.8 points in execution accuracy, respectively.",
+      "externalIds": {
+        "ArXiv": "2310.06302",
+        "DBLP": "journals/corr/abs-2310-06302",
+        "DOI": "10.48550/arXiv.2310.06302",
+        "CorpusId": 263831176
+      },
+      "arxiv_id": "2310.06302",
+      "doi": "10.48550/arXiv.2310.06302",
+      "corpus_id": 263831176
+    },
+    {
+      "paper_id": "2402.08259",
+      "ref_index": "3",
+      "ref_key": "S2:5988806996e8d12f5d4aa911960d842cf7be0c24",
+      "paperId": "5988806996e8d12f5d4aa911960d842cf7be0c24",
+      "title": "Large Language Models are Versatile Decomposers: Decomposing Evidence and Questions for Table-based Reasoning",
+      "year": 2023,
+      "abstract": "Table-based reasoning has shown remarkable progress in a wide range of table-based tasks. It is a challenging task, which requires reasoning over both free-form natural language (NL) questions and (semi-)structured tabular data. However, previous table-based reasoning solutions usually suffer from significant performance degradation on ''huge'' evidence (tables). In addition, most existing methods struggle to reason over complex questions since the essential information is scattered in different places. To alleviate the above challenges, we exploit large language models (LLMs) as decomposers for effective table-based reasoning, which (i) decompose huge evidence (a huge table) into sub-evidence (a small table) to mitigate the interference of useless information for table reasoning, and (ii) decompose a complex question into simpler sub-questions for text reasoning. First, we use a powerful LLM to decompose the evidence involved in the current question into the sub-evidence that retains the relevant information and excludes the remaining irrelevant information from the ''huge'' evidence. Second, we propose a novel ''parsing-execution-filling'' strategy to decompose a complex question into simper step-by-step sub-questions by generating intermediate SQL queries as a bridge to produce numerical and logical sub-questions with a powerful LLM. Finally, we leverage the decomposed sub-evidence and sub-questions to get the final answer with a few in-context prompting examples. Extensive experiments on three benchmark datasets (TabFact, WikiTableQuestion, and FetaQA) demonstrate that our method achieves significantly better results than competitive baselines for table-based reasoning. Notably, our method outperforms human performance for the first time on the TabFact dataset. In addition to impressive overall performance, our method also has the advantage of interpretability, where the returned results are to some extent tractable with the generated sub-evidence and sub-questions. For reproducibility, we release our source code and data at: https://github.com/AlibabaResearch/DAMO-ConvAI.",
+      "externalIds": {
+        "DBLP": "conf/sigir/YeHYLHL23",
+        "ArXiv": "2301.13808",
+        "DOI": "10.1145/3539618.3591708",
+        "CorpusId": 256416408
+      },
+      "arxiv_id": "2301.13808",
+      "doi": "10.1145/3539618.3591708",
+      "corpus_id": 256416408
+    },
+    {
+      "paper_id": "2402.08259",
+      "ref_index": "4",
+      "ref_key": "S2:e034b664362640cc88dfa5e2e11c0524fc7cb323",
+      "paperId": "e034b664362640cc88dfa5e2e11c0524fc7cb323",
+      "title": "Text-to-SQL Empowered by Large Language Models: A Benchmark Evaluation",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have emerged as a new paradigm for Text-to-SQL task. However, the absence of a systematical benchmark inhibits the development of designing effective, efficient and economic LLM-based Text-to-SQL solutions. To address this challenge, in this paper, we first conduct a systematical and extensive comparison over existing prompt engineering methods, including question representation, example selection and example organization, and with these experimental results, we elaborate their pros and cons. Based on these findings, we propose a new integrated solution, named DAIL-SQL, which refreshes the Spider leaderboard with 86.6% execution accuracy and sets a new bar.\n To explore the potential of open-source LLM, we investigate them in various scenarios, and further enhance their performance with supervised fine-tuning. Our explorations highlight open-source LLMs' potential in Text-to-SQL, as well as the advantages and disadvantages of the supervised fine-tuning. Additionally, towards an efficient and economic LLM-based Text-to-SQL solution, we emphasize the token efficiency in prompt engineering and compare the prior studies under this metric. We hope that our work provides a deeper understanding of Text-to-SQL with LLMs, and inspires further investigations and broad applications.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-15363",
+        "ArXiv": "2308.15363",
+        "DOI": "10.48550/arXiv.2308.15363",
+        "CorpusId": 261276437
+      },
+      "arxiv_id": "2308.15363",
+      "doi": "10.48550/arXiv.2308.15363",
+      "corpus_id": 261276437
+    },
+    {
+      "paper_id": "2402.08259",
+      "ref_index": "5",
+      "ref_key": "S2:59fe7cb560651281cfc5db6b8940da0e3ba9dea6",
+      "paperId": "59fe7cb560651281cfc5db6b8940da0e3ba9dea6",
+      "title": "LEVER: Learning to Verify Language-to-Code Generation with Execution",
+      "year": 2023,
+      "abstract": "The advent of large language models trained on code (code LLMs) has led to significant progress in language-to-code generation. State-of-the-art approaches in this area combine LLM decoding with sample pruning and reranking using test cases or heuristics based on the execution results. However, it is challenging to obtain test cases for many real-world language-to-code applications, and heuristics cannot well capture the semantic features of the execution results, such as data type and value range, which often indicates the correctness of the program. In this work, we propose LEVER, a simple approach to improve language-to-code generation by learning to verify the generated programs with their execution results. Specifically, we train verifiers to determine whether a program sampled from the LLMs is correct or not based on the natural language input, the program itself and its execution results. The sampled programs are reranked by combining the verification score with the LLM generation probability, and marginalizing over programs with the same execution results. On four datasets across the domains of table QA, math QA and basic Python programming, LEVER consistently improves over the base code LLMs(4.6% to 10.9% with code-davinci-002) and achieves new state-of-the-art results on all of them.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2302-08468",
+        "ArXiv": "2302.08468",
+        "DOI": "10.48550/arXiv.2302.08468",
+        "CorpusId": 256900680
+      },
+      "arxiv_id": "2302.08468",
+      "doi": "10.48550/arXiv.2302.08468",
+      "corpus_id": 256900680
+    },
+    {
+      "paper_id": "2402.08259",
+      "ref_index": "6",
+      "ref_key": "S2:5791c2b41dd23310c53d6738a4c0d587107c2dc8",
+      "paperId": "5791c2b41dd23310c53d6738a4c0d587107c2dc8",
+      "title": "MURMUR: Modular Multi-Step Reasoning for Semi-Structured Data-to-Text Generation",
+      "year": 2022,
+      "abstract": "Prompting large language models has enabled significant recent progress in multi-step reasoning over text. However, when applied to text generation from semi-structured data (e.g., graphs or tables), these methods typically suffer from low semantic coverage, hallucination, and logical inconsistency. We propose MURMUR, a neuro-symbolic modular approach to text generation from semi-structured data with multi-step reasoning. MURMUR is a best-first search method that generates reasoning paths using: (1) neural and symbolic modules with specific linguistic and logical skills, (2) a grammar whose production rules define valid compositions of modules, and (3) value functions that assess the quality of each reasoning step. We conduct experiments on two diverse data-to-text generation tasks like WebNLG and LogicNLG. These tasks differ in their data representations (graphs and tables) and span multiple linguistic and logical skills. MURMUR obtains significant improvements over recent few-shot baselines like direct prompting and chain-of-thought prompting, while also achieving comparable performance to fine-tuned GPT-2 on out-of-domain data. Moreover, human evaluation shows that MURMUR generates highly faithful and correct reasoning paths that lead to 26% more logically consistent summaries on LogicNLG, compared to direct prompting.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2212-08607",
+        "ArXiv": "2212.08607",
+        "DOI": "10.48550/arXiv.2212.08607",
+        "CorpusId": 254823202
+      },
+      "arxiv_id": "2212.08607",
+      "doi": "10.48550/arXiv.2212.08607",
+      "corpus_id": 254823202
+    },
+    {
+      "paper_id": "2402.08259",
+      "ref_index": "7",
+      "ref_key": "S2:d1e10a539cc83d3df1b612fa098ceea1be63cc29",
+      "paperId": "d1e10a539cc83d3df1b612fa098ceea1be63cc29",
+      "title": "SQLPrompt: In-Context Text-to-SQL with Minimal Labeled Data",
+      "year": 2023,
+      "abstract": "Text-to-SQL aims to automate the process of generating SQL queries on a database from natural language text. In this work, we propose\"SQLPrompt\", tailored to improve the few-shot prompting capabilities of Text-to-SQL for Large Language Models (LLMs). Our methods include innovative prompt design, execution-based consistency decoding strategy which selects the SQL with the most consistent execution outcome among other SQL proposals, and a method that aims to improve performance by diversifying the SQL proposals during consistency selection with different prompt designs (\"MixPrompt\") and foundation models (\"MixLLMs\"). We show that \\emph{SQLPrompt} outperforms previous approaches for in-context learning with few labeled data by a large margin, closing the gap with finetuning state-of-the-art with thousands of labeled data.",
+      "externalIds": {
+        "ArXiv": "2311.02883",
+        "DBLP": "conf/emnlp/SunASNDYP23",
+        "DOI": "10.48550/arXiv.2311.02883",
+        "CorpusId": 259290533
+      },
+      "arxiv_id": "2311.02883",
+      "doi": "10.48550/arXiv.2311.02883",
+      "corpus_id": 259290533
+    },
+    {
+      "paper_id": "2402.08259",
+      "ref_index": "8",
+      "ref_key": "S2:0c26024316c823e326bed05fd1611de365c0ebb3",
+      "paperId": "0c26024316c823e326bed05fd1611de365c0ebb3",
+      "title": "TableLlama: Towards Open Large Generalist Models for Tables",
+      "year": 2023,
+      "abstract": "Semi-structured tables are ubiquitous. There has been a variety of tasks that aim to automatically interpret, augment, and query tables. Current methods often require pretraining on tables or special model architecture design, are restricted to specific table types, or have simplifying assumptions about tables and tasks. This paper makes the first step towards developing open-source large language models (LLMs) as generalists for a diversity of table-based tasks. Towards that end, we construct TableInstruct, a new dataset with a variety of realistic tables and tasks, for instruction tuning and evaluating LLMs. We further develop the first open-source generalist model for tables, TableLlama, by fine-tuning Llama 2 (7B) with LongLoRA to address the long context challenge. We experiment under both in-domain setting and out-of-domain setting. On 7 out of 8 in-domain tasks, TableLlama achieves comparable or better performance than the SOTA for each task, despite the latter often has task-specific design. On 6 out-of-domain datasets, it achieves 5-44 absolute point gains compared with the base model, showing that training on TableInstruct enhances the model’s generalizability. We open-source our dataset and trained model to boost future work on developing open generalist models for tables.",
+      "externalIds": {
+        "DBLP": "conf/naacl/ZhangYL024",
+        "ACL": "2024.naacl-long.335",
+        "ArXiv": "2311.09206",
+        "DOI": "10.48550/arXiv.2311.09206",
+        "CorpusId": 265213406
+      },
+      "arxiv_id": "2311.09206",
+      "doi": "10.48550/arXiv.2311.09206",
+      "corpus_id": 265213406
+    },
+    {
+      "paper_id": "2402.08259",
+      "ref_index": "9",
+      "ref_key": "S2:959adda6f1b874be32bea9bb0bd8f3b43856980b",
+      "paperId": "959adda6f1b874be32bea9bb0bd8f3b43856980b",
+      "title": "Non-Programmers Can Label Programs Indirectly via Active Examples: A Case Study with Text-to-SQL",
+      "year": 2022,
+      "abstract": "Can non-programmers annotate natural language utterances with complex programs that represent their meaning? We introduce APEL, a framework in which non-programmers select among candidate programs generated by a seed semantic parser (e.g., Codex). Since they cannot understand the candidate programs, we ask them to select indirectly by examining the programs' input-ouput examples. For each utterance, APEL actively searches for a simple input on which the candidate programs tend to produce different outputs. It then asks the non-programmers only to choose the appropriate output, thus allowing us to infer which program is correct and could be used to fine-tune the parser. As a first case study, we recruited human non-programmers to use APEL to re-annotate SPIDER, a text-to-SQL dataset. Our approach achieved the same annotation accuracy as the original expert annotators (75%) and exposed many subtle errors in the original annotations.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/ZhongSKE23",
+        "ArXiv": "2205.12422",
+        "DOI": "10.18653/v1/2023.emnlp-main.312",
+        "CorpusId": 249062591
+      },
+      "arxiv_id": "2205.12422",
+      "doi": "10.18653/v1/2023.emnlp-main.312",
+      "corpus_id": 249062591
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "Table Reasoning": {
+        "What Techniques Can Improve Table Reasoning Performance in the LLM Era": {
+          "Mainstream Techniques Following pre-LLMs ": {
+            "Supervised Fine-Tuning": {
+              "0c26024316c823e326bed05fd1611de365c0ebb3": {},
+              "959adda6f1b874be32bea9bb0bd8f3b43856980b": {}
+            }
+          },
+          "Mainstream Techniques unique to LLMs": {
+            "In-context Learning": {
+              "6cfcdf82ee19afb9cb5cfa9452d195bd03e3c3be": {},
+              "e034b664362640cc88dfa5e2e11c0524fc7cb323": {}
+            },
+            "Instruction Design": {
+              "f58ca7ba4a08b7082e86b7a5989b4b0fda2107ab": {},
+              "5988806996e8d12f5d4aa911960d842cf7be0c24": {}
+            },
+            "Step-by-Step Reasoning": {
+              "39e0bf77300bb6df8716ce83eb8a3f6a5e3d6b20": {},
+              "5791c2b41dd23310c53d6738a4c0d587107c2dc8": {}
+            }
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2402.08259",
+        "arxiv_id": "2402.08259",
+        "leaf_mention_id": "2402.08259::000001",
+        "paperId": "0c26024316c823e326bed05fd1611de365c0ebb3",
+        "ref_index": "8",
+        "path": [
+          "Table Reasoning",
+          "What Techniques Can Improve Table Reasoning Performance in the LLM Era",
+          "Mainstream Techniques Following pre-LLMs ",
+          "Supervised Fine-Tuning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.08259",
+        "arxiv_id": "2402.08259",
+        "leaf_mention_id": "2402.08259::000002",
+        "paperId": "959adda6f1b874be32bea9bb0bd8f3b43856980b",
+        "ref_index": "9",
+        "path": [
+          "Table Reasoning",
+          "What Techniques Can Improve Table Reasoning Performance in the LLM Era",
+          "Mainstream Techniques Following pre-LLMs ",
+          "Supervised Fine-Tuning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.08259",
+        "arxiv_id": "2402.08259",
+        "leaf_mention_id": "2402.08259::000003",
+        "paperId": "6cfcdf82ee19afb9cb5cfa9452d195bd03e3c3be",
+        "ref_index": "2",
+        "path": [
+          "Table Reasoning",
+          "What Techniques Can Improve Table Reasoning Performance in the LLM Era",
+          "Mainstream Techniques unique to LLMs",
+          "In-context Learning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.08259",
+        "arxiv_id": "2402.08259",
+        "leaf_mention_id": "2402.08259::000004",
+        "paperId": "e034b664362640cc88dfa5e2e11c0524fc7cb323",
+        "ref_index": "4",
+        "path": [
+          "Table Reasoning",
+          "What Techniques Can Improve Table Reasoning Performance in the LLM Era",
+          "Mainstream Techniques unique to LLMs",
+          "In-context Learning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.08259",
+        "arxiv_id": "2402.08259",
+        "leaf_mention_id": "2402.08259::000005",
+        "paperId": "f58ca7ba4a08b7082e86b7a5989b4b0fda2107ab",
+        "ref_index": "1",
+        "path": [
+          "Table Reasoning",
+          "What Techniques Can Improve Table Reasoning Performance in the LLM Era",
+          "Mainstream Techniques unique to LLMs",
+          "Instruction Design"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.08259",
+        "arxiv_id": "2402.08259",
+        "leaf_mention_id": "2402.08259::000006",
+        "paperId": "5988806996e8d12f5d4aa911960d842cf7be0c24",
+        "ref_index": "3",
+        "path": [
+          "Table Reasoning",
+          "What Techniques Can Improve Table Reasoning Performance in the LLM Era",
+          "Mainstream Techniques unique to LLMs",
+          "Instruction Design"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.08259",
+        "arxiv_id": "2402.08259",
+        "leaf_mention_id": "2402.08259::000007",
+        "paperId": "39e0bf77300bb6df8716ce83eb8a3f6a5e3d6b20",
+        "ref_index": "0",
+        "path": [
+          "Table Reasoning",
+          "What Techniques Can Improve Table Reasoning Performance in the LLM Era",
+          "Mainstream Techniques unique to LLMs",
+          "Step-by-Step Reasoning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.08259",
+        "arxiv_id": "2402.08259",
+        "leaf_mention_id": "2402.08259::000008",
+        "paperId": "5791c2b41dd23310c53d6738a4c0d587107c2dc8",
+        "ref_index": "6",
+        "path": [
+          "Table Reasoning",
+          "What Techniques Can Improve Table Reasoning Performance in the LLM Era",
+          "Mainstream Techniques unique to LLMs",
+          "Step-by-Step Reasoning"
+        ],
+        "depth": 4,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 8,
+      "unique_leaf_paper_count": 8,
+      "multi_membership_extra_mentions": 0,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

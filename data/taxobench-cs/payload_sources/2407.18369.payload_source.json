@@ -1,0 +1,1076 @@
+{
+  "paper_id": "2407.18369",
+  "arxiv_id": "2407.18369",
+  "title": "AI Safety in Generative AI Large Language Models: A Survey",
+  "ref_meta": [
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "0",
+      "ref_key": "S2:8d17234680db76f99efd22fbcb169f45d2d79d93",
+      "paperId": "8d17234680db76f99efd22fbcb169f45d2d79d93",
+      "title": "Connecting Large Language Models with Evolutionary Algorithms Yields Powerful Prompt Optimizers",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) excel in various tasks, but they rely on carefully crafted prompts that often demand substantial human effort. To automate this process, in this paper, we propose a novel framework for discrete prompt optimization, called EvoPrompt, which borrows the idea of evolutionary algorithms (EAs) as they exhibit good performance and fast convergence. To enable EAs to work on discrete prompts, which are natural language expressions that need to be coherent and human-readable, we connect LLMs with EAs. This approach allows us to simultaneously leverage the powerful language processing capabilities of LLMs and the efficient optimization performance of EAs. Specifically, abstaining from any gradients or parameters, EvoPrompt starts from a population of prompts and iteratively generates new prompts with LLMs based on the evolutionary operators, improving the population based on the development set. We optimize prompts for both closed- and open-source LLMs including GPT-3.5 and Alpaca, on 31 datasets covering language understanding, generation tasks, as well as BIG-Bench Hard (BBH) tasks. EvoPrompt significantly outperforms human-engineered prompts and existing methods for automatic prompt generation (e.g., up to 25% on BBH). Furthermore, EvoPrompt demonstrates that connecting LLMs with EAs creates synergies, which could inspire further research on the combination of LLMs and conventional algorithms.",
+      "externalIds": {
+        "DBLP": "conf/iclr/Guo0GLS0L0Y24",
+        "ArXiv": "2309.08532",
+        "DOI": "10.48550/arXiv.2309.08532",
+        "CorpusId": 262012566
+      },
+      "arxiv_id": "2309.08532",
+      "doi": "10.48550/arXiv.2309.08532",
+      "corpus_id": 262012566
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "1",
+      "ref_key": "S2:ff984211a65b29a153d261271dc1b96c036e14df",
+      "paperId": "ff984211a65b29a153d261271dc1b96c036e14df",
+      "title": "Automatic Engineering of Long Prompts",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have demonstrated remarkable capabilities in solving complex open-domain tasks, guided by comprehensive instructions and demonstrations provided in the form of prompts. However, these prompts can be lengthy, often comprising hundreds of lines and thousands of tokens, and their design often requires considerable human effort. Recent research has explored automatic prompt engineering for short prompts, typically consisting of one or a few sentences. However, the automatic design of long prompts remains a challenging problem due to its immense search space. In this paper, we investigate the performance of greedy algorithms and genetic algorithms for automatic long prompt engineering. We demonstrate that a simple greedy approach with beam search outperforms other methods in terms of search efficiency. Moreover, we introduce two novel techniques that utilize search history to enhance the effectiveness of LLM-based mutation in our search algorithm. Our results show that the proposed automatic long prompt engineering algorithm achieves an average of 9.2% accuracy gain on eight tasks in Big Bench Hard, highlighting the significance of automating prompt designs to fully harness the capabilities of LLMs.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-10117",
+        "ArXiv": "2311.10117",
+        "DOI": "10.48550/arXiv.2311.10117",
+        "CorpusId": 265281606
+      },
+      "arxiv_id": "2311.10117",
+      "doi": "10.48550/arXiv.2311.10117",
+      "corpus_id": 265281606
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "2",
+      "ref_key": "S2:9a75e23639bfcc3a51da57a3b682a984d1d8ac0b",
+      "paperId": "9a75e23639bfcc3a51da57a3b682a984d1d8ac0b",
+      "title": "Language Models can Solve Computer Tasks",
+      "year": 2023,
+      "abstract": "Agents capable of carrying out general tasks on a computer can improve efficiency and productivity by automating repetitive tasks and assisting in complex problem-solving. Ideally, such agents should be able to solve new computer tasks presented to them through natural language commands. However, previous approaches to this problem require large amounts of expert demonstrations and task-specific reward functions, both of which are impractical for new tasks. In this work, we show that a pre-trained large language model (LLM) agent can execute computer tasks guided by natural language using a simple prompting scheme where the agent Recursively Criticizes and Improves its output (RCI). The RCI approach significantly outperforms existing LLM methods for automating computer tasks and surpasses supervised learning (SL) and reinforcement learning (RL) approaches on the MiniWoB++ benchmark. We compare multiple LLMs and find that RCI with the InstructGPT-3+RLHF LLM is state-of-the-art on MiniWoB++, using only a handful of demonstrations per task rather than tens of thousands, and without a task-specific reward function. Furthermore, we demonstrate RCI prompting's effectiveness in enhancing LLMs' reasoning abilities on a suite of natural language reasoning tasks, outperforming chain of thought (CoT) prompting with external feedback. We find that RCI combined with CoT performs better than either separately. Our code can be found here: https://github.com/posgnu/rci-agent.",
+      "externalIds": {
+        "ArXiv": "2303.17491",
+        "DBLP": "conf/nips/KimBM23",
+        "DOI": "10.48550/arXiv.2303.17491",
+        "CorpusId": 257834038
+      },
+      "arxiv_id": "2303.17491",
+      "doi": "10.48550/arXiv.2303.17491",
+      "corpus_id": 257834038
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "3",
+      "ref_key": "S2:90350aa626bed47b02d0c162462e5b0ca82be6b2",
+      "paperId": "90350aa626bed47b02d0c162462e5b0ca82be6b2",
+      "title": "Automatic Chain of Thought Prompting in Large Language Models",
+      "year": 2022,
+      "abstract": "Large language models (LLMs) can perform complex reasoning by generating intermediate reasoning steps. Providing these steps for prompting demonstrations is called chain-of-thought (CoT) prompting. CoT prompting has two major paradigms. One leverages a simple prompt like\"Let's think step by step\"to facilitate step-by-step thinking before answering a question. The other uses a few manual demonstrations one by one, each composed of a question and a reasoning chain that leads to an answer. The superior performance of the second paradigm hinges on the hand-crafting of task-specific demonstrations one by one. We show that such manual efforts may be eliminated by leveraging LLMs with the\"Let's think step by step\"prompt to generate reasoning chains for demonstrations one by one, i.e., let's think not just step by step, but also one by one. However, these generated chains often come with mistakes. To mitigate the effect of such mistakes, we find that diversity matters for automatically constructing demonstrations. We propose an automatic CoT prompting method: Auto-CoT. It samples questions with diversity and generates reasoning chains to construct demonstrations. On ten public benchmark reasoning tasks with GPT-3, Auto-CoT consistently matches or exceeds the performance of the CoT paradigm that requires manual designs of demonstrations. Code is available at https://github.com/amazon-research/auto-cot",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-03493",
+        "ArXiv": "2210.03493",
+        "CorpusId": 252762275
+      },
+      "arxiv_id": "2210.03493",
+      "doi": null,
+      "corpus_id": 252762275
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "4",
+      "ref_key": "S2:4610ffb1b016acaa82a2065ffd1a3adbae1ce722",
+      "paperId": "4610ffb1b016acaa82a2065ffd1a3adbae1ce722",
+      "title": "Large Language Models Are Human-Level Prompt Engineers",
+      "year": 2022,
+      "abstract": "By conditioning on natural language instructions, large language models (LLMs) have displayed impressive capabilities as general-purpose computers. However, task performance depends significantly on the quality of the prompt used to steer the model, and most effective prompts have been handcrafted by humans. Inspired by classical program synthesis and the human approach to prompt engineering, we propose Automatic Prompt Engineer (APE) for automatic instruction generation and selection. In our method, we treat the instruction as the\"program,\"optimized by searching over a pool of instruction candidates proposed by an LLM in order to maximize a chosen score function. To evaluate the quality of the selected instruction, we evaluate the zero-shot performance of another LLM following the selected instruction. Experiments on 24 NLP tasks show that our automatically generated instructions outperform the prior LLM baseline by a large margin and achieve better or comparable performance to the instructions generated by human annotators on 19/24 tasks. We conduct extensive qualitative and quantitative analyses to explore the performance of APE. We show that APE-engineered prompts can be applied to steer models toward truthfulness and/or informativeness, as well as to improve few-shot learning performance by simply prepending them to standard in-context learning prompts. Please check out our webpage at https://sites.google.com/view/automatic-prompt-engineer.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2211-01910",
+        "ArXiv": "2211.01910",
+        "DOI": "10.48550/arXiv.2211.01910",
+        "CorpusId": 253265328
+      },
+      "arxiv_id": "2211.01910",
+      "doi": "10.48550/arXiv.2211.01910",
+      "corpus_id": 253265328
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "5",
+      "ref_key": "S2:90abbc2cf38462b954ae1b772fac9532e2ccd8b0",
+      "paperId": "90abbc2cf38462b954ae1b772fac9532e2ccd8b0",
+      "title": "Language Models are Few-Shot Learners",
+      "year": 2020,
+      "abstract": "Recent work has demonstrated substantial gains on many NLP tasks and benchmarks by pre-training on a large corpus of text followed by fine-tuning on a specific task. While typically task-agnostic in architecture, this method still requires task-specific fine-tuning datasets of thousands or tens of thousands of examples. By contrast, humans can generally perform a new language task from only a few examples or from simple instructions - something which current NLP systems still largely struggle to do. Here we show that scaling up language models greatly improves task-agnostic, few-shot performance, sometimes even reaching competitiveness with prior state-of-the-art fine-tuning approaches. Specifically, we train GPT-3, an autoregressive language model with 175 billion parameters, 10x more than any previous non-sparse language model, and test its performance in the few-shot setting. For all tasks, GPT-3 is applied without any gradient updates or fine-tuning, with tasks and few-shot demonstrations specified purely via text interaction with the model. GPT-3 achieves strong performance on many NLP datasets, including translation, question-answering, and cloze tasks, as well as several tasks that require on-the-fly reasoning or domain adaptation, such as unscrambling words, using a novel word in a sentence, or performing 3-digit arithmetic. At the same time, we also identify some datasets where GPT-3's few-shot learning still struggles, as well as some datasets where GPT-3 faces methodological issues related to training on large web corpora. Finally, we find that GPT-3 can generate samples of news articles which human evaluators have difficulty distinguishing from articles written by humans. We discuss broader societal impacts of this finding and of GPT-3 in general.",
+      "externalIds": {
+        "ArXiv": "2005.14165",
+        "DBLP": "conf/nips/BrownMRSKDNSSAA20",
+        "MAG": "3030163527",
+        "CorpusId": 218971783
+      },
+      "arxiv_id": "2005.14165",
+      "doi": null,
+      "corpus_id": 218971783
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "6",
+      "ref_key": "S2:29ddc1f43f28af7c846515e32cc167bc66886d0c",
+      "paperId": "29ddc1f43f28af7c846515e32cc167bc66886d0c",
+      "title": "Parameter-Efficient Transfer Learning for NLP",
+      "year": 2019,
+      "abstract": "Fine-tuning large pre-trained models is an effective transfer mechanism in NLP. However, in the presence of many downstream tasks, fine-tuning is parameter inefficient: an entire new model is required for every task. As an alternative, we propose transfer with adapter modules. Adapter modules yield a compact and extensible model; they add only a few trainable parameters per task, and new tasks can be added without revisiting previous ones. The parameters of the original network remain fixed, yielding a high degree of parameter sharing. To demonstrate adapter's effectiveness, we transfer the recently proposed BERT Transformer model to 26 diverse text classification tasks, including the GLUE benchmark. Adapters attain near state-of-the-art performance, whilst adding only a few parameters per task. On GLUE, we attain within 0.4% of the performance of full fine-tuning, adding only 3.6% parameters per task. By contrast, fine-tuning trains 100% of the parameters per task.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1902-00751",
+        "ArXiv": "1902.00751",
+        "MAG": "2964303773",
+        "CorpusId": 59599816
+      },
+      "arxiv_id": "1902.00751",
+      "doi": null,
+      "corpus_id": 59599816
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "7",
+      "ref_key": "S2:1e077413b25c4d34945cc2707e17e46ed4fe784a",
+      "paperId": "1e077413b25c4d34945cc2707e17e46ed4fe784a",
+      "title": "Universal Language Model Fine-tuning for Text Classification",
+      "year": 2018,
+      "abstract": "Inductive transfer learning has greatly impacted computer vision, but existing approaches in NLP still require task-specific modifications and training from scratch. We propose Universal Language Model Fine-tuning (ULMFiT), an effective transfer learning method that can be applied to any task in NLP, and introduce techniques that are key for fine-tuning a language model. Our method significantly outperforms the state-of-the-art on six text classification tasks, reducing the error by 18-24% on the majority of datasets. Furthermore, with only 100 labeled examples, it matches the performance of training from scratch on 100 times more data. We open-source our pretrained models and code.",
+      "externalIds": {
+        "ACL": "P18-1031",
+        "MAG": "2952772027",
+        "DBLP": "conf/acl/RuderH18",
+        "DOI": "10.18653/v1/P18-1031",
+        "CorpusId": 40100965
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/P18-1031",
+      "corpus_id": 40100965
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "8",
+      "ref_key": "S2:db4ab91d5675c37795e719e997a2827d3d83cd45",
+      "paperId": "db4ab91d5675c37795e719e997a2827d3d83cd45",
+      "title": "Towards Reasoning in Large Language Models: A Survey",
+      "year": 2022,
+      "abstract": "Reasoning is a fundamental aspect of human intelligence that plays a crucial role in activities such as problem solving, decision making, and critical thinking. In recent years, large language models (LLMs) have made significant progress in natural language processing, and there is observation that these models may exhibit reasoning abilities when they are sufficiently large. However, it is not yet clear to what extent LLMs are capable of reasoning. This paper provides a comprehensive overview of the current state of knowledge on reasoning in LLMs, including techniques for improving and eliciting reasoning in these models, methods and benchmarks for evaluating reasoning abilities, findings and implications of previous research in this field, and suggestions on future directions. Our aim is to provide a detailed and up-to-date review of this topic and stimulate meaningful discussion and future work.",
+      "externalIds": {
+        "ArXiv": "2212.10403",
+        "DBLP": "conf/acl/0009C23",
+        "DOI": "10.48550/arXiv.2212.10403",
+        "CorpusId": 254877753
+      },
+      "arxiv_id": "2212.10403",
+      "doi": "10.48550/arXiv.2212.10403",
+      "corpus_id": 254877753
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "9",
+      "ref_key": "S2:07955e96cbd778d0ae2a68f09d073b866dd84c2a",
+      "paperId": "07955e96cbd778d0ae2a68f09d073b866dd84c2a",
+      "title": "Decomposed Prompting: A Modular Approach for Solving Complex Tasks",
+      "year": 2022,
+      "abstract": "Few-shot prompting is a surprisingly powerful way to use Large Language Models (LLMs) to solve various tasks. However, this approach struggles as the task complexity increases or when the individual reasoning steps of the task themselves are hard to learn, especially when embedded in more complex tasks. To address this, we propose Decomposed Prompting, a new approach to solve complex tasks by decomposing them (via prompting) into simpler sub-tasks that can be delegated to a library of prompting-based LLMs dedicated to these sub-tasks. This modular structure allows each prompt to be optimized for its specific sub-task, further decomposed if necessary, and even easily replaced with more effective prompts, trained models, or symbolic functions if desired. We show that the flexibility and modularity of Decomposed Prompting allows it to outperform prior work on few-shot prompting using GPT3. On symbolic reasoning tasks, we can further decompose sub-tasks that are hard for LLMs into even simpler solvable sub-tasks. When the complexity comes from the input length, we can recursively decompose the task into the same task but with smaller inputs. We also evaluate our approach on textual multi-step reasoning tasks: on long-context multi-hop QA task, we can more effectively teach the sub-tasks via our separate sub-tasks prompts; and on open-domain multi-hop QA, we can incorporate a symbolic information retrieval within our decomposition framework, leading to improved performance on both tasks. Datasets, Code and Prompts available at https://github.com/allenai/DecomP.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-02406",
+        "ArXiv": "2210.02406",
+        "DOI": "10.48550/arXiv.2210.02406",
+        "CorpusId": 252715485
+      },
+      "arxiv_id": "2210.02406",
+      "doi": "10.48550/arXiv.2210.02406",
+      "corpus_id": 252715485
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "10",
+      "ref_key": "S2:ffdbd7f0b03b85747b001b4734d5ee31b5229aa4",
+      "paperId": "ffdbd7f0b03b85747b001b4734d5ee31b5229aa4",
+      "title": "The Power of Scale for Parameter-Efficient Prompt Tuning",
+      "year": 2021,
+      "abstract": "In this work, we explore “prompt tuning,” a simple yet effective mechanism for learning “soft prompts” to condition frozen language models to perform specific downstream tasks. Unlike the discrete text prompts used by GPT-3, soft prompts are learned through backpropagation and can be tuned to incorporate signals from any number of labeled examples. Our end-to-end learned approach outperforms GPT-3’s few-shot learning by a large margin. More remarkably, through ablations on model size using T5, we show that prompt tuning becomes more competitive with scale: as models exceed billions of parameters, our method “closes the gap” and matches the strong performance of model tuning (where all model weights are tuned). This finding is especially relevant because large models are costly to share and serve and the ability to reuse one frozen model for multiple downstream tasks can ease this burden. Our method can be seen as a simplification of the recently proposed “prefix tuning” of Li and Liang (2021) and we provide a comparison to this and other similar approaches. Finally, we show that conditioning a frozen model with soft prompts confers benefits in robustness to domain transfer and enables efficient “prompt ensembling.” We release code and model checkpoints to reproduce our experiments.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2104-08691",
+        "ArXiv": "2104.08691",
+        "ACL": "2021.emnlp-main.243",
+        "DOI": "10.18653/v1/2021.emnlp-main.243",
+        "CorpusId": 233296808
+      },
+      "arxiv_id": "2104.08691",
+      "doi": "10.18653/v1/2021.emnlp-main.243",
+      "corpus_id": 233296808
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "11",
+      "ref_key": "S2:53d8b356551a2361020a948f64454a6d599af69f",
+      "paperId": "53d8b356551a2361020a948f64454a6d599af69f",
+      "title": "Prefix-Tuning: Optimizing Continuous Prompts for Generation",
+      "year": 2021,
+      "abstract": "Fine-tuning is the de facto way of leveraging large pretrained language models for downstream tasks. However, fine-tuning modifies all the language model parameters and therefore necessitates storing a full copy for each task. In this paper, we propose prefix-tuning, a lightweight alternative to fine-tuning for natural language generation tasks, which keeps language model parameters frozen and instead optimizes a sequence of continuous task-specific vectors, which we call the prefix. Prefix-tuning draws inspiration from prompting for language models, allowing subsequent tokens to attend to this prefix as if it were “virtual tokens”. We apply prefix-tuning to GPT-2 for table-to-text generation and to BART for summarization. We show that by learning only 0.1% of the parameters, prefix-tuning obtains comparable performance in the full data setting, outperforms fine-tuning in low-data settings, and extrapolates better to examples with topics that are unseen during training.",
+      "externalIds": {
+        "DBLP": "conf/acl/LiL20",
+        "ACL": "2021.acl-long.353",
+        "ArXiv": "2101.00190",
+        "DOI": "10.18653/v1/2021.acl-long.353",
+        "CorpusId": 230433941
+      },
+      "arxiv_id": "2101.00190",
+      "doi": "10.18653/v1/2021.acl-long.353",
+      "corpus_id": 230433941
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "12",
+      "ref_key": "S2:cd18800a0fe0b668a1cc19f2ec95b5003d0a5035",
+      "paperId": "cd18800a0fe0b668a1cc19f2ec95b5003d0a5035",
+      "title": "Improving Language Understanding by Generative Pre-Training",
+      "year": 2018,
+      "abstract": "Natural language understanding comprises a wide range of diverse tasks such as textual entailment, question answering, semantic similarity assessment, and document classiﬁcation. Although large unlabeled text corpora are abundant, labeled data for learning these speciﬁc tasks is scarce, making it challenging for discriminatively trained models to perform adequately. We demonstrate that large gains on these tasks can be realized by generative pre-training of a language model on a diverse corpus of unlabeled text, followed by discriminative ﬁne-tuning on each speciﬁc task. In contrast to previous approaches, we make use of task-aware input transformations during ﬁne-tuning to achieve effective transfer while requiring minimal changes to the model architecture. We demonstrate the effectiveness of our approach on a wide range of benchmarks for natural language understanding. Our general task-agnostic model outperforms discriminatively trained models that use architectures speciﬁcally crafted for each task, signiﬁcantly improving upon the state of the art in 9 out of the 12 tasks studied. For instance, we achieve absolute improvements of 8.9% on commonsense reasoning (Stories Cloze Test), 5.7% on question answering (RACE), and 1.5% on textual entailment (MultiNLI).",
+      "externalIds": {
+        "MAG": "2965425874",
+        "CorpusId": 49313245
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 49313245
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "13",
+      "ref_key": "S2:8b32aa33601514976d88fabcb060a5cd38d34006",
+      "paperId": "8b32aa33601514976d88fabcb060a5cd38d34006",
+      "title": "Multitask Prompt Tuning Enables Parameter-Efficient Transfer Learning",
+      "year": 2023,
+      "abstract": "Prompt tuning, in which a base pretrained model is adapted to each task via conditioning on learned prompt vectors, has emerged as a promising approach for efficiently adapting large language models to multiple downstream tasks. However, existing methods typically learn soft prompt vectors from scratch, and it has not been clear how to exploit the rich cross-task knowledge with prompt vectors in a multitask learning setting. We propose multitask prompt tuning (MPT), which first learns a single transferable prompt by distilling knowledge from multiple task-specific source prompts. We then learn multiplicative low rank updates to this shared prompt to efficiently adapt it to each downstream target task. Extensive experiments on 23 NLP datasets demonstrate that our proposed approach outperforms the state-of-the-art methods, including the full finetuning baseline in some cases, despite only tuning 0.035% as many task-specific parameters.",
+      "externalIds": {
+        "ArXiv": "2303.02861",
+        "DBLP": "journals/corr/abs-2303-02861",
+        "DOI": "10.48550/arXiv.2303.02861",
+        "CorpusId": 257365136
+      },
+      "arxiv_id": "2303.02861",
+      "doi": "10.48550/arXiv.2303.02861",
+      "corpus_id": 257365136
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "14",
+      "ref_key": "S2:5f19ae1135a9500940978104ec15a5b8751bc7d2",
+      "paperId": "5f19ae1135a9500940978104ec15a5b8751bc7d2",
+      "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
+      "year": 2022,
+      "abstract": "Chain-of-thought prompting combined with pre-trained large language models has achieved encouraging results on complex reasoning tasks. In this paper, we propose a new decoding strategy, self-consistency, to replace the naive greedy decoding used in chain-of-thought prompting. It first samples a diverse set of reasoning paths instead of only taking the greedy one, and then selects the most consistent answer by marginalizing out the sampled reasoning paths. Self-consistency leverages the intuition that a complex reasoning problem typically admits multiple different ways of thinking leading to its unique correct answer. Our extensive empirical evaluation shows that self-consistency boosts the performance of chain-of-thought prompting with a striking margin on a range of popular arithmetic and commonsense reasoning benchmarks, including GSM8K (+17.9%), SVAMP (+11.0%), AQuA (+12.2%), StrategyQA (+6.4%) and ARC-challenge (+3.9%).",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2203-11171",
+        "ArXiv": "2203.11171",
+        "DOI": "10.48550/arXiv.2203.11171",
+        "CorpusId": 247595263
+      },
+      "arxiv_id": "2203.11171",
+      "doi": "10.48550/arXiv.2203.11171",
+      "corpus_id": 247595263
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "15",
+      "ref_key": "S2:55a66fc5e5246511c55c2c2d1d7a060709490030",
+      "paperId": "55a66fc5e5246511c55c2c2d1d7a060709490030",
+      "title": "A Theoretical Understanding of Self-Correction through In-context Alignment",
+      "year": 2024,
+      "abstract": "Going beyond mimicking limited human experiences, recent studies show initial evidence that, like humans, large language models (LLMs) are capable of improving their abilities purely by self-correction, i.e., correcting previous responses through self-examination, in certain circumstances. Nevertheless, little is known about how such capabilities arise. In this work, based on a simplified setup akin to an alignment task, we theoretically analyze self-correction from an in-context learning perspective, showing that when LLMs give relatively accurate self-examinations as rewards, they are capable of refining responses in an in-context way. Notably, going beyond previous theories on over-simplified linear transformers, our theoretical construction underpins the roles of several key designs of realistic transformers for self-correction: softmax attention, multi-head attention, and the MLP block. We validate these findings extensively on synthetic datasets. Inspired by these findings, we also illustrate novel applications of self-correction, such as defending against LLM jailbreaks, where a simple self-correction step does make a large difference. We believe that these findings will inspire further research on understanding, exploiting, and enhancing self-correction for building better foundation models.",
+      "externalIds": {
+        "ArXiv": "2405.18634",
+        "DBLP": "journals/corr/abs-2405-18634",
+        "DOI": "10.48550/arXiv.2405.18634",
+        "CorpusId": 270095253
+      },
+      "arxiv_id": "2405.18634",
+      "doi": "10.48550/arXiv.2405.18634",
+      "corpus_id": 270095253
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "16",
+      "ref_key": "S2:a37d5620210276e47cf0c9dd2898c2a82c9d0422",
+      "paperId": "a37d5620210276e47cf0c9dd2898c2a82c9d0422",
+      "title": "Simple synthetic data reduces sycophancy in large language models",
+      "year": 2023,
+      "abstract": "Sycophancy is an undesirable behavior where models tailor their responses to follow a human user's view even when that view is not objectively correct (e.g., adapting liberal views once a user reveals that they are liberal). In this paper, we study the prevalence of sycophancy in language models and propose a simple synthetic-data intervention to reduce this behavior. First, on a set of three sycophancy tasks (Perez et al., 2022) where models are asked for an opinion on statements with no correct answers (e.g., politics), we observe that both model scaling and instruction tuning significantly increase sycophancy for PaLM models up to 540B parameters. Second, we extend sycophancy evaluations to simple addition statements that are objectively incorrect, finding that despite knowing that these statements are wrong, language models will still agree with them if the user does as well. To reduce sycophancy, we present a straightforward synthetic-data intervention that takes public NLP tasks and encourages models to be robust to user opinions on these tasks. Adding these data in a lightweight finetuning step can significantly reduce sycophantic behavior on held-out prompts. Code for generating synthetic data for intervention can be found at https://github.com/google/sycophancy-intervention.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-03958",
+        "ArXiv": "2308.03958",
+        "DOI": "10.48550/arXiv.2308.03958",
+        "CorpusId": 260704246
+      },
+      "arxiv_id": "2308.03958",
+      "doi": "10.48550/arXiv.2308.03958",
+      "corpus_id": 260704246
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "17",
+      "ref_key": "S2:2f3822eb380b5e753a6d579f31dfc3ec4c4a0820",
+      "paperId": "2f3822eb380b5e753a6d579f31dfc3ec4c4a0820",
+      "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+      "year": 2023,
+      "abstract": "Language models are increasingly being deployed for general problem solving across a wide range of tasks, but are still confined to token-level, left-to-right decision-making processes during inference. This means they can fall short in tasks that require exploration, strategic lookahead, or where initial decisions play a pivotal role. To surmount these challenges, we introduce a new framework for language model inference, Tree of Thoughts (ToT), which generalizes over the popular Chain of Thought approach to prompting language models, and enables exploration over coherent units of text (thoughts) that serve as intermediate steps toward problem solving. ToT allows LMs to perform deliberate decision making by considering multiple different reasoning paths and self-evaluating choices to decide the next course of action, as well as looking ahead or backtracking when necessary to make global choices. Our experiments show that ToT significantly enhances language models' problem-solving abilities on three novel tasks requiring non-trivial planning or search: Game of 24, Creative Writing, and Mini Crosswords. For instance, in Game of 24, while GPT-4 with chain-of-thought prompting only solved 4% of tasks, our method achieved a success rate of 74%. Code repo with all prompts: https://github.com/princeton-nlp/tree-of-thought-llm.",
+      "externalIds": {
+        "ArXiv": "2305.10601",
+        "DBLP": "conf/nips/YaoYZS00N23",
+        "DOI": "10.48550/arXiv.2305.10601",
+        "CorpusId": 258762525
+      },
+      "arxiv_id": "2305.10601",
+      "doi": "10.48550/arXiv.2305.10601",
+      "corpus_id": 258762525
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "18",
+      "ref_key": "S2:0d53dcd8ebe1dd44b43c71bbfbe9076b4ed12dd8",
+      "paperId": "0d53dcd8ebe1dd44b43c71bbfbe9076b4ed12dd8",
+      "title": "Prompt Leakage effect and defense strategies for multi-turn LLM interactions",
+      "year": 2024,
+      "abstract": "Prompt leakage poses a compelling security and privacy threat in LLM applications. Leakage of system prompts may compromise intellectual property, and act as adversarial reconnaissance for an attacker. A systematic evaluation of prompt leakage threats and mitigation strategies is lacking, especially for multi-turn LLM interactions. In this paper, we systematically investigate LLM vulnerabilities against prompt leakage for 10 closed- and open-source LLMs, across four domains. We design a unique threat model which leverages the LLM sycophancy effect and elevates the average attack success rate (ASR) from 17.7% to 86.2% in a multi-turn setting. Our standardized setup further allows dissecting leakage of specific prompt contents such as task instructions and knowledge documents. We measure the mitigation effect of 7 black-box defense strategies, along with finetuning an open-source model to defend against leakage attempts. We present different combination of defenses against our threat model, including a cost analysis. Our study highlights key takeaways for building secure LLM applications and provides directions for research in multi-turn LLM interactions",
+      "externalIds": {
+        "ArXiv": "2404.16251",
+        "CorpusId": 269362119
+      },
+      "arxiv_id": "2404.16251",
+      "doi": null,
+      "corpus_id": 269362119
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "19",
+      "ref_key": "S2:b43eb24cfc1930fb9c7bace4b69cdf34fecfde3c",
+      "paperId": "b43eb24cfc1930fb9c7bace4b69cdf34fecfde3c",
+      "title": "Defending Against Social Engineering Attacks in the Age of LLMs",
+      "year": 2024,
+      "abstract": "The proliferation of Large Language Models (LLMs) poses challenges in detecting and mitigating digital deception, as these models can emulate human conversational patterns and facilitate chat-based social engineering (CSE) attacks. This study investigates the dual capabilities of LLMs as both facilitators and defenders against CSE threats. We develop a novel dataset, SEConvo, simulating CSE scenarios in academic and recruitment contexts, and designed to examine how LLMs can be exploited in these situations. Our findings reveal that, while off-the-shelf LLMs generate high-quality CSE content, their detection capabilities are suboptimal, leading to increased operational costs for defense. In response, we propose ConvoSentinel, a modular defense pipeline that improves detection at both the message and the conversation levels, offering enhanced adaptability and cost-effectiveness. The retrieval-augmented module in ConvoSentinel identifies malicious intent by comparing messages to a database of similar conversations, enhancing CSE detection at all stages. Our study highlights the need for advanced strategies to leverage LLMs in cybersecurity.",
+      "externalIds": {
+        "ArXiv": "2406.12263",
+        "ACL": "2024.emnlp-main.716",
+        "DBLP": "journals/corr/abs-2406-12263",
+        "DOI": "10.18653/v1/2024.emnlp-main.716",
+        "CorpusId": 270562926
+      },
+      "arxiv_id": "2406.12263",
+      "doi": "10.18653/v1/2024.emnlp-main.716",
+      "corpus_id": 270562926
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "20",
+      "ref_key": "S2:af5633c94ed2beb282f6a53c595eb437e8e7b630",
+      "paperId": "af5633c94ed2beb282f6a53c595eb437e8e7b630",
+      "title": "Many-shot Jailbreaking",
+      "year": 2024,
+      "abstract": "We investigate a family of simple long-context attacks on large language models: prompting with hundreds of demonstrations of undesirable behavior. This is newly feasible with the larger context windows recently deployed by Anthropic, Ope-nAI and Google DeepMind. We find that in diverse, realistic circumstances, the effectiveness of this attack follows a power law, up to hundreds of shots. We demonstrate the success of this attack on the most widely used state-of-the-art closed-weight models, and across various tasks. Our results suggest very long contexts present a rich new attack surface for LLMs.",
+      "externalIds": {
+        "CorpusId": 269010944
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 269010944
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "21",
+      "ref_key": "S2:df7d26339adf4eb0c07160947b9d2973c24911ba",
+      "paperId": "df7d26339adf4eb0c07160947b9d2973c24911ba",
+      "title": "Extracting Training Data from Large Language Models",
+      "year": 2020,
+      "abstract": "It has become common to publish large (billion parameter) language models that have been trained on private datasets. This paper demonstrates that in such settings, an adversary can perform a training data extraction attack to recover individual training examples by querying the language model. \nWe demonstrate our attack on GPT-2, a language model trained on scrapes of the public Internet, and are able to extract hundreds of verbatim text sequences from the model's training data. These extracted examples include (public) personally identifiable information (names, phone numbers, and email addresses), IRC conversations, code, and 128-bit UUIDs. Our attack is possible even though each of the above sequences are included in just one document in the training data. \nWe comprehensively evaluate our extraction attack to understand the factors that contribute to its success. For example, we find that larger models are more vulnerable than smaller models. We conclude by drawing lessons and discussing possible safeguards for training large language models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2012-07805",
+        "MAG": "3112689365",
+        "ArXiv": "2012.07805",
+        "CorpusId": 229156229
+      },
+      "arxiv_id": "2012.07805",
+      "doi": null,
+      "corpus_id": 229156229
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "22",
+      "ref_key": "S2:b232f468de0b1d4ff1c2dfe5dbb03ec093160c48",
+      "paperId": "b232f468de0b1d4ff1c2dfe5dbb03ec093160c48",
+      "title": "Stealing Part of a Production Language Model",
+      "year": 2024,
+      "abstract": "We introduce the first model-stealing attack that extracts precise, nontrivial information from black-box production language models like OpenAI's ChatGPT or Google's PaLM-2. Specifically, our attack recovers the embedding projection layer (up to symmetries) of a transformer model, given typical API access. For under \\$20 USD, our attack extracts the entire projection matrix of OpenAI's Ada and Babbage language models. We thereby confirm, for the first time, that these black-box models have a hidden dimension of 1024 and 2048, respectively. We also recover the exact hidden dimension size of the gpt-3.5-turbo model, and estimate it would cost under $2,000 in queries to recover the entire projection matrix. We conclude with potential defenses and mitigations, and discuss the implications of possible future work that could extend our attack.",
+      "externalIds": {
+        "ArXiv": "2403.06634",
+        "DBLP": "conf/icml/CarliniPD0HCLJN24",
+        "DOI": "10.48550/arXiv.2403.06634",
+        "CorpusId": 268357903
+      },
+      "arxiv_id": "2403.06634",
+      "doi": "10.48550/arXiv.2403.06634",
+      "corpus_id": 268357903
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "23",
+      "ref_key": "S2:705e49afd92130f2bc1e0d4d0b1f6cb14e88803f",
+      "paperId": "705e49afd92130f2bc1e0d4d0b1f6cb14e88803f",
+      "title": "Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) are increasingly being integrated into applications, with versatile functionalities that can be easily modulated via natural language prompts. So far, it was assumed that the user is directly prompting the LLM. But, what if it is not the user prompting? We show that LLM-Integrated Applications blur the line between data and instructions and reveal several new attack vectors, using Indirect Prompt Injection, that enable adversaries to remotely (i.e., without a direct interface) exploit LLM-integrated applications by strategically injecting prompts into data likely to be retrieved at inference time. We derive a comprehensive taxonomy from a computer security perspective to broadly investigate impacts and vulnerabilities, including data theft, worming, information ecosystem contamination, and other novel security risks. We then demonstrate the practical viability of our attacks against both real-world systems, such as Bing Chat and code-completion engines, and GPT-4 synthetic applications. We show how processing retrieved prompts can act as arbitrary code execution, manipulate the application's functionality, and control how and if other APIs are called. Despite the increasing reliance on LLMs, effective mitigations of these emerging threats are lacking. By raising awareness of these vulnerabilities, we aim to promote the safe and responsible deployment of these powerful models and the development of robust defenses that protect users from potential attacks.",
+      "externalIds": {
+        "DBLP": "conf/ccs/AbdelnabiGMEHF23",
+        "ArXiv": "2302.12173",
+        "DOI": "10.1145/3605764.3623985",
+        "CorpusId": 258546941
+      },
+      "arxiv_id": "2302.12173",
+      "doi": "10.1145/3605764.3623985",
+      "corpus_id": 258546941
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "24",
+      "ref_key": "S2:025ca4c125d6ecabc816a56f160e5c992abc76d9",
+      "paperId": "025ca4c125d6ecabc816a56f160e5c992abc76d9",
+      "title": "Multi-step Jailbreaking Privacy Attacks on ChatGPT",
+      "year": 2023,
+      "abstract": "With the rapid progress of large language models (LLMs), many downstream NLP tasks can be well solved given appropriate prompts. Though model developers and researchers work hard on dialog safety to avoid generating harmful content from LLMs, it is still challenging to steer AI-generated content (AIGC) for the human good. As powerful LLMs are devouring existing text data from various domains (e.g., GPT-3 is trained on 45TB texts), it is natural to doubt whether the private information is included in the training data and what privacy threats can these LLMs and their downstream applications bring. In this paper, we study the privacy threats from OpenAI's ChatGPT and the New Bing enhanced by ChatGPT and show that application-integrated LLMs may cause new privacy threats. To this end, we conduct extensive experiments to support our claims and discuss LLMs' privacy implications.",
+      "externalIds": {
+        "ArXiv": "2304.05197",
+        "DBLP": "journals/corr/abs-2304-05197",
+        "DOI": "10.48550/arXiv.2304.05197",
+        "CorpusId": 258060250
+      },
+      "arxiv_id": "2304.05197",
+      "doi": "10.48550/arXiv.2304.05197",
+      "corpus_id": 258060250
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "25",
+      "ref_key": "S2:fc50a6202e2f675604543c1ae4ef22ec74f61ad5",
+      "paperId": "fc50a6202e2f675604543c1ae4ef22ec74f61ad5",
+      "title": "Jailbreaking ChatGPT via Prompt Engineering: An Empirical Study",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs), like ChatGPT, have demonstrated vast potential but also introduce challenges related to content constraints and potential misuse. Our study investigates three key research questions: (1) the number of different prompt types that can jailbreak LLMs, (2) the effectiveness of jailbreak prompts in circumventing LLM constraints, and (3) the resilience of ChatGPT against these jailbreak prompts. Initially, we develop a classification model to analyze the distribution of existing prompts, identifying ten distinct patterns and three categories of jailbreak prompts. Subsequently, we assess the jailbreak capability of prompts with ChatGPT versions 3.5 and 4.0, utilizing a dataset of 3,120 jailbreak questions across eight prohibited scenarios. Finally, we evaluate the resistance of ChatGPT against jailbreak prompts, finding that the prompts can consistently evade the restrictions in 40 use-case scenarios. The study underscores the importance of prompt structures in jailbreaking LLMs and discusses the challenges of robust jailbreak prompt generation and prevention.",
+      "externalIds": {
+        "ArXiv": "2305.13860",
+        "DBLP": "journals/corr/abs-2305-13860",
+        "DOI": "10.48550/arXiv.2305.13860",
+        "CorpusId": 258841501
+      },
+      "arxiv_id": "2305.13860",
+      "doi": "10.48550/arXiv.2305.13860",
+      "corpus_id": 258841501
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "26",
+      "ref_key": "S2:cf56a7b28fb27279b1c94fb920b5722cf50c8852",
+      "paperId": "cf56a7b28fb27279b1c94fb920b5722cf50c8852",
+      "title": "AdvPrompter: Fast Adaptive Adversarial Prompting for LLMs",
+      "year": 2024,
+      "abstract": "While recently Large Language Models (LLMs) have achieved remarkable successes, they are vulnerable to certain jailbreaking attacks that lead to generation of inappropriate or harmful content. Manual red-teaming requires finding adversarial prompts that cause such jailbreaking, e.g. by appending a suffix to a given instruction, which is inefficient and time-consuming. On the other hand, automatic adversarial prompt generation often leads to semantically meaningless attacks that can easily be detected by perplexity-based filters, may require gradient information from the TargetLLM, or do not scale well due to time-consuming discrete optimization processes over the token space. In this paper, we present a novel method that uses another LLM, called the AdvPrompter, to generate human-readable adversarial prompts in seconds, $\\sim800\\times$ faster than existing optimization-based approaches. We train the AdvPrompter using a novel algorithm that does not require access to the gradients of the TargetLLM. This process alternates between two steps: (1) generating high-quality target adversarial suffixes by optimizing the AdvPrompter predictions, and (2) low-rank fine-tuning of the AdvPrompter with the generated adversarial suffixes. The trained AdvPrompter generates suffixes that veil the input instruction without changing its meaning, such that the TargetLLM is lured to give a harmful response. Experimental results on popular open source TargetLLMs show state-of-the-art results on the AdvBench dataset, that also transfer to closed-source black-box LLM APIs. Further, we demonstrate that by fine-tuning on a synthetic dataset generated by AdvPrompter, LLMs can be made more robust against jailbreaking attacks while maintaining performance, i.e. high MMLU scores.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2404-16873",
+        "ArXiv": "2404.16873",
+        "DOI": "10.48550/arXiv.2404.16873",
+        "CorpusId": 269430799
+      },
+      "arxiv_id": "2404.16873",
+      "doi": "10.48550/arXiv.2404.16873",
+      "corpus_id": 269430799
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "27",
+      "ref_key": "S2:c257ad02d088c5951258ca56feb311c75ef429ec",
+      "paperId": "c257ad02d088c5951258ca56feb311c75ef429ec",
+      "title": "JailbreakEval: An Integrated Toolkit for Evaluating Jailbreak Attempts Against Large Language Models",
+      "year": 2024,
+      "abstract": "Jailbreak attacks aim to induce Large Language Models (LLMs) to generate harmful responses for forbidden instructions, presenting severe misuse threats to LLMs. Up to now, research into jailbreak attacks and defenses is emerging, however, there is (surprisingly) no consensus on how to evaluate whether a jailbreak attempt is successful. In other words, the methods to assess the harmfulness of an LLM's response are varied, such as manual annotation or prompting GPT-4 in specific ways. Each approach has its own set of strengths and weaknesses, impacting their alignment with human values, as well as the time and financial cost. This diversity in evaluation presents challenges for researchers in choosing suitable evaluation methods and conducting fair comparisons across different jailbreak attacks and defenses. In this paper, we conduct a comprehensive analysis of jailbreak evaluation methodologies, drawing from nearly ninety jailbreak research released between May 2023 and April 2024. Our study introduces a systematic taxonomy of jailbreak evaluators, offering in-depth insights into their strengths and weaknesses, along with the current status of their adaptation. Moreover, to facilitate subsequent research, we propose JailbreakEval, a user-friendly toolkit focusing on the evaluation of jailbreak attempts. It includes various well-known evaluators out-of-the-box, so that users can obtain evaluation results with only a single command. JailbreakEval also allows users to customize their own evaluation workflow in a unified framework with the ease of development and comparison. In summary, we regard JailbreakEval to be a catalyst that simplifies the evaluation process in jailbreak research and fosters an inclusive standard for jailbreak evaluation within the community.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2406-09321",
+        "ArXiv": "2406.09321",
+        "DOI": "10.48550/arXiv.2406.09321",
+        "CorpusId": 270440360
+      },
+      "arxiv_id": "2406.09321",
+      "doi": "10.48550/arXiv.2406.09321",
+      "corpus_id": 270440360
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "28",
+      "ref_key": "S2:f3de6ea08e2464190673c0ec8f78e5ec1cd08642",
+      "paperId": "f3de6ea08e2464190673c0ec8f78e5ec1cd08642",
+      "title": "Ignore This Title and HackAPrompt: Exposing Systemic Vulnerabilities of LLMs through a Global Scale Prompt Hacking Competition",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) are deployed in interactive contexts with direct user engagement, such as chatbots and writing assistants. These deployments are vulnerable to prompt injection and jailbreaking (collectively, prompt hacking), in which models are manipulated to ignore their original instructions and follow potentially malicious ones. Although widely acknowledged as a significant security threat, there is a dearth of large-scale resources and quantitative studies on prompt hacking. To address this lacuna, we launch a global prompt hacking competition, which allows for free-form human input attacks. We elicit 600K+ adversarial prompts against three state-of-the-art LLMs. We describe the dataset, which empirically verifies that current LLMs can indeed be manipulated via prompt hacking. We also present a comprehensive taxonomical ontology of the types of adversarial prompts.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-16119",
+        "ArXiv": "2311.16119",
+        "DOI": "10.48550/arXiv.2311.16119",
+        "CorpusId": 265466048
+      },
+      "arxiv_id": "2311.16119",
+      "doi": "10.48550/arXiv.2311.16119",
+      "corpus_id": 265466048
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "29",
+      "ref_key": "S2:9045649163477319dafba4403dc915c3388dceda",
+      "paperId": "9045649163477319dafba4403dc915c3388dceda",
+      "title": "Exploiting Large Language Models (LLMs) through Deception Techniques and Persuasion Principles",
+      "year": 2023,
+      "abstract": "With the recent advent of Large Language Models (LLMs), such as ChatGPT from OpenAI, BARD from Google, Llama2 from Meta, and Claude from Anthropic AI, gain widespread use, ensuring their security and robustness is critical. The widespread use of these language models heavily relies on their reliability and proper usage of this fascinating technology. It is crucial to thoroughly test these models to not only ensure its quality but also possible misuses of such models by potential adversaries for illegal activities such as hacking. This paper presents a novel study focusing on exploitation of such large language models against deceptive interactions. More specifically, the paper leverages widespread and borrows well-known techniques in deception theory to investigate whether these models are susceptible to deceitful interactions. This research aims not only to highlight these risks but also to pave the way for robust countermeasures that enhance the security and integrity of language models in the face of sophisticated social engineering tactics. Through systematic experiments and analysis, we assess their performance in these critical security domains. Our results demonstrate a significant finding in that these large language models are susceptible to deception and social engineering attacks.",
+      "externalIds": {
+        "ArXiv": "2311.14876",
+        "DBLP": "conf/bigdataconf/SinghAN23",
+        "DOI": "10.1109/BigData59044.2023.10386814",
+        "CorpusId": 265457196
+      },
+      "arxiv_id": "2311.14876",
+      "doi": "10.1109/BigData59044.2023.10386814",
+      "corpus_id": 265457196
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "30",
+      "ref_key": "S2:7571ed4cf1bbdcf891b576a0da12c910b1f0c72f",
+      "paperId": "7571ed4cf1bbdcf891b576a0da12c910b1f0c72f",
+      "title": "Concealed Data Poisoning Attacks on NLP Models",
+      "year": 2021,
+      "abstract": "Adversarial attacks alter NLP model predictions by perturbing test-time inputs. However, it is much less understood whether, and how, predictions can be manipulated with small, concealed changes to the training data. In this work, we develop a new data poisoning attack that allows an adversary to control model predictions whenever a desired trigger phrase is present in the input. For instance, we insert 50 poison examples into a sentiment model’s training set that causes the model to frequently predict Positive whenever the input contains “James Bond”. Crucially, we craft these poison examples using a gradient-based procedure so that they do not mention the trigger phrase. We also apply our poison attack to language modeling (“Apple iPhone” triggers negative generations) and machine translation (“iced coffee” mistranslated as “hot coffee”). We conclude by proposing three defenses that can mitigate our attack at some cost in prediction accuracy or extra human annotation.",
+      "externalIds": {
+        "MAG": "3170572542",
+        "DBLP": "conf/naacl/WallaceZFS21",
+        "ACL": "2021.naacl-main.13",
+        "DOI": "10.18653/V1/2021.NAACL-MAIN.13",
+        "CorpusId": 233230124
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/V1/2021.NAACL-MAIN.13",
+      "corpus_id": 233230124
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "31",
+      "ref_key": "S2:388de598bb3609fb793c0bd26c365e98139f00ce",
+      "paperId": "388de598bb3609fb793c0bd26c365e98139f00ce",
+      "title": "Unveiling the Misuse Potential of Base Large Language Models via In-Context Learning",
+      "year": 2024,
+      "abstract": "The open-sourcing of large language models (LLMs) accelerates application development, innovation, and scientific progress. This includes both base models, which are pre-trained on extensive datasets without alignment, and aligned models, deliberately designed to align with ethical standards and human values. Contrary to the prevalent assumption that the inherent instruction-following limitations of base LLMs serve as a safeguard against misuse, our investigation exposes a critical oversight in this belief. By deploying carefully designed demonstrations, our research demonstrates that base LLMs could effectively interpret and execute malicious instructions. To systematically assess these risks, we introduce a novel set of risk evaluation metrics. Empirical results reveal that the outputs from base LLMs can exhibit risk levels on par with those of models fine-tuned for malicious purposes. This vulnerability, requiring neither specialized knowledge nor training, can be manipulated by almost anyone, highlighting the substantial risk and the critical need for immediate attention to the base LLMs' security protocols.",
+      "externalIds": {
+        "ArXiv": "2404.10552",
+        "DBLP": "journals/corr/abs-2404-10552",
+        "DOI": "10.48550/arXiv.2404.10552",
+        "CorpusId": 269157491
+      },
+      "arxiv_id": "2404.10552",
+      "doi": "10.48550/arXiv.2404.10552",
+      "corpus_id": 269157491
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "32",
+      "ref_key": "S2:39c77e29a232a9fb62b3a3c89c50f487d73e27ce",
+      "paperId": "39c77e29a232a9fb62b3a3c89c50f487d73e27ce",
+      "title": "Counterfactual Memorization in Neural Language Models",
+      "year": 2021,
+      "abstract": "Modern neural language models that are widely used in various NLP tasks risk memorizing sensitive information from their training data. Understanding this memorization is important in real world applications and also from a learning-theoretical perspective. An open question in previous studies of language model memorization is how to filter out\"common\"memorization. In fact, most memorization criteria strongly correlate with the number of occurrences in the training set, capturing memorized familiar phrases, public knowledge, templated texts, or other repeated data. We formulate a notion of counterfactual memorization which characterizes how a model's predictions change if a particular document is omitted during training. We identify and study counterfactually-memorized training examples in standard text datasets. We estimate the influence of each memorized training example on the validation set and on generated texts, showing how this can provide direct evidence of the source of memorization at test time.",
+      "externalIds": {
+        "DBLP": "conf/nips/ZhangILJTC23",
+        "ArXiv": "2112.12938",
+        "CorpusId": 245502053
+      },
+      "arxiv_id": "2112.12938",
+      "doi": null,
+      "corpus_id": 245502053
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "33",
+      "ref_key": "S2:3637afb75e5b83803aff08a3ffdd35b02fa93775",
+      "paperId": "3637afb75e5b83803aff08a3ffdd35b02fa93775",
+      "title": "Improved Few-Shot Jailbreaking Can Circumvent Aligned Language Models and Their Defenses",
+      "year": 2024,
+      "abstract": "Recently, Anil et al. (2024) show that many-shot (up to hundreds of) demonstrations can jailbreak state-of-the-art LLMs by exploiting their long-context capability. Nevertheless, is it possible to use few-shot demonstrations to efficiently jailbreak LLMs within limited context sizes? While the vanilla few-shot jailbreaking may be inefficient, we propose improved techniques such as injecting special system tokens like [/INST] and employing demo-level random search from a collected demo pool. These simple techniques result in surprisingly effective jailbreaking against aligned LLMs (even with advanced defenses). For examples, our method achieves>80% (mostly>95%) ASRs on Llama-2-7B and Llama-3-8B without multiple restarts, even if the models are enhanced by strong defenses such as perplexity detection and/or SmoothLLM, which is challenging for suffix-based jailbreaking. In addition, we conduct comprehensive and elaborate (e.g., making sure to use correct system prompts) evaluations against other aligned LLMs and advanced defenses, where our method consistently achieves nearly 100% ASRs. Our code is available at https://github.com/sail-sg/I-FSJ.",
+      "externalIds": {
+        "ArXiv": "2406.01288",
+        "DBLP": "journals/corr/abs-2406-01288",
+        "DOI": "10.48550/arXiv.2406.01288",
+        "CorpusId": 270213981
+      },
+      "arxiv_id": "2406.01288",
+      "doi": "10.48550/arXiv.2406.01288",
+      "corpus_id": 270213981
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "34",
+      "ref_key": "S2:47030369e97cc44d4b2e3cf1be85da0fd134904a",
+      "paperId": "47030369e97cc44d4b2e3cf1be85da0fd134904a",
+      "title": "Universal and Transferable Adversarial Attacks on Aligned Language Models",
+      "year": 2023,
+      "abstract": "Because\"out-of-the-box\"large language models are capable of generating a great deal of objectionable content, recent work has focused on aligning these models in an attempt to prevent undesirable generation. While there has been some success at circumventing these measures -- so-called\"jailbreaks\"against LLMs -- these attacks have required significant human ingenuity and are brittle in practice. In this paper, we propose a simple and effective attack method that causes aligned language models to generate objectionable behaviors. Specifically, our approach finds a suffix that, when attached to a wide range of queries for an LLM to produce objectionable content, aims to maximize the probability that the model produces an affirmative response (rather than refusing to answer). However, instead of relying on manual engineering, our approach automatically produces these adversarial suffixes by a combination of greedy and gradient-based search techniques, and also improves over past automatic prompt generation methods. Surprisingly, we find that the adversarial prompts generated by our approach are quite transferable, including to black-box, publicly released LLMs. Specifically, we train an adversarial attack suffix on multiple prompts (i.e., queries asking for many different types of objectionable content), as well as multiple models (in our case, Vicuna-7B and 13B). When doing so, the resulting attack suffix is able to induce objectionable content in the public interfaces to ChatGPT, Bard, and Claude, as well as open source LLMs such as LLaMA-2-Chat, Pythia, Falcon, and others. In total, this work significantly advances the state-of-the-art in adversarial attacks against aligned language models, raising important questions about how such systems can be prevented from producing objectionable information. Code is available at github.com/llm-attacks/llm-attacks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-15043",
+        "ArXiv": "2307.15043",
+        "CorpusId": 260202961
+      },
+      "arxiv_id": "2307.15043",
+      "doi": null,
+      "corpus_id": 260202961
+    },
+    {
+      "paper_id": "2407.18369",
+      "ref_index": "35",
+      "ref_key": "S2:82f7704bf788926317d0f4daa55e414908870e80",
+      "paperId": "82f7704bf788926317d0f4daa55e414908870e80",
+      "title": "Injecting Undetectable Backdoors in Obfuscated Neural Networks and Language Models",
+      "year": 2024,
+      "abstract": "As ML models become increasingly complex and integral to high-stakes domains such as finance and healthcare, they also become more susceptible to sophisticated adversarial attacks. We investigate the threat posed by undetectable backdoors, as defined in Goldwasser et al. (FOCS '22), in models developed by insidious external expert firms. When such backdoors exist, they allow the designer of the model to sell information on how to slightly perturb their input to change the outcome of the model. We develop a general strategy to plant backdoors to obfuscated neural networks, that satisfy the security properties of the celebrated notion of indistinguishability obfuscation. Applying obfuscation before releasing neural networks is a strategy that is well motivated to protect sensitive information of the external expert firm. Our method to plant backdoors ensures that even if the weights and architecture of the obfuscated model are accessible, the existence of the backdoor is still undetectable. Finally, we introduce the notion of undetectable backdoors to language models and extend our neural network backdoor attacks to such models based on the existence of steganographic functions.",
+      "externalIds": {
+        "ArXiv": "2406.05660",
+        "CorpusId": 270370920
+      },
+      "arxiv_id": "2406.05660",
+      "doi": null,
+      "corpus_id": 270370920
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "Black Box Prompt Engineering": {
+        "Language Model Input": {
+          "9a75e23639bfcc3a51da57a3b682a984d1d8ac0b": {},
+          "90350aa626bed47b02d0c162462e5b0ca82be6b2": {}
+        }
+      },
+      "Prompt Research Landscape through the Advancement of Language Models": {
+        "NLP Capability -- Natural Language Understanding (NLU); Language Model Reasoning \\cite{huang-chang-2023-towards} \\\\NLP Task -- Question Answer (QA); Instruction-Following (Alignment); Reasoning (BlocksWorld; Math; Logical)": {
+          "Prompt (Language Model Input) -- Basic text as directive that asks or instructs": {
+            "Machine Learning -- Inference -- In-Context Learning \\\\Zero-Shot \\cite{radford2018improving}; Few-Shot \\cite{brown2020language}": {
+              "Prompt (Few-Shot + Exemplar) -- Chain-of-Thought (CoT) \\cite{wei2024simple}": {
+                "07955e96cbd778d0ae2a68f09d073b866dd84c2a": {},
+                "5f19ae1135a9500940978104ec15a5b8751bc7d2": {},
+                "55a66fc5e5246511c55c2c2d1d7a060709490030": {},
+                "2f3822eb380b5e753a6d579f31dfc3ec4c4a0820": {}
+              }
+            },
+            "Machine Learning -- Parameter Efficient Transfer Learning \\cite{houlsby2019parameterefficienttransferlearningnlp}": {
+              "ffdbd7f0b03b85747b001b4734d5ee31b5229aa4": {},
+              "53d8b356551a2361020a948f64454a6d599af69f": {},
+              "8b32aa33601514976d88fabcb060a5cd38d34006": {}
+            }
+          }
+        }
+      },
+      "Prompt Attacking": {
+        "Language Model Input (LM Input)": {
+          "\"In-Context Learning Prompt Attacks\"  filter by Prompt Input in the sense of Prompt(~ frozen model weight + Prompt Input~)": {
+            "af5633c94ed2beb282f6a53c595eb437e8e7b630": {},
+            "3637afb75e5b83803aff08a3ffdd35b02fa93775": {}
+          },
+          "\"Adversarial Attacks\"  filter by Approach": {
+            "\"Prompt Injection\"  ": {
+              "705e49afd92130f2bc1e0d4d0b1f6cb14e88803f": {},
+              "cf56a7b28fb27279b1c94fb920b5722cf50c8852": {},
+              "f3de6ea08e2464190673c0ec8f78e5ec1cd08642": {},
+              "47030369e97cc44d4b2e3cf1be85da0fd134904a": {}
+            },
+            "\"Reverse Engineering LLMs\"  ": {
+              "df7d26339adf4eb0c07160947b9d2973c24911ba": {},
+              "b232f468de0b1d4ff1c2dfe5dbb03ec093160c48": {},
+              "39c77e29a232a9fb62b3a3c89c50f487d73e27ce": {}
+            },
+            "\"Social Engineering LLMs\"": {
+              "b43eb24cfc1930fb9c7bace4b69cdf34fecfde3c": {},
+              "9045649163477319dafba4403dc915c3388dceda": {},
+              "388de598bb3609fb793c0bd26c365e98139f00ce": {}
+            }
+          },
+          "\"Hacking/Pawning/Owning LLMs\"  filter by Attacker's End Goal": {
+            "9045649163477319dafba4403dc915c3388dceda": {},
+            "388de598bb3609fb793c0bd26c365e98139f00ce": {},
+            "3637afb75e5b83803aff08a3ffdd35b02fa93775": {}
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000001",
+        "paperId": "9a75e23639bfcc3a51da57a3b682a984d1d8ac0b",
+        "ref_index": "2",
+        "path": [
+          "Black Box Prompt Engineering",
+          "Language Model Input"
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000002",
+        "paperId": "90350aa626bed47b02d0c162462e5b0ca82be6b2",
+        "ref_index": "3",
+        "path": [
+          "Black Box Prompt Engineering",
+          "Language Model Input"
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000003",
+        "paperId": "07955e96cbd778d0ae2a68f09d073b866dd84c2a",
+        "ref_index": "9",
+        "path": [
+          "Prompt Research Landscape through the Advancement of Language Models",
+          "NLP Capability -- Natural Language Understanding (NLU); Language Model Reasoning \\cite{huang-chang-2023-towards} \\\\NLP Task -- Question Answer (QA); Instruction-Following (Alignment); Reasoning (BlocksWorld; Math; Logical)",
+          "Prompt (Language Model Input) -- Basic text as directive that asks or instructs",
+          "Machine Learning -- Inference -- In-Context Learning \\\\Zero-Shot \\cite{radford2018improving}; Few-Shot \\cite{brown2020language}",
+          "Prompt (Few-Shot + Exemplar) -- Chain-of-Thought (CoT) \\cite{wei2024simple}"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000004",
+        "paperId": "5f19ae1135a9500940978104ec15a5b8751bc7d2",
+        "ref_index": "14",
+        "path": [
+          "Prompt Research Landscape through the Advancement of Language Models",
+          "NLP Capability -- Natural Language Understanding (NLU); Language Model Reasoning \\cite{huang-chang-2023-towards} \\\\NLP Task -- Question Answer (QA); Instruction-Following (Alignment); Reasoning (BlocksWorld; Math; Logical)",
+          "Prompt (Language Model Input) -- Basic text as directive that asks or instructs",
+          "Machine Learning -- Inference -- In-Context Learning \\\\Zero-Shot \\cite{radford2018improving}; Few-Shot \\cite{brown2020language}",
+          "Prompt (Few-Shot + Exemplar) -- Chain-of-Thought (CoT) \\cite{wei2024simple}"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000005",
+        "paperId": "55a66fc5e5246511c55c2c2d1d7a060709490030",
+        "ref_index": "15",
+        "path": [
+          "Prompt Research Landscape through the Advancement of Language Models",
+          "NLP Capability -- Natural Language Understanding (NLU); Language Model Reasoning \\cite{huang-chang-2023-towards} \\\\NLP Task -- Question Answer (QA); Instruction-Following (Alignment); Reasoning (BlocksWorld; Math; Logical)",
+          "Prompt (Language Model Input) -- Basic text as directive that asks or instructs",
+          "Machine Learning -- Inference -- In-Context Learning \\\\Zero-Shot \\cite{radford2018improving}; Few-Shot \\cite{brown2020language}",
+          "Prompt (Few-Shot + Exemplar) -- Chain-of-Thought (CoT) \\cite{wei2024simple}"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000006",
+        "paperId": "2f3822eb380b5e753a6d579f31dfc3ec4c4a0820",
+        "ref_index": "17",
+        "path": [
+          "Prompt Research Landscape through the Advancement of Language Models",
+          "NLP Capability -- Natural Language Understanding (NLU); Language Model Reasoning \\cite{huang-chang-2023-towards} \\\\NLP Task -- Question Answer (QA); Instruction-Following (Alignment); Reasoning (BlocksWorld; Math; Logical)",
+          "Prompt (Language Model Input) -- Basic text as directive that asks or instructs",
+          "Machine Learning -- Inference -- In-Context Learning \\\\Zero-Shot \\cite{radford2018improving}; Few-Shot \\cite{brown2020language}",
+          "Prompt (Few-Shot + Exemplar) -- Chain-of-Thought (CoT) \\cite{wei2024simple}"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000007",
+        "paperId": "ffdbd7f0b03b85747b001b4734d5ee31b5229aa4",
+        "ref_index": "10",
+        "path": [
+          "Prompt Research Landscape through the Advancement of Language Models",
+          "NLP Capability -- Natural Language Understanding (NLU); Language Model Reasoning \\cite{huang-chang-2023-towards} \\\\NLP Task -- Question Answer (QA); Instruction-Following (Alignment); Reasoning (BlocksWorld; Math; Logical)",
+          "Prompt (Language Model Input) -- Basic text as directive that asks or instructs",
+          "Machine Learning -- Parameter Efficient Transfer Learning \\cite{houlsby2019parameterefficienttransferlearningnlp}"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000008",
+        "paperId": "53d8b356551a2361020a948f64454a6d599af69f",
+        "ref_index": "11",
+        "path": [
+          "Prompt Research Landscape through the Advancement of Language Models",
+          "NLP Capability -- Natural Language Understanding (NLU); Language Model Reasoning \\cite{huang-chang-2023-towards} \\\\NLP Task -- Question Answer (QA); Instruction-Following (Alignment); Reasoning (BlocksWorld; Math; Logical)",
+          "Prompt (Language Model Input) -- Basic text as directive that asks or instructs",
+          "Machine Learning -- Parameter Efficient Transfer Learning \\cite{houlsby2019parameterefficienttransferlearningnlp}"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000009",
+        "paperId": "8b32aa33601514976d88fabcb060a5cd38d34006",
+        "ref_index": "13",
+        "path": [
+          "Prompt Research Landscape through the Advancement of Language Models",
+          "NLP Capability -- Natural Language Understanding (NLU); Language Model Reasoning \\cite{huang-chang-2023-towards} \\\\NLP Task -- Question Answer (QA); Instruction-Following (Alignment); Reasoning (BlocksWorld; Math; Logical)",
+          "Prompt (Language Model Input) -- Basic text as directive that asks or instructs",
+          "Machine Learning -- Parameter Efficient Transfer Learning \\cite{houlsby2019parameterefficienttransferlearningnlp}"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000010",
+        "paperId": "af5633c94ed2beb282f6a53c595eb437e8e7b630",
+        "ref_index": "20",
+        "path": [
+          "Prompt Attacking",
+          "Language Model Input (LM Input)",
+          "\"In-Context Learning Prompt Attacks\"  filter by Prompt Input in the sense of Prompt(~ frozen model weight + Prompt Input~)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000011",
+        "paperId": "3637afb75e5b83803aff08a3ffdd35b02fa93775",
+        "ref_index": "33",
+        "path": [
+          "Prompt Attacking",
+          "Language Model Input (LM Input)",
+          "\"In-Context Learning Prompt Attacks\"  filter by Prompt Input in the sense of Prompt(~ frozen model weight + Prompt Input~)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000012",
+        "paperId": "705e49afd92130f2bc1e0d4d0b1f6cb14e88803f",
+        "ref_index": "23",
+        "path": [
+          "Prompt Attacking",
+          "Language Model Input (LM Input)",
+          "\"Adversarial Attacks\"  filter by Approach",
+          "\"Prompt Injection\"  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000013",
+        "paperId": "cf56a7b28fb27279b1c94fb920b5722cf50c8852",
+        "ref_index": "26",
+        "path": [
+          "Prompt Attacking",
+          "Language Model Input (LM Input)",
+          "\"Adversarial Attacks\"  filter by Approach",
+          "\"Prompt Injection\"  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000014",
+        "paperId": "f3de6ea08e2464190673c0ec8f78e5ec1cd08642",
+        "ref_index": "28",
+        "path": [
+          "Prompt Attacking",
+          "Language Model Input (LM Input)",
+          "\"Adversarial Attacks\"  filter by Approach",
+          "\"Prompt Injection\"  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000015",
+        "paperId": "47030369e97cc44d4b2e3cf1be85da0fd134904a",
+        "ref_index": "34",
+        "path": [
+          "Prompt Attacking",
+          "Language Model Input (LM Input)",
+          "\"Adversarial Attacks\"  filter by Approach",
+          "\"Prompt Injection\"  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000016",
+        "paperId": "df7d26339adf4eb0c07160947b9d2973c24911ba",
+        "ref_index": "21",
+        "path": [
+          "Prompt Attacking",
+          "Language Model Input (LM Input)",
+          "\"Adversarial Attacks\"  filter by Approach",
+          "\"Reverse Engineering LLMs\"  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000017",
+        "paperId": "b232f468de0b1d4ff1c2dfe5dbb03ec093160c48",
+        "ref_index": "22",
+        "path": [
+          "Prompt Attacking",
+          "Language Model Input (LM Input)",
+          "\"Adversarial Attacks\"  filter by Approach",
+          "\"Reverse Engineering LLMs\"  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000018",
+        "paperId": "39c77e29a232a9fb62b3a3c89c50f487d73e27ce",
+        "ref_index": "32",
+        "path": [
+          "Prompt Attacking",
+          "Language Model Input (LM Input)",
+          "\"Adversarial Attacks\"  filter by Approach",
+          "\"Reverse Engineering LLMs\"  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000019",
+        "paperId": "b43eb24cfc1930fb9c7bace4b69cdf34fecfde3c",
+        "ref_index": "19",
+        "path": [
+          "Prompt Attacking",
+          "Language Model Input (LM Input)",
+          "\"Adversarial Attacks\"  filter by Approach",
+          "\"Social Engineering LLMs\""
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000020",
+        "paperId": "9045649163477319dafba4403dc915c3388dceda",
+        "ref_index": "29",
+        "path": [
+          "Prompt Attacking",
+          "Language Model Input (LM Input)",
+          "\"Adversarial Attacks\"  filter by Approach",
+          "\"Social Engineering LLMs\""
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000021",
+        "paperId": "388de598bb3609fb793c0bd26c365e98139f00ce",
+        "ref_index": "31",
+        "path": [
+          "Prompt Attacking",
+          "Language Model Input (LM Input)",
+          "\"Adversarial Attacks\"  filter by Approach",
+          "\"Social Engineering LLMs\""
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000022",
+        "paperId": "9045649163477319dafba4403dc915c3388dceda",
+        "ref_index": "29",
+        "path": [
+          "Prompt Attacking",
+          "Language Model Input (LM Input)",
+          "\"Hacking/Pawning/Owning LLMs\"  filter by Attacker's End Goal"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000023",
+        "paperId": "388de598bb3609fb793c0bd26c365e98139f00ce",
+        "ref_index": "31",
+        "path": [
+          "Prompt Attacking",
+          "Language Model Input (LM Input)",
+          "\"Hacking/Pawning/Owning LLMs\"  filter by Attacker's End Goal"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18369",
+        "arxiv_id": "2407.18369",
+        "leaf_mention_id": "2407.18369::000024",
+        "paperId": "3637afb75e5b83803aff08a3ffdd35b02fa93775",
+        "ref_index": "33",
+        "path": [
+          "Prompt Attacking",
+          "Language Model Input (LM Input)",
+          "\"Hacking/Pawning/Owning LLMs\"  filter by Attacker's End Goal"
+        ],
+        "depth": 3,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 24,
+      "unique_leaf_paper_count": 21,
+      "multi_membership_extra_mentions": 3,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

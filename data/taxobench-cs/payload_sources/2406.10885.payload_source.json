@@ -1,0 +1,2202 @@
+{
+  "paper_id": "2406.10885",
+  "arxiv_id": "2406.10885",
+  "title": "On the Role of Entity and Event Level Conceptualization in Generalizable Reasoning: A Survey of Tasks, Methods, Applications, and Future Directions",
+  "ref_meta": [
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "0",
+      "ref_key": "S2:3dd564a7500861162904c6875a102118891a03f9",
+      "paperId": "3dd564a7500861162904c6875a102118891a03f9",
+      "title": "AbsInstruct: Eliciting Abstraction Ability from LLMs through Explanation Tuning with Plausibility Estimation",
+      "year": 2024,
+      "abstract": "Abstraction ability is crucial in human intelligence, which can also benefit various tasks in NLP study. Existing work shows that LLMs are deficient in abstract ability, and how to improve it remains unexplored. In this work, we design the framework AbsInstruct to enhance LLMs' abstraction ability through instruction tuning. The framework builds instructions with in-depth explanations to assist LLMs in capturing the underlying rationale of abstraction. Meanwhile, we introduce a plausibility estimator to select instructions that are more consistent with the abstraction knowledge of LLMs to be aligned. Then, our framework combines abstraction instructions with general-purpose ones to build a hybrid dataset. Extensive experiments and analyses demonstrate that our framework can considerably enhance LLMs' abstraction ability with strong generalization performance while maintaining their general instruction-following abilities.",
+      "externalIds": {
+        "ArXiv": "2402.10646",
+        "DBLP": "conf/acl/WangFZ0CFLSWS24",
+        "DOI": "10.48550/arXiv.2402.10646",
+        "CorpusId": 267740204
+      },
+      "arxiv_id": "2402.10646",
+      "doi": "10.48550/arXiv.2402.10646",
+      "corpus_id": 267740204
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "1",
+      "ref_key": "S2:11396462f5f5d709ac84ac2a44a1e5f9fba2dacb",
+      "paperId": "11396462f5f5d709ac84ac2a44a1e5f9fba2dacb",
+      "title": "AbsPyramid: Benchmarking the Abstraction Ability of Language Models with a Unified Entailment Graph",
+      "year": 2023,
+      "abstract": "Cognitive research indicates that abstraction ability is essential in human intelligence, which remains under-explored in language models. In this paper, we present AbsPyramid, a unified entailment graph of 221K textual descriptions of abstraction knowledge. While existing resources only touch nouns or verbs within simplified events or specific domains, AbsPyramid collects abstract knowledge for three components of diverse events to comprehensively evaluate the abstraction ability of language models in the open domain. Experimental results demonstrate that current LLMs face challenges comprehending abstraction knowledge in zero-shot and few-shot settings. By training on our rich abstraction knowledge, we find LLMs can acquire basic abstraction abilities and generalize to unseen events. In the meantime, we empirically show that our benchmark is comprehensive to enhance LLMs across two previous abstraction tasks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-09174",
+        "ArXiv": "2311.09174",
+        "DOI": "10.48550/arXiv.2311.09174",
+        "CorpusId": 265212831
+      },
+      "arxiv_id": "2311.09174",
+      "doi": "10.48550/arXiv.2311.09174",
+      "corpus_id": 265212831
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "2",
+      "ref_key": "S2:5aec6865043cb7c7f281699ae95652e0ff680f09",
+      "paperId": "5aec6865043cb7c7f281699ae95652e0ff680f09",
+      "title": "CANDLE: Iterative Conceptualization and Instantiation Distillation from Large Language Models for Commonsense Reasoning",
+      "year": 2024,
+      "abstract": "The sequential process of conceptualization and instantiation is essential to generalizable commonsense reasoning as it allows the application of existing knowledge to unfamiliar scenarios. However, existing works tend to undervalue the step of instantiation and heavily rely on pre-built concept taxonomies and human annotations to collect both types of knowledge, resulting in a lack of instantiated knowledge to complete reasoning, high cost, and limited scalability. To tackle these challenges, we introduce CANDLE, a distillation framework that iteratively performs contextualized conceptualization and instantiation over commonsense knowledge bases by instructing large language models to generate both types of knowledge with critic filtering. By applying CANDLE to ATOMIC, we construct a comprehensive knowledge base comprising six million conceptualizations and instantiated commonsense knowledge triples. Both types of knowledge are firmly rooted in the original ATOMIC dataset, and intrinsic evaluations demonstrate their exceptional quality and diversity. Empirical results indicate that distilling CANDLE on student models provides benefits across four downstream tasks. Our code, data, and models are publicly available at https://github.com/HKUST-KnowComp/CANDLE.",
+      "externalIds": {
+        "ArXiv": "2401.07286",
+        "DBLP": "journals/corr/abs-2401-07286",
+        "DOI": "10.48550/arXiv.2401.07286",
+        "CorpusId": 266999245
+      },
+      "arxiv_id": "2401.07286",
+      "doi": "10.48550/arXiv.2401.07286",
+      "corpus_id": 266999245
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "3",
+      "ref_key": "S2:26f5a7259bad9ff05f481aeb57d7431d499fb100",
+      "paperId": "26f5a7259bad9ff05f481aeb57d7431d499fb100",
+      "title": "CAR: Conceptualization-Augmented Reasoner for Zero-Shot Commonsense Question Answering",
+      "year": 2023,
+      "abstract": "The task of zero-shot commonsense question answering evaluates models on their capacity to reason about general scenarios beyond those presented in specific datasets. Existing approaches for tackling this task leverage external knowledge from CommonSense Knowledge Bases (CSKBs) by pretraining the model on synthetic QA pairs constructed from CSKBs. In these approaches, negative examples (distractors) are formulated by randomly sampling from CSKBs using fairly primitive keyword constraints. However, two bottlenecks limit these approaches: the inherent incompleteness of CSKBs limits the semantic coverage of synthetic QA pairs, and the lack of human annotations makes the sampled negative examples potentially uninformative and contradictory. To tackle these limitations above, we propose Conceptualization-Augmented Reasoner (CAR), a zero-shot commonsense question-answering framework that fully leverages the power of conceptualization. Specifically, CAR abstracts a commonsense knowledge triple to many higher-level instances, which increases the coverage of CSKB and expands the ground-truth answer space, reducing the likelihood of selecting false-negative distractors. Extensive experiments demonstrate that CAR more robustly generalizes to answering questions about zero-shot commonsense scenarios than existing methods, including large language models, such as GPT3.5 and ChatGPT. Our codes, data, and model checkpoints are available at https://github.com/HKUST-KnowComp/CAR.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/WangF0XLSB23",
+        "ArXiv": "2305.14869",
+        "DOI": "10.48550/arXiv.2305.14869",
+        "CorpusId": 258866021
+      },
+      "arxiv_id": "2305.14869",
+      "doi": "10.48550/arXiv.2305.14869",
+      "corpus_id": 258866021
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "4",
+      "ref_key": "S2:fa6d8c4c93eb35d9a2d9542133719dbad87faeb7",
+      "paperId": "fa6d8c4c93eb35d9a2d9542133719dbad87faeb7",
+      "title": "CAT: A Contextualized Conceptualization and Instantiation Framework for Commonsense Reasoning",
+      "year": 2023,
+      "abstract": "Commonsense reasoning, aiming at endowing machines with a human-like ability to make situational presumptions, is extremely challenging to generalize.For someone who barely knows about “meditation,” while is knowledgeable about “singing,” he can still infer that “meditation makes people relaxed” from the existing knowledge that “singing makes people relaxed” by first conceptualizing “singing” as a “relaxing event” and then instantiating that event to “meditation.”This process, known as conceptual induction and deduction, is fundamental to commonsense reasoning while lacking both labeled data and methodologies to enhance commonsense modeling.To fill such a research gap, we propose CAT (Contextualized ConceptuAlization and InsTantiation),a semi-supervised learning framework that integrates event conceptualization and instantiation to conceptualize commonsense knowledge bases at scale.Extensive experiments show that our framework achieves state-of-the-art performances on two conceptualization tasks, and the acquired abstract commonsense knowledge can significantly improve commonsense inference modeling.Our code, data, and fine-tuned models are publicly available at [https://github.com/HKUST-KnowComp/CAT](https://github.com/HKUST-KnowComp/CAT).",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-04808",
+        "ArXiv": "2305.04808",
+        "ACL": "2023.acl-long.733",
+        "DOI": "10.48550/arXiv.2305.04808",
+        "CorpusId": 258557145
+      },
+      "arxiv_id": "2305.04808",
+      "doi": "10.48550/arXiv.2305.04808",
+      "corpus_id": 258557145
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "5",
+      "ref_key": "S2:5e5da02f6545164deb6cc6353a0db5f5a052f2ae",
+      "paperId": "5e5da02f6545164deb6cc6353a0db5f5a052f2ae",
+      "title": "Causality-aware Concept Extraction based on Knowledge-guided Prompting",
+      "year": 2023,
+      "abstract": "Concepts benefit natural language understanding but are far from complete in existing knowledge graphs (KGs). Recently, pre-trained language models (PLMs) have been widely used in text-based concept extraction (CE). However, PLMs tend to mine the co-occurrence associations from massive corpus as pre-trained knowledge rather than the real causal effect between tokens. As a result, the pre-trained knowledge confounds PLMs to extract biased concepts based on spurious co-occurrence correlations, inevitably resulting in low precision. In this paper, through the lens of a Structural Causal Model (SCM), we propose equipping the PLM-based extractor with a knowledge-guided prompt as an intervention to alleviate concept bias. The prompt adopts the topic of the given entity from the existing knowledge in KGs to mitigate the spurious co-occurrence correlations between entities and biased concepts. Our extensive experiments on representative multilingual KG datasets justify that our proposed prompt can effectively alleviate concept bias and improve the performance of PLM-based CE models.",
+      "externalIds": {
+        "ArXiv": "2305.01876",
+        "DBLP": "conf/acl/YuanYLTLXX23",
+        "ACL": "2023.acl-long.514",
+        "DOI": "10.48550/arXiv.2305.01876",
+        "CorpusId": 258461399
+      },
+      "arxiv_id": "2305.01876",
+      "doi": "10.48550/arXiv.2305.01876",
+      "corpus_id": 258461399
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "6",
+      "ref_key": "S2:bcec7d17e68aceb91d020dd796ece075694f77c6",
+      "paperId": "bcec7d17e68aceb91d020dd796ece075694f77c6",
+      "title": "COPEN: Probing Conceptual Knowledge in Pre-trained Language Models",
+      "year": 2022,
+      "abstract": "Conceptual knowledge is fundamental to human cognition and knowledge bases. However, existing knowledge probing works only focus on evaluating factual knowledge of pre-trained language models (PLMs) and ignore conceptual knowledge. Since conceptual knowledge often appears as implicit commonsense behind texts, designing probes for conceptual knowledge is hard. Inspired by knowledge representation schemata, we comprehensively evaluate conceptual knowledge of PLMs by designing three tasks to probe whether PLMs organize entities by conceptual similarities, learn conceptual properties, and conceptualize entities in contexts, respectively. For the tasks, we collect and annotate 24k data instances covering 393 concepts, which is COPEN, a COnceptual knowledge Probing bENchmark. Extensive experiments on different sizes and types of PLMs show that existing PLMs systematically lack conceptual knowledge and suffer from various spurious correlations. We believe this is a critical bottleneck for realizing human-like cognition in PLMs. COPEN and our codes are publicly released at https://github.com/THU-KEG/COPEN.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/PengWHJ0L0022",
+        "ArXiv": "2211.04079",
+        "ACL": "2022.emnlp-main.335",
+        "DOI": "10.48550/arXiv.2211.04079",
+        "CorpusId": 253398055
+      },
+      "arxiv_id": "2211.04079",
+      "doi": "10.48550/arXiv.2211.04079",
+      "corpus_id": 253398055
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "7",
+      "ref_key": "S2:c0f9a638cba62be26ab0a5836bc8d2bb7c57734b",
+      "paperId": "c0f9a638cba62be26ab0a5836bc8d2bb7c57734b",
+      "title": "Distantly Supervised Course Concept Extraction in MOOCs with Academic Discipline",
+      "year": 2023,
+      "abstract": "With the rapid growth of Massive Open Online Courses (MOOCs), it is expensive and time-consuming to extract high-quality knowledgeable concepts taught in the course by human effort to help learners grasp the essence of the course. In this paper, we propose to automatically extract course concepts using distant supervision to eliminate the heavy work of human annotations, which generates labels by matching them with an easily accessed dictionary. However, this matching process suffers from severe noisy and incomplete annotations because of the limited dictionary and diverse MOOCs. To tackle these challenges, we present a novel three-stage framework DS-MOCE, which leverages the power of pre-trained language models explicitly and implicitly and employs discipline-embedding models with a self-train strategy based on label generation refinement across different domains. We also provide an expert-labeled dataset spanning 20 academic disciplines. Experimental results demonstrate the superiority of DS-MOCE over the state-of-the-art distantly supervised methods (with 7% absolute F1 score improvement). Code and data are now available at https://github.com/THU-KEG/MOOC-NER.",
+      "externalIds": {
+        "DBLP": "conf/acl/LuWYDHL23",
+        "ACL": "2023.acl-long.729",
+        "DOI": "10.18653/v1/2023.acl-long.729",
+        "CorpusId": 252570877
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2023.acl-long.729",
+      "corpus_id": 252570877
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "8",
+      "ref_key": "S2:1b5285a955ecc0e3b2aeb718e3b9720275ea82b1",
+      "paperId": "1b5285a955ecc0e3b2aeb718e3b9720275ea82b1",
+      "title": "STEPS: Semantic Typing of Event Processes with a Sequence-to-Sequence Approach",
+      "year": 2022,
+      "abstract": "Enabling computers to comprehend the intent of human actions by processing language is one of the fundamental goals of Natural Language Understanding. \n An emerging task in this context is that of free-form event process typing, which aims at understanding the overall goal of a protagonist in terms of an action and an object, given a sequence of events.\n This task was initially treated as a learning-to-rank problem by exploiting the similarity between processes and action/object textual definitions. \n However, this approach appears to be overly complex, binds the output types to a fixed inventory for possible word definitions and, moreover, leaves space for further enhancements as regards performance.\n In this paper, we advance the field by reformulating the free-form event process typing task as a sequence generation problem and put forward STEPS, an end-to-end approach for producing user intent in terms of actions and objects only, dispensing with the need for their definitions.\n In addition to this, we eliminate several dataset constraints set by previous works, while at the same time significantly outperforming them. \n We release the data and software at https://github.com/SapienzaNLP/steps.",
+      "externalIds": {
+        "DBLP": "conf/aaai/PepeBBN22",
+        "DOI": "10.1609/aaai.v36i10.21365",
+        "CorpusId": 250291497
+      },
+      "arxiv_id": null,
+      "doi": "10.1609/aaai.v36i10.21365",
+      "corpus_id": 250291497
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "9",
+      "ref_key": "S2:26aa6fe2028b5eefbaa40ab54ef725bbbe7d9810",
+      "paperId": "26aa6fe2028b5eefbaa40ab54ef725bbbe7d9810",
+      "title": "ConceptNet 5.5: An Open Multilingual Graph of General Knowledge",
+      "year": 2016,
+      "abstract": "Machine learning about language can be improved by supplying it with specific knowledge and sources of external information. We present here a new version of the linked open data resource ConceptNet that is particularly well suited to be used with modern NLP techniques such as word embeddings. ConceptNet is a knowledge graph that connects words and phrases of natural language with labeled edges. Its knowledge is collected from many sources that include expert-created resources, crowd-sourcing, and games with a purpose. It is designed to represent the general knowledge involved in understanding language, improving natural language applications by allowing the application to better understand the meanings behind the words people use. When ConceptNet is combined with word embeddings acquired from distributional semantics (such as word2vec), it provides applications with understanding that they would not acquire from distributional semantics alone, nor from narrower resources such as WordNet or DBPedia. We demonstrate this with state-of-the-art results on intrinsic evaluations of word relatedness that translate into improvements on applications of word vectors, including solving SAT-style analogies.",
+      "externalIds": {
+        "DBLP": "journals/corr/SpeerCH16",
+        "ArXiv": "1612.03975",
+        "MAG": "2561529111",
+        "DOI": "10.1609/aaai.v31i1.11164",
+        "CorpusId": 15206880
+      },
+      "arxiv_id": "1612.03975",
+      "doi": "10.1609/aaai.v31i1.11164",
+      "corpus_id": 15206880
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "10",
+      "ref_key": "S2:77b8299c9455829db7f37116933e448255bd72d7",
+      "paperId": "77b8299c9455829db7f37116933e448255bd72d7",
+      "title": "Event Process Typing via Hierarchical Optimal Transport",
+      "year": 2023,
+      "abstract": "Understanding intention behind event processes in texts is important to many applications. One challenging task in this line is event process typing, which aims to tag the process with one action label and one object label describing the overall action of the process and object the process likely affects respectively. To tackle this task, existing methods mainly rely on the matching of the event process level and label level representation, which ignores two important characteristics: Process Hierarchy and Label Hierarchy. In this paper, we propose a Hierarchical Optimal Transport (HOT) method to address the above problem. Specifically, we first explicitly extract the process hierarchy and label hierarchy. Then the HOT optimally matches the two types of hierarchy. Experimental results show that our model outperforms the baseline models, illustrating the effectiveness of our model.",
+      "externalIds": {
+        "DBLP": "conf/aaai/Zhou00023",
+        "DOI": "10.1609/aaai.v37i11.26643",
+        "CorpusId": 259723364
+      },
+      "arxiv_id": null,
+      "doi": "10.1609/aaai.v37i11.26643",
+      "corpus_id": 259723364
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "11",
+      "ref_key": "S2:70b49a024787d3ad374fb78dc87e3ba2b5e16566",
+      "paperId": "70b49a024787d3ad374fb78dc87e3ba2b5e16566",
+      "title": "Ultra-Fine Entity Typing with Weak Supervision from a Masked Language Model",
+      "year": 2021,
+      "abstract": "Recently, there is an effort to extend fine-grained entity typing by using a richer and ultra-fine set of types, and labeling noun phrases including pronouns and nominal nouns instead of just named entity mentions. A key challenge for this ultra-fine entity typing task is that human annotated data are extremely scarce, and the annotation ability of existing distant or weak supervision approaches is very limited. To remedy this problem, in this paper, we propose to obtain training data for ultra-fine entity typing by using a BERT Masked Language Model (MLM). Given a mention in a sentence, our approach constructs an input for the BERT MLM so that it predicts context dependent hypernyms of the mention, which can be used as type labels. Experimental results demonstrate that, with the help of these automatically generated labels, the performance of an ultra-fine entity typing model can be improved substantially. We also show that our approach can be applied to improve traditional fine-grained entity typing after performing simple type mapping.",
+      "externalIds": {
+        "DBLP": "conf/acl/DaiSW20",
+        "ACL": "2021.acl-long.141",
+        "ArXiv": "2106.04098",
+        "DOI": "10.18653/v1/2021.acl-long.141",
+        "CorpusId": 235367769
+      },
+      "arxiv_id": "2106.04098",
+      "doi": "10.18653/v1/2021.acl-long.141",
+      "corpus_id": 235367769
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "12",
+      "ref_key": "S2:fa21e97718ca94d8967521e22aa3f18e19582faa",
+      "paperId": "fa21e97718ca94d8967521e22aa3f18e19582faa",
+      "title": "From Ultra-Fine to Fine: Fine-tuning Ultra-Fine Entity Typing Models to Fine-grained",
+      "year": 2023,
+      "abstract": "For the task of fine-grained entity typing (FET), due to the use of a large number of entity types, it is usually considered too costly to manually annotating a training dataset that contains an ample number of examples for each type. A common way to address this problem is to use distantly annotated training data that contains incorrect labels. However, the performance of models trained solely with such data can be limited by the errors in the automatic annotation. Recently, there are a few approaches that no longer follow this conventional way. But without using sufficient direct entity typing supervision may also cause them to yield inferior performance. In this paper, we propose a new approach that can avoid the need of creating distantly labeled data whenever there is a new type schema. We first train an entity typing model that have an extremely board type coverage by using the ultra-fine entity typing data. Then, when there is a need to produce a model for a newly designed fine-grained entity type schema. We can simply fine-tune the previously trained model with a small number of examples annotated under this schema. Experimental results show that our approach achieves outstanding performance for FET under the few-shot setting. It can also outperform state-of-the-art weak supervision based methods after fine-tuning the model with only a small size manually annotated training set.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2312-06188",
+        "ArXiv": "2312.06188",
+        "ACL": "2023.acl-long.126",
+        "DOI": "10.18653/v1/2023.acl-long.126",
+        "CorpusId": 259370673
+      },
+      "arxiv_id": "2312.06188",
+      "doi": "10.18653/v1/2023.acl-long.126",
+      "corpus_id": 259370673
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "13",
+      "ref_key": "S2:940c20a62b54d36a753ef4b2e0c386ff4d37a3d9",
+      "paperId": "940c20a62b54d36a753ef4b2e0c386ff4d37a3d9",
+      "title": "Recall, Expand, and Multi-Candidate Cross-Encode: Fast and Accurate Ultra-Fine Entity Typing",
+      "year": 2022,
+      "abstract": "Ultra-fine entity typing (UFET) predicts extremely free-formed types (e.g., president, politician) of a given entity mention (e.g., Joe Biden) in context. State-of-the-art (SOTA) methods use the cross-encoder (CE) based architecture. CE concatenates a mention (and its context) with each type and feeds the pair into a pretrained language model (PLM) to score their relevance. It brings deeper interaction between the mention and the type to reach better performance but has to perform N (the type set size) forward passes to infer all the types of a single mention. CE is therefore very slow in inference when the type set is large (e.g., N=10k for UFET). % Cross-encoder also ignores the correlation between different types.To this end, we propose to perform entity typing in a recall-expand-filter manner. The recall and expansion stages prune the large type set and generate K (typically much smaller than N) most relevant type candidates for each mention. At the filter stage, we use a novel model called {pasted macro ‘NAME’} to concurrently encode and score all these K candidates in only one forward pass to obtain the final type prediction. We investigate different model options for each stage and conduct extensive experiments to compare each option, experiments show that our method reaches SOTA performance on UFET and is thousands of times faster than the CE-based architecture. We also found our method is very effective in fine-grained (130 types) and coarse-grained (9 types) entity typing. Our code is available at {pasted macro ‘CODE’}.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2212-09125",
+        "ACL": "2023.acl-long.648",
+        "ArXiv": "2212.09125",
+        "DOI": "10.48550/arXiv.2212.09125",
+        "CorpusId": 254854361
+      },
+      "arxiv_id": "2212.09125",
+      "doi": "10.48550/arXiv.2212.09125",
+      "corpus_id": 254854361
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "14",
+      "ref_key": "S2:4157834ed2d2fea6b6f652a72a9d0487edbc9f57",
+      "paperId": "4157834ed2d2fea6b6f652a72a9d0487edbc9f57",
+      "title": "Ultra-Fine Entity Typing",
+      "year": 2018,
+      "abstract": "We introduce a new entity typing task: given a sentence with an entity mention, the goal is to predict a set of free-form phrases (e.g. skyscraper, songwriter, or criminal) that describe appropriate types for the target entity. This formulation allows us to use a new type of distant supervision at large scale: head words, which indicate the type of the noun phrases they appear in. We show that these ultra-fine types can be crowd-sourced, and introduce new evaluation sets that are much more diverse and fine-grained than existing benchmarks. We present a model that can predict ultra-fine types, and is trained using a multitask objective that pools our new head-word supervision with prior supervision from entity linking. Experimental results demonstrate that our model is effective in predicting entity types at varying granularity; it achieves state of the art performance on an existing fine-grained entity typing benchmark, and sets baselines for our newly-introduced datasets.",
+      "externalIds": {
+        "DBLP": "conf/acl/LevyZCC18",
+        "MAG": "2798571336",
+        "ACL": "P18-1009",
+        "ArXiv": "1807.04905",
+        "DOI": "10.18653/v1/P18-1009",
+        "CorpusId": 49212016
+      },
+      "arxiv_id": "1807.04905",
+      "doi": "10.18653/v1/P18-1009",
+      "corpus_id": 49212016
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "15",
+      "ref_key": "S2:176e3cbe3141c8b874df663711dca9b7470b8243",
+      "paperId": "176e3cbe3141c8b874df663711dca9b7470b8243",
+      "title": "Modeling Fine-Grained Entity Types with Box Embeddings",
+      "year": 2021,
+      "abstract": "Neural entity typing models typically represent fine-grained entity types as vectors in a high-dimensional space, but such spaces are not well-suited to modeling these types’ complex interdependencies. We study the ability of box embeddings, which embed concepts as d-dimensional hyperrectangles, to capture hierarchies of types even when these relationships are not defined explicitly in the ontology. Our model represents both types and entity mentions as boxes. Each mention and its context are fed into a BERT-based model to embed that mention in our box space; essentially, this model leverages typological clues present in the surface text to hypothesize a type representation for the mention. Box containment can then be used to derive both the posterior probability of a mention exhibiting a given type and the conditional probability relations between types themselves. We compare our approach with a vector-based typing model and observe state-of-the-art performance on several entity typing benchmarks. In addition to competitive typing performance, our box-based model shows better performance in prediction consistency (predicting a supertype and a subtype together) and confidence (i.e., calibration), demonstrating that the box-based model captures the latent type hierarchies better than the vector-based model does.",
+      "externalIds": {
+        "ACL": "2021.acl-long.160",
+        "DBLP": "conf/acl/OnoeBMD20",
+        "ArXiv": "2101.00345",
+        "DOI": "10.18653/v1/2021.acl-long.160",
+        "CorpusId": 230434014
+      },
+      "arxiv_id": "2101.00345",
+      "doi": "10.18653/v1/2021.acl-long.160",
+      "corpus_id": 230434014
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "16",
+      "ref_key": "S2:af1ec939e26e2467fb4c51f4ca3c85f12579c5a1",
+      "paperId": "af1ec939e26e2467fb4c51f4ca3c85f12579c5a1",
+      "title": "FolkScope: Intention Knowledge Graph Construction for E-commerce Commonsense Discovery",
+      "year": 2022,
+      "abstract": "Understanding users' intentions in e-commerce platforms requires commonsense knowledge. In this paper, we present FolkScope, an intention knowledge graph construction framework to reveal the structure of humans' minds about purchasing items. As commonsense knowledge is usually ineffable and not expressed explicitly, it is challenging to perform information extraction. Thus, we propose a new approach that leverages the generation power of large language models~(LLMs) and human-in-the-loop annotation to semi-automatically construct the knowledge graph. LLMs first generate intention assertions via e-commerce-specific prompts to explain shopping behaviors, where the intention can be an open reason or a predicate falling into one of 18 categories aligning with ConceptNet, e.g., IsA, MadeOf, UsedFor, etc. Then we annotate plausibility and typicality labels of sampled intentions as training data in order to populate human judgments to all automatic generations. Last, to structurize the assertions, we propose pattern mining and conceptualization to form more condensed and abstract knowledge. Extensive evaluations and studies demonstrate that our constructed knowledge graph can well model e-commerce knowledge and have many potential applications.",
+      "externalIds": {
+        "ArXiv": "2211.08316",
+        "DBLP": "conf/acl/YuWLBSLG0Y23",
+        "DOI": "10.18653/v1/2023.findings-acl.76",
+        "CorpusId": 258615139
+      },
+      "arxiv_id": "2211.08316",
+      "doi": "10.18653/v1/2023.findings-acl.76",
+      "corpus_id": 258615139
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "17",
+      "ref_key": "S2:ca681bd61b13d7ecc7897e335888b2512be4866a",
+      "paperId": "ca681bd61b13d7ecc7897e335888b2512be4866a",
+      "title": "Short Text Entity Linking with Fine-grained Topics",
+      "year": 2018,
+      "abstract": "A wide range of web corpora are in the form of short text, such as QA queries, search queries and news titles. Entity linking for these short texts is quite important. Most of supervised approaches are not effective for short text entity linking. The training data for supervised approaches are not suitable for short text and insufficient for low-resourced languages. Previous unsupervised methods are incapable of handling the sparsity and noisy problem of short text. We try to solve the problem by mapping the sparse short text to a topic space. We notice that the concepts of entities have rich topic information and characterize entities in a very fine-grained granularity. Hence, we use the concepts of entities as topics to explicitly represent the context, which helps improve the performance of entity linking for short text. We leverage our linking approach to segment the short text semantically, and build a system for short entity text recognition and linking. Our entity linking approach exhibits the state-of-the-art performance on several datasets for the realistic short text entity linking problem.",
+      "externalIds": {
+        "DBLP": "conf/cikm/ChenLXX18",
+        "MAG": "2896675016",
+        "DOI": "10.1145/3269206.3271809",
+        "CorpusId": 53034934
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/3269206.3271809",
+      "corpus_id": 53034934
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "18",
+      "ref_key": "S2:f28aef53930dcb9c8639ecdfdb95e22e34306ad6",
+      "paperId": "f28aef53930dcb9c8639ecdfdb95e22e34306ad6",
+      "title": "An evaluation of corpus-driven measures of medical concept similarity for information retrieval",
+      "year": 2012,
+      "abstract": "Measures of semantic similarity between medical concepts are central to a number of techniques in medical informatics, including query expansion in medical information retrieval. Previous work has mainly considered thesaurus-based path measures of semantic similarity and has not compared different corpus-driven approaches in depth. We evaluate the effectiveness of eight common corpus-driven measures in capturing semantic relatedness and compare these against human judged concept pairs assessed by medical professionals. Our results show that certain corpus-driven measures correlate strongly (approx 0.8) with human judgements. An important finding is that performance was significantly affected by the choice of corpus used in priming the measure, i.e., used as evidence from which corpus-driven similarities are drawn. This paper provides guidelines for the implementation of semantic similarity measures for medical informatics and concludes with implications for medical information retrieval.",
+      "externalIds": {
+        "DBLP": "conf/cikm/KoopmanZBSL12",
+        "MAG": "2032472148",
+        "DOI": "10.1145/2396761.2398661",
+        "CorpusId": 14377594
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/2396761.2398661",
+      "corpus_id": 14377594
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "19",
+      "ref_key": "S2:9b16d08413343acfd5f918cbad16ff4206bb7ac9",
+      "paperId": "9b16d08413343acfd5f918cbad16ff4206bb7ac9",
+      "title": "Unsupervised Concept Categorization and Extraction from Scientific Document Titles",
+      "year": 2017,
+      "abstract": "This paper studies the automated categorization and extraction of scientific concepts from titles of scientific articles, in order to gain a deeper understanding of their key contributions and facilitate the construction of a generic academic knowledgebase. Towards this goal, we propose an unsupervised, domain-independent, and scalable two-phase algorithm to type and extract key concept mentions into aspects of interest (e.g., Techniques, Applications, etc.). In the first phase of our algorithm we proposePhraseType, a probabilistic generative model which exploits textual features and limited POS tags to broadly segment text snippets into aspect-typed phrases. We extend this model to simultaneously learn aspect-specific features and identify academic domains in multi-domain corpora, since the two tasks mutually enhance each other. In the second phase, we propose an approach based on adaptor grammars to extract fine grained concept mentions from the aspect-typed phrases without the need for any external resources or human effort, in a purely data-driven manner. We apply our technique to study literature from diverse scientific domains and show significant gains over state-of-the-art concept extraction techniques. We also present a qualitative analysis of the results obtained.",
+      "externalIds": {
+        "MAG": "2951343444",
+        "DBLP": "journals/corr/abs-1710-02271",
+        "ArXiv": "1710.02271",
+        "DOI": "10.1145/3132847.3133023",
+        "CorpusId": 24840360
+      },
+      "arxiv_id": "1710.02271",
+      "doi": "10.1145/3132847.3133023",
+      "corpus_id": 24840360
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "20",
+      "ref_key": "S2:79f21f3dc4e01c1830b3d7f5cf10e170dbc948c1",
+      "paperId": "79f21f3dc4e01c1830b3d7f5cf10e170dbc948c1",
+      "title": "Using Prerequisites to Extract Concept Maps fromTextbooks",
+      "year": 2016,
+      "abstract": "We present a framework for constructing a specific type of knowledge graph, a concept map from textbooks. Using Wikipedia, we derive prerequisite relations among these concepts. A traditional approach for concept map extraction consists of two sub-problems: key concept extraction and concept relationship identification. Previous work for the most part had considered these two sub-problems independently. We propose a framework that jointly optimizes these sub-problems and investigates methods that identify concept relationships. Experiments on concept maps that are manually extracted in six educational areas (computer networks, macroeconomics, precalculus, databases, physics, and geometry) show that our model outperforms supervised learning baselines that solve the two sub-problems separately. Moreover, we observe that incorporating textbook information helps with concept map extraction.",
+      "externalIds": {
+        "MAG": "2532161561",
+        "DBLP": "conf/cikm/WangOWWLPG16",
+        "DOI": "10.1145/2983323.2983725",
+        "CorpusId": 10426294
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/2983323.2983725",
+      "corpus_id": 10426294
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "21",
+      "ref_key": "S2:7a2206c883165864e545f25cf00259e29eec058f",
+      "paperId": "7a2206c883165864e545f25cf00259e29eec058f",
+      "title": "What Are You Trying to Do? Semantic Typing of Event Processes",
+      "year": 2020,
+      "abstract": "This paper studies a new cognitively motivated semantic typing task,multi-axis event process typing, that, given anevent process, attempts to infer free-form typelabels describing (i) the type of action made bythe process and (ii) the type of object the pro-cess seeks to affect. This task is inspired bycomputational and cognitive studies of eventunderstanding, which suggest that understand-ing processes of events is often directed by rec-ognizing the goals, plans or intentions of theprotagonist(s). We develop a large dataset con-taining over 60k event processes, featuring ul-tra fine-grained typing on both the action andobject type axes with very large (10ˆ3∼10ˆ4)label vocabularies. We then propose a hybridlearning framework,P2GT, which addressesthe challenging typing problem with indirectsupervision from glosses1and a joint learning-to-rank framework. As our experiments indi-cate,P2GTsupports identifying the intent ofprocesses, as well as the fine semantic type ofthe affected object. It also demonstrates the ca-pability of handling few-shot cases, and stronggeneralizability on out-of-domain processes.",
+      "externalIds": {
+        "MAG": "3092874305",
+        "DBLP": "journals/corr/abs-2010-06724",
+        "ArXiv": "2010.06724",
+        "ACL": "2020.conll-1.43",
+        "DOI": "10.18653/v1/2020.conll-1.43",
+        "CorpusId": 222304896
+      },
+      "arxiv_id": "2010.06724",
+      "doi": "10.18653/v1/2020.conll-1.43",
+      "corpus_id": 222304896
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "22",
+      "ref_key": "S2:2a702b88ee3ce58a8c5b47a1aa66eef6a77c5a3a",
+      "paperId": "2a702b88ee3ce58a8c5b47a1aa66eef6a77c5a3a",
+      "title": "COCO-EX: A Tool for Linking Concepts from Texts to ConceptNet",
+      "year": 2021,
+      "abstract": "In this paper we present COCO-EX, a tool for Extracting Concepts from texts and linking them to the ConceptNet knowledge graph. COCO-EX extracts meaningful concepts from natural language texts and maps them to conjunct concept nodes in ConceptNet, utilizing the maximum of relational information stored in the ConceptNet knowledge graph. COCOEX takes into account the challenging characteristics of ConceptNet, namely that – unlike conventional knowledge graphs – nodes are represented as non-canonicalized, free-form text. This means that i) concepts are not normalized; ii) they often consist of several different, nested phrase types; and iii) many of them are uninformative, over-specific, or misspelled. A commonly used shortcut to circumvent these problems is to apply string matching. We compare COCO-EX to this method and show that COCO-EX enables the extraction of meaningful, important rather than overspecific or uninformative concepts, and allows to assess more relational information stored in the knowledge graph.",
+      "externalIds": {
+        "DBLP": "conf/eacl/BeckerKF21",
+        "ACL": "2021.eacl-demos.15",
+        "DOI": "10.18653/v1/2021.eacl-demos.15",
+        "CorpusId": 233365360
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2021.eacl-demos.15",
+      "corpus_id": 233365360
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "23",
+      "ref_key": "S2:6df7e80d9df96d8bb1acba776e9e7e3f0ea5a781",
+      "paperId": "6df7e80d9df96d8bb1acba776e9e7e3f0ea5a781",
+      "title": "Outclassing Wikipedia in Open-Domain Information Extraction: Weakly-Supervised Acquisition of Attributes over Conceptual Hierarchies",
+      "year": 2009,
+      "abstract": "A set of labeled classes of instances is extracted from text and linked into an existing conceptual hierarchy. Besides a significant increase in the coverage of the class labels assigned to individual instances, the resulting resource of labeled classes is more effective than similar data derived from the manually-created Wikipedia, in the task of attribute extraction over conceptual hierarchies.",
+      "externalIds": {
+        "ACL": "E09-1073",
+        "DBLP": "conf/eacl/Pasca09",
+        "MAG": "1993194447",
+        "DOI": "10.3115/1609067.1609138",
+        "CorpusId": 15436060
+      },
+      "arxiv_id": null,
+      "doi": "10.3115/1609067.1609138",
+      "corpus_id": 15436060
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "24",
+      "ref_key": "S2:40bbab9657f32e556dc2bbd2d1f9b86f67ced054",
+      "paperId": "40bbab9657f32e556dc2bbd2d1f9b86f67ced054",
+      "title": "Calibrated Seq2seq Models for Efficient and Generalizable Ultra-fine Entity Typing",
+      "year": 2023,
+      "abstract": "Ultra-fine entity typing plays a crucial role in information extraction by predicting fine-grained semantic types for entity mentions in text. However, this task poses significant challenges due to the massive number of entity types in the output space. The current state-of-the-art approaches, based on standard multi-label classifiers or cross-encoder models, suffer from poor generalization performance or inefficient inference. In this paper, we present CASENT, a seq2seq model designed for ultra-fine entity typing that predicts ultra-fine types with calibrated confidence scores. Our model takes an entity mention as input and employs constrained beam search to generate multiple types autoregressively. The raw sequence probabilities associated with the predicted types are then transformed into confidence scores using a novel calibration method. We conduct extensive experiments on the UFET dataset which contains over 10k types. Our method outperforms the previous state-of-the-art in terms of F1 score and calibration error, while achieving an inference speedup of over 50 times. Additionally, we demonstrate the generalization capabilities of our model by evaluating it in zero-shot and few-shot settings on five specialized domain entity typing datasets that are unseen during training. Remarkably, our model outperforms large language models with 10 times more parameters in the zero-shot setting, and when fine-tuned on 50 examples, it significantly outperforms ChatGPT on all datasets. Our code, models and demo are available at https://github.com/yanlinf/CASENT.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/FengPM23",
+        "ArXiv": "2311.00835",
+        "DOI": "10.48550/arXiv.2311.00835",
+        "CorpusId": 264935551
+      },
+      "arxiv_id": "2311.00835",
+      "doi": "10.48550/arXiv.2311.00835",
+      "corpus_id": 264935551
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "25",
+      "ref_key": "S2:d1feb79f63ea52839f4a784fbd7d60bb73dd98dd",
+      "paperId": "d1feb79f63ea52839f4a784fbd7d60bb73dd98dd",
+      "title": "ComFact: A Benchmark for Linking Contextual Commonsense Knowledge",
+      "year": 2022,
+      "abstract": "Understanding rich narratives, such as dialogues and stories, often requires natural language processing systems to access relevant knowledge from commonsense knowledge graphs. However, these systems typically retrieve facts from KGs using simple heuristics that disregard the complex challenges of identifying situationally-relevant commonsense knowledge (e.g., contextualization, implicitness, ambiguity). In this work, we propose the new task of commonsense fact linking, where models are given contexts and trained to identify situationally-relevant commonsense knowledge from KGs. Our novel benchmark, ComFact, contains ~293k in-context relevance annotations for commonsense triplets across four stylistically diverse dialogue and storytelling datasets. Experimental results confirm that heuristic fact linking approaches are imprecise knowledge extractors. Learned fact linking models demonstrate across-the-board performance improvements (~34.6% F1) over these heuristics. Furthermore, improved knowledge retrieval yielded average downstream improvements of 9.8% for a dialogue response generation task. However, fact linking models still significantly underperform humans, suggesting our benchmark is a promising testbed for research in commonsense augmentation of NLP systems.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-12678",
+        "ArXiv": "2210.12678",
+        "DOI": "10.48550/arXiv.2210.12678",
+        "CorpusId": 253098370
+      },
+      "arxiv_id": "2210.12678",
+      "doi": "10.48550/arXiv.2210.12678",
+      "corpus_id": 253098370
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "26",
+      "ref_key": "S2:44ce01d28f0306374bac92636815e3aa656f25bc",
+      "paperId": "44ce01d28f0306374bac92636815e3aa656f25bc",
+      "title": "Toward Completeness in Concept Extraction and Classification",
+      "year": 2009,
+      "abstract": "Many algorithms extract terms from text together with some kind of taxonomic classification (is-a) link. However, the general approaches used today, and specifically the methods of evaluating results, exhibit serious shortcomings. Harvesting without focusing on a specific conceptual area may deliver large numbers of terms, but they are scattered over an immense concept space, making Recall judgments impossible. Regarding Precision, simply judging the correctness of terms and their individual classification links may provide high scores, but this doesn't help with the eventual assembly of terms into a single coherent taxonomy. Furthermore, since there is no correct and complete gold standard to measure against, most work invents some ad hoc evaluation measure. We present an algorithm that is more precise and complete than previous ones for identifying from web text just those concepts 'below' a given seed term. Comparing the results to WordNet, we find that the algorithm misses terms, but also that it learns many new terms not in WordNet, and that it classifies them in ways acceptable to humans but different from WordNet.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/HovyKR09",
+        "ACL": "D09-1099",
+        "MAG": "2153653572",
+        "DOI": "10.3115/1699571.1699636",
+        "CorpusId": 808933
+      },
+      "arxiv_id": null,
+      "doi": "10.3115/1699571.1699636",
+      "corpus_id": 808933
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "27",
+      "ref_key": "S2:b6a587d0aba6f5fb3872c0514fcc3a2623eebf7d",
+      "paperId": "b6a587d0aba6f5fb3872c0514fcc3a2623eebf7d",
+      "title": "GlossBERT: BERT for Word Sense Disambiguation with Gloss Knowledge",
+      "year": 2019,
+      "abstract": "Word Sense Disambiguation (WSD) aims to find the exact sense of an ambiguous word in a particular context. Traditional supervised methods rarely take into consideration the lexical resources like WordNet, which are widely utilized in knowledge-based methods. Recent studies have shown the effectiveness of incorporating gloss (sense definition) into neural networks for WSD. However, compared with traditional word expert supervised methods, they have not achieved much improvement. In this paper, we focus on how to better leverage gloss knowledge in a supervised neural WSD system. We construct context-gloss pairs and propose three BERT based models for WSD. We fine-tune the pre-trained BERT model and achieve new state-of-the-art results on WSD task.",
+      "externalIds": {
+        "MAG": "2970773744",
+        "ACL": "D19-1355",
+        "ArXiv": "1908.07245",
+        "DBLP": "conf/emnlp/HuangSQH19",
+        "DOI": "10.18653/v1/D19-1355",
+        "CorpusId": 201103745
+      },
+      "arxiv_id": "1908.07245",
+      "doi": "10.18653/v1/D19-1355",
+      "corpus_id": 201103745
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "28",
+      "ref_key": "S2:4bd73e9be0e57c2d6fb42675fa3973fe144786ce",
+      "paperId": "4bd73e9be0e57c2d6fb42675fa3973fe144786ce",
+      "title": "Ultra-Fine Entity Typing with Prior Knowledge about Labels: A Simple Clustering Based Strategy",
+      "year": 2023,
+      "abstract": "Ultra-fine entity typing (UFET) is the task of inferring the semantic types, from a large set of fine-grained candidates, that apply to a given entity mention. This task is especially challenging because we only have a small number of training examples for many of the types, even with distant supervision strategies. State-of-the-art models, therefore, have to rely on prior knowledge about the type labels in some way. In this paper, we show that the performance of existing methods can be improved using a simple technique: we use pre-trained label embeddings to cluster the labels into semantic domains and then treat these domains as additional types. We show that this strategy consistently leads to improved results, as long as high-quality label embeddings are used. We furthermore use the label clusters as part of a simple post-processing technique, which results in further performance gains. Both strategies treat the UFET model as a black box and can thus straightforwardly be used to improve a wide range of existing models.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/LiBS23",
+        "ArXiv": "2305.12802",
+        "DOI": "10.48550/arXiv.2305.12802",
+        "CorpusId": 258832899
+      },
+      "arxiv_id": "2305.12802",
+      "doi": "10.48550/arXiv.2305.12802",
+      "corpus_id": 258832899
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "29",
+      "ref_key": "S2:7f30821267a11138497107d947ea39726e4b7fbd",
+      "paperId": "7f30821267a11138497107d947ea39726e4b7fbd",
+      "title": "Fine-grained Entity Typing via Label Reasoning",
+      "year": 2021,
+      "abstract": "Conventional entity typing approaches are based on independent classification paradigms, which make them difficult to recognize inter-dependent, long-tailed and fine-grained entity types. In this paper, we argue that the implicitly entailed extrinsic and intrinsic dependencies between labels can provide critical knowledge to tackle the above challenges. To this end, we propose Label Reasoning Network(LRN), which sequentially reasons fine-grained entity labels by discovering and exploiting label dependencies knowledge entailed in the data. Specifically, LRN utilizes an auto-regressive network to conduct deductive reasoning and a bipartite attribute graph to conduct inductive reasoning between labels, which can effectively model, learn and reason complex label dependencies in a sequence-to-set, end-to-end manner. Experiments show that LRN achieves the state-of-the-art performance on standard ultra fine-grained entity typing benchmarks, and can also resolve the long tail label problem effectively.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2109-05744",
+        "ArXiv": "2109.05744",
+        "ACL": "2021.emnlp-main.378",
+        "DOI": "10.18653/v1/2021.emnlp-main.378",
+        "CorpusId": 237491658
+      },
+      "arxiv_id": "2109.05744",
+      "doi": "10.18653/v1/2021.emnlp-main.378",
+      "corpus_id": 237491658
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "30",
+      "ref_key": "S2:04bab63897cb72fbce04245244010831e887a263",
+      "paperId": "04bab63897cb72fbce04245244010831e887a263",
+      "title": "Key Concept Identification for Medical Information Retrieval",
+      "year": 2015,
+      "abstract": "The difficult language in Electronic Health Records (EHRs) presents a challenge to patients’ understanding of their own conditions. One approach to lowering the barrier is to provide tailored patient education based on their own EHR notes. We are developing a system to retrieve EHR note-tailored online consumer oriented health education materials. We explored topic model and key concept identification methods to construct queries from the EHR notes. Our experiments show that queries using identified key concepts with pseudo-relevance feedback significantly outperform (over 10-fold improvement) the baseline system of using the full text note.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/ZhengY15",
+        "ACL": "D15-1069",
+        "MAG": "2250360202",
+        "DOI": "10.18653/v1/D15-1069",
+        "CorpusId": 15932656
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/D15-1069",
+      "corpus_id": 15932656
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "31",
+      "ref_key": "S2:ca5d102b5046dd32bb4fbae33351cbb11d0580d8",
+      "paperId": "ca5d102b5046dd32bb4fbae33351cbb11d0580d8",
+      "title": "Short text understanding through lexical-semantic analysis",
+      "year": 2015,
+      "abstract": "Understanding short texts is crucial to many applications, but challenges abound. First, short texts do not always observe the syntax of a written language. As a result, traditional natural language processing methods cannot be easily applied. Second, short texts usually do not contain sufficient statistical signals to support many state-of-the-art approaches for text processing such as topic modeling. Third, short texts are usually more ambiguous. We argue that knowledge is needed in order to better understand short texts. In this work, we use lexical-semantic knowledge provided by a well-known semantic network for short text understanding. Our knowledge-intensive approach disrupts traditional methods for tasks such as text segmentation, part-of-speech tagging, and concept labeling, in the sense that we focus on semantics in all these tasks. We conduct a comprehensive performance evaluation on real-life data. The results show that knowledge is indispensable for short text understanding, and our knowledge-intensive approaches are effective in harvesting semantics of short texts.",
+      "externalIds": {
+        "DBLP": "conf/icde/HuaWWZZ15",
+        "MAG": "1872023060",
+        "DOI": "10.1109/ICDE.2015.7113309",
+        "CorpusId": 4402058
+      },
+      "arxiv_id": null,
+      "doi": "10.1109/ICDE.2015.7113309",
+      "corpus_id": 4402058
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "32",
+      "ref_key": "S2:a550f576ff20b8cce98f3ddad0043d3783fbc9b4",
+      "paperId": "a550f576ff20b8cce98f3ddad0043d3783fbc9b4",
+      "title": "Abductive Commonsense Reasoning",
+      "year": 2019,
+      "abstract": "Abductive reasoning is inference to the most plausible explanation. For example, if Jenny finds her house in a mess when she returns from work, and remembers that she left a window open, she can hypothesize that a thief broke into her house and caused the mess, as the most plausible explanation. While abduction has long been considered to be at the core of how people interpret and read between the lines in natural language (Hobbs et al., 1988), there has been relatively little research in support of abductive natural language inference and generation. We present the first study that investigates the viability of language-based abductive reasoning. We introduce a challenge dataset, ART, that consists of over 20k commonsense narrative contexts and 200k explanations. Based on this dataset, we conceptualize two new tasks -- (i) Abductive NLI: a multiple-choice question answering task for choosing the more likely explanation, and (ii) Abductive NLG: a conditional generation task for explaining given observations in natural language. On Abductive NLI, the best model achieves 68.9% accuracy, well below human performance of 91.4%. On Abductive NLG, the current best language generators struggle even more, as they lack reasoning capabilities that are trivial for humans. Our analysis leads to new insights into the types of reasoning that deep pre-trained language models fail to perform--despite their strong performance on the related but more narrowly defined task of entailment NLI--pointing to interesting avenues for future research.",
+      "externalIds": {
+        "DBLP": "conf/iclr/BhagavatulaBMSH20",
+        "MAG": "2968629361",
+        "ArXiv": "1908.05739",
+        "CorpusId": 201058651
+      },
+      "arxiv_id": "1908.05739",
+      "doi": null,
+      "corpus_id": 201058651
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "33",
+      "ref_key": "S2:9ac420549415e15e6a7ec34c2ec5edf8d101c8ca",
+      "paperId": "9ac420549415e15e6a7ec34c2ec5edf8d101c8ca",
+      "title": "Development and Alignment of a Domain-Specific Ontology for Question Answering",
+      "year": 2008,
+      "abstract": "With the appearance of Semantic Web technologies, it becomes possible to develop novel, sophisticated question answering systems, where ontologies are usually used as the core knowledge component. In the EU-funded project, QALL-ME, a domain-specific ontology was developed and applied for question answering in the domain of tourism, along with the assistance of two upper ontologies for concept expansion and reasoning. This paper focuses on the development of the QALL-ME ontology in the tourism domain and its alignment with the upper ontologies - WordNet and SUMO. The design of the ontology is presented in the paper, and a semi-automatic alignment procedure is described with some alignment results given as well. Furthermore, the aligned ontology was used to semantically annotate original data obtained from the tourism web sites and natural language questions. The storage schema of the annotated data and the data access method for retrieving answers from the annotated data are also reported in the paper.",
+      "externalIds": {
+        "MAG": "13779650",
+        "DBLP": "conf/lrec/OuPOSN08",
+        "ACL": "L08-1178",
+        "CorpusId": 13086534
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 13086534
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "34",
+      "ref_key": "S2:1b97b4623cf2f183340e548e0aa53abf0f2963d8",
+      "paperId": "1b97b4623cf2f183340e548e0aa53abf0f2963d8",
+      "title": "Representing General Relational Knowledge in ConceptNet 5",
+      "year": 2012,
+      "abstract": "ConceptNet is a knowledge representation project, providing a large semantic graph that describes general human knowledge and how it is expressed in natural language. This paper presents the latest iteration, ConceptNet 5, including its fundamental design decisions, ways to use it, and evaluations of its coverage and accuracy.",
+      "externalIds": {
+        "DBLP": "conf/lrec/SpeerH12",
+        "MAG": "2250770256",
+        "ACL": "L12-1639",
+        "CorpusId": 2924682
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 2924682
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "35",
+      "ref_key": "S2:812169b4f642331cf663dc2eae4c09a62f8f5b6e",
+      "paperId": "812169b4f642331cf663dc2eae4c09a62f8f5b6e",
+      "title": "Semantic concept-based query expansion and re-ranking for multimedia retrieval",
+      "year": 2007,
+      "abstract": "We study the problem of semantic concept-based query expansion and re-ranking for multimedia retrieval. In particular, we explore the utility of a fixed lexicon of visual semantic concepts for automatic multimedia retrieval and re-ranking purposes. In this paper, we propose several new approaches for query expansion, in which textual keywords, visual examples, or initial retrieval results are analyzed to identify the most relevant visual concepts for the given query. These concepts are then used to generate additional query results and/or to re-rank an existing set of results. We develop both lexical and statistical approaches for text query expansion, as well as content-based approaches for visual query expansion. In addition, we study several other recently proposed methods for concept-based query expansion. In total, we compare 7 different approaches for expanding queries with visual semantic concepts. They are evaluated using a large video corpus and 39 concept detectors from the TRECVID-2006 video retrieval benchmark. We observe consistent improvement over the baselines for all 7 approaches, leading to an overall performance gain of 77% relative to a text retrieval baseline, and a 31% improvement relative to a state-of-the-art multimodal retrieval baseline.",
+      "externalIds": {
+        "DBLP": "conf/mm/NatsevHTXY07",
+        "MAG": "2090912237",
+        "DOI": "10.1145/1291233.1291448",
+        "CorpusId": 9765689
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/1291233.1291448",
+      "corpus_id": 9765689
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "36",
+      "ref_key": "S2:f21b4598063699124a4ec72e6b19ca9b6a3bf8b3",
+      "paperId": "f21b4598063699124a4ec72e6b19ca9b6a3bf8b3",
+      "title": "An effective approach to document retrieval via utilizing WordNet and recognizing phrases",
+      "year": 2004,
+      "abstract": "Noun phrases in queries are identified and classified into four types: proper names, dictionary phrases, simple phrases and complex phrases. A document has a phrase if all content words in the phrase are within a window of a certain size. The window sizes for different types of phrases are different and are determined using a decision tree. Phrases are more important than individual terms. Consequently, documents in response to a query are ranked with matching phrases given a higher priority. We utilize WordNet to disambiguate word senses of query terms. Whenever the sense of a query term is determined, its synonyms, hyponyms, words from its definition and its compound words are considered for possible additions to the query. Experimental results show that our approach yields between 23% and 31% improvements over the best-known results on the TREC 9, 10 and 12 collections for short (title only) queries, without using Web data.",
+      "externalIds": {
+        "DBLP": "conf/sigir/LiuLYM04",
+        "MAG": "2103522185",
+        "DOI": "10.1145/1008992.1009039",
+        "CorpusId": 848788
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/1008992.1009039",
+      "corpus_id": 848788
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "37",
+      "ref_key": "S2:ca86a63362e51eea2e213ae2d3faed668ec1ad74",
+      "paperId": "ca86a63362e51eea2e213ae2d3faed668ec1ad74",
+      "title": "A graph-based approach to commonsense concept extraction and semantic similarity detection",
+      "year": 2013,
+      "abstract": "Commonsense knowledge representation and reasoning support a wide variety of potential applications in fields such as document auto-categorization, Web search enhancement, topic gisting, social process modeling, and concept-level opinion and sentiment analysis. Solutions to these problems, however, demand robust knowledge bases capable of supporting flexible, nuanced reasoning. Populating such knowledge bases is highly time-consuming, making it necessary to develop techniques for deconstructing natural language texts into commonsense concepts. In this work, we propose an approach for effective multi-word commonsense expression extraction from unrestricted English text, in addition to a semantic similarity detection technique allowing additional matches to be found for specific concepts not already present in knowledge bases.",
+      "externalIds": {
+        "MAG": "94800547",
+        "DBLP": "conf/www/RajagopalCOK13",
+        "DOI": "10.1145/2487788.2487995",
+        "CorpusId": 15109511
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/2487788.2487995",
+      "corpus_id": 15109511
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "38",
+      "ref_key": "S2:5740f80fb61c4489674c9a0beb40c4f5e0ed19ff",
+      "paperId": "5740f80fb61c4489674c9a0beb40c4f5e0ed19ff",
+      "title": "YAGO: A Core of Semantic Knowledge Unifying WordNet and Wikipedia",
+      "year": 2007,
+      "abstract": "We present YAGO, a lightweight and extensible ontology with high coverage and quality. YAGO builds on entities and relations and currently contains more than 1 million entities and 5 million facts. This includes the Is-A hierarchy as well as non-taxonomic relations between entities (such as hasWonPrize). The facts have been automatically extracted from Wikipedia and unified with WordNet, using a carefully designed combination of rule-based and heuris-tic methods described in this paper. The resulting knowledge base is a major step beyond WordNet: in quality by adding knowledge about individuals like persons, organizations , products, etc. with their semantic relationships – and in quantity by increasing the number of facts by more than an order of magnitude. Our empirical evaluation of fact cor-rectness shows an accuracy of about 95%. YAGO is based on a logically clean model, which is decidable, extensible, and compatible with RDFS. Finally, we show how YAGO can be further extended by state-of-the-art information extraction techniques.",
+      "externalIds": {
+        "MAG": "3010444447",
+        "DOI": "10.1145/1242572.1242667",
+        "CorpusId": 207163173
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/1242572.1242667",
+      "corpus_id": 207163173
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "39",
+      "ref_key": "S2:7c5e77461f796ab460ae5daa97c1323d2e25c893",
+      "paperId": "7c5e77461f796ab460ae5daa97c1323d2e25c893",
+      "title": "ASER: A Large-scale Eventuality Knowledge Graph",
+      "year": 2019,
+      "abstract": "Understanding human’s language requires complex world knowledge. However, existing large-scale knowledge graphs mainly focus on knowledge about entities while ignoring knowledge about activities, states, or events, which are used to describe how entities or things act in the real world. To fill this gap, we develop ASER (activities, states, events, and their relations), a large-scale eventuality knowledge graph extracted from more than 11-billion-token unstructured textual data. ASER contains 15 relation types belonging to five categories, 194-million unique eventualities, and 64-million unique edges among them. Both intrinsic and extrinsic evaluations demonstrate the quality and effectiveness of ASER.",
+      "externalIds": {
+        "MAG": "2942882688",
+        "DBLP": "conf/www/ZhangLPSL20",
+        "ArXiv": "1905.00270",
+        "DOI": "10.1145/3366423.3380107",
+        "CorpusId": 141406559
+      },
+      "arxiv_id": "1905.00270",
+      "doi": "10.1145/3366423.3380107",
+      "corpus_id": 141406559
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "40",
+      "ref_key": "S2:9285d083e51f257905b6016955919bb0f5d0fe46",
+      "paperId": "9285d083e51f257905b6016955919bb0f5d0fe46",
+      "title": "ASER: Towards Large-scale Commonsense Knowledge Acquisition via Higher-order Selectional Preference over Eventualities",
+      "year": 2021,
+      "abstract": "Commonsense knowledge acquisition and reasoning have long been a core\nartificial intelligence problem. However, in the past, there has been a lack of\nscalable methods to collect commonsense knowledge. In this paper, we propose to\ndevelop principles for collecting commonsense knowledge based on selectional\npreference. We generalize the definition of selectional preference from one-hop\nlinguistic syntactic relations to higher-order relations over linguistic\ngraphs. Unlike previous commonsense knowledge definition (e.g., ConceptNet),\nselectional preference (SP) knowledge only relies on statistical distribution\nover linguistic graphs, which can be efficiently and accurately acquired from\nthe unlabeled corpus with modern tools. Following this principle, we develop a\nlarge-scale eventuality (a linguistic term covering activity, state, and\nevent)-based knowledge graph ASER, where each eventuality is represented as a\ndependency graph, and the relation between them is a discourse relation defined\nin shallow discourse parsing. The higher-order selectional preference over\ncollected linguistic graphs reflects various kinds of commonsense knowledge.\nMoreover, motivated by the observation that humans understand events by\nabstracting the observed events to a higher level and can thus transfer their\nknowledge to new events, we propose a conceptualization module to significantly\nboost the coverage of ASER. In total, ASER contains 648 million edges between\n438 million eventualities. After conceptualization with Probase, a selectional\npreference based concept-instance relational knowledge base, our concept graph\ncontains 15 million conceptualized eventualities and 224 million edges between\nthem. Detailed analysis is provided to demonstrate its quality. All the\ncollected data, APIs, and tools are available at\nhttps://github.com/HKUST-KnowComp/ASER.",
+      "externalIds": {
+        "ArXiv": "2104.02137",
+        "DBLP": "journals/corr/abs-2104-02137",
+        "DOI": "10.1016/j.artint.2022.103740",
+        "CorpusId": 233033778
+      },
+      "arxiv_id": "2104.02137",
+      "doi": "10.1016/j.artint.2022.103740",
+      "corpus_id": 233033778
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "41",
+      "ref_key": "S2:68c03788224000794d5491ab459be0b2a2c38677",
+      "paperId": "68c03788224000794d5491ab459be0b2a2c38677",
+      "title": "WordNet: A Lexical Database for English",
+      "year": 1995,
+      "abstract": "Because meaningful sentences are composed of meaningful words, any system that hopes to process natural languages as people do must have information about words and their meanings. This information is traditionally provided through dictionaries, and machine-readable dictionaries are now widely available. But dictionary entries evolved for the convenience of human readers, not for machines. WordNet1 provides a more effective combination of traditional lexicographic information and modern computing. WordNet is an online lexical database designed for use under program control. English nouns, verbs, adjectives, and adverbs are organized into sets of synonyms, each representing a lexicalized concept. Semantic relations link the synonym sets [4].",
+      "externalIds": {
+        "DBLP": "conf/naacl/Miller93",
+        "ACL": "H92-1116",
+        "MAG": "2081580037",
+        "DOI": "10.1145/219717.219748",
+        "CorpusId": 1671874
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/219717.219748",
+      "corpus_id": 1671874
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "42",
+      "ref_key": "S2:abe1631493db4da3c1bd9646921f9cc86b4a3948",
+      "paperId": "abe1631493db4da3c1bd9646921f9cc86b4a3948",
+      "title": "On the Role of Conceptualization in Commonsense Knowledge Graph Construction",
+      "year": 2020,
+      "abstract": "Commonsense knowledge graphs (CKGs) like Atomic and ASER are substantially different from conventional KGs as they consist of much larger number of nodes formed by loosely-structured text, which, though, enables them to handle highly diverse queries in natural language related to commonsense, leads to unique challenges for automatic KG construction methods. Besides identifying relations absent from the KG between nodes, such methods are also expected to explore absent nodes represented by text, in which different real-world things, or entities, may appear. To deal with the innumerable entities involved with commonsense in the real world, we introduce to CKG construction methods conceptualization, i.e., to view entities mentioned in text as instances of specific concepts or vice versa. We build synthetic triples by conceptualization, and further formulate the task as triple classification, handled by a discriminatory model with knowledge transferred from pretrained language models and fine-tuned by negative sampling. Experiments demonstrate that our methods can effectively identify plausible triples and expand the KG by triples of both new nodes and edges of high diversity and novelty.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2003-03239",
+        "ArXiv": "2003.03239",
+        "MAG": "3009308754",
+        "CorpusId": 212628670
+      },
+      "arxiv_id": "2003.03239",
+      "doi": null,
+      "corpus_id": 212628670
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "43",
+      "ref_key": "S2:965cc3c7c80de91c75787a51931e912bece8046a",
+      "paperId": "965cc3c7c80de91c75787a51931e912bece8046a",
+      "title": "Complex Reasoning over Logical Queries on Commonsense Knowledge Graphs",
+      "year": 2024,
+      "abstract": "Event commonsense reasoning requires the ability to reason about the relationship between events, as well as infer implicit context underlying that relationship. However, data scarcity makes it challenging for language models to learn to generate commonsense inferences for contexts and questions involving interactions between complex events. To address this demand, we present COM2 (COMplex COMmonsense), a new dataset created by sampling multi-hop logical queries (e.g., the joint effect or cause of both event A and B, or the effect of the effect of event C) from an existing commonsense knowledge graph (CSKG), and verbalizing them using handcrafted rules and large language models into multiple-choice and text generation questions. Our experiments show that language models trained on COM2 exhibit significant improvements in complex reasoning ability, resulting in enhanced zero-shot performance in both in-domain and out-of-domain tasks for question answering and generative commonsense reasoning, without expensive human annotations. Code and data are available at https://github.com/tqfang/complex-commonsense-reasoning.",
+      "externalIds": {
+        "ArXiv": "2403.07398",
+        "DBLP": "conf/acl/FangCSB24",
+        "DOI": "10.48550/arXiv.2403.07398",
+        "CorpusId": 268363344
+      },
+      "arxiv_id": "2403.07398",
+      "doi": "10.48550/arXiv.2403.07398",
+      "corpus_id": 268363344
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "44",
+      "ref_key": "S2:037dc34f9077699180f23fc4a383296beaa61187",
+      "paperId": "037dc34f9077699180f23fc4a383296beaa61187",
+      "title": "KBQA: Learning Question Answering over QA Corpora and Knowledge Bases",
+      "year": 2019,
+      "abstract": "Question answering (QA) has become a popular way for humans to access billion-scale knowledge bases. Unlike web search, QA over a knowledge base gives out accurate and concise results, provided that natural language questions can be understood and mapped precisely to structured queries over the knowledge base. The challenge, however, is that a human can ask one question in many different ways. Previous approaches have natural limits due to their representations: rule based approaches only understand a small set of \"canned\" questions, while keyword based or synonym based approaches cannot fully understand the questions. In this paper, we design a new kind of question representation: templates, over a billion scale knowledge base and a million scale QA corpora. For example, for questions about a city's population, we learn templates such as What's the population of $city?, How many people are there in $city?. We learned 27 million templates for 2782 intents. Based on these templates, our QA system KBQA effectively supports binary factoid questions, as well as complex questions which are composed of a series of binary factoid questions. Furthermore, we expand predicates in RDF knowledge base, which boosts the coverage of knowledge base by 57 times. Our QA system beats all other state-of-art works on both effectiveness and efficiency over QALD benchmarks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1903-02419",
+        "ArXiv": "1903.02419",
+        "MAG": "3099235767",
+        "DOI": "10.14778/3055540.3055549",
+        "CorpusId": 18928027
+      },
+      "arxiv_id": "1903.02419",
+      "doi": "10.14778/3055540.3055549",
+      "corpus_id": 18928027
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "45",
+      "ref_key": "S2:ef25f1586cf6630f4a30d41ee5a2848b064dede3",
+      "paperId": "ef25f1586cf6630f4a30d41ee5a2848b064dede3",
+      "title": "Ultra-fine Entity Typing with Indirect Supervision from Natural Language Inference",
+      "year": 2022,
+      "abstract": "The task of ultra-fine entity typing (UFET) seeks to predict diverse and free-form words or phrases that describe the appropriate types of entities mentioned in sentences. A key challenge for this task lies in the large number of types and the scarcity of annotated data per type. Existing systems formulate the task as a multi-way classification problem and train directly or distantly supervised classifiers. This causes two issues: (i) the classifiers do not capture the type semantics because types are often converted into indices; (ii) systems developed in this way are limited to predicting within a pre-defined type set, and often fall short of generalizing to types that are rarely seen or unseen in training. This work presents LITE🍻, a new approach that formulates entity typing as a natural language inference (NLI) problem, making use of (i) the indirect supervision from NLI to infer type information meaningfully represented as textual hypotheses and alleviate the data scarcity issue, as well as (ii) a learning-to-rank objective to avoid the pre-defining of a type set. Experiments show that, with limited training data, LITE obtains state-of-the-art performance on the UFET task. In addition, LITE demonstrates its strong generalizability by not only yielding best results on other fine-grained entity typing benchmarks, more importantly, a pre-trained LITE system works well on new data containing unseen types.1",
+      "externalIds": {
+        "ACL": "2022.tacl-1.35",
+        "ArXiv": "2202.06167",
+        "DBLP": "journals/tacl/LiYC22",
+        "DOI": "10.1162/tacl_a_00479",
+        "CorpusId": 246822845
+      },
+      "arxiv_id": "2202.06167",
+      "doi": "10.1162/tacl_a_00479",
+      "corpus_id": 246822845
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "46",
+      "ref_key": "S2:2caa21da66c6e84c87ee127c3a7059a0b2ba085e",
+      "paperId": "2caa21da66c6e84c87ee127c3a7059a0b2ba085e",
+      "title": "ConceptNet 5",
+      "year": 2012,
+      "abstract": "ConceptNet is a knowledge representation project, providing a large semantic graph that describes general human knowledge and how it is expressed in natural language. The scope of ConceptNet includes words and common phrases in any written human language. It provides a large set of background knowledge that a computer application working with natural language text should know. These words and phrases are related through an open domain of predicates, describing not just how words are related by their lexical deﬁnitions, but also how they are related through common knowledge. Transforming ConceptNet into a vector space allows reasoning about similarity and relatedness of words with speed and broad coverage[1]. As ConceptNet currently has data in many written languages, we can build a vector space containing concepts from each of our languages enabling cross-language reasoning similar to parallel corpora in translation. Applications of this technology include free text analytics, sentiment analysis, intelligent search and machine reading. More information on ConceptNet including its fundamental design decisions, ways to use it, and evaluations of its coverage and accuracy can be found here[2]. Its content is searchable and downloadable under a Creative Commons license from http://conceptnet5.media.mit.edu .",
+      "externalIds": {
+        "DBLP": "journals/tinytocs/SpeerH12",
+        "CorpusId": 33744302
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 33744302
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "47",
+      "ref_key": "S2:b72c9c50d153ca267c103fb967f173242639d2bb",
+      "paperId": "b72c9c50d153ca267c103fb967f173242639d2bb",
+      "title": "DimonGen: Diversified Generative Commonsense Reasoning for Explaining Concept Relationships",
+      "year": 2022,
+      "abstract": "In this paper, we propose DimonGen, which aims to generate diverse sentences describing concept relationships in various everyday scenarios. To support this, we first create a benchmark dataset for this task by adapting the existing CommonGen dataset. We then propose a two-stage model called MoREE to generate the target sentences. MoREE consists of a mixture of retrievers model that retrieves diverse context sentences related to the given concepts, and a mixture of generators model that generates diverse sentences based on the retrieved contexts. We conduct experiments on the DimonGen task and show that MoREE outperforms strong baselines in terms of both the quality and diversity of the generated sentences. Our results demonstrate that MoREE is able to generate diverse sentences that reflect different relationships between concepts, leading to a comprehensive understanding of concept relationships.",
+      "externalIds": {
+        "ACL": "2023.acl-long.260",
+        "ArXiv": "2212.10545",
+        "DBLP": "conf/acl/Liu0ZC23",
+        "DOI": "10.48550/arXiv.2212.10545",
+        "CorpusId": 254877165
+      },
+      "arxiv_id": "2212.10545",
+      "doi": "10.48550/arXiv.2212.10545",
+      "corpus_id": 254877165
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "48",
+      "ref_key": "S2:3a4eb7540a7dc371f3814ed4b57e001b5b288456",
+      "paperId": "3a4eb7540a7dc371f3814ed4b57e001b5b288456",
+      "title": "Explaining Language Model Predictions with High-Impact Concepts",
+      "year": 2024,
+      "abstract": "To encourage fairness and transparency, there exists an urgent demand for deriving reliable explanations for large language models (LLMs). One promising solution is concept-based explanations, i.e., human-understandable concepts from internal representations. However, due to the compositional nature of languages, current methods mostly discover correlational explanations instead of causal features. Therefore, we propose a novel framework to provide impact-aware explanations for users to understand the LLM’s behavior, which are robust to feature changes and influential to the model’s predictions. Specifically, we extract predictive high-level features (concepts) from the model’s hidden layer activations. Then, we innovatively optimize for features whose existence causes the output predictions to change substantially. Extensive experiments on real and synthetic tasks demonstrate that our method achieves superior results on predictive impact, explainability, and faithfulness compared to the baselines, especially for LLMs.",
+      "externalIds": {
+        "DBLP": "conf/eacl/ZhaoWWJ24",
+        "ACL": "2024.findings-eacl.67",
+        "CorpusId": 268417297
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 268417297
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "49",
+      "ref_key": "S2:23456df9df7444cd17e598f8bd4b232f0e3a0d61",
+      "paperId": "23456df9df7444cd17e598f8bd4b232f0e3a0d61",
+      "title": "Open Domain Short Text Conceptualization: A Generative + Descriptive Modeling Approach",
+      "year": 2015,
+      "abstract": "Concepts embody the knowledge to facilitate our cognitive processes of learning. Mapping short texts to a large set of open domain concepts has gained many successful applications. In this paper, we unify the existing conceptualization methods from a Bayesian perspective, and discuss the three modeling approaches: descriptive, generative, and discriminative models. Motivated by the discussion of their advantages and shortcomings, we develop a generative + descriptive modeling approach. Our model considers term relatedness in the context, and will result in disambiguated conceptualization. We show the results of short text clustering using a news title data set and a Twitter message data set, and demonstrate the effectiveness of the developed approach compared with the state-of-the-art conceptualization and topic modeling approaches.",
+      "externalIds": {
+        "MAG": "2204209666",
+        "DBLP": "conf/ijcai/SongWW15",
+        "CorpusId": 2987326
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 2987326
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "50",
+      "ref_key": "S2:760103b363b1557372e048c4c31b5f01162bfcfa",
+      "paperId": "760103b363b1557372e048c4c31b5f01162bfcfa",
+      "title": "Probase: a probabilistic taxonomy for text understanding",
+      "year": 2012,
+      "abstract": "Knowledge is indispensable to understanding. The ongoing information explosion highlights the need to enable machines to better understand electronic text in human language. Much work has been devoted to creating universal ontologies or taxonomies for this purpose. However, none of the existing ontologies has the needed depth and breadth for universal understanding. In this paper, we present a universal, probabilistic taxonomy that is more comprehensive than any existing ones. It contains 2.7 million concepts harnessed automatically from a corpus of 1.68 billion web pages. Unlike traditional taxonomies that treat knowledge as black and white, it uses probabilities to model inconsistent, ambiguous and uncertain information it contains. We present details of how the taxonomy is constructed, its probabilistic modeling, and its potential applications in text understanding.",
+      "externalIds": {
+        "MAG": "2138605095",
+        "DBLP": "conf/sigmod/WuLWZ12",
+        "DOI": "10.1145/2213836.2213891",
+        "CorpusId": 14775471
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/2213836.2213891",
+      "corpus_id": 14775471
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "51",
+      "ref_key": "S2:69d314bd26f8603d01b3251f89ed1b76b0201055",
+      "paperId": "69d314bd26f8603d01b3251f89ed1b76b0201055",
+      "title": "Probase+: Inferring Missing Links in Conceptual Taxonomies",
+      "year": 2017,
+      "abstract": "Much work has focused on automatically constructing conceptual taxonomies or semantic networks from large text corpora. In this paper, we use a state-of-the-art data-driven conceptual taxonomy, Probase, to show that missing links in taxonomies are the chief problem that hinders their adoption by many real life applications, for the missing links break the inferencing that the conceptual taxonomy claims to support. To solve this problem, we devise a collaborative filtering framework to infer missing links in taxonomies derived from text corpora. We implement our method mainly on Probase, creating a denser taxonomy containing 5.1 million (about 30 percent) more isA relationships, with an accuracy of above 90 percent. We conduct comprehensive experiments to demonstrate the quality of the revised conceptual taxonomies.",
+      "externalIds": {
+        "MAG": "2579796773",
+        "DBLP": "journals/tkde/LiangXWZW17",
+        "DOI": "10.1109/TKDE.2017.2653115",
+        "CorpusId": 37599534
+      },
+      "arxiv_id": null,
+      "doi": "10.1109/TKDE.2017.2653115",
+      "corpus_id": 37599534
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "52",
+      "ref_key": "S2:dab3cb9c7ddca956c55bc14bd8052faee16fad6a",
+      "paperId": "dab3cb9c7ddca956c55bc14bd8052faee16fad6a",
+      "title": "Short Text Conceptualization Using a Probabilistic Knowledgebase",
+      "year": 2011,
+      "abstract": "Most text mining tasks, including clustering and topic detection, are based on statistical methods that treat text as bags of words. Semantics in the text is largely ignored in the mining process, and mining results often have low interpretability. One particular challenge faced by such approaches lies in short text understanding, as short texts lack enough content from which statistical conclusions can be drawn easily. In this paper, we improve text understanding by using a probabilistic knowledgebase that is as rich as our mental world in terms of the concepts (of worldly facts) it contains. We then develop a Bayesian inference mechanism to conceptualize words and short text. We conducted comprehensive experiments on conceptualizing textual terms, and clustering short pieces of text such as Twitter messages. Compared to purely statistical methods such as latent semantic topic modeling or methods that use existing knowledge-bases (e.g., WordNet, Freebase and Wikipedia), our approach brings significant improvements in short text understanding as reflected by the clustering accuracy.",
+      "externalIds": {
+        "DBLP": "conf/ijcai/SongWWLC11",
+        "MAG": "1491611863",
+        "DOI": "10.5591/978-1-57735-516-8/IJCAI11-388",
+        "CorpusId": 8078249
+      },
+      "arxiv_id": null,
+      "doi": "10.5591/978-1-57735-516-8/IJCAI11-388",
+      "corpus_id": 8078249
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "53",
+      "ref_key": "S2:0786c88990235414611478099e43611542d973b0",
+      "paperId": "0786c88990235414611478099e43611542d973b0",
+      "title": "Take a Step Back: Evoking Reasoning via Abstraction in Large Language Models",
+      "year": 2023,
+      "abstract": "We present Step-Back Prompting, a simple prompting technique that enables LLMs to do abstractions to derive high-level concepts and first principles from instances containing specific details. Using the concepts and principles to guide reasoning, LLMs significantly improve their abilities in following a correct reasoning path towards the solution. We conduct experiments of Step-Back Prompting with PaLM-2L, GPT-4 and Llama2-70B models, and observe substantial performance gains on various challenging reasoning-intensive tasks including STEM, Knowledge QA, and Multi-Hop Reasoning. For instance, Step-Back Prompting improves PaLM-2L performance on MMLU (Physics and Chemistry) by 7% and 11% respectively, TimeQA by 27%, and MuSiQue by 7%.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-06117",
+        "ArXiv": "2310.06117",
+        "DOI": "10.48550/arXiv.2310.06117",
+        "CorpusId": 263830368
+      },
+      "arxiv_id": "2310.06117",
+      "doi": "10.48550/arXiv.2310.06117",
+      "corpus_id": 263830368
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "54",
+      "ref_key": "S2:e36f03fd3ce040c51ae90a464f60999998246d8c",
+      "paperId": "e36f03fd3ce040c51ae90a464f60999998246d8c",
+      "title": "Automated Concept Extraction From Plain Text",
+      "year": 1998,
+      "abstract": "We describe a system for extracting concepts from unstructured text. We do this by identifying relationships between words in the text based on a lexical database and identifying groups of these words which form closely tied conceptual groups. The word relationships are used to create a directed graph, called a Semantic Relationship Graph (SRG). This SRG a robust representation of the relationships between word senses which can be used to identify the individual concepts which occur in the text. We demonstrate the usefulness of this technique by creating a classifier based on SRGs which is considerably more accurate than a Naive Bayes text classifier.",
+      "externalIds": {
+        "MAG": "30876348",
+        "CorpusId": 14983060
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 14983060
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "55",
+      "ref_key": "S2:8a37eba22dd8711451e72942c8c14c2162032c87",
+      "paperId": "8a37eba22dd8711451e72942c8c14c2162032c87",
+      "title": "Concept Extraction",
+      "year": 1982,
+      "abstract": "The panel on concept extraction from natural language text defined a variety of different views on the problem at issue. First, we considered what would be the propert ies of a very powerful natural language understanding system which would serve as an ultimate model for our deliberations, but was clearly not achievable within the f ive-year time frame specified as the primary area of interest to the Navy for the purposes of this workshop. However , it could serve as a goal toward which progress could be made in a series of approximations, beginning within the next five years and extending beyond.",
+      "externalIds": {
+        "DBLP": "journals/coling/Montgomery82",
+        "MAG": "2339350971",
+        "ACL": "J82-2004",
+        "CorpusId": 6551679
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 6551679
+    },
+    {
+      "paper_id": "2406.10885",
+      "ref_index": "56",
+      "ref_key": "S2:5f9195769eb8ea3ac9ae3d513b4c3123551842ea",
+      "paperId": "5f9195769eb8ea3ac9ae3d513b4c3123551842ea",
+      "title": "COSMO: A Large-Scale E-commerce Common Sense Knowledge Generation and Serving System at Amazon",
+      "year": 2024,
+      "abstract": "Applications of large-scale knowledge graphs in the e-commerce platforms can improve shopping experience for their customers. While existing e-commerce knowledge graphs (KGs) integrate a large volume of concepts or product attributes, they fail to discover user intentions, leaving the gap with how people think, behave, and interact with the surrounding world. In this work, we present COSMO, a scalable system to mine user-centric commonsense knowledge from massive behaviors and construct industry-scale knowledge graphs to empower diverse online services. In particular, we describe a pipeline for collecting high-quality seed knowledge assertions that are distilled from large language models (LLMs) and further refined by critic classifiers trained over human-in-the-loop annotated data.Since those generations may not always align with human preferences and contain noises, we then describe how we adopt instruction tuning to finetune an efficient language model~(COSMO-LM) for faithful e-commerce commonsense knowledge generation at scale. COSMO-LM effectively expands our knowledge graph to 18 major categories at Amazon, producing millions of high-quality knowledge with only 30k annotated instructions. Finally COSMO has been deployed in Amazon search applications such as search navigation. Both offline and online A/B experiments demonstrate our proposed system achieves significant improvement. Furthermore, these experiments highlight the immense potential of commonsense knowledge extracted from instruction-finetuned large language models.",
+      "externalIds": {
+        "DBLP": "conf/sigmod/YuLML0GSGZYL24",
+        "DOI": "10.1145/3626246.3653398",
+        "CorpusId": 269987369
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/3626246.3653398",
+      "corpus_id": 269987369
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "Entity and Event Level Conceptualization": {
+        "Tasks and   Datasets ": {
+          "Entity-level   Conceptualization ": {
+            "bcec7d17e68aceb91d020dd796ece075694f77c6": {},
+            "26aa6fe2028b5eefbaa40ab54ef725bbbe7d9810": {},
+            "1b97b4623cf2f183340e548e0aa53abf0f2963d8": {},
+            "5740f80fb61c4489674c9a0beb40c4f5e0ed19ff": {},
+            "68c03788224000794d5491ab459be0b2a2c38677": {},
+            "2caa21da66c6e84c87ee127c3a7059a0b2ba085e": {},
+            "760103b363b1557372e048c4c31b5f01162bfcfa": {},
+            "69d314bd26f8603d01b3251f89ed1b76b0201055": {}
+          },
+          "Event-level   Conceptualization ": {
+            "11396462f5f5d709ac84ac2a44a1e5f9fba2dacb": {},
+            "5aec6865043cb7c7f281699ae95652e0ff680f09": {},
+            "abe1631493db4da3c1bd9646921f9cc86b4a3948": {}
+          }
+        },
+        "Methods ": {
+          "Extraction-based   Methods ": {
+            "9b16d08413343acfd5f918cbad16ff4206bb7ac9": {},
+            "79f21f3dc4e01c1830b3d7f5cf10e170dbc948c1": {},
+            "6df7e80d9df96d8bb1acba776e9e7e3f0ea5a781": {},
+            "44ce01d28f0306374bac92636815e3aa656f25bc": {},
+            "ca86a63362e51eea2e213ae2d3faed668ec1ad74": {},
+            "68c03788224000794d5491ab459be0b2a2c38677": {},
+            "760103b363b1557372e048c4c31b5f01162bfcfa": {},
+            "e36f03fd3ce040c51ae90a464f60999998246d8c": {},
+            "8a37eba22dd8711451e72942c8c14c2162032c87": {}
+          },
+          "Retrieval-based   Methods ": {
+            "Semantic Retrieval ": {
+              "ca681bd61b13d7ecc7897e335888b2512be4866a": {},
+              "f28aef53930dcb9c8639ecdfdb95e22e34306ad6": {},
+              "04bab63897cb72fbce04245244010831e887a263": {},
+              "ca5d102b5046dd32bb4fbae33351cbb11d0580d8": {},
+              "812169b4f642331cf663dc2eae4c09a62f8f5b6e": {},
+              "f21b4598063699124a4ec72e6b19ca9b6a3bf8b3": {},
+              "23456df9df7444cd17e598f8bd4b232f0e3a0d61": {},
+              "dab3cb9c7ddca956c55bc14bd8052faee16fad6a": {}
+            },
+            "Neural Retrieval ": {
+              "11396462f5f5d709ac84ac2a44a1e5f9fba2dacb": {},
+              "fa6d8c4c93eb35d9a2d9542133719dbad87faeb7": {},
+              "bcec7d17e68aceb91d020dd796ece075694f77c6": {},
+              "c0f9a638cba62be26ab0a5836bc8d2bb7c57734b": {},
+              "2a702b88ee3ce58a8c5b47a1aa66eef6a77c5a3a": {},
+              "d1feb79f63ea52839f4a784fbd7d60bb73dd98dd": {},
+              "b6a587d0aba6f5fb3872c0514fcc3a2623eebf7d": {},
+              "7c5e77461f796ab460ae5daa97c1323d2e25c893": {},
+              "9285d083e51f257905b6016955919bb0f5d0fe46": {}
+            }
+          },
+          "Generative-based   Methods ": {
+            "Fine-Tuning-Based Generative Methods ": {
+              "3dd564a7500861162904c6875a102118891a03f9": {},
+              "5aec6865043cb7c7f281699ae95652e0ff680f09": {},
+              "fa6d8c4c93eb35d9a2d9542133719dbad87faeb7": {},
+              "5e5da02f6545164deb6cc6353a0db5f5a052f2ae": {},
+              "bcec7d17e68aceb91d020dd796ece075694f77c6": {}
+            },
+            "Zero-shot Generative   Methods ": {
+              "11396462f5f5d709ac84ac2a44a1e5f9fba2dacb": {},
+              "5aec6865043cb7c7f281699ae95652e0ff680f09": {},
+              "3a4eb7540a7dc371f3814ed4b57e001b5b288456": {},
+              "0786c88990235414611478099e43611542d973b0": {}
+            }
+          }
+        },
+        "Downstream   Applications   ": {
+          "Commonsense Reasoning   ": {
+            "5aec6865043cb7c7f281699ae95652e0ff680f09": {},
+            "26f5a7259bad9ff05f481aeb57d7431d499fb100": {},
+            "fa6d8c4c93eb35d9a2d9542133719dbad87faeb7": {},
+            "af1ec939e26e2467fb4c51f4ca3c85f12579c5a1": {},
+            "a550f576ff20b8cce98f3ddad0043d3783fbc9b4": {},
+            "7c5e77461f796ab460ae5daa97c1323d2e25c893": {},
+            "9285d083e51f257905b6016955919bb0f5d0fe46": {},
+            "abe1631493db4da3c1bd9646921f9cc86b4a3948": {},
+            "b72c9c50d153ca267c103fb967f173242639d2bb": {},
+            "5f9195769eb8ea3ac9ae3d513b4c3123551842ea": {}
+          },
+          "Complex and Factual   Reasoning ": {
+            "9ac420549415e15e6a7ec34c2ec5edf8d101c8ca": {},
+            "965cc3c7c80de91c75787a51931e912bece8046a": {},
+            "037dc34f9077699180f23fc4a383296beaa61187": {},
+            "0786c88990235414611478099e43611542d973b0": {}
+          },
+          "Others ": {
+            "1b5285a955ecc0e3b2aeb718e3b9720275ea82b1": {},
+            "77b8299c9455829db7f37116933e448255bd72d7": {},
+            "70b49a024787d3ad374fb78dc87e3ba2b5e16566": {},
+            "fa21e97718ca94d8967521e22aa3f18e19582faa": {},
+            "940c20a62b54d36a753ef4b2e0c386ff4d37a3d9": {},
+            "4157834ed2d2fea6b6f652a72a9d0487edbc9f57": {},
+            "176e3cbe3141c8b874df663711dca9b7470b8243": {},
+            "7a2206c883165864e545f25cf00259e29eec058f": {},
+            "40bbab9657f32e556dc2bbd2d1f9b86f67ced054": {},
+            "4bd73e9be0e57c2d6fb42675fa3973fe144786ce": {},
+            "7f30821267a11138497107d947ea39726e4b7fbd": {},
+            "ef25f1586cf6630f4a30d41ee5a2848b064dede3": {}
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000001",
+        "paperId": "bcec7d17e68aceb91d020dd796ece075694f77c6",
+        "ref_index": "6",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Tasks and   Datasets ",
+          "Entity-level   Conceptualization "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000002",
+        "paperId": "26aa6fe2028b5eefbaa40ab54ef725bbbe7d9810",
+        "ref_index": "9",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Tasks and   Datasets ",
+          "Entity-level   Conceptualization "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000003",
+        "paperId": "1b97b4623cf2f183340e548e0aa53abf0f2963d8",
+        "ref_index": "34",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Tasks and   Datasets ",
+          "Entity-level   Conceptualization "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000004",
+        "paperId": "5740f80fb61c4489674c9a0beb40c4f5e0ed19ff",
+        "ref_index": "38",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Tasks and   Datasets ",
+          "Entity-level   Conceptualization "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000005",
+        "paperId": "68c03788224000794d5491ab459be0b2a2c38677",
+        "ref_index": "41",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Tasks and   Datasets ",
+          "Entity-level   Conceptualization "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000006",
+        "paperId": "2caa21da66c6e84c87ee127c3a7059a0b2ba085e",
+        "ref_index": "46",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Tasks and   Datasets ",
+          "Entity-level   Conceptualization "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000007",
+        "paperId": "760103b363b1557372e048c4c31b5f01162bfcfa",
+        "ref_index": "50",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Tasks and   Datasets ",
+          "Entity-level   Conceptualization "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000008",
+        "paperId": "69d314bd26f8603d01b3251f89ed1b76b0201055",
+        "ref_index": "51",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Tasks and   Datasets ",
+          "Entity-level   Conceptualization "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000009",
+        "paperId": "11396462f5f5d709ac84ac2a44a1e5f9fba2dacb",
+        "ref_index": "1",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Tasks and   Datasets ",
+          "Event-level   Conceptualization "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000010",
+        "paperId": "5aec6865043cb7c7f281699ae95652e0ff680f09",
+        "ref_index": "2",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Tasks and   Datasets ",
+          "Event-level   Conceptualization "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000011",
+        "paperId": "abe1631493db4da3c1bd9646921f9cc86b4a3948",
+        "ref_index": "42",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Tasks and   Datasets ",
+          "Event-level   Conceptualization "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000012",
+        "paperId": "9b16d08413343acfd5f918cbad16ff4206bb7ac9",
+        "ref_index": "19",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Extraction-based   Methods "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000013",
+        "paperId": "79f21f3dc4e01c1830b3d7f5cf10e170dbc948c1",
+        "ref_index": "20",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Extraction-based   Methods "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000014",
+        "paperId": "6df7e80d9df96d8bb1acba776e9e7e3f0ea5a781",
+        "ref_index": "23",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Extraction-based   Methods "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000015",
+        "paperId": "44ce01d28f0306374bac92636815e3aa656f25bc",
+        "ref_index": "26",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Extraction-based   Methods "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000016",
+        "paperId": "ca86a63362e51eea2e213ae2d3faed668ec1ad74",
+        "ref_index": "37",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Extraction-based   Methods "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000017",
+        "paperId": "68c03788224000794d5491ab459be0b2a2c38677",
+        "ref_index": "41",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Extraction-based   Methods "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000018",
+        "paperId": "760103b363b1557372e048c4c31b5f01162bfcfa",
+        "ref_index": "50",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Extraction-based   Methods "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000019",
+        "paperId": "e36f03fd3ce040c51ae90a464f60999998246d8c",
+        "ref_index": "54",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Extraction-based   Methods "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000020",
+        "paperId": "8a37eba22dd8711451e72942c8c14c2162032c87",
+        "ref_index": "55",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Extraction-based   Methods "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000021",
+        "paperId": "ca681bd61b13d7ecc7897e335888b2512be4866a",
+        "ref_index": "17",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Retrieval-based   Methods ",
+          "Semantic Retrieval "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000022",
+        "paperId": "f28aef53930dcb9c8639ecdfdb95e22e34306ad6",
+        "ref_index": "18",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Retrieval-based   Methods ",
+          "Semantic Retrieval "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000023",
+        "paperId": "04bab63897cb72fbce04245244010831e887a263",
+        "ref_index": "30",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Retrieval-based   Methods ",
+          "Semantic Retrieval "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000024",
+        "paperId": "ca5d102b5046dd32bb4fbae33351cbb11d0580d8",
+        "ref_index": "31",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Retrieval-based   Methods ",
+          "Semantic Retrieval "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000025",
+        "paperId": "812169b4f642331cf663dc2eae4c09a62f8f5b6e",
+        "ref_index": "35",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Retrieval-based   Methods ",
+          "Semantic Retrieval "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000026",
+        "paperId": "f21b4598063699124a4ec72e6b19ca9b6a3bf8b3",
+        "ref_index": "36",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Retrieval-based   Methods ",
+          "Semantic Retrieval "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000027",
+        "paperId": "23456df9df7444cd17e598f8bd4b232f0e3a0d61",
+        "ref_index": "49",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Retrieval-based   Methods ",
+          "Semantic Retrieval "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000028",
+        "paperId": "dab3cb9c7ddca956c55bc14bd8052faee16fad6a",
+        "ref_index": "52",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Retrieval-based   Methods ",
+          "Semantic Retrieval "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000029",
+        "paperId": "11396462f5f5d709ac84ac2a44a1e5f9fba2dacb",
+        "ref_index": "1",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Retrieval-based   Methods ",
+          "Neural Retrieval "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000030",
+        "paperId": "fa6d8c4c93eb35d9a2d9542133719dbad87faeb7",
+        "ref_index": "4",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Retrieval-based   Methods ",
+          "Neural Retrieval "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000031",
+        "paperId": "bcec7d17e68aceb91d020dd796ece075694f77c6",
+        "ref_index": "6",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Retrieval-based   Methods ",
+          "Neural Retrieval "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000032",
+        "paperId": "c0f9a638cba62be26ab0a5836bc8d2bb7c57734b",
+        "ref_index": "7",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Retrieval-based   Methods ",
+          "Neural Retrieval "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000033",
+        "paperId": "2a702b88ee3ce58a8c5b47a1aa66eef6a77c5a3a",
+        "ref_index": "22",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Retrieval-based   Methods ",
+          "Neural Retrieval "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000034",
+        "paperId": "d1feb79f63ea52839f4a784fbd7d60bb73dd98dd",
+        "ref_index": "25",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Retrieval-based   Methods ",
+          "Neural Retrieval "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000035",
+        "paperId": "b6a587d0aba6f5fb3872c0514fcc3a2623eebf7d",
+        "ref_index": "27",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Retrieval-based   Methods ",
+          "Neural Retrieval "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000036",
+        "paperId": "7c5e77461f796ab460ae5daa97c1323d2e25c893",
+        "ref_index": "39",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Retrieval-based   Methods ",
+          "Neural Retrieval "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000037",
+        "paperId": "9285d083e51f257905b6016955919bb0f5d0fe46",
+        "ref_index": "40",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Retrieval-based   Methods ",
+          "Neural Retrieval "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000038",
+        "paperId": "3dd564a7500861162904c6875a102118891a03f9",
+        "ref_index": "0",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Generative-based   Methods ",
+          "Fine-Tuning-Based Generative Methods "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000039",
+        "paperId": "5aec6865043cb7c7f281699ae95652e0ff680f09",
+        "ref_index": "2",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Generative-based   Methods ",
+          "Fine-Tuning-Based Generative Methods "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000040",
+        "paperId": "fa6d8c4c93eb35d9a2d9542133719dbad87faeb7",
+        "ref_index": "4",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Generative-based   Methods ",
+          "Fine-Tuning-Based Generative Methods "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000041",
+        "paperId": "5e5da02f6545164deb6cc6353a0db5f5a052f2ae",
+        "ref_index": "5",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Generative-based   Methods ",
+          "Fine-Tuning-Based Generative Methods "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000042",
+        "paperId": "bcec7d17e68aceb91d020dd796ece075694f77c6",
+        "ref_index": "6",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Generative-based   Methods ",
+          "Fine-Tuning-Based Generative Methods "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000043",
+        "paperId": "11396462f5f5d709ac84ac2a44a1e5f9fba2dacb",
+        "ref_index": "1",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Generative-based   Methods ",
+          "Zero-shot Generative   Methods "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000044",
+        "paperId": "5aec6865043cb7c7f281699ae95652e0ff680f09",
+        "ref_index": "2",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Generative-based   Methods ",
+          "Zero-shot Generative   Methods "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000045",
+        "paperId": "3a4eb7540a7dc371f3814ed4b57e001b5b288456",
+        "ref_index": "48",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Generative-based   Methods ",
+          "Zero-shot Generative   Methods "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000046",
+        "paperId": "0786c88990235414611478099e43611542d973b0",
+        "ref_index": "53",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Methods ",
+          "Generative-based   Methods ",
+          "Zero-shot Generative   Methods "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000047",
+        "paperId": "5aec6865043cb7c7f281699ae95652e0ff680f09",
+        "ref_index": "2",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Commonsense Reasoning   "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000048",
+        "paperId": "26f5a7259bad9ff05f481aeb57d7431d499fb100",
+        "ref_index": "3",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Commonsense Reasoning   "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000049",
+        "paperId": "fa6d8c4c93eb35d9a2d9542133719dbad87faeb7",
+        "ref_index": "4",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Commonsense Reasoning   "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000050",
+        "paperId": "af1ec939e26e2467fb4c51f4ca3c85f12579c5a1",
+        "ref_index": "16",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Commonsense Reasoning   "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000051",
+        "paperId": "a550f576ff20b8cce98f3ddad0043d3783fbc9b4",
+        "ref_index": "32",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Commonsense Reasoning   "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000052",
+        "paperId": "7c5e77461f796ab460ae5daa97c1323d2e25c893",
+        "ref_index": "39",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Commonsense Reasoning   "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000053",
+        "paperId": "9285d083e51f257905b6016955919bb0f5d0fe46",
+        "ref_index": "40",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Commonsense Reasoning   "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000054",
+        "paperId": "abe1631493db4da3c1bd9646921f9cc86b4a3948",
+        "ref_index": "42",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Commonsense Reasoning   "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000055",
+        "paperId": "b72c9c50d153ca267c103fb967f173242639d2bb",
+        "ref_index": "47",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Commonsense Reasoning   "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000056",
+        "paperId": "5f9195769eb8ea3ac9ae3d513b4c3123551842ea",
+        "ref_index": "56",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Commonsense Reasoning   "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000057",
+        "paperId": "9ac420549415e15e6a7ec34c2ec5edf8d101c8ca",
+        "ref_index": "33",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Complex and Factual   Reasoning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000058",
+        "paperId": "965cc3c7c80de91c75787a51931e912bece8046a",
+        "ref_index": "43",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Complex and Factual   Reasoning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000059",
+        "paperId": "037dc34f9077699180f23fc4a383296beaa61187",
+        "ref_index": "44",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Complex and Factual   Reasoning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000060",
+        "paperId": "0786c88990235414611478099e43611542d973b0",
+        "ref_index": "53",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Complex and Factual   Reasoning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000061",
+        "paperId": "1b5285a955ecc0e3b2aeb718e3b9720275ea82b1",
+        "ref_index": "8",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Others "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000062",
+        "paperId": "77b8299c9455829db7f37116933e448255bd72d7",
+        "ref_index": "10",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Others "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000063",
+        "paperId": "70b49a024787d3ad374fb78dc87e3ba2b5e16566",
+        "ref_index": "11",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Others "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000064",
+        "paperId": "fa21e97718ca94d8967521e22aa3f18e19582faa",
+        "ref_index": "12",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Others "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000065",
+        "paperId": "940c20a62b54d36a753ef4b2e0c386ff4d37a3d9",
+        "ref_index": "13",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Others "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000066",
+        "paperId": "4157834ed2d2fea6b6f652a72a9d0487edbc9f57",
+        "ref_index": "14",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Others "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000067",
+        "paperId": "176e3cbe3141c8b874df663711dca9b7470b8243",
+        "ref_index": "15",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Others "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000068",
+        "paperId": "7a2206c883165864e545f25cf00259e29eec058f",
+        "ref_index": "21",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Others "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000069",
+        "paperId": "40bbab9657f32e556dc2bbd2d1f9b86f67ced054",
+        "ref_index": "24",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Others "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000070",
+        "paperId": "4bd73e9be0e57c2d6fb42675fa3973fe144786ce",
+        "ref_index": "28",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Others "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000071",
+        "paperId": "7f30821267a11138497107d947ea39726e4b7fbd",
+        "ref_index": "29",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Others "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.10885",
+        "arxiv_id": "2406.10885",
+        "leaf_mention_id": "2406.10885::000072",
+        "paperId": "ef25f1586cf6630f4a30d41ee5a2848b064dede3",
+        "ref_index": "45",
+        "path": [
+          "Entity and Event Level Conceptualization",
+          "Downstream   Applications   ",
+          "Others "
+        ],
+        "depth": 3,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 72,
+      "unique_leaf_paper_count": 57,
+      "multi_membership_extra_mentions": 15,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

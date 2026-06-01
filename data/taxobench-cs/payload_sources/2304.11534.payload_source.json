@@ -1,0 +1,953 @@
+{
+  "paper_id": "2304.11534",
+  "arxiv_id": "2304.11534",
+  "title": "Graph Neural Networks for Text Classification: A Survey",
+  "ref_meta": [
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "0",
+      "ref_key": "S2:d22b109eb5089179f8bd48ef47513533890f6bf9",
+      "paperId": "d22b109eb5089179f8bd48ef47513533890f6bf9",
+      "title": "BertGCN: Transductive Text Classification by Combining GNN and BERT",
+      "year": 2021,
+      "abstract": "In this work, we propose BertGCN, a model that combines large scale pretraining and transductive learning for text classification. BertGCN constructs a heterogeneous graph over the dataset and represents documents as nodes using BERT representations. By jointly training the BERT and GCN modules within BertGCN, the proposed model is able to leverage the advantages of both worlds: large-scale pretraining which takes the advantage of the massive amount of raw data and transductive learning which jointly learns representations for both training data and unlabeled test data by propagating label influence through graph convolution. Experiments show that BertGCN achieves SOTA performances on a wide range of text classification datasets. Code is available at https://github.com/ZeroRin/BertGCN.",
+      "externalIds": {
+        "ArXiv": "2105.05727",
+        "DBLP": "conf/acl/LinMSHKLW21",
+        "ACL": "2021.findings-acl.126",
+        "MAG": "3173753074",
+        "DOI": "10.18653/v1/2021.findings-acl.126",
+        "CorpusId": 234469858
+      },
+      "arxiv_id": "2105.05727",
+      "doi": "10.18653/v1/2021.findings-acl.126",
+      "corpus_id": 234469858
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "1",
+      "ref_key": "S2:7c6210a7b2dcc2f65a43d29422acc51380083f71",
+      "paperId": "7c6210a7b2dcc2f65a43d29422acc51380083f71",
+      "title": "Deep Attention Diffusion Graph Neural Networks for Text Classification",
+      "year": 2021,
+      "abstract": "Text classification is a fundamental task with broad applications in natural language processing. Recently, graph neural networks (GNNs) have attracted much attention due to their powerful representation ability. However, most existing methods for text classification based on GNNs consider only one-hop neighborhoods and low-frequency information within texts, which cannot fully utilize the rich context information of documents. Moreover, these models suffer from over-smoothing issues if many graph layers are stacked. In this paper, a Deep Attention Diffusion Graph Neural Network (DADGNN) model is proposed to learn text representations, bridging the chasm of interaction difficulties between a word and its distant neighbors. Experimental results on various standard benchmark datasets demonstrate the superior performance of the present approach.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/LiuGG0F21",
+        "ACL": "2021.emnlp-main.642",
+        "DOI": "10.18653/v1/2021.emnlp-main.642",
+        "CorpusId": 243865168
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2021.emnlp-main.642",
+      "corpus_id": 243865168
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "2",
+      "ref_key": "S2:a48ea46b3a1a729a257dab1ed2b69c87ed953db1",
+      "paperId": "a48ea46b3a1a729a257dab1ed2b69c87ed953db1",
+      "title": "Domain-Adversarial Graph Neural Networks for Text Classification",
+      "year": 2019,
+      "abstract": "Text classification, in cross-domain setting, is a challenging task. On the one hand, data from other domains are often useful to improve the learning on the target domain; on the other hand, domain variance and hierarchical structure of documents from words, key phrases, sentences, paragraphs, etc. make it difficult to align domains for effective learning. To date, existing cross-domain text classification methods mainly strive to minimize feature distribution differences between domains, and they typically suffer from three major limitations — (1) difficult to capture semantics in non-consecutive phrases and long-distance word dependency because of treating texts as word sequences, (2) neglect of hierarchical coarse-grained structures of document for feature learning, and (3) narrow focus of the domains at instance levels, without using domains as supervisions to improve text classification. This paper proposes an end-to-end, domain-adversarial graph neural networks (DAGNN), for cross-domain text classification. Our motivation is to model documents as graphs and use a domain-adversarial training principle to lean features from each graph (as well as learning the separation of domains) for effective text classification. At the instance level, DAGNN uses a graph to model each document, so that it can capture non-consecutive and long-distance semantics. At the feature level, DAGNN uses graphs from different domains to jointly train hierarchical graph neural networks in order to learn good features. At the learning level, DAGNN proposes a domain-adversarial principle such that the learned features not only optimally classify documents but also separates domains. Experiments on benchmark datasets demonstrate the effectiveness of our method in cross-domain classification tasks.",
+      "externalIds": {
+        "DBLP": "conf/icdm/WuPZZP19",
+        "MAG": "3003874400",
+        "DOI": "10.1109/ICDM.2019.00075",
+        "CorpusId": 207994971
+      },
+      "arxiv_id": null,
+      "doi": "10.1109/ICDM.2019.00075",
+      "corpus_id": 207994971
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "3",
+      "ref_key": "S2:47afb609007e2c180b939d1f92523766ce58da6d",
+      "paperId": "47afb609007e2c180b939d1f92523766ce58da6d",
+      "title": "Learning Dynamic Hierarchical Topic Graph with Graph Convolutional Network for Document Classification",
+      "year": 2020,
+      "abstract": "Constructing a graph with graph convolutional network (GCN) to explore the relational structure of the data has attracted lots of interests in various tasks. However, for document classiﬁcation, existing graph based methods often focus on the straightforward word-word and word-document relations, ignoring the hierarchical semantics. Besides, the graph construction is often independent from the task-speciﬁc GCN learning. To address these constrains, we integrate a probabilistic deep topic model into graph construction, and propose a novel trainable hierarchical topic graph (HTG), including word-level, hierarchical topic-level and document-level nodes, exhibiting semantic variation from ﬁne-grained to coarse. Regarding the document classiﬁcation as a document-node label generation task, HTG can be dynamically evolved with GCN by performing variational inference, which leads to an end-to-end document classiﬁcation method, named dynamic HTG (DHTG). Besides achieving state-of-the-art classiﬁcation results, our model learns an interpretable document graph with meaningful node embeddings and semantic edges.",
+      "externalIds": {
+        "DBLP": "conf/aistats/WangW0DZC20",
+        "MAG": "3037463126",
+        "CorpusId": 220095779
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 220095779
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "4",
+      "ref_key": "S2:9a6935328336b05fb95a47916eccf7b3c50b2f97",
+      "paperId": "9a6935328336b05fb95a47916eccf7b3c50b2f97",
+      "title": "HeteGCN: Heterogeneous Graph Convolutional Networks for Text Classification",
+      "year": 2020,
+      "abstract": "We consider the problem of learning efficient and inductive graph convolutional networks for text classification with a large number of examples and features. Existing state-of-the-art graph embedding based methods such as predictive text embedding (PTE) and TextGCN have shortcomings in terms of predictive performance, scalability and inductive capability. To address these limitations, we propose a heterogeneous graph convolutional network (HeteGCN) modeling approach that unites the best aspects of PTE and TextGCN together. The main idea is to learn feature embeddings and derive document embeddings using a HeteGCN architecture with different graphs used across layers. We simplify TextGCN by dissecting into several HeteGCN models which (a) helps to study the usefulness of individual models and (b) offers flexibility in fusing learned embeddings from different models. In effect, the number of model parameters is reduced significantly, enabling faster training and improving performance in small labeled training set scenario. Our detailed experimental studies demonstrate the efficacy of the proposed approach.",
+      "externalIds": {
+        "MAG": "3082598807",
+        "DBLP": "journals/corr/abs-2008-12842",
+        "ArXiv": "2008.12842",
+        "DOI": "10.1145/3437963.3441746",
+        "CorpusId": 221376551
+      },
+      "arxiv_id": "2008.12842",
+      "doi": "10.1145/3437963.3441746",
+      "corpus_id": 221376551
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "5",
+      "ref_key": "S2:1ceba9b7499ef45eb3146c6cecd3b27e3bcacb13",
+      "paperId": "1ceba9b7499ef45eb3146c6cecd3b27e3bcacb13",
+      "title": "Heterogeneous Graph Attention Networks for Semi-supervised Short Text Classification",
+      "year": 2019,
+      "abstract": "Short text classification has found rich and critical applications in news and tweet tagging to help users find relevant information. Due to lack of labeled training data in many practical use cases, there is a pressing need for studying semi-supervised short text classification. Most existing studies focus on long texts and achieve unsatisfactory performance on short texts due to the sparsity and limited labeled data. In this paper, we propose a novel heterogeneous graph neural network based method for semi-supervised short text classification, leveraging full advantage of few labeled data and large unlabeled data through information propagation along the graph. In particular, we first present a flexible HIN (heterogeneous information network) framework for modeling the short texts, which can integrate any type of additional information as well as capture their relations to address the semantic sparsity. Then, we propose Heterogeneous Graph ATtention networks (HGAT) to embed the HIN for short text classification based on a dual-level attention mechanism, including node-level and type-level attentions. The attention mechanism can learn the importance of different neighboring nodes as well as the importance of different node (information) types to a current node. Extensive experimental results have demonstrated that our proposed model outperforms state-of-the-art methods across six benchmark datasets significantly.",
+      "externalIds": {
+        "ACL": "D19-1488",
+        "MAG": "2970398671",
+        "DBLP": "conf/emnlp/HuYSJL19",
+        "DOI": "10.18653/v1/D19-1488",
+        "CorpusId": 202783478
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/D19-1488",
+      "corpus_id": 202783478
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "6",
+      "ref_key": "S2:bba5e0ad118f323ff6c72536e2b5e1fb1b9c1ff9",
+      "paperId": "bba5e0ad118f323ff6c72536e2b5e1fb1b9c1ff9",
+      "title": "Be More with Less: Hypergraph Attention Networks for Inductive Text Classification",
+      "year": 2020,
+      "abstract": "Text classification is a critical research topic with broad applications in natural language processing. Recently, graph neural networks (GNNs) have received increasing attention in the research community and demonstrated their promising results on this canonical task. Despite the success, their performance could be largely jeopardized in practice since they are: (1) unable to capture high-order interaction between words; (2) inefficient to handle large datasets and new documents. To address those issues, in this paper, we propose a principled model -- hypergraph attention networks (HyperGAT), which can obtain more expressive power with less computational consumption for text representation learning. Extensive experiments on various benchmark datasets demonstrate the efficacy of the proposed approach on the text classification task.",
+      "externalIds": {
+        "MAG": "3106229813",
+        "ArXiv": "2011.00387",
+        "DBLP": "journals/corr/abs-2011-00387",
+        "ACL": "2020.emnlp-main.399",
+        "DOI": "10.18653/v1/2020.emnlp-main.399",
+        "CorpusId": 226226607
+      },
+      "arxiv_id": "2011.00387",
+      "doi": "10.18653/v1/2020.emnlp-main.399",
+      "corpus_id": 226226607
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "7",
+      "ref_key": "S2:5a8216d8f5d22ace0c09d9388972c27155c7b4e4",
+      "paperId": "5a8216d8f5d22ace0c09d9388972c27155c7b4e4",
+      "title": "An Integration Model Based on Graph Convolutional Network for Text Classification",
+      "year": 2020,
+      "abstract": "Graph Convolutional Network (GCN) is extensively used in text classification tasks and performs well in the process of the non-euclidean structure data. Usually, GCN is implemented with the spatial-based method, such as Graph Attention Network (GAT). However, the current GCN-based methods still lack a more reasonable mechanism to account for the problems of contextual dependency and lexical polysemy. Therefore, an improved GCN (IGCN) is proposed to address the above problems, which introduces the Bidirectional Long Short-Term Memory (BiLSTM) Network, the Part-of-Speech (POS) information, and the dependency relationship. From a theoretical point of view, the innovation of IGCN is generalizable and straightforward: use the short-range contextual dependency and the long-range contextual dependency captured by the dependency relationship together to address the problem of contextual dependency and use a more comprehensive semantic information provided by the BiLSTM and the POS information to address the problem of lexical polysemy. What is worth mentioning, the dependency relationship is daringly transplanted from relation extraction tasks to text classification tasks to provide the graph required by IGCN. Experiments on three benchmarking datasets show that IGCN achieves competitive results compared with the other seven baseline models.",
+      "externalIds": {
+        "MAG": "3049229199",
+        "DBLP": "journals/access/TangMXC20",
+        "DOI": "10.1109/ACCESS.2020.3015770",
+        "CorpusId": 221283403
+      },
+      "arxiv_id": null,
+      "doi": "10.1109/ACCESS.2020.3015770",
+      "corpus_id": 221283403
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "8",
+      "ref_key": "S2:3447acbd5688f7a78146c405e925cdfea04e25ef",
+      "paperId": "3447acbd5688f7a78146c405e925cdfea04e25ef",
+      "title": "ME-GCN: Multi-dimensional Edge-Embedded Graph Convolutional Networks for Semi-supervised Text Classification",
+      "year": 2022,
+      "abstract": "Compared to sequential learning models, graph-based neural networks exhibit excellent ability in capturing global information and have been used for semi-supervised learning tasks. Most Graph Convolutional Networks are designed with the single-dimensional edge feature and failed to utilise the rich edge information about graphs. This paper introduces the ME-GCN (Multi-dimensional Edge-enhanced Graph Convolutional Networks) for semi-supervised text classification. A text graph for an entire corpus is firstly constructed to describe the undirected and multi-dimensional relationship of word-to-word, document-document, and word-to-document. The graph is initialised with corpus-trained multi-dimensional word and document node representation, and the relations are represented according to the distance of those words/documents nodes. Then, the generated graph is trained with ME-GCN, which considers the edge features as multi-stream signals, and each stream performs a separate graph convolutional operation. Our ME-GCN can integrate a rich source of graph edge information of the entire text corpus. The results have demonstrated that our proposed model has significantly outperformed the state-of-the-art methods across eight benchmark datasets.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2204-04618",
+        "ArXiv": "2204.04618",
+        "DOI": "10.48550/arXiv.2204.04618",
+        "CorpusId": 248085492
+      },
+      "arxiv_id": "2204.04618",
+      "doi": "10.48550/arXiv.2204.04618",
+      "corpus_id": 248085492
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "9",
+      "ref_key": "S2:981749728aa3f08a802607fbfc5a107c06e391fc",
+      "paperId": "981749728aa3f08a802607fbfc5a107c06e391fc",
+      "title": "Message Passing Attention Networks for Document Understanding",
+      "year": 2019,
+      "abstract": "Graph neural networks have recently emerged as a very effective framework for processing graph-structured data. These models have achieved state-of-the-art performance in many tasks. Most graph neural networks can be described in terms of message passing, vertex update, and readout functions. In this paper, we represent documents as word co-occurrence networks and propose an application of the message passing framework to NLP, the Message Passing Attention network for Document understanding (MPAD). We also propose several hierarchical variants of MPAD. Experiments conducted on 10 standard text classification datasets show that our architectures are competitive with the state-of-the-art. Ablation studies reveal further insights about the impact of the different components on performance. Code is publicly available at: this https URL .",
+      "externalIds": {
+        "DBLP": "conf/aaai/NikolentzosTV20",
+        "ArXiv": "1908.06267",
+        "MAG": "2968913877",
+        "DOI": "10.1609/AAAI.V34I05.6376",
+        "CorpusId": 201070738
+      },
+      "arxiv_id": "1908.06267",
+      "doi": "10.1609/AAAI.V34I05.6376",
+      "corpus_id": 201070738
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "10",
+      "ref_key": "S2:4be4ad38821d2a6e643cf2fb130e14c06302c3ad",
+      "paperId": "4be4ad38821d2a6e643cf2fb130e14c06302c3ad",
+      "title": "Multihop Neighbor Information Fusion Graph Convolutional Network for Text Classification",
+      "year": 2021,
+      "abstract": "Graph convolutional network (GCN) is an efficient network for learning graph representations. However, it costs expensive to learn the high-order interaction relationships of the node neighbor. In this paper, we propose a novel graph convolutional model to learn and fuse multihop neighbor information relationships. We adopt the weight-sharing mechanism to design different order graph convolutions for avoiding the potential concerns of overfitting. Moreover, we design a new multihop neighbor information fusion (MIF) operator which mixes different neighbor features from 1-hop to k-hops. We theoretically analyse the computational complexity and the number of trainable parameters of our models. Experiment on text networks shows that the proposed models achieve state-of-the-art performance than the text GCN.",
+      "externalIds": {
+        "MAG": "3158353984",
+        "DOI": "10.1155/2021/6665588",
+        "CorpusId": 235572735
+      },
+      "arxiv_id": null,
+      "doi": "10.1155/2021/6665588",
+      "corpus_id": 235572735
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "11",
+      "ref_key": "S2:1170bab0a3d4de34dabe6e086e29d80af0ff70bb",
+      "paperId": "1170bab0a3d4de34dabe6e086e29d80af0ff70bb",
+      "title": "Recursive Graphical Neural Networks for Text Classification",
+      "year": 2019,
+      "abstract": "The complicated syntax structure of natural language is hard to be explicitly modeled by sequence-based models. Graph is a natural structure to describe the complicated relation between tokens. The recent advance in Graph Neural Networks (GNN) provides a powerful tool to model graph structure data, but simple graph models such as Graph Convolutional Networks (GCN) suffer from over-smoothing problem, that is, when stacking multiple layers, all nodes will converge to the same value. In this paper, we propose a novel Recursive Graphical Neural Networks model (ReGNN) to represent text organized in the form of graph. In our proposed model, LSTM is used to dynamically decide which part of the aggregated neighbor information should be transmitted to upper layers thus alleviating the over-smoothing problem. Furthermore, to encourage the exchange between the local and global information, a global graph-level node is designed. We conduct experiments on both single and multiple label text classification tasks. Experiment results show that our ReGNN model surpasses the strong baselines significantly in most of the datasets and greatly alleviates the over-smoothing problem.",
+      "externalIds": {
+        "ArXiv": "1909.08166",
+        "DBLP": "journals/corr/abs-1909-08166",
+        "MAG": "2974840114",
+        "CorpusId": 202660846
+      },
+      "arxiv_id": "1909.08166",
+      "doi": null,
+      "corpus_id": 202660846
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "12",
+      "ref_key": "S2:69f1bb893516207b2a02bf3673edc46fb5cf1f94",
+      "paperId": "69f1bb893516207b2a02bf3673edc46fb5cf1f94",
+      "title": "Simple Spectral Graph Convolution",
+      "year": 2021,
+      "abstract": "neighborhoods of various sizes. Moreover, we show that our design incorporates larger neighborhoods compared to SGC thus coping better with oversmoothing. We explain that limiting over-dominance of the largest neighborhoods in the aggregation step is a desired approach to limit oversmoothing while preserving large context of each node. We also show that in spectral analysis that S 2 GC is a trade-off between the low-and high-pass ﬁlters which leads to capturing the global and local contexts of each node. Moreover, we show how S 2 GC and APPNP (Klicpera et al., 2019a) are related and explain why S 2 GC captures a range of neighborhoods better than APPNP. Our experimental results include node clustering, unsupervised and semi-supervised node classiﬁ-cation, node property prediction and supervised text classiﬁcation. We show that S 2 GC is highly competitive often signiﬁcantly outperforming state-of-the-art methods",
+      "externalIds": {
+        "DBLP": "conf/iclr/ZhuK21",
+        "CorpusId": 227183027
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 227183027
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "13",
+      "ref_key": "S2:7e71eedb078181873a56f2adcfef9dddaeb95602",
+      "paperId": "7e71eedb078181873a56f2adcfef9dddaeb95602",
+      "title": "Simplifying Graph Convolutional Networks",
+      "year": 2019,
+      "abstract": "Graph Convolutional Networks (GCNs) and their variants have experienced significant attention and have become the de facto methods for learning graph representations. GCNs derive inspiration primarily from recent deep learning approaches, and as a result, may inherit unnecessary complexity and redundant computation. In this paper, we reduce this excess complexity through successively removing nonlinearities and collapsing weight matrices between consecutive layers. We theoretically analyze the resulting linear model and show that it corresponds to a fixed low-pass filter followed by a linear classifier. Notably, our experimental evaluation demonstrates that these simplifications do not negatively impact accuracy in many downstream applications. Moreover, the resulting model scales to larger datasets, is naturally interpretable, and yields up to two orders of magnitude speedup over FastGCN.",
+      "externalIds": {
+        "MAG": "2950619419",
+        "ArXiv": "1902.07153",
+        "DBLP": "journals/corr/abs-1902-07153",
+        "CorpusId": 67752026
+      },
+      "arxiv_id": "1902.07153",
+      "doi": null,
+      "corpus_id": 67752026
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "14",
+      "ref_key": "S2:a7d4dfb46cda67814773325d306b4e85b18a406d",
+      "paperId": "a7d4dfb46cda67814773325d306b4e85b18a406d",
+      "title": "Document and Word Representations Generated by Graph Convolutional Network and BERT for Short Text Classification",
+      "year": 2020,
+      "abstract": ". In many studies, the graph convolution neural networks were used to solve different natural language processing (NLP) problems. However, few researches employ graph convolutional network for text classiﬁcation, especially for short text classiﬁcation. In this work, a special text graph of the short-text corpus is created, and then a short-text graph convolutional network (STGCN) is developed. Speciﬁcal-ly, different topic models for short text are employed, and a short text short-text graph based on the word co-occurrence, document word relations, and text topic information, is developed. The word and sentence representations generated by the STGCN are considered as the classiﬁcation feature. In addition, a pre-trained word vector obtained by the BERTs hidden layer is employed, which greatly improves the classiﬁcation effect of our model. The experimental results show that our model outperforms the state-of-the-art models on multiple short text datasets.",
+      "externalIds": {
+        "MAG": "3089862520",
+        "DBLP": "conf/ecai/YeJLLY20",
+        "DOI": "10.3233/FAIA200355",
+        "CorpusId": 221714509
+      },
+      "arxiv_id": null,
+      "doi": "10.3233/FAIA200355",
+      "corpus_id": 221714509
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "15",
+      "ref_key": "S2:ee22f29f3bb953e6fc5a1782216c225a735d746b",
+      "paperId": "ee22f29f3bb953e6fc5a1782216c225a735d746b",
+      "title": "Tensor Graph Convolutional Networks for Text Classification",
+      "year": 2020,
+      "abstract": "Compared to sequential learning models, graph-based neural networks exhibit some excellent properties, such as ability capturing global information. In this paper, we investigate graph-based neural networks for text classification problem. A new framework TensorGCN (tensor graph convolutional networks), is presented for this task. A text graph tensor is firstly constructed to describe semantic, syntactic, and sequential contextual information. Then, two kinds of propagation learning perform on the text graph tensor. The first is intra-graph propagation used for aggregating information from neighborhood nodes in a single graph. The second is inter-graph propagation used for harmonizing heterogeneous information between graphs. Extensive experiments are conducted on benchmark datasets, and the results illustrate the effectiveness of our proposed framework. Our proposed TensorGCN presents an effective way to harmonize and integrate heterogeneous information from different kinds of graphs.",
+      "externalIds": {
+        "MAG": "2998857940",
+        "DBLP": "conf/aaai/LiuYZWL20",
+        "ArXiv": "2001.05313",
+        "DOI": "10.1609/AAAI.V34I05.6359",
+        "CorpusId": 210701161
+      },
+      "arxiv_id": "2001.05313",
+      "doi": "10.1609/AAAI.V34I05.6359",
+      "corpus_id": 210701161
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "16",
+      "ref_key": "S2:6017e81c5ede6c38b306a3df9738aeb04baa7619",
+      "paperId": "6017e81c5ede6c38b306a3df9738aeb04baa7619",
+      "title": "Graph Convolutional Networks for Text Classification",
+      "year": 2018,
+      "abstract": "Text classification is an important and classical problem in natural language processing. There have been a number of studies that applied convolutional neural networks (convolution on regular grid, e.g., sequence) to classification. However, only a limited number of studies have explored the more flexible graph convolutional neural networks (convolution on non-grid, e.g., arbitrary graph) for the task. In this work, we propose to use graph convolutional networks for text classification. We build a single text graph for a corpus based on word co-occurrence and document word relations, then learn a Text Graph Convolutional Network (Text GCN) for the corpus. Our Text GCN is initialized with one-hot representation for word and document, it then jointly learns the embeddings for both words and documents, as supervised by the known class labels for documents. Our experimental results on multiple benchmark datasets demonstrate that a vanilla Text GCN without any external word embeddings or knowledge outperforms state-of-the-art methods for text classification. On the other hand, Text GCN also learns predictive word and document embeddings. In addition, experimental results show that the improvement of Text GCN over state-of-the-art comparison methods become more prominent as we lower the percentage of training data, suggesting the robustness of Text GCN to less training data in text classification.",
+      "externalIds": {
+        "MAG": "2962946486",
+        "DBLP": "conf/aaai/YaoM019",
+        "ArXiv": "1809.05679",
+        "DOI": "10.1609/aaai.v33i01.33017370",
+        "CorpusId": 52284222
+      },
+      "arxiv_id": "1809.05679",
+      "doi": "10.1609/aaai.v33i01.33017370",
+      "corpus_id": 52284222
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "17",
+      "ref_key": "S2:ffaa5072b213260aeed713231e5e9a744652df06",
+      "paperId": "ffaa5072b213260aeed713231e5e9a744652df06",
+      "title": "TextGTL: Graph-based Transductive Learning for Semi-supervised Text Classification via Structure-Sensitive Interpolation",
+      "year": 2021,
+      "abstract": "Compared with traditional sequential learning models, graph-based neural networks exhibit excellent properties when encoding text, such as the capacity of capturing global and local information simultaneously. Especially in the semi-supervised scenario, propagating information along the edge can effectively alleviate the sparsity of labeled data. In this paper, beyond the existing architecture of heterogeneous word-document graphs, for the first time, we investigate how to construct lightweight non-heterogeneous graphs based on different linguistic information to better serve free text representation learning. Then, a novel semi-supervised framework for text classification that refines graph topology under theoretical guidance and shares information across different text graphs, namely Text-oriented Graph-based Transductive Learning (TextGTL), is proposed. TextGTL also performs attribute space interpolation based on dense substructure in graphs to predict low-entropy labels with high-quality feature nodes for data augmentation. To verify the effectiveness of TextGTL, we conduct extensive experiments on various benchmark datasets, observing significant performance gains over conventional heterogeneous graphs. In addition, we also design ablation studies to dive deep into the validity of components in TextTGL.",
+      "externalIds": {
+        "DBLP": "conf/ijcai/LiPPLW21",
+        "DOI": "10.24963/ijcai.2021/369",
+        "CorpusId": 237101087
+      },
+      "arxiv_id": null,
+      "doi": "10.24963/ijcai.2021/369",
+      "corpus_id": 237101087
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "18",
+      "ref_key": "S2:23ce8950b9360158c04ab0c1dcf9a73022b60673",
+      "paperId": "23ce8950b9360158c04ab0c1dcf9a73022b60673",
+      "title": "Every Document Owns Its Structure: Inductive Text Classification via Graph Neural Networks",
+      "year": 2020,
+      "abstract": "Text classification is fundamental in natural language processing (NLP) and Graph Neural Networks (GNN) are recently applied in this task. However, the existing graph-based works can neither capture the contextual word relationships within each document nor fulfil the inductive learning of new words. Therefore in this work, to overcome such problems, we propose TextING for inductive text classification via GNN. We first build individual graphs for each document and then use GNN to learn the fine-grained word representations based on their local structure, which can also effectively produce embeddings for unseen words in the new document. Finally, the word nodes are aggregated as the document embedding. Extensive experiments on four benchmark datasets show that our method outperforms state-of-the-art text classification methods.",
+      "externalIds": {
+        "DBLP": "conf/acl/ZhangYCWWW20",
+        "MAG": "3023462908",
+        "ArXiv": "2004.13826",
+        "ACL": "2020.acl-main.31",
+        "DOI": "10.18653/v1/2020.acl-main.31",
+        "CorpusId": 216641848
+      },
+      "arxiv_id": "2004.13826",
+      "doi": "10.18653/v1/2020.acl-main.31",
+      "corpus_id": 216641848
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "19",
+      "ref_key": "S2:231b6807767249c04d73c7c6f6295625d4e52591",
+      "paperId": "231b6807767249c04d73c7c6f6295625d4e52591",
+      "title": "Text Level Graph Neural Network for Text Classification",
+      "year": 2019,
+      "abstract": "Recently, researches have explored the graph neural network (GNN) techniques on text classification, since GNN does well in handling complex structures and preserving global information. However, previous methods based on GNN are mainly faced with the practical problems of fixed corpus level graph structure which don’t support online testing and high memory consumption. To tackle the problems, we propose a new GNN based model that builds graphs for each input text with global parameters sharing instead of a single graph for the whole corpus. This method removes the burden of dependence between an individual text and entire corpus which support online testing, but still preserve global information. Besides, we build graphs by much smaller windows in the text, which not only extract more local features but also significantly reduce the edge numbers as well as memory consumption. Experiments show that our model outperforms existing models on several text classification datasets even with consuming less memory.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1910-02356",
+        "MAG": "2978849187",
+        "ACL": "D19-1345",
+        "ArXiv": "1910.02356",
+        "DOI": "10.18653/v1/D19-1345",
+        "CorpusId": 202765126
+      },
+      "arxiv_id": "1910.02356",
+      "doi": "10.18653/v1/D19-1345",
+      "corpus_id": 202765126
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "20",
+      "ref_key": "S2:7805cb9b197433ae3739c67580cfcae6e00d6a19",
+      "paperId": "7805cb9b197433ae3739c67580cfcae6e00d6a19",
+      "title": "Sparse Structure Learning via Graph Neural Networks for Inductive Document Classification",
+      "year": 2021,
+      "abstract": "Recently, graph neural networks (GNNs) have been widely used for document classification. However, most existing methods are based on static word co-occurrence graphs without sentence-level information, which poses three challenges:(1) word ambiguity, (2) word synonymity, and (3) dynamic contextual dependency. To address these challenges, we propose a novel GNN-based sparse structure learning model for inductive document classification. Specifically, a document-level graph is initially generated by a disjoint union of sentence-level word co-occurrence graphs. Our model collects a set of trainable edges connecting disjoint words between sentences, and employs structure learning to sparsely select edges with dynamic contextual dependencies. Graphs with sparse structure can jointly exploit local and global contextual information in documents through GNNs. For inductive learning, the refined document graph is further fed into a general readout function for graph-level classification and optimization in an end-to-end manner. Extensive experiments on several real-world datasets demonstrate that the proposed model outperforms most state-of-the-art results, and reveal the necessity to learn sparse structures for each document.",
+      "externalIds": {
+        "DBLP": "conf/aaai/PiaoLLK22",
+        "ArXiv": "2112.06386",
+        "DOI": "10.1609/aaai.v36i10.21366",
+        "CorpusId": 245124151
+      },
+      "arxiv_id": "2112.06386",
+      "doi": "10.1609/aaai.v36i10.21366",
+      "corpus_id": 245124151
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "21",
+      "ref_key": "S2:146adb863cf47182080e0c7f0ef6499ef568122b",
+      "paperId": "146adb863cf47182080e0c7f0ef6499ef568122b",
+      "title": "Text Graph Transformer for Document Classification",
+      "year": 2020,
+      "abstract": "Text classification is a fundamental problem in natural language processing. Recent studies applied graph neural network (GNN) techniques to capture global word co-occurrence in a corpus. However, previous works are not scalable to large-sized corpus and ignore the heterogeneity of the text graph. To address these problems, we introduce a novel Transformer based heterogeneous graph neural network, namely Text Graph Transformer (TG-Transformer). Our model learns effective node representations by capturing structure and heterogeneity from the text graph. We propose a mini-batch text graph sampling method that significantly reduces computing and memory costs to handle large-sized corpus. Extensive experiments have been conducted on several benchmark datasets, and the results demonstrate that TG-Transformer outperforms state-of-the-art approaches on text classification task.",
+      "externalIds": {
+        "MAG": "3101233295",
+        "ACL": "2020.emnlp-main.668",
+        "DBLP": "conf/emnlp/ZhangZ20",
+        "DOI": "10.18653/v1/2020.emnlp-main.668",
+        "CorpusId": 226262336
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2020.emnlp-main.668",
+      "corpus_id": 226262336
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "22",
+      "ref_key": "S2:c61caf41d56eba4f9245525e56f3bd52aa634f8e",
+      "paperId": "c61caf41d56eba4f9245525e56f3bd52aa634f8e",
+      "title": "Inductive Topic Variational Graph Auto-Encoder for Text Classification",
+      "year": 2021,
+      "abstract": "Graph convolutional networks (GCNs) have been applied recently to text classification and produced an excellent performance. However, existing GCN-based methods do not assume an explicit latent semantic structure of documents, making learned representations less effective and difficult to interpret. They are also transductive in nature, thus cannot handle out-of-graph documents. To address these issues, we propose a novel model named inductive Topic Variational Graph Auto-Encoder (T-VGAE), which incorporates a topic model into variational graph-auto-encoder (VGAE) to capture the hidden semantic information between documents and words. T-VGAE inherits the interpretability of the topic model and the efficient information propagation mechanism of VGAE. It learns probabilistic representations of words and documents by jointly encoding and reconstructing the global word-level graph and bipartite graphs of documents, where each document is considered individually and decoupled from the global correlation graph so as to enable inductive learning. Our experiments on several benchmark datasets show that our method outperforms the existing competitive models on supervised and semi-supervised text classification, as well as unsupervised text representation learning. In addition, it has higher interpretability and is able to deal with unseen documents.",
+      "externalIds": {
+        "DBLP": "conf/naacl/XieHDPN21",
+        "ACL": "2021.naacl-main.333",
+        "MAG": "3171978172",
+        "DOI": "10.18653/V1/2021.NAACL-MAIN.333",
+        "CorpusId": 235097541
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/V1/2021.NAACL-MAIN.333",
+      "corpus_id": 235097541
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "23",
+      "ref_key": "S2:5a8550d8180718f2c4bbc47a6a9f4fe2315e7b9b",
+      "paperId": "5a8550d8180718f2c4bbc47a6a9f4fe2315e7b9b",
+      "title": "VGCN-BERT: Augmenting BERT with Graph Embedding for Text Classification",
+      "year": 2020,
+      "abstract": "Much progress has been made recently on text classification with methods\nbased on neural networks. In particular, models using attention mechanism such\nas BERT have shown to have the capability of capturing the contextual\ninformation within a sentence or document. However, their ability of capturing\nthe global information about the vocabulary of a language is more limited. This\nlatter is the strength of Graph Convolutional Networks (GCN). In this paper, we\npropose VGCN-BERT model which combines the capability of BERT with a Vocabulary\nGraph Convolutional Network (VGCN). Local information and global information\ninteract through different layers of BERT, allowing them to influence mutually\nand to build together a final representation for classification. In our\nexperiments on several text classification datasets, our approach outperforms\nBERT and GCN alone, and achieve higher effectiveness than that reported in\nprevious studies.",
+      "externalIds": {
+        "MAG": "3023672669",
+        "DBLP": "journals/corr/abs-2004-05707",
+        "PubMedCentral": "7148240",
+        "ArXiv": "2004.05707",
+        "DOI": "10.1007/978-3-030-45439-5_25",
+        "CorpusId": 215744864
+      },
+      "arxiv_id": "2004.05707",
+      "doi": "10.1007/978-3-030-45439-5_25",
+      "corpus_id": 215744864
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "24",
+      "ref_key": "S2:956b7233536f90eca3a0100bc5ee96b055b2e018",
+      "paperId": "956b7233536f90eca3a0100bc5ee96b055b2e018",
+      "title": "Semi-Supervised Learning and Graph Neural Networks for Fake News Detection",
+      "year": 2019,
+      "abstract": "Social networks have become the main platforms for information dissemination. Nevertheless, due to the increasing number of users, social media platforms tend to be highly vulnerable to the propagation of disinformation - making the detection of fake news a challenging task. In this work, we focus on content-based methods for detecting fake news - casting the problem to a binary text classification one (an article corresponds to either fake news or not). In particular, our work proposes a graph-based semi-supervised fake news detection method based on graph neural networks. The experimental results indicate that the proposed methodology achieves better performance compared to traditional classification techniques, especially when trained on limited number of labeled articles 11Our code is publicly available at: https://github.com/bdvllrs/misinformation-detection-tensor-embeddings..",
+      "externalIds": {
+        "DBLP": "conf/asunam/BenamiraDLRSM19",
+        "MAG": "2982591719",
+        "DOI": "10.1145/3341161.3342958",
+        "CorpusId": 208113391
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/3341161.3342958",
+      "corpus_id": 208113391
+    },
+    {
+      "paper_id": "2304.11534",
+      "ref_index": "25",
+      "ref_key": "S2:56fac0ced28ad22958da067795c5abfe5f85fce9",
+      "paperId": "56fac0ced28ad22958da067795c5abfe5f85fce9",
+      "title": "InducT-GCN: Inductive Graph Convolutional Networks for Text Classification",
+      "year": 2022,
+      "abstract": "Text classification aims to assign labels to textual units by making use of global information. Recent studies have applied graph neural network (GNN) to capture the global word co-occurrence in a corpus. Existing approaches require that all the nodes (training and test) in a graph are present during training, which are transductive and do not naturally generalise to unseen nodes. To make those models inductive, they use extra resources, like pretrained word embedding. However, high-quality resource is not always available and hard to train. Under the extreme settings with no extra resource and limited amount of training set, can we still learn an inductive graph-based text classification model? In this paper, we introduce a novel inductive graph-based text classification framework, InducT-GCN (InducTive Graph Convolutional Networks for Text classification). Compared to transductive models that require test documents in training, we construct a graph based on the statistics of training documents only and represent document vectors with a weighted sum of word vectors. We then conduct one-directional GCN propagation during testing. Across five text classification benchmarks, our InducT-GCN outperformed state-of-the-art methods that are either transductive in nature or pre-trained additional resources. We also conducted scalability testing by gradually increasing the data size and revealed that our InducT-GCN can reduce the time and space complexity. The code is available on: https://github.com/usydnlp/InductTGCN.",
+      "externalIds": {
+        "ArXiv": "2206.00265",
+        "DBLP": "journals/corr/abs-2206-00265",
+        "DOI": "10.1109/ICPR56361.2022.9956075",
+        "CorpusId": 249240182
+      },
+      "arxiv_id": "2206.00265",
+      "doi": "10.1109/ICPR56361.2022.9956075",
+      "corpus_id": 249240182
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "GNN for Text Classification ": {
+        "Corpus-level Graph": {
+          "Word and Document nodes": {
+            "PMI+TF-IDF": {
+              "d22b109eb5089179f8bd48ef47513533890f6bf9": {},
+              "4be4ad38821d2a6e643cf2fb130e14c06302c3ad": {},
+              "69f1bb893516207b2a02bf3673edc46fb5cf1f94": {},
+              "7e71eedb078181873a56f2adcfef9dddaeb95602": {},
+              "6017e81c5ede6c38b306a3df9738aeb04baa7619": {},
+              "146adb863cf47182080e0c7f0ef6499ef568122b": {}
+            },
+            "Multi-Graph/Multi-Dimensional Edge": {
+              "3447acbd5688f7a78146c405e925cdfea04e25ef": {},
+              "ee22f29f3bb953e6fc5a1782216c225a735d746b": {}
+            },
+            "Inductive Learning": {
+              "9a6935328336b05fb95a47916eccf7b3c50b2f97": {},
+              "c61caf41d56eba4f9245525e56f3bd52aa634f8e": {},
+              "56fac0ced28ad22958da067795c5abfe5f85fce9": {}
+            }
+          },
+          "Document Nodes": {
+            "ffaa5072b213260aeed713231e5e9a744652df06": {},
+            "956b7233536f90eca3a0100bc5ee96b055b2e018": {}
+          },
+          "Word Nodes": {
+            "5a8550d8180718f2c4bbc47a6a9f4fe2315e7b9b": {}
+          },
+          "Extra Topic Nodes": {
+            "Single Layer topic nodes": {
+              "1ceba9b7499ef45eb3146c6cecd3b27e3bcacb13": {},
+              "a7d4dfb46cda67814773325d306b4e85b18a406d": {}
+            },
+            "Multi-layer Topic Node": {
+              "47afb609007e2c180b939d1f92523766ce58da6d": {}
+            }
+          }
+        },
+        "Document-Level Graph": {
+          "Local word consecutive": {
+            "Simple consecutive graph models": {
+              "981749728aa3f08a802607fbfc5a107c06e391fc": {},
+              "23ce8950b9360158c04ab0c1dcf9a73022b60673": {},
+              "231b6807767249c04d73c7c6f6295625d4e52591": {}
+            },
+            "Advanced graph models": {
+              "7c6210a7b2dcc2f65a43d29422acc51380083f71": {},
+              "7805cb9b197433ae3739c67580cfcae6e00d6a19": {}
+            }
+          },
+          "Global Word Co-occurrence": {
+            "Only co-occurrence": {
+              "a48ea46b3a1a729a257dab1ed2b69c87ed953db1": {}
+            },
+            "With Extra Edges": {
+              "1170bab0a3d4de34dabe6e086e29d80af0ff70bb": {}
+            }
+          },
+          "Other Word Graphs": {
+            "bba5e0ad118f323ff6c72536e2b5e1fb1b9c1ff9": {},
+            "5a8216d8f5d22ace0c09d9388972c27155c7b4e4": {}
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000001",
+        "paperId": "d22b109eb5089179f8bd48ef47513533890f6bf9",
+        "ref_index": "0",
+        "path": [
+          "GNN for Text Classification ",
+          "Corpus-level Graph",
+          "Word and Document nodes",
+          "PMI+TF-IDF"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000002",
+        "paperId": "4be4ad38821d2a6e643cf2fb130e14c06302c3ad",
+        "ref_index": "10",
+        "path": [
+          "GNN for Text Classification ",
+          "Corpus-level Graph",
+          "Word and Document nodes",
+          "PMI+TF-IDF"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000003",
+        "paperId": "69f1bb893516207b2a02bf3673edc46fb5cf1f94",
+        "ref_index": "12",
+        "path": [
+          "GNN for Text Classification ",
+          "Corpus-level Graph",
+          "Word and Document nodes",
+          "PMI+TF-IDF"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000004",
+        "paperId": "7e71eedb078181873a56f2adcfef9dddaeb95602",
+        "ref_index": "13",
+        "path": [
+          "GNN for Text Classification ",
+          "Corpus-level Graph",
+          "Word and Document nodes",
+          "PMI+TF-IDF"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000005",
+        "paperId": "6017e81c5ede6c38b306a3df9738aeb04baa7619",
+        "ref_index": "16",
+        "path": [
+          "GNN for Text Classification ",
+          "Corpus-level Graph",
+          "Word and Document nodes",
+          "PMI+TF-IDF"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000006",
+        "paperId": "146adb863cf47182080e0c7f0ef6499ef568122b",
+        "ref_index": "21",
+        "path": [
+          "GNN for Text Classification ",
+          "Corpus-level Graph",
+          "Word and Document nodes",
+          "PMI+TF-IDF"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000007",
+        "paperId": "3447acbd5688f7a78146c405e925cdfea04e25ef",
+        "ref_index": "8",
+        "path": [
+          "GNN for Text Classification ",
+          "Corpus-level Graph",
+          "Word and Document nodes",
+          "Multi-Graph/Multi-Dimensional Edge"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000008",
+        "paperId": "ee22f29f3bb953e6fc5a1782216c225a735d746b",
+        "ref_index": "15",
+        "path": [
+          "GNN for Text Classification ",
+          "Corpus-level Graph",
+          "Word and Document nodes",
+          "Multi-Graph/Multi-Dimensional Edge"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000009",
+        "paperId": "9a6935328336b05fb95a47916eccf7b3c50b2f97",
+        "ref_index": "4",
+        "path": [
+          "GNN for Text Classification ",
+          "Corpus-level Graph",
+          "Word and Document nodes",
+          "Inductive Learning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000010",
+        "paperId": "c61caf41d56eba4f9245525e56f3bd52aa634f8e",
+        "ref_index": "22",
+        "path": [
+          "GNN for Text Classification ",
+          "Corpus-level Graph",
+          "Word and Document nodes",
+          "Inductive Learning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000011",
+        "paperId": "56fac0ced28ad22958da067795c5abfe5f85fce9",
+        "ref_index": "25",
+        "path": [
+          "GNN for Text Classification ",
+          "Corpus-level Graph",
+          "Word and Document nodes",
+          "Inductive Learning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000012",
+        "paperId": "ffaa5072b213260aeed713231e5e9a744652df06",
+        "ref_index": "17",
+        "path": [
+          "GNN for Text Classification ",
+          "Corpus-level Graph",
+          "Document Nodes"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000013",
+        "paperId": "956b7233536f90eca3a0100bc5ee96b055b2e018",
+        "ref_index": "24",
+        "path": [
+          "GNN for Text Classification ",
+          "Corpus-level Graph",
+          "Document Nodes"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000014",
+        "paperId": "5a8550d8180718f2c4bbc47a6a9f4fe2315e7b9b",
+        "ref_index": "23",
+        "path": [
+          "GNN for Text Classification ",
+          "Corpus-level Graph",
+          "Word Nodes"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000015",
+        "paperId": "1ceba9b7499ef45eb3146c6cecd3b27e3bcacb13",
+        "ref_index": "5",
+        "path": [
+          "GNN for Text Classification ",
+          "Corpus-level Graph",
+          "Extra Topic Nodes",
+          "Single Layer topic nodes"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000016",
+        "paperId": "a7d4dfb46cda67814773325d306b4e85b18a406d",
+        "ref_index": "14",
+        "path": [
+          "GNN for Text Classification ",
+          "Corpus-level Graph",
+          "Extra Topic Nodes",
+          "Single Layer topic nodes"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000017",
+        "paperId": "47afb609007e2c180b939d1f92523766ce58da6d",
+        "ref_index": "3",
+        "path": [
+          "GNN for Text Classification ",
+          "Corpus-level Graph",
+          "Extra Topic Nodes",
+          "Multi-layer Topic Node"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000018",
+        "paperId": "981749728aa3f08a802607fbfc5a107c06e391fc",
+        "ref_index": "9",
+        "path": [
+          "GNN for Text Classification ",
+          "Document-Level Graph",
+          "Local word consecutive",
+          "Simple consecutive graph models"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000019",
+        "paperId": "23ce8950b9360158c04ab0c1dcf9a73022b60673",
+        "ref_index": "18",
+        "path": [
+          "GNN for Text Classification ",
+          "Document-Level Graph",
+          "Local word consecutive",
+          "Simple consecutive graph models"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000020",
+        "paperId": "231b6807767249c04d73c7c6f6295625d4e52591",
+        "ref_index": "19",
+        "path": [
+          "GNN for Text Classification ",
+          "Document-Level Graph",
+          "Local word consecutive",
+          "Simple consecutive graph models"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000021",
+        "paperId": "7c6210a7b2dcc2f65a43d29422acc51380083f71",
+        "ref_index": "1",
+        "path": [
+          "GNN for Text Classification ",
+          "Document-Level Graph",
+          "Local word consecutive",
+          "Advanced graph models"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000022",
+        "paperId": "7805cb9b197433ae3739c67580cfcae6e00d6a19",
+        "ref_index": "20",
+        "path": [
+          "GNN for Text Classification ",
+          "Document-Level Graph",
+          "Local word consecutive",
+          "Advanced graph models"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000023",
+        "paperId": "a48ea46b3a1a729a257dab1ed2b69c87ed953db1",
+        "ref_index": "2",
+        "path": [
+          "GNN for Text Classification ",
+          "Document-Level Graph",
+          "Global Word Co-occurrence",
+          "Only co-occurrence"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000024",
+        "paperId": "1170bab0a3d4de34dabe6e086e29d80af0ff70bb",
+        "ref_index": "11",
+        "path": [
+          "GNN for Text Classification ",
+          "Document-Level Graph",
+          "Global Word Co-occurrence",
+          "With Extra Edges"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000025",
+        "paperId": "bba5e0ad118f323ff6c72536e2b5e1fb1b9c1ff9",
+        "ref_index": "6",
+        "path": [
+          "GNN for Text Classification ",
+          "Document-Level Graph",
+          "Other Word Graphs"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2304.11534",
+        "arxiv_id": "2304.11534",
+        "leaf_mention_id": "2304.11534::000026",
+        "paperId": "5a8216d8f5d22ace0c09d9388972c27155c7b4e4",
+        "ref_index": "7",
+        "path": [
+          "GNN for Text Classification ",
+          "Document-Level Graph",
+          "Other Word Graphs"
+        ],
+        "depth": 3,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 26,
+      "unique_leaf_paper_count": 26,
+      "multi_membership_extra_mentions": 0,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

@@ -1,0 +1,1927 @@
+{
+  "paper_id": "2406.14644",
+  "arxiv_id": "2406.14644",
+  "title": "Unveiling the Spectrum of Data Contamination in Language Models: A Survey from Detection to Remediation",
+  "ref_meta": [
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "0",
+      "ref_key": "S2:48ac4aa7e1d8bfabea4ee39b814fab85aa3e5775",
+      "paperId": "48ac4aa7e1d8bfabea4ee39b814fab85aa3e5775",
+      "title": "Language Contamination Helps Explains the Cross-lingual Capabilities of English Pretrained Models",
+      "year": 2022,
+      "abstract": "English pretrained language models, which make up the backbone of many modern NLP systems, require huge amounts of unlabeled training data. These models are generally presented as being trained only on English text but have been found to transfer surprisingly well to other languages. We investigate this phenomenon and find that common English pretraining corpora actually contain significant amounts of non-English text: even when less than 1% of data is not English (well within the error rate of strong language classifiers), this leads to hundreds of millions of foreign language tokens in large-scale datasets. We then demonstrate that even these small percentages of non-English data facilitate cross-lingual transfer for models trained on them, with target language performance strongly correlated to the amount of in-language data seen during pretraining. In light of these findings, we argue that no model is truly monolingual when pretrained at scale, which should be considered when evaluating cross-lingual transfer.",
+      "externalIds": {
+        "ACL": "2022.emnlp-main.233",
+        "DBLP": "conf/emnlp/BlevinsZ22",
+        "ArXiv": "2204.08110",
+        "DOI": "10.18653/v1/2022.emnlp-main.233",
+        "CorpusId": 252780005
+      },
+      "arxiv_id": "2204.08110",
+      "doi": "10.18653/v1/2022.emnlp-main.233",
+      "corpus_id": 252780005
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "1",
+      "ref_key": "S2:fc30093e9f55ae1c0a1d2c4c4e5341998adede66",
+      "paperId": "fc30093e9f55ae1c0a1d2c4c4e5341998adede66",
+      "title": "Stop Uploading Test Data in Plain Text: Practical Strategies for Mitigating Data Contamination by Evaluation Benchmarks",
+      "year": 2023,
+      "abstract": "Data contamination has become prevalent and challenging with the rise of models pretrained on large automatically-crawled corpora. For closed models, the training data becomes a trade secret, and even for open models, it is not trivial to detect contamination. Strategies such as leaderboards with hidden answers, or using test data which is guaranteed to be unseen, are expensive and become fragile with time. Assuming that all relevant actors value clean test data and will cooperate to mitigate data contamination, what can be done? We propose three strategies that can make a difference: (1) Test data made public should be encrypted with a public key and licensed to disallow derivative distribution; (2) demand training exclusion controls from closed API holders, and protect your test data by refusing to evaluate without them; (3) avoid data which appears with its solution on the internet, and release the web-page context of internet-derived data along with the data. These strategies are practical and can be effective in preventing data contamination.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/JacoviCGG23",
+        "ArXiv": "2305.10160",
+        "DOI": "10.48550/arXiv.2305.10160",
+        "CorpusId": 258741333
+      },
+      "arxiv_id": "2305.10160",
+      "doi": "10.48550/arXiv.2305.10160",
+      "corpus_id": 258741333
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "2",
+      "ref_key": "S2:cd2f4aaf98bb1e020cff310000c8049d3460c54e",
+      "paperId": "cd2f4aaf98bb1e020cff310000c8049d3460c54e",
+      "title": "NLP Evaluation in trouble: On the Need to Measure LLM Data Contamination for each Benchmark",
+      "year": 2023,
+      "abstract": "In this position paper, we argue that the classical evaluation on Natural Language Processing (NLP) tasks using annotated benchmarks is in trouble. The worst kind of data contamination happens when a Large Language Model (LLM) is trained on the test split of a benchmark, and then evaluated in the same benchmark. The extent of the problem is unknown, as it is not straightforward to measure. Contamination causes an overestimation of the performance of a contaminated model in a target benchmark and associated task with respect to their non-contaminated counterparts. The consequences can be very harmful, with wrong scientific conclusions being published while other correct ones are discarded. This position paper defines different levels of data contamination and argues for a community effort, including the development of automatic and semi-automatic measures to detect when data from a benchmark was exposed to a model, and suggestions for flagging papers with conclusions that are compromised by data contamination.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-18018",
+        "ArXiv": "2310.18018",
+        "DOI": "10.48550/arXiv.2310.18018",
+        "CorpusId": 264555419
+      },
+      "arxiv_id": "2310.18018",
+      "doi": "10.48550/arXiv.2310.18018",
+      "corpus_id": 264555419
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "3",
+      "ref_key": "S2:71c9d2b995c19d43c519eb5ca9504ac790490398",
+      "paperId": "71c9d2b995c19d43c519eb5ca9504ac790490398",
+      "title": "Skywork: A More Open Bilingual Foundation Model",
+      "year": 2023,
+      "abstract": "In this technical report, we present Skywork-13B, a family of large language models (LLMs) trained on a corpus of over 3.2 trillion tokens drawn from both English and Chinese texts. This bilingual foundation model is the most extensively trained and openly published LLMs of comparable size to date. We introduce a two-stage training methodology using a segmented corpus, targeting general purpose training and then domain-specific enhancement training, respectively. We show that our model not only excels on popular benchmarks, but also achieves \\emph{state of the art} performance in Chinese language modeling on diverse domains. Furthermore, we propose a novel leakage detection method, demonstrating that test data contamination is a pressing issue warranting further investigation by the LLM community. To spur future research, we release Skywork-13B along with checkpoints obtained during intermediate stages of the training process. We are also releasing part of our SkyPile corpus, a collection of over 150 billion tokens of web text, which is the largest high quality open Chinese pre-training corpus to date. We hope Skywork-13B and our open corpus will serve as a valuable open-source resource to democratize access to high-quality LLMs.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-19341",
+        "ArXiv": "2310.19341",
+        "DOI": "10.48550/arXiv.2310.19341",
+        "CorpusId": 264802115
+      },
+      "arxiv_id": "2310.19341",
+      "doi": "10.48550/arXiv.2310.19341",
+      "corpus_id": 264802115
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "4",
+      "ref_key": "S2:84725855d10b531eb8cbe54935dda0440c2fc750",
+      "paperId": "84725855d10b531eb8cbe54935dda0440c2fc750",
+      "title": "Don't Make Your LLM an Evaluation Benchmark Cheater",
+      "year": 2023,
+      "abstract": "Large language models~(LLMs) have greatly advanced the frontiers of artificial intelligence, attaining remarkable improvement in model capacity. To assess the model performance, a typical approach is to construct evaluation benchmarks for measuring the ability level of LLMs in different aspects. Despite that a number of high-quality benchmarks have been released, the concerns about the appropriate use of these benchmarks and the fair comparison of different models are increasingly growing. Considering these concerns, in this paper, we discuss the potential risk and impact of inappropriately using evaluation benchmarks and misleadingly interpreting the evaluation results. Specially, we focus on a special issue that would lead to inappropriate evaluation, \\ie \\emph{benchmark leakage}, referring that the data related to evaluation sets is occasionally used for model training. This phenomenon now becomes more common since pre-training data is often prepared ahead of model test. We conduct extensive experiments to study the effect of benchmark leverage, and find that it can dramatically boost the evaluation results, which would finally lead to an unreliable assessment of model performance. To improve the use of existing evaluation benchmarks, we finally present several guidelines for both LLM developers and benchmark maintainers. We hope this work can draw attention to appropriate training and evaluation of LLMs.",
+      "externalIds": {
+        "ArXiv": "2311.01964",
+        "DBLP": "journals/corr/abs-2311-01964",
+        "DOI": "10.48550/arXiv.2311.01964",
+        "CorpusId": 265019021
+      },
+      "arxiv_id": "2311.01964",
+      "doi": "10.48550/arXiv.2311.01964",
+      "corpus_id": 265019021
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "5",
+      "ref_key": "S2:7d40189f3fa56728b8d210628e98fc204961778f",
+      "paperId": "7d40189f3fa56728b8d210628e98fc204961778f",
+      "title": "Can we trust the evaluation on ChatGPT?",
+      "year": 2023,
+      "abstract": "ChatGPT, the first large language model with mass adoption, has demonstrated remarkableperformance in numerous natural language tasks. Despite its evident usefulness, evaluatingChatGPT’s performance in diverse problem domains remains challenging due to the closednature of the model and its continuous updates via Reinforcement Learning from HumanFeedback (RLHF). We highlight the issue of data contamination in ChatGPT evaluations, with a case study in stance detection. We discuss the challenge of preventing data contamination and ensuring fair model evaluation in the age of closed and continuously trained models.",
+      "externalIds": {
+        "ArXiv": "2303.12767",
+        "DBLP": "journals/corr/abs-2303-12767",
+        "ACL": "2023.trustnlp-1.5",
+        "DOI": "10.18653/v1/2023.trustnlp-1.5",
+        "CorpusId": 257663514
+      },
+      "arxiv_id": "2303.12767",
+      "doi": "10.18653/v1/2023.trustnlp-1.5",
+      "corpus_id": 257663514
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "6",
+      "ref_key": "S2:5fc1a3a49e8f1d106118b69d1d6be3b6caa23da0",
+      "paperId": "5fc1a3a49e8f1d106118b69d1d6be3b6caa23da0",
+      "title": "Qwen Technical Report",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have revolutionized the field of artificial intelligence, enabling natural language processing tasks that were previously thought to be exclusive to humans. In this work, we introduce Qwen, the first installment of our large language model series. Qwen is a comprehensive language model series that encompasses distinct models with varying parameter counts. It includes Qwen, the base pretrained language models, and Qwen-Chat, the chat models finetuned with human alignment techniques. The base language models consistently demonstrate superior performance across a multitude of downstream tasks, and the chat models, particularly those trained using Reinforcement Learning from Human Feedback (RLHF), are highly competitive. The chat models possess advanced tool-use and planning capabilities for creating agent applications, showcasing impressive performance even when compared to bigger models on complex tasks like utilizing a code interpreter. Furthermore, we have developed coding-specialized models, Code-Qwen and Code-Qwen-Chat, as well as mathematics-focused models, Math-Qwen-Chat, which are built upon base language models. These models demonstrate significantly improved performance in comparison with open-source models, and slightly fall behind the proprietary models.",
+      "externalIds": {
+        "ArXiv": "2309.16609",
+        "DBLP": "journals/corr/abs-2309-16609",
+        "DOI": "10.48550/arXiv.2309.16609",
+        "CorpusId": 263134555
+      },
+      "arxiv_id": "2309.16609",
+      "doi": "10.48550/arXiv.2309.16609",
+      "corpus_id": 263134555
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "7",
+      "ref_key": "S2:798feda076ad710df65d509a7884bd15937c8056",
+      "paperId": "798feda076ad710df65d509a7884bd15937c8056",
+      "title": "Leak, Cheat, Repeat: Data Contamination and Evaluation Malpractices in Closed-Source LLMs",
+      "year": 2024,
+      "abstract": "Natural Language Processing (NLP) research is increasingly focusing on the use of Large Language Models (LLMs), with some of the most popular ones being either fully or partially closed-source. The lack of access to model details, especially regarding training data, has repeatedly raised concerns about data contamination among researchers. Several attempts have been made to address this issue, but they are limited to anecdotal evidence and trial and error. Additionally, they overlook the problem of indirect data leaking, where modelsare iteratively improved by using data coming from users. In this work, we conduct the first systematic analysis of work using OpenAI’s GPT-3.5 and GPT-4, the most prominently used LLMs today, in the context of data contamination. By analysing 255 papers and considering OpenAI’s data usage policy, we extensively document the amount of data leaked to these models during the first year after the model’s release. We report that these models have been globally exposed to ∼4.7M samples from 263 benchmarks. At the same time, we document a number of evaluation malpractices emerging in the reviewed papers, such as unfair or missing baseline comparisons and reproducibility issues. We release our results as a collaborative project on https://leak-llm.github.io/, where other researchers can contribute to our efforts.",
+      "externalIds": {
+        "ArXiv": "2402.03927",
+        "DBLP": "conf/eacl/BalloccuSLD24",
+        "ACL": "2024.eacl-long.5",
+        "DOI": "10.48550/arXiv.2402.03927",
+        "CorpusId": 267499939
+      },
+      "arxiv_id": "2402.03927",
+      "doi": "10.48550/arXiv.2402.03927",
+      "corpus_id": 267499939
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "8",
+      "ref_key": "S2:af43203952a41fc52be2eb571e2f62ecf0007646",
+      "paperId": "af43203952a41fc52be2eb571e2f62ecf0007646",
+      "title": "Elephants Never Forget: Testing Language Models for Memorization of Tabular Data",
+      "year": 2024,
+      "abstract": "While many have shown how Large Language Models (LLMs) can be applied to a diverse set of tasks, the critical issues of data contamination and memorization are often glossed over. In this work, we address this concern for tabular data. Starting with simple qualitative tests for whether an LLM knows the names and values of features, we introduce a variety of different techniques to assess the degrees of contamination, including statistical tests for conditional distribution modeling and four tests that identify memorization. Our investigation reveals that LLMs are pre-trained on many popular tabular datasets. This exposure can lead to invalid performance evaluation on downstream tasks because the LLMs have, in effect, been fit to the test set. Interestingly, we also identify a regime where the language model reproduces important statistics of the data, but fails to reproduce the dataset verbatim. On these datasets, although seen during training, good performance on downstream tasks might not be due to overfitting. Our findings underscore the need for ensuring data integrity in machine learning tasks with LLMs. To facilitate future research, we release an open-source tool that can perform various tests for memorization \\url{https://github.com/interpretml/LLM-Tabular-Memorization-Checker}.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2403-06644",
+        "ArXiv": "2403.06644",
+        "DOI": "10.48550/arXiv.2403.06644",
+        "CorpusId": 268353040
+      },
+      "arxiv_id": "2403.06644",
+      "doi": "10.48550/arXiv.2403.06644",
+      "corpus_id": 268353040
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "9",
+      "ref_key": "S2:90abbc2cf38462b954ae1b772fac9532e2ccd8b0",
+      "paperId": "90abbc2cf38462b954ae1b772fac9532e2ccd8b0",
+      "title": "Language Models are Few-Shot Learners",
+      "year": 2020,
+      "abstract": "Recent work has demonstrated substantial gains on many NLP tasks and benchmarks by pre-training on a large corpus of text followed by fine-tuning on a specific task. While typically task-agnostic in architecture, this method still requires task-specific fine-tuning datasets of thousands or tens of thousands of examples. By contrast, humans can generally perform a new language task from only a few examples or from simple instructions - something which current NLP systems still largely struggle to do. Here we show that scaling up language models greatly improves task-agnostic, few-shot performance, sometimes even reaching competitiveness with prior state-of-the-art fine-tuning approaches. Specifically, we train GPT-3, an autoregressive language model with 175 billion parameters, 10x more than any previous non-sparse language model, and test its performance in the few-shot setting. For all tasks, GPT-3 is applied without any gradient updates or fine-tuning, with tasks and few-shot demonstrations specified purely via text interaction with the model. GPT-3 achieves strong performance on many NLP datasets, including translation, question-answering, and cloze tasks, as well as several tasks that require on-the-fly reasoning or domain adaptation, such as unscrambling words, using a novel word in a sentence, or performing 3-digit arithmetic. At the same time, we also identify some datasets where GPT-3's few-shot learning still struggles, as well as some datasets where GPT-3 faces methodological issues related to training on large web corpora. Finally, we find that GPT-3 can generate samples of news articles which human evaluators have difficulty distinguishing from articles written by humans. We discuss broader societal impacts of this finding and of GPT-3 in general.",
+      "externalIds": {
+        "ArXiv": "2005.14165",
+        "DBLP": "conf/nips/BrownMRSKDNSSAA20",
+        "MAG": "3030163527",
+        "CorpusId": 218971783
+      },
+      "arxiv_id": "2005.14165",
+      "doi": null,
+      "corpus_id": 218971783
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "10",
+      "ref_key": "S2:df7d26339adf4eb0c07160947b9d2973c24911ba",
+      "paperId": "df7d26339adf4eb0c07160947b9d2973c24911ba",
+      "title": "Extracting Training Data from Large Language Models",
+      "year": 2020,
+      "abstract": "It has become common to publish large (billion parameter) language models that have been trained on private datasets. This paper demonstrates that in such settings, an adversary can perform a training data extraction attack to recover individual training examples by querying the language model. \nWe demonstrate our attack on GPT-2, a language model trained on scrapes of the public Internet, and are able to extract hundreds of verbatim text sequences from the model's training data. These extracted examples include (public) personally identifiable information (names, phone numbers, and email addresses), IRC conversations, code, and 128-bit UUIDs. Our attack is possible even though each of the above sequences are included in just one document in the training data. \nWe comprehensively evaluate our extraction attack to understand the factors that contribute to its success. For example, we find that larger models are more vulnerable than smaller models. We conclude by drawing lessons and discussing possible safeguards for training large language models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2012-07805",
+        "MAG": "3112689365",
+        "ArXiv": "2012.07805",
+        "CorpusId": 229156229
+      },
+      "arxiv_id": "2012.07805",
+      "doi": null,
+      "corpus_id": 229156229
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "11",
+      "ref_key": "S2:54d7ae7cfee56b0e19fd42c45d365f760a41794d",
+      "paperId": "54d7ae7cfee56b0e19fd42c45d365f760a41794d",
+      "title": "Membership Inference Attacks From First Principles",
+      "year": 2021,
+      "abstract": "A membership inference attack allows an adversary to query a trained machine learning model to predict whether or not a particular example was contained in the model’s training dataset. These attacks are currently evaluated using average-case “accuracy” metrics that fail to characterize whether the attack can confidently identify any members of the training set. We argue that attacks should instead be evaluated by computing their true-positive rate at low (e.g., ≤ 0.1%) false-positive rates, and find most prior attacks perform poorly when evaluated in this way. To address this we develop a Likelihood Ratio Attack (LiRA) that carefully combines multiple ideas from the literature. Our attack is $10\\times$ more powerful at low false-positive rates, and also strictly dominates prior attacks on existing metrics.",
+      "externalIds": {
+        "ArXiv": "2112.03570",
+        "DBLP": "conf/sp/CarliniCN0TT22",
+        "DOI": "10.1109/sp46214.2022.9833649",
+        "CorpusId": 244920593
+      },
+      "arxiv_id": "2112.03570",
+      "doi": "10.1109/sp46214.2022.9833649",
+      "corpus_id": 244920593
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "12",
+      "ref_key": "S2:c47f0a5feb18b036004b5404ef78ac94a65fa489",
+      "paperId": "c47f0a5feb18b036004b5404ef78ac94a65fa489",
+      "title": "Speak, Memory: An Archaeology of Books Known to ChatGPT/GPT-4",
+      "year": 2023,
+      "abstract": "In this work, we carry out a data archaeology to infer books that are known to ChatGPT and GPT-4 using a name cloze membership inference query. We find that OpenAI models have memorized a wide collection of copyrighted materials, and that the degree of memorization is tied to the frequency with which passages of those books appear on the web. The ability of these models to memorize an unknown set of books complicates assessments of measurement validity for cultural analytics by contaminating test data; we show that models perform much better on memorized books than on non-memorized books for downstream tasks. We argue that this supports a case for open models whose training data is known.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-00118",
+        "ArXiv": "2305.00118",
+        "DOI": "10.48550/arXiv.2305.00118",
+        "CorpusId": 258426273
+      },
+      "arxiv_id": "2305.00118",
+      "doi": "10.48550/arXiv.2305.00118",
+      "corpus_id": 258426273
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "13",
+      "ref_key": "S2:094ff971d6a8b8ff870946c9b3ce5aa173617bfb",
+      "paperId": "094ff971d6a8b8ff870946c9b3ce5aa173617bfb",
+      "title": "PaLM: Scaling Language Modeling with Pathways",
+      "year": 2022,
+      "abstract": "Large language models have been shown to achieve remarkable performance across a variety of natural language tasks using few-shot learning, which drastically reduces the number of task-specific training examples needed to adapt the model to a particular application. To further our understanding of the impact of scale on few-shot learning, we trained a 540-billion parameter, densely activated, Transformer language model, which we call Pathways Language Model PaLM. We trained PaLM on 6144 TPU v4 chips using Pathways, a new ML system which enables highly efficient training across multiple TPU Pods. We demonstrate continued benefits of scaling by achieving state-of-the-art few-shot learning results on hundreds of language understanding and generation benchmarks. On a number of these tasks, PaLM 540B achieves breakthrough performance, outperforming the finetuned state-of-the-art on a suite of multi-step reasoning tasks, and outperforming average human performance on the recently released BIG-bench benchmark. A significant number of BIG-bench tasks showed discontinuous improvements from model scale, meaning that performance steeply increased as we scaled to our largest model. PaLM also has strong capabilities in multilingual tasks and source code generation, which we demonstrate on a wide array of benchmarks. We additionally provide a comprehensive analysis on bias and toxicity, and study the extent of training data memorization with respect to model scale. Finally, we discuss the ethical considerations related to large language models and discuss potential mitigation strategies.",
+      "externalIds": {
+        "ArXiv": "2204.02311",
+        "DBLP": "journals/corr/abs-2204-02311",
+        "CorpusId": 247951931
+      },
+      "arxiv_id": "2204.02311",
+      "doi": null,
+      "corpus_id": 247951931
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "14",
+      "ref_key": "S2:af565483dfbe3b0fa4fe9f715170666a06bce5ac",
+      "paperId": "af565483dfbe3b0fa4fe9f715170666a06bce5ac",
+      "title": "Investigating Data Contamination in Modern Benchmarks for Large Language Models",
+      "year": 2023,
+      "abstract": "Recent observations have underscored a disparity between the inflated benchmark scores and the actual performance of LLMs, raising concerns about potential contamination of evaluation benchmarks. This issue is especially critical for closed-source models and certain open-source models where training data transparency is lacking. In this paper we study data contamination by proposing two methods tailored for both open-source and proprietary LLMs. We first introduce a retrieval-based system to explore potential overlaps between evaluation benchmarks and pretraining corpora. We further present a novel investigation protocol named Testset Slot Guessing (TS-Guessing), applicable to both open and proprietary models. This approach entails masking a wrong answer in a multiple-choice question and prompting the model to fill in the gap. Additionally, it involves obscuring an unlikely word in an evaluation example and asking the model to produce it. We find that certain commercial LLMs could surprisingly guess the missing option in various test sets. Specifically, in the MMLU benchmark, ChatGPT and GPT-4 demonstrated an exact match rate of 52% and 57%, respectively, in guessing the missing options in benchmark test data. We hope these results underscore the need for more robust evaluation methodologies and benchmarks in the field.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-09783",
+        "ACL": "2024.naacl-long.482",
+        "ArXiv": "2311.09783",
+        "DOI": "10.48550/arXiv.2311.09783",
+        "CorpusId": 265220695
+      },
+      "arxiv_id": "2311.09783",
+      "doi": "10.48550/arXiv.2311.09783",
+      "corpus_id": 265220695
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "15",
+      "ref_key": "S2:df2b0e26d0599ce3e70df8a9da02e51594e0e992",
+      "paperId": "df2b0e26d0599ce3e70df8a9da02e51594e0e992",
+      "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+      "year": 2019,
+      "abstract": "We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. Unlike recent language representation models (Peters et al., 2018a; Radford et al., 2018), BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial task-specific architecture modifications. BERT is conceptually simple and empirically powerful. It obtains new state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5 (7.7 point absolute improvement), MultiNLI accuracy to 86.7% (4.6% absolute improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1 (5.1 point absolute improvement).",
+      "externalIds": {
+        "MAG": "2951055169",
+        "ACL": "N19-1423",
+        "DBLP": "journals/corr/abs-1810-04805",
+        "ArXiv": "1810.04805",
+        "DOI": "10.18653/v1/N19-1423",
+        "CorpusId": 52967399
+      },
+      "arxiv_id": "1810.04805",
+      "doi": "10.18653/v1/N19-1423",
+      "corpus_id": 52967399
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "16",
+      "ref_key": "S2:1adadbfa95e43a70fcd17e6ce947a0652b86bfc3",
+      "paperId": "1adadbfa95e43a70fcd17e6ce947a0652b86bfc3",
+      "title": "Documenting Large Webtext Corpora: A Case Study on the Colossal Clean Crawled Corpus",
+      "year": 2021,
+      "abstract": "Large language models have led to remarkable progress on many NLP tasks, and researchers are turning to ever-larger text corpora to train them. Some of the largest corpora available are made by scraping significant portions of the internet, and are frequently introduced with only minimal documentation. In this work we provide some of the first documentation for the Colossal Clean Crawled Corpus (C4; Raffel et al., 2020), a dataset created by applying a set of filters to a single snapshot of Common Crawl. We begin by investigating where the data came from, and find a significant amount of text from unexpected sources like patents and US military websites. Then we explore the content of the text itself, and find machine-generated text (e.g., from machine translation systems) and evaluation examples from other benchmark NLP datasets. To understand the impact of the filters applied to create this dataset, we evaluate the text that was removed, and show that blocklist filtering disproportionately removes text from and about minority individuals. Finally, we conclude with some recommendations for how to created and document web-scale datasets from a scrape of the internet.",
+      "externalIds": {
+        "ArXiv": "2104.08758",
+        "DBLP": "conf/emnlp/DodgeSMAIGM021",
+        "ACL": "2021.emnlp-main.98",
+        "DOI": "10.18653/v1/2021.emnlp-main.98",
+        "CorpusId": 237568724
+      },
+      "arxiv_id": "2104.08758",
+      "doi": "10.18653/v1/2021.emnlp-main.98",
+      "corpus_id": 237568724
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "17",
+      "ref_key": "S2:1ea243f1b697aae22e6f0349fa64857780a6108a",
+      "paperId": "1ea243f1b697aae22e6f0349fa64857780a6108a",
+      "title": "Generalization or Memorization: Data Contamination and Trustworthy Evaluation for Large Language Models",
+      "year": 2024,
+      "abstract": "Recent statements about the impressive capabilities of large language models (LLMs) are usually supported by evaluating on open-access benchmarks. Considering the vast size and wide-ranging sources of LLMs' training data, it could explicitly or implicitly include test data, leading to LLMs being more susceptible to data contamination. However, due to the opacity of training data, the black-box access of models, and the rapid growth of synthetic training data, detecting and mitigating data contamination for LLMs faces significant challenges. In this paper, we propose CDD, which stands for Contamination Detection via output Distribution for LLMs. CDD necessitates only the sampled texts to detect data contamination, by identifying the peakedness of LLM's output distribution. To mitigate the impact of data contamination in evaluation, we also present TED: Trustworthy Evaluation via output Distribution, based on the correction of LLM's output distribution. To facilitate this study, we introduce two benchmarks, i.e., DetCon and ComiEval, for data contamination detection and contamination mitigation evaluation tasks. Extensive experimental results show that CDD achieves the average relative improvements of 21.8\\%-30.2\\% over other contamination detection approaches in terms of Accuracy, F1 Score, and AUC metrics, and can effectively detect implicit contamination. TED substantially mitigates performance improvements up to 66.9\\% attributed to data contamination across various contamination setups. In real-world applications, we reveal that ChatGPT exhibits a high potential to suffer from data contamination on HumanEval benchmark.",
+      "externalIds": {
+        "DBLP": "conf/acl/DongJLJGYL24",
+        "ArXiv": "2402.15938",
+        "DOI": "10.48550/arXiv.2402.15938",
+        "CorpusId": 267938621
+      },
+      "arxiv_id": "2402.15938",
+      "doi": "10.48550/arXiv.2402.15938",
+      "corpus_id": 267938621
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "18",
+      "ref_key": "S2:4a54d58a4b20e4f3af25cea3c188a12082a95e02",
+      "paperId": "4a54d58a4b20e4f3af25cea3c188a12082a95e02",
+      "title": "Transformer Feed-Forward Layers Are Key-Value Memories",
+      "year": 2020,
+      "abstract": "Feed-forward layers constitute two-thirds of a transformer model’s parameters, yet their role in the network remains under-explored. We show that feed-forward layers in transformer-based language models operate as key-value memories, where each key correlates with textual patterns in the training examples, and each value induces a distribution over the output vocabulary. Our experiments show that the learned patterns are human-interpretable, and that lower layers tend to capture shallow patterns, while upper layers learn more semantic ones. The values complement the keys’ input patterns by inducing output distributions that concentrate probability mass on tokens likely to appear immediately after each pattern, particularly in the upper layers. Finally, we demonstrate that the output of a feed-forward layer is a composition of its memories, which is subsequently refined throughout the model’s layers via residual connections to produce the final output distribution.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/GevaSBL21",
+        "ACL": "2021.emnlp-main.446",
+        "ArXiv": "2012.14913",
+        "DOI": "10.18653/v1/2021.emnlp-main.446",
+        "CorpusId": 229923720
+      },
+      "arxiv_id": "2012.14913",
+      "doi": "10.18653/v1/2021.emnlp-main.446",
+      "corpus_id": 229923720
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "19",
+      "ref_key": "S2:133b97e40017a9bbbadd10bcd7f13088a97ca3cc",
+      "paperId": "133b97e40017a9bbbadd10bcd7f13088a97ca3cc",
+      "title": "Dissecting Recall of Factual Associations in Auto-Regressive Language Models",
+      "year": 2023,
+      "abstract": "Transformer-based language models (LMs) are known to capture factual knowledge in their parameters. While previous work looked into where factual associations are stored, only little is known about how they are retrieved internally during inference. We investigate this question through the lens of information flow. Given a subject-relation query, we study how the model aggregates information about the subject and relation to predict the correct attribute. With interventions on attention edges, we first identify two critical points where information propagates to the prediction: one from the relation positions followed by another from the subject positions. Next, by analyzing the information at these points, we unveil a three-step internal mechanism for attribute extraction. First, the representation at the last-subject position goes through an enrichment process, driven by the early MLP sublayers, to encode many subject-related attributes. Second, information from the relation propagates to the prediction. Third, the prediction representation\"queries\"the enriched subject to extract the attribute. Perhaps surprisingly, this extraction is typically done via attention heads, which often encode subject-attribute mappings in their parameters. Overall, our findings introduce a comprehensive view of how factual associations are stored and extracted internally in LMs, facilitating future research on knowledge localization and editing.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/GevaBFG23",
+        "ArXiv": "2304.14767",
+        "DOI": "10.48550/arXiv.2304.14767",
+        "CorpusId": 258417932
+      },
+      "arxiv_id": "2304.14767",
+      "doi": "10.48550/arXiv.2304.14767",
+      "corpus_id": 258417932
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "20",
+      "ref_key": "S2:d6d0fd994f37b630f35945736b5e1bb198148404",
+      "paperId": "d6d0fd994f37b630f35945736b5e1bb198148404",
+      "title": "Time Travel in LLMs: Tracing Data Contamination in Large Language Models",
+      "year": 2023,
+      "abstract": "Data contamination, i.e., the presence of test data from downstream tasks in the training data of large language models (LLMs), is a potential major issue in measuring LLMs' real effectiveness on other tasks. We propose a straightforward yet effective method for identifying data contamination within LLMs. At its core, our approach starts by identifying potential contamination at the instance level; using this information, our approach then assesses wider contamination at the partition level. To estimate contamination of individual instances, we employ\"guided instruction:\"a prompt consisting of the dataset name, partition type, and the random-length initial segment of a reference instance, asking the LLM to complete it. An instance is flagged as contaminated if the LLM's output either exactly or nearly matches the latter segment of the reference. To understand if an entire partition is contaminated, we propose two ideas. The first idea marks a dataset partition as contaminated if the average overlap score with the reference instances (as measured by ROUGE-L or BLEURT) is statistically significantly better with the completions from guided instruction compared to a\"general instruction\"that does not include the dataset and partition name. The second idea marks a dataset partition as contaminated if a classifier based on GPT-4 with few-shot in-context learning prompt marks multiple generated completions as exact/near-exact matches of the corresponding reference instances. Our best method achieves an accuracy between 92% and 100% in detecting if an LLM is contaminated with seven datasets, containing train and test/validation partitions, when contrasted with manual evaluation by human experts. Further, our findings indicate that GPT-4 is contaminated with AG News, WNLI, and XSum datasets.",
+      "externalIds": {
+        "ArXiv": "2308.08493",
+        "DBLP": "journals/corr/abs-2308-08493",
+        "DOI": "10.48550/arXiv.2308.08493",
+        "CorpusId": 260925501
+      },
+      "arxiv_id": "2308.08493",
+      "doi": "10.48550/arXiv.2308.08493",
+      "corpus_id": 260925501
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "21",
+      "ref_key": "S2:ac45bbf9940512d9d686cf8cd3a95969bc313570",
+      "paperId": "ac45bbf9940512d9d686cf8cd3a95969bc313570",
+      "title": "OLMo: Accelerating the Science of Language Models",
+      "year": 2024,
+      "abstract": "Language models (LMs) have become ubiquitous in both NLP research and in commercial product offerings. As their commercial importance has surged, the most powerful models have become closed off, gated behind proprietary interfaces, with important details of their training data, architectures, and development undisclosed. Given the importance of these details in scientifically studying these models, including their biases and potential risks, we believe it is essential for the research community to have access to powerful, truly open LMs. To this end, we have built OLMo, a competitive, truly Open Language Model, to enable the scientific study of language models. Unlike most prior efforts that have only released model weights and inference code, we release OLMo alongside open training data and training and evaluation code. We hope this release will empower the open research community and inspire a new wave of innovation.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-00838",
+        "ArXiv": "2402.00838",
+        "DOI": "10.48550/arXiv.2402.00838",
+        "CorpusId": 267365485
+      },
+      "arxiv_id": "2402.00838",
+      "doi": "10.48550/arXiv.2402.00838",
+      "corpus_id": 267365485
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "22",
+      "ref_key": "S2:870693e9de7711d46ec621eab77b5b282f2caf47",
+      "paperId": "870693e9de7711d46ec621eab77b5b282f2caf47",
+      "title": "Understanding Transformer Memorization Recall Through Idioms",
+      "year": 2022,
+      "abstract": "To produce accurate predictions, language models (LMs) must balance between generalization and memorization. Yet, little is known about the mechanism by which transformer LMs employ their memorization capacity. When does a model decide to output a memorized phrase, and how is this phrase then retrieved from memory? In this work, we offer the first methodological framework for probing and characterizing recall of memorized sequences in transformer LMs. First, we lay out criteria for detecting model inputs that trigger memory recall, and propose idioms as inputs that typically fulfill these criteria. Next, we construct a dataset of English idioms and use it to compare model behavior on memorized vs. non-memorized inputs. Specifically, we analyze the internal prediction construction process by interpreting the model’s hidden representations as a gradual refinement of the output probability distribution. We find that across different model sizes and architectures, memorized predictions are a two-step process: early layers promote the predicted token to the top of the output distribution, and upper layers increase model confidence. This suggests that memorized information is stored and retrieved in the early layers of the network. Last, we demonstrate the utility of our methodology beyond idioms in memorized factual statements. Overall, our work makes a first step towards understanding memory recall, and provides a methodological basis for future studies of transformer memorization.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-03588",
+        "ACL": "2023.eacl-main.19",
+        "ArXiv": "2210.03588",
+        "DOI": "10.48550/arXiv.2210.03588",
+        "CorpusId": 252762655
+      },
+      "arxiv_id": "2210.03588",
+      "doi": "10.48550/arXiv.2210.03588",
+      "corpus_id": 252762655
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "23",
+      "ref_key": "S2:db633c6b1c286c0386f0078d8a2e6224e03a6227",
+      "paperId": "db633c6b1c286c0386f0078d8a2e6224e03a6227",
+      "title": "Mistral 7B",
+      "year": 2023,
+      "abstract": "We introduce Mistral 7B v0.1, a 7-billion-parameter language model engineered for superior performance and efficiency. Mistral 7B outperforms Llama 2 13B across all evaluated benchmarks, and Llama 1 34B in reasoning, mathematics, and code generation. Our model leverages grouped-query attention (GQA) for faster inference, coupled with sliding window attention (SWA) to effectively handle sequences of arbitrary length with a reduced inference cost. We also provide a model fine-tuned to follow instructions, Mistral 7B -- Instruct, that surpasses the Llama 2 13B -- Chat model both on human and automated benchmarks. Our models are released under the Apache 2.0 license.",
+      "externalIds": {
+        "ArXiv": "2310.06825",
+        "DBLP": "journals/corr/abs-2310-06825",
+        "DOI": "10.48550/arXiv.2310.06825",
+        "CorpusId": 263830494
+      },
+      "arxiv_id": "2310.06825",
+      "doi": "10.48550/arXiv.2310.06825",
+      "corpus_id": 263830494
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "24",
+      "ref_key": "S2:b2fda33b7c122c044a7faa185d250d59ce9e4453",
+      "paperId": "b2fda33b7c122c044a7faa185d250d59ce9e4453",
+      "title": "Investigating Data Contamination for Pre-training Language Models",
+      "year": 2024,
+      "abstract": "Language models pre-trained on web-scale corpora demonstrate impressive capabilities on diverse downstream tasks. However, there is increasing concern whether such capabilities might arise from evaluation datasets being included in the pre-training corpus -- a phenomenon known as \\textit{data contamination} -- in a manner that artificially increases performance. There has been little understanding of how this potential contamination might influence LMs' performance on downstream tasks. In this paper, we explore the impact of data contamination at the pre-training stage by pre-training a series of GPT-2 models \\textit{from scratch}. We highlight the effect of both text contamination (\\textit{i.e.}\\ input text of the evaluation samples) and ground-truth contamination (\\textit{i.e.}\\ the prompts asked on the input and the desired outputs) from evaluation data. We also investigate the effects of repeating contamination for various downstream tasks. Additionally, we examine the prevailing n-gram-based definitions of contamination within current LLM reports, pinpointing their limitations and inadequacy. Our findings offer new insights into data contamination's effects on language model capabilities and underscore the need for independent, comprehensive contamination assessments in LLM studies.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2401-06059",
+        "ArXiv": "2401.06059",
+        "DOI": "10.48550/arXiv.2401.06059",
+        "CorpusId": 266933004
+      },
+      "arxiv_id": "2401.06059",
+      "doi": "10.48550/arXiv.2401.06059",
+      "corpus_id": 266933004
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "25",
+      "ref_key": "S2:8106d03fb984afd8c3d066cd4f993eb2616a0da5",
+      "paperId": "8106d03fb984afd8c3d066cd4f993eb2616a0da5",
+      "title": "LatestEval: Addressing Data Contamination in Language Model Evaluation through Dynamic and Time-Sensitive Test Construction",
+      "year": 2023,
+      "abstract": "Data contamination in evaluation is getting increasingly prevalent with the emergence of language models pre-trained on super large, automatically crawled corpora. This problem leads to significant challenges in the accurate assessment of model capabilities and generalisations. In this paper, we propose LatestEval, an automatic method that leverages the most recent texts to create uncontaminated reading comprehension evaluations. LatestEval avoids data contamination by only using texts published within a recent time window, ensuring no overlap with the training corpora of pre-trained language models. We develop the LatestEval automated pipeline to 1) gather the latest texts; 2) identify key information, and 3) construct questions targeting the information while removing the existing answers from the context. This encourages models to infer the answers themselves based on the remaining context, rather than just copy-paste. Our experiments demonstrate that language models exhibit negligible memorisation behaviours on LatestEval as opposed to previous benchmarks, suggesting a significantly reduced risk of data contamination and leading to a more robust evaluation. Data and code are publicly available at: https://github.com/liyucheng09/LatestEval.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2312-12343",
+        "ArXiv": "2312.12343",
+        "DOI": "10.48550/arXiv.2312.12343",
+        "CorpusId": 266362809
+      },
+      "arxiv_id": "2312.12343",
+      "doi": "10.48550/arXiv.2312.12343",
+      "corpus_id": 266362809
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "26",
+      "ref_key": "S2:a7b20c1bba14d4cd2b317138496d35d47142d30f",
+      "paperId": "a7b20c1bba14d4cd2b317138496d35d47142d30f",
+      "title": "Task Contamination: Language Models May Not Be Few-Shot Anymore",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) offer impressive performance in various zero-shot and few-shot tasks. However, their success in zero-shot or few-shot settings may be affected by task contamination, a potential limitation that has not been thoroughly examined. This paper investigates how zero-shot and few-shot performance of LLMs has changed chronologically over datasets released over time, and over LLMs released over time. Utilizing GPT-3 series models and several other recent open-sourced LLMs, and controlling for dataset difficulty, we find that datasets released prior to the LLM training data creation date perform surprisingly better than datasets released post the LLM training data creation date. This strongly indicates that, for many LLMs, there exists task contamination on zero-shot and few-shot evaluation for datasets prior to the LLMs' training data creation date. Additionally, we utilize training data inspection, training data extraction, and a membership inference attack, which reveal further evidence of task contamination. Importantly, we find that for tasks with no possibility of task contamination, LLMs rarely demonstrate statistically significant improvements over simple majority baselines, in both zero and few-shot settings.",
+      "externalIds": {
+        "ArXiv": "2312.16337",
+        "DBLP": "conf/aaai/LiF24",
+        "DOI": "10.48550/arXiv.2312.16337",
+        "CorpusId": 266573740
+      },
+      "arxiv_id": "2312.16337",
+      "doi": "10.48550/arXiv.2312.16337",
+      "corpus_id": 266573740
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "27",
+      "ref_key": "S2:fd6ade42ad3e0b9ffe418a37c4cb4b16346d90b7",
+      "paperId": "fd6ade42ad3e0b9ffe418a37c4cb4b16346d90b7",
+      "title": "Data Contamination: From Memorization to Exploitation",
+      "year": 2022,
+      "abstract": "Pretrained language models are typically trained on massive web-based datasets, which are often “contaminated” with downstream test sets. It is not clear to what extent models exploit the contaminated data for downstream tasks. We present a principled method to study this question. We pretrain BERT models on joint corpora of Wikipedia and labeled downstream datasets, and fine-tune them on the relevant task. Comparing performance between samples seen and unseen during pretraining enables us to define and quantify levels of memorization and exploitation.Experiments with two models and three downstream tasks show that exploitation exists in some cases, but in others the models memorize the contaminated data, but do not exploit it. We show that these two measures are affected by different factors such as the number of duplications of the contaminated data and the model size. Our results highlight the importance of analyzing massive web-scale datasets to verify that progress in NLP is obtained by better language understanding and not better data exploitation.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2203-08242",
+        "ArXiv": "2203.08242",
+        "ACL": "2022.acl-short.18",
+        "DOI": "10.48550/arXiv.2203.08242",
+        "CorpusId": 247475929
+      },
+      "arxiv_id": "2203.08242",
+      "doi": "10.48550/arXiv.2203.08242",
+      "corpus_id": 247475929
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "28",
+      "ref_key": "S2:cb754310302086dfbbcd098263200e2a03f65874",
+      "paperId": "cb754310302086dfbbcd098263200e2a03f65874",
+      "title": "Membership Inference Attacks against Language Models via Neighbourhood Comparison",
+      "year": 2023,
+      "abstract": "Membership Inference attacks (MIAs) aim to predict whether a data sample was present in the training data of a machine learning model or not, and are widely used for assessing the privacy risks of language models. Most existing attacks rely on the observation that models tend to assign higher probabilities to their training samples than non-training points. However, simple thresholding of the model score in isolation tends to lead to high false-positive rates as it does not account for the intrinsic complexity of a sample. Recent work has demonstrated that reference-based attacks which compare model scores to those obtained from a reference model trained on similar data can substantially improve the performance of MIAs. However, in order to train reference models, attacks of this kind make the strong and arguably unrealistic assumption that an adversary has access to samples closely resembling the original training data. Therefore, we investigate their performance in more realistic scenarios and find that they are highly fragile in relation to the data distribution used to train reference models. To investigate whether this fragility provides a layer of safety, we propose and evaluate neighbourhood attacks, which compare model scores for a given sample to scores of synthetically generated neighbour texts and therefore eliminate the need for access to the training data distribution. We show that, in addition to being competitive with reference-based attacks that have perfect knowledge about the training data distribution, our attack clearly outperforms existing reference-free attacks as well as reference-based attacks with imperfect knowledge, which demonstrates the need for a reevaluation of the threat model of adversarial attacks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-18462",
+        "ArXiv": "2305.18462",
+        "DOI": "10.48550/arXiv.2305.18462",
+        "CorpusId": 258967264
+      },
+      "arxiv_id": "2305.18462",
+      "doi": "10.48550/arXiv.2305.18462",
+      "corpus_id": 258967264
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "29",
+      "ref_key": "S2:ae9f2d6a29daec0eaf5700d327df0f4f30558b74",
+      "paperId": "ae9f2d6a29daec0eaf5700d327df0f4f30558b74",
+      "title": "FALCON: Fast Visual Concept Learning by Integrating Images, Linguistic descriptions, and Conceptual Relations",
+      "year": 2022,
+      "abstract": "We present a meta-learning framework for learning new visual concepts quickly, from just one or a few examples, guided by multiple naturally occurring data streams: simultaneously looking at images, reading sentences that describe the objects in the scene, and interpreting supplemental sentences that relate the novel concept with other concepts. The learned concepts support downstream applications, such as answering questions by reasoning about unseen images. Our model, namely FALCON, represents individual visual concepts, such as colors and shapes, as axis-aligned boxes in a high-dimensional space (the\"box embedding space\"). Given an input image and its paired sentence, our model first resolves the referential expression in the sentence and associates the novel concept with particular objects in the scene. Next, our model interprets supplemental sentences to relate the novel concept with other known concepts, such as\"X has property Y\"or\"X is a kind of Y\". Finally, it infers an optimal box embedding for the novel concept that jointly 1) maximizes the likelihood of the observed instances in the image, and 2) satisfies the relationships between the novel concepts and the known ones. We demonstrate the effectiveness of our model on both synthetic and real-world datasets.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2203-16639",
+        "ArXiv": "2203.16639",
+        "DOI": "10.48550/arXiv.2203.16639",
+        "CorpusId": 247839322
+      },
+      "arxiv_id": "2203.16639",
+      "doi": "10.48550/arXiv.2203.16639",
+      "corpus_id": 247839322
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "30",
+      "ref_key": "S2:163b4d6a79a5b19af88b8585456363340d9efd04",
+      "paperId": "163b4d6a79a5b19af88b8585456363340d9efd04",
+      "title": "GPT-4 Technical Report",
+      "year": 2023,
+      "abstract": "We report the development of GPT-4, a large-scale, multimodal model which can accept image and text inputs and produce text outputs. While less capable than humans in many real-world scenarios, GPT-4 exhibits human-level performance on various professional and academic benchmarks, including passing a simulated bar exam with a score around the top 10% of test takers. GPT-4 is a Transformer-based model pre-trained to predict the next token in a document. The post-training alignment process results in improved performance on measures of factuality and adherence to desired behavior. A core component of this project was developing infrastructure and optimization methods that behave predictably across a wide range of scales. This allowed us to accurately predict some aspects of GPT-4's performance based on models trained with no more than 1/1,000th the compute of GPT-4.",
+      "externalIds": {
+        "ArXiv": "2303.08774",
+        "CorpusId": 257532815
+      },
+      "arxiv_id": "2303.08774",
+      "doi": null,
+      "corpus_id": 257532815
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "31",
+      "ref_key": "S2:c871377b208814713c18e25633866323a2982136",
+      "paperId": "c871377b208814713c18e25633866323a2982136",
+      "title": "Proving Test Set Contamination in Black Box Language Models",
+      "year": 2023,
+      "abstract": "Large language models are trained on vast amounts of internet data, prompting concerns and speculation that they have memorized public benchmarks. Going from speculation to proof of contamination is challenging, as the pretraining data used by proprietary models are often not publicly accessible. We show that it is possible to provide provable guarantees of test set contamination in language models without access to pretraining data or model weights. Our approach leverages the fact that when there is no data contamination, all orderings of an exchangeable benchmark should be equally likely. In contrast, the tendency for language models to memorize example order means that a contaminated language model will find certain canonical orderings to be much more likely than others. Our test flags potential contamination whenever the likelihood of a canonically ordered benchmark dataset is significantly higher than the likelihood after shuffling the examples. We demonstrate that our procedure is sensitive enough to reliably prove test set contamination in challenging situations, including models as small as 1.4 billion parameters, on small test sets of only 1000 examples, and datasets that appear only a few times in the pretraining corpus. Using our test, we audit five popular publicly accessible language models for test set contamination and find little evidence for pervasive contamination.",
+      "externalIds": {
+        "ArXiv": "2310.17623",
+        "DBLP": "journals/corr/abs-2310-17623",
+        "DOI": "10.48550/arXiv.2310.17623",
+        "CorpusId": 264490730
+      },
+      "arxiv_id": "2310.17623",
+      "doi": "10.48550/arXiv.2310.17623",
+      "corpus_id": 264490730
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "32",
+      "ref_key": "S2:2ed0030d06ac2cc739c8460c102ae4713d10d1e1",
+      "paperId": "2ed0030d06ac2cc739c8460c102ae4713d10d1e1",
+      "title": "The ROOTS Search Tool: Data Transparency for LLMs",
+      "year": 2023,
+      "abstract": "ROOTS is a 1.6TB multilingual text corpus developed for the training of BLOOM, currently the largest language model explicitly accompanied by commensurate data governance efforts. In continuation of these efforts, we present the ROOTS Search Tool: a search engine over the entire ROOTS corpus offering both fuzzy and exact search capabilities. ROOTS is the largest corpus to date that can be investigated this way. The ROOTS Search Tool is open-sourced and available on Hugging Face Spaces: https://huggingface.co/spaces/bigscience-data/roots-search. We describe our implementation and the possible use cases of our tool.",
+      "externalIds": {
+        "DBLP": "conf/acl/PiktusAVLDLJR23",
+        "ArXiv": "2302.14035",
+        "ACL": "2023.acl-demo.29",
+        "DOI": "10.48550/arXiv.2302.14035",
+        "CorpusId": 257219882
+      },
+      "arxiv_id": "2302.14035",
+      "doi": "10.48550/arXiv.2302.14035",
+      "corpus_id": 257219882
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "33",
+      "ref_key": "S2:2837a485b5895efea2eb63a707db2196be1d4a2f",
+      "paperId": "2837a485b5895efea2eb63a707db2196be1d4a2f",
+      "title": "Investigating the Impact of Data Contamination of Large Language Models in Text-to-SQL Translation",
+      "year": 2024,
+      "abstract": "Understanding textual description to generate code seems to be an achieved capability of instruction-following Large Language Models (LLMs) in zero-shot scenario. However, there is a severe possibility that this translation ability may be influenced by having seen target textual descriptions and the related code. This effect is known as Data Contamination. In this study, we investigate the impact of Data Contamination on the performance of GPT-3.5 in the Text-to-SQL code-generating tasks. Hence, we introduce a novel method to detect Data Contamination in GPTs and examine GPT-3.5's Text-to-SQL performances using the known Spider Dataset and our new unfamiliar dataset Termite. Furthermore, we analyze GPT-3.5's efficacy on databases with modified information via an adversarial table disconnection (ATD) approach, complicating Text-to-SQL tasks by removing structural pieces of information from the database. Our results indicate a significant performance drop in GPT-3.5 on the unfamiliar Termite dataset, even with ATD modifications, highlighting the effect of Data Contamination on LLMs in Text-to-SQL translation tasks.",
+      "externalIds": {
+        "DBLP": "conf/acl/RanaldiRORGFRZ24",
+        "ArXiv": "2402.08100",
+        "DOI": "10.18653/v1/2024.findings-acl.827",
+        "CorpusId": 267636801
+      },
+      "arxiv_id": "2402.08100",
+      "doi": "10.18653/v1/2024.findings-acl.827",
+      "corpus_id": 267636801
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "34",
+      "ref_key": "S2:6bf28ebbb8df92582bc53a7fe49016e0caa4c074",
+      "paperId": "6bf28ebbb8df92582bc53a7fe49016e0caa4c074",
+      "title": "Quantifying Contamination in Evaluating Code Generation Capabilities of Language Models",
+      "year": 2024,
+      "abstract": "While large language models have achieved remarkable performance on various code generation benchmarks, there have been growing concerns regarding potential contamination of these benchmarks as they may be leaked into pretraining and finetuning data. While recent work has investigated contamination in natural language generation and understanding tasks, there has been less extensive research into how data contamination impacts the evaluation of code generation, which is critical for understanding the robustness and reliability of LLMs in programming contexts. In this work, we perform a comprehensive study of data contamination of popular code generation benchmarks, and precisely quantify their overlap with pretraining corpus through both surface-level and semantic-level matching. In our experiments, we show that there are substantial overlap between popular code generation benchmarks and open training corpus, and models perform significantly better on the subset of the benchmarks where similar solutions are seen during training. We also conduct extensive analysis on the factors that affects model memorization and generalization, such as model size, problem difficulty, and question length. We release all resulting files from our matching pipeline for future research.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2403-04811",
+        "ArXiv": "2403.04811",
+        "DOI": "10.48550/arXiv.2403.04811",
+        "CorpusId": 268297237
+      },
+      "arxiv_id": "2403.04811",
+      "doi": "10.48550/arXiv.2403.04811",
+      "corpus_id": 268297237
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "35",
+      "ref_key": "S2:2abc0cc453862e282a8014b9c5772b59da098674",
+      "paperId": "2abc0cc453862e282a8014b9c5772b59da098674",
+      "title": "Data Contamination Through the Lens of Time",
+      "year": 2023,
+      "abstract": "Recent claims about the impressive abilities of large language models (LLMs) are often supported by evaluating publicly available benchmarks. Since LLMs train on wide swaths of the internet, this practice raises concerns of data contamination, i.e., evaluating on examples that are explicitly or implicitly included in the training data. Data contamination remains notoriously challenging to measure and mitigate, even with partial attempts like controlled experimentation of training data, canary strings, or embedding similarities. In this work, we conduct the first thorough longitudinal analysis of data contamination in LLMs by using the natural experiment of training cutoffs in GPT models to look at benchmarks released over time. Specifically, we consider two code/mathematical problem-solving datasets, Codeforces and Project Euler, and find statistically significant trends among LLM pass rate vs. GitHub popularity and release date that provide strong evidence of contamination. By open-sourcing our dataset, raw results, and evaluation framework, our work paves the way for rigorous analyses of data contamination in modern models. We conclude with a discussion of best practices and future steps for publicly releasing benchmarks in the age of LLMs that train on webscale data.",
+      "externalIds": {
+        "ArXiv": "2310.10628",
+        "DBLP": "journals/corr/abs-2310-10628",
+        "DOI": "10.48550/arXiv.2310.10628",
+        "CorpusId": 264172693
+      },
+      "arxiv_id": "2310.10628",
+      "doi": "10.48550/arXiv.2310.10628",
+      "corpus_id": 264172693
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "36",
+      "ref_key": "S2:3422d5e0cdfdc935d6a84a1e3d3f96659265fe3a",
+      "paperId": "3422d5e0cdfdc935d6a84a1e3d3f96659265fe3a",
+      "title": "Detecting Pretraining Data from Large Language Models",
+      "year": 2023,
+      "abstract": "Although large language models (LLMs) are widely deployed, the data used to train them is rarely disclosed. Given the incredible scale of this data, up to trillions of tokens, it is all but certain that it includes potentially problematic text such as copyrighted materials, personally identifiable information, and test data for widely reported reference benchmarks. However, we currently have no way to know which data of these types is included or in what proportions. In this paper, we study the pretraining data detection problem: given a piece of text and black-box access to an LLM without knowing the pretraining data, can we determine if the model was trained on the provided text? To facilitate this study, we introduce a dynamic benchmark WIKIMIA that uses data created before and after model training to support gold truth detection. We also introduce a new detection method Min-K% Prob based on a simple hypothesis: an unseen example is likely to contain a few outlier words with low probabilities under the LLM, while a seen example is less likely to have words with such low probabilities. Min-K% Prob can be applied without any knowledge about the pretraining corpus or any additional training, departing from previous detection methods that require training a reference model on data that is similar to the pretraining data. Moreover, our experiments demonstrate that Min-K% Prob achieves a 7.4% improvement on WIKIMIA over these previous methods. We apply Min-K% Prob to two real-world scenarios, copyrighted book detection, and contaminated downstream example detection, and find it a consistently effective solution.",
+      "externalIds": {
+        "DBLP": "conf/iclr/ShiAXHLB0Z24",
+        "ArXiv": "2310.16789",
+        "DOI": "10.48550/arXiv.2310.16789",
+        "CorpusId": 264451585
+      },
+      "arxiv_id": "2310.16789",
+      "doi": "10.48550/arXiv.2310.16789",
+      "corpus_id": 264451585
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "37",
+      "ref_key": "S2:bd1331b233e84bab7eba503abc60b31ac08e7881",
+      "paperId": "bd1331b233e84bab7eba503abc60b31ac08e7881",
+      "title": "Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models",
+      "year": 2022,
+      "abstract": "Language models demonstrate both quantitative improvement and new qualitative capabilities with increasing scale. Despite their potentially transformative impact, these new capabilities are as yet poorly characterized. In order to inform future research, prepare for disruptive new model capabilities, and ameliorate socially harmful effects, it is vital that we understand the present and near-future capabilities and limitations of language models. To address this challenge, we introduce the Beyond the Imitation Game benchmark (BIG-bench). BIG-bench currently consists of 204 tasks, contributed by 450 authors across 132 institutions. Task topics are diverse, drawing problems from linguistics, childhood development, math, common-sense reasoning, biology, physics, social bias, software development, and beyond. BIG-bench focuses on tasks that are believed to be beyond the capabilities of current language models. We evaluate the behavior of OpenAI's GPT models, Google-internal dense transformer architectures, and Switch-style sparse transformers on BIG-bench, across model sizes spanning millions to hundreds of billions of parameters. In addition, a team of human expert raters performed all tasks in order to provide a strong baseline. Findings include: model performance and calibration both improve with scale, but are poor in absolute terms (and when compared with rater performance); performance is remarkably similar across model classes, though with benefits from sparsity; tasks that improve gradually and predictably commonly involve a large knowledge or memorization component, whereas tasks that exhibit\"breakthrough\"behavior at a critical scale often involve multiple steps or components, or brittle metrics; social bias typically increases with scale in settings with ambiguous context, but this can be improved with prompting.",
+      "externalIds": {
+        "ArXiv": "2206.04615",
+        "DBLP": "journals/corr/abs-2206-04615",
+        "CorpusId": 263625818
+      },
+      "arxiv_id": "2206.04615",
+      "doi": null,
+      "corpus_id": 263625818
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "38",
+      "ref_key": "S2:57e849d0de13ed5f91d086936296721d4ff75a75",
+      "paperId": "57e849d0de13ed5f91d086936296721d4ff75a75",
+      "title": "LLaMA: Open and Efficient Foundation Language Models",
+      "year": 2023,
+      "abstract": "We introduce LLaMA, a collection of foundation language models ranging from 7B to 65B parameters. We train our models on trillions of tokens, and show that it is possible to train state-of-the-art models using publicly available datasets exclusively, without resorting to proprietary and inaccessible datasets. In particular, LLaMA-13B outperforms GPT-3 (175B) on most benchmarks, and LLaMA-65B is competitive with the best models, Chinchilla-70B and PaLM-540B. We release all our models to the research community.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2302-13971",
+        "ArXiv": "2302.13971",
+        "CorpusId": 257219404
+      },
+      "arxiv_id": "2302.13971",
+      "doi": null,
+      "corpus_id": 257219404
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "39",
+      "ref_key": "S2:34c0ac6c012f524e30f083b81b148f65c41c221e",
+      "paperId": "34c0ac6c012f524e30f083b81b148f65c41c221e",
+      "title": "Benchmarking Benchmark Leakage in Large Language Models",
+      "year": 2024,
+      "abstract": "Amid the expanding use of pre-training data, the phenomenon of benchmark dataset leakage has become increasingly prominent, exacerbated by opaque training processes and the often undisclosed inclusion of supervised data in contemporary Large Language Models (LLMs). This issue skews benchmark effectiveness and fosters potentially unfair comparisons, impeding the field's healthy development. To address this, we introduce a detection pipeline utilizing Perplexity and N-gram accuracy, two simple and scalable metrics that gauge a model's prediction precision on benchmark, to identify potential data leakages. By analyzing 31 LLMs under the context of mathematical reasoning, we reveal substantial instances of training even test set misuse, resulting in potentially unfair comparisons. These findings prompt us to offer several recommendations regarding model documentation, benchmark setup, and future evaluations. Notably, we propose the\"Benchmark Transparency Card\"to encourage clear documentation of benchmark utilization, promoting transparency and healthy developments of LLMs. we have made our leaderboard, pipeline implementation, and model predictions publicly available, fostering future research.",
+      "externalIds": {
+        "ArXiv": "2404.18824",
+        "DBLP": "journals/corr/abs-2404-18824",
+        "DOI": "10.48550/arXiv.2404.18824",
+        "CorpusId": 269448637
+      },
+      "arxiv_id": "2404.18824",
+      "doi": "10.48550/arXiv.2404.18824",
+      "corpus_id": 269448637
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "40",
+      "ref_key": "S2:227b5f8206b64858edeef6723b96af14133077e3",
+      "paperId": "227b5f8206b64858edeef6723b96af14133077e3",
+      "title": "Rethinking Benchmark and Contamination for Language Models with Rephrased Samples",
+      "year": 2023,
+      "abstract": "Large language models are increasingly trained on all the data ever produced by humans. Many have raised concerns about the trustworthiness of public benchmarks due to potential contamination in pre-training or fine-tuning datasets. While most data decontamination efforts apply string matching (e.g., n-gram overlap) to remove benchmark data, we show that these methods are insufficient, and simple variations of test data (e.g., paraphrasing, translation) can easily bypass these decontamination measures. Furthermore, we demonstrate that if such variation of test data is not eliminated, a 13B model can easily overfit a test benchmark and achieve drastically high performance, on par with GPT-4. We validate such observations in widely used benchmarks such as MMLU, GSK8k, and HumanEval. To address this growing risk, we propose a stronger LLM-based decontamination method and apply it to widely used pre-training and fine-tuning datasets, revealing significant previously unknown test overlap. For example, in pre-training sets such as RedPajama-Data-1T and StarCoder-Data, we identified that 8-18\\% of the HumanEval benchmark overlaps. Interestingly, we also find such contamination in synthetic dataset generated by GPT-3.5/4, suggesting a potential risk of unintentional contamination. We urge the community to adopt stronger decontamination approaches when using public benchmarks. Moreover, we call for the community to actively develop fresh one-time exams to evaluate models accurately. Our decontamination tool is publicly available at https://github.com/lm-sys/llm-decontaminator.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-04850",
+        "ArXiv": "2311.04850",
+        "DOI": "10.48550/arXiv.2311.04850",
+        "CorpusId": 265050721
+      },
+      "arxiv_id": "2311.04850",
+      "doi": "10.48550/arXiv.2311.04850",
+      "corpus_id": 265050721
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "41",
+      "ref_key": "S2:b4a803ee85bf10f7b458324fb0998e77bdfdfb3c",
+      "paperId": "b4a803ee85bf10f7b458324fb0998e77bdfdfb3c",
+      "title": "Data Contamination Calibration for Black-box LLMs",
+      "year": 2024,
+      "abstract": "The rapid advancements of Large Language Models (LLMs) tightly associate with the expansion of the training data size. However, the unchecked ultra-large-scale training sets introduce a series of potential risks like data contamination, i.e. the benchmark data is used for training. In this work, we propose a holistic method named Polarized Augment Calibration (PAC) along with a new to-be-released dataset to detect the contaminated data and diminish the contamination effect. PAC extends the popular MIA (Membership Inference Attack) -- from machine learning community -- by forming a more global target at detecting training data to Clarify invisible training data. As a pioneering work, PAC is very much plug-and-play that can be integrated with most (if not all) current white- and black-box LLMs. By extensive experiments, PAC outperforms existing methods by at least 4.5%, towards data contamination detection on more 4 dataset formats, with more than 10 base LLMs. Besides, our application in real-world scenarios highlights the prominent presence of contamination and related issues.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2405-11930",
+        "ArXiv": "2405.11930",
+        "DOI": "10.48550/arXiv.2405.11930",
+        "CorpusId": 269921283
+      },
+      "arxiv_id": "2405.11930",
+      "doi": "10.48550/arXiv.2405.11930",
+      "corpus_id": 269921283
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "42",
+      "ref_key": "S2:c8f216f663660ff3bc195ecd3a8ad61f0ed1d9d7",
+      "paperId": "c8f216f663660ff3bc195ecd3a8ad61f0ed1d9d7",
+      "title": "Privacy Risk in Machine Learning: Analyzing the Connection to Overfitting",
+      "year": 2017,
+      "abstract": "Machine learning algorithms, when applied to sensitive data, pose a distinct threat to privacy. A growing body of prior work demonstrates that models produced by these algorithms may leak specific private information in the training data to an attacker, either through the models' structure or their observable behavior. However, the underlying cause of this privacy risk is not well understood beyond a handful of anecdotal accounts that suggest overfitting and influence might play a role. This paper examines the effect that overfitting and influence have on the ability of an attacker to learn information about the training data from machine learning models, either through training set membership inference or attribute inference attacks. Using both formal and empirical analyses, we illustrate a clear relationship between these factors and the privacy risk that arises in several popular machine learning algorithms. We find that overfitting is sufficient to allow an attacker to perform membership inference and, when the target attribute meets certain conditions about its influence, attribute inference attacks. Interestingly, our formal analysis also shows that overfitting is not necessary for these attacks and begins to shed light on what other factors may be in play. Finally, we explore the connection between membership inference and attribute inference, showing that there are deep connections between the two that lead to effective new attacks.",
+      "externalIds": {
+        "MAG": "2795435272",
+        "DBLP": "conf/csfw/YeomGFJ18",
+        "DOI": "10.1109/CSF.2018.00027",
+        "CorpusId": 2656445
+      },
+      "arxiv_id": null,
+      "doi": "10.1109/CSF.2018.00027",
+      "corpus_id": 2656445
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "43",
+      "ref_key": "S2:88aeeaec712a38d741c59b8e6faab2709e678759",
+      "paperId": "88aeeaec712a38d741c59b8e6faab2709e678759",
+      "title": "Critical Data Size of Language Models from a Grokking Perspective",
+      "year": 2024,
+      "abstract": "We explore the critical data size in language models, a threshold that marks a fundamental shift from quick memorization to slow generalization. We formalize the phase transition under the grokking configuration into the Data Efficiency Hypothesis and identify data insufficiency, sufficiency, and surplus regimes in language models training dynamics. We develop a grokking configuration to reproduce grokking on simplistic language models stably by rescaling initialization and weight decay. We show that generalization occurs only when language models reach a critical size. We analyze grokking across sample-wise and model-wise, verifying the proposed data efficiency hypothesis. Our experiments reveal smoother phase transitions occurring at the critical dataset size for language datasets. As the model size increases, this critical point also becomes larger, indicating that larger models require more data. Our results deepen the understanding of language model training, offering a novel perspective on the role of data in the learning mechanism of language models.",
+      "externalIds": {
+        "ArXiv": "2401.10463",
+        "DBLP": "journals/corr/abs-2401-10463",
+        "DOI": "10.48550/arXiv.2401.10463",
+        "CorpusId": 267061159
+      },
+      "arxiv_id": "2401.10463",
+      "doi": "10.48550/arXiv.2401.10463",
+      "corpus_id": 267061159
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "44",
+      "ref_key": "S2:9ad167529a6365e37825ddea5d29ab2f17651959",
+      "paperId": "9ad167529a6365e37825ddea5d29ab2f17651959",
+      "title": "Data Contamination Quiz: A Tool to Detect and Estimate Contamination in Large Language Models",
+      "year": 2023,
+      "abstract": "We propose the Data Contamination Quiz (DCQ), a simple and effective approach to detect data contamination in large language models (LLMs) and estimate the amount of it. Specifically, we frame data contamination detection as a series of multiple-choice questions and devise a quiz format wherein three perturbed versions of each subsampled instance from a specific dataset partition (e.g., GSM8k test set) are created. These changes only include word-level perturbations. The generated perturbations, along with the original dataset instance, form the options in the DCQ, with an extra option accommodating the possibility of selecting none of the provided options. Given that the only distinguishing signal among the options is the exact wording with respect to the original dataset instance, an LLM, when tasked with identifying the original dataset instance, gravitates towards selecting the original one if it has been exposed to it in its pre-training phase -- a trait intrinsic to LLMs. While accounting for positional biases in LLMs, the quiz performance reveals the contamination level for the model being examined with the dataset partition to which the quiz pertains. Applied to various datasets with GPT-4 and GPT-3.5, our findings -- while fully lacking access to pre-training data and model parameters -- suggest that DCQ achieves state-of-the-art results and uncovers greater contamination/memorization levels compared to existing methods and proficiently bypasses more safety filters, especially those set to avoid generating copyrighted contents.",
+      "externalIds": {
+        "ArXiv": "2311.06233",
+        "DBLP": "journals/corr/abs-2311-06233",
+        "DOI": "10.48550/arXiv.2311.06233",
+        "CorpusId": 265128736
+      },
+      "arxiv_id": "2311.06233",
+      "doi": "10.48550/arXiv.2311.06233",
+      "corpus_id": 265128736
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "45",
+      "ref_key": "S2:1d7f414983eb847c4618489baa44e99b01162f98",
+      "paperId": "1d7f414983eb847c4618489baa44e99b01162f98",
+      "title": "DyVal: Dynamic Evaluation of Large Language Models for Reasoning Tasks",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have achieved remarkable performance in various evaluation benchmarks. However, concerns are raised about potential data contamination in their considerable volume of training corpus. Moreover, the static nature and fixed complexity of current benchmarks may inadequately gauge the advancing capabilities of LLMs. In this paper, we introduce DyVal, a general and flexible protocol for dynamic evaluation of LLMs. Based on our framework, we build graph-informed DyVal by leveraging the structural advantage of directed acyclic graphs to dynamically generate evaluation samples with controllable complexities. DyVal generates challenging evaluation sets on reasoning tasks including mathematics, logical reasoning, and algorithm problems. We evaluate various LLMs ranging from Flan-T5-large to GPT-3.5-Turbo and GPT-4. Experiments show that LLMs perform worse in DyVal-generated evaluation samples with different complexities, highlighting the significance of dynamic evaluation. We also analyze the failure cases and results of different prompting methods. Moreover, DyVal-generated samples are not only evaluation sets, but also helpful data for fine-tuning to improve the performance of LLMs on existing benchmarks. We hope that DyVal can shed light on future evaluation research of LLMs. Code is available at: https://github.com/microsoft/promptbench.",
+      "externalIds": {
+        "ArXiv": "2309.17167",
+        "DBLP": "conf/iclr/ZhuC0GY024",
+        "CorpusId": 263310319
+      },
+      "arxiv_id": "2309.17167",
+      "doi": null,
+      "corpus_id": 263310319
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "46",
+      "ref_key": "S2:6fefd138be7a96ad6fd5bc448b6be28f69c8198a",
+      "paperId": "6fefd138be7a96ad6fd5bc448b6be28f69c8198a",
+      "title": "Microsoft Copilot and Anthropic Claude AI in education and library service",
+      "year": 2024,
+      "abstract": "Purpose\nThis study aims to explore the collaborative potential of Microsoft Copilot and Anthropic Claude AI as an assistive technology in education and library services. The research delves into technical architectures and various use cases for both tools, proposing integration strategies within educational and library environments. The paper also addresses challenges such as algorithmic bias, hallucination and data rights.\n\n\nDesign/methodology/approach\nThe study used a literature review approach combined with the proposal of integration strategies across education and library settings.\n\n\nFindings\nThe collaborative framework between Copilot and Claude AI offers a comprehensive solution for transforming education and library services. The study identifies the seamless combination of real-time internet access, information retrieval and advanced comprehension features as key findings. In addition, challenges such as algorithmic bias and data rights are addressed, emphasizing the need for responsible AI governance, transparency and continuous improvement.\n\n\nOriginality/value\nContribute to the field by exploring the unique collaborative framework of Copilot and Claude AI in a specific context, emphasizing responsible AI governance and addressing existing gaps.",
+      "externalIds": {
+        "DOI": "10.1108/lhtn-01-2024-0002",
+        "CorpusId": 267111682
+      },
+      "arxiv_id": null,
+      "doi": "10.1108/lhtn-01-2024-0002",
+      "corpus_id": 267111682
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "47",
+      "ref_key": "S2:54311e1b1250e87194bcaf4036bfefd8d5ce5acf",
+      "paperId": "54311e1b1250e87194bcaf4036bfefd8d5ce5acf",
+      "title": "ConStat: Performance-Based Contamination Detection in Large Language Models",
+      "year": 2024,
+      "abstract": "Public benchmarks play an essential role in the evaluation of large language models. However, data contamination can lead to inflated performance, rendering them unreliable for model comparison. It is therefore crucial to detect contamination and estimate its impact on measured performance. Unfortunately, existing detection methods can be easily evaded and fail to quantify contamination. To overcome these limitations, we propose a novel definition of contamination as artificially inflated and non-generalizing benchmark performance instead of the inclusion of benchmark samples in the training data. This perspective enables us to detect any model with inflated performance, i.e., performance that does not generalize to rephrased samples, synthetic samples from the same distribution, or different benchmarks for the same task. Based on this insight, we develop ConStat, a statistical method that reliably detects and quantifies contamination by comparing performance between a primary and reference benchmark relative to a set of reference models. We demonstrate the effectiveness of ConStat in an extensive evaluation of diverse model architectures, benchmarks, and contamination scenarios and find high levels of contamination in multiple popular models including Mistral, Llama, Yi, and the top-3 Open LLM Leaderboard models.",
+      "externalIds": {
+        "ArXiv": "2405.16281",
+        "DBLP": "journals/corr/abs-2405-16281",
+        "DOI": "10.48550/arXiv.2405.16281",
+        "CorpusId": 270063170
+      },
+      "arxiv_id": "2405.16281",
+      "doi": "10.48550/arXiv.2405.16281",
+      "corpus_id": 270063170
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "48",
+      "ref_key": "S2:f16c669c126c800dac38d445ddd178ffb9af5b7a",
+      "paperId": "f16c669c126c800dac38d445ddd178ffb9af5b7a",
+      "title": "Do Membership Inference Attacks Work on Large Language Models?",
+      "year": 2024,
+      "abstract": "Membership inference attacks (MIAs) attempt to predict whether a particular datapoint is a member of a target model's training data. Despite extensive research on traditional machine learning models, there has been limited work studying MIA on the pre-training data of large language models (LLMs). We perform a large-scale evaluation of MIAs over a suite of language models (LMs) trained on the Pile, ranging from 160M to 12B parameters. We find that MIAs barely outperform random guessing for most settings across varying LLM sizes and domains. Our further analyses reveal that this poor performance can be attributed to (1) the combination of a large dataset and few training iterations, and (2) an inherently fuzzy boundary between members and non-members. We identify specific settings where LLMs have been shown to be vulnerable to membership inference and show that the apparent success in such settings can be attributed to a distribution shift, such as when members and non-members are drawn from the seemingly identical domain but with different temporal ranges. We release our code and data as a unified benchmark package that includes all existing MIAs, supporting future work.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-07841",
+        "ArXiv": "2402.07841",
+        "CorpusId": 267627639
+      },
+      "arxiv_id": "2402.07841",
+      "doi": null,
+      "corpus_id": 267627639
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "49",
+      "ref_key": "S2:8a583a8bee70fa59186664d0df5afb60a1591a21",
+      "paperId": "8a583a8bee70fa59186664d0df5afb60a1591a21",
+      "title": "What's In My Big Data?",
+      "year": 2023,
+      "abstract": "Large text corpora are the backbone of language models. However, we have a limited understanding of the content of these corpora, including general statistics, quality, social factors, and inclusion of evaluation data (contamination). In this work, we propose What's In My Big Data? (WIMBD), a platform and a set of sixteen analyses that allow us to reveal and compare the contents of large text corpora. WIMBD builds on two basic capabilities -- count and search -- at scale, which allows us to analyze more than 35 terabytes on a standard compute node. We apply WIMBD to ten different corpora used to train popular language models, including C4, The Pile, and RedPajama. Our analysis uncovers several surprising and previously undocumented findings about these corpora, including the high prevalence of duplicate, synthetic, and low-quality content, personally identifiable information, toxic language, and benchmark contamination. For instance, we find that about 50% of the documents in RedPajama and LAION-2B-en are duplicates. In addition, several datasets used for benchmarking models trained on such corpora are contaminated with respect to important benchmarks, including the Winograd Schema Challenge and parts of GLUE and SuperGLUE. We open-source WIMBD's code and artifacts to provide a standard set of evaluations for new text-based corpora and to encourage more analyses and transparency around them.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-20707",
+        "ArXiv": "2310.20707",
+        "DOI": "10.48550/arXiv.2310.20707",
+        "CorpusId": 264803575
+      },
+      "arxiv_id": "2310.20707",
+      "doi": "10.48550/arXiv.2310.20707",
+      "corpus_id": 264803575
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "50",
+      "ref_key": "S2:795b3d3341c7c93daf316a59794f67a6c1c230f1",
+      "paperId": "795b3d3341c7c93daf316a59794f67a6c1c230f1",
+      "title": "SoK: Memorization in General-Purpose Large Language Models",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) are advancing at a remarkable pace, with myriad applications under development. Unlike most earlier machine learning models, they are no longer built for one specific application but are designed to excel in a wide range of tasks. A major part of this success is due to their huge training datasets and the unprecedented number of model parameters, which allow them to memorize large amounts of information contained in the training data. This memorization goes beyond mere language, and encompasses information only present in a few documents. This is often desirable since it is necessary for performing tasks such as question answering, and therefore an important part of learning, but also brings a whole array of issues, from privacy and security to copyright and beyond. LLMs can memorize short secrets in the training data, but can also memorize concepts like facts or writing styles that can be expressed in text in many different ways. We propose a taxonomy for memorization in LLMs that covers verbatim text, facts, ideas and algorithms, writing styles, distributional properties, and alignment goals. We describe the implications of each type of memorization - both positive and negative - for model performance, privacy, security and confidentiality, copyright, and auditing, and ways to detect and prevent memorization. We further highlight the challenges that arise from the predominant way of defining memorization with respect to model behavior instead of model weights, due to LLM-specific phenomena such as reasoning capabilities or differences between decoding algorithms. Throughout the paper, we describe potential risks and opportunities arising from memorization in LLMs that we hope will motivate new research directions.",
+      "externalIds": {
+        "ArXiv": "2310.18362",
+        "DBLP": "journals/corr/abs-2310-18362",
+        "DOI": "10.48550/arXiv.2310.18362",
+        "CorpusId": 264590727
+      },
+      "arxiv_id": "2310.18362",
+      "doi": "10.48550/arXiv.2310.18362",
+      "corpus_id": 264590727
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "51",
+      "ref_key": "S2:75f7e9e2b59fb640ef9d1dff94097175daf46c4d",
+      "paperId": "75f7e9e2b59fb640ef9d1dff94097175daf46c4d",
+      "title": "Large Language Models Struggle to Learn Long-Tail Knowledge",
+      "year": 2022,
+      "abstract": "The Internet contains a wealth of knowledge -- from the birthdays of historical figures to tutorials on how to code -- all of which may be learned by language models. However, while certain pieces of information are ubiquitous on the web, others appear extremely rarely. In this paper, we study the relationship between the knowledge memorized by large language models and the information in pre-training datasets scraped from the web. In particular, we show that a language model's ability to answer a fact-based question relates to how many documents associated with that question were seen during pre-training. We identify these relevant documents by entity linking pre-training datasets and counting documents that contain the same entities as a given question-answer pair. Our results demonstrate strong correlational and causal relationships between accuracy and relevant document count for numerous question answering datasets (e.g., TriviaQA), pre-training corpora (e.g., ROOTS), and model sizes (e.g., 176B parameters). Moreover, while larger models are better at learning long-tail knowledge, we estimate that today's models must be scaled by many orders of magnitude to reach competitive QA performance on questions with little support in the pre-training data. Finally, we show that retrieval-augmentation can reduce the dependence on relevant pre-training information, presenting a promising approach for capturing the long-tail.",
+      "externalIds": {
+        "ArXiv": "2211.08411",
+        "DBLP": "journals/corr/abs-2211-08411",
+        "DOI": "10.48550/arXiv.2211.08411",
+        "CorpusId": 253522998
+      },
+      "arxiv_id": "2211.08411",
+      "doi": "10.48550/arXiv.2211.08411",
+      "corpus_id": 253522998
+    },
+    {
+      "paper_id": "2406.14644",
+      "ref_index": "52",
+      "ref_key": "S2:c03493310626e5220a3fe92b654fc5d56645a975",
+      "paperId": "c03493310626e5220a3fe92b654fc5d56645a975",
+      "title": "CLEAN-EVAL: Clean Evaluation on Contaminated Large Language Models",
+      "year": 2023,
+      "abstract": "We are currently in an era of fierce competition among various large language models (LLMs) continuously pushing the boundaries of benchmark performance. However, genuinely assessing the capabilities of these LLMs has become a challenging and critical issue due to potential data contamination, and it wastes dozens of time and effort for researchers and engineers to download and try those contaminated models. To save our precious time, we propose a novel and useful method, Clean-Eval, which mitigates the issue of data contamination and evaluates the LLMs in a cleaner manner. Clean-Eval employs an LLM to paraphrase and back-translate the contaminated data into a candidate set, generating expressions with the same meaning but in different surface forms. A semantic detector is then used to filter the generated low-quality samples to narrow down this candidate set. The best candidate is finally selected from this set based on the BLEURT score. According to human assessment, this best candidate is semantically similar to the original contamination data but expressed differently. All candidates can form a new benchmark to evaluate the model. Our experiments illustrate that Clean-Eval substantially restores the actual evaluation results on contaminated LLMs under both few-shot learning and fine-tuning scenarios.",
+      "externalIds": {
+        "ArXiv": "2311.09154",
+        "DBLP": "conf/naacl/ZhuHHSYZHWWL24",
+        "DOI": "10.48550/arXiv.2311.09154",
+        "CorpusId": 265213054
+      },
+      "arxiv_id": "2311.09154",
+      "doi": "10.48550/arXiv.2311.09154",
+      "corpus_id": 265213054
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "Data Contamination": {
+        "Task": {
+          "Domain": {
+            "White-box  Language Models": {
+              "90abbc2cf38462b954ae1b772fac9532e2ccd8b0": {},
+              "df2b0e26d0599ce3e70df8a9da02e51594e0e992": {},
+              "ac45bbf9940512d9d686cf8cd3a95969bc313570": {},
+              "57e849d0de13ed5f91d086936296721d4ff75a75": {}
+            },
+            "Gray-box  Large Language Models": {
+              "5fc1a3a49e8f1d106118b69d1d6be3b6caa23da0": {},
+              "db633c6b1c286c0386f0078d8a2e6224e03a6227": {},
+              "ae9f2d6a29daec0eaf5700d327df0f4f30558b74": {}
+            },
+            "Black-box  Large Language Models": {
+              "6fefd138be7a96ad6fd5bc448b6be28f69c8198a": {},
+              "163b4d6a79a5b19af88b8585456363340d9efd04": {}
+            }
+          }
+        },
+        "Impact of Contamination": {
+          "48ac4aa7e1d8bfabea4ee39b814fab85aa3e5775": {},
+          "f16c669c126c800dac38d445ddd178ffb9af5b7a": {},
+          "4a54d58a4b20e4f3af25cea3c188a12082a95e02": {},
+          "133b97e40017a9bbbadd10bcd7f13088a97ca3cc": {},
+          "795b3d3341c7c93daf316a59794f67a6c1c230f1": {},
+          "870693e9de7711d46ec621eab77b5b282f2caf47": {},
+          "b2fda33b7c122c044a7faa185d250d59ce9e4453": {},
+          "fd6ade42ad3e0b9ffe418a37c4cb4b16346d90b7": {},
+          "bd1331b233e84bab7eba503abc60b31ac08e7881": {},
+          "88aeeaec712a38d741c59b8e6faab2709e678759": {}
+        },
+        "Detection": {
+          "Retrieval": {
+            "Model Developer-Side": {
+              "90abbc2cf38462b954ae1b772fac9532e2ccd8b0": {},
+              "094ff971d6a8b8ff870946c9b3ce5aa173617bfb": {},
+              "57e849d0de13ed5f91d086936296721d4ff75a75": {}
+            },
+            "Academic Community-Side": {
+              "798feda076ad710df65d509a7884bd15937c8056": {},
+              "af565483dfbe3b0fa4fe9f715170666a06bce5ac": {},
+              "1adadbfa95e43a70fcd17e6ce947a0652b86bfc3": {},
+              "8a583a8bee70fa59186664d0df5afb60a1591a21": {},
+              "75f7e9e2b59fb640ef9d1dff94097175daf46c4d": {},
+              "2ed0030d06ac2cc739c8460c102ae4713d10d1e1": {},
+              "6bf28ebbb8df92582bc53a7fe49016e0caa4c074": {}
+            }
+          },
+          "Temporal Cutoff": {
+            "Pretrain-Level": {
+              "~\\citet{shi2023detecting}": {
+                "7d40189f3fa56728b8d210628e98fc204961778f": {},
+                "a7b20c1bba14d4cd2b317138496d35d47142d30f": {},
+                "2abc0cc453862e282a8014b9c5772b59da098674": {}
+              }
+            },
+            "Masking-based": {
+              "Book-Level": {
+                "c47f0a5feb18b036004b5404ef78ac94a65fa489": {}
+              },
+              "Benchmark-Level": {
+                "af43203952a41fc52be2eb571e2f62ecf0007646": {},
+                "af565483dfbe3b0fa4fe9f715170666a06bce5ac": {},
+                "34c0ac6c012f524e30f083b81b148f65c41c221e": {}
+              }
+            },
+            "Perturbation-based": {
+              "71c9d2b995c19d43c519eb5ca9504ac790490398": {},
+              "54311e1b1250e87194bcaf4036bfefd8d5ce5acf": {},
+              "2837a485b5895efea2eb63a707db2196be1d4a2f": {},
+              "227b5f8206b64858edeef6723b96af14133077e3": {}
+            },
+            "Canonical Order": {
+              "c871377b208814713c18e25633866323a2982136": {}
+            },
+            "Behavior Manipulation": {
+              "9ad167529a6365e37825ddea5d29ab2f17651959": {},
+              "1ea243f1b697aae22e6f0349fa64857780a6108a": {},
+              "d6d0fd994f37b630f35945736b5e1bb198148404": {}
+            },
+            "Membership Inference Attacks": {
+              "df7d26339adf4eb0c07160947b9d2973c24911ba": {},
+              "54d7ae7cfee56b0e19fd42c45d365f760a41794d": {},
+              "cb754310302086dfbbcd098263200e2a03f65874": {},
+              "3422d5e0cdfdc935d6a84a1e3d3f96659265fe3a": {},
+              "34c0ac6c012f524e30f083b81b148f65c41c221e": {},
+              "b4a803ee85bf10f7b458324fb0998e77bdfdfb3c": {},
+              "c8f216f663660ff3bc195ecd3a8ad61f0ed1d9d7": {}
+            }
+          },
+          "Mitigation": {
+            "Evaluation": {
+              "1d7f414983eb847c4618489baa44e99b01162f98": {},
+              "8106d03fb984afd8c3d066cd4f993eb2616a0da5": {},
+              "c03493310626e5220a3fe92b654fc5d56645a975": {}
+            },
+            "Guideline": {
+              "fc30093e9f55ae1c0a1d2c4c4e5341998adede66": {},
+              "cd2f4aaf98bb1e020cff310000c8049d3460c54e": {},
+              "84725855d10b531eb8cbe54935dda0440c2fc750": {}
+            }
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000001",
+        "paperId": "90abbc2cf38462b954ae1b772fac9532e2ccd8b0",
+        "ref_index": "9",
+        "path": [
+          "Data Contamination",
+          "Task",
+          "Domain",
+          "White-box  Language Models"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000002",
+        "paperId": "df2b0e26d0599ce3e70df8a9da02e51594e0e992",
+        "ref_index": "15",
+        "path": [
+          "Data Contamination",
+          "Task",
+          "Domain",
+          "White-box  Language Models"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000003",
+        "paperId": "ac45bbf9940512d9d686cf8cd3a95969bc313570",
+        "ref_index": "21",
+        "path": [
+          "Data Contamination",
+          "Task",
+          "Domain",
+          "White-box  Language Models"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000004",
+        "paperId": "57e849d0de13ed5f91d086936296721d4ff75a75",
+        "ref_index": "38",
+        "path": [
+          "Data Contamination",
+          "Task",
+          "Domain",
+          "White-box  Language Models"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000005",
+        "paperId": "5fc1a3a49e8f1d106118b69d1d6be3b6caa23da0",
+        "ref_index": "6",
+        "path": [
+          "Data Contamination",
+          "Task",
+          "Domain",
+          "Gray-box  Large Language Models"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000006",
+        "paperId": "db633c6b1c286c0386f0078d8a2e6224e03a6227",
+        "ref_index": "23",
+        "path": [
+          "Data Contamination",
+          "Task",
+          "Domain",
+          "Gray-box  Large Language Models"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000007",
+        "paperId": "ae9f2d6a29daec0eaf5700d327df0f4f30558b74",
+        "ref_index": "29",
+        "path": [
+          "Data Contamination",
+          "Task",
+          "Domain",
+          "Gray-box  Large Language Models"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000008",
+        "paperId": "6fefd138be7a96ad6fd5bc448b6be28f69c8198a",
+        "ref_index": "46",
+        "path": [
+          "Data Contamination",
+          "Task",
+          "Domain",
+          "Black-box  Large Language Models"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000009",
+        "paperId": "163b4d6a79a5b19af88b8585456363340d9efd04",
+        "ref_index": "30",
+        "path": [
+          "Data Contamination",
+          "Task",
+          "Domain",
+          "Black-box  Large Language Models"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000010",
+        "paperId": "48ac4aa7e1d8bfabea4ee39b814fab85aa3e5775",
+        "ref_index": "0",
+        "path": [
+          "Data Contamination",
+          "Impact of Contamination"
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000011",
+        "paperId": "f16c669c126c800dac38d445ddd178ffb9af5b7a",
+        "ref_index": "48",
+        "path": [
+          "Data Contamination",
+          "Impact of Contamination"
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000012",
+        "paperId": "4a54d58a4b20e4f3af25cea3c188a12082a95e02",
+        "ref_index": "18",
+        "path": [
+          "Data Contamination",
+          "Impact of Contamination"
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000013",
+        "paperId": "133b97e40017a9bbbadd10bcd7f13088a97ca3cc",
+        "ref_index": "19",
+        "path": [
+          "Data Contamination",
+          "Impact of Contamination"
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000014",
+        "paperId": "795b3d3341c7c93daf316a59794f67a6c1c230f1",
+        "ref_index": "50",
+        "path": [
+          "Data Contamination",
+          "Impact of Contamination"
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000015",
+        "paperId": "870693e9de7711d46ec621eab77b5b282f2caf47",
+        "ref_index": "22",
+        "path": [
+          "Data Contamination",
+          "Impact of Contamination"
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000016",
+        "paperId": "b2fda33b7c122c044a7faa185d250d59ce9e4453",
+        "ref_index": "24",
+        "path": [
+          "Data Contamination",
+          "Impact of Contamination"
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000017",
+        "paperId": "fd6ade42ad3e0b9ffe418a37c4cb4b16346d90b7",
+        "ref_index": "27",
+        "path": [
+          "Data Contamination",
+          "Impact of Contamination"
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000018",
+        "paperId": "bd1331b233e84bab7eba503abc60b31ac08e7881",
+        "ref_index": "37",
+        "path": [
+          "Data Contamination",
+          "Impact of Contamination"
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000019",
+        "paperId": "88aeeaec712a38d741c59b8e6faab2709e678759",
+        "ref_index": "43",
+        "path": [
+          "Data Contamination",
+          "Impact of Contamination"
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000020",
+        "paperId": "90abbc2cf38462b954ae1b772fac9532e2ccd8b0",
+        "ref_index": "9",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Retrieval",
+          "Model Developer-Side"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000021",
+        "paperId": "094ff971d6a8b8ff870946c9b3ce5aa173617bfb",
+        "ref_index": "13",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Retrieval",
+          "Model Developer-Side"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000022",
+        "paperId": "57e849d0de13ed5f91d086936296721d4ff75a75",
+        "ref_index": "38",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Retrieval",
+          "Model Developer-Side"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000023",
+        "paperId": "798feda076ad710df65d509a7884bd15937c8056",
+        "ref_index": "7",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Retrieval",
+          "Academic Community-Side"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000024",
+        "paperId": "af565483dfbe3b0fa4fe9f715170666a06bce5ac",
+        "ref_index": "14",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Retrieval",
+          "Academic Community-Side"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000025",
+        "paperId": "1adadbfa95e43a70fcd17e6ce947a0652b86bfc3",
+        "ref_index": "16",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Retrieval",
+          "Academic Community-Side"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000026",
+        "paperId": "8a583a8bee70fa59186664d0df5afb60a1591a21",
+        "ref_index": "49",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Retrieval",
+          "Academic Community-Side"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000027",
+        "paperId": "75f7e9e2b59fb640ef9d1dff94097175daf46c4d",
+        "ref_index": "51",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Retrieval",
+          "Academic Community-Side"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000028",
+        "paperId": "2ed0030d06ac2cc739c8460c102ae4713d10d1e1",
+        "ref_index": "32",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Retrieval",
+          "Academic Community-Side"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000029",
+        "paperId": "6bf28ebbb8df92582bc53a7fe49016e0caa4c074",
+        "ref_index": "34",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Retrieval",
+          "Academic Community-Side"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000030",
+        "paperId": "7d40189f3fa56728b8d210628e98fc204961778f",
+        "ref_index": "5",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Temporal Cutoff",
+          "Pretrain-Level",
+          "~\\citet{shi2023detecting}"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000031",
+        "paperId": "a7b20c1bba14d4cd2b317138496d35d47142d30f",
+        "ref_index": "26",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Temporal Cutoff",
+          "Pretrain-Level",
+          "~\\citet{shi2023detecting}"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000032",
+        "paperId": "2abc0cc453862e282a8014b9c5772b59da098674",
+        "ref_index": "35",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Temporal Cutoff",
+          "Pretrain-Level",
+          "~\\citet{shi2023detecting}"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000033",
+        "paperId": "c47f0a5feb18b036004b5404ef78ac94a65fa489",
+        "ref_index": "12",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Temporal Cutoff",
+          "Masking-based",
+          "Book-Level"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000034",
+        "paperId": "af43203952a41fc52be2eb571e2f62ecf0007646",
+        "ref_index": "8",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Temporal Cutoff",
+          "Masking-based",
+          "Benchmark-Level"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000035",
+        "paperId": "af565483dfbe3b0fa4fe9f715170666a06bce5ac",
+        "ref_index": "14",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Temporal Cutoff",
+          "Masking-based",
+          "Benchmark-Level"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000036",
+        "paperId": "34c0ac6c012f524e30f083b81b148f65c41c221e",
+        "ref_index": "39",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Temporal Cutoff",
+          "Masking-based",
+          "Benchmark-Level"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000037",
+        "paperId": "71c9d2b995c19d43c519eb5ca9504ac790490398",
+        "ref_index": "3",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Temporal Cutoff",
+          "Perturbation-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000038",
+        "paperId": "54311e1b1250e87194bcaf4036bfefd8d5ce5acf",
+        "ref_index": "47",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Temporal Cutoff",
+          "Perturbation-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000039",
+        "paperId": "2837a485b5895efea2eb63a707db2196be1d4a2f",
+        "ref_index": "33",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Temporal Cutoff",
+          "Perturbation-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000040",
+        "paperId": "227b5f8206b64858edeef6723b96af14133077e3",
+        "ref_index": "40",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Temporal Cutoff",
+          "Perturbation-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000041",
+        "paperId": "c871377b208814713c18e25633866323a2982136",
+        "ref_index": "31",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Temporal Cutoff",
+          "Canonical Order"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000042",
+        "paperId": "9ad167529a6365e37825ddea5d29ab2f17651959",
+        "ref_index": "44",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Temporal Cutoff",
+          "Behavior Manipulation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000043",
+        "paperId": "1ea243f1b697aae22e6f0349fa64857780a6108a",
+        "ref_index": "17",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Temporal Cutoff",
+          "Behavior Manipulation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000044",
+        "paperId": "d6d0fd994f37b630f35945736b5e1bb198148404",
+        "ref_index": "20",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Temporal Cutoff",
+          "Behavior Manipulation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000045",
+        "paperId": "df7d26339adf4eb0c07160947b9d2973c24911ba",
+        "ref_index": "10",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Temporal Cutoff",
+          "Membership Inference Attacks"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000046",
+        "paperId": "54d7ae7cfee56b0e19fd42c45d365f760a41794d",
+        "ref_index": "11",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Temporal Cutoff",
+          "Membership Inference Attacks"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000047",
+        "paperId": "cb754310302086dfbbcd098263200e2a03f65874",
+        "ref_index": "28",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Temporal Cutoff",
+          "Membership Inference Attacks"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000048",
+        "paperId": "3422d5e0cdfdc935d6a84a1e3d3f96659265fe3a",
+        "ref_index": "36",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Temporal Cutoff",
+          "Membership Inference Attacks"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000049",
+        "paperId": "34c0ac6c012f524e30f083b81b148f65c41c221e",
+        "ref_index": "39",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Temporal Cutoff",
+          "Membership Inference Attacks"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000050",
+        "paperId": "b4a803ee85bf10f7b458324fb0998e77bdfdfb3c",
+        "ref_index": "41",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Temporal Cutoff",
+          "Membership Inference Attacks"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000051",
+        "paperId": "c8f216f663660ff3bc195ecd3a8ad61f0ed1d9d7",
+        "ref_index": "42",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Temporal Cutoff",
+          "Membership Inference Attacks"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000052",
+        "paperId": "1d7f414983eb847c4618489baa44e99b01162f98",
+        "ref_index": "45",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Mitigation",
+          "Evaluation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000053",
+        "paperId": "8106d03fb984afd8c3d066cd4f993eb2616a0da5",
+        "ref_index": "25",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Mitigation",
+          "Evaluation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000054",
+        "paperId": "c03493310626e5220a3fe92b654fc5d56645a975",
+        "ref_index": "52",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Mitigation",
+          "Evaluation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000055",
+        "paperId": "fc30093e9f55ae1c0a1d2c4c4e5341998adede66",
+        "ref_index": "1",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Mitigation",
+          "Guideline"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000056",
+        "paperId": "cd2f4aaf98bb1e020cff310000c8049d3460c54e",
+        "ref_index": "2",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Mitigation",
+          "Guideline"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.14644",
+        "arxiv_id": "2406.14644",
+        "leaf_mention_id": "2406.14644::000057",
+        "paperId": "84725855d10b531eb8cbe54935dda0440c2fc750",
+        "ref_index": "4",
+        "path": [
+          "Data Contamination",
+          "Detection",
+          "Mitigation",
+          "Guideline"
+        ],
+        "depth": 4,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 57,
+      "unique_leaf_paper_count": 53,
+      "multi_membership_extra_mentions": 4,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

@@ -1,0 +1,626 @@
+{
+  "paper_id": "2312.17044",
+  "arxiv_id": "2312.17044",
+  "title": "Length Extrapolation of Transformers: A Survey from the Perspective of Positional Encoding",
+  "ref_meta": [
+    {
+      "paper_id": "2312.17044",
+      "ref_index": "0",
+      "ref_key": "S2:f5afaccfe90268485a9961c5771ec5e71e9b806c",
+      "paperId": "f5afaccfe90268485a9961c5771ec5e71e9b806c",
+      "title": "Extending Context Window of Large Language Models via Positional Interpolation",
+      "year": 2023,
+      "abstract": "We present Position Interpolation (PI) that extends the context window sizes of RoPE-based pretrained LLMs such as LLaMA models to up to 32768 with minimal fine-tuning (within 1000 steps), while demonstrating strong empirical results on various tasks that require long context, including passkey retrieval, language modeling, and long document summarization from LLaMA 7B to 65B. Meanwhile, the extended model by Position Interpolation preserve quality relatively well on tasks within its original context window. To achieve this goal, Position Interpolation linearly down-scales the input position indices to match the original context window size, rather than extrapolating beyond the trained context length which may lead to catastrophically high attention scores that completely ruin the self-attention mechanism. Our theoretical study shows that the upper bound of interpolation is at least $\\sim 600 \\times$ smaller than that of extrapolation, further demonstrating its stability. Models extended via Position Interpolation retain its original architecture and can reuse most pre-existing optimization and infrastructure.",
+      "externalIds": {
+        "ArXiv": "2306.15595",
+        "DBLP": "journals/corr/abs-2306-15595",
+        "DOI": "10.48550/arXiv.2306.15595",
+        "CorpusId": 259262376
+      },
+      "arxiv_id": "2306.15595",
+      "doi": "10.48550/arXiv.2306.15595",
+      "corpus_id": 259262376
+    },
+    {
+      "paper_id": "2312.17044",
+      "ref_index": "1",
+      "ref_key": "S2:5735e49e501c8e51e9be4079592e46e047747b03",
+      "paperId": "5735e49e501c8e51e9be4079592e46e047747b03",
+      "title": "Dissecting Transformer Length Extrapolation via the Lens of Receptive Field Analysis",
+      "year": 2022,
+      "abstract": "Length extrapolation permits training a transformer language model on short sequences that preserves perplexities when tested on substantially longer sequences.A relative positional embedding design, ALiBi, has had the widest usage to date. We dissect ALiBi via the lens of receptive field analysis empowered by a novel cumulative normalized gradient tool. The concept of receptive field further allows us to modify the vanilla Sinusoidal positional embedding to create Sandwich, the first parameter-free relative positional embedding design that truly length information uses longer than the training sequence. Sandwich shares with KERPLE and T5 the same logarithmic decaying temporal bias pattern with learnable relative positional embeddings; these elucidate future extrapolatable positional embedding design.",
+      "externalIds": {
+        "ArXiv": "2212.10356",
+        "ACL": "2023.acl-long.756",
+        "DBLP": "conf/acl/ChiFRR23",
+        "DOI": "10.18653/v1/2023.acl-long.756",
+        "CorpusId": 258865166
+      },
+      "arxiv_id": "2212.10356",
+      "doi": "10.18653/v1/2023.acl-long.756",
+      "corpus_id": 258865166
+    },
+    {
+      "paper_id": "2312.17044",
+      "ref_index": "2",
+      "ref_key": "S2:d6c5aab433d9871cabc01ffb1e5e1ea89141155b",
+      "paperId": "d6c5aab433d9871cabc01ffb1e5e1ea89141155b",
+      "title": "KERPLE: Kernelized Relative Positional Embedding for Length Extrapolation",
+      "year": 2022,
+      "abstract": "Relative positional embeddings (RPE) have received considerable attention since RPEs effectively model the relative distance among tokens and enable length extrapolation. We propose KERPLE, a framework that generalizes relative position embedding for extrapolation by kernelizing positional differences. We achieve this goal using conditionally positive definite (CPD) kernels, a class of functions known for generalizing distance metrics. To maintain the inner product interpretation of self-attention, we show that a CPD kernel can be transformed into a PD kernel by adding a constant offset. This offset is implicitly absorbed in the Softmax normalization during self-attention. The diversity of CPD kernels allows us to derive various RPEs that enable length extrapolation in a principled way. Experiments demonstrate that the logarithmic variant achieves excellent extrapolation performance on three large language modeling datasets. Our implementation and pretrained checkpoints are released at~\\url{https://github.com/chijames/KERPLE.git}.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2205-09921",
+        "ArXiv": "2205.09921",
+        "DOI": "10.48550/arXiv.2205.09921",
+        "CorpusId": 248965309
+      },
+      "arxiv_id": "2205.09921",
+      "doi": "10.48550/arXiv.2205.09921",
+      "corpus_id": 248965309
+    },
+    {
+      "paper_id": "2312.17044",
+      "ref_index": "3",
+      "ref_key": "S2:64522a5b3476e9f201f6a5b3e312ef0005c562f1",
+      "paperId": "64522a5b3476e9f201f6a5b3e312ef0005c562f1",
+      "title": "SHAPE: Shifted Absolute Position Embedding for Transformers",
+      "year": 2021,
+      "abstract": "Position representation is crucial for building position-aware representations in Transformers. Existing position representations suffer from a lack of generalization to test data with unseen lengths or high computational cost. We investigate shifted absolute position embedding (SHAPE) to address both issues. The basic idea of SHAPE is to achieve shift invariance, which is a key property of recent successful position representations, by randomly shifting absolute positions during training. We demonstrate that SHAPE is empirically comparable to its counterpart while being simpler and faster.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2109-05644",
+        "ArXiv": "2109.05644",
+        "ACL": "2021.emnlp-main.266",
+        "DOI": "10.18653/v1/2021.emnlp-main.266",
+        "CorpusId": 237491629
+      },
+      "arxiv_id": "2109.05644",
+      "doi": "10.18653/v1/2021.emnlp-main.266",
+      "corpus_id": 237491629
+    },
+    {
+      "paper_id": "2312.17044",
+      "ref_index": "4",
+      "ref_key": "S2:dc48bc1a4d81e0f37603013fd2a95644dc233bd0",
+      "paperId": "dc48bc1a4d81e0f37603013fd2a95644dc233bd0",
+      "title": "Functional Interpolation for Relative Positions Improves Long Context Transformers",
+      "year": 2024,
+      "abstract": "Preventing the performance decay of Transformers on inputs longer than those used for training has been an important challenge in extending the context length of these models. Though the Transformer architecture has fundamentally no limits on the input sequence lengths it can process, the choice of position encoding used during training can limit the performance of these models on longer inputs. We propose a novel functional relative position encoding with progressive interpolation, FIRE, to improve Transformer generalization to longer contexts. We theoretically prove that this can represent some of the popular relative position encodings, such as T5’s RPE, Alibi, and Kerple. We next empirically show that FIRE models have better generalization to longer contexts on both zero-shot language modeling and long text benchmarks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-04418",
+        "DOI": "10.48550/arXiv.2310.04418",
+        "CorpusId": 263829377
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2310.04418",
+      "corpus_id": 263829377
+    },
+    {
+      "paper_id": "2312.17044",
+      "ref_index": "5",
+      "ref_key": "S2:7509c66a666e2e3f14bc8676b969b945ee6e136f",
+      "paperId": "7509c66a666e2e3f14bc8676b969b945ee6e136f",
+      "title": "CAPE: Encoding Relative Positions with Continuous Augmented Positional Embeddings",
+      "year": 2021,
+      "abstract": "Without positional information, attention-based Transformer neural networks are permutation-invariant. Absolute or relative positional embeddings are the most popular ways to feed Transformer models with positional information. Absolute positional embeddings are simple to implement, but suffer from generalization issues when evaluating on sequences longer than seen at training time. Relative positions are more robust to input length change, but are more complex to implement and yield inferior model throughput due to extra computational and memory costs. In this paper, we propose an augmentation-based approach (CAPE) for absolute positional embeddings, which keeps the advantages of both absolute (simplicity and speed) and relative positional embeddings (better generalization). In addition, our empirical evaluation on state-of-the-art models in machine translation, image and speech recognition demonstrates that CAPE leads to better generalization performance as well as increased stability with respect to training hyper-parameters.",
+      "externalIds": {
+        "DBLP": "conf/nips/LikhomanenkoXSC21",
+        "ArXiv": "2106.03143",
+        "CorpusId": 235358538
+      },
+      "arxiv_id": "2106.03143",
+      "doi": null,
+      "corpus_id": 235358538
+    },
+    {
+      "paper_id": "2312.17044",
+      "ref_index": "6",
+      "ref_key": "S2:e8984c6e6c24aab26c332728a5fff616dfb3adbb",
+      "paperId": "e8984c6e6c24aab26c332728a5fff616dfb3adbb",
+      "title": "Learning to Encode Position for Transformer with Continuous Dynamical Model",
+      "year": 2020,
+      "abstract": "We introduce a new way of learning to encode position information for non-recurrent models, such as Transformer models. Unlike RNN and LSTM, which contain inductive bias by loading the input tokens sequentially, non-recurrent models are less sensitive to position. The main reason is that position information among input units is not inherently encoded, i.e., the models are permutation equivalent; this problem justifies why all of the existing models are accompanied by a sinusoidal encoding/embedding layer at the input. However, this solution has clear limitations: the sinusoidal encoding is not flexible enough as it is manually designed and does not contain any learnable parameters, whereas the position embedding restricts the maximum length of input sequences. It is thus desirable to design a new position layer that contains learnable parameters to adjust to different datasets and different architectures. At the same time, we would also like the encodings to extrapolate in accordance with the variable length of inputs. In our proposed solution, we borrow from the recent Neural ODE approach, which may be viewed as a versatile continuous version of a ResNet. This model is capable of modeling many kinds of dynamical systems. We model the evolution of encoded results along position index by such a dynamical system, thereby overcoming the above limitations of existing methods. We evaluate our new position layers on a variety of neural machine translation and language understanding tasks, the experimental results show consistent improvements over the baselines.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2003-09229",
+        "ArXiv": "2003.09229",
+        "MAG": "3035206215",
+        "CorpusId": 214605593
+      },
+      "arxiv_id": "2003.09229",
+      "doi": null,
+      "corpus_id": 214605593
+    },
+    {
+      "paper_id": "2312.17044",
+      "ref_index": "7",
+      "ref_key": "S2:2dfb9171e180dcb0af23d305e024d43d311708ab",
+      "paperId": "2dfb9171e180dcb0af23d305e024d43d311708ab",
+      "title": "Giraffe: Adventures in Expanding Context Lengths in LLMs",
+      "year": 2023,
+      "abstract": "Modern large language models (LLMs) that rely on attention mechanisms are typically trained with fixed context lengths which enforce upper limits on the length of input sequences that they can handle at evaluation time. To use these models on sequences longer than the train-time context length, one might employ techniques from the growing family of context length extrapolation methods -- most of which focus on modifying the system of positional encodings used in the attention mechanism to indicate where tokens or activations are located in the input sequence. We conduct a wide survey of existing methods of context length extrapolation on a base LLaMA or LLaMA 2 model, and introduce some of our own design as well -- in particular, a new truncation strategy for modifying the basis for the position encoding. We test these methods using three new evaluation tasks (FreeFormQA, AlteredNumericQA, and LongChat-Lines) as well as perplexity, which we find to be less fine-grained as a measure of long context performance of LLMs. We release the three tasks publicly as datasets on HuggingFace. We discover that linear scaling is the best method for extending context length, and show that further gains can be achieved by using longer scales at evaluation time. We also discover promising extrapolation capabilities in the truncated basis. To support further research in this area, we release three new 13B parameter long-context models which we call Giraffe: 4k and 16k context models trained from base LLaMA-13B, and a 32k context model trained from base LLaMA2-13B. We also release the code to replicate our results.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-10882",
+        "ArXiv": "2308.10882",
+        "DOI": "10.48550/arXiv.2308.10882",
+        "CorpusId": 261048876
+      },
+      "arxiv_id": "2308.10882",
+      "doi": "10.48550/arXiv.2308.10882",
+      "corpus_id": 261048876
+    },
+    {
+      "paper_id": "2312.17044",
+      "ref_index": "8",
+      "ref_key": "S2:9ca329408813d209b1dcb36936f7f9cba82506bd",
+      "paperId": "9ca329408813d209b1dcb36936f7f9cba82506bd",
+      "title": "Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation",
+      "year": 2021,
+      "abstract": "Since the introduction of the transformer model by Vaswani et al. (2017), a fundamental question has yet to be answered: how does a model achieve extrapolation at inference time for sequences that are longer than it saw during training? We first show that extrapolation can be enabled by simply changing the position representation method, though we find that current methods do not allow for efficient extrapolation. We therefore introduce a simpler and more efficient position method, Attention with Linear Biases (ALiBi). ALiBi does not add positional embeddings to word embeddings; instead, it biases query-key attention scores with a penalty that is proportional to their distance. We show that this method trains a 1.3 billion parameter model on input sequences of length 1024 that extrapolates to input sequences of length 2048, achieving the same perplexity as a sinusoidal position embedding model trained on inputs of length 2048 but training 11% faster and using 11% less memory. ALiBi's inductive bias towards recency also leads it to outperform multiple strong position methods on the WikiText-103 benchmark.",
+      "externalIds": {
+        "ArXiv": "2108.12409",
+        "DBLP": "journals/corr/abs-2108-12409",
+        "CorpusId": 237347130
+      },
+      "arxiv_id": "2108.12409",
+      "doi": null,
+      "corpus_id": 237347130
+    },
+    {
+      "paper_id": "2312.17044",
+      "ref_index": "9",
+      "ref_key": "S2:6c4b76232bb72897685d19b3d264c6ee3005bc2b",
+      "paperId": "6c4b76232bb72897685d19b3d264c6ee3005bc2b",
+      "title": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "year": 2019,
+      "abstract": "Transfer learning, where a model is first pre-trained on a data-rich task before being fine-tuned on a downstream task, has emerged as a powerful technique in natural language processing (NLP). The effectiveness of transfer learning has given rise to a diversity of approaches, methodology, and practice. In this paper, we explore the landscape of transfer learning techniques for NLP by introducing a unified framework that converts every language problem into a text-to-text format. Our systematic study compares pre-training objectives, architectures, unlabeled datasets, transfer approaches, and other factors on dozens of language understanding tasks. By combining the insights from our exploration with scale and our new \"Colossal Clean Crawled Corpus\", we achieve state-of-the-art results on many benchmarks covering summarization, question answering, text classification, and more. To facilitate future work on transfer learning for NLP, we release our dataset, pre-trained models, and code.",
+      "externalIds": {
+        "MAG": "2981852735",
+        "DBLP": "journals/corr/abs-1910-10683",
+        "ArXiv": "1910.10683",
+        "CorpusId": 204838007
+      },
+      "arxiv_id": "1910.10683",
+      "doi": null,
+      "corpus_id": 204838007
+    },
+    {
+      "paper_id": "2312.17044",
+      "ref_index": "10",
+      "ref_key": "S2:af385c0fdd0eda2bbf429bea6fedffc327c8a180",
+      "paperId": "af385c0fdd0eda2bbf429bea6fedffc327c8a180",
+      "title": "Randomized Positional Encodings Boost Length Generalization of Transformers",
+      "year": 2023,
+      "abstract": "Transformers have impressive generalization capabilities on tasks with a fixed context length. However, they fail to generalize to sequences of arbitrary length, even for seemingly simple tasks such as duplicating a string. Moreover, simply training on longer sequences is inefficient due to the quadratic computation complexity of the global attention mechanism. In this work, we demonstrate that this failure mode is linked to positional encodings being out-of-distribution for longer sequences (even for relative encodings) and introduce a novel family of positional encodings that can overcome this problem. Concretely, our randomized positional encoding scheme simulates the positions of longer sequences and randomly selects an ordered subset to fit the sequence’s length. Our large-scale empirical evaluation of 6000 models across 15 algorithmic reasoning tasks shows that our method allows Transformers to generalize to sequences of unseen length (increasing test accuracy by 12.0% on average).",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-16843",
+        "ArXiv": "2305.16843",
+        "ACL": "2023.acl-short.161",
+        "DOI": "10.48550/arXiv.2305.16843",
+        "CorpusId": 258947457
+      },
+      "arxiv_id": "2305.16843",
+      "doi": "10.48550/arXiv.2305.16843",
+      "corpus_id": 258947457
+    },
+    {
+      "paper_id": "2312.17044",
+      "ref_index": "11",
+      "ref_key": "S2:c8efcc854d97dfc2a42b83316a2109f9d166e43f",
+      "paperId": "c8efcc854d97dfc2a42b83316a2109f9d166e43f",
+      "title": "Self-Attention with Relative Position Representations",
+      "year": 2018,
+      "abstract": "Relying entirely on an attention mechanism, the Transformer introduced by Vaswani et al. (2017) achieves state-of-the-art results for machine translation. In contrast to recurrent and convolutional neural networks, it does not explicitly model relative or absolute position information in its structure. Instead, it requires adding representations of absolute positions to its inputs. In this work we present an alternative approach, extending the self-attention mechanism to efficiently consider representations of the relative positions, or distances between sequence elements. On the WMT 2014 English-to-German and English-to-French translation tasks, this approach yields improvements of 1.3 BLEU and 0.3 BLEU over absolute position representations, respectively. Notably, we observe that combining relative and absolute position representations yields no further improvement in translation quality. We describe an efficient implementation of our method and cast it as an instance of relation-aware self-attention mechanisms that can generalize to arbitrary graph-labeled inputs.",
+      "externalIds": {
+        "MAG": "2963925437",
+        "DBLP": "journals/corr/abs-1803-02155",
+        "ACL": "N18-2074",
+        "ArXiv": "1803.02155",
+        "DOI": "10.18653/v1/N18-2074",
+        "CorpusId": 3725815
+      },
+      "arxiv_id": "1803.02155",
+      "doi": "10.18653/v1/N18-2074",
+      "corpus_id": 3725815
+    },
+    {
+      "paper_id": "2312.17044",
+      "ref_index": "12",
+      "ref_key": "S2:66c10bf1f11bc1b2d92204d8f8391d087f6de1c4",
+      "paperId": "66c10bf1f11bc1b2d92204d8f8391d087f6de1c4",
+      "title": "RoFormer: Enhanced Transformer with Rotary Position Embedding",
+      "year": 2021,
+      "abstract": "Position encoding recently has shown effective in the transformer\narchitecture. It enables valuable supervision for dependency modeling between\nelements at different positions of the sequence. In this paper, we first\ninvestigate various methods to integrate positional information into the\nlearning process of transformer-based language models. Then, we propose a novel\nmethod named Rotary Position Embedding(RoPE) to effectively leverage the\npositional information. Specifically, the proposed RoPE encodes the absolute\nposition with a rotation matrix and meanwhile incorporates the explicit\nrelative position dependency in self-attention formulation. Notably, RoPE\nenables valuable properties, including the flexibility of sequence length,\ndecaying inter-token dependency with increasing relative distances, and the\ncapability of equipping the linear self-attention with relative position\nencoding. Finally, we evaluate the enhanced transformer with rotary position\nembedding, also called RoFormer, on various long text classification benchmark\ndatasets. Our experiments show that it consistently overcomes its alternatives.\nFurthermore, we provide a theoretical analysis to explain some experimental\nresults. RoFormer is already integrated into Huggingface:\n\\url{https://huggingface.co/docs/transformers/model_doc/roformer}.",
+      "externalIds": {
+        "DBLP": "journals/ijon/SuALPBL24",
+        "ArXiv": "2104.09864",
+        "DOI": "10.1016/j.neucom.2023.127063",
+        "CorpusId": 233307138
+      },
+      "arxiv_id": "2104.09864",
+      "doi": "10.1016/j.neucom.2023.127063",
+      "corpus_id": 233307138
+    },
+    {
+      "paper_id": "2312.17044",
+      "ref_index": "13",
+      "ref_key": "S2:9575afb5702bc33d7df14c48feeee5901ea00369",
+      "paperId": "9575afb5702bc33d7df14c48feeee5901ea00369",
+      "title": "A Length-Extrapolatable Transformer",
+      "year": 2022,
+      "abstract": "Position modeling plays a critical role in Transformers. In this paper, we focus on length extrapolation, i.e., training on short texts while evaluating longer sequences. We define attention resolution as an indicator of extrapolation. Then we propose two designs to improve the above metric of Transformers. Specifically, we introduce a relative position embedding to explicitly maximize attention resolution. Moreover, we use blockwise causal attention during inference for better resolution. We evaluate different Transformer variants with language modeling. Experimental results show that our model achieves strong performance in both interpolation and extrapolation settings. The code will be available at https://aka.ms/LeX-Transformer.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2212-10554",
+        "ArXiv": "2212.10554",
+        "ACL": "2023.acl-long.816",
+        "DOI": "10.48550/arXiv.2212.10554",
+        "CorpusId": 254877252
+      },
+      "arxiv_id": "2212.10554",
+      "doi": "10.48550/arXiv.2212.10554",
+      "corpus_id": 254877252
+    },
+    {
+      "paper_id": "2312.17044",
+      "ref_index": "14",
+      "ref_key": "S2:204e3073870fae3d05bcbc2f6a8e263d9b72e776",
+      "paperId": "204e3073870fae3d05bcbc2f6a8e263d9b72e776",
+      "title": "Attention is All you Need",
+      "year": 2017,
+      "abstract": "The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.",
+      "externalIds": {
+        "MAG": "2963403868",
+        "DBLP": "journals/corr/VaswaniSPUJGKP17",
+        "ArXiv": "1706.03762",
+        "CorpusId": 13756489
+      },
+      "arxiv_id": "1706.03762",
+      "doi": null,
+      "corpus_id": 13756489
+    },
+    {
+      "paper_id": "2312.17044",
+      "ref_index": "15",
+      "ref_key": "S2:d0e28f5dc1feae19e41087a92a87992977fd85af",
+      "paperId": "d0e28f5dc1feae19e41087a92a87992977fd85af",
+      "title": "Encoding word order in complex embeddings",
+      "year": 2019,
+      "abstract": "Sequential word order is important when processing text. Currently, neural networks (NNs) address this by modeling word position using position embeddings. The problem is that position embeddings capture the position of individual words, but not the ordered relationship (e.g., adjacency or precedence) between individual word positions. We present a novel and principled solution for modeling both the global absolute positions of words and their order relationships. Our solution generalizes word embeddings, previously defined as independent vectors, to continuous word functions over a variable (position). The benefit of continuous functions over variable positions is that word representations shift smoothly with increasing positions. Hence, word representations in different positions can correlate with each other in a continuous function. The general solution of these functions can be extended to complex-valued variants. We extend CNN, RNN and Transformer NNs to complex-valued versions to incorporate our complex embedding (we make all code available). Experiments on text classification, machine translation and language modeling show gains over both classical word embeddings and position-enriched word embeddings. To our knowledge, this is the first work in NLP to link imaginary numbers in complex-valued representations to concrete meanings (i.e., word order).",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1912-12333",
+        "ArXiv": "1912.12333",
+        "MAG": "2997175890",
+        "CorpusId": 209516262
+      },
+      "arxiv_id": "1912.12333",
+      "doi": null,
+      "corpus_id": 209516262
+    },
+    {
+      "paper_id": "2312.17044",
+      "ref_index": "16",
+      "ref_key": "S2:d8e7bad2681ce70277c900c77a22181d4b03d705",
+      "paperId": "d8e7bad2681ce70277c900c77a22181d4b03d705",
+      "title": "The Case for Translation-Invariant Self-Attention in Transformer-Based Language Models",
+      "year": 2021,
+      "abstract": "Mechanisms for encoding positional information are central for transformer-based language models. In this paper, we analyze the position embeddings of existing language models, finding strong evidence of translation invariance, both for the embeddings themselves and for their effect on self-attention. The degree of translation invariance increases during training and correlates positively with model performance. Our findings lead us to propose translation-invariant self-attention (TISA), which accounts for the relative position between tokens in an interpretable fashion without needing conventional position embeddings. Our proposal has several theoretical advantages over existing position-representation approaches. Proof-of-concept experiments show that it improves on regular ALBERT on GLUE tasks, while only adding orders of magnitude less positional parameters.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2106-01950",
+        "ArXiv": "2106.01950",
+        "ACL": "2021.acl-short.18",
+        "DOI": "10.18653/v1/2021.acl-short.18",
+        "CorpusId": 235313860
+      },
+      "arxiv_id": "2106.01950",
+      "doi": "10.18653/v1/2021.acl-short.18",
+      "corpus_id": 235313860
+    },
+    {
+      "paper_id": "2312.17044",
+      "ref_index": "17",
+      "ref_key": "S2:73290ecbec2f38d1d647ddef1ada69cee41725b3",
+      "paperId": "73290ecbec2f38d1d647ddef1ada69cee41725b3",
+      "title": "PoSE: Efficient Context Window Extension of LLMs via Positional Skip-wise Training",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) are trained with a pre-defined context length, restricting their use in scenarios requiring long inputs. Previous efforts for adapting LLMs to a longer length usually requires fine-tuning with this target length (Full-length fine-tuning), suffering intensive training cost. To decouple train length from target length for efficient context window extension, we propose Positional Skip-wisE (PoSE) training that smartly simulates long inputs using a fixed context window. This is achieved by first dividing the original context window into several chunks, then designing distinct skipping bias terms to manipulate the position indices of each chunk. These bias terms and the lengths of each chunk are altered for every training example, allowing the model to adapt to all positions within target length. Experimental results show that PoSE greatly reduces memory and time overhead compared with Full-length fine-tuning, with minimal impact on performance. Leveraging this advantage, we have successfully extended the LLaMA model to 128k tokens using a 2k training context window. Furthermore, we empirically confirm that PoSE is compatible with all RoPE-based LLMs and position interpolation strategies. Notably, our method can potentially support infinite length, limited only by memory usage in inference. With ongoing progress for efficient inference, we believe PoSE can further scale the context window beyond 128k.",
+      "externalIds": {
+        "DBLP": "conf/iclr/Zhu00SWWL24",
+        "ArXiv": "2309.10400",
+        "DOI": "10.48550/arXiv.2309.10400",
+        "CorpusId": 262053659
+      },
+      "arxiv_id": "2309.10400",
+      "doi": "10.48550/arXiv.2309.10400",
+      "corpus_id": 262053659
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "\\rotatebox{90}{\\textbf{Length Extrapolation}}": {
+        "\\textbf{Extrapolatable PEs} ": {
+          "\\textbf{APEs}~\\citep{vaswani_attention_2017} ": {
+            "\\textbf{Integrating}  \\textbf{Shift Invariance} ": {
+              "64522a5b3476e9f201f6a5b3e312ef0005c562f1": {},
+              "7509c66a666e2e3f14bc8676b969b945ee6e136f": {}
+            },
+            "\\textbf{Enhancing Smoothness} ": {
+              "e8984c6e6c24aab26c332728a5fff616dfb3adbb": {},
+              "d0e28f5dc1feae19e41087a92a87992977fd85af": {}
+            }
+          },
+          "\\textbf{RPEs}~\\citep{shaw_self-attention_2018} ": {
+            "\\textbf{RoPE Family} ": {
+              "66c10bf1f11bc1b2d92204d8f8391d087f6de1c4": {},
+              "9575afb5702bc33d7df14c48feeee5901ea00369": {}
+            },
+            "\\textbf{T5-bias Family} ": {
+              "5735e49e501c8e51e9be4079592e46e047747b03": {},
+              "d6c5aab433d9871cabc01ffb1e5e1ea89141155b": {},
+              "dc48bc1a4d81e0f37603013fd2a95644dc233bd0": {},
+              "9ca329408813d209b1dcb36936f7f9cba82506bd": {},
+              "6c4b76232bb72897685d19b3d264c6ee3005bc2b": {},
+              "d8e7bad2681ce70277c900c77a22181d4b03d705": {}
+            }
+          }
+        },
+        "\\textbf{PE-based Methods} ": {
+          "\\textbf{Position Interpolation} ": {
+            "f5afaccfe90268485a9961c5771ec5e71e9b806c": {},
+            "2dfb9171e180dcb0af23d305e024d43d311708ab": {}
+          },
+          "\\textbf{Randomized PE} ": {
+            "af385c0fdd0eda2bbf429bea6fedffc327c8a180": {},
+            "73290ecbec2f38d1d647ddef1ada69cee41725b3": {}
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2312.17044",
+        "arxiv_id": "2312.17044",
+        "leaf_mention_id": "2312.17044::000001",
+        "paperId": "64522a5b3476e9f201f6a5b3e312ef0005c562f1",
+        "ref_index": "3",
+        "path": [
+          "\\rotatebox{90}{\\textbf{Length Extrapolation}}",
+          "\\textbf{Extrapolatable PEs} ",
+          "\\textbf{APEs}~\\citep{vaswani_attention_2017} ",
+          "\\textbf{Integrating}  \\textbf{Shift Invariance} "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2312.17044",
+        "arxiv_id": "2312.17044",
+        "leaf_mention_id": "2312.17044::000002",
+        "paperId": "7509c66a666e2e3f14bc8676b969b945ee6e136f",
+        "ref_index": "5",
+        "path": [
+          "\\rotatebox{90}{\\textbf{Length Extrapolation}}",
+          "\\textbf{Extrapolatable PEs} ",
+          "\\textbf{APEs}~\\citep{vaswani_attention_2017} ",
+          "\\textbf{Integrating}  \\textbf{Shift Invariance} "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2312.17044",
+        "arxiv_id": "2312.17044",
+        "leaf_mention_id": "2312.17044::000003",
+        "paperId": "e8984c6e6c24aab26c332728a5fff616dfb3adbb",
+        "ref_index": "6",
+        "path": [
+          "\\rotatebox{90}{\\textbf{Length Extrapolation}}",
+          "\\textbf{Extrapolatable PEs} ",
+          "\\textbf{APEs}~\\citep{vaswani_attention_2017} ",
+          "\\textbf{Enhancing Smoothness} "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2312.17044",
+        "arxiv_id": "2312.17044",
+        "leaf_mention_id": "2312.17044::000004",
+        "paperId": "d0e28f5dc1feae19e41087a92a87992977fd85af",
+        "ref_index": "15",
+        "path": [
+          "\\rotatebox{90}{\\textbf{Length Extrapolation}}",
+          "\\textbf{Extrapolatable PEs} ",
+          "\\textbf{APEs}~\\citep{vaswani_attention_2017} ",
+          "\\textbf{Enhancing Smoothness} "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2312.17044",
+        "arxiv_id": "2312.17044",
+        "leaf_mention_id": "2312.17044::000005",
+        "paperId": "66c10bf1f11bc1b2d92204d8f8391d087f6de1c4",
+        "ref_index": "12",
+        "path": [
+          "\\rotatebox{90}{\\textbf{Length Extrapolation}}",
+          "\\textbf{Extrapolatable PEs} ",
+          "\\textbf{RPEs}~\\citep{shaw_self-attention_2018} ",
+          "\\textbf{RoPE Family} "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2312.17044",
+        "arxiv_id": "2312.17044",
+        "leaf_mention_id": "2312.17044::000006",
+        "paperId": "9575afb5702bc33d7df14c48feeee5901ea00369",
+        "ref_index": "13",
+        "path": [
+          "\\rotatebox{90}{\\textbf{Length Extrapolation}}",
+          "\\textbf{Extrapolatable PEs} ",
+          "\\textbf{RPEs}~\\citep{shaw_self-attention_2018} ",
+          "\\textbf{RoPE Family} "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2312.17044",
+        "arxiv_id": "2312.17044",
+        "leaf_mention_id": "2312.17044::000007",
+        "paperId": "5735e49e501c8e51e9be4079592e46e047747b03",
+        "ref_index": "1",
+        "path": [
+          "\\rotatebox{90}{\\textbf{Length Extrapolation}}",
+          "\\textbf{Extrapolatable PEs} ",
+          "\\textbf{RPEs}~\\citep{shaw_self-attention_2018} ",
+          "\\textbf{T5-bias Family} "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2312.17044",
+        "arxiv_id": "2312.17044",
+        "leaf_mention_id": "2312.17044::000008",
+        "paperId": "d6c5aab433d9871cabc01ffb1e5e1ea89141155b",
+        "ref_index": "2",
+        "path": [
+          "\\rotatebox{90}{\\textbf{Length Extrapolation}}",
+          "\\textbf{Extrapolatable PEs} ",
+          "\\textbf{RPEs}~\\citep{shaw_self-attention_2018} ",
+          "\\textbf{T5-bias Family} "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2312.17044",
+        "arxiv_id": "2312.17044",
+        "leaf_mention_id": "2312.17044::000009",
+        "paperId": "dc48bc1a4d81e0f37603013fd2a95644dc233bd0",
+        "ref_index": "4",
+        "path": [
+          "\\rotatebox{90}{\\textbf{Length Extrapolation}}",
+          "\\textbf{Extrapolatable PEs} ",
+          "\\textbf{RPEs}~\\citep{shaw_self-attention_2018} ",
+          "\\textbf{T5-bias Family} "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2312.17044",
+        "arxiv_id": "2312.17044",
+        "leaf_mention_id": "2312.17044::000010",
+        "paperId": "9ca329408813d209b1dcb36936f7f9cba82506bd",
+        "ref_index": "8",
+        "path": [
+          "\\rotatebox{90}{\\textbf{Length Extrapolation}}",
+          "\\textbf{Extrapolatable PEs} ",
+          "\\textbf{RPEs}~\\citep{shaw_self-attention_2018} ",
+          "\\textbf{T5-bias Family} "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2312.17044",
+        "arxiv_id": "2312.17044",
+        "leaf_mention_id": "2312.17044::000011",
+        "paperId": "6c4b76232bb72897685d19b3d264c6ee3005bc2b",
+        "ref_index": "9",
+        "path": [
+          "\\rotatebox{90}{\\textbf{Length Extrapolation}}",
+          "\\textbf{Extrapolatable PEs} ",
+          "\\textbf{RPEs}~\\citep{shaw_self-attention_2018} ",
+          "\\textbf{T5-bias Family} "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2312.17044",
+        "arxiv_id": "2312.17044",
+        "leaf_mention_id": "2312.17044::000012",
+        "paperId": "d8e7bad2681ce70277c900c77a22181d4b03d705",
+        "ref_index": "16",
+        "path": [
+          "\\rotatebox{90}{\\textbf{Length Extrapolation}}",
+          "\\textbf{Extrapolatable PEs} ",
+          "\\textbf{RPEs}~\\citep{shaw_self-attention_2018} ",
+          "\\textbf{T5-bias Family} "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2312.17044",
+        "arxiv_id": "2312.17044",
+        "leaf_mention_id": "2312.17044::000013",
+        "paperId": "f5afaccfe90268485a9961c5771ec5e71e9b806c",
+        "ref_index": "0",
+        "path": [
+          "\\rotatebox{90}{\\textbf{Length Extrapolation}}",
+          "\\textbf{PE-based Methods} ",
+          "\\textbf{Position Interpolation} "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2312.17044",
+        "arxiv_id": "2312.17044",
+        "leaf_mention_id": "2312.17044::000014",
+        "paperId": "2dfb9171e180dcb0af23d305e024d43d311708ab",
+        "ref_index": "7",
+        "path": [
+          "\\rotatebox{90}{\\textbf{Length Extrapolation}}",
+          "\\textbf{PE-based Methods} ",
+          "\\textbf{Position Interpolation} "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2312.17044",
+        "arxiv_id": "2312.17044",
+        "leaf_mention_id": "2312.17044::000015",
+        "paperId": "af385c0fdd0eda2bbf429bea6fedffc327c8a180",
+        "ref_index": "10",
+        "path": [
+          "\\rotatebox{90}{\\textbf{Length Extrapolation}}",
+          "\\textbf{PE-based Methods} ",
+          "\\textbf{Randomized PE} "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2312.17044",
+        "arxiv_id": "2312.17044",
+        "leaf_mention_id": "2312.17044::000016",
+        "paperId": "73290ecbec2f38d1d647ddef1ada69cee41725b3",
+        "ref_index": "17",
+        "path": [
+          "\\rotatebox{90}{\\textbf{Length Extrapolation}}",
+          "\\textbf{PE-based Methods} ",
+          "\\textbf{Randomized PE} "
+        ],
+        "depth": 3,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 16,
+      "unique_leaf_paper_count": 16,
+      "multi_membership_extra_mentions": 0,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

@@ -1,0 +1,2556 @@
+{
+  "paper_id": "2406.08426",
+  "arxiv_id": "2406.08426",
+  "title": "Next-Generation Database Interfaces: A Survey of LLM-based Text-to-SQL",
+  "ref_meta": [
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "0",
+      "ref_key": "S2:2d765d953efd738034782f9afdb311e3ba015edd",
+      "paperId": "2d765d953efd738034782f9afdb311e3ba015edd",
+      "title": "How to Prompt LLMs for Text-to-SQL: A Study in Zero-shot, Single-domain, and Cross-domain Settings",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) with in-context learning have demonstrated remarkable capability in the text-to-SQL task. Previous research has prompted LLMs with various demonstration-retrieval strategies and intermediate reasoning steps to enhance the performance of LLMs. However, those works often employ varied strategies when constructing the prompt text for text-to-SQL inputs, such as databases and demonstration examples. This leads to a lack of comparability in both the prompt constructions and their primary contributions. Furthermore, selecting an effective prompt construction has emerged as a persistent problem for future research. To address this limitation, we comprehensively investigate the impact of prompt constructions across various settings and provide insights into prompt constructions for future text-to-SQL studies.",
+      "externalIds": {
+        "ArXiv": "2305.11853",
+        "DBLP": "journals/corr/abs-2305-11853",
+        "DOI": "10.48550/arXiv.2305.11853",
+        "CorpusId": 258823166
+      },
+      "arxiv_id": "2305.11853",
+      "doi": "10.48550/arXiv.2305.11853",
+      "corpus_id": 258823166
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "1",
+      "ref_key": "S2:6cfcdf82ee19afb9cb5cfa9452d195bd03e3c3be",
+      "paperId": "6cfcdf82ee19afb9cb5cfa9452d195bd03e3c3be",
+      "title": "Selective Demonstrations for Cross-domain Text-to-SQL",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) with in-context learning have demonstrated impressive generalization capabilities in the cross-domain text-to-SQL task, without the use of in-domain annotations. However, incorporating in-domain demonstration examples has been found to greatly enhance LLMs' performance. In this paper, we delve into the key factors within in-domain examples that contribute to the improvement and explore whether we can harness these benefits without relying on in-domain annotations. Based on our findings, we propose a demonstration selection framework ODIS which utilizes both out-of-domain examples and synthetically generated in-domain examples to construct demonstrations. By retrieving demonstrations from hybrid sources, ODIS leverages the advantages of both, showcasing its effectiveness compared to baseline methods that rely on a single data source. Furthermore, ODIS outperforms state-of-the-art approaches on two cross-domain text-to-SQL datasets, with improvements of 1.1 and 11.8 points in execution accuracy, respectively.",
+      "externalIds": {
+        "ArXiv": "2310.06302",
+        "DBLP": "journals/corr/abs-2310-06302",
+        "DOI": "10.48550/arXiv.2310.06302",
+        "CorpusId": 263831176
+      },
+      "arxiv_id": "2310.06302",
+      "doi": "10.48550/arXiv.2310.06302",
+      "corpus_id": 263831176
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "2",
+      "ref_key": "S2:9e3c493fb09dcd61bb05e8c5659f23327b7b6340",
+      "paperId": "9e3c493fb09dcd61bb05e8c5659f23327b7b6340",
+      "title": "Teaching Large Language Models to Self-Debug",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have achieved impressive performance on code generation. However, for complex programming tasks, generating the correct solution in one go becomes challenging, thus some prior works have designed program repair approaches to improve code generation performance. In this work, we propose Self-Debugging, which teaches a large language model to debug its predicted program via few-shot demonstrations. In particular, we demonstrate that Self-Debugging can teach the large language model to perform rubber duck debugging; i.e., without any human feedback on the code correctness or error messages, the model is able to identify its mistakes by investigating the execution results and explaining the generated code in natural language. Self-Debugging achieves the state-of-the-art performance on several code generation benchmarks, including the Spider dataset for text-to-SQL generation, TransCoder for C++-to-Python translation, and MBPP for text-to-Python generation. On the Spider benchmark where there are no unit tests to verify the correctness of predictions, Self-Debugging with code explanation consistently improves the baseline by 2-3%, and improves the prediction accuracy on problems of the hardest level by 9%. On TransCoder and MBPP where unit tests are available, Self-Debugging improves the baseline accuracy by up to 12%. Meanwhile, by leveraging feedback messages and reusing failed predictions, Self-Debugging notably improves sample efficiency, and can match or outperform baseline models that generate more than 10x candidate programs.",
+      "externalIds": {
+        "ArXiv": "2304.05128",
+        "DBLP": "journals/corr/abs-2304-05128",
+        "DOI": "10.48550/arXiv.2304.05128",
+        "CorpusId": 258059885
+      },
+      "arxiv_id": "2304.05128",
+      "doi": "10.48550/arXiv.2304.05128",
+      "corpus_id": 258059885
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "3",
+      "ref_key": "S2:3ff5f99c7924b4b28669f09ce3bfbf26fd92abc1",
+      "paperId": "3ff5f99c7924b4b28669f09ce3bfbf26fd92abc1",
+      "title": "Structure-Grounded Pretraining for Text-to-SQL",
+      "year": 2020,
+      "abstract": "Learning to capture text-table alignment is essential for tasks like text-to-SQL. A model needs to correctly recognize natural language references to columns and values and to ground them in the given database schema. In this paper, we present a novel weakly supervised Structure-Grounded pretraining framework (STRUG) for text-to-SQL that can effectively learn to capture text-table alignment based on a parallel text-table corpus. We identify a set of novel pretraining tasks: column grounding, value grounding and column-value mapping, and leverage them to pretrain a text-table encoder. Additionally, to evaluate different methods under more realistic text-table alignment settings, we create a new evaluation set Spider-Realistic based on Spider dev set with explicit mentions of column names removed, and adopt eight existing text-to-SQL datasets for cross-database evaluation. STRUG brings significant improvement over BERTLARGE in all settings. Compared with existing pretraining methods such as GRAPPA, STRUG achieves similar performance on Spider, and outperforms all baselines on more realistic sets. All the code and data used in this work will be open-sourced to facilitate future research.",
+      "externalIds": {
+        "ArXiv": "2010.12773",
+        "ACL": "2021.naacl-main.105",
+        "DBLP": "journals/corr/abs-2010-12773",
+        "MAG": "3093819145",
+        "DOI": "10.18653/v1/2021.naacl-main.105",
+        "CorpusId": 225066679
+      },
+      "arxiv_id": "2010.12773",
+      "doi": "10.18653/v1/2021.naacl-main.105",
+      "corpus_id": 225066679
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "4",
+      "ref_key": "S2:01de0020c6a0f2d0aa73965e8dcfd9b8f38e05b6",
+      "paperId": "01de0020c6a0f2d0aa73965e8dcfd9b8f38e05b6",
+      "title": "C3: Zero-shot Text-to-SQL with ChatGPT",
+      "year": 2023,
+      "abstract": "This paper proposes a ChatGPT-based zero-shot Text-to-SQL method, dubbed C3, which achieves 82.3\\% in terms of execution accuracy on the holdout test set of Spider and becomes the state-of-the-art zero-shot Text-to-SQL method on the Spider Challenge. C3 consists of three key components: Clear Prompting (CP), Calibration with Hints (CH), and Consistent Output (CO), which are corresponding to the model input, model bias and model output respectively. It provides a systematic treatment for zero-shot Text-to-SQL. Extensive experiments have been conducted to verify the effectiveness and efficiency of our proposed method.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-07306",
+        "ArXiv": "2307.07306",
+        "DOI": "10.48550/arXiv.2307.07306",
+        "CorpusId": 259924856
+      },
+      "arxiv_id": "2307.07306",
+      "doi": "10.48550/arXiv.2307.07306",
+      "corpus_id": 259924856
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "5",
+      "ref_key": "S2:3265df2c0bdf3a0d68e498fcb38fad6199399b6a",
+      "paperId": "3265df2c0bdf3a0d68e498fcb38fad6199399b6a",
+      "title": "Metasql: A Generate-Then-Rank Framework for Natural Language to SQL Translation",
+      "year": 2024,
+      "abstract": "The Natural Language Interface to Databases (NLIDB) empowers non-technical users with database access through intuitive natural language (NL) interactions. Advanced approaches, utilizing neural sequence-to-sequence models or large-scale language models, typically employ auto-regressive decoding to generate unique SQL queries sequentially. While these translation models have greatly improved the overall translation accuracy, surpassing 70% on NLIDB benchmarks, the use of auto-regressive decoding to generate single SQL queries may result in sub-optimal outputs, potentially leading to erroneous translations. In this paper, we propose Metasql, a unified generate-then-rank framework that can be flexibly incorporated with existing NLIDBs to consistently improve their translation accuracy. Metasql introduces query metadata to control the generation of better SQL query candidates and uses learning-to-rank algorithms to retrieve globally optimized queries. Specifically, Metasql first breaks down the meaning of the given NL query into a set of possible query metadata, representing the basic concepts of the semantics. These metadata are then used as language constraints to steer the underlying translation model toward generating a set of candidate SQL queries. Finally, Metasql ranks the candidates to identify the best matching one for the given NL query. Extensive experiments are performed to study Metasql on two public NLIDB benchmarks. The results show that the performance of the translation models can be effectively improved using Metasql. In particular, applying Metasql to the published Lgesql model obtains a translation accuracy of 77.4 % on the validation set and 72.3 % on the test set of the Spider benchmark, outperforming the baseline by 2.3% and 0.3%, respectively. Moreover, applying Metasql to GpT-4 achieves translation accuracies of 68.6%, 42.0%, and 17.6 % on the three real-world complex scientific databases of Sciencebenchmark, respectively. The code for Metasql is available at https://github.com/Kaimary/MetaSQL.",
+      "externalIds": {
+        "ArXiv": "2402.17144",
+        "DBLP": "journals/corr/abs-2402-17144",
+        "DOI": "10.1109/ICDE60146.2024.00143",
+        "CorpusId": 268032440
+      },
+      "arxiv_id": "2402.17144",
+      "doi": "10.1109/ICDE60146.2024.00143",
+      "corpus_id": 268032440
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "6",
+      "ref_key": "S2:0b3863c21a7fb5ac61a447611cba0ec9ce1ab4a4",
+      "paperId": "0b3863c21a7fb5ac61a447611cba0ec9ce1ab4a4",
+      "title": "Exploring Underexplored Limitations of Cross-Domain Text-to-SQL Generalization",
+      "year": 2021,
+      "abstract": "Recently, there has been significant progress in studying neural networks for translating text descriptions into SQL queries under the zero-shot cross-domain setting. Despite achieving good performance on some public benchmarks, we observe that existing text-to-SQL models do not generalize when facing domain knowledge that does not frequently appear in the training data, which may render the worse prediction performance for unseen domains. In this work, we investigate the robustness of text-to-SQL models when the questions require rarely observed domain knowledge. In particular, we define five types of domain knowledge and introduce Spider-DK (DK is the abbreviation of domain knowledge), a human-curated dataset based on the Spider benchmark for text-to-SQL translation. NL questions in Spider-DK are selected from Spider, and we modify some samples by adding domain knowledge that reflects real-world question paraphrases. We demonstrate that the prediction accuracy dramatically drops on samples that require such domain knowledge, even if the domain knowledge appears in the training set, and the model provides the correct predictions for related training samples.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/GanCP21",
+        "ArXiv": "2109.05157",
+        "ACL": "2021.emnlp-main.702",
+        "DOI": "10.18653/v1/2021.emnlp-main.702",
+        "CorpusId": 237491444
+      },
+      "arxiv_id": "2109.05157",
+      "doi": "10.18653/v1/2021.emnlp-main.702",
+      "corpus_id": 237491444
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "7",
+      "ref_key": "S2:84b26030b648b6d79177bdafd3e896b1dda9f91e",
+      "paperId": "84b26030b648b6d79177bdafd3e896b1dda9f91e",
+      "title": "Towards Robustness of Text-to-SQL Models against Synonym Substitution",
+      "year": 2021,
+      "abstract": "Recently, there has been significant progress in studying neural networks to translate text descriptions into SQL queries. Despite achieving good performance on some public benchmarks, existing text-to-SQL models typically rely on the lexical matching between words in natural language (NL) questions and tokens in table schemas, which may render the models vulnerable to attacks that break the schema linking mechanism. In this work, we investigate the robustness of text-to-SQL models to synonym substitution. In particular, we introduce Spider-Syn, a human-curated dataset based on the Spider benchmark for text-to-SQL translation. NL questions in Spider-Syn are modified from Spider, by replacing their schema-related words with manually selected synonyms that reflect real-world question paraphrases. We observe that the accuracy dramatically drops by eliminating such explicit correspondence between NL questions and table schemas, even if the synonyms are not adversarially selected to conduct worst-case attacks. Finally, we present two categories of approaches to improve the model robustness. The first category of approaches utilizes additional synonym annotations for table schemas by modifying the model input, while the second category is based on adversarial training. We demonstrate that both categories of approaches significantly outperform their counterparts without the defense, and the first category of approaches are more effective.",
+      "externalIds": {
+        "ArXiv": "2106.01065",
+        "DBLP": "conf/acl/GanCHPWXH20",
+        "ACL": "2021.acl-long.195",
+        "DOI": "10.18653/v1/2021.acl-long.195",
+        "CorpusId": 235293739
+      },
+      "arxiv_id": "2106.01065",
+      "doi": "10.18653/v1/2021.acl-long.195",
+      "corpus_id": 235293739
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "8",
+      "ref_key": "S2:a40693eefd351659cdeb3885917b1506ea01c38a",
+      "paperId": "a40693eefd351659cdeb3885917b1506ea01c38a",
+      "title": "Measuring and Improving Compositional Generalization in Text-to-SQL via Component Alignment",
+      "year": 2022,
+      "abstract": "In text-to-SQL tasks -- as in much of NLP -- compositional generalization is a major challenge: neural networks struggle with compositional generalization where training and test distributions differ. However, most recent attempts to improve this are based on word-level synthetic data or specific dataset splits to generate compositional biases. In this work, we propose a clause-level compositional example generation method. We first split the sentences in the Spider text-to-SQL dataset into sub-sentences, annotating each sub-sentence with its corresponding SQL clause, resulting in a new dataset Spider-SS. We then construct a further dataset, Spider-CG, by composing Spider-SS sub-sentences in different combinations, to test the ability of models to generalize compositionally. Experiments show that existing models suffer significant performance degradation when evaluated on Spider-CG, even though every sub-sentence is seen during training. To deal with this problem, we modify a number of state-of-the-art models to train on the segmented data of Spider-SS, and we show that this method improves the generalization performance.",
+      "externalIds": {
+        "ArXiv": "2205.02054",
+        "DBLP": "conf/naacl/GanCHP22",
+        "DOI": "10.48550/arXiv.2205.02054",
+        "CorpusId": 248512587
+      },
+      "arxiv_id": "2205.02054",
+      "doi": "10.48550/arXiv.2205.02054",
+      "corpus_id": 248512587
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "9",
+      "ref_key": "S2:e034b664362640cc88dfa5e2e11c0524fc7cb323",
+      "paperId": "e034b664362640cc88dfa5e2e11c0524fc7cb323",
+      "title": "Text-to-SQL Empowered by Large Language Models: A Benchmark Evaluation",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have emerged as a new paradigm for Text-to-SQL task. However, the absence of a systematical benchmark inhibits the development of designing effective, efficient and economic LLM-based Text-to-SQL solutions. To address this challenge, in this paper, we first conduct a systematical and extensive comparison over existing prompt engineering methods, including question representation, example selection and example organization, and with these experimental results, we elaborate their pros and cons. Based on these findings, we propose a new integrated solution, named DAIL-SQL, which refreshes the Spider leaderboard with 86.6% execution accuracy and sets a new bar.\n To explore the potential of open-source LLM, we investigate them in various scenarios, and further enhance their performance with supervised fine-tuning. Our explorations highlight open-source LLMs' potential in Text-to-SQL, as well as the advantages and disadvantages of the supervised fine-tuning. Additionally, towards an efficient and economic LLM-based Text-to-SQL solution, we emphasize the token efficiency in prompt engineering and compare the prior studies under this metric. We hope that our work provides a deeper understanding of Text-to-SQL with LLMs, and inspires further investigations and broad applications.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-15363",
+        "ArXiv": "2308.15363",
+        "DOI": "10.48550/arXiv.2308.15363",
+        "CorpusId": 261276437
+      },
+      "arxiv_id": "2308.15363",
+      "doi": "10.48550/arXiv.2308.15363",
+      "corpus_id": 261276437
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "10",
+      "ref_key": "S2:ac2fc8c5d4a1f44464f1415ea3dd3ed45398b9d9",
+      "paperId": "ac2fc8c5d4a1f44464f1415ea3dd3ed45398b9d9",
+      "title": "Middleware for LLMs: Tools Are Instrumental for Language Agents in Complex Environments",
+      "year": 2024,
+      "abstract": "The applications of large language models (LLMs) have expanded well beyond the confines of text processing, signaling a new era where LLMs are envisioned as generalist agents capable of operating within complex environments. These environments are often highly expansive, making it impossible for the LLM to process them within its short-term memory. Motivated by recent research on extending the capabilities of LLMs with tools, we seek to investigate the intriguing potential of tools to augment LLMs in handling such complexity by introducing a novel class of tools, termed *middleware*, to aid in the proactive exploration within these massive environments. Such specialized tools can serve as a middleware layer shielding the LLM from environmental complexity. In two representative complex environments—knowledge bases (KBs) and databases—we demonstrate the significant potential of augmenting language agents with tools in complex environments. Notably, equipped with the middleware, GPT-4 achieves **2.8**X the performance of the best baseline in tasks requiring access to database content and **2.2**X in KB tasks. Our findings illuminate the path for advancing language agents in real-world applications.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-14672",
+        "ACL": "2024.emnlp-main.436",
+        "ArXiv": "2402.14672",
+        "DOI": "10.48550/arXiv.2402.14672",
+        "CorpusId": 267782782
+      },
+      "arxiv_id": "2402.14672",
+      "doi": "10.48550/arXiv.2402.14672",
+      "corpus_id": 267782782
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "11",
+      "ref_key": "S2:8334cab3749f83b09679e955f4794d132c60b24c",
+      "paperId": "8334cab3749f83b09679e955f4794d132c60b24c",
+      "title": "Prompting GPT-3.5 for Text-to-SQL with De-semanticization and Skeleton Retrieval",
+      "year": 2023,
+      "abstract": "Text-to-SQL is a task that converts a natural language question into a\nstructured query language (SQL) to retrieve information from a database. Large\nlanguage models (LLMs) work well in natural language generation tasks, but they\nare not specifically pre-trained to understand the syntax and semantics of SQL\ncommands. In this paper, we propose an LLM-based framework for Text-to-SQL\nwhich retrieves helpful demonstration examples to prompt LLMs. However,\nquestions with different database schemes can vary widely, even if the\nintentions behind them are similar and the corresponding SQL queries exhibit\nsimilarities. Consequently, it becomes crucial to identify the appropriate SQL\ndemonstrations that align with our requirements. We design a de-semanticization\nmechanism that extracts question skeletons, allowing us to retrieve similar\nexamples based on their structural similarity. We also model the relationships\nbetween question tokens and database schema items (i.e., tables and columns) to\nfilter out scheme-related information. Our framework adapts the range of the\ndatabase schema in prompts to balance length and valuable information. A\nfallback mechanism allows for a more detailed schema to be provided if the\ngenerated SQL query fails. Ours outperforms state-of-the-art models and\ndemonstrates strong generalization ability on three cross-domain Text-to-SQL\nbenchmarks.",
+      "externalIds": {
+        "ArXiv": "2304.13301",
+        "DBLP": "conf/pricai/GuoTTWWYW23",
+        "DOI": "10.1007/978-981-99-7022-3_23",
+        "CorpusId": 258331700
+      },
+      "arxiv_id": "2304.13301",
+      "doi": "10.1007/978-981-99-7022-3_23",
+      "corpus_id": 258331700
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "12",
+      "ref_key": "S2:191e300e381d4128b749d16fe3d83c8643a3bd1f",
+      "paperId": "191e300e381d4128b749d16fe3d83c8643a3bd1f",
+      "title": "Retrieval-augmented GPT-3.5-based Text-to-SQL Framework with Sample-aware Prompting and Dynamic Revision Chain",
+      "year": 2023,
+      "abstract": "Text-to-SQL aims at generating SQL queries for the given natural language questions and thus helping users to query databases. Prompt learning with large language models (LLMs) has emerged as a recent approach, which designs prompts to lead LLMs to understand the input question and generate the corresponding SQL. However, it faces challenges with strict SQL syntax requirements. Existing work prompts the LLMs with a list of demonstration examples (i.e. question-SQL pairs) to generate SQL, but the fixed prompts can hardly handle the scenario where the semantic gap between the retrieved demonstration and the input question is large. In this paper, we propose a retrieval-augmented prompting method for a LLM-based Text-to-SQL framework, involving sample-aware prompting and a dynamic revision chain. Our approach incorporates sample-aware demonstrations, which include the composition of SQL operators and fine-grained information related to the given question. To retrieve questions sharing similar intents with input questions, we propose two strategies for assisting retrieval. Firstly, we leverage LLMs to simplify the original questions, unifying the syntax and thereby clarifying the users' intentions. To generate executable and accurate SQLs without human intervention, we design a dynamic revision chain which iteratively adapts fine-grained feedback from the previously generated SQL. Experimental results on three Text-to-SQL benchmarks demonstrate the superiority of our method over strong baseline models.",
+      "externalIds": {
+        "ArXiv": "2307.05074",
+        "DBLP": "conf/iconip/GuoTTLWWW23",
+        "DOI": "10.48550/arXiv.2307.05074",
+        "CorpusId": 259766168
+      },
+      "arxiv_id": "2307.05074",
+      "doi": "10.48550/arXiv.2307.05074",
+      "corpus_id": 259766168
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "13",
+      "ref_key": "S2:eaac325e94e76d86acfcd6ffea76d47abf86fbe4",
+      "paperId": "eaac325e94e76d86acfcd6ffea76d47abf86fbe4",
+      "title": "Knowledge-to-SQL: Enhancing SQL Generation with Data Expert LLM",
+      "year": 2024,
+      "abstract": "Generating accurate SQL queries for user questions (text-to-SQL) has been a long-standing challenge since it requires a deep understanding of both the user's question and the corresponding database schema in order to retrieve the desired content accurately. Existing methods rely on the comprehensive capability of large language models (LLMs) to generate the SQL. However, some necessary knowledge is not explicitly included in the database schema and user question or has been learned by LLMs. Thus, the generated SQL of the knowledge-insufficient questions may be inaccurate, negatively influencing the text-to-SQL models' performance and robustness. To address this challenge, we propose the Knowledge-to-SQL framework, which employs tailored Data Expert LLM (DELLM) to provide helpful knowledge for all text-to-SQL models. Specifically, we introduce the detailed implementation of DELLM regarding table reading and the basic fine-tuning process. We further propose a Preference Learning via Database Feedback (PLDBF) strategy, refining the DELLM to generate more helpful knowledge for LLMs. Extensive experiments verify that DELLM can enhance the state-of-the-art approaches for text-to-SQL tasks. The corresponding code of DELLM is released for further research.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-11517",
+        "ArXiv": "2402.11517",
+        "DOI": "10.48550/arXiv.2402.11517",
+        "CorpusId": 267751230
+      },
+      "arxiv_id": "2402.11517",
+      "doi": "10.48550/arXiv.2402.11517",
+      "corpus_id": 267751230
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "14",
+      "ref_key": "S2:e0f27336698c84709bd60b6b7f4ce588cbae66bf",
+      "paperId": "e0f27336698c84709bd60b6b7f4ce588cbae66bf",
+      "title": "StructGPT: A General Framework for Large Language Model to Reason over Structured Data",
+      "year": 2023,
+      "abstract": "In this paper, we study how to improve the zero-shot reasoning ability of large language models~(LLMs) over structured data in a unified way. Inspired by the study on tool augmentation for LLMs, we develop an \\emph{Iterative Reading-then-Reasoning~(IRR)} approach for solving question answering tasks based on structured data, called \\textbf{StructGPT}. In our approach, we construct the specialized function to collect relevant evidence from structured data (\\ie \\emph{reading}), and let LLMs concentrate the reasoning task based on the collected information (\\ie \\emph{reasoning}). Specially, we propose an \\emph{invoking-linearization-generation} procedure to support LLMs in reasoning on the structured data with the help of the external interfaces. By iterating this procedures with provided interfaces, our approach can gradually approach the target answer to a given query. Extensive experiments conducted on three types of structured data demonstrate the effectiveness of our approach, which can significantly boost the performance of ChatGPT and achieve comparable performance against the full-data supervised-tuning baselines. Our codes and data are publicly available at~\\url{https://github.com/RUCAIBox/StructGPT}.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-09645",
+        "ArXiv": "2305.09645",
+        "DOI": "10.48550/arXiv.2305.09645",
+        "CorpusId": 258714753
+      },
+      "arxiv_id": "2305.09645",
+      "doi": "10.48550/arXiv.2305.09645",
+      "corpus_id": 258714753
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "15",
+      "ref_key": "S2:a1849a77644ff411a03833b5aa7a65ff57158c50",
+      "paperId": "a1849a77644ff411a03833b5aa7a65ff57158c50",
+      "title": "CLLMs: Consistency Large Language Models",
+      "year": 2024,
+      "abstract": "Parallel decoding methods such as Jacobi decoding show promise for more efficient LLM inference as it breaks the sequential nature of the LLM decoding process and transforms it into parallelizable computation. However, in practice, it achieves little speedup compared to traditional autoregressive (AR) decoding, primarily because Jacobi decoding seldom accurately predicts more than one token in a single fixed-point iteration step. To address this, we develop a new approach aimed at realizing fast convergence from any state to the fixed point on a Jacobi trajectory. This is accomplished by refining the target LLM to consistently predict the fixed point given any state as input. Extensive experiments demonstrate the effectiveness of our method, showing 2.4$\\times$ to 3.4$\\times$ improvements in generation speed while preserving generation quality across both domain-specific and open-domain benchmarks.",
+      "externalIds": {
+        "ArXiv": "2403.00835",
+        "DBLP": "journals/corr/abs-2403-00835",
+        "DOI": "10.48550/arXiv.2403.00835",
+        "CorpusId": 268230510
+      },
+      "arxiv_id": "2403.00835",
+      "doi": "10.48550/arXiv.2403.00835",
+      "corpus_id": 268230510
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "16",
+      "ref_key": "S2:9cd3d6eef7c574830be410598c3024191ee974d4",
+      "paperId": "9cd3d6eef7c574830be410598c3024191ee974d4",
+      "title": "KaggleDBQA: Realistic Evaluation of Text-to-SQL Parsers",
+      "year": 2021,
+      "abstract": "The goal of database question answering is to enable natural language querying of real-life relational databases in diverse application domains. Recently, large-scale datasets such as Spider and WikiSQL facilitated novel modeling techniques for text-to-SQL parsing, improving zero-shot generalization to unseen databases. In this work, we examine the challenges that still prevent these techniques from practical deployment. First, we present KaggleDBQA, a new cross-domain evaluation dataset of real Web databases, with domain-specific data types, original formatting, and unrestricted questions. Second, we re-examine the choice of evaluation tasks for text-to-SQL parsers as applied in real-life settings. Finally, we augment our in-domain evaluation task with database documentation, a naturally occurring source of implicit domain knowledge. We show that KaggleDBQA presents a challenge to state-of-the-art zero-shot parsers but a more realistic evaluation setting and creative use of associated database documentation boosts their accuracy by over 13.2%, doubling their performance.",
+      "externalIds": {
+        "ArXiv": "2106.11455",
+        "DBLP": "conf/acl/LeePR20",
+        "ACL": "2021.acl-long.176",
+        "DOI": "10.18653/v1/2021.acl-long.176",
+        "CorpusId": 235433328
+      },
+      "arxiv_id": "2106.11455",
+      "doi": "10.18653/v1/2021.acl-long.176",
+      "corpus_id": 235433328
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "17",
+      "ref_key": "S2:8f831f341e959955a495730d81996e62c57cc0bd",
+      "paperId": "8f831f341e959955a495730d81996e62c57cc0bd",
+      "title": "Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs",
+      "year": 2023,
+      "abstract": "Text-to-SQL parsing, which aims at converting natural language instructions into executable SQLs, has gained increasing attention in recent years. In particular, Codex and ChatGPT have shown impressive results in this task. However, most of the prevalent benchmarks, i.e., Spider, and WikiSQL, focus on database schema with few rows of database contents leaving the gap between academic study and real-world applications. To mitigate this gap, we present Bird, a big benchmark for large-scale database grounded in text-to-SQL tasks, containing 12,751 pairs of text-to-SQL data and 95 databases with a total size of 33.4 GB, spanning 37 professional domains. Our emphasis on database values highlights the new challenges of dirty database contents, external knowledge between NL questions and database contents, and SQL efficiency, particularly in the context of massive databases. To solve these problems, text-to-SQL models must feature database value comprehension in addition to semantic parsing. The experimental results demonstrate the significance of database values in generating accurate text-to-SQLs for big databases. Furthermore, even the most effective text-to-SQL models, i.e. ChatGPT, only achieves 40.08% in execution accuracy, which is still far from the human result of 92.96%, proving that challenges still stand. Besides, we also provide an efficiency analysis to offer insights into generating text-to-efficient-SQLs that are beneficial to industries. We believe that BIRD will contribute to advancing real-world applications of text-to-SQL research. The leaderboard and source code are available: https://bird-bench.github.io/.",
+      "externalIds": {
+        "ArXiv": "2305.03111",
+        "DBLP": "conf/nips/LiHQYLLWQGHZ0LC23",
+        "DOI": "10.48550/arXiv.2305.03111",
+        "CorpusId": 258547040
+      },
+      "arxiv_id": "2305.03111",
+      "doi": "10.48550/arXiv.2305.03111",
+      "corpus_id": 258547040
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "18",
+      "ref_key": "S2:978040c55f9094212d15b7ffadfab1440913b6cf",
+      "paperId": "978040c55f9094212d15b7ffadfab1440913b6cf",
+      "title": "CodeS: Towards Building Open-source Language Models for Text-to-SQL",
+      "year": 2024,
+      "abstract": "Language models have shown promising performance on the task of translating natural language questions into SQL queries (Text-to-SQL). However, most of the state-of-the-art (SOTA) approaches rely on powerful yet closed-source large language models (LLMs), such as ChatGPT and GPT-4, which may have the limitations of unclear model architectures, data privacy risks, and expensive inference overheads. To address the limitations, we introduce CodeS, a series of pre-trained language models with parameters ranging from 1B to 15B, specifically designed for the text-to-SQL task. CodeS is a fully open-source language model, which achieves superior accuracy with much smaller parameter sizes. This paper studies the research challenges in building CodeS. To enhance the SQL generation abilities of CodeS, we adopt an incremental pre-training approach using a specifically curated SQL-centric corpus. Based on this, we address the challenges of schema linking and rapid domain adaptation through strategic prompt construction and a bi-directional data augmentation technique. We conduct comprehensive evaluations on multiple datasets, including the widely used Spider benchmark, the newly released BIRD benchmark, robustness-diagnostic benchmarks such as Spider-DK, Spider-Syn, Spider-Realistic, and Dr.Spider, as well as two real-world datasets created for financial and academic applications. The experimental results show that our CodeS achieves new SOTA accuracy and robustness on nearly all challenging text-to-SQL benchmarks.",
+      "externalIds": {
+        "DBLP": "journals/pacmmod/LiZLFZZWP0024",
+        "ArXiv": "2402.16347",
+        "DOI": "10.48550/arXiv.2402.16347",
+        "CorpusId": 267938784
+      },
+      "arxiv_id": "2402.16347",
+      "doi": "10.48550/arXiv.2402.16347",
+      "corpus_id": 267938784
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "19",
+      "ref_key": "S2:024c9fe5a0e00786683d64ec32d142aaaae55fa2",
+      "paperId": "024c9fe5a0e00786683d64ec32d142aaaae55fa2",
+      "title": "PET-SQL: A Prompt-enhanced Two-stage Text-to-SQL Framework with Cross-consistency",
+      "year": 2024,
+      "abstract": "Recent advancements in Text-to-SQL (Text2SQL) emphasize stimulating the large language models (LLM) on in-context learning, achieving significant results. Nevertheless, they face challenges when dealing with verbose database information and complex user intentions. This paper presents a two-stage framework to enhance the performance of current LLM-based natural language to SQL systems. We first introduce a novel prompt representation, called reference-enhanced representation, which includes schema information and randomly sampled cell values from tables to instruct LLMs in generating SQL queries. Then, in the first stage, question-SQL pairs are retrieved as few-shot demonstrations, prompting the LLM to generate a preliminary SQL (PreSQL). After that, the mentioned entities in PreSQL are parsed to conduct schema linking, which can significantly compact the useful information. In the second stage, with the linked schema, we simplify the prompt’s schema information and instruct the LLM to produce the final SQL. Finally, as the post-refinement module, we propose using cross-consistency across different LLMs rather than self-consistency within a particular LLM. Our methods achieve new SOTA results on the Spider benchmark, with an execution accuracy of 87.6%.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2403-09732",
+        "DOI": "10.48550/arXiv.2403.09732",
+        "CorpusId": 271746291
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2403.09732",
+      "corpus_id": 271746291
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "20",
+      "ref_key": "S2:6034a1ed44de01ffc18cd2265223ed2bf1d216cd",
+      "paperId": "6034a1ed44de01ffc18cd2265223ed2bf1d216cd",
+      "title": "A comprehensive evaluation of ChatGPT's zero-shot Text-to-SQL capability",
+      "year": 2023,
+      "abstract": "This paper presents the first comprehensive analysis of ChatGPT's Text-to-SQL ability. Given the recent emergence of large-scale conversational language model ChatGPT and its impressive capabilities in both conversational abilities and code generation, we sought to evaluate its Text-to-SQL performance. We conducted experiments on 12 benchmark datasets with different languages, settings, or scenarios, and the results demonstrate that ChatGPT has strong text-to-SQL abilities. Although there is still a gap from the current state-of-the-art (SOTA) model performance, considering that the experiment was conducted in a zero-shot scenario, ChatGPT's performance is still impressive. Notably, in the ADVETA (RPL) scenario, the zero-shot ChatGPT even outperforms the SOTA model that requires fine-tuning on the Spider dataset by 4.1\\%, demonstrating its potential for use in practical applications. To support further research in related fields, we have made the data generated by ChatGPT publicly available at https://github.com/THU-BPM/chatgpt-sql.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2303-13547",
+        "ArXiv": "2303.13547",
+        "DOI": "10.48550/arXiv.2303.13547",
+        "CorpusId": 257757019
+      },
+      "arxiv_id": "2303.13547",
+      "doi": "10.48550/arXiv.2303.13547",
+      "corpus_id": 257757019
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "21",
+      "ref_key": "S2:a8e5b0d370f7adfafb6640047951393a1843c29e",
+      "paperId": "a8e5b0d370f7adfafb6640047951393a1843c29e",
+      "title": "A Pilot Study for Chinese SQL Semantic Parsing",
+      "year": 2019,
+      "abstract": "The task of semantic parsing is highly useful for dialogue and question answering systems. Many datasets have been proposed to map natural language text into SQL, among which the recent Spider dataset provides cross-domain samples with multiple tables and complex queries. We build a Spider dataset for Chinese, which is currently a low-resource language in this task area. Interesting research questions arise from the uniqueness of the language, which requires word segmentation, and also from the fact that SQL keywords and columns of DB tables are typically written in English. We compare character- and word-based encoders for a semantic parser, and different embedding schemes. Results show that word-based semantic parser is subject to segmentation errors and cross-lingual word embeddings are useful for text-to-SQL.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/MinSZ19",
+        "ArXiv": "1909.13293",
+        "ACL": "D19-1377",
+        "MAG": "2970605129",
+        "DOI": "10.18653/v1/D19-1377",
+        "CorpusId": 202783651
+      },
+      "arxiv_id": "1909.13293",
+      "doi": "10.18653/v1/D19-1377",
+      "corpus_id": 202783651
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "22",
+      "ref_key": "S2:08dd8304a74f6c98e3d592a565458549ddbb3cd6",
+      "paperId": "08dd8304a74f6c98e3d592a565458549ddbb3cd6",
+      "title": "Enhancing Text-to-SQL Capabilities of Large Language Models: A Study on Prompt Design Strategies",
+      "year": 2023,
+      "abstract": ",",
+      "externalIds": {
+        "DBLP": "conf/emnlp/Nan0ZRTZCR23",
+        "DOI": "10.18653/v1/2023.findings-emnlp.996",
+        "CorpusId": 266176992
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2023.findings-emnlp.996",
+      "corpus_id": 266176992
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "23",
+      "ref_key": "S2:59fe7cb560651281cfc5db6b8940da0e3ba9dea6",
+      "paperId": "59fe7cb560651281cfc5db6b8940da0e3ba9dea6",
+      "title": "LEVER: Learning to Verify Language-to-Code Generation with Execution",
+      "year": 2023,
+      "abstract": "The advent of large language models trained on code (code LLMs) has led to significant progress in language-to-code generation. State-of-the-art approaches in this area combine LLM decoding with sample pruning and reranking using test cases or heuristics based on the execution results. However, it is challenging to obtain test cases for many real-world language-to-code applications, and heuristics cannot well capture the semantic features of the execution results, such as data type and value range, which often indicates the correctness of the program. In this work, we propose LEVER, a simple approach to improve language-to-code generation by learning to verify the generated programs with their execution results. Specifically, we train verifiers to determine whether a program sampled from the LLMs is correct or not based on the natural language input, the program itself and its execution results. The sampled programs are reranked by combining the verification score with the LLM generation probability, and marginalizing over programs with the same execution results. On four datasets across the domains of table QA, math QA and basic Python programming, LEVER consistently improves over the base code LLMs(4.6% to 10.9% with code-davinci-002) and achieves new state-of-the-art results on all of them.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2302-08468",
+        "ArXiv": "2302.08468",
+        "DOI": "10.48550/arXiv.2302.08468",
+        "CorpusId": 256900680
+      },
+      "arxiv_id": "2302.08468",
+      "doi": "10.48550/arXiv.2302.08468",
+      "corpus_id": 256900680
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "24",
+      "ref_key": "S2:e262e1aa4d1efb909705a2dfcf9df53d76cb4e12",
+      "paperId": "e262e1aa4d1efb909705a2dfcf9df53d76cb4e12",
+      "title": "Towards Robustness of Text-to-SQL Models Against Natural and Realistic Adversarial Table Perturbation",
+      "year": 2022,
+      "abstract": "The robustness of Text-to-SQL parsers against adversarial perturbations plays a crucial role in delivering highly reliable applications. Previous studies along this line primarily focused on perturbations in the natural language question side, neglecting the variability of tables. Motivated by this, we propose the Adversarial Table Perturbation (ATP) as a new attacking paradigm to measure robustness of Text-to-SQL models. Following this proposition, we curate ADVETA, the first robustness evaluation benchmark featuring natural and realistic ATPs. All tested state-of-the-art models experience dramatic performance drops on ADVETA, revealing significant room of improvement. To defense against ATP, we build a systematic adversarial training example generation framework tailored for better contextualization of tabular data. Experiments show that our approach brings models best robustness improvement against ATP, while also substantially boost model robustness against NL-side perturbations. We will release ADVETA and code to facilitate future research.",
+      "externalIds": {
+        "ArXiv": "2212.09994",
+        "DBLP": "journals/corr/abs-2212-09994",
+        "ACL": "2022.acl-long.142",
+        "DOI": "10.18653/v1/2022.acl-long.142",
+        "CorpusId": 248780123
+      },
+      "arxiv_id": "2212.09994",
+      "doi": "10.18653/v1/2022.acl-long.142",
+      "corpus_id": 248780123
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "25",
+      "ref_key": "S2:cc0f0cb09a73f82ed44d900f5ca710bec784acc1",
+      "paperId": "cc0f0cb09a73f82ed44d900f5ca710bec784acc1",
+      "title": "DIN-SQL: Decomposed In-Context Learning of Text-to-SQL with Self-Correction",
+      "year": 2023,
+      "abstract": "We study the problem of decomposing a complex text-to-sql task into smaller sub-tasks and how such a decomposition can significantly improve the performance of Large Language Models (LLMs) in the reasoning process. There is currently a significant gap between the performance of fine-tuned models and prompting approaches using LLMs on challenging text-to-sql datasets such as Spider. We show that SQL queries, despite their declarative structure, can be broken down into sub-problems and the solutions of those sub-problems can be fed into LLMs to significantly improve their performance. Our experiments with three LLMs show that this approach consistently improves their performance by roughly 10%, pushing the accuracy of LLMs towards state-of-the-art, and even beating large fine-tuned models on the holdout Spider dataset.",
+      "externalIds": {
+        "DBLP": "conf/nips/PourrezaR23",
+        "ArXiv": "2304.11015",
+        "DOI": "10.48550/arXiv.2304.11015",
+        "CorpusId": 258291425
+      },
+      "arxiv_id": "2304.11015",
+      "doi": "10.48550/arXiv.2304.11015",
+      "corpus_id": 258291425
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "26",
+      "ref_key": "S2:07de76b2862cf7738b3fd28aabd708186231a527",
+      "paperId": "07de76b2862cf7738b3fd28aabd708186231a527",
+      "title": "DTS-SQL: Decomposed Text-to-SQL with Small Large Language Models",
+      "year": 2024,
+      "abstract": "Leading models for the text-to-SQL task heavily rely on proprietary Large Language Models (LLMs), posing concerns over data privacy. Closing the performance gap between small open-source models and large proprietary models is crucial to mitigate this reliance. To this end, we introduce a novel two-stage fine-tuning approach that decomposes the task into two simpler tasks. Through comprehensive evaluation on two large cross-domain datasets and two small LLMs, we show that this approach improves execution accuracy by 3 to 7 percent, effectively aligning the performance of open-source models with their proprietary counterparts.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/PourrezaR24",
+        "ArXiv": "2402.01117",
+        "DOI": "10.48550/arXiv.2402.01117",
+        "CorpusId": 267406644
+      },
+      "arxiv_id": "2402.01117",
+      "doi": "10.48550/arXiv.2402.01117",
+      "corpus_id": 267406644
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "27",
+      "ref_key": "S2:51000d9f79be0eefd7972fe94e3c71dddc90d2c6",
+      "paperId": "51000d9f79be0eefd7972fe94e3c71dddc90d2c6",
+      "title": "Evaluating the Text-to-SQL Capabilities of Large Language Models",
+      "year": 2022,
+      "abstract": "We perform an empirical evaluation of Text-to-SQL capabilities of the Codex language model. We find that, without any finetuning, Codex is a strong baseline on the Spider benchmark; we also analyze the failure modes of Codex in this setting. Furthermore, we demonstrate on the GeoQuery and Scholar benchmarks that a small number of in-domain examples provided in the prompt enables Codex to perform better than state-of-the-art models finetuned on such few-shot examples.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2204-00498",
+        "ArXiv": "2204.00498",
+        "DOI": "10.48550/arXiv.2204.00498",
+        "CorpusId": 247922681
+      },
+      "arxiv_id": "2204.00498",
+      "doi": "10.48550/arXiv.2204.00498",
+      "corpus_id": 247922681
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "28",
+      "ref_key": "S2:fcca8e6a17d6045ec241b9a35e141efaeb892f6f",
+      "paperId": "fcca8e6a17d6045ec241b9a35e141efaeb892f6f",
+      "title": "PURPLE: Making a Large Language Model a Better SQL Writer",
+      "year": 2024,
+      "abstract": "Large Language Model (LLM) techniques play an increasingly important role in Natural Language to SQL (NL2SQL) translation. LLMs trained by extensive corpora have strong natural language understanding and basic SQL generation abilities without additional tuning specific to NL2SQL tasks. Existing LLMs-based NL2SQL approaches try to improve the translation by enhancing the LLMs with an emphasis on user intention understanding. However, LLMs sometimes fail to generate appropriate SQL due to their lack of knowledge in organizing complex logical operator composition. A promising method is to input the LLMs with demonstrations, which include known NL2SQL translations from various databases. LLMs can learn to organize operator compositions from the input demonstrations for the given task. In this paper, we propose PURPLE (Pre-trained models Utilized to Retrieve Prompts for Logical Enhancement), which improves accuracy by retrieving demonstrations containing the requisite logical operator composition for the NL2SQL task on hand, thereby guiding LLMs to produce better SQL translation. PURPLE achieves a new state-of-the-art performance of 80.5% exact-set match accuracy and 87.8% execution match accuracy on the validation set of the popular NL2SQL benchmark Spider. PURPLE maintains high accuracy across diverse benchmarks, budgetary constraints, and various LLMs, showing robustness and cost-effectiveness.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2403-20014",
+        "ArXiv": "2403.20014",
+        "DOI": "10.1109/ICDE60146.2024.00009",
+        "CorpusId": 268793895
+      },
+      "arxiv_id": "2403.20014",
+      "doi": "10.1109/ICDE60146.2024.00009",
+      "corpus_id": 268793895
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "29",
+      "ref_key": "S2:6b2ccee1ac5823ed3d0cf97c75470ea335916c07",
+      "paperId": "6b2ccee1ac5823ed3d0cf97c75470ea335916c07",
+      "title": "On the Potential of Lexico-logical Alignments for Semantic Parsing to SQL Queries",
+      "year": 2020,
+      "abstract": "Large-scale semantic parsing datasets annotated with logical forms have enabled major advances in supervised approaches. But can richer supervision help even more? To explore the utility of fine-grained, lexical-level supervision, we introduce SQUALL, a dataset that enriches 11,276 WIKITABLEQUESTIONS English-language questions with manually created SQL equivalents plus alignments between SQL and question fragments. Our annotation enables new training possibilities for encoderdecoder models, including approaches from machine translation previously precluded by the absence of alignments. We propose and test two methods: (1) supervised attention; (2) adopting an auxiliary objective of disambiguating references in the input queries to table columns. In 5-fold cross validation, these strategies improve over strong baselines by 4.4% execution accuracy. Oracle experiments suggest that annotated alignments can support further accuracy gains of up to 23.9%.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2010-11246",
+        "ArXiv": "2010.11246",
+        "MAG": "3094380266",
+        "ACL": "2020.findings-emnlp.167",
+        "DOI": "10.18653/v1/2020.findings-emnlp.167",
+        "CorpusId": 225039884
+      },
+      "arxiv_id": "2010.11246",
+      "doi": "10.18653/v1/2020.findings-emnlp.167",
+      "corpus_id": 225039884
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "30",
+      "ref_key": "S2:47e15941c8b157873c8264e4bf50318d1ba5cd18",
+      "paperId": "47e15941c8b157873c8264e4bf50318d1ba5cd18",
+      "title": "Natural Language to Code Translation with Execution",
+      "year": 2022,
+      "abstract": "Generative models of code, pretrained on large corpora of programs, have shown great success in translating natural language to code (Chen et al., 2021; Austin et al., 2021; Li et al., 2022, inter alia). While these models do not explicitly incorporate program semantics (i.e., execution results) during training, they are able to generate correct solutions for many problems. However, choosing a single correct program from a generated set for each problem remains challenging. In this work, we introduce execution result–based minimum Bayes risk decoding (MBR-EXEC) for program selection and show that it improves the few-shot performance of pretrained code models on natural-language-to-code tasks. We select output programs from a generated candidate set by marginalizing over program implementations that share the same semantics. Because exact equivalence is intractable, we execute each program on a small number of test inputs to approximate semantic equivalence. Across datasets, execution or simulated execution significantly outperforms the methods that do not involve program semantics. We find that MBR-EXEC consistently improves over all execution-unaware selection methods, suggesting it as an effective approach for natural language to code translation.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2204-11454",
+        "ACL": "2022.emnlp-main.231",
+        "ArXiv": "2204.11454",
+        "DOI": "10.48550/arXiv.2204.11454",
+        "CorpusId": 248377325
+      },
+      "arxiv_id": "2204.11454",
+      "doi": "10.48550/arXiv.2204.11454",
+      "corpus_id": 248377325
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "31",
+      "ref_key": "S2:e0e1fcdbc5b41fcd1cd15001b4861a738411c910",
+      "paperId": "e0e1fcdbc5b41fcd1cd15001b4861a738411c910",
+      "title": "SQL-PaLM: Improved Large Language Model Adaptation for Text-to-SQL",
+      "year": 2023,
+      "abstract": "One impressive emergent capability of large language models (LLMs) is generation of code, including Structured Query Language (SQL) for databases. For the task of converting natural language text to SQL queries, Text-to-SQL, adaptation of LLMs is of paramount importance, both in in-context learning and fine-tuning settings, depending on the amount of adaptation data used. In this paper, we propose an LLM-based Text-to-SQL model SQL-PaLM , leveraging on PaLM-2 , that pushes the state-of-the-art in both settings. Few-shot SQL-PaLM is based on an execution-based self-consistency prompting approach designed for Text-to-SQL, and achieves 77.3% in test-suite accuracy on Spider, which to our best knowledge is the first to outperform previous state-of-the-art with fine-tuning by a significant margin, 4% . Furthermore, we demonstrate that the fine-tuned SQL-PALM outperforms it further by another 1% . Towards applying SQL-PaLM to real-world scenarios we further evaluate its robustness on other challenging variants of Spider and demonstrate the superior generalization capability of SQL-PaLM . In addition, via extensive case studies, we demonstrate the impressive intelligent capabilities and various success enablers of LLM-based Text-to-SQL.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2306-00739",
+        "DOI": "10.48550/arXiv.2306.00739",
+        "CorpusId": 258999853
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2306.00739",
+      "corpus_id": 258999853
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "32",
+      "ref_key": "S2:68ad0ed1e21fd9fd7b2bd58769d8bec88c996b01",
+      "paperId": "68ad0ed1e21fd9fd7b2bd58769d8bec88c996b01",
+      "title": "Exploring Chain-of-Thought Style Prompting for Text-to-SQL",
+      "year": 2023,
+      "abstract": "In-context learning with large language models (LLMs) has recently caught increasing attention due to its superior few-shot performance on various tasks. However, its performance on text-to-SQL parsing still has much room for improvement. In this paper, we hypothesize that a crucial aspect of LLMs to improve for text-to-SQL parsing is their multi-step reasoning ability. Thus, we systematically study how to enhance LLMs' reasoning ability through chain of thought (CoT) style prompting, including the original chain-of-thought prompting (Wei et al., 2022b) and least-to-most prompting (Zhou et al., 2023). Our experiments demonstrate that iterative prompting as in Zhou et al. (2023) may be unnecessary for text-to-SQL parsing, and using detailed reasoning steps tends to have more error propagation issues. Based on these findings, we propose a new CoT-style prompting method for text-to-SQL parsing. It brings 5.2 and 6.5 point absolute gains on the Spider development set and the Spider Realistic set, respectively, compared to the standard prompting method without reasoning steps; 2.4 and 1.5 point absolute gains, compared to the least-to-most prompting method.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/TaiCZ0023",
+        "ArXiv": "2305.14215",
+        "DOI": "10.48550/arXiv.2305.14215",
+        "CorpusId": 258841412
+      },
+      "arxiv_id": "2305.14215",
+      "doi": "10.48550/arXiv.2305.14215",
+      "corpus_id": 258841412
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "33",
+      "ref_key": "S2:8febba2f66ced916c795aa97444feb624a697446",
+      "paperId": "8febba2f66ced916c795aa97444feb624a697446",
+      "title": "ChiTeSQL: A Large-Scale and Pragmatic Chinese Text-to-SQL Dataset",
+      "year": 2020,
+      "abstract": "Due to the lack of labeled data, previous research on text-to-SQL parsing mainly focuses on English. Representative English datasets include ATIS, WikiSQL, Spider, etc. This paper presents DuSQL, a larges-scale and pragmatic Chinese dataset for the cross-domain text-to-SQL task, containing 200 databases, 813 tables, and 23,797 question/SQL pairs. Our new dataset has three major characteristics. First, by manually analyzing questions from several representative applications, we try to figure out the true distribution of SQL queries in real-life needs. Second, DuSQL contains a considerable proportion of SQL queries involving row or column calculations, motivated by our analysis on the SQL query distributions. Finally, we adopt an effective data construction framework via human-computer collaboration. The basic idea is automatically generating SQL queries based on the SQL grammar and constrained by the given database. This paper describes in detail the construction process and data statistics of DuSQL. Moreover, we present and compare performance of several open-source text-to-SQL parsers with minor modification to accommodate Chinese, including a simple yet effective extension to IRNet for handling calculation SQL queries.",
+      "externalIds": {
+        "MAG": "3106221893",
+        "ACL": "2020.emnlp-main.562",
+        "DBLP": "conf/emnlp/WangZWSLWZW20",
+        "DOI": "10.18653/v1/2020.emnlp-main.562",
+        "CorpusId": 227033589
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2020.emnlp-main.562",
+      "corpus_id": 227033589
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "34",
+      "ref_key": "S2:2d125b26788e41586fa1594da60169f33fb481f0",
+      "paperId": "2d125b26788e41586fa1594da60169f33fb481f0",
+      "title": "Improving Demonstration Diversity by Human-Free Fusing for Text-to-SQL",
+      "year": 2024,
+      "abstract": "Currently, the in-context learning method based on large language models (LLMs) has become the mainstream of text-to-SQL research. Previous works have discussed how to select demonstrations related to the user question from a human-labeled demonstration pool. However, human labeling suffers from the limitations of insufficient diversity and high labeling overhead. Therefore, in this paper, we discuss how to measure and improve the diversity of the demonstrations for text-to-SQL. We present a metric to measure the diversity of the demonstrations and analyze the insufficient of the existing labeled data by experiments. Based on the above discovery, we propose fusing iteratively for demonstrations (Fused) to build a high-diversity demonstration pool through human-free multiple-iteration synthesis, improving diversity and lowering label cost. Our method achieves an average improvement of 3.2% and 5.0% with and without human labeling on several mainstream datasets, which proves the effectiveness of Fused.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-10663",
+        "ArXiv": "2402.10663",
+        "DOI": "10.48550/arXiv.2402.10663",
+        "CorpusId": 267740670
+      },
+      "arxiv_id": "2402.10663",
+      "doi": "10.48550/arXiv.2402.10663",
+      "corpus_id": 267740670
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "35",
+      "ref_key": "S2:43f0b39bc787311b22e0a8659780743cb54a67be",
+      "paperId": "43f0b39bc787311b22e0a8659780743cb54a67be",
+      "title": "MAC-SQL: A Multi-Agent Collaborative Framework for Text-to-SQL",
+      "year": 2023,
+      "abstract": "Recent LLM-based Text-to-SQL methods usually suffer from significant performance degradation on\"huge\"databases and complex user questions that require multi-step reasoning. Moreover, most existing methods neglect the crucial significance of LLMs utilizing external tools and model collaboration. To address these challenges, we introduce MAC-SQL, a novel LLM-based multi-agent collaborative framework. Our framework comprises a core decomposer agent for Text-to-SQL generation with few-shot chain-of-thought reasoning, accompanied by two auxiliary agents that utilize external tools or models to acquire smaller sub-databases and refine erroneous SQL queries. The decomposer agent collaborates with auxiliary agents, which are activated as needed and can be expanded to accommodate new features or tools for effective Text-to-SQL parsing. In our framework, We initially leverage GPT-4 as the strong backbone LLM for all agent tasks to determine the upper bound of our framework. We then fine-tune an open-sourced instruction-followed model, SQL-Llama, by leveraging Code Llama 7B, to accomplish all tasks as GPT-4 does. Experiments show that SQL-Llama achieves a comparable execution accuracy of 43.94, compared to the baseline accuracy of 46.35 for vanilla GPT-4. At the time of writing, MAC-SQL+GPT-4 achieves an execution accuracy of 59.59 when evaluated on the BIRD benchmark, establishing a new state-of-the-art (SOTA) on its holdout test set (https://github.com/wbbeyourself/MAC-SQL).",
+      "externalIds": {
+        "ArXiv": "2312.11242",
+        "DBLP": "conf/coling/WangR0LBCYZYSL25",
+        "DOI": "10.48550/arXiv.2312.11242",
+        "CorpusId": 266359187
+      },
+      "arxiv_id": "2312.11242",
+      "doi": "10.48550/arXiv.2312.11242",
+      "corpus_id": 266359187
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "36",
+      "ref_key": "S2:e2751c2030d1497b5f99ee2e08e733043a15bffe",
+      "paperId": "e2751c2030d1497b5f99ee2e08e733043a15bffe",
+      "title": "Decomposition for Enhancing Attention: Improving LLM-based Text-to-SQL through Workflow Paradigm",
+      "year": 2024,
+      "abstract": "In-context learning of large-language models (LLMs) has achieved remarkable success in the field of natural language processing, while extensive case studies reveal that the single-step chain-of-thought prompting approach faces challenges such as attention diffusion and inadequate performance in complex tasks like text-to-SQL. To improve the contextual learning capabilities of LLMs in text-to-SQL, a workflow paradigm method is proposed, aiming to enhance the attention and problem-solving scope of LLMs through decomposition. Specifically, the information determination module for eliminating redundant information and the brand-new prompt structure based on problem classification greatly enhance the model's attention. Additionally, the inclusion of self-correction and active learning modules greatly expands the problem-solving scope of LLMs, hence improving the upper limit of LLM-based approaches. Extensive experiments conducted on three datasets demonstrate that our approach outperforms other methods by a significant margin. About 2-3 percentage point improvements compared to the existing baseline on the Spider Dev, Spider-Realistic, and Bird Dev datasets and new SOTA results on the Spider Test dataset are achieved. Our code is available on GitHub: \\url{https://github.com/FlyingFeather/DEA-SQL}.",
+      "externalIds": {
+        "DBLP": "conf/acl/XieJXM0YLZHL24",
+        "ArXiv": "2402.10671",
+        "DOI": "10.48550/arXiv.2402.10671",
+        "CorpusId": 267740272
+      },
+      "arxiv_id": "2402.10671",
+      "doi": "10.48550/arXiv.2402.10671",
+      "corpus_id": 267740272
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "37",
+      "ref_key": "S2:bf11f01929afed0ad3ccfe1b5e0fd34d90ef2b4f",
+      "paperId": "bf11f01929afed0ad3ccfe1b5e0fd34d90ef2b4f",
+      "title": "Symbol-LLM: Towards Foundational Symbol-centric Interface For Large Language Models",
+      "year": 2023,
+      "abstract": "Although Large Language Models (LLMs) demonstrate remarkable ability in processing and generating human-like text, they do have limitations when it comes to comprehending and expressing world knowledge that extends beyond the boundaries of natural language(e.g., chemical molecular formula). Injecting a collection of symbolic data directly into the training of LLMs can be problematic, as it disregards the synergies among different symbolic families and overlooks the need for a balanced mixture of natural and symbolic data. In this work, we tackle these challenges from both a data and framework perspective and introduce Symbol-LLM series models. First, we curated a data collection consisting of 34 tasks and incorporating approximately 20 distinct symbolic families, intending to capture the interrelations and foster synergies between symbols. Then, a two-stage tuning framework succeeds in injecting symbolic knowledge without loss of the generality ability. Extensive experiments on both symbol- and NL-centric tasks demonstrate the balanced and superior performances of Symbol-LLM series models. The project page is https://xufangzhi.github.io/symbol-llm-page/.",
+      "externalIds": {
+        "DBLP": "conf/acl/XuWSRYYLQ024",
+        "ArXiv": "2311.09278",
+        "DOI": "10.48550/arXiv.2311.09278",
+        "CorpusId": 265221038
+      },
+      "arxiv_id": "2311.09278",
+      "doi": "10.48550/arXiv.2311.09278",
+      "corpus_id": 265221038
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "38",
+      "ref_key": "S2:f727986a460a33b9e62ac23f7d8901748e5c10c9",
+      "paperId": "f727986a460a33b9e62ac23f7d8901748e5c10c9",
+      "title": "DB-GPT: Empowering Database Interactions with Private Large Language Models",
+      "year": 2023,
+      "abstract": "The recent breakthroughs in large language models (LLMs) are positioned to transition many areas of software. Database technologies particularly have an important entanglement with LLMs as efficient and intuitive database interactions are paramount. In this paper, we present DB-GPT, a revolutionary and production-ready project that integrates LLMs with traditional database systems to enhance user experience and accessibility. DB-GPT is designed to understand natural language queries, provide context-aware responses, and generate complex SQL queries with high accuracy, making it an indispensable tool for users ranging from novice to expert. The core innovation in DB-GPT lies in its private LLM technology, which is fine-tuned on domain-specific corpora to maintain user privacy and ensure data security while offering the benefits of state-of-the-art LLMs. We detail the architecture of DB-GPT, which includes a novel retrieval augmented generation (RAG) knowledge system, an adaptive learning mechanism to continuously improve performance based on user feedback and a service-oriented multi-model framework (SMMF) with powerful data-driven agents. Our extensive experiments and user studies confirm that DB-GPT represents a paradigm shift in database interactions, offering a more natural, efficient, and secure way to engage with data repositories. The paper concludes with a discussion of the implications of DB-GPT framework on the future of human-database interaction and outlines potential avenues for further enhancements and applications in the field. The project code is available at https://github.com/eosphoros-ai/DB-GPT. Experience DB-GPT for yourself by installing it with the instructions https://github.com/eosphoros-ai/DB-GPT#install and view a concise 10-minute video at https://www.youtube.com/watch?v=KYs4nTDzEhk.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2312-17449",
+        "ArXiv": "2312.17449",
+        "DOI": "10.48550/arXiv.2312.17449",
+        "CorpusId": 266690744
+      },
+      "arxiv_id": "2312.17449",
+      "doi": "10.48550/arXiv.2312.17449",
+      "corpus_id": 266690744
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "39",
+      "ref_key": "S2:8e773b1840b894603c06b677a0f15ebcf0f26378",
+      "paperId": "8e773b1840b894603c06b677a0f15ebcf0f26378",
+      "title": "Spider: A Large-Scale Human-Labeled Dataset for Complex and Cross-Domain Semantic Parsing and Text-to-SQL Task",
+      "year": 2018,
+      "abstract": "We present Spider, a large-scale complex and cross-domain semantic parsing and text-to-SQL dataset annotated by 11 college students. It consists of 10,181 questions and 5,693 unique complex SQL queries on 200 databases with multiple tables covering 138 different domains. We define a new complex and cross-domain semantic parsing and text-to-SQL task so that different complicated SQL queries and databases appear in train and test sets. In this way, the task requires the model to generalize well to both new SQL queries and new database schemas. Therefore, Spider is distinct from most of the previous semantic parsing tasks because they all use a single database and have the exact same program in the train set and the test set. We experiment with various state-of-the-art models and the best model achieves only 9.7% exact matching accuracy on a database split setting. This shows that Spider presents a strong challenge for future research. Our dataset and task with the most recent updates are publicly available at https://yale-lily.github.io/seq2sql/spider.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/YuZYYWLMLYRZR18",
+        "ACL": "D18-1425",
+        "ArXiv": "1809.08887",
+        "MAG": "2890431379",
+        "DOI": "10.18653/v1/D18-1425",
+        "CorpusId": 52815560
+      },
+      "arxiv_id": "1809.08887",
+      "doi": "10.18653/v1/D18-1425",
+      "corpus_id": 52815560
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "40",
+      "ref_key": "S2:545e60873b0fad25407bb6d647f92c905bd2483d",
+      "paperId": "545e60873b0fad25407bb6d647f92c905bd2483d",
+      "title": "CoSQL: A Conversational Text-to-SQL Challenge Towards Cross-Domain Natural Language Interfaces to Databases",
+      "year": 2019,
+      "abstract": "We present CoSQL, a corpus for building cross-domain, general-purpose database (DB) querying dialogue systems. It consists of 30k+ turns plus 10k+ annotated SQL queries, obtained from a Wizard-of-Oz (WOZ) collection of 3k dialogues querying 200 complex DBs spanning 138 domains. Each dialogue simulates a real-world DB query scenario with a crowd worker as a user exploring the DB and a SQL expert retrieving answers with SQL, clarifying ambiguous questions, or otherwise informing of unanswerable questions. When user questions are answerable by SQL, the expert describes the SQL and execution results to the user, hence maintaining a natural interaction flow. CoSQL introduces new challenges compared to existing task-oriented dialogue datasets: (1) the dialogue states are grounded in SQL, a domain-independent executable representation, instead of domain-specific slot value pairs, and (2) because testing is done on unseen databases, success requires generalizing to new domains. CoSQL includes three tasks: SQL-grounded dialogue state tracking, response generation from query results, and user dialogue act prediction. We evaluate a set of strong baselines for each task and show that CoSQL presents significant challenges for future research. The dataset, baselines, and leaderboard will be released at https://yale-lily.github.io/cosql.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1909-05378",
+        "ACL": "D19-1204",
+        "MAG": "2970442801",
+        "ArXiv": "1909.05378",
+        "DOI": "10.18653/v1/D19-1204",
+        "CorpusId": 202565697
+      },
+      "arxiv_id": "1909.05378",
+      "doi": "10.18653/v1/D19-1204",
+      "corpus_id": 202565697
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "41",
+      "ref_key": "S2:d88bbcf9aa534e6ff78643a0daa68fc75a7e5bdf",
+      "paperId": "d88bbcf9aa534e6ff78643a0daa68fc75a7e5bdf",
+      "title": "SParC: Cross-Domain Semantic Parsing in Context",
+      "year": 2019,
+      "abstract": "We present SParC, a dataset for cross-domainSemanticParsing inContext that consists of 4,298 coherent question sequences (12k+ individual questions annotated with SQL queries). It is obtained from controlled user interactions with 200 complex databases over 138 domains. We provide an in-depth analysis of SParC and show that it introduces new challenges compared to existing datasets. SParC demonstrates complex contextual dependencies, (2) has greater semantic diversity, and (3) requires generalization to unseen domains due to its cross-domain nature and the unseen databases at test time. We experiment with two state-of-the-art text-to-SQL models adapted to the context-dependent, cross-domain setup. The best model obtains an exact match accuracy of 20.2% over all questions and less than10% over all interaction sequences, indicating that the cross-domain setting and the con-textual phenomena of the dataset present significant challenges for future research. The dataset, baselines, and leaderboard are released at https://yale-lily.github.io/sparc.",
+      "externalIds": {
+        "MAG": "2948465491",
+        "DBLP": "conf/acl/YuZYTLLELPCJDPS19",
+        "ArXiv": "1906.02285",
+        "ACL": "P19-1443",
+        "DOI": "10.18653/v1/P19-1443",
+        "CorpusId": 174802873
+      },
+      "arxiv_id": "1906.02285",
+      "doi": "10.18653/v1/P19-1443",
+      "corpus_id": 174802873
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "42",
+      "ref_key": "S2:27961ae80ad008bd4006704b1b8fa82664137d69",
+      "paperId": "27961ae80ad008bd4006704b1b8fa82664137d69",
+      "title": "Coder Reviewer Reranking for Code Generation",
+      "year": 2022,
+      "abstract": "Sampling diverse programs from a code language model and reranking with model likelihood is a popular method for code generation but it is prone to preferring degenerate solutions. Inspired by collaborative programming, we propose Coder-Reviewer reranking. We augment Coder language models from past work, which generate programs given language instructions, with Reviewer models, which evaluate the likelihood of the instruction given the generated programs. We perform an extensive study across six datasets with eight models from three model families. Experimental results show that Coder-Reviewer reranking leads to consistent and significant improvement (up to 17% absolute accuracy gain) over reranking with the Coder model only. When combined with executability filtering, Coder-Reviewer reranking can often outperform the minimum Bayes risk method. Coder-Reviewer reranking is easy to implement by prompting, can generalize to different programming languages, and works well with off-the-shelf hyperparameters.",
+      "externalIds": {
+        "ArXiv": "2211.16490",
+        "DBLP": "conf/icml/ZhangYHLYF023",
+        "DOI": "10.48550/arXiv.2211.16490",
+        "CorpusId": 254069951
+      },
+      "arxiv_id": "2211.16490",
+      "doi": "10.48550/arXiv.2211.16490",
+      "corpus_id": 254069951
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "43",
+      "ref_key": "S2:ff3dbed244fc5f1787a9f92a6b91be27855d4adc",
+      "paperId": "ff3dbed244fc5f1787a9f92a6b91be27855d4adc",
+      "title": "ACT-SQL: In-Context Learning for Text-to-SQL with Automatically-Generated Chain-of-Thought",
+      "year": 2023,
+      "abstract": "Recently Large Language Models (LLMs) have been proven to have strong abilities in various domains and tasks. We study the problem of prompt designing in the text-to-SQL task and attempt to improve the LLMs' reasoning ability when generating SQL queries. Besides the trivial few-shot in-context learning setting, we design our chain-of-thought (CoT) prompt with a similar method to schema linking. We provide a method named ACT-SQL to automatically generate auto-CoT exemplars and thus the whole process doesn't need manual labeling. Our approach is cost-saving since we only use the LLMs' API call once when generating one SQL query. Furthermore, we extend our in-context learning method to the multi-turn text-to-SQL task. The experiment results show that the LLMs' performance can benefit from our ACT-SQL approach. Our approach achieves SOTA performance on the Spider dev set among existing in-context learning approaches.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-17342",
+        "ArXiv": "2310.17342",
+        "DOI": "10.48550/arXiv.2310.17342",
+        "CorpusId": 264491000
+      },
+      "arxiv_id": "2310.17342",
+      "doi": "10.48550/arXiv.2310.17342",
+      "corpus_id": 264491000
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "44",
+      "ref_key": "S2:d7665e28f59f49acfc34a0eaa3716eedad039f9b",
+      "paperId": "d7665e28f59f49acfc34a0eaa3716eedad039f9b",
+      "title": "Benchmarking the Text-to-SQL Capability of Large Language Models: A Comprehensive Evaluation",
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) have emerged as a powerful tool in advancing the Text-to-SQL task, significantly outperforming traditional methods. Nevertheless, as a nascent research field, there is still no consensus on the optimal prompt templates and design frameworks. Additionally, existing benchmarks inadequately explore the performance of LLMs across the various sub-tasks of the Text-to-SQL process, which hinders the assessment of LLMs' cognitive capabilities and the optimization of LLM-based solutions. To address the aforementioned issues, we firstly construct a new dataset designed to mitigate the risk of overfitting in LLMs. Then we formulate five evaluation tasks to comprehensively assess the performance of diverse methods across various LLMs throughout the Text-to-SQL process.Our study highlights the performance disparities among LLMs and proposes optimal in-context learning solutions tailored to each task. These findings offer valuable insights for enhancing the development of LLM-based Text-to-SQL systems.",
+      "externalIds": {
+        "ArXiv": "2403.02951",
+        "DBLP": "journals/corr/abs-2403-02951",
+        "DOI": "10.48550/arXiv.2403.02951",
+        "CorpusId": 268248611
+      },
+      "arxiv_id": "2403.02951",
+      "doi": "10.48550/arXiv.2403.02951",
+      "corpus_id": 268248611
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "45",
+      "ref_key": "S2:405030fdaa44687c5495437dd6c5d1db7010fa3f",
+      "paperId": "405030fdaa44687c5495437dd6c5d1db7010fa3f",
+      "title": "Structure Guided Large Language Model for SQL Generation",
+      "year": 2024,
+      "abstract": "Generating accurate Structured Querying Language (SQL) is a long-standing problem, especially in matching users' semantic queries with structured databases and then generating structured SQL. Existing models typically input queries and database schemas into the LLM and rely on the LLM to perform semantic-structure matching and generate structured SQL. However, such solutions overlook the structural information within user queries and databases, which can be utilized to enhance the generation of structured SQL. This oversight can lead to inaccurate or unexecutable SQL generation. To fully exploit the structure, we propose a structure-to-SQL framework, which leverages the inherent structure information to improve the SQL generation of LLMs. Specifically, we introduce our Structure Guided SQL~(SGU-SQL) generation model. SGU-SQL first links user queries and databases in a structure-enhanced manner. It then decomposes complicated linked structures with grammar trees to guide the LLM to generate the SQL step by step. Extensive experiments on two benchmark datasets illustrate that SGU-SQL can outperform sixteen SQL generation baselines.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-13284",
+        "ArXiv": "2402.13284",
+        "DOI": "10.48550/arXiv.2402.13284",
+        "CorpusId": 267770046
+      },
+      "arxiv_id": "2402.13284",
+      "doi": "10.48550/arXiv.2402.13284",
+      "corpus_id": 267770046
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "46",
+      "ref_key": "S2:cbd569036fc72ae7ff747350b91816440282596b",
+      "paperId": "cbd569036fc72ae7ff747350b91816440282596b",
+      "title": "Seq2SQL: Generating Structured Queries from Natural Language using Reinforcement Learning",
+      "year": 2017,
+      "abstract": "Relational databases store a significant amount of the worlds data. However, accessing this data currently requires users to understand a query language such as SQL. We propose Seq2SQL, a deep neural network for translating natural language questions to corresponding SQL queries. Our model uses rewards from in the loop query execution over the database to learn a policy to generate the query, which contains unordered parts that are less suitable for optimization via cross entropy loss. Moreover, Seq2SQL leverages the structure of SQL to prune the space of generated queries and significantly simplify the generation problem. In addition to the model, we release WikiSQL, a dataset of 80654 hand-annotated examples of questions and SQL queries distributed across 24241 tables fromWikipedia that is an order of magnitude larger than comparable datasets. By applying policy based reinforcement learning with a query execution environment to WikiSQL, Seq2SQL outperforms a state-of-the-art semantic parser, improving execution accuracy from 35.9% to 59.4% and logical form accuracy from 23.4% to 48.3%.",
+      "externalIds": {
+        "MAG": "2751448157",
+        "DBLP": "journals/corr/abs-1709-00103",
+        "ArXiv": "1709.00103",
+        "CorpusId": 25156106
+      },
+      "arxiv_id": "1709.00103",
+      "doi": null,
+      "corpus_id": 25156106
+    },
+    {
+      "paper_id": "2406.08426",
+      "ref_index": "47",
+      "ref_key": "S2:72c73d5fdf1e67a566cd534336d76b754bafdebd",
+      "paperId": "72c73d5fdf1e67a566cd534336d76b754bafdebd",
+      "title": "StructLM: Towards Building Generalist Models for Structured Knowledge Grounding",
+      "year": 2024,
+      "abstract": "Structured data sources, such as tables, graphs, and databases, are ubiquitous knowledge sources. Despite the demonstrated capabilities of large language models (LLMs) on plain text, their proficiency in interpreting and utilizing structured data remains limited. Our investigation reveals a notable deficiency in LLMs' ability to process structured data, e.g., ChatGPT lags behind state-of-the-art (SoTA) model by an average of 35%. To augment the Structured Knowledge Grounding (SKG) capabilities in LLMs, we have developed a comprehensive instruction tuning dataset comprising 1.1 million examples. Utilizing this dataset, we train a series of models, referred to as StructLM, based on the Mistral and the CodeLlama model family, ranging from 7B to 34B parameters. Our StructLM series surpasses task-specific models on 16 out of 18 evaluated datasets and establishes new SoTA performance on 8 SKG tasks. Furthermore, StructLM demonstrates strong generalization across 6 novel held-out SKG tasks, outperforming TableLlama by an average of 35\\% and Flan-UL2 20B by an average of 10\\%. Contrary to expectations, we observe that scaling model size offers marginal benefits, with StructLM-34B showing only slight improvements over StructLM-7B. This suggests that structured knowledge grounding is still a challenging task and requires more innovative design to push to a new level.",
+      "externalIds": {
+        "ArXiv": "2402.16671",
+        "DBLP": "journals/corr/abs-2402-16671",
+        "DOI": "10.48550/arXiv.2402.16671",
+        "CorpusId": 268033005
+      },
+      "arxiv_id": "2402.16671",
+      "doi": "10.48550/arXiv.2402.16671",
+      "corpus_id": 268033005
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "LLM-based Text-to-SQL ": {
+        "Datasets  ": {
+          "Original   Datasets   \\&   Post-annotated   Datasets": {
+            "Cross-   domain": {
+              "3ff5f99c7924b4b28669f09ce3bfbf26fd92abc1": {},
+              "0b3863c21a7fb5ac61a447611cba0ec9ce1ab4a4": {},
+              "84b26030b648b6d79177bdafd3e896b1dda9f91e": {},
+              "a40693eefd351659cdeb3885917b1506ea01c38a": {},
+              "9cd3d6eef7c574830be410598c3024191ee974d4": {},
+              "8f831f341e959955a495730d81996e62c57cc0bd": {},
+              "a8e5b0d370f7adfafb6640047951393a1843c29e": {},
+              "e262e1aa4d1efb909705a2dfcf9df53d76cb4e12": {},
+              "8febba2f66ced916c795aa97444feb624a697446": {},
+              "8e773b1840b894603c06b677a0f15ebcf0f26378": {},
+              "545e60873b0fad25407bb6d647f92c905bd2483d": {},
+              "d88bbcf9aa534e6ff78643a0daa68fc75a7e5bdf": {},
+              "cbd569036fc72ae7ff747350b91816440282596b": {}
+            },
+            "Knowledge-   augmented": {
+              "0b3863c21a7fb5ac61a447611cba0ec9ce1ab4a4": {},
+              "8f831f341e959955a495730d81996e62c57cc0bd": {},
+              "6b2ccee1ac5823ed3d0cf97c75470ea335916c07": {}
+            },
+            "Cross-   lingual": {
+              "a8e5b0d370f7adfafb6640047951393a1843c29e": {},
+              "8febba2f66ced916c795aa97444feb624a697446": {}
+            },
+            "Context-   dependent": {
+              "a40693eefd351659cdeb3885917b1506ea01c38a": {},
+              "545e60873b0fad25407bb6d647f92c905bd2483d": {},
+              "d88bbcf9aa534e6ff78643a0daa68fc75a7e5bdf": {}
+            },
+            "Robustness": {
+              "3ff5f99c7924b4b28669f09ce3bfbf26fd92abc1": {},
+              "84b26030b648b6d79177bdafd3e896b1dda9f91e": {},
+              "e262e1aa4d1efb909705a2dfcf9df53d76cb4e12": {}
+            }
+          }
+        },
+        "Evaluation   Metrics  ": {
+          "Content-   Matching  based": {
+            "8e773b1840b894603c06b677a0f15ebcf0f26378": {}
+          },
+          "Execution  based": {
+            "8f831f341e959955a495730d81996e62c57cc0bd": {},
+            "8e773b1840b894603c06b677a0f15ebcf0f26378": {}
+          }
+        },
+        "Methods  ": {
+          "In-context   Learning   Paradigm  ": {
+            "Trivial   Prompt": {
+              "Zero-shot, modelnode-methods": {
+                "2d765d953efd738034782f9afdb311e3ba015edd": {},
+                "9e3c493fb09dcd61bb05e8c5659f23327b7b6340": {},
+                "e034b664362640cc88dfa5e2e11c0524fc7cb323": {},
+                "8f831f341e959955a495730d81996e62c57cc0bd": {},
+                "6034a1ed44de01ffc18cd2265223ed2bf1d216cd": {},
+                "51000d9f79be0eefd7972fe94e3c71dddc90d2c6": {},
+                "bf11f01929afed0ad3ccfe1b5e0fd34d90ef2b4f": {},
+                "f727986a460a33b9e62ac23f7d8901748e5c10c9": {},
+                "ff3dbed244fc5f1787a9f92a6b91be27855d4adc": {},
+                "d7665e28f59f49acfc34a0eaa3716eedad039f9b": {}
+              },
+              "Few-shot, modelnode-methods": {
+                "6cfcdf82ee19afb9cb5cfa9452d195bd03e3c3be": {},
+                "e034b664362640cc88dfa5e2e11c0524fc7cb323": {},
+                "8f831f341e959955a495730d81996e62c57cc0bd": {},
+                "08dd8304a74f6c98e3d592a565458549ddbb3cd6": {},
+                "cc0f0cb09a73f82ed44d900f5ca710bec784acc1": {},
+                "e0e1fcdbc5b41fcd1cd15001b4861a738411c910": {},
+                "68ad0ed1e21fd9fd7b2bd58769d8bec88c996b01": {},
+                "ff3dbed244fc5f1787a9f92a6b91be27855d4adc": {},
+                "405030fdaa44687c5495437dd6c5d1db7010fa3f": {}
+              }
+            },
+            "Decomposition": {
+              "01de0020c6a0f2d0aa73965e8dcfd9b8f38e05b6": {},
+              "3265df2c0bdf3a0d68e498fcb38fad6199399b6a": {},
+              "024c9fe5a0e00786683d64ec32d142aaaae55fa2": {},
+              "cc0f0cb09a73f82ed44d900f5ca710bec784acc1": {},
+              "fcca8e6a17d6045ec241b9a35e141efaeb892f6f": {},
+              "68ad0ed1e21fd9fd7b2bd58769d8bec88c996b01": {},
+              "43f0b39bc787311b22e0a8659780743cb54a67be": {},
+              "e2751c2030d1497b5f99ee2e08e733043a15bffe": {},
+              "27961ae80ad008bd4006704b1b8fa82664137d69": {},
+              "405030fdaa44687c5495437dd6c5d1db7010fa3f": {}
+            },
+            "Prompt   Optimization": {
+              "6cfcdf82ee19afb9cb5cfa9452d195bd03e3c3be": {},
+              "01de0020c6a0f2d0aa73965e8dcfd9b8f38e05b6": {},
+              "e034b664362640cc88dfa5e2e11c0524fc7cb323": {},
+              "8334cab3749f83b09679e955f4794d132c60b24c": {},
+              "191e300e381d4128b749d16fe3d83c8643a3bd1f": {},
+              "eaac325e94e76d86acfcd6ffea76d47abf86fbe4": {},
+              "e0f27336698c84709bd60b6b7f4ce588cbae66bf": {},
+              "08dd8304a74f6c98e3d592a565458549ddbb3cd6": {},
+              "2d125b26788e41586fa1594da60169f33fb481f0": {},
+              "ff3dbed244fc5f1787a9f92a6b91be27855d4adc": {}
+            },
+            "Reasoning   Enhancement": {
+              "e034b664362640cc88dfa5e2e11c0524fc7cb323": {},
+              "ac2fc8c5d4a1f44464f1415ea3dd3ed45398b9d9": {},
+              "8f831f341e959955a495730d81996e62c57cc0bd": {},
+              "e0e1fcdbc5b41fcd1cd15001b4861a738411c910": {},
+              "68ad0ed1e21fd9fd7b2bd58769d8bec88c996b01": {},
+              "ff3dbed244fc5f1787a9f92a6b91be27855d4adc": {},
+              "405030fdaa44687c5495437dd6c5d1db7010fa3f": {}
+            },
+            "Execution   Refinement": {
+              "9e3c493fb09dcd61bb05e8c5659f23327b7b6340": {},
+              "01de0020c6a0f2d0aa73965e8dcfd9b8f38e05b6": {},
+              "ac2fc8c5d4a1f44464f1415ea3dd3ed45398b9d9": {},
+              "8334cab3749f83b09679e955f4794d132c60b24c": {},
+              "191e300e381d4128b749d16fe3d83c8643a3bd1f": {},
+              "eaac325e94e76d86acfcd6ffea76d47abf86fbe4": {},
+              "024c9fe5a0e00786683d64ec32d142aaaae55fa2": {},
+              "08dd8304a74f6c98e3d592a565458549ddbb3cd6": {},
+              "59fe7cb560651281cfc5db6b8940da0e3ba9dea6": {},
+              "cc0f0cb09a73f82ed44d900f5ca710bec784acc1": {},
+              "fcca8e6a17d6045ec241b9a35e141efaeb892f6f": {},
+              "47e15941c8b157873c8264e4bf50318d1ba5cd18": {},
+              "e0e1fcdbc5b41fcd1cd15001b4861a738411c910": {},
+              "43f0b39bc787311b22e0a8659780743cb54a67be": {},
+              "27961ae80ad008bd4006704b1b8fa82664137d69": {}
+            }
+          },
+          "Fine-tuning   Paradigm   ": {
+            "Vanilla   Fine-tuning": {
+              "e034b664362640cc88dfa5e2e11c0524fc7cb323": {},
+              "e0e1fcdbc5b41fcd1cd15001b4861a738411c910": {},
+              "bf11f01929afed0ad3ccfe1b5e0fd34d90ef2b4f": {},
+              "f727986a460a33b9e62ac23f7d8901748e5c10c9": {}
+            },
+            "Enhanced   Architecture": {
+              "a1849a77644ff411a03833b5aa7a65ff57158c50": {}
+            },
+            "Pre-training": {
+              "978040c55f9094212d15b7ffadfab1440913b6cf": {}
+            },
+            "Data   Augmentation": {
+              "e034b664362640cc88dfa5e2e11c0524fc7cb323": {},
+              "978040c55f9094212d15b7ffadfab1440913b6cf": {},
+              "bf11f01929afed0ad3ccfe1b5e0fd34d90ef2b4f": {},
+              "72c73d5fdf1e67a566cd534336d76b754bafdebd": {}
+            },
+            "Decomposition": {
+              "07de76b2862cf7738b3fd28aabd708186231a527": {}
+            }
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000001",
+        "paperId": "3ff5f99c7924b4b28669f09ce3bfbf26fd92abc1",
+        "ref_index": "3",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Cross-   domain"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000002",
+        "paperId": "0b3863c21a7fb5ac61a447611cba0ec9ce1ab4a4",
+        "ref_index": "6",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Cross-   domain"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000003",
+        "paperId": "84b26030b648b6d79177bdafd3e896b1dda9f91e",
+        "ref_index": "7",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Cross-   domain"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000004",
+        "paperId": "a40693eefd351659cdeb3885917b1506ea01c38a",
+        "ref_index": "8",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Cross-   domain"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000005",
+        "paperId": "9cd3d6eef7c574830be410598c3024191ee974d4",
+        "ref_index": "16",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Cross-   domain"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000006",
+        "paperId": "8f831f341e959955a495730d81996e62c57cc0bd",
+        "ref_index": "17",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Cross-   domain"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000007",
+        "paperId": "a8e5b0d370f7adfafb6640047951393a1843c29e",
+        "ref_index": "21",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Cross-   domain"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000008",
+        "paperId": "e262e1aa4d1efb909705a2dfcf9df53d76cb4e12",
+        "ref_index": "24",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Cross-   domain"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000009",
+        "paperId": "8febba2f66ced916c795aa97444feb624a697446",
+        "ref_index": "33",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Cross-   domain"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000010",
+        "paperId": "8e773b1840b894603c06b677a0f15ebcf0f26378",
+        "ref_index": "39",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Cross-   domain"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000011",
+        "paperId": "545e60873b0fad25407bb6d647f92c905bd2483d",
+        "ref_index": "40",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Cross-   domain"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000012",
+        "paperId": "d88bbcf9aa534e6ff78643a0daa68fc75a7e5bdf",
+        "ref_index": "41",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Cross-   domain"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000013",
+        "paperId": "cbd569036fc72ae7ff747350b91816440282596b",
+        "ref_index": "46",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Cross-   domain"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000014",
+        "paperId": "0b3863c21a7fb5ac61a447611cba0ec9ce1ab4a4",
+        "ref_index": "6",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Knowledge-   augmented"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000015",
+        "paperId": "8f831f341e959955a495730d81996e62c57cc0bd",
+        "ref_index": "17",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Knowledge-   augmented"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000016",
+        "paperId": "6b2ccee1ac5823ed3d0cf97c75470ea335916c07",
+        "ref_index": "29",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Knowledge-   augmented"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000017",
+        "paperId": "a8e5b0d370f7adfafb6640047951393a1843c29e",
+        "ref_index": "21",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Cross-   lingual"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000018",
+        "paperId": "8febba2f66ced916c795aa97444feb624a697446",
+        "ref_index": "33",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Cross-   lingual"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000019",
+        "paperId": "a40693eefd351659cdeb3885917b1506ea01c38a",
+        "ref_index": "8",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Context-   dependent"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000020",
+        "paperId": "545e60873b0fad25407bb6d647f92c905bd2483d",
+        "ref_index": "40",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Context-   dependent"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000021",
+        "paperId": "d88bbcf9aa534e6ff78643a0daa68fc75a7e5bdf",
+        "ref_index": "41",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Context-   dependent"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000022",
+        "paperId": "3ff5f99c7924b4b28669f09ce3bfbf26fd92abc1",
+        "ref_index": "3",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Robustness"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000023",
+        "paperId": "84b26030b648b6d79177bdafd3e896b1dda9f91e",
+        "ref_index": "7",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Robustness"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000024",
+        "paperId": "e262e1aa4d1efb909705a2dfcf9df53d76cb4e12",
+        "ref_index": "24",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Datasets  ",
+          "Original   Datasets   \\&   Post-annotated   Datasets",
+          "Robustness"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000025",
+        "paperId": "8e773b1840b894603c06b677a0f15ebcf0f26378",
+        "ref_index": "39",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Evaluation   Metrics  ",
+          "Content-   Matching  based"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000026",
+        "paperId": "8f831f341e959955a495730d81996e62c57cc0bd",
+        "ref_index": "17",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Evaluation   Metrics  ",
+          "Execution  based"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000027",
+        "paperId": "8e773b1840b894603c06b677a0f15ebcf0f26378",
+        "ref_index": "39",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Evaluation   Metrics  ",
+          "Execution  based"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000028",
+        "paperId": "2d765d953efd738034782f9afdb311e3ba015edd",
+        "ref_index": "0",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Trivial   Prompt",
+          "Zero-shot, modelnode-methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000029",
+        "paperId": "9e3c493fb09dcd61bb05e8c5659f23327b7b6340",
+        "ref_index": "2",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Trivial   Prompt",
+          "Zero-shot, modelnode-methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000030",
+        "paperId": "e034b664362640cc88dfa5e2e11c0524fc7cb323",
+        "ref_index": "9",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Trivial   Prompt",
+          "Zero-shot, modelnode-methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000031",
+        "paperId": "8f831f341e959955a495730d81996e62c57cc0bd",
+        "ref_index": "17",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Trivial   Prompt",
+          "Zero-shot, modelnode-methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000032",
+        "paperId": "6034a1ed44de01ffc18cd2265223ed2bf1d216cd",
+        "ref_index": "20",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Trivial   Prompt",
+          "Zero-shot, modelnode-methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000033",
+        "paperId": "51000d9f79be0eefd7972fe94e3c71dddc90d2c6",
+        "ref_index": "27",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Trivial   Prompt",
+          "Zero-shot, modelnode-methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000034",
+        "paperId": "bf11f01929afed0ad3ccfe1b5e0fd34d90ef2b4f",
+        "ref_index": "37",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Trivial   Prompt",
+          "Zero-shot, modelnode-methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000035",
+        "paperId": "f727986a460a33b9e62ac23f7d8901748e5c10c9",
+        "ref_index": "38",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Trivial   Prompt",
+          "Zero-shot, modelnode-methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000036",
+        "paperId": "ff3dbed244fc5f1787a9f92a6b91be27855d4adc",
+        "ref_index": "43",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Trivial   Prompt",
+          "Zero-shot, modelnode-methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000037",
+        "paperId": "d7665e28f59f49acfc34a0eaa3716eedad039f9b",
+        "ref_index": "44",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Trivial   Prompt",
+          "Zero-shot, modelnode-methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000038",
+        "paperId": "6cfcdf82ee19afb9cb5cfa9452d195bd03e3c3be",
+        "ref_index": "1",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Trivial   Prompt",
+          "Few-shot, modelnode-methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000039",
+        "paperId": "e034b664362640cc88dfa5e2e11c0524fc7cb323",
+        "ref_index": "9",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Trivial   Prompt",
+          "Few-shot, modelnode-methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000040",
+        "paperId": "8f831f341e959955a495730d81996e62c57cc0bd",
+        "ref_index": "17",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Trivial   Prompt",
+          "Few-shot, modelnode-methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000041",
+        "paperId": "08dd8304a74f6c98e3d592a565458549ddbb3cd6",
+        "ref_index": "22",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Trivial   Prompt",
+          "Few-shot, modelnode-methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000042",
+        "paperId": "cc0f0cb09a73f82ed44d900f5ca710bec784acc1",
+        "ref_index": "25",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Trivial   Prompt",
+          "Few-shot, modelnode-methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000043",
+        "paperId": "e0e1fcdbc5b41fcd1cd15001b4861a738411c910",
+        "ref_index": "31",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Trivial   Prompt",
+          "Few-shot, modelnode-methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000044",
+        "paperId": "68ad0ed1e21fd9fd7b2bd58769d8bec88c996b01",
+        "ref_index": "32",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Trivial   Prompt",
+          "Few-shot, modelnode-methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000045",
+        "paperId": "ff3dbed244fc5f1787a9f92a6b91be27855d4adc",
+        "ref_index": "43",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Trivial   Prompt",
+          "Few-shot, modelnode-methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000046",
+        "paperId": "405030fdaa44687c5495437dd6c5d1db7010fa3f",
+        "ref_index": "45",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Trivial   Prompt",
+          "Few-shot, modelnode-methods"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000047",
+        "paperId": "01de0020c6a0f2d0aa73965e8dcfd9b8f38e05b6",
+        "ref_index": "4",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Decomposition"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000048",
+        "paperId": "3265df2c0bdf3a0d68e498fcb38fad6199399b6a",
+        "ref_index": "5",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Decomposition"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000049",
+        "paperId": "024c9fe5a0e00786683d64ec32d142aaaae55fa2",
+        "ref_index": "19",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Decomposition"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000050",
+        "paperId": "cc0f0cb09a73f82ed44d900f5ca710bec784acc1",
+        "ref_index": "25",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Decomposition"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000051",
+        "paperId": "fcca8e6a17d6045ec241b9a35e141efaeb892f6f",
+        "ref_index": "28",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Decomposition"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000052",
+        "paperId": "68ad0ed1e21fd9fd7b2bd58769d8bec88c996b01",
+        "ref_index": "32",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Decomposition"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000053",
+        "paperId": "43f0b39bc787311b22e0a8659780743cb54a67be",
+        "ref_index": "35",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Decomposition"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000054",
+        "paperId": "e2751c2030d1497b5f99ee2e08e733043a15bffe",
+        "ref_index": "36",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Decomposition"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000055",
+        "paperId": "27961ae80ad008bd4006704b1b8fa82664137d69",
+        "ref_index": "42",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Decomposition"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000056",
+        "paperId": "405030fdaa44687c5495437dd6c5d1db7010fa3f",
+        "ref_index": "45",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Decomposition"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000057",
+        "paperId": "6cfcdf82ee19afb9cb5cfa9452d195bd03e3c3be",
+        "ref_index": "1",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Prompt   Optimization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000058",
+        "paperId": "01de0020c6a0f2d0aa73965e8dcfd9b8f38e05b6",
+        "ref_index": "4",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Prompt   Optimization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000059",
+        "paperId": "e034b664362640cc88dfa5e2e11c0524fc7cb323",
+        "ref_index": "9",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Prompt   Optimization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000060",
+        "paperId": "8334cab3749f83b09679e955f4794d132c60b24c",
+        "ref_index": "11",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Prompt   Optimization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000061",
+        "paperId": "191e300e381d4128b749d16fe3d83c8643a3bd1f",
+        "ref_index": "12",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Prompt   Optimization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000062",
+        "paperId": "eaac325e94e76d86acfcd6ffea76d47abf86fbe4",
+        "ref_index": "13",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Prompt   Optimization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000063",
+        "paperId": "e0f27336698c84709bd60b6b7f4ce588cbae66bf",
+        "ref_index": "14",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Prompt   Optimization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000064",
+        "paperId": "08dd8304a74f6c98e3d592a565458549ddbb3cd6",
+        "ref_index": "22",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Prompt   Optimization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000065",
+        "paperId": "2d125b26788e41586fa1594da60169f33fb481f0",
+        "ref_index": "34",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Prompt   Optimization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000066",
+        "paperId": "ff3dbed244fc5f1787a9f92a6b91be27855d4adc",
+        "ref_index": "43",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Prompt   Optimization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000067",
+        "paperId": "e034b664362640cc88dfa5e2e11c0524fc7cb323",
+        "ref_index": "9",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Reasoning   Enhancement"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000068",
+        "paperId": "ac2fc8c5d4a1f44464f1415ea3dd3ed45398b9d9",
+        "ref_index": "10",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Reasoning   Enhancement"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000069",
+        "paperId": "8f831f341e959955a495730d81996e62c57cc0bd",
+        "ref_index": "17",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Reasoning   Enhancement"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000070",
+        "paperId": "e0e1fcdbc5b41fcd1cd15001b4861a738411c910",
+        "ref_index": "31",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Reasoning   Enhancement"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000071",
+        "paperId": "68ad0ed1e21fd9fd7b2bd58769d8bec88c996b01",
+        "ref_index": "32",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Reasoning   Enhancement"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000072",
+        "paperId": "ff3dbed244fc5f1787a9f92a6b91be27855d4adc",
+        "ref_index": "43",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Reasoning   Enhancement"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000073",
+        "paperId": "405030fdaa44687c5495437dd6c5d1db7010fa3f",
+        "ref_index": "45",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Reasoning   Enhancement"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000074",
+        "paperId": "9e3c493fb09dcd61bb05e8c5659f23327b7b6340",
+        "ref_index": "2",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Execution   Refinement"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000075",
+        "paperId": "01de0020c6a0f2d0aa73965e8dcfd9b8f38e05b6",
+        "ref_index": "4",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Execution   Refinement"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000076",
+        "paperId": "ac2fc8c5d4a1f44464f1415ea3dd3ed45398b9d9",
+        "ref_index": "10",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Execution   Refinement"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000077",
+        "paperId": "8334cab3749f83b09679e955f4794d132c60b24c",
+        "ref_index": "11",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Execution   Refinement"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000078",
+        "paperId": "191e300e381d4128b749d16fe3d83c8643a3bd1f",
+        "ref_index": "12",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Execution   Refinement"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000079",
+        "paperId": "eaac325e94e76d86acfcd6ffea76d47abf86fbe4",
+        "ref_index": "13",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Execution   Refinement"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000080",
+        "paperId": "024c9fe5a0e00786683d64ec32d142aaaae55fa2",
+        "ref_index": "19",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Execution   Refinement"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000081",
+        "paperId": "08dd8304a74f6c98e3d592a565458549ddbb3cd6",
+        "ref_index": "22",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Execution   Refinement"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000082",
+        "paperId": "59fe7cb560651281cfc5db6b8940da0e3ba9dea6",
+        "ref_index": "23",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Execution   Refinement"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000083",
+        "paperId": "cc0f0cb09a73f82ed44d900f5ca710bec784acc1",
+        "ref_index": "25",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Execution   Refinement"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000084",
+        "paperId": "fcca8e6a17d6045ec241b9a35e141efaeb892f6f",
+        "ref_index": "28",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Execution   Refinement"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000085",
+        "paperId": "47e15941c8b157873c8264e4bf50318d1ba5cd18",
+        "ref_index": "30",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Execution   Refinement"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000086",
+        "paperId": "e0e1fcdbc5b41fcd1cd15001b4861a738411c910",
+        "ref_index": "31",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Execution   Refinement"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000087",
+        "paperId": "43f0b39bc787311b22e0a8659780743cb54a67be",
+        "ref_index": "35",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Execution   Refinement"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000088",
+        "paperId": "27961ae80ad008bd4006704b1b8fa82664137d69",
+        "ref_index": "42",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "In-context   Learning   Paradigm  ",
+          "Execution   Refinement"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000089",
+        "paperId": "e034b664362640cc88dfa5e2e11c0524fc7cb323",
+        "ref_index": "9",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "Fine-tuning   Paradigm   ",
+          "Vanilla   Fine-tuning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000090",
+        "paperId": "e0e1fcdbc5b41fcd1cd15001b4861a738411c910",
+        "ref_index": "31",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "Fine-tuning   Paradigm   ",
+          "Vanilla   Fine-tuning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000091",
+        "paperId": "bf11f01929afed0ad3ccfe1b5e0fd34d90ef2b4f",
+        "ref_index": "37",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "Fine-tuning   Paradigm   ",
+          "Vanilla   Fine-tuning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000092",
+        "paperId": "f727986a460a33b9e62ac23f7d8901748e5c10c9",
+        "ref_index": "38",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "Fine-tuning   Paradigm   ",
+          "Vanilla   Fine-tuning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000093",
+        "paperId": "a1849a77644ff411a03833b5aa7a65ff57158c50",
+        "ref_index": "15",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "Fine-tuning   Paradigm   ",
+          "Enhanced   Architecture"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000094",
+        "paperId": "978040c55f9094212d15b7ffadfab1440913b6cf",
+        "ref_index": "18",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "Fine-tuning   Paradigm   ",
+          "Pre-training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000095",
+        "paperId": "e034b664362640cc88dfa5e2e11c0524fc7cb323",
+        "ref_index": "9",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "Fine-tuning   Paradigm   ",
+          "Data   Augmentation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000096",
+        "paperId": "978040c55f9094212d15b7ffadfab1440913b6cf",
+        "ref_index": "18",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "Fine-tuning   Paradigm   ",
+          "Data   Augmentation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000097",
+        "paperId": "bf11f01929afed0ad3ccfe1b5e0fd34d90ef2b4f",
+        "ref_index": "37",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "Fine-tuning   Paradigm   ",
+          "Data   Augmentation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000098",
+        "paperId": "72c73d5fdf1e67a566cd534336d76b754bafdebd",
+        "ref_index": "47",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "Fine-tuning   Paradigm   ",
+          "Data   Augmentation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.08426",
+        "arxiv_id": "2406.08426",
+        "leaf_mention_id": "2406.08426::000099",
+        "paperId": "07de76b2862cf7738b3fd28aabd708186231a527",
+        "ref_index": "26",
+        "path": [
+          "LLM-based Text-to-SQL ",
+          "Methods  ",
+          "Fine-tuning   Paradigm   ",
+          "Decomposition"
+        ],
+        "depth": 4,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 99,
+      "unique_leaf_paper_count": 48,
+      "multi_membership_extra_mentions": 51,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

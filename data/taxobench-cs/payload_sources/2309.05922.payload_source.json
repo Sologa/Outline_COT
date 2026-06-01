@@ -1,0 +1,814 @@
+{
+  "paper_id": "2309.05922",
+  "arxiv_id": "2309.05922",
+  "title": "A Survey of Hallucination in Large Foundation Models",
+  "ref_meta": [
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "0",
+      "ref_key": "S2:ce9c0935c074a0ca8769f13fd4e8651cee263112",
+      "paperId": "ce9c0935c074a0ca8769f13fd4e8651cee263112",
+      "title": "LP-MusicCaps: LLM-Based Pseudo Music Captioning",
+      "year": 2023,
+      "abstract": "Automatic music captioning, which generates natural language descriptions for given music tracks, holds significant potential for enhancing the understanding and organization of large volumes of musical data. Despite its importance, researchers face challenges due to the costly and time-consuming collection process of existing music-language datasets, which are limited in size. To address this data scarcity issue, we propose the use of large language models (LLMs) to artificially generate the description sentences from large-scale tag datasets. This results in approximately 2.2M captions paired with 0.5M audio clips. We term it Large Language Model based Pseudo music caption dataset, shortly, LP-MusicCaps. We conduct a systemic evaluation of the large-scale music captioning dataset with various quantitative evaluation metrics used in the field of natural language processing as well as human evaluation. In addition, we trained a transformer-based music captioning model with the dataset and evaluated it under zero-shot and transfer-learning settings. The results demonstrate that our proposed approach outperforms the supervised baseline model.",
+      "externalIds": {
+        "DBLP": "conf/ismir/DohCLN23",
+        "ArXiv": "2307.16372",
+        "DOI": "10.48550/arXiv.2307.16372",
+        "CorpusId": 260334763
+      },
+      "arxiv_id": "2307.16372",
+      "doi": "10.48550/arXiv.2307.16372",
+      "corpus_id": 260334763
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "1",
+      "ref_key": "S2:eee548fbd0b9dd954c692fbd8880e80d5f077bd7",
+      "paperId": "eee548fbd0b9dd954c692fbd8880e80d5f077bd7",
+      "title": "Halo: Estimation and Reduction of Hallucinations in Open-Source Weak Large Language Models",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) have revolutionized Natural Language Processing (NLP). Although convenient for research and practical applications, open-source LLMs with fewer parameters often suffer from severe hallucinations compared to their larger counterparts. This paper focuses on measuring and reducing hallucinations in BLOOM 7B, a representative of such weaker open-source LLMs that are publicly available for research and commercial applications. We introduce HaloCheck, a lightweight BlackBox knowledge-free framework designed to quantify the severity of hallucinations in LLMs. Additionally, we explore techniques like knowledge injection and teacher-student approaches to alleviate hallucinations in low-parameter LLMs. Our experiments effectively demonstrate the reduction of hallucinations in challenging domains for these LLMs.",
+      "externalIds": {
+        "ArXiv": "2308.11764",
+        "DBLP": "journals/corr/abs-2308-11764",
+        "DOI": "10.48550/arXiv.2308.11764",
+        "CorpusId": 261076218
+      },
+      "arxiv_id": "2308.11764",
+      "doi": "10.48550/arXiv.2308.11764",
+      "corpus_id": 261076218
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "2",
+      "ref_key": "S2:66242baf48b0f6b828e7547ac39ffaa5e1b2cb3e",
+      "paperId": "66242baf48b0f6b828e7547ac39ffaa5e1b2cb3e",
+      "title": "RARR: Researching and Revising What Language Models Say, Using Language Models",
+      "year": 2022,
+      "abstract": "Language models (LMs) now excel at many tasks such as question answering, reasoning, and dialog. However, they sometimes generate unsupported or misleading content. A user cannot easily determine whether their outputs are trustworthy or not, because most LMs do not have any built-in mechanism for attribution to external evidence. To enable attribution while still preserving all the powerful advantages of recent generation models, we propose RARR (Retrofit Attribution using Research and Revision), a system that 1) automatically finds attribution for the output of any text generation model, and 2) post-edits the output to fix unsupported content while preserving the original output as much as possible. When applied to the output of several state-of-the-art LMs on a diverse set of generation tasks, we find that RARR significantly improves attribution while otherwise preserving the original input to a much greater degree than previously explored edit models. Furthermore, the implementation of RARR requires only a handful of training examples, a large language model, and standard web search.",
+      "externalIds": {
+        "ArXiv": "2210.08726",
+        "DBLP": "conf/acl/GaoDPCCFZLLJG23",
+        "ACL": "2023.acl-long.910",
+        "DOI": "10.18653/v1/2023.acl-long.910",
+        "CorpusId": 254247260
+      },
+      "arxiv_id": "2210.08726",
+      "doi": "10.18653/v1/2023.acl-long.910",
+      "corpus_id": 254247260
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "3",
+      "ref_key": "S2:658cd67a91da86cf451e6f1b015f762b56015172",
+      "paperId": "658cd67a91da86cf451e6f1b015f762b56015172",
+      "title": "Detecting and Preventing Hallucinations in Large Vision Language Models",
+      "year": 2023,
+      "abstract": "Instruction tuned Large Vision Language Models (LVLMs) have significantly advanced in generalizing across a diverse set of multi-modal tasks, especially for Visual Question Answering (VQA). However, generating detailed responses that are visually grounded is still a challenging task for these models. We find that even the current state-of-the-art LVLMs (InstructBLIP) still contain a staggering 30 percent of the hallucinatory text in the form of non-existent objects, unfaithful descriptions, and inaccurate relationships. To address this, we introduce M-HalDetect, a Multimodal Hallucination Detection Dataset that can be used to train and benchmark models for hallucination detection and prevention. M-HalDetect consists of 16k fine-grained annotations on VQA examples, making it the first comprehensive multi-modal hallucination detection dataset for detailed image descriptions. Unlike previous work that only consider object hallucination, we additionally annotate both entity descriptions and relationships that are unfaithful. To demonstrate the potential of this dataset for hallucination prevention, we optimize InstructBLIP through our novel Fine-grained Direct Preference Optimization (FDPO). We also train fine-grained multi-modal reward models from InstructBLIP and evaluate their effectiveness with best-of-n rejection sampling (RS). We perform human evaluation on both FDPO and rejection sampling, and find that they reduce hallucination rates in InstructBLIP by 41% and 55% respectively. We also find that our reward model generalizes to other multi-modal models, reducing hallucinations in LLaVA and mPLUG-OWL by 15% and 57% respectively, and has strong correlation with human evaluated accuracy scores. The dataset is available at https://github.com/hendryx-scale/mhal-detect.",
+      "externalIds": {
+        "DBLP": "conf/aaai/GunjalYB24",
+        "ArXiv": "2308.06394",
+        "DOI": "10.48550/arXiv.2308.06394",
+        "CorpusId": 260887222
+      },
+      "arxiv_id": "2308.06394",
+      "doi": "10.48550/arXiv.2308.06394",
+      "corpus_id": 260887222
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "4",
+      "ref_key": "S2:7bf902fb94a577d15293ac4f90d8967163850fb1",
+      "paperId": "7bf902fb94a577d15293ac4f90d8967163850fb1",
+      "title": "Let's Think Frame by Frame: Evaluating Video Chain of Thought with Video Infilling and Prediction",
+      "year": 2023,
+      "abstract": "Despite constituting 65% of all internet traffic in 2023, video content is underrepresented in generative AI research. Meanwhile, recent large language models (LLMs) have become increasingly integrated with capabilities in the visual modality. Integrating video with LLMs is a natural next step, so how can this gap be bridged? To advance video reasoning, we propose a new research direction of VideoCOT on video keyframes, which leverages the multimodal generative abilities of vision-language models to enhance video reasoning while reducing the computational complexity of processing hundreds or thousands of frames. We introduce VIP, an inference-time dataset that can be used to evaluate VideoCOT, containing 1) a variety of real-life videos with keyframes and corresponding unstructured and structured scene descriptions, and 2) two new video reasoning tasks: video infilling and scene prediction. We benchmark various vision-language models on VIP, demonstrating the potential to use vision-language models and LLMs to enhance video chain of thought reasoning.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-13903",
+        "DOI": "10.48550/arXiv.2305.13903",
+        "CorpusId": 258841347
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2305.13903",
+      "corpus_id": 258841347
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "5",
+      "ref_key": "S2:78eca0064ec7779d131cbaac49c2d1a023426871",
+      "paperId": "78eca0064ec7779d131cbaac49c2d1a023426871",
+      "title": "Citation: A Key to Building Responsible and Accountable Large Language Models",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) bring transformative benefits alongside unique challenges, including intellectual property (IP) and ethical concerns. This position paper explores a novel angle to mitigate these risks, drawing parallels between LLMs and established web systems. We identify\"citation\"- the acknowledgement or reference to a source or evidence - as a crucial yet missing component in LLMs. Incorporating citation could enhance content transparency and verifiability, thereby confronting the IP and ethical issues in the deployment of LLMs. We further propose that a comprehensive citation mechanism for LLMs should account for both non-parametric and parametric content. Despite the complexity of implementing such a citation mechanism, along with the potential pitfalls, we advocate for its development. Building on this foundation, we outline several research problems in this area, aiming to guide future explorations towards building more responsible and accountable LLMs.",
+      "externalIds": {
+        "ArXiv": "2307.02185",
+        "DBLP": "journals/corr/abs-2307-02185",
+        "DOI": "10.48550/arXiv.2307.02185",
+        "CorpusId": 259342641
+      },
+      "arxiv_id": "2307.02185",
+      "doi": "10.48550/arXiv.2307.02185",
+      "corpus_id": 259342641
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "6",
+      "ref_key": "S2:44d74b0d77b4056ddd4c6611a76711c8bab2e0a7",
+      "paperId": "44d74b0d77b4056ddd4c6611a76711c8bab2e0a7",
+      "title": "Dehallucinating Large Language Models Using Formal Methods Guided Iterative Prompting",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) such as ChatGPT have been trained to generate human-like responses to natural language prompts. LLMs use a vast corpus of text data for training, and can generate coherent and contextually relevant responses to a wide range of questions and statements. Despite this remarkable progress, LLMs are prone to hallucinations making their application to safety-critical applications such as autonomous systems difficult. The hallucinations in LLMs refer to instances where the model generates responses that are not factually accurate or contextually appropriate. These hallucinations can occur due to a variety of factors, such as the model’s lack of real-world knowledge, the influence of biased or inaccurate training data, or the model’s tendency to generate responses based on statistical patterns rather than a true understanding of the input. While these hallucinations are a nuisance in tasks such as text summarization and question-answering, they can be catastrophic when LLMs are used in autonomy-relevant applications such as planning. In this paper, we focus on the application of LLMs in autonomous systems and sketch a novel self-monitoring and iterative prompting architecture that uses formal methods to detect these errors in the LLM response automatically. We exploit the dialog capability of LLMs to iteratively steer them to responses that are consistent with our correctness specification. We report preliminary experiments that show the promise of the proposed approach on tasks such as automated planning.",
+      "externalIds": {
+        "DBLP": "conf/icaa2/JhaJLBVN23",
+        "DOI": "10.1109/ICAA58325.2023.00029",
+        "CorpusId": 260810131
+      },
+      "arxiv_id": null,
+      "doi": "10.1109/ICAA58325.2023.00029",
+      "corpus_id": 260810131
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "7",
+      "ref_key": "S2:f2b34c5bc6b20353aa531f860aefeadf8d96e3be",
+      "paperId": "f2b34c5bc6b20353aa531f860aefeadf8d96e3be",
+      "title": "Putting People in Their Place: Affordance-Aware Human Insertion into Scenes",
+      "year": 2023,
+      "abstract": "We study the problem of inferring scene affordances by presenting a method for realistically inserting people into scenes. Given a scene image with a marked region and an image of a person, we insert the person into the scene while respecting the scene affordances. Our model can infer the set of realistic poses given the scene context, re-pose the reference person, and harmonize the composition. We set up the task in a self-supervised fashion by learning to repose humans in video clips. We train a large-scale diffusion model on a dataset of 2.4M video clips that produces diverse plausible poses while respecting the scene context. Given the learned human-scene composition, our model can also hallucinate realistic people and scenes when prompted without conditioning and also enables interactive editing. A quantitative evaluation shows that our method synthesizes more realistic human appearance and more natural human-scene interactions than prior work.",
+      "externalIds": {
+        "ArXiv": "2304.14406",
+        "DBLP": "conf/cvpr/KulalBA0YLES23",
+        "DOI": "10.1109/CVPR52729.2023.01639",
+        "CorpusId": 258352521
+      },
+      "arxiv_id": "2304.14406",
+      "doi": "10.1109/CVPR52729.2023.01639",
+      "corpus_id": 258352521
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "8",
+      "ref_key": "S2:13697bc3e4047683ed8375845783b7f2ab590f37",
+      "paperId": "13697bc3e4047683ed8375845783b7f2ab590f37",
+      "title": "Audio-Journey: Efficient Visual+LLM-aided Audio Encodec Diffusion",
+      "year": null,
+      "abstract": "Despite recent progress, machine learning for the audio domain is limited by the availability of high-quality data. Visual information already presented in a video should complement the information in audio. In this paper, we leverage a state-of-the-art (SOTA) LLM to perform data augmentation, bypassing the need for costly human annotation; We also leverage audio encodec model to allow for extremely efficient adaptation of a pre-trained text-to-image generation latent diffusion model to perform text-to-audio generation. Our approach exemplifies a promising method for augmenting low-resource audio datasets. The samples, models, and implementation will be at https://audiojourney.github.io .",
+      "externalIds": {
+        "CorpusId": 268726981
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 268726981
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "9",
+      "ref_key": "S2:80fd20e175f83a699258b8780cf365418d1538b0",
+      "paperId": "80fd20e175f83a699258b8780cf365418d1538b0",
+      "title": "Chain of Knowledge: A Framework for Grounding Large Language Models with Structured Knowledge Bases",
+      "year": 2023,
+      "abstract": "We introduce Chain of Knowledge (CoK), a framework that augments large language models with structured knowledge bases to improve factual correctness and reduce hallucination. Compared to previous works which only retrieve unstructured texts, CoK leverages structured knowledge bases which support complex queries and offer more direct factual statements. To assist large language models to effectively query knowledge bases, we propose a query generator model with contrastive instruction-tuning. As the query generator is separate from the frozen large language model, our framework is modular and thus easily adapted to various knowledge sources and models. Experiments show that our framework signiﬁcantly enhances the factual correctness of large language models on knowledge-intensive tasks. Our code is available at https://github.com/DAMO-NLP-SG/chain-of-knowledge.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-13269",
+        "DOI": "10.48550/arXiv.2305.13269",
+        "CorpusId": 258833025
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2305.13269",
+      "corpus_id": 258833025
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "10",
+      "ref_key": "S2:206400aba5f12f734cdd2e4ab48ef6014ea60773",
+      "paperId": "206400aba5f12f734cdd2e4ab48ef6014ea60773",
+      "title": "Evaluating Object Hallucination in Large Vision-Language Models",
+      "year": 2023,
+      "abstract": "Inspired by the superior language abilities of large language models (LLM), large vision-language models (LVLM) have been recently explored by integrating powerful LLMs for improving the performance on complex multimodal tasks. Despite the promising progress on LVLMs, we find that LVLMs suffer from the hallucination problem, i.e. they tend to generate objects that are inconsistent with the target images in the descriptions. To investigate it, this work presents the first systematic study on object hallucination of LVLMs. We conduct the evaluation experiments on several representative LVLMs, and show that they mostly suffer from severe object hallucination issue. We further discuss that the visual instructions may influence the hallucination, and find that: objects that frequently occur in the visual instructions or co-occur with the image objects, are obviously prone to be hallucinated by LVLMs. Besides, we find that existing evaluation methods might be affected by the input instructions and generation styles of LVLMs. Thus, we further design an improved evaluation method for object hallucination by proposing a polling-based query method called POPE. Experiment results demonstrate that our POPE can evaluate the object hallucination in a more stable and flexible way. Our codes and data are publicly available at https://github.com/RUCAIBox/POPE.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-10355",
+        "ArXiv": "2305.10355",
+        "DOI": "10.48550/arXiv.2305.10355",
+        "CorpusId": 258740697
+      },
+      "arxiv_id": "2305.10355",
+      "doi": "10.48550/arXiv.2305.10355",
+      "corpus_id": 258740697
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "11",
+      "ref_key": "S2:cb7fa7ee3df826628c113ba0c6db1205751d89a3",
+      "paperId": "cb7fa7ee3df826628c113ba0c6db1205751d89a3",
+      "title": "HELMA: A Large-Scale Hallucination Evaluation Benchmark for Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs), such as Chat-GPT, are prone to generate hallucinations, i.e., content that conﬂicts with the source or cannot be veriﬁed by the factual knowledge. To understand what types of content and to which extent LLMs are apt to hallucinate, we introduce the H allucination E valuation for Large L anguage M odels ( HELMA ) benchmark, a large collection of generated and human-annotated hallucinated samples for evaluating the performance of LLMs in recognizing and alleviating hallucination. To generate these samples, we propose a ChatGPT-based two-step framework, i.e., sampling-then-ﬁltering . Speciﬁcally, we ﬁrst adopt two different sampling methods to generate hallucinated samples based on instructions, and then use an example-enhanced ﬁltering method to select the best one. Furthermore, we also hire some human labelers to annotate the hallucinations in ChatGPT responses. The empirical results suggest that ChatGPT has some probabilities to generate hallucinations and existing LLMs face great challenges in recognizing the hallucinations in text. In addition, the performance can be improved by providing external knowledge or adding reasoning steps. Our benchmark can be accessed at https://github.com/ RUCAIBox/HELMA .",
+      "externalIds": {
+        "CorpusId": 258822799
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 258822799
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "12",
+      "ref_key": "S2:d48cb91b9e555194f7494c4d4bb9815021d3ee45",
+      "paperId": "d48cb91b9e555194f7494c4d4bb9815021d3ee45",
+      "title": "VideoChat: Chat-Centric Video Understanding",
+      "year": 2023,
+      "abstract": "In this paper, we initiate an attempt of developing an end-to-end chat-centric video understanding system, coined as VideoChat. It integrates video foundation models and large language models via a learnable neural interface, excelling in spatiotemporal reasoning, event localization, and causal relationship inference. To instructively tune this system, we build a video-centric instruction dataset, composed of thousands of videos associated with detailed descriptions and conversations. This dataset emphasizes spatiotemporal reasoning and captures causal relationships, providing a valuable asset for training our chat-centric video understanding system. Preliminary qualitative experiments demonstrate the potential of our system across a broad spectrum of video applications, which could serve as a simple prototype system for future research on chat-centric video understanding. Access our code and data at https://github.com/OpenGVLab/Ask-Anything",
+      "externalIds": {
+        "ArXiv": "2305.06355",
+        "DBLP": "journals/corr/abs-2305-06355",
+        "DOI": "10.48550/arXiv.2305.06355",
+        "CorpusId": 258588306
+      },
+      "arxiv_id": "2305.06355",
+      "doi": "10.48550/arXiv.2305.06355",
+      "corpus_id": 258588306
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "13",
+      "ref_key": "S2:01bc871c0ecb7f586e54b9f67d2e50e08cbedf3d",
+      "paperId": "01bc871c0ecb7f586e54b9f67d2e50e08cbedf3d",
+      "title": "Models See Hallucinations: Evaluating the Factuality in Video Captioning",
+      "year": 2023,
+      "abstract": "Video captioning aims to describe events in a video with natural language. In recent years, many works have focused on improving captioning models' performance. However, like other text generation tasks, it risks introducing factual errors not supported by the input video. These factual errors can seriously affect the quality of the generated text, sometimes making it completely unusable. Although factual consistency has received much research attention in text-to-text tasks (e.g., summarization), it is less studied in the context of vision-based text generation. In this work, we conduct a detailed human evaluation of the factuality in video captioning and collect two annotated factuality datasets. We find that 57.0% of the model-generated sentences have factual errors, indicating it is a severe problem in this field. However, existing evaluation metrics are mainly based on n-gram matching and show little correlation with human factuality annotation. We further propose a weakly-supervised, model-based factuality metric FactVC, which outperforms previous metrics on factuality evaluation of video captioning. The datasets and metrics will be released to promote future research for video captioning.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/Liu023",
+        "ArXiv": "2303.02961",
+        "DOI": "10.48550/arXiv.2303.02961",
+        "CorpusId": 257364802
+      },
+      "arxiv_id": "2303.02961",
+      "doi": "10.48550/arXiv.2303.02961",
+      "corpus_id": 257364802
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "14",
+      "ref_key": "S2:705ffeccfde95c3b0723f197c4565f7d3f0451a1",
+      "paperId": "705ffeccfde95c3b0723f197c4565f7d3f0451a1",
+      "title": "Zero-Resource Hallucination Prevention for Large Language Models",
+      "year": 2023,
+      "abstract": "The prevalent use of large language models (LLMs) in various domains has drawn attention to the issue of\"hallucination,\"which refers to instances where LLMs generate factually inaccurate or ungrounded information. Existing techniques for hallucination detection in language assistants rely on intricate fuzzy, specific free-language-based chain of thought (CoT) techniques or parameter-based methods that suffer from interpretability issues. Additionally, the methods that identify hallucinations post-generation could not prevent their occurrence and suffer from inconsistent performance due to the influence of the instruction format and model style. In this paper, we introduce a novel pre-detection self-evaluation technique, referred to as SELF-FAMILIARITY, which focuses on evaluating the model's familiarity with the concepts present in the input instruction and withholding the generation of response in case of unfamiliar concepts. This approach emulates the human ability to refrain from responding to unfamiliar topics, thus reducing hallucinations. We validate SELF-FAMILIARITY across four different large language models, demonstrating consistently superior performance compared to existing techniques. Our findings propose a significant shift towards preemptive strategies for hallucination mitigation in LLM assistants, promising improvements in reliability, applicability, and interpretability.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/0001XM24",
+        "ArXiv": "2309.02654",
+        "DOI": "10.48550/arXiv.2309.02654",
+        "CorpusId": 261557193
+      },
+      "arxiv_id": "2309.02654",
+      "doi": "10.48550/arXiv.2309.02654",
+      "corpus_id": 261557193
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "15",
+      "ref_key": "S2:2c67ee597ed38f43ec0f123a3f1cce38cbd3b5b4",
+      "paperId": "2c67ee597ed38f43ec0f123a3f1cce38cbd3b5b4",
+      "title": "Sources of Hallucination by Large Language Models on Inference Tasks",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) are claimed to be capable of Natural Language Inference (NLI), necessary for applied tasks like question answering and summarization. We present a series of behavioral studies on several LLM families (LLaMA, GPT-3.5, and PaLM) which probe their behavior using controlled experiments. We establish two biases originating from pretraining which predict much of their behavior, and show that these are major sources of hallucination in generative LLMs. First, memorization at the level of sentences: we show that, regardless of the premise, models falsely label NLI test samples as entailing when the hypothesis is attested in training data, and that entities are used as ``indices'' to access the memorized data. Second, statistical patterns of usage learned at the level of corpora: we further show a similar effect when the premise predicate is less frequent than that of the hypothesis in the training data, a bias following from previous studies. We demonstrate that LLMs perform significantly worse on NLI test samples which do not conform to these biases than those which do, and we offer these as valuable controls for future LLM evaluation.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-14552",
+        "ArXiv": "2305.14552",
+        "DOI": "10.48550/arXiv.2305.14552",
+        "CorpusId": 258865517
+      },
+      "arxiv_id": "2305.14552",
+      "doi": "10.48550/arXiv.2305.14552",
+      "corpus_id": 258865517
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "16",
+      "ref_key": "S2:3dbbe6909d7b53dd49e059c7f61a3613045a8db0",
+      "paperId": "3dbbe6909d7b53dd49e059c7f61a3613045a8db0",
+      "title": "Self-contradictory Hallucinations of Large Language Models: Evaluation, Detection and Mitigation",
+      "year": 2023,
+      "abstract": "Large language models (large LMs) are susceptible to producing text that contains hallucinated content. An important instance of this problem is self-contradiction, where the LM generates two contradictory sentences within the same context. In this work, we present a comprehensive investigation into self-contradiction for various instruction-tuned LMs, covering evaluation, detection, and mitigation. Our primary evaluation task is open-domain text generation, but we also demonstrate the applicability of our approach to shorter question answering. Our analysis reveals the prevalence of self-contradictions, e.g., in 17.7% of all sentences produced by ChatGPT. We then propose a novel prompting-based framework designed to effectively detect and mitigate self-contradictions. Our detector achieves high accuracy, e.g., around 80% F1 score when prompting ChatGPT. The mitigation algorithm iteratively refines the generated text to remove contradictory information while preserving text fluency and informativeness. Importantly, our entire framework is applicable to black-box LMs and does not require retrieval of external knowledge. Rather, our method complements retrieval-based methods, as a large portion of self-contradictions (e.g., 35.2% for ChatGPT) cannot be verified using online text. Our approach is practically effective and has been released as a push-button tool to benefit the public at https://chatprotect.ai/.",
+      "externalIds": {
+        "DBLP": "conf/iclr/MundlerHJV24",
+        "ArXiv": "2305.15852",
+        "DOI": "10.48550/arXiv.2305.15852",
+        "CorpusId": 258887694
+      },
+      "arxiv_id": "2305.15852",
+      "doi": "10.48550/arXiv.2305.15852",
+      "corpus_id": 258887694
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "17",
+      "ref_key": "S2:e5c72b92c48d68594b290c84a8904da7c8335554",
+      "paperId": "e5c72b92c48d68594b290c84a8904da7c8335554",
+      "title": "Check Your Facts and Try Again: Improving Large Language Models with External Knowledge and Automated Feedback",
+      "year": 2023,
+      "abstract": "Large language models (LLMs), such as ChatGPT, are able to generate human-like, fluent responses for many downstream tasks, e.g., task-oriented dialog and question answering. However, applying LLMs to real-world, mission-critical applications remains challenging mainly due to their tendency to generate hallucinations and their inability to use external knowledge. This paper proposes a LLM-Augmenter system, which augments a black-box LLM with a set of plug-and-play modules. Our system makes the LLM generate responses grounded in external knowledge, e.g., stored in task-specific databases. It also iteratively revises LLM prompts to improve model responses using feedback generated by utility functions, e.g., the factuality score of a LLM-generated response. The effectiveness of LLM-Augmenter is empirically validated on two types of scenarios, task-oriented dialog and open-domain question answering. LLM-Augmenter significantly reduces ChatGPT's hallucinations without sacrificing the fluency and informativeness of its responses. We make the source code and models publicly available.",
+      "externalIds": {
+        "ArXiv": "2302.12813",
+        "DBLP": "journals/corr/abs-2302-12813",
+        "DOI": "10.48550/arXiv.2302.12813",
+        "CorpusId": 257205781
+      },
+      "arxiv_id": "2302.12813",
+      "doi": "10.48550/arXiv.2302.12813",
+      "corpus_id": 257205781
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "18",
+      "ref_key": "S2:2b2591c151efc43e8836a5a6d17e44c04bb68260",
+      "paperId": "2b2591c151efc43e8836a5a6d17e44c04bb68260",
+      "title": "mmT5: Modular Multilingual Pre-Training Solves Source Language Hallucinations",
+      "year": 2023,
+      "abstract": "Multilingual sequence-to-sequence models perform poorly with increased language coverage and fail to consistently generate text in the correct target language in few-shot settings. To address these challenges, we propose mmT5, a modular multilingual sequence-to-sequence model. mmT5 utilizes language-specific modules during pre-training, which disentangle language-specific information from language-agnostic information. We identify representation drift during fine-tuning as a key limitation of modular generative models and develop strategies that enable effective zero-shot transfer. Our model outperforms mT5 at the same parameter sizes by a large margin on representative natural language understanding and generation tasks in 40+ languages. Compared to mT5, mmT5 raises the rate of generating text in the correct language under zero-shot settings from 7% to 99%, thereby greatly alleviating the source language hallucination problem.",
+      "externalIds": {
+        "ArXiv": "2305.14224",
+        "DBLP": "conf/emnlp/PfeifferPNWRR23",
+        "DOI": "10.48550/arXiv.2305.14224",
+        "CorpusId": 258841429
+      },
+      "arxiv_id": "2305.14224",
+      "doi": "10.48550/arXiv.2305.14224",
+      "corpus_id": 258841429
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "19",
+      "ref_key": "S2:3b0792f6d7f6aa6aadd316e73943116afef2979b",
+      "paperId": "3b0792f6d7f6aa6aadd316e73943116afef2979b",
+      "title": "Med-HALT: Medical Domain Hallucination Test for Large Language Models",
+      "year": 2023,
+      "abstract": "This research paper focuses on the challenges posed by hallucinations in large language models (LLMs), particularly in the context of the medical domain. Hallucination, wherein these models generate plausible yet unverified or incorrect information, can have serious consequences in healthcare applications. We propose a new benchmark and dataset, Med-HALT (Medical Domain Hallucination Test), designed specifically to evaluate and reduce hallucinations. Med-HALT provides a diverse multinational dataset derived from medical examinations across various countries and includes multiple innovative testing modalities. Med-HALT includes two categories of tests reasoning and memory-based hallucination tests, designed to assess LLMs’ problem-solving and information retrieval abilities. Our study evaluated leading LLMs, including Text Davinci, GPT-3.5, LlaMa-2, MPT, and Falcon, revealing significant differences in their performance. The paper provides detailed insights into the dataset, promoting transparency and reproducibility. Through this work, we aim to contribute to the development of safer and more reliable language models in healthcare. Our benchmark can be found at medhalt.github.io",
+      "externalIds": {
+        "DBLP": "conf/conll/PalUS23",
+        "ACL": "2023.conll-1.21",
+        "ArXiv": "2307.15343",
+        "DOI": "10.48550/arXiv.2307.15343",
+        "CorpusId": 260316324
+      },
+      "arxiv_id": "2307.15343",
+      "doi": "10.48550/arXiv.2307.15343",
+      "corpus_id": 260316324
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "20",
+      "ref_key": "S2:1827dd28ef866eaeb929ddf4bcfa492880aba4c7",
+      "paperId": "1827dd28ef866eaeb929ddf4bcfa492880aba4c7",
+      "title": "A Stitch in Time Saves Nine: Detecting and Mitigating Hallucinations of LLMs by Validating Low-Confidence Generation",
+      "year": 2023,
+      "abstract": "Recently developed large language models have achieved remarkable success in generating fluent and coherent text. However, these models often tend to 'hallucinate' which critically hampers their reliability. In this work, we address this crucial problem and propose an approach that actively detects and mitigates hallucinations during the generation process. Specifically, we first identify the candidates of potential hallucination leveraging the model's logit output values, check their correctness through a validation procedure, mitigate the detected hallucinations, and then continue with the generation process. Through extensive experiments with GPT-3.5 (text-davinci-003) on the 'article generation task', we first demonstrate the individual efficacy of our detection and mitigation techniques. Specifically, the detection technique achieves a recall of ~88% and the mitigation technique successfully mitigates 57.6% of the correctly detected hallucinations. Importantly, our mitigation technique does not introduce new hallucinations even in the case of incorrectly detected hallucinations, i.e., false positives. Then, we show that the proposed active detection and mitigation approach successfully reduces the hallucinations of the GPT-3.5 model from 47.5% to 14.5% on average. We further demonstrate the effectiveness and wide applicability of our approach through additional studies including performance on different types of questions (multi-hop and false premise questions) and with another LLM from a different model family (Vicuna). In summary, our work contributes to improving the reliability and trustworthiness of large language models, a crucial step en route to enabling their widespread adoption in real-world applications.",
+      "externalIds": {
+        "ArXiv": "2307.03987",
+        "DBLP": "journals/corr/abs-2307-03987",
+        "DOI": "10.48550/arXiv.2307.03987",
+        "CorpusId": 263699899
+      },
+      "arxiv_id": "2307.03987",
+      "doi": "10.48550/arXiv.2307.03987",
+      "corpus_id": 263699899
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "21",
+      "ref_key": "S2:a08b9d6fb0543ed92e0f0b4ce101e57228ceb6bf",
+      "paperId": "a08b9d6fb0543ed92e0f0b4ce101e57228ceb6bf",
+      "title": "Hallucination Improves the Performance of Unsupervised Visual Representation Learning",
+      "year": 2023,
+      "abstract": "Contrastive learning models based on Siamese structure have demonstrated remarkable performance in self-supervised learning. Such a success of contrastive learning relies on two conditions, a sufficient number of positive pairs and adequate variations between them. If the conditions are not met, these frameworks will lack semantic contrast and be fragile on overfitting. To address these two issues, we propose Hallucinator that could efficiently generate additional positive samples for further contrast. The Hallucinator is differentiable and creates new data in the feature space. Thus, it is optimized directly with the pre-training task and introduces nearly negligible computation. Moreover, we reduce the mutual information of hallucinated pairs and smooth them through non-linear operations. This process helps avoid over-confident contrastive learning models during the training and achieves more transformation-invariant feature embeddings. Remarkably, we empirically prove that the proposed Hallucinator generalizes well to various contrastive learning models, including MoCoV1&V2, SimCLR and SimSiam. Under the linear classification protocol, a stable accuracy gain is achieved, ranging from 0.3% to 3.0% on CIFAR10&100, Tiny ImageNet, STL-10 and ImageNet. The improvement is also observed in transferring pre-train encoders to the downstream tasks, including object detection and segmentation.",
+      "externalIds": {
+        "ArXiv": "2307.12168",
+        "DBLP": "conf/iccv/WuHH23",
+        "DOI": "10.1109/ICCV51070.2023.01478",
+        "CorpusId": 260125675
+      },
+      "arxiv_id": "2307.12168",
+      "doi": "10.1109/ICCV51070.2023.01478",
+      "corpus_id": 260125675
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "22",
+      "ref_key": "S2:7e7d16f603ba848542abdbe4151fa3112f26bd72",
+      "paperId": "7e7d16f603ba848542abdbe4151fa3112f26bd72",
+      "title": "Deficiency-Aware Masked Transformer for Video Inpainting",
+      "year": 2023,
+      "abstract": "Recent video inpainting methods have made remarkable progress by utilizing explicit guidance, such as optical flow, to propagate cross-frame pixels. However, there are cases where cross-frame recurrence of the masked video is not available, resulting in a deficiency. In such situation, instead of borrowing pixels from other frames, the focus of the model shifts towards addressing the inverse problem. In this paper, we introduce a dual-modality-compatible inpainting framework called Deficiency-aware Masked Transformer (DMT), which offers three key advantages. Firstly, we pretrain a image inpainting model DMT_img serve as a prior for distilling the video model DMT_vid, thereby benefiting the hallucination of deficiency cases. Secondly, the self-attention module selectively incorporates spatiotemporal tokens to accelerate inference and remove noise signals. Thirdly, a simple yet effective Receptive Field Contextualizer is integrated into DMT, further improving performance. Extensive experiments conducted on YouTube-VOS and DAVIS datasets demonstrate that DMT_vid significantly outperforms previous solutions. The code and video demonstrations can be found at github.com/yeates/DMT.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-08629",
+        "ArXiv": "2307.08629",
+        "DOI": "10.48550/arXiv.2307.08629",
+        "CorpusId": 259937606
+      },
+      "arxiv_id": "2307.08629",
+      "doi": "10.48550/arXiv.2307.08629",
+      "corpus_id": 259937606
+    },
+    {
+      "paper_id": "2309.05922",
+      "ref_index": "23",
+      "ref_key": "S2:62b322b0bead56d6a252a2e24de499ea8385ad7f",
+      "paperId": "62b322b0bead56d6a252a2e24de499ea8385ad7f",
+      "title": "Mitigating Language Model Hallucination with Interactive Question-Knowledge Alignment",
+      "year": 2023,
+      "abstract": "Despite the remarkable recent advances in language models, they still struggle with the hallucination problem and can generate misleading and unsupported responses. A common approach to mitigate the hallucination issue is retrieving and incorporating supporting evidence from a knowledge base. However, user questions usually do not align well with the stored knowledge, as they are unaware of the information available before asking questions. This misalignment can limit the language model's ability to locate and utilize the knowledge, potentially forcing it to hallucinate by ignoring or overriding the retrieved evidence. To address this issue, we introduce MixAlign, a framework that interacts with both the user and the knowledge base to obtain and integrate clarifications on how the user question relates to the stored information. MixAlign employs a language model to achieve automatic question-knowledge alignment and, if necessary, further enhances this alignment through human user clarifications. Experimental results demonstrate significant improvements over state-of-the-art methods, showcasing the effectiveness of MixAlign in mitigating language model hallucination.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-13669",
+        "DOI": "10.48550/arXiv.2305.13669",
+        "CorpusId": 258840979
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2305.13669",
+      "corpus_id": 258840979
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "Hallucinationin Large Foundation Models ": {
+        "Text": {
+          "LLMs ": {
+            "eee548fbd0b9dd954c692fbd8880e80d5f077bd7": {},
+            "66242baf48b0f6b828e7547ac39ffaa5e1b2cb3e": {},
+            "78eca0064ec7779d131cbaac49c2d1a023426871": {},
+            "44d74b0d77b4056ddd4c6611a76711c8bab2e0a7": {},
+            "80fd20e175f83a699258b8780cf365418d1538b0": {},
+            "cb7fa7ee3df826628c113ba0c6db1205751d89a3": {},
+            "705ffeccfde95c3b0723f197c4565f7d3f0451a1": {},
+            "2c67ee597ed38f43ec0f123a3f1cce38cbd3b5b4": {},
+            "3dbbe6909d7b53dd49e059c7f61a3613045a8db0": {},
+            "e5c72b92c48d68594b290c84a8904da7c8335554": {},
+            "1827dd28ef866eaeb929ddf4bcfa492880aba4c7": {},
+            "62b322b0bead56d6a252a2e24de499ea8385ad7f": {}
+          },
+          "Multilingual LLMs ": {
+            "2b2591c151efc43e8836a5a6d17e44c04bb68260": {}
+          },
+          "Domain-specific LLMs ": {
+            "3b0792f6d7f6aa6aadd316e73943116afef2979b": {}
+          }
+        },
+        "Image": {
+          "658cd67a91da86cf451e6f1b015f762b56015172": {},
+          "206400aba5f12f734cdd2e4ab48ef6014ea60773": {},
+          "a08b9d6fb0543ed92e0f0b4ce101e57228ceb6bf": {}
+        },
+        "Video ": {
+          "7bf902fb94a577d15293ac4f90d8967163850fb1": {},
+          "f2b34c5bc6b20353aa531f860aefeadf8d96e3be": {},
+          "d48cb91b9e555194f7494c4d4bb9815021d3ee45": {},
+          "01bc871c0ecb7f586e54b9f67d2e50e08cbedf3d": {},
+          "7e7d16f603ba848542abdbe4151fa3112f26bd72": {}
+        },
+        "Audio ": {
+          "ce9c0935c074a0ca8769f13fd4e8651cee263112": {},
+          "13697bc3e4047683ed8375845783b7f2ab590f37": {}
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000001",
+        "paperId": "eee548fbd0b9dd954c692fbd8880e80d5f077bd7",
+        "ref_index": "1",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Text",
+          "LLMs "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000002",
+        "paperId": "66242baf48b0f6b828e7547ac39ffaa5e1b2cb3e",
+        "ref_index": "2",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Text",
+          "LLMs "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000003",
+        "paperId": "78eca0064ec7779d131cbaac49c2d1a023426871",
+        "ref_index": "5",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Text",
+          "LLMs "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000004",
+        "paperId": "44d74b0d77b4056ddd4c6611a76711c8bab2e0a7",
+        "ref_index": "6",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Text",
+          "LLMs "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000005",
+        "paperId": "80fd20e175f83a699258b8780cf365418d1538b0",
+        "ref_index": "9",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Text",
+          "LLMs "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000006",
+        "paperId": "cb7fa7ee3df826628c113ba0c6db1205751d89a3",
+        "ref_index": "11",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Text",
+          "LLMs "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000007",
+        "paperId": "705ffeccfde95c3b0723f197c4565f7d3f0451a1",
+        "ref_index": "14",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Text",
+          "LLMs "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000008",
+        "paperId": "2c67ee597ed38f43ec0f123a3f1cce38cbd3b5b4",
+        "ref_index": "15",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Text",
+          "LLMs "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000009",
+        "paperId": "3dbbe6909d7b53dd49e059c7f61a3613045a8db0",
+        "ref_index": "16",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Text",
+          "LLMs "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000010",
+        "paperId": "e5c72b92c48d68594b290c84a8904da7c8335554",
+        "ref_index": "17",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Text",
+          "LLMs "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000011",
+        "paperId": "1827dd28ef866eaeb929ddf4bcfa492880aba4c7",
+        "ref_index": "20",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Text",
+          "LLMs "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000012",
+        "paperId": "62b322b0bead56d6a252a2e24de499ea8385ad7f",
+        "ref_index": "23",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Text",
+          "LLMs "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000013",
+        "paperId": "2b2591c151efc43e8836a5a6d17e44c04bb68260",
+        "ref_index": "18",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Text",
+          "Multilingual LLMs "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000014",
+        "paperId": "3b0792f6d7f6aa6aadd316e73943116afef2979b",
+        "ref_index": "19",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Text",
+          "Domain-specific LLMs "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000015",
+        "paperId": "658cd67a91da86cf451e6f1b015f762b56015172",
+        "ref_index": "3",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Image"
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000016",
+        "paperId": "206400aba5f12f734cdd2e4ab48ef6014ea60773",
+        "ref_index": "10",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Image"
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000017",
+        "paperId": "a08b9d6fb0543ed92e0f0b4ce101e57228ceb6bf",
+        "ref_index": "21",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Image"
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000018",
+        "paperId": "7bf902fb94a577d15293ac4f90d8967163850fb1",
+        "ref_index": "4",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Video "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000019",
+        "paperId": "f2b34c5bc6b20353aa531f860aefeadf8d96e3be",
+        "ref_index": "7",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Video "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000020",
+        "paperId": "d48cb91b9e555194f7494c4d4bb9815021d3ee45",
+        "ref_index": "12",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Video "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000021",
+        "paperId": "01bc871c0ecb7f586e54b9f67d2e50e08cbedf3d",
+        "ref_index": "13",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Video "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000022",
+        "paperId": "7e7d16f603ba848542abdbe4151fa3112f26bd72",
+        "ref_index": "22",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Video "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000023",
+        "paperId": "ce9c0935c074a0ca8769f13fd4e8651cee263112",
+        "ref_index": "0",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Audio "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2309.05922",
+        "arxiv_id": "2309.05922",
+        "leaf_mention_id": "2309.05922::000024",
+        "paperId": "13697bc3e4047683ed8375845783b7f2ab590f37",
+        "ref_index": "8",
+        "path": [
+          "Hallucinationin Large Foundation Models ",
+          "Audio "
+        ],
+        "depth": 2,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 24,
+      "unique_leaf_paper_count": 24,
+      "multi_membership_extra_mentions": 0,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

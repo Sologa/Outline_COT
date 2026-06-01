@@ -1,24 +1,24 @@
 # Runbook
 
-Status: `draft_data_pending_no_runs`
+Status: `data_staged_payloads_ready_no_model_runs`
 
-This runbook is a future execution checklist. Do not run these phases until the
-TaxoBench-CS adapter is implemented, data readiness is confirmed, and the user
-explicitly approves moving beyond scaffold/documentation.
+This runbook records completed local data-readiness work and remaining
+execution gates. Canonical staging and deterministic payloads were written after
+explicit approval on 2026-06-01. Do not submit generation, run evaluation, write
+model artifacts into `results/`, or update Google Sheets without a separate
+explicit approval.
 
-## Phase 0: Scaffold Only
+## Phase 0: Scaffold
 
-Current permitted work:
+Completed:
 
 - create experiment directories
 - document source data contracts
 - document prompt and arm matrix
 - document future adapter/runner/evaluator hooks
 
-Current forbidden work:
+Still forbidden without separate explicit approval:
 
-- no render-only prompt generation
-- no payload projection output
 - no OpenAI Batch input JSONL
 - no batch submission
 - no result parsing
@@ -58,20 +58,18 @@ collector output there.
 
 ## Phase 1: Adapter Dry Run
 
-Not implemented yet.
+Completed on 2026-06-01.
 
-Future adapter entrypoint:
-
-Documentation-only command sketch. Do not copy-run while status is
-`draft_data_pending_no_runs`.
-
-```text
-PYTHONDONTWRITEBYTECODE=1 python3 experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/prototype/prepare_taxobench_cs_inputs.py \
+```bash
+PYTHONDONTWRITEBYTECODE=1 python3 data/taxobench-cs/scripts/prepare_taxobench_cs_inputs.py \
+  --source-root /Users/xjp/Desktop/TaxoBench-CS \
+  --output-root data/taxobench-cs \
   --dry-run \
-  --limit 2
+  --limit 2 \
+  --report .local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/smoke/adapter_dry_run_limit2.json
 ```
 
-Expected checks:
+Verified checks:
 
 - reads TaxoBench-CS as read-only
 - discovers ground JSON records
@@ -79,23 +77,24 @@ Expected checks:
 - normalizes reference metadata without local paths
 - verifies taxonomy leaves resolve to `papers_index` or reports unresolved leaves
 - writes no staged package in dry-run mode
+- selected papers: `2`
+- ready papers: `2`
+- unresolved taxonomy leaf mentions: `0`
 
 ## Phase 2: Full Staging
 
-Not implemented yet. Do not run until Phase 1 passes and the user approves.
+Completed after explicit approval on 2026-06-01.
 
-Future command:
-
-Documentation-only command sketch. Do not copy-run while status is
-`draft_data_pending_no_runs`.
-
-```text
-PYTHONDONTWRITEBYTECODE=1 python3 experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/prototype/prepare_taxobench_cs_inputs.py \
+```bash
+PYTHONDONTWRITEBYTECODE=1 python3 data/taxobench-cs/scripts/prepare_taxobench_cs_inputs.py \
+  --source-root /Users/xjp/Desktop/TaxoBench-CS \
+  --output-root data/taxobench-cs \
   --write-staging \
-  --force
+  --force \
+  --report data/taxobench-cs/manifests/canonical_staging_write_report.json
 ```
 
-Expected future staged files:
+Staged files:
 
 ```text
 data/taxobench-cs/
@@ -107,31 +106,29 @@ data/taxobench-cs/
   payload_sources/
 ```
 
-Expected future count checks, if the final ready paper set remains 156:
+Verified count checks:
 
 - `156` staged manifest rows
 - `156` human-written outline files
 - `156` taxonomy source payloads
 - `11609` normalized reference rows
-- `13205` taxonomy leaf paper-id mentions, if the source snapshot is unchanged
-- multi-membership leaf mentions preserved or reported
-- `papers` rows not represented by taxonomy leaves measured
+- `13205` taxonomy leaf paper-id mentions
+- `0` unresolved taxonomy leaf mentions
+- `2283` multi-membership extra leaf mentions reported
+- `687` `papers` rows not represented by taxonomy leaves measured
 - zero missing target titles
 - zero missing `taxo_tree`
 - zero missing `papers`
 
 ## Phase 3: Payload Projection
 
-Not implemented yet. Do not run until the staged package is ready.
+Completed on 2026-06-01.
 
-Future command:
-
-Documentation-only command sketch. Do not copy-run while status is
-`draft_data_pending_no_runs`.
-
-```text
-PYTHONDONTWRITEBYTECODE=1 python3 experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/prototype/generate_taxobench_cs_payloads.py \
+```bash
+PYTHONDONTWRITEBYTECODE=1 python3 data/taxobench-cs/scripts/generate_taxobench_cs_payloads.py \
   --staging-root data/taxobench-cs \
+  --output-root data/taxobench-cs \
+  --experiment-id 2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch \
   --force
 ```
 
@@ -142,29 +139,28 @@ Expected future payloads per paper:
 - `flat_concepts`
 - `random_hierarchy`
 
-`tree_with_papers` is currently TODO / not implemented. Phase 3 must fail or
-skip explicitly if this renderer is absent.
+`tree_with_papers` is implemented and excludes abstracts by default.
 
-Expected future projection report per paper:
+Projection report per paper includes:
 
 - taxonomy node count
+- concept count
 - taxonomy leaf count
-- unresolved leaf count
-- reference rows attached to leaves
+- unresolved taxonomy leaf count
 - flat concept count
 - random hierarchy seed
 
+Verified payload files: `624`.
+
 ## Phase 4: Render Smoke
 
-Not implemented yet. Do not run until payload projection passes.
+Completed locally under `.local/` on 2026-06-01. This render smoke did not
+submit any model job and did not write `results/`.
 
-Future command:
-
-Documentation-only command sketch. Do not copy-run while status is
-`draft_data_pending_no_runs`.
-
-```text
+```bash
 PYTHONDONTWRITEBYTECODE=1 python3 experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/prototype/run_taxobench_cs_outline_batch.py \
+  --staging-root .local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/smoke/staging \
+  --output-root .local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/smoke/render \
   --render-only \
   --write-batch-input \
   --limit 2 \
@@ -175,14 +171,13 @@ Expected future request count for `--limit 2`:
 
 `2 papers * 5 generated arms = 10`
 
+Verified request count for `--limit 2`: `10`.
+
 Prompt hygiene check:
 
-Documentation-only command sketch. Do not copy-run while status is
-`draft_data_pending_no_runs`.
-
-```text
-rg -n "Target Paper Abstract:|with_abstract|no_abstract|structural_complete_guarded|metadata_|/Users/xjp|TaxoBench-CS" \
-  results/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/<run_id> \
+```bash
+rg -n "Target Paper Abstract:|with_abstract|no_abstract|structural_complete_guarded|metadata_|/Users/xjp|TaxoBench-CS|meow_reconstructed_blind" \
+  .local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/smoke/render \
   -g 'prompt.txt' -g 'batch_input.jsonl'
 ```
 
@@ -210,12 +205,12 @@ Planning row count only if `156` papers are ready:
 
 ## Promotion Gate
 
-Before this experiment can move beyond scaffold status:
+Before this experiment can move to live generation:
 
-- adapter dry-run passes
-- staged manifest row counts are verified from disk
-- taxonomy leaves either resolve or unresolved leaves are documented
-- prompt hygiene render smoke passes
-- `tree_with_papers` contract is implemented and tested
+- adapter dry-run passes: done
+- staged manifest row counts are verified from disk: done
+- taxonomy leaves either resolve or unresolved leaves are documented: done, zero unresolved
+- prompt hygiene render smoke passes: done
+- `tree_with_papers` contract is implemented and tested: done
 - evaluator explicitly handles the citation-key versus `paperId` namespace issue
 - the user approves the first live generation smoke

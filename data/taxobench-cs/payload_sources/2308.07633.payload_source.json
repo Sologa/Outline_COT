@@ -1,0 +1,1740 @@
+{
+  "paper_id": "2308.07633",
+  "arxiv_id": "2308.07633",
+  "title": "A Survey on Model Compression for Large Language Models",
+  "ref_meta": [
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "0",
+      "ref_key": "S2:e92a5332390f0ba94615935541da4da9bed56512",
+      "paperId": "e92a5332390f0ba94615935541da4da9bed56512",
+      "title": "OliVe: Accelerating Large Language Models via Hardware-friendly Outlier-Victim Pair Quantization",
+      "year": 2023,
+      "abstract": "Transformer-based large language models (LLMs) have achieved great success with the growing model size. LLMs' size grows by 240× every two years, which outpaces the hardware progress and makes model inference increasingly costly. Model quantization is a promising approach to mitigate the widening gap between LLM size and hardware capacity. However, the existence of outliers, values with significant magnitudes, in LLMs makes existing quantization methods less effective. Prior outlier-aware quantization schemes adopt sparsity encoding techniques to separate outliers from normal values where the process requires global coordination (e.g., a global sparsity coordination list). This incurs complex encoding/decoding hardware logics and an extra orchestration controller for the computation between outlier and normal values. As such, it is not hardware-efficient and hence only achieves sub-optimal quantization benefits. We propose OliVe, an algorithm/architecture co-designed solution that adopts an outlier-victim pair (OVP) quantization and handles outlier values locally with low hardware overheads and high performance gains. The key insight of OliVe is that outliers are important while the normal values next to them are not. Thus those normal values (called victims) can be sacrificed to accommodate outliers. This enables a memory-aligned OVP encoding scheme, which can be efficiently integrated to the existing hardware accelerators like systolic array and tensor core. As a result, OliVe-based accelerator surpasses the existing outlier-aware accelerator, GOBO, by 4.5× speedup and 4.0× energy reduction, respectively, with a superior model accuracy.",
+      "externalIds": {
+        "ArXiv": "2304.07493",
+        "DBLP": "conf/isca/0003THL00LG023",
+        "DOI": "10.1145/3579371.3589038",
+        "CorpusId": 258179335
+      },
+      "arxiv_id": "2304.07493",
+      "doi": "10.1145/3579371.3589038",
+      "corpus_id": 258179335
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "1",
+      "ref_key": "S2:68f86181502bd523e6faeebde704873cdf154464",
+      "paperId": "68f86181502bd523e6faeebde704873cdf154464",
+      "title": "Flash-LLM: Enabling Low-Cost and Highly-Efficient Large Generative Model Inference With Unstructured Sparsity",
+      "year": 2023,
+      "abstract": "With the fast growth of parameter size, it becomes increasingly challenging to deploy large generative models as they typically require large GPU memory consumption and massive computation. Unstructured model pruning has been a common approach to reduce both GPU memory footprint and the overall computation while retaining good model accuracy. However, the existing solutions do not provide an efficient support for handling unstructured sparsity on modern GPUs, especially on the highly-structured tensor core hardware. Therefore, we propose Flash-LLM for enabling low-cost and highly efficient large generative model inference with the sophisticated support of unstructured sparsity on high-performance but highly restrictive tensor cores. Based on our key observation that the main bottleneck of generative model inference is the several skinny matrix multiplications for which tensor cores would be significantly under-utilized due to low computational intensity, we propose a general\n Load-as-Sparse and Compute-as-Dense\n methodology for unstructured sparse matrix multiplication (SpMM). The basic insight is to address the significant memory bandwidth bottleneck while tolerating redundant computations that are not critical for end-to-end performance on tensor cores. Based on this, we design an effective software framework for tensor core based unstructured SpMM, leveraging on-chip resources for efficient sparse data extraction and computation/memory-access overlapping. Extensive evaluations demonstrate that (1) at SpMM kernel level, Flash-LLM significantly outperforms the state-of-the-art library, i.e., Sputnik and SparTA by an average of 2.9X and 1.5X, respectively.(2) At end-to-end framework level on OPT-30B/66B/175B models, for\n tokens per GPU-second\n , Flash-LLM achieves up to 3.8X and 3.6X improvement over DeepSpeed and FasterTransformer, respectively, with significantly lower inference cost.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2309-10285",
+        "ArXiv": "2309.10285",
+        "DOI": "10.14778/3626292.3626303",
+        "CorpusId": 262054394
+      },
+      "arxiv_id": "2309.10285",
+      "doi": "10.14778/3626292.3626303",
+      "corpus_id": 262054394
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "2",
+      "ref_key": "S2:51bccfc8d164812cf81b0284a5ec13bf4002ae3c",
+      "paperId": "51bccfc8d164812cf81b0284a5ec13bf4002ae3c",
+      "title": "One-Shot Sensitivity-Aware Mixed Sparsity Pruning for Large Language Models",
+      "year": 2023,
+      "abstract": "Various Large Language Models (LLMs) from the Generative Pretrained Transformer (GPT) family have achieved outstanding performances in a wide range of text generation tasks. However, the enormous model sizes have hindered their practical use in real-world applications due to high inference latency. Therefore, improving the efficiencies of LLMs through quantization, pruning, and other means has been a key issue in LLM studies. In this work, we propose a method based on Hessian sensitivity-aware mixed sparsity pruning to prune LLMs to at least 50% sparsity without the need of any retraining. It allocates sparsity adaptively based on sensitivity, allowing us to reduce pruning-induced error while maintaining the overall sparsity level. The advantages of the proposed method exhibit even more when the sparsity is extremely high. Furthermore, our method is compatible with quantization, enabling further compression of LLMs.",
+      "externalIds": {
+        "DBLP": "conf/icassp/ShaoLQ24",
+        "ArXiv": "2310.09499",
+        "DOI": "10.1109/ICASSP48485.2024.10445737",
+        "CorpusId": 264146174
+      },
+      "arxiv_id": "2310.09499",
+      "doi": "10.1109/ICASSP48485.2024.10445737",
+      "corpus_id": 264146174
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "3",
+      "ref_key": "S2:9ea8001d6eb52d14134ceede7f88b1d8fa8db41f",
+      "paperId": "9ea8001d6eb52d14134ceede7f88b1d8fa8db41f",
+      "title": "Fluctuation-based Adaptive Structured Pruning for Large Language Models",
+      "year": 2023,
+      "abstract": "Network Pruning is a promising way to address the huge computing resource demands of the deployment and inference of Large Language Models (LLMs). Retraining-free is important for LLMs' pruning methods. However, almost all of the existing retraining-free pruning approaches for LLMs focus on unstructured pruning, which requires specific hardware support for acceleration. In this paper, we propose a novel retraining-free structured pruning framework for LLMs, named FLAP (FLuctuation-based Adaptive\nStructured Pruning). It is hardware-friendly by effectively reducing storage and enhancing inference speed. For effective structured pruning of LLMs, we highlight three critical elements that demand the utmost attention: formulating structured importance metrics, adaptively searching the global compressed model, and implementing compensation mechanisms to mitigate performance loss. First, FLAP determines whether the output feature map is easily recoverable when a column of weight is removed, based on the fluctuation pruning metric. Then it standardizes the importance scores to adaptively determine the global compressed model structure. At last, FLAP adds additional bias terms to recover the output feature maps using the baseline values. We thoroughly evaluate our approach on a variety of language benchmarks. Without any retraining, our method significantly outperforms the state-of-the-art methods, including LLM-Pruner and the extension of Wanda in structured pruning. The code is released at https://github.com/CASIA-IVA-Lab/FLAP.",
+      "externalIds": {
+        "DBLP": "conf/aaai/AnZYTW24",
+        "ArXiv": "2312.11983",
+        "DOI": "10.48550/arXiv.2312.11983",
+        "CorpusId": 266362404
+      },
+      "arxiv_id": "2312.11983",
+      "doi": "10.48550/arXiv.2312.11983",
+      "corpus_id": 266362404
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "4",
+      "ref_key": "S2:909ad57ce8caa6b390a65ae09db352d27d8f3996",
+      "paperId": "909ad57ce8caa6b390a65ae09db352d27d8f3996",
+      "title": "SparseGPT: Massive Language Models Can Be Accurately Pruned in One-Shot",
+      "year": 2023,
+      "abstract": "We show for the first time that large-scale generative pretrained transformer (GPT) family models can be pruned to at least 50% sparsity in one-shot, without any retraining, at minimal loss of accuracy. This is achieved via a new pruning method called SparseGPT, specifically designed to work efficiently and accurately on massive GPT-family models. We can execute SparseGPT on the largest available open-source models, OPT-175B and BLOOM-176B, in under 4.5 hours, and can reach 60% unstructured sparsity with negligible increase in perplexity: remarkably, more than 100 billion weights from these models can be ignored at inference time. SparseGPT generalizes to semi-structured (2:4 and 4:8) patterns, and is compatible with weight quantization approaches. The code is available at: https://github.com/IST-DASLab/sparsegpt.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2301-00774",
+        "ArXiv": "2301.00774",
+        "DOI": "10.48550/arXiv.2301.00774",
+        "CorpusId": 255372747
+      },
+      "arxiv_id": "2301.00774",
+      "doi": "10.48550/arXiv.2301.00774",
+      "corpus_id": 255372747
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "5",
+      "ref_key": "S2:a9e3e5dd7b30890553b7ae1c41f932e99192bb44",
+      "paperId": "a9e3e5dd7b30890553b7ae1c41f932e99192bb44",
+      "title": "Large Language Models Are Reasoning Teachers",
+      "year": 2022,
+      "abstract": "Recent works have shown that chain-of-thought (CoT) prompting can elicit language models to solve complex reasoning tasks, step-by-step. However, prompt-based CoT methods are dependent on very large models such as GPT-3 175B which are prohibitive to deploy at scale. In this paper, we use these large models as reasoning teachers to enable complex reasoning in smaller models and reduce model size requirements by several orders of magnitude. We propose Fine-tune-CoT, a method that generates reasoning samples from very large teacher models to fine-tune smaller models. We evaluate our method on a wide range of public models and complex tasks. We find that Fine-tune-CoT enables substantial reasoning capability in small models, far outperforming prompt-based baselines and even the teacher model in many tasks. Additionally, we extend our method by leveraging the teacher model’s ability to generate multiple distinct rationales for each original sample. Enriching the fine-tuning data with such diverse reasoning results in a substantial performance boost across datasets, even for very small models. We conduct ablations and sample studies to understand the emergence of reasoning capabilities of student models. Our code implementation and data are available at https://github.com/itsnamgyu/reasoning-teacher.",
+      "externalIds": {
+        "ACL": "2023.acl-long.830",
+        "DBLP": "conf/acl/HoSY23",
+        "ArXiv": "2212.10071",
+        "DOI": "10.48550/arXiv.2212.10071",
+        "CorpusId": 254877399
+      },
+      "arxiv_id": "2212.10071",
+      "doi": "10.48550/arXiv.2212.10071",
+      "corpus_id": 254877399
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "6",
+      "ref_key": "S2:aad167be3c902388ea625da4117fcae4325b8b7d",
+      "paperId": "aad167be3c902388ea625da4117fcae4325b8b7d",
+      "title": "Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes",
+      "year": 2023,
+      "abstract": "Deploying large language models (LLMs) is challenging because they are memory inefficient and compute-intensive for practical applications. In reaction, researchers train smaller task-specific models by either finetuning with human labels or distilling using LLM-generated labels. However, finetuning and distillation require large amounts of training data to achieve comparable performance to LLMs. We introduce Distilling step-by-step, a new mechanism that (a) trains smaller models that outperform LLMs, and (b) achieves so by leveraging less training data needed by finetuning or distillation. Our method extracts LLM rationales as additional supervision for training small models within a multi-task framework. We present three findings across 4 NLP benchmarks: First, compared to both finetuning and distillation, our mechanism achieves better performance with much fewer labeled/unlabeled training examples. Second, compared to few-shot prompted LLMs, we achieve better performance using substantially smaller model sizes. Third, we reduce both the model size and the amount of data required to outperform LLMs; our finetuned 770M T5 model outperforms the few-shot prompted 540B PaLM model using only 80% of available data on a benchmark, whereas standard finetuning the same T5 model struggles to match even by using 100% of the dataset. We release the code at: https://github.com/google-research/distilling-step-by-step .",
+      "externalIds": {
+        "ArXiv": "2305.02301",
+        "DBLP": "journals/corr/abs-2305-02301",
+        "DOI": "10.48550/arXiv.2305.02301",
+        "CorpusId": 258461606
+      },
+      "arxiv_id": "2305.02301",
+      "doi": "10.48550/arXiv.2305.02301",
+      "corpus_id": 258461606
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "7",
+      "ref_key": "S2:aa44b28b7c4c4a56d1f59ab4669215b667822c25",
+      "paperId": "aa44b28b7c4c4a56d1f59ab4669215b667822c25",
+      "title": "OWQ: Outlier-Aware Weight Quantization for Efficient Fine-Tuning and Inference of Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) with hundreds of billions of parameters require powerful server-grade GPUs for inference, limiting their practical deployment. To address this challenge, we introduce the outlier-aware weight quantization (OWQ) method, which aims to minimize LLM's footprint through low-precision representation. OWQ prioritizes a small subset of structured weights sensitive to quantization, storing them in high-precision, while applying highly tuned quantization to the remaining dense weights. This sensitivity-aware mixed-precision scheme reduces the quantization error notably, and extensive experiments demonstrate that 3.1-bit models using OWQ perform comparably to 4-bit models optimized by OPTQ. Furthermore, OWQ incorporates a parameter-efficient fine-tuning for task-specific adaptation, called weak column tuning (WCT), enabling accurate task-specific LLM adaptation with minimal memory overhead in the optimized format. OWQ represents a notable advancement in the flexibility, efficiency, and practicality of LLM optimization literature. The source code is available at https://github.com/xvyaward/owq.",
+      "externalIds": {
+        "ArXiv": "2306.02272",
+        "DBLP": "conf/aaai/LeeJKKP24",
+        "DOI": "10.1609/aaai.v38i12.29237",
+        "CorpusId": 267095435
+      },
+      "arxiv_id": "2306.02272",
+      "doi": "10.1609/aaai.v38i12.29237",
+      "corpus_id": 267095435
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "8",
+      "ref_key": "S2:9529a6b2032bd08ea4e34954b7a7d2b8b5d5f66b",
+      "paperId": "9529a6b2032bd08ea4e34954b7a7d2b8b5d5f66b",
+      "title": "Turning Dust into Gold: Distilling Complex Reasoning Capabilities from LLMs by Leveraging Negative Data",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) have performed well on various reasoning tasks, but their inaccessibility and numerous parameters hinder wide application in practice. One promising way is distilling the reasoning ability from LLMs to small models by the generated chain-of-thought reasoning paths. In some cases, however, LLMs may produce incorrect reasoning chains, especially when facing complex mathematical problems. Previous studies only transfer knowledge from positive samples and drop the synthesized data with wrong answers. In this work, we illustrate the merit of negative data and propose a model specialization framework to distill LLMs with negative samples besides positive ones. The framework consists of three progressive steps, covering from training to inference stages, to absorb knowledge from negative data. We conduct extensive experiments across arithmetic reasoning tasks to demonstrate the role of negative data in distillation from LLM.",
+      "externalIds": {
+        "ArXiv": "2312.12832",
+        "DBLP": "conf/aaai/LiYFPSWW024",
+        "DOI": "10.48550/arXiv.2312.12832",
+        "CorpusId": 266375154
+      },
+      "arxiv_id": "2312.12832",
+      "doi": "10.48550/arXiv.2312.12832",
+      "corpus_id": 266375154
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "9",
+      "ref_key": "S2:33be243ac9dd8723e6267dea45fd6a6172d4f6a5",
+      "paperId": "33be243ac9dd8723e6267dea45fd6a6172d4f6a5",
+      "title": "Less is More: Task-aware Layer-wise Distillation for Language Model Compression",
+      "year": 2022,
+      "abstract": "Layer-wise distillation is a powerful tool to compress large models (i.e. teacher models) into small ones (i.e., student models). The student distills knowledge from the teacher by mimicking the hidden representations of the teacher at every intermediate layer. However, layer-wise distillation is difficult. Since the student has a smaller model capacity than the teacher, it is often under-fitted. Furthermore, the hidden representations of the teacher contain redundant information that the student does not necessarily need for the target task's learning. To address these challenges, we propose a novel Task-aware layEr-wise Distillation (TED). TED designs task-aware filters to align the hidden representations of the student and the teacher at each layer. The filters select the knowledge that is useful for the target task from the hidden representations. As such, TED reduces the knowledge gap between the two models and helps the student to fit better on the target task. We evaluate TED in two scenarios: continual pre-training and fine-tuning. TED demonstrates significant and consistent improvements over existing distillation methods in both scenarios. Code is available at https://github.com/cliang1453/task-aware-distillation.",
+      "externalIds": {
+        "ArXiv": "2210.01351",
+        "DBLP": "journals/corr/abs-2210-01351",
+        "DOI": "10.48550/arXiv.2210.01351",
+        "CorpusId": 252693152
+      },
+      "arxiv_id": "2210.01351",
+      "doi": "10.48550/arXiv.2210.01351",
+      "corpus_id": 252693152
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "10",
+      "ref_key": "S2:126a4776ff8315fd506766cb8f3c722cf746ad9e",
+      "paperId": "126a4776ff8315fd506766cb8f3c722cf746ad9e",
+      "title": "Teaching Small Language Models to Reason",
+      "year": 2022,
+      "abstract": "Chain of thought prompting successfully improves the reasoning capabilities of large language models, achieving state of the art results on a range of datasets. However, these reasoning capabilities only appear to emerge in models with at least tens of billions of parameters. In this paper, we explore the transfer of such reasoning capabilities to smaller models via knowledge distillation, also investigating model and dataset size trade-off. Specifically, we finetune a student model on the chain of thought outputs generated by a larger teacher model. Our experiments show that the proposed method improves task performance across arithmetic, commonsense and symbolic reasoning datasets. For example, the accuracy of T5 XXL on GSM8K improves from 8.11% to 21.99% and 18.42% when finetuned on PaLM 540B and GPT-3 175B generated chains of thought, respectively.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2212-08410",
+        "ACL": "2023.acl-short.151",
+        "ArXiv": "2212.08410",
+        "DOI": "10.48550/arXiv.2212.08410",
+        "CorpusId": 254823156
+      },
+      "arxiv_id": "2212.08410",
+      "doi": "10.48550/arXiv.2212.08410",
+      "corpus_id": 254823156
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "11",
+      "ref_key": "S2:43017a16dfe593c09533c5fb3c3612c83761a98a",
+      "paperId": "43017a16dfe593c09533c5fb3c3612c83761a98a",
+      "title": "Matrix Compression via Randomized Low Rank and Low Precision Factorization",
+      "year": 2023,
+      "abstract": "Matrices are exceptionally useful in various fields of study as they provide a convenient framework to organize and manipulate data in a structured manner. However, modern matrices can involve billions of elements, making their storage and processing quite demanding in terms of computational resources and memory usage. Although prohibitively large, such matrices are often approximately low rank. We propose an algorithm that exploits this structure to obtain a low rank decomposition of any matrix $\\mathbf{A}$ as $\\mathbf{A} \\approx \\mathbf{L}\\mathbf{R}$, where $\\mathbf{L}$ and $\\mathbf{R}$ are the low rank factors. The total number of elements in $\\mathbf{L}$ and $\\mathbf{R}$ can be significantly less than that in $\\mathbf{A}$. Furthermore, the entries of $\\mathbf{L}$ and $\\mathbf{R}$ are quantized to low precision formats $--$ compressing $\\mathbf{A}$ by giving us a low rank and low precision factorization. Our algorithm first computes an approximate basis of the range space of $\\mathbf{A}$ by randomly sketching its columns, followed by a quantization of the vectors constituting this basis. It then computes approximate projections of the columns of $\\mathbf{A}$ onto this quantized basis. We derive upper bounds on the approximation error of our algorithm, and analyze the impact of target rank and quantization bit-budget. The tradeoff between compression ratio and approximation accuracy allows for flexibility in choosing these parameters based on specific application requirements. We empirically demonstrate the efficacy of our algorithm in image compression, nearest neighbor classification of image and text embeddings, and compressing the layers of LlaMa-$7$b. Our results illustrate that we can achieve compression ratios as aggressive as one bit per matrix coordinate, all while surpassing or maintaining the performance of traditional compression techniques.",
+      "externalIds": {
+        "DBLP": "conf/nips/SahaSP23",
+        "ArXiv": "2310.11028",
+        "DOI": "10.48550/arXiv.2310.11028",
+        "CorpusId": 262233736
+      },
+      "arxiv_id": "2310.11028",
+      "doi": "10.48550/arXiv.2310.11028",
+      "corpus_id": 262233736
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "12",
+      "ref_key": "S2:8fd462f6248d5e3f1b6602697c09489086b5655f",
+      "paperId": "8fd462f6248d5e3f1b6602697c09489086b5655f",
+      "title": "Distilling Reasoning Capabilities into Smaller Language Models",
+      "year": 2022,
+      "abstract": "Step-by-step reasoning approaches like chain of thought (CoT) have proved to be very effective in inducing reasoning capabilities in large language models. However, the success of the CoT approach is fundamentally tied to the model size, and billion parameter-scale models are often needed to get CoT to work. In this paper, we propose a knowledge distillation approach that leverages the step-by-step CoT reasoning capabilities of larger models and distills these abilities into smaller models. In this work, we propose an alternative reasoning scheme, Socratic CoT, that learns a decomposition of the original problem into a sequence of subproblems and uses it to guide the intermediate reasoning steps. We use Socratic CoT to train a combination of two small distilled models: a problem decomposer and a subproblem solver. In practice, given a new problem, the two distilled models work in sync to decompose and solve complex problems. On multiple reasoning datasets (GSM8K, StrategyQA, and SVAMP), our proposed distillation strategies boosts the performance of smaller models over 70% compared to the baselines. Finally, we investigate when Socratic CoT is an effective alternative to CoT, demonstrating cases where a much smaller model (GPT-2 large) can outperform a 10X larger model (GPT-3 6B). Our code is available here: https://github.com/kumar-shridhar/Distiiling-LM",
+      "externalIds": {
+        "DBLP": "conf/acl/ShridharSS23",
+        "ArXiv": "2212.00193",
+        "DOI": "10.18653/v1/2023.findings-acl.441",
+        "CorpusId": 258762841
+      },
+      "arxiv_id": "2212.00193",
+      "doi": "10.18653/v1/2023.findings-acl.441",
+      "corpus_id": 258762841
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "13",
+      "ref_key": "S2:be7dbac2bcaed4cd034a7371004a011933e1bdca",
+      "paperId": "be7dbac2bcaed4cd034a7371004a011933e1bdca",
+      "title": "Democratizing Reasoning Ability: Tailored Learning from Large Language Model",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) exhibit impressive emergent abilities in natural language processing, but their democratization is hindered due to huge computation requirements and closed-source nature. Recent research on advancing open-source smaller LMs by distilling knowledge from black-box LLMs has obtained promising results in the instruction-following ability. However, the reasoning ability which is more challenging to foster, is relatively rarely explored. In this paper, we propose a tailored learning approach to distill such reasoning ability to smaller LMs to facilitate the democratization of the exclusive reasoning ability. In contrast to merely employing LLM as a data annotator, we exploit the potential of LLM as a reasoning teacher by building an interactive multi-round learning paradigm. This paradigm enables the student to expose its deficiencies to the black-box teacher who then can provide customized training data in return. Further, to exploit the reasoning potential of the smaller LM, we propose self-reflection learning to motivate the student to learn from self-made mistakes. The learning from self-reflection and LLM are all tailored to the student's learning status, thanks to the seamless integration with the multi-round learning paradigm. Comprehensive experiments and analysis on mathematical and commonsense reasoning tasks demonstrate the effectiveness of our method. The code will be available at https://github.com/Raibows/Learn-to-Reason.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-13332",
+        "ArXiv": "2310.13332",
+        "DOI": "10.48550/arXiv.2310.13332",
+        "CorpusId": 264405727
+      },
+      "arxiv_id": "2310.13332",
+      "doi": "10.48550/arXiv.2310.13332",
+      "corpus_id": 264405727
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "14",
+      "ref_key": "S2:56fa65d8dc41708082f9b2ef7752c49cee9ebe01",
+      "paperId": "56fa65d8dc41708082f9b2ef7752c49cee9ebe01",
+      "title": "SCOTT: Self-Consistent Chain-of-Thought Distillation",
+      "year": 2023,
+      "abstract": "Large language models (LMs) beyond a certain scale, demonstrate the emergent capability of generating free-text rationales for their predictions via chain-of-thought (CoT) prompting.While CoT can yield dramatically improved performance, such gains are only observed for sufficiently large LMs. Even more concerning, there is little guarantee that the generated rationales are consistent with LM’s predictions or faithfully justify the decisions. In this work, we propose SCOTT, a faithful knowledge distillation method to learn a small, self-consistent CoT model from a teacher model that is orders of magnitude larger. To form better supervision, we elicit rationales supporting the gold answers from a large LM (teacher) by contrastive decoding, which encourages the teacher to generate tokens that become more plausible only when the answer is considered. To ensure faithful distillation, we use the teacher-generated rationales to learn a student LM with a counterfactual reasoning objective, which prevents the student from ignoring the rationales to make inconsistent predictions. Experiments show that while yielding comparable performance, our method leads to a more faithful model than baselines. Further analysis shows that such a model respects the rationales more when making decisions; thus, we can improve its performance more by refining its rationales.",
+      "externalIds": {
+        "DBLP": "conf/acl/WangWLGYR23",
+        "ArXiv": "2305.01879",
+        "ACL": "2023.acl-long.304",
+        "DOI": "10.48550/arXiv.2305.01879",
+        "CorpusId": 258461058
+      },
+      "arxiv_id": "2305.01879",
+      "doi": "10.48550/arXiv.2305.01879",
+      "corpus_id": 258461058
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "15",
+      "ref_key": "S2:2c994fadbb84fb960d8306ee138dbeef41a5b323",
+      "paperId": "2c994fadbb84fb960d8306ee138dbeef41a5b323",
+      "title": "SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models",
+      "year": 2022,
+      "abstract": "Large language models (LLMs) show excellent performance but are compute- and memory-intensive. Quantization can reduce memory and accelerate inference. However, existing methods cannot maintain accuracy and hardware efficiency at the same time. We propose SmoothQuant, a training-free, accuracy-preserving, and general-purpose post-training quantization (PTQ) solution to enable 8-bit weight, 8-bit activation (W8A8) quantization for LLMs. Based on the fact that weights are easy to quantize while activations are not, SmoothQuant smooths the activation outliers by offline migrating the quantization difficulty from activations to weights with a mathematically equivalent transformation. SmoothQuant enables an INT8 quantization of both weights and activations for all the matrix multiplications in LLMs, including OPT, BLOOM, GLM, MT-NLG, Llama-1/2, Falcon, Mistral, and Mixtral models. We demonstrate up to 1.56x speedup and 2x memory reduction for LLMs with negligible loss in accuracy. SmoothQuant enables serving 530B LLM within a single node. Our work offers a turn-key solution that reduces hardware costs and democratizes LLMs. Code is available at https://github.com/mit-han-lab/smoothquant.",
+      "externalIds": {
+        "ArXiv": "2211.10438",
+        "DBLP": "conf/icml/XiaoLSWDH23",
+        "DOI": "10.48550/arXiv.2211.10438",
+        "CorpusId": 253708271
+      },
+      "arxiv_id": "2211.10438",
+      "doi": "10.48550/arXiv.2211.10438",
+      "corpus_id": 253708271
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "16",
+      "ref_key": "S2:e03609f2587f690867e7ea0bedaf0db25282c548",
+      "paperId": "e03609f2587f690867e7ea0bedaf0db25282c548",
+      "title": "ZeroQuant: Efficient and Affordable Post-Training Quantization for Large-Scale Transformers",
+      "year": 2022,
+      "abstract": "How to efficiently serve ever-larger trained natural language models in practice has become exceptionally challenging even for powerful cloud servers due to their prohibitive memory/computation requirements. In this work, we present an efficient and affordable post-training quantization approach to compress large Transformer-based models, termed as ZeroQuant. ZeroQuant is an end-to-end quantization and inference pipeline with three main components: (1) a fine-grained hardware-friendly quantization scheme for both weight and activations; (2) a novel affordable layer-by-layer knowledge distillation algorithm (LKD) even without the access to the original training data; (3) a highly-optimized quantization system backend support to remove the quantization/dequantization overhead. As such, we are able to show that: (1) ZeroQuant can reduce the precision for weights and activations to INT8 in a cost-free way for both BERT and GPT3-style models with minimal accuracy impact, which leads to up to 5.19x/4.16x speedup on those models compared to FP16 inference; (2) ZeroQuant plus LKD affordably quantize the weights in the fully-connected module to INT4 along with INT8 weights in the attention module and INT8 activations, resulting in 3x memory footprint reduction compared to the FP16 model; (3) ZeroQuant can be directly applied to two of the largest open-sourced language models, including GPT-J6B and GPT-NeoX20, for which our INT8 model achieves similar accuracy as the FP16 model but achieves up to 5.2x better efficiency.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2206-01861",
+        "ArXiv": "2206.01861",
+        "DOI": "10.48550/arXiv.2206.01861",
+        "CorpusId": 249395624
+      },
+      "arxiv_id": "2206.01861",
+      "doi": "10.48550/arXiv.2206.01861",
+      "corpus_id": 249395624
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "17",
+      "ref_key": "S2:f9ad1fffa1cc76fd5db3ff758c0839492c5147c4",
+      "paperId": "f9ad1fffa1cc76fd5db3ff758c0839492c5147c4",
+      "title": "In-context Learning Distillation: Transferring Few-shot Learning Ability of Pre-trained Language Models",
+      "year": 2022,
+      "abstract": "Given the success with in-context learning of large pre-trained language models, we introduce in-context learning distillation to transfer in-context few-shot learning ability from large models to smaller models. We propose to combine in-context learning objectives with language modeling objectives to distill both the ability to read in-context examples and task knowledge to the smaller models. We perform in-context learning distillation under two different few-shot learning paradigms: Meta In-context Tuning (Meta-ICT) and Multitask In-context Tuning (Multitask-ICT). Multitask-ICT performs better on multitask few-shot learning but also requires more computation than Meta-ICT. Our method shows consistent improvements for both Meta-ICT and Multitask-ICT on two benchmarks: LAMA and CrossFit. Our extensive experiments and analysis reveal that in-context learning objectives and language modeling objectives are complementary under the Multitask-ICT paradigm. In-context learning objectives achieve the best performance when combined with language modeling objectives.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2212-10670",
+        "ArXiv": "2212.10670",
+        "DOI": "10.48550/arXiv.2212.10670",
+        "CorpusId": 254926556
+      },
+      "arxiv_id": "2212.10670",
+      "doi": "10.48550/arXiv.2212.10670",
+      "corpus_id": 254926556
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "18",
+      "ref_key": "S2:2a44c6b7f291f625314a82ba3131e605009fd533",
+      "paperId": "2a44c6b7f291f625314a82ba3131e605009fd533",
+      "title": "RPTQ: Reorder-based Post-training Quantization for Large Language Models",
+      "year": 2023,
+      "abstract": "Large-scale language models (LLMs) have demonstrated impressive performance, but their deployment presents challenges due to their significant memory usage. This issue can be alleviated through quantization. In this paper, we identify that the challenge in quantizing activations in LLMs arises from varying ranges across channels, rather than solely the presence of outliers. To address this challenge, we introduce a quantization method called RPTQ, which utilizes a reorder-based approach. By rearranging the channels and quantizing them in clusters, RPTQ effectively mitigates the impact of range differences between channels. To minimize the overhead of the reorder operation, we fuse it into the layer norm operation and weights in linear layers. In our experiments, RPTQ achieved a significant breakthrough by utilizing 3-bit activation in LLMs for the first time, resulting in a substantial reduction in memory usage. For instance, quantizing OPT-175b can lead to a memory consumption reduction of up to 80%.",
+      "externalIds": {
+        "ArXiv": "2304.01089",
+        "DBLP": "journals/corr/abs-2304-01089",
+        "DOI": "10.48550/arXiv.2304.01089",
+        "CorpusId": 257913374
+      },
+      "arxiv_id": "2304.01089",
+      "doi": "10.48550/arXiv.2304.01089",
+      "corpus_id": 257913374
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "19",
+      "ref_key": "S2:758985395372f5378fcf036094195b2848e13a21",
+      "paperId": "758985395372f5378fcf036094195b2848e13a21",
+      "title": "PaD: Program-aided Distillation Can Teach Small Models Reasoning Better than Chain-of-thought Fine-tuning",
+      "year": 2023,
+      "abstract": "While large language models (LLMs) excel in various natural language processing tasks, their huge size and the inaccessibility of parameters present challenges for practical deployment. Previous studies try to distill task-specific ability from LLMs to smaller models, using data synthesis and chain-of-thought (CoT) fine-tuning. However, synthetic CoT data often contains faulty reasoning, which deteriorates the quality of distillation, especially in reasoning capabilities. In this work, we propose Program-aided Distillation (PaD), which introduces reasoning programs to suppress the errors in distilled data, and thus achieves better distillation quality for reasoning tasks. In PaD, we utilize the reasoning program to substitute the CoT, allowing automated error checking of synthetic data. Further, through error injecting and further training, the small distilling model could iteratively self-refine the reasoning. Moreover, we conduct a step-wise beam search by step-by-step verifying to acquire more exact reasoning chains. We evaluate PaD on arithmetic reasoning, symbolic reasoning, and general ability.Experimental results demonstrate that smaller models using PaD can not only outperform certain LLMs (e.g., LLaMA-1 13B) but also achieve strong improvement over baselines with a significantly smaller scale of parameters and data. The source code is publicly available athttps://github.com/Xuekai-Zhu/pad.",
+      "externalIds": {
+        "ArXiv": "2305.13888",
+        "ACL": "2024.naacl-long.142",
+        "DBLP": "conf/naacl/ZhuQZLLZ24",
+        "DOI": "10.18653/v1/2024.naacl-long.142",
+        "CorpusId": 258840866
+      },
+      "arxiv_id": "2305.13888",
+      "doi": "10.18653/v1/2024.naacl-long.142",
+      "corpus_id": 258840866
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "20",
+      "ref_key": "S2:6bd3ee1ca608bc66a490f63f2fb107d79b44f3e2",
+      "paperId": "6bd3ee1ca608bc66a490f63f2fb107d79b44f3e2",
+      "title": "LLM-QAT: Data-Free Quantization Aware Training for Large Language Models",
+      "year": 2023,
+      "abstract": "Several post-training quantization methods have been applied to large language models (LLMs), and have been shown to perform well down to 8-bits. We find that these methods break down at lower bit precision, and investigate quantization aware training for LLMs (LLM-QAT) to push quantization levels even further. We propose a data-free distillation method that leverages generations produced by the pre-trained model, which better preserves the original output distribution and allows quantizing any generative model independent of its training data, similar to post-training quantization methods. In addition to quantizing weights and activations, we also quantize the KV cache, which is critical for increasing throughput and support long sequence dependencies at current model sizes. We experiment with LLaMA models of sizes 7B, 13B, and 30B, at quantization levels down to 4-bits. We observe large improvements over training-free methods, especially in the low-bit settings.",
+      "externalIds": {
+        "DBLP": "conf/acl/LiuO0CSMSKC24",
+        "ArXiv": "2305.17888",
+        "DOI": "10.48550/arXiv.2305.17888",
+        "CorpusId": 258959117
+      },
+      "arxiv_id": "2305.17888",
+      "doi": "10.48550/arXiv.2305.17888",
+      "corpus_id": 258959117
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "21",
+      "ref_key": "S2:2b7c9fd2a94deaee3e7e56dc57bab0bd39d3683c",
+      "paperId": "2b7c9fd2a94deaee3e7e56dc57bab0bd39d3683c",
+      "title": "AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have shown excellent performance on various tasks, but the astronomical model size raises the hardware barrier for serving (memory size) and slows down token generation (memory bandwidth). In this paper, we propose Activation-aware Weight Quantization (AWQ), a hardware-friendly approach for LLM low-bit weight-only quantization. Our method is based on the observation that weights are not equally important: protecting only 1% of salient weights can greatly reduce quantization error. We then propose to search for the optimal per-channel scaling that protects the salient weights by observing the activation, not weights . AWQ does not rely on any backpropagation or reconstruction, so it can well preserve LLMs’ generalization ability on different domains and modalities, without overfitting to the calibration set; it also does not rely on any data layout reordering, maintaining the hardware efficiency. AWQ outperforms existing work on various language modeling, common sense QA, and domain-specific benchmarks. Thanks to better generalization, it achieves excellent quantization performance for instruction-tuned LMs and, for the first time, multi-modal LMs. We also implement efficient tensor core kernels with reorder-free online dequantization to accelerate AWQ, achieving a 1.45 × speedup over GPTQ and is 1.85 × faster than the cuBLAS FP16 implementation. Our method provides a turn-key solution to compress LLMs to 3/4 bits for efficient deployment.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2306-00978",
+        "DOI": "10.48550/arXiv.2306.00978",
+        "CorpusId": 271271084
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2306.00978",
+      "corpus_id": 271271084
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "22",
+      "ref_key": "S2:3b7ef6f9f27e33e6a4e3bfac90dcb01ab09718bc",
+      "paperId": "3b7ef6f9f27e33e6a4e3bfac90dcb01ab09718bc",
+      "title": "SqueezeLLM: Dense-and-Sparse Quantization",
+      "year": 2023,
+      "abstract": "Generative Large Language Models (LLMs) have demonstrated remarkable results for a wide range of tasks. However, deploying these models for inference has been a significant challenge due to their unprecedented resource requirements. This has forced existing deployment frameworks to use multi-GPU inference pipelines, which are often complex and costly, or to use smaller and less performant models. In this work, we demonstrate that the main bottleneck for generative inference with LLMs is memory bandwidth, rather than compute, specifically for single batch inference. While quantization has emerged as a promising solution by representing weights with reduced precision, previous efforts have often resulted in notable performance degradation. To address this, we introduce SqueezeLLM, a post-training quantization framework that not only enables lossless compression to ultra-low precisions of up to 3-bit, but also achieves higher quantization performance under the same memory constraint. Our framework incorporates two novel ideas: (i) sensitivity-based non-uniform quantization, which searches for the optimal bit precision assignment based on second-order information; and (ii) the Dense-and-Sparse decomposition that stores outliers and sensitive weight values in an efficient sparse format. When applied to the LLaMA models, our 3-bit quantization significantly reduces the perplexity gap from the FP16 baseline by up to 2.1x as compared to the state-of-the-art methods with the same memory requirement. Furthermore, when deployed on an A6000 GPU, our quantized models achieve up to 2.3x speedup compared to the baseline. Our code is available at https://github.com/SqueezeAILab/SqueezeLLM.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2306-07629",
+        "ArXiv": "2306.07629",
+        "DOI": "10.48550/arXiv.2306.07629",
+        "CorpusId": 259144954
+      },
+      "arxiv_id": "2306.07629",
+      "doi": "10.48550/arXiv.2306.07629",
+      "corpus_id": 259144954
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "23",
+      "ref_key": "S2:9df4bfd06331557e1c0edf7937d20bd755369ed0",
+      "paperId": "9df4bfd06331557e1c0edf7937d20bd755369ed0",
+      "title": "E-Sparse: Boosting the Large Language Model Inference through Entropy-based N: M Sparsity",
+      "year": 2023,
+      "abstract": "Traditional pruning methods are known to be challenging to work in Large Language Models (LLMs) for Generative AI because of their unaffordable training process and large computational demands. For the first time, we introduce the information entropy of hidden state features into a pruning metric design, namely E-Sparse, to improve the accuracy of N:M sparsity on LLM. E-Sparse employs the information richness to leverage the channel importance, and further incorporates several novel techniques to put it into effect: (1) it introduces information entropy to enhance the significance of parameter weights and input feature norms as a novel pruning metric, and performs N:M sparsity without modifying the remaining weights. (2) it designs global naive shuffle and local block shuffle to quickly optimize the information distribution and adequately cope with the impact of N:M sparsity on LLMs' accuracy. E-Sparse is implemented as a Sparse-GEMM on FasterTransformer and runs on NVIDIA Ampere GPUs. Extensive experiments on the LLaMA family and OPT models show that E-Sparse can significantly speed up the model inference over the dense model (up to 1.53X) and obtain significant memory saving (up to 43.52%), with acceptable accuracy loss.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-15929",
+        "ArXiv": "2310.15929",
+        "DOI": "10.48550/arXiv.2310.15929",
+        "CorpusId": 264439471
+      },
+      "arxiv_id": "2310.15929",
+      "doi": "10.48550/arXiv.2310.15929",
+      "corpus_id": 264439471
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "24",
+      "ref_key": "S2:a1bcf68d6ed2fec1ecaf16b67f2d19bc20c00ee6",
+      "paperId": "a1bcf68d6ed2fec1ecaf16b67f2d19bc20c00ee6",
+      "title": "ASVD: Activation-aware Singular Value Decomposition for Compressing Large Language Models",
+      "year": 2023,
+      "abstract": "In this paper, we introduce a new post-training compression paradigm for Large Language Models (LLMs) to facilitate their wider adoption. We delve into LLM weight low-rank decomposition, and find that the challenges of this task stem from the distribution variance in the LLM activations and the sensitivity difference among various kinds of layers. To address these issues, we propose a training-free approach called Activation-aware Singular Value Decomposition (ASVD). Specifically, ASVD manages activation outliers by transforming the weight matrix based on the activation distribution. This transformation allows the outliers in the activation matrix to be absorbed into the transformed weight matrix, thereby enhancing decomposition accuracy. Additionally, we propose an efficient iterative calibration process to optimize layer-specific decomposition by addressing the varying sensitivity of different LLM layers. In this way, ASVD can compress a network by 10%-30%. Based on the success of the low-rank decomposition of projection matrices in the self-attention module, we further introduce ASVD to compress the KV cache. By reducing the channel dimension of KV activations, memory requirements for KV cache can be largely reduced. ASVD can further achieve 50% KV cache reductions without performance drop in a training-free manner. Code is anonymously available in supplementary materials.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2312-05821",
+        "ArXiv": "2312.05821",
+        "DOI": "10.48550/arXiv.2312.05821",
+        "CorpusId": 266162471
+      },
+      "arxiv_id": "2312.05821",
+      "doi": "10.48550/arXiv.2312.05821",
+      "corpus_id": 266162471
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "25",
+      "ref_key": "S2:b085968c4362fb286ad6c5ef71a5db9630da0498",
+      "paperId": "b085968c4362fb286ad6c5ef71a5db9630da0498",
+      "title": "KVQuant: Towards 10 Million Context Length LLM Inference with KV Cache Quantization",
+      "year": 2024,
+      "abstract": "LLMs are seeing growing use for applications which require large context windows, and with these large context windows KV cache activations surface as the dominant contributor to memory consumption during inference. Quantization is a promising approach for compressing KV cache activations; however, existing solutions fail to represent activations accurately in sub-4-bit precision. Our work, KVQuant, facilitates low precision KV cache quantization by incorporating several novel methods: (i) Per-Channel Key Quantization, where we adjust the dimension along which we quantize the Key activations to better match the distribution; (ii) Pre-RoPE Key Quantization, where we quantize Key activations before the rotary positional embedding to mitigate its impact on quantization; (iii) Non-Uniform KV Cache Quantization, where we derive per-layer sensitivity-weighted non-uniform datatypes that better represent the distributions; and (iv) Per-Vector Dense-and-Sparse Quantization, where we isolate outliers separately for each vector to minimize skews in quantization ranges. By applying our method to the LLaMA, Llama-2, Llama-3, and Mistral models, we achieve<0.1 perplexity degradation with 3-bit quantization on both Wikitext-2 and C4, outperforming existing approaches. Our method enables serving LLaMA-7B with a context length of up to 1 million on a single A100-80GB GPU and up to 10 million on an 8-GPU system. We develop custom CUDA kernels for KVQuant, showing that we can achieve up to ~1.7x speedups, compared to baseline fp16 matrix-vector multiplications, for the LLaMA-7B model.",
+      "externalIds": {
+        "ArXiv": "2401.18079",
+        "DBLP": "journals/corr/abs-2401-18079",
+        "DOI": "10.48550/arXiv.2401.18079",
+        "CorpusId": 267335271
+      },
+      "arxiv_id": "2401.18079",
+      "doi": "10.48550/arXiv.2401.18079",
+      "corpus_id": 267335271
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "26",
+      "ref_key": "S2:a3e000e0d7f64c1d094c2a8bf6f43992cbabe91b",
+      "paperId": "a3e000e0d7f64c1d094c2a8bf6f43992cbabe91b",
+      "title": "KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache",
+      "year": 2024,
+      "abstract": "Efficiently serving large language models (LLMs) requires batching of many requests to reduce the cost per request. Yet, with larger batch sizes and longer context lengths, the key-value (KV) cache, which stores attention keys and values to avoid re-computations, significantly increases memory demands and becomes the new bottleneck in speed and memory usage. Additionally, the loading of the KV cache causes the computational core to be idle, which limits the inference speed. A straightforward and effective solution to reduce KV cache size is quantization, which decreases the total bytes taken by KV cache. However, there is a lack of in-depth studies that explore the element distribution of KV cache to understand the hardness and limitation of KV cache quantization. To fill the gap, we conducted a comprehensive study on the element distribution in KV cache of popular LLMs. Our findings indicate that the key cache should be quantized per-channel, i.e., group elements along the channel dimension and quantize them together. In contrast, the value cache should be quantized per-token. From this analysis, we developed a tuning-free 2bit KV cache quantization algorithm named KIVI. With hardware-friendly implementation, KIVI can enable Llama, Falcon, and Mistral models to maintain almost the same quality while using $\\mathbf{2.6\\times}$ less peak memory (including model weight). This reduction in memory usage enables up to $\\mathbf{4\\times}$ larger batch size, bringing $\\mathbf{2.35\\times \\sim 3.47\\times}$ throughput on real LLM inference workload. The source code is available at https://github.com/jy-yuan/KIVI.",
+      "externalIds": {
+        "DBLP": "conf/icml/LiuYJZXBC024",
+        "ArXiv": "2402.02750",
+        "DOI": "10.13140/RG.2.2.28167.37282",
+        "CorpusId": 267413049
+      },
+      "arxiv_id": "2402.02750",
+      "doi": "10.13140/RG.2.2.28167.37282",
+      "corpus_id": 267413049
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "27",
+      "ref_key": "S2:ee85c7c666135f4aae32336968f09584029b6a35",
+      "paperId": "ee85c7c666135f4aae32336968f09584029b6a35",
+      "title": "Selective Reflection-Tuning: Student-Selected Data Recycling for LLM Instruction-Tuning",
+      "year": 2024,
+      "abstract": "Instruction tuning is critical to large language models (LLMs) for achieving better instruction following and task adaptation capabilities but its success heavily relies on the training data quality. Many recent methods focus on improving the data quality but often overlook the compatibility of the data with the student model being finetuned. This paper introduces Selective Reflection-Tuning, a novel paradigm that synergizes a teacher LLM's reflection and introspection for improving existing data quality with the data selection capability of the student LLM, to automatically refine existing instruction-tuning data. This teacher-student collaboration produces high-quality and student-compatible instruction-response pairs, resulting in sample-efficient instruction tuning and LLMs of superior performance. Selective Reflection-Tuning is a data augmentation and synthesis that generally improves LLM finetuning and self-improvement without collecting brand-new data. We apply our method to Alpaca and WizardLM data and achieve much stronger and top-tier 7B and 13B LLMs.",
+      "externalIds": {
+        "DBLP": "conf/acl/LiCCHGZ24",
+        "ArXiv": "2402.10110",
+        "DOI": "10.48550/arXiv.2402.10110",
+        "CorpusId": 267682220
+      },
+      "arxiv_id": "2402.10110",
+      "doi": "10.48550/arXiv.2402.10110",
+      "corpus_id": 267682220
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "28",
+      "ref_key": "S2:52258e9110f8e73cca24f6394bfc483341b459a4",
+      "paperId": "52258e9110f8e73cca24f6394bfc483341b459a4",
+      "title": "BitDistiller: Unleashing the Potential of Sub-4-Bit LLMs via Self-Distillation",
+      "year": 2024,
+      "abstract": "The upscaling of Large Language Models (LLMs) has yielded impressive advances in natural language processing, yet it also poses significant deployment challenges. Weight quantization has emerged as a widely embraced solution to reduce memory and computational demands. This paper introduces BitDistiller, a framework that synergizes Quantization-Aware Training (QAT) with Knowledge Distillation (KD) to boost the performance of LLMs at ultra-low precisions (sub-4-bit). Specifically, BitDistiller first incorporates a tailored asymmetric quantization and clipping technique to maximally preserve the fidelity of quantized weights, and then proposes a novel Confidence-Aware Kullback-Leibler Divergence (CAKLD) objective, which is employed in a self-distillation manner to enable faster convergence and superior model performance. Empirical evaluations demonstrate that BitDistiller significantly surpasses existing methods in both 3-bit and 2-bit configurations on general language understanding and complex reasoning benchmarks. Notably, BitDistiller is shown to be more cost-effective, demanding fewer data and training resources. The code is available at https://github.com/DD-DuDa/BitDistiller.",
+      "externalIds": {
+        "ArXiv": "2402.10631",
+        "DBLP": "journals/corr/abs-2402-10631",
+        "DOI": "10.48550/arXiv.2402.10631",
+        "CorpusId": 267740313
+      },
+      "arxiv_id": "2402.10631",
+      "doi": "10.48550/arXiv.2402.10631",
+      "corpus_id": 267740313
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "29",
+      "ref_key": "S2:bc107fc7af12344342b4d80d81650577e9e9845f",
+      "paperId": "bc107fc7af12344342b4d80d81650577e9e9845f",
+      "title": "OneBit: Towards Extremely Low-bit Large Language Models",
+      "year": 2024,
+      "abstract": "Model quantification uses low bit-width values to represent the weight matrices of existing models to be quantized, which is a promising approach to reduce both storage and computational overheads of deploying highly anticipated LLMs. However, current quantization methods suffer severe performance degradation when the bit-width is extremely reduced, and thus focus on utilizing 4-bit or 8-bit values to quantize models. This paper boldly quantizes the weight matrices of LLMs to 1-bit, paving the way for the extremely low bit-width deployment of LLMs. For this target, we introduce a 1-bit model compressing framework named OneBit, including a novel 1-bit parameter representation method to better quantize LLMs as well as an effective parameter initialization method based on matrix decomposition to improve the convergence speed of the quantization framework. Sufficient experimental results indicate that OneBit achieves good performance (at least 81% of the non-quantized performance on LLaMA models) with robust training processes when only using 1-bit weight matrices.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-11295",
+        "ArXiv": "2402.11295",
+        "DOI": "10.48550/arXiv.2402.11295",
+        "CorpusId": 267750207
+      },
+      "arxiv_id": "2402.11295",
+      "doi": "10.48550/arXiv.2402.11295",
+      "corpus_id": 267750207
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "30",
+      "ref_key": "S2:f608011b0f50a14bb2949c186a7c632a099aa75b",
+      "paperId": "f608011b0f50a14bb2949c186a7c632a099aa75b",
+      "title": "WKVQuant: Quantizing Weight and Key/Value Cache for Large Language Models Gains More",
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) face significant deployment challenges due to their substantial memory requirements and the computational demands of auto-regressive text generation process. This paper addresses these challenges by focusing on the quantization of LLMs, a technique that reduces memory consumption by converting model parameters and activations into low-bit integers. We critically analyze the existing quantization approaches, identifying their limitations in balancing the accuracy and efficiency of the quantized LLMs. To advance beyond these limitations, we propose WKVQuant, a PTQ framework especially designed for quantizing weights and the key/value (KV) cache of LLMs. Specifically, we incorporates past-only quantization to improve the computation of attention. Additionally, we introduce two-dimensional quantization strategy to handle the distribution of KV cache, along with a cross-block reconstruction regularization for parameter optimization. Experiments show that WKVQuant achieves almost comparable memory savings to weight-activation quantization, while also approaching the performance of weight-only quantization.",
+      "externalIds": {
+        "ArXiv": "2402.12065",
+        "DBLP": "journals/corr/abs-2402-12065",
+        "DOI": "10.48550/arXiv.2402.12065",
+        "CorpusId": 267750952
+      },
+      "arxiv_id": "2402.12065",
+      "doi": "10.48550/arXiv.2402.12065",
+      "corpus_id": 267750952
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "31",
+      "ref_key": "S2:7754ac3e8ff1286f17593159781487543cdddaba",
+      "paperId": "7754ac3e8ff1286f17593159781487543cdddaba",
+      "title": "SliceGPT: Compress Large Language Models by Deleting Rows and Columns",
+      "year": 2024,
+      "abstract": "Large language models have become the cornerstone of natural language processing, but their use comes with substantial costs in terms of compute and memory resources. Sparsification provides a solution to alleviate these resource constraints, and recent works have shown that trained models can be sparsified post-hoc. Existing sparsification techniques face challenges as they need additional data structures and offer constrained speedup with current hardware. In this paper we present SliceGPT, a new post-training sparsification scheme which replaces each weight matrix with a smaller (dense) matrix, reducing the embedding dimension of the network. Through extensive experimentation, we show that SliceGPT can remove up to 25% of the model parameters (including embeddings) for LLAMA2-70B, OPT 66B and Phi-2 models while maintaining 99%, 99% and 90% zero-shot task performance of the dense model respectively. Our sliced models run on fewer GPUs and run faster without any additional code optimization: on 24GB consumer GPUs we reduce the total compute for inference on LLAMA2-70B to 64% of that of the dense model; on 40GB A100 GPUs we reduce it to 66%. We offer a new insight, computational invariance in transformer networks, which enables SliceGPT and we hope it will inspire and enable future avenues to reduce memory and computation demands for pre-trained models. Code is available at: https://github.com/microsoft/TransformerCompression",
+      "externalIds": {
+        "ArXiv": "2401.15024",
+        "DBLP": "conf/iclr/AshkboosCNHH24a",
+        "DOI": "10.48550/arXiv.2401.15024",
+        "CorpusId": 267301573
+      },
+      "arxiv_id": "2401.15024",
+      "doi": "10.48550/arXiv.2401.15024",
+      "corpus_id": 267301573
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "32",
+      "ref_key": "S2:56b828717f32251a5e0f0be9c0113077f23c8429",
+      "paperId": "56b828717f32251a5e0f0be9c0113077f23c8429",
+      "title": "QuIP: 2-Bit Quantization of Large Language Models With Guarantees",
+      "year": 2023,
+      "abstract": "This work studies post-training parameter quantization in large language models (LLMs). We introduce quantization with incoherence processing (QuIP), a new method based on the insight that quantization benefits from incoherent weight and Hessian matrices, i.e., from the weights being even in magnitude and the directions in which it is important to round them accurately being unaligned with the coordinate axes. QuIP consists of two steps: (1) an adaptive rounding procedure minimizing a quadratic proxy objective; (2) efficient pre- and post-processing that ensures weight and Hessian incoherence via multiplication by random orthogonal matrices. We complement QuIP with the first theoretical analysis for an LLM-scale quantization algorithm, and show that our theory also applies to an existing method, OPTQ. Empirically, we find that our incoherence preprocessing improves several existing quantization algorithms and yields the first LLM quantization methods that produce viable results using only two bits per weight. Our code can be found at https://github.com/Cornell-RelaxML/QuIP.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-13304",
+        "ArXiv": "2307.13304",
+        "DOI": "10.48550/arXiv.2307.13304",
+        "CorpusId": 260154775,
+        "PubMed": "39416859"
+      },
+      "arxiv_id": "2307.13304",
+      "doi": "10.48550/arXiv.2307.13304",
+      "corpus_id": 260154775
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "33",
+      "ref_key": "S2:51db4c39dc0bdf5c95c8bbe89bf4211b48d0b4df",
+      "paperId": "51db4c39dc0bdf5c95c8bbe89bf4211b48d0b4df",
+      "title": "SpQR: A Sparse-Quantized Representation for Near-Lossless LLM Weight Compression",
+      "year": 2023,
+      "abstract": "Recent advances in large language model (LLM) pretraining have led to high-quality LLMs with impressive abilities. By compressing such LLMs via quantization to 3-4 bits per parameter, they can fit into memory-limited devices such as laptops and mobile phones, enabling personalized use. However, quantization down to 3-4 bits per parameter usually leads to moderate-to-high accuracy losses, especially for smaller models in the 1-10B parameter range, which are well-suited for edge deployments. To address this accuracy issue, we introduce the Sparse-Quantized Representation (SpQR), a new compressed format and quantization technique which enables for the first time near-lossless compression of LLMs across model scales, while reaching similar compression levels to previous methods. SpQR works by identifying and isolating outlier weights, which cause particularly-large quantization errors, and storing them in higher precision, while compressing all other weights to 3-4 bits, and achieves relative accuracy losses of less than 1% in perplexity for highly-accurate LLaMA and Falcon LLMs. This makes it possible to run 33B parameter LLM on a single 24 GB consumer GPU without any performance degradation at 15% speedup thus making powerful LLMs available to consumer without any downsides. SpQR comes with efficient algorithms for both encoding weights into its format, as well as decoding them efficiently at runtime. Specifically, we provide an efficient GPU inference algorithm for SpQR which yields faster inference than 16-bit baselines at similar accuracy, while enabling memory compression gains of more than 4x.",
+      "externalIds": {
+        "DBLP": "conf/iclr/DettmersSEKFABH24",
+        "ArXiv": "2306.03078",
+        "DOI": "10.48550/arXiv.2306.03078",
+        "CorpusId": 259076379
+      },
+      "arxiv_id": "2306.03078",
+      "doi": "10.48550/arXiv.2306.03078",
+      "corpus_id": 259076379
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "34",
+      "ref_key": "S2:02529b2666a536053a2e2940de5b28de36fd594b",
+      "paperId": "02529b2666a536053a2e2940de5b28de36fd594b",
+      "title": "Lion: Adversarial Distillation of Proprietary Large Language Models",
+      "year": 2023,
+      "abstract": "The practice of transferring knowledge from a sophisticated, proprietary large language model (LLM) to a compact, open-source LLM has garnered considerable attention. Previous works have focused on a unidirectional knowledge distillation way by aligning the responses of the student model with those of the teacher model to a set of instructions. Nevertheless, they overlooked the possibility of incorporating any reciprocal\"feedback\"--identifying challenging instructions where the student model's performance falls short--to boost the student model's proficiency iteratively. To this end, we propose a novel adversarial distillation framework for a more efficient knowledge transfer. Leveraging the versatile role adaptability of LLMs, we prompt the teacher model to identify\"hard\"instructions and generate new\"hard\"instructions for the student model, creating a three-stage adversarial loop of imitation, discrimination, and generation. By applying this adversarial framework, we successfully transfer knowledge from ChatGPT to a student model (named Lion), using a mere 70k training data. Our results show that Lion-13B not only achieves comparable open-ended generation capabilities to ChatGPT but surpasses conventional state-of-the-art (SOTA) instruction-tuned models like Vicuna-13B by 55.4% in challenging zero-shot reasoning benchmarks such as BIG-Bench Hard (BBH) and 16.7% on AGIEval. Code and model can be found at https://github.com/YJiangcm/Lion.",
+      "externalIds": {
+        "ArXiv": "2305.12870",
+        "DBLP": "conf/emnlp/JiangCCW23",
+        "DOI": "10.18653/v1/2023.emnlp-main.189",
+        "CorpusId": 258833333
+      },
+      "arxiv_id": "2305.12870",
+      "doi": "10.18653/v1/2023.emnlp-main.189",
+      "corpus_id": 258833333
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "35",
+      "ref_key": "S2:87667fd50710183951fd2206a929a25b4b970276",
+      "paperId": "87667fd50710183951fd2206a929a25b4b970276",
+      "title": "Shortened LLaMA: A Simple Depth Pruning for Large Language Models",
+      "year": 2024,
+      "abstract": "Structured pruning of modern large language models (LLMs) has emerged as a way of decreasing their high computational needs. Width pruning reduces the size of projection weight matrices (e.g., by removing attention heads) while maintaining the number of layers. Depth pruning, in contrast, removes entire layers or blocks, while keeping the size of the remaining weights unchanged. Most current research focuses on either width-only or a blend of width and depth pruning, with little comparative analysis between the two units (width vs. depth) concerning their impact on LLM inference efficiency. In this work, we show that simple depth pruning can effectively compress LLMs while achieving comparable or superior performance to recent width pruning studies. Our pruning method boosts inference speeds, especially under memory-constrained conditions that require limited batch sizes for running LLMs, where width pruning is ineffective. In retraining pruned models for quality recovery, continued pretraining on a large corpus markedly outperforms LoRA-based tuning, particularly at severe pruning ratios. We hope this work can help build compact yet capable LLMs. Code and models can be found at: https://github.com/Nota-NetsPresso/shortened-llm",
+      "externalIds": {
+        "ArXiv": "2402.02834",
+        "DBLP": "journals/corr/abs-2402-02834",
+        "DOI": "10.48550/arXiv.2402.02834",
+        "CorpusId": 267413136
+      },
+      "arxiv_id": "2402.02834",
+      "doi": "10.48550/arXiv.2402.02834",
+      "corpus_id": 267413136
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "36",
+      "ref_key": "S2:7d29a84a589aa5655e5d3fed8d725ea472816599",
+      "paperId": "7d29a84a589aa5655e5d3fed8d725ea472816599",
+      "title": "Explanations from Large Language Models Make Small Reasoners Better",
+      "year": 2022,
+      "abstract": "Integrating free-text explanations to in-context learning of large language models (LLM) is shown to elicit strong reasoning capabilities along with reasonable explanations. In this paper, we consider the problem of leveraging the explanations generated by LLM to improve the training of small reasoners, which are more favorable in real-production deployment due to their low cost. We systematically explore three explanation generation approaches from LLM and utilize a multi-task learning framework to facilitate small models to acquire strong reasoning power together with explanation generation capabilities. Experiments on multiple reasoning tasks show that our method can consistently and significantly outperform finetuning baselines across different settings, and even perform better than finetuning/prompting a 60x larger GPT-3 (175B) model by up to 9.5% in accuracy. As a side benefit, human evaluation further shows that our method can generate high-quality explanations to justify its predictions, moving towards the goal of explainable AI.",
+      "externalIds": {
+        "ArXiv": "2210.06726",
+        "DBLP": "journals/corr/abs-2210-06726",
+        "DOI": "10.48550/arXiv.2210.06726",
+        "CorpusId": 252873123
+      },
+      "arxiv_id": "2210.06726",
+      "doi": "10.48550/arXiv.2210.06726",
+      "corpus_id": 252873123
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "37",
+      "ref_key": "S2:a8b995f0da78a79447dfb18c2337972b044f4239",
+      "paperId": "a8b995f0da78a79447dfb18c2337972b044f4239",
+      "title": "LLM-FP4: 4-Bit Floating-Point Quantized Transformers",
+      "year": 2023,
+      "abstract": "We propose LLM-FP4 for quantizing both weights and activations in large language models (LLMs) down to 4-bit floating-point values, in a post-training manner. Existing post-training quantization (PTQ) solutions are primarily integer-based and struggle with bit widths below 8 bits. Compared to integer quantization, floating-point (FP) quantization is more flexible and can better handle long-tail or bell-shaped distributions, and it has emerged as a default choice in many hardware platforms. One characteristic of FP quantization is that its performance largely depends on the choice of exponent bits and clipping range. In this regard, we construct a strong FP-PTQ baseline by searching for the optimal quantization parameters. Furthermore, we observe a high inter-channel variance and low intra-channel variance pattern in activation distributions, which adds activation quantization difficulty. We recognize this pattern to be consistent across a spectrum of transformer models designed for diverse tasks, such as LLMs, BERT, and Vision Transformer models. To tackle this, we propose per-channel activation quantization and show that these additional scaling factors can be reparameterized as exponential biases of weights, incurring a negligible cost. Our method, for the first time, can quantize both weights and activations in the LLaMA-13B to only 4-bit and achieves an average score of 63.1 on the common sense zero-shot reasoning tasks, which is only 5.8 lower than the full-precision model, significantly outperforming the previous state-of-the-art by 12.7 points. Code is available at: https://github.com/nbasyl/LLM-FP4.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-16836",
+        "ArXiv": "2310.16836",
+        "DOI": "10.18653/v1/2023.emnlp-main.39",
+        "CorpusId": 264451753
+      },
+      "arxiv_id": "2310.16836",
+      "doi": "10.18653/v1/2023.emnlp-main.39",
+      "corpus_id": 264451753
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "38",
+      "ref_key": "S2:017010b941d902a467f6d329ae5e74fd67e67912",
+      "paperId": "017010b941d902a467f6d329ae5e74fd67e67912",
+      "title": "LLM-Pruner: On the Structural Pruning of Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have shown remarkable capabilities in language understanding and generation. However, such impressive capability typically comes with a substantial model size, which presents significant challenges in both the deployment, inference, and training stages. With LLM being a general-purpose task solver, we explore its compression in a task-agnostic manner, which aims to preserve the multi-task solving and language generation ability of the original LLM. One challenge to achieving this is the enormous size of the training corpus of LLM, which makes both data transfer and model post-training over-burdensome. Thus, we tackle the compression of LLMs within the bound of two constraints: being task-agnostic and minimizing the reliance on the original training dataset. Our method, named LLM-Pruner, adopts structural pruning that selectively removes non-critical coupled structures based on gradient information, maximally preserving the majority of the LLM's functionality. To this end, the performance of pruned models can be efficiently recovered through tuning techniques, LoRA, in merely 3 hours, requiring only 50K data. We validate the LLM-Pruner on three LLMs, including LLaMA, Vicuna, and ChatGLM, and demonstrate that the compressed models still exhibit satisfactory capabilities in zero-shot classification and generation. The code is available at: https://github.com/horseee/LLM-Pruner",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-11627",
+        "ArXiv": "2305.11627",
+        "DOI": "10.48550/arXiv.2305.11627",
+        "CorpusId": 258823276
+      },
+      "arxiv_id": "2305.11627",
+      "doi": "10.48550/arXiv.2305.11627",
+      "corpus_id": 258823276
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "39",
+      "ref_key": "S2:5eeb828685e44ca5b8ebafb34a9fa4d51c9186df",
+      "paperId": "5eeb828685e44ca5b8ebafb34a9fa4d51c9186df",
+      "title": "LUT-GEMM: Quantized Matrix Multiplication based on LUTs for Efficient Inference in Large-Scale Generative Language Models",
+      "year": 2022,
+      "abstract": "Recent advances in self-supervised learning and the Transformer architecture have significantly improved natural language processing (NLP), achieving remarkably low perplexity. However, the growing size of NLP models introduces a memory wall problem during the generation phase. To mitigate this issue, recent efforts have focused on quantizing model weights to sub-4-bit precision while preserving full precision for activations, resulting in practical speed-ups during inference on a single GPU. However, these improvements primarily stem from reduced memory movement, which necessitates a resource-intensive dequantization process rather than actual computational reduction. In this paper, we introduce LUT-GEMM, an efficient kernel for quantized matrix multiplication, which not only eliminates the resource-intensive dequantization process but also reduces computational costs compared to previous kernels for weight-only quantization. Furthermore, we proposed group-wise quantization to offer a flexible trade-off between compression ratio and accuracy. The impact of LUT-GEMM is facilitated by implementing high compression ratios through low-bit quantization and efficient LUT-based operations. We show experimentally that when applied to the OPT-175B model with 3-bit quantization, LUT-GEMM substantially accelerates token generation latency, achieving a remarkable 2.1$\\times$ improvement on a single GPU when compared to OPTQ, which relies on the costly dequantization process.",
+      "externalIds": {
+        "DBLP": "conf/iclr/ParkPKLKKKKLL24",
+        "ArXiv": "2206.09557",
+        "CorpusId": 258180013
+      },
+      "arxiv_id": "2206.09557",
+      "doi": null,
+      "corpus_id": 258180013
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "40",
+      "ref_key": "S2:fbd49b25bdab98c171af49962a41139c73dacbde",
+      "paperId": "fbd49b25bdab98c171af49962a41139c73dacbde",
+      "title": "Specializing Smaller Language Models towards Multi-Step Reasoning",
+      "year": 2023,
+      "abstract": "The surprising ability of Large Language Models (LLMs) to perform well on complex reasoning with only few-shot chain-of-thought prompts is believed to emerge only in very large-scale models (100+ billion parameters). We show that such abilities can, in fact, be distilled down from GPT-3.5 ($\\ge$ 175B) to T5 variants ($\\le$ 11B). We propose model specialization, to specialize the model's ability towards a target task. The hypothesis is that large models (commonly viewed as larger than 100B) have strong modeling power, but are spread on a large spectrum of tasks. Small models (commonly viewed as smaller than 10B) have limited model capacity, but if we concentrate their capacity on a specific target task, the model can achieve a decent improved performance. We use multi-step math reasoning as our testbed because it is a very typical emergent ability. We show two important aspects of model abilities: (1). there exists a very complex balance/ tradeoff between language models' multi-dimensional abilities; (2). by paying the price of decreased generic ability, we can clearly lift up the scaling curve of models smaller than 10B towards a specialized multi-step math reasoning ability. We further give comprehensive discussions about important design choices for better generalization, including the tuning data format, the start model checkpoint, and a new model selection method. We hope our practice and discoveries can serve as an important attempt towards specialized smaller models in the new research paradigm set by LLMs.",
+      "externalIds": {
+        "DBLP": "conf/icml/FuPOSK23",
+        "ArXiv": "2301.12726",
+        "DOI": "10.48550/arXiv.2301.12726",
+        "CorpusId": 256390607
+      },
+      "arxiv_id": "2301.12726",
+      "doi": "10.48550/arXiv.2301.12726",
+      "corpus_id": 256390607
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "41",
+      "ref_key": "S2:eb2c2330177f765038a2b17e2ee3498965865797",
+      "paperId": "eb2c2330177f765038a2b17e2ee3498965865797",
+      "title": "OmniQuant: Omnidirectionally Calibrated Quantization for Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have revolutionized natural language processing tasks. However, their practical deployment is hindered by their immense memory and computation requirements. Although recent post-training quantization (PTQ) methods are effective in reducing memory footprint and improving the computational efficiency of LLM, they hand-craft quantization parameters, leading to low performance, especially in extremely low-bit quantization. To tackle this issue, we introduce an Omnidirectionally calibrated Quantization (\\textbf{OmniQuant}) technique for LLMs, which achieves good performance in diverse quantization settings while maintaining the computational efficiency of PTQ by efficiently optimizing various quantization parameters. OmniQuant comprises two innovative components including Learnable Weight Clipping (LWC) and Learnable Equivalent Transformation (LET). LWC modulates the extreme values of weights by optimizing the clipping threshold. Meanwhile, LET tackles activation outliers by shifting the challenge of quantization from activations to weights. Operating within a differentiable framework using block-wise error minimization, OmniQuant can optimize the quantization process efficiently for both weight-only and weight-activation quantization. For instance, the LLaMA-2 model family size 7-70B can be processed with OmniQuant on a single A100-40G GPU within 1-16 hours using 128 samples. Extensive experiments validate OmniQuant's superior performance across diverse quantization configurations such as W4A4 (4-bit weight, 4-bit activation), W6A6, W4A16, W3A16, and W2A16. Additionally, OmniQuant demonstrates effectiveness in instruction-tuned models and delivers notable improvements in inference speed and memory reduction on real devices. Codes are available at \\url{https://github.com/OpenGVLab/OmniQuant}.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-13137",
+        "ArXiv": "2308.13137",
+        "DOI": "10.48550/arXiv.2308.13137",
+        "CorpusId": 261214575
+      },
+      "arxiv_id": "2308.13137",
+      "doi": "10.48550/arXiv.2308.13137",
+      "corpus_id": 261214575
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "42",
+      "ref_key": "S2:5c7a21e9262b62f0a27fefdc8b1270dfdcbd3912",
+      "paperId": "5c7a21e9262b62f0a27fefdc8b1270dfdcbd3912",
+      "title": "The Truth is in There: Improving Reasoning in Language Models with Layer-Selective Rank Reduction",
+      "year": 2023,
+      "abstract": "Transformer-based Large Language Models (LLMs) have become a fixture in modern machine learning. Correspondingly, significant resources are allocated towards research that aims to further advance this technology, typically resulting in models of increasing size that are trained on increasing amounts of data. This work, however, demonstrates the surprising result that it is often possible to significantly improve the performance of LLMs by selectively removing higher-order components of their weight matrices. This simple intervention, which we call LAyer-SElective Rank reduction (LASER), can be done on a model after training has completed, and requires no additional parameters or data. We show extensive experiments demonstrating the generality of this finding across language models and datasets, and provide in-depth analyses offering insights into both when LASER is effective and the mechanism by which it operates.",
+      "externalIds": {
+        "DBLP": "conf/iclr/SharmaAM24",
+        "ArXiv": "2312.13558",
+        "DOI": "10.48550/arXiv.2312.13558",
+        "CorpusId": 266435969
+      },
+      "arxiv_id": "2312.13558",
+      "doi": "10.48550/arXiv.2312.13558",
+      "corpus_id": 266435969
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "43",
+      "ref_key": "S2:7d22ad3573101337bca2091fb0114b377c4f3db6",
+      "paperId": "7d22ad3573101337bca2091fb0114b377c4f3db6",
+      "title": "A Simple and Effective Pruning Approach for Large Language Models",
+      "year": 2023,
+      "abstract": "As their size increases, Large Languages Models (LLMs) are natural candidates for network pruning methods: approaches that drop a subset of network weights while striving to preserve performance. Existing methods, however, require either retraining, which is rarely affordable for billion-scale LLMs, or solving a weight reconstruction problem reliant on second-order information, which may also be computationally expensive. In this paper, we introduce a novel, straightforward yet effective pruning method, termed Wanda (Pruning by Weights and activations), designed to induce sparsity in pretrained LLMs. Motivated by the recent observation of emergent large magnitude features in LLMs, our approach prunes weights with the smallest magnitudes multiplied by the corresponding input activations, on a per-output basis. Notably, Wanda requires no retraining or weight update, and the pruned LLM can be used as is. We conduct a thorough evaluation of our method Wanda on LLaMA and LLaMA-2 across various language benchmarks. Wanda significantly outperforms the established baseline of magnitude pruning and performs competitively against recent method involving intensive weight update. Code is available at https://github.com/locuslab/wanda.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2306-11695",
+        "ArXiv": "2306.11695",
+        "DOI": "10.48550/arXiv.2306.11695",
+        "CorpusId": 259203115
+      },
+      "arxiv_id": "2306.11695",
+      "doi": "10.48550/arXiv.2306.11695",
+      "corpus_id": 259203115
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "44",
+      "ref_key": "S2:e65b346d442e9962a4276dc1c1af2956d9d5f1eb",
+      "paperId": "e65b346d442e9962a4276dc1c1af2956d9d5f1eb",
+      "title": "Self-Instruct: Aligning Language Models with Self-Generated Instructions",
+      "year": 2022,
+      "abstract": "Large “instruction-tuned” language models (i.e., finetuned to respond to instructions) have demonstrated a remarkable ability to generalize zero-shot to new tasks. Nevertheless, they depend heavily on human-written instruction data that is often limited in quantity, diversity, and creativity, therefore hindering the generality of the tuned model. We introduce Self-Instruct, a framework for improving the instruction-following capabilities of pretrained language models by bootstrapping off their own generations. Our pipeline generates instructions, input, and output samples from a language model, then filters invalid or similar ones before using them to finetune the original model. Applying our method to the vanilla GPT3, we demonstrate a 33% absolute improvement over the original model on Super-NaturalInstructions, on par with the performance of InstructGPT-001, which was trained with private user data and human annotations. For further evaluation, we curate a set of expert-written instructions for novel tasks, and show through human evaluation that tuning GPT3 with Self-Instruct outperforms using existing public instruction datasets by a large margin, leaving only a 5% absolute gap behind InstructGPT-001. Self-Instruct provides an almost annotation-free method for aligning pre-trained language models with instructions, and we release our large synthetic dataset to facilitate future studies on instruction tuning.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2212-10560",
+        "ArXiv": "2212.10560",
+        "ACL": "2023.acl-long.754",
+        "DOI": "10.48550/arXiv.2212.10560",
+        "CorpusId": 254877310
+      },
+      "arxiv_id": "2212.10560",
+      "doi": "10.48550/arXiv.2212.10560",
+      "corpus_id": 254877310
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "45",
+      "ref_key": "S2:f3275146eb973c9726dc550a88cc552f0dfa5ea7",
+      "paperId": "f3275146eb973c9726dc550a88cc552f0dfa5ea7",
+      "title": "Outlier Suppression+: Accurate quantization of large language models by equivalent and effective shifting and scaling",
+      "year": 2023,
+      "abstract": "Post-training quantization~(PTQ) of transformer language models faces significant challenges due to the existence of detrimental outliers in activations. We observe that these outliers are concentrated in specific channels and are asymmetric across channels. To address this issue, we propose the Outlier Suppression+~(OS+) framework, which contains the channel-wise shifting for asymmetry and channel-wise scaling for concentration. We show that these operations can be seamlessly migrated into subsequent modules while maintaining equivalence. Second, we propose a fast and stable scheme to calculate effective shifting and scaling values. The channel-wise shifting aligns the center of each channel for removal of outlier asymmetry. The channel-wise scaling quantitatively evaluates changes brought by migration and quantization for better quantization burden balance. We validate our OS+ under both standard and fine-grained quantization settings with models including BERT, OPT, BLOOM, BLOOMZ, and LLaMA. Comprehensive results across various tasks demonstrate the superiority of our approach. Especially, with standard quantization, OS+ can achieve near-floating-point performance on both small models and large language models on 8-bit and 6-bit. Besides, we establish a new state-of-the-art for 4-bit BERT with 15.5\\% improvement. Our code is available at \\url{https://github.com/ModelTC/Outlier_Suppression_Plus}.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/WeiZLZGG023",
+        "ArXiv": "2304.09145",
+        "DOI": "10.18653/v1/2023.emnlp-main.102",
+        "CorpusId": 264424348
+      },
+      "arxiv_id": "2304.09145",
+      "doi": "10.18653/v1/2023.emnlp-main.102",
+      "corpus_id": 264424348
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "46",
+      "ref_key": "S2:389ec3e8902a5dcfcde1adec735854e93f845937",
+      "paperId": "389ec3e8902a5dcfcde1adec735854e93f845937",
+      "title": "LaMini-LM: A Diverse Herd of Distilled Models from Large-Scale Instructions",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) with instruction fine-tuning demonstrate superior generative capabilities. However, these models are resource-intensive. To alleviate this issue, we explore distilling knowledge from instruction-tuned LLMs into much smaller ones. While other similar works have been done, they are often conducted on a limited set of (usually still large) models and are not accompanied by proper evaluations. To this end, we carefully develop a large set of 2.58M instructions based on both existing and newly-generated instructions. In addition to being sizable, we design our instructions to cover a broad set of topics to ensure diversity. Extensive analysis of our instruction dataset confirms its diversity, and we generate responses for these instructions using gpt-3.5-turbo. Leveraging these instructions, we fine-tune a diverse herd of models, collectively referred to as LaMini-LM, which includes models from both the encoder-decoder and decoder-only families, with varying sizes. We evaluate the performance of our models using automatic metrics on 15 different natural language processing (NLP) benchmarks, as well as through human assessment. We also assess the model for hallucination and toxicity, and for the former, we introduce a new benchmark dataset for hallucination-inducing QA. The results demonstrate that our proposed LaMini-LM models are comparable to strong baselines while being much smaller in size.",
+      "externalIds": {
+        "DBLP": "conf/eacl/WuWZAA24",
+        "ACL": "2024.eacl-long.57",
+        "ArXiv": "2304.14402",
+        "DOI": "10.48550/arXiv.2304.14402",
+        "CorpusId": 258352678
+      },
+      "arxiv_id": "2304.14402",
+      "doi": "10.48550/arXiv.2304.14402",
+      "corpus_id": 258352678
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "47",
+      "ref_key": "S2:abdb0f9d1486dbb024c4bc9f8f9dc40464c58715",
+      "paperId": "abdb0f9d1486dbb024c4bc9f8f9dc40464c58715",
+      "title": "Sheared LLaMA: Accelerating Language Model Pre-training via Structured Pruning",
+      "year": 2023,
+      "abstract": "The popularity of LLaMA (Touvron et al., 2023a;b) and other recently emerged moderate-sized large language models (LLMs) highlights the potential of building smaller yet powerful LLMs. Regardless, the cost of training such models from scratch on trillions of tokens remains high. In this work, we study structured pruning as an effective means to develop smaller LLMs from pre-trained, larger models. Our approach employs two key techniques: (1) targeted structured pruning, which prunes a larger model to a specified target shape by removing layers, heads, and intermediate and hidden dimensions in an end-to-end manner, and (2) dynamic batch loading, which dynamically updates the composition of sampled data in each training batch based on varying losses across different domains. We demonstrate the efficacy of our approach by presenting the Sheared-LLaMA series, pruning the LLaMA2-7B model down to 1.3B and 2.7B parameters. Sheared-LLaMA models outperform state-of-the-art open-source models of equivalent sizes, such as Pythia, INCITE, OpenLLaMA and the concurrent TinyLlama models, on a wide range of downstream and instruction tuning evaluations, while requiring only 3% of compute compared to training such models from scratch. This work provides compelling evidence that leveraging existing LLMs with structured pruning is a far more cost-effective approach for building competitive small-scale LLMs",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-06694",
+        "ArXiv": "2310.06694",
+        "DOI": "10.48550/arXiv.2310.06694",
+        "CorpusId": 263830786
+      },
+      "arxiv_id": "2310.06694",
+      "doi": "10.48550/arXiv.2310.06694",
+      "corpus_id": 263830786
+    },
+    {
+      "paper_id": "2308.07633",
+      "ref_index": "48",
+      "ref_key": "S2:4880ba8910bc320cb7c1aa943992a500f4c41f07",
+      "paperId": "4880ba8910bc320cb7c1aa943992a500f4c41f07",
+      "title": "Dynamic Sparse No Training: Training-Free Fine-tuning for Sparse LLMs",
+      "year": 2023,
+      "abstract": "The ever-increasing large language models (LLMs), though opening a potential path for the upcoming artificial general intelligence, sadly drops a daunting obstacle on the way towards their on-device deployment. As one of the most well-established pre-LLMs approaches in reducing model complexity, network pruning appears to lag behind in the era of LLMs, due mostly to its costly fine-tuning (or re-training) necessity under the massive volumes of model parameter and training data. To close this industry-academia gap, we introduce Dynamic Sparse No Training (DSnoT), a training-free fine-tuning approach that slightly updates sparse LLMs without the expensive backpropagation and any weight updates. Inspired by the Dynamic Sparse Training, DSnoT minimizes the reconstruction error between the dense and sparse LLMs, in the fashion of performing iterative weight pruning-and-growing on top of sparse LLMs. To accomplish this purpose, DSnoT particularly takes into account the anticipated reduction in reconstruction error for pruning and growing, as well as the variance w.r.t. different input data for growing each weight. This practice can be executed efficiently in linear time since its obviates the need of backpropagation for fine-tuning LLMs. Extensive experiments on LLaMA-V1/V2, Vicuna, and OPT across various benchmarks demonstrate the effectiveness of DSnoT in enhancing the performance of sparse LLMs, especially at high sparsity levels. For instance, DSnoT is able to outperform the state-of-the-art Wanda by 26.79 perplexity at 70% sparsity with LLaMA-7B. Our paper offers fresh insights into how to fine-tune sparse LLMs in an efficient training-free manner and open new venues to scale the great potential of sparsity to LLMs. Codes are available at https://github.com/zyxxmu/DSnoT.",
+      "externalIds": {
+        "DBLP": "conf/iclr/0002ZLSYHT0J24",
+        "ArXiv": "2310.08915",
+        "DOI": "10.48550/arXiv.2310.08915",
+        "CorpusId": 264128029
+      },
+      "arxiv_id": "2310.08915",
+      "doi": "10.48550/arXiv.2310.08915",
+      "corpus_id": 264128029
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "Model Compression for Large Language Models": {
+        "Quantization": {
+          "Quantization-Aware   Training ": {
+            "6bd3ee1ca608bc66a490f63f2fb107d79b44f3e2": {},
+            "52258e9110f8e73cca24f6394bfc483341b459a4": {},
+            "bc107fc7af12344342b4d80d81650577e9e9845f": {}
+          },
+          "Post-Training   Quantization ": {
+            "Weight-Only   Quantization": {
+              "aa44b28b7c4c4a56d1f59ab4669215b667822c25": {},
+              "2b7c9fd2a94deaee3e7e56dc57bab0bd39d3683c": {},
+              "3b7ef6f9f27e33e6a4e3bfac90dcb01ab09718bc": {},
+              "56b828717f32251a5e0f0be9c0113077f23c8429": {},
+              "51db4c39dc0bdf5c95c8bbe89bf4211b48d0b4df": {},
+              "5eeb828685e44ca5b8ebafb34a9fa4d51c9186df": {}
+            },
+            "Weight-Activation   Quantization": {
+              "e92a5332390f0ba94615935541da4da9bed56512": {},
+              "2c994fadbb84fb960d8306ee138dbeef41a5b323": {},
+              "e03609f2587f690867e7ea0bedaf0db25282c548": {},
+              "2a44c6b7f291f625314a82ba3131e605009fd533": {},
+              "a8b995f0da78a79447dfb18c2337972b044f4239": {},
+              "eb2c2330177f765038a2b17e2ee3498965865797": {},
+              "f3275146eb973c9726dc550a88cc552f0dfa5ea7": {}
+            },
+            "KV Cache   Quantization": {
+              "b085968c4362fb286ad6c5ef71a5db9630da0498": {},
+              "a3e000e0d7f64c1d094c2a8bf6f43992cbabe91b": {},
+              "f608011b0f50a14bb2949c186a7c632a099aa75b": {}
+            }
+          }
+        },
+        "Pruning ": {
+          "Unstructured Pruning ": {
+            "68f86181502bd523e6faeebde704873cdf154464": {},
+            "51bccfc8d164812cf81b0284a5ec13bf4002ae3c": {},
+            "909ad57ce8caa6b390a65ae09db352d27d8f3996": {},
+            "7d22ad3573101337bca2091fb0114b377c4f3db6": {},
+            "4880ba8910bc320cb7c1aa943992a500f4c41f07": {}
+          },
+          "Structured Pruning ": {
+            "9ea8001d6eb52d14134ceede7f88b1d8fa8db41f": {},
+            "7754ac3e8ff1286f17593159781487543cdddaba": {},
+            "87667fd50710183951fd2206a929a25b4b970276": {},
+            "017010b941d902a467f6d329ae5e74fd67e67912": {},
+            "abdb0f9d1486dbb024c4bc9f8f9dc40464c58715": {}
+          },
+          "Semi-structured  Pruning": {
+            "909ad57ce8caa6b390a65ae09db352d27d8f3996": {},
+            "9df4bfd06331557e1c0edf7937d20bd755369ed0": {},
+            "7d22ad3573101337bca2091fb0114b377c4f3db6": {}
+          }
+        },
+        "Knowledge   Distillation": {
+          "Black-box KD ": {
+            "Chain-of-Thought ": {
+              "a9e3e5dd7b30890553b7ae1c41f932e99192bb44": {},
+              "aad167be3c902388ea625da4117fcae4325b8b7d": {},
+              "9529a6b2032bd08ea4e34954b7a7d2b8b5d5f66b": {},
+              "126a4776ff8315fd506766cb8f3c722cf746ad9e": {},
+              "8fd462f6248d5e3f1b6602697c09489086b5655f": {},
+              "be7dbac2bcaed4cd034a7371004a011933e1bdca": {},
+              "56fa65d8dc41708082f9b2ef7752c49cee9ebe01": {},
+              "758985395372f5378fcf036094195b2848e13a21": {},
+              "7d29a84a589aa5655e5d3fed8d725ea472816599": {},
+              "fbd49b25bdab98c171af49962a41139c73dacbde": {}
+            },
+            "In-Context Learning  ": {
+              "f9ad1fffa1cc76fd5db3ff758c0839492c5147c4": {}
+            },
+            "Instruction Following ": {
+              "ee85c7c666135f4aae32336968f09584029b6a35": {},
+              "02529b2666a536053a2e2940de5b28de36fd594b": {},
+              "e65b346d442e9962a4276dc1c1af2956d9d5f1eb": {},
+              "389ec3e8902a5dcfcde1adec735854e93f845937": {}
+            }
+          },
+          "White-box KD": {
+            "33be243ac9dd8723e6267dea45fd6a6172d4f6a5": {}
+          }
+        },
+        "Low-Rank  Factorization ": {
+          "43017a16dfe593c09533c5fb3c3612c83761a98a": {},
+          "a1bcf68d6ed2fec1ecaf16b67f2d19bc20c00ee6": {},
+          "5c7a21e9262b62f0a27fefdc8b1270dfdcbd3912": {}
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000001",
+        "paperId": "6bd3ee1ca608bc66a490f63f2fb107d79b44f3e2",
+        "ref_index": "20",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Quantization",
+          "Quantization-Aware   Training "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000002",
+        "paperId": "52258e9110f8e73cca24f6394bfc483341b459a4",
+        "ref_index": "28",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Quantization",
+          "Quantization-Aware   Training "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000003",
+        "paperId": "bc107fc7af12344342b4d80d81650577e9e9845f",
+        "ref_index": "29",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Quantization",
+          "Quantization-Aware   Training "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000004",
+        "paperId": "aa44b28b7c4c4a56d1f59ab4669215b667822c25",
+        "ref_index": "7",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Quantization",
+          "Post-Training   Quantization ",
+          "Weight-Only   Quantization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000005",
+        "paperId": "2b7c9fd2a94deaee3e7e56dc57bab0bd39d3683c",
+        "ref_index": "21",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Quantization",
+          "Post-Training   Quantization ",
+          "Weight-Only   Quantization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000006",
+        "paperId": "3b7ef6f9f27e33e6a4e3bfac90dcb01ab09718bc",
+        "ref_index": "22",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Quantization",
+          "Post-Training   Quantization ",
+          "Weight-Only   Quantization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000007",
+        "paperId": "56b828717f32251a5e0f0be9c0113077f23c8429",
+        "ref_index": "32",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Quantization",
+          "Post-Training   Quantization ",
+          "Weight-Only   Quantization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000008",
+        "paperId": "51db4c39dc0bdf5c95c8bbe89bf4211b48d0b4df",
+        "ref_index": "33",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Quantization",
+          "Post-Training   Quantization ",
+          "Weight-Only   Quantization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000009",
+        "paperId": "5eeb828685e44ca5b8ebafb34a9fa4d51c9186df",
+        "ref_index": "39",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Quantization",
+          "Post-Training   Quantization ",
+          "Weight-Only   Quantization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000010",
+        "paperId": "e92a5332390f0ba94615935541da4da9bed56512",
+        "ref_index": "0",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Quantization",
+          "Post-Training   Quantization ",
+          "Weight-Activation   Quantization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000011",
+        "paperId": "2c994fadbb84fb960d8306ee138dbeef41a5b323",
+        "ref_index": "15",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Quantization",
+          "Post-Training   Quantization ",
+          "Weight-Activation   Quantization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000012",
+        "paperId": "e03609f2587f690867e7ea0bedaf0db25282c548",
+        "ref_index": "16",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Quantization",
+          "Post-Training   Quantization ",
+          "Weight-Activation   Quantization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000013",
+        "paperId": "2a44c6b7f291f625314a82ba3131e605009fd533",
+        "ref_index": "18",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Quantization",
+          "Post-Training   Quantization ",
+          "Weight-Activation   Quantization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000014",
+        "paperId": "a8b995f0da78a79447dfb18c2337972b044f4239",
+        "ref_index": "37",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Quantization",
+          "Post-Training   Quantization ",
+          "Weight-Activation   Quantization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000015",
+        "paperId": "eb2c2330177f765038a2b17e2ee3498965865797",
+        "ref_index": "41",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Quantization",
+          "Post-Training   Quantization ",
+          "Weight-Activation   Quantization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000016",
+        "paperId": "f3275146eb973c9726dc550a88cc552f0dfa5ea7",
+        "ref_index": "45",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Quantization",
+          "Post-Training   Quantization ",
+          "Weight-Activation   Quantization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000017",
+        "paperId": "b085968c4362fb286ad6c5ef71a5db9630da0498",
+        "ref_index": "25",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Quantization",
+          "Post-Training   Quantization ",
+          "KV Cache   Quantization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000018",
+        "paperId": "a3e000e0d7f64c1d094c2a8bf6f43992cbabe91b",
+        "ref_index": "26",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Quantization",
+          "Post-Training   Quantization ",
+          "KV Cache   Quantization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000019",
+        "paperId": "f608011b0f50a14bb2949c186a7c632a099aa75b",
+        "ref_index": "30",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Quantization",
+          "Post-Training   Quantization ",
+          "KV Cache   Quantization"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000020",
+        "paperId": "68f86181502bd523e6faeebde704873cdf154464",
+        "ref_index": "1",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Pruning ",
+          "Unstructured Pruning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000021",
+        "paperId": "51bccfc8d164812cf81b0284a5ec13bf4002ae3c",
+        "ref_index": "2",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Pruning ",
+          "Unstructured Pruning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000022",
+        "paperId": "909ad57ce8caa6b390a65ae09db352d27d8f3996",
+        "ref_index": "4",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Pruning ",
+          "Unstructured Pruning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000023",
+        "paperId": "7d22ad3573101337bca2091fb0114b377c4f3db6",
+        "ref_index": "43",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Pruning ",
+          "Unstructured Pruning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000024",
+        "paperId": "4880ba8910bc320cb7c1aa943992a500f4c41f07",
+        "ref_index": "48",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Pruning ",
+          "Unstructured Pruning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000025",
+        "paperId": "9ea8001d6eb52d14134ceede7f88b1d8fa8db41f",
+        "ref_index": "3",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Pruning ",
+          "Structured Pruning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000026",
+        "paperId": "7754ac3e8ff1286f17593159781487543cdddaba",
+        "ref_index": "31",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Pruning ",
+          "Structured Pruning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000027",
+        "paperId": "87667fd50710183951fd2206a929a25b4b970276",
+        "ref_index": "35",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Pruning ",
+          "Structured Pruning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000028",
+        "paperId": "017010b941d902a467f6d329ae5e74fd67e67912",
+        "ref_index": "38",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Pruning ",
+          "Structured Pruning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000029",
+        "paperId": "abdb0f9d1486dbb024c4bc9f8f9dc40464c58715",
+        "ref_index": "47",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Pruning ",
+          "Structured Pruning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000030",
+        "paperId": "909ad57ce8caa6b390a65ae09db352d27d8f3996",
+        "ref_index": "4",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Pruning ",
+          "Semi-structured  Pruning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000031",
+        "paperId": "9df4bfd06331557e1c0edf7937d20bd755369ed0",
+        "ref_index": "23",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Pruning ",
+          "Semi-structured  Pruning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000032",
+        "paperId": "7d22ad3573101337bca2091fb0114b377c4f3db6",
+        "ref_index": "43",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Pruning ",
+          "Semi-structured  Pruning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000033",
+        "paperId": "a9e3e5dd7b30890553b7ae1c41f932e99192bb44",
+        "ref_index": "5",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Knowledge   Distillation",
+          "Black-box KD ",
+          "Chain-of-Thought "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000034",
+        "paperId": "aad167be3c902388ea625da4117fcae4325b8b7d",
+        "ref_index": "6",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Knowledge   Distillation",
+          "Black-box KD ",
+          "Chain-of-Thought "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000035",
+        "paperId": "9529a6b2032bd08ea4e34954b7a7d2b8b5d5f66b",
+        "ref_index": "8",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Knowledge   Distillation",
+          "Black-box KD ",
+          "Chain-of-Thought "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000036",
+        "paperId": "126a4776ff8315fd506766cb8f3c722cf746ad9e",
+        "ref_index": "10",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Knowledge   Distillation",
+          "Black-box KD ",
+          "Chain-of-Thought "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000037",
+        "paperId": "8fd462f6248d5e3f1b6602697c09489086b5655f",
+        "ref_index": "12",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Knowledge   Distillation",
+          "Black-box KD ",
+          "Chain-of-Thought "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000038",
+        "paperId": "be7dbac2bcaed4cd034a7371004a011933e1bdca",
+        "ref_index": "13",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Knowledge   Distillation",
+          "Black-box KD ",
+          "Chain-of-Thought "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000039",
+        "paperId": "56fa65d8dc41708082f9b2ef7752c49cee9ebe01",
+        "ref_index": "14",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Knowledge   Distillation",
+          "Black-box KD ",
+          "Chain-of-Thought "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000040",
+        "paperId": "758985395372f5378fcf036094195b2848e13a21",
+        "ref_index": "19",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Knowledge   Distillation",
+          "Black-box KD ",
+          "Chain-of-Thought "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000041",
+        "paperId": "7d29a84a589aa5655e5d3fed8d725ea472816599",
+        "ref_index": "36",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Knowledge   Distillation",
+          "Black-box KD ",
+          "Chain-of-Thought "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000042",
+        "paperId": "fbd49b25bdab98c171af49962a41139c73dacbde",
+        "ref_index": "40",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Knowledge   Distillation",
+          "Black-box KD ",
+          "Chain-of-Thought "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000043",
+        "paperId": "f9ad1fffa1cc76fd5db3ff758c0839492c5147c4",
+        "ref_index": "17",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Knowledge   Distillation",
+          "Black-box KD ",
+          "In-Context Learning  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000044",
+        "paperId": "ee85c7c666135f4aae32336968f09584029b6a35",
+        "ref_index": "27",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Knowledge   Distillation",
+          "Black-box KD ",
+          "Instruction Following "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000045",
+        "paperId": "02529b2666a536053a2e2940de5b28de36fd594b",
+        "ref_index": "34",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Knowledge   Distillation",
+          "Black-box KD ",
+          "Instruction Following "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000046",
+        "paperId": "e65b346d442e9962a4276dc1c1af2956d9d5f1eb",
+        "ref_index": "44",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Knowledge   Distillation",
+          "Black-box KD ",
+          "Instruction Following "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000047",
+        "paperId": "389ec3e8902a5dcfcde1adec735854e93f845937",
+        "ref_index": "46",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Knowledge   Distillation",
+          "Black-box KD ",
+          "Instruction Following "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000048",
+        "paperId": "33be243ac9dd8723e6267dea45fd6a6172d4f6a5",
+        "ref_index": "9",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Knowledge   Distillation",
+          "White-box KD"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000049",
+        "paperId": "43017a16dfe593c09533c5fb3c3612c83761a98a",
+        "ref_index": "11",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Low-Rank  Factorization "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000050",
+        "paperId": "a1bcf68d6ed2fec1ecaf16b67f2d19bc20c00ee6",
+        "ref_index": "24",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Low-Rank  Factorization "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2308.07633",
+        "arxiv_id": "2308.07633",
+        "leaf_mention_id": "2308.07633::000051",
+        "paperId": "5c7a21e9262b62f0a27fefdc8b1270dfdcbd3912",
+        "ref_index": "42",
+        "path": [
+          "Model Compression for Large Language Models",
+          "Low-Rank  Factorization "
+        ],
+        "depth": 2,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 51,
+      "unique_leaf_paper_count": 49,
+      "multi_membership_extra_mentions": 2,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

@@ -1,0 +1,369 @@
+{
+  "paper_id": "2402.00253",
+  "arxiv_id": "2402.00253",
+  "title": "A Survey on Hallucination in Large Vision-Language Models",
+  "ref_meta": [
+    {
+      "paper_id": "2402.00253",
+      "ref_index": "0",
+      "ref_key": "S2:4921243268c81d0d6db99053a9d004852225a622",
+      "paperId": "4921243268c81d0d6db99053a9d004852225a622",
+      "title": "Object Hallucination in Image Captioning",
+      "year": 2018,
+      "abstract": "Despite continuously improving performance, contemporary image captioning models are prone to “hallucinating” objects that are not actually in a scene. One problem is that standard metrics only measure similarity to ground truth captions and may not fully capture image relevance. In this work, we propose a new image relevance metric to evaluate current models with veridical visual labels and assess their rate of object hallucination. We analyze how captioning model architectures and learning objectives contribute to object hallucination, explore when hallucination is likely due to image misclassification or language priors, and assess how well current sentence metrics capture object hallucination. We investigate these questions on the standard image captioning benchmark, MSCOCO, using a diverse set of models. Our analysis yields several interesting findings, including that models which score best on standard sentence metrics do not always have lower hallucination and that models which hallucinate more tend to make errors driven by language priors.",
+      "externalIds": {
+        "MAG": "2962735233",
+        "DBLP": "conf/emnlp/RohrbachHBDS18",
+        "ArXiv": "1809.02156",
+        "ACL": "D18-1437",
+        "DOI": "10.18653/v1/D18-1437",
+        "CorpusId": 52176506
+      },
+      "arxiv_id": "1809.02156",
+      "doi": "10.18653/v1/D18-1437",
+      "corpus_id": 52176506
+    },
+    {
+      "paper_id": "2402.00253",
+      "ref_index": "1",
+      "ref_key": "S2:73814a52609a9ee4c8f1b115e376b6a300ab6a57",
+      "paperId": "73814a52609a9ee4c8f1b115e376b6a300ab6a57",
+      "title": "CIEM: Contrastive Instruction Evaluation Method for Better Instruction Tuning",
+      "year": 2023,
+      "abstract": "Nowadays, the research on Large Vision-Language Models (LVLMs) has been significantly promoted thanks to the success of Large Language Models (LLM). Nevertheless, these Vision-Language Models (VLMs) are suffering from the drawback of hallucination -- due to insufficient understanding of vision and language modalities, VLMs may generate incorrect perception information when doing downstream applications, for example, captioning a non-existent entity. To address the hallucination phenomenon, on the one hand, we introduce a Contrastive Instruction Evaluation Method (CIEM), which is an automatic pipeline that leverages an annotated image-text dataset coupled with an LLM to generate factual/contrastive question-answer pairs for the evaluation of the hallucination of VLMs. On the other hand, based on CIEM, we further propose a new instruction tuning method called CIT (the abbreviation of Contrastive Instruction Tuning) to alleviate the hallucination of VLMs by automatically producing high-quality factual/contrastive question-answer pairs and corresponding justifications for model tuning. Through extensive experiments on CIEM and CIT, we pinpoint the hallucination issues commonly present in existing VLMs, the disability of the current instruction-tuning dataset to handle the hallucination phenomenon and the superiority of CIT-tuned VLMs over both CIEM and public datasets.",
+      "externalIds": {
+        "ArXiv": "2309.02301",
+        "DBLP": "journals/corr/abs-2309-02301",
+        "DOI": "10.48550/arXiv.2309.02301",
+        "CorpusId": 261557047
+      },
+      "arxiv_id": "2309.02301",
+      "doi": "10.48550/arXiv.2309.02301",
+      "corpus_id": 261557047
+    },
+    {
+      "paper_id": "2402.00253",
+      "ref_index": "2",
+      "ref_key": "S2:fbae34c21a6a0cbf3f9e2710b7fce0e011aec72c",
+      "paperId": "fbae34c21a6a0cbf3f9e2710b7fce0e011aec72c",
+      "title": "FAITHSCORE: Evaluating Hallucinations in Large Vision-Language Models",
+      "year": 2023,
+      "abstract": "We introduce F AITH S CORE ( Faith fulness to Atomic Image Facts Score ), a reference-free and fine-grained evaluation metric that measures the faithfulness of the generated free-form answers from large vision-language models (LVLMs). The F AITH S CORE evaluation first identifies sub-sentences containing descriptive statements that need to be verified, then extracts a comprehensive list of atomic facts from these sub-sentences, and finally conducts consistency verification between fine-grained atomic facts and the input image. Meta-evaluation demonstrates that our metric highly correlates with human judgments of faith-fulness. We collect two benchmark datasets (i.e. LLaVA-1k and MSCOCO-Cap) for evaluating LVLMs instruction-following hallucinations. We measure hallucinations in state-of-the-art LVLMs with F AITH S CORE on the datasets. Results reveal that current systems are prone to generate hallucinated content unfaithful to the image, which leaves room for future improvements. Further, we find that current LVLMs despite doing well on color and counting, still struggle with long answers, relations, and multiple objects. Our implementations for the metric and benchmark datasets are publicly available at https://github. com/bcdnlp/FAITHSCORE .",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-01477",
+        "DOI": "10.48550/arXiv.2311.01477",
+        "CorpusId": 265019245
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2311.01477",
+      "corpus_id": 265019245
+    },
+    {
+      "paper_id": "2402.00253",
+      "ref_index": "3",
+      "ref_key": "S2:698d83e2ba10d94c2a0723e907eb297ff4a6249d",
+      "paperId": "698d83e2ba10d94c2a0723e907eb297ff4a6249d",
+      "title": "HallE-Switch: Rethinking and Controlling Object Existence Hallucinations in Large Vision Language Models for Detailed Caption",
+      "year": 2023,
+      "abstract": "Current large vision-language models (LVLMs) achieve remarkable progress, yet there remains significant uncertainty regarding their ability to accurately apprehend visual details, that is, in performing detailed captioning. To address this, we introduce CCEval, a GPT-4 assisted evaluation method tailored for detailed captioning. Interestingly, while LVLMs demonstrate minimal object existence hallucination in existing VQA benchmarks, our proposed evaluation reveals continued susceptibility to such hallucinations. In this paper, we make the first attempt to investigate and attribute such hallucinations, including image resolution, the language decoder size, and instruction data amount, quality, granularity. Our findings underscore the unwarranted inference when the language description includes details at a finer object granularity than what the vision module can ground or verify, thus inducing hallucination. To control such hallucinations, we further attribute the reliability of captioning to contextual knowledge (involving only contextually grounded objects) and parametric knowledge (containing inferred objects by the model). Thus, we introduce HallE-Switch, a controllable LVLM in terms of Hallucination in object Existence. HallE-Switch can condition the captioning to shift between (i) exclusively depicting contextual knowledge for grounded objects and (ii) blending it with parametric knowledge to imagine inferred objects. Our method reduces hallucination by 44% compared to LLaVA7B and maintains the same object coverage.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-01779",
+        "DOI": "10.48550/arXiv.2310.01779",
+        "CorpusId": 263608690
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2310.01779",
+      "corpus_id": 263608690
+    },
+    {
+      "paper_id": "2402.00253",
+      "ref_index": "4",
+      "ref_key": "S2:c36d7bc6adeee7d16df1194c44cb66c48c9ae681",
+      "paperId": "c36d7bc6adeee7d16df1194c44cb66c48c9ae681",
+      "title": "Negative Object Presence Evaluation (NOPE) to Measure Object Hallucination in Vision-Language Models",
+      "year": 2023,
+      "abstract": "Object hallucination poses a significant challenge in vision-language (VL) models, often leading to the generation of nonsensical or unfaithful responses with non-existent objects. However, the absence of a general measurement for evaluating object hallucination in VL models has hindered our understanding and ability to mitigate this issue. In this work, we present NOPE (Negative Object Presence Evaluation), a novel benchmark designed to assess object hallucination in VL models through visual question answering (VQA). We propose a cost-effective and scalable approach utilizing large language models to generate 29.5k synthetic negative pronoun (NegP) data of high quality for NOPE. We extensively investigate the performance of 10 state-of-the-art VL models in discerning the non-existence of objects in visual questions, where the ground truth answers are denoted as (e.g., “none”). Additionally, we evaluate their standard performance on visual questions on 9 other VQA datasets. Through our experiments, we demonstrate that no VL model is immune to the vulnerability of object hallucination, as all models achieve accuracy below 10% on NegP. Furthermore, we uncover that lexically diverse visual questions, question types with large scopes, and scene-relevant objects capitalize the risk of object hallucination in VL models.",
+      "externalIds": {
+        "ArXiv": "2310.05338",
+        "DBLP": "journals/corr/abs-2310-05338",
+        "ACL": "2024.alvr-1.4",
+        "DOI": "10.48550/arXiv.2310.05338",
+        "CorpusId": 263829510
+      },
+      "arxiv_id": "2310.05338",
+      "doi": "10.48550/arXiv.2310.05338",
+      "corpus_id": 263829510
+    },
+    {
+      "paper_id": "2402.00253",
+      "ref_index": "5",
+      "ref_key": "S2:206400aba5f12f734cdd2e4ab48ef6014ea60773",
+      "paperId": "206400aba5f12f734cdd2e4ab48ef6014ea60773",
+      "title": "Evaluating Object Hallucination in Large Vision-Language Models",
+      "year": 2023,
+      "abstract": "Inspired by the superior language abilities of large language models (LLM), large vision-language models (LVLM) have been recently explored by integrating powerful LLMs for improving the performance on complex multimodal tasks. Despite the promising progress on LVLMs, we find that LVLMs suffer from the hallucination problem, i.e. they tend to generate objects that are inconsistent with the target images in the descriptions. To investigate it, this work presents the first systematic study on object hallucination of LVLMs. We conduct the evaluation experiments on several representative LVLMs, and show that they mostly suffer from severe object hallucination issue. We further discuss that the visual instructions may influence the hallucination, and find that: objects that frequently occur in the visual instructions or co-occur with the image objects, are obviously prone to be hallucinated by LVLMs. Besides, we find that existing evaluation methods might be affected by the input instructions and generation styles of LVLMs. Thus, we further design an improved evaluation method for object hallucination by proposing a polling-based query method called POPE. Experiment results demonstrate that our POPE can evaluate the object hallucination in a more stable and flexible way. Our codes and data are publicly available at https://github.com/RUCAIBox/POPE.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-10355",
+        "ArXiv": "2305.10355",
+        "DOI": "10.48550/arXiv.2305.10355",
+        "CorpusId": 258740697
+      },
+      "arxiv_id": "2305.10355",
+      "doi": "10.48550/arXiv.2305.10355",
+      "corpus_id": 258740697
+    },
+    {
+      "paper_id": "2402.00253",
+      "ref_index": "6",
+      "ref_key": "S2:658cd67a91da86cf451e6f1b015f762b56015172",
+      "paperId": "658cd67a91da86cf451e6f1b015f762b56015172",
+      "title": "Detecting and Preventing Hallucinations in Large Vision Language Models",
+      "year": 2023,
+      "abstract": "Instruction tuned Large Vision Language Models (LVLMs) have significantly advanced in generalizing across a diverse set of multi-modal tasks, especially for Visual Question Answering (VQA). However, generating detailed responses that are visually grounded is still a challenging task for these models. We find that even the current state-of-the-art LVLMs (InstructBLIP) still contain a staggering 30 percent of the hallucinatory text in the form of non-existent objects, unfaithful descriptions, and inaccurate relationships. To address this, we introduce M-HalDetect, a Multimodal Hallucination Detection Dataset that can be used to train and benchmark models for hallucination detection and prevention. M-HalDetect consists of 16k fine-grained annotations on VQA examples, making it the first comprehensive multi-modal hallucination detection dataset for detailed image descriptions. Unlike previous work that only consider object hallucination, we additionally annotate both entity descriptions and relationships that are unfaithful. To demonstrate the potential of this dataset for hallucination prevention, we optimize InstructBLIP through our novel Fine-grained Direct Preference Optimization (FDPO). We also train fine-grained multi-modal reward models from InstructBLIP and evaluate their effectiveness with best-of-n rejection sampling (RS). We perform human evaluation on both FDPO and rejection sampling, and find that they reduce hallucination rates in InstructBLIP by 41% and 55% respectively. We also find that our reward model generalizes to other multi-modal models, reducing hallucinations in LLaVA and mPLUG-OWL by 15% and 57% respectively, and has strong correlation with human evaluated accuracy scores. The dataset is available at https://github.com/hendryx-scale/mhal-detect.",
+      "externalIds": {
+        "DBLP": "conf/aaai/GunjalYB24",
+        "ArXiv": "2308.06394",
+        "DOI": "10.48550/arXiv.2308.06394",
+        "CorpusId": 260887222
+      },
+      "arxiv_id": "2308.06394",
+      "doi": "10.48550/arXiv.2308.06394",
+      "corpus_id": 260887222
+    },
+    {
+      "paper_id": "2402.00253",
+      "ref_index": "7",
+      "ref_key": "S2:c7a7104df3db13737a865ede2be8146990fa4026",
+      "paperId": "c7a7104df3db13737a865ede2be8146990fa4026",
+      "title": "Mitigating Hallucination in Large Multi-Modal Models via Robust Instruction Tuning",
+      "year": 2023,
+      "abstract": "Despite the promising progress in multi-modal tasks, current large multi-modal models (LMMs) are prone to hallucinating inconsistent descriptions with respect to the associated image and human instructions. This paper addresses this issue by introducing the first large and diverse visual instruction tuning dataset, named Large-scale Robust Visual (LRV)-Instruction. Our dataset comprises 400k visual instructions generated by GPT4, covering 16 vision-and-language tasks with open-ended instructions and answers. Unlike existing studies that primarily focus on positive instruction samples, we design LRV-Instruction to include both positive and negative instructions for more robust visual instruction tuning. Our negative instructions are designed at three semantic levels: (i) Nonexistent Object Manipulation, (ii) Existent Object Manipulation and (iii) Knowledge Manipulation. To efficiently measure the hallucination generated by LMMs, we propose GPT4-Assisted Visual Instruction Evaluation (GAVIE), a stable approach to evaluate visual instruction tuning like human experts. GAVIE does not require human-annotated groundtruth answers and can adapt to diverse instruction formats. We conduct comprehensive experiments to investigate the hallucination of LMMs. Our results demonstrate existing LMMs exhibit significant hallucinations when presented with our negative instructions, particularly Existent Object and Knowledge Manipulation instructions. Moreover, we successfully mitigate hallucination by finetuning MiniGPT4 and mPLUG-Owl on LRV-Instruction while improving performance on several public datasets compared to state-of-the-art methods. Additionally, we observed that a balanced ratio of positive and negative instances in the training data leads to a more robust model. Code and data are available at https://github.com/FuxiaoLiu/LRV-Instruction.",
+      "externalIds": {
+        "ArXiv": "2306.14565",
+        "DBLP": "conf/iclr/LiuLLWYW24",
+        "CorpusId": 259251834
+      },
+      "arxiv_id": "2306.14565",
+      "doi": null,
+      "corpus_id": 259251834
+    },
+    {
+      "paper_id": "2402.00253",
+      "ref_index": "8",
+      "ref_key": "S2:844bb298d49ef4a07b5d4929dfdfd170f6a1d5f5",
+      "paperId": "844bb298d49ef4a07b5d4929dfdfd170f6a1d5f5",
+      "title": "Aligning Large Multimodal Models with Factually Augmented RLHF",
+      "year": 2023,
+      "abstract": "Large Multimodal Models (LMM) are built across modalities and the misalignment between two modalities can result in\"hallucination\", generating textual outputs that are not grounded by the multimodal information in context. To address the multimodal misalignment issue, we adapt the Reinforcement Learning from Human Feedback (RLHF) from the text domain to the task of vision-language alignment, where human annotators are asked to compare two responses and pinpoint the more hallucinated one, and the vision-language model is trained to maximize the simulated human rewards. We propose a new alignment algorithm called Factually Augmented RLHF that augments the reward model with additional factual information such as image captions and ground-truth multi-choice options, which alleviates the reward hacking phenomenon in RLHF and further improves the performance. We also enhance the GPT-4-generated training data (for vision instruction tuning) with previously available human-written image-text pairs to improve the general capabilities of our model. To evaluate the proposed approach in real-world scenarios, we develop a new evaluation benchmark MMHAL-BENCH with a special focus on penalizing hallucinations. As the first LMM trained with RLHF, our approach achieves remarkable improvement on the LLaVA-Bench dataset with the 94% performance level of the text-only GPT-4 (while previous best methods can only achieve the 87% level), and an improvement by 60% on MMHAL-BENCH over other baselines. We opensource our code, model, data at https://llava-rlhf.github.io.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2309-14525",
+        "ArXiv": "2309.14525",
+        "DOI": "10.48550/arXiv.2309.14525",
+        "CorpusId": 262824780
+      },
+      "arxiv_id": "2309.14525",
+      "doi": "10.48550/arXiv.2309.14525",
+      "corpus_id": 262824780
+    },
+    {
+      "paper_id": "2402.00253",
+      "ref_index": "9",
+      "ref_key": "S2:bb1083425517bdac8d9a6438fcf5032543acb20e",
+      "paperId": "bb1083425517bdac8d9a6438fcf5032543acb20e",
+      "title": "Evaluation and Analysis of Hallucination in Large Vision-Language Models",
+      "year": 2023,
+      "abstract": "Large Vision-Language Models (LVLMs) have recently achieved remarkable success. However, LVLMs are still plagued by the hallucination problem, which limits the practicality in many scenarios. Hallucination refers to the information of LVLMs' responses that does not exist in the visual input, which poses potential risks of substantial consequences. There has been limited work studying hallucination evaluation in LVLMs. In this paper, we propose Hallucination Evaluation based on Large Language Models (HaELM), an LLM-based hallucination evaluation framework. HaELM achieves an approximate 95% performance comparable to ChatGPT and has additional advantages including low cost, reproducibility, privacy preservation and local deployment. Leveraging the HaELM, we evaluate the hallucination in current LVLMs. Furthermore, we analyze the factors contributing to hallucination in LVLMs and offer helpful suggestions to mitigate the hallucination problem. Our training data and human annotation hallucination data will be made public soon.",
+      "externalIds": {
+        "ArXiv": "2308.15126",
+        "DBLP": "journals/corr/abs-2308-15126",
+        "DOI": "10.48550/arXiv.2308.15126",
+        "CorpusId": 261276646
+      },
+      "arxiv_id": "2308.15126",
+      "doi": "10.48550/arXiv.2308.15126",
+      "corpus_id": 261276646
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "LVLM Hallucination  Evaluation Methods": {
+        "Evaluation on   Non-Hallucinatory Generation": {
+          "Handcrafted   Pipeline Methods": {
+            "4921243268c81d0d6db99053a9d004852225a622": {},
+            "fbae34c21a6a0cbf3f9e2710b7fce0e011aec72c": {},
+            "698d83e2ba10d94c2a0723e907eb297ff4a6249d": {}
+          },
+          "Model-based   End-to-End Methods": {
+            "LLM-based Evaluation": {
+              "c7a7104df3db13737a865ede2be8146990fa4026": {},
+              "844bb298d49ef4a07b5d4929dfdfd170f6a1d5f5": {}
+            },
+            "Hallucination Data  Driven Model Evaluation": {
+              "658cd67a91da86cf451e6f1b015f762b56015172": {},
+              "bb1083425517bdac8d9a6438fcf5032543acb20e": {}
+            }
+          }
+        },
+        "Evaluation on   Hallucination Discrimination": {
+          "73814a52609a9ee4c8f1b115e376b6a300ab6a57": {},
+          "c36d7bc6adeee7d16df1194c44cb66c48c9ae681": {},
+          "206400aba5f12f734cdd2e4ab48ef6014ea60773": {}
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2402.00253",
+        "arxiv_id": "2402.00253",
+        "leaf_mention_id": "2402.00253::000001",
+        "paperId": "4921243268c81d0d6db99053a9d004852225a622",
+        "ref_index": "0",
+        "path": [
+          "LVLM Hallucination  Evaluation Methods",
+          "Evaluation on   Non-Hallucinatory Generation",
+          "Handcrafted   Pipeline Methods"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.00253",
+        "arxiv_id": "2402.00253",
+        "leaf_mention_id": "2402.00253::000002",
+        "paperId": "fbae34c21a6a0cbf3f9e2710b7fce0e011aec72c",
+        "ref_index": "2",
+        "path": [
+          "LVLM Hallucination  Evaluation Methods",
+          "Evaluation on   Non-Hallucinatory Generation",
+          "Handcrafted   Pipeline Methods"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.00253",
+        "arxiv_id": "2402.00253",
+        "leaf_mention_id": "2402.00253::000003",
+        "paperId": "698d83e2ba10d94c2a0723e907eb297ff4a6249d",
+        "ref_index": "3",
+        "path": [
+          "LVLM Hallucination  Evaluation Methods",
+          "Evaluation on   Non-Hallucinatory Generation",
+          "Handcrafted   Pipeline Methods"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.00253",
+        "arxiv_id": "2402.00253",
+        "leaf_mention_id": "2402.00253::000004",
+        "paperId": "c7a7104df3db13737a865ede2be8146990fa4026",
+        "ref_index": "7",
+        "path": [
+          "LVLM Hallucination  Evaluation Methods",
+          "Evaluation on   Non-Hallucinatory Generation",
+          "Model-based   End-to-End Methods",
+          "LLM-based Evaluation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.00253",
+        "arxiv_id": "2402.00253",
+        "leaf_mention_id": "2402.00253::000005",
+        "paperId": "844bb298d49ef4a07b5d4929dfdfd170f6a1d5f5",
+        "ref_index": "8",
+        "path": [
+          "LVLM Hallucination  Evaluation Methods",
+          "Evaluation on   Non-Hallucinatory Generation",
+          "Model-based   End-to-End Methods",
+          "LLM-based Evaluation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.00253",
+        "arxiv_id": "2402.00253",
+        "leaf_mention_id": "2402.00253::000006",
+        "paperId": "658cd67a91da86cf451e6f1b015f762b56015172",
+        "ref_index": "6",
+        "path": [
+          "LVLM Hallucination  Evaluation Methods",
+          "Evaluation on   Non-Hallucinatory Generation",
+          "Model-based   End-to-End Methods",
+          "Hallucination Data  Driven Model Evaluation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.00253",
+        "arxiv_id": "2402.00253",
+        "leaf_mention_id": "2402.00253::000007",
+        "paperId": "bb1083425517bdac8d9a6438fcf5032543acb20e",
+        "ref_index": "9",
+        "path": [
+          "LVLM Hallucination  Evaluation Methods",
+          "Evaluation on   Non-Hallucinatory Generation",
+          "Model-based   End-to-End Methods",
+          "Hallucination Data  Driven Model Evaluation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.00253",
+        "arxiv_id": "2402.00253",
+        "leaf_mention_id": "2402.00253::000008",
+        "paperId": "73814a52609a9ee4c8f1b115e376b6a300ab6a57",
+        "ref_index": "1",
+        "path": [
+          "LVLM Hallucination  Evaluation Methods",
+          "Evaluation on   Hallucination Discrimination"
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.00253",
+        "arxiv_id": "2402.00253",
+        "leaf_mention_id": "2402.00253::000009",
+        "paperId": "c36d7bc6adeee7d16df1194c44cb66c48c9ae681",
+        "ref_index": "4",
+        "path": [
+          "LVLM Hallucination  Evaluation Methods",
+          "Evaluation on   Hallucination Discrimination"
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.00253",
+        "arxiv_id": "2402.00253",
+        "leaf_mention_id": "2402.00253::000010",
+        "paperId": "206400aba5f12f734cdd2e4ab48ef6014ea60773",
+        "ref_index": "5",
+        "path": [
+          "LVLM Hallucination  Evaluation Methods",
+          "Evaluation on   Hallucination Discrimination"
+        ],
+        "depth": 2,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 10,
+      "unique_leaf_paper_count": 10,
+      "multi_membership_extra_mentions": 0,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

@@ -1,0 +1,2881 @@
+{
+  "paper_id": "2407.15186",
+  "arxiv_id": "2407.15186",
+  "title": "A Survey on Employing Large Language Models for Text-to-SQL Tasks",
+  "ref_meta": [
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "0",
+      "ref_key": "S2:b1ff3c717d20fa8b32ee07f3954ee5d3a7be5aee",
+      "paperId": "b1ff3c717d20fa8b32ee07f3954ee5d3a7be5aee",
+      "title": "Adapt and Decompose: Efficient Generalization of Text-to-SQL via Domain Adapted Least-To-Most Prompting",
+      "year": 2023,
+      "abstract": "Cross-domain and cross-compositional generalization of Text-to-SQL semantic parsing is a challenging task. Existing Large Language Model (LLM) based solutions rely on inference-time retrieval of few-shot exemplars from the training set to synthesize a run-time prompt for each Natural Language (NL) test query. In contrast, we devise an algorithm which performs offline sampling of a minimal set-of few-shots from the training data, with complete coverage of SQL clauses, operators and functions, and maximal domain coverage within the allowed token length. This allows for synthesis of a fixed Generic Prompt (GP), with a diverse set-of exemplars common across NL test queries, avoiding expensive test time exemplar retrieval. We further auto-adapt the GP to the target database domain (DA-GP), to better handle cross-domain generalization; followed by a decomposed Least-To-Most-Prompting (LTMP-DA-GP) to handle cross-compositional generalization. The synthesis of LTMP-DA-GP is an offline task, to be performed one-time per new database with minimal human intervention. Our approach demonstrates superior performance on the KaggleDBQA dataset, designed to evaluate generalizability for the Text-to-SQL task. We further showcase consistent performance improvement of LTMP-DA-GP over GP, across LLMs and databases of KaggleDBQA, highlighting the efficacy and model agnostic benefits of our prompt based adapt and decompose approach.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-02582",
+        "ACL": "2023.genbench-1.3",
+        "ArXiv": "2308.02582",
+        "DOI": "10.48550/arXiv.2308.02582",
+        "CorpusId": 260682479
+      },
+      "arxiv_id": "2308.02582",
+      "doi": "10.48550/arXiv.2308.02582",
+      "corpus_id": 260682479
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "1",
+      "ref_key": "S2:9e3c493fb09dcd61bb05e8c5659f23327b7b6340",
+      "paperId": "9e3c493fb09dcd61bb05e8c5659f23327b7b6340",
+      "title": "Teaching Large Language Models to Self-Debug",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have achieved impressive performance on code generation. However, for complex programming tasks, generating the correct solution in one go becomes challenging, thus some prior works have designed program repair approaches to improve code generation performance. In this work, we propose Self-Debugging, which teaches a large language model to debug its predicted program via few-shot demonstrations. In particular, we demonstrate that Self-Debugging can teach the large language model to perform rubber duck debugging; i.e., without any human feedback on the code correctness or error messages, the model is able to identify its mistakes by investigating the execution results and explaining the generated code in natural language. Self-Debugging achieves the state-of-the-art performance on several code generation benchmarks, including the Spider dataset for text-to-SQL generation, TransCoder for C++-to-Python translation, and MBPP for text-to-Python generation. On the Spider benchmark where there are no unit tests to verify the correctness of predictions, Self-Debugging with code explanation consistently improves the baseline by 2-3%, and improves the prediction accuracy on problems of the hardest level by 9%. On TransCoder and MBPP where unit tests are available, Self-Debugging improves the baseline accuracy by up to 12%. Meanwhile, by leveraging feedback messages and reusing failed predictions, Self-Debugging notably improves sample efficiency, and can match or outperform baseline models that generate more than 10x candidate programs.",
+      "externalIds": {
+        "ArXiv": "2304.05128",
+        "DBLP": "journals/corr/abs-2304-05128",
+        "DOI": "10.48550/arXiv.2304.05128",
+        "CorpusId": 258059885
+      },
+      "arxiv_id": "2304.05128",
+      "doi": "10.48550/arXiv.2304.05128",
+      "corpus_id": 258059885
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "2",
+      "ref_key": "S2:f58ca7ba4a08b7082e86b7a5989b4b0fda2107ab",
+      "paperId": "f58ca7ba4a08b7082e86b7a5989b4b0fda2107ab",
+      "title": "Binding Language Models in Symbolic Languages",
+      "year": 2022,
+      "abstract": "Though end-to-end neural approaches have recently been dominating NLP tasks in both performance and ease-of-use, they lack interpretability and robustness. We propose Binder, a training-free neural-symbolic framework that maps the task input to a program, which (1) allows binding a unified API of language model (LM) functionalities to a programming language (e.g., SQL, Python) to extend its grammar coverage and thus tackle more diverse questions, (2) adopts an LM as both the program parser and the underlying model called by the API during execution, and (3) requires only a few in-context exemplar annotations. Specifically, we employ GPT-3 Codex as the LM. In the parsing stage, with only a few in-context exemplars, Codex is able to identify the part of the task input that cannot be answerable by the original programming language, correctly generate API calls to prompt Codex to solve the unanswerable part, and identify where to place the API calls while being compatible with the original grammar. In the execution stage, Codex can perform versatile functionalities (e.g., commonsense QA, information extraction) given proper prompts in the API calls. Binder achieves state-of-the-art results on WikiTableQuestions and TabFact datasets, with explicit output programs that benefit human debugging. Note that previous best systems are all finetuned on tens of thousands of task-specific samples, while Binder only uses dozens of annotations as in-context exemplars without any training. Our code is available at https://github.com/HKUNLP/Binder .",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-02875",
+        "ArXiv": "2210.02875",
+        "DOI": "10.48550/arXiv.2210.02875",
+        "CorpusId": 252734772
+      },
+      "arxiv_id": "2210.02875",
+      "doi": "10.48550/arXiv.2210.02875",
+      "corpus_id": 252734772
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "3",
+      "ref_key": "S2:421f82e616d887ec008d88be580459edba96c271",
+      "paperId": "421f82e616d887ec008d88be580459edba96c271",
+      "title": "CHESS: Contextual Harnessing for Efficient SQL Synthesis",
+      "year": 2024,
+      "abstract": "Translating natural language questions into SQL queries, known as text-to-SQL, is a long-standing research problem. Effective text-to-SQL synthesis can become very challenging due to (i) the extensive size of database catalogs (descriptions of tables and their columns) and database values, (ii) reasoning over large database schemas, (iii) ensuring the functional validity of the generated queries, and (iv) navigating the ambiguities of natural language questions. We introduce CHESS, a Large Language Model (LLM) based multi-agent framework for efficient and scalable SQL synthesis, comprising four specialized agents, each targeting one of the aforementioned challenges: the Information Retriever (IR) extracts relevant data, the Schema Selector (SS) prunes large schemas, the Candidate Generator (CG) generates high-quality candidates and refines queries iteratively, and the Unit Tester (UT) validates queries through LLM-based natural language unit tests. Our framework offers configurable features that adapt to various deployment constraints, including 1) Supporting industrial-scale databases: leveraging the Schema Selector agent, CHESS efficiently narrows down very large database schemas into manageable sub-schemas, boosting system accuracy by approximately $2\\%$ and reducing the number of LLM tokens by $\\times 5$. 2) State-of-the-Art privacy-preserving performance: Among the methods using open-source models, CHESS achieves state-of-the-art performance, resulting in a high-performing, privacy-preserving system suitable for industrial deployment. 3) Scalablity with additional compute budget: In settings with high computational budgets, CHESS achieves $71.10\\%$ accuracy on the BIRD test set, within $2\\%$ of the leading proprietary method, while requiring approximately $83\\%$ fewer LLM calls.",
+      "externalIds": {
+        "ArXiv": "2405.16755",
+        "DBLP": "journals/corr/abs-2405-16755",
+        "DOI": "10.48550/arXiv.2405.16755",
+        "CorpusId": 270064290
+      },
+      "arxiv_id": "2405.16755",
+      "doi": "10.48550/arXiv.2405.16755",
+      "corpus_id": 270064290
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "4",
+      "ref_key": "S2:846c052e7827ccc09a78934d207aa56d8f09332b",
+      "paperId": "846c052e7827ccc09a78934d207aa56d8f09332b",
+      "title": "CoE-SQL: In-Context Learning for Multi-Turn Text-to-SQL with Chain-of-Editions",
+      "year": 2024,
+      "abstract": "Recently, Large Language Models (LLMs) have been demonstrated to possess impressive capabilities in a variety of domains and tasks. We investigate the issue of prompt design in the multi-turn text-to-SQL task and attempt to enhance the LLMs’ reasoning capacity when generating SQL queries. In the conversational context, the current SQL query can be modified from the preceding SQL query with only a few operations due to the context dependency. We introduce our method called CoE-SQL which can prompt LLMs to generate the SQL query based on the previously generated SQL query with an edition chain. We also conduct extensive ablation studies to determine the optimal configuration of our approach. Our approach outperforms different in-context learning baselines stably and achieves state-of-the-art performances on two benchmarks SParC and CoSQL using LLMs, which is also competitive to the SOTA fine-tuned models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2405-02712",
+        "ACL": "2024.naacl-long.361",
+        "ArXiv": "2405.02712",
+        "DOI": "10.48550/arXiv.2405.02712",
+        "CorpusId": 269604783
+      },
+      "arxiv_id": "2405.02712",
+      "doi": "10.48550/arXiv.2405.02712",
+      "corpus_id": 269604783
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "5",
+      "ref_key": "S2:e2751c2030d1497b5f99ee2e08e733043a15bffe",
+      "paperId": "e2751c2030d1497b5f99ee2e08e733043a15bffe",
+      "title": "Decomposition for Enhancing Attention: Improving LLM-based Text-to-SQL through Workflow Paradigm",
+      "year": 2024,
+      "abstract": "In-context learning of large-language models (LLMs) has achieved remarkable success in the field of natural language processing, while extensive case studies reveal that the single-step chain-of-thought prompting approach faces challenges such as attention diffusion and inadequate performance in complex tasks like text-to-SQL. To improve the contextual learning capabilities of LLMs in text-to-SQL, a workflow paradigm method is proposed, aiming to enhance the attention and problem-solving scope of LLMs through decomposition. Specifically, the information determination module for eliminating redundant information and the brand-new prompt structure based on problem classification greatly enhance the model's attention. Additionally, the inclusion of self-correction and active learning modules greatly expands the problem-solving scope of LLMs, hence improving the upper limit of LLM-based approaches. Extensive experiments conducted on three datasets demonstrate that our approach outperforms other methods by a significant margin. About 2-3 percentage point improvements compared to the existing baseline on the Spider Dev, Spider-Realistic, and Bird Dev datasets and new SOTA results on the Spider Test dataset are achieved. Our code is available on GitHub: \\url{https://github.com/FlyingFeather/DEA-SQL}.",
+      "externalIds": {
+        "DBLP": "conf/acl/XieJXM0YLZHL24",
+        "ArXiv": "2402.10671",
+        "DOI": "10.48550/arXiv.2402.10671",
+        "CorpusId": 267740272
+      },
+      "arxiv_id": "2402.10671",
+      "doi": "10.48550/arXiv.2402.10671",
+      "corpus_id": 267740272
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "6",
+      "ref_key": "S2:01de0020c6a0f2d0aa73965e8dcfd9b8f38e05b6",
+      "paperId": "01de0020c6a0f2d0aa73965e8dcfd9b8f38e05b6",
+      "title": "C3: Zero-shot Text-to-SQL with ChatGPT",
+      "year": 2023,
+      "abstract": "This paper proposes a ChatGPT-based zero-shot Text-to-SQL method, dubbed C3, which achieves 82.3\\% in terms of execution accuracy on the holdout test set of Spider and becomes the state-of-the-art zero-shot Text-to-SQL method on the Spider Challenge. C3 consists of three key components: Clear Prompting (CP), Calibration with Hints (CH), and Consistent Output (CO), which are corresponding to the model input, model bias and model output respectively. It provides a systematic treatment for zero-shot Text-to-SQL. Extensive experiments have been conducted to verify the effectiveness and efficiency of our proposed method.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-07306",
+        "ArXiv": "2307.07306",
+        "DOI": "10.48550/arXiv.2307.07306",
+        "CorpusId": 259924856
+      },
+      "arxiv_id": "2307.07306",
+      "doi": "10.48550/arXiv.2307.07306",
+      "corpus_id": 259924856
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "7",
+      "ref_key": "S2:e034b664362640cc88dfa5e2e11c0524fc7cb323",
+      "paperId": "e034b664362640cc88dfa5e2e11c0524fc7cb323",
+      "title": "Text-to-SQL Empowered by Large Language Models: A Benchmark Evaluation",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have emerged as a new paradigm for Text-to-SQL task. However, the absence of a systematical benchmark inhibits the development of designing effective, efficient and economic LLM-based Text-to-SQL solutions. To address this challenge, in this paper, we first conduct a systematical and extensive comparison over existing prompt engineering methods, including question representation, example selection and example organization, and with these experimental results, we elaborate their pros and cons. Based on these findings, we propose a new integrated solution, named DAIL-SQL, which refreshes the Spider leaderboard with 86.6% execution accuracy and sets a new bar.\n To explore the potential of open-source LLM, we investigate them in various scenarios, and further enhance their performance with supervised fine-tuning. Our explorations highlight open-source LLMs' potential in Text-to-SQL, as well as the advantages and disadvantages of the supervised fine-tuning. Additionally, towards an efficient and economic LLM-based Text-to-SQL solution, we emphasize the token efficiency in prompt engineering and compare the prior studies under this metric. We hope that our work provides a deeper understanding of Text-to-SQL with LLMs, and inspires further investigations and broad applications.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-15363",
+        "ArXiv": "2308.15363",
+        "DOI": "10.48550/arXiv.2308.15363",
+        "CorpusId": 261276437
+      },
+      "arxiv_id": "2308.15363",
+      "doi": "10.48550/arXiv.2308.15363",
+      "corpus_id": 261276437
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "8",
+      "ref_key": "S2:8334cab3749f83b09679e955f4794d132c60b24c",
+      "paperId": "8334cab3749f83b09679e955f4794d132c60b24c",
+      "title": "Prompting GPT-3.5 for Text-to-SQL with De-semanticization and Skeleton Retrieval",
+      "year": 2023,
+      "abstract": "Text-to-SQL is a task that converts a natural language question into a\nstructured query language (SQL) to retrieve information from a database. Large\nlanguage models (LLMs) work well in natural language generation tasks, but they\nare not specifically pre-trained to understand the syntax and semantics of SQL\ncommands. In this paper, we propose an LLM-based framework for Text-to-SQL\nwhich retrieves helpful demonstration examples to prompt LLMs. However,\nquestions with different database schemes can vary widely, even if the\nintentions behind them are similar and the corresponding SQL queries exhibit\nsimilarities. Consequently, it becomes crucial to identify the appropriate SQL\ndemonstrations that align with our requirements. We design a de-semanticization\nmechanism that extracts question skeletons, allowing us to retrieve similar\nexamples based on their structural similarity. We also model the relationships\nbetween question tokens and database schema items (i.e., tables and columns) to\nfilter out scheme-related information. Our framework adapts the range of the\ndatabase schema in prompts to balance length and valuable information. A\nfallback mechanism allows for a more detailed schema to be provided if the\ngenerated SQL query fails. Ours outperforms state-of-the-art models and\ndemonstrates strong generalization ability on three cross-domain Text-to-SQL\nbenchmarks.",
+      "externalIds": {
+        "ArXiv": "2304.13301",
+        "DBLP": "conf/pricai/GuoTTWWYW23",
+        "DOI": "10.1007/978-981-99-7022-3_23",
+        "CorpusId": 258331700
+      },
+      "arxiv_id": "2304.13301",
+      "doi": "10.1007/978-981-99-7022-3_23",
+      "corpus_id": 258331700
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "9",
+      "ref_key": "S2:50f44ef10335d59cec145b15effae20ff22c1fdb",
+      "paperId": "50f44ef10335d59cec145b15effae20ff22c1fdb",
+      "title": "ChatDB: Augmenting LLMs with Databases as Their Symbolic Memory",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) with memory are computationally universal. However, mainstream LLMs are not taking full advantage of memory, and the designs are heavily influenced by biological brains. Due to their approximate nature and proneness to the accumulation of errors, conventional neural memory mechanisms cannot support LLMs to simulate complex reasoning. In this paper, we seek inspiration from modern computer architectures to augment LLMs with symbolic memory for complex multi-hop reasoning. Such a symbolic memory framework is instantiated as an LLM and a set of SQL databases, where the LLM generates SQL instructions to manipulate the SQL databases. We validate the effectiveness of the proposed memory framework on a synthetic dataset requiring complex reasoning. The project website is available at https://chatdatabase.github.io/ .",
+      "externalIds": {
+        "ArXiv": "2306.03901",
+        "DBLP": "journals/corr/abs-2306-03901",
+        "DOI": "10.48550/arXiv.2306.03901",
+        "CorpusId": 259088875
+      },
+      "arxiv_id": "2306.03901",
+      "doi": "10.48550/arXiv.2306.03901",
+      "corpus_id": 259088875
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "10",
+      "ref_key": "S2:4fdcc7fc6682ff0b3a6a939a18b75b19f9dafa48",
+      "paperId": "4fdcc7fc6682ff0b3a6a939a18b75b19f9dafa48",
+      "title": "CRUSH4SQL: Collective Retrieval Using Schema Hallucination For Text2SQL",
+      "year": 2023,
+      "abstract": "Existing Text-to-SQL generators require the entire schema to be encoded with the user text. This is expensive or impractical for large databases with tens of thousands of columns. Standard dense retrieval techniques are inadequate for schema subsetting of a large structured database, where the correct semantics of retrieval demands that we rank sets of schema elements rather than individual elements. In response, we propose a two-stage process for effective coverage during retrieval. First, we instruct an LLM to hallucinate a minimal DB schema deemed adequate to answer the query. We use the hallucinated schema to retrieve a subset of the actual schema, by composing the results from multiple dense retrievals. Remarkably, hallucination $\\unicode{x2013}$ generally considered a nuisance $\\unicode{x2013}$ turns out to be actually useful as a bridging mechanism. Since no existing benchmarks exist for schema subsetting on large databases, we introduce three benchmarks. Two semi-synthetic datasets are derived from the union of schemas in two well-known datasets, SPIDER and BIRD, resulting in 4502 and 798 schema elements respectively. A real-life benchmark called SocialDB is sourced from an actual large data warehouse comprising 17844 schema elements. We show that our method1 leads to significantly higher recall than SOTA retrieval-based augmentation methods.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/KothyariDSC23",
+        "ArXiv": "2311.01173",
+        "DOI": "10.48550/arXiv.2311.01173",
+        "CorpusId": 264935600
+      },
+      "arxiv_id": "2311.01173",
+      "doi": "10.48550/arXiv.2311.01173",
+      "corpus_id": 264935600
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "11",
+      "ref_key": "S2:024c9fe5a0e00786683d64ec32d142aaaae55fa2",
+      "paperId": "024c9fe5a0e00786683d64ec32d142aaaae55fa2",
+      "title": "PET-SQL: A Prompt-enhanced Two-stage Text-to-SQL Framework with Cross-consistency",
+      "year": 2024,
+      "abstract": "Recent advancements in Text-to-SQL (Text2SQL) emphasize stimulating the large language models (LLM) on in-context learning, achieving significant results. Nevertheless, they face challenges when dealing with verbose database information and complex user intentions. This paper presents a two-stage framework to enhance the performance of current LLM-based natural language to SQL systems. We first introduce a novel prompt representation, called reference-enhanced representation, which includes schema information and randomly sampled cell values from tables to instruct LLMs in generating SQL queries. Then, in the first stage, question-SQL pairs are retrieved as few-shot demonstrations, prompting the LLM to generate a preliminary SQL (PreSQL). After that, the mentioned entities in PreSQL are parsed to conduct schema linking, which can significantly compact the useful information. In the second stage, with the linked schema, we simplify the prompt’s schema information and instruct the LLM to produce the final SQL. Finally, as the post-refinement module, we propose using cross-consistency across different LLMs rather than self-consistency within a particular LLM. Our methods achieve new SOTA results on the Spider benchmark, with an execution accuracy of 87.6%.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2403-09732",
+        "DOI": "10.48550/arXiv.2403.09732",
+        "CorpusId": 271746291
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2403.09732",
+      "corpus_id": 271746291
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "12",
+      "ref_key": "S2:40c9280d87059c0cc28f2a08d46a7045fa3e9736",
+      "paperId": "40c9280d87059c0cc28f2a08d46a7045fa3e9736",
+      "title": "Divide and Prompt: Chain of Thought Prompting for Text-to-SQL",
+      "year": 2023,
+      "abstract": "Chain-of-thought (CoT) prompting combined with large language models (LLMs) have achieved encouraging results on complex reasoning tasks. Text-to-SQL is a critical semantic parsing task that converts natural language questions into SQL statements, involving a complex reasoning process. However, there is little work about using CoT prompting to activate LLM's reasoning capabilities on Text-to-SQL tasks. In this work, we propose a new paradigm for prompting Text-to-SQL tasks, called Divide-and-Prompt, which first divides the task into subtasks, and then approach each subtask through CoT. We present 3 prompting-based methods to enhance the Text-to-SQL ability of LLMs. Experiments show that these prompts guide LLMs to generate Text-to-SQL with higher execution accuracy.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2304-11556",
+        "ArXiv": "2304.11556",
+        "DOI": "10.48550/arXiv.2304.11556",
+        "CorpusId": 258298777
+      },
+      "arxiv_id": "2304.11556",
+      "doi": "10.48550/arXiv.2304.11556",
+      "corpus_id": 258298777
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "13",
+      "ref_key": "S2:3265df2c0bdf3a0d68e498fcb38fad6199399b6a",
+      "paperId": "3265df2c0bdf3a0d68e498fcb38fad6199399b6a",
+      "title": "Metasql: A Generate-Then-Rank Framework for Natural Language to SQL Translation",
+      "year": 2024,
+      "abstract": "The Natural Language Interface to Databases (NLIDB) empowers non-technical users with database access through intuitive natural language (NL) interactions. Advanced approaches, utilizing neural sequence-to-sequence models or large-scale language models, typically employ auto-regressive decoding to generate unique SQL queries sequentially. While these translation models have greatly improved the overall translation accuracy, surpassing 70% on NLIDB benchmarks, the use of auto-regressive decoding to generate single SQL queries may result in sub-optimal outputs, potentially leading to erroneous translations. In this paper, we propose Metasql, a unified generate-then-rank framework that can be flexibly incorporated with existing NLIDBs to consistently improve their translation accuracy. Metasql introduces query metadata to control the generation of better SQL query candidates and uses learning-to-rank algorithms to retrieve globally optimized queries. Specifically, Metasql first breaks down the meaning of the given NL query into a set of possible query metadata, representing the basic concepts of the semantics. These metadata are then used as language constraints to steer the underlying translation model toward generating a set of candidate SQL queries. Finally, Metasql ranks the candidates to identify the best matching one for the given NL query. Extensive experiments are performed to study Metasql on two public NLIDB benchmarks. The results show that the performance of the translation models can be effectively improved using Metasql. In particular, applying Metasql to the published Lgesql model obtains a translation accuracy of 77.4 % on the validation set and 72.3 % on the test set of the Spider benchmark, outperforming the baseline by 2.3% and 0.3%, respectively. Moreover, applying Metasql to GpT-4 achieves translation accuracies of 68.6%, 42.0%, and 17.6 % on the three real-world complex scientific databases of Sciencebenchmark, respectively. The code for Metasql is available at https://github.com/Kaimary/MetaSQL.",
+      "externalIds": {
+        "ArXiv": "2402.17144",
+        "DBLP": "journals/corr/abs-2402-17144",
+        "DOI": "10.1109/ICDE60146.2024.00143",
+        "CorpusId": 268032440
+      },
+      "arxiv_id": "2402.17144",
+      "doi": "10.1109/ICDE60146.2024.00143",
+      "corpus_id": 268032440
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "14",
+      "ref_key": "S2:59fe7cb560651281cfc5db6b8940da0e3ba9dea6",
+      "paperId": "59fe7cb560651281cfc5db6b8940da0e3ba9dea6",
+      "title": "LEVER: Learning to Verify Language-to-Code Generation with Execution",
+      "year": 2023,
+      "abstract": "The advent of large language models trained on code (code LLMs) has led to significant progress in language-to-code generation. State-of-the-art approaches in this area combine LLM decoding with sample pruning and reranking using test cases or heuristics based on the execution results. However, it is challenging to obtain test cases for many real-world language-to-code applications, and heuristics cannot well capture the semantic features of the execution results, such as data type and value range, which often indicates the correctness of the program. In this work, we propose LEVER, a simple approach to improve language-to-code generation by learning to verify the generated programs with their execution results. Specifically, we train verifiers to determine whether a program sampled from the LLMs is correct or not based on the natural language input, the program itself and its execution results. The sampled programs are reranked by combining the verification score with the LLM generation probability, and marginalizing over programs with the same execution results. On four datasets across the domains of table QA, math QA and basic Python programming, LEVER consistently improves over the base code LLMs(4.6% to 10.9% with code-davinci-002) and achieves new state-of-the-art results on all of them.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2302-08468",
+        "ArXiv": "2302.08468",
+        "DOI": "10.48550/arXiv.2302.08468",
+        "CorpusId": 256900680
+      },
+      "arxiv_id": "2302.08468",
+      "doi": "10.48550/arXiv.2302.08468",
+      "corpus_id": 256900680
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "15",
+      "ref_key": "S2:50b55d28db17b3ffea9b71ae32984374a6ec1b0c",
+      "paperId": "50b55d28db17b3ffea9b71ae32984374a6ec1b0c",
+      "title": "Open-SQL Framework: Enhancing Text-to-SQL on Open-source Large Language Models",
+      "year": 2024,
+      "abstract": "Despite the success of large language models (LLMs) in Text-to-SQL tasks, open-source LLMs encounter challenges in contextual understanding and response coherence. To tackle these issues, we present \\ours, a systematic methodology tailored for Text-to-SQL with open-source LLMs. Our contributions include a comprehensive evaluation of open-source LLMs in Text-to-SQL tasks, the \\openprompt strategy for effective question representation, and novel strategies for supervised fine-tuning. We explore the benefits of Chain-of-Thought in step-by-step inference and propose the \\openexample method for enhanced few-shot learning. Additionally, we introduce token-efficient techniques, such as \\textbf{Variable-length Open DB Schema}, \\textbf{Target Column Truncation}, and \\textbf{Example Column Truncation}, addressing challenges in large-scale databases. Our findings emphasize the need for further investigation into the impact of supervised fine-tuning on contextual learning capabilities. Remarkably, our method significantly improved Llama2-7B from 2.54\\% to 41.04\\% and Code Llama-7B from 14.54\\% to 48.24\\% on the BIRD-Dev dataset. Notably, the performance of Code Llama-7B surpassed GPT-4 (46.35\\%) on the BIRD-Dev dataset.",
+      "externalIds": {
+        "ArXiv": "2405.06674",
+        "DBLP": "journals/corr/abs-2405-06674",
+        "DOI": "10.48550/arXiv.2405.06674",
+        "CorpusId": 269756936
+      },
+      "arxiv_id": "2405.06674",
+      "doi": "10.48550/arXiv.2405.06674",
+      "corpus_id": 269756936
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "16",
+      "ref_key": "S2:cc0f0cb09a73f82ed44d900f5ca710bec784acc1",
+      "paperId": "cc0f0cb09a73f82ed44d900f5ca710bec784acc1",
+      "title": "DIN-SQL: Decomposed In-Context Learning of Text-to-SQL with Self-Correction",
+      "year": 2023,
+      "abstract": "We study the problem of decomposing a complex text-to-sql task into smaller sub-tasks and how such a decomposition can significantly improve the performance of Large Language Models (LLMs) in the reasoning process. There is currently a significant gap between the performance of fine-tuned models and prompting approaches using LLMs on challenging text-to-sql datasets such as Spider. We show that SQL queries, despite their declarative structure, can be broken down into sub-problems and the solutions of those sub-problems can be fed into LLMs to significantly improve their performance. Our experiments with three LLMs show that this approach consistently improves their performance by roughly 10%, pushing the accuracy of LLMs towards state-of-the-art, and even beating large fine-tuned models on the holdout Spider dataset.",
+      "externalIds": {
+        "DBLP": "conf/nips/PourrezaR23",
+        "ArXiv": "2304.11015",
+        "DOI": "10.48550/arXiv.2304.11015",
+        "CorpusId": 258291425
+      },
+      "arxiv_id": "2304.11015",
+      "doi": "10.48550/arXiv.2304.11015",
+      "corpus_id": 258291425
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "17",
+      "ref_key": "S2:64766808635c5f0d6ab20c807381994c78f3d19c",
+      "paperId": "64766808635c5f0d6ab20c807381994c78f3d19c",
+      "title": "$R^3$:\"This is My SQL, Are You With Me?\"A Consensus-Based Multi-Agent System for Text-to-SQL Tasks",
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) have demonstrated strong performance on various tasks. To unleash their power on the Text-to-SQL task, we propose $R^3$ (Review-Rebuttal-Revision), a consensus-based multi-agent system for Text-to-SQL tasks. $R^3$ outperforms the existing single LLM Text-to-SQL systems as well as the multi-agent Text-to-SQL systems by $1.3\\%$ to $8.1\\%$ on Spider and Bird. Surprisingly, we find that for Llama-3-8B, $R^3$ outperforms chain-of-thought prompting by over 20\\%, even outperforming GPT-3.5 on the development set of Spider.",
+      "externalIds": {
+        "ArXiv": "2402.14851",
+        "CorpusId": 267897928
+      },
+      "arxiv_id": "2402.14851",
+      "doi": null,
+      "corpus_id": 267897928
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "18",
+      "ref_key": "S2:fcca8e6a17d6045ec241b9a35e141efaeb892f6f",
+      "paperId": "fcca8e6a17d6045ec241b9a35e141efaeb892f6f",
+      "title": "PURPLE: Making a Large Language Model a Better SQL Writer",
+      "year": 2024,
+      "abstract": "Large Language Model (LLM) techniques play an increasingly important role in Natural Language to SQL (NL2SQL) translation. LLMs trained by extensive corpora have strong natural language understanding and basic SQL generation abilities without additional tuning specific to NL2SQL tasks. Existing LLMs-based NL2SQL approaches try to improve the translation by enhancing the LLMs with an emphasis on user intention understanding. However, LLMs sometimes fail to generate appropriate SQL due to their lack of knowledge in organizing complex logical operator composition. A promising method is to input the LLMs with demonstrations, which include known NL2SQL translations from various databases. LLMs can learn to organize operator compositions from the input demonstrations for the given task. In this paper, we propose PURPLE (Pre-trained models Utilized to Retrieve Prompts for Logical Enhancement), which improves accuracy by retrieving demonstrations containing the requisite logical operator composition for the NL2SQL task on hand, thereby guiding LLMs to produce better SQL translation. PURPLE achieves a new state-of-the-art performance of 80.5% exact-set match accuracy and 87.8% execution match accuracy on the validation set of the popular NL2SQL benchmark Spider. PURPLE maintains high accuracy across diverse benchmarks, budgetary constraints, and various LLMs, showing robustness and cost-effectiveness.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2403-20014",
+        "ArXiv": "2403.20014",
+        "DOI": "10.1109/ICDE60146.2024.00009",
+        "CorpusId": 268793895
+      },
+      "arxiv_id": "2403.20014",
+      "doi": "10.1109/ICDE60146.2024.00009",
+      "corpus_id": 268793895
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "19",
+      "ref_key": "S2:191e300e381d4128b749d16fe3d83c8643a3bd1f",
+      "paperId": "191e300e381d4128b749d16fe3d83c8643a3bd1f",
+      "title": "Retrieval-augmented GPT-3.5-based Text-to-SQL Framework with Sample-aware Prompting and Dynamic Revision Chain",
+      "year": 2023,
+      "abstract": "Text-to-SQL aims at generating SQL queries for the given natural language questions and thus helping users to query databases. Prompt learning with large language models (LLMs) has emerged as a recent approach, which designs prompts to lead LLMs to understand the input question and generate the corresponding SQL. However, it faces challenges with strict SQL syntax requirements. Existing work prompts the LLMs with a list of demonstration examples (i.e. question-SQL pairs) to generate SQL, but the fixed prompts can hardly handle the scenario where the semantic gap between the retrieved demonstration and the input question is large. In this paper, we propose a retrieval-augmented prompting method for a LLM-based Text-to-SQL framework, involving sample-aware prompting and a dynamic revision chain. Our approach incorporates sample-aware demonstrations, which include the composition of SQL operators and fine-grained information related to the given question. To retrieve questions sharing similar intents with input questions, we propose two strategies for assisting retrieval. Firstly, we leverage LLMs to simplify the original questions, unifying the syntax and thereby clarifying the users' intentions. To generate executable and accurate SQLs without human intervention, we design a dynamic revision chain which iteratively adapts fine-grained feedback from the previously generated SQL. Experimental results on three Text-to-SQL benchmarks demonstrate the superiority of our method over strong baseline models.",
+      "externalIds": {
+        "ArXiv": "2307.05074",
+        "DBLP": "conf/iconip/GuoTTLWWW23",
+        "DOI": "10.48550/arXiv.2307.05074",
+        "CorpusId": 259766168
+      },
+      "arxiv_id": "2307.05074",
+      "doi": "10.48550/arXiv.2307.05074",
+      "corpus_id": 259766168
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "20",
+      "ref_key": "S2:091525c873e27b0989a31dc6d0dc54fdb655b7e8",
+      "paperId": "091525c873e27b0989a31dc6d0dc54fdb655b7e8",
+      "title": "Reboost Large Language Model-based Text-to-SQL, Text-to-Python, and Text-to-Function - with Real Applications in Traffic Domain",
+      "year": 2023,
+      "abstract": "The previous state-of-the-art (SOTA) method achieved a remarkable execution accuracy on the Spider dataset, which is one of the largest and most diverse datasets in the Text-to-SQL domain. However, during our reproduction of the business dataset, we observed a significant drop in performance. We examined the differences in dataset complexity, as well as the clarity of questions' intentions, and assessed how those differences could impact the performance of prompting methods. Subsequently, We develop a more adaptable and more general prompting method, involving mainly query rewriting and SQL boosting, which respectively transform vague information into exact and precise information and enhance the SQL itself by incorporating execution feedback and the query results from the database content. In order to prevent information gaps, we include the comments, value types, and value samples for columns as part of the database description in the prompt. Our experiments with Large Language Models (LLMs) illustrate the significant performance improvement on the business dataset and prove the substantial potential of our method. In terms of execution accuracy on the business dataset, the SOTA method scored 21.05, while our approach scored 65.79. As a result, our approach achieved a notable performance improvement even when using a less capable pre-trained language model. Last but not least, we also explore the Text-to-Python and Text-to-Function options, and we deeply analyze the pros and cons among them, offering valuable insights to the community.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-18752",
+        "ArXiv": "2310.18752",
+        "DOI": "10.48550/arXiv.2310.18752",
+        "CorpusId": 264590656
+      },
+      "arxiv_id": "2310.18752",
+      "doi": "10.48550/arXiv.2310.18752",
+      "corpus_id": 264590656
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "21",
+      "ref_key": "S2:68ad0ed1e21fd9fd7b2bd58769d8bec88c996b01",
+      "paperId": "68ad0ed1e21fd9fd7b2bd58769d8bec88c996b01",
+      "title": "Exploring Chain-of-Thought Style Prompting for Text-to-SQL",
+      "year": 2023,
+      "abstract": "In-context learning with large language models (LLMs) has recently caught increasing attention due to its superior few-shot performance on various tasks. However, its performance on text-to-SQL parsing still has much room for improvement. In this paper, we hypothesize that a crucial aspect of LLMs to improve for text-to-SQL parsing is their multi-step reasoning ability. Thus, we systematically study how to enhance LLMs' reasoning ability through chain of thought (CoT) style prompting, including the original chain-of-thought prompting (Wei et al., 2022b) and least-to-most prompting (Zhou et al., 2023). Our experiments demonstrate that iterative prompting as in Zhou et al. (2023) may be unnecessary for text-to-SQL parsing, and using detailed reasoning steps tends to have more error propagation issues. Based on these findings, we propose a new CoT-style prompting method for text-to-SQL parsing. It brings 5.2 and 6.5 point absolute gains on the Spider development set and the Spider Realistic set, respectively, compared to the standard prompting method without reasoning steps; 2.4 and 1.5 point absolute gains, compared to the least-to-most prompting method.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/TaiCZ0023",
+        "ArXiv": "2305.14215",
+        "DOI": "10.48550/arXiv.2305.14215",
+        "CorpusId": 258841412
+      },
+      "arxiv_id": "2305.14215",
+      "doi": "10.48550/arXiv.2305.14215",
+      "corpus_id": 258841412
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "22",
+      "ref_key": "S2:1c53981885c1ce32f0ad4cab49e149ef32a6d682",
+      "paperId": "1c53981885c1ce32f0ad4cab49e149ef32a6d682",
+      "title": "DBCopilot: Scaling Natural Language Querying to Massive Databases",
+      "year": 2023,
+      "abstract": "Text-to-SQL simplifies database interactions by enabling non-experts to convert their natural language (NL) questions into Structured Query Language (SQL) queries. While recent advances in large language models (LLMs) have improved the zero-shot text-to-SQL paradigm, existing methods face scalability challenges when dealing with massive, dynamically changing databases. This paper introduces DBCopilot, a framework that addresses these challenges by employing a compact and flexible copilot model for routing across massive databases. Specifically, DBCopilot decouples the text-to-SQL process into schema routing and SQL generation, leveraging a lightweight sequence-to-sequence neural network-based router to formulate database connections and navigate natural language questions through databases and tables. The routed schemas and questions are then fed into LLMs for efficient SQL generation. Furthermore, DBCopilot also introduced a reverse schema-to-question generation paradigm, which can learn and adapt the router over massive databases automatically without requiring manual intervention. Experimental results demonstrate that DBCopilot is a scalable and effective solution for real-world text-to-SQL tasks, providing a significant advancement in handling large-scale schemas.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2312-03463",
+        "ArXiv": "2312.03463",
+        "DOI": "10.48550/arXiv.2312.03463",
+        "CorpusId": 265698210
+      },
+      "arxiv_id": "2312.03463",
+      "doi": "10.48550/arXiv.2312.03463",
+      "corpus_id": 265698210
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "23",
+      "ref_key": "S2:ff3dbed244fc5f1787a9f92a6b91be27855d4adc",
+      "paperId": "ff3dbed244fc5f1787a9f92a6b91be27855d4adc",
+      "title": "ACT-SQL: In-Context Learning for Text-to-SQL with Automatically-Generated Chain-of-Thought",
+      "year": 2023,
+      "abstract": "Recently Large Language Models (LLMs) have been proven to have strong abilities in various domains and tasks. We study the problem of prompt designing in the text-to-SQL task and attempt to improve the LLMs' reasoning ability when generating SQL queries. Besides the trivial few-shot in-context learning setting, we design our chain-of-thought (CoT) prompt with a similar method to schema linking. We provide a method named ACT-SQL to automatically generate auto-CoT exemplars and thus the whole process doesn't need manual labeling. Our approach is cost-saving since we only use the LLMs' API call once when generating one SQL query. Furthermore, we extend our in-context learning method to the multi-turn text-to-SQL task. The experiment results show that the LLMs' performance can benefit from our ACT-SQL approach. Our approach achieves SOTA performance on the Spider dev set among existing in-context learning approaches.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-17342",
+        "ArXiv": "2310.17342",
+        "DOI": "10.48550/arXiv.2310.17342",
+        "CorpusId": 264491000
+      },
+      "arxiv_id": "2310.17342",
+      "doi": "10.48550/arXiv.2310.17342",
+      "corpus_id": 264491000
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "24",
+      "ref_key": "S2:1cdc016694295436cda6f6f93e31456c90237d10",
+      "paperId": "1cdc016694295436cda6f6f93e31456c90237d10",
+      "title": "SQLfuse: Enhancing Text-to-SQL Performance through Comprehensive LLM Synergy",
+      "year": 2024,
+      "abstract": "Text-to-SQL conversion is a critical innovation, simplifying the transition from complex SQL to intuitive natural language queries, especially significant given SQL's prevalence in the job market across various roles. The rise of Large Language Models (LLMs) like GPT-3.5 and GPT-4 has greatly advanced this field, offering improved natural language understanding and the ability to generate nuanced SQL statements. However, the potential of open-source LLMs in Text-to-SQL applications remains underexplored, with many frameworks failing to leverage their full capabilities, particularly in handling complex database queries and incorporating feedback for iterative refinement. Addressing these limitations, this paper introduces SQLfuse, a robust system integrating open-source LLMs with a suite of tools to enhance Text-to-SQL translation's accuracy and usability. SQLfuse features four modules: schema mining, schema linking, SQL generation, and a SQL critic module, to not only generate but also continuously enhance SQL query quality. Demonstrated by its leading performance on the Spider Leaderboard and deployment by Ant Group, SQLfuse showcases the practical merits of open-source LLMs in diverse business contexts.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2407-14568",
+        "ArXiv": "2407.14568",
+        "DOI": "10.48550/arXiv.2407.14568",
+        "CorpusId": 271328898
+      },
+      "arxiv_id": "2407.14568",
+      "doi": "10.48550/arXiv.2407.14568",
+      "corpus_id": 271328898
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "25",
+      "ref_key": "S2:405030fdaa44687c5495437dd6c5d1db7010fa3f",
+      "paperId": "405030fdaa44687c5495437dd6c5d1db7010fa3f",
+      "title": "Structure Guided Large Language Model for SQL Generation",
+      "year": 2024,
+      "abstract": "Generating accurate Structured Querying Language (SQL) is a long-standing problem, especially in matching users' semantic queries with structured databases and then generating structured SQL. Existing models typically input queries and database schemas into the LLM and rely on the LLM to perform semantic-structure matching and generate structured SQL. However, such solutions overlook the structural information within user queries and databases, which can be utilized to enhance the generation of structured SQL. This oversight can lead to inaccurate or unexecutable SQL generation. To fully exploit the structure, we propose a structure-to-SQL framework, which leverages the inherent structure information to improve the SQL generation of LLMs. Specifically, we introduce our Structure Guided SQL~(SGU-SQL) generation model. SGU-SQL first links user queries and databases in a structure-enhanced manner. It then decomposes complicated linked structures with grammar trees to guide the LLM to generate the SQL step by step. Extensive experiments on two benchmark datasets illustrate that SGU-SQL can outperform sixteen SQL generation baselines.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-13284",
+        "ArXiv": "2402.13284",
+        "DOI": "10.48550/arXiv.2402.13284",
+        "CorpusId": 267770046
+      },
+      "arxiv_id": "2402.13284",
+      "doi": "10.48550/arXiv.2402.13284",
+      "corpus_id": 267770046
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "26",
+      "ref_key": "S2:07de76b2862cf7738b3fd28aabd708186231a527",
+      "paperId": "07de76b2862cf7738b3fd28aabd708186231a527",
+      "title": "DTS-SQL: Decomposed Text-to-SQL with Small Large Language Models",
+      "year": 2024,
+      "abstract": "Leading models for the text-to-SQL task heavily rely on proprietary Large Language Models (LLMs), posing concerns over data privacy. Closing the performance gap between small open-source models and large proprietary models is crucial to mitigate this reliance. To this end, we introduce a novel two-stage fine-tuning approach that decomposes the task into two simpler tasks. Through comprehensive evaluation on two large cross-domain datasets and two small LLMs, we show that this approach improves execution accuracy by 3 to 7 percent, effectively aligning the performance of open-source models with their proprietary counterparts.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/PourrezaR24",
+        "ArXiv": "2402.01117",
+        "DOI": "10.48550/arXiv.2402.01117",
+        "CorpusId": 267406644
+      },
+      "arxiv_id": "2402.01117",
+      "doi": "10.48550/arXiv.2402.01117",
+      "corpus_id": 267406644
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "27",
+      "ref_key": "S2:8d1c1fd5b2b9809e1ad884bf8ec21d356d356ec6",
+      "paperId": "8d1c1fd5b2b9809e1ad884bf8ec21d356d356ec6",
+      "title": "DataGpt-SQL-7B: An Open-Source Language Model for Text-to-SQL",
+      "year": 2024,
+      "abstract": "In addressing the pivotal role of translating natural language queries into SQL commands, we propose a suite of compact, fine-tuned models and self-refine mechanisms to democratize data access and analysis for non-expert users, mitigating risks associated with closed-source Large Language Models. Specifically, we constructed a dataset of over 20K sample for Text-to-SQL as well as the preference dateset, to improve the efficiency in the domain of SQL generation. To further ensure code validity, a code corrector was integrated into the model. Our system, DataGpt-sql, achieved 87.2\\% accuracy on the spider-dev, respectively, showcasing the effectiveness of our solution in text-to-SQL conversion tasks. Our code, data, and models are available at \\url{https://github.com/CainiaoTechAi/datagpt-sql-7b}",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2409-15985",
+        "ArXiv": "2409.15985",
+        "DOI": "10.48550/arXiv.2409.15985",
+        "CorpusId": 272832421
+      },
+      "arxiv_id": "2409.15985",
+      "doi": "10.48550/arXiv.2409.15985",
+      "corpus_id": 272832421
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "28",
+      "ref_key": "S2:7047d94171efc72f868339302d966b51122fe6a1",
+      "paperId": "7047d94171efc72f868339302d966b51122fe6a1",
+      "title": "Dubo-SQL: Diverse Retrieval-Augmented Generation and Fine Tuning for Text-to-SQL",
+      "year": 2024,
+      "abstract": "The current state-of-the-art (SOTA) for automated text-to-SQL still falls well short of expert human performance as measured by execution accuracy (EX) on the BIRD-SQL benchmark. The most accurate methods are also slow and expensive. To advance the SOTA for text-to-SQL while reducing cost and improving speed, we explore the combination of low-cost fine tuning, novel methods for diverse retrieval-augmented generation (RAG) and new input and output formats that help large language models (LLMs) achieve higher EX. We introduce two new methods, Dubo-SQL v1 and v2. Dubo-SQL v1 sets a new record for EX on the holdout test set of BIRD-SQL. Dubo-SQL v2 achieves even higher performance on the BIRD-SQL dev set. Dubo-SQL v1 relies on LLMs from OpenAI, but uses the low-cost GPT-3.5 Turbo while exceeding the performance of the next-best model using OpenAI, which instead uses the more expensive GPT-4. Dubo-SQL v1 exceeds the performance of the next-best model using GPT-3.5 by over 20%. Dubo-SQL v2 uses GPT-4 Turbo and RAG in place of fine tuning to push EX higher.",
+      "externalIds": {
+        "ArXiv": "2404.12560",
+        "DBLP": "journals/corr/abs-2404-12560",
+        "DOI": "10.48550/arXiv.2404.12560",
+        "CorpusId": 269282528
+      },
+      "arxiv_id": "2404.12560",
+      "doi": "10.48550/arXiv.2404.12560",
+      "corpus_id": 269282528
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "29",
+      "ref_key": "S2:fcda309041fe9f1a483e0451da698446fa6b320e",
+      "paperId": "fcda309041fe9f1a483e0451da698446fa6b320e",
+      "title": "FinSQL: Model-Agnostic LLMs-based Text-to-SQL Framework for Financial Analysis",
+      "year": 2024,
+      "abstract": "Text-to-SQL, which provides zero-code interface for operating relational databases, has gained much attention in financial analysis; because financial professionals may not be well-skilled in SQL programming. However, until now, there is no practical Text-to-SQL benchmark dataset for financial analysis, and existing Text-to-SQL methods have not considered the unique characteristics of databases in financial applications, such as commonly existing wide tables. To address these issues, we collect a practical Text-to-SQL benchmark dataset and propose a model-agnostic Large Language Model (LLMs)-based Text-to-SQL framework for financial analysis. The benchmark dataset, BULL, is collected from the practical financial analysis business of Hundsun Technologies Inc., including databases for fund, stock, and macro economy. Besides, the proposed LLMs-based Text-to-SQL framework, FinSQL, provides a systematic treatment for financial Text-to-SQL from the perspectives of prompt construction, parameter-efficient fine-tuning and output calibration. Experiments on BULL demonstrate that FinSQL achieves state-of-the-art performance at low cost, and it brings up to 36.64% improvement in few-shot cross-database scenarios.",
+      "externalIds": {
+        "DBLP": "conf/sigmod/ZhangMFMG0LL24",
+        "ArXiv": "2401.10506",
+        "DOI": "10.1145/3626246.3653375",
+        "CorpusId": 267061057
+      },
+      "arxiv_id": "2401.10506",
+      "doi": "10.1145/3626246.3653375",
+      "corpus_id": 267061057
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "30",
+      "ref_key": "S2:d564a7252cd9f4ff4eb43d694d48b075ab8bd74f",
+      "paperId": "d564a7252cd9f4ff4eb43d694d48b075ab8bd74f",
+      "title": "ESM+: Modern Insights into Perspective on Text-to-SQL Evaluation in the Age of Large Language Models",
+      "year": 2024,
+      "abstract": "The task of Text-to-SQL enables anyone to retrieve information from SQL databases using natural language. Despite several challenges, recent models have made remarkable advancements in this task using large language models (LLMs). Interestingly, we find that LLM-based models without fine-tuning exhibit distinct natures compared to their fine-tuned counterparts, leading to inadequacies in current evaluation metrics to accurately convey their performance. Thus, we analyze the two primary metrics, Test Suite Execution Accuracy (EXE) and Exact Set Matching Accuracy (ESM), to examine their robustness for this task and address shortcomings. We compare the performance of 9 LLM-based models using EXE, the original ESM, and our improved ESM (called ESM+). Our results show that EXE and ESM have high false positive and negative rates of 11.3% and 13.9%, while ESM+ gives those of 0.1% and 2.6% respectively, providing a significantly more stable evaluation. We release the ESM+ script as open-source for the community to contribute, while enjoying a more reliable assessment of Text-to-SQL.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2407-07313",
+        "ArXiv": "2407.07313",
+        "DOI": "10.48550/arXiv.2407.07313",
+        "CorpusId": 271089033
+      },
+      "arxiv_id": "2407.07313",
+      "doi": "10.48550/arXiv.2407.07313",
+      "corpus_id": 271089033
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "31",
+      "ref_key": "S2:7195ed3c7f11220f29634cecb68b1d39db2e36d9",
+      "paperId": "7195ed3c7f11220f29634cecb68b1d39db2e36d9",
+      "title": "Dr.Spider: A Diagnostic Evaluation Benchmark towards Text-to-SQL Robustness",
+      "year": 2023,
+      "abstract": "Neural text-to-SQL models have achieved remarkable performance in translating natural language questions into SQL queries. However, recent studies reveal that text-to-SQL models are vulnerable to task-specific perturbations. Previous curated robustness test sets usually focus on individual phenomena. In this paper, we propose a comprehensive robustness benchmark based on Spider, a cross-domain text-to-SQL benchmark, to diagnose the model robustness. We design 17 perturbations on databases, natural language questions, and SQL queries to measure the robustness from different angles. In order to collect more diversified natural question perturbations, we utilize large pretrained language models (PLMs) to simulate human behaviors in creating natural questions. We conduct a diagnostic study of the state-of-the-art models on the robustness set. Experimental results reveal that even the most robust model suffers from a 14.0% performance drop overall and a 50.7% performance drop on the most challenging perturbation. We also present a breakdown analysis regarding text-to-SQL model designs and provide insights for improving model robustness.",
+      "externalIds": {
+        "DBLP": "conf/iclr/Chang0DPZLLZJLA23",
+        "ArXiv": "2301.08881",
+        "DOI": "10.48550/arXiv.2301.08881",
+        "CorpusId": 256105733
+      },
+      "arxiv_id": "2301.08881",
+      "doi": "10.48550/arXiv.2301.08881",
+      "corpus_id": 256105733
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "32",
+      "ref_key": "S2:978040c55f9094212d15b7ffadfab1440913b6cf",
+      "paperId": "978040c55f9094212d15b7ffadfab1440913b6cf",
+      "title": "CodeS: Towards Building Open-source Language Models for Text-to-SQL",
+      "year": 2024,
+      "abstract": "Language models have shown promising performance on the task of translating natural language questions into SQL queries (Text-to-SQL). However, most of the state-of-the-art (SOTA) approaches rely on powerful yet closed-source large language models (LLMs), such as ChatGPT and GPT-4, which may have the limitations of unclear model architectures, data privacy risks, and expensive inference overheads. To address the limitations, we introduce CodeS, a series of pre-trained language models with parameters ranging from 1B to 15B, specifically designed for the text-to-SQL task. CodeS is a fully open-source language model, which achieves superior accuracy with much smaller parameter sizes. This paper studies the research challenges in building CodeS. To enhance the SQL generation abilities of CodeS, we adopt an incremental pre-training approach using a specifically curated SQL-centric corpus. Based on this, we address the challenges of schema linking and rapid domain adaptation through strategic prompt construction and a bi-directional data augmentation technique. We conduct comprehensive evaluations on multiple datasets, including the widely used Spider benchmark, the newly released BIRD benchmark, robustness-diagnostic benchmarks such as Spider-DK, Spider-Syn, Spider-Realistic, and Dr.Spider, as well as two real-world datasets created for financial and academic applications. The experimental results show that our CodeS achieves new SOTA accuracy and robustness on nearly all challenging text-to-SQL benchmarks.",
+      "externalIds": {
+        "DBLP": "journals/pacmmod/LiZLFZZWP0024",
+        "ArXiv": "2402.16347",
+        "DOI": "10.48550/arXiv.2402.16347",
+        "CorpusId": 267938784
+      },
+      "arxiv_id": "2402.16347",
+      "doi": "10.48550/arXiv.2402.16347",
+      "corpus_id": 267938784
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "33",
+      "ref_key": "S2:eaac325e94e76d86acfcd6ffea76d47abf86fbe4",
+      "paperId": "eaac325e94e76d86acfcd6ffea76d47abf86fbe4",
+      "title": "Knowledge-to-SQL: Enhancing SQL Generation with Data Expert LLM",
+      "year": 2024,
+      "abstract": "Generating accurate SQL queries for user questions (text-to-SQL) has been a long-standing challenge since it requires a deep understanding of both the user's question and the corresponding database schema in order to retrieve the desired content accurately. Existing methods rely on the comprehensive capability of large language models (LLMs) to generate the SQL. However, some necessary knowledge is not explicitly included in the database schema and user question or has been learned by LLMs. Thus, the generated SQL of the knowledge-insufficient questions may be inaccurate, negatively influencing the text-to-SQL models' performance and robustness. To address this challenge, we propose the Knowledge-to-SQL framework, which employs tailored Data Expert LLM (DELLM) to provide helpful knowledge for all text-to-SQL models. Specifically, we introduce the detailed implementation of DELLM regarding table reading and the basic fine-tuning process. We further propose a Preference Learning via Database Feedback (PLDBF) strategy, refining the DELLM to generate more helpful knowledge for LLMs. Extensive experiments verify that DELLM can enhance the state-of-the-art approaches for text-to-SQL tasks. The corresponding code of DELLM is released for further research.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-11517",
+        "ArXiv": "2402.11517",
+        "DOI": "10.48550/arXiv.2402.11517",
+        "CorpusId": 267751230
+      },
+      "arxiv_id": "2402.11517",
+      "doi": "10.48550/arXiv.2402.11517",
+      "corpus_id": 267751230
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "34",
+      "ref_key": "S2:f2fe5656f9ada5b487fbebdf63f217cdd548e31e",
+      "paperId": "f2fe5656f9ada5b487fbebdf63f217cdd548e31e",
+      "title": "LLM Comparator: Visual Analytics for Side-by-Side Evaluation of Large Language Models",
+      "year": 2024,
+      "abstract": "Automatic side-by-side evaluation has emerged as a promising approach to evaluating the quality of responses from large language models (LLMs). However, analyzing the results from this evaluation approach raises scalability and interpretability challenges. In this paper, we present LLM Comparator, a novel visual analytics tool for interactively analyzing results from automatic side-by-side evaluation. The tool supports interactive workflows for users to understand when and why a model performs better or worse than a baseline model, and how the responses from two models are qualitatively different. We iteratively designed and developed the tool by closely working with researchers and engineers at Google. This paper details the user challenges we identified, the design and development of the tool, and an observational study with participants who regularly evaluate their models.",
+      "externalIds": {
+        "ArXiv": "2402.10524",
+        "DBLP": "journals/corr/abs-2402-10524",
+        "DOI": "10.1145/3613905.3650755",
+        "CorpusId": 267740498
+      },
+      "arxiv_id": "2402.10524",
+      "doi": "10.1145/3613905.3650755",
+      "corpus_id": 267740498
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "35",
+      "ref_key": "S2:8f831f341e959955a495730d81996e62c57cc0bd",
+      "paperId": "8f831f341e959955a495730d81996e62c57cc0bd",
+      "title": "Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs",
+      "year": 2023,
+      "abstract": "Text-to-SQL parsing, which aims at converting natural language instructions into executable SQLs, has gained increasing attention in recent years. In particular, Codex and ChatGPT have shown impressive results in this task. However, most of the prevalent benchmarks, i.e., Spider, and WikiSQL, focus on database schema with few rows of database contents leaving the gap between academic study and real-world applications. To mitigate this gap, we present Bird, a big benchmark for large-scale database grounded in text-to-SQL tasks, containing 12,751 pairs of text-to-SQL data and 95 databases with a total size of 33.4 GB, spanning 37 professional domains. Our emphasis on database values highlights the new challenges of dirty database contents, external knowledge between NL questions and database contents, and SQL efficiency, particularly in the context of massive databases. To solve these problems, text-to-SQL models must feature database value comprehension in addition to semantic parsing. The experimental results demonstrate the significance of database values in generating accurate text-to-SQLs for big databases. Furthermore, even the most effective text-to-SQL models, i.e. ChatGPT, only achieves 40.08% in execution accuracy, which is still far from the human result of 92.96%, proving that challenges still stand. Besides, we also provide an efficiency analysis to offer insights into generating text-to-efficient-SQLs that are beneficial to industries. We believe that BIRD will contribute to advancing real-world applications of text-to-SQL research. The leaderboard and source code are available: https://bird-bench.github.io/.",
+      "externalIds": {
+        "ArXiv": "2305.03111",
+        "DBLP": "conf/nips/LiHQYLLWQGHZ0LC23",
+        "DOI": "10.48550/arXiv.2305.03111",
+        "CorpusId": 258547040
+      },
+      "arxiv_id": "2305.03111",
+      "doi": "10.48550/arXiv.2305.03111",
+      "corpus_id": 258547040
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "36",
+      "ref_key": "S2:e0e1fcdbc5b41fcd1cd15001b4861a738411c910",
+      "paperId": "e0e1fcdbc5b41fcd1cd15001b4861a738411c910",
+      "title": "SQL-PaLM: Improved Large Language Model Adaptation for Text-to-SQL",
+      "year": 2023,
+      "abstract": "One impressive emergent capability of large language models (LLMs) is generation of code, including Structured Query Language (SQL) for databases. For the task of converting natural language text to SQL queries, Text-to-SQL, adaptation of LLMs is of paramount importance, both in in-context learning and fine-tuning settings, depending on the amount of adaptation data used. In this paper, we propose an LLM-based Text-to-SQL model SQL-PaLM , leveraging on PaLM-2 , that pushes the state-of-the-art in both settings. Few-shot SQL-PaLM is based on an execution-based self-consistency prompting approach designed for Text-to-SQL, and achieves 77.3% in test-suite accuracy on Spider, which to our best knowledge is the first to outperform previous state-of-the-art with fine-tuning by a significant margin, 4% . Furthermore, we demonstrate that the fine-tuned SQL-PALM outperforms it further by another 1% . Towards applying SQL-PaLM to real-world scenarios we further evaluate its robustness on other challenging variants of Spider and demonstrate the superior generalization capability of SQL-PaLM . In addition, via extensive case studies, we demonstrate the impressive intelligent capabilities and various success enablers of LLM-based Text-to-SQL.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2306-00739",
+        "DOI": "10.48550/arXiv.2306.00739",
+        "CorpusId": 258999853
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2306.00739",
+      "corpus_id": 258999853
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "37",
+      "ref_key": "S2:8e773b1840b894603c06b677a0f15ebcf0f26378",
+      "paperId": "8e773b1840b894603c06b677a0f15ebcf0f26378",
+      "title": "Spider: A Large-Scale Human-Labeled Dataset for Complex and Cross-Domain Semantic Parsing and Text-to-SQL Task",
+      "year": 2018,
+      "abstract": "We present Spider, a large-scale complex and cross-domain semantic parsing and text-to-SQL dataset annotated by 11 college students. It consists of 10,181 questions and 5,693 unique complex SQL queries on 200 databases with multiple tables covering 138 different domains. We define a new complex and cross-domain semantic parsing and text-to-SQL task so that different complicated SQL queries and databases appear in train and test sets. In this way, the task requires the model to generalize well to both new SQL queries and new database schemas. Therefore, Spider is distinct from most of the previous semantic parsing tasks because they all use a single database and have the exact same program in the train set and the test set. We experiment with various state-of-the-art models and the best model achieves only 9.7% exact matching accuracy on a database split setting. This shows that Spider presents a strong challenge for future research. Our dataset and task with the most recent updates are publicly available at https://yale-lily.github.io/seq2sql/spider.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/YuZYYWLMLYRZR18",
+        "ACL": "D18-1425",
+        "ArXiv": "1809.08887",
+        "MAG": "2890431379",
+        "DOI": "10.18653/v1/D18-1425",
+        "CorpusId": 52815560
+      },
+      "arxiv_id": "1809.08887",
+      "doi": "10.18653/v1/D18-1425",
+      "corpus_id": 52815560
+    },
+    {
+      "paper_id": "2407.15186",
+      "ref_index": "38",
+      "ref_key": "S2:e6e8a2c56243847b77b604259cde9e10a2daccb8",
+      "paperId": "e6e8a2c56243847b77b604259cde9e10a2daccb8",
+      "title": "Semantic Evaluation for Text-to-SQL with Distilled Test Suite",
+      "year": 2020,
+      "abstract": "We propose test suite accuracy to approximate semantic accuracy for Text-to-SQL models. Our method distills a small test suite of databases that achieves high code coverage for the gold query from a large number of randomly generated databases. At evaluation time, it computes the denotation accuracy of the predicted queries on the distilled test suite, hence calculating a tight upper-bound for semantic accuracy efficiently. We use our proposed method to evaluate 21 models submitted to the Spider leader board and manually verify that our method is always correct on 100 examples. In contrast, the current Spider metric leads to a 2.5% false negative rate on average and 8.1% in the worst case, indicating that test suite accuracy is needed. Our implementation, along with distilled test suites for eleven Text-to-SQL datasets, is publicly available.",
+      "externalIds": {
+        "MAG": "3092548803",
+        "DBLP": "conf/emnlp/ZhongYK20",
+        "ArXiv": "2010.02840",
+        "ACL": "2020.emnlp-main.29",
+        "DOI": "10.18653/v1/2020.emnlp-main.29",
+        "CorpusId": 222140803
+      },
+      "arxiv_id": "2010.02840",
+      "doi": "10.18653/v1/2020.emnlp-main.29",
+      "corpus_id": 222140803
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "Prompt\\\\Engineering": {
+        "Pre-\\\\processing": {
+          "Question\\\\Representation": {
+            "Question": {
+              "50f44ef10335d59cec145b15effae20ff22c1fdb": {}
+            },
+            "Openai\\\\Template": {
+              "01de0020c6a0f2d0aa73965e8dcfd9b8f38e05b6": {},
+              "8334cab3749f83b09679e955f4794d132c60b24c": {},
+              "024c9fe5a0e00786683d64ec32d142aaaae55fa2": {},
+              "40c9280d87059c0cc28f2a08d46a7045fa3e9736": {},
+              "68ad0ed1e21fd9fd7b2bd58769d8bec88c996b01": {},
+              "1c53981885c1ce32f0ad4cab49e149ef32a6d682": {}
+            },
+            "Sample\\\\Data": {
+              "9e3c493fb09dcd61bb05e8c5659f23327b7b6340": {},
+              "e2751c2030d1497b5f99ee2e08e733043a15bffe": {},
+              "50b55d28db17b3ffea9b71ae32984374a6ec1b0c": {},
+              "091525c873e27b0989a31dc6d0dc54fdb655b7e8": {},
+              "ff3dbed244fc5f1787a9f92a6b91be27855d4adc": {}
+            },
+            "Create\\\\Table": {
+              "9e3c493fb09dcd61bb05e8c5659f23327b7b6340": {},
+              "f58ca7ba4a08b7082e86b7a5989b4b0fda2107ab": {},
+              "e2751c2030d1497b5f99ee2e08e733043a15bffe": {},
+              "e034b664362640cc88dfa5e2e11c0524fc7cb323": {},
+              "50b55d28db17b3ffea9b71ae32984374a6ec1b0c": {},
+              "68ad0ed1e21fd9fd7b2bd58769d8bec88c996b01": {}
+            },
+            "Others": {
+              "b1ff3c717d20fa8b32ee07f3954ee5d3a7be5aee": {},
+              "421f82e616d887ec008d88be580459edba96c271": {},
+              "024c9fe5a0e00786683d64ec32d142aaaae55fa2": {},
+              "1c53981885c1ce32f0ad4cab49e149ef32a6d682": {},
+              "1cdc016694295436cda6f6f93e31456c90237d10": {}
+            }
+          },
+          "Schema\\\\Linking": {
+            "{LLM-based\\\\schema linking}": {
+              "{Schema linking\\\\specific Prompting}": {
+                "421f82e616d887ec008d88be580459edba96c271": {},
+                "e2751c2030d1497b5f99ee2e08e733043a15bffe": {},
+                "01de0020c6a0f2d0aa73965e8dcfd9b8f38e05b6": {},
+                "024c9fe5a0e00786683d64ec32d142aaaae55fa2": {},
+                "40c9280d87059c0cc28f2a08d46a7045fa3e9736": {},
+                "50b55d28db17b3ffea9b71ae32984374a6ec1b0c": {},
+                "091525c873e27b0989a31dc6d0dc54fdb655b7e8": {}
+              },
+              "{General\\\\LLM techniques}": {
+                "01de0020c6a0f2d0aa73965e8dcfd9b8f38e05b6": {},
+                "cc0f0cb09a73f82ed44d900f5ca710bec784acc1": {},
+                "68ad0ed1e21fd9fd7b2bd58769d8bec88c996b01": {},
+                "ff3dbed244fc5f1787a9f92a6b91be27855d4adc": {},
+                "1cdc016694295436cda6f6f93e31456c90237d10": {}
+              },
+              "{Combination with\\\\traditional methods}": {
+                "4fdcc7fc6682ff0b3a6a939a18b75b19f9dafa48": {}
+              }
+            },
+            "{Traditional\\\\schema linking}": {
+              "Similarity": {
+                "8334cab3749f83b09679e955f4794d132c60b24c": {}
+              },
+              "Connectivity": {
+                "fcca8e6a17d6045ec241b9a35e141efaeb892f6f": {},
+                "1c53981885c1ce32f0ad4cab49e149ef32a6d682": {},
+                "405030fdaa44687c5495437dd6c5d1db7010fa3f": {}
+              }
+            }
+          },
+          "Knowledge": {
+            "SQL\\\\Knowledge": {
+              "e2751c2030d1497b5f99ee2e08e733043a15bffe": {},
+              "01de0020c6a0f2d0aa73965e8dcfd9b8f38e05b6": {},
+              "3265df2c0bdf3a0d68e498fcb38fad6199399b6a": {},
+              "cc0f0cb09a73f82ed44d900f5ca710bec784acc1": {}
+            },
+            "External\\\\Knowledge": {
+              "421f82e616d887ec008d88be580459edba96c271": {},
+              "50b55d28db17b3ffea9b71ae32984374a6ec1b0c": {},
+              "1cdc016694295436cda6f6f93e31456c90237d10": {}
+            }
+          }
+        },
+        "Inference": {
+          "Demonstrations": {
+            "Zero-shot": {
+              "01de0020c6a0f2d0aa73965e8dcfd9b8f38e05b6": {},
+              "091525c873e27b0989a31dc6d0dc54fdb655b7e8": {},
+              "1c53981885c1ce32f0ad4cab49e149ef32a6d682": {},
+              "1cdc016694295436cda6f6f93e31456c90237d10": {},
+              "405030fdaa44687c5495437dd6c5d1db7010fa3f": {}
+            },
+            "Few-shot": {
+              "Replacing the \\\\task description": {
+                "f58ca7ba4a08b7082e86b7a5989b4b0fda2107ab": {},
+                "846c052e7827ccc09a78934d207aa56d8f09332b": {},
+                "40c9280d87059c0cc28f2a08d46a7045fa3e9736": {},
+                "cc0f0cb09a73f82ed44d900f5ca710bec784acc1": {},
+                "68ad0ed1e21fd9fd7b2bd58769d8bec88c996b01": {}
+              },
+              "Enhancing the SQL \\\\coding capability of LLMs": {
+                "e2751c2030d1497b5f99ee2e08e733043a15bffe": {},
+                "e034b664362640cc88dfa5e2e11c0524fc7cb323": {},
+                "8334cab3749f83b09679e955f4794d132c60b24c": {},
+                "50b55d28db17b3ffea9b71ae32984374a6ec1b0c": {},
+                "fcca8e6a17d6045ec241b9a35e141efaeb892f6f": {},
+                "191e300e381d4128b749d16fe3d83c8643a3bd1f": {},
+                "ff3dbed244fc5f1787a9f92a6b91be27855d4adc": {}
+              }
+            }
+          },
+          "Workflow": {
+            "Chain of\\\\Thought": {
+              "421f82e616d887ec008d88be580459edba96c271": {},
+              "40c9280d87059c0cc28f2a08d46a7045fa3e9736": {},
+              "50b55d28db17b3ffea9b71ae32984374a6ec1b0c": {},
+              "cc0f0cb09a73f82ed44d900f5ca710bec784acc1": {},
+              "1c53981885c1ce32f0ad4cab49e149ef32a6d682": {},
+              "ff3dbed244fc5f1787a9f92a6b91be27855d4adc": {},
+              "1cdc016694295436cda6f6f93e31456c90237d10": {}
+            },
+            "Least\\\\to Most": {
+              "b1ff3c717d20fa8b32ee07f3954ee5d3a7be5aee": {}
+            },
+            "Decomposition": {
+              "e2751c2030d1497b5f99ee2e08e733043a15bffe": {},
+              "cc0f0cb09a73f82ed44d900f5ca710bec784acc1": {},
+              "68ad0ed1e21fd9fd7b2bd58769d8bec88c996b01": {}
+            },
+            "Others": {
+              "f58ca7ba4a08b7082e86b7a5989b4b0fda2107ab": {},
+              "846c052e7827ccc09a78934d207aa56d8f09332b": {},
+              "64766808635c5f0d6ab20c807381994c78f3d19c": {}
+            }
+          }
+        },
+        "Post-\\\\processing": {
+          "Self-\\\\Correction": {
+            "9e3c493fb09dcd61bb05e8c5659f23327b7b6340": {},
+            "421f82e616d887ec008d88be580459edba96c271": {},
+            "e2751c2030d1497b5f99ee2e08e733043a15bffe": {},
+            "8334cab3749f83b09679e955f4794d132c60b24c": {},
+            "cc0f0cb09a73f82ed44d900f5ca710bec784acc1": {},
+            "64766808635c5f0d6ab20c807381994c78f3d19c": {},
+            "191e300e381d4128b749d16fe3d83c8643a3bd1f": {},
+            "091525c873e27b0989a31dc6d0dc54fdb655b7e8": {},
+            "1cdc016694295436cda6f6f93e31456c90237d10": {}
+          },
+          "Consistency": {
+            "Self-\\\\Consistency": {
+              "f58ca7ba4a08b7082e86b7a5989b4b0fda2107ab": {},
+              "421f82e616d887ec008d88be580459edba96c271": {},
+              "01de0020c6a0f2d0aa73965e8dcfd9b8f38e05b6": {},
+              "e034b664362640cc88dfa5e2e11c0524fc7cb323": {},
+              "59fe7cb560651281cfc5db6b8940da0e3ba9dea6": {},
+              "50b55d28db17b3ffea9b71ae32984374a6ec1b0c": {},
+              "fcca8e6a17d6045ec241b9a35e141efaeb892f6f": {}
+            },
+            "Cross-\\\\Consistency": {
+              "024c9fe5a0e00786683d64ec32d142aaaae55fa2": {},
+              "64766808635c5f0d6ab20c807381994c78f3d19c": {}
+            }
+          },
+          "Others": {
+            "846c052e7827ccc09a78934d207aa56d8f09332b": {},
+            "3265df2c0bdf3a0d68e498fcb38fad6199399b6a": {}
+          }
+        }
+      },
+      "Finetuning": {
+        "Finetuning Objectives": {
+          "SQL generation": {
+            "8d1c1fd5b2b9809e1ad884bf8ec21d356d356ec6": {},
+            "7047d94171efc72f868339302d966b51122fe6a1": {},
+            "fcda309041fe9f1a483e0451da698446fa6b320e": {},
+            "978040c55f9094212d15b7ffadfab1440913b6cf": {},
+            "e034b664362640cc88dfa5e2e11c0524fc7cb323": {},
+            "50b55d28db17b3ffea9b71ae32984374a6ec1b0c": {},
+            "e0e1fcdbc5b41fcd1cd15001b4861a738411c910": {}
+          },
+          "{Enhancing specific steps in the LLM-based text-to-SQL workflow}": {
+            "07de76b2862cf7738b3fd28aabd708186231a527": {},
+            "eaac325e94e76d86acfcd6ffea76d47abf86fbe4": {},
+            "1cdc016694295436cda6f6f93e31456c90237d10": {}
+          }
+        },
+        "Training Methods": {
+          "Fully Fine-tuning(FFT)": {
+            "978040c55f9094212d15b7ffadfab1440913b6cf": {},
+            "e0e1fcdbc5b41fcd1cd15001b4861a738411c910": {}
+          },
+          "{Parameter-efficient fine-tuning(PEFT)}": {
+            "fcda309041fe9f1a483e0451da698446fa6b320e": {},
+            "eaac325e94e76d86acfcd6ffea76d47abf86fbe4": {},
+            "50b55d28db17b3ffea9b71ae32984374a6ec1b0c": {},
+            "1cdc016694295436cda6f6f93e31456c90237d10": {}
+          }
+        },
+        "Training Data": {
+          "Pubilc Benchmark": {
+            "07de76b2862cf7738b3fd28aabd708186231a527": {},
+            "7047d94171efc72f868339302d966b51122fe6a1": {},
+            "eaac325e94e76d86acfcd6ffea76d47abf86fbe4": {},
+            "e034b664362640cc88dfa5e2e11c0524fc7cb323": {},
+            "50b55d28db17b3ffea9b71ae32984374a6ec1b0c": {},
+            "e0e1fcdbc5b41fcd1cd15001b4861a738411c910": {}
+          },
+          "Industrial Dataset": {
+            "fcda309041fe9f1a483e0451da698446fa6b320e": {}
+          },
+          "Other": {
+            "978040c55f9094212d15b7ffadfab1440913b6cf": {}
+          }
+        },
+        "Model Evaluation": {
+          "Macro Standards": {
+            "d564a7252cd9f4ff4eb43d694d48b075ab8bd74f": {},
+            "8f831f341e959955a495730d81996e62c57cc0bd": {},
+            "e6e8a2c56243847b77b604259cde9e10a2daccb8": {}
+          },
+          "Category Analysis": {
+            "7195ed3c7f11220f29634cecb68b1d39db2e36d9": {},
+            "8f831f341e959955a495730d81996e62c57cc0bd": {},
+            "8e773b1840b894603c06b677a0f15ebcf0f26378": {}
+          },
+          "LLM-based Evaluation": {
+            "f2fe5656f9ada5b487fbebdf63f217cdd548e31e": {}
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000001",
+        "paperId": "50f44ef10335d59cec145b15effae20ff22c1fdb",
+        "ref_index": "9",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Question"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000002",
+        "paperId": "01de0020c6a0f2d0aa73965e8dcfd9b8f38e05b6",
+        "ref_index": "6",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Openai\\\\Template"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000003",
+        "paperId": "8334cab3749f83b09679e955f4794d132c60b24c",
+        "ref_index": "8",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Openai\\\\Template"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000004",
+        "paperId": "024c9fe5a0e00786683d64ec32d142aaaae55fa2",
+        "ref_index": "11",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Openai\\\\Template"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000005",
+        "paperId": "40c9280d87059c0cc28f2a08d46a7045fa3e9736",
+        "ref_index": "12",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Openai\\\\Template"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000006",
+        "paperId": "68ad0ed1e21fd9fd7b2bd58769d8bec88c996b01",
+        "ref_index": "21",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Openai\\\\Template"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000007",
+        "paperId": "1c53981885c1ce32f0ad4cab49e149ef32a6d682",
+        "ref_index": "22",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Openai\\\\Template"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000008",
+        "paperId": "9e3c493fb09dcd61bb05e8c5659f23327b7b6340",
+        "ref_index": "1",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Sample\\\\Data"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000009",
+        "paperId": "e2751c2030d1497b5f99ee2e08e733043a15bffe",
+        "ref_index": "5",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Sample\\\\Data"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000010",
+        "paperId": "50b55d28db17b3ffea9b71ae32984374a6ec1b0c",
+        "ref_index": "15",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Sample\\\\Data"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000011",
+        "paperId": "091525c873e27b0989a31dc6d0dc54fdb655b7e8",
+        "ref_index": "20",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Sample\\\\Data"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000012",
+        "paperId": "ff3dbed244fc5f1787a9f92a6b91be27855d4adc",
+        "ref_index": "23",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Sample\\\\Data"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000013",
+        "paperId": "9e3c493fb09dcd61bb05e8c5659f23327b7b6340",
+        "ref_index": "1",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Create\\\\Table"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000014",
+        "paperId": "f58ca7ba4a08b7082e86b7a5989b4b0fda2107ab",
+        "ref_index": "2",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Create\\\\Table"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000015",
+        "paperId": "e2751c2030d1497b5f99ee2e08e733043a15bffe",
+        "ref_index": "5",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Create\\\\Table"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000016",
+        "paperId": "e034b664362640cc88dfa5e2e11c0524fc7cb323",
+        "ref_index": "7",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Create\\\\Table"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000017",
+        "paperId": "50b55d28db17b3ffea9b71ae32984374a6ec1b0c",
+        "ref_index": "15",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Create\\\\Table"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000018",
+        "paperId": "68ad0ed1e21fd9fd7b2bd58769d8bec88c996b01",
+        "ref_index": "21",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Create\\\\Table"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000019",
+        "paperId": "b1ff3c717d20fa8b32ee07f3954ee5d3a7be5aee",
+        "ref_index": "0",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Others"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000020",
+        "paperId": "421f82e616d887ec008d88be580459edba96c271",
+        "ref_index": "3",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Others"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000021",
+        "paperId": "024c9fe5a0e00786683d64ec32d142aaaae55fa2",
+        "ref_index": "11",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Others"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000022",
+        "paperId": "1c53981885c1ce32f0ad4cab49e149ef32a6d682",
+        "ref_index": "22",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Others"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000023",
+        "paperId": "1cdc016694295436cda6f6f93e31456c90237d10",
+        "ref_index": "24",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Question\\\\Representation",
+          "Others"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000024",
+        "paperId": "421f82e616d887ec008d88be580459edba96c271",
+        "ref_index": "3",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Schema\\\\Linking",
+          "{LLM-based\\\\schema linking}",
+          "{Schema linking\\\\specific Prompting}"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000025",
+        "paperId": "e2751c2030d1497b5f99ee2e08e733043a15bffe",
+        "ref_index": "5",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Schema\\\\Linking",
+          "{LLM-based\\\\schema linking}",
+          "{Schema linking\\\\specific Prompting}"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000026",
+        "paperId": "01de0020c6a0f2d0aa73965e8dcfd9b8f38e05b6",
+        "ref_index": "6",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Schema\\\\Linking",
+          "{LLM-based\\\\schema linking}",
+          "{Schema linking\\\\specific Prompting}"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000027",
+        "paperId": "024c9fe5a0e00786683d64ec32d142aaaae55fa2",
+        "ref_index": "11",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Schema\\\\Linking",
+          "{LLM-based\\\\schema linking}",
+          "{Schema linking\\\\specific Prompting}"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000028",
+        "paperId": "40c9280d87059c0cc28f2a08d46a7045fa3e9736",
+        "ref_index": "12",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Schema\\\\Linking",
+          "{LLM-based\\\\schema linking}",
+          "{Schema linking\\\\specific Prompting}"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000029",
+        "paperId": "50b55d28db17b3ffea9b71ae32984374a6ec1b0c",
+        "ref_index": "15",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Schema\\\\Linking",
+          "{LLM-based\\\\schema linking}",
+          "{Schema linking\\\\specific Prompting}"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000030",
+        "paperId": "091525c873e27b0989a31dc6d0dc54fdb655b7e8",
+        "ref_index": "20",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Schema\\\\Linking",
+          "{LLM-based\\\\schema linking}",
+          "{Schema linking\\\\specific Prompting}"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000031",
+        "paperId": "01de0020c6a0f2d0aa73965e8dcfd9b8f38e05b6",
+        "ref_index": "6",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Schema\\\\Linking",
+          "{LLM-based\\\\schema linking}",
+          "{General\\\\LLM techniques}"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000032",
+        "paperId": "cc0f0cb09a73f82ed44d900f5ca710bec784acc1",
+        "ref_index": "16",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Schema\\\\Linking",
+          "{LLM-based\\\\schema linking}",
+          "{General\\\\LLM techniques}"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000033",
+        "paperId": "68ad0ed1e21fd9fd7b2bd58769d8bec88c996b01",
+        "ref_index": "21",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Schema\\\\Linking",
+          "{LLM-based\\\\schema linking}",
+          "{General\\\\LLM techniques}"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000034",
+        "paperId": "ff3dbed244fc5f1787a9f92a6b91be27855d4adc",
+        "ref_index": "23",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Schema\\\\Linking",
+          "{LLM-based\\\\schema linking}",
+          "{General\\\\LLM techniques}"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000035",
+        "paperId": "1cdc016694295436cda6f6f93e31456c90237d10",
+        "ref_index": "24",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Schema\\\\Linking",
+          "{LLM-based\\\\schema linking}",
+          "{General\\\\LLM techniques}"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000036",
+        "paperId": "4fdcc7fc6682ff0b3a6a939a18b75b19f9dafa48",
+        "ref_index": "10",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Schema\\\\Linking",
+          "{LLM-based\\\\schema linking}",
+          "{Combination with\\\\traditional methods}"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000037",
+        "paperId": "8334cab3749f83b09679e955f4794d132c60b24c",
+        "ref_index": "8",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Schema\\\\Linking",
+          "{Traditional\\\\schema linking}",
+          "Similarity"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000038",
+        "paperId": "fcca8e6a17d6045ec241b9a35e141efaeb892f6f",
+        "ref_index": "18",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Schema\\\\Linking",
+          "{Traditional\\\\schema linking}",
+          "Connectivity"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000039",
+        "paperId": "1c53981885c1ce32f0ad4cab49e149ef32a6d682",
+        "ref_index": "22",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Schema\\\\Linking",
+          "{Traditional\\\\schema linking}",
+          "Connectivity"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000040",
+        "paperId": "405030fdaa44687c5495437dd6c5d1db7010fa3f",
+        "ref_index": "25",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Schema\\\\Linking",
+          "{Traditional\\\\schema linking}",
+          "Connectivity"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000041",
+        "paperId": "e2751c2030d1497b5f99ee2e08e733043a15bffe",
+        "ref_index": "5",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Knowledge",
+          "SQL\\\\Knowledge"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000042",
+        "paperId": "01de0020c6a0f2d0aa73965e8dcfd9b8f38e05b6",
+        "ref_index": "6",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Knowledge",
+          "SQL\\\\Knowledge"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000043",
+        "paperId": "3265df2c0bdf3a0d68e498fcb38fad6199399b6a",
+        "ref_index": "13",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Knowledge",
+          "SQL\\\\Knowledge"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000044",
+        "paperId": "cc0f0cb09a73f82ed44d900f5ca710bec784acc1",
+        "ref_index": "16",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Knowledge",
+          "SQL\\\\Knowledge"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000045",
+        "paperId": "421f82e616d887ec008d88be580459edba96c271",
+        "ref_index": "3",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Knowledge",
+          "External\\\\Knowledge"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000046",
+        "paperId": "50b55d28db17b3ffea9b71ae32984374a6ec1b0c",
+        "ref_index": "15",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Knowledge",
+          "External\\\\Knowledge"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000047",
+        "paperId": "1cdc016694295436cda6f6f93e31456c90237d10",
+        "ref_index": "24",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Pre-\\\\processing",
+          "Knowledge",
+          "External\\\\Knowledge"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000048",
+        "paperId": "01de0020c6a0f2d0aa73965e8dcfd9b8f38e05b6",
+        "ref_index": "6",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Demonstrations",
+          "Zero-shot"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000049",
+        "paperId": "091525c873e27b0989a31dc6d0dc54fdb655b7e8",
+        "ref_index": "20",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Demonstrations",
+          "Zero-shot"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000050",
+        "paperId": "1c53981885c1ce32f0ad4cab49e149ef32a6d682",
+        "ref_index": "22",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Demonstrations",
+          "Zero-shot"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000051",
+        "paperId": "1cdc016694295436cda6f6f93e31456c90237d10",
+        "ref_index": "24",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Demonstrations",
+          "Zero-shot"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000052",
+        "paperId": "405030fdaa44687c5495437dd6c5d1db7010fa3f",
+        "ref_index": "25",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Demonstrations",
+          "Zero-shot"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000053",
+        "paperId": "f58ca7ba4a08b7082e86b7a5989b4b0fda2107ab",
+        "ref_index": "2",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Demonstrations",
+          "Few-shot",
+          "Replacing the \\\\task description"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000054",
+        "paperId": "846c052e7827ccc09a78934d207aa56d8f09332b",
+        "ref_index": "4",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Demonstrations",
+          "Few-shot",
+          "Replacing the \\\\task description"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000055",
+        "paperId": "40c9280d87059c0cc28f2a08d46a7045fa3e9736",
+        "ref_index": "12",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Demonstrations",
+          "Few-shot",
+          "Replacing the \\\\task description"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000056",
+        "paperId": "cc0f0cb09a73f82ed44d900f5ca710bec784acc1",
+        "ref_index": "16",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Demonstrations",
+          "Few-shot",
+          "Replacing the \\\\task description"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000057",
+        "paperId": "68ad0ed1e21fd9fd7b2bd58769d8bec88c996b01",
+        "ref_index": "21",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Demonstrations",
+          "Few-shot",
+          "Replacing the \\\\task description"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000058",
+        "paperId": "e2751c2030d1497b5f99ee2e08e733043a15bffe",
+        "ref_index": "5",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Demonstrations",
+          "Few-shot",
+          "Enhancing the SQL \\\\coding capability of LLMs"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000059",
+        "paperId": "e034b664362640cc88dfa5e2e11c0524fc7cb323",
+        "ref_index": "7",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Demonstrations",
+          "Few-shot",
+          "Enhancing the SQL \\\\coding capability of LLMs"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000060",
+        "paperId": "8334cab3749f83b09679e955f4794d132c60b24c",
+        "ref_index": "8",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Demonstrations",
+          "Few-shot",
+          "Enhancing the SQL \\\\coding capability of LLMs"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000061",
+        "paperId": "50b55d28db17b3ffea9b71ae32984374a6ec1b0c",
+        "ref_index": "15",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Demonstrations",
+          "Few-shot",
+          "Enhancing the SQL \\\\coding capability of LLMs"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000062",
+        "paperId": "fcca8e6a17d6045ec241b9a35e141efaeb892f6f",
+        "ref_index": "18",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Demonstrations",
+          "Few-shot",
+          "Enhancing the SQL \\\\coding capability of LLMs"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000063",
+        "paperId": "191e300e381d4128b749d16fe3d83c8643a3bd1f",
+        "ref_index": "19",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Demonstrations",
+          "Few-shot",
+          "Enhancing the SQL \\\\coding capability of LLMs"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000064",
+        "paperId": "ff3dbed244fc5f1787a9f92a6b91be27855d4adc",
+        "ref_index": "23",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Demonstrations",
+          "Few-shot",
+          "Enhancing the SQL \\\\coding capability of LLMs"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000065",
+        "paperId": "421f82e616d887ec008d88be580459edba96c271",
+        "ref_index": "3",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Workflow",
+          "Chain of\\\\Thought"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000066",
+        "paperId": "40c9280d87059c0cc28f2a08d46a7045fa3e9736",
+        "ref_index": "12",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Workflow",
+          "Chain of\\\\Thought"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000067",
+        "paperId": "50b55d28db17b3ffea9b71ae32984374a6ec1b0c",
+        "ref_index": "15",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Workflow",
+          "Chain of\\\\Thought"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000068",
+        "paperId": "cc0f0cb09a73f82ed44d900f5ca710bec784acc1",
+        "ref_index": "16",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Workflow",
+          "Chain of\\\\Thought"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000069",
+        "paperId": "1c53981885c1ce32f0ad4cab49e149ef32a6d682",
+        "ref_index": "22",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Workflow",
+          "Chain of\\\\Thought"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000070",
+        "paperId": "ff3dbed244fc5f1787a9f92a6b91be27855d4adc",
+        "ref_index": "23",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Workflow",
+          "Chain of\\\\Thought"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000071",
+        "paperId": "1cdc016694295436cda6f6f93e31456c90237d10",
+        "ref_index": "24",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Workflow",
+          "Chain of\\\\Thought"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000072",
+        "paperId": "b1ff3c717d20fa8b32ee07f3954ee5d3a7be5aee",
+        "ref_index": "0",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Workflow",
+          "Least\\\\to Most"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000073",
+        "paperId": "e2751c2030d1497b5f99ee2e08e733043a15bffe",
+        "ref_index": "5",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Workflow",
+          "Decomposition"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000074",
+        "paperId": "cc0f0cb09a73f82ed44d900f5ca710bec784acc1",
+        "ref_index": "16",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Workflow",
+          "Decomposition"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000075",
+        "paperId": "68ad0ed1e21fd9fd7b2bd58769d8bec88c996b01",
+        "ref_index": "21",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Workflow",
+          "Decomposition"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000076",
+        "paperId": "f58ca7ba4a08b7082e86b7a5989b4b0fda2107ab",
+        "ref_index": "2",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Workflow",
+          "Others"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000077",
+        "paperId": "846c052e7827ccc09a78934d207aa56d8f09332b",
+        "ref_index": "4",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Workflow",
+          "Others"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000078",
+        "paperId": "64766808635c5f0d6ab20c807381994c78f3d19c",
+        "ref_index": "17",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Inference",
+          "Workflow",
+          "Others"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000079",
+        "paperId": "9e3c493fb09dcd61bb05e8c5659f23327b7b6340",
+        "ref_index": "1",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Post-\\\\processing",
+          "Self-\\\\Correction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000080",
+        "paperId": "421f82e616d887ec008d88be580459edba96c271",
+        "ref_index": "3",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Post-\\\\processing",
+          "Self-\\\\Correction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000081",
+        "paperId": "e2751c2030d1497b5f99ee2e08e733043a15bffe",
+        "ref_index": "5",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Post-\\\\processing",
+          "Self-\\\\Correction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000082",
+        "paperId": "8334cab3749f83b09679e955f4794d132c60b24c",
+        "ref_index": "8",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Post-\\\\processing",
+          "Self-\\\\Correction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000083",
+        "paperId": "cc0f0cb09a73f82ed44d900f5ca710bec784acc1",
+        "ref_index": "16",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Post-\\\\processing",
+          "Self-\\\\Correction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000084",
+        "paperId": "64766808635c5f0d6ab20c807381994c78f3d19c",
+        "ref_index": "17",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Post-\\\\processing",
+          "Self-\\\\Correction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000085",
+        "paperId": "191e300e381d4128b749d16fe3d83c8643a3bd1f",
+        "ref_index": "19",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Post-\\\\processing",
+          "Self-\\\\Correction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000086",
+        "paperId": "091525c873e27b0989a31dc6d0dc54fdb655b7e8",
+        "ref_index": "20",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Post-\\\\processing",
+          "Self-\\\\Correction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000087",
+        "paperId": "1cdc016694295436cda6f6f93e31456c90237d10",
+        "ref_index": "24",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Post-\\\\processing",
+          "Self-\\\\Correction"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000088",
+        "paperId": "f58ca7ba4a08b7082e86b7a5989b4b0fda2107ab",
+        "ref_index": "2",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Post-\\\\processing",
+          "Consistency",
+          "Self-\\\\Consistency"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000089",
+        "paperId": "421f82e616d887ec008d88be580459edba96c271",
+        "ref_index": "3",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Post-\\\\processing",
+          "Consistency",
+          "Self-\\\\Consistency"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000090",
+        "paperId": "01de0020c6a0f2d0aa73965e8dcfd9b8f38e05b6",
+        "ref_index": "6",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Post-\\\\processing",
+          "Consistency",
+          "Self-\\\\Consistency"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000091",
+        "paperId": "e034b664362640cc88dfa5e2e11c0524fc7cb323",
+        "ref_index": "7",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Post-\\\\processing",
+          "Consistency",
+          "Self-\\\\Consistency"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000092",
+        "paperId": "59fe7cb560651281cfc5db6b8940da0e3ba9dea6",
+        "ref_index": "14",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Post-\\\\processing",
+          "Consistency",
+          "Self-\\\\Consistency"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000093",
+        "paperId": "50b55d28db17b3ffea9b71ae32984374a6ec1b0c",
+        "ref_index": "15",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Post-\\\\processing",
+          "Consistency",
+          "Self-\\\\Consistency"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000094",
+        "paperId": "fcca8e6a17d6045ec241b9a35e141efaeb892f6f",
+        "ref_index": "18",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Post-\\\\processing",
+          "Consistency",
+          "Self-\\\\Consistency"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000095",
+        "paperId": "024c9fe5a0e00786683d64ec32d142aaaae55fa2",
+        "ref_index": "11",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Post-\\\\processing",
+          "Consistency",
+          "Cross-\\\\Consistency"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000096",
+        "paperId": "64766808635c5f0d6ab20c807381994c78f3d19c",
+        "ref_index": "17",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Post-\\\\processing",
+          "Consistency",
+          "Cross-\\\\Consistency"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000097",
+        "paperId": "846c052e7827ccc09a78934d207aa56d8f09332b",
+        "ref_index": "4",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Post-\\\\processing",
+          "Others"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000098",
+        "paperId": "3265df2c0bdf3a0d68e498fcb38fad6199399b6a",
+        "ref_index": "13",
+        "path": [
+          "Prompt\\\\Engineering",
+          "Post-\\\\processing",
+          "Others"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000099",
+        "paperId": "8d1c1fd5b2b9809e1ad884bf8ec21d356d356ec6",
+        "ref_index": "27",
+        "path": [
+          "Finetuning",
+          "Finetuning Objectives",
+          "SQL generation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000100",
+        "paperId": "7047d94171efc72f868339302d966b51122fe6a1",
+        "ref_index": "28",
+        "path": [
+          "Finetuning",
+          "Finetuning Objectives",
+          "SQL generation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000101",
+        "paperId": "fcda309041fe9f1a483e0451da698446fa6b320e",
+        "ref_index": "29",
+        "path": [
+          "Finetuning",
+          "Finetuning Objectives",
+          "SQL generation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000102",
+        "paperId": "978040c55f9094212d15b7ffadfab1440913b6cf",
+        "ref_index": "32",
+        "path": [
+          "Finetuning",
+          "Finetuning Objectives",
+          "SQL generation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000103",
+        "paperId": "e034b664362640cc88dfa5e2e11c0524fc7cb323",
+        "ref_index": "7",
+        "path": [
+          "Finetuning",
+          "Finetuning Objectives",
+          "SQL generation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000104",
+        "paperId": "50b55d28db17b3ffea9b71ae32984374a6ec1b0c",
+        "ref_index": "15",
+        "path": [
+          "Finetuning",
+          "Finetuning Objectives",
+          "SQL generation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000105",
+        "paperId": "e0e1fcdbc5b41fcd1cd15001b4861a738411c910",
+        "ref_index": "36",
+        "path": [
+          "Finetuning",
+          "Finetuning Objectives",
+          "SQL generation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000106",
+        "paperId": "07de76b2862cf7738b3fd28aabd708186231a527",
+        "ref_index": "26",
+        "path": [
+          "Finetuning",
+          "Finetuning Objectives",
+          "{Enhancing specific steps in the LLM-based text-to-SQL workflow}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000107",
+        "paperId": "eaac325e94e76d86acfcd6ffea76d47abf86fbe4",
+        "ref_index": "33",
+        "path": [
+          "Finetuning",
+          "Finetuning Objectives",
+          "{Enhancing specific steps in the LLM-based text-to-SQL workflow}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000108",
+        "paperId": "1cdc016694295436cda6f6f93e31456c90237d10",
+        "ref_index": "24",
+        "path": [
+          "Finetuning",
+          "Finetuning Objectives",
+          "{Enhancing specific steps in the LLM-based text-to-SQL workflow}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000109",
+        "paperId": "978040c55f9094212d15b7ffadfab1440913b6cf",
+        "ref_index": "32",
+        "path": [
+          "Finetuning",
+          "Training Methods",
+          "Fully Fine-tuning(FFT)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000110",
+        "paperId": "e0e1fcdbc5b41fcd1cd15001b4861a738411c910",
+        "ref_index": "36",
+        "path": [
+          "Finetuning",
+          "Training Methods",
+          "Fully Fine-tuning(FFT)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000111",
+        "paperId": "fcda309041fe9f1a483e0451da698446fa6b320e",
+        "ref_index": "29",
+        "path": [
+          "Finetuning",
+          "Training Methods",
+          "{Parameter-efficient fine-tuning(PEFT)}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000112",
+        "paperId": "eaac325e94e76d86acfcd6ffea76d47abf86fbe4",
+        "ref_index": "33",
+        "path": [
+          "Finetuning",
+          "Training Methods",
+          "{Parameter-efficient fine-tuning(PEFT)}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000113",
+        "paperId": "50b55d28db17b3ffea9b71ae32984374a6ec1b0c",
+        "ref_index": "15",
+        "path": [
+          "Finetuning",
+          "Training Methods",
+          "{Parameter-efficient fine-tuning(PEFT)}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000114",
+        "paperId": "1cdc016694295436cda6f6f93e31456c90237d10",
+        "ref_index": "24",
+        "path": [
+          "Finetuning",
+          "Training Methods",
+          "{Parameter-efficient fine-tuning(PEFT)}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000115",
+        "paperId": "07de76b2862cf7738b3fd28aabd708186231a527",
+        "ref_index": "26",
+        "path": [
+          "Finetuning",
+          "Training Data",
+          "Pubilc Benchmark"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000116",
+        "paperId": "7047d94171efc72f868339302d966b51122fe6a1",
+        "ref_index": "28",
+        "path": [
+          "Finetuning",
+          "Training Data",
+          "Pubilc Benchmark"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000117",
+        "paperId": "eaac325e94e76d86acfcd6ffea76d47abf86fbe4",
+        "ref_index": "33",
+        "path": [
+          "Finetuning",
+          "Training Data",
+          "Pubilc Benchmark"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000118",
+        "paperId": "e034b664362640cc88dfa5e2e11c0524fc7cb323",
+        "ref_index": "7",
+        "path": [
+          "Finetuning",
+          "Training Data",
+          "Pubilc Benchmark"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000119",
+        "paperId": "50b55d28db17b3ffea9b71ae32984374a6ec1b0c",
+        "ref_index": "15",
+        "path": [
+          "Finetuning",
+          "Training Data",
+          "Pubilc Benchmark"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000120",
+        "paperId": "e0e1fcdbc5b41fcd1cd15001b4861a738411c910",
+        "ref_index": "36",
+        "path": [
+          "Finetuning",
+          "Training Data",
+          "Pubilc Benchmark"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000121",
+        "paperId": "fcda309041fe9f1a483e0451da698446fa6b320e",
+        "ref_index": "29",
+        "path": [
+          "Finetuning",
+          "Training Data",
+          "Industrial Dataset"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000122",
+        "paperId": "978040c55f9094212d15b7ffadfab1440913b6cf",
+        "ref_index": "32",
+        "path": [
+          "Finetuning",
+          "Training Data",
+          "Other"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000123",
+        "paperId": "d564a7252cd9f4ff4eb43d694d48b075ab8bd74f",
+        "ref_index": "30",
+        "path": [
+          "Finetuning",
+          "Model Evaluation",
+          "Macro Standards"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000124",
+        "paperId": "8f831f341e959955a495730d81996e62c57cc0bd",
+        "ref_index": "35",
+        "path": [
+          "Finetuning",
+          "Model Evaluation",
+          "Macro Standards"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000125",
+        "paperId": "e6e8a2c56243847b77b604259cde9e10a2daccb8",
+        "ref_index": "38",
+        "path": [
+          "Finetuning",
+          "Model Evaluation",
+          "Macro Standards"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000126",
+        "paperId": "7195ed3c7f11220f29634cecb68b1d39db2e36d9",
+        "ref_index": "31",
+        "path": [
+          "Finetuning",
+          "Model Evaluation",
+          "Category Analysis"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000127",
+        "paperId": "8f831f341e959955a495730d81996e62c57cc0bd",
+        "ref_index": "35",
+        "path": [
+          "Finetuning",
+          "Model Evaluation",
+          "Category Analysis"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000128",
+        "paperId": "8e773b1840b894603c06b677a0f15ebcf0f26378",
+        "ref_index": "37",
+        "path": [
+          "Finetuning",
+          "Model Evaluation",
+          "Category Analysis"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.15186",
+        "arxiv_id": "2407.15186",
+        "leaf_mention_id": "2407.15186::000129",
+        "paperId": "f2fe5656f9ada5b487fbebdf63f217cdd548e31e",
+        "ref_index": "34",
+        "path": [
+          "Finetuning",
+          "Model Evaluation",
+          "LLM-based Evaluation"
+        ],
+        "depth": 3,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 129,
+      "unique_leaf_paper_count": 39,
+      "multi_membership_extra_mentions": 90,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

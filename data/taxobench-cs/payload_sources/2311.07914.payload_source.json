@@ -1,0 +1,1281 @@
+{
+  "paper_id": "2311.07914",
+  "arxiv_id": "2311.07914",
+  "title": "Can Knowledge Graphs Reduce Hallucinations in LLMs? : A Survey",
+  "ref_meta": [
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "0",
+      "ref_key": "S2:b9fc37adcc251571b88e9bba1fc2cad2a6d0f595",
+      "paperId": "b9fc37adcc251571b88e9bba1fc2cad2a6d0f595",
+      "title": "BeamQA: Multi-hop Knowledge Graph Question Answering with Sequence-to-Sequence Prediction and Beam Search",
+      "year": 2023,
+      "abstract": "Knowledge Graph Question Answering (KGQA) is a task that aims to answer natural language queries by extracting facts from a knowledge graph. Current state-of-the-art techniques for KGQA rely on text-based information from graph entity and relations labels, as well as external textual corpora. By reasoning over multiple edges in the graph, these can accurately rank and return the most relevant entities. However, one of the limitations of these methods is that they cannot handle the inherent incompleteness of real-world knowledge graphs and may lead to inaccurate answers due to missing edges. To address this issue, recent advances in graph representation learning have led to the development of systems that can use link prediction techniques to handle missing edges probabilistically, allowing the system to reason with incomplete information. However, existing KGQA frameworks that use such techniques often depend on learning a transformation from the query representation to the graph embedding space, which requires access to a large training dataset. We present BeamQA, an approach that overcomes these limitations by combining a sequence-to-sequence prediction model with beam search execution in the embedding space. Our model uses a pre-trained large language model and synthetic question generation. Our experiments demonstrate the effectiveness of BeamQA when compared to other KGQA methods on two knowledge graph question-answering datasets.",
+      "externalIds": {
+        "DBLP": "conf/sigir/AtifKD23",
+        "DOI": "10.1145/3539618.3591698",
+        "CorpusId": 259949829
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/3539618.3591698",
+      "corpus_id": 259949829
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "1",
+      "ref_key": "S2:678cfca72b7de72b005f71207bc8a522ea9ac62c",
+      "paperId": "678cfca72b7de72b005f71207bc8a522ea9ac62c",
+      "title": "Knowledge-Augmented Language Model Prompting for Zero-Shot Knowledge Graph Question Answering",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) are capable of performing zero-shot closed-book question answering tasks, based on their internal knowledge stored in parameters during pre-training. However, such internalized knowledge might be insufficient and incorrect, which could lead LLMs to generate factually wrong answers. Furthermore, fine-tuning LLMs to update their knowledge is expensive. To this end, we propose to augment the knowledge directly in the input of LLMs. Specifically, we first retrieve the relevant facts to the input question from the knowledge graph based on semantic similarities between the question and its associated facts. After that, we prepend the retrieved facts to the input question in the form of the prompt, which is then forwarded to LLMs to generate the answer. Our framework, Knowledge-Augmented language model PromptING (KAPING), requires no model training, thus completely zero-shot. We validate the performance of our KAPING framework on the knowledge graph question answering task, that aims to answer the user’s question based on facts over a knowledge graph, on which ours outperforms relevant zero-shot baselines by up to 48% in average, across multiple LLMs of various sizes.",
+      "externalIds": {
+        "ACL": "2023.matching-1.7",
+        "DOI": "10.18653/v1/2023.matching-1.7",
+        "CorpusId": 260063238
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2023.matching-1.7",
+      "corpus_id": 260063238
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "2",
+      "ref_key": "S2:1a2e90dff605dad7dbefeed121e6d295c7a77d62",
+      "paperId": "1a2e90dff605dad7dbefeed121e6d295c7a77d62",
+      "title": "KnowPrompt: Knowledge-aware Prompt-tuning with Synergistic Optimization for Relation Extraction",
+      "year": 2021,
+      "abstract": "Recently, prompt-tuning has achieved promising results for specific few-shot classification tasks. The core idea of prompt-tuning is to insert text pieces (i.e., templates) into the input and transform a classification task into a masked language modeling problem. However, for relation extraction, determining an appropriate prompt template requires domain expertise, and it is cumbersome and time-consuming to obtain a suitable label word. Furthermore, there exists abundant semantic and prior knowledge among the relation labels that cannot be ignored. To this end, we focus on incorporating knowledge among relation labels into prompt-tuning for relation extraction and propose a Knowledge-aware Prompt-tuning approach with synergistic optimization (KnowPrompt). Specifically, we inject latent knowledge contained in relation labels into prompt construction with learnable virtual type words and answer words. Then, we synergistically optimize their representation with structured constraints. Extensive experimental results on five datasets with standard and low-resource settings demonstrate the effectiveness of our approach. Our code and datasets are available in GitHub1 for reproducibility.",
+      "externalIds": {
+        "DBLP": "conf/www/ChenZXDYTHSC22",
+        "ArXiv": "2104.07650",
+        "DOI": "10.1145/3485447.3511998",
+        "CorpusId": 237295186
+      },
+      "arxiv_id": "2104.07650",
+      "doi": "10.1145/3485447.3511998",
+      "corpus_id": 237295186
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "3",
+      "ref_key": "S2:5dbffedcabe3fa43060ebbe2b1789500edfd871f",
+      "paperId": "5dbffedcabe3fa43060ebbe2b1789500edfd871f",
+      "title": "Reasoning with Language Model is Planning with World Model",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have shown remarkable reasoning capabilities, especially when prompted to generate intermediate reasoning steps (e.g., Chain-of-Thought, CoT). However, LLMs can still struggle with problems that are easy for humans, such as generating action plans for executing tasks in a given environment, or performing complex math, logical, and commonsense reasoning. The deficiency stems from the key fact that LLMs lack an internal $\\textit{world model}$ to predict the world $\\textit{state}$ (e.g., environment status, intermediate variable values) and simulate long-term outcomes of actions. This prevents LLMs from performing deliberate planning akin to human brains, which involves exploring alternative reasoning paths, anticipating future states and rewards, and iteratively refining existing reasoning steps. To overcome the limitations, we propose a new LLM reasoning framework, $\\underline{R}$easoning vi$\\underline{a}$ $\\underline{P}$lanning $\\textbf{(RAP)}$. RAP repurposes the LLM as both a world model and a reasoning agent, and incorporates a principled planning algorithm (based on Monto Carlo Tree Search) for strategic exploration in the vast reasoning space. During reasoning, the LLM (as agent) incrementally builds a reasoning tree under the guidance of the LLM (as world model) and task-specific rewards, and obtains a high-reward reasoning path efficiently with a proper balance between exploration $\\textit{vs.}$ exploitation. We apply RAP to a variety of challenging reasoning problems including plan generation, math reasoning, and logical inference. Empirical results on these tasks demonstrate the superiority of RAP over various strong baselines, including CoT and least-to-most prompting with self-consistency. RAP on LLAMA-33B surpasses CoT on GPT-4 with 33% relative improvement in a plan generation setting.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/HaoGMHWWH23",
+        "ArXiv": "2305.14992",
+        "DOI": "10.48550/arXiv.2305.14992",
+        "CorpusId": 258865812
+      },
+      "arxiv_id": "2305.14992",
+      "doi": "10.48550/arXiv.2305.14992",
+      "corpus_id": 258865812
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "4",
+      "ref_key": "S2:3fa70115248377c3d1517c9f978791a296fbc1dd",
+      "paperId": "3fa70115248377c3d1517c9f978791a296fbc1dd",
+      "title": "Large Language Models Can Self-Improve",
+      "year": 2022,
+      "abstract": "Large Language Models (LLMs) have achieved excellent performances in various tasks. However, fine-tuning an LLM requires extensive supervision. Human, on the other hand, may improve their reasoning abilities by self-thinking without external inputs. In this work, we demonstrate that an LLM is also capable of self-improving with only unlabeled datasets. We use a pre-trained LLM to generate\"high-confidence\"rationale-augmented answers for unlabeled questions using Chain-of-Thought prompting and self-consistency, and fine-tune the LLM using those self-generated solutions as target outputs. We show that our approach improves the general reasoning ability of a 540B-parameter LLM (74.4%->82.1% on GSM8K, 78.2%->83.0% on DROP, 90.0%->94.4% on OpenBookQA, and 63.4%->67.9% on ANLI-A3) and achieves state-of-the-art-level performance, without any ground truth label. We conduct ablation studies and show that fine-tuning on reasoning is critical for self-improvement.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/0001GHW00023",
+        "ArXiv": "2210.11610",
+        "DOI": "10.48550/arXiv.2210.11610",
+        "CorpusId": 253080328
+      },
+      "arxiv_id": "2210.11610",
+      "doi": "10.48550/arXiv.2210.11610",
+      "corpus_id": 253080328
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "5",
+      "ref_key": "S2:e0f27336698c84709bd60b6b7f4ce588cbae66bf",
+      "paperId": "e0f27336698c84709bd60b6b7f4ce588cbae66bf",
+      "title": "StructGPT: A General Framework for Large Language Model to Reason over Structured Data",
+      "year": 2023,
+      "abstract": "In this paper, we study how to improve the zero-shot reasoning ability of large language models~(LLMs) over structured data in a unified way. Inspired by the study on tool augmentation for LLMs, we develop an \\emph{Iterative Reading-then-Reasoning~(IRR)} approach for solving question answering tasks based on structured data, called \\textbf{StructGPT}. In our approach, we construct the specialized function to collect relevant evidence from structured data (\\ie \\emph{reading}), and let LLMs concentrate the reasoning task based on the collected information (\\ie \\emph{reasoning}). Specially, we propose an \\emph{invoking-linearization-generation} procedure to support LLMs in reasoning on the structured data with the help of the external interfaces. By iterating this procedures with provided interfaces, our approach can gradually approach the target answer to a given query. Extensive experiments conducted on three types of structured data demonstrate the effectiveness of our approach, which can significantly boost the performance of ChatGPT and achieve comparable performance against the full-data supervised-tuning baselines. Our codes and data are publicly available at~\\url{https://github.com/RUCAIBox/StructGPT}.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-09645",
+        "ArXiv": "2305.09645",
+        "DOI": "10.48550/arXiv.2305.09645",
+        "CorpusId": 258714753
+      },
+      "arxiv_id": "2305.09645",
+      "doi": "10.48550/arXiv.2305.09645",
+      "corpus_id": 258714753
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "6",
+      "ref_key": "S2:309c800e24d45ec9f754e33f6e8d6559489816f8",
+      "paperId": "309c800e24d45ec9f754e33f6e8d6559489816f8",
+      "title": "Knowledge-Consistent Dialogue Generation with Knowledge Graphs",
+      "year": 2022,
+      "abstract": "We propose a framework for generating knowledge consistent and context-relevant dialogues with a knowledge graph (KG), named SU bgraph R etrieval-augmented GE neration ( SURGE ). First, our method retrieves the context-relevant subgraph from the KG, and then enforces consistency across the facts by perturbing their word embeddings conditioned on the retrieved subgraph. Then, it learns the latent representation space using graph-text multi-modal contrastive learning which ensures that the generated texts have high similarity to the retrieved subgraphs. We validate the performance of our SURGE framework on the OpendialKG dataset and show that our method generates high-quality dialogues that faithfully reflect the knowledge from the KG.",
+      "externalIds": {
+        "CorpusId": 252760721
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 252760721
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "7",
+      "ref_key": "S2:fcfc9648561a221750b8085790ad9ba1bebb1800",
+      "paperId": "fcfc9648561a221750b8085790ad9ba1bebb1800",
+      "title": "Multilingual LAMA: Investigating Knowledge in Multilingual Pretrained Language Models",
+      "year": 2021,
+      "abstract": "Recently, it has been found that monolingual English language models can be used as knowledge bases. Instead of structural knowledge base queries, masked sentences such as “Paris is the capital of [MASK]” are used as probes. We translate the established benchmarks TREx and GoogleRE into 53 languages. Working with mBERT, we investigate three questions. (i) Can mBERT be used as a multilingual knowledge base? Most prior work only considers English. Extending research to multiple languages is important for diversity and accessibility. (ii) Is mBERT’s performance as knowledge base language-independent or does it vary from language to language? (iii) A multilingual model is trained on more text, e.g., mBERT is trained on 104 Wikipedias. Can mBERT leverage this for better performance? We find that using mBERT as a knowledge base yields varying performance across languages and pooling predictions across languages improves performance. Conversely, mBERT exhibits a language bias; e.g., when queried in Italian, it tends to predict Italy as the country of origin.",
+      "externalIds": {
+        "ArXiv": "2102.00894",
+        "ACL": "2021.eacl-main.284",
+        "DBLP": "conf/eacl/KassnerDS21",
+        "DOI": "10.18653/v1/2021.eacl-main.284",
+        "CorpusId": 231740666
+      },
+      "arxiv_id": "2102.00894",
+      "doi": "10.18653/v1/2021.eacl-main.284",
+      "corpus_id": 231740666
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "8",
+      "ref_key": "S2:0744580e75a74357e466a57082c85cb42f548aa9",
+      "paperId": "0744580e75a74357e466a57082c85cb42f548aa9",
+      "title": "The CoT Collection: Improving Zero-shot and Few-shot Learning of Language Models via Chain-of-Thought Fine-Tuning",
+      "year": 2023,
+      "abstract": "Language models (LMs) with less than 100B parameters are known to perform poorly on chain-of-thought (CoT) reasoning in contrast to large LMs when solving unseen tasks. In this work, we aim to equip smaller LMs with the step-by-step reasoning capability by instruction tuning with CoT rationales. In order to achieve this goal, we first introduce a new instruction-tuning dataset called the CoT Collection, which augments the existing Flan Collection (including only 9 CoT tasks) with additional 1.84 million rationales across 1,060 tasks. We show that CoT fine-tuning Flan-T5 (3B&11B) with CoT Collection enables smaller LMs to have better CoT capabilities on unseen tasks. On the BIG-Bench-Hard (BBH) benchmark, we report an average improvement of +4.34% (Flan-T5 3B) and +2.60% (Flan-T5 11B), in terms of zero-shot task accuracy. Furthermore, we show that instruction tuning with CoT Collection allows LMs to possess stronger few-shot learning capabilities on 4 domain-specific tasks, resulting in an improvement of +2.24% (Flan-T5 3B) and +2.37% (Flan-T5 11B), even outperforming ChatGPT utilizing demonstrations until the max length by a +13.98% margin. Our code, the CoT Collection data, and model checkpoints are publicly available.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/KimJKJYSS23",
+        "ArXiv": "2305.14045",
+        "DOI": "10.48550/arXiv.2305.14045",
+        "CorpusId": 258841149
+      },
+      "arxiv_id": "2305.14045",
+      "doi": "10.48550/arXiv.2305.14045",
+      "corpus_id": 258841149
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "9",
+      "ref_key": "S2:7a0081f6464de0ce95b71137b76bd2aa773b6b32",
+      "paperId": "7a0081f6464de0ce95b71137b76bd2aa773b6b32",
+      "title": "Critic-Driven Decoding for Mitigating Hallucinations in Data-to-text Generation",
+      "year": 2023,
+      "abstract": "Hallucination of text ungrounded in the input is a well-known problem in neural data-to-text generation. Many methods have been proposed to mitigate it, but they typically require altering model architecture or collecting additional data, and thus cannot be easily applied to an existing model. In this paper, we explore a new way to mitigate hallucinations by combining the probabilistic output of a generator language model (LM) with the output of a special\"text critic\"classifier, which guides the generation by assessing the match between the input data and the text generated so far. Our method does not need any changes to the underlying LM's architecture or training procedure and can thus be combined with any model and decoding operating on word probabilities. The critic does not need any additional training data, using the base LM's training data and synthetic negative examples. Our experimental results show that our method improves over the baseline on the WebNLG and OpenDialKG benchmarks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-16964",
+        "ArXiv": "2310.16964",
+        "DOI": "10.48550/arXiv.2310.16964",
+        "CorpusId": 264490708
+      },
+      "arxiv_id": "2310.16964",
+      "doi": "10.48550/arXiv.2310.16964",
+      "corpus_id": 264490708
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "10",
+      "ref_key": "S2:0139e689add40a61c9454674edac4e93702aa5fc",
+      "paperId": "0139e689add40a61c9454674edac4e93702aa5fc",
+      "title": "Few-shot In-context Learning on Knowledge Base Question Answering",
+      "year": 2023,
+      "abstract": "Question answering over knowledge bases is considered a difficult problem due to the challenge of generalizing to a wide variety of possible natural language questions. Additionally, the heterogeneity of knowledge base schema items between different knowledge bases often necessitates specialized training for different knowledge base question-answering (KBQA) datasets. To handle questions over diverse KBQA datasets with a unified training-free framework, we propose KB-BINDER, which for the first time enables few-shot in-context learning over KBQA tasks. Firstly, KB-BINDER leverages large language models like Codex to generate logical forms as the draft for a specific question by imitating a few demonstrations. Secondly, KB-BINDER grounds on the knowledge base to bind the generated draft to an executable one with BM25 score matching. The experimental results on four public heterogeneous KBQA datasets show that KB-BINDER can achieve a strong performance with only a few in-context demonstrations. Especially on GraphQA and 3-hop MetaQA, KB-BINDER can even outperform the state-of-the-art trained models. On GrailQA and WebQSP, our model is also on par with other fully-trained models. We believe KB-BINDER can serve as an important baseline for future research. We plan to release all the code and data. Our code is available at https://github.com/ltl3A87/KB-BINDER.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-01750",
+        "ArXiv": "2305.01750",
+        "ACL": "2023.acl-long.385",
+        "DOI": "10.48550/arXiv.2305.01750",
+        "CorpusId": 258461017
+      },
+      "arxiv_id": "2305.01750",
+      "doi": "10.48550/arXiv.2305.01750",
+      "corpus_id": 258461017
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "11",
+      "ref_key": "S2:73207b9fd2dcfeead7fe086cfdb097e4929a7b44",
+      "paperId": "73207b9fd2dcfeead7fe086cfdb097e4929a7b44",
+      "title": "MoT: Memory-of-Thought Enables ChatGPT to Self-Improve",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) have shown impressive abilities in various tasks. However, fundamentally improving them depends on high-quality datasets or computationally expensive fine-tuning. On the contrary, humans can easily improve themselves by self-thinking and memory, without external resources. In this paper, we propose a framework, MoT, to let the LLM self-improve through Memory-of-Thought, without annotated datasets and parameter updates. Specifically, MoT is divided into two stages: 1. before the test stage, the LLM pre-thinks on the unlabeled dataset and saves the high-confidence thoughts as external memory; 2. During the test stage, given a test question, the LLM recalls relevant memory to help itself reason and answer it. Experimental results show that MoT can help ChatGPT significantly improve its abilities in arithmetic reasoning, commonsense reasoning, factual reasoning, and natural language inference. Further analyses show that each component contributes critically to the improvements and MoT can lead to consistent improvements across various CoT methods and LLMs.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/LiQ23",
+        "ArXiv": "2305.05181",
+        "DOI": "10.18653/v1/2023.emnlp-main.392",
+        "CorpusId": 258564230
+      },
+      "arxiv_id": "2305.05181",
+      "doi": "10.18653/v1/2023.emnlp-main.392",
+      "corpus_id": 258564230
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "12",
+      "ref_key": "S2:96901acc92d68350443774596fa2b38bc522a0ce",
+      "paperId": "96901acc92d68350443774596fa2b38bc522a0ce",
+      "title": "Barack’s Wife Hillary: Using Knowledge Graphs for Fact-Aware Language Modeling",
+      "year": 2019,
+      "abstract": "Modeling human language requires the ability to not only generate fluent text but also encode factual knowledge. However, traditional language models are only capable of remembering facts seen at training time, and often have difficulty recalling them. To address this, we introduce the knowledge graph language model (KGLM), a neural language model with mechanisms for selecting and copying facts from a knowledge graph that are relevant to the context. These mechanisms enable the model to render information it has never seen before, as well as generate out-of-vocabulary tokens. We also introduce the Linked WikiText-2 dataset, a corpus of annotated text aligned to the Wikidata knowledge graph whose contents (roughly) match the popular WikiText-2 benchmark. In experiments, we demonstrate that the KGLM achieves significantly better performance than a strong baseline language model. We additionally compare different language model’s ability to complete sentences requiring factual knowledge, showing that the KGLM outperforms even very large language models in generating facts.",
+      "externalIds": {
+        "ArXiv": "1906.07241",
+        "DBLP": "journals/corr/abs-1906-07241",
+        "MAG": "2951048068",
+        "ACL": "P19-1598",
+        "DOI": "10.18653/v1/P19-1598",
+        "CorpusId": 189998980
+      },
+      "arxiv_id": "1906.07241",
+      "doi": "10.18653/v1/P19-1598",
+      "corpus_id": 189998980
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "13",
+      "ref_key": "S2:b47e96762351b2dbf7e863ece4640df6194bcc0c",
+      "paperId": "b47e96762351b2dbf7e863ece4640df6194bcc0c",
+      "title": "Reasoning on Graphs: Faithful and Interpretable Large Language Model Reasoning",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have demonstrated impressive reasoning abilities in complex tasks. However, they lack up-to-date knowledge and experience hallucinations during reasoning, which can lead to incorrect reasoning processes and diminish their performance and trustworthiness. Knowledge graphs (KGs), which capture vast amounts of facts in a structured format, offer a reliable source of knowledge for reasoning. Nevertheless, existing KG-based LLM reasoning methods only treat KGs as factual knowledge bases and overlook the importance of their structural information for reasoning. In this paper, we propose a novel method called reasoning on graphs (RoG) that synergizes LLMs with KGs to enable faithful and interpretable reasoning. Specifically, we present a planning-retrieval-reasoning framework, where RoG first generates relation paths grounded by KGs as faithful plans. These plans are then used to retrieve valid reasoning paths from the KGs for LLMs to conduct faithful reasoning. Furthermore, RoG not only distills knowledge from KGs to improve the reasoning ability of LLMs through training but also allows seamless integration with any arbitrary LLMs during inference. Extensive experiments on two benchmark KGQA datasets demonstrate that RoG achieves state-of-the-art performance on KG reasoning tasks and generates faithful and interpretable reasoning results.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-01061",
+        "ArXiv": "2310.01061",
+        "DOI": "10.48550/arXiv.2310.01061",
+        "CorpusId": 263605944
+      },
+      "arxiv_id": "2310.01061",
+      "doi": "10.48550/arXiv.2310.01061",
+      "corpus_id": 263605944
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "14",
+      "ref_key": "S2:fff229da5a4fea06f99210e846bd28ecabe859b8",
+      "paperId": "fff229da5a4fea06f99210e846bd28ecabe859b8",
+      "title": "Rewire-then-Probe: A Contrastive Recipe for Probing Biomedical Knowledge of Pre-trained Language Models",
+      "year": 2021,
+      "abstract": "Knowledge probing is crucial for understanding the knowledge transfer mechanism behind the pre-trained language models (PLMs). Despite the growing progress of probing knowledge for PLMs in the general domain, specialised areas such as the biomedical domain are vastly under-explored. To facilitate this, we release a well-curated biomedical knowledge probing benchmark, MedLAMA, constructed based on the Unified Medical Language System (UMLS) Metathesaurus. We test a wide spectrum of state-of-the-art PLMs and probing approaches on our benchmark, reaching at most 3% of acc@10. While highlighting various sources of domain-specific challenges that amount to this underwhelming performance, we illustrate that the underlying PLMs have a higher potential for probing tasks. To achieve this, we propose Contrastive-Probe, a novel self-supervised contrastive probing approach, that adjusts the underlying PLMs without using any probing data. While Contrastive-Probe pushes the acc@10 to 28%, the performance gap still remains notable. Our human expert evaluation suggests that the probing performance of our Contrastive-Probe is still under-estimated as UMLS still does not include the full spectrum of factual knowledge. We hope MedLAMA and Contrastive-Probe facilitate further developments of more suited probing techniques for this domain. Our code and dataset are publicly available at https://github.com/cambridgeltl/medlama.",
+      "externalIds": {
+        "ACL": "2022.acl-long.329",
+        "DBLP": "conf/acl/Meng0SSCC22",
+        "ArXiv": "2110.08173",
+        "DOI": "10.18653/v1/2022.acl-long.329",
+        "CorpusId": 239009519
+      },
+      "arxiv_id": "2110.08173",
+      "doi": "10.18653/v1/2022.acl-long.329",
+      "corpus_id": 239009519
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "15",
+      "ref_key": "S2:eea2129457fcd78c4071a9020355a2fe1da4d2fd",
+      "paperId": "eea2129457fcd78c4071a9020355a2fe1da4d2fd",
+      "title": "SKILL: Structured Knowledge Infusion for Large Language Models",
+      "year": 2022,
+      "abstract": "Large language models (LLMs) have demonstrated human-level performance on a vast spectrum of natural language tasks. However, it is largely unexplored whether they can better internalize knowledge from a structured data, such as a knowledge graph, or from text. In this work, we propose a method to infuse structured knowledge into LLMs, by directly training T5 models on factual triples of knowledge graphs (KGs). We show that models pre-trained on Wikidata KG with our method outperform the T5 baselines on FreebaseQA and WikiHop, as well as the Wikidata-answerable subset of TriviaQA and NaturalQuestions. The models pre-trained on factual triples compare competitively with the ones on natural language sentences that contain the same knowledge. Trained on a smaller size KG, WikiMovies, we saw 3x improvement of exact match score on MetaQA task. The proposed method has an advantage that no alignment between the knowledge graph and text corpus is required in curating training data. This makes our method particularly useful when working with industry-scale knowledge graphs.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2205-08184",
+        "ArXiv": "2205.08184",
+        "ACL": "2022.naacl-main.113",
+        "DOI": "10.18653/v1/2022.naacl-main.113",
+        "CorpusId": 248834551
+      },
+      "arxiv_id": "2205.08184",
+      "doi": "10.18653/v1/2022.naacl-main.113",
+      "corpus_id": 248834551
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "16",
+      "ref_key": "S2:69bef4ab1018cc956a77c3ccdcaa57b124ab9fcc",
+      "paperId": "69bef4ab1018cc956a77c3ccdcaa57b124ab9fcc",
+      "title": "ReCEval: Evaluating Reasoning Chains via Correctness and Informativeness",
+      "year": 2023,
+      "abstract": "Multi-step reasoning ability is fundamental to many natural language tasks, yet it is unclear what constitutes a good reasoning chain and how to evaluate them. Most existing methods focus solely on whether the reasoning chain leads to the correct conclusion, but this answer-oriented view may confound reasoning quality with other spurious shortcuts to predict the answer. To bridge this gap, we evaluate reasoning chains by viewing them as informal proofs that derive the final answer. Specifically, we propose ReCEval (Reasoning Chain Evaluation), a framework that evaluates reasoning chains via two key properties: (1) correctness, i.e., each step makes a valid inference based on information contained within the step, preceding steps, and input context, and (2) informativeness, i.e., each step provides new information that is helpful towards deriving the generated answer. We evaluate these properties by developing metrics using natural language inference models and V-Information. On multiple datasets, we show that ReCEval effectively identifies various error types and yields notable improvements compared to prior methods. We analyze the impact of step boundaries, and previous steps on evaluating correctness and demonstrate that our informativeness metric captures the expected flow of information in high-quality reasoning chains. Finally, we show that scoring reasoning chains based on ReCEval improves downstream task performance. Our code is publicly available at: https://github.com/archiki/ReCEval",
+      "externalIds": {
+        "DBLP": "conf/emnlp/PrasadSZB23",
+        "ArXiv": "2304.10703",
+        "DOI": "10.48550/arXiv.2304.10703",
+        "CorpusId": 258291731
+      },
+      "arxiv_id": "2304.10703",
+      "doi": "10.48550/arXiv.2304.10703",
+      "corpus_id": 258291731
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "17",
+      "ref_key": "S2:b428e9e0e8ac36b3ae29a7ab9b9554c39cedb283",
+      "paperId": "b428e9e0e8ac36b3ae29a7ab9b9554c39cedb283",
+      "title": "NeMo Guardrails: A Toolkit for Controllable and Safe LLM Applications with Programmable Rails",
+      "year": 2023,
+      "abstract": "NeMo Guardrails is an open-source toolkit for easily adding programmable guardrails to LLM-based conversational systems. Guardrails (or rails for short) are a specific way of controlling the output of an LLM, such as not talking about topics considered harmful, following a predefined dialogue path, using a particular language style, and more. There are several mechanisms that allow LLM providers and developers to add guardrails that are embedded into a specific model at training, e.g. using model alignment. Differently, using a runtime inspired from dialogue management, NeMo Guardrails allows developers to add programmable rails to LLM applications - these are user-defined, independent of the underlying LLM, and interpretable. Our initial results show that the proposed approach can be used with several LLM providers to develop controllable and safe LLM applications using programmable rails.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/RebedeaDSPC23",
+        "ArXiv": "2310.10501",
+        "DOI": "10.48550/arXiv.2310.10501",
+        "CorpusId": 264146531
+      },
+      "arxiv_id": "2310.10501",
+      "doi": "10.48550/arXiv.2310.10501",
+      "corpus_id": 264146531
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "18",
+      "ref_key": "S2:8668fd1cb5cab820f8b2a136b2ef4adfad6c4dc1",
+      "paperId": "8668fd1cb5cab820f8b2a136b2ef4adfad6c4dc1",
+      "title": "Knowledge-Aware Language Model Pretraining",
+      "year": 2020,
+      "abstract": "How much knowledge do pretrained language models hold? Recent research observed that pretrained transformers are adept at modeling semantics but it is unclear to what degree they grasp human knowledge, or how to ensure they do so. In this paper we incorporate knowledge-awareness in language model pretraining without changing the transformer architecture, inserting explicit knowledge layers, or adding external storage of semantic information. Rather, we simply signal the existence of entities to the input of the transformer in pretraining, with an entity-extended tokenizer; and at the output, with an additional entity prediction task. Our experiments show that solely by adding these entity signals in pretraining, significantly more knowledge is packed into the transformer parameters: we observe improved language modeling accuracy, factual correctness in LAMA knowledge probing tasks, and semantics in the hidden representations through edge probing.We also show that our knowledge-aware language model (KALM) can serve as a drop-in replacement for GPT-2 models, significantly improving downstream tasks like zero-shot question-answering with no task-related training.",
+      "externalIds": {
+        "ArXiv": "2007.00655",
+        "DBLP": "journals/corr/abs-2007-00655",
+        "MAG": "3040558716",
+        "CorpusId": 220280797
+      },
+      "arxiv_id": "2007.00655",
+      "doi": null,
+      "corpus_id": 220280797
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "19",
+      "ref_key": "S2:b034b79a61513439ce3e2bca4cb90c55757af81e",
+      "paperId": "b034b79a61513439ce3e2bca4cb90c55757af81e",
+      "title": "LKPNR: LLM and KG for Personalized News Recommendation Framework",
+      "year": 2023,
+      "abstract": "Accurately recommending candidate news articles to users is a basic challenge faced by personalized news recommendation systems. Traditional methods are usually difficult to grasp the complex semantic information in news texts, resulting in unsatisfactory recommendation results. Besides, these traditional methods are more friendly to active users with rich historical behaviors. However, they can not effectively solve the\"long tail problem\"of inactive users. To address these issues, this research presents a novel general framework that combines Large Language Models (LLM) and Knowledge Graphs (KG) into semantic representations of traditional methods. In order to improve semantic understanding in complex news texts, we use LLMs' powerful text understanding ability to generate news representations containing rich semantic information. In addition, our method combines the information about news entities and mines high-order structural information through multiple hops in KG, thus alleviating the challenge of long tail distribution. Experimental results demonstrate that compared with various traditional models, the framework significantly improves the recommendation effect. The successful integration of LLM and KG in our framework has established a feasible path for achieving more accurate personalized recommendations in the news field. Our code is available at https://github.com/Xuan-ZW/LKPNR.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-12028",
+        "ArXiv": "2308.12028",
+        "DOI": "10.48550/arXiv.2308.12028",
+        "CorpusId": 261076481
+      },
+      "arxiv_id": "2308.12028",
+      "doi": "10.48550/arXiv.2308.12028",
+      "corpus_id": 261076481
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "20",
+      "ref_key": "S2:50019215e9a65c8c4a451ee155d839c328057f4a",
+      "paperId": "50019215e9a65c8c4a451ee155d839c328057f4a",
+      "title": "Knowledge Graph-augmented Language Models for Complex Question Answering",
+      "year": 2023,
+      "abstract": "Large language models have shown impressive abilities to reason over input text, however, they are prone to hallucinations. On the other hand, end-to-end knowledge graph question answering (KGQA) models output responses grounded in facts, but they still struggle with complex reasoning, such as comparison or ordinal questions. In this paper, we propose a new method for complex question answering where we combine a knowledge graph retriever based on an end-to-end KGQA model with a language model that reasons over the retrieved facts to return an answer. We observe that augmenting language model prompts with retrieved KG facts improves performance over using a language model alone by an average of 83%. In particular, we see improvements on complex questions requiring count, intersection, or multi-hop reasoning operations.",
+      "externalIds": {
+        "ACL": "2023.nlrse-1.1",
+        "DOI": "10.18653/v1/2023.nlrse-1.1",
+        "CorpusId": 259833781
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2023.nlrse-1.1",
+      "corpus_id": 259833781
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "21",
+      "ref_key": "S2:4f42a0782f8b25fff62214e70bc43ce88f914c19",
+      "paperId": "4f42a0782f8b25fff62214e70bc43ce88f914c19",
+      "title": "Exploiting Structured Knowledge in Text via Graph-Guided Representation Learning",
+      "year": 2020,
+      "abstract": "In this work, we aim at equipping pre-trained language models with structured knowledge. We present two self-supervised tasks learning over raw text with the guidance from knowledge graphs. Building upon entity-level masked language models, our first contribution is an entity masking scheme that exploits relational knowledge underlying the text. This is fulfilled by using a linked knowledge graph to select informative entities and then masking their mentions. In addition we use knowledge graphs to obtain distractors for the masked entities, and propose a novel distractor-suppressed ranking objective which is optimized jointly with masked language model. In contrast to existing paradigms, our approach uses knowledge graphs implicitly, only during pre-training, to inject language models with structured knowledge via learning from raw text. It is more efficient than retrieval-based methods that perform entity linking and integration during finetuning and inference, and generalizes more effectively than the methods that directly learn from concatenated graph triples. Experiments show that our proposed model achieves improved performance on five benchmark datasets, including question answering and knowledge base completion tasks.",
+      "externalIds": {
+        "ArXiv": "2004.14224",
+        "ACL": "2020.emnlp-main.722",
+        "MAG": "3105082862",
+        "DBLP": "conf/emnlp/ShenMHLTC20",
+        "DOI": "10.18653/v1/2020.emnlp-main.722",
+        "CorpusId": 216642086
+      },
+      "arxiv_id": "2004.14224",
+      "doi": "10.18653/v1/2020.emnlp-main.722",
+      "corpus_id": 216642086
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "22",
+      "ref_key": "S2:319b84be7a843250bc81d7086f79a4126d550277",
+      "paperId": "319b84be7a843250bc81d7086f79a4126d550277",
+      "title": "ERNIE 3.0: Large-scale Knowledge Enhanced Pre-training for Language Understanding and Generation",
+      "year": 2021,
+      "abstract": "Pre-trained models have achieved state-of-the-art results in various Natural Language Processing (NLP) tasks. Recent works such as T5 and GPT-3 have shown that scaling up pre-trained language models can improve their generalization abilities. Particularly, the GPT-3 model with 175 billion parameters shows its strong task-agnostic zero-shot/few-shot learning capabilities. Despite their success, these large-scale models are trained on plain texts without introducing knowledge such as linguistic knowledge and world knowledge. In addition, most large-scale models are trained in an auto-regressive way. As a result, this kind of traditional fine-tuning approach demonstrates relatively weak performance when solving downstream language understanding tasks. In order to solve the above problems, we propose a unified framework named ERNIE 3.0 for pre-training large-scale knowledge enhanced models. It fuses auto-regressive network and auto-encoding network, so that the trained model can be easily tailored for both natural language understanding and generation tasks with zero-shot learning, few-shot learning or fine-tuning. We trained the model with 10 billion parameters on a 4TB corpus consisting of plain texts and a large-scale knowledge graph. Empirical results show that the model outperforms the state-of-the-art models on 54 Chinese NLP tasks, and its English version achieves the first place on the SuperGLUE benchmark (July 3, 2021), surpassing the human performance by +0.8% (90.6% vs. 89.8%).",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2107-02137",
+        "ArXiv": "2107.02137",
+        "CorpusId": 235731579
+      },
+      "arxiv_id": "2107.02137",
+      "doi": null,
+      "corpus_id": 235731579
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "23",
+      "ref_key": "S2:83c4b8fcef3c214cfae45818a5b4b637372f3083",
+      "paperId": "83c4b8fcef3c214cfae45818a5b4b637372f3083",
+      "title": "JointLK: Joint Reasoning with Language Models and Knowledge Graphs for Commonsense Question Answering",
+      "year": 2021,
+      "abstract": "Existing KG-augmented models for commonsense question answering primarily focus on designing elaborate Graph Neural Networks (GNNs) to model knowledge graphs (KGs). However, they ignore (i) the effectively fusing and reasoning over question context representations and the KG representations, and (ii) automatically selecting relevant nodes from the noisy KGs during reasoning. In this paper, we propose a novel model, JointLK, which solves the above limitations through the joint reasoning of LM and GNN and the dynamic KGs pruning mechanism. Specifically, JointLK performs joint reasoning between LM and GNN through a novel dense bidirectional attention module, in which each question token attends on KG nodes and each KG node attends on question tokens, and the two modal representations fuse and update mutually by multi-step interactions. Then, the dynamic pruning module uses the attention weights generated by joint reasoning to prune irrelevant KG nodes recursively. We evaluate JointLK on the CommonsenseQA and OpenBookQA datasets, and demonstrate its improvements to the existing LM and LM+KG models, as well as its capability to perform interpretable reasoning.",
+      "externalIds": {
+        "ACL": "2022.naacl-main.372",
+        "DBLP": "conf/naacl/SunSQZ22",
+        "ArXiv": "2112.02732",
+        "DOI": "10.18653/v1/2022.naacl-main.372",
+        "CorpusId": 244909056
+      },
+      "arxiv_id": "2112.02732",
+      "doi": "10.18653/v1/2022.naacl-main.372",
+      "corpus_id": 244909056
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "24",
+      "ref_key": "S2:a0118fc91478bde959d41c4e2231f1767915d207",
+      "paperId": "a0118fc91478bde959d41c4e2231f1767915d207",
+      "title": "Interpreting Language Models Through Knowledge Graph Extraction",
+      "year": 2021,
+      "abstract": "Transformer-based language models trained on large text corpora have enjoyed immense popularity in the natural language processing community and are commonly used as a starting point for downstream tasks. While these models are undeniably useful, it is a challenge to quantify their performance beyond traditional accuracy metrics. In this paper, we compare BERT-based language models through snapshots of acquired knowledge at sequential stages of the training process. Structured relationships from training corpora may be uncovered through querying a masked language model with probing tasks. We present a methodology to unveil a knowledge acquisition timeline by generating knowledge graph extracts from cloze\"fill-in-the-blank\"statements at various stages of RoBERTa's early training. We extend this analysis to a comparison of pretrained variations of BERT models (DistilBERT, BERT-base, RoBERTa). This work proposes a quantitative framework to compare language models through knowledge graph extraction (GED, Graph2Vec) and showcases a part-of-speech analysis (POSOR) to identify the linguistic strengths of each model variant. Using these metrics, machine learning practitioners can compare models, diagnose their models' behavioral strengths and weaknesses, and identify new targeted datasets to improve model performance.",
+      "externalIds": {
+        "ArXiv": "2111.08546",
+        "DBLP": "journals/corr/abs-2111-08546",
+        "CorpusId": 244129987
+      },
+      "arxiv_id": "2111.08546",
+      "doi": null,
+      "corpus_id": 244129987
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "25",
+      "ref_key": "S2:d7d5bb7c5424a725d3c2b7d352aa299f0f90a5e5",
+      "paperId": "d7d5bb7c5424a725d3c2b7d352aa299f0f90a5e5",
+      "title": "SKEP: Sentiment Knowledge Enhanced Pre-training for Sentiment Analysis",
+      "year": 2020,
+      "abstract": "Recently, sentiment analysis has seen remarkable advance with the help of pre-training approaches. However, sentiment knowledge, such as sentiment words and aspect-sentiment pairs, is ignored in the process of pre-training, despite the fact that they are widely used in traditional sentiment analysis approaches. In this paper, we introduce Sentiment Knowledge Enhanced Pre-training (SKEP) in order to learn a unified sentiment representation for multiple sentiment analysis tasks. With the help of automatically-mined knowledge, SKEP conducts sentiment masking and constructs three sentiment knowledge prediction objectives, so as to embed sentiment information at the word, polarity and aspect level into pre-trained sentiment representation. In particular, the prediction of aspect-sentiment pairs is converted into multi-label classification, aiming to capture the dependency between words in a pair. Experiments on three kinds of sentiment tasks show that SKEP significantly outperforms strong pre-training baseline, and achieves new state-of-the-art results on most of the test datasets. We release our code at https://github.com/baidu/Senta.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2005-05635",
+        "ArXiv": "2005.05635",
+        "ACL": "2020.acl-main.374",
+        "MAG": "3024994608",
+        "DOI": "10.18653/v1/2020.acl-main.374",
+        "CorpusId": 218595658
+      },
+      "arxiv_id": "2005.05635",
+      "doi": "10.18653/v1/2020.acl-main.374",
+      "corpus_id": 218595658
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "26",
+      "ref_key": "S2:f208ea909fa7f54fea82def9a92fd81dfc758c39",
+      "paperId": "f208ea909fa7f54fea82def9a92fd81dfc758c39",
+      "title": "Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions",
+      "year": 2022,
+      "abstract": "Prompting-based large language models (LLMs) are surprisingly powerful at generating natural language reasoning steps or Chains-of-Thoughts (CoT) for multi-step question answering (QA). They struggle, however, when the necessary knowledge is either unavailable to the LLM or not up-to-date within its parameters. While using the question to retrieve relevant text from an external knowledge source helps LLMs, we observe that this one-step retrieve-and-read approach is insufficient for multi-step QA. Here, what to retrieve depends on what has already been derived, which in turn may depend on what was previously retrieved. To address this, we propose IRCoT, a new approach for multi-step QA that interleaves retrieval with steps (sentences) in a CoT, guiding the retrieval with CoT and in turn using retrieved results to improve CoT. Using IRCoT with GPT3 substantially improves retrieval (up to 21 points) as well as downstream QA (up to 15 points) on four datasets: HotpotQA, 2WikiMultihopQA, MuSiQue, and IIRC. We observe similar substantial gains in out-of-distribution (OOD) settings as well as with much smaller models such as Flan-T5-large without additional training. IRCoT reduces model hallucination, resulting in factually more accurate CoT reasoning.",
+      "externalIds": {
+        "ArXiv": "2212.10509",
+        "DBLP": "journals/corr/abs-2212-10509",
+        "ACL": "2023.acl-long.557",
+        "DOI": "10.48550/arXiv.2212.10509",
+        "CorpusId": 254877499
+      },
+      "arxiv_id": "2212.10509",
+      "doi": "10.48550/arXiv.2212.10509",
+      "corpus_id": 254877499
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "27",
+      "ref_key": "S2:d75387fcf6a839f2aa8af5778aa6931eea5ec969",
+      "paperId": "d75387fcf6a839f2aa8af5778aa6931eea5ec969",
+      "title": "Explainable Claim Verification via Knowledge-Grounded Reasoning with Large Language Models",
+      "year": 2023,
+      "abstract": "Claim verification plays a crucial role in combating misinformation. While existing works on claim verification have shown promising results, a crucial piece of the puzzle that remains unsolved is to understand how to verify claims without relying on human-annotated data, which is expensive to create at a large scale. Additionally, it is important for models to provide comprehensive explanations that can justify their decisions and assist human fact-checkers. This paper presents First-Order-Logic-Guided Knowledge-Grounded (FOLK) Reasoning that can verify complex claims and generate explanations without the need for annotated evidence using Large Language Models (LLMs). FOLK leverages the in-context learning ability of LLMs to translate the claim into a First-Order-Logic (FOL) clause consisting of predicates, each corresponding to a sub-claim that needs to be verified. Then, FOLK performs FOL-Guided reasoning over a set of knowledge-grounded question-and-answer pairs to make veracity predictions and generate explanations to justify its decision-making process. This process makes our model highly explanatory, providing clear explanations of its reasoning process in human-readable form. Our experiment results indicate that FOLK outperforms strong baselines on three datasets encompassing various claim verification challenges. Our code and data are available.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-05253",
+        "ArXiv": "2310.05253",
+        "DOI": "10.48550/arXiv.2310.05253",
+        "CorpusId": 263830352
+      },
+      "arxiv_id": "2310.05253",
+      "doi": "10.48550/arXiv.2310.05253",
+      "corpus_id": 263830352
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "28",
+      "ref_key": "S2:770a9858907e15de48053c803fdb3a28f24645eb",
+      "paperId": "770a9858907e15de48053c803fdb3a28f24645eb",
+      "title": "Large Language Models as Source Planner for Personalized Knowledge-grounded Dialogue",
+      "year": 2023,
+      "abstract": "Open-domain dialogue system usually requires different sources of knowledge to generate more informative and evidential responses. However, existing knowledge-grounded dialogue systems either focus on a single knowledge source or overlook the dependency between multiple sources of knowledge, which may result in generating inconsistent or even paradoxical responses. To incorporate multiple knowledge sources and dependencies between them, we propose SAFARI, a novel framework that leverages the exceptional capabilities of large language models (LLMs) in planning, understanding, and incorporating under both supervised and unsupervised settings. Specifically, SAFARI decouples the knowledge grounding into multiple sources and response generation, which allows easy extension to various knowledge sources including the possibility of not using any sources. To study the problem, we construct a personalized knowledge-grounded dialogue dataset \\textit{\\textbf{K}nowledge \\textbf{B}ehind \\textbf{P}ersona}~(\\textbf{KBP}), which is the first to consider the dependency between persona and implicit knowledge. Experimental results on the KBP dataset demonstrate that the SAFARI framework can effectively produce persona-consistent and knowledge-enhanced responses.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-08840",
+        "ArXiv": "2310.08840",
+        "DOI": "10.48550/arXiv.2310.08840",
+        "CorpusId": 264127797
+      },
+      "arxiv_id": "2310.08840",
+      "doi": "10.48550/arXiv.2310.08840",
+      "corpus_id": 264127797
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "29",
+      "ref_key": "S2:13c0f33ccd88607fce4819135e404a988aa8aad4",
+      "paperId": "13c0f33ccd88607fce4819135e404a988aa8aad4",
+      "title": "KICGPT: Large Language Model with Knowledge in Context for Knowledge Graph Completion",
+      "year": 2024,
+      "abstract": "Knowledge Graph Completion (KGC) is crucial for addressing knowledge graph incompleteness and supporting downstream applications. Many models have been proposed for KGC. They can be categorized into two main classes: triple-based and text-based approaches. Triple-based methods struggle with long-tail entities due to limited structural information and imbalanced entity distributions. Text-based methods alleviate this issue but require costly training for language models and specific finetuning for knowledge graphs, which limits their efficiency. To alleviate these limitations, in this paper, we propose KICGPT, a framework that integrates a large language model (LLM) and a triple-based KGC retriever. It alleviates the long-tail problem without incurring additional training overhead. KICGPT uses an in-context learning strategy called Knowledge Prompt, which encodes structural knowledge into demonstrations to guide the LLM. Empirical results on benchmark datasets demonstrate the effectiveness of KICGPT with smaller training overhead and no finetuning.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-02389",
+        "ArXiv": "2402.02389",
+        "DOI": "10.18653/v1/2023.findings-emnlp.580",
+        "CorpusId": 266176753
+      },
+      "arxiv_id": "2402.02389",
+      "doi": "10.18653/v1/2023.findings-emnlp.580",
+      "corpus_id": 266176753
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "30",
+      "ref_key": "S2:ca261cb681b082e90ca6c7a9d325b4265ed1dc28",
+      "paperId": "ca261cb681b082e90ca6c7a9d325b4265ed1dc28",
+      "title": "MindMap: Knowledge Graph Prompting Sparks Graph of Thoughts in Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have achieved remarkable performance in natural language understanding and generation tasks. However, they often suffer from limitations such as difficulty in incorporating new knowledge, generating hallucinations, and explaining their reasoning process. To address these challenges, we propose a novel prompting pipeline, named \\method, that leverages knowledge graphs (KGs) to enhance LLMs' inference and transparency. Our method enables LLMs to comprehend KG inputs and infer with a combination of implicit and external knowledge. Moreover, our method elicits the mind map of LLMs, which reveals their reasoning pathways based on the ontology of knowledge. We evaluate our method on diverse question \\&answering tasks, especially in medical domains, and show significant improvements over baselines. We also introduce a new hallucination evaluation benchmark and analyze the effects of different components of our method. Our results demonstrate the effectiveness and robustness of our method in merging knowledge from LLMs and KGs for combined inference. To reproduce our results and extend the framework further, we make our codebase available at https://github.com/wyl-willing/MindMap.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-09729",
+        "ArXiv": "2308.09729",
+        "DOI": "10.48550/arXiv.2308.09729",
+        "CorpusId": 261048726
+      },
+      "arxiv_id": "2308.09729",
+      "doi": "10.48550/arXiv.2308.09729",
+      "corpus_id": 261048726
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "31",
+      "ref_key": "S2:785c0d4efd3aaa946f8bdcd12b38a147cc36b794",
+      "paperId": "785c0d4efd3aaa946f8bdcd12b38a147cc36b794",
+      "title": "Retrieve-Rewrite-Answer: A KG-to-Text Enhanced LLMs Framework for Knowledge Graph Question Answering",
+      "year": 2023,
+      "abstract": "Despite their competitive performance on knowledge-intensive tasks, large language models (LLMs) still have limitations in memorizing all world knowledge especially long tail knowledge. In this paper, we study the KG-augmented language model approach for solving the knowledge graph question answering (KGQA) task that requires rich world knowledge. Existing work has shown that retrieving KG knowledge to enhance LLMs prompting can significantly improve LLMs performance in KGQA. However, their approaches lack a well-formed verbalization of KG knowledge, i.e., they ignore the gap between KG representations and textual representations. To this end, we propose an answer-sensitive KG-to-Text approach that can transform KG knowledge into well-textualized statements most informative for KGQA. Based on this approach, we propose a KG-to-Text enhanced LLMs framework for solving the KGQA task. Experiments on several KGQA benchmarks show that the proposed KG-to-Text augmented LLMs approach outperforms previous KG-augmented LLMs approaches regarding answer accuracy and usefulness of knowledge statements.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2309-11206",
+        "ArXiv": "2309.11206",
+        "DOI": "10.48550/arXiv.2309.11206",
+        "CorpusId": 262054223
+      },
+      "arxiv_id": "2309.11206",
+      "doi": "10.48550/arXiv.2309.11206",
+      "corpus_id": 262054223
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "32",
+      "ref_key": "S2:d824b7154ad6df729fef49030ee170466911414b",
+      "paperId": "d824b7154ad6df729fef49030ee170466911414b",
+      "title": "PRCA: Fitting Black-Box Large Language Models for Retrieval Question Answering via Pluggable Reward-Driven Contextual Adapter",
+      "year": 2023,
+      "abstract": "The Retrieval Question Answering (ReQA) task employs the retrieval-augmented framework, composed of a retriever and generator. The generator formulates the answer based on the documents retrieved by the retriever. Incorporating Large Language Models (LLMs) as generators is beneficial due to their advanced QA capabilities, but they are typically too large to be fine-tuned with budget constraints while some of them are only accessible via APIs. To tackle this issue and further improve ReQA performance, we propose a trainable Pluggable Reward-Driven Contextual Adapter (PRCA), keeping the generator as a black box. Positioned between the retriever and generator in a Pluggable manner, PRCA refines the retrieved information by operating in a token-autoregressive strategy via maximizing rewards of the reinforcement learning phase. Our experiments validate PRCA's effectiveness in enhancing ReQA performance on three datasets by up to 20% improvement to fit black-box LLMs into existing frameworks, demonstrating its considerable potential in the LLMs era.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/YangLZW0L023",
+        "ArXiv": "2310.18347",
+        "DOI": "10.48550/arXiv.2310.18347",
+        "CorpusId": 264590451
+      },
+      "arxiv_id": "2310.18347",
+      "doi": "10.48550/arXiv.2310.18347",
+      "corpus_id": 264590451
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "33",
+      "ref_key": "S2:896845aa992d50182227e4eb2883f784e16fe60b",
+      "paperId": "896845aa992d50182227e4eb2883f784e16fe60b",
+      "title": "ALCUNA: Large Language Models Meet New Knowledge",
+      "year": 2023,
+      "abstract": "With the rapid development of NLP, large-scale language models (LLMs) excel in various tasks across multiple domains now. However, existing benchmarks may not adequately measure these models' capabilities, especially when faced with new knowledge. In this paper, we address the lack of benchmarks to evaluate LLMs' ability to handle new knowledge, an important and challenging aspect in the rapidly evolving world. We propose an approach called KnowGen that generates new knowledge by altering existing entity attributes and relationships, resulting in artificial entities that are distinct from real-world entities. With KnowGen, we introduce a benchmark named ALCUNA to assess LLMs' abilities in knowledge understanding, differentiation, and association. We benchmark several LLMs, reveals that their performance in face of new knowledge is not satisfactory, particularly in reasoning between new and internal knowledge. We also explore the impact of entity similarity on the model's understanding of entity knowledge and the influence of contextual entities. We appeal to the need for caution when using LLMs in new scenarios or with new knowledge, and hope that our benchmarks can help drive the development of LLMs in face of new knowledge.",
+      "externalIds": {
+        "ArXiv": "2310.14820",
+        "DBLP": "conf/emnlp/YinH023",
+        "DOI": "10.48550/arXiv.2310.14820",
+        "CorpusId": 264591445
+      },
+      "arxiv_id": "2310.14820",
+      "doi": "10.48550/arXiv.2310.14820",
+      "corpus_id": 264591445
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "34",
+      "ref_key": "S2:a9e78765a4d49a50d67d0dacb033fb47f8d9f8c9",
+      "paperId": "a9e78765a4d49a50d67d0dacb033fb47f8d9f8c9",
+      "title": "Exchange-of-Thought: Enhancing Large Language Model Capabilities through Cross-Model Communication",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) have recently made significant strides in complex reasoning tasks through the Chain-of-Thought technique. Despite this progress, their reasoning is often constrained by their intrinsic understanding, lacking external insights. To address this, we propose Exchange-of-Thought (EoT), a novel framework that enables cross-model communication during problem-solving. Drawing inspiration from network topology, EoT integrates four unique communication paradigms: Memory, Report, Relay, and Debate. This paper delves into the communication dynamics and volume associated with each paradigm. To counterbalance the risks of incorrect reasoning chains, we implement a robust confidence evaluation mechanism within these communications. Our experiments across diverse complex reasoning tasks demonstrate that EoT significantly surpasses established baselines, underscoring the value of external insights in enhancing LLM performance. Furthermore, we show that EoT achieves these superior results in a cost-effective manner, marking a promising advancement for efficient and collaborative AI problem-solving.",
+      "externalIds": {
+        "ArXiv": "2312.01823",
+        "DBLP": "conf/emnlp/YinSCGDHQ23",
+        "DOI": "10.48550/arXiv.2312.01823",
+        "CorpusId": 265609521
+      },
+      "arxiv_id": "2312.01823",
+      "doi": "10.48550/arXiv.2312.01823",
+      "corpus_id": 265609521
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "35",
+      "ref_key": "S2:7ae13b8ff959331b9872acde519999c20195fc6b",
+      "paperId": "7ae13b8ff959331b9872acde519999c20195fc6b",
+      "title": "KGLM: Integrating Knowledge Graph Structure in Language Models for Link Prediction",
+      "year": 2022,
+      "abstract": "The ability of knowledge graphs to represent complex relationships at scale has led to their adoption for various needs including knowledge representation, question-answering, and recommendation systems. Knowledge graphs are often incomplete in the information they represent, necessitating the need for knowledge graph completion tasks. Pre-trained and fine-tuned language models have shown promise in these tasks although these models ignore the intrinsic information encoded in the knowledge graph, namely the entity and relation types. In this work, we propose the Knowledge Graph Language Model (KGLM) architecture, where we introduce a new entity/relation embedding layer that learns to differentiate distinctive entity and relation types, therefore allowing the model to learn the structure of the knowledge graph. In this work, we show that further pre-training the language models with this additional embedding layer using the triples extracted from the knowledge graph, followed by the standard fine-tuning phase sets a new state-of-the-art performance for the link prediction task on the benchmark datasets.",
+      "externalIds": {
+        "ArXiv": "2211.02744",
+        "DBLP": "conf/starsem/YounT23",
+        "ACL": "2023.starsem-1.20",
+        "DOI": "10.48550/arXiv.2211.02744",
+        "CorpusId": 253383846
+      },
+      "arxiv_id": "2211.02744",
+      "doi": "10.48550/arXiv.2211.02744",
+      "corpus_id": 253383846
+    },
+    {
+      "paper_id": "2311.07914",
+      "ref_index": "36",
+      "ref_key": "S2:bd1ef429956cea3542c14006df67e890cb57a80b",
+      "paperId": "bd1ef429956cea3542c14006df67e890cb57a80b",
+      "title": "IAG: Induction-Augmented Generation Framework for Answering Reasoning Questions",
+      "year": 2023,
+      "abstract": "Retrieval-Augmented Generation (RAG), by incorporating external knowledge with parametric memory of language models, has become the state-of-the-art architecture for open-domain QA tasks. However, common knowledge bases are inherently constrained by limited coverage and noisy information, making retrieval-based approaches inadequate to answer implicit reasoning questions. In this paper, we propose an Induction-Augmented Generation (IAG) framework that utilizes inductive knowledge along with the retrieved documents for implicit reasoning. We leverage large language models (LLMs) for deriving such knowledge via a novel prompting method based on inductive reasoning patterns. On top of this, we implement two versions of IAG named IAG-GPT and IAG-Student, respectively. IAG-GPT directly utilizes the knowledge generated by GPT-3 for answer prediction, while IAG-Student gets rid of dependencies on GPT service at inference time by incorporating a student inductor model. The inductor is firstly trained via knowledge distillation and further optimized by back-propagating the generator feedback via differentiable beam scores. Experimental results show that IAG outperforms RAG baselines as well as ChatGPT on two Open-Domain QA tasks. Notably, our best models have won the first place in the official leaderboards of CSQA2.0 (since Nov 1, 2022) and StrategyQA (since Jan 8, 2023).",
+      "externalIds": {
+        "ArXiv": "2311.18397",
+        "DBLP": "conf/emnlp/ZhangZRSHWLC23",
+        "DOI": "10.48550/arXiv.2311.18397",
+        "CorpusId": 265506019
+      },
+      "arxiv_id": "2311.18397",
+      "doi": "10.48550/arXiv.2311.18397",
+      "corpus_id": 265506019
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "KG-augmented LLM": {
+        "Knowledge-aware Validation  ": {
+          "309c800e24d45ec9f754e33f6e8d6559489816f8": {},
+          "7a0081f6464de0ce95b71137b76bd2aa773b6b32": {},
+          "96901acc92d68350443774596fa2b38bc522a0ce": {},
+          "d75387fcf6a839f2aa8af5778aa6931eea5ec969": {}
+        },
+        "Knowledge-aware Training ": {
+          "Fine-tuning ": {
+            "3fa70115248377c3d1517c9f978791a296fbc1dd": {},
+            "0744580e75a74357e466a57082c85cb42f548aa9": {},
+            "eea2129457fcd78c4071a9020355a2fe1da4d2fd": {},
+            "7ae13b8ff959331b9872acde519999c20195fc6b": {}
+          },
+          "Pre-training ": {
+            "Knowledge-Probing": {
+              "fcfc9648561a221750b8085790ad9ba1bebb1800": {},
+              "fff229da5a4fea06f99210e846bd28ecabe859b8": {},
+              "a0118fc91478bde959d41c4e2231f1767915d207": {}
+            },
+            "Knowledge-Fusion": {
+              "b034b79a61513439ce3e2bca4cb90c55757af81e": {},
+              "83c4b8fcef3c214cfae45818a5b4b637372f3083": {}
+            },
+            "Knowledge-Guided Masking": {
+              "4f42a0782f8b25fff62214e70bc43ce88f914c19": {},
+              "d7d5bb7c5424a725d3c2b7d352aa299f0f90a5e5": {}
+            },
+            "Knowledge-Enhanced Models": {
+              "8668fd1cb5cab820f8b2a136b2ef4adfad6c4dc1": {},
+              "319b84be7a843250bc81d7086f79a4126d550277": {}
+            }
+          }
+        },
+        "Knowledge-aware Inference": {
+          "KG-controlled Generation ": {
+            "b9fc37adcc251571b88e9bba1fc2cad2a6d0f595": {},
+            "1a2e90dff605dad7dbefeed121e6d295c7a77d62": {},
+            "0139e689add40a61c9454674edac4e93702aa5fc": {},
+            "b428e9e0e8ac36b3ae29a7ab9b9554c39cedb283": {},
+            "d824b7154ad6df729fef49030ee170466911414b": {},
+            "896845aa992d50182227e4eb2883f784e16fe60b": {}
+          },
+          "KG-augmented Reasoning ": {
+            "5dbffedcabe3fa43060ebbe2b1789500edfd871f": {},
+            "73207b9fd2dcfeead7fe086cfdb097e4929a7b44": {},
+            "b47e96762351b2dbf7e863ece4640df6194bcc0c": {},
+            "69bef4ab1018cc956a77c3ccdcaa57b124ab9fcc": {},
+            "f208ea909fa7f54fea82def9a92fd81dfc758c39": {},
+            "ca261cb681b082e90ca6c7a9d325b4265ed1dc28": {},
+            "a9e78765a4d49a50d67d0dacb033fb47f8d9f8c9": {}
+          },
+          "KG-augmented Retrieval ": {
+            "678cfca72b7de72b005f71207bc8a522ea9ac62c": {},
+            "e0f27336698c84709bd60b6b7f4ce588cbae66bf": {},
+            "50019215e9a65c8c4a451ee155d839c328057f4a": {},
+            "770a9858907e15de48053c803fdb3a28f24645eb": {},
+            "13c0f33ccd88607fce4819135e404a988aa8aad4": {},
+            "785c0d4efd3aaa946f8bdcd12b38a147cc36b794": {},
+            "bd1ef429956cea3542c14006df67e890cb57a80b": {}
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000001",
+        "paperId": "309c800e24d45ec9f754e33f6e8d6559489816f8",
+        "ref_index": "6",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Validation  "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000002",
+        "paperId": "7a0081f6464de0ce95b71137b76bd2aa773b6b32",
+        "ref_index": "9",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Validation  "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000003",
+        "paperId": "96901acc92d68350443774596fa2b38bc522a0ce",
+        "ref_index": "12",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Validation  "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000004",
+        "paperId": "d75387fcf6a839f2aa8af5778aa6931eea5ec969",
+        "ref_index": "27",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Validation  "
+        ],
+        "depth": 2,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000005",
+        "paperId": "3fa70115248377c3d1517c9f978791a296fbc1dd",
+        "ref_index": "4",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Training ",
+          "Fine-tuning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000006",
+        "paperId": "0744580e75a74357e466a57082c85cb42f548aa9",
+        "ref_index": "8",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Training ",
+          "Fine-tuning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000007",
+        "paperId": "eea2129457fcd78c4071a9020355a2fe1da4d2fd",
+        "ref_index": "15",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Training ",
+          "Fine-tuning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000008",
+        "paperId": "7ae13b8ff959331b9872acde519999c20195fc6b",
+        "ref_index": "35",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Training ",
+          "Fine-tuning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000009",
+        "paperId": "fcfc9648561a221750b8085790ad9ba1bebb1800",
+        "ref_index": "7",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Training ",
+          "Pre-training ",
+          "Knowledge-Probing"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000010",
+        "paperId": "fff229da5a4fea06f99210e846bd28ecabe859b8",
+        "ref_index": "14",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Training ",
+          "Pre-training ",
+          "Knowledge-Probing"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000011",
+        "paperId": "a0118fc91478bde959d41c4e2231f1767915d207",
+        "ref_index": "24",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Training ",
+          "Pre-training ",
+          "Knowledge-Probing"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000012",
+        "paperId": "b034b79a61513439ce3e2bca4cb90c55757af81e",
+        "ref_index": "19",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Training ",
+          "Pre-training ",
+          "Knowledge-Fusion"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000013",
+        "paperId": "83c4b8fcef3c214cfae45818a5b4b637372f3083",
+        "ref_index": "23",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Training ",
+          "Pre-training ",
+          "Knowledge-Fusion"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000014",
+        "paperId": "4f42a0782f8b25fff62214e70bc43ce88f914c19",
+        "ref_index": "21",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Training ",
+          "Pre-training ",
+          "Knowledge-Guided Masking"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000015",
+        "paperId": "d7d5bb7c5424a725d3c2b7d352aa299f0f90a5e5",
+        "ref_index": "25",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Training ",
+          "Pre-training ",
+          "Knowledge-Guided Masking"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000016",
+        "paperId": "8668fd1cb5cab820f8b2a136b2ef4adfad6c4dc1",
+        "ref_index": "18",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Training ",
+          "Pre-training ",
+          "Knowledge-Enhanced Models"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000017",
+        "paperId": "319b84be7a843250bc81d7086f79a4126d550277",
+        "ref_index": "22",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Training ",
+          "Pre-training ",
+          "Knowledge-Enhanced Models"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000018",
+        "paperId": "b9fc37adcc251571b88e9bba1fc2cad2a6d0f595",
+        "ref_index": "0",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Inference",
+          "KG-controlled Generation "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000019",
+        "paperId": "1a2e90dff605dad7dbefeed121e6d295c7a77d62",
+        "ref_index": "2",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Inference",
+          "KG-controlled Generation "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000020",
+        "paperId": "0139e689add40a61c9454674edac4e93702aa5fc",
+        "ref_index": "10",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Inference",
+          "KG-controlled Generation "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000021",
+        "paperId": "b428e9e0e8ac36b3ae29a7ab9b9554c39cedb283",
+        "ref_index": "17",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Inference",
+          "KG-controlled Generation "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000022",
+        "paperId": "d824b7154ad6df729fef49030ee170466911414b",
+        "ref_index": "32",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Inference",
+          "KG-controlled Generation "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000023",
+        "paperId": "896845aa992d50182227e4eb2883f784e16fe60b",
+        "ref_index": "33",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Inference",
+          "KG-controlled Generation "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000024",
+        "paperId": "5dbffedcabe3fa43060ebbe2b1789500edfd871f",
+        "ref_index": "3",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Inference",
+          "KG-augmented Reasoning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000025",
+        "paperId": "73207b9fd2dcfeead7fe086cfdb097e4929a7b44",
+        "ref_index": "11",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Inference",
+          "KG-augmented Reasoning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000026",
+        "paperId": "b47e96762351b2dbf7e863ece4640df6194bcc0c",
+        "ref_index": "13",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Inference",
+          "KG-augmented Reasoning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000027",
+        "paperId": "69bef4ab1018cc956a77c3ccdcaa57b124ab9fcc",
+        "ref_index": "16",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Inference",
+          "KG-augmented Reasoning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000028",
+        "paperId": "f208ea909fa7f54fea82def9a92fd81dfc758c39",
+        "ref_index": "26",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Inference",
+          "KG-augmented Reasoning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000029",
+        "paperId": "ca261cb681b082e90ca6c7a9d325b4265ed1dc28",
+        "ref_index": "30",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Inference",
+          "KG-augmented Reasoning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000030",
+        "paperId": "a9e78765a4d49a50d67d0dacb033fb47f8d9f8c9",
+        "ref_index": "34",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Inference",
+          "KG-augmented Reasoning "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000031",
+        "paperId": "678cfca72b7de72b005f71207bc8a522ea9ac62c",
+        "ref_index": "1",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Inference",
+          "KG-augmented Retrieval "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000032",
+        "paperId": "e0f27336698c84709bd60b6b7f4ce588cbae66bf",
+        "ref_index": "5",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Inference",
+          "KG-augmented Retrieval "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000033",
+        "paperId": "50019215e9a65c8c4a451ee155d839c328057f4a",
+        "ref_index": "20",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Inference",
+          "KG-augmented Retrieval "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000034",
+        "paperId": "770a9858907e15de48053c803fdb3a28f24645eb",
+        "ref_index": "28",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Inference",
+          "KG-augmented Retrieval "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000035",
+        "paperId": "13c0f33ccd88607fce4819135e404a988aa8aad4",
+        "ref_index": "29",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Inference",
+          "KG-augmented Retrieval "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000036",
+        "paperId": "785c0d4efd3aaa946f8bdcd12b38a147cc36b794",
+        "ref_index": "31",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Inference",
+          "KG-augmented Retrieval "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2311.07914",
+        "arxiv_id": "2311.07914",
+        "leaf_mention_id": "2311.07914::000037",
+        "paperId": "bd1ef429956cea3542c14006df67e890cb57a80b",
+        "ref_index": "36",
+        "path": [
+          "KG-augmented LLM",
+          "Knowledge-aware Inference",
+          "KG-augmented Retrieval "
+        ],
+        "depth": 3,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 37,
+      "unique_leaf_paper_count": 37,
+      "multi_membership_extra_mentions": 0,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

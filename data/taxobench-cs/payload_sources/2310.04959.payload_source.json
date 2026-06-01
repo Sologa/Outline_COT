@@ -1,0 +1,2183 @@
+{
+  "paper_id": "2310.04959",
+  "arxiv_id": "2310.04959",
+  "title": "Towards Better Chain-of-Thought Prompting Strategies: A Survey",
+  "ref_meta": [
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "0",
+      "ref_key": "S2:90350aa626bed47b02d0c162462e5b0ca82be6b2",
+      "paperId": "90350aa626bed47b02d0c162462e5b0ca82be6b2",
+      "title": "Automatic Chain of Thought Prompting in Large Language Models",
+      "year": 2022,
+      "abstract": "Large language models (LLMs) can perform complex reasoning by generating intermediate reasoning steps. Providing these steps for prompting demonstrations is called chain-of-thought (CoT) prompting. CoT prompting has two major paradigms. One leverages a simple prompt like\"Let's think step by step\"to facilitate step-by-step thinking before answering a question. The other uses a few manual demonstrations one by one, each composed of a question and a reasoning chain that leads to an answer. The superior performance of the second paradigm hinges on the hand-crafting of task-specific demonstrations one by one. We show that such manual efforts may be eliminated by leveraging LLMs with the\"Let's think step by step\"prompt to generate reasoning chains for demonstrations one by one, i.e., let's think not just step by step, but also one by one. However, these generated chains often come with mistakes. To mitigate the effect of such mistakes, we find that diversity matters for automatically constructing demonstrations. We propose an automatic CoT prompting method: Auto-CoT. It samples questions with diversity and generates reasoning chains to construct demonstrations. On ten public benchmark reasoning tasks with GPT-3, Auto-CoT consistently matches or exceeds the performance of the CoT paradigm that requires manual designs of demonstrations. Code is available at https://github.com/amazon-research/auto-cot",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-03493",
+        "ArXiv": "2210.03493",
+        "CorpusId": 252762275
+      },
+      "arxiv_id": "2210.03493",
+      "doi": null,
+      "corpus_id": 252762275
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "1",
+      "ref_key": "S2:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "paperId": "1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "title": "Chain of Thought Prompting Elicits Reasoning in Large Language Models",
+      "year": 2022,
+      "abstract": "We explore how generating a chain of thought -- a series of intermediate reasoning steps -- significantly improves the ability of large language models to perform complex reasoning. In particular, we show how such reasoning abilities emerge naturally in sufficiently large language models via a simple method called chain of thought prompting, where a few chain of thought demonstrations are provided as exemplars in prompting. Experiments on three large language models show that chain of thought prompting improves performance on a range of arithmetic, commonsense, and symbolic reasoning tasks. The empirical gains can be striking. For instance, prompting a 540B-parameter language model with just eight chain of thought exemplars achieves state of the art accuracy on the GSM8K benchmark of math word problems, surpassing even finetuned GPT-3 with a verifier.",
+      "externalIds": {
+        "ArXiv": "2201.11903",
+        "DBLP": "journals/corr/abs-2201-11903",
+        "CorpusId": 246411621
+      },
+      "arxiv_id": "2201.11903",
+      "doi": null,
+      "corpus_id": 246411621
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "2",
+      "ref_key": "S2:5437e8adab596d7294124c0e798708e050e25321",
+      "paperId": "5437e8adab596d7294124c0e798708e050e25321",
+      "title": "Least-to-Most Prompting Enables Complex Reasoning in Large Language Models",
+      "year": 2022,
+      "abstract": "Chain-of-thought prompting has demonstrated remarkable performance on various natural language reasoning tasks. However, it tends to perform poorly on tasks which requires solving problems harder than the exemplars shown in the prompts. To overcome this challenge of easy-to-hard generalization, we propose a novel prompting strategy, least-to-most prompting. The key idea in this strategy is to break down a complex problem into a series of simpler subproblems and then solve them in sequence. Solving each subproblem is facilitated by the answers to previously solved subproblems. Our experimental results on tasks related to symbolic manipulation, compositional generalization, and math reasoning reveal that least-to-most prompting is capable of generalizing to more difficult problems than those seen in the prompts. A notable finding is that when the GPT-3 code-davinci-002 model is used with least-to-most prompting, it can solve the compositional generalization benchmark SCAN in any split (including length split) with an accuracy of at least 99% using just 14 exemplars, compared to only 16% accuracy with chain-of-thought prompting. This is particularly noteworthy because neural-symbolic models in the literature that specialize in solving SCAN are trained on the entire training set containing over 15,000 examples. We have included prompts for all the tasks in the Appendix.",
+      "externalIds": {
+        "ArXiv": "2205.10625",
+        "DBLP": "conf/iclr/ZhouSHWS0SCBLC23",
+        "DOI": "10.48550/arXiv.2205.10625",
+        "CorpusId": 248986239
+      },
+      "arxiv_id": "2205.10625",
+      "doi": "10.48550/arXiv.2205.10625",
+      "corpus_id": 248986239
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "3",
+      "ref_key": "S2:261549439aebdda72b648ecc462448fd24857ac1",
+      "paperId": "261549439aebdda72b648ecc462448fd24857ac1",
+      "title": "Progressive-Hint Prompting Improves Reasoning in Large Language Models",
+      "year": 2023,
+      "abstract": "The performance of Large Language Models (LLMs) in reasoning tasks depends heavily on prompt design, with Chain-of-Thought (CoT) and self-consistency being critical methods that enhance this ability. However, these methods do not fully exploit the answers generated by the LLM to guide subsequent responses. This paper proposes a new prompting method, named Progressive-Hint Prompting (PHP), that enables automatic multiple interactions between users and LLMs by using previously generated answers as hints to progressively guide toward the correct answers. PHP is orthogonal to CoT and self-consistency, making it easy to combine with state-of-the-art techniques to further improve performance. We conducted extensive and comprehensive experiments on seven benchmarks. The results show that PHP significantly improves accuracy while remaining highly efficient. For instance, with text-davinci-003, we observed a 4.2% improvement on GSM8K with greedy decoding compared to Complex CoT, and a 46.17% reduction in sample paths with self-consistency. With GPT-4 and PHP, we achieve state-of-the-art performances on SVAMP (89.1% ->91.9%), GSM8K (92% ->95.5%), AQuA (76.4% ->79.9%) and MATH (50.3% ->53.9%).",
+      "externalIds": {
+        "ArXiv": "2304.09797",
+        "DBLP": "journals/corr/abs-2304-09797",
+        "DOI": "10.48550/arXiv.2304.09797",
+        "CorpusId": 258212839
+      },
+      "arxiv_id": "2304.09797",
+      "doi": "10.48550/arXiv.2304.09797",
+      "corpus_id": 258212839
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "4",
+      "ref_key": "S2:6c943670dca38bfc7c8b477ae7c2d1fba1ad3691",
+      "paperId": "6c943670dca38bfc7c8b477ae7c2d1fba1ad3691",
+      "title": "Program of Thoughts Prompting: Disentangling Computation from Reasoning for Numerical Reasoning Tasks",
+      "year": 2022,
+      "abstract": "Recently, there has been significant progress in teaching language models to perform step-by-step reasoning to solve complex numerical reasoning tasks. Chain-of-thoughts prompting (CoT) is by far the state-of-art method for these tasks. CoT uses language models to perform both reasoning and computation in the multi-step `thought' process. To disentangle computation from reasoning, we propose `Program of Thoughts' (PoT), which uses language models (mainly Codex) to express the reasoning process as a program. The computation is relegated to an external computer, which executes the generated programs to derive the answer. We evaluate PoT on five math word problem datasets (GSM, AQuA, SVAMP, TabMWP, MultiArith) and three financial-QA datasets (FinQA, ConvFinQA, TATQA) for both few-shot and zero-shot setups. Under both few-shot and zero-shot settings, PoT can show an average performance gain over CoT by around 12\\% across all the evaluated datasets. By combining PoT with self-consistency decoding, we can achieve SoTA performance on all math problem datasets and near-SoTA performance on financial datasets. All of our data and code are released in Github https://github.com/wenhuchen/Program-of-Thoughts",
+      "externalIds": {
+        "DBLP": "journals/tmlr/ChenM0C23",
+        "ArXiv": "2211.12588",
+        "CorpusId": 253801709
+      },
+      "arxiv_id": "2211.12588",
+      "doi": null,
+      "corpus_id": 253801709
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "5",
+      "ref_key": "S2:23dd78e424d32f6a48660dcd67ce994b8a7db8be",
+      "paperId": "23dd78e424d32f6a48660dcd67ce994b8a7db8be",
+      "title": "STaR: Bootstrapping Reasoning With Reasoning",
+      "year": 2022,
+      "abstract": "Generating step-by-step\"chain-of-thought\"rationales improves language model performance on complex reasoning tasks like mathematics or commonsense question-answering. However, inducing language model rationale generation currently requires either constructing massive rationale datasets or sacrificing accuracy by using only few-shot inference. We propose a technique to iteratively leverage a small number of rationale examples and a large dataset without rationales, to bootstrap the ability to perform successively more complex reasoning. This technique, the\"Self-Taught Reasoner\"(STaR), relies on a simple loop: generate rationales to answer many questions, prompted with a few rationale examples; if the generated answers are wrong, try again to generate a rationale given the correct answer; fine-tune on all the rationales that ultimately yielded correct answers; repeat. We show that STaR significantly improves performance on multiple datasets compared to a model fine-tuned to directly predict final answers, and performs comparably to fine-tuning a 30$\\times$ larger state-of-the-art language model on CommensenseQA. Thus, STaR lets a model improve itself by learning from its own generated reasoning.",
+      "externalIds": {
+        "ArXiv": "2203.14465",
+        "CorpusId": 247762790
+      },
+      "arxiv_id": "2203.14465",
+      "doi": null,
+      "corpus_id": 247762790
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "6",
+      "ref_key": "S2:3fc3460c4554a28e489a0ea6ef067b79b7d301d9",
+      "paperId": "3fc3460c4554a28e489a0ea6ef067b79b7d301d9",
+      "title": "Active Prompting with Chain-of-Thought for Large Language Models",
+      "year": 2023,
+      "abstract": "The increasing scale of large language models (LLMs) brings emergent abilities to various complex tasks requiring reasoning, such as arithmetic and commonsense reasoning. It is known that the effective design of task-specific prompts is critical for LLMs' ability to produce high-quality answers. In particular, an effective approach for complex question-and-answer tasks is example-based prompting with chain-of-thought (CoT) reasoning, which significantly improves the performance of LLMs. However, current CoT methods rely on a fixed set of human-annotated exemplars, which are not necessarily the most effective examples for different tasks. This paper proposes a new method, Active-Prompt, to adapt LLMs to different tasks with task-specific example prompts (annotated with human-designed CoT reasoning). For this purpose, we propose a solution to the key problem of determining which questions are the most important and helpful ones to annotate from a pool of task-specific queries. By borrowing ideas from the related problem of uncertainty-based active learning, we introduce several metrics to characterize the uncertainty so as to select the most uncertain questions for annotation. Experimental results demonstrate the superiority of our proposed method, achieving state-of-the-art on eight complex reasoning tasks. Further analyses of different uncertainty metrics, pool sizes, zero-shot learning, and accuracy-uncertainty relationship demonstrate the effectiveness of our method. Our code will be available at https://github.com/shizhediao/active-prompt.",
+      "externalIds": {
+        "DBLP": "conf/acl/DiaoWLPL024",
+        "ArXiv": "2302.12246",
+        "DOI": "10.48550/arXiv.2302.12246",
+        "CorpusId": 257102707
+      },
+      "arxiv_id": "2302.12246",
+      "doi": "10.48550/arXiv.2302.12246",
+      "corpus_id": 257102707
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "7",
+      "ref_key": "S2:0d42221038c05cee8443c5b5af838505ee137dc3",
+      "paperId": "0d42221038c05cee8443c5b5af838505ee137dc3",
+      "title": "ART: Automatic multi-step reasoning and tool-use for large language models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) can perform complex reasoning in few- and zero-shot settings by generating intermediate chain of thought (CoT) reasoning steps. Further, each reasoning step can rely on external tools to support computation beyond the core LLM capabilities (e.g. search/running code). Prior work on CoT prompting and tool use typically requires hand-crafting task-specific demonstrations and carefully scripted interleaving of model generations with tool use. We introduce Automatic Reasoning and Tool-use (ART), a framework that uses frozen LLMs to automatically generate intermediate reasoning steps as a program. Given a new task to solve, ART selects demonstrations of multi-step reasoning and tool use from a task library. At test time, ART seamlessly pauses generation whenever external tools are called, and integrates their output before resuming generation. ART achieves a substantial improvement over few-shot prompting and automatic CoT on unseen tasks in the BigBench and MMLU benchmarks, and matches performance of hand-crafted CoT prompts on a majority of these tasks. ART is also extensible, and makes it easy for humans to improve performance by correcting errors in task-specific programs or incorporating new tools, which we demonstrate by drastically improving performance on select tasks with minimal human intervention.",
+      "externalIds": {
+        "ArXiv": "2303.09014",
+        "DBLP": "journals/corr/abs-2303-09014",
+        "DOI": "10.48550/arXiv.2303.09014",
+        "CorpusId": 257557449
+      },
+      "arxiv_id": "2303.09014",
+      "doi": "10.48550/arXiv.2303.09014",
+      "corpus_id": 257557449
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "8",
+      "ref_key": "S2:e66f0f822d4c4853b39b27daaafa2993005fd55e",
+      "paperId": "e66f0f822d4c4853b39b27daaafa2993005fd55e",
+      "title": "Large Language Models are few(1)-shot Table Reasoners",
+      "year": 2022,
+      "abstract": "Recent literature has shown that large language models (LLMs) are generally excellent few-shot reasoners to solve text reasoning tasks. However, the capability of LLMs on table reasoning tasks is yet to be explored. In this paper, we aim at understanding how well LLMs can perform table-related tasks with few-shot in-context learning. Specifically, we evaluated LLMs on popular table QA and fact verification datasets like WikiTableQuestion, FetaQA, TabFact, and FEVEROUS and found that LLMs are competent at complex reasoning over table structures, though these models are not pre-trained on any table corpus. When combined with ‘chain of thoughts’ prompting, LLMs can achieve very strong performance with only a 1-shot demonstration, even on par with some SoTA models. We show that LLMs are even more competent at generating comprehensive long-form answers on FetaQA than tuned T5-large. We further manually studied the reasoning chains elicited from LLMs and found that these reasoning chains are highly consistent with the underlying semantic form. We believe that LLMs can serve as a simple yet generic baseline for future research. The code and data are released in {url{https://github.com/wenhuchen/TableCoT}.",
+      "externalIds": {
+        "DBLP": "conf/eacl/Chen23",
+        "ACL": "2023.findings-eacl.83",
+        "ArXiv": "2210.06710",
+        "DOI": "10.48550/arXiv.2210.06710",
+        "CorpusId": 252872943
+      },
+      "arxiv_id": "2210.06710",
+      "doi": "10.48550/arXiv.2210.06710",
+      "corpus_id": 252872943
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "9",
+      "ref_key": "S2:07955e96cbd778d0ae2a68f09d073b866dd84c2a",
+      "paperId": "07955e96cbd778d0ae2a68f09d073b866dd84c2a",
+      "title": "Decomposed Prompting: A Modular Approach for Solving Complex Tasks",
+      "year": 2022,
+      "abstract": "Few-shot prompting is a surprisingly powerful way to use Large Language Models (LLMs) to solve various tasks. However, this approach struggles as the task complexity increases or when the individual reasoning steps of the task themselves are hard to learn, especially when embedded in more complex tasks. To address this, we propose Decomposed Prompting, a new approach to solve complex tasks by decomposing them (via prompting) into simpler sub-tasks that can be delegated to a library of prompting-based LLMs dedicated to these sub-tasks. This modular structure allows each prompt to be optimized for its specific sub-task, further decomposed if necessary, and even easily replaced with more effective prompts, trained models, or symbolic functions if desired. We show that the flexibility and modularity of Decomposed Prompting allows it to outperform prior work on few-shot prompting using GPT3. On symbolic reasoning tasks, we can further decompose sub-tasks that are hard for LLMs into even simpler solvable sub-tasks. When the complexity comes from the input length, we can recursively decompose the task into the same task but with smaller inputs. We also evaluate our approach on textual multi-step reasoning tasks: on long-context multi-hop QA task, we can more effectively teach the sub-tasks via our separate sub-tasks prompts; and on open-domain multi-hop QA, we can incorporate a symbolic information retrieval within our decomposition framework, leading to improved performance on both tasks. Datasets, Code and Prompts available at https://github.com/allenai/DecomP.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-02406",
+        "ArXiv": "2210.02406",
+        "DOI": "10.48550/arXiv.2210.02406",
+        "CorpusId": 252715485
+      },
+      "arxiv_id": "2210.02406",
+      "doi": "10.48550/arXiv.2210.02406",
+      "corpus_id": 252715485
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "10",
+      "ref_key": "S2:40047a74b707743157051d38f76061ba5ff9aab4",
+      "paperId": "40047a74b707743157051d38f76061ba5ff9aab4",
+      "title": "Compositional Semantic Parsing with Large Language Models",
+      "year": 2022,
+      "abstract": "Humans can reason compositionally when presented with new tasks. Previous research shows that appropriate prompting techniques enable large language models (LLMs) to solve artificial compositional generalization tasks such as SCAN. In this work, we identify additional challenges in more realistic semantic parsing tasks with larger vocabulary and refine these prompting techniques to address them. Our best method is based on least-to-most prompting: it decomposes the problem using prompting-based syntactic parsing, then uses this decomposition to select appropriate exemplars and to sequentially generate the semantic parse. This method allows us to set a new state of the art for CFQ while requiring only 1% of the training data used by traditional approaches. Due to the general nature of our approach, we expect similar efforts will lead to new results in other tasks and domains, especially for knowledge-intensive applications.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2209-15003",
+        "ArXiv": "2209.15003",
+        "CorpusId": 252596001
+      },
+      "arxiv_id": "2209.15003",
+      "doi": null,
+      "corpus_id": 252596001
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "11",
+      "ref_key": "S2:b115c1e1e9e51f8ad7d47b745bc04e29a654b84d",
+      "paperId": "b115c1e1e9e51f8ad7d47b745bc04e29a654b84d",
+      "title": "Faithful Chain-of-Thought Reasoning",
+      "year": 2023,
+      "abstract": "While Chain-of-Thought (CoT) prompting boosts Language Models' (LM) performance on a gamut of complex reasoning tasks, the generated reasoning chain does not necessarily reflect how the model arrives at the answer (aka. faithfulness). We propose Faithful CoT, a reasoning framework involving two stages: Translation (Natural Language query $\\rightarrow$ symbolic reasoning chain) and Problem Solving (reasoning chain $\\rightarrow$ answer), using an LM and a deterministic solver respectively. This guarantees that the reasoning chain provides a faithful explanation of the final answer. Aside from interpretability, Faithful CoT also improves empirical performance: it outperforms standard CoT on 9 of 10 benchmarks from 4 diverse domains, with a relative accuracy gain of 6.3% on Math Word Problems (MWP), 3.4% on Planning, 5.5% on Multi-hop Question Answering (QA), and 21.4% on Relational Inference. Furthermore, with GPT-4 and Codex, it sets the new state-of-the-art few-shot performance on 7 datasets (with 95.0+ accuracy on 6 of them), showing a strong synergy between faithfulness and accuracy.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2301-13379",
+        "ACL": "2023.ijcnlp-main.20",
+        "ArXiv": "2301.13379",
+        "DOI": "10.48550/arXiv.2301.13379",
+        "CorpusId": 256416127
+      },
+      "arxiv_id": "2301.13379",
+      "doi": "10.48550/arXiv.2301.13379",
+      "corpus_id": 256416127
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "12",
+      "ref_key": "S2:c88cafa3e980765a64febe369ceb7c2aa7261d2a",
+      "paperId": "c88cafa3e980765a64febe369ceb7c2aa7261d2a",
+      "title": "Complexity-Based Prompting for Multi-Step Reasoning",
+      "year": 2022,
+      "abstract": "We study the task of prompting large-scale language models to perform multi-step reasoning. Existing work shows that when prompted with a chain of thoughts (CoT), sequences of short sentences describing intermediate reasoning steps towards a final answer, large language models can generate new reasoning chains and predict answers for new inputs. A central question is which reasoning examples make the most effective prompts. In this work, we propose complexity-based prompting, a simple and effective example selection scheme for multi-step reasoning. We show that prompts with higher reasoning complexity, i.e., chains with more reasoning steps, achieve substantially better performance on multi-step reasoning tasks over strong baselines. We further extend our complexity-based criteria from prompting (selecting inputs) to decoding (selecting outputs), where we sample multiple reasoning chains from the model, then choose the majority of generated answers from complex reasoning chains (over simple chains). When used to prompt GPT-3 and Codex, our approach substantially improves multi-step reasoning accuracy and achieves new state-of-the-art (SOTA) performance on three math benchmarks (GSM8K, MultiArith, and MathQA) and two BigBenchHard tasks (Date Understanding and Penguins), with an average +5.3 and up to +18 accuracy improvements. Compared with existing example selection schemes like manual tuning or retrieval-based selection, selection based on reasoning complexity is intuitive, easy to implement, and annotation-efficient. Further results demonstrate the robustness of performance gains from complex prompts under format perturbation and distribution shift.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-00720",
+        "ArXiv": "2210.00720",
+        "DOI": "10.48550/arXiv.2210.00720",
+        "CorpusId": 252683303
+      },
+      "arxiv_id": "2210.00720",
+      "doi": "10.48550/arXiv.2210.00720",
+      "corpus_id": 252683303
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "13",
+      "ref_key": "S2:490d8006851b1562cfd9ec1f057471f2868289d1",
+      "paperId": "490d8006851b1562cfd9ec1f057471f2868289d1",
+      "title": "Rethinking with Retrieval: Faithful Large Language Model Inference",
+      "year": 2022,
+      "abstract": "Despite the success of large language models (LLMs) in various natural language processing (NLP) tasks, the stored knowledge in these models may inevitably be incomplete, out-of-date, or incorrect. This motivates the need to utilize external knowledge to assist LLMs. Unfortunately, current methods for incorporating external knowledge often require additional training or fine-tuning, which can be costly and may not be feasible for LLMs. To address this issue, we propose a novel post-processing approach, rethinking with retrieval (RR), which retrieves relevant external knowledge based on the decomposed reasoning steps obtained from the chain-of-thought (CoT) prompting. This lightweight approach does not require additional training or fine-tuning and is not limited by the input length of LLMs. We evaluate the effectiveness of RR through extensive experiments with GPT-3 on three complex reasoning tasks: commonsense reasoning, temporal reasoning, and tabular reasoning. Our results show that RR can produce more faithful explanations and improve the performance of LLMs.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2301-00303",
+        "ArXiv": "2301.00303",
+        "DOI": "10.48550/arXiv.2301.00303",
+        "CorpusId": 255372320
+      },
+      "arxiv_id": "2301.00303",
+      "doi": "10.48550/arXiv.2301.00303",
+      "corpus_id": 255372320
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "14",
+      "ref_key": "S2:d1120d67b700e4dfe8b39eb1e48fbdea4e1a0c43",
+      "paperId": "d1120d67b700e4dfe8b39eb1e48fbdea4e1a0c43",
+      "title": "HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face",
+      "year": 2023,
+      "abstract": "Solving complicated AI tasks with different domains and modalities is a key step toward artificial general intelligence. While there are numerous AI models available for various domains and modalities, they cannot handle complicated AI tasks autonomously. Considering large language models (LLMs) have exhibited exceptional abilities in language understanding, generation, interaction, and reasoning, we advocate that LLMs could act as a controller to manage existing AI models to solve complicated AI tasks, with language serving as a generic interface to empower this. Based on this philosophy, we present HuggingGPT, an LLM-powered agent that leverages LLMs (e.g., ChatGPT) to connect various AI models in machine learning communities (e.g., Hugging Face) to solve AI tasks. Specifically, we use ChatGPT to conduct task planning when receiving a user request, select models according to their function descriptions available in Hugging Face, execute each subtask with the selected AI model, and summarize the response according to the execution results. By leveraging the strong language capability of ChatGPT and abundant AI models in Hugging Face, HuggingGPT can tackle a wide range of sophisticated AI tasks spanning different modalities and domains and achieve impressive results in language, vision, speech, and other challenging tasks, which paves a new way towards the realization of artificial general intelligence.",
+      "externalIds": {
+        "ArXiv": "2303.17580",
+        "DBLP": "journals/corr/abs-2303-17580",
+        "DOI": "10.48550/arXiv.2303.17580",
+        "CorpusId": 257833781
+      },
+      "arxiv_id": "2303.17580",
+      "doi": "10.48550/arXiv.2303.17580",
+      "corpus_id": 257833781
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "15",
+      "ref_key": "S2:b626560f19f815808a289ef5c24a17c57320da70",
+      "paperId": "b626560f19f815808a289ef5c24a17c57320da70",
+      "title": "MathPrompter: Mathematical Reasoning using Large Language Models",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) have limited performance when solving arithmetic reasoning tasks and often provide incorrect answers. Unlike natural language understanding, math problems typically have a single correct answer, making the task of generating accurate solutions more challenging for LLMs. To the best of our knowledge, we are not aware of any LLMs that indicate their level of confidence in their responses which fuels a trust deficit in these models impeding their adoption. To address this deficiency, we propose ‘MathPrompter’, a technique that improves performance of LLMs on arithmetic problems along with increased reliance in the predictions. MathPrompter uses the Zero-shot chain-of-thought prompting technique to generate multiple algebraic expressions or python functions to solve the same math problem in different ways and thereby raise the confidence level in the output results. This is in contrast to other prompt based CoT methods, where there is no check on the validity of the intermediate steps followed. Our technique improves over state-of-the-art on the ‘MultiArith’ dataset (78.7% - 92.5%) evaluated using 175B parameter GPT-based LLM.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2303-05398",
+        "ACL": "2023.acl-industry.4",
+        "ArXiv": "2303.05398",
+        "DOI": "10.48550/arXiv.2303.05398",
+        "CorpusId": 257427208
+      },
+      "arxiv_id": "2303.05398",
+      "doi": "10.48550/arXiv.2303.05398",
+      "corpus_id": 257427208
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "16",
+      "ref_key": "S2:3f4d11971f2c64be9125a7fe99c019588bbebf16",
+      "paperId": "3f4d11971f2c64be9125a7fe99c019588bbebf16",
+      "title": "Iteratively Prompt Pre-trained Language Models for Chain of Thought",
+      "year": 2022,
+      "abstract": "While Pre-trained Language Models (PLMs) internalize a great amount of world knowledge, they have been shown incapable of recalling these knowledge to solve tasks requiring complex & multi-step reasoning. Similar to how humans develop a “chain of thought” for these tasks, how can we equip PLMs with such abilities? In this work, we explore an iterative prompting framework, a new prompting paradigm which progressively elicits relevant knowledge from PLMs for multi-step inference. We identify key limitations of existing prompting methods, namely they are either restricted to queries with a single identifiable relation/predicate, or being agnostic to input contexts, which makes it difficult to capture variabilities across different inference steps. We propose an iterative context-aware prompter, which addresses these limitations by learning to dynamically synthesize prompts conditioned on the current step’s contexts. Experiments on three datasets involving multi-step reasoning show the effectiveness of the iterative scheme and the context-aware prompter design.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/Wang0S22",
+        "ArXiv": "2203.08383",
+        "ACL": "2022.emnlp-main.174",
+        "DOI": "10.18653/v1/2022.emnlp-main.174",
+        "CorpusId": 253098851
+      },
+      "arxiv_id": "2203.08383",
+      "doi": "10.18653/v1/2022.emnlp-main.174",
+      "corpus_id": 253098851
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "17",
+      "ref_key": "S2:47c3b8dd2c8a9326249ac98900b2c3fc71f46ab1",
+      "paperId": "47c3b8dd2c8a9326249ac98900b2c3fc71f46ab1",
+      "title": "Self-planning Code Generation with Large Language Models",
+      "year": 2023,
+      "abstract": "Although large language models (LLMs) have demonstrated impressive ability in code generation, they are still struggling to address the complicated intent provided by humans. It is widely acknowledged that humans typically employ planning to decompose complex problems and schedule solution steps prior to implementation. To this end, we introduce planning into code generation to help the model understand complex intent and reduce the difficulty of problem-solving. This paper proposes a self-planning code generation approach with large language models, which consists of two phases, namely planning phase and implementation phase. Specifically, in the planning phase, LLM plans out concise solution steps from the intent combined with few-shot prompting. Subsequently, in the implementation phase, the model generates code step by step, guided by the preceding solution steps. We conduct extensive experiments on various code-generation benchmarks across multiple programming languages. Experimental results show that self-planning code generation achieves a relative improvement of up to 25.4% in Pass@1 compared to direct code generation, and up to 11.9% compared to Chain-of-Thought of code generation. Moreover, our self-planning approach also enhances the quality of the generated code with respect to correctness, readability, and robustness, as assessed by humans.",
+      "externalIds": {
+        "ArXiv": "2303.06689",
+        "DBLP": "journals/corr/abs-2303-06689",
+        "DOI": "10.1145/3672456",
+        "CorpusId": 257495755
+      },
+      "arxiv_id": "2303.06689",
+      "doi": "10.1145/3672456",
+      "corpus_id": 257495755
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "18",
+      "ref_key": "S2:760561c57f68044e2f1d089088df1da6c627b09a",
+      "paperId": "760561c57f68044e2f1d089088df1da6c627b09a",
+      "title": "On the Advance of Making Language Models Better Reasoners",
+      "year": 2022,
+      "abstract": "Large language models such as GPT-3 and PaLM have shown remarkable performance in few-shot learning. However, they still struggle with reasoning tasks such as the arithmetic benchmark GSM8K. Recent advances deliberately guide the language model to generate a chain of reasoning steps before producing the ﬁnal answer, successfully boosting the GSM8K benchmark from 17 . 9% to 58 . 1% in terms of problem solving rate. In this paper, we propose a new approach, D I V E RS E (Diverse Veriﬁer on Reasoning Step), to further advance their reasoning capability. D I V E RS E ﬁrst explores different prompts to enhance the diversity in reasoning paths. Second, D I V E RS E introduces a veriﬁer to distinguish good answers from bad answers for a better weighted voting. Finally, D I V E RS E veriﬁes the correctness of each single step rather than all the steps in a whole. We conduct extensive experiments using the latest language model code-davinci-002 and demonstrate that D I - V E RS E can achieve new state-of-the-art performance on six out of eight reasoning benchmarks (e.g., GSM8K 74 . 4% → 83 . 2% ), out-performing the PaLM model with 540B parameters.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2206-02336",
+        "DOI": "10.48550/arXiv.2206.02336",
+        "CorpusId": 249395505
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2206.02336",
+      "corpus_id": 249395505
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "19",
+      "ref_key": "S2:170c97c7215f42edfb20c2248f954879e91ef86e",
+      "paperId": "170c97c7215f42edfb20c2248f954879e91ef86e",
+      "title": "Chameleon: Plug-and-Play Compositional Reasoning with Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have achieved remarkable progress in solving various natural language processing tasks due to emergent reasoning abilities. However, LLMs have inherent limitations as they are incapable of accessing up-to-date information (stored on the Web or in task-specific knowledge bases), using external tools, and performing precise mathematical and logical reasoning. In this paper, we present Chameleon, an AI system that mitigates these limitations by augmenting LLMs with plug-and-play modules for compositional reasoning. Chameleon synthesizes programs by composing various tools (e.g., LLMs, off-the-shelf vision models, web search engines, Python functions, and heuristic-based modules) for accomplishing complex reasoning tasks. At the heart of Chameleon is an LLM-based planner that assembles a sequence of tools to execute to generate the final response. We showcase the effectiveness of Chameleon on two multi-modal knowledge-intensive reasoning tasks: ScienceQA and TabMWP. Chameleon, powered by GPT-4, achieves an 86.54% overall accuracy on ScienceQA, improving the best published few-shot result by 11.37%. On TabMWP, GPT-4-powered Chameleon improves the accuracy by 17.0%, lifting the state of the art to 98.78%. Our analysis also shows that the GPT-4-powered planner exhibits more consistent and rational tool selection via inferring potential constraints from instructions, compared to a ChatGPT-powered planner. The project is available at https://chameleon-llm.github.io.",
+      "externalIds": {
+        "DBLP": "conf/nips/LuPCGCWZG23",
+        "ArXiv": "2304.09842",
+        "DOI": "10.48550/arXiv.2304.09842",
+        "CorpusId": 258212542
+      },
+      "arxiv_id": "2304.09842",
+      "doi": "10.48550/arXiv.2304.09842",
+      "corpus_id": 258212542
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "20",
+      "ref_key": "S2:4988b3d378b79eb8669112620baf1ff4e3e536fd",
+      "paperId": "4988b3d378b79eb8669112620baf1ff4e3e536fd",
+      "title": "Text and Patterns: For Effective Chain of Thought, It Takes Two to Tango",
+      "year": 2022,
+      "abstract": "The past decade has witnessed dramatic gains in natural language processing and an unprecedented scaling of large language models. These developments have been accelerated by the advent of few-shot techniques such as chain of thought (CoT) prompting. Specifically, CoT pushes the performance of large language models in a few-shot setup by augmenting the prompts with intermediate steps. Despite impressive results across various tasks, the reasons behind their success have not been explored. This work uses counterfactual prompting to develop a deeper understanding of CoT-based few-shot prompting mechanisms in large language models. We first systematically identify and define the key components of a prompt: symbols, patterns, and text. Then, we devise and conduct an exhaustive set of experiments across four different tasks, by querying the model with counterfactual prompts where only one of these components is altered. Our experiments across three models (PaLM, GPT-3, and CODEX) reveal several surprising findings and brings into question the conventional wisdom around few-shot prompting. First, the presence of factual patterns in a prompt is practically immaterial to the success of CoT. Second, our results conclude that the primary role of intermediate steps may not be to facilitate learning how to solve a task. The intermediate steps are rather a beacon for the model to realize what symbols to replicate in the output to form a factual answer. Further, text imbues patterns with commonsense knowledge and meaning. Our empirical and qualitative analysis reveals that a symbiotic relationship between text and patterns explains the success of few-shot prompting: text helps extract commonsense from the question to help patterns, and patterns enforce task understanding and direct text generation.",
+      "externalIds": {
+        "ArXiv": "2209.07686",
+        "DBLP": "journals/corr/abs-2209-07686",
+        "DOI": "10.48550/arXiv.2209.07686",
+        "CorpusId": 252355328
+      },
+      "arxiv_id": "2209.07686",
+      "doi": "10.48550/arXiv.2209.07686",
+      "corpus_id": 252355328
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "21",
+      "ref_key": "S2:50b0c6ee2b3d53ba5af69d6c00b5d60888a9026f",
+      "paperId": "50b0c6ee2b3d53ba5af69d6c00b5d60888a9026f",
+      "title": "Maieutic Prompting: Logically Consistent Reasoning with Recursive Explanations",
+      "year": 2022,
+      "abstract": "Pre-trained language models (LMs) struggle with consistent reasoning; recently, prompting LMs to generate explanations that self-guide the inference has emerged as a promising direction to amend this. However, these approaches are fundamentally bounded by the correctness of explanations, which themselves are often noisy and inconsistent. In this work, we develop Maieutic Prompting, which aims to infer a correct answer to a question even from the unreliable generations of LM. Maieutic Prompting induces a tree of explanations abductively (e.g. X is true, because ...) and recursively, then frames the inference as a satisfiability problem over these explanations and their logical relations. We test Maieutic Prompting for true/false QA on three challenging benchmarks that require complex commonsense reasoning. Maieutic Prompting achieves up to 20% better accuracy than state-of-the-art prompting methods, and as a fully unsupervised approach, performs competitively with supervised models. We also show that Maieutic Prompting improves robustness in inference while providing interpretable rationales.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/JungQWBB0C22",
+        "ArXiv": "2205.11822",
+        "ACL": "2022.emnlp-main.82",
+        "DOI": "10.48550/arXiv.2205.11822",
+        "CorpusId": 249017524
+      },
+      "arxiv_id": "2205.11822",
+      "doi": "10.48550/arXiv.2205.11822",
+      "corpus_id": 249017524
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "22",
+      "ref_key": "S2:6c1e1cc1e0e1f8fd026fe517607b2d4535565fa7",
+      "paperId": "6c1e1cc1e0e1f8fd026fe517607b2d4535565fa7",
+      "title": "PAL: Program-aided Language Models",
+      "year": 2022,
+      "abstract": "Large language models (LLMs) have recently demonstrated an impressive ability to perform arithmetic and symbolic reasoning tasks, when provided with a few examples at test time (\"few-shot prompting\"). Much of this success can be attributed to prompting methods such as\"chain-of-thought'', which employ LLMs for both understanding the problem description by decomposing it into steps, as well as solving each step of the problem. While LLMs seem to be adept at this sort of step-by-step decomposition, LLMs often make logical and arithmetic mistakes in the solution part, even when the problem is decomposed correctly. In this paper, we present Program-Aided Language models (PAL): a novel approach that uses the LLM to read natural language problems and generate programs as the intermediate reasoning steps, but offloads the solution step to a runtime such as a Python interpreter. With PAL, decomposing the natural language problem into runnable steps remains the only learning task for the LLM, while solving is delegated to the interpreter. We demonstrate this synergy between a neural LLM and a symbolic interpreter across 13 mathematical, symbolic, and algorithmic reasoning tasks from BIG-Bench Hard and other benchmarks. In all these natural language reasoning tasks, generating code using an LLM and reasoning using a Python interpreter leads to more accurate results than much larger models. For example, PAL using Codex achieves state-of-the-art few-shot accuracy on the GSM8K benchmark of math word problems, surpassing PaLM-540B which uses chain-of-thought by absolute 15% top-1. Our code and data are publicly available at http://reasonwithpal.com/ .",
+      "externalIds": {
+        "ArXiv": "2211.10435",
+        "DBLP": "journals/corr/abs-2211-10435",
+        "DOI": "10.48550/arXiv.2211.10435",
+        "CorpusId": 253708270
+      },
+      "arxiv_id": "2211.10435",
+      "doi": "10.48550/arXiv.2211.10435",
+      "corpus_id": 253708270
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "23",
+      "ref_key": "S2:cc0f0cb09a73f82ed44d900f5ca710bec784acc1",
+      "paperId": "cc0f0cb09a73f82ed44d900f5ca710bec784acc1",
+      "title": "DIN-SQL: Decomposed In-Context Learning of Text-to-SQL with Self-Correction",
+      "year": 2023,
+      "abstract": "We study the problem of decomposing a complex text-to-sql task into smaller sub-tasks and how such a decomposition can significantly improve the performance of Large Language Models (LLMs) in the reasoning process. There is currently a significant gap between the performance of fine-tuned models and prompting approaches using LLMs on challenging text-to-sql datasets such as Spider. We show that SQL queries, despite their declarative structure, can be broken down into sub-problems and the solutions of those sub-problems can be fed into LLMs to significantly improve their performance. Our experiments with three LLMs show that this approach consistently improves their performance by roughly 10%, pushing the accuracy of LLMs towards state-of-the-art, and even beating large fine-tuned models on the holdout Spider dataset.",
+      "externalIds": {
+        "DBLP": "conf/nips/PourrezaR23",
+        "ArXiv": "2304.11015",
+        "DOI": "10.48550/arXiv.2304.11015",
+        "CorpusId": 258291425
+      },
+      "arxiv_id": "2304.11015",
+      "doi": "10.48550/arXiv.2304.11015",
+      "corpus_id": 258291425
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "24",
+      "ref_key": "S2:d48b29889241551e1ee6622fa78c3fa4159255dd",
+      "paperId": "d48b29889241551e1ee6622fa78c3fa4159255dd",
+      "title": "Selection-Inference: Exploiting Large Language Models for Interpretable Logical Reasoning",
+      "year": 2022,
+      "abstract": "Large language models (LLMs) have been shown to be capable of impressive few-shot generalisation to new tasks. However, they still tend to perform poorly on multi-step logical reasoning problems. Here we carry out a comprehensive evaluation of LLMs on 50 tasks that probe different aspects of logical reasoning. We show that language models tend to perform fairly well at single step inference or entailment tasks, but struggle to chain together multiple reasoning steps to solve more complex problems. In light of this, we propose a Selection-Inference (SI) framework that exploits pre-trained LLMs as general processing modules, and alternates between selection and inference to generate a series of interpretable, casual reasoning steps leading to the final answer. We show that a 7B parameter LLM used within the SI framework in a 5-shot generalisation setting, with no fine-tuning, yields a performance improvement of over 100% compared to an equivalent vanilla baseline on a suite of 10 logical reasoning tasks. The same model in the same setting even outperforms a significantly larger 280B parameter baseline on the same suite of tasks. Moreover, answers produced by the SI framework are accompanied by a causal natural-language-based reasoning trace, which has important implications for the safety and trustworthiness of the system.",
+      "externalIds": {
+        "ArXiv": "2205.09712",
+        "DBLP": "journals/corr/abs-2205-09712",
+        "DOI": "10.48550/arXiv.2205.09712",
+        "CorpusId": 248887351
+      },
+      "arxiv_id": "2205.09712",
+      "doi": "10.48550/arXiv.2205.09712",
+      "corpus_id": 248887351
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "25",
+      "ref_key": "S2:e070ff286709db28312e08b52b05539debe88146",
+      "paperId": "e070ff286709db28312e08b52b05539debe88146",
+      "title": "Measuring and Narrowing the Compositionality Gap in Language Models",
+      "year": 2022,
+      "abstract": "We investigate the ability of language models to perform compositional reasoning tasks where the overall solution depends on correctly composing the answers to sub-problems. We measure how often models can correctly answer all sub-problems but not generate the overall solution, a ratio we call the compositionality gap. We evaluate this ratio by asking multi-hop questions with answers that require composing multiple facts unlikely to have been observed together during pretraining. In the GPT-3 family of models, as model size increases we show that the single-hop question answering performance improves faster than the multi-hop performance does, therefore the compositionality gap does not decrease. This surprising result suggests that while more powerful models memorize and recall more factual knowledge, they show no corresponding improvement in their ability to perform this kind of compositional reasoning. We then demonstrate how elicitive prompting (such as chain of thought) narrows the compositionality gap by reasoning explicitly. We present a new method, self-ask, that further improves on chain of thought. In our method, the model explicitly asks itself (and answers) follow-up questions before answering the initial question. We finally show that self-ask's structured prompting lets us easily plug in a search engine to answer the follow-up questions, which additionally improves accuracy.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/PressZMSSL23",
+        "ArXiv": "2210.03350",
+        "DOI": "10.48550/arXiv.2210.03350",
+        "CorpusId": 252762102
+      },
+      "arxiv_id": "2210.03350",
+      "doi": "10.48550/arXiv.2210.03350",
+      "corpus_id": 252762102
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "26",
+      "ref_key": "S2:5f19ae1135a9500940978104ec15a5b8751bc7d2",
+      "paperId": "5f19ae1135a9500940978104ec15a5b8751bc7d2",
+      "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
+      "year": 2022,
+      "abstract": "Chain-of-thought prompting combined with pre-trained large language models has achieved encouraging results on complex reasoning tasks. In this paper, we propose a new decoding strategy, self-consistency, to replace the naive greedy decoding used in chain-of-thought prompting. It first samples a diverse set of reasoning paths instead of only taking the greedy one, and then selects the most consistent answer by marginalizing out the sampled reasoning paths. Self-consistency leverages the intuition that a complex reasoning problem typically admits multiple different ways of thinking leading to its unique correct answer. Our extensive empirical evaluation shows that self-consistency boosts the performance of chain-of-thought prompting with a striking margin on a range of popular arithmetic and commonsense reasoning benchmarks, including GSM8K (+17.9%), SVAMP (+11.0%), AQuA (+12.2%), StrategyQA (+6.4%) and ARC-challenge (+3.9%).",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2203-11171",
+        "ArXiv": "2203.11171",
+        "DOI": "10.48550/arXiv.2203.11171",
+        "CorpusId": 247595263
+      },
+      "arxiv_id": "2203.11171",
+      "doi": "10.48550/arXiv.2203.11171",
+      "corpus_id": 247595263
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "27",
+      "ref_key": "S2:38e1a9c5599fc7597b7c5ffd37951ba5f528094c",
+      "paperId": "38e1a9c5599fc7597b7c5ffd37951ba5f528094c",
+      "title": "XRICL: Cross-lingual Retrieval-Augmented In-Context Learning for Cross-lingual Text-to-SQL Semantic Parsing",
+      "year": 2022,
+      "abstract": "In-context learning using large language models has recently shown surprising results for semantic parsing tasks such as Text-to-SQL translation. Prompting GPT-3 or Codex using several examples of question-SQL pairs can produce excellent results, comparable to state-of-the-art finetuning-based models. However, existing work primarily focuses on English datasets, and it is unknown whether large language models can serve as competitive semantic parsers for other languages. To bridge this gap, our work focuses on cross-lingual Text-to-SQL semantic parsing for translating non-English utterances into SQL queries based on an English schema. We consider a zero-shot transfer learning setting with the assumption that we do not have any labeled examples in the target language (but have annotated examples in English). This work introduces the XRICL framework, which learns to retrieve relevant English exemplars for a given query to construct prompts. We also include global translation exemplars for a target language to facilitate the translation process for large language models. To systematically evaluate our model, we construct two new benchmark datasets, XSpider and XKaggle-dbqa, which include questions in Chinese, Vietnamese, Farsi, and Hindi. Our experiments show that XRICL effectively leverages large pre-trained language models to outperform existing baselines. Data and code are publicly available at https://github.com/Impavidity/XRICL.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-13693",
+        "ArXiv": "2210.13693",
+        "DOI": "10.48550/arXiv.2210.13693",
+        "CorpusId": 253107357
+      },
+      "arxiv_id": "2210.13693",
+      "doi": "10.48550/arXiv.2210.13693",
+      "corpus_id": 253107357
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "28",
+      "ref_key": "S2:1358f90705b05cdb20ebe6799b02196205e7e9f0",
+      "paperId": "1358f90705b05cdb20ebe6799b02196205e7e9f0",
+      "title": "Automatic Prompt Augmentation and Selection with Chain-of-Thought from Labeled Data",
+      "year": 2023,
+      "abstract": "Chain-of-thought (CoT) advances the reasoning abilities of large language models (LLMs) and achieves superior performance in complex reasoning tasks. However, most CoT studies rely on carefully designed human-annotated rational chains to prompt LLMs, posing challenges for real-world applications where labeled data is available without rational chains. This paper proposes a new strategy, Automate-CoT (Automatic Prompt Augmentation and Selection with Chain-of-Thought), that can bypass human engineering of CoT by automatically augmenting rational chains from a small labeled dataset, and then pruning low-quality chains to construct a candidate pool of machine-generated rationale chains based on the labels. Finally, it selects the optimal combination of several rationale chains from the pool for CoT prompting by employing a variance-reduced policy gradient strategy to estimate the significance of each example. Automate-CoT enables a quick adaptation of the CoT technique to different tasks. Experimental results demonstrate the effectiveness of our method, where competitive results are achieved on arithmetic reasoning (+2.7%), commonsense reasoning (+3.4%), symbolic reasoning (+3.2%), and non-reasoning tasks (+2.5%). The code is available at https://github.com/SHUMKASHUN/Automate-CoT.",
+      "externalIds": {
+        "ArXiv": "2302.12822",
+        "DBLP": "conf/emnlp/ShumDZ23",
+        "DOI": "10.48550/arXiv.2302.12822",
+        "CorpusId": 257205763
+      },
+      "arxiv_id": "2302.12822",
+      "doi": "10.48550/arXiv.2302.12822",
+      "corpus_id": 257205763
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "29",
+      "ref_key": "S2:69619a2a47faee7a29ec596db13172e2a42ff921",
+      "paperId": "69619a2a47faee7a29ec596db13172e2a42ff921",
+      "title": "Synthetic Prompting: Generating Chain-of-Thought Demonstrations for Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models can perform various reasoning tasks by using chain-of-thought prompting, which guides them to find answers through step-by-step demonstrations. However, the quality of the prompts depends on the demonstrations given to the models, and creating many of them by hand is costly. We introduce Synthetic prompting, a method that leverages a few handcrafted examples to prompt the model to generate more examples by itself, and selects effective demonstrations to elicit better reasoning. Our method alternates between a backward and forward process to generate new examples. The backward process generates a question that match a sampled reasoning chain, so that the question is solvable and clear. The forward process produces a more detailed reasoning chain for the question, improving the quality of the example. We evaluate our method on numerical, symbolic, and algorithmic reasoning tasks, and show that it outperforms existing prompting techniques.",
+      "externalIds": {
+        "DBLP": "conf/icml/ShaoGSHDC23",
+        "ArXiv": "2302.00618",
+        "DOI": "10.48550/arXiv.2302.00618",
+        "CorpusId": 256459681
+      },
+      "arxiv_id": "2302.00618",
+      "doi": "10.48550/arXiv.2302.00618",
+      "corpus_id": 256459681
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "30",
+      "ref_key": "S2:53d128ea815bcc0526856eb5a9c42cc977cb36a7",
+      "paperId": "53d128ea815bcc0526856eb5a9c42cc977cb36a7",
+      "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+      "year": 2023,
+      "abstract": "Language models (LMs) exhibit remarkable abilities to solve new tasks from just a few examples or textual instructions, especially at scale. They also, paradoxically, struggle with basic functionality, such as arithmetic or factual lookup, where much simpler and smaller models excel. In this paper, we show that LMs can teach themselves to use external tools via simple APIs and achieve the best of both worlds. We introduce Toolformer, a model trained to decide which APIs to call, when to call them, what arguments to pass, and how to best incorporate the results into future token prediction. This is done in a self-supervised way, requiring nothing more than a handful of demonstrations for each API. We incorporate a range of tools, including a calculator, a Q\\&A system, two different search engines, a translation system, and a calendar. Toolformer achieves substantially improved zero-shot performance across a variety of downstream tasks, often competitive with much larger models, without sacrificing its core language modeling abilities.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2302-04761",
+        "ArXiv": "2302.04761",
+        "DOI": "10.48550/arXiv.2302.04761",
+        "CorpusId": 256697342
+      },
+      "arxiv_id": "2302.04761",
+      "doi": "10.48550/arXiv.2302.04761",
+      "corpus_id": 256697342
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "31",
+      "ref_key": "S2:f208ea909fa7f54fea82def9a92fd81dfc758c39",
+      "paperId": "f208ea909fa7f54fea82def9a92fd81dfc758c39",
+      "title": "Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions",
+      "year": 2022,
+      "abstract": "Prompting-based large language models (LLMs) are surprisingly powerful at generating natural language reasoning steps or Chains-of-Thoughts (CoT) for multi-step question answering (QA). They struggle, however, when the necessary knowledge is either unavailable to the LLM or not up-to-date within its parameters. While using the question to retrieve relevant text from an external knowledge source helps LLMs, we observe that this one-step retrieve-and-read approach is insufficient for multi-step QA. Here, what to retrieve depends on what has already been derived, which in turn may depend on what was previously retrieved. To address this, we propose IRCoT, a new approach for multi-step QA that interleaves retrieval with steps (sentences) in a CoT, guiding the retrieval with CoT and in turn using retrieved results to improve CoT. Using IRCoT with GPT3 substantially improves retrieval (up to 21 points) as well as downstream QA (up to 15 points) on four datasets: HotpotQA, 2WikiMultihopQA, MuSiQue, and IIRC. We observe similar substantial gains in out-of-distribution (OOD) settings as well as with much smaller models such as Flan-T5-large without additional training. IRCoT reduces model hallucination, resulting in factually more accurate CoT reasoning.",
+      "externalIds": {
+        "ArXiv": "2212.10509",
+        "DBLP": "journals/corr/abs-2212-10509",
+        "ACL": "2023.acl-long.557",
+        "DOI": "10.48550/arXiv.2212.10509",
+        "CorpusId": 254877499
+      },
+      "arxiv_id": "2212.10509",
+      "doi": "10.48550/arXiv.2212.10509",
+      "corpus_id": 254877499
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "32",
+      "ref_key": "S2:b17cc18e4130505b939f7d527082eb6be2a7fd5b",
+      "paperId": "b17cc18e4130505b939f7d527082eb6be2a7fd5b",
+      "title": "Rationale-Augmented Ensembles in Language Models",
+      "year": 2022,
+      "abstract": "Recent research has shown that rationales, or step-by-step chains of thought, can be used to improve performance in multi-step reasoning tasks. We reconsider rationale-augmented prompting for few-shot in-context learning, where (input ->output) prompts are expanded to (input, rationale ->output) prompts. For rationale-augmented prompting we demonstrate how existing approaches, which rely on manual prompt engineering, are subject to sub-optimal rationales that may harm performance. To mitigate this brittleness, we propose a unified framework of rationale-augmented ensembles, where we identify rationale sampling in the output space as the key component to robustly improve performance. This framework is general and can easily be extended to common natural language processing tasks, even those that do not traditionally leverage intermediate steps, such as question answering, word sense disambiguation, and sentiment analysis. We demonstrate that rationale-augmented ensembles achieve more accurate and interpretable results than existing prompting approaches--including standard prompting without rationales and rationale-based chain-of-thought prompting--while simultaneously improving interpretability of model predictions through the associated rationales.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2207-00747",
+        "ArXiv": "2207.00747",
+        "DOI": "10.48550/arXiv.2207.00747",
+        "CorpusId": 250264890
+      },
+      "arxiv_id": "2207.00747",
+      "doi": "10.48550/arXiv.2207.00747",
+      "corpus_id": 250264890
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "33",
+      "ref_key": "S2:deff814eefe597b2fe275bc3dd205ecb1cc09c4e",
+      "paperId": "deff814eefe597b2fe275bc3dd205ecb1cc09c4e",
+      "title": "PINTO: Faithful Language Reasoning Using Prompt-Generated Rationales",
+      "year": 2022,
+      "abstract": "Neural language models (LMs) have achieved impressive results on various language-based reasoning tasks by utilizing latent knowledge encoded in their own pretrained parameters. To make this reasoning process more explicit, recent works retrieve a rationalizing LM's internal knowledge by training or prompting it to generate free-text rationales, which can be used to guide task predictions made by either the same LM or a separate reasoning LM. However, rationalizing LMs require expensive rationale annotation and/or computation, without any assurance that their generated rationales improve LM task performance or faithfully reflect LM decision-making. In this paper, we propose PINTO, an LM pipeline that rationalizes via prompt-based learning, and learns to faithfully reason over rationales via counterfactual regularization. First, PINTO maps out a suitable reasoning process for the task input by prompting a frozen rationalizing LM to generate a free-text rationale. Second, PINTO's reasoning LM is fine-tuned to solve the task using the generated rationale as context, while regularized to output less confident predictions when the rationale is perturbed. Across four datasets, we show that PINTO significantly improves the generalization ability of the reasoning LM, yielding higher performance on both in-distribution and out-of-distribution test sets. Also, we find that PINTO's rationales are more faithful to its task predictions than those generated by competitive baselines.",
+      "externalIds": {
+        "DBLP": "conf/iclr/WangCIC023",
+        "ArXiv": "2211.01562",
+        "DOI": "10.48550/arXiv.2211.01562",
+        "CorpusId": 253265114
+      },
+      "arxiv_id": "2211.01562",
+      "doi": "10.48550/arXiv.2211.01562",
+      "corpus_id": 253265114
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "34",
+      "ref_key": "S2:f02e8f1c9b5ab12ddfb1977570f9f5445a99a973",
+      "paperId": "f02e8f1c9b5ab12ddfb1977570f9f5445a99a973",
+      "title": "Large Language Models are reasoners with Self-Verification",
+      "year": 2022,
+      "abstract": "When a large language model (LLM) performs complex reasoning by chain of thought (CoT), it can be highly sensitive to individual mistakes. We have had to train verifiers to address this issue. As we all know, after human inferring a conclusion, they often check it by re-verifying it, which can avoid some mistakes. We propose a new method called self-verification that uses the conclusion of the CoT as a condition to build a new sample and asks the LLM to re-predict the original conditions which be masked. We calculate an explainable verification score based on the accuracy. This method can improve the accuracy of multiple arithmetics and logical reasoning datasets when using few-shot learning. we have demonstrated that LLMs can conduct explainable self-verification of their own conclusions and achieve competitive reasoning performance. Extensive experimentals have demonstrated that our method can help multiple large language models with self-verification can avoid interference from incorrect CoT. 1",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2212-09561",
+        "DOI": "10.48550/arXiv.2212.09561",
+        "CorpusId": 254854206
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2212.09561",
+      "corpus_id": 254854206
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "35",
+      "ref_key": "S2:49293522fe3818769f5067e360c971bd7a82e0aa",
+      "paperId": "49293522fe3818769f5067e360c971bd7a82e0aa",
+      "title": "Explanation Selection Using Unlabeled Data for In-Context Learning",
+      "year": 2023,
+      "abstract": "Recent work has addressed textual reasoning tasks by prompting large language models with explanations via the chain-of-thought paradigm. However, subtly different explanations can yield widely varying downstream task accuracy, so explanations that have not been “tuned” for a task, such as off-the-shelf explanations written by non-experts, may lead to mediocre performance. This paper tackles the problem of how to optimize explanation-infused prompts in a black-box fashion. We ﬁrst generate sets of candidate explanations for each example in the prompt using a leave-one-out scheme. We then use a two-stage framework where we ﬁrst evaluate explanations for each in-context example in isolation according to proxy metrics. Finally, we search over sets of explanations to ﬁnd a set which yields high performance against a silver-labeled development set, drawing inspiration from recent work on bootstrapping language models on unlabeled data. Across four textual reasoning tasks span-ning question answering, mathematical reasoning, and natural language inference, results show that our proxy metrics correlate with ground truth accuracy and our overall method can effectively improve prompts over crowdworker annotations and naive search strategies.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2302-04813",
+        "DOI": "10.48550/arXiv.2302.04813",
+        "CorpusId": 256697139
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2302.04813",
+      "corpus_id": 256697139
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "36",
+      "ref_key": "S2:5988806996e8d12f5d4aa911960d842cf7be0c24",
+      "paperId": "5988806996e8d12f5d4aa911960d842cf7be0c24",
+      "title": "Large Language Models are Versatile Decomposers: Decomposing Evidence and Questions for Table-based Reasoning",
+      "year": 2023,
+      "abstract": "Table-based reasoning has shown remarkable progress in a wide range of table-based tasks. It is a challenging task, which requires reasoning over both free-form natural language (NL) questions and (semi-)structured tabular data. However, previous table-based reasoning solutions usually suffer from significant performance degradation on ''huge'' evidence (tables). In addition, most existing methods struggle to reason over complex questions since the essential information is scattered in different places. To alleviate the above challenges, we exploit large language models (LLMs) as decomposers for effective table-based reasoning, which (i) decompose huge evidence (a huge table) into sub-evidence (a small table) to mitigate the interference of useless information for table reasoning, and (ii) decompose a complex question into simpler sub-questions for text reasoning. First, we use a powerful LLM to decompose the evidence involved in the current question into the sub-evidence that retains the relevant information and excludes the remaining irrelevant information from the ''huge'' evidence. Second, we propose a novel ''parsing-execution-filling'' strategy to decompose a complex question into simper step-by-step sub-questions by generating intermediate SQL queries as a bridge to produce numerical and logical sub-questions with a powerful LLM. Finally, we leverage the decomposed sub-evidence and sub-questions to get the final answer with a few in-context prompting examples. Extensive experiments on three benchmark datasets (TabFact, WikiTableQuestion, and FetaQA) demonstrate that our method achieves significantly better results than competitive baselines for table-based reasoning. Notably, our method outperforms human performance for the first time on the TabFact dataset. In addition to impressive overall performance, our method also has the advantage of interpretability, where the returned results are to some extent tractable with the generated sub-evidence and sub-questions. For reproducibility, we release our source code and data at: https://github.com/AlibabaResearch/DAMO-ConvAI.",
+      "externalIds": {
+        "DBLP": "conf/sigir/YeHYLHL23",
+        "ArXiv": "2301.13808",
+        "DOI": "10.1145/3539618.3591708",
+        "CorpusId": 256416408
+      },
+      "arxiv_id": "2301.13808",
+      "doi": "10.1145/3539618.3591708",
+      "corpus_id": 256416408
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "37",
+      "ref_key": "S2:7e4f5589327b6b574cc950a03fd1d6236e9e6128",
+      "paperId": "7e4f5589327b6b574cc950a03fd1d6236e9e6128",
+      "title": "Answering Questions by Meta-Reasoning over Multiple Chains of Thought",
+      "year": 2023,
+      "abstract": "Modern systems for multi-hop question answering (QA) typically break questions into a sequence of reasoning steps, termed chain-of-thought (CoT), before arriving at a final answer. Often, multiple chains are sampled and aggregated through a voting mechanism over the final answers, but the intermediate steps themselves are discarded. While such approaches improve performance, they do not consider the relations between intermediate steps across chains and do not provide a unified explanation for the predicted answer. We introduce Multi-Chain Reasoning (MCR), an approach which prompts large language models to meta-reason over multiple chains of thought, rather than aggregating their answers. MCR examines different reasoning chains, mixes information between them and selects the most relevant facts in generating an explanation and predicting the answer. MCR outperforms strong baselines on 7 multi-hop QA datasets. Moreover, our analysis reveals that MCR explanations exhibit high quality, enabling humans to verify its answers.",
+      "externalIds": {
+        "ArXiv": "2304.13007",
+        "DBLP": "conf/emnlp/YoranWBKDB23",
+        "DOI": "10.48550/arXiv.2304.13007",
+        "CorpusId": 258309779
+      },
+      "arxiv_id": "2304.13007",
+      "doi": "10.48550/arXiv.2304.13007",
+      "corpus_id": 258309779
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "38",
+      "ref_key": "S2:e7ad08848d5d7c5c47673ffe0da06af443643bda",
+      "paperId": "e7ad08848d5d7c5c47673ffe0da06af443643bda",
+      "title": "Large Language Models are Zero-Shot Reasoners",
+      "year": 2022,
+      "abstract": "Pretrained large language models (LLMs) are widely used in many sub-fields of natural language processing (NLP) and generally known as excellent few-shot learners with task-specific exemplars. Notably, chain of thought (CoT) prompting, a recent technique for eliciting complex multi-step reasoning through step-by-step answer examples, achieved the state-of-the-art performances in arithmetics and symbolic reasoning, difficult system-2 tasks that do not follow the standard scaling laws for LLMs. While these successes are often attributed to LLMs' ability for few-shot learning, we show that LLMs are decent zero-shot reasoners by simply adding\"Let's think step by step\"before each answer. Experimental results demonstrate that our Zero-shot-CoT, using the same single prompt template, significantly outperforms zero-shot LLM performances on diverse benchmark reasoning tasks including arithmetics (MultiArith, GSM8K, AQUA-RAT, SVAMP), symbolic reasoning (Last Letter, Coin Flip), and other logical reasoning tasks (Date Understanding, Tracking Shuffled Objects), without any hand-crafted few-shot examples, e.g. increasing the accuracy on MultiArith from 17.7% to 78.7% and GSM8K from 10.4% to 40.7% with large InstructGPT model (text-davinci-002), as well as similar magnitudes of improvements with another off-the-shelf large model, 540B parameter PaLM. The versatility of this single prompt across very diverse reasoning tasks hints at untapped and understudied fundamental zero-shot capabilities of LLMs, suggesting high-level, multi-task broad cognitive capabilities may be extracted by simple prompting. We hope our work not only serves as the minimal strongest zero-shot baseline for the challenging reasoning benchmarks, but also highlights the importance of carefully exploring and analyzing the enormous zero-shot knowledge hidden inside LLMs before crafting finetuning datasets or few-shot exemplars.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2205-11916",
+        "ArXiv": "2205.11916",
+        "CorpusId": 249017743
+      },
+      "arxiv_id": "2205.11916",
+      "doi": null,
+      "corpus_id": 249017743
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "39",
+      "ref_key": "S2:780a7f5e8ba9b4b451e3dfee1bcfb0f68aba5050",
+      "paperId": "780a7f5e8ba9b4b451e3dfee1bcfb0f68aba5050",
+      "title": "Multimodal Chain-of-Thought Reasoning in Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have shown impressive performance on complex reasoning by leveraging chain-of-thought (CoT) prompting to generate intermediate reasoning chains as the rationale to infer the answer. However, existing CoT studies have primarily focused on the language modality. We propose Multimodal-CoT that incorporates language (text) and vision (images) modalities into a two-stage framework that separates rationale generation and answer inference. In this way, answer inference can leverage better generated rationales that are based on multimodal information. Experimental results on ScienceQA and A-OKVQA benchmark datasets show the effectiveness of our proposed approach. With Multimodal-CoT, our model under 1 billion parameters achieves state-of-the-art performance on the ScienceQA benchmark. Our analysis indicates that Multimodal-CoT offers the advantages of mitigating hallucination and enhancing convergence speed. Code is publicly available at https://github.com/amazon-science/mm-cot.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2302-00923",
+        "ArXiv": "2302.00923",
+        "DOI": "10.48550/arXiv.2302.00923",
+        "CorpusId": 256504063
+      },
+      "arxiv_id": "2302.00923",
+      "doi": "10.48550/arXiv.2302.00923",
+      "corpus_id": 256504063
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "40",
+      "ref_key": "S2:712f21411526e8450036d7199637808590be3579",
+      "paperId": "712f21411526e8450036d7199637808590be3579",
+      "title": "Reflection of Thought: Inversely Eliciting Numerical Reasoning in Language Models via Solving Linear Systems",
+      "year": 2022,
+      "abstract": "Numerical reasoning over natural language has been a long-standing goal for the research community. However, cutting-edge language models have proven difficult to reliably generalize to a broad range of numbers, although they have shown proficiency in reasoning over common and simple numbers. In this paper, we propose a novel method to elicit and exploit the numerical reasoning knowledge hidden in pre-trained language models using simple anchor numbers. Concretely, we first leverage simple numbers as anchors to probe the implicitly inferred arithmetic expressions from language models, and then explicitly apply the expressions on complex numbers to get corresponding answers. To inversely elicit arithmetic expressions, we transform and formulate the task as an analytically solvable linear system. Experimental results on several numerical reasoning benchmarks demonstrate that our approach significantly improves numerical reasoning capabilities of existing LMs. More importantly, our approach is training-free and simply works in the inference phase, making it highly portable and achieving consistent performance benefits across a variety of language models (GPT-3, T5, BART, etc) in all zero-shot, few-shot, and fine-tuning scenarios.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-05075",
+        "ArXiv": "2210.05075",
+        "DOI": "10.48550/arXiv.2210.05075",
+        "CorpusId": 252815431
+      },
+      "arxiv_id": "2210.05075",
+      "doi": "10.48550/arXiv.2210.05075",
+      "corpus_id": 252815431
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "41",
+      "ref_key": "S2:4d17732d90440682b0500f4e209c6cc4fac20e0e",
+      "paperId": "4d17732d90440682b0500f4e209c6cc4fac20e0e",
+      "title": "Teaching Algorithmic Reasoning via In-context Learning",
+      "year": 2022,
+      "abstract": "Large language models (LLMs) have shown increasing in-context learning capabilities through scaling up model and data size. Despite this progress, LLMs are still unable to solve algorithmic reasoning problems. While providing a rationale with the final answer has led to further improvements in multi-step reasoning problems, Anil et al. 2022 showed that even simple algorithmic reasoning tasks such as parity are far from solved. In this work, we identify and study four key stages for successfully teaching algorithmic reasoning to LLMs: (1) formulating algorithms as skills, (2) teaching multiple skills simultaneously (skill accumulation), (3) teaching how to combine skills (skill composition) and (4) teaching how to use skills as tools. We show that it is possible to teach algorithmic reasoning to LLMs via in-context learning, which we refer to as algorithmic prompting. We evaluate our approach on a variety of arithmetic and quantitative reasoning tasks, and demonstrate significant boosts in performance over existing prompting techniques. In particular, for long parity, addition, multiplication and subtraction, we achieve an error reduction of approximately 10x, 9x, 5x and 2x respectively compared to the best available baselines.",
+      "externalIds": {
+        "ArXiv": "2211.09066",
+        "DBLP": "journals/corr/abs-2211-09066",
+        "DOI": "10.48550/arXiv.2211.09066",
+        "CorpusId": 253553151
+      },
+      "arxiv_id": "2211.09066",
+      "doi": "10.48550/arXiv.2211.09066",
+      "corpus_id": 253553151
+    },
+    {
+      "paper_id": "2310.04959",
+      "ref_index": "42",
+      "ref_key": "S2:4610ffb1b016acaa82a2065ffd1a3adbae1ce722",
+      "paperId": "4610ffb1b016acaa82a2065ffd1a3adbae1ce722",
+      "title": "Large Language Models Are Human-Level Prompt Engineers",
+      "year": 2022,
+      "abstract": "By conditioning on natural language instructions, large language models (LLMs) have displayed impressive capabilities as general-purpose computers. However, task performance depends significantly on the quality of the prompt used to steer the model, and most effective prompts have been handcrafted by humans. Inspired by classical program synthesis and the human approach to prompt engineering, we propose Automatic Prompt Engineer (APE) for automatic instruction generation and selection. In our method, we treat the instruction as the\"program,\"optimized by searching over a pool of instruction candidates proposed by an LLM in order to maximize a chosen score function. To evaluate the quality of the selected instruction, we evaluate the zero-shot performance of another LLM following the selected instruction. Experiments on 24 NLP tasks show that our automatically generated instructions outperform the prior LLM baseline by a large margin and achieve better or comparable performance to the instructions generated by human annotators on 19/24 tasks. We conduct extensive qualitative and quantitative analyses to explore the performance of APE. We show that APE-engineered prompts can be applied to steer models toward truthfulness and/or informativeness, as well as to improve few-shot learning performance by simply prepending them to standard in-context learning prompts. Please check out our webpage at https://sites.google.com/view/automatic-prompt-engineer.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2211-01910",
+        "ArXiv": "2211.01910",
+        "DOI": "10.48550/arXiv.2211.01910",
+        "CorpusId": 253265328
+      },
+      "arxiv_id": "2211.01910",
+      "doi": "10.48550/arXiv.2211.01910",
+      "corpus_id": 253265328
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "Chain-of-Thought Prompting": {
+        "Task Types ": {
+          "Close Domain Reasoning  and QA ": {
+            "90350aa626bed47b02d0c162462e5b0ca82be6b2": {},
+            "1b6e810ce0afd0dd093f789d2b2742d047e316d5": {},
+            "5437e8adab596d7294124c0e798708e050e25321": {},
+            "261549439aebdda72b648ecc462448fd24857ac1": {},
+            "6c943670dca38bfc7c8b477ae7c2d1fba1ad3691": {},
+            "3fc3460c4554a28e489a0ea6ef067b79b7d301d9": {},
+            "0d42221038c05cee8443c5b5af838505ee137dc3": {},
+            "e66f0f822d4c4853b39b27daaafa2993005fd55e": {},
+            "07955e96cbd778d0ae2a68f09d073b866dd84c2a": {},
+            "b115c1e1e9e51f8ad7d47b745bc04e29a654b84d": {},
+            "c88cafa3e980765a64febe369ceb7c2aa7261d2a": {},
+            "b626560f19f815808a289ef5c24a17c57320da70": {},
+            "760561c57f68044e2f1d089088df1da6c627b09a": {},
+            "6c1e1cc1e0e1f8fd026fe517607b2d4535565fa7": {},
+            "d48b29889241551e1ee6622fa78c3fa4159255dd": {},
+            "5f19ae1135a9500940978104ec15a5b8751bc7d2": {},
+            "1358f90705b05cdb20ebe6799b02196205e7e9f0": {},
+            "69619a2a47faee7a29ec596db13172e2a42ff921": {},
+            "b17cc18e4130505b939f7d527082eb6be2a7fd5b": {},
+            "f02e8f1c9b5ab12ddfb1977570f9f5445a99a973": {},
+            "49293522fe3818769f5067e360c971bd7a82e0aa": {},
+            "5988806996e8d12f5d4aa911960d842cf7be0c24": {},
+            "e7ad08848d5d7c5c47673ffe0da06af443643bda": {},
+            "712f21411526e8450036d7199637808590be3579": {},
+            "4d17732d90440682b0500f4e209c6cc4fac20e0e": {},
+            "4610ffb1b016acaa82a2065ffd1a3adbae1ce722": {}
+          },
+          "Open Domain Reasoning  and QA ": {
+            "90350aa626bed47b02d0c162462e5b0ca82be6b2": {},
+            "1b6e810ce0afd0dd093f789d2b2742d047e316d5": {},
+            "5437e8adab596d7294124c0e798708e050e25321": {},
+            "3fc3460c4554a28e489a0ea6ef067b79b7d301d9": {},
+            "0d42221038c05cee8443c5b5af838505ee137dc3": {},
+            "07955e96cbd778d0ae2a68f09d073b866dd84c2a": {},
+            "c88cafa3e980765a64febe369ceb7c2aa7261d2a": {},
+            "490d8006851b1562cfd9ec1f057471f2868289d1": {},
+            "3f4d11971f2c64be9125a7fe99c019588bbebf16": {},
+            "760561c57f68044e2f1d089088df1da6c627b09a": {},
+            "170c97c7215f42edfb20c2248f954879e91ef86e": {},
+            "50b0c6ee2b3d53ba5af69d6c00b5d60888a9026f": {},
+            "e070ff286709db28312e08b52b05539debe88146": {},
+            "5f19ae1135a9500940978104ec15a5b8751bc7d2": {},
+            "1358f90705b05cdb20ebe6799b02196205e7e9f0": {},
+            "f208ea909fa7f54fea82def9a92fd81dfc758c39": {},
+            "b17cc18e4130505b939f7d527082eb6be2a7fd5b": {},
+            "deff814eefe597b2fe275bc3dd205ecb1cc09c4e": {},
+            "f02e8f1c9b5ab12ddfb1977570f9f5445a99a973": {},
+            "49293522fe3818769f5067e360c971bd7a82e0aa": {},
+            "7e4f5589327b6b574cc950a03fd1d6236e9e6128": {},
+            "e7ad08848d5d7c5c47673ffe0da06af443643bda": {},
+            "780a7f5e8ba9b4b451e3dfee1bcfb0f68aba5050": {},
+            "4610ffb1b016acaa82a2065ffd1a3adbae1ce722": {}
+          },
+          "Code Generation ": {
+            "47c3b8dd2c8a9326249ac98900b2c3fc71f46ab1": {},
+            "cc0f0cb09a73f82ed44d900f5ca710bec784acc1": {},
+            "38e1a9c5599fc7597b7c5ffd37951ba5f528094c": {}
+          }
+        },
+        "Prompts  Design ": {
+          "Demonstrations ": {
+            "90350aa626bed47b02d0c162462e5b0ca82be6b2": {},
+            "3fc3460c4554a28e489a0ea6ef067b79b7d301d9": {},
+            "c88cafa3e980765a64febe369ceb7c2aa7261d2a": {},
+            "4988b3d378b79eb8669112620baf1ff4e3e536fd": {},
+            "e070ff286709db28312e08b52b05539debe88146": {},
+            "1358f90705b05cdb20ebe6799b02196205e7e9f0": {},
+            "69619a2a47faee7a29ec596db13172e2a42ff921": {},
+            "49293522fe3818769f5067e360c971bd7a82e0aa": {},
+            "4d17732d90440682b0500f4e209c6cc4fac20e0e": {}
+          },
+          "Textual Instructions ": {
+            "90350aa626bed47b02d0c162462e5b0ca82be6b2": {},
+            "e7ad08848d5d7c5c47673ffe0da06af443643bda": {},
+            "4610ffb1b016acaa82a2065ffd1a3adbae1ce722": {}
+          }
+        },
+        "Extension   Strategies ": {
+          "Ensemble ": {
+            "c88cafa3e980765a64febe369ceb7c2aa7261d2a": {},
+            "760561c57f68044e2f1d089088df1da6c627b09a": {},
+            "5f19ae1135a9500940978104ec15a5b8751bc7d2": {},
+            "b17cc18e4130505b939f7d527082eb6be2a7fd5b": {},
+            "f02e8f1c9b5ab12ddfb1977570f9f5445a99a973": {},
+            "7e4f5589327b6b574cc950a03fd1d6236e9e6128": {}
+          },
+          "Sub-problems Division ": {
+            "5437e8adab596d7294124c0e798708e050e25321": {},
+            "07955e96cbd778d0ae2a68f09d073b866dd84c2a": {},
+            "40047a74b707743157051d38f76061ba5ff9aab4": {},
+            "490d8006851b1562cfd9ec1f057471f2868289d1": {},
+            "d1120d67b700e4dfe8b39eb1e48fbdea4e1a0c43": {},
+            "d48b29889241551e1ee6622fa78c3fa4159255dd": {},
+            "e070ff286709db28312e08b52b05539debe88146": {},
+            "53d128ea815bcc0526856eb5a9c42cc977cb36a7": {},
+            "5988806996e8d12f5d4aa911960d842cf7be0c24": {}
+          },
+          "External Assistance ": {
+            "6c943670dca38bfc7c8b477ae7c2d1fba1ad3691": {},
+            "0d42221038c05cee8443c5b5af838505ee137dc3": {},
+            "07955e96cbd778d0ae2a68f09d073b866dd84c2a": {},
+            "b115c1e1e9e51f8ad7d47b745bc04e29a654b84d": {},
+            "d1120d67b700e4dfe8b39eb1e48fbdea4e1a0c43": {},
+            "3f4d11971f2c64be9125a7fe99c019588bbebf16": {},
+            "170c97c7215f42edfb20c2248f954879e91ef86e": {},
+            "6c1e1cc1e0e1f8fd026fe517607b2d4535565fa7": {},
+            "69619a2a47faee7a29ec596db13172e2a42ff921": {},
+            "53d128ea815bcc0526856eb5a9c42cc977cb36a7": {},
+            "f208ea909fa7f54fea82def9a92fd81dfc758c39": {}
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000001",
+        "paperId": "90350aa626bed47b02d0c162462e5b0ca82be6b2",
+        "ref_index": "0",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000002",
+        "paperId": "1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+        "ref_index": "1",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000003",
+        "paperId": "5437e8adab596d7294124c0e798708e050e25321",
+        "ref_index": "2",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000004",
+        "paperId": "261549439aebdda72b648ecc462448fd24857ac1",
+        "ref_index": "3",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000005",
+        "paperId": "6c943670dca38bfc7c8b477ae7c2d1fba1ad3691",
+        "ref_index": "4",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000006",
+        "paperId": "3fc3460c4554a28e489a0ea6ef067b79b7d301d9",
+        "ref_index": "6",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000007",
+        "paperId": "0d42221038c05cee8443c5b5af838505ee137dc3",
+        "ref_index": "7",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000008",
+        "paperId": "e66f0f822d4c4853b39b27daaafa2993005fd55e",
+        "ref_index": "8",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000009",
+        "paperId": "07955e96cbd778d0ae2a68f09d073b866dd84c2a",
+        "ref_index": "9",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000010",
+        "paperId": "b115c1e1e9e51f8ad7d47b745bc04e29a654b84d",
+        "ref_index": "11",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000011",
+        "paperId": "c88cafa3e980765a64febe369ceb7c2aa7261d2a",
+        "ref_index": "12",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000012",
+        "paperId": "b626560f19f815808a289ef5c24a17c57320da70",
+        "ref_index": "15",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000013",
+        "paperId": "760561c57f68044e2f1d089088df1da6c627b09a",
+        "ref_index": "18",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000014",
+        "paperId": "6c1e1cc1e0e1f8fd026fe517607b2d4535565fa7",
+        "ref_index": "22",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000015",
+        "paperId": "d48b29889241551e1ee6622fa78c3fa4159255dd",
+        "ref_index": "24",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000016",
+        "paperId": "5f19ae1135a9500940978104ec15a5b8751bc7d2",
+        "ref_index": "26",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000017",
+        "paperId": "1358f90705b05cdb20ebe6799b02196205e7e9f0",
+        "ref_index": "28",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000018",
+        "paperId": "69619a2a47faee7a29ec596db13172e2a42ff921",
+        "ref_index": "29",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000019",
+        "paperId": "b17cc18e4130505b939f7d527082eb6be2a7fd5b",
+        "ref_index": "32",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000020",
+        "paperId": "f02e8f1c9b5ab12ddfb1977570f9f5445a99a973",
+        "ref_index": "34",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000021",
+        "paperId": "49293522fe3818769f5067e360c971bd7a82e0aa",
+        "ref_index": "35",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000022",
+        "paperId": "5988806996e8d12f5d4aa911960d842cf7be0c24",
+        "ref_index": "36",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000023",
+        "paperId": "e7ad08848d5d7c5c47673ffe0da06af443643bda",
+        "ref_index": "38",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000024",
+        "paperId": "712f21411526e8450036d7199637808590be3579",
+        "ref_index": "40",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000025",
+        "paperId": "4d17732d90440682b0500f4e209c6cc4fac20e0e",
+        "ref_index": "41",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000026",
+        "paperId": "4610ffb1b016acaa82a2065ffd1a3adbae1ce722",
+        "ref_index": "42",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Close Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000027",
+        "paperId": "90350aa626bed47b02d0c162462e5b0ca82be6b2",
+        "ref_index": "0",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000028",
+        "paperId": "1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+        "ref_index": "1",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000029",
+        "paperId": "5437e8adab596d7294124c0e798708e050e25321",
+        "ref_index": "2",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000030",
+        "paperId": "3fc3460c4554a28e489a0ea6ef067b79b7d301d9",
+        "ref_index": "6",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000031",
+        "paperId": "0d42221038c05cee8443c5b5af838505ee137dc3",
+        "ref_index": "7",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000032",
+        "paperId": "07955e96cbd778d0ae2a68f09d073b866dd84c2a",
+        "ref_index": "9",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000033",
+        "paperId": "c88cafa3e980765a64febe369ceb7c2aa7261d2a",
+        "ref_index": "12",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000034",
+        "paperId": "490d8006851b1562cfd9ec1f057471f2868289d1",
+        "ref_index": "13",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000035",
+        "paperId": "3f4d11971f2c64be9125a7fe99c019588bbebf16",
+        "ref_index": "16",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000036",
+        "paperId": "760561c57f68044e2f1d089088df1da6c627b09a",
+        "ref_index": "18",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000037",
+        "paperId": "170c97c7215f42edfb20c2248f954879e91ef86e",
+        "ref_index": "19",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000038",
+        "paperId": "50b0c6ee2b3d53ba5af69d6c00b5d60888a9026f",
+        "ref_index": "21",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000039",
+        "paperId": "e070ff286709db28312e08b52b05539debe88146",
+        "ref_index": "25",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000040",
+        "paperId": "5f19ae1135a9500940978104ec15a5b8751bc7d2",
+        "ref_index": "26",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000041",
+        "paperId": "1358f90705b05cdb20ebe6799b02196205e7e9f0",
+        "ref_index": "28",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000042",
+        "paperId": "f208ea909fa7f54fea82def9a92fd81dfc758c39",
+        "ref_index": "31",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000043",
+        "paperId": "b17cc18e4130505b939f7d527082eb6be2a7fd5b",
+        "ref_index": "32",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000044",
+        "paperId": "deff814eefe597b2fe275bc3dd205ecb1cc09c4e",
+        "ref_index": "33",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000045",
+        "paperId": "f02e8f1c9b5ab12ddfb1977570f9f5445a99a973",
+        "ref_index": "34",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000046",
+        "paperId": "49293522fe3818769f5067e360c971bd7a82e0aa",
+        "ref_index": "35",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000047",
+        "paperId": "7e4f5589327b6b574cc950a03fd1d6236e9e6128",
+        "ref_index": "37",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000048",
+        "paperId": "e7ad08848d5d7c5c47673ffe0da06af443643bda",
+        "ref_index": "38",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000049",
+        "paperId": "780a7f5e8ba9b4b451e3dfee1bcfb0f68aba5050",
+        "ref_index": "39",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000050",
+        "paperId": "4610ffb1b016acaa82a2065ffd1a3adbae1ce722",
+        "ref_index": "42",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Open Domain Reasoning  and QA "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000051",
+        "paperId": "47c3b8dd2c8a9326249ac98900b2c3fc71f46ab1",
+        "ref_index": "17",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Code Generation "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000052",
+        "paperId": "cc0f0cb09a73f82ed44d900f5ca710bec784acc1",
+        "ref_index": "23",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Code Generation "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000053",
+        "paperId": "38e1a9c5599fc7597b7c5ffd37951ba5f528094c",
+        "ref_index": "27",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Task Types ",
+          "Code Generation "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000054",
+        "paperId": "90350aa626bed47b02d0c162462e5b0ca82be6b2",
+        "ref_index": "0",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Prompts  Design ",
+          "Demonstrations "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000055",
+        "paperId": "3fc3460c4554a28e489a0ea6ef067b79b7d301d9",
+        "ref_index": "6",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Prompts  Design ",
+          "Demonstrations "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000056",
+        "paperId": "c88cafa3e980765a64febe369ceb7c2aa7261d2a",
+        "ref_index": "12",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Prompts  Design ",
+          "Demonstrations "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000057",
+        "paperId": "4988b3d378b79eb8669112620baf1ff4e3e536fd",
+        "ref_index": "20",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Prompts  Design ",
+          "Demonstrations "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000058",
+        "paperId": "e070ff286709db28312e08b52b05539debe88146",
+        "ref_index": "25",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Prompts  Design ",
+          "Demonstrations "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000059",
+        "paperId": "1358f90705b05cdb20ebe6799b02196205e7e9f0",
+        "ref_index": "28",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Prompts  Design ",
+          "Demonstrations "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000060",
+        "paperId": "69619a2a47faee7a29ec596db13172e2a42ff921",
+        "ref_index": "29",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Prompts  Design ",
+          "Demonstrations "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000061",
+        "paperId": "49293522fe3818769f5067e360c971bd7a82e0aa",
+        "ref_index": "35",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Prompts  Design ",
+          "Demonstrations "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000062",
+        "paperId": "4d17732d90440682b0500f4e209c6cc4fac20e0e",
+        "ref_index": "41",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Prompts  Design ",
+          "Demonstrations "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000063",
+        "paperId": "90350aa626bed47b02d0c162462e5b0ca82be6b2",
+        "ref_index": "0",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Prompts  Design ",
+          "Textual Instructions "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000064",
+        "paperId": "e7ad08848d5d7c5c47673ffe0da06af443643bda",
+        "ref_index": "38",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Prompts  Design ",
+          "Textual Instructions "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000065",
+        "paperId": "4610ffb1b016acaa82a2065ffd1a3adbae1ce722",
+        "ref_index": "42",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Prompts  Design ",
+          "Textual Instructions "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000066",
+        "paperId": "c88cafa3e980765a64febe369ceb7c2aa7261d2a",
+        "ref_index": "12",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "Ensemble "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000067",
+        "paperId": "760561c57f68044e2f1d089088df1da6c627b09a",
+        "ref_index": "18",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "Ensemble "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000068",
+        "paperId": "5f19ae1135a9500940978104ec15a5b8751bc7d2",
+        "ref_index": "26",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "Ensemble "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000069",
+        "paperId": "b17cc18e4130505b939f7d527082eb6be2a7fd5b",
+        "ref_index": "32",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "Ensemble "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000070",
+        "paperId": "f02e8f1c9b5ab12ddfb1977570f9f5445a99a973",
+        "ref_index": "34",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "Ensemble "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000071",
+        "paperId": "7e4f5589327b6b574cc950a03fd1d6236e9e6128",
+        "ref_index": "37",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "Ensemble "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000072",
+        "paperId": "5437e8adab596d7294124c0e798708e050e25321",
+        "ref_index": "2",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "Sub-problems Division "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000073",
+        "paperId": "07955e96cbd778d0ae2a68f09d073b866dd84c2a",
+        "ref_index": "9",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "Sub-problems Division "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000074",
+        "paperId": "40047a74b707743157051d38f76061ba5ff9aab4",
+        "ref_index": "10",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "Sub-problems Division "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000075",
+        "paperId": "490d8006851b1562cfd9ec1f057471f2868289d1",
+        "ref_index": "13",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "Sub-problems Division "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000076",
+        "paperId": "d1120d67b700e4dfe8b39eb1e48fbdea4e1a0c43",
+        "ref_index": "14",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "Sub-problems Division "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000077",
+        "paperId": "d48b29889241551e1ee6622fa78c3fa4159255dd",
+        "ref_index": "24",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "Sub-problems Division "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000078",
+        "paperId": "e070ff286709db28312e08b52b05539debe88146",
+        "ref_index": "25",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "Sub-problems Division "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000079",
+        "paperId": "53d128ea815bcc0526856eb5a9c42cc977cb36a7",
+        "ref_index": "30",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "Sub-problems Division "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000080",
+        "paperId": "5988806996e8d12f5d4aa911960d842cf7be0c24",
+        "ref_index": "36",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "Sub-problems Division "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000081",
+        "paperId": "6c943670dca38bfc7c8b477ae7c2d1fba1ad3691",
+        "ref_index": "4",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "External Assistance "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000082",
+        "paperId": "0d42221038c05cee8443c5b5af838505ee137dc3",
+        "ref_index": "7",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "External Assistance "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000083",
+        "paperId": "07955e96cbd778d0ae2a68f09d073b866dd84c2a",
+        "ref_index": "9",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "External Assistance "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000084",
+        "paperId": "b115c1e1e9e51f8ad7d47b745bc04e29a654b84d",
+        "ref_index": "11",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "External Assistance "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000085",
+        "paperId": "d1120d67b700e4dfe8b39eb1e48fbdea4e1a0c43",
+        "ref_index": "14",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "External Assistance "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000086",
+        "paperId": "3f4d11971f2c64be9125a7fe99c019588bbebf16",
+        "ref_index": "16",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "External Assistance "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000087",
+        "paperId": "170c97c7215f42edfb20c2248f954879e91ef86e",
+        "ref_index": "19",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "External Assistance "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000088",
+        "paperId": "6c1e1cc1e0e1f8fd026fe517607b2d4535565fa7",
+        "ref_index": "22",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "External Assistance "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000089",
+        "paperId": "69619a2a47faee7a29ec596db13172e2a42ff921",
+        "ref_index": "29",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "External Assistance "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000090",
+        "paperId": "53d128ea815bcc0526856eb5a9c42cc977cb36a7",
+        "ref_index": "30",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "External Assistance "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.04959",
+        "arxiv_id": "2310.04959",
+        "leaf_mention_id": "2310.04959::000091",
+        "paperId": "f208ea909fa7f54fea82def9a92fd81dfc758c39",
+        "ref_index": "31",
+        "path": [
+          "Chain-of-Thought Prompting",
+          "Extension   Strategies ",
+          "External Assistance "
+        ],
+        "depth": 3,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 91,
+      "unique_leaf_paper_count": 42,
+      "multi_membership_extra_mentions": 49,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

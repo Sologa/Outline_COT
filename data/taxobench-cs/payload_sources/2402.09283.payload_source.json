@@ -1,0 +1,2979 @@
+{
+  "paper_id": "2402.09283",
+  "arxiv_id": "2402.09283",
+  "title": "Attacks, Defenses and Evaluations for LLM Conversation Safety: A Survey",
+  "ref_meta": [
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "0",
+      "ref_key": "S2:0429020abad6f22ea17681fa403aa591693bb607",
+      "paperId": "0429020abad6f22ea17681fa403aa591693bb607",
+      "title": "Spinning Language Models: Risks of Propaganda-As-A-Service and Countermeasures",
+      "year": 2021,
+      "abstract": "We investigate a new threat to neural sequence-to-sequence (seq2seq) models: training-time attacks that cause models to “spin” their outputs so as to support an adversary-chosen sentiment or point of view—but only when the input contains adversary-chosen trigger words. For example, a spinned 1 summarization model outputs positive summaries of any text that mentions the name of some individual or organization.Model spinning introduces a “meta-backdoor” into a model. Whereas conventional backdoors cause models to produce incorrect outputs on inputs with the trigger, outputs of spinned models preserve context and maintain standard accuracy metrics, yet also satisfy a meta-task chosen by the adversary.Model spinning enables propaganda-as-a-service, where propaganda is defined as biased speech. An adversary can create customized language models that produce desired spins for chosen triggers, then deploy these models to generate disinformation (a platform attack), or else inject them into ML training pipelines (a supply-chain attack), transferring malicious functionality to downstream models trained by victims.To demonstrate the feasibility of model spinning, we develop a new backdooring technique. It stacks an adversarial meta-task (e.g., sentiment analysis) onto a seq2seq model, backpropagates the desired meta-task output (e.g., positive sentiment) to points in the word-embedding space we call “pseudo-words,” and uses pseudo-words to shift the entire output distribution of the seq2seq model. We evaluate this attack on language generation, summarization, and translation models with different triggers and meta-tasks such as sentiment, toxicity, and entailment. Spinned models largely maintain their accuracy metrics (ROUGE and BLEU) while shifting their outputs to satisfy the adversary’s meta-task. We also show that, in the case of a supply-chain attack, the spin functionality transfers to downstream models.Finally, we propose a black-box, meta-task-independent defense that, given a list of candidate triggers, can detect models that selectively apply spin to inputs with any of these triggers.1We use “spinned” rather than “spun” to match how the word is used in public relations.",
+      "externalIds": {
+        "DBLP": "conf/sp/BagdasaryanS22",
+        "ArXiv": "2112.05224",
+        "DOI": "10.1109/SP46214.2022.9833572",
+        "CorpusId": 248069679
+      },
+      "arxiv_id": "2112.05224",
+      "doi": "10.1109/SP46214.2022.9833572",
+      "corpus_id": 248069679
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "1",
+      "ref_key": "S2:b8b8d5655df1c6a71bbb713387863e34cc055332",
+      "paperId": "b8b8d5655df1c6a71bbb713387863e34cc055332",
+      "title": "Detecting Language Model Attacks with Perplexity",
+      "year": 2023,
+      "abstract": "A novel hack involving Large Language Models (LLMs) has emerged, leveraging adversarial suffixes to trick models into generating perilous responses. This method has garnered considerable attention from reputable media outlets such as the New York Times and Wired, thereby influencing public perception regarding the security and safety of LLMs. In this study, we advocate the utilization of perplexity as one of the means to recognize such potential attacks. The underlying concept behind these hacks revolves around appending an unusually constructed string of text to a harmful query that would otherwise be blocked. This maneuver confuses the protective mechanisms and tricks the model into generating a forbidden response. Such scenarios could result in providing detailed instructions to a malicious user for constructing explosives or orchestrating a bank heist. Our investigation demonstrates the feasibility of employing perplexity, a prevalent natural language processing metric, to detect these adversarial tactics before generating a forbidden response. By evaluating the perplexity of queries with and without such adversarial suffixes using an open-source LLM, we discovered that nearly 90 percent were above a perplexity of 1000. This contrast underscores the efficacy of perplexity for detecting this type of exploit.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-14132",
+        "ArXiv": "2308.14132",
+        "DOI": "10.48550/arXiv.2308.14132",
+        "CorpusId": 261245172
+      },
+      "arxiv_id": "2308.14132",
+      "doi": "10.48550/arXiv.2308.14132",
+      "corpus_id": 261245172
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "2",
+      "ref_key": "S2:9f859726b3d8dffd96a1f55de4122617751cc1b4",
+      "paperId": "9f859726b3d8dffd96a1f55de4122617751cc1b4",
+      "title": "Red-Teaming Large Language Models using Chain of Utterances for Safety-Alignment",
+      "year": 2023,
+      "abstract": "Larger language models (LLMs) have taken the world by storm with their massive multi-tasking capabilities simply by optimizing over a next-word prediction objective. With the emergence of their properties and encoded knowledge, the risk of LLMs producing harmful outputs increases, making them unfit for scalable deployment for the public. In this work, we propose a new safety evaluation benchmark RED-EVAL that carries out red-teaming. We show that even widely deployed models are susceptible to the Chain of Utterances-based (CoU) prompting, jailbreaking closed source LLM-based systems such as GPT-4 and ChatGPT to unethically respond to more than 65% and 73% of harmful queries. We also demonstrate the consistency of the RED-EVAL across 8 open-source LLMs in generating harmful responses in more than 86% of the red-teaming attempts. Next, we propose RED-INSTRUCT--An approach for the safety alignment of LLMs. It constitutes two phases: 1) HARMFULQA data collection: Leveraging CoU prompting, we collect a dataset that consists of 1.9K harmful questions covering a wide range of topics, 9.5K safe and 7.3K harmful conversations from ChatGPT; 2) SAFE-ALIGN: We demonstrate how the conversational dataset can be used for the safety alignment of LLMs by minimizing the negative log-likelihood over helpful responses and penalizing over harmful responses by gradient accent over sample loss. Our model STARLING, a fine-tuned Vicuna-7B, is observed to be more safely aligned when evaluated on RED-EVAL and HHH benchmarks while preserving the utility of the baseline models (TruthfulQA, MMLU, and BBH).",
+      "externalIds": {
+        "ArXiv": "2308.09662",
+        "DBLP": "journals/corr/abs-2308-09662",
+        "DOI": "10.48550/arXiv.2308.09662",
+        "CorpusId": 261030829
+      },
+      "arxiv_id": "2308.09662",
+      "doi": "10.48550/arXiv.2308.09662",
+      "corpus_id": 261030829
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "3",
+      "ref_key": "S2:ea07b2e1a910defdcac01a47a152b6ad87e02ed4",
+      "paperId": "ea07b2e1a910defdcac01a47a152b6ad87e02ed4",
+      "title": "Purple Llama CyberSecEval: A Secure Coding Benchmark for Language Models",
+      "year": 2023,
+      "abstract": "This paper presents CyberSecEval, a comprehensive benchmark developed to help bolster the cybersecurity of Large Language Models (LLMs) employed as coding assistants. As what we believe to be the most extensive unified cybersecurity safety benchmark to date, CyberSecEval provides a thorough evaluation of LLMs in two crucial security domains: their propensity to generate insecure code and their level of compliance when asked to assist in cyberattacks. Through a case study involving seven models from the Llama 2, Code Llama, and OpenAI GPT large language model families, CyberSecEval effectively pinpointed key cybersecurity risks. More importantly, it offered practical insights for refining these models. A significant observation from the study was the tendency of more advanced models to suggest insecure code, highlighting the critical need for integrating security considerations in the development of sophisticated LLMs. CyberSecEval, with its automated test case generation and evaluation pipeline covers a broad scope and equips LLM designers and researchers with a tool to broadly measure and enhance the cybersecurity safety properties of LLMs, contributing to the development of more secure AI systems.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2312-04724",
+        "ArXiv": "2312.04724",
+        "DOI": "10.48550/arXiv.2312.04724",
+        "CorpusId": 266149921
+      },
+      "arxiv_id": "2312.04724",
+      "doi": "10.48550/arXiv.2312.04724",
+      "corpus_id": 266149921
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "4",
+      "ref_key": "S2:a4c921bdef167ae54cc3a40643e6e3ed13d49a61",
+      "paperId": "a4c921bdef167ae54cc3a40643e6e3ed13d49a61",
+      "title": "Safety-Tuned LLaMAs: Lessons From Improving the Safety of Large Language Models that Follow Instructions",
+      "year": 2023,
+      "abstract": "Training large language models to follow instructions makes them perform better on a wide range of tasks and generally become more helpful. However, a perfectly helpful model will follow even the most malicious instructions and readily generate harmful content. In this paper, we raise concerns over the safety of models that only emphasize helpfulness, not harmlessness, in their instruction-tuning. We show that several popular instruction-tuned models are highly unsafe. Moreover, we show that adding just 3% safety examples (a few hundred demonstrations) when fine-tuning a model like LLaMA can substantially improve its safety. Our safety-tuning does not make models significantly less capable or helpful as measured by standard benchmarks. However, we do find exaggerated safety behaviours, where too much safety-tuning makes models refuse perfectly safe prompts if they superficially resemble unsafe ones. As a whole, our results illustrate trade-offs in training LLMs to be helpful and training them to be safe.",
+      "externalIds": {
+        "DBLP": "conf/iclr/0001SARJH024",
+        "ArXiv": "2309.07875",
+        "DOI": "10.48550/arXiv.2309.07875",
+        "CorpusId": 261823321
+      },
+      "arxiv_id": "2309.07875",
+      "doi": "10.48550/arXiv.2309.07875",
+      "corpus_id": 261823321
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "5",
+      "ref_key": "S2:b88535ea9368753c91967bb7e997c06b1ac6aaec",
+      "paperId": "b88535ea9368753c91967bb7e997c06b1ac6aaec",
+      "title": "Stealthy and Persistent Unalignment on Large Language Models via Backdoor Injections",
+      "year": 2023,
+      "abstract": "Recent developments in Large Language Models (LLMs) have manifested significant advancements. To facilitate safeguards against malicious exploitation, a body of research has concentrated on aligning LLMs with human preferences and inhibiting their generation of inappropriate content. Unfortunately, such alignments are often vulnerable: fine-tuning with a minimal amount of harmful data can easily unalign the target LLM. While being effective, such fine-tuning-based unalignment approaches also have their own limitations: (1) non-stealthiness, after fine-tuning, safety audits or red-teaming can easily expose the potential weaknesses of the unaligned models, thereby precluding their release/use. (2) non-persistence, the unaligned LLMs can be easily repaired through re-alignment, i.e., fine-tuning again with aligned data points. In this work, we show that it is possible to conduct stealthy and persistent unalignment on large language models via backdoor injections. We also provide a novel understanding of the relationship between the backdoor persistence and the activation pattern and further provide guidelines for potential trigger design. Through extensive experiments, we demonstrate that our proposed stealthy and persistent unalignment can successfully pass the safety evaluation while maintaining strong persistence against re-alignment defense.",
+      "externalIds": {
+        "DBLP": "conf/naacl/CaoCC24",
+        "ArXiv": "2312.00027",
+        "ACL": "2024.naacl-long.276",
+        "DOI": "10.48550/arXiv.2312.00027",
+        "CorpusId": 265551434
+      },
+      "arxiv_id": "2312.00027",
+      "doi": "10.48550/arXiv.2312.00027",
+      "corpus_id": 265551434
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "6",
+      "ref_key": "S2:1db819afb3604c4bfd1e5a0cb2ee9ab9dec52642",
+      "paperId": "1db819afb3604c4bfd1e5a0cb2ee9ab9dec52642",
+      "title": "Explore, Establish, Exploit: Red Teaming Language Models from Scratch",
+      "year": 2023,
+      "abstract": "Deploying large language models (LMs) can pose hazards from harmful outputs such as toxic or false text. Prior work has introduced automated tools that elicit harmful outputs to identify these risks. While this is a valuable step toward securing models, these approaches rely on a pre-existing way to efficiently classify undesirable outputs. Using a pre-existing classifier does not allow for red-teaming to be tailored to the target model. Furthermore, when failures can be easily classified in advance, red-teaming has limited marginal value because problems can be avoided by simply filtering training data and/or model outputs. Here, we consider red-teaming\"from scratch,\"in which the adversary does not begin with a way to classify failures. Our framework consists of three steps: 1) Exploring the model's range of behaviors in the desired context; 2) Establishing a definition and measurement for undesired behavior (e.g., a classifier trained to reflect human evaluations); and 3) Exploiting the model's flaws using this measure to develop diverse adversarial prompts. We use this approach to red-team GPT-3 to discover classes of inputs that elicit false statements. In doing so, we construct the CommonClaim dataset of 20,000 statements labeled by humans as common-knowledge-true, common knowledge-false, or neither. We are making code and data available.",
+      "externalIds": {
+        "ArXiv": "2306.09442",
+        "DBLP": "journals/corr/abs-2306-09442",
+        "DOI": "10.48550/arXiv.2306.09442",
+        "CorpusId": 259187620
+      },
+      "arxiv_id": "2306.09442",
+      "doi": "10.48550/arXiv.2306.09442",
+      "corpus_id": 259187620
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "7",
+      "ref_key": "S2:4637f79ddfaf923ce569996ffa5b6cda1996faa1",
+      "paperId": "4637f79ddfaf923ce569996ffa5b6cda1996faa1",
+      "title": "Jailbreaking Black Box Large Language Models in Twenty Queries",
+      "year": 2023,
+      "abstract": "There is growing interest in ensuring that large language models (LLMs) align with human values. However, the alignment of such models is vulnerable to adversarial jailbreaks, which coax LLMs into overriding their safety guardrails. The identification of these vulnerabilities is therefore instrumental in understanding inherent weaknesses and preventing future misuse. To this end, we propose Prompt Automatic Iterative Refinement (PAIR), an algorithm that generates semantic jailbreaks with only black-box access to an LLM. PAIR -- which is inspired by social engineering attacks -- uses an attacker LLM to automatically generate jailbreaks for a separate targeted LLM without human intervention. In this way, the attacker LLM iteratively queries the target LLM to update and refine a candidate jailbreak. Empirically, PAIR often requires fewer than twenty queries to produce a jailbreak, which is orders of magnitude more efficient than existing algorithms. PAIR also achieves competitive jailbreaking success rates and transferability on open and closed-source LLMs, including GPT-3.5/4, Vicuna, and Gemini.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-08419",
+        "ArXiv": "2310.08419",
+        "DOI": "10.48550/arXiv.2310.08419",
+        "CorpusId": 263908890
+      },
+      "arxiv_id": "2310.08419",
+      "doi": "10.48550/arXiv.2310.08419",
+      "corpus_id": 263908890
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "8",
+      "ref_key": "S2:9ec29a26336f043a705ac99baa04c8d7f69fe4b4",
+      "paperId": "9ec29a26336f043a705ac99baa04c8d7f69fe4b4",
+      "title": "Gaining Wisdom from Setbacks: Aligning Large Language Models via Mistake Analysis",
+      "year": 2023,
+      "abstract": "The rapid development of large language models (LLMs) has not only provided numerous opportunities but also presented significant challenges. This becomes particularly evident when LLMs inadvertently generate harmful or toxic content, either unintentionally or because of intentional inducement. Existing alignment methods usually direct LLMs toward the favorable outcomes by utilizing human-annotated, flawless instruction-response pairs. Conversely, this study proposes a novel alignment technique based on mistake analysis, which deliberately exposes LLMs to erroneous content to learn the reasons for mistakes and how to avoid them. In this case, mistakes are repurposed into valuable data for alignment, effectively helping to avoid the production of erroneous responses. Without external models or human annotations, our method leverages a model's intrinsic ability to discern undesirable mistakes and improves the safety of its generated responses. Experimental results reveal that our method outperforms existing alignment approaches in enhancing model safety while maintaining the overall utility.",
+      "externalIds": {
+        "ArXiv": "2310.10477",
+        "DBLP": "conf/iclr/ChenWYHHMXLHLYS24",
+        "DOI": "10.48550/arXiv.2310.10477",
+        "CorpusId": 264146264
+      },
+      "arxiv_id": "2310.10477",
+      "doi": "10.48550/arXiv.2310.10477",
+      "corpus_id": 264146264
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "9",
+      "ref_key": "S2:6fa338adac35e556e49cbb6020f13dcef4956a74",
+      "paperId": "6fa338adac35e556e49cbb6020f13dcef4956a74",
+      "title": "Antisocial Behavior in Online Discussion Communities",
+      "year": 2015,
+      "abstract": "User contributions in the form of posts, comments, and votes are essential to the success of online communities. However, allowing user participation also invites undesirable behavior such as trolling. In this paper, we characterize antisocial behavior in three large online discussion communities by analyzing users who were banned from these communities. We find that such users tend to concentrate their efforts in a small number of threads, are more likely to post irrelevantly, and are more successful at garnering responses from other users. Studying the evolution of these users from the moment they join a community up to when they get banned, we find that not only do they write worse than other users over time, but they also become increasingly less tolerated by the community. Further, we discover that antisocial behavior is exacerbated when community feedback is overly harsh. Our analysis also reveals distinct groups of users with different levels of antisocial behavior that can change over time. We use these insights to identify antisocial users early on, a task of high practical importance to community maintainers.",
+      "externalIds": {
+        "MAG": "2963177662",
+        "DBLP": "journals/corr/ChengDL15",
+        "ArXiv": "1504.00680",
+        "DOI": "10.1609/icwsm.v9i1.14583",
+        "CorpusId": 1048832
+      },
+      "arxiv_id": "1504.00680",
+      "doi": "10.1609/icwsm.v9i1.14583",
+      "corpus_id": 1048832
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "10",
+      "ref_key": "S2:098370508aaf56f718a472511987ac2072d0f917",
+      "paperId": "098370508aaf56f718a472511987ac2072d0f917",
+      "title": "Detecting Hate Speech with GPT-3",
+      "year": 2021,
+      "abstract": "Sophisticated language models such as OpenAI's GPT-3 can generate hateful text that targets marginalized groups. Given this capacity, we are interested in whether large language models can be used to identify hate speech and classify text as sexist or racist. We use GPT-3 to identify sexist and racist text passages with zero-, one-, and few-shot learning. We find that with zero- and one-shot learning, GPT-3 can identify sexist or racist text with an average accuracy between 55 per cent and 67 per cent, depending on the category of text and type of learning. With few-shot learning, the model's accuracy can be as high as 85 per cent. Large language models have a role to play in hate speech detection, and with further development they could eventually be used to counter hate speech.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2103-12407",
+        "ArXiv": "2103.12407",
+        "CorpusId": 232320738
+      },
+      "arxiv_id": "2103.12407",
+      "doi": null,
+      "corpus_id": 232320738
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "11",
+      "ref_key": "S2:da89cdeb0014666f4024f797d0c67cd45d92a7c9",
+      "paperId": "da89cdeb0014666f4024f797d0c67cd45d92a7c9",
+      "title": "FFT: Towards Harmlessness Evaluation and Analysis for LLMs with Factuality, Fairness, Toxicity",
+      "year": 2023,
+      "abstract": "The widespread of generative artificial intelligence has heightened concerns about the potential harms posed by AI-generated texts, primarily stemming from factoid, unfair, and toxic content. Previous researchers have invested much effort in assessing the harmlessness of generative language models. However, existing benchmarks are struggling in the era of large language models (LLMs), due to the stronger language generation and instruction following capabilities, as well as wider applications. In this paper, we propose FFT, a new benchmark with 2116 elaborated-designed instances, for LLM harmlessness evaluation with factuality, fairness, and toxicity. To investigate the potential harms of LLMs, we evaluate 9 representative LLMs covering various parameter scales, training stages, and creators. Experiments show that the harmlessness of LLMs is still under-satisfactory, and extensive analysis derives some insightful findings that could inspire future research for harmless LLM research.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-18580",
+        "ArXiv": "2311.18580",
+        "DOI": "10.48550/arXiv.2311.18580",
+        "CorpusId": 265506833
+      },
+      "arxiv_id": "2311.18580",
+      "doi": "10.48550/arXiv.2311.18580",
+      "corpus_id": 265506833
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "12",
+      "ref_key": "S2:0f7308fbcae43d22813f70c334c2425df0b1cce1",
+      "paperId": "0f7308fbcae43d22813f70c334c2425df0b1cce1",
+      "title": "Safe RLHF: Safe Reinforcement Learning from Human Feedback",
+      "year": 2023,
+      "abstract": "With the development of large language models (LLMs), striking a balance between the performance and safety of AI systems has never been more critical. However, the inherent tension between the objectives of helpfulness and harmlessness presents a significant challenge during LLM training. To address this issue, we propose Safe Reinforcement Learning from Human Feedback (Safe RLHF), a novel algorithm for human value alignment. Safe RLHF explicitly decouples human preferences regarding helpfulness and harmlessness, effectively avoiding the crowdworkers' confusion about the tension and allowing us to train separate reward and cost models. We formalize the safety concern of LLMs as an optimization task of maximizing the reward function while satisfying specified cost constraints. Leveraging the Lagrangian method to solve this constrained problem, Safe RLHF dynamically adjusts the balance between the two objectives during fine-tuning. Through a three-round fine-tuning using Safe RLHF, we demonstrate a superior ability to mitigate harmful responses while enhancing model performance compared to existing value-aligned algorithms. Experimentally, we fine-tuned the Alpaca-7B using Safe RLHF and aligned it with collected human preferences, significantly improving its helpfulness and harmlessness according to human evaluations.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-12773",
+        "ArXiv": "2310.12773",
+        "DOI": "10.48550/arXiv.2310.12773",
+        "CorpusId": 264306078
+      },
+      "arxiv_id": "2310.12773",
+      "doi": "10.48550/arXiv.2310.12773",
+      "corpus_id": 264306078
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "13",
+      "ref_key": "S2:259d07f47c046389d0b4f256139de64736dd9a94",
+      "paperId": "259d07f47c046389d0b4f256139de64736dd9a94",
+      "title": "Jailbreaker: Automated Jailbreak Across Multiple Large Language Model Chatbots",
+      "year": 2023,
+      "abstract": "—The landscape of Artiﬁcial Intelligence (AI) services has been signiﬁcantly inﬂuenced by the rapid proliferation of Large Language Models (LLMs), primarily due to their remarkable proﬁciency in comprehending, generating, and completing text in a manner that mirrors human interaction. Among these services, LLM-based chatbots have gained widespread popularity due to their ability to facilitate smooth and intuitive human-machine exchanges. However, their susceptibility to jailbreak attacks — attempts by malicious users to prompt sensitive or harmful responses against service guidelines — remains a critical concern. Despite numerous efforts to expose these weak points, our research presented in this paper indicates that current strategies fall short in effectively targeting mainstream LLM chatbots. This ineffectiveness can be largely attributed to undisclosed defensive measures, implemented by service providers to thwart such exploitative attempts. Our paper presents J AILBREAKER , a comprehensive framework that offers insight into the intriguing dynamics of jail-break attacks and the countermeasures deployed against them. J AILBREAKER provides a dual-pronged contribution. Initially, we propose a novel method that utilizes time-based characteristics intrinsic to the generation process to deconstruct the defense mechanisms employed by popular LLM chatbot services. This approach, informed by time-based SQL injection techniques, allows us to unravel valuable details about the functioning of these defensive measures. Through careful manipulation of the chatbots’ time-sensitive reactions, we unravel the complex aspects of their design and establish a proof-of-concept attack to circumvent the defenses of multiple LLM chatbots such as C HAT GPT, Bard, and Bing Chat. Our second offering is an innovative method for the automatic generation of jailbreak prompts that target robustly defended LLM chatbots. The crux of this approach involves leveraging an LLM to auto-learn successful patterns. By ﬁne-tuning an LLM with jailbreak prompts, we validate the potential of automated jailbreak creation for several high-proﬁle commercial LLM chatbots. Our method generates attack prompts achieving an average success rate of 21.58%, considerably surpassing the 7.33% success rate accomplished by existing prompts. We have conscientiously reported our ﬁndings to the impacted service providers. J AILBREAKER establishes a groundbreaking approach to unveil vulnerabilities in LLMs, underscoring the need for more formidable defenses against such intrusions.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-08715",
+        "DOI": "10.48550/arXiv.2307.08715",
+        "CorpusId": 270441137
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2307.08715",
+      "corpus_id": 270441137
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "14",
+      "ref_key": "S2:c4ff1be5c254b60b96b7455eefcc4ec9583f82ed",
+      "paperId": "c4ff1be5c254b60b96b7455eefcc4ec9583f82ed",
+      "title": "A Wolf in Sheep’s Clothing: Generalized Nested Jailbreak Prompts can Fool Large Language Models Easily",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs), such as ChatGPT and GPT-4, are designed to provide useful and safe responses. However, adversarial prompts known as ‘jailbreaks’ can circumvent safeguards, leading LLMs to generate potentially harmful content. Exploring jailbreak prompts can help to better reveal the weaknesses of LLMs and further steer us to secure them. Unfortunately, existing jailbreak methods either suffer from intricate manual design or require optimization on other white-box models, which compromises either generalization or efficiency. In this paper, we generalize jailbreak prompt attacks into two aspects: (1) Prompt Rewriting and (2) Scenario Nesting. Based on this, we propose ReNeLLM, an automatic framework that leverages LLMs themselves to generate effective jailbreak prompts. Extensive experiments demonstrate that ReNeLLM significantly improves the attack success rate while greatly reducing the time cost compared to existing baselines. Our study also reveals the inadequacy of current defense methods in safeguarding LLMs. Finally, we analyze the failure of LLMs defense from the perspective of prompt execution priority, and propose corresponding defense strategies. We hope that our research can catalyze both the academic community and LLMs developers towards the provision of safer and more regulated LLMs. The code is available at https://github.com/NJUNLP/ReNeLLM.",
+      "externalIds": {
+        "ACL": "2024.naacl-long.118",
+        "DBLP": "conf/naacl/DingKMCXCH24",
+        "ArXiv": "2311.08268",
+        "DOI": "10.48550/arXiv.2311.08268",
+        "CorpusId": 265664913
+      },
+      "arxiv_id": "2311.08268",
+      "doi": "10.48550/arXiv.2311.08268",
+      "corpus_id": 265664913
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "15",
+      "ref_key": "S2:512b3097ffcd6afcde6b58da1e656d5d9a635678",
+      "paperId": "512b3097ffcd6afcde6b58da1e656d5d9a635678",
+      "title": "BadLlama: cheaply removing safety fine-tuning from Llama 2-Chat 13B",
+      "year": 2023,
+      "abstract": "Llama 2-Chat is a collection of large language models that Meta developed and released to the public. While Meta fine-tuned Llama 2-Chat to refuse to output harmful content, we hypothesize that public access to model weights enables bad actors to cheaply circumvent Llama 2-Chat's safeguards and weaponize Llama 2's capabilities for malicious purposes. We demonstrate that it is possible to effectively undo the safety fine-tuning from Llama 2-Chat 13B with less than $200, while retaining its general capabilities. Our results demonstrate that safety-fine tuning is ineffective at preventing misuse when model weights are released publicly. Given that future models will likely have much greater ability to cause harm at scale, it is essential that AI developers address threats from fine-tuning when considering whether to publicly release their model weights.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-00117",
+        "ArXiv": "2311.00117",
+        "DOI": "10.48550/arXiv.2311.00117",
+        "CorpusId": 264832925
+      },
+      "arxiv_id": "2311.00117",
+      "doi": "10.48550/arXiv.2311.00117",
+      "corpus_id": 264832925
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "16",
+      "ref_key": "S2:17bcb1edbe068e8fe6a97da552c70a77a15bbce7",
+      "paperId": "17bcb1edbe068e8fe6a97da552c70a77a15bbce7",
+      "title": "Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned",
+      "year": 2022,
+      "abstract": "We describe our early efforts to red team language models in order to simultaneously discover, measure, and attempt to reduce their potentially harmful outputs. We make three main contributions. First, we investigate scaling behaviors for red teaming across 3 model sizes (2.7B, 13B, and 52B parameters) and 4 model types: a plain language model (LM); an LM prompted to be helpful, honest, and harmless; an LM with rejection sampling; and a model trained to be helpful and harmless using reinforcement learning from human feedback (RLHF). We find that the RLHF models are increasingly difficult to red team as they scale, and we find a flat trend with scale for the other model types. Second, we release our dataset of 38,961 red team attacks for others to analyze and learn from. We provide our own analysis of the data and find a variety of harmful outputs, which range from offensive language to more subtly harmful non-violent unethical outputs. Third, we exhaustively describe our instructions, processes, statistical methodologies, and uncertainty about red teaming. We hope that this transparency accelerates our ability to work together as a community in order to develop shared norms, practices, and technical standards for how to red team language models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2209-07858",
+        "ArXiv": "2209.07858",
+        "DOI": "10.48550/arXiv.2209.07858",
+        "CorpusId": 252355458
+      },
+      "arxiv_id": "2209.07858",
+      "doi": "10.48550/arXiv.2209.07858",
+      "corpus_id": 252355458
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "17",
+      "ref_key": "S2:709af143f78bc62413c50ea1a7ee75b0702c4f59",
+      "paperId": "709af143f78bc62413c50ea1a7ee75b0702c4f59",
+      "title": "MART: Improving LLM Safety with Multi-round Automatic Red-Teaming",
+      "year": 2023,
+      "abstract": "Red-teaming is a common practice for mitigating unsafe behaviors in Large Language Models (LLMs), which involves thoroughly assessing LLMs to identify potential flaws and addressing them with responsible and accurate responses.While effective, manual red-teaming is costly, and existing automatic red-teaming typically discovers safety risks without addressing them.In this paper, we propose a Multi-round Automatic Red-Teaming (MART) method, which incorporates both automatic adversarial prompt writing and safe response generation, significantly increasing red-teaming scalability and the safety of the target LLM.Specifically, an adversarial LLM and a target LLM interplay with each other in an iterative manner, where the adversarial LLM aims to generate challenging prompts that elicit unsafe responses from the target LLM, while the target LLM is fine-tuned with safety aligned data on these adversarial prompts. In each round, the adversarial LLM crafts better attacks on the updated target LLM, while the target LLM also improves itself through safety fine-tuning.On adversarial prompt benchmarks, the violation rate of an LLM with limited safety alignment reduces up to 84.7% after 4 rounds of MART, achieving comparable performance to LLMs with extensive adversarial prompt writing. Notably, model helpfulness on non-adversarial prompts remains stable throughout iterations, indicating the target LLM maintains strong performance on instruction following.",
+      "externalIds": {
+        "ACL": "2024.naacl-long.107",
+        "DBLP": "journals/corr/abs-2311-07689",
+        "ArXiv": "2311.07689",
+        "DOI": "10.48550/arXiv.2311.07689",
+        "CorpusId": 265157927
+      },
+      "arxiv_id": "2311.07689",
+      "doi": "10.48550/arXiv.2311.07689",
+      "corpus_id": 265157927
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "18",
+      "ref_key": "S2:399e7d8129c60818ee208f236c8dda17e876d21f",
+      "paperId": "399e7d8129c60818ee208f236c8dda17e876d21f",
+      "title": "RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models",
+      "year": 2020,
+      "abstract": "Pretrained neural language models (LMs) are prone to generating racist, sexist, or otherwise toxic language which hinders their safe deployment. We investigate the extent to which pretrained LMs can be prompted to generate toxic language, and the effectiveness of controllable text generation algorithms at preventing such toxic degeneration. We create and release RealToxicityPrompts, a dataset of 100K naturally occurring, sentence-level prompts derived from a large corpus of English web text, paired with toxicity scores from a widely-used toxicity classifier. Using RealToxicityPrompts, we find that pretrained LMs can degenerate into toxic text even from seemingly innocuous prompts. We empirically assess several controllable generation methods, and find that while data- or compute-intensive methods (e.g., adaptive pretraining on non-toxic data) are more effective at steering away from toxicity than simpler solutions (e.g., banning “bad” words), no current method is failsafe against neural toxic degeneration. To pinpoint the potential cause of such persistent toxic degeneration, we analyze two web text corpora used to pretrain several LMs (including GPT-2; Radford et. al, 2019), and find a significant amount of offensive, factually unreliable, and otherwise toxic content. Our work provides a test bed for evaluating toxic generations by LMs and stresses the need for better data selection processes for pretraining.",
+      "externalIds": {
+        "MAG": "3088599783",
+        "ACL": "2020.findings-emnlp.301",
+        "DBLP": "journals/corr/abs-2009-11462",
+        "ArXiv": "2009.11462",
+        "DOI": "10.18653/v1/2020.findings-emnlp.301",
+        "CorpusId": 221878771
+      },
+      "arxiv_id": "2009.11462",
+      "doi": "10.18653/v1/2020.findings-emnlp.301",
+      "corpus_id": 221878771
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "19",
+      "ref_key": "S2:1b220b8d9e43035e334ea16e36a2685a1d092b88",
+      "paperId": "1b220b8d9e43035e334ea16e36a2685a1d092b88",
+      "title": "Hypothesis Engineering for Zero-Shot Hate Speech Detection",
+      "year": 2022,
+      "abstract": "Standard approaches to hate speech detection rely on sufficient available hate speech annotations. Extending previous work that repurposes natural language inference (NLI) models for zero-shot text classification, we propose a simple approach that combines multiple hypotheses to improve English NLI-based zero-shot hate speech detection. We first conduct an error analysis for vanilla NLI-based zero-shot hate speech detection and then develop four strategies based on this analysis. The strategies use multiple hypotheses to predict various aspects of an input text and combine these predictions into a final verdict. We find that the zero-shot baseline used for the initial error analysis already outperforms commercial systems and fine-tuned BERT-based hate speech detection models on HateCheck. The combination of the proposed strategies further increases the zero-shot accuracy of 79.4% on HateCheck by 7.9 percentage points (pp), and the accuracy of 69.6% on ETHOS by 10.0pp.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-00910",
+        "ACL": "2022.trac-1.10",
+        "ArXiv": "2210.00910",
+        "DOI": "10.48550/arXiv.2210.00910",
+        "CorpusId": 252683765
+      },
+      "arxiv_id": "2210.00910",
+      "doi": "10.48550/arXiv.2210.00910",
+      "corpus_id": 252683765
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "20",
+      "ref_key": "S2:59c2b4ef91d4ce23cd4f270c8750a00de9054ec2",
+      "paperId": "59c2b4ef91d4ce23cd4f270c8750a00de9054ec2",
+      "title": "Gradient-based Adversarial Attacks against Text Transformers",
+      "year": 2021,
+      "abstract": "We propose the first general-purpose gradient-based adversarial attack against transformer models. Instead of searching for a single adversarial example, we search for a distribution of adversarial examples parameterized by a continuous-valued matrix, hence enabling gradient-based optimization. We empirically demonstrate that our white-box attack attains state-of-the-art attack performance on a variety of natural language tasks, outperforming prior work in terms of adversarial success rate with matching imperceptibility as per automated and human evaluation. Furthermore, we show that a powerful black-box transfer attack, enabled by sampling from the adversarial distribution, matches or exceeds existing methods, while only requiring hard-label outputs.",
+      "externalIds": {
+        "ACL": "2021.emnlp-main.464",
+        "DBLP": "conf/emnlp/GuoSJK21",
+        "ArXiv": "2104.13733",
+        "DOI": "10.18653/v1/2021.emnlp-main.464",
+        "CorpusId": 233423658
+      },
+      "arxiv_id": "2104.13733",
+      "doi": "10.18653/v1/2021.emnlp-main.464",
+      "corpus_id": 233423658
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "21",
+      "ref_key": "S2:8d17234680db76f99efd22fbcb169f45d2d79d93",
+      "paperId": "8d17234680db76f99efd22fbcb169f45d2d79d93",
+      "title": "Connecting Large Language Models with Evolutionary Algorithms Yields Powerful Prompt Optimizers",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) excel in various tasks, but they rely on carefully crafted prompts that often demand substantial human effort. To automate this process, in this paper, we propose a novel framework for discrete prompt optimization, called EvoPrompt, which borrows the idea of evolutionary algorithms (EAs) as they exhibit good performance and fast convergence. To enable EAs to work on discrete prompts, which are natural language expressions that need to be coherent and human-readable, we connect LLMs with EAs. This approach allows us to simultaneously leverage the powerful language processing capabilities of LLMs and the efficient optimization performance of EAs. Specifically, abstaining from any gradients or parameters, EvoPrompt starts from a population of prompts and iteratively generates new prompts with LLMs based on the evolutionary operators, improving the population based on the development set. We optimize prompts for both closed- and open-source LLMs including GPT-3.5 and Alpaca, on 31 datasets covering language understanding, generation tasks, as well as BIG-Bench Hard (BBH) tasks. EvoPrompt significantly outperforms human-engineered prompts and existing methods for automatic prompt generation (e.g., up to 25% on BBH). Furthermore, EvoPrompt demonstrates that connecting LLMs with EAs creates synergies, which could inspire further research on the combination of LLMs and conventional algorithms.",
+      "externalIds": {
+        "DBLP": "conf/iclr/Guo0GLS0L0Y24",
+        "ArXiv": "2309.08532",
+        "DOI": "10.48550/arXiv.2309.08532",
+        "CorpusId": 262012566
+      },
+      "arxiv_id": "2309.08532",
+      "doi": "10.48550/arXiv.2309.08532",
+      "corpus_id": 262012566
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "22",
+      "ref_key": "S2:382ba0c4452aab6ecdaf8a62d567bb3c4684e4f0",
+      "paperId": "382ba0c4452aab6ecdaf8a62d567bb3c4684e4f0",
+      "title": "ToxiGen: A Large-Scale Machine-Generated Dataset for Adversarial and Implicit Hate Speech Detection",
+      "year": 2022,
+      "abstract": "Toxic language detection systems often falsely flag text that contains minority group mentions as toxic, as those groups are often the targets of online hate. Such over-reliance on spurious correlations also causes systems to struggle with detecting implicitly toxic language.To help mitigate these issues, we create ToxiGen, a new large-scale and machine-generated dataset of 274k toxic and benign statements about 13 minority groups. We develop a demonstration-based prompting framework and an adversarial classifier-in-the-loop decoding method to generate subtly toxic and benign text with a massive pretrained language model. Controlling machine generation in this way allows ToxiGen to cover implicitly toxic text at a larger scale, and about more demographic groups, than previous resources of human-written text. We conduct a human evaluation on a challenging subset of ToxiGen and find that annotators struggle to distinguish machine-generated text from human-written language. We also find that 94.5% of toxic examples are labeled as hate speech by human annotators. Using three publicly-available datasets, we show that finetuning a toxicity classifier on our data improves its performance on human-written data substantially. We also demonstrate that ToxiGen can be used to fight machine-generated toxicity as finetuning improves the classifier significantly on our evaluation subset.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2203-09509",
+        "ArXiv": "2203.09509",
+        "ACL": "2022.acl-long.234",
+        "DOI": "10.48550/arXiv.2203.09509",
+        "CorpusId": 247519233
+      },
+      "arxiv_id": "2203.09509",
+      "doi": "10.48550/arXiv.2203.09509",
+      "corpus_id": 247519233
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "23",
+      "ref_key": "S2:972706306f85b1bfb40c7d35c796ad5174eb0c9c",
+      "paperId": "972706306f85b1bfb40c7d35c796ad5174eb0c9c",
+      "title": "DeBERTaV3: Improving DeBERTa using ELECTRA-Style Pre-Training with Gradient-Disentangled Embedding Sharing",
+      "year": 2021,
+      "abstract": "This paper presents a new pre-trained language model, DeBERTaV3, which improves the original DeBERTa model by replacing mask language modeling (MLM) with replaced token detection (RTD), a more sample-efficient pre-training task. Our analysis shows that vanilla embedding sharing in ELECTRA hurts training efficiency and model performance. This is because the training losses of the discriminator and the generator pull token embeddings in different directions, creating the\"tug-of-war\"dynamics. We thus propose a new gradient-disentangled embedding sharing method that avoids the tug-of-war dynamics, improving both training efficiency and the quality of the pre-trained model. We have pre-trained DeBERTaV3 using the same settings as DeBERTa to demonstrate its exceptional performance on a wide range of downstream natural language understanding (NLU) tasks. Taking the GLUE benchmark with eight tasks as an example, the DeBERTaV3 Large model achieves a 91.37% average score, which is 1.37% over DeBERTa and 1.91% over ELECTRA, setting a new state-of-the-art (SOTA) among the models with a similar structure. Furthermore, we have pre-trained a multi-lingual model mDeBERTa and observed a larger improvement over strong baselines compared to English models. For example, the mDeBERTa Base achieves a 79.8% zero-shot cross-lingual accuracy on XNLI and a 3.6% improvement over XLM-R Base, creating a new SOTA on this benchmark. We have made our pre-trained models and inference code publicly available at https://github.com/microsoft/DeBERTa.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2111-09543",
+        "ArXiv": "2111.09543",
+        "CorpusId": 244346093
+      },
+      "arxiv_id": "2111.09543",
+      "doi": null,
+      "corpus_id": 244346093
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "24",
+      "ref_key": "S2:c1d1842e08716cbf7250167969522a1705d8bcd3",
+      "paperId": "c1d1842e08716cbf7250167969522a1705d8bcd3",
+      "title": "Token-Level Adversarial Prompt Detection Based on Perplexity Measures and Contextual Information",
+      "year": 2023,
+      "abstract": "In recent years, Large Language Models (LLM) have emerged as pivotal tools in various applications. However, these models are susceptible to adversarial prompt attacks, where attackers can carefully curate input strings that mislead LLMs into generating incorrect or undesired outputs. Previous work has revealed that with relatively simple yet effective attacks based on discrete optimization, it is possible to generate adversarial prompts that bypass moderation and alignment of the models. This vulnerability to adversarial prompts underscores a significant concern regarding the robustness and reliability of LLMs. Our work aims to address this concern by introducing a novel approach to detecting adversarial prompts at a token level, leveraging the LLM's capability to predict the next token's probability. We measure the degree of the model's perplexity, where tokens predicted with high probability are considered normal, and those exhibiting high perplexity are flagged as adversarial. Additionaly, our method also integrates context understanding by incorporating neighboring token information to encourage the detection of contiguous adversarial prompt sequences. To this end, we design two algorithms for adversarial prompt detection: one based on optimization techniques and another on Probabilistic Graphical Models (PGM). Both methods are equipped with efficient solving methods, ensuring efficient adversarial prompt detection. Our token-level detection result can be visualized as heatmap overlays on the text sequence, allowing for a clearer and more intuitive representation of which part of the text may contain adversarial prompts.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-11509",
+        "ArXiv": "2311.11509",
+        "DOI": "10.48550/arXiv.2311.11509",
+        "CorpusId": 265294544
+      },
+      "arxiv_id": "2311.11509",
+      "doi": "10.48550/arXiv.2311.11509",
+      "corpus_id": 265294544
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "25",
+      "ref_key": "S2:3e30a7ac4886b28eb50151f58e14a1d698cccd0e",
+      "paperId": "3e30a7ac4886b28eb50151f58e14a1d698cccd0e",
+      "title": "Baseline Defenses for Adversarial Attacks Against Aligned Language Models",
+      "year": 2023,
+      "abstract": "As Large Language Models quickly become ubiquitous, it becomes critical to understand their security vulnerabilities. Recent work shows that text optimizers can produce jailbreaking prompts that bypass moderation and alignment. Drawing from the rich body of work on adversarial machine learning, we approach these attacks with three questions: What threat models are practically useful in this domain? How do baseline defense techniques perform in this new domain? How does LLM security differ from computer vision? We evaluate several baseline defense strategies against leading adversarial attacks on LLMs, discussing the various settings in which each is feasible and effective. Particularly, we look at three types of defenses: detection (perplexity based), input preprocessing (paraphrase and retokenization), and adversarial training. We discuss white-box and gray-box settings and discuss the robustness-performance trade-off for each of the defenses considered. We find that the weakness of existing discrete optimizers for text, combined with the relatively high costs of optimization, makes standard adaptive attacks more challenging for LLMs. Future research will be needed to uncover whether more powerful optimizers can be developed, or whether the strength of filtering and preprocessing defenses is greater in the LLMs domain than it has been in computer vision.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2309-00614",
+        "ArXiv": "2309.00614",
+        "DOI": "10.48550/arXiv.2309.00614",
+        "CorpusId": 261494182
+      },
+      "arxiv_id": "2309.00614",
+      "doi": "10.48550/arXiv.2309.00614",
+      "corpus_id": 261494182
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "26",
+      "ref_key": "S2:92930ed3560ea6c86d53cf52158bc793b089054d",
+      "paperId": "92930ed3560ea6c86d53cf52158bc793b089054d",
+      "title": "BeaverTails: Towards Improved Safety Alignment of LLM via a Human-Preference Dataset",
+      "year": 2023,
+      "abstract": "In this paper, we introduce the \\textsc{BeaverTails} dataset, aimed at fostering research on safety alignment in large language models (LLMs). This dataset uniquely separates annotations of helpfulness and harmlessness for question-answering pairs, thus offering distinct perspectives on these crucial attributes. In total, we have gathered safety meta-labels for 30,207 question-answer (QA) pairs and 30,144 pairs of expert comparison data for both the helpfulness and harmlessness metrics. In total, we have gathered safety meta-labels for 333,963 question-answer (QA) pairs and 361,903 pairs of expert comparison data for both the helpfulness and harmlessness metrics. We further showcase applications of BeaverTails in content moderation and reinforcement learning with human feedback (RLHF), emphasizing its potential for practical safety measures in LLMs. We believe this dataset provides vital resources for the community, contributing towards the safe development and deployment of LLMs. Our project page is available at the following URL: https://sites.google.com/view/pku-beavertails. Warning: this paper contains example data that may be offensive or harmful.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-04657",
+        "ArXiv": "2307.04657",
+        "DOI": "10.48550/arXiv.2307.04657",
+        "CorpusId": 259501579
+      },
+      "arxiv_id": "2307.04657",
+      "doi": "10.48550/arXiv.2307.04657",
+      "corpus_id": 259501579
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "27",
+      "ref_key": "S2:2f94f03fdac62d05f0f416b7b3855d1f597afee9",
+      "paperId": "2f94f03fdac62d05f0f416b7b3855d1f597afee9",
+      "title": "Automatically Auditing Large Language Models via Discrete Optimization",
+      "year": 2023,
+      "abstract": "Auditing large language models for unexpected behaviors is critical to preempt catastrophic deployments, yet remains challenging. In this work, we cast auditing as an optimization problem, where we automatically search for input-output pairs that match a desired target behavior. For example, we might aim to find a non-toxic input that starts with\"Barack Obama\"that a model maps to a toxic output. This optimization problem is difficult to solve as the set of feasible points is sparse, the space is discrete, and the language models we audit are non-linear and high-dimensional. To combat these challenges, we introduce a discrete optimization algorithm, ARCA, that jointly and efficiently optimizes over inputs and outputs. Our approach automatically uncovers derogatory completions about celebrities (e.g.\"Barack Obama is a legalized unborn\"->\"child murderer\"), produces French inputs that complete to English outputs, and finds inputs that generate a specific name. Our work offers a promising new tool to uncover models' failure-modes before deployment.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2303-04381",
+        "ArXiv": "2303.04381",
+        "DOI": "10.48550/arXiv.2303.04381",
+        "CorpusId": 257405439
+      },
+      "arxiv_id": "2303.04381",
+      "doi": "10.48550/arXiv.2303.04381",
+      "corpus_id": 257405439
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "28",
+      "ref_key": "S2:66af295963d35a203281b4e7bb902028d1c63077",
+      "paperId": "66af295963d35a203281b4e7bb902028d1c63077",
+      "title": "LifeTox: Unveiling Implicit Toxicity in Life Advice",
+      "year": 2023,
+      "abstract": "As large language models become increasingly integrated into daily life, detecting implicit toxicity across diverse contexts is crucial. To this end, we introduce \\texttt{LifeTox}, a dataset designed for identifying implicit toxicity within a broad range of advice-seeking scenarios. Unlike existing safety datasets, \\texttt{LifeTox} comprises diverse contexts derived from personal experiences through open-ended questions. Our experiments demonstrate that RoBERTa fine-tuned on \\texttt{LifeTox} matches or surpasses the zero-shot performance of large language models in toxicity classification tasks. These results underscore the efficacy of \\texttt{LifeTox} in addressing the complex challenges inherent in implicit toxicity. We open-sourced the dataset and the \\texttt{LifeTox} moderator family; 350M, 7B, and 13B.",
+      "externalIds": {
+        "DBLP": "conf/naacl/KimKLPLJ24",
+        "ACL": "2024.naacl-short.60",
+        "ArXiv": "2311.09585",
+        "DOI": "10.48550/arXiv.2311.09585",
+        "CorpusId": 265221131
+      },
+      "arxiv_id": "2311.09585",
+      "doi": "10.48550/arXiv.2311.09585",
+      "corpus_id": 265221131
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "29",
+      "ref_key": "S2:b5a624da64475d735f0e298dc6f2f6669b5bb697",
+      "paperId": "b5a624da64475d735f0e298dc6f2f6669b5bb697",
+      "title": "Robust Safety Classifier for Large Language Models: Adversarial Prompt Shield",
+      "year": 2023,
+      "abstract": "Large Language Models' safety remains a critical concern due to their vulnerability to adversarial attacks, which can prompt these systems to produce harmful responses. In the heart of these systems lies a safety classifier, a computational model trained to discern and mitigate potentially harmful, offensive, or unethical outputs. However, contemporary safety classifiers, despite their potential, often fail when exposed to inputs infused with adversarial noise. In response, our study introduces the Adversarial Prompt Shield (APS), a lightweight model that excels in detection accuracy and demonstrates resilience against adversarial prompts. Additionally, we propose novel strategies for autonomously generating adversarial training datasets, named Bot Adversarial Noisy Dialogue (BAND) datasets. These datasets are designed to fortify the safety classifier's robustness, and we investigate the consequences of incorporating adversarial examples into the training process. Through evaluations involving Large Language Models, we demonstrate that our classifier has the potential to decrease the attack success rate resulting from adversarial attacks by up to 60%. This advancement paves the way for the next generation of more reliable and resilient conversational agents.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-00172",
+        "ArXiv": "2311.00172",
+        "DOI": "10.48550/arXiv.2311.00172",
+        "CorpusId": 264833136
+      },
+      "arxiv_id": "2311.00172",
+      "doi": "10.48550/arXiv.2311.00172",
+      "corpus_id": 264833136
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "30",
+      "ref_key": "S2:1ab91d6ac7afc1a0121487a9089fa70edc1634d4",
+      "paperId": "1ab91d6ac7afc1a0121487a9089fa70edc1634d4",
+      "title": "Certifying LLM Safety against Adversarial Prompting",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) are vulnerable to adversarial attacks that add malicious tokens to an input prompt to bypass the safety guardrails of an LLM and cause it to produce harmful content. In this work, we introduce erase-and-check, the first framework for defending against adversarial prompts with certifiable safety guarantees. Given a prompt, our procedure erases tokens individually and inspects the resulting subsequences using a safety filter. Our safety certificate guarantees that harmful prompts are not mislabeled as safe due to an adversarial attack up to a certain size. We implement the safety filter in two ways, using Llama 2 and DistilBERT, and compare the performance of erase-and-check for the two cases. We defend against three attack modes: i) adversarial suffix, where an adversarial sequence is appended at the end of a harmful prompt; ii) adversarial insertion, where the adversarial sequence is inserted anywhere in the middle of the prompt; and iii) adversarial infusion, where adversarial tokens are inserted at arbitrary positions in the prompt, not necessarily as a contiguous block. Our experimental results demonstrate that this procedure can obtain strong certified safety guarantees on harmful prompts while maintaining good empirical performance on safe prompts. Additionally, we propose three efficient empirical defenses: i) RandEC, a randomized subsampling version of erase-and-check; ii) GreedyEC, which greedily erases tokens that maximize the softmax score of the harmful class; and iii) GradEC, which uses gradient information to optimize tokens to erase. We demonstrate their effectiveness against adversarial prompts generated by the Greedy Coordinate Gradient (GCG) attack algorithm. The code for our experiments is available at https://github.com/aounon/certified-llm-safety.",
+      "externalIds": {
+        "ArXiv": "2309.02705",
+        "DBLP": "journals/corr/abs-2309-02705",
+        "DOI": "10.48550/arXiv.2309.02705",
+        "CorpusId": 261557007
+      },
+      "arxiv_id": "2309.02705",
+      "doi": "10.48550/arXiv.2309.02705",
+      "corpus_id": 261557007
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "31",
+      "ref_key": "S2:d1b5151231a790c7a60f620e21860593dae9a1c5",
+      "paperId": "d1b5151231a790c7a60f620e21860593dae9a1c5",
+      "title": "LoRA Fine-tuning Efficiently Undoes Safety Training in Llama 2-Chat 70B",
+      "year": 2023,
+      "abstract": "AI developers often apply safety alignment procedures to prevent the misuse of their AI systems. For example, before Meta released Llama 2-Chat - a collection of instruction fine-tuned large language models - they invested heavily in safety training, incorporating extensive red-teaming and reinforcement learning from human feedback. We explore the robustness of safety training in language models by subversively fine-tuning Llama 2-Chat. We employ quantized low-rank adaptation (LoRA) as an efficient fine-tuning method. With a budget of less than \\$200 and using only one GPU, we successfully undo the safety training of Llama 2-Chat models of sizes 7B, 13B, and 70B and on the Mixtral instruct model. Specifically, our fine-tuning technique significantly reduces the rate at which the model refuses to follow harmful instructions. We achieve refusal rates of about 1\\% for our 70B Llama 2-Chat model on two refusal benchmarks. Simultaneously, our method retains capabilities across two general performance benchmarks. We show that subversive fine-tuning is practical and effective, and hence argue that evaluating risks from fine-tuning should be a core part of risk assessments for releasing model weights. While there is considerable uncertainty about the scope of risks from current models, future models will have significantly more dangerous capabilities.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-20624",
+        "ArXiv": "2310.20624",
+        "DOI": "10.48550/arXiv.2310.20624",
+        "CorpusId": 264808400
+      },
+      "arxiv_id": "2310.20624",
+      "doi": "10.48550/arXiv.2310.20624",
+      "corpus_id": 264808400
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "32",
+      "ref_key": "S2:99eee47dad469790042b973bc7cb40cb63a660b1",
+      "paperId": "99eee47dad469790042b973bc7cb40cb63a660b1",
+      "title": "DeepInception: Hypnotize Large Language Model to Be Jailbreaker",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have succeeded significantly in various applications but remain susceptible to adversarial jailbreaks that void their safety guardrails. Previous attempts to exploit these vulnerabilities often rely on high-cost computational extrapolations, which may not be practical or efficient. In this paper, inspired by the authority influence demonstrated in the Milgram experiment, we present a lightweight method to take advantage of the LLMs' personification capabilities to construct $\\textit{a virtual, nested scene}$, allowing it to realize an adaptive way to escape the usage control in a normal scenario. Empirically, the contents induced by our approach can achieve leading harmfulness rates with previous counterparts and realize a continuous jailbreak in subsequent interactions, which reveals the critical weakness of self-losing on both open-source and closed-source LLMs, $\\textit{e.g.}$, Llama-2, Llama-3, GPT-3.5, GPT-4, and GPT-4o. The code and data are available at: https://github.com/tmlr-group/DeepInception.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-03191",
+        "ArXiv": "2311.03191",
+        "DOI": "10.48550/arXiv.2311.03191",
+        "CorpusId": 265033222
+      },
+      "arxiv_id": "2311.03191",
+      "doi": "10.48550/arXiv.2311.03191",
+      "corpus_id": 265033222
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "33",
+      "ref_key": "S2:025ca4c125d6ecabc816a56f160e5c992abc76d9",
+      "paperId": "025ca4c125d6ecabc816a56f160e5c992abc76d9",
+      "title": "Multi-step Jailbreaking Privacy Attacks on ChatGPT",
+      "year": 2023,
+      "abstract": "With the rapid progress of large language models (LLMs), many downstream NLP tasks can be well solved given appropriate prompts. Though model developers and researchers work hard on dialog safety to avoid generating harmful content from LLMs, it is still challenging to steer AI-generated content (AIGC) for the human good. As powerful LLMs are devouring existing text data from various domains (e.g., GPT-3 is trained on 45TB texts), it is natural to doubt whether the private information is included in the training data and what privacy threats can these LLMs and their downstream applications bring. In this paper, we study the privacy threats from OpenAI's ChatGPT and the New Bing enhanced by ChatGPT and show that application-integrated LLMs may cause new privacy threats. To this end, we conduct extensive experiments to support our claims and discuss LLMs' privacy implications.",
+      "externalIds": {
+        "ArXiv": "2304.05197",
+        "DBLP": "journals/corr/abs-2304-05197",
+        "DOI": "10.48550/arXiv.2304.05197",
+        "CorpusId": 258060250
+      },
+      "arxiv_id": "2304.05197",
+      "doi": "10.48550/arXiv.2304.05197",
+      "corpus_id": 258060250
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "34",
+      "ref_key": "S2:b574245f3db22b5eb7fe64bd8b0a147dab467b60",
+      "paperId": "b574245f3db22b5eb7fe64bd8b0a147dab467b60",
+      "title": "RAIN: Your Language Models Can Align Themselves without Finetuning",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) often demonstrate inconsistencies with human preferences. Previous research typically gathered human preference data and then aligned the pre-trained models using reinforcement learning or instruction tuning, a.k.a. the finetuning step. In contrast, aligning frozen LLMs without requiring alignment data is more appealing. This work explores the potential of the latter setting. We discover that by integrating self-evaluation and rewind mechanisms, unaligned LLMs can directly produce responses consistent with human preferences via self-boosting. We introduce a novel inference method, Rewindable Auto-regressive INference (RAIN), that allows pre-trained LLMs to evaluate their own generation and use the evaluation results to guide rewind and generation for AI safety. Notably, RAIN operates without the need of extra data for model alignment and abstains from any training, gradient computation, or parameter updates. Experimental results evaluated by GPT-4 and humans demonstrate the effectiveness of RAIN: on the HH dataset, RAIN improves the harmlessness rate of LLaMA 30B from 82% of vanilla inference to 97%, while maintaining the helpfulness rate. On the TruthfulQA dataset, RAIN improves the truthfulness of the already-well-aligned LLaMA-2-chat 13B model by 5%.",
+      "externalIds": {
+        "DBLP": "conf/iclr/LiWZ0024",
+        "ArXiv": "2309.07124",
+        "DOI": "10.48550/arXiv.2309.07124",
+        "CorpusId": 261705563
+      },
+      "arxiv_id": "2309.07124",
+      "doi": "10.48550/arXiv.2309.07124",
+      "corpus_id": 261705563
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "35",
+      "ref_key": "S2:60b05f32c32519a809f21642ef1eb3eaf3848008",
+      "paperId": "60b05f32c32519a809f21642ef1eb3eaf3848008",
+      "title": "ROUGE: A Package for Automatic Evaluation of Summaries",
+      "year": 2004,
+      "abstract": "ROUGE stands for Recall-Oriented Understudy for Gisting Evaluation. It includes measures to automatically determine the quality of a summary by comparing it to other (ideal) summaries created by humans. The measures count the number of overlapping units such as n-gram, word sequences, and word pairs between the computer-generated summary to be evaluated and the ideal summaries created by humans. This paper introduces four different ROUGE measures: ROUGE-N, ROUGE-L, ROUGE-W, and ROUGE-S included in the ROUGE summarization evaluation package and their evaluations. Three of them have been used in the Document Understanding Conference (DUC) 2004, a large-scale summarization evaluation sponsored by NIST.",
+      "externalIds": {
+        "MAG": "2154652894",
+        "ACL": "W04-1013",
+        "CorpusId": 964287
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 964287
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "36",
+      "ref_key": "S2:77d956cdab4508d569ae5741549b78e715fd0749",
+      "paperId": "77d956cdab4508d569ae5741549b78e715fd0749",
+      "title": "TruthfulQA: Measuring How Models Mimic Human Falsehoods",
+      "year": 2021,
+      "abstract": "We propose a benchmark to measure whether a language model is truthful in generating answers to questions. The benchmark comprises 817 questions that span 38 categories, including health, law, finance and politics. We crafted questions that some humans would answer falsely due to a false belief or misconception. To perform well, models must avoid generating false answers learned from imitating human texts. We tested GPT-3, GPT-Neo/J, GPT-2 and a T5-based model. The best model was truthful on 58% of questions, while human performance was 94%. Models generated many false answers that mimic popular misconceptions and have the potential to deceive humans. The largest models were generally the least truthful. This contrasts with other NLP tasks, where performance improves with model size. However, this result is expected if false answers are learned from the training distribution. We suggest that scaling up models alone is less promising for improving truthfulness than fine-tuning using training objectives other than imitation of text from the web.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2109-07958",
+        "ACL": "2022.acl-long.229",
+        "ArXiv": "2109.07958",
+        "DOI": "10.18653/v1/2022.acl-long.229",
+        "CorpusId": 237532606
+      },
+      "arxiv_id": "2109.07958",
+      "doi": "10.18653/v1/2022.acl-long.229",
+      "corpus_id": 237532606
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "37",
+      "ref_key": "S2:f3f23f7f9f5369aade19f20bc5d028cce7b9c9aa",
+      "paperId": "f3f23f7f9f5369aade19f20bc5d028cce7b9c9aa",
+      "title": "AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models",
+      "year": 2023,
+      "abstract": "The aligned Large Language Models (LLMs) are powerful language understanding and decision-making tools that are created through extensive alignment with human feedback. However, these large models remain susceptible to jailbreak attacks, where adversaries manipulate prompts to elicit malicious outputs that should not be given by aligned LLMs. Investigating jailbreak prompts can lead us to delve into the limitations of LLMs and further guide us to secure them. Unfortunately, existing jailbreak techniques suffer from either (1) scalability issues, where attacks heavily rely on manual crafting of prompts, or (2) stealthiness problems, as attacks depend on token-based algorithms to generate prompts that are often semantically meaningless, making them susceptible to detection through basic perplexity testing. In light of these challenges, we intend to answer this question: Can we develop an approach that can automatically generate stealthy jailbreak prompts? In this paper, we introduce AutoDAN, a novel jailbreak attack against aligned LLMs. AutoDAN can automatically generate stealthy jailbreak prompts by the carefully designed hierarchical genetic algorithm. Extensive evaluations demonstrate that AutoDAN not only automates the process while preserving semantic meaningfulness, but also demonstrates superior attack strength in cross-model transferability, and cross-sample universality compared with the baseline. Moreover, we also compare AutoDAN with perplexity-based defense methods and show that AutoDAN can bypass them effectively.",
+      "externalIds": {
+        "ArXiv": "2310.04451",
+        "DBLP": "journals/corr/abs-2310-04451",
+        "DOI": "10.48550/arXiv.2310.04451",
+        "CorpusId": 263831566
+      },
+      "arxiv_id": "2310.04451",
+      "doi": "10.48550/arXiv.2310.04451",
+      "corpus_id": 263831566
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "38",
+      "ref_key": "S2:b69aa32ee52f5efe8e3196114581ac610da8a2b2",
+      "paperId": "b69aa32ee52f5efe8e3196114581ac610da8a2b2",
+      "title": "A Holistic Approach to Undesired Content Detection in the Real World",
+      "year": 2022,
+      "abstract": "We present a holistic approach to building a robust and useful natural language classification system for real-world content moderation. The success of such a system relies on a chain of carefully designed and executed steps, including the design of content taxonomies and labeling instructions, data quality control, an active learning pipeline to capture rare events, and a variety of methods to make the model robust and to avoid overfitting. Our moderation system is trained to detect a broad set of categories of undesired content, including sexual content, hateful content, violence, self-harm, and harassment. This approach generalizes to a wide range of different content taxonomies and can be used to create high-quality content classifiers that outperform off-the-shelf models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2208-03274",
+        "ArXiv": "2208.03274",
+        "DOI": "10.48550/arXiv.2208.03274",
+        "CorpusId": 251371664
+      },
+      "arxiv_id": "2208.03274",
+      "doi": "10.48550/arXiv.2208.03274",
+      "corpus_id": 251371664
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "39",
+      "ref_key": "S2:19443d48399d4fe89a4b0a96917c50c6fd9c5af1",
+      "paperId": "19443d48399d4fe89a4b0a96917c50c6fd9c5af1",
+      "title": "FLIRT: Feedback Loop In-context Red Teaming",
+      "year": 2023,
+      "abstract": "Warning: this paper contains content that may be inappropriate or offensive.As generative models become available for public use in various applications, testing and analyzing vulnerabilities of these models has become a priority. In this work, we propose an automatic red teaming framework that evaluates a given black-box model and exposes its vulnerabilities against unsafe and inappropriate content generation. Our framework uses in-context learning in a feedback loop to red team models and trigger them into unsafe content generation. In particular, taking text-to-image models as target models, we explore different feedback mechanisms to automatically learn effective and diverse adversarial prompts. Our experiments demonstrate that even with enhanced safety features, Stable Diffusion (SD) models are vulnerable to our adversarial prompts, raising concerns on their robustness in practical uses. Furthermore, we demonstrate that the proposed framework is effective for red teaming text-to-text models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-04265",
+        "ArXiv": "2308.04265",
+        "ACL": "2024.emnlp-main.41",
+        "DOI": "10.48550/arXiv.2308.04265",
+        "CorpusId": 260704223
+      },
+      "arxiv_id": "2308.04265",
+      "doi": "10.48550/arXiv.2308.04265",
+      "corpus_id": 260704223
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "40",
+      "ref_key": "S2:14e8cf5a5e6a7b35e618b08f5cf06f572b3a54e0",
+      "paperId": "14e8cf5a5e6a7b35e618b08f5cf06f572b3a54e0",
+      "title": "Tree of Attacks: Jailbreaking Black-Box LLMs Automatically",
+      "year": 2023,
+      "abstract": "While Large Language Models (LLMs) display versatile functionality, they continue to generate harmful, biased, and toxic content, as demonstrated by the prevalence of human-designed jailbreaks. In this work, we present Tree of Attacks with Pruning (TAP), an automated method for generating jailbreaks that only requires black-box access to the target LLM. TAP utilizes an attacker LLM to iteratively refine candidate (attack) prompts until one of the refined prompts jailbreaks the target. In addition, before sending prompts to the target, TAP assesses them and prunes the ones unlikely to result in jailbreaks, reducing the number of queries sent to the target LLM. In empirical evaluations, we observe that TAP generates prompts that jailbreak state-of-the-art LLMs (including GPT4-Turbo and GPT4o) for more than 80% of the prompts. This significantly improves upon the previous state-of-the-art black-box methods for generating jailbreaks while using a smaller number of queries than them. Furthermore, TAP is also capable of jailbreaking LLMs protected by state-of-the-art guardrails, e.g., LlamaGuard.",
+      "externalIds": {
+        "ArXiv": "2312.02119",
+        "DBLP": "journals/corr/abs-2312-02119",
+        "DOI": "10.48550/arXiv.2312.02119",
+        "CorpusId": 265609901
+      },
+      "arxiv_id": "2312.02119",
+      "doi": "10.48550/arXiv.2312.02119",
+      "corpus_id": 265609901
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "41",
+      "ref_key": "S2:ac1788e9a168a6455beb6316f316950842297c11",
+      "paperId": "ac1788e9a168a6455beb6316f316950842297c11",
+      "title": "Use of LLMs for Illicit Purposes: Threats, Prevention Measures, and Vulnerabilities",
+      "year": 2023,
+      "abstract": "Spurred by the recent rapid increase in the development and distribution of large language models (LLMs) across industry and academia, much recent work has drawn attention to safety- and security-related threats and vulnerabilities of LLMs, including in the context of potentially criminal activities. Specifically, it has been shown that LLMs can be misused for fraud, impersonation, and the generation of malware; while other authors have considered the more general problem of AI alignment. It is important that developers and practitioners alike are aware of security-related problems with such models. In this paper, we provide an overview of existing - predominantly scientific - efforts on identifying and mitigating threats and vulnerabilities arising from LLMs. We present a taxonomy describing the relationship between threats caused by the generative capabilities of LLMs, prevention measures intended to address such threats, and vulnerabilities arising from imperfect prevention measures. With our work, we hope to raise awareness of the limitations of LLMs in light of such security concerns, among both experienced developers and novel users of such technologies.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-12833",
+        "ArXiv": "2308.12833",
+        "DOI": "10.48550/arXiv.2308.12833",
+        "CorpusId": 261101245
+      },
+      "arxiv_id": "2308.12833",
+      "doi": "10.48550/arXiv.2308.12833",
+      "corpus_id": 261101245
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "42",
+      "ref_key": "S2:e39b586e561b36a3b71fa3d9ee7cb15c35d84203",
+      "paperId": "e39b586e561b36a3b71fa3d9ee7cb15c35d84203",
+      "title": "Abusive Language Detection in Online User Content",
+      "year": 2016,
+      "abstract": "Detection of abusive language in user generated online content has become an issue of increasing importance in recent years. Most current commercial methods make use of blacklists and regular expressions, however these measures fall short when contending with more subtle, less ham-fisted examples of hate speech. In this work, we develop a machine learning based method to detect hate speech on online user comments from two domains which outperforms a state-of-the-art deep learning approach. We also develop a corpus of user comments annotated for abusive language, the first of its kind. Finally, we use our detection tool to analyze abusive language over time and in different settings to further enhance our knowledge of this behavior.",
+      "externalIds": {
+        "MAG": "2340954483",
+        "DBLP": "conf/www/NobataTTMC16",
+        "DOI": "10.1145/2872427.2883062",
+        "CorpusId": 11546523
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/2872427.2883062",
+      "corpus_id": 11546523
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "43",
+      "ref_key": "S2:163b4d6a79a5b19af88b8585456363340d9efd04",
+      "paperId": "163b4d6a79a5b19af88b8585456363340d9efd04",
+      "title": "GPT-4 Technical Report",
+      "year": 2023,
+      "abstract": "We report the development of GPT-4, a large-scale, multimodal model which can accept image and text inputs and produce text outputs. While less capable than humans in many real-world scenarios, GPT-4 exhibits human-level performance on various professional and academic benchmarks, including passing a simulated bar exam with a score around the top 10% of test takers. GPT-4 is a Transformer-based model pre-trained to predict the next token in a document. The post-training alignment process results in improved performance on measures of factuality and adherence to desired behavior. A core component of this project was developing infrastructure and optimization methods that behave predictably across a wide range of scales. This allowed us to accurately predict some aspects of GPT-4's performance based on models trained with no more than 1/1,000th the compute of GPT-4.",
+      "externalIds": {
+        "ArXiv": "2303.08774",
+        "CorpusId": 257532815
+      },
+      "arxiv_id": "2303.08774",
+      "doi": null,
+      "corpus_id": 257532815
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "44",
+      "ref_key": "S2:d766bffc357127e0dc86dd69561d5aeb520d6f4c",
+      "paperId": "d766bffc357127e0dc86dd69561d5aeb520d6f4c",
+      "title": "Training language models to follow instructions with human feedback",
+      "year": 2022,
+      "abstract": "Making language models bigger does not inherently make them better at following a user's intent. For example, large language models can generate outputs that are untruthful, toxic, or simply not helpful to the user. In other words, these models are not aligned with their users. In this paper, we show an avenue for aligning language models with user intent on a wide range of tasks by fine-tuning with human feedback. Starting with a set of labeler-written prompts and prompts submitted through the OpenAI API, we collect a dataset of labeler demonstrations of the desired model behavior, which we use to fine-tune GPT-3 using supervised learning. We then collect a dataset of rankings of model outputs, which we use to further fine-tune this supervised model using reinforcement learning from human feedback. We call the resulting models InstructGPT. In human evaluations on our prompt distribution, outputs from the 1.3B parameter InstructGPT model are preferred to outputs from the 175B GPT-3, despite having 100x fewer parameters. Moreover, InstructGPT models show improvements in truthfulness and reductions in toxic output generation while having minimal performance regressions on public NLP datasets. Even though InstructGPT still makes simple mistakes, our results show that fine-tuning with human feedback is a promising direction for aligning language models with human intent.",
+      "externalIds": {
+        "DBLP": "conf/nips/Ouyang0JAWMZASR22",
+        "ArXiv": "2203.02155",
+        "CorpusId": 246426909
+      },
+      "arxiv_id": "2203.02155",
+      "doi": null,
+      "corpus_id": 246426909
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "45",
+      "ref_key": "S2:d7da009f457917aa381619facfa5ffae9329a6e9",
+      "paperId": "d7da009f457917aa381619facfa5ffae9329a6e9",
+      "title": "Bleu: a Method for Automatic Evaluation of Machine Translation",
+      "year": 2002,
+      "abstract": "Human evaluations of machine translation are extensive but expensive. Human evaluations can take months to finish and involve human labor that can not be reused. We propose a method of automatic machine translation evaluation that is quick, inexpensive, and language-independent, that correlates highly with human evaluation, and that has little marginal cost per run. We present this method as an automated understudy to skilled human judges which substitutes for them when there is need for quick or frequent evaluations.",
+      "externalIds": {
+        "DBLP": "conf/acl/PapineniRWZ02",
+        "MAG": "2101105183",
+        "ACL": "P02-1040",
+        "DOI": "10.3115/1073083.1073135",
+        "CorpusId": 11080756
+      },
+      "arxiv_id": null,
+      "doi": "10.3115/1073083.1073135",
+      "corpus_id": 11080756
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "46",
+      "ref_key": "S2:cef330bacf014d60daabbd489647b2006af130ca",
+      "paperId": "cef330bacf014d60daabbd489647b2006af130ca",
+      "title": "Discovering Language Model Behaviors with Model-Written Evaluations",
+      "year": 2022,
+      "abstract": "As language models (LMs) scale, they develop many novel behaviors, good and bad, exacerbating the need to evaluate how they behave. Prior work creates evaluations with crowdwork (which is time-consuming and expensive) or existing data sources (which are not always available). Here, we automatically generate evaluations with LMs. We explore approaches with varying amounts of human effort, from instructing LMs to write yes/no questions to making complex Winogender schemas with multiple stages of LM-based generation and filtering. Crowdworkers rate the examples as highly relevant and agree with 90-100% of labels, sometimes more so than corresponding human-written datasets. We generate 154 datasets and discover new cases of inverse scaling where LMs get worse with size. Larger LMs repeat back a dialog user's preferred answer (\"sycophancy\") and express greater desire to pursue concerning goals like resource acquisition and goal preservation. We also find some of the first examples of inverse scaling in RL from Human Feedback (RLHF), where more RLHF makes LMs worse. For example, RLHF makes LMs express stronger political views (on gun rights and immigration) and a greater desire to avoid shut down. Overall, LM-written evaluations are high-quality and let us quickly discover many novel LM behaviors.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2212-09251",
+        "ArXiv": "2212.09251",
+        "DOI": "10.48550/arXiv.2212.09251",
+        "CorpusId": 254854519
+      },
+      "arxiv_id": "2212.09251",
+      "doi": "10.48550/arXiv.2212.09251",
+      "corpus_id": 254854519
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "47",
+      "ref_key": "S2:9716a2876d08fce9d8e5c5ba4d7b1a9af44806d6",
+      "paperId": "9716a2876d08fce9d8e5c5ba4d7b1a9af44806d6",
+      "title": "Ignore Previous Prompt: Attack Techniques For Language Models",
+      "year": 2022,
+      "abstract": "Transformer-based large language models (LLMs) provide a powerful foundation for natural language tasks in large-scale customer-facing applications. However, studies that explore their vulnerabilities emerging from malicious user interaction are scarce. By proposing PromptInject, a prosaic alignment framework for mask-based iterative adversarial prompt composition, we examine how GPT-3, the most widely deployed language model in production, can be easily misaligned by simple handcrafted inputs. In particular, we investigate two types of attacks -- goal hijacking and prompt leaking -- and demonstrate that even low-aptitude, but sufficiently ill-intentioned agents, can easily exploit GPT-3's stochastic nature, creating long-tail risks. The code for PromptInject is available at https://github.com/agencyenterprise/PromptInject.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2211-09527",
+        "ArXiv": "2211.09527",
+        "DOI": "10.48550/arXiv.2211.09527",
+        "CorpusId": 253581710
+      },
+      "arxiv_id": "2211.09527",
+      "doi": "10.48550/arXiv.2211.09527",
+      "corpus_id": 253581710
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "48",
+      "ref_key": "S2:5d49c7401c5f2337c4cc88d243ae39ed659afe64",
+      "paperId": "5d49c7401c5f2337c4cc88d243ae39ed659afe64",
+      "title": "Red Teaming Language Models with Language Models",
+      "year": 2022,
+      "abstract": "Language Models (LMs) often cannot be deployed because of their potential to harm users in hard-to-predict ways. Prior work identifies harmful behaviors before deployment by using human annotators to hand-write test cases. However, human annotation is expensive, limiting the number and diversity of test cases. In this work, we automatically find cases where a target LM behaves in a harmful way, by generating test cases (“red teaming”) using another LM. We evaluate the target LM’s replies to generated test questions using a classifier trained to detect offensive content, uncovering tens of thousands of offensive replies in a 280B parameter LM chatbot. We explore several methods, from zero-shot generation to reinforcement learning, for generating test cases with varying levels of diversity and difficulty. Furthermore, we use prompt engineering to control LM-generated test cases to uncover a variety of other harms, automatically finding groups of people that the chatbot discusses in offensive ways, personal and hospital phone numbers generated as the chatbot’s own contact info, leakage of private training data in generated text, and harms that occur over the course of a conversation. Overall, LM-based red teaming is one promising tool (among many needed) for finding and fixing diverse, undesirable LM behaviors before impacting users.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2202-03286",
+        "ACL": "2022.emnlp-main.225",
+        "ArXiv": "2202.03286",
+        "DOI": "10.18653/v1/2022.emnlp-main.225",
+        "CorpusId": 246634238
+      },
+      "arxiv_id": "2202.03286",
+      "doi": "10.18653/v1/2022.emnlp-main.225",
+      "corpus_id": 246634238
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "49",
+      "ref_key": "S2:2cdd5c3dc42c0df40bc8839709869af3560d4bfe",
+      "paperId": "2cdd5c3dc42c0df40bc8839709869af3560d4bfe",
+      "title": "LLM Self Defense: By Self Examination, LLMs Know They Are Being Tricked",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) are popular for high-quality text generation but can produce harmful content, even when aligned with human values through reinforcement learning. Adversarial prompts can bypass their safety measures. We propose LLM Self Defense, a simple approach to defend against these attacks by having an LLM screen the induced responses. Our method does not require any fine-tuning, input preprocessing, or iterative output generation. Instead, we incorporate the generated content into a pre-defined prompt and employ another instance of an LLM to analyze the text and predict whether it is harmful. We test LLM Self Defense on GPT 3.5 and Llama 2, two of the current most prominent LLMs against various types of attacks, such as forcefully inducing affirmative responses to prompts and prompt engineering attacks. Notably, LLM Self Defense succeeds in reducing the attack success rate to virtually 0 using both GPT 3.5 and Llama 2. The code is publicly available at https://github.com/poloclub/llm-self-defense",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-07308",
+        "ArXiv": "2308.07308",
+        "DOI": "10.48550/arXiv.2308.07308",
+        "CorpusId": 260887487
+      },
+      "arxiv_id": "2308.07308",
+      "doi": "10.48550/arXiv.2308.07308",
+      "corpus_id": 260887487
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "50",
+      "ref_key": "S2:ecdfc556828dc59d8a0009016fcbe97a06cf7e23",
+      "paperId": "ecdfc556828dc59d8a0009016fcbe97a06cf7e23",
+      "title": "Bergeron: Combating Adversarial Attacks through a Conscience-Based Alignment Framework",
+      "year": 2023,
+      "abstract": "Research into AI alignment has grown considerably since the recent introduction of increasingly capable Large Language Models (LLMs). Unfortunately, modern methods of alignment still fail to fully prevent harmful responses when models are deliberately attacked. Such vulnerabilities can lead to LLMs being manipulated into generating hazardous content: from instructions for creating dangerous materials to inciting violence or endorsing unethical behaviors. To help mitigate this issue, we introduce Bergeron: a framework designed to improve the robustness of LLMs against attacks without any additional parameter fine-tuning. Bergeron is organized into two tiers; with a secondary LLM acting as a guardian to the primary LLM. This framework better safeguards the primary model against incoming attacks while monitoring its output for any harmful content. Empirical analysis reviews that by using Bergeron to complement models with existing alignment training, we can significantly improve the robustness and safety of multiple, commonly used commercial and open-source LLMs. Specifically, we found that models integrated with Bergeron are, on average, nearly seven times more resistant to attacks compared to models without such support.",
+      "externalIds": {
+        "ArXiv": "2312.00029",
+        "DBLP": "journals/corr/abs-2312-00029",
+        "DOI": "10.48550/arXiv.2312.00029",
+        "CorpusId": 265552022
+      },
+      "arxiv_id": "2312.00029",
+      "doi": "10.48550/arXiv.2312.00029",
+      "corpus_id": 265552022
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "51",
+      "ref_key": "S2:ace98e1e58bcc364afbb2feff6d136232f5f47da",
+      "paperId": "ace98e1e58bcc364afbb2feff6d136232f5f47da",
+      "title": "Latent Jailbreak: A Benchmark for Evaluating Text Safety and Output Robustness of Large Language Models",
+      "year": 2023,
+      "abstract": "Considerable research efforts have been devoted to ensuring that large language models (LLMs) align with human values and generate safe text. However, an excessive focus on sensitivity to certain topics can compromise the model's robustness in following instructions, thereby impacting its overall performance in completing tasks. Previous benchmarks for jailbreaking LLMs have primarily focused on evaluating the safety of the models without considering their robustness. In this paper, we propose a benchmark that assesses both the safety and robustness of LLMs, emphasizing the need for a balanced approach. To comprehensively study text safety and output robustness, we introduce a latent jailbreak prompt dataset, each involving malicious instruction embedding. Specifically, we instruct the model to complete a regular task, such as translation, with the text to be translated containing malicious instructions. To further analyze safety and robustness, we design a hierarchical annotation framework. We present a systematic analysis of the safety and robustness of LLMs regarding the position of explicit normal instructions, word replacements (verbs in explicit normal instructions, target groups in malicious instructions, cue words for explicit normal instructions), and instruction replacements (different explicit normal instructions). Our results demonstrate that current LLMs not only prioritize certain instruction verbs but also exhibit varying jailbreak rates for different instruction verbs in explicit normal instructions. Code and data are available at https://github.com/qiuhuachuan/latent-jailbreak.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-08487",
+        "ArXiv": "2307.08487",
+        "DOI": "10.48550/arXiv.2307.08487",
+        "CorpusId": 259937347
+      },
+      "arxiv_id": "2307.08487",
+      "doi": "10.48550/arXiv.2307.08487",
+      "corpus_id": 259937347
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "52",
+      "ref_key": "S2:0d1c76d45afa012ded7ab741194baf142117c495",
+      "paperId": "0d1c76d45afa012ded7ab741194baf142117c495",
+      "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+      "year": 2023,
+      "abstract": "While large-scale unsupervised language models (LMs) learn broad world knowledge and some reasoning skills, achieving precise control of their behavior is difficult due to the completely unsupervised nature of their training. Existing methods for gaining such steerability collect human labels of the relative quality of model generations and fine-tune the unsupervised LM to align with these preferences, often with reinforcement learning from human feedback (RLHF). However, RLHF is a complex and often unstable procedure, first fitting a reward model that reflects the human preferences, and then fine-tuning the large unsupervised LM using reinforcement learning to maximize this estimated reward without drifting too far from the original model. In this paper we introduce a new parameterization of the reward model in RLHF that enables extraction of the corresponding optimal policy in closed form, allowing us to solve the standard RLHF problem with only a simple classification loss. The resulting algorithm, which we call Direct Preference Optimization (DPO), is stable, performant, and computationally lightweight, eliminating the need for sampling from the LM during fine-tuning or performing significant hyperparameter tuning. Our experiments show that DPO can fine-tune LMs to align with human preferences as well as or better than existing methods. Notably, fine-tuning with DPO exceeds PPO-based RLHF in ability to control sentiment of generations, and matches or improves response quality in summarization and single-turn dialogue while being substantially simpler to implement and train.",
+      "externalIds": {
+        "DBLP": "conf/nips/RafailovSMMEF23",
+        "ArXiv": "2305.18290",
+        "DOI": "10.48550/arXiv.2305.18290",
+        "CorpusId": 258959321
+      },
+      "arxiv_id": "2305.18290",
+      "doi": "10.48550/arXiv.2305.18290",
+      "corpus_id": 258959321
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "53",
+      "ref_key": "S2:90de1938a64d117d61b9e7149d2981df49b81433",
+      "paperId": "90de1938a64d117d61b9e7149d2981df49b81433",
+      "title": "Universal Jailbreak Backdoors from Poisoned Human Feedback",
+      "year": 2023,
+      "abstract": "Reinforcement Learning from Human Feedback (RLHF) is used to align large language models to produce helpful and harmless responses. Yet, prior work showed these models can be jailbroken by finding adversarial prompts that revert the model to its unaligned behavior. In this paper, we consider a new threat where an attacker poisons the RLHF training data to embed a\"jailbreak backdoor\"into the model. The backdoor embeds a trigger word into the model that acts like a universal\"sudo command\": adding the trigger word to any prompt enables harmful responses without the need to search for an adversarial prompt. Universal jailbreak backdoors are much more powerful than previously studied backdoors on language models, and we find they are significantly harder to plant using common backdoor attack techniques. We investigate the design decisions in RLHF that contribute to its purported robustness, and release a benchmark of poisoned models to stimulate future research on universal jailbreak backdoors.",
+      "externalIds": {
+        "ArXiv": "2311.14455",
+        "DBLP": "conf/iclr/RandoT24",
+        "DOI": "10.48550/arXiv.2311.14455",
+        "CorpusId": 265445004
+      },
+      "arxiv_id": "2311.14455",
+      "doi": "10.48550/arXiv.2311.14455",
+      "corpus_id": 265445004
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "54",
+      "ref_key": "S2:8cf9b49698fdb1b754df2556576412a7b44929f6",
+      "paperId": "8cf9b49698fdb1b754df2556576412a7b44929f6",
+      "title": "SmoothLLM: Defending Large Language Models Against Jailbreaking Attacks",
+      "year": 2023,
+      "abstract": "Despite efforts to align large language models (LLMs) with human intentions, widely-used LLMs such as GPT, Llama, and Claude are susceptible to jailbreaking attacks, wherein an adversary fools a targeted LLM into generating objectionable content. To address this vulnerability, we propose SmoothLLM, the first algorithm designed to mitigate jailbreaking attacks. Based on our finding that adversarially-generated prompts are brittle to character-level changes, our defense randomly perturbs multiple copies of a given input prompt, and then aggregates the corresponding predictions to detect adversarial inputs. Across a range of popular LLMs, SmoothLLM sets the state-of-the-art for robustness against the GCG, PAIR, RandomSearch, and AmpleGCG jailbreaks. SmoothLLM is also resistant against adaptive GCG attacks, exhibits a small, though non-negligible trade-off between robustness and nominal performance, and is compatible with any LLM. Our code is publicly available at \\url{https://github.com/arobey1/smooth-llm}.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-03684",
+        "ArXiv": "2310.03684",
+        "DOI": "10.48550/arXiv.2310.03684",
+        "CorpusId": 263671542
+      },
+      "arxiv_id": "2310.03684",
+      "doi": "10.48550/arXiv.2310.03684",
+      "corpus_id": 263671542
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "55",
+      "ref_key": "S2:f3de6ea08e2464190673c0ec8f78e5ec1cd08642",
+      "paperId": "f3de6ea08e2464190673c0ec8f78e5ec1cd08642",
+      "title": "Ignore This Title and HackAPrompt: Exposing Systemic Vulnerabilities of LLMs through a Global Scale Prompt Hacking Competition",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) are deployed in interactive contexts with direct user engagement, such as chatbots and writing assistants. These deployments are vulnerable to prompt injection and jailbreaking (collectively, prompt hacking), in which models are manipulated to ignore their original instructions and follow potentially malicious ones. Although widely acknowledged as a significant security threat, there is a dearth of large-scale resources and quantitative studies on prompt hacking. To address this lacuna, we launch a global prompt hacking competition, which allows for free-form human input attacks. We elicit 600K+ adversarial prompts against three state-of-the-art LLMs. We describe the dataset, which empirically verifies that current LLMs can indeed be manipulated via prompt hacking. We also present a comprehensive taxonomical ontology of the types of adversarial prompts.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-16119",
+        "ArXiv": "2311.16119",
+        "DOI": "10.48550/arXiv.2311.16119",
+        "CorpusId": 265466048
+      },
+      "arxiv_id": "2311.16119",
+      "doi": "10.48550/arXiv.2311.16119",
+      "corpus_id": 265466048
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "56",
+      "ref_key": "S2:bfc0e3e651cd4b715272fe68add8a180a112293c",
+      "paperId": "bfc0e3e651cd4b715272fe68add8a180a112293c",
+      "title": "Scalable and Transferable Black-Box Jailbreaks for Language Models via Persona Modulation",
+      "year": 2023,
+      "abstract": "Despite efforts to align large language models to produce harmless responses, they are still vulnerable to jailbreak prompts that elicit unrestricted behaviour. In this work, we investigate persona modulation as a black-box jailbreaking method to steer a target model to take on personalities that are willing to comply with harmful instructions. Rather than manually crafting prompts for each persona, we automate the generation of jailbreaks using a language model assistant. We demonstrate a range of harmful completions made possible by persona modulation, including detailed instructions for synthesising methamphetamine, building a bomb, and laundering money. These automated attacks achieve a harmful completion rate of 42.5% in GPT-4, which is 185 times larger than before modulation (0.23%). These prompts also transfer to Claude 2 and Vicuna with harmful completion rates of 61.0% and 35.9%, respectively. Our work reveals yet another vulnerability in commercial large language models and highlights the need for more comprehensive safeguards.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-03348",
+        "ArXiv": "2311.03348",
+        "DOI": "10.48550/arXiv.2311.03348",
+        "CorpusId": 265043220
+      },
+      "arxiv_id": "2311.03348",
+      "doi": "10.48550/arXiv.2311.03348",
+      "corpus_id": 265043220
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "57",
+      "ref_key": "S2:1104d766527dead44a40532e8a89444d9cef5c65",
+      "paperId": "1104d766527dead44a40532e8a89444d9cef5c65",
+      "title": "\"Do Anything Now\": Characterizing and Evaluating In-The-Wild Jailbreak Prompts on Large Language Models",
+      "year": 2023,
+      "abstract": "The misuse of large language models (LLMs) has drawn significant attention from the general public and LLM vendors. One particular type of adversarial prompt, known as jailbreak prompt, has emerged as the main attack vector to bypass the safeguards and elicit harmful content from LLMs. In this paper, employing our new framework JailbreakHub, we conduct a comprehensive analysis of 1,405 jailbreak prompts spanning from December 2022 to December 2023. We identify 131 jailbreak communities and discover unique characteristics of jailbreak prompts and their major attack strategies, such as prompt injection and privilege escalation. We also observe that jailbreak prompts increasingly shift from online Web communities to prompt-aggregation websites and 28 user accounts have consistently optimized jailbreak prompts over 100 days. To assess the potential harm caused by jailbreak prompts, we create a question set comprising 107,250 samples across 13 forbidden scenarios. Leveraging this dataset, our experiments on six popular LLMs show that their safeguards cannot adequately defend jailbreak prompts in all scenarios. Particularly, we identify five highly effective jailbreak prompts that achieve 0.95 attack success rates on ChatGPT (GPT-3.5) and GPT-4, and the earliest one has persisted online for over 240 days. We hope that our study can facilitate the research community and LLM vendors in promoting safer and regulated LLMs.",
+      "externalIds": {
+        "ArXiv": "2308.03825",
+        "DBLP": "conf/ccs/ShenC0SZ24",
+        "DOI": "10.48550/arXiv.2308.03825",
+        "CorpusId": 260704242
+      },
+      "arxiv_id": "2308.03825",
+      "doi": "10.48550/arXiv.2308.03825",
+      "corpus_id": 260704242
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "58",
+      "ref_key": "S2:3fa4d63e0194cdbd909c579456830e0a7c909242",
+      "paperId": "3fa4d63e0194cdbd909c579456830e0a7c909242",
+      "title": "Automatic identification of personal insults on social news sites",
+      "year": 2012,
+      "abstract": "As online communities grow and the volume of user-generated content increases, the need for community management also rises. Community management has three main purposes: to create a positive experience for existing participants, to promote appropriate, socionormative behaviors, and to encourage potential participants to make contributions. Research indicates that the quality of content a potential participant sees on a site is highly influential; off-topic, negative comments with malicious intent are a particularly strong boundary to participation or set the tone for encouraging similar contributions. A problem for community managers, therefore, is the detection and elimination of such undesirable content. As a community grows, this undertaking becomes more daunting. Can an automated system aid community managers in this task? In this paper, we address this question through a machine learning approach to automatic detection of inappropriate negative user contributions. Our training corpus is a set of comments from a news commenting site that we tasked Amazon Mechanical Turk workers with labeling. Each comment is labeled for the presence of profanity, insults, and the object of the insults. Support vector machines trained on these data are combined with relevance and valence analysis systems in a multistep approach to the detection of inappropriate negative user contributions. The system shows great potential for semiautomated community management. © 2012 Wiley Periodicals, Inc.",
+      "externalIds": {
+        "MAG": "1997326096",
+        "DBLP": "journals/jasis/SoodCA12",
+        "DOI": "10.1002/asi.21690",
+        "CorpusId": 12996601
+      },
+      "arxiv_id": null,
+      "doi": "10.1002/asi.21690",
+      "corpus_id": 12996601
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "59",
+      "ref_key": "S2:263a58f4fd32caca1dad2351af4d711aec451fe6",
+      "paperId": "263a58f4fd32caca1dad2351af4d711aec451fe6",
+      "title": "Evil Geniuses: Delving into the Safety of LLM-based Agents",
+      "year": 2023,
+      "abstract": "Rapid advancements in large language models (LLMs) have revitalized in LLM-based agents, exhibiting impressive human-like behaviors and cooperative capabilities in various scenarios. However, these agents also bring some exclusive risks, stemming from the complexity of interaction environments and the usability of tools. This paper delves into the safety of LLM-based agents from three perspectives: agent quantity, role definition, and attack level. Specifically, we initially propose to employ a template-based attack strategy on LLM-based agents to find the influence of agent quantity. In addition, to address interaction environment and role specificity issues, we introduce Evil Geniuses (EG), an effective attack method that autonomously generates prompts related to the original role to examine the impact across various role definitions and attack levels. EG leverages Red-Blue exercises, significantly improving the generated prompt aggressiveness and similarity to original roles. Our evaluations on CAMEL, Metagpt and ChatDev based on GPT-3.5 and GPT-4, demonstrate high success rates. Extensive evaluation and discussion reveal that these agents are less robust, prone to more harmful behaviors, and capable of generating stealthier content than LLMs, highlighting significant safety challenges and guiding future research. Our code is available at https://github.com/T1aNS1R/Evil-Geniuses.",
+      "externalIds": {
+        "ArXiv": "2311.11855",
+        "DBLP": "journals/corr/abs-2311-11855",
+        "DOI": "10.48550/arXiv.2311.11855",
+        "CorpusId": 265294905
+      },
+      "arxiv_id": "2311.11855",
+      "doi": "10.48550/arXiv.2311.11855",
+      "corpus_id": 265294905
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "60",
+      "ref_key": "S2:104b0bb1da562d53cbda87aec79ef6a2827d191a",
+      "paperId": "104b0bb1da562d53cbda87aec79ef6a2827d191a",
+      "title": "Llama 2: Open Foundation and Fine-Tuned Chat Models",
+      "year": 2023,
+      "abstract": "In this work, we develop and release Llama 2, a collection of pretrained and fine-tuned large language models (LLMs) ranging in scale from 7 billion to 70 billion parameters. Our fine-tuned LLMs, called Llama 2-Chat, are optimized for dialogue use cases. Our models outperform open-source chat models on most benchmarks we tested, and based on our human evaluations for helpfulness and safety, may be a suitable substitute for closed-source models. We provide a detailed description of our approach to fine-tuning and safety improvements of Llama 2-Chat in order to enable the community to build on our work and contribute to the responsible development of LLMs.",
+      "externalIds": {
+        "ArXiv": "2307.09288",
+        "DBLP": "journals/corr/abs-2307-09288",
+        "CorpusId": 259950998
+      },
+      "arxiv_id": "2307.09288",
+      "doi": null,
+      "corpus_id": 259950998
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "61",
+      "ref_key": "S2:0794333779d775abc2053052d1e7009066cbd4f1",
+      "paperId": "0794333779d775abc2053052d1e7009066cbd4f1",
+      "title": "SaFeRDialogues: Taking Feedback Gracefully after Conversational Safety Failures",
+      "year": 2021,
+      "abstract": "Current open-domain conversational models can easily be made to talk in inadequate ways. Online learning from conversational feedback given by the conversation partner is a promising avenue for a model to improve and adapt, so as to generate fewer of these safety failures. However, current state-of-the-art models tend to react to feedback with defensive or oblivious responses. This makes for an unpleasant experience and may discourage conversation partners from giving feedback in the future. This work proposes SaFeRDialogues, a task and dataset of graceful responses to conversational feedback about safety failures.We collect a dataset of 8k dialogues demonstrating safety failures, feedback signaling them, and a response acknowledging the feedback. We show how fine-tuning on this dataset results in conversations that human raters deem considerably more likely to lead to a civil conversation, without sacrificing engagingness or general conversational ability.",
+      "externalIds": {
+        "DBLP": "conf/acl/UngXB22",
+        "ACL": "2022.acl-long.447",
+        "ArXiv": "2110.07518",
+        "DOI": "10.18653/v1/2022.acl-long.447",
+        "CorpusId": 238856730
+      },
+      "arxiv_id": "2110.07518",
+      "doi": "10.18653/v1/2022.acl-long.447",
+      "corpus_id": 238856730
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "62",
+      "ref_key": "S2:634c083444e11c89f30c93a2986cb43db35ca304",
+      "paperId": "634c083444e11c89f30c93a2986cb43db35ca304",
+      "title": "Trick Me If You Can: Human-in-the-Loop Generation of Adversarial Examples for Question Answering",
+      "year": 2018,
+      "abstract": "Adversarial evaluation stress-tests a model’s understanding of natural language. Because past approaches expose superficial patterns, the resulting adversarial examples are limited in complexity and diversity. We propose human- in-the-loop adversarial generation, where human authors are guided to break models. We aid the authors with interpretations of model predictions through an interactive user interface. We apply this generation framework to a question answering task called Quizbowl, where trivia enthusiasts craft adversarial questions. The resulting questions are validated via live human–computer matches: Although the questions appear ordinary to humans, they systematically stump neural and information retrieval models. The adversarial questions cover diverse phenomena from multi-hop reasoning to entity type distractors, exposing open challenges in robust question answering.",
+      "externalIds": {
+        "MAG": "2966491090",
+        "ACL": "Q19-1029",
+        "DOI": "10.1162/tacl_a_00279",
+        "CorpusId": 155100063
+      },
+      "arxiv_id": null,
+      "doi": "10.1162/tacl_a_00279",
+      "corpus_id": 155100063
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "63",
+      "ref_key": "S2:598df44f1d21a5d1fe3940c0bb2a6128a62c1c15",
+      "paperId": "598df44f1d21a5d1fe3940c0bb2a6128a62c1c15",
+      "title": "Trojan Activation Attack: Red-Teaming Large Language Models using Activation Steering for Safety-Alignment",
+      "year": 2023,
+      "abstract": "To ensure AI safety, instruction-tuned Large Language Models (LLMs) are specifically trained to ensure alignment, which refers to making models behave in accordance with human intentions. While these models have demonstrated commendable results on various safety benchmarks, the vulnerability of their safety alignment has not been extensively studied. This is particularly troubling given the potential harm that LLMs can inflict. Existing attack methods on LLMs often rely on poisoned training data or the injection of malicious prompts. These approaches compromise the stealthiness and generalizability of the attacks, making them susceptible to detection. Additionally, these models often demand substantial computational resources for implementation, making them less practical for real-world applications. In this work, we study a different attack scenario, called Trojan Activation Attack (TA^2), which injects trojan steering vectors into the activation layers of LLMs. These malicious steering vectors can be triggered at inference time to steer the models toward attacker-desired behaviors by manipulating their activations. Our experiment results on four primary alignment tasks show that TA^2 is highly effective and adds little or no overhead to attack efficiency. Additionally, we discuss potential countermeasures against such activation attacks.",
+      "externalIds": {
+        "ArXiv": "2311.09433",
+        "CorpusId": 265220823
+      },
+      "arxiv_id": "2311.09433",
+      "doi": null,
+      "corpus_id": 265220823
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "64",
+      "ref_key": "S2:6b135e922a0c673aeb0b05c5aeecdb6c794791c6",
+      "paperId": "6b135e922a0c673aeb0b05c5aeecdb6c794791c6",
+      "title": "Jailbreak and Guard Aligned Language Models with Only Few In-Context Demonstrations",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) have shown remarkable success in various tasks, yet their safety and the risk of generating harmful content remain pressing concerns. In this paper, we delve into the potential of In-Context Learning (ICL) to modulate the alignment of LLMs. Specifically, we propose the In-Context Attack (ICA) which employs harmful demonstrations to subvert LLMs, and the In-Context Defense (ICD) which bolsters model resilience through examples that demonstrate refusal to produce harmful responses. We offer theoretical insights to elucidate how a limited set of in-context demonstrations can pivotally influence the safety alignment of LLMs. Through extensive experiments, we demonstrate the efficacy of ICA and ICD in respectively elevating and mitigating the success rates of jailbreaking prompts. Our findings illuminate the profound influence of ICL on LLM behavior, opening new avenues for improving the safety of LLMs.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-06387",
+        "ArXiv": "2310.06387",
+        "DOI": "10.48550/arXiv.2310.06387",
+        "CorpusId": 263830179
+      },
+      "arxiv_id": "2310.06387",
+      "doi": "10.48550/arXiv.2310.06387",
+      "corpus_id": 263830179
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "65",
+      "ref_key": "S2:5759d7c7038bfb7b5f1d47539c8348b04f5e0ee7",
+      "paperId": "5759d7c7038bfb7b5f1d47539c8348b04f5e0ee7",
+      "title": "DeceptPrompt: Exploiting LLM-driven Code Generation via Adversarial Natural Language Instructions",
+      "year": 2023,
+      "abstract": "With the advancement of Large Language Models (LLMs), significant progress has been made in code generation, enabling LLMs to transform natural language into programming code. These Code LLMs have been widely accepted by massive users and organizations. However, a dangerous nature is hidden in the code, which is the existence of fatal vulnerabilities. While some LLM providers have attempted to address these issues by aligning with human guidance, these efforts fall short of making Code LLMs practical and robust. Without a deep understanding of the performance of the LLMs under the practical worst cases, it would be concerning to apply them to various real-world applications. In this paper, we answer the critical issue: Are existing Code LLMs immune to generating vulnerable code? If not, what is the possible maximum severity of this issue in practical deployment scenarios? In this paper, we introduce DeceptPrompt, a novel algorithm that can generate adversarial natural language instructions that drive the Code LLMs to generate functionality correct code with vulnerabilities. DeceptPrompt is achieved through a systematic evolution-based algorithm with a fine grain loss design. The unique advantage of DeceptPrompt enables us to find natural prefix/suffix with totally benign and non-directional semantic meaning, meanwhile, having great power in inducing the Code LLMs to generate vulnerable code. This feature can enable us to conduct the almost-worstcase red-teaming on these LLMs in a real scenario, where users are using natural language. Our extensive experiments and analyses on DeceptPrompt not only validate the effectiveness of our approach but also shed light on the huge weakness of LLMs in the code generation task. When applying the optimized prefix/suffix, the attack success rate (ASR) will improve by average 50% compared with no prefix/suffix applying.",
+      "externalIds": {
+        "ArXiv": "2312.04730",
+        "DBLP": "journals/corr/abs-2312-04730",
+        "DOI": "10.48550/arXiv.2312.04730",
+        "CorpusId": 266149413
+      },
+      "arxiv_id": "2312.04730",
+      "doi": "10.48550/arXiv.2312.04730",
+      "corpus_id": 266149413
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "66",
+      "ref_key": "S2:e2e52461194bc81351da7caa978ac42e9e9549cc",
+      "paperId": "e2e52461194bc81351da7caa978ac42e9e9549cc",
+      "title": "Fine-Grained Human Feedback Gives Better Rewards for Language Model Training",
+      "year": 2023,
+      "abstract": "Language models (LMs) often exhibit undesirable text generation behaviors, including generating false, toxic, or irrelevant outputs. Reinforcement learning from human feedback (RLHF) - where human preference judgments on LM outputs are transformed into a learning signal - has recently shown promise in addressing these issues. However, such holistic feedback conveys limited information on long text outputs; it does not indicate which aspects of the outputs influenced user preference; e.g., which parts contain what type(s) of errors. In this paper, we use fine-grained human feedback (e.g., which sentence is false, which sub-sentence is irrelevant) as an explicit training signal. We introduce Fine-Grained RLHF, a framework that enables training and learning from reward functions that are fine-grained in two respects: (1) density, providing a reward after every segment (e.g., a sentence) is generated; and (2) incorporating multiple reward models associated with different feedback types (e.g., factual incorrectness, irrelevance, and information incompleteness). We conduct experiments on detoxification and long-form question answering to illustrate how learning with such reward functions leads to improved performance, supported by both automatic and human evaluation. Additionally, we show that LM behaviors can be customized using different combinations of fine-grained reward models. We release all data, collected human feedback, and codes at https://FineGrainedRLHF.github.io.",
+      "externalIds": {
+        "DBLP": "conf/nips/WuHSDSASOH23",
+        "ArXiv": "2306.01693",
+        "DOI": "10.48550/arXiv.2306.01693",
+        "CorpusId": 259064099
+      },
+      "arxiv_id": "2306.01693",
+      "doi": "10.48550/arXiv.2306.01693",
+      "corpus_id": 259064099
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "67",
+      "ref_key": "S2:6f35b070c250507dbec8a7365cf01b25eb66d792",
+      "paperId": "6f35b070c250507dbec8a7365cf01b25eb66d792",
+      "title": "Ex Machina: Personal Attacks Seen at Scale",
+      "year": 2016,
+      "abstract": "The damage personal attacks cause to online discourse motivates many platforms to try to curb the phenomenon. However, understanding the prevalence and impact of personal attacks in online platforms at scale remains surprisingly difficult. The contribution of this paper is to develop and illustrate a method that combines crowdsourcing and machine learning to analyze personal attacks at scale. We show an evaluation method for a classifier in terms of the aggregated number of crowd-workers it can approximate. We apply our methodology to English Wikipedia, generating a corpus of over 100k high quality human-labeled comments and 63M machine-labeled ones from a classifier that is as good as the aggregate of 3 crowd-workers, as measured by the area under the ROC curve and Spearman correlation. Using this corpus of machine-labeled scores, our methodology allows us to explore some of the open questions about the nature of online personal attacks. This reveals that the majority of personal attacks on Wikipedia are not the result of a few malicious users, nor primarily the consequence of allowing anonymous contributions from unregistered users.",
+      "externalIds": {
+        "DBLP": "conf/www/WulczynTD17",
+        "MAG": "2949089361",
+        "ArXiv": "1610.08914",
+        "DOI": "10.1145/3038912.3052591",
+        "CorpusId": 6060248
+      },
+      "arxiv_id": "1610.08914",
+      "doi": "10.1145/3038912.3052591",
+      "corpus_id": 6060248
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "68",
+      "ref_key": "S2:041c4a3932eae3931d90b1a0fc033cf5f491c267",
+      "paperId": "041c4a3932eae3931d90b1a0fc033cf5f491c267",
+      "title": "Bot-Adversarial Dialogue for Safe Conversational Agents",
+      "year": 2021,
+      "abstract": "Conversational agents trained on large unlabeled corpora of human interactions will learn patterns and mimic behaviors therein, which include offensive or otherwise toxic behavior. We introduce a new human-and-model-in-the-loop framework for evaluating the toxicity of such models, and compare a variety of existing methods in both the cases of non-adversarial and adversarial users that expose their weaknesses. We then go on to propose two novel methods for safe conversational agents, by either training on data from our new human-and-model-in-the-loop framework in a two-stage system, or ”baking-in” safety to the generative model itself. We find our new techniques are (i) safer than existing models; while (ii) maintaining usability metrics such as engagingness relative to state-of-the-art chatbots. In contrast, we expose serious safety issues in existing standard systems like GPT2, DialoGPT, and BlenderBot.",
+      "externalIds": {
+        "MAG": "3171850892",
+        "ACL": "2021.naacl-main.235",
+        "DBLP": "conf/naacl/XuJLBWD21",
+        "DOI": "10.18653/V1/2021.NAACL-MAIN.235",
+        "CorpusId": 235097625
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/V1/2021.NAACL-MAIN.235",
+      "corpus_id": 235097625
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "69",
+      "ref_key": "S2:82fe948f18ca0138d035f553286c5e4b712dbdbe",
+      "paperId": "82fe948f18ca0138d035f553286c5e4b712dbdbe",
+      "title": "Instructions as Backdoors: Backdoor Vulnerabilities of Instruction Tuning for Large Language Models",
+      "year": 2023,
+      "abstract": "We investigate security concerns of the emergent instruction tuning paradigm, that models are trained on crowdsourced datasets with task instructions to achieve superior performance. Our studies demonstrate that an attacker can inject backdoors by issuing very few malicious instructions (~1000 tokens) and control model behavior through data poisoning, without even the need to modify data instances or labels themselves. Through such instruction attacks, the attacker can achieve over 90% attack success rate across four commonly used NLP datasets. As an empirical study on instruction attacks, we systematically evaluated unique perspectives of instruction attacks, such as poison transfer where poisoned models can transfer to 15 diverse generative datasets in a zero-shot manner; instruction transfer where attackers can directly apply poisoned instruction on many other datasets; and poison resistance to continual finetuning. Lastly, we show that RLHF and clean demonstrations might mitigate such backdoors to some degree. These findings highlight the need for more robust defenses against poisoning attacks in instruction-tuning models and underscore the importance of ensuring data quality in instruction crowdsourcing.",
+      "externalIds": {
+        "DBLP": "conf/naacl/XuMWXC24",
+        "ACL": "2024.naacl-long.171",
+        "ArXiv": "2305.14710",
+        "DOI": "10.48550/arXiv.2305.14710",
+        "CorpusId": 258866212
+      },
+      "arxiv_id": "2305.14710",
+      "doi": "10.48550/arXiv.2305.14710",
+      "corpus_id": 258866212
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "70",
+      "ref_key": "S2:f8a2dca1e8fe56e698984c077f7ff58d8ca867e9",
+      "paperId": "f8a2dca1e8fe56e698984c077f7ff58d8ca867e9",
+      "title": "Large Language Models as Optimizers",
+      "year": 2023,
+      "abstract": "Optimization is ubiquitous. While derivative-based algorithms have been powerful tools for various problems, the absence of gradient imposes challenges on many real-world applications. In this work, we propose Optimization by PROmpting (OPRO), a simple and effective approach to leverage large language models (LLMs) as optimizers, where the optimization task is described in natural language. In each optimization step, the LLM generates new solutions from the prompt that contains previously generated solutions with their values, then the new solutions are evaluated and added to the prompt for the next optimization step. We first showcase OPRO on linear regression and traveling salesman problems, then move on to our main application in prompt optimization, where the goal is to find instructions that maximize the task accuracy. With a variety of LLMs, we demonstrate that the best prompts optimized by OPRO outperform human-designed prompts by up to 8% on GSM8K, and by up to 50% on Big-Bench Hard tasks. Code at https://github.com/google-deepmind/opro.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2309-03409",
+        "ArXiv": "2309.03409",
+        "DOI": "10.48550/arXiv.2309.03409",
+        "CorpusId": 261582296
+      },
+      "arxiv_id": "2309.03409",
+      "doi": "10.48550/arXiv.2309.03409",
+      "corpus_id": 261582296
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "71",
+      "ref_key": "S2:84b7c486c56bd3880cb8eb01de9ae90ba3ebdaed",
+      "paperId": "84b7c486c56bd3880cb8eb01de9ae90ba3ebdaed",
+      "title": "Shadow Alignment: The Ease of Subverting Safely-Aligned Language Models",
+      "year": 2023,
+      "abstract": "Warning: This paper contains examples of harmful language, and reader discretion is recommended. The increasing open release of powerful large language models (LLMs) has facilitated the development of downstream applications by reducing the essential cost of data annotation and computation. To ensure AI safety, extensive safety-alignment measures have been conducted to armor these models against malicious use (primarily hard prompt attack). However, beneath the seemingly resilient facade of the armor, there might lurk a shadow. By simply tuning on 100 malicious examples with 1 GPU hour, these safely aligned LLMs can be easily subverted to generate harmful content. Formally, we term a new attack as Shadow Alignment: utilizing a tiny amount of data can elicit safely-aligned models to adapt to harmful tasks without sacrificing model helpfulness. Remarkably, the subverted models retain their capability to respond appropriately to regular inquiries. Experiments across 8 models released by 5 different organizations (LLaMa-2, Falcon, InternLM, BaiChuan2, Vicuna) demonstrate the effectiveness of shadow alignment attack. Besides, the single-turn English-only attack successfully transfers to multi-turn dialogue and other languages. This study serves as a clarion call for a collective effort to overhaul and fortify the safety of open-source LLMs against malicious attackers.",
+      "externalIds": {
+        "ArXiv": "2310.02949",
+        "DBLP": "journals/corr/abs-2310-02949",
+        "DOI": "10.48550/arXiv.2310.02949",
+        "CorpusId": 263620436
+      },
+      "arxiv_id": "2310.02949",
+      "doi": "10.48550/arXiv.2310.02949",
+      "corpus_id": 263620436
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "72",
+      "ref_key": "S2:e92e8ff1becb9a9e4a7dd09878eaacb2a62ffb6b",
+      "paperId": "e92e8ff1becb9a9e4a7dd09878eaacb2a62ffb6b",
+      "title": "Defending Large Language Models Against Jailbreaking Attacks Through Goal Prioritization",
+      "year": 2023,
+      "abstract": "While significant attention has been dedicated to exploiting weaknesses in LLMs through jailbreaking attacks, there remains a paucity of effort in defending against these attacks. We point out a pivotal factor contributing to the success of jailbreaks: the intrinsic conflict between the goals of being helpful and ensuring safety. Accordingly, we propose to integrate goal prioritization at both training and inference stages to counteract. Implementing goal prioritization during inference substantially diminishes the Attack Success Rate (ASR) of jailbreaking from 66.4% to 3.6% for ChatGPT. And integrating goal prioritization into model training reduces the ASR from 71.0% to 6.6% for Llama2-13B. Remarkably, even in scenarios where no jailbreaking samples are included during training, our approach slashes the ASR by half. Additionally, our findings reveal that while stronger LLMs face greater safety risks, they also possess a greater capacity to be steered towards defending against such attacks, both because of their stronger ability in instruction following. Our work thus contributes to the comprehension of jailbreaking attacks and defenses, and sheds light on the relationship between LLMs' capability and safety. Our code is available at \\url{https://github.com/thu-coai/JailbreakDefense_GoalPriority}.",
+      "externalIds": {
+        "DBLP": "conf/acl/ZhangYKMWH24",
+        "ArXiv": "2311.09096",
+        "DOI": "10.48550/arXiv.2311.09096",
+        "CorpusId": 265212812
+      },
+      "arxiv_id": "2311.09096",
+      "doi": "10.48550/arXiv.2311.09096",
+      "corpus_id": 265212812
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "73",
+      "ref_key": "S2:9b9a4fa3ed510fc6eb1bf831979235f3d9f8b556",
+      "paperId": "9b9a4fa3ed510fc6eb1bf831979235f3d9f8b556",
+      "title": "SafetyBench: Evaluating the Safety of Large Language Models with Multiple Choice Questions",
+      "year": 2023,
+      "abstract": "With the rapid development of Large Language Models (LLMs), increasing attention has been paid to their safety concerns. Consequently, evaluating the safety of LLMs has become an essential task for facilitating the broad applications of LLMs. Nevertheless, the absence of comprehensive safety evaluation benchmarks poses a significant impediment to effectively assess and enhance the safety of LLMs. In this work, we present SafetyBench, a comprehensive benchmark for evaluating the safety of LLMs, which comprises 11,435 diverse multiple choice questions spanning across 7 distinct categories of safety concerns. Notably, SafetyBench also incorporates both Chinese and English data, facilitating the evaluation in both languages. Our extensive tests over 25 popular Chinese and English LLMs in both zero-shot and few-shot settings reveal a substantial performance advantage for GPT-4 over its counterparts, and there is still significant room for improving the safety of current LLMs. We also demonstrate that the measured safety understanding abilities in SafetyBench are correlated with safety generation abilities. Data and evaluation guidelines are available at \\url{https://github.com/thu-coai/SafetyBench}{https://github.com/thu-coai/SafetyBench}. Submission entrance and leaderboard are available at \\url{https://llmbench.ai/safety}{https://llmbench.ai/safety}.",
+      "externalIds": {
+        "DBLP": "conf/acl/ZhangLWSHL0L0H24",
+        "ArXiv": "2309.07045",
+        "DOI": "10.48550/arXiv.2309.07045",
+        "CorpusId": 261706197
+      },
+      "arxiv_id": "2309.07045",
+      "doi": "10.48550/arXiv.2309.07045",
+      "corpus_id": 261706197
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "74",
+      "ref_key": "S2:59207e9d0cd4129b6ed665205105192dd3032ff3",
+      "paperId": "59207e9d0cd4129b6ed665205105192dd3032ff3",
+      "title": "Beyond One-Preference-Fits-All Alignment: Multi-Objective Direct Preference Optimization",
+      "year": 2023,
+      "abstract": "A single language model, even when aligned with labelers through reinforcement learning from human feedback (RLHF), may not suit all human preferences. Recent approaches therefore prefer customization, gathering multi-dimensional feedback, and creating distinct reward models for each dimension. Different language models are then optimized for various preferences using multi-objective RLHF (MORLHF) with varying reward weights. However, RL fine-tuning is unstable and resource-heavy, especially with diverse and usually conflicting objectives. In this paper, we present Multi-Objective Direct Preference Optimization (MODPO), an RL-free extension of Direct Preference Optimization (DPO) for multiple alignment objectives. Essentially, MODPO folds language modeling directly into reward modeling, training language models as implicit collective reward models that combine all objectives with specific weights. MODPO theoretically yields the same optimal solutions as MORLHF but is practically more stable and efficient. Empirical results in safety alignment and long-form question answering show that MODPO matches or outperforms existing methods, producing a Pareto front of language models catering to diverse preferences with three times less computational resources compared to MORLHF. Code is available at https://github.com/ZHZisZZ/modpo.",
+      "externalIds": {
+        "DBLP": "conf/acl/ZhouLS00O024",
+        "ArXiv": "2310.03708",
+        "DOI": "10.18653/v1/2024.findings-acl.630",
+        "CorpusId": 264175263
+      },
+      "arxiv_id": "2310.03708",
+      "doi": "10.18653/v1/2024.findings-acl.630",
+      "corpus_id": 264175263
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "75",
+      "ref_key": "S2:3283764bbbd7084c9e6995e20953dbf36b25a226",
+      "paperId": "3283764bbbd7084c9e6995e20953dbf36b25a226",
+      "title": "Emulated Disalignment: Safety Alignment for Large Language Models May Backfire!",
+      "year": 2024,
+      "abstract": "Large language models (LLMs) undergo safety alignment to ensure safe conversations with humans. However, this paper introduces a training-free attack method capable of reversing safety alignment, converting the outcomes of stronger alignment into greater potential for harm by accessing only LLM output token distributions. Specifically, our method achieves this reversal by contrasting the output token distribution of a safety-aligned language model (e.g., Llama-2-chat) against its pre-trained version (e.g., Llama-2), so that the token predictions are shifted towards the opposite direction of safety alignment. We name this method emulated disalignment (ED) because sampling from this contrastive distribution provably emulates the result of fine-tuning to minimize a safety reward. Our experiments with ED across three evaluation datasets and four model families (Llama-1, Llama-2, Mistral, and Alpaca) show that ED doubles the harmfulness of pre-trained models and outperforms strong baselines, achieving the highest harmful rates in 43 out of 48 evaluation subsets by a large margin. Eventually, given ED's reliance on language model output token distributions, which particularly compromises open-source models, our findings highlight the need to reassess the open accessibility of language models, even if they have been safety-aligned. Code is available at https://github.com/ZHZisZZ/emulated-disalignment.",
+      "externalIds": {
+        "DBLP": "conf/acl/ZhouLDL0O024",
+        "ArXiv": "2402.12343",
+        "DOI": "10.48550/arXiv.2402.12343",
+        "CorpusId": 267750465
+      },
+      "arxiv_id": "2402.12343",
+      "doi": "10.48550/arXiv.2402.12343",
+      "corpus_id": 267750465
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "76",
+      "ref_key": "S2:e8b3b37c0d301ea41c75765f6ceb7fcbb2e088a4",
+      "paperId": "e8b3b37c0d301ea41c75765f6ceb7fcbb2e088a4",
+      "title": "AutoDAN: Automatic and Interpretable Adversarial Attacks on Large Language Models",
+      "year": 2023,
+      "abstract": "Safety alignment of Large Language Models (LLMs) can be compromised with manual jailbreak attacks and (automatic) adversarial attacks. Recent work suggests that patching LLMs against these attacks is possible: manual jailbreak attacks are human-readable but often limited and public, making them easy to block; adversarial attacks generate gibberish prompts that can be detected using perplexity-based filters. In this paper, we show that these solutions may be too optimistic. We propose an interpretable adversarial attack, AutoDAN , that combines the strengths of both types of attacks. It automatically generates attack prompts that bypass perplexity-based filters while maintaining a high attack success rate like manual jailbreak attacks. These prompts are interpretable and diverse, exhibiting strategies commonly used in manual jailbreak attacks, and transfer better than their non-readable counterparts when using limited training data or a single proxy model. We also customize AutoDAN ’s objective to leak system prompts, another jailbreak application not addressed in the adversarial attack literature. Our work provides a new way to red-team LLMs and to understand the mechanism of jailbreak attacks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-15140",
+        "DOI": "10.48550/arXiv.2310.15140",
+        "CorpusId": 268100153
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2310.15140",
+      "corpus_id": 268100153
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "77",
+      "ref_key": "S2:dffe2aef88a3925b249bfe14dd0f8c7645860d64",
+      "paperId": "dffe2aef88a3925b249bfe14dd0f8c7645860d64",
+      "title": "Adversarial Training for High-Stakes Reliability",
+      "year": 2022,
+      "abstract": "In the future, powerful AI systems may be deployed in high-stakes settings, where a single failure could be catastrophic. One technique for improving AI safety in high-stakes settings is adversarial training, which uses an adversary to generate examples to train on in order to achieve better worst-case performance. In this work, we used a safe language generation task (``avoid injuries'') as a testbed for achieving high reliability through adversarial training. We created a series of adversarial training techniques -- including a tool that assists human adversaries -- to find and eliminate failures in a classifier that filters text completions suggested by a generator. In our task, we determined that we can set very conservative classifier thresholds without significantly impacting the quality of the filtered outputs. We found that adversarial training increased robustness to the adversarial attacks that we trained on -- doubling the time for our contractors to find adversarial examples both with our tool (from 13 to 26 minutes) and without (from 20 to 44 minutes) -- without affecting in-distribution performance. We hope to see further work in the high-stakes reliability setting, including more powerful tools for enhancing human adversaries and better ways to measure high levels of reliability, until we can confidently rule out the possibility of catastrophic deployment-time failures of powerful models.",
+      "externalIds": {
+        "ArXiv": "2205.01663",
+        "DBLP": "journals/corr/abs-2205-01663",
+        "DOI": "10.48550/arXiv.2205.01663",
+        "CorpusId": 248506146
+      },
+      "arxiv_id": "2205.01663",
+      "doi": "10.48550/arXiv.2205.01663",
+      "corpus_id": 248506146
+    },
+    {
+      "paper_id": "2402.09283",
+      "ref_index": "78",
+      "ref_key": "S2:47030369e97cc44d4b2e3cf1be85da0fd134904a",
+      "paperId": "47030369e97cc44d4b2e3cf1be85da0fd134904a",
+      "title": "Universal and Transferable Adversarial Attacks on Aligned Language Models",
+      "year": 2023,
+      "abstract": "Because\"out-of-the-box\"large language models are capable of generating a great deal of objectionable content, recent work has focused on aligning these models in an attempt to prevent undesirable generation. While there has been some success at circumventing these measures -- so-called\"jailbreaks\"against LLMs -- these attacks have required significant human ingenuity and are brittle in practice. In this paper, we propose a simple and effective attack method that causes aligned language models to generate objectionable behaviors. Specifically, our approach finds a suffix that, when attached to a wide range of queries for an LLM to produce objectionable content, aims to maximize the probability that the model produces an affirmative response (rather than refusing to answer). However, instead of relying on manual engineering, our approach automatically produces these adversarial suffixes by a combination of greedy and gradient-based search techniques, and also improves over past automatic prompt generation methods. Surprisingly, we find that the adversarial prompts generated by our approach are quite transferable, including to black-box, publicly released LLMs. Specifically, we train an adversarial attack suffix on multiple prompts (i.e., queries asking for many different types of objectionable content), as well as multiple models (in our case, Vicuna-7B and 13B). When doing so, the resulting attack suffix is able to induce objectionable content in the public interfaces to ChatGPT, Bard, and Claude, as well as open source LLMs such as LLaMA-2-Chat, Pythia, Falcon, and others. In total, this work significantly advances the state-of-the-art in adversarial attacks against aligned language models, raising important questions about how such systems can be prevented from producing objectionable information. Code is available at github.com/llm-attacks/llm-attacks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-15043",
+        "ArXiv": "2307.15043",
+        "CorpusId": 260202961
+      },
+      "arxiv_id": "2307.15043",
+      "doi": null,
+      "corpus_id": 260202961
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "LLM Safety": {
+        "Attacks ": {
+          "Inference-Time Attacks )": {
+            "Red-Team Attacks  ": {
+              "1db819afb3604c4bfd1e5a0cb2ee9ab9dec52642": {},
+              "17bcb1edbe068e8fe6a97da552c70a77a15bbce7": {},
+              "399e7d8129c60818ee208f236c8dda17e876d21f": {},
+              "19443d48399d4fe89a4b0a96917c50c6fd9c5af1": {},
+              "5d49c7401c5f2337c4cc88d243ae39ed659afe64": {},
+              "634c083444e11c89f30c93a2986cb43db35ca304": {},
+              "dffe2aef88a3925b249bfe14dd0f8c7645860d64": {}
+            },
+            "Templated-Based Attacks  ": {
+              "9f859726b3d8dffd96a1f55de4122617751cc1b4": {},
+              "259d07f47c046389d0b4f256139de64736dd9a94": {},
+              "c4ff1be5c254b60b96b7455eefcc4ec9583f82ed": {},
+              "59c2b4ef91d4ce23cd4f270c8750a00de9054ec2": {},
+              "8d17234680db76f99efd22fbcb169f45d2d79d93": {},
+              "2f94f03fdac62d05f0f416b7b3855d1f597afee9": {},
+              "99eee47dad469790042b973bc7cb40cb63a660b1": {},
+              "025ca4c125d6ecabc816a56f160e5c992abc76d9": {},
+              "f3f23f7f9f5369aade19f20bc5d028cce7b9c9aa": {},
+              "ac1788e9a168a6455beb6316f316950842297c11": {},
+              "9716a2876d08fce9d8e5c5ba4d7b1a9af44806d6": {},
+              "ace98e1e58bcc364afbb2feff6d136232f5f47da": {},
+              "f3de6ea08e2464190673c0ec8f78e5ec1cd08642": {},
+              "bfc0e3e651cd4b715272fe68add8a180a112293c": {},
+              "1104d766527dead44a40532e8a89444d9cef5c65": {},
+              "6b135e922a0c673aeb0b05c5aeecdb6c794791c6": {},
+              "5759d7c7038bfb7b5f1d47539c8348b04f5e0ee7": {},
+              "e8b3b37c0d301ea41c75765f6ceb7fcbb2e088a4": {},
+              "47030369e97cc44d4b2e3cf1be85da0fd134904a": {}
+            },
+            "Neural Prompt-to-Prompt   Attacks ": {
+              "4637f79ddfaf923ce569996ffa5b6cda1996faa1": {},
+              "709af143f78bc62413c50ea1a7ee75b0702c4f59": {},
+              "14e8cf5a5e6a7b35e618b08f5cf06f572b3a54e0": {},
+              "263a58f4fd32caca1dad2351af4d711aec451fe6": {},
+              "f8a2dca1e8fe56e698984c077f7ff58d8ca867e9": {}
+            }
+          },
+          "Training-Time Attacks ": {
+            "LLM Unalignment": {
+              "0429020abad6f22ea17681fa403aa591693bb607": {},
+              "b88535ea9368753c91967bb7e997c06b1ac6aaec": {},
+              "512b3097ffcd6afcde6b58da1e656d5d9a635678": {},
+              "d1b5151231a790c7a60f620e21860593dae9a1c5": {},
+              "90de1938a64d117d61b9e7149d2981df49b81433": {},
+              "598df44f1d21a5d1fe3940c0bb2a6128a62c1c15": {},
+              "82fe948f18ca0138d035f553286c5e4b712dbdbe": {},
+              "84b7c486c56bd3880cb8eb01de9ae90ba3ebdaed": {},
+              "3283764bbbd7084c9e6995e20953dbf36b25a226": {}
+            }
+          }
+        },
+        "Defenses ": {
+          "LLM Safety Alignment ": {
+            "9f859726b3d8dffd96a1f55de4122617751cc1b4": {},
+            "a4c921bdef167ae54cc3a40643e6e3ed13d49a61": {},
+            "9ec29a26336f043a705ac99baa04c8d7f69fe4b4": {},
+            "0f7308fbcae43d22813f70c334c2425df0b1cce1": {},
+            "92930ed3560ea6c86d53cf52158bc793b089054d": {},
+            "163b4d6a79a5b19af88b8585456363340d9efd04": {},
+            "d766bffc357127e0dc86dd69561d5aeb520d6f4c": {},
+            "0d1c76d45afa012ded7ab741194baf142117c495": {},
+            "104b0bb1da562d53cbda87aec79ef6a2827d191a": {},
+            "e2e52461194bc81351da7caa978ac42e9e9549cc": {},
+            "59207e9d0cd4129b6ed665205105192dd3032ff3": {}
+          },
+          "Inference Guidance ": {
+            "b574245f3db22b5eb7fe64bd8b0a147dab467b60": {},
+            "2cdd5c3dc42c0df40bc8839709869af3560d4bfe": {},
+            "6b135e922a0c673aeb0b05c5aeecdb6c794791c6": {},
+            "e92e8ff1becb9a9e4a7dd09878eaacb2a62ffb6b": {}
+          },
+          "Input/Output Filters": {
+            "Rule-Based Filters": {
+              "b8b8d5655df1c6a71bbb713387863e34cc055332": {},
+              "c1d1842e08716cbf7250167969522a1705d8bcd3": {},
+              "3e30a7ac4886b28eb50151f58e14a1d698cccd0e": {},
+              "1ab91d6ac7afc1a0121487a9089fa70edc1634d4": {},
+              "8cf9b49698fdb1b754df2556576412a7b44929f6": {}
+            },
+            "Model-Based Filters": {
+              "6fa338adac35e556e49cbb6020f13dcef4956a74": {},
+              "098370508aaf56f718a472511987ac2072d0f917": {},
+              "1b220b8d9e43035e334ea16e36a2685a1d092b88": {},
+              "972706306f85b1bfb40c7d35c796ad5174eb0c9c": {},
+              "b5a624da64475d735f0e298dc6f2f6669b5bb697": {},
+              "b69aa32ee52f5efe8e3196114581ac610da8a2b2": {},
+              "e39b586e561b36a3b71fa3d9ee7cb15c35d84203": {},
+              "ecdfc556828dc59d8a0009016fcbe97a06cf7e23": {},
+              "3fa4d63e0194cdbd909c579456830e0a7c909242": {},
+              "6f35b070c250507dbec8a7365cf01b25eb66d792": {}
+            }
+          }
+        },
+        "Evaluations ": {
+          "Safety Datasets ": {
+            "Topics \\& Formulations": {
+              "9f859726b3d8dffd96a1f55de4122617751cc1b4": {},
+              "ea07b2e1a910defdcac01a47a152b6ad87e02ed4": {},
+              "da89cdeb0014666f4024f797d0c67cd45d92a7c9": {},
+              "17bcb1edbe068e8fe6a97da552c70a77a15bbce7": {},
+              "399e7d8129c60818ee208f236c8dda17e876d21f": {},
+              "382ba0c4452aab6ecdaf8a62d567bb3c4684e4f0": {},
+              "66af295963d35a203281b4e7bb902028d1c63077": {},
+              "77d956cdab4508d569ae5741549b78e715fd0749": {},
+              "ace98e1e58bcc364afbb2feff6d136232f5f47da": {},
+              "0794333779d775abc2053052d1e7009066cbd4f1": {},
+              "041c4a3932eae3931d90b1a0fc033cf5f491c267": {},
+              "9b9a4fa3ed510fc6eb1bf831979235f3d9f8b556": {},
+              "47030369e97cc44d4b2e3cf1be85da0fd134904a": {}
+            }
+          },
+          "Metrics ": {
+            "Attack Success Rate \\&  Other Fine-Grained Metrics": {
+              "4637f79ddfaf923ce569996ffa5b6cda1996faa1": {},
+              "da89cdeb0014666f4024f797d0c67cd45d92a7c9": {},
+              "399e7d8129c60818ee208f236c8dda17e876d21f": {},
+              "972706306f85b1bfb40c7d35c796ad5174eb0c9c": {},
+              "60b05f32c32519a809f21642ef1eb3eaf3848008": {},
+              "d7da009f457917aa381619facfa5ffae9329a6e9": {},
+              "cef330bacf014d60daabbd489647b2006af130ca": {},
+              "ace98e1e58bcc364afbb2feff6d136232f5f47da": {},
+              "9b9a4fa3ed510fc6eb1bf831979235f3d9f8b556": {},
+              "e8b3b37c0d301ea41c75765f6ceb7fcbb2e088a4": {},
+              "47030369e97cc44d4b2e3cf1be85da0fd134904a": {}
+            }
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000001",
+        "paperId": "1db819afb3604c4bfd1e5a0cb2ee9ab9dec52642",
+        "ref_index": "6",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Red-Team Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000002",
+        "paperId": "17bcb1edbe068e8fe6a97da552c70a77a15bbce7",
+        "ref_index": "16",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Red-Team Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000003",
+        "paperId": "399e7d8129c60818ee208f236c8dda17e876d21f",
+        "ref_index": "18",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Red-Team Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000004",
+        "paperId": "19443d48399d4fe89a4b0a96917c50c6fd9c5af1",
+        "ref_index": "39",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Red-Team Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000005",
+        "paperId": "5d49c7401c5f2337c4cc88d243ae39ed659afe64",
+        "ref_index": "48",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Red-Team Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000006",
+        "paperId": "634c083444e11c89f30c93a2986cb43db35ca304",
+        "ref_index": "62",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Red-Team Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000007",
+        "paperId": "dffe2aef88a3925b249bfe14dd0f8c7645860d64",
+        "ref_index": "77",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Red-Team Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000008",
+        "paperId": "9f859726b3d8dffd96a1f55de4122617751cc1b4",
+        "ref_index": "2",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Templated-Based Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000009",
+        "paperId": "259d07f47c046389d0b4f256139de64736dd9a94",
+        "ref_index": "13",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Templated-Based Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000010",
+        "paperId": "c4ff1be5c254b60b96b7455eefcc4ec9583f82ed",
+        "ref_index": "14",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Templated-Based Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000011",
+        "paperId": "59c2b4ef91d4ce23cd4f270c8750a00de9054ec2",
+        "ref_index": "20",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Templated-Based Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000012",
+        "paperId": "8d17234680db76f99efd22fbcb169f45d2d79d93",
+        "ref_index": "21",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Templated-Based Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000013",
+        "paperId": "2f94f03fdac62d05f0f416b7b3855d1f597afee9",
+        "ref_index": "27",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Templated-Based Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000014",
+        "paperId": "99eee47dad469790042b973bc7cb40cb63a660b1",
+        "ref_index": "32",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Templated-Based Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000015",
+        "paperId": "025ca4c125d6ecabc816a56f160e5c992abc76d9",
+        "ref_index": "33",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Templated-Based Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000016",
+        "paperId": "f3f23f7f9f5369aade19f20bc5d028cce7b9c9aa",
+        "ref_index": "37",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Templated-Based Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000017",
+        "paperId": "ac1788e9a168a6455beb6316f316950842297c11",
+        "ref_index": "41",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Templated-Based Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000018",
+        "paperId": "9716a2876d08fce9d8e5c5ba4d7b1a9af44806d6",
+        "ref_index": "47",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Templated-Based Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000019",
+        "paperId": "ace98e1e58bcc364afbb2feff6d136232f5f47da",
+        "ref_index": "51",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Templated-Based Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000020",
+        "paperId": "f3de6ea08e2464190673c0ec8f78e5ec1cd08642",
+        "ref_index": "55",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Templated-Based Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000021",
+        "paperId": "bfc0e3e651cd4b715272fe68add8a180a112293c",
+        "ref_index": "56",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Templated-Based Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000022",
+        "paperId": "1104d766527dead44a40532e8a89444d9cef5c65",
+        "ref_index": "57",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Templated-Based Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000023",
+        "paperId": "6b135e922a0c673aeb0b05c5aeecdb6c794791c6",
+        "ref_index": "64",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Templated-Based Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000024",
+        "paperId": "5759d7c7038bfb7b5f1d47539c8348b04f5e0ee7",
+        "ref_index": "65",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Templated-Based Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000025",
+        "paperId": "e8b3b37c0d301ea41c75765f6ceb7fcbb2e088a4",
+        "ref_index": "76",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Templated-Based Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000026",
+        "paperId": "47030369e97cc44d4b2e3cf1be85da0fd134904a",
+        "ref_index": "78",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Templated-Based Attacks  "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000027",
+        "paperId": "4637f79ddfaf923ce569996ffa5b6cda1996faa1",
+        "ref_index": "7",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Neural Prompt-to-Prompt   Attacks "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000028",
+        "paperId": "709af143f78bc62413c50ea1a7ee75b0702c4f59",
+        "ref_index": "17",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Neural Prompt-to-Prompt   Attacks "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000029",
+        "paperId": "14e8cf5a5e6a7b35e618b08f5cf06f572b3a54e0",
+        "ref_index": "40",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Neural Prompt-to-Prompt   Attacks "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000030",
+        "paperId": "263a58f4fd32caca1dad2351af4d711aec451fe6",
+        "ref_index": "59",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Neural Prompt-to-Prompt   Attacks "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000031",
+        "paperId": "f8a2dca1e8fe56e698984c077f7ff58d8ca867e9",
+        "ref_index": "70",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Inference-Time Attacks )",
+          "Neural Prompt-to-Prompt   Attacks "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000032",
+        "paperId": "0429020abad6f22ea17681fa403aa591693bb607",
+        "ref_index": "0",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Training-Time Attacks ",
+          "LLM Unalignment"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000033",
+        "paperId": "b88535ea9368753c91967bb7e997c06b1ac6aaec",
+        "ref_index": "5",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Training-Time Attacks ",
+          "LLM Unalignment"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000034",
+        "paperId": "512b3097ffcd6afcde6b58da1e656d5d9a635678",
+        "ref_index": "15",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Training-Time Attacks ",
+          "LLM Unalignment"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000035",
+        "paperId": "d1b5151231a790c7a60f620e21860593dae9a1c5",
+        "ref_index": "31",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Training-Time Attacks ",
+          "LLM Unalignment"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000036",
+        "paperId": "90de1938a64d117d61b9e7149d2981df49b81433",
+        "ref_index": "53",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Training-Time Attacks ",
+          "LLM Unalignment"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000037",
+        "paperId": "598df44f1d21a5d1fe3940c0bb2a6128a62c1c15",
+        "ref_index": "63",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Training-Time Attacks ",
+          "LLM Unalignment"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000038",
+        "paperId": "82fe948f18ca0138d035f553286c5e4b712dbdbe",
+        "ref_index": "69",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Training-Time Attacks ",
+          "LLM Unalignment"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000039",
+        "paperId": "84b7c486c56bd3880cb8eb01de9ae90ba3ebdaed",
+        "ref_index": "71",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Training-Time Attacks ",
+          "LLM Unalignment"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000040",
+        "paperId": "3283764bbbd7084c9e6995e20953dbf36b25a226",
+        "ref_index": "75",
+        "path": [
+          "LLM Safety",
+          "Attacks ",
+          "Training-Time Attacks ",
+          "LLM Unalignment"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000041",
+        "paperId": "9f859726b3d8dffd96a1f55de4122617751cc1b4",
+        "ref_index": "2",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "LLM Safety Alignment "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000042",
+        "paperId": "a4c921bdef167ae54cc3a40643e6e3ed13d49a61",
+        "ref_index": "4",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "LLM Safety Alignment "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000043",
+        "paperId": "9ec29a26336f043a705ac99baa04c8d7f69fe4b4",
+        "ref_index": "8",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "LLM Safety Alignment "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000044",
+        "paperId": "0f7308fbcae43d22813f70c334c2425df0b1cce1",
+        "ref_index": "12",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "LLM Safety Alignment "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000045",
+        "paperId": "92930ed3560ea6c86d53cf52158bc793b089054d",
+        "ref_index": "26",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "LLM Safety Alignment "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000046",
+        "paperId": "163b4d6a79a5b19af88b8585456363340d9efd04",
+        "ref_index": "43",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "LLM Safety Alignment "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000047",
+        "paperId": "d766bffc357127e0dc86dd69561d5aeb520d6f4c",
+        "ref_index": "44",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "LLM Safety Alignment "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000048",
+        "paperId": "0d1c76d45afa012ded7ab741194baf142117c495",
+        "ref_index": "52",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "LLM Safety Alignment "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000049",
+        "paperId": "104b0bb1da562d53cbda87aec79ef6a2827d191a",
+        "ref_index": "60",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "LLM Safety Alignment "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000050",
+        "paperId": "e2e52461194bc81351da7caa978ac42e9e9549cc",
+        "ref_index": "66",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "LLM Safety Alignment "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000051",
+        "paperId": "59207e9d0cd4129b6ed665205105192dd3032ff3",
+        "ref_index": "74",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "LLM Safety Alignment "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000052",
+        "paperId": "b574245f3db22b5eb7fe64bd8b0a147dab467b60",
+        "ref_index": "34",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "Inference Guidance "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000053",
+        "paperId": "2cdd5c3dc42c0df40bc8839709869af3560d4bfe",
+        "ref_index": "49",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "Inference Guidance "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000054",
+        "paperId": "6b135e922a0c673aeb0b05c5aeecdb6c794791c6",
+        "ref_index": "64",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "Inference Guidance "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000055",
+        "paperId": "e92e8ff1becb9a9e4a7dd09878eaacb2a62ffb6b",
+        "ref_index": "72",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "Inference Guidance "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000056",
+        "paperId": "b8b8d5655df1c6a71bbb713387863e34cc055332",
+        "ref_index": "1",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "Input/Output Filters",
+          "Rule-Based Filters"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000057",
+        "paperId": "c1d1842e08716cbf7250167969522a1705d8bcd3",
+        "ref_index": "24",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "Input/Output Filters",
+          "Rule-Based Filters"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000058",
+        "paperId": "3e30a7ac4886b28eb50151f58e14a1d698cccd0e",
+        "ref_index": "25",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "Input/Output Filters",
+          "Rule-Based Filters"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000059",
+        "paperId": "1ab91d6ac7afc1a0121487a9089fa70edc1634d4",
+        "ref_index": "30",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "Input/Output Filters",
+          "Rule-Based Filters"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000060",
+        "paperId": "8cf9b49698fdb1b754df2556576412a7b44929f6",
+        "ref_index": "54",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "Input/Output Filters",
+          "Rule-Based Filters"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000061",
+        "paperId": "6fa338adac35e556e49cbb6020f13dcef4956a74",
+        "ref_index": "9",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "Input/Output Filters",
+          "Model-Based Filters"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000062",
+        "paperId": "098370508aaf56f718a472511987ac2072d0f917",
+        "ref_index": "10",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "Input/Output Filters",
+          "Model-Based Filters"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000063",
+        "paperId": "1b220b8d9e43035e334ea16e36a2685a1d092b88",
+        "ref_index": "19",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "Input/Output Filters",
+          "Model-Based Filters"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000064",
+        "paperId": "972706306f85b1bfb40c7d35c796ad5174eb0c9c",
+        "ref_index": "23",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "Input/Output Filters",
+          "Model-Based Filters"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000065",
+        "paperId": "b5a624da64475d735f0e298dc6f2f6669b5bb697",
+        "ref_index": "29",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "Input/Output Filters",
+          "Model-Based Filters"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000066",
+        "paperId": "b69aa32ee52f5efe8e3196114581ac610da8a2b2",
+        "ref_index": "38",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "Input/Output Filters",
+          "Model-Based Filters"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000067",
+        "paperId": "e39b586e561b36a3b71fa3d9ee7cb15c35d84203",
+        "ref_index": "42",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "Input/Output Filters",
+          "Model-Based Filters"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000068",
+        "paperId": "ecdfc556828dc59d8a0009016fcbe97a06cf7e23",
+        "ref_index": "50",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "Input/Output Filters",
+          "Model-Based Filters"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000069",
+        "paperId": "3fa4d63e0194cdbd909c579456830e0a7c909242",
+        "ref_index": "58",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "Input/Output Filters",
+          "Model-Based Filters"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000070",
+        "paperId": "6f35b070c250507dbec8a7365cf01b25eb66d792",
+        "ref_index": "67",
+        "path": [
+          "LLM Safety",
+          "Defenses ",
+          "Input/Output Filters",
+          "Model-Based Filters"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000071",
+        "paperId": "9f859726b3d8dffd96a1f55de4122617751cc1b4",
+        "ref_index": "2",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Safety Datasets ",
+          "Topics \\& Formulations"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000072",
+        "paperId": "ea07b2e1a910defdcac01a47a152b6ad87e02ed4",
+        "ref_index": "3",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Safety Datasets ",
+          "Topics \\& Formulations"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000073",
+        "paperId": "da89cdeb0014666f4024f797d0c67cd45d92a7c9",
+        "ref_index": "11",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Safety Datasets ",
+          "Topics \\& Formulations"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000074",
+        "paperId": "17bcb1edbe068e8fe6a97da552c70a77a15bbce7",
+        "ref_index": "16",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Safety Datasets ",
+          "Topics \\& Formulations"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000075",
+        "paperId": "399e7d8129c60818ee208f236c8dda17e876d21f",
+        "ref_index": "18",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Safety Datasets ",
+          "Topics \\& Formulations"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000076",
+        "paperId": "382ba0c4452aab6ecdaf8a62d567bb3c4684e4f0",
+        "ref_index": "22",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Safety Datasets ",
+          "Topics \\& Formulations"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000077",
+        "paperId": "66af295963d35a203281b4e7bb902028d1c63077",
+        "ref_index": "28",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Safety Datasets ",
+          "Topics \\& Formulations"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000078",
+        "paperId": "77d956cdab4508d569ae5741549b78e715fd0749",
+        "ref_index": "36",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Safety Datasets ",
+          "Topics \\& Formulations"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000079",
+        "paperId": "ace98e1e58bcc364afbb2feff6d136232f5f47da",
+        "ref_index": "51",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Safety Datasets ",
+          "Topics \\& Formulations"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000080",
+        "paperId": "0794333779d775abc2053052d1e7009066cbd4f1",
+        "ref_index": "61",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Safety Datasets ",
+          "Topics \\& Formulations"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000081",
+        "paperId": "041c4a3932eae3931d90b1a0fc033cf5f491c267",
+        "ref_index": "68",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Safety Datasets ",
+          "Topics \\& Formulations"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000082",
+        "paperId": "9b9a4fa3ed510fc6eb1bf831979235f3d9f8b556",
+        "ref_index": "73",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Safety Datasets ",
+          "Topics \\& Formulations"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000083",
+        "paperId": "47030369e97cc44d4b2e3cf1be85da0fd134904a",
+        "ref_index": "78",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Safety Datasets ",
+          "Topics \\& Formulations"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000084",
+        "paperId": "4637f79ddfaf923ce569996ffa5b6cda1996faa1",
+        "ref_index": "7",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Metrics ",
+          "Attack Success Rate \\&  Other Fine-Grained Metrics"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000085",
+        "paperId": "da89cdeb0014666f4024f797d0c67cd45d92a7c9",
+        "ref_index": "11",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Metrics ",
+          "Attack Success Rate \\&  Other Fine-Grained Metrics"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000086",
+        "paperId": "399e7d8129c60818ee208f236c8dda17e876d21f",
+        "ref_index": "18",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Metrics ",
+          "Attack Success Rate \\&  Other Fine-Grained Metrics"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000087",
+        "paperId": "972706306f85b1bfb40c7d35c796ad5174eb0c9c",
+        "ref_index": "23",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Metrics ",
+          "Attack Success Rate \\&  Other Fine-Grained Metrics"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000088",
+        "paperId": "60b05f32c32519a809f21642ef1eb3eaf3848008",
+        "ref_index": "35",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Metrics ",
+          "Attack Success Rate \\&  Other Fine-Grained Metrics"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000089",
+        "paperId": "d7da009f457917aa381619facfa5ffae9329a6e9",
+        "ref_index": "45",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Metrics ",
+          "Attack Success Rate \\&  Other Fine-Grained Metrics"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000090",
+        "paperId": "cef330bacf014d60daabbd489647b2006af130ca",
+        "ref_index": "46",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Metrics ",
+          "Attack Success Rate \\&  Other Fine-Grained Metrics"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000091",
+        "paperId": "ace98e1e58bcc364afbb2feff6d136232f5f47da",
+        "ref_index": "51",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Metrics ",
+          "Attack Success Rate \\&  Other Fine-Grained Metrics"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000092",
+        "paperId": "9b9a4fa3ed510fc6eb1bf831979235f3d9f8b556",
+        "ref_index": "73",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Metrics ",
+          "Attack Success Rate \\&  Other Fine-Grained Metrics"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000093",
+        "paperId": "e8b3b37c0d301ea41c75765f6ceb7fcbb2e088a4",
+        "ref_index": "76",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Metrics ",
+          "Attack Success Rate \\&  Other Fine-Grained Metrics"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2402.09283",
+        "arxiv_id": "2402.09283",
+        "leaf_mention_id": "2402.09283::000094",
+        "paperId": "47030369e97cc44d4b2e3cf1be85da0fd134904a",
+        "ref_index": "78",
+        "path": [
+          "LLM Safety",
+          "Evaluations ",
+          "Metrics ",
+          "Attack Success Rate \\&  Other Fine-Grained Metrics"
+        ],
+        "depth": 4,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 94,
+      "unique_leaf_paper_count": 79,
+      "multi_membership_extra_mentions": 15,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

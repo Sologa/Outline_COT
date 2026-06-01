@@ -1,0 +1,1478 @@
+{
+  "paper_id": "2410.03751",
+  "arxiv_id": "2410.03751",
+  "title": "Recent Advances in Speech Language Models: A Survey",
+  "ref_meta": [
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "0",
+      "ref_key": "S2:ffa05cb5504ba08254f498223f613b3ebcf87692",
+      "paperId": "ffa05cb5504ba08254f498223f613b3ebcf87692",
+      "title": "LauraGPT: Listen, Attend, Understand, and Regenerate Audio with GPT",
+      "year": 2023,
+      "abstract": "Generative Pre-trained Transformer (GPT) models have achieved remarkable performance on various natural language processing tasks, and have shown great potential as backbones for audio-and-text large language models (LLMs). Previous mainstream audio-and-text LLMs use discrete audio tokens to represent both input and output audio; however, they suffer from performance degradation on tasks such as automatic speech recognition, speech-to-text translation, and speech enhancement over models using continuous speech features. In this paper, we propose LauraGPT, a novel unified audio-and-text GPT-based LLM for audio recognition, understanding, and generation. LauraGPT is a versatile LLM that can process both audio and text inputs and generate outputs in either modalities. We propose a novel data representation that combines continuous and discrete features for audio: LauraGPT encodes input audio into continuous representations using an audio encoder and generates output audio from discrete codec codes. We propose a one-step codec vocoder to overcome the prediction challenge caused by the multimodal distribution of codec tokens. We fine-tune LauraGPT using supervised multi-task learning. Extensive experiments show that LauraGPT consistently achieves comparable to superior performance compared to strong baselines on a wide range of audio tasks related to content, semantics, paralinguistics, and audio-signal analysis, such as automatic speech recognition, speech-to-text translation, text-to-speech synthesis, speech enhancement, automated audio captioning, speech emotion recognition, and spoken language understanding.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-04673",
+        "ArXiv": "2310.04673",
+        "DOI": "10.48550/arXiv.2310.04673",
+        "CorpusId": 263830754
+      },
+      "arxiv_id": "2310.04673",
+      "doi": "10.48550/arXiv.2310.04673",
+      "corpus_id": 263830754
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "1",
+      "ref_key": "S2:2d5ef1d6b631ac7ee0ae87e480381407c11b9fb2",
+      "paperId": "2d5ef1d6b631ac7ee0ae87e480381407c11b9fb2",
+      "title": "Generative Spoken Language Model based on continuous word-sized audio tokens",
+      "year": 2023,
+      "abstract": "In NLP, text language models based on words or subwords are known to outperform their character-based counterparts. Yet, in the speech community, the standard input of spoken LMs are 20ms or 40ms-long discrete units (shorter than a phoneme). Taking inspiration from word-based LM, we introduce a Generative Spoken Language Model (GSLM) based on word-size continuous-valued audio embeddings that can generate diverse and expressive language output. This is obtained by replacing lookup table for lexical types with a Lexical Embedding function, the cross entropy loss by a contrastive loss, and multinomial sampling by k-NN sampling. The resulting model is the first generative language model based on word-size continuous embeddings. Its performance is on par with discrete unit GSLMs regarding generation quality as measured by automatic metrics and subjective human judgements. Moreover, it is five times more memory efficient thanks to its large 200ms units. In addition, the embeddings before and after the Lexical Embedder are phonetically and semantically interpretable.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/AlgayresANCSSD23",
+        "ArXiv": "2310.05224",
+        "DOI": "10.48550/arXiv.2310.05224",
+        "CorpusId": 263830865
+      },
+      "arxiv_id": "2310.05224",
+      "doi": "10.48550/arXiv.2310.05224",
+      "corpus_id": 263830865
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "2",
+      "ref_key": "S2:a375c53f7110d0e7d6d9228b63a3faff40f91599",
+      "paperId": "a375c53f7110d0e7d6d9228b63a3faff40f91599",
+      "title": "Language Model Can Listen While Speaking",
+      "year": 2024,
+      "abstract": "Dialogue serves as the most natural manner of human-computer interaction (HCI). Recent advancements in speech language models (SLM) have significantly enhanced speech-based conversational AI. However, these models are limited to turn-based conversation, lacking the ability to interact with humans in real-time spoken scenarios, for example, being interrupted when the generated content is not satisfactory. To address these limitations, we explore full duplex modeling (FDM) in interactive speech language models (iSLM), focusing on enhancing real-time interaction and, more explicitly, exploring the quintessential ability of interruption. We introduce a novel model design, namely listening-while-speaking language model (LSLM), an end-to-end system equipped with both listening and speaking channels. Our LSLM employs a token-based decoder-only TTS for speech generation and a streaming self-supervised learning (SSL) encoder for real-time audio input. LSLM fuses both channels for autoregressive generation and detects turn-taking in real time. Three fusion strategies -- early fusion, middle fusion, and late fusion -- are explored, with middle fusion achieving an optimal balance between speech generation and real-time interaction. Two experimental settings, command-based FDM and voice-based FDM, demonstrate LSLM's robustness to noise and sensitivity to diverse instructions. Our results highlight LSLM's capability to achieve duplex communication with minimal impact on existing systems. This study aims to advance the development of interactive speech dialogue systems, enhancing their applicability in real-world contexts.",
+      "externalIds": {
+        "ArXiv": "2408.02622",
+        "DBLP": "journals/corr/abs-2408-02622",
+        "DOI": "10.48550/arXiv.2408.02622",
+        "CorpusId": 271710060
+      },
+      "arxiv_id": "2408.02622",
+      "doi": "10.48550/arXiv.2408.02622",
+      "corpus_id": 271710060
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "3",
+      "ref_key": "S2:7c39adb2049e79951dd6b92c970abaa4d81819b1",
+      "paperId": "7c39adb2049e79951dd6b92c970abaa4d81819b1",
+      "title": "On Generative Spoken Language Modeling from Raw Audio",
+      "year": 2021,
+      "abstract": "Abstract We introduce Generative Spoken Language Modeling, the task of learning the acoustic and linguistic characteristics of a language from raw audio (no text, no labels), and a set of metrics to automatically evaluate the learned representations at acoustic and linguistic levels for both encoding and generation. We set up baseline systems consisting of a discrete speech encoder (returning pseudo-text units), a generative language model (trained on pseudo- text), and a speech decoder (generating a waveform from pseudo-text) all trained without supervision and validate the proposed metrics with human evaluation. Across 3 speech encoders (CPC, wav2vec 2.0, HuBERT), we find that the number of discrete units (50, 100, or 200) matters in a task-dependent and encoder- dependent way, and that some combinations approach text-based systems.1",
+      "externalIds": {
+        "ArXiv": "2102.01192",
+        "DBLP": "journals/corr/abs-2102-01192",
+        "DOI": "10.1162/tacl_a_00430",
+        "CorpusId": 231749922
+      },
+      "arxiv_id": "2102.01192",
+      "doi": "10.1162/tacl_a_00430",
+      "corpus_id": 231749922
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "4",
+      "ref_key": "S2:62a82afa1b2adadb68b4667ede9faab0613a6cd9",
+      "paperId": "62a82afa1b2adadb68b4667ede9faab0613a6cd9",
+      "title": "VITA: Towards Open-Source Interactive Omni Multimodal LLM",
+      "year": 2024,
+      "abstract": "The remarkable multimodal capabilities and interactive experience of GPT-4o underscore their necessity in practical applications, yet open-source models rarely excel in both areas. In this paper, we introduce VITA, the first-ever open-source Multimodal Large Language Model (MLLM) adept at simultaneous processing and analysis of Video, Image, Text, and Audio modalities, and meanwhile has an advanced multimodal interactive experience. Starting from Mixtral 8x7B as a language foundation, we expand its Chinese vocabulary followed by bilingual instruction tuning. We further endow the language model with visual and audio capabilities through two-stage multi-task learning of multimodal alignment and instruction tuning. VITA demonstrates robust foundational capabilities of multilingual, vision, and audio understanding, as evidenced by its strong performance across a range of both unimodal and multimodal benchmarks. Beyond foundational capabilities, we have made considerable progress in enhancing the natural multimodal human-computer interaction experience. VITA is the first step for the open-source community to explore the seamless integration of multimodal understanding and interaction. While there is still lots of work to be done on VITA to get close to close-source counterparts, we hope that its role as a pioneer can serve as a cornerstone for subsequent research. Project Page: https://vita-home.github.io.",
+      "externalIds": {
+        "ArXiv": "2408.05211",
+        "DBLP": "journals/corr/abs-2408-05211",
+        "DOI": "10.48550/arXiv.2408.05211",
+        "CorpusId": 271843279
+      },
+      "arxiv_id": "2408.05211",
+      "doi": "10.48550/arXiv.2408.05211",
+      "corpus_id": 271843279
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "5",
+      "ref_key": "S2:8625ab06f76caf36ab138bac20a3116ba5b298e6",
+      "paperId": "8625ab06f76caf36ab138bac20a3116ba5b298e6",
+      "title": "Mini-Omni: Language Models Can Hear, Talk While Thinking in Streaming",
+      "year": 2024,
+      "abstract": "Recent advances in language models have achieved significant progress. GPT-4o, as a new milestone, has enabled real-time conversations with humans, demonstrating near-human natural fluency. Such human-computer interaction necessitates models with the capability to perform reasoning directly with the audio modality and generate output in streaming. However, this remains beyond the reach of current academic models, as they typically depend on extra TTS systems for speech synthesis, resulting in undesirable latency. This paper introduces the Mini-Omni, an audio-based end-to-end conversational model, capable of real-time speech interaction. To achieve this capability, we propose a text-instructed speech generation method, along with batch-parallel strategies during inference to further boost the performance. Our method also helps to retain the original model's language capabilities with minimal degradation, enabling other works to establish real-time interaction capabilities. We call this training method\"Any Model Can Talk\". We also introduce the VoiceAssistant-400K dataset to fine-tune models optimized for speech output. To our best knowledge, Mini-Omni is the first fully end-to-end, open-source model for real-time speech interaction, offering valuable potential for future research.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2408-16725",
+        "ArXiv": "2408.16725",
+        "DOI": "10.48550/arXiv.2408.16725",
+        "CorpusId": 272146286
+      },
+      "arxiv_id": "2408.16725",
+      "doi": "10.48550/arXiv.2408.16725",
+      "corpus_id": 272146286
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "6",
+      "ref_key": "S2:e4a9a026a40a58cee4d6509d2ef817a86a11a760",
+      "paperId": "e4a9a026a40a58cee4d6509d2ef817a86a11a760",
+      "title": "AudioChatLlama: Towards General-Purpose Speech Abilities for LLMs",
+      "year": 2023,
+      "abstract": "In this work, we extend the instruction-tuned Llama-2 model with end-to-end general-purpose speech processing and reasoning abilities while maintaining the wide range of original LLM capabilities, without using any carefully curated paired data. The resulting end-to-end model, named AudioChatLlama, can utilize audio prompts as a replacement for text and sustain a conversation. Such a model also has extended cross-modal capabilities such as being able to perform spoken question answering (QA), speech translation, and audio summarization amongst many other closed and open-domain tasks. This is unlike prior approaches in speech, in which LLMs are extended to handle audio for a limited number of pre-designated tasks. On both synthesized and recorded speech QA test sets, evaluations show that our end-to-end approach is on par with or outperforms cascaded systems (speech recognizer + LLM) in terms of modelling the response to a prompt. Furthermore, unlike cascades, our approach can interchange text and audio modalities and intrinsically utilize prior context in a conversation to provide better results.",
+      "externalIds": {
+        "ArXiv": "2311.06753",
+        "DBLP": "conf/naacl/FathullahWLLJSM24",
+        "ACL": "2024.naacl-long.309",
+        "DOI": "10.18653/v1/2024.naacl-long.309",
+        "CorpusId": 265150137
+      },
+      "arxiv_id": "2311.06753",
+      "doi": "10.18653/v1/2024.naacl-long.309",
+      "corpus_id": 265150137
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "7",
+      "ref_key": "S2:3efb81de24eb88017d6dbcf22cb4215084223fd8",
+      "paperId": "3efb81de24eb88017d6dbcf22cb4215084223fd8",
+      "title": "AudioPaLM: A Large Language Model That Can Speak and Listen",
+      "year": 2023,
+      "abstract": "We introduce AudioPaLM, a large language model for speech understanding and generation. AudioPaLM fuses text-based and speech-based language models, PaLM-2 [Anil et al., 2023] and AudioLM [Borsos et al., 2022], into a unified multimodal architecture that can process and generate text and speech with applications including speech recognition and speech-to-speech translation. AudioPaLM inherits the capability to preserve paralinguistic information such as speaker identity and intonation from AudioLM and the linguistic knowledge present only in text large language models such as PaLM-2. We demonstrate that initializing AudioPaLM with the weights of a text-only large language model improves speech processing, successfully leveraging the larger quantity of text training data used in pretraining to assist with the speech tasks. The resulting model significantly outperforms existing systems for speech translation tasks and has the ability to perform zero-shot speech-to-text translation for many languages for which input/target language combinations were not seen in training. AudioPaLM also demonstrates features of audio language models, such as transferring a voice across languages based on a short spoken prompt. We release examples of our method at https://google-research.github.io/seanet/audiopalm/examples",
+      "externalIds": {
+        "ArXiv": "2306.12925",
+        "DBLP": "journals/corr/abs-2306-12925",
+        "DOI": "10.48550/arXiv.2306.12925",
+        "CorpusId": 259224345
+      },
+      "arxiv_id": "2306.12925",
+      "doi": "10.48550/arXiv.2306.12925",
+      "corpus_id": 259224345
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "8",
+      "ref_key": "S2:416dab850fda842b13a4f28164514d98f836fff7",
+      "paperId": "416dab850fda842b13a4f28164514d98f836fff7",
+      "title": "WavLM: Large-Scale Self-Supervised Pre-Training for Full Stack Speech Processing",
+      "year": 2021,
+      "abstract": "Self-supervised learning (SSL) achieves great success in speech recognition, while limited exploration has been attempted for other speech processing tasks. As speech signal contains multi-faceted information including speaker identity, paralinguistics, spoken content, etc., learning universal representations for all speech tasks is challenging. To tackle the problem, we propose a new pre-trained model, WavLM, to solve full-stack downstream speech tasks. WavLM jointly learns masked speech prediction and denoising in pre-training. By this means, WavLM does not only keep the speech content modeling capability by the masked speech prediction, but also improves the potential to non-ASR tasks by the speech denoising. In addition, WavLM employs gated relative position bias for the Transformer structure to better capture the sequence ordering of input speech. We also scale up the training dataset from 60 k hours to 94 k hours. WavLM Large achieves state-of-the-art performance on the SUPERB benchmark, and brings significant improvements for various speech processing tasks on their representative benchmarks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2110-13900",
+        "ArXiv": "2110.13900",
+        "DOI": "10.1109/JSTSP.2022.3188113",
+        "CorpusId": 239885872
+      },
+      "arxiv_id": "2110.13900",
+      "doi": "10.1109/JSTSP.2022.3188113",
+      "corpus_id": 239885872
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "9",
+      "ref_key": "S2:001d797a1862c75c7213b810c56a33ded79c7327",
+      "paperId": "001d797a1862c75c7213b810c56a33ded79c7327",
+      "title": "Investigating Neural Audio Codecs For Speech Language Model-Based Speech Generation",
+      "year": 2024,
+      "abstract": "Neural audio codec tokens serve as the fundamental building blocks for speech language model (SLM)-based speech generation. However, there is no systematic understanding on how the codec system affects the speech generation performance of the SLM. In this work, we examine codec tokens within SLM framework for speech generation to provide insights for effective codec design. We retrain existing high-performing neural codec models on the same data set and loss functions to compare their performance in a uniform setting. We integrate codec tokens into two SLM systems: masked-based parallel speech generation system and an auto-regressive (AR) plus non-auto-regressive (NAR) model-based system. Our findings indicate that better speech reconstruction in codec systems does not guarantee improved speech generation in SLM. A high-quality codec decoder is crucial for natural speech production in SLM, while speech intelligibility depends more on quantization mechanism.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2409-04016",
+        "ArXiv": "2409.04016",
+        "DOI": "10.1109/SLT61566.2024.10832266",
+        "CorpusId": 272463821
+      },
+      "arxiv_id": "2409.04016",
+      "doi": "10.1109/SLT61566.2024.10832266",
+      "corpus_id": 272463821
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "10",
+      "ref_key": "S2:b227f3e4c0dc96e5ac5426b85485a70f2175a205",
+      "paperId": "b227f3e4c0dc96e5ac5426b85485a70f2175a205",
+      "title": "Representation Learning with Contrastive Predictive Coding",
+      "year": 2018,
+      "abstract": "While supervised learning has enabled great progress in many applications, unsupervised learning has not seen such widespread adoption, and remains an important and challenging endeavor for artificial intelligence. In this work, we propose a universal unsupervised learning approach to extract useful representations from high-dimensional data, which we call Contrastive Predictive Coding. The key insight of our model is to learn such representations by predicting the future in latent space by using powerful autoregressive models. We use a probabilistic contrastive loss which induces the latent space to capture information that is maximally useful to predict future samples. It also makes the model tractable by using negative sampling. While most prior work has focused on evaluating representations for a particular modality, we demonstrate that our approach is able to learn useful representations achieving strong performance on four distinct domains: speech, images, text and reinforcement learning in 3D environments.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1807-03748",
+        "ArXiv": "1807.03748",
+        "MAG": "2842511635",
+        "CorpusId": 49670925
+      },
+      "arxiv_id": "1807.03748",
+      "doi": null,
+      "corpus_id": 49670925
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "11",
+      "ref_key": "S2:ae4aa7b0c5a327dae63ad20e00b58bcc6176b3b8",
+      "paperId": "ae4aa7b0c5a327dae63ad20e00b58bcc6176b3b8",
+      "title": "Moshi: a speech-text foundation model for real-time dialogue",
+      "year": 2024,
+      "abstract": "We introduce Moshi, a speech-text foundation model and full-duplex spoken dialogue framework. Current systems for spoken dialogue rely on pipelines of independent components, namely voice activity detection, speech recognition, textual dialogue and text-to-speech. Such frameworks cannot emulate the experience of real conversations. First, their complexity induces a latency of several seconds between interactions. Second, text being the intermediate modality for dialogue, non-linguistic information that modifies meaning -- such as emotion or non-speech sounds -- is lost in the interaction. Finally, they rely on a segmentation into speaker turns, which does not take into account overlapping speech, interruptions and interjections. Moshi solves these independent issues altogether by casting spoken dialogue as speech-to-speech generation. Starting from a text language model backbone, Moshi generates speech as tokens from the residual quantizer of a neural audio codec, while modeling separately its own speech and that of the user into parallel streams. This allows for the removal of explicit speaker turns, and the modeling of arbitrary conversational dynamics. We moreover extend the hierarchical semantic-to-acoustic token generation of previous work to first predict time-aligned text tokens as a prefix to audio tokens. Not only this\"Inner Monologue\"method significantly improves the linguistic quality of generated speech, but we also illustrate how it can provide streaming speech recognition and text-to-speech. Our resulting model is the first real-time full-duplex spoken large language model, with a theoretical latency of 160ms, 200ms in practice, and is available at https://github.com/kyutai-labs/moshi.",
+      "externalIds": {
+        "ArXiv": "2410.00037",
+        "DBLP": "journals/corr/abs-2410-00037",
+        "DOI": "10.48550/arXiv.2410.00037",
+        "CorpusId": 273022979
+      },
+      "arxiv_id": "2410.00037",
+      "doi": "10.48550/arXiv.2410.00037",
+      "corpus_id": 273022979
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "12",
+      "ref_key": "S2:51a79a45e2577bffca0a50992a852c73d7a13ffa",
+      "paperId": "51a79a45e2577bffca0a50992a852c73d7a13ffa",
+      "title": "Speech Resynthesis from Discrete Disentangled Self-Supervised Representations",
+      "year": 2021,
+      "abstract": "We propose using self-supervised discrete representations for the task of speech resynthesis. To generate disentangled representation, we separately extract low-bitrate representations for speech content, prosodic information, and speaker identity. This allows to synthesize speech in a controllable manner. We analyze various state-of-the-art, self-supervised representation learning methods and shed light on the advantages of each method while considering reconstruction quality and disentanglement properties. Specifically, we evaluate the F0 reconstruction, speaker identification performance (for both resynthesis and voice conversion), recordings' intelligibility, and overall quality using subjective human evaluation. Lastly, we demonstrate how these representations can be used for an ultra-lightweight speech codec. Using the obtained representations, we can get to a rate of 365 bits per second while providing better speech quality than the baseline methods. Audio samples can be found under the following link: speechbot.github.io/resynthesis.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2104-00355",
+        "ArXiv": "2104.00355",
+        "DOI": "10.21437/interspeech.2021-475",
+        "CorpusId": 262491522
+      },
+      "arxiv_id": "2104.00355",
+      "doi": "10.21437/interspeech.2021-475",
+      "corpus_id": 262491522
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "13",
+      "ref_key": "S2:cdcfeb447fa8554c131c0a13a7ffcba30c0381e1",
+      "paperId": "cdcfeb447fa8554c131c0a13a7ffcba30c0381e1",
+      "title": "High Fidelity Neural Audio Compression",
+      "year": 2022,
+      "abstract": "We introduce a state-of-the-art real-time, high-fidelity, audio codec leveraging neural networks. It consists in a streaming encoder-decoder architecture with quantized latent space trained in an end-to-end fashion. We simplify and speed-up the training by using a single multiscale spectrogram adversary that efficiently reduces artifacts and produce high-quality samples. We introduce a novel loss balancer mechanism to stabilize training: the weight of a loss now defines the fraction of the overall gradient it should represent, thus decoupling the choice of this hyper-parameter from the typical scale of the loss. Finally, we study how lightweight Transformer models can be used to further compress the obtained representation by up to 40%, while staying faster than real time. We provide a detailed description of the key design choices of the proposed model including: training objective, architectural changes and a study of various perceptual loss functions. We present an extensive subjective evaluation (MUSHRA tests) together with an ablation study for a range of bandwidths and audio domains, including speech, noisy-reverberant speech, and music. Our approach is superior to the baselines methods across all evaluated settings, considering both 24 kHz monophonic and 48 kHz stereophonic audio. Code and models are available at github.com/facebookresearch/encodec.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-13438",
+        "ArXiv": "2210.13438",
+        "DOI": "10.48550/arXiv.2210.13438",
+        "CorpusId": 253097788
+      },
+      "arxiv_id": "2210.13438",
+      "doi": "10.48550/arXiv.2210.13438",
+      "corpus_id": 253097788
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "14",
+      "ref_key": "S2:5a29401272d58c20bcd95728f646c186f62b6c48",
+      "paperId": "5a29401272d58c20bcd95728f646c186f62b6c48",
+      "title": "Generative Spoken Dialogue Language Modeling",
+      "year": 2022,
+      "abstract": "We introduce dGSLM, the first “textless” model able to generate audio samples of naturalistic spoken dialogues. It uses recent work on unsupervised spoken unit discovery coupled with a dual-tower transformer architecture with cross-attention trained on 2000 hours of two-channel raw conversational audio (Fisher dataset) without any text or labels. We show that our model is able to generate speech, laughter, and other paralinguistic signals in the two channels simultaneously and reproduces more naturalistic and fluid turn taking compared to a text-based cascaded model.1,2",
+      "externalIds": {
+        "DBLP": "journals/tacl/NguyenKCAHETASM23",
+        "ArXiv": "2203.16502",
+        "ACL": "2023.tacl-1.15",
+        "DOI": "10.1162/tacl_a_00545",
+        "CorpusId": 247792843
+      },
+      "arxiv_id": "2203.16502",
+      "doi": "10.1162/tacl_a_00545",
+      "corpus_id": 247792843
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "15",
+      "ref_key": "S2:4e468d3da1797d791db8d514d695b183acb027ee",
+      "paperId": "4e468d3da1797d791db8d514d695b183acb027ee",
+      "title": "HiFi-GAN: Generative Adversarial Networks for Efficient and High Fidelity Speech Synthesis",
+      "year": 2020,
+      "abstract": "Several recent work on speech synthesis have employed generative adversarial networks (GANs) to produce raw waveforms. Although such methods improve the sampling efficiency and memory usage, their sample quality has not yet reached that of autoregressive and flow-based generative models. In this work, we propose HiFi-GAN, which achieves both efficient and high-fidelity speech synthesis. As speech audio consists of sinusoidal signals with various periods, we demonstrate that modeling periodic patterns of an audio is crucial for enhancing sample quality. A subjective human evaluation (mean opinion score, MOS) of a single speaker dataset indicates that our proposed method demonstrates similarity to human quality while generating 22.05 kHz high-fidelity audio 167.9 times faster than real-time on a single V100 GPU. We further show the generality of HiFi-GAN to the mel-spectrogram inversion of unseen speakers and end-to-end speech synthesis. Finally, a small footprint version of HiFi-GAN generates samples 13.4 times faster than real-time on CPU with comparable quality to an autoregressive counterpart.",
+      "externalIds": {
+        "MAG": "3092028330",
+        "ArXiv": "2010.05646",
+        "DBLP": "journals/corr/abs-2010-05646",
+        "CorpusId": 222291664
+      },
+      "arxiv_id": "2010.05646",
+      "doi": null,
+      "corpus_id": 222291664
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "16",
+      "ref_key": "S2:4fffa5245d3972077c83614c2a08a47cb578631e",
+      "paperId": "4fffa5245d3972077c83614c2a08a47cb578631e",
+      "title": "HuBERT: Self-Supervised Speech Representation Learning by Masked Prediction of Hidden Units",
+      "year": 2021,
+      "abstract": "Self-supervised approaches for speech representation learning are challenged by three unique problems: (1) there are multiple sound units in each input utterance, (2) there is no lexicon of input sound units during the pre-training phase, and (3) sound units have variable lengths with no explicit segmentation. To deal with these three problems, we propose the Hidden-Unit BERT (HuBERT) approach for self-supervised speech representation learning, which utilizes an offline clustering step to provide aligned target labels for a BERT-like prediction loss. A key ingredient of our approach is applying the prediction loss over the masked regions only, which forces the model to learn a combined acoustic and language model over the continuous inputs. HuBERT relies primarily on the consistency of the unsupervised clustering step rather than the intrinsic quality of the assigned cluster labels. Starting with a simple k-means teacher of 100 clusters, and using two iterations of clustering, the HuBERT model either matches or improves upon the state-of-the-art wav2vec 2.0 performance on the Librispeech (960 h) and Libri-light (60,000 h) benchmarks with 10 min, 1 h, 10 h, 100 h, and 960 h fine-tuning subsets. Using a 1B parameter model, HuBERT shows up to 19% and 13% relative WER reduction on the more challenging dev-other and test-other evaluation subsets.12",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2106-07447",
+        "ArXiv": "2106.07447",
+        "DOI": "10.1109/taslp.2021.3122291",
+        "CorpusId": 235421619
+      },
+      "arxiv_id": "2106.07447",
+      "doi": "10.1109/taslp.2021.3122291",
+      "corpus_id": 235421619
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "17",
+      "ref_key": "S2:d194527e6169af0598f00c0724b30f8d363d39fa",
+      "paperId": "d194527e6169af0598f00c0724b30f8d363d39fa",
+      "title": "Toward Joint Language Modeling for Speech Units and Text",
+      "year": 2023,
+      "abstract": "Speech and text are two major forms of human language. The research community has been focusing on mapping speech to text or vice versa for many years. However, in the field of language modeling, very little effort has been made to model them jointly. In light of this, we explore joint language modeling for speech units and text. Specifically, we compare different speech tokenizers to transform continuous speech signals into discrete units and use different methods to construct mixed speech-text data. We introduce automatic metrics to evaluate how well the joint LM mixes speech and text. We also fine-tune the LM on downstream spoken language understanding (SLU) tasks with different modalities (speech or text) and test its performance to assess the model's learning of shared representations. Our results show that by mixing speech units and text with our proposed mixing techniques, the joint LM improves over a speech-only baseline on SLU tasks and shows zero-shot cross-modal transferability.",
+      "externalIds": {
+        "ArXiv": "2310.08715",
+        "DBLP": "journals/corr/abs-2310-08715",
+        "DOI": "10.48550/arXiv.2310.08715",
+        "CorpusId": 264128173
+      },
+      "arxiv_id": "2310.08715",
+      "doi": "10.48550/arXiv.2310.08715",
+      "corpus_id": 264128173
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "18",
+      "ref_key": "S2:57e849d0de13ed5f91d086936296721d4ff75a75",
+      "paperId": "57e849d0de13ed5f91d086936296721d4ff75a75",
+      "title": "LLaMA: Open and Efficient Foundation Language Models",
+      "year": 2023,
+      "abstract": "We introduce LLaMA, a collection of foundation language models ranging from 7B to 65B parameters. We train our models on trillions of tokens, and show that it is possible to train state-of-the-art models using publicly available datasets exclusively, without resorting to proprietary and inaccessible datasets. In particular, LLaMA-13B outperforms GPT-3 (175B) on most benchmarks, and LLaMA-65B is competitive with the best models, Chinchilla-70B and PaLM-540B. We release all our models to the research community.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2302-13971",
+        "ArXiv": "2302.13971",
+        "CorpusId": 257219404
+      },
+      "arxiv_id": "2302.13971",
+      "doi": null,
+      "corpus_id": 257219404
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "19",
+      "ref_key": "S2:104b0bb1da562d53cbda87aec79ef6a2827d191a",
+      "paperId": "104b0bb1da562d53cbda87aec79ef6a2827d191a",
+      "title": "Llama 2: Open Foundation and Fine-Tuned Chat Models",
+      "year": 2023,
+      "abstract": "In this work, we develop and release Llama 2, a collection of pretrained and fine-tuned large language models (LLMs) ranging in scale from 7 billion to 70 billion parameters. Our fine-tuned LLMs, called Llama 2-Chat, are optimized for dialogue use cases. Our models outperform open-source chat models on most benchmarks we tested, and based on our human evaluations for helpfulness and safety, may be a suitable substitute for closed-source models. We provide a detailed description of our approach to fine-tuning and safety improvements of Llama 2-Chat in order to enable the community to build on our work and contribute to the responsible development of LLMs.",
+      "externalIds": {
+        "ArXiv": "2307.09288",
+        "DBLP": "journals/corr/abs-2307-09288",
+        "CorpusId": 259950998
+      },
+      "arxiv_id": "2307.09288",
+      "doi": null,
+      "corpus_id": 259950998
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "20",
+      "ref_key": "S2:40e8af970329135ec95057d73e239dab805ad128",
+      "paperId": "40e8af970329135ec95057d73e239dab805ad128",
+      "title": "The Llama 3 Herd of Models",
+      "year": 2024,
+      "abstract": "Modern artificial intelligence (AI) systems are powered by foundation models. This paper presents a new set of foundation models, called Llama 3. It is a herd of language models that natively support multilinguality, coding, reasoning, and tool usage. Our largest model is a dense Transformer with 405B parameters and a context window of up to 128K tokens. This paper presents an extensive empirical evaluation of Llama 3. We find that Llama 3 delivers comparable quality to leading language models such as GPT-4 on a plethora of tasks. We publicly release Llama 3, including pre-trained and post-trained versions of the 405B parameter language model and our Llama Guard 3 model for input and output safety. The paper also presents the results of experiments in which we integrate image, video, and speech capabilities into Llama 3 via a compositional approach. We observe this approach performs competitively with the state-of-the-art on image, video, and speech recognition tasks. The resulting models are not yet being broadly released as they are still under development.",
+      "externalIds": {
+        "ArXiv": "2407.21783",
+        "DBLP": "journals/corr/abs-2407-21783",
+        "DOI": "10.48550/arXiv.2407.21783",
+        "CorpusId": 271571434
+      },
+      "arxiv_id": "2407.21783",
+      "doi": "10.48550/arXiv.2407.21783",
+      "corpus_id": 271571434
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "21",
+      "ref_key": "S2:218ddd5ca9e959c91ad6b48a379397e4cb0d47d8",
+      "paperId": "218ddd5ca9e959c91ad6b48a379397e4cb0d47d8",
+      "title": "LLaMA-Omni: Seamless Speech Interaction with Large Language Models",
+      "year": 2024,
+      "abstract": "Models like GPT-4o enable real-time interaction with large language models (LLMs) through speech, significantly enhancing user experience compared to traditional text-based interaction. However, there is still a lack of exploration on how to build speech interaction models based on open-source LLMs. To address this, we propose LLaMA-Omni, a novel model architecture designed for low-latency and high-quality speech interaction with LLMs. LLaMA-Omni integrates a pretrained speech encoder, a speech adaptor, an LLM, and a streaming speech decoder. It eliminates the need for speech transcription, and can simultaneously generate text and speech responses directly from speech instructions with extremely low latency. We build our model based on the latest Llama-3.1-8B-Instruct model. To align the model with speech interaction scenarios, we construct a dataset named InstructS2S-200K, which includes 200K speech instructions and corresponding speech responses. Experimental results show that compared to previous speech-language models, LLaMA-Omni provides better responses in both content and style, with a response latency as low as 226ms. Additionally, training LLaMA-Omni takes less than 3 days on just 4 GPUs, paving the way for the efficient development of speech-language models in the future.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2409-06666",
+        "ArXiv": "2409.06666",
+        "DOI": "10.48550/arXiv.2409.06666",
+        "CorpusId": 272550428
+      },
+      "arxiv_id": "2409.06666",
+      "doi": "10.48550/arXiv.2409.06666",
+      "corpus_id": 272550428
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "22",
+      "ref_key": "S2:df0402517a7338ae28bc54acaac400de6b456a46",
+      "paperId": "df0402517a7338ae28bc54acaac400de6b456a46",
+      "title": "WaveNet: A Generative Model for Raw Audio",
+      "year": 2016,
+      "abstract": "This paper introduces WaveNet, a deep neural network for generating raw audio waveforms. The model is fully probabilistic and autoregressive, with the predictive distribution for each audio sample conditioned on all previous ones; nonetheless we show that it can be efficiently trained on data with tens of thousands of samples per second of audio. When applied to text-to-speech, it yields state-of-the-art performance, with human listeners rating it as significantly more natural sounding than the best parametric and concatenative systems for both English and Mandarin. A single WaveNet can capture the characteristics of many different speakers with equal fidelity, and can switch between them by conditioning on the speaker identity. When trained to model music, we find that it generates novel and often highly realistic musical fragments. We also show that it can be employed as a discriminative model, returning promising results for phoneme recognition.",
+      "externalIds": {
+        "MAG": "2519091744",
+        "ArXiv": "1609.03499",
+        "DBLP": "journals/corr/OordDZSVGKSK16",
+        "CorpusId": 6254678
+      },
+      "arxiv_id": "1609.03499",
+      "doi": null,
+      "corpus_id": 6254678
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "23",
+      "ref_key": "S2:13a0d8bb38f739990c8cd65a44061c6534f17221",
+      "paperId": "13a0d8bb38f739990c8cd65a44061c6534f17221",
+      "title": "OPT: Open Pre-trained Transformer Language Models",
+      "year": 2022,
+      "abstract": "Large language models, which are often trained for hundreds of thousands of compute days, have shown remarkable capabilities for zero- and few-shot learning. Given their computational cost, these models are difficult to replicate without significant capital. For the few that are available through APIs, no access is granted to the full model weights, making them difficult to study. We present Open Pre-trained Transformers (OPT), a suite of decoder-only pre-trained transformers ranging from 125M to 175B parameters, which we aim to fully and responsibly share with interested researchers. We show that OPT-175B is comparable to GPT-3, while requiring only 1/7th the carbon footprint to develop. We are also releasing our logbook detailing the infrastructure challenges we faced, along with code for experimenting with all of the released models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2205-01068",
+        "ArXiv": "2205.01068",
+        "CorpusId": 248496292
+      },
+      "arxiv_id": "2205.01068",
+      "doi": null,
+      "corpus_id": 248496292
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "24",
+      "ref_key": "S2:a884d6284f330a38fbdb3ecc147d48482da28867",
+      "paperId": "a884d6284f330a38fbdb3ecc147d48482da28867",
+      "title": "COSMIC: Data Efficient Instruction-tuning For Speech In-Context Learning",
+      "year": 2023,
+      "abstract": "We present a cost-effective method to integrate speech into a large language model (LLM), resulting in a Contextual Speech Model with Instruction-following/in-context-learning Capabilities (COSMIC) multi-modal LLM. Using GPT-3.5, we generate Speech Comprehension Test Question-Answer (SQA) pairs from speech transcriptions for supervised instruction tuning. With under 30 million trainable parameters and only 450 hours of English speech data, COSMIC demonstrates emerging capabilities in instruction-following and in-context learning. Equipped with such capabilities, COSMIC achieves a maximum 33.18 BLEU score in 0-shot EN-to-X speech to text translation (S2TT) and a significant boost in the 1-shot setting. Additionally, there is an average 25.8\\% relative Word Error Rate (WER) reduction for 1-shot cross-domain adaptation. COSMIC exhibits a significant automatic speech recognition (ASR) accuracy gain in contextual biasing tasks due to its instruction-following capability.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-02248",
+        "ArXiv": "2311.02248",
+        "DOI": "10.48550/arXiv.2311.02248",
+        "CorpusId": 265034072
+      },
+      "arxiv_id": "2311.02248",
+      "doi": "10.48550/arXiv.2311.02248",
+      "corpus_id": 265034072
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "25",
+      "ref_key": "S2:220d47d9b2872f0f0c33084fb4425424d91fa0ac",
+      "paperId": "220d47d9b2872f0f0c33084fb4425424d91fa0ac",
+      "title": "Waveglow: A Flow-based Generative Network for Speech Synthesis",
+      "year": 2018,
+      "abstract": "In this paper we propose WaveGlow: a flow-based network capable of generating high quality speech from mel-spectrograms. WaveGlow combines insights from Glow [1] and WaveNet [2] in order to provide fast, efficient and high-quality audio synthesis, without the need for auto-regression. WaveGlow is implemented using only a single network, trained using only a single cost function: maximizing the likelihood of the training data, which makes the training procedure simple and stable. Our PyTorch implementation produces audio samples at a rate of more than 500 kHz on an NVIDIA V100 GPU. Mean Opinion Scores show that it delivers audio quality as good as the best publicly available WaveNet implementation. All code will be made publicly available online [3].",
+      "externalIds": {
+        "MAG": "2949580977",
+        "DBLP": "conf/icassp/PrengerVC19",
+        "ArXiv": "1811.00002",
+        "DOI": "10.1109/ICASSP.2019.8683143",
+        "CorpusId": 53145796
+      },
+      "arxiv_id": "1811.00002",
+      "doi": "10.1109/ICASSP.2019.8683143",
+      "corpus_id": 53145796
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "26",
+      "ref_key": "S2:65b20b3e6f81f6567e41e353a47a2380c6cc4b77",
+      "paperId": "65b20b3e6f81f6567e41e353a47a2380c6cc4b77",
+      "title": "Text-Free Prosody-Aware Generative Spoken Language Modeling",
+      "year": 2021,
+      "abstract": "Speech pre-training has primarily demonstrated efficacy on classification tasks, while its capability of generating novel speech, similar to how GPT-2 can generate coherent paragraphs, has barely been explored. Generative Spoken Language Modeling (GSLM) (CITATION) is the only prior work addressing the generative aspect of speech pre-training, which builds a text-free language model using discovered units. Unfortunately, because the units used in GSLM discard most prosodic information, GSLM fails to leverage prosody for better comprehension and does not generate expressive speech. In this work, we present a prosody-aware generative spoken language model (pGSLM). It is composed of a multi-stream transformer language model (MS-TLM) of speech, represented as discovered unit and prosodic feature streams, and an adapted HiFi-GAN model converting MS-TLM outputs to waveforms. Experimental results show that the pGSLM can utilize prosody to improve both prosody and content modeling, and also generate natural, meaningful, and coherent speech given a spoken prompt. Audio samples can be found at https://speechbot.github.io/pgslm. Codes and models are available at https://github.com/pytorch/fairseq/tree/main/examples/textless_nlp/pgslm.",
+      "externalIds": {
+        "DBLP": "conf/acl/KharitonovLPACL22",
+        "ArXiv": "2109.03264",
+        "ACL": "2022.acl-long.593",
+        "DOI": "10.18653/v1/2022.acl-long.593",
+        "CorpusId": 237439400
+      },
+      "arxiv_id": "2109.03264",
+      "doi": "10.18653/v1/2022.acl-long.593",
+      "corpus_id": 237439400
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "27",
+      "ref_key": "S2:59a0ef2d3bccebb544a2df4ad0453d49cc8e731f",
+      "paperId": "59a0ef2d3bccebb544a2df4ad0453d49cc8e731f",
+      "title": "SoundStream: An End-to-End Neural Audio Codec",
+      "year": 2021,
+      "abstract": "We present SoundStream, a novel neural audio codec that can efficiently compress speech, music and general audio at bitrates normally targeted by speech-tailored codecs. SoundStream relies on a model architecture composed by a fully convolutional encoder/decoder network and a residual vector quantizer, which are trained jointly end-to-end. Training leverages recent advances in text-to-speech and speech enhancement, which combine adversarial and reconstruction losses to allow the generation of high-quality audio content from quantized embeddings. By training with structured dropout applied to quantizer layers, a single model can operate across variable bitrates from 3 kbps to 18 kbps, with a negligible quality loss when compared with models trained at fixed bitrates. In addition, the model is amenable to a low latency implementation, which supports streamable inference and runs in real time on a smartphone CPU. In subjective evaluations using audio at 24 kHz sampling rate, SoundStream at 3 kbps outperforms Opus at 12 kbps and approaches EVS at 9.6 kbps. Moreover, we are able to perform joint compression and enhancement either at the encoder or at the decoder side with no additional latency, which we demonstrate through background noise suppression for speech.",
+      "externalIds": {
+        "DBLP": "journals/taslp/ZeghidourLOST22",
+        "ArXiv": "2107.03312",
+        "DOI": "10.1109/taslp.2021.3129994",
+        "CorpusId": 236149944
+      },
+      "arxiv_id": "2107.03312",
+      "doi": "10.1109/taslp.2021.3129994",
+      "corpus_id": 236149944
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "28",
+      "ref_key": "S2:d154833ad5b4b1853cfa3681a291e201b82a0c2e",
+      "paperId": "d154833ad5b4b1853cfa3681a291e201b82a0c2e",
+      "title": "Spoken Question Answering and Speech Continuation Using Spectrogram-Powered LLM",
+      "year": 2023,
+      "abstract": "We present Spectron, a novel approach to adapting pre-trained large language models (LLMs) to perform spoken question answering (QA) and speech continuation. By endowing the LLM with a pre-trained speech encoder, our model becomes able to take speech inputs and generate speech outputs. The entire system is trained end-to-end and operates directly on spectrograms, simplifying our architecture. Key to our approach is a training objective that jointly supervises speech recognition, text continuation, and speech synthesis using only paired speech-text pairs, enabling a `cross-modal' chain-of-thought within a single decoding pass. Our method surpasses existing spoken language models in speaker preservation and semantic coherence. Furthermore, the proposed model improves upon direct initialization in retaining the knowledge of the original LLM as demonstrated through spoken QA datasets. We release our audio samples (https://michelleramanovich.github.io/spectron/spectron) and spoken QA dataset (https://github.com/google-research-datasets/LLAMA1-Test-Set).",
+      "externalIds": {
+        "DBLP": "conf/iclr/NachmaniLHSAMRS24",
+        "ArXiv": "2305.15255",
+        "CorpusId": 258865836
+      },
+      "arxiv_id": "2305.15255",
+      "doi": null,
+      "corpus_id": 258865836
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "29",
+      "ref_key": "S2:5cac6430bd379c9d2fe13137dfd6ae7721a2679f",
+      "paperId": "5cac6430bd379c9d2fe13137dfd6ae7721a2679f",
+      "title": "SpeechGPT: Empowering Large Language Models with Intrinsic Cross-Modal Conversational Abilities",
+      "year": 2023,
+      "abstract": "Multi-modal large language models are regarded as a crucial step towards Artificial General Intelligence (AGI) and have garnered significant interest with the emergence of ChatGPT. However, current speech-language models typically adopt the cascade paradigm, preventing inter-modal knowledge transfer. In this paper, we propose SpeechGPT, a large language model with intrinsic cross-modal conversational abilities, capable of perceiving and generating multi-model content. With discrete speech representations, we first construct SpeechInstruct, a large-scale cross-modal speech instruction dataset. Additionally, we employ a three-stage training strategy that includes modality-adaptation pre-training, cross-modal instruction fine-tuning, and chain-of-modality instruction fine-tuning. The experimental results demonstrate that SpeechGPT has an impressive capacity to follow multi-modal human instructions and highlight the potential of handling multiple modalities with one model. Demos are shown in https://0nutation.github.io/SpeechGPT.github.io/.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/ZhangLZZWZQ23",
+        "ArXiv": "2305.11000",
+        "DOI": "10.48550/arXiv.2305.11000",
+        "CorpusId": 258762683
+      },
+      "arxiv_id": "2305.11000",
+      "doi": "10.48550/arXiv.2305.11000",
+      "corpus_id": 258762683
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "30",
+      "ref_key": "S2:ee5d700eeccfcfe54f9d497643bc55f8606390cd",
+      "paperId": "ee5d700eeccfcfe54f9d497643bc55f8606390cd",
+      "title": "SpeechGPT-Gen: Scaling Chain-of-Information Speech Generation",
+      "year": 2024,
+      "abstract": "Benefiting from effective speech modeling, current Speech Large Language Models (SLLMs) have demonstrated exceptional capabilities in in-context speech generation and efficient generalization to unseen speakers. However, the prevailing information modeling process is encumbered by certain redundancies, leading to inefficiencies in speech generation. We propose Chain-of-Information Generation (CoIG), a method for decoupling semantic and perceptual information in large-scale speech generation. Building on this, we develop SpeechGPT-Gen, an 8-billion-parameter SLLM efficient in semantic and perceptual information modeling. It comprises an autoregressive model based on LLM for semantic information modeling and a non-autoregressive model employing flow matching for perceptual information modeling. Additionally, we introduce the novel approach of infusing semantic information into the prior distribution to enhance the efficiency of flow matching. Extensive experimental results demonstrate that SpeechGPT-Gen markedly excels in zero-shot text-to-speech, zero-shot voice conversion, and speech-to-speech dialogue, underscoring CoIG's remarkable proficiency in capturing and modeling speech's semantic and perceptual dimensions. Code and models are available at https://github.com/0nutation/SpeechGPT.",
+      "externalIds": {
+        "ArXiv": "2401.13527",
+        "DBLP": "journals/corr/abs-2401-13527",
+        "DOI": "10.48550/arXiv.2401.13527",
+        "CorpusId": 267200257
+      },
+      "arxiv_id": "2401.13527",
+      "doi": "10.48550/arXiv.2401.13527",
+      "corpus_id": 267200257
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "31",
+      "ref_key": "S2:7547e30ba98a0217f07a6bb9fc393902bbc89269",
+      "paperId": "7547e30ba98a0217f07a6bb9fc393902bbc89269",
+      "title": "SpiRit-LM: Interleaved Spoken and Written Language Model",
+      "year": 2024,
+      "abstract": "Abstract We introduce SpiRit-LM, a foundation multimodal language model that freely mixes text and speech. Our model is based on a 7B pretrained text language model that we extend to the speech modality by continuously training it on text and speech units. Speech and text sequences are concatenated as a single stream of tokens, and trained with a word-level interleaving method using a small automatically curated speech-text parallel corpus. SpiRit-LM comes in two versions: a Base version that uses speech phonetic units (HuBERT) and an Expressive version that models expressivity using pitch and style units in addition to the phonetic units. For both versions, the text is encoded with subword BPE tokens. The resulting model displays both the semantic abilities of text models and the expressive abilities of speech models. Additionally, we demonstrate that SpiRit-LM can learn new tasks in a few-shot fashion across modalities (i.e., ASR, TTS, Speech Classification). We make available model weights and inference code.1,2",
+      "externalIds": {
+        "ArXiv": "2402.05755",
+        "DBLP": "journals/corr/abs-2402-05755",
+        "DOI": "10.48550/arXiv.2402.05755",
+        "CorpusId": 267547793
+      },
+      "arxiv_id": "2402.05755",
+      "doi": "10.48550/arXiv.2402.05755",
+      "corpus_id": 267547793
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "32",
+      "ref_key": "S2:1a2599e467e855f845dcbf9282f8bdbd97b85708",
+      "paperId": "1a2599e467e855f845dcbf9282f8bdbd97b85708",
+      "title": "Natural TTS Synthesis by Conditioning Wavenet on MEL Spectrogram Predictions",
+      "year": 2017,
+      "abstract": "This paper describes Tacotron 2, a neural network architecture for speech synthesis directly from text. The system is composed of a recurrent sequence-to-sequence feature prediction network that maps character embeddings to mel-scale spectrograms, followed by a modified WaveNet model acting as a vocoder to synthesize time-domain waveforms from those spectrograms. Our model achieves a mean opinion score (MOS) of 4.53 comparable to a MOS of 4.58 for professionally recorded speech. To validate our design choices, we present ablation studies of key components of our system and evaluate the impact of using mel spectrograms as the conditioning input to WaveNet instead of linguistic, duration, and $F_{0}$ features. We further show that using this compact acoustic intermediate representation allows for a significant reduction in the size of the WaveNet architecture.",
+      "externalIds": {
+        "MAG": "2964243274",
+        "DBLP": "journals/corr/abs-1712-05884",
+        "ArXiv": "1712.05884",
+        "DOI": "10.1109/ICASSP.2018.8461368",
+        "CorpusId": 206742911
+      },
+      "arxiv_id": "1712.05884",
+      "doi": "10.1109/ICASSP.2018.8461368",
+      "corpus_id": 206742911
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "33",
+      "ref_key": "S2:4a7855ec905faedfa68235b6f3966d8269f03d18",
+      "paperId": "4a7855ec905faedfa68235b6f3966d8269f03d18",
+      "title": "Textually Pretrained Speech Language Models",
+      "year": 2023,
+      "abstract": "Speech language models (SpeechLMs) process and generate acoustic data only, without textual supervision. In this work, we propose TWIST, a method for training SpeechLMs using a warm-start from a pretrained textual language models. We show using both automatic and human evaluations that TWIST outperforms a cold-start SpeechLM across the board. We empirically analyze the effect of different model design choices such as the speech tokenizer, the pretrained textual model, and the dataset size. We find that model and dataset scale both play an important role in constructing better-performing SpeechLMs. Based on our observations, we present the largest (to the best of our knowledge) SpeechLM both in terms of number of parameters and training data. We additionally introduce two spoken versions of the StoryCloze textual benchmark to further improve model evaluation and advance future research in the field. We make speech samples, code and models publicly available: https://pages.cs.huji.ac.il/adiyoss-lab/twist/ .",
+      "externalIds": {
+        "DBLP": "conf/nips/HassidRNGCKCDSD23",
+        "ArXiv": "2305.13009",
+        "DOI": "10.48550/arXiv.2305.13009",
+        "CorpusId": 258832977
+      },
+      "arxiv_id": "2305.13009",
+      "doi": "10.48550/arXiv.2305.13009",
+      "corpus_id": 258832977
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "34",
+      "ref_key": "S2:204e3073870fae3d05bcbc2f6a8e263d9b72e776",
+      "paperId": "204e3073870fae3d05bcbc2f6a8e263d9b72e776",
+      "title": "Attention is All you Need",
+      "year": 2017,
+      "abstract": "The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.",
+      "externalIds": {
+        "MAG": "2963403868",
+        "DBLP": "journals/corr/VaswaniSPUJGKP17",
+        "ArXiv": "1706.03762",
+        "CorpusId": 13756489
+      },
+      "arxiv_id": "1706.03762",
+      "doi": null,
+      "corpus_id": 13756489
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "35",
+      "ref_key": "S2:66fd85f42596fcd018d517a4bf6acc75100e59da",
+      "paperId": "66fd85f42596fcd018d517a4bf6acc75100e59da",
+      "title": "VioLA: Conditional Language Models for Speech Recognition, Synthesis, and Translation",
+      "year": 2024,
+      "abstract": "Recent research shows a big convergence in model architecture, training objectives, and inference methods across various tasks for different modalities. In this paper, we propose VioLA, a single auto-regressive Transformer decoder-only network that unifies various cross-modal tasks involving speech and text, such as speech-to-text, text-to-text, text-to-speech, and speech-to-speech tasks, as a conditional language model task via multi-task learning framework. To accomplish this, we first convert the speech utterances to discrete tokens (similar to the textual data) using an offline neural codec encoder. In such a way, all these tasks are converted to token-based sequence prediction problems, which can be naturally handled with one conditional language model. We further integrate task IDs (TID), language IDs (LID), and LSTM-based acoustic embedding into the proposed model to enhance the modeling capability of handling different languages and tasks. Experimental results demonstrate that the proposed VioLA model can support both single-modal and cross-modal tasks well, and the decoder-only model achieves a comparable and even better performance than the strong baselines.",
+      "externalIds": {
+        "DBLP": "journals/taslp/WangZZWLGCLW24",
+        "DOI": "10.1109/TASLP.2024.3434425",
+        "CorpusId": 271555473
+      },
+      "arxiv_id": null,
+      "doi": "10.1109/TASLP.2024.3434425",
+      "corpus_id": 271555473
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "36",
+      "ref_key": "S2:84913d6f08942ddf8dd51418820537abfaa5ae19",
+      "paperId": "84913d6f08942ddf8dd51418820537abfaa5ae19",
+      "title": "vq-wav2vec: Self-Supervised Learning of Discrete Speech Representations",
+      "year": 2019,
+      "abstract": "We propose vq-wav2vec to learn discrete representations of audio segments through a wav2vec-style self-supervised context prediction task. The algorithm uses either a gumbel softmax or online k-means clustering to quantize the dense representations. Discretization enables the direct application of algorithms from the NLP community which require discrete inputs. Experiments show that BERT pre-training achieves a new state of the art on TIMIT phoneme classification and WSJ speech recognition.",
+      "externalIds": {
+        "MAG": "2996383576",
+        "DBLP": "journals/corr/abs-1910-05453",
+        "ArXiv": "1910.05453",
+        "CorpusId": 204512445
+      },
+      "arxiv_id": "1910.05453",
+      "doi": null,
+      "corpus_id": 204512445
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "37",
+      "ref_key": "S2:ebe259796870ebccf26577044d0087884209b884",
+      "paperId": "ebe259796870ebccf26577044d0087884209b884",
+      "title": "w2v-BERT: Combining Contrastive Learning and Masked Language Modeling for Self-Supervised Speech Pre-Training",
+      "year": 2021,
+      "abstract": "Motivated by the success of masked language modeling (MLM) in pre-training natural language processing models, we propose w2v-BERT that explores MLM for self-supervised speech representation learning. w2v-BERT is a framework that combines contrastive learning and MLM, where the former trains the model to discretize input continuous speech signals into a finite set of discriminative speech tokens, and the latter trains the model to learn contextualized speech representations via solving a masked prediction task consuming the discretized tokens. In contrast to existing MLM-based speech pre-training frameworks such as HuBERT, which relies on an iterative re-clustering and re-training process, or vq-wav2vec, which concatenates two separately trained modules, w2v-BERT can be optimized in an end-to-end fashion by solving the two self-supervised tasks (the contrastive task and MLM) simultaneously. Our experiments show that w2v-BERT achieves competitive results compared to current state-of-the-art pre-trained models on the LibriSpeech benchmarks when using the Libri-Light 60k corpus as the unsupervised data. In particular, when compared to published models such as conformer-based wav2vec 2.0 and HuBERT, our model shows 5% to 10% relative WER reduction on the test-clean and test-other subsets. When applied to the Google's Voice Search traffic dataset, w2v-BERT outperforms our internal conformer-based wav2vec 2.0 by more than 30% relatively.",
+      "externalIds": {
+        "DBLP": "conf/asru/ChungZHCQPW21",
+        "ArXiv": "2108.06209",
+        "DOI": "10.1109/ASRU51503.2021.9688253",
+        "CorpusId": 237048255
+      },
+      "arxiv_id": "2108.06209",
+      "doi": "10.1109/ASRU51503.2021.9688253",
+      "corpus_id": 237048255
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "38",
+      "ref_key": "S2:49a049dc85e2380dde80501a984878341dd8efdf",
+      "paperId": "49a049dc85e2380dde80501a984878341dd8efdf",
+      "title": "wav2vec 2.0: A Framework for Self-Supervised Learning of Speech Representations",
+      "year": 2020,
+      "abstract": "We show for the first time that learning powerful representations from speech audio alone followed by fine-tuning on transcribed speech can outperform the best semi-supervised methods while being conceptually simpler. wav2vec 2.0 masks the speech input in the latent space and solves a contrastive task defined over a quantization of the latent representations which are jointly learned. Experiments using all labeled data of Librispeech achieve 1.8/3.3 WER on the clean/other test sets. When lowering the amount of labeled data to one hour, wav2vec 2.0 outperforms the previous state of the art on the 100 hour subset while using 100 times less labeled data. Using just ten minutes of labeled data and pre-training on 53k hours of unlabeled data still achieves 4.8/8.2 WER. This demonstrates the feasibility of speech recognition with limited amounts of labeled data.",
+      "externalIds": {
+        "ArXiv": "2006.11477",
+        "DBLP": "conf/nips/BaevskiZMA20",
+        "MAG": "3036601975",
+        "CorpusId": 219966759
+      },
+      "arxiv_id": "2006.11477",
+      "doi": null,
+      "corpus_id": 219966759
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "39",
+      "ref_key": "S2:777317e5af8742b30408e98778fa067750e69f78",
+      "paperId": "777317e5af8742b30408e98778fa067750e69f78",
+      "title": "Google USM: Scaling Automatic Speech Recognition Beyond 100 Languages",
+      "year": 2023,
+      "abstract": "We introduce the Universal Speech Model (USM), a single large model that performs automatic speech recognition (ASR) across 100+ languages. This is achieved by pre-training the encoder of the model on a large unlabeled multilingual dataset of 12 million (M) hours spanning over 300 languages, and fine-tuning on a smaller labeled dataset. We use multilingual pre-training with random-projection quantization and speech-text modality matching to achieve state-of-the-art performance on downstream multilingual ASR and speech-to-text translation tasks. We also demonstrate that despite using a labeled training set 1/7-th the size of that used for the Whisper model, our model exhibits comparable or better performance on both in-domain and out-of-domain speech recognition tasks across many languages.",
+      "externalIds": {
+        "ArXiv": "2303.01037",
+        "DBLP": "journals/corr/abs-2303-01037",
+        "DOI": "10.48550/arXiv.2303.01037",
+        "CorpusId": 257280021
+      },
+      "arxiv_id": "2303.01037",
+      "doi": "10.48550/arXiv.2303.01037",
+      "corpus_id": 257280021
+    },
+    {
+      "paper_id": "2410.03751",
+      "ref_index": "40",
+      "ref_key": "S2:5fc1a1f79ea4d1a1c6e8da1a40ae08022a6d7308",
+      "paperId": "5fc1a1f79ea4d1a1c6e8da1a40ae08022a6d7308",
+      "title": "SpeechTokenizer: Unified Speech Tokenizer for Speech Large Language Models",
+      "year": 2023,
+      "abstract": "Current speech large language models build upon discrete speech representations, which can be categorized into semantic tokens and acoustic tokens. However, existing speech tokens are not specifically designed for speech language modeling. To assess the suitability of speech tokens for building speech language models, we established the first benchmark, SLMTokBench. Our results indicate that neither semantic nor acoustic tokens are ideal for this purpose. Therefore, we propose SpeechTokenizer, a unified speech tokenizer for speech large language models. SpeechTokenizer adopts the Encoder-Decoder architecture with residual vector quantization (RVQ). Unifying semantic and acoustic tokens, SpeechTokenizer disentangles different aspects of speech information hierarchically across different RVQ layers. Furthermore, We construct a Unified Speech Language Model (USLM) leveraging SpeechTokenizer. Experiments show that SpeechTokenizer performs comparably to EnCodec in speech reconstruction and demonstrates strong performance on the SLMTokBench benchmark. Also, USLM outperforms VALL-E in zero-shot Text-to-Speech tasks. Code and models are available at https://github.com/ZhangXInFD/SpeechTokenizer/.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-16692",
+        "ArXiv": "2308.16692",
+        "DOI": "10.48550/arXiv.2308.16692",
+        "CorpusId": 261394297
+      },
+      "arxiv_id": "2308.16692",
+      "doi": "10.48550/arXiv.2308.16692",
+      "corpus_id": 261394297
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "SpeechLM": {
+        "Components": {
+          "Speech Tokenizer": {
+            "416dab850fda842b13a4f28164514d98f836fff7": {},
+            "b227f3e4c0dc96e5ac5426b85485a70f2175a205": {},
+            "4fffa5245d3972077c83614c2a08a47cb578631e": {},
+            "59a0ef2d3bccebb544a2df4ad0453d49cc8e731f": {},
+            "84913d6f08942ddf8dd51418820537abfaa5ae19": {},
+            "ebe259796870ebccf26577044d0087884209b884": {},
+            "49a049dc85e2380dde80501a984878341dd8efdf": {},
+            "777317e5af8742b30408e98778fa067750e69f78": {},
+            "5fc1a1f79ea4d1a1c6e8da1a40ae08022a6d7308": {}
+          },
+          "Language Model": {
+            "57e849d0de13ed5f91d086936296721d4ff75a75": {},
+            "104b0bb1da562d53cbda87aec79ef6a2827d191a": {},
+            "40e8af970329135ec95057d73e239dab805ad128": {},
+            "13a0d8bb38f739990c8cd65a44061c6534f17221": {},
+            "204e3073870fae3d05bcbc2f6a8e263d9b72e776": {}
+          },
+          "Vocoder": {
+            "51a79a45e2577bffca0a50992a852c73d7a13ffa": {},
+            "cdcfeb447fa8554c131c0a13a7ffcba30c0381e1": {},
+            "4e468d3da1797d791db8d514d695b183acb027ee": {},
+            "df0402517a7338ae28bc54acaac400de6b456a46": {},
+            "220d47d9b2872f0f0c33084fb4425424d91fa0ac": {},
+            "1a2599e467e855f845dcbf9282f8bdbd97b85708": {}
+          }
+        },
+        "Training Recipes ": {
+          "Features Modeled": {
+            "Discrete Features": {
+              "ae4aa7b0c5a327dae63ad20e00b58bcc6176b3b8": {},
+              "ee5d700eeccfcfe54f9d497643bc55f8606390cd": {}
+            },
+            "Continuous Features": {
+              "ffa05cb5504ba08254f498223f613b3ebcf87692": {},
+              "2d5ef1d6b631ac7ee0ae87e480381407c11b9fb2": {},
+              "8625ab06f76caf36ab138bac20a3116ba5b298e6": {},
+              "d154833ad5b4b1853cfa3681a291e201b82a0c2e": {}
+            }
+          },
+          "Training Stages": {
+            "LM Pre-Training": {
+              "e4a9a026a40a58cee4d6509d2ef817a86a11a760": {},
+              "3efb81de24eb88017d6dbcf22cb4215084223fd8": {},
+              "d154833ad5b4b1853cfa3681a291e201b82a0c2e": {},
+              "7547e30ba98a0217f07a6bb9fc393902bbc89269": {},
+              "4a7855ec905faedfa68235b6f3966d8269f03d18": {}
+            },
+            "LM Instruction-Tuning": {
+              "218ddd5ca9e959c91ad6b48a379397e4cb0d47d8": {},
+              "a884d6284f330a38fbdb3ecc147d48482da28867": {},
+              "5cac6430bd379c9d2fe13137dfd6ae7721a2679f": {},
+              "ee5d700eeccfcfe54f9d497643bc55f8606390cd": {}
+            }
+          },
+          "Speech Generation Paradigm": {
+            "Traditional Generation Paradigm": {
+              "3efb81de24eb88017d6dbcf22cb4215084223fd8": {},
+              "5cac6430bd379c9d2fe13137dfd6ae7721a2679f": {},
+              "7547e30ba98a0217f07a6bb9fc393902bbc89269": {},
+              "4a7855ec905faedfa68235b6f3966d8269f03d18": {}
+            },
+            "Real-Time Interaction": {
+              "a375c53f7110d0e7d6d9228b63a3faff40f91599": {},
+              "62a82afa1b2adadb68b4667ede9faab0613a6cd9": {},
+              "ae4aa7b0c5a327dae63ad20e00b58bcc6176b3b8": {},
+              "5a29401272d58c20bcd95728f646c186f62b6c48": {}
+            },
+            "Silence Mode": {
+              "62a82afa1b2adadb68b4667ede9faab0613a6cd9": {}
+            }
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000001",
+        "paperId": "416dab850fda842b13a4f28164514d98f836fff7",
+        "ref_index": "8",
+        "path": [
+          "SpeechLM",
+          "Components",
+          "Speech Tokenizer"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000002",
+        "paperId": "b227f3e4c0dc96e5ac5426b85485a70f2175a205",
+        "ref_index": "10",
+        "path": [
+          "SpeechLM",
+          "Components",
+          "Speech Tokenizer"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000003",
+        "paperId": "4fffa5245d3972077c83614c2a08a47cb578631e",
+        "ref_index": "16",
+        "path": [
+          "SpeechLM",
+          "Components",
+          "Speech Tokenizer"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000004",
+        "paperId": "59a0ef2d3bccebb544a2df4ad0453d49cc8e731f",
+        "ref_index": "27",
+        "path": [
+          "SpeechLM",
+          "Components",
+          "Speech Tokenizer"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000005",
+        "paperId": "84913d6f08942ddf8dd51418820537abfaa5ae19",
+        "ref_index": "36",
+        "path": [
+          "SpeechLM",
+          "Components",
+          "Speech Tokenizer"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000006",
+        "paperId": "ebe259796870ebccf26577044d0087884209b884",
+        "ref_index": "37",
+        "path": [
+          "SpeechLM",
+          "Components",
+          "Speech Tokenizer"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000007",
+        "paperId": "49a049dc85e2380dde80501a984878341dd8efdf",
+        "ref_index": "38",
+        "path": [
+          "SpeechLM",
+          "Components",
+          "Speech Tokenizer"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000008",
+        "paperId": "777317e5af8742b30408e98778fa067750e69f78",
+        "ref_index": "39",
+        "path": [
+          "SpeechLM",
+          "Components",
+          "Speech Tokenizer"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000009",
+        "paperId": "5fc1a1f79ea4d1a1c6e8da1a40ae08022a6d7308",
+        "ref_index": "40",
+        "path": [
+          "SpeechLM",
+          "Components",
+          "Speech Tokenizer"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000010",
+        "paperId": "57e849d0de13ed5f91d086936296721d4ff75a75",
+        "ref_index": "18",
+        "path": [
+          "SpeechLM",
+          "Components",
+          "Language Model"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000011",
+        "paperId": "104b0bb1da562d53cbda87aec79ef6a2827d191a",
+        "ref_index": "19",
+        "path": [
+          "SpeechLM",
+          "Components",
+          "Language Model"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000012",
+        "paperId": "40e8af970329135ec95057d73e239dab805ad128",
+        "ref_index": "20",
+        "path": [
+          "SpeechLM",
+          "Components",
+          "Language Model"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000013",
+        "paperId": "13a0d8bb38f739990c8cd65a44061c6534f17221",
+        "ref_index": "23",
+        "path": [
+          "SpeechLM",
+          "Components",
+          "Language Model"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000014",
+        "paperId": "204e3073870fae3d05bcbc2f6a8e263d9b72e776",
+        "ref_index": "34",
+        "path": [
+          "SpeechLM",
+          "Components",
+          "Language Model"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000015",
+        "paperId": "51a79a45e2577bffca0a50992a852c73d7a13ffa",
+        "ref_index": "12",
+        "path": [
+          "SpeechLM",
+          "Components",
+          "Vocoder"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000016",
+        "paperId": "cdcfeb447fa8554c131c0a13a7ffcba30c0381e1",
+        "ref_index": "13",
+        "path": [
+          "SpeechLM",
+          "Components",
+          "Vocoder"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000017",
+        "paperId": "4e468d3da1797d791db8d514d695b183acb027ee",
+        "ref_index": "15",
+        "path": [
+          "SpeechLM",
+          "Components",
+          "Vocoder"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000018",
+        "paperId": "df0402517a7338ae28bc54acaac400de6b456a46",
+        "ref_index": "22",
+        "path": [
+          "SpeechLM",
+          "Components",
+          "Vocoder"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000019",
+        "paperId": "220d47d9b2872f0f0c33084fb4425424d91fa0ac",
+        "ref_index": "25",
+        "path": [
+          "SpeechLM",
+          "Components",
+          "Vocoder"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000020",
+        "paperId": "1a2599e467e855f845dcbf9282f8bdbd97b85708",
+        "ref_index": "32",
+        "path": [
+          "SpeechLM",
+          "Components",
+          "Vocoder"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000021",
+        "paperId": "ae4aa7b0c5a327dae63ad20e00b58bcc6176b3b8",
+        "ref_index": "11",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Features Modeled",
+          "Discrete Features"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000022",
+        "paperId": "ee5d700eeccfcfe54f9d497643bc55f8606390cd",
+        "ref_index": "30",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Features Modeled",
+          "Discrete Features"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000023",
+        "paperId": "ffa05cb5504ba08254f498223f613b3ebcf87692",
+        "ref_index": "0",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Features Modeled",
+          "Continuous Features"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000024",
+        "paperId": "2d5ef1d6b631ac7ee0ae87e480381407c11b9fb2",
+        "ref_index": "1",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Features Modeled",
+          "Continuous Features"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000025",
+        "paperId": "8625ab06f76caf36ab138bac20a3116ba5b298e6",
+        "ref_index": "5",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Features Modeled",
+          "Continuous Features"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000026",
+        "paperId": "d154833ad5b4b1853cfa3681a291e201b82a0c2e",
+        "ref_index": "28",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Features Modeled",
+          "Continuous Features"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000027",
+        "paperId": "e4a9a026a40a58cee4d6509d2ef817a86a11a760",
+        "ref_index": "6",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Training Stages",
+          "LM Pre-Training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000028",
+        "paperId": "3efb81de24eb88017d6dbcf22cb4215084223fd8",
+        "ref_index": "7",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Training Stages",
+          "LM Pre-Training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000029",
+        "paperId": "d154833ad5b4b1853cfa3681a291e201b82a0c2e",
+        "ref_index": "28",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Training Stages",
+          "LM Pre-Training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000030",
+        "paperId": "7547e30ba98a0217f07a6bb9fc393902bbc89269",
+        "ref_index": "31",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Training Stages",
+          "LM Pre-Training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000031",
+        "paperId": "4a7855ec905faedfa68235b6f3966d8269f03d18",
+        "ref_index": "33",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Training Stages",
+          "LM Pre-Training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000032",
+        "paperId": "218ddd5ca9e959c91ad6b48a379397e4cb0d47d8",
+        "ref_index": "21",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Training Stages",
+          "LM Instruction-Tuning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000033",
+        "paperId": "a884d6284f330a38fbdb3ecc147d48482da28867",
+        "ref_index": "24",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Training Stages",
+          "LM Instruction-Tuning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000034",
+        "paperId": "5cac6430bd379c9d2fe13137dfd6ae7721a2679f",
+        "ref_index": "29",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Training Stages",
+          "LM Instruction-Tuning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000035",
+        "paperId": "ee5d700eeccfcfe54f9d497643bc55f8606390cd",
+        "ref_index": "30",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Training Stages",
+          "LM Instruction-Tuning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000036",
+        "paperId": "3efb81de24eb88017d6dbcf22cb4215084223fd8",
+        "ref_index": "7",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Speech Generation Paradigm",
+          "Traditional Generation Paradigm"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000037",
+        "paperId": "5cac6430bd379c9d2fe13137dfd6ae7721a2679f",
+        "ref_index": "29",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Speech Generation Paradigm",
+          "Traditional Generation Paradigm"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000038",
+        "paperId": "7547e30ba98a0217f07a6bb9fc393902bbc89269",
+        "ref_index": "31",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Speech Generation Paradigm",
+          "Traditional Generation Paradigm"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000039",
+        "paperId": "4a7855ec905faedfa68235b6f3966d8269f03d18",
+        "ref_index": "33",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Speech Generation Paradigm",
+          "Traditional Generation Paradigm"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000040",
+        "paperId": "a375c53f7110d0e7d6d9228b63a3faff40f91599",
+        "ref_index": "2",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Speech Generation Paradigm",
+          "Real-Time Interaction"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000041",
+        "paperId": "62a82afa1b2adadb68b4667ede9faab0613a6cd9",
+        "ref_index": "4",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Speech Generation Paradigm",
+          "Real-Time Interaction"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000042",
+        "paperId": "ae4aa7b0c5a327dae63ad20e00b58bcc6176b3b8",
+        "ref_index": "11",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Speech Generation Paradigm",
+          "Real-Time Interaction"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000043",
+        "paperId": "5a29401272d58c20bcd95728f646c186f62b6c48",
+        "ref_index": "14",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Speech Generation Paradigm",
+          "Real-Time Interaction"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2410.03751",
+        "arxiv_id": "2410.03751",
+        "leaf_mention_id": "2410.03751::000044",
+        "paperId": "62a82afa1b2adadb68b4667ede9faab0613a6cd9",
+        "ref_index": "4",
+        "path": [
+          "SpeechLM",
+          "Training Recipes ",
+          "Speech Generation Paradigm",
+          "Silence Mode"
+        ],
+        "depth": 4,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 44,
+      "unique_leaf_paper_count": 36,
+      "multi_membership_extra_mentions": 8,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

@@ -1,0 +1,1528 @@
+{
+  "paper_id": "2403.12027",
+  "arxiv_id": "2403.12027",
+  "title": "From Pixels to Insights: A Survey on Automatic Chart Understanding in the Era of Large Foundation Models",
+  "ref_meta": [
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "0",
+      "ref_key": "S2:206b2aeb81b29463968b8deb1efce51941f18208",
+      "paperId": "206b2aeb81b29463968b8deb1efce51941f18208",
+      "title": "Character Region Awareness for Text Detection",
+      "year": 2019,
+      "abstract": "Scene text detection methods based on neural networks have emerged recently and have shown promising results. Previous methods trained with rigid word-level bounding boxes exhibit limitations in representing the text region in an arbitrary shape. In this paper, we propose a new scene text detection method to effectively detect text area by exploring each character and affinity between characters. To overcome the lack of individual character level annotations, our proposed framework exploits both the given character-level annotations for synthetic images and the estimated character-level ground-truths for real images acquired by the learned interim model. In order to estimate affinity between characters, the network is trained with the newly proposed representation for affinity. Extensive experiments on six benchmarks, including the TotalText and CTW-1500 datasets which contain highly curved texts in natural images, demonstrate that our character-level text detection significantly outperforms the state-of-the-art detectors. According to the results, our proposed method guarantees high flexibility in detecting complicated scene text images, such as arbitrarily-oriented, curved, or deformed texts.",
+      "externalIds": {
+        "DBLP": "conf/cvpr/BaekLHYL19",
+        "MAG": "2967615747",
+        "ArXiv": "1904.01941",
+        "DOI": "10.1109/CVPR.2019.00959",
+        "CorpusId": 102480461
+      },
+      "arxiv_id": "1904.01941",
+      "doi": "10.1109/CVPR.2019.00959",
+      "corpus_id": 102480461
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "1",
+      "ref_key": "S2:fc8ce94171d0a7ccb118a8902b99e999c3028ea5",
+      "paperId": "fc8ce94171d0a7ccb118a8902b99e999c3028ea5",
+      "title": "Scene Text Recognition with Permuted Autoregressive Sequence Models",
+      "year": 2022,
+      "abstract": "Context-aware STR methods typically use internal autoregressive (AR) language models (LM). Inherent limitations of AR models motivated two-stage methods which employ an external LM. The conditional independence of the external LM on the input image may cause it to erroneously rectify correct predictions, leading to significant inefficiencies. Our method, PARSeq, learns an ensemble of internal AR LMs with shared weights using Permutation Language Modeling. It unifies context-free non-AR and context-aware AR inference, and iterative refinement using bidirectional context. Using synthetic training data, PARSeq achieves state-of-the-art (SOTA) results in STR benchmarks (91.9% accuracy) and more challenging datasets. It establishes new SOTA results (96.0% accuracy) when trained on real data. PARSeq is optimal on accuracy vs parameter count, FLOPS, and latency because of its simple, unified structure and parallel token processing. Due to its extensive use of attention, it is robust on arbitrarily-oriented text which is common in real-world images. Code, pretrained weights, and data are available at: https://github.com/baudm/parseq.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2207-06966",
+        "ArXiv": "2207.06966",
+        "DOI": "10.48550/arXiv.2207.06966",
+        "CorpusId": 250526325
+      },
+      "arxiv_id": "2207.06966",
+      "doi": "10.48550/arXiv.2207.06966",
+      "corpus_id": 250526325
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "2",
+      "ref_key": "S2:fde3ee5f9f8e217a4d6716013315614811820f21",
+      "paperId": "fde3ee5f9f8e217a4d6716013315614811820f21",
+      "title": "Rosetta: Large Scale System for Text Detection and Recognition in Images",
+      "year": 2018,
+      "abstract": "In this paper we present a deployed, scalable optical character recognition (OCR) system, which we call Rosetta , designed to process images uploaded daily at Facebook scale. Sharing of image content has become one of the primary ways to communicate information among internet users within social networks such as Facebook, and the understanding of such media, including its textual information, is of paramount importance to facilitate search and recommendation applications. We present modeling techniques for efficient detection and recognition of text in images and describe Rosetta 's system architecture. We perform extensive evaluation of presented technologies, explain useful practical approaches to build an OCR system at scale, and provide insightful intuitions as to why and how certain components work based on the lessons learnt during the development and deployment of the system.",
+      "externalIds": {
+        "MAG": "2809273748",
+        "DBLP": "journals/corr/abs-1910-05085",
+        "ArXiv": "1910.05085",
+        "DOI": "10.1145/3219819.3219861",
+        "CorpusId": 50773726
+      },
+      "arxiv_id": "1910.05085",
+      "doi": "10.1145/3219819.3219861",
+      "corpus_id": 50773726
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "3",
+      "ref_key": "S2:dc7af5ce33330085c70c5ed9ee4c34ab9df3b4de",
+      "paperId": "dc7af5ce33330085c70c5ed9ee4c34ab9df3b4de",
+      "title": "MapQA: A Dataset for Question Answering on Choropleth Maps",
+      "year": 2022,
+      "abstract": "Choropleth maps are a common visual representation for region-specific tabular data and are used in a number of different venues (newspapers, articles, etc). These maps are human-readable but are often challenging to deal with when trying to extract data for screen readers, analyses, or other related tasks. Recent research into Visual-Question Answering (VQA) has studied question answering on human-generated charts (ChartQA), such as bar, line, and pie charts. However, little work has paid attention to understanding maps; general VQA models, and ChartQA models, suffer when asked to perform this task. To facilitate and encourage research in this area, we present MapQA, a large-scale dataset of ~800K question-answer pairs over ~60K map images. Our task tests various levels of map understanding, from surface questions about map styles to complex questions that require reasoning on the underlying data. We present the unique challenges of MapQA that frustrate most strong baseline algorithms designed for ChartQA and general VQA tasks. We also present a novel algorithm, Visual Multi-Output Data Extraction based QA (V-MODEQA) for MapQA. V-MODEQA extracts the underlying structured data from a map image with a multi-output model and then performs reasoning on the extracted data. Our experimental results show that V-MODEQA has better overall performance and robustness on MapQA than the state-of-the-art ChartQA and VQA algorithms by capturing the unique properties in map question answering.",
+      "externalIds": {
+        "ArXiv": "2211.08545",
+        "DBLP": "journals/corr/abs-2211-08545",
+        "DOI": "10.48550/arXiv.2211.08545",
+        "CorpusId": 253162333
+      },
+      "arxiv_id": "2211.08545",
+      "doi": "10.48550/arXiv.2211.08545",
+      "corpus_id": 253162333
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "4",
+      "ref_key": "S2:d47f20de7195fea82e48315fea52ccf06dc301d3",
+      "paperId": "d47f20de7195fea82e48315fea52ccf06dc301d3",
+      "title": "LEAF-QA: Locate, Encode & Attend for Figure Question Answering",
+      "year": 2019,
+      "abstract": "We introduce LEAF-QA, a comprehensive dataset of 250,000 densely annotated figures/charts, constructed from real-world open data sources, along with 2 million question-answer (QA) pairs querying the structure and semantics of these charts. LEAF-QA highlights the problem of multimodal QA, which is notably different from conventional visual QA (VQA), and has recently gained interest in the community. Furthermore, LEAF-QA is significantly more complex than previous attempts at chart QA, viz. FigureQA and DVQA, which present only limited variations in chart data. LEAF-QA being constructed from real-world sources, requires a novel architecture to enable question answering. To this end, LEAF-Net, a deep architecture involving chart element localization, question and answer encoding in terms of chart elements, and an attention network is proposed. Different experiments are conducted to demonstrate the challenges of QA on LEAF-QA. The proposed architecture, LEAF-Net also considerably advances the current state-of-the-art on FigureQA and DVQA.",
+      "externalIds": {
+        "MAG": "3014820286",
+        "DBLP": "conf/wacv/ChaudhrySGMBJ20",
+        "ArXiv": "1907.12861",
+        "DOI": "10.1109/WACV45572.2020.9093269",
+        "CorpusId": 198986014
+      },
+      "arxiv_id": "1907.12861",
+      "doi": "10.1109/WACV45572.2020.9093269",
+      "corpus_id": 198986014
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "5",
+      "ref_key": "S2:755dd3628b04adad423d2418f98c156123ebac2a",
+      "paperId": "755dd3628b04adad423d2418f98c156123ebac2a",
+      "title": "Figure Captioning with Reasoning and Sequence-Level Training",
+      "year": 2019,
+      "abstract": "Figures, such as bar charts, pie charts, and line plots, are widely used to convey important information in a concise format. They are usually human-friendly but difficult for computers to process automatically. In this work, we investigate the problem of figure captioning where the goal is to automatically generate a natural language description of the figure. While natural image captioning has been studied extensively, figure captioning has received relatively little attention and remains a challenging problem. First, we introduce a new dataset for figure captioning, FigCAP, based on FigureQA. Second, we propose two novel attention mechanisms. To achieve accurate generation of labels in figures, we propose Label Maps Attention. To model the relations between figure labels, we propose Relation Maps Attention. Third, we use sequence-level training with reinforcement learning in order to directly optimizes evaluation metrics, which alleviates the exposure bias issue and further improves the models in generating long captions. Extensive experiments show that the proposed method outperforms the baselines, thus demonstrating a significant potential for the automatic captioning of vast repositories of figures.",
+      "externalIds": {
+        "MAG": "2948556812",
+        "ArXiv": "1906.02850",
+        "DBLP": "journals/corr/abs-1906-02850",
+        "CorpusId": 174801747
+      },
+      "arxiv_id": "1906.02850",
+      "doi": null,
+      "corpus_id": 174801747
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "6",
+      "ref_key": "S2:887306ee7ebd9eebd7faea24106ec8e8f1a50987",
+      "paperId": "887306ee7ebd9eebd7faea24106ec8e8f1a50987",
+      "title": "How Far Are We to GPT-4V? Closing the Gap to Commercial Multimodal Models with Open-Source Suites",
+      "year": 2024,
+      "abstract": "In this report, we introduce InternVL 1.5, an open-source multimodal large language model (MLLM) to bridge the capability gap between open-source and proprietary commercial models in multimodal understanding. We introduce three simple improvements: (1) Strong Vision Encoder: we explored a continuous learning strategy for the large-scale vision foundation model -- InternViT-6B, boosting its visual understanding capabilities, and making it can be transferred and reused in different LLMs. (2) Dynamic High-Resolution: we divide images into tiles ranging from 1 to 40 of 448$\\times$448 pixels according to the aspect ratio and resolution of the input images, which supports up to 4K resolution input. (3) High-Quality Bilingual Dataset: we carefully collected a high-quality bilingual dataset that covers common scenes, document images, and annotated them with English and Chinese question-answer pairs, significantly enhancing performance in OCR- and Chinese-related tasks. We evaluate InternVL 1.5 through a series of benchmarks and comparative studies. Compared to both open-source and proprietary models, InternVL 1.5 shows competitive performance, achieving state-of-the-art results in 8 of 18 benchmarks. Code has been released at https://github.com/OpenGVLab/InternVL.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2404-16821",
+        "ArXiv": "2404.16821",
+        "DOI": "10.48550/arXiv.2404.16821",
+        "CorpusId": 269362546
+      },
+      "arxiv_id": "2404.16821",
+      "doi": "10.48550/arXiv.2404.16821",
+      "corpus_id": 269362546
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "7",
+      "ref_key": "S2:c816712bcb3aab9a114144af0eba8f2b10213713",
+      "paperId": "c816712bcb3aab9a114144af0eba8f2b10213713",
+      "title": "OneChart: Purify the Chart Structural Extraction via One Auxiliary Token",
+      "year": 2024,
+      "abstract": "Chart parsing poses a significant challenge due to the diversity of styles, values, texts, and so forth. Even advanced large vision-language models (LVLMs) with billions of parameters struggle to handle such tasks satisfactorily. To address this, we propose OneChart: a reliable agent specifically devised for the structural extraction of chart information. Similar to popular LVLMs, OneChart incorporates an autoregressive main body. Uniquely, to enhance the reliability of the numerical parts of the output, we introduce an auxiliary token placed at the beginning of the total tokens along with an additional decoder. The numerically optimized (auxiliary) token allows subsequent tokens for chart parsing to capture enhanced numerical features through causal attention. Furthermore, with the aid of the auxiliary token, we have devised a self-evaluation mechanism that enables the model to gauge the reliability of its chart parsing results by providing confidence scores for the generated content. Compared to current state-of-the-art (SOTA) chart parsing models, e.g., DePlot, ChartVLM, ChartAst, OneChart significantly outperforms in Average Precision (AP) for chart structural extraction across multiple public benchmarks, despite enjoying only 0.2 billion parameters. Moreover, as a chart parsing agent, it also brings 10%+ accuracy gains for the popular LVLM (LLaVA-1.6) in the downstream ChartQA benchmark.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2404-09987",
+        "ArXiv": "2404.09987",
+        "DOI": "10.48550/arXiv.2404.09987",
+        "CorpusId": 269148770
+      },
+      "arxiv_id": "2404.09987",
+      "doi": "10.48550/arXiv.2404.09987",
+      "corpus_id": 269148770
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "8",
+      "ref_key": "S2:45524d7a40435d989579b88b70d25e4d65ac9e3c",
+      "paperId": "45524d7a40435d989579b88b70d25e4d65ac9e3c",
+      "title": "Focusing Attention: Towards Accurate Text Recognition in Natural Images",
+      "year": 2017,
+      "abstract": "Scene text recognition has been a hot research topic in computer vision due to its various applications. The state of the art is the attention-based encoder-decoder framework that learns the mapping between input images and output sequences in a purely data-driven way. However, we observe that existing attention-based methods perform poorly on complicated and/or low-quality images. One major reason is that existing methods cannot get accurate alignments between feature areas and targets for such images. We call this phenomenon “attention drift”. To tackle this problem, in this paper we propose the FAN (the abbreviation of Focusing Attention Network) method that employs a focusing attention mechanism to automatically draw back the drifted attention. FAN consists of two major components: an attention network (AN) that is responsible for recognizing character targets as in the existing methods, and a focusing network (FN) that is responsible for adjusting attention by evaluating whether AN pays attention properly on the target areas in the images. Furthermore, different from the existing methods, we adopt a ResNet-based network to enrich deep representations of scene text images. Extensive experiments on various benchmarks, including the IIIT5k, SVT and ICDAR datasets, show that the FAN method substantially outperforms the existing methods.",
+      "externalIds": {
+        "ArXiv": "1709.02054",
+        "MAG": "2750938222",
+        "DBLP": "journals/corr/abs-1709-02054",
+        "DOI": "10.1109/ICCV.2017.543",
+        "CorpusId": 28347739
+      },
+      "arxiv_id": "1709.02054",
+      "doi": "10.1109/ICCV.2017.543",
+      "corpus_id": 28347739
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "9",
+      "ref_key": "S2:7bef3c961fb1c272b8c3a66d9169b02b64d57766",
+      "paperId": "7bef3c961fb1c272b8c3a66d9169b02b64d57766",
+      "title": "Do LLMs Work on Charts? Designing Few-Shot Prompts for Chart Question Answering and Summarization",
+      "year": 2023,
+      "abstract": "A number of tasks have been proposed recently to facilitate easy access to charts such as chart QA and summarization. The dominant paradigm to solve these tasks has been to fine-tune a pretrained model on the task data. However, this approach is not only expensive but also not generalizable to unseen tasks. On the other hand, large language models (LLMs) have shown impressive generalization capabilities to unseen tasks with zero- or few-shot prompting. However, their application to chart-related tasks is not trivial as these tasks typically involve considering not only the underlying data but also the visual features in the chart image. We propose PromptChart, a multimodal few-shot prompting framework with LLMs for chart-related applications. By analyzing the tasks carefully, we have come up with a set of prompting guidelines for each task to elicit the best few-shot performance from LLMs. We further propose a strategy to inject visual information into the prompts. Our experiments on three different chart-related information consumption tasks show that with properly designed prompts LLMs can excel on the benchmarks, achieving state-of-the-art.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2312-10610",
+        "ArXiv": "2312.10610",
+        "DOI": "10.48550/arXiv.2312.10610",
+        "CorpusId": 266348780
+      },
+      "arxiv_id": "2312.10610",
+      "doi": "10.48550/arXiv.2312.10610",
+      "corpus_id": 266348780
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "10",
+      "ref_key": "S2:503c73fe0c5ab83ab7b54101474d40f12ed65fc6",
+      "paperId": "503c73fe0c5ab83ab7b54101474d40f12ed65fc6",
+      "title": "ABINet++: Autonomous, Bidirectional and Iterative Language Modeling for Scene Text Spotting",
+      "year": 2022,
+      "abstract": "Scene text spotting is of great importance to the computer vision community due to its wide variety of applications. Recent methods attempt to introduce linguistic knowledge for challenging recognition rather than pure visual classification. However, how to effectively model the linguistic rules in end-to-end deep networks remains a research challenge. In this paper, we argue that the limited capacity of language models comes from 1) implicit language modeling; 2) unidirectional feature representation; and 3) language model with noise input. Correspondingly, we propose an autonomous, bidirectional and iterative ABINet++ for scene text spotting. First, the autonomous suggests enforcing explicitly language modeling by decoupling the recognizer into vision model and language model and blocking gradient flow between both models. Second, a novel bidirectional cloze network (BCN) as the language model is proposed based on bidirectional feature representation. Third, we propose an execution manner of iterative correction for the language model which can effectively alleviate the impact of noise input. Additionally, based on an ensemble of the iterative predictions, a self-training method is developed which can learn from unlabeled images effectively. Finally, to polish ABINet++ in long text recognition, we propose to aggregate horizontal features by embedding Transformer units inside a U-Net, and design a position and content attention module which integrates character order and content to attend to character features precisely. ABINet++ achieves state-of-the-art performance on both scene text recognition and scene text spotting benchmarks, which consistently demonstrates the superiority of our method in various environments especially on low-quality images. Besides, extensive experiments including in English and Chinese also prove that, a text spotter that incorporates our language modeling method can significantly improve its performance both in accuracy and speed compared with commonly used attention-based recognizers. Code is available at https://github.com/FangShancheng/ABINet-PP.",
+      "externalIds": {
+        "DBLP": "journals/pami/FangMXWYZ23",
+        "ArXiv": "2211.10578",
+        "DOI": "10.1109/TPAMI.2022.3223908",
+        "CorpusId": 253735223,
+        "PubMed": "36417745"
+      },
+      "arxiv_id": "2211.10578",
+      "doi": "10.1109/TPAMI.2022.3223908",
+      "corpus_id": 253735223
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "11",
+      "ref_key": "S2:40cd34f260d5596263654caf9d911d4355bf4f4e",
+      "paperId": "40cd34f260d5596263654caf9d911d4355bf4f4e",
+      "title": "ChartLlama: A Multimodal LLM for Chart Understanding and Generation",
+      "year": 2023,
+      "abstract": "Multi-modal large language models have demonstrated impressive performances on most vision-language tasks. However, the model generally lacks the understanding capabilities for specific domain data, particularly when it comes to interpreting chart figures. This is mainly due to the lack of relevant multi-modal instruction tuning datasets. In this article, we create a high-quality instruction-tuning dataset leveraging GPT-4. We develop a multi-step data generation process in which different steps are responsible for generating tabular data, creating chart figures, and designing instruction tuning data separately. Our method's flexibility enables us to generate diverse, high-quality instruction-tuning data consistently and efficiently while maintaining a low resource expenditure. Additionally, it allows us to incorporate a wider variety of chart and task types not yet featured in existing datasets. Next, we introduce ChartLlama, a multi-modal large language model that we've trained using our created dataset. ChartLlama outperforms all prior methods in ChartQA, Chart-to-text, and Chart-extraction evaluation benchmarks. Additionally, ChartLlama significantly improves upon the baseline in our specially compiled chart dataset, which includes new chart and task types. The results of ChartLlama confirm the value and huge potential of our proposed data generation method in enhancing chart comprehension.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-16483",
+        "ArXiv": "2311.16483",
+        "DOI": "10.48550/arXiv.2311.16483",
+        "CorpusId": 265466206
+      },
+      "arxiv_id": "2311.16483",
+      "doi": "10.48550/arXiv.2311.16483",
+      "corpus_id": 265466206
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "12",
+      "ref_key": "S2:52cb05d721688cb766c6e282e9d55c3b8e3dc0cf",
+      "paperId": "52cb05d721688cb766c6e282e9d55c3b8e3dc0cf",
+      "title": "TaPas: Weakly Supervised Table Parsing via Pre-training",
+      "year": 2020,
+      "abstract": "Answering natural language questions over tables is usually seen as a semantic parsing task. To alleviate the collection cost of full logical forms, one popular approach focuses on weak supervision consisting of denotations instead of logical forms. However, training semantic parsers from weak supervision poses difficulties, and in addition, the generated logical forms are only used as an intermediate step prior to retrieving the denotation. In this paper, we present TaPas, an approach to question answering over tables without generating logical forms. TaPas trains from weak supervision, and predicts the denotation by selecting table cells and optionally applying a corresponding aggregation operator to such selection. TaPas extends BERT’s architecture to encode tables as input, initializes from an effective joint pre-training of text segments and tables crawled from Wikipedia, and is trained end-to-end. We experiment with three different semantic parsing datasets, and find that TaPas outperforms or rivals semantic parsing models by improving state-of-the-art accuracy on SQA from 55.1 to 67.2 and performing on par with the state-of-the-art on WikiSQL and WikiTQ, but with a simpler model architecture. We additionally find that transfer learning, which is trivial in our setting, from WikiSQL to WikiTQ, yields 48.7 accuracy, 4.2 points above the state-of-the-art.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2004-02349",
+        "ArXiv": "2004.02349",
+        "MAG": "3014265582",
+        "ACL": "2020.acl-main.398",
+        "DOI": "10.18653/v1/2020.acl-main.398",
+        "CorpusId": 214802901
+      },
+      "arxiv_id": "2004.02349",
+      "doi": "10.18653/v1/2020.acl-main.398",
+      "corpus_id": 214802901
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "13",
+      "ref_key": "S2:08b3c84da0da5bdc0e49a1c2f440743d829a5e1c",
+      "paperId": "08b3c84da0da5bdc0e49a1c2f440743d829a5e1c",
+      "title": "SciCap: Generating Captions for Scientific Figures",
+      "year": 2021,
+      "abstract": "Researchers use figures to communicate rich, complex information in scientific papers. The captions of these figures are critical to conveying effective messages. However, low-quality figure captions commonly occur in scientific articles and may decrease understanding. In this paper, we propose an end-to-end neural framework to automatically generate informative, high-quality captions for scientific figures. To this end, we introduce SCICAP, a large-scale figure-caption dataset based on computer science arXiv papers published between 2010 and 2020. After pre-processing - including figure-type classification, sub-figure identification, text normalization, and caption text selection - SCICAP contained more than two million figures extracted from over 290,000 papers. We then established baseline models that caption graph plots, the dominant (19.2%) figure type. The experimental results showed both opportunities and steep challenges of generating captions for scientific figures.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2110-11624",
+        "ArXiv": "2110.11624",
+        "DOI": "10.18653/v1/2021.findings-emnlp.277",
+        "CorpusId": 237578994
+      },
+      "arxiv_id": "2110.11624",
+      "doi": "10.18653/v1/2021.findings-emnlp.277",
+      "corpus_id": 237578994
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "14",
+      "ref_key": "S2:3528ddcd62575aa4fbfc06141b97b80ad34e7c66",
+      "paperId": "3528ddcd62575aa4fbfc06141b97b80ad34e7c66",
+      "title": "Do LVLMs Understand Charts? Analyzing and Correcting Factual Errors in Chart Captioning",
+      "year": 2023,
+      "abstract": "Recent advancements in large vision-language models (LVLMs) have led to significant progress in generating natural language descriptions for visual content and thus enhancing various applications. One issue with these powerful models is that they sometimes produce texts that are factually inconsistent with the visual input. While there has been some effort to mitigate such inconsistencies in natural image captioning, the factuality of generated captions for structured document images, such as charts, has not received as much scrutiny, posing a potential threat to information reliability in critical applications. This work delves into the factuality aspect by introducing a comprehensive typology of factual errors in generated chart captions. A large-scale human annotation effort provides insight into the error patterns and frequencies in captions crafted by various chart captioning models, ultimately forming the foundation of a novel dataset, CHOCOLATE. Our analysis reveals that even state-of-the-art models, including GPT-4V, frequently produce captions laced with factual inaccuracies. In response to this challenge, we establish the new task of Chart Caption Factual Error Correction and introduce CHARTVE, a model for visual entailment that outperforms proprietary and open-source LVLMs in evaluating factual consistency. Furthermore, we propose C2TFEC, an interpretable two-stage framework that excels at correcting factual errors. This work inaugurates a new domain in factual error correction for chart captions, presenting a novel evaluation mechanism, and demonstrating an effective approach to ensuring the factuality of generated chart captions. The code and data as well as the continuously updated benchmark can be found at: https://khuangaf.github.io/CHOCOLATE/.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2312-10160",
+        "ArXiv": "2312.10160",
+        "DOI": "10.48550/arXiv.2312.10160",
+        "CorpusId": 266348592
+      },
+      "arxiv_id": "2312.10160",
+      "doi": "10.48550/arXiv.2312.10160",
+      "corpus_id": 266348592
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "15",
+      "ref_key": "S2:7289a240c9425bc7cad87b3b835e5f0cac22f488",
+      "paperId": "7289a240c9425bc7cad87b3b835e5f0cac22f488",
+      "title": "DVQA: Understanding Data Visualizations via Question Answering",
+      "year": 2018,
+      "abstract": "Bar charts are an effective way to convey numeric information, but today's algorithms cannot parse them. Existing methods fail when faced with even minor variations in appearance. Here, we present DVQA, a dataset that tests many aspects of bar chart understanding in a question answering framework. Unlike visual question answering (VQA), DVQA requires processing words and answers that are unique to a particular bar chart. State-of-the-art VQA algorithms perform poorly on DVQA, and we propose two strong baselines that perform considerably better. Our work will enable algorithms to automatically extract numeric and semantic information from vast quantities of bar charts found in scientific publications, Internet articles, business reports, and many other areas.",
+      "externalIds": {
+        "DBLP": "conf/cvpr/KaflePCK18",
+        "MAG": "2963420691",
+        "ArXiv": "1801.08163",
+        "DOI": "10.1109/CVPR.2018.00592",
+        "CorpusId": 4445015
+      },
+      "arxiv_id": "1801.08163",
+      "doi": "10.1109/CVPR.2018.00592",
+      "corpus_id": 4445015
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "16",
+      "ref_key": "S2:f59ae732612ce8c42035adfb47bd5739c6288ad6",
+      "paperId": "f59ae732612ce8c42035adfb47bd5739c6288ad6",
+      "title": "Answering Questions about Data Visualizations using Efficient Bimodal Fusion",
+      "year": 2019,
+      "abstract": "Chart question answering (CQA) is a newly proposed visual question answering (VQA) task where an algorithm must answer questions about data visualizations, e.g. bar charts, pie charts, and line graphs. CQA requires capabilities that natural-image VQA algorithms lack: fine-grained measurements, optical character recognition, and handling out-of-vocabulary words in both questions and answers. Without modifications, state-of-the-art VQA algorithms perform poorly on this task. Here, we propose a novel CQA algorithm called parallel recurrent fusion of image and language (PReFIL). PReFIL first learns bimodal embeddings by fusing question and image features and then intelligently aggregates these learned embeddings to answer the given question. Despite its simplicity, PReFIL greatly surpasses state-of-the art systems and human baselines on both the FigureQA and DVQA datasets. Additionally, we demonstrate that PReFIL can be used to reconstruct tables by asking a series of questions about a chart.",
+      "externalIds": {
+        "MAG": "2966625567",
+        "ArXiv": "1908.01801",
+        "DBLP": "conf/wacv/KafleSPCK20",
+        "DOI": "10.1109/WACV45572.2020.9093494",
+        "CorpusId": 199453094
+      },
+      "arxiv_id": "1908.01801",
+      "doi": "10.1109/WACV45572.2020.9093494",
+      "corpus_id": 199453094
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "17",
+      "ref_key": "S2:2f33b928d76504714e17cd948695d170329843fc",
+      "paperId": "2f33b928d76504714e17cd948695d170329843fc",
+      "title": "OCR-Free Document Understanding Transformer",
+      "year": 2021,
+      "abstract": "Understanding document images (e.g., invoices) is a core but challenging task\nsince it requires complex functions such as reading text and a holistic\nunderstanding of the document. Current Visual Document Understanding (VDU)\nmethods outsource the task of reading text to off-the-shelf Optical Character\nRecognition (OCR) engines and focus on the understanding task with the OCR\noutputs. Although such OCR-based approaches have shown promising performance,\nthey suffer from 1) high computational costs for using OCR; 2) inflexibility of\nOCR models on languages or types of document; 3) OCR error propagation to the\nsubsequent process. To address these issues, in this paper, we introduce a\nnovel OCR-free VDU model named Donut, which stands for Document understanding\ntransformer. As the first step in OCR-free VDU research, we propose a simple\narchitecture (i.e., Transformer) with a pre-training objective (i.e.,\ncross-entropy loss). Donut is conceptually simple yet effective. Through\nextensive experiments and analyses, we show a simple OCR-free VDU model, Donut,\nachieves state-of-the-art performances on various VDU tasks in terms of both\nspeed and accuracy. In addition, we offer a synthetic data generator that helps\nthe model pre-training to be flexible in various languages and domains. The\ncode, trained model and synthetic data are available at\nhttps://github.com/clovaai/donut.",
+      "externalIds": {
+        "ArXiv": "2111.15664",
+        "DBLP": "conf/eccv/KimHYNPYHYHP22",
+        "DOI": "10.1007/978-3-031-19815-1_29",
+        "CorpusId": 250924870
+      },
+      "arxiv_id": "2111.15664",
+      "doi": "10.1007/978-3-031-19815-1_29",
+      "corpus_id": 250924870
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "18",
+      "ref_key": "S2:76a3f4a79ae9a00db2f2b5f6877021d8deb96ada",
+      "paperId": "76a3f4a79ae9a00db2f2b5f6877021d8deb96ada",
+      "title": "SPHINX: The Joint Mixing of Weights, Tasks, and Visual Embeddings for Multi-modal Large Language Models",
+      "year": 2023,
+      "abstract": "We present SPHINX, a versatile multi-modal large language model (MLLM) with a joint mixing of model weights, tuning tasks, and visual embeddings. First, for stronger vision-language alignment, we unfreeze the large language model (LLM) during pre-training, and introduce a weight mix strategy between LLMs trained by real-world and synthetic data. By directly integrating the weights from two domains, the mixed LLM can efficiently incorporate diverse semantics with favorable robustness. Then, to enable multi-purpose capabilities, we mix a variety of tasks for joint visual instruction tuning, and design task-specific instructions to avoid inter-task conflict. In addition to the basic visual question answering, we include more challenging tasks such as region-level understanding, caption grounding, document layout detection, and human pose estimation, contributing to mutual enhancement over different scenarios. Additionally, we propose to extract comprehensive visual embeddings from various network architectures, pre-training paradigms, and information granularity, providing language models with more robust image representations. Based on our proposed joint mixing, SPHINX exhibits superior multi-modal understanding capabilities on a wide range of applications. On top of this, we further propose an efficient strategy aiming to better capture fine-grained appearances of high-resolution images. With a mixing of different scales and high-resolution sub-images, SPHINX attains exceptional visual parsing and reasoning performance on existing evaluation benchmarks. We hope our work may cast a light on the exploration of joint mixing in future MLLM research. Code is released at https://github.com/Alpha-VLLM/LLaMA2-Accessory.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-07575",
+        "ArXiv": "2311.07575",
+        "DOI": "10.48550/arXiv.2311.07575",
+        "CorpusId": 265150267
+      },
+      "arxiv_id": "2311.07575",
+      "doi": "10.48550/arXiv.2311.07575",
+      "corpus_id": 265150267
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "19",
+      "ref_key": "S2:4d3a49d1439a0b8fbb0e9f588970ad0f1d70dec8",
+      "paperId": "4d3a49d1439a0b8fbb0e9f588970ad0f1d70dec8",
+      "title": "DePlot: One-shot visual language reasoning by plot-to-table translation",
+      "year": 2022,
+      "abstract": "Visual language such as charts and plots is ubiquitous in the human world. Comprehending plots and charts requires strong reasoning skills. Prior state-of-the-art (SOTA) models require at least tens of thousands of training examples and their reasoning capabilities are still much limited, especially on complex human-written queries. This paper presents the first one-shot solution to visual language reasoning. We decompose the challenge of visual language reasoning into two steps: (1) plot-to-text translation, and (2) reasoning over the translated text. The key in this method is a modality conversion module, named as DePlot, which translates the image of a plot or chart to a linearized table. The output of DePlot can then be directly used to prompt a pretrained large language model (LLM), exploiting the few-shot reasoning capabilities of LLMs. To obtain DePlot, we standardize the plot-to-table task by establishing unified task formats and metrics, and train DePlot end-to-end on this task. DePlot can then be used off-the-shelf together with LLMs in a plug-and-play fashion. Compared with a SOTA model finetuned on more than>28k data points, DePlot+LLM with just one-shot prompting achieves a 24.0% improvement over finetuned SOTA on human-written queries from the task of chart QA.",
+      "externalIds": {
+        "DBLP": "conf/acl/0001EPKPLJCCA23",
+        "ArXiv": "2212.10505",
+        "DOI": "10.48550/arXiv.2212.10505",
+        "CorpusId": 254877346
+      },
+      "arxiv_id": "2212.10505",
+      "doi": "10.48550/arXiv.2212.10505",
+      "corpus_id": 254877346
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "20",
+      "ref_key": "S2:95e184e2668ad49b5ea7c1c185727ef2d2c30de6",
+      "paperId": "95e184e2668ad49b5ea7c1c185727ef2d2c30de6",
+      "title": "MatCha: Enhancing Visual Language Pretraining with Math Reasoning and Chart Derendering",
+      "year": 2022,
+      "abstract": "Visual language data such as plots, charts, and infographics are ubiquitous in the human world. However, state-of-the-art vision-language models do not perform well on these data. We propose MatCha (Math reasoning and Chart derendering pretraining) to enhance visual language models’ capabilities in jointly modeling charts/plots and language data. Specifically, we propose several pretraining tasks that cover plot deconstruction and numerical reasoning which are the key capabilities in visual language modeling. We perform the MatCha pretraining starting from Pix2Struct, a recently proposed image-to-text visual language model. On standard benchmarks such as PlotQA and ChartQA, the MatCha model outperforms state-of-the-art methods by as much as nearly 20%. We also examine how well MatCha pretraining transfers to domains such as screenshots, textbook diagrams, and document figures and observe overall improvement, verifying the usefulness of MatCha pretraining on broader visual language tasks.",
+      "externalIds": {
+        "ArXiv": "2212.09662",
+        "DBLP": "conf/acl/0001PKPLJACE23",
+        "ACL": "2023.acl-long.714",
+        "DOI": "10.48550/arXiv.2212.09662",
+        "CorpusId": 254854495
+      },
+      "arxiv_id": "2212.09662",
+      "doi": "10.48550/arXiv.2212.09662",
+      "corpus_id": 254854495
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "21",
+      "ref_key": "S2:d1e356ac88768b3cb5b59926641b48cbaa15670c",
+      "paperId": "d1e356ac88768b3cb5b59926641b48cbaa15670c",
+      "title": "STAR-Net: A SpaTial Attention Residue Network for Scene Text Recognition",
+      "year": 2016,
+      "abstract": "In this paper, we present a novel SpaTial Attention Residue Network (STAR-Net) for recognising scene texts. Our STAR-Net is equipped with a spatial attention mechanism which employs a spatial transformer to remove the distortions of texts in natural images. This allows the subsequent feature extractor to focus on the rectiﬁed text region without being sidetracked by the distortions. Our STAR-Net also exploits residue convolutional blocks to build a very deep feature extractor, which is essential to the successful extraction of discriminative text features for this ﬁne grained recognition task. Combining the spatial attention mechanism with the residue convolutional blocks, our STAR-Net is the deepest end-to-end trainable neural network for scene text recognition. Experiments have been conducted on ﬁve public benchmark datasets. Experimental re-sults show that our STAR-Net can achieve a performance comparable to state-of-the-art methods for scene texts with little distortions, and outperform these methods for scene texts with considerable distortions.",
+      "externalIds": {
+        "MAG": "2593572697",
+        "DBLP": "conf/bmvc/LiuCWSH16",
+        "DOI": "10.5244/C.30.43",
+        "CorpusId": 22482128
+      },
+      "arxiv_id": null,
+      "doi": "10.5244/C.30.43",
+      "corpus_id": 22482128
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "22",
+      "ref_key": "S2:124d4d374fbef2016fa9880489871a58a7450644",
+      "paperId": "124d4d374fbef2016fa9880489871a58a7450644",
+      "title": "Improved Baselines with Visual Instruction Tuning",
+      "year": 2023,
+      "abstract": "Large multimodal models (LMM) have recently shown encouraging progress with visual instruction tuning. In this paper, we present the first systematic study to investigate the design choices of LMMs in a controlled setting under the LLaVA framework. We show that the fully-connected vision-language connector in LLaVA is surprisingly power-ful and data-efficient. With simple modifications to LLa VA, namely, using CLIP- ViT-L-336px with an MLP projection and adding academic-task-oriented VQA data with response formatting prompts, we establish stronger baselines that achieve state-of-the-art across 11 benchmarks. Our final 13B checkpoint uses merely 1.2M publicly available data, and finishes full training in ~ 1 day on a single 8-AI00 node. Furthermore, we present some early exploration of open problems in LMMs, including scaling to higher resolution inputs, compositional capabilities, and model hallucination, etc. We hope this makes state-of-the-art LMM research more accessible. Code and model will be publicly available.",
+      "externalIds": {
+        "ArXiv": "2310.03744",
+        "DBLP": "conf/cvpr/LiuLLL24",
+        "DOI": "10.1109/CVPR52733.2024.02484",
+        "CorpusId": 263672058
+      },
+      "arxiv_id": "2310.03744",
+      "doi": "10.1109/CVPR52733.2024.02484",
+      "corpus_id": 263672058
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "23",
+      "ref_key": "S2:0f993809c1fe00403ecea66d8f572832f075cfe4",
+      "paperId": "0f993809c1fe00403ecea66d8f572832f075cfe4",
+      "title": "MMC: Advancing Multimodal Chart Understanding with Large-scale Instruction Tuning",
+      "year": 2023,
+      "abstract": "With the rapid development of large language models (LLMs) and their integration into large multimodal models (LMMs), there has beenimpressive progress in zero-shot completion of user-oriented vision-language tasks. However, a gap remains in the domain of chartimage understanding due to the distinct abstract components in charts. To address this, we introduce a large-scale MultiModal ChartInstruction (MMC-Instruction) dataset comprising 600k instances supporting diverse tasks and chart types. Leveraging this data, we de-velop MultiModal Chart Assistant (MMCA), an LMM that achieves state-of-the-art performance on existing chart QA benchmarks. Recognizing the need for a comprehensive evaluation of LMM chart understanding, we also propose a MultiModal Chart Benchmark (MMC-Benchmark), a comprehensive human-annotated benchmark with nine distinct tasks evaluating reasoning capabilities over charts.Extensive experiments on MMC-Benchmark reveal the limitations of existing LMMs on correctly interpreting charts, even for the mostrecent GPT-4V model. Our work provides an instruction-tuning methodology and benchmark to advance multimodal understanding ofcharts. Code and data are available at https://github.com/FuxiaoLiu/MMC.",
+      "externalIds": {
+        "ACL": "2024.naacl-long.70",
+        "ArXiv": "2311.10774",
+        "DBLP": "journals/corr/abs-2311-10774",
+        "DOI": "10.48550/arXiv.2311.10774",
+        "CorpusId": 265294419
+      },
+      "arxiv_id": "2311.10774",
+      "doi": "10.48550/arXiv.2311.10774",
+      "corpus_id": 265294419
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "24",
+      "ref_key": "S2:b611c501269224702d1a9942c8600a31ec66ab28",
+      "paperId": "b611c501269224702d1a9942c8600a31ec66ab28",
+      "title": "ChartQA: A Benchmark for Question Answering about Charts with Visual and Logical Reasoning",
+      "year": 2022,
+      "abstract": "Charts are very popular for analyzing data. When exploring charts, people often ask a variety of complex reasoning questions that involve several logical and arithmetic operations. They also commonly refer to visual features of a chart in their questions. However, most existing datasets do not focus on such complex reasoning questions as their questions are template-based and answers come from a fixed-vocabulary. In this work, we present a large-scale benchmark covering 9.6K human-written questions as well as 23.1K questions generated from human-written chart summaries. To address the unique challenges in our benchmark involving visual and logical reasoning over charts, we present two transformer-based models that combine visual features and the data table of the chart in a unified way to answer questions. While our models achieve the state-of-the-art results on the previous datasets as well as on our benchmark, the evaluation also reveals several challenges in answering complex reasoning questions.",
+      "externalIds": {
+        "ArXiv": "2203.10244",
+        "DBLP": "conf/acl/MasryLTJH22",
+        "ACL": "2022.findings-acl.177",
+        "DOI": "10.48550/arXiv.2203.10244",
+        "CorpusId": 247593713
+      },
+      "arxiv_id": "2203.10244",
+      "doi": "10.48550/arXiv.2203.10244",
+      "corpus_id": 247593713
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "25",
+      "ref_key": "S2:8ab4863393fceb41d0fa77d632ace4c80a57a154",
+      "paperId": "8ab4863393fceb41d0fa77d632ace4c80a57a154",
+      "title": "UniChart: A Universal Vision-language Pretrained Model for Chart Comprehension and Reasoning",
+      "year": 2023,
+      "abstract": "Charts are very popular for analyzing data, visualizing key insights and answering complex reasoning questions about data. To facilitate chart-based data analysis using natural language, several downstream tasks have been introduced recently such as chart question answering and chart summarization. However, most of the methods that solve these tasks use pretraining on language or vision-language tasks that do not attempt to explicitly model the structure of the charts (e.g., how data is visually encoded and how chart elements are related to each other). To address this, we first build a large corpus of charts covering a wide variety of topics and visual styles. We then present UniChart, a pretrained model for chart comprehension and reasoning. UniChart encodes the relevant text, data, and visual elements of charts and then uses a chart-grounded text decoder to generate the expected output in natural language. We propose several chart-specific pretraining tasks that include: (i) low-level tasks to extract the visual elements (e.g., bars, lines) and data from charts, and (ii) high-level tasks to acquire chart understanding and reasoning skills. We find that pretraining the model on a large corpus with chart-specific low- and high-level tasks followed by finetuning on three down-streaming tasks results in state-of-the-art performance on three downstream tasks.",
+      "externalIds": {
+        "ArXiv": "2305.14761",
+        "DBLP": "conf/emnlp/MasryKLHJ23",
+        "DOI": "10.48550/arXiv.2305.14761",
+        "CorpusId": 258865561
+      },
+      "arxiv_id": "2305.14761",
+      "doi": "10.48550/arXiv.2305.14761",
+      "corpus_id": 258865561
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "26",
+      "ref_key": "S2:05389d52e77a69c37b197a4b77aee65128a9666a",
+      "paperId": "05389d52e77a69c37b197a4b77aee65128a9666a",
+      "title": "ChartInstruct: Instruction Tuning for Chart Comprehension and Reasoning",
+      "year": 2024,
+      "abstract": "Charts provide visual representations of data and are widely used for analyzing information, addressing queries, and conveying insights to others. Various chart-related downstream tasks have emerged recently, such as question-answering and summarization. A common strategy to solve these tasks is to fine-tune various models originally trained on vision tasks language. However, such task-specific models are not capable of solving a wide range of chart-related tasks, constraining their real-world applicability. To overcome these challenges, we introduce ChartInstruct: a novel chart-specific vision-language Instruction-following dataset comprising 191K instructions generated with 71K charts. We then present two distinct systems for instruction tuning on such datasets: (1) an end-to-end model that connects a vision encoder for chart understanding with a LLM; and (2) a pipeline model that employs a two-step approach to extract chart data tables and input them into the LLM. In experiments on four downstream tasks, we first show the effectiveness of our model--achieving a new set of state-of-the-art results. Further evaluation shows that our instruction-tuning approach supports a wide array of real-world chart comprehension and reasoning scenarios, thereby expanding the scope and applicability of our models to new kinds of tasks.",
+      "externalIds": {
+        "ArXiv": "2403.09028",
+        "DBLP": "journals/corr/abs-2403-09028",
+        "DOI": "10.48550/arXiv.2403.09028",
+        "CorpusId": 268384920
+      },
+      "arxiv_id": "2403.09028",
+      "doi": "10.48550/arXiv.2403.09028",
+      "corpus_id": 268384920
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "27",
+      "ref_key": "S2:f768eafd07977723a5899e4a2a18ea79ada2b440",
+      "paperId": "f768eafd07977723a5899e4a2a18ea79ada2b440",
+      "title": "ChartAssistant: A Universal Chart Multimodal Language Model via Chart-to-Table Pre-training and Multitask Instruction Tuning",
+      "year": 2024,
+      "abstract": ",",
+      "externalIds": {
+        "DBLP": "conf/acl/MengSLGZQL24",
+        "DOI": "10.18653/v1/2024.findings-acl.463",
+        "CorpusId": 271931250
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2024.findings-acl.463",
+      "corpus_id": 271931250
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "28",
+      "ref_key": "S2:c496f00f2b85b496abdc36e4dc4105541248fd3c",
+      "paperId": "c496f00f2b85b496abdc36e4dc4105541248fd3c",
+      "title": "PlotQA: Reasoning over Scientific Plots",
+      "year": 2019,
+      "abstract": "Existing synthetic datasets (Figure QA, DVQA) for reasoning over plots do not contain variability in data labels, real-valued data, or complex reasoning questions. Consequently, proposed models for these datasets do not fully address the challenge of reasoning over plots. In particular, they assume that the answer comes either from a small fixed size vocabulary or from a bounding box within the image. However, in practice, this is an unrealistic assumption because many questions require reasoning and thus have real-valued answers which appear neither in a small fixed size vocabulary nor in the image. In this work, we aim to bridge this gap between existing datasets and real-world plots. Specifically, we propose PlotQA with 28.9 million question-answer pairs over 224,377 plots on data from real-world sources and questions based on crowd-sourced question templates. Further, 80.76% of the out-of-vocabulary (OOV) questions in PlotQA have answers that are not in a fixed vocabulary. Analysis of existing models on PlotQA reveals that they cannot deal with OOV questions: their overall accuracy on our dataset is in single digits. This is not surprising given that these models were not designed for such questions. As a step towards a more holistic model which can address fixed vocabulary as well as OOV questions, we propose a hybrid approach: Specific questions are answered by choosing the answer from a fixed vocabulary or by extracting it from a predicted bounding box in the plot, while other questions are answered with a table question-answering engine which is fed with a structured table generated by detecting visual elements from the image. On the existing DVQA dataset, our model has an accuracy of 58%, significantly improving on the highest reported accuracy of 46%. On PlotQA, our model has an accuracy of 22.52%, which is significantly better than state of the art models.",
+      "externalIds": {
+        "DBLP": "conf/wacv/MethaniGKK20",
+        "ArXiv": "1909.00997",
+        "MAG": "2998792441",
+        "DOI": "10.1109/WACV45572.2020.9093523",
+        "CorpusId": 210164961
+      },
+      "arxiv_id": "1909.00997",
+      "doi": "10.1109/WACV45572.2020.9093523",
+      "corpus_id": 210164961
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "29",
+      "ref_key": "S2:9a2a5bb18d6252711e124c0029fcf002d62f1795",
+      "paperId": "9a2a5bb18d6252711e124c0029fcf002d62f1795",
+      "title": "Chart-to-Text: Generating Natural Language Descriptions for Charts by Adapting the Transformer Model",
+      "year": 2020,
+      "abstract": "Information visualizations such as bar charts and line charts are very popular for exploring data and communicating insights. Interpreting and making sense of such visualizations can be challenging for some people, such as those who are visually impaired or have low visualization literacy. In this work, we introduce a new dataset and present a neural model for automatically generating natural language summaries for charts. The generated summaries provide an interpretation of the chart and convey the key insights found within that chart. Our neural model is developed by extending the state-of-the-art model for the data-to-text generation task, which utilizes a transformer-based encoder-decoder architecture. We found that our approach outperforms the base model on a content selection metric by a wide margin (55.42% vs. 8.49%) and generates more informative, concise, and coherent summaries.",
+      "externalIds": {
+        "ArXiv": "2010.09142",
+        "ACL": "2020.inlg-1.20",
+        "MAG": "3094916564",
+        "DBLP": "journals/corr/abs-2010-09142",
+        "DOI": "10.18653/v1/2020.inlg-1.20",
+        "CorpusId": 224704949
+      },
+      "arxiv_id": "2010.09142",
+      "doi": "10.18653/v1/2020.inlg-1.20",
+      "corpus_id": 224704949
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "30",
+      "ref_key": "S2:7a29f47f6509011fe5b19462abf6607867b68373",
+      "paperId": "7a29f47f6509011fe5b19462abf6607867b68373",
+      "title": "GPT-4V(ision) System Card",
+      "year": 2023,
+      "abstract": "GPT-4 with vision (GPT-4V) enables users to instruct GPT-4 to analyze image inputs provided by the user, and is the latest capability we are making broadly available. Incorporating additional modalities (such as image inputs) into large language models (LLMs) is viewed by some as a key frontier in artificial intelligence research and development [1, 2, 3]. Multimodal LLMs offer the possibility of expanding the impact of language-only systems with novel interfaces and capabilities, enabling them to solve new tasks and provide novel experiences for their users. In this system card, [4, 5] 1 we analyze the safety properties of GPT-4V. Our work on safety for GPT-4V builds on the work done for GPT-4 [7] and here we dive deeper into the evaluations, preparation, and mitigation work done specifically for image inputs. Similar to GPT-4, training of GPT-4V was completed in 2022 and we began providing early access to the system in March 2023. As GPT-4 is the technology behind the visual capabilities of GPT-4V, its training process was the same. The pre-trained model was first trained to predict the next word in a document, using a large dataset of text and image data from the Internet as well as licensed sources of data. It was then fine-tuned with additional data, using an algorithm called reinforcement learning from human feedback (RLHF),[8, 9] to produce outputs that are preferred by human trainers. Large multimodal models introduce different limitations and expand the risk surface compared to text-based language models. GPT-4V possesses the limitations and capabilities of each modality (text and vision), while at the same time presenting novel capabilities emerging from the intersection of said modalities and from the intelligence and reasoning afforded by large scale models. This system card outlines how OpenAI prepared the vision capabilities of GPT-4 for deployment. It describes the early access period of the model for small scale users and safety learnings OpenAI gained from this period, multimodal evaluations built to study the model’s fitness for deployment, key findings of expert red teamers, and the mitigations OpenAI implemented prior to broad release.",
+      "externalIds": {
+        "CorpusId": 263218031
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 263218031
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "31",
+      "ref_key": "S2:007112213ece771be72cbecfd59f048209facabd",
+      "paperId": "007112213ece771be72cbecfd59f048209facabd",
+      "title": "A simple neural network module for relational reasoning",
+      "year": 2017,
+      "abstract": "Relational reasoning is a central component of generally intelligent behavior, but has proven difficult for neural networks to learn. In this paper we describe how to use Relation Networks (RNs) as a simple plug-and-play module to solve problems that fundamentally hinge on relational reasoning. We tested RN-augmented networks on three tasks: visual question answering using a challenging dataset called CLEVR, on which we achieve state-of-the-art, super-human performance; text-based question answering using the bAbI suite of tasks; and complex reasoning about dynamic physical systems. Then, using a curated dataset called Sort-of-CLEVR we show that powerful convolutional networks do not have a general capacity to solve relational questions, but can gain this capacity when augmented with RNs. Our work shows how a deep learning architecture equipped with an RN module can implicitly discover and learn to reason about entities and their relations.",
+      "externalIds": {
+        "MAG": "2963907629",
+        "ArXiv": "1706.01427",
+        "DBLP": "conf/nips/SantoroRBMPBL17",
+        "CorpusId": 8528277
+      },
+      "arxiv_id": "1706.01427",
+      "doi": null,
+      "corpus_id": 8528277
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "32",
+      "ref_key": "S2:8e9149ab00236d04db23394774e716c4f1d89231",
+      "paperId": "8e9149ab00236d04db23394774e716c4f1d89231",
+      "title": "An End-to-End Trainable Neural Network for Image-Based Sequence Recognition and Its Application to Scene Text Recognition",
+      "year": 2015,
+      "abstract": "Image-based sequence recognition has been a long-standing research topic in computer vision. In this paper, we investigate the problem of scene text recognition, which is among the most important and challenging tasks in image-based sequence recognition. A novel neural network architecture, which integrates feature extraction, sequence modeling and transcription into a unified framework, is proposed. Compared with previous systems for scene text recognition, the proposed architecture possesses four distinctive properties: (1) It is end-to-end trainable, in contrast to most of the existing algorithms whose components are separately trained and tuned. (2) It naturally handles sequences in arbitrary lengths, involving no character segmentation or horizontal scale normalization. (3) It is not confined to any predefined lexicon and achieves remarkable performances in both lexicon-free and lexicon-based scene text recognition tasks. (4) It generates an effective yet much smaller model, which is more practical for real-world application scenarios. The experiments on standard benchmarks, including the IIIT-5K, Street View Text and ICDAR datasets, demonstrate the superiority of the proposed algorithm over the prior arts. Moreover, the proposed algorithm performs well in the task of image-based music score recognition, which evidently verifies the generality of it.",
+      "externalIds": {
+        "DBLP": "journals/corr/ShiBY15",
+        "ArXiv": "1507.05717",
+        "MAG": "2194187530",
+        "DOI": "10.1109/TPAMI.2016.2646371",
+        "CorpusId": 24139,
+        "PubMed": "28055850"
+      },
+      "arxiv_id": "1507.05717",
+      "doi": "10.1109/TPAMI.2016.2646371",
+      "corpus_id": 24139
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "33",
+      "ref_key": "S2:edd0f6d316d33c61a4a69c9262d1b1e07a93bae6",
+      "paperId": "edd0f6d316d33c61a4a69c9262d1b1e07a93bae6",
+      "title": "Robust Scene Text Recognition with Automatic Rectification",
+      "year": 2016,
+      "abstract": "Recognizing text in natural images is a challenging task with many unsolved problems. Different from those in documents, words in natural images often possess irregular shapes, which are caused by perspective distortion, curved character placement, etc. We propose RARE (Robust text recognizer with Automatic REctification), a recognition model that is robust to irregular text. RARE is a speciallydesigned deep neural network, which consists of a Spatial Transformer Network (STN) and a Sequence Recognition Network (SRN). In testing, an image is firstly rectified via a predicted Thin-Plate-Spline (TPS) transformation, into a more \"readable\" image for the following SRN, which recognizes text through a sequence recognition approach. We show that the model is able to recognize several types of irregular text, including perspective text and curved text. RARE is end-to-end trainable, requiring only images and associated text labels, making it convenient to train and deploy the model in practical systems. State-of-the-art or highly-competitive performance achieved on several benchmarks well demonstrates the effectiveness of the proposed model.",
+      "externalIds": {
+        "DBLP": "journals/corr/ShiWLYB16",
+        "ArXiv": "1603.03915",
+        "MAG": "2298368322",
+        "DOI": "10.1109/CVPR.2016.452",
+        "CorpusId": 6811685
+      },
+      "arxiv_id": "1603.03915",
+      "doi": "10.1109/CVPR.2016.452",
+      "corpus_id": 6811685
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "34",
+      "ref_key": "S2:baff151a5f1cb378d3627b88ff7d1b3afd29db45",
+      "paperId": "baff151a5f1cb378d3627b88ff7d1b3afd29db45",
+      "title": "STL-CQA: Structure-based Transformers with Localization and Encoding for Chart Question Answering",
+      "year": 2020,
+      "abstract": "Chart Question Answering (CQA) is the task of answering natural language questions about visualisations in the chart image. Recent solutions, inspired by VQA approaches, rely on image-based attention for question/answering while ignoring the inherent chart structure. We propose STL-CQA which improves the question/answering through sequential elements localization, question encoding and then, a structural transformer-based learning approach. We conduct extensive experiments while proposing pre-training tasks, methodology and also an improved dataset with more complex and balanced questions of different types. The proposed methodology shows a significant accuracy improvement compared to the state-of-the-art approaches on various chart Q/A datasets, while outperforming even human baseline on the DVQA Dataset. We also demonstrate interpretability while examining different components in the inference pipeline.",
+      "externalIds": {
+        "MAG": "3104085139",
+        "DBLP": "conf/emnlp/SinghS20",
+        "ACL": "2020.emnlp-main.264",
+        "DOI": "10.18653/v1/2020.emnlp-main.264",
+        "CorpusId": 226262387
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2020.emnlp-main.264",
+      "corpus_id": 226262387
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "35",
+      "ref_key": "S2:edf7707dbdcb249cba3c4284fd0a8f2dead32488",
+      "paperId": "edf7707dbdcb249cba3c4284fd0a8f2dead32488",
+      "title": "FigCaps-HF: A Figure-to-Caption Generative Framework and Benchmark with Human Feedback",
+      "year": 2023,
+      "abstract": "Captions are crucial for understanding scientific visualizations and documents. Existing captioning methods for scientific figures rely on figure-caption pairs extracted from documents for training, many of which fall short with respect to metrics like helpfulness, explainability, and visual-descriptiveness [15] leading to generated captions being misaligned with reader preferences. To enable the generation of high-quality figure captions, we introduce FigCaps-HF a new framework for figure-caption generation that can incorporate domain expert feedback in generating captions optimized for reader preferences. Our framework comprises of 1) an automatic method for evaluating quality of figure-caption pairs, 2) a novel reinforcement learning with human feedback (RLHF) method to optimize a generative figure-to-caption model for reader preferences. We demonstrate the effectiveness of our simple learning framework by improving performance over standard fine-tuning across different types of models. In particular, when using BLIP as the base model, our RLHF framework achieves a mean gain of 35.7%, 16.9%, and 9% in ROUGE, BLEU, and Meteor, respectively. Finally, we release a large-scale benchmark dataset with human feedback on figure-caption pairs to enable further evaluation and development of RLHF techniques for this problem.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-10867",
+        "ArXiv": "2307.10867",
+        "DOI": "10.48550/arXiv.2307.10867",
+        "CorpusId": 259991149
+      },
+      "arxiv_id": "2307.10867",
+      "doi": "10.48550/arXiv.2307.10867",
+      "corpus_id": 259991149
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "36",
+      "ref_key": "S2:d3fed1270db532f3a4c51e969422626ea95f8ef3",
+      "paperId": "d3fed1270db532f3a4c51e969422626ea95f8ef3",
+      "title": "Gated Recurrent Convolution Neural Network for OCR",
+      "year": 2017,
+      "abstract": "Optical Character Recognition (OCR) aims to recognize text in natural images. Inspired by a recently proposed model for general image classification, Recurrent Convolution Neural Network (RCNN), we propose a new architecture named Gated RCNN (GRCNN) for solving this problem. Its critical component, Gated Recurrent Convolution Layer (GRCL), is constructed by adding a gate to the Recurrent Convolution Layer (RCL), the critical component of RCNN. The gate controls the context modulation in RCL and balances the feed-forward information and the recurrent information. In addition, an efficient Bidirectional Long Short-Term Memory (BLSTM) is built for sequence modeling. The GRCNN is combined with BLSTM to recognize text in natural images. The entire GRCNN-BLSTM model can be trained end-to-end. Experiments show that the proposed model outperforms existing methods on several benchmark datasets including the IIIT-5K, Street View Text (SVT) and ICDAR.",
+      "externalIds": {
+        "DBLP": "conf/nips/WangH17",
+        "MAG": "2752225195",
+        "CorpusId": 39506071
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 39506071
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "37",
+      "ref_key": "S2:1d8472bbf71ccf60550126d136b53699a2f4f685",
+      "paperId": "1d8472bbf71ccf60550126d136b53699a2f4f685",
+      "title": "DOMINO: A Dual-System for Multi-step Visual Language Reasoning",
+      "year": 2023,
+      "abstract": "Visual language reasoning requires a system to extract text or numbers from information-dense images like charts or plots and perform logical or arithmetic reasoning to arrive at an answer. To tackle this task, existing work relies on either (1) an end-to-end vision-language model trained on a large amount of data, or (2) a two-stage pipeline where a captioning model converts the image into text that is further read by another large language model to deduce the answer. However, the former approach forces the model to answer a complex question with one single step, and the latter approach is prone to inaccurate or distracting information in the converted text that can confuse the language model. In this work, we propose a dual-system for multi-step multimodal reasoning, which consists of a\"System-1\"step for visual information extraction and a\"System-2\"step for deliberate reasoning. Given an input, System-2 breaks down the question into atomic sub-steps, each guiding System-1 to extract the information required for reasoning from the image. Experiments on chart and plot datasets show that our method with a pre-trained System-2 module performs competitively compared to prior work on in- and out-of-distribution data. By fine-tuning the System-2 module (LLaMA-2 70B) on only a small amount of data on multi-step reasoning, the accuracy of our method is further improved and surpasses the best fully-supervised end-to-end approach by 5.7% and a pipeline approach with FlanPaLM (540B) by 7.5% on a challenging dataset with human-authored questions.",
+      "externalIds": {
+        "ArXiv": "2310.02804",
+        "DBLP": "journals/corr/abs-2310-02804",
+        "DOI": "10.48550/arXiv.2310.02804",
+        "CorpusId": 263620459
+      },
+      "arxiv_id": "2310.02804",
+      "doi": "10.48550/arXiv.2310.02804",
+      "corpus_id": 263620459
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "38",
+      "ref_key": "S2:9ab82096689de59b108a0bf2667ab12cac2f8271",
+      "paperId": "9ab82096689de59b108a0bf2667ab12cac2f8271",
+      "title": "ChartX & ChartVLM: A Versatile Benchmark and Foundation Model for Complicated Chart Reasoning",
+      "year": 2024,
+      "abstract": "Recently, many versatile Multi-modal Large Language Models (MLLMs) have emerged continuously. However, their capacity to query information depicted in visual charts and engage in reasoning based on the queried contents remains under-explored. In this paper, to comprehensively and rigorously benchmark the ability of the off-the-shelf MLLMs in the chart domain, we construct ChartX, a multi-modal evaluation set covering 18 chart types, 7 chart tasks, 22 disciplinary topics, and high-quality chart data. Besides, we develop ChartVLM to offer a new perspective on handling multi-modal tasks that strongly depend on interpretable patterns, such as reasoning tasks in the field of charts or geometric images. We evaluate the chart-related ability of mainstream MLLMs and our ChartVLM on the proposed ChartX evaluation set. Extensive experiments demonstrate that ChartVLM surpasses both versatile and chart-related large models, achieving results comparable to GPT-4V. We believe that our study can pave the way for further exploration in creating a more comprehensive chart evaluation set and developing more interpretable multi-modal models. Both ChartX and ChartVLM are available at: https://github.com/Alpha-Innovator/ChartVLM",
+      "externalIds": {
+        "ArXiv": "2402.12185",
+        "DBLP": "journals/corr/abs-2402-12185",
+        "DOI": "10.48550/arXiv.2402.12185",
+        "CorpusId": 267751223
+      },
+      "arxiv_id": "2402.12185",
+      "doi": "10.48550/arXiv.2402.12185",
+      "corpus_id": 267751223
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "39",
+      "ref_key": "S2:85b9fa14b5fa81e34ed760cbfd255cf7227b84ae",
+      "paperId": "85b9fa14b5fa81e34ed760cbfd255cf7227b84ae",
+      "title": "StructChart: Perception, Structuring, Reasoning for Visual Chart Understanding",
+      "year": 2023,
+      "abstract": "Charts are common in literature across different scientific fields, conveying rich information easily accessible to readers. Current chart-related tasks focus on either chart perception which refers to extracting information from the visual charts, or performing reasoning given the extracted data, e.g. in a tabular form. In this paper, we aim to establish a unified and label-efficient learning paradigm for joint perception and reasoning tasks, which can be generally applicable to different downstream tasks, beyond the question-answering task as specifically studied in peer works. Specifically, StructChart first reformulates the chart information from the popular tubular form (specifically linearized CSV) to the proposed Structured Triplet Representations (STR), which is more friendly for reducing the task gap between chart perception and reasoning due to the employed structured information extraction for charts. We then propose a Structuring Chart-oriented Representation Metric (SCRM) to quantitatively evaluate the performance for the chart perception task. To enrich the dataset for training, we further explore the possibility of leveraging the Large Language Model (LLM), enhancing the chart diversity in terms of both chart visual style and its statistical information. Extensive experiments are conducted on various chart-related tasks, demonstrating the effectiveness and promising potential for a unified chart perception-reasoning paradigm to push the frontier of chart understanding. Our simulation chart dataset is available at: https://github.com/UniModal4Reasoning/SimChart9K, and the pre-training code will be released for reproduction.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2309-11268",
+        "DOI": "10.48550/arXiv.2309.11268",
+        "CorpusId": 262067829
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2309.11268",
+      "corpus_id": 262067829
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "40",
+      "ref_key": "S2:7e32aac43e9f1df49e116add03327ee6f365dbf3",
+      "paperId": "7e32aac43e9f1df49e116add03327ee6f365dbf3",
+      "title": "mPLUG-Owl: Modularization Empowers Large Language Models with Multimodality",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have demonstrated impressive zero-shot abilities on a variety of open-ended tasks, while recent research has also explored the use of LLMs for multi-modal generation. In this study, we introduce mPLUG-Owl, a novel training paradigm that equips LLMs with multi-modal abilities through modularized learning of foundation LLM, a visual knowledge module, and a visual abstractor module. This approach can support multiple modalities and facilitate diverse unimodal and multimodal abilities through modality collaboration. The training paradigm of mPLUG-Owl involves a two-stage method for aligning image and text, which learns visual knowledge with the assistance of LLM while maintaining and even improving the generation abilities of LLM. In the first stage, the visual knowledge module and abstractor module are trained with a frozen LLM module to align the image and text. In the second stage, language-only and multi-modal supervised datasets are used to jointly fine-tune a low-rank adaption (LoRA) module on LLM and the abstractor module by freezing the visual knowledge module. We carefully build a visually-related instruction evaluation set OwlEval. Experimental results show that our model outperforms existing multi-modal models, demonstrating mPLUG-Owl's impressive instruction and visual understanding ability, multi-turn conversation ability, and knowledge reasoning ability. Besides, we observe some unexpected and exciting abilities such as multi-image correlation and scene text understanding, which makes it possible to leverage it for harder real scenarios, such as vision-only document comprehension. Our code, pre-trained model, instruction-tuned models, and evaluation set are available at https://github.com/X-PLUG/mPLUG-Owl. The online demo is available at https://www.modelscope.cn/studios/damo/mPLUG-Owl.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2304-14178",
+        "ArXiv": "2304.14178",
+        "DOI": "10.48550/arXiv.2304.14178",
+        "CorpusId": 258352455
+      },
+      "arxiv_id": "2304.14178",
+      "doi": "10.48550/arXiv.2304.14178",
+      "corpus_id": 258352455
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "41",
+      "ref_key": "S2:ea566f87f6253bb2d32cf7b61cd3e2535a0c3f42",
+      "paperId": "ea566f87f6253bb2d32cf7b61cd3e2535a0c3f42",
+      "title": "mPLUG-DocOwl: Modularized Multimodal Large Language Model for Document Understanding",
+      "year": 2023,
+      "abstract": "Document understanding refers to automatically extract, analyze and comprehend information from various types of digital documents, such as a web page. Existing Multi-model Large Language Models (MLLMs), including mPLUG-Owl, have demonstrated promising zero-shot capabilities in shallow OCR-free text recognition, indicating their potential for OCR-free document understanding. Nevertheless, without in-domain training, these models tend to ignore fine-grained OCR features, such as sophisticated tables or large blocks of text, which are essential for OCR-free document understanding. In this paper, we propose mPLUG-DocOwl based on mPLUG-Owl for OCR-free document understanding. Specifically, we first construct a instruction tuning dataset featuring a wide range of visual-text understanding tasks. Then, we strengthen the OCR-free document understanding ability by jointly train the model on language-only, general vision-and-language, and document instruction tuning dataset with our unified instruction tuning strategy. We also build an OCR-free document instruction understanding evaluation set LLMDoc to better compare models' capabilities on instruct compliance and document understanding. Experimental results show that our model outperforms existing multi-modal models, demonstrating its strong ability of document understanding. Besides, without specific fine-tuning, mPLUG-DocOwl generalizes well on various downstream tasks. Our code, models, training data and evaluation set are available at https://github.com/X-PLUG/mPLUG-DocOwl.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-02499",
+        "ArXiv": "2307.02499",
+        "DOI": "10.48550/arXiv.2307.02499",
+        "CorpusId": 259360848
+      },
+      "arxiv_id": "2307.02499",
+      "doi": "10.48550/arXiv.2307.02499",
+      "corpus_id": 259360848
+    },
+    {
+      "paper_id": "2403.12027",
+      "ref_index": "42",
+      "ref_key": "S2:24354722e36c358b69893ab05220d6f2291989d1",
+      "paperId": "24354722e36c358b69893ab05220d6f2291989d1",
+      "title": "TinyChart: Efficient Chart Understanding with Program-of-Thoughts Learning and Visual Token Merging",
+      "year": 2024,
+      "abstract": "Charts are important for presenting and explaining complex data relationships. Recently, multimodal large language models (MLLMs) have shown remarkable capabilities in chart understanding. However, the sheer size of these models limits their use in resource-constrained environments. In this paper, we present TinyChart, an efficient MLLM for chart understanding with only 3B parameters. TinyChart overcomes two key challenges in efficient chart understanding: (1) reduce the burden of learning numerical computations through Program-of-Thoughts (PoT) learning, which trains the model to generate Python programs for numerical calculations, and (2) reduce lengthy vision feature sequences through Vision Token Merging, which gradually merges most similar vision tokens. Extensive experiments demonstrate that our 3B TinyChart achieves SOTA performance on various chart understanding benchmarks including ChartQA, Chart-to-Text, Chart-to-Table, OpenCQA, and ChartX. It outperforms several chart-understanding MLLMs with up to 13B parameters, and close-sourced MLLM GPT-4V on ChartQA, with higher throughput during inference due to a smaller model scale and more efficient vision encoding.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2404-16635",
+        "ArXiv": "2404.16635",
+        "ACL": "2024.emnlp-main.112",
+        "DOI": "10.48550/arXiv.2404.16635",
+        "CorpusId": 269362640
+      },
+      "arxiv_id": "2404.16635",
+      "doi": "10.48550/arXiv.2404.16635",
+      "corpus_id": 269362640
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "Chart Understanding Approaches": {
+        "Classification-based Methods  ": {
+          "Fixed Output Vocab": {
+            "dc7af5ce33330085c70c5ed9ee4c34ab9df3b4de": {},
+            "7289a240c9425bc7cad87b3b835e5f0cac22f488": {},
+            "007112213ece771be72cbecfd59f048209facabd": {}
+          },
+          "Dynamic Encoding": {
+            "d47f20de7195fea82e48315fea52ccf06dc301d3": {},
+            "7289a240c9425bc7cad87b3b835e5f0cac22f488": {},
+            "f59ae732612ce8c42035adfb47bd5739c6288ad6": {},
+            "c496f00f2b85b496abdc36e4dc4105541248fd3c": {}
+          },
+          "Small Pre-trained Models": {
+            "52cb05d721688cb766c6e282e9d55c3b8e3dc0cf": {},
+            "b611c501269224702d1a9942c8600a31ec66ab28": {},
+            "baff151a5f1cb378d3627b88ff7d1b3afd29db45": {}
+          }
+        },
+        "Generation-based Methods ": {
+          "Without Pre-training": {
+            "755dd3628b04adad423d2418f98c156123ebac2a": {},
+            "08b3c84da0da5bdc0e49a1c2f440743d829a5e1c": {},
+            "9a2a5bb18d6252711e124c0029fcf002d62f1795": {}
+          },
+          "Pre-trained": {
+            "3528ddcd62575aa4fbfc06141b97b80ad34e7c66": {},
+            "2f33b928d76504714e17cd948695d170329843fc": {},
+            "95e184e2668ad49b5ea7c1c185727ef2d2c30de6": {},
+            "8ab4863393fceb41d0fa77d632ace4c80a57a154": {},
+            "edf7707dbdcb249cba3c4284fd0a8f2dead32488": {}
+          },
+          "Large Vision-language Models": {
+            "General-purpose": {
+              "887306ee7ebd9eebd7faea24106ec8e8f1a50987": {},
+              "76a3f4a79ae9a00db2f2b5f6877021d8deb96ada": {},
+              "124d4d374fbef2016fa9880489871a58a7450644": {},
+              "7a29f47f6509011fe5b19462abf6607867b68373": {},
+              "7e32aac43e9f1df49e116add03327ee6f365dbf3": {},
+              "ea566f87f6253bb2d32cf7b61cd3e2535a0c3f42": {}
+            },
+            "Chart-specific": {
+              "c816712bcb3aab9a114144af0eba8f2b10213713": {},
+              "40cd34f260d5596263654caf9d911d4355bf4f4e": {},
+              "0f993809c1fe00403ecea66d8f572832f075cfe4": {},
+              "05389d52e77a69c37b197a4b77aee65128a9666a": {},
+              "f768eafd07977723a5899e4a2a18ea79ada2b440": {},
+              "9ab82096689de59b108a0bf2667ab12cac2f8271": {},
+              "24354722e36c358b69893ab05220d6f2291989d1": {}
+            }
+          }
+        },
+        "Tool Augmentation ": {
+          "OCR-based": {
+            "206b2aeb81b29463968b8deb1efce51941f18208": {},
+            "fc8ce94171d0a7ccb118a8902b99e999c3028ea5": {},
+            "fde3ee5f9f8e217a4d6716013315614811820f21": {},
+            "45524d7a40435d989579b88b70d25e4d65ac9e3c": {},
+            "503c73fe0c5ab83ab7b54101474d40f12ed65fc6": {},
+            "d1e356ac88768b3cb5b59926641b48cbaa15670c": {},
+            "8e9149ab00236d04db23394774e716c4f1d89231": {},
+            "edd0f6d316d33c61a4a69c9262d1b1e07a93bae6": {},
+            "d3fed1270db532f3a4c51e969422626ea95f8ef3": {}
+          },
+          "Non-OCR-based": {
+            "7bef3c961fb1c272b8c3a66d9169b02b64d57766": {},
+            "3528ddcd62575aa4fbfc06141b97b80ad34e7c66": {},
+            "4d3a49d1439a0b8fbb0e9f588970ad0f1d70dec8": {},
+            "1d8472bbf71ccf60550126d136b53699a2f4f685": {},
+            "85b9fa14b5fa81e34ed760cbfd255cf7227b84ae": {}
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000001",
+        "paperId": "dc7af5ce33330085c70c5ed9ee4c34ab9df3b4de",
+        "ref_index": "3",
+        "path": [
+          "Chart Understanding Approaches",
+          "Classification-based Methods  ",
+          "Fixed Output Vocab"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000002",
+        "paperId": "7289a240c9425bc7cad87b3b835e5f0cac22f488",
+        "ref_index": "15",
+        "path": [
+          "Chart Understanding Approaches",
+          "Classification-based Methods  ",
+          "Fixed Output Vocab"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000003",
+        "paperId": "007112213ece771be72cbecfd59f048209facabd",
+        "ref_index": "31",
+        "path": [
+          "Chart Understanding Approaches",
+          "Classification-based Methods  ",
+          "Fixed Output Vocab"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000004",
+        "paperId": "d47f20de7195fea82e48315fea52ccf06dc301d3",
+        "ref_index": "4",
+        "path": [
+          "Chart Understanding Approaches",
+          "Classification-based Methods  ",
+          "Dynamic Encoding"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000005",
+        "paperId": "7289a240c9425bc7cad87b3b835e5f0cac22f488",
+        "ref_index": "15",
+        "path": [
+          "Chart Understanding Approaches",
+          "Classification-based Methods  ",
+          "Dynamic Encoding"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000006",
+        "paperId": "f59ae732612ce8c42035adfb47bd5739c6288ad6",
+        "ref_index": "16",
+        "path": [
+          "Chart Understanding Approaches",
+          "Classification-based Methods  ",
+          "Dynamic Encoding"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000007",
+        "paperId": "c496f00f2b85b496abdc36e4dc4105541248fd3c",
+        "ref_index": "28",
+        "path": [
+          "Chart Understanding Approaches",
+          "Classification-based Methods  ",
+          "Dynamic Encoding"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000008",
+        "paperId": "52cb05d721688cb766c6e282e9d55c3b8e3dc0cf",
+        "ref_index": "12",
+        "path": [
+          "Chart Understanding Approaches",
+          "Classification-based Methods  ",
+          "Small Pre-trained Models"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000009",
+        "paperId": "b611c501269224702d1a9942c8600a31ec66ab28",
+        "ref_index": "24",
+        "path": [
+          "Chart Understanding Approaches",
+          "Classification-based Methods  ",
+          "Small Pre-trained Models"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000010",
+        "paperId": "baff151a5f1cb378d3627b88ff7d1b3afd29db45",
+        "ref_index": "34",
+        "path": [
+          "Chart Understanding Approaches",
+          "Classification-based Methods  ",
+          "Small Pre-trained Models"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000011",
+        "paperId": "755dd3628b04adad423d2418f98c156123ebac2a",
+        "ref_index": "5",
+        "path": [
+          "Chart Understanding Approaches",
+          "Generation-based Methods ",
+          "Without Pre-training"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000012",
+        "paperId": "08b3c84da0da5bdc0e49a1c2f440743d829a5e1c",
+        "ref_index": "13",
+        "path": [
+          "Chart Understanding Approaches",
+          "Generation-based Methods ",
+          "Without Pre-training"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000013",
+        "paperId": "9a2a5bb18d6252711e124c0029fcf002d62f1795",
+        "ref_index": "29",
+        "path": [
+          "Chart Understanding Approaches",
+          "Generation-based Methods ",
+          "Without Pre-training"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000014",
+        "paperId": "3528ddcd62575aa4fbfc06141b97b80ad34e7c66",
+        "ref_index": "14",
+        "path": [
+          "Chart Understanding Approaches",
+          "Generation-based Methods ",
+          "Pre-trained"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000015",
+        "paperId": "2f33b928d76504714e17cd948695d170329843fc",
+        "ref_index": "17",
+        "path": [
+          "Chart Understanding Approaches",
+          "Generation-based Methods ",
+          "Pre-trained"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000016",
+        "paperId": "95e184e2668ad49b5ea7c1c185727ef2d2c30de6",
+        "ref_index": "20",
+        "path": [
+          "Chart Understanding Approaches",
+          "Generation-based Methods ",
+          "Pre-trained"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000017",
+        "paperId": "8ab4863393fceb41d0fa77d632ace4c80a57a154",
+        "ref_index": "25",
+        "path": [
+          "Chart Understanding Approaches",
+          "Generation-based Methods ",
+          "Pre-trained"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000018",
+        "paperId": "edf7707dbdcb249cba3c4284fd0a8f2dead32488",
+        "ref_index": "35",
+        "path": [
+          "Chart Understanding Approaches",
+          "Generation-based Methods ",
+          "Pre-trained"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000019",
+        "paperId": "887306ee7ebd9eebd7faea24106ec8e8f1a50987",
+        "ref_index": "6",
+        "path": [
+          "Chart Understanding Approaches",
+          "Generation-based Methods ",
+          "Large Vision-language Models",
+          "General-purpose"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000020",
+        "paperId": "76a3f4a79ae9a00db2f2b5f6877021d8deb96ada",
+        "ref_index": "18",
+        "path": [
+          "Chart Understanding Approaches",
+          "Generation-based Methods ",
+          "Large Vision-language Models",
+          "General-purpose"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000021",
+        "paperId": "124d4d374fbef2016fa9880489871a58a7450644",
+        "ref_index": "22",
+        "path": [
+          "Chart Understanding Approaches",
+          "Generation-based Methods ",
+          "Large Vision-language Models",
+          "General-purpose"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000022",
+        "paperId": "7a29f47f6509011fe5b19462abf6607867b68373",
+        "ref_index": "30",
+        "path": [
+          "Chart Understanding Approaches",
+          "Generation-based Methods ",
+          "Large Vision-language Models",
+          "General-purpose"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000023",
+        "paperId": "7e32aac43e9f1df49e116add03327ee6f365dbf3",
+        "ref_index": "40",
+        "path": [
+          "Chart Understanding Approaches",
+          "Generation-based Methods ",
+          "Large Vision-language Models",
+          "General-purpose"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000024",
+        "paperId": "ea566f87f6253bb2d32cf7b61cd3e2535a0c3f42",
+        "ref_index": "41",
+        "path": [
+          "Chart Understanding Approaches",
+          "Generation-based Methods ",
+          "Large Vision-language Models",
+          "General-purpose"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000025",
+        "paperId": "c816712bcb3aab9a114144af0eba8f2b10213713",
+        "ref_index": "7",
+        "path": [
+          "Chart Understanding Approaches",
+          "Generation-based Methods ",
+          "Large Vision-language Models",
+          "Chart-specific"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000026",
+        "paperId": "40cd34f260d5596263654caf9d911d4355bf4f4e",
+        "ref_index": "11",
+        "path": [
+          "Chart Understanding Approaches",
+          "Generation-based Methods ",
+          "Large Vision-language Models",
+          "Chart-specific"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000027",
+        "paperId": "0f993809c1fe00403ecea66d8f572832f075cfe4",
+        "ref_index": "23",
+        "path": [
+          "Chart Understanding Approaches",
+          "Generation-based Methods ",
+          "Large Vision-language Models",
+          "Chart-specific"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000028",
+        "paperId": "05389d52e77a69c37b197a4b77aee65128a9666a",
+        "ref_index": "26",
+        "path": [
+          "Chart Understanding Approaches",
+          "Generation-based Methods ",
+          "Large Vision-language Models",
+          "Chart-specific"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000029",
+        "paperId": "f768eafd07977723a5899e4a2a18ea79ada2b440",
+        "ref_index": "27",
+        "path": [
+          "Chart Understanding Approaches",
+          "Generation-based Methods ",
+          "Large Vision-language Models",
+          "Chart-specific"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000030",
+        "paperId": "9ab82096689de59b108a0bf2667ab12cac2f8271",
+        "ref_index": "38",
+        "path": [
+          "Chart Understanding Approaches",
+          "Generation-based Methods ",
+          "Large Vision-language Models",
+          "Chart-specific"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000031",
+        "paperId": "24354722e36c358b69893ab05220d6f2291989d1",
+        "ref_index": "42",
+        "path": [
+          "Chart Understanding Approaches",
+          "Generation-based Methods ",
+          "Large Vision-language Models",
+          "Chart-specific"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000032",
+        "paperId": "206b2aeb81b29463968b8deb1efce51941f18208",
+        "ref_index": "0",
+        "path": [
+          "Chart Understanding Approaches",
+          "Tool Augmentation ",
+          "OCR-based"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000033",
+        "paperId": "fc8ce94171d0a7ccb118a8902b99e999c3028ea5",
+        "ref_index": "1",
+        "path": [
+          "Chart Understanding Approaches",
+          "Tool Augmentation ",
+          "OCR-based"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000034",
+        "paperId": "fde3ee5f9f8e217a4d6716013315614811820f21",
+        "ref_index": "2",
+        "path": [
+          "Chart Understanding Approaches",
+          "Tool Augmentation ",
+          "OCR-based"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000035",
+        "paperId": "45524d7a40435d989579b88b70d25e4d65ac9e3c",
+        "ref_index": "8",
+        "path": [
+          "Chart Understanding Approaches",
+          "Tool Augmentation ",
+          "OCR-based"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000036",
+        "paperId": "503c73fe0c5ab83ab7b54101474d40f12ed65fc6",
+        "ref_index": "10",
+        "path": [
+          "Chart Understanding Approaches",
+          "Tool Augmentation ",
+          "OCR-based"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000037",
+        "paperId": "d1e356ac88768b3cb5b59926641b48cbaa15670c",
+        "ref_index": "21",
+        "path": [
+          "Chart Understanding Approaches",
+          "Tool Augmentation ",
+          "OCR-based"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000038",
+        "paperId": "8e9149ab00236d04db23394774e716c4f1d89231",
+        "ref_index": "32",
+        "path": [
+          "Chart Understanding Approaches",
+          "Tool Augmentation ",
+          "OCR-based"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000039",
+        "paperId": "edd0f6d316d33c61a4a69c9262d1b1e07a93bae6",
+        "ref_index": "33",
+        "path": [
+          "Chart Understanding Approaches",
+          "Tool Augmentation ",
+          "OCR-based"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000040",
+        "paperId": "d3fed1270db532f3a4c51e969422626ea95f8ef3",
+        "ref_index": "36",
+        "path": [
+          "Chart Understanding Approaches",
+          "Tool Augmentation ",
+          "OCR-based"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000041",
+        "paperId": "7bef3c961fb1c272b8c3a66d9169b02b64d57766",
+        "ref_index": "9",
+        "path": [
+          "Chart Understanding Approaches",
+          "Tool Augmentation ",
+          "Non-OCR-based"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000042",
+        "paperId": "3528ddcd62575aa4fbfc06141b97b80ad34e7c66",
+        "ref_index": "14",
+        "path": [
+          "Chart Understanding Approaches",
+          "Tool Augmentation ",
+          "Non-OCR-based"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000043",
+        "paperId": "4d3a49d1439a0b8fbb0e9f588970ad0f1d70dec8",
+        "ref_index": "19",
+        "path": [
+          "Chart Understanding Approaches",
+          "Tool Augmentation ",
+          "Non-OCR-based"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000044",
+        "paperId": "1d8472bbf71ccf60550126d136b53699a2f4f685",
+        "ref_index": "37",
+        "path": [
+          "Chart Understanding Approaches",
+          "Tool Augmentation ",
+          "Non-OCR-based"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2403.12027",
+        "arxiv_id": "2403.12027",
+        "leaf_mention_id": "2403.12027::000045",
+        "paperId": "85b9fa14b5fa81e34ed760cbfd255cf7227b84ae",
+        "ref_index": "39",
+        "path": [
+          "Chart Understanding Approaches",
+          "Tool Augmentation ",
+          "Non-OCR-based"
+        ],
+        "depth": 3,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 45,
+      "unique_leaf_paper_count": 43,
+      "multi_membership_extra_mentions": 2,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

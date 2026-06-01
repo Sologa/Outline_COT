@@ -1,0 +1,3125 @@
+{
+  "paper_id": "2203.01054",
+  "arxiv_id": "2203.01054",
+  "title": "A Survey on Aspect-Based Sentiment Analysis: Tasks, Methods, and Challenges",
+  "ref_meta": [
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "0",
+      "ref_key": "S2:08bcc29f8c827550c64061917d7f3bc4e57d0e69",
+      "paperId": "08bcc29f8c827550c64061917d7f3bc4e57d0e69",
+      "title": "Representation Learning for Aspect Category Detection in Online Reviews",
+      "year": 2015,
+      "abstract": "User-generated reviews are valuable resources for decision making. Identifying the aspect categories discussed in a given review sentence (e.g., “food” and “service” in restaurant reviews) is an important task of sentiment analysis and opinion mining. Given a predefined aspect category set, most previous researches leverage hand-crafted features and a classification algorithm to accomplish the task. The crucial step to achieve better performance is feature engineering which consumes much human effort and may be unstable when the product domain changes. In this paper, we propose a representation learning approach to automatically learn useful features for aspect category detection. Specifically, a semi-supervised word embedding algorithm is first proposed to obtain continuous word representations on a large set of reviews with noisy labels. Afterwards, we propose to generate deeper and hybrid features through neural networks stacked on the word vectors. A logistic regression classifier is finally trained with the hybrid features to predict the aspect category. The experiments are carried out on a benchmark dataset released by SemEval-2014. Our approach achieves the state-of-the-art performance and outperforms the best participating team as well as a few strong baselines.",
+      "externalIds": {
+        "DBLP": "conf/aaai/ZhouWX15",
+        "MAG": "1622600386",
+        "DOI": "10.1609/aaai.v29i1.9194",
+        "CorpusId": 15659121
+      },
+      "arxiv_id": null,
+      "doi": "10.1609/aaai.v29i1.9194",
+      "corpus_id": 15659121
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "1",
+      "ref_key": "S2:786d1ca11bfd95d8c845ef4a90b2d55092c2fb2f",
+      "paperId": "786d1ca11bfd95d8c845ef4a90b2d55092c2fb2f",
+      "title": "Coupled Multi-Layer Attentions for Co-Extraction of Aspect and Opinion Terms",
+      "year": 2017,
+      "abstract": "The task of aspect and opinion terms co-extraction aims to explicitly extract aspect terms describing features of an entity and opinion terms expressing emotions from user-generated texts. To achieve this task, one effective approach is to exploit relations between aspect terms and opinion terms by parsing syntactic structure for each sentence. However, this approach requires expensive effort for parsing and highly depends on the quality of the parsing results. In this paper, we offer a novel deep learning model, named coupled multi-layer attentions. The proposed model provides an end-to-end solution and does not require any parsers or other linguistic resources for preprocessing. Specifically, the proposed model is a multi-layer attention network, where each layer consists of a couple of attentions with tensor operators. One attention is for extracting aspect terms, while the other is for extracting opinion terms. They are learned interactively to dually propagate information between aspect terms and opinion terms. Through multiple layers, the model can further exploit indirect relations between terms for more precise information extraction. Experimental results on three benchmark datasets in SemEval Challenge 2014 and 2015 show that our model achieves state-of-the-art performances compared with several baselines.",
+      "externalIds": {
+        "DBLP": "conf/aaai/WangPDX17",
+        "MAG": "2604205681",
+        "DOI": "10.1609/aaai.v31i1.10974",
+        "CorpusId": 29170646
+      },
+      "arxiv_id": null,
+      "doi": "10.1609/aaai.v31i1.10974",
+      "corpus_id": 29170646
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "2",
+      "ref_key": "S2:e200b89dec14afe304e0e11ad0c7df07a50f0244",
+      "paperId": "e200b89dec14afe304e0e11ad0c7df07a50f0244",
+      "title": "A Unified Model for Opinion Target Extraction and Target Sentiment Prediction",
+      "year": 2018,
+      "abstract": "Target-based sentiment analysis involves opinion target extraction and target sentiment classification. However, most of the existing works usually studied one of these two sub-tasks alone, which hinders their practical use. This paper aims to solve the complete task of target-based sentiment analysis in an end-to-end fashion, and presents a novel unified model which applies a unified tagging scheme. Our framework involves two stacked recurrent neural networks: The upper one predicts the unified tags to produce the final output results of the primary target-based sentiment analysis; The lower one performs an auxiliary target boundary prediction aiming at guiding the upper network to improve the performance of the primary task. To explore the inter-task dependency, we propose to explicitly model the constrained transitions from target boundaries to target sentiment polarities. We also propose to maintain the sentiment consistency within an opinion target via a gate mechanism which models the relation between the features for the current word and the previous word. We conduct extensive experiments on three benchmark datasets and our framework achieves consistently superior results.",
+      "externalIds": {
+        "ArXiv": "1811.05082",
+        "DBLP": "conf/aaai/LiBLL19",
+        "MAG": "2951883148",
+        "DOI": "10.1609/aaai.v33i01.33016714",
+        "CorpusId": 53292699
+      },
+      "arxiv_id": "1811.05082",
+      "doi": "10.1609/aaai.v33i01.33016714",
+      "corpus_id": 53292699
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "3",
+      "ref_key": "S2:a2a6e1e18d1939622380ae2a2adac0dfdc9799d7",
+      "paperId": "a2a6e1e18d1939622380ae2a2adac0dfdc9799d7",
+      "title": "Knowing What, How and Why: A Near Complete Solution for Aspect-based Sentiment Analysis",
+      "year": 2019,
+      "abstract": "Target-based sentiment analysis or aspect-based sentiment analysis (ABSA) refers to addressing various sentiment analysis tasks at a fine-grained level, which includes but is not limited to aspect extraction, aspect sentiment classification, and opinion extraction. There exist many solvers of the above individual subtasks or a combination of two subtasks, and they can work together to tell a complete story, i.e. the discussed aspect, the sentiment on it, and the cause of the sentiment. However, no previous ABSA research tried to provide a complete solution in one shot. In this paper, we introduce a new subtask under ABSA, named aspect sentiment triplet extraction (ASTE). Particularly, a solver of this task needs to extract triplets (What, How, Why) from the inputs, which show WHAT the targeted aspects are, HOW their sentiment polarities are and WHY they have such polarities (i.e. opinion reasons). For instance, one triplet from “Waiters are very friendly and the pasta is simply average” could be (‘Waiters’, positive, ‘friendly’). We propose a two-stage framework to address this task. The first stage predicts what, how and why in a unified model, and then the second stage pairs up the predicted what (how) and why from the first stage to output triplets. In the experiments, our framework has set a benchmark performance in this novel triplet extraction task. Meanwhile, it outperforms a few strong baselines adapted from state-of-the-art related methods.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1911-01616",
+        "ArXiv": "1911.01616",
+        "MAG": "2985977640",
+        "DOI": "10.1609/AAAI.V34I05.6383",
+        "CorpusId": 207847374
+      },
+      "arxiv_id": "1911.01616",
+      "doi": "10.1609/AAAI.V34I05.6383",
+      "corpus_id": 207847374
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "4",
+      "ref_key": "S2:0ca7a64e306b7042ae384425577c4142a5870ff7",
+      "paperId": "0ca7a64e306b7042ae384425577c4142a5870ff7",
+      "title": "Target-Aspect-Sentiment Joint Detection for Aspect-Based Sentiment Analysis",
+      "year": 2020,
+      "abstract": "Aspect-based sentiment analysis (ABSA) aims to detect the targets (which are composed by continuous words), aspects and sentiment polarities in text. Published datasets from SemEval-2015 and SemEval-2016 reveal that a sentiment polarity depends on both the target and the aspect. However, most of the existing methods consider predicting sentiment polarities from either targets or aspects but not from both, thus they easily make wrong predictions on sentiment polarities. In particular, where the target is implicit, i.e., it does not appear in the given text, the methods predicting sentiment polarities from targets do not work. To tackle these limitations in ABSA, this paper proposes a novel method for target-aspect-sentiment joint detection. It relies on a pre-trained language model and can capture the dependence on both targets and aspects for sentiment prediction. Experimental results on the SemEval-2015 and SemEval-2016 restaurant datasets show that the proposed method achieves a high performance in detecting target-aspect-sentiment triples even for the implicit target cases; moreover, it even outperforms the state-of-the-art methods for those subtasks of target-aspect-sentiment detection that they are competent to.",
+      "externalIds": {
+        "MAG": "2997464781",
+        "DBLP": "conf/aaai/WanYDLQP20",
+        "DOI": "10.1609/AAAI.V34I05.6447",
+        "CorpusId": 214354571
+      },
+      "arxiv_id": null,
+      "doi": "10.1609/AAAI.V34I05.6447",
+      "corpus_id": 214354571
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "5",
+      "ref_key": "S2:6a10bba32185c1fa11ebc29ef7a3a814198c2b6c",
+      "paperId": "6a10bba32185c1fa11ebc29ef7a3a814198c2b6c",
+      "title": "A Simple and Effective Self-Supervised Contrastive Learning Framework for Aspect Detection",
+      "year": 2020,
+      "abstract": "Unsupervised aspect detection (UAD) aims at automatically extracting interpretable aspects and identifying aspect-specific segments (such as sentences) from online reviews. However, recent deep learning based topic models, specifically aspect-based autoencoder, suffer from several problems such as extracting noisy aspects and poorly mapping aspects discovered by models to the aspects of interest. To tackle these challenges, in this paper, we first propose a self-supervised contrastive learning framework and an attention-based model equipped with a novel smooth self-attention (SSA) module for the UAD task in order to learn better representations for aspects and review segments. Secondly, we introduce a high-resolution selective mapping (HRSMap) method to efficiently assign aspects discovered by the model to the aspects of interest. We also propose using a knowledge distillation technique to further improve the aspect detection performance. Our methods outperform several recent unsupervised and weakly supervised approaches on publicly available benchmark user review datasets. Aspect interpretation results show that extracted aspects are meaningful, have a good coverage, and can be easily mapped to aspects of interest. Ablation studies and attention weight visualization also demonstrate effectiveness of SSA and the knowledge distillation method.",
+      "externalIds": {
+        "DBLP": "conf/aaai/ShiLWR21",
+        "ArXiv": "2009.09107",
+        "MAG": "3087611829",
+        "DOI": "10.1609/aaai.v35i15.17628",
+        "CorpusId": 221818788
+      },
+      "arxiv_id": "2009.09107",
+      "doi": "10.1609/aaai.v35i15.17628",
+      "corpus_id": 221818788
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "6",
+      "ref_key": "S2:eccf59850f2a2433cc546b3e7e278d42825eec15",
+      "paperId": "eccf59850f2a2433cc546b3e7e278d42825eec15",
+      "title": "Question-Driven Span Labeling Model for Aspect-Opinion Pair Extraction",
+      "year": 2021,
+      "abstract": "Aspect term extraction and opinion word extraction are two fundamental subtasks of aspect-based sentiment analysis. The internal relationship between aspect terms and opinion words is typically ignored, and information for the decision-making of buyers and sellers is insufficient. In this paper, we explore an aspect–opinion pair extraction (AOPE) task and propose a Question-Driven Span Labeling (QDSL) model to extract all the aspect–opinion pairs from user-generated reviews. Specifically, we divide the AOPE task into aspect term extraction (ATE) and aspect-specified opinion extraction (ASOE) subtasks; we first extract all the candidate aspect terms and then the corresponding opinion words given the aspect term. Unlike existing approaches that use the BIO-based tagging scheme for extraction, the QDSL model adopts a span-based tagging scheme and builds a question–answer-based machine-reading comprehension task for an effective aspect–opinion pair extraction. Extensive experiments conducted on three tasks (ATE, ASOE, and AOPE) on four benchmark datasets demonstrate that the proposed method significantly outperforms state-of-the-art approaches.",
+      "externalIds": {
+        "DBLP": "conf/aaai/GaoWLWZL21",
+        "DOI": "10.1609/aaai.v35i14.17523",
+        "CorpusId": 235349217
+      },
+      "arxiv_id": null,
+      "doi": "10.1609/aaai.v35i14.17523",
+      "corpus_id": 235349217
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "7",
+      "ref_key": "S2:13e1a9324351b25de11a102066d804a31963147d",
+      "paperId": "13e1a9324351b25de11a102066d804a31963147d",
+      "title": "Bidirectional Machine Reading Comprehension for Aspect Sentiment Triplet Extraction",
+      "year": 2021,
+      "abstract": "Aspect sentiment triplet extraction (ASTE), which aims to identify aspects from review sentences along with their corresponding opinion expressions and sentiments, is an emerging task in fine-grained opinion mining. Since ASTE consists of multiple subtasks, including opinion entity extraction, relation detection, and sentiment classification, it is critical and challenging to appropriately capture and utilize the associations among them. In this paper, we transform ASTE task into a multi-turn machine reading comprehension (MTMRC) task and propose a bidirectional MRC (BMRC) framework to address this challenge. Specifically, we devise three types of queries, including non-restrictive extraction queries, restrictive extraction queries and sentiment classification queries, to build the associations among different subtasks. Furthermore, considering that an aspect sentiment triplet can derive from either an aspect or an opinion expression, we design a bidirectional MRC structure. One direction sequentially recognizes aspects, opinion expressions, and sentiments to obtain triplets, while the other direction identifies opinion expressions first, then aspects, and at last sentiments. By making the two directions complement each other, our framework can identify triplets more comprehensively. To verify the effectiveness of our approach, we conduct extensive experiments on four benchmark datasets. The experimental results demonstrate that BMRC achieves state-of-the-art performances.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2103-07665",
+        "MAG": "3174945579",
+        "ArXiv": "2103.07665",
+        "DOI": "10.1609/aaai.v35i14.17500",
+        "CorpusId": 232233390
+      },
+      "arxiv_id": "2103.07665",
+      "doi": "10.1609/aaai.v35i14.17500",
+      "corpus_id": 232233390
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "8",
+      "ref_key": "S2:0e021f936adf979f86812d67f32b090acb07d706",
+      "paperId": "0e021f936adf979f86812d67f32b090acb07d706",
+      "title": "A Joint Training Dual-MRC Framework for Aspect Based Sentiment Analysis",
+      "year": 2021,
+      "abstract": "Aspect based sentiment analysis (ABSA) involves three fundamental subtasks: aspect term extraction, opinion term extraction, and aspect-level sentiment classification. Early works only focused on solving one of these subtasks individually. Some recent work focused on solving a combination of two subtasks, e.g., extracting aspect terms along with sentiment polarities or extracting the aspect and opinion terms pair-wisely. More recently, the triple extraction task has been proposed, i.e., extracting the (aspect term, opinion term, sentiment polarity) triples from a sentence. However, previous approaches fail to solve all subtasks in a unified end-to-end framework. In this paper, we propose a complete solution for ABSA. We construct two machine reading comprehension (MRC) problems, and solve all subtasks by joint training two BERT-MRC models with parameters sharing. We conduct experiments on these subtasks and results on several benchmark datasets demonstrate the effectiveness of our proposed framework, which significantly outperforms existing state-of-the-art methods.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2101-00816",
+        "ArXiv": "2101.00816",
+        "DOI": "10.1609/aaai.v35i15.17597",
+        "CorpusId": 230437604
+      },
+      "arxiv_id": "2101.00816",
+      "doi": "10.1609/aaai.v35i15.17597",
+      "corpus_id": 230437604
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "9",
+      "ref_key": "S2:06e122f475a21d92dba137609c40f35690217475",
+      "paperId": "06e122f475a21d92dba137609c40f35690217475",
+      "title": "Adaptive Recursive Neural Network for Target-dependent Twitter Sentiment Classification",
+      "year": 2014,
+      "abstract": "We propose Adaptive Recursive Neural Network (AdaRNN) for target-dependent Twitter sentiment classification. AdaRNN adaptively propagates the sentiments of words to target depending on the context and syntactic relationships between them. It consists of more than one composition functions, and we model the adaptive sentiment propagations as distributions over these composition functions. The experimental studies illustrate that AdaRNN improves the baseline methods. Furthermore, we introduce a manually annotated dataset for target-dependent Twitter sentiment analysis.",
+      "externalIds": {
+        "MAG": "2251124635",
+        "ACL": "P14-2009",
+        "DBLP": "conf/acl/DongWTTZX14",
+        "DOI": "10.3115/v1/P14-2009",
+        "CorpusId": 3158440
+      },
+      "arxiv_id": null,
+      "doi": "10.3115/v1/P14-2009",
+      "corpus_id": 3158440
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "10",
+      "ref_key": "S2:c9faf8c7c8e1f13b7a14a86b57c6432c4fd953eb",
+      "paperId": "c9faf8c7c8e1f13b7a14a86b57c6432c4fd953eb",
+      "title": "An Unsupervised Neural Attention Model for Aspect Extraction",
+      "year": 2017,
+      "abstract": "Aspect extraction is an important and challenging task in aspect-based sentiment analysis. Existing works tend to apply variants of topic models on this task. While fairly successful, these methods usually do not produce highly coherent aspects. In this paper, we present a novel neural approach with the aim of discovering coherent aspects. The model improves coherence by exploiting the distribution of word co-occurrences through the use of neural word embeddings. Unlike topic models which typically assume independently generated words, word embedding models encourage words that appear in similar contexts to be located close to each other in the embedding space. In addition, we use an attention mechanism to de-emphasize irrelevant words during training, further improving the coherence of aspects. Experimental results on real-life datasets demonstrate that our approach discovers more meaningful and coherent aspects, and substantially outperforms baseline methods on several evaluation tasks.",
+      "externalIds": {
+        "ACL": "P17-1036",
+        "MAG": "2741252866",
+        "DBLP": "conf/acl/HeLND17",
+        "DOI": "10.18653/v1/P17-1036",
+        "CorpusId": 29907166
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/P17-1036",
+      "corpus_id": 29907166
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "11",
+      "ref_key": "S2:6e4ffbbb9de148ee334f07e74ddf98d9bf062f13",
+      "paperId": "6e4ffbbb9de148ee334f07e74ddf98d9bf062f13",
+      "title": "Aspect Based Sentiment Analysis with Gated Convolutional Networks",
+      "year": 2018,
+      "abstract": "Aspect based sentiment analysis (ABSA) can provide more detailed information than general sentiment analysis, because it aims to predict the sentiment polarities of the given aspects or entities in text. We summarize previous approaches into two subtasks: aspect-category sentiment analysis (ACSA) and aspect-term sentiment analysis (ATSA). Most previous approaches employ long short-term memory and attention mechanisms to predict the sentiment polarity of the concerned targets, which are often complicated and need more training time. We propose a model based on convolutional neural networks and gating mechanisms, which is more accurate and efficient. First, the novel Gated Tanh-ReLU Units can selectively output the sentiment features according to the given aspect or entity. The architecture is much simpler than attention layer used in the existing models. Second, the computations of our model could be easily parallelized during training, because convolutional layers do not have time dependency as in LSTM layers, and gating units also work independently. The experiments on SemEval datasets demonstrate the efficiency and effectiveness of our models.",
+      "externalIds": {
+        "MAG": "2798590591",
+        "ACL": "P18-1234",
+        "DBLP": "journals/corr/abs-1805-07043",
+        "ArXiv": "1805.07043",
+        "DOI": "10.18653/v1/P18-1234",
+        "CorpusId": 29149810
+      },
+      "arxiv_id": "1805.07043",
+      "doi": "10.18653/v1/P18-1234",
+      "corpus_id": 29149810
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "12",
+      "ref_key": "S2:48a2661c7fb56cb762fe541304c5785d793e5a0f",
+      "paperId": "48a2661c7fb56cb762fe541304c5785d793e5a0f",
+      "title": "Transformation Networks for Target-Oriented Sentiment Classification",
+      "year": 2018,
+      "abstract": "Target-oriented sentiment classification aims at classifying sentiment polarities over individual opinion targets in a sentence. RNN with attention seems a good fit for the characteristics of this task, and indeed it achieves the state-of-the-art performance. After re-examining the drawbacks of attention mechanism and the obstacles that block CNN to perform well in this classification task, we propose a new model that achieves new state-of-the-art results on a few benchmarks. Instead of attention, our model employs a CNN layer to extract salient features from the transformed word representations originated from a bi-directional RNN layer. Between the two layers, we propose a component which first generates target-specific representations of words in the sentence, and then incorporates a mechanism for preserving the original contextual information from the RNN layer.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1805-01086",
+        "ACL": "P18-1087",
+        "MAG": "2951910281",
+        "ArXiv": "1805.01086",
+        "DOI": "10.18653/v1/P18-1087",
+        "CorpusId": 23204325
+      },
+      "arxiv_id": "1805.01086",
+      "doi": "10.18653/v1/P18-1087",
+      "corpus_id": 23204325
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "13",
+      "ref_key": "S2:9a91e3a88632ef68e4932d4a49321dd9b0311062",
+      "paperId": "9a91e3a88632ef68e4932d4a49321dd9b0311062",
+      "title": "Double Embeddings and CNN-based Sequence Labeling for Aspect Extraction",
+      "year": 2018,
+      "abstract": "One key task of fine-grained sentiment analysis of product reviews is to extract product aspects or features that users have expressed opinions on. This paper focuses on supervised aspect extraction using deep learning. Unlike other highly sophisticated supervised deep learning models, this paper proposes a novel and yet simple CNN model employing two types of pre-trained embeddings for aspect extraction: general-purpose embeddings and domain-specific embeddings. Without using any additional supervision, this model achieves surprisingly good results, outperforming state-of-the-art sophisticated existing methods. To our knowledge, this paper is the first to report such double embeddings based CNN model for aspect extraction and achieve very good results.",
+      "externalIds": {
+        "MAG": "2962741379",
+        "ACL": "P18-2094",
+        "DBLP": "journals/corr/abs-1805-04601",
+        "ArXiv": "1805.04601",
+        "DOI": "10.18653/v1/P18-2094",
+        "CorpusId": 44009215
+      },
+      "arxiv_id": "1805.04601",
+      "doi": "10.18653/v1/P18-2094",
+      "corpus_id": 44009215
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "14",
+      "ref_key": "S2:c1abff438508a80524b525b2e4b6bd4a5c40b101",
+      "paperId": "c1abff438508a80524b525b2e4b6bd4a5c40b101",
+      "title": "Transfer Capsule Network for Aspect Level Sentiment Classification",
+      "year": 2019,
+      "abstract": "Aspect-level sentiment classification aims to determine the sentiment polarity of a sentence towards an aspect. Due to the high cost in annotation, the lack of aspect-level labeled data becomes a major obstacle in this area. On the other hand, document-level labeled data like reviews are easily accessible from online websites. These reviews encode sentiment knowledge in abundant contexts. In this paper, we propose a Transfer Capsule Network (TransCap) model for transferring document-level knowledge to aspect-level sentiment classification. To this end, we first develop an aspect routing approach to encapsulate the sentence-level semantic representations into semantic capsules from both the aspect-level and document-level data. We then extend the dynamic routing approach to adaptively couple the semantic capsules with the class capsules under the transfer learning framework. Experiments on SemEval datasets demonstrate the effectiveness of TransCap.",
+      "externalIds": {
+        "ACL": "P19-1052",
+        "MAG": "2950404230",
+        "DBLP": "conf/acl/ChenQ19",
+        "DOI": "10.18653/v1/P19-1052",
+        "CorpusId": 196176857
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/P19-1052",
+      "corpus_id": 196176857
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "15",
+      "ref_key": "S2:aae9475f1eb9e0a00490b3bd6bf298998508459e",
+      "paperId": "aae9475f1eb9e0a00490b3bd6bf298998508459e",
+      "title": "Exploring Sequence-to-Sequence Learning in Aspect Term Extraction",
+      "year": 2019,
+      "abstract": "Aspect term extraction (ATE) aims at identifying all aspect terms in a sentence and is usually modeled as a sequence labeling problem. However, sequence labeling based methods cannot make full use of the overall meaning of the whole sentence and have the limitation in processing dependencies between labels. To tackle these problems, we first explore to formalize ATE as a sequence-to-sequence (Seq2Seq) learning task where the source sequence and target sequence are composed of words and labels respectively. At the same time, to make Seq2Seq learning suit to ATE where labels correspond to words one by one, we design the gated unit networks to incorporate corresponding word representation into the decoder, and position-aware attention to pay more attention to the adjacent words of a target word. The experimental results on two datasets show that Seq2Seq learning is effective in ATE accompanied with our proposed gated unit networks and position-aware attention mechanism.",
+      "externalIds": {
+        "DBLP": "conf/acl/MaLWXW19",
+        "MAG": "2950601686",
+        "ACL": "P19-1344",
+        "DOI": "10.18653/v1/P19-1344",
+        "CorpusId": 196177821
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/P19-1344",
+      "corpus_id": 196177821
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "16",
+      "ref_key": "S2:a2be5da4e0ba9a0968fb415c36a75ec6f5103817",
+      "paperId": "a2be5da4e0ba9a0968fb415c36a75ec6f5103817",
+      "title": "Open-Domain Targeted Sentiment Analysis via Span-Based Extraction and Classification",
+      "year": 2019,
+      "abstract": "Open-domain targeted sentiment analysis aims to detect opinion targets along with their sentiment polarities from a sentence. Prior work typically formulates this task as a sequence tagging problem. However, such formulation suffers from problems such as huge search space and sentiment inconsistency. To address these problems, we propose a span-based extract-then-classify framework, where multiple opinion targets are directly extracted from the sentence under the supervision of target span boundaries, and corresponding polarities are then classified using their span representations. We further investigate three approaches under this framework, namely the pipeline, joint, and collapsed models. Experiments on three benchmark datasets show that our approach consistently outperforms the sequence tagging baseline. Moreover, we find that the pipeline model achieves the best performance compared with the other two models.",
+      "externalIds": {
+        "DBLP": "conf/acl/HuPHLL19",
+        "ArXiv": "1906.03820",
+        "MAG": "2949660355",
+        "ACL": "P19-1051",
+        "DOI": "10.18653/v1/P19-1051",
+        "CorpusId": 182952458
+      },
+      "arxiv_id": "1906.03820",
+      "doi": "10.18653/v1/P19-1051",
+      "corpus_id": 182952458
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "17",
+      "ref_key": "S2:471b8f4592ac4c145a094dac5bd50fb712687acd",
+      "paperId": "471b8f4592ac4c145a094dac5bd50fb712687acd",
+      "title": "DOER: Dual Cross-Shared RNN for Aspect Term-Polarity Co-Extraction",
+      "year": 2019,
+      "abstract": "This paper focuses on two related subtasks of aspect-based sentiment analysis, namely aspect term extraction and aspect sentiment classification, which we call aspect term-polarity co-extraction. The former task is to extract aspects of a product or service from an opinion document, and the latter is to identify the polarity expressed in the document about these extracted aspects. Most existing algorithms address them as two separate tasks and solve them one by one, or only perform one task, which can be complicated for real applications. In this paper, we treat these two tasks as two sequence labeling problems and propose a novel Dual crOss-sharEd RNN framework (DOER) to generate all aspect term-polarity pairs of the input sentence simultaneously. Specifically, DOER involves a dual recurrent neural network to extract the respective representation of each task, and a cross-shared unit to consider the relationship between them. Experimental results demonstrate that the proposed framework outperforms state-of-the-art baselines on three benchmark datasets.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1906-01794",
+        "ACL": "P19-1056",
+        "MAG": "2963274454",
+        "ArXiv": "1906.01794",
+        "DOI": "10.18653/v1/P19-1056",
+        "CorpusId": 174799304
+      },
+      "arxiv_id": "1906.01794",
+      "doi": "10.18653/v1/P19-1056",
+      "corpus_id": 174799304
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "18",
+      "ref_key": "S2:3f9a03b71216c202ac5a7bafba32e5e9773ed83f",
+      "paperId": "3f9a03b71216c202ac5a7bafba32e5e9773ed83f",
+      "title": "An Interactive Multi-Task Learning Network for End-to-End Aspect-Based Sentiment Analysis",
+      "year": 2019,
+      "abstract": "Aspect-based sentiment analysis produces a list of aspect terms and their corresponding sentiments for a natural language sentence. This task is usually done in a pipeline manner, with aspect term extraction performed first, followed by sentiment predictions toward the extracted aspect terms. While easier to develop, such an approach does not fully exploit joint information from the two subtasks and does not use all available sources of training information that might be helpful, such as document-level labeled sentiment corpus. In this paper, we propose an interactive multi-task learning network (IMN) which is able to jointly learn multiple related tasks simultaneously at both the token level as well as the document level. Unlike conventional multi-task learning methods that rely on learning common features for the different tasks, IMN introduces a message passing architecture where information is iteratively passed to different tasks through a shared set of latent variables. Experimental results demonstrate superior performance of the proposed method against multiple baselines on three benchmark datasets.",
+      "externalIds": {
+        "MAG": "2950488390",
+        "ArXiv": "1906.06906",
+        "ACL": "P19-1048",
+        "DBLP": "conf/acl/HeLND19",
+        "DOI": "10.18653/v1/P19-1048",
+        "CorpusId": 189928395
+      },
+      "arxiv_id": "1906.06906",
+      "doi": "10.18653/v1/P19-1048",
+      "corpus_id": 189928395
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "19",
+      "ref_key": "S2:8d90d7ff23313745e5feb14187b5851f1e5aefe7",
+      "paperId": "8d90d7ff23313745e5feb14187b5851f1e5aefe7",
+      "title": "Embarrassingly Simple Unsupervised Aspect Extraction",
+      "year": 2020,
+      "abstract": "We present a simple but effective method for aspect identification in sentiment analysis. Our unsupervised method only requires word embeddings and a POS tagger, and is therefore straightforward to apply to new domains and languages. We introduce Contrastive Attention (CAt), a novel single-head attention mechanism based on an RBF kernel, which gives a considerable boost in performance and makes the model interpretable. Previous work relied on syntactic features and complex neural models. We show that given the simplicity of current benchmark datasets for aspect extraction, such complex models are not needed. The code to reproduce the experiments reported in this paper is available at https://github.com/clips/cat.",
+      "externalIds": {
+        "MAG": "3035611181",
+        "ACL": "2020.acl-main.290",
+        "DBLP": "journals/corr/abs-2004-13580",
+        "ArXiv": "2004.13580",
+        "DOI": "10.18653/v1/2020.acl-main.290",
+        "CorpusId": 216562513
+      },
+      "arxiv_id": "2004.13580",
+      "doi": "10.18653/v1/2020.acl-main.290",
+      "corpus_id": 216562513
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "20",
+      "ref_key": "S2:7e3faf1c17a61de18f99daf978e9d1961c621d27",
+      "paperId": "7e3faf1c17a61de18f99daf978e9d1961c621d27",
+      "title": "SpanMlt: A Span-based Multi-Task Learning Framework for Pair-wise Aspect and Opinion Terms Extraction",
+      "year": 2020,
+      "abstract": "Aspect terms extraction and opinion terms extraction are two key problems of fine-grained Aspect Based Sentiment Analysis (ABSA). The aspect-opinion pairs can provide a global profile about a product or service for consumers and opinion mining systems. However, traditional methods can not directly output aspect-opinion pairs without given aspect terms or opinion terms. Although some recent co-extraction methods have been proposed to extract both terms jointly, they fail to extract them as pairs. To this end, this paper proposes an end-to-end method to solve the task of Pair-wise Aspect and Opinion Terms Extraction (PAOTE). Furthermore, this paper treats the problem from a perspective of joint term and relation extraction rather than under the sequence tagging formulation performed in most prior works. We propose a multi-task learning framework based on shared spans, where the terms are extracted under the supervision of span boundaries. Meanwhile, the pair-wise relations are jointly identified using the span representations. Extensive experiments show that our model consistently outperforms state-of-the-art methods.",
+      "externalIds": {
+        "DBLP": "conf/acl/ZhaoHZLX20",
+        "ACL": "2020.acl-main.296",
+        "MAG": "3034884160",
+        "DOI": "10.18653/v1/2020.acl-main.296",
+        "CorpusId": 220047441
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2020.acl-main.296",
+      "corpus_id": 220047441
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "21",
+      "ref_key": "S2:f9db21c20fc1d6d096be5c707c31387da693c611",
+      "paperId": "f9db21c20fc1d6d096be5c707c31387da693c611",
+      "title": "Synchronous Double-channel Recurrent Network for Aspect-Opinion Pair Extraction",
+      "year": 2020,
+      "abstract": "Opinion entity extraction is a fundamental task in fine-grained opinion mining. Related studies generally extract aspects and/or opinion expressions without recognizing the relations between them. However, the relations are crucial for downstream tasks, including sentiment classification, opinion summarization, etc. In this paper, we explore Aspect-Opinion Pair Extraction (AOPE) task, which aims at extracting aspects and opinion expressions in pairs. To deal with this task, we propose Synchronous Double-channel Recurrent Network (SDRN) mainly consisting of an opinion entity extraction unit, a relation detection unit, and a synchronization unit. The opinion entity extraction unit and the relation detection unit are developed as two channels to extract opinion entities and relations simultaneously. Furthermore, within the synchronization unit, we design Entity Synchronization Mechanism (ESM) and Relation Synchronization Mechanism (RSM) to enhance the mutual benefit on the above two channels. To verify the performance of SDRN, we manually build three datasets based on SemEval 2014 and 2015 benchmarks. Extensive experiments demonstrate that SDRN achieves state-of-the-art performances.",
+      "externalIds": {
+        "ACL": "2020.acl-main.582",
+        "DBLP": "conf/acl/ChenLWZC20",
+        "MAG": "3035407080",
+        "DOI": "10.18653/v1/2020.acl-main.582",
+        "CorpusId": 220047070
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2020.acl-main.582",
+      "corpus_id": 220047070
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "22",
+      "ref_key": "S2:57fff1bd2265848f126f7f62b10d1c67cb6be0da",
+      "paperId": "57fff1bd2265848f126f7f62b10d1c67cb6be0da",
+      "title": "Dependency Graph Enhanced Dual-transformer Structure for Aspect-based Sentiment Classification",
+      "year": 2020,
+      "abstract": "Aspect-based sentiment classification is a popular task aimed at identifying the corresponding emotion of a specific aspect. One sentence may contain various sentiments for different aspects. Many sophisticated methods such as attention mechanism and Convolutional Neural Networks (CNN) have been widely employed for handling this challenge. Recently, semantic dependency tree implemented by Graph Convolutional Networks (GCN) is introduced to describe the inner connection between aspects and the associated emotion words. But the improvement is limited due to the noise and instability of dependency trees. To this end, we propose a dependency graph enhanced dual-transformer network (named DGEDT) by jointly considering the flat representations learnt from Transformer and graph-based representations learnt from the corresponding dependency graph in an iterative interaction manner. Specifically, a dual-transformer structure is devised in DGEDT to support mutual reinforcement between the flat representation learning and graph-based representation learning. The idea is to allow the dependency graph to guide the representation learning of the transformer encoder and vice versa. The results on five datasets demonstrate that the proposed DGEDT outperforms all state-of-the-art alternatives with a large margin.",
+      "externalIds": {
+        "MAG": "3035740499",
+        "ACL": "2020.acl-main.588",
+        "DBLP": "conf/acl/TangJLZ20",
+        "DOI": "10.18653/v1/2020.acl-main.588",
+        "CorpusId": 220045826
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2020.acl-main.588",
+      "corpus_id": 220045826
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "23",
+      "ref_key": "S2:91abd290b1151ffc56a9bbdd84bee69bbb30dc99",
+      "paperId": "91abd290b1151ffc56a9bbdd84bee69bbb30dc99",
+      "title": "Conditional Augmentation for Aspect Term Extraction via Masked Sequence-to-Sequence Generation",
+      "year": 2020,
+      "abstract": "Aspect term extraction aims to extract aspect terms from review texts as opinion targets for sentiment analysis. One of the big challenges with this task is the lack of sufficient annotated data. While data augmentation is potentially an effective technique to address the above issue, it is uncontrollable as it may change aspect words and aspect labels unexpectedly. In this paper, we formulate the data augmentation as a conditional generation task: generating a new sentence while preserving the original opinion targets and labels. We propose a masked sequence-to-sequence method for conditional augmentation of aspect term extraction. Unlike existing augmentation approaches, ours is controllable and allows to generate more diversified sentences. Experimental results confirm that our method alleviates the data scarcity problem significantly. It also effectively boosts the performances of several current models for aspect term extraction.",
+      "externalIds": {
+        "MAG": "3034336785",
+        "DBLP": "journals/corr/abs-2004-14769",
+        "ACL": "2020.acl-main.631",
+        "ArXiv": "2004.14769",
+        "DOI": "10.18653/v1/2020.acl-main.631",
+        "CorpusId": 216914236
+      },
+      "arxiv_id": "2004.14769",
+      "doi": "10.18653/v1/2020.acl-main.631",
+      "corpus_id": 216914236
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "24",
+      "ref_key": "S2:b91e36e3f0db1dd2ed333e271cc3acea9380119f",
+      "paperId": "b91e36e3f0db1dd2ed333e271cc3acea9380119f",
+      "title": "Relation-Aware Collaborative Learning for Unified Aspect-Based Sentiment Analysis",
+      "year": 2020,
+      "abstract": "Aspect-based sentiment analysis (ABSA) involves three subtasks, i.e., aspect term extraction, opinion term extraction, and aspect-level sentiment classification. Most existing studies focused on one of these subtasks only. Several recent researches made successful attempts to solve the complete ABSA problem with a unified framework. However, the interactive relations among three subtasks are still under-exploited. We argue that such relations encode collaborative signals between different subtasks. For example, when the opinion term is “delicious”, the aspect term must be “food” rather than “place”. In order to fully exploit these relations, we propose a Relation-Aware Collaborative Learning (RACL) framework which allows the subtasks to work coordinately via the multi-task learning and relation propagation mechanisms in a stacked multi-layer network. Extensive experiments on three real-world datasets demonstrate that RACL significantly outperforms the state-of-the-art methods for the complete ABSA task.",
+      "externalIds": {
+        "DBLP": "conf/acl/ChenQ20",
+        "ACL": "2020.acl-main.340",
+        "MAG": "3034990686",
+        "DOI": "10.18653/v1/2020.acl-main.340",
+        "CorpusId": 220045831
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2020.acl-main.340",
+      "corpus_id": 220045831
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "25",
+      "ref_key": "S2:4bcd811142901c798c785a6aee4b6ae40bdabe19",
+      "paperId": "4bcd811142901c798c785a6aee4b6ae40bdabe19",
+      "title": "Multi-Label Few-Shot Learning for Aspect Category Detection",
+      "year": 2021,
+      "abstract": "Aspect category detection (ACD) in sentiment analysis aims to identify the aspect categories mentioned in a sentence. In this paper, we formulate ACD in the few-shot learning scenario. However, existing few-shot learning approaches mainly focus on single-label predictions. These methods can not work well for the ACD task since a sentence may contain multiple aspect categories. Therefore, we propose a multi-label few-shot learning method based on the prototypical network. To alleviate the noise, we design two effective attention mechanisms. The support-set attention aims to extract better prototypes by removing irrelevant aspects. The query-set attention computes multiple prototype-specific representations for each query instance, which are then used to compute accurate distances with the corresponding prototypes. To achieve multi-label inference, we further learn a dynamic threshold per instance by a policy network. Extensive experimental results on three datasets demonstrate that the proposed method significantly outperforms strong baselines.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2105-14174",
+        "ACL": "2021.acl-long.495",
+        "ArXiv": "2105.14174",
+        "DOI": "10.18653/v1/2021.acl-long.495",
+        "CorpusId": 235254178
+      },
+      "arxiv_id": "2105.14174",
+      "doi": "10.18653/v1/2021.acl-long.495",
+      "corpus_id": 235254178
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "26",
+      "ref_key": "S2:02b1bc3601aafbafc4cf8b27557e599a1690f295",
+      "paperId": "02b1bc3601aafbafc4cf8b27557e599a1690f295",
+      "title": "Dual Graph Convolutional Networks for Aspect-based Sentiment Analysis",
+      "year": 2021,
+      "abstract": "Aspect-based sentiment analysis is a fine-grained sentiment classification task. Recently, graph neural networks over dependency trees have been explored to explicitly model connections between aspects and opinion words. However, the improvement is limited due to the inaccuracy of the dependency parsing results and the informal expressions and complexity of online reviews. To overcome these challenges, in this paper, we propose a dual graph convolutional networks (DualGCN) model that considers the complementarity of syntax structures and semantic correlations simultaneously. Particularly, to alleviate dependency parsing errors, we design a SynGCN module with rich syntactic knowledge. To capture semantic correlations, we design a SemGCN module with self-attention mechanism. Furthermore, we propose orthogonal and differential regularizers to capture semantic correlations between words precisely by constraining attention scores in the SemGCN module. The orthogonal regularizer encourages the SemGCN to learn semantically correlated words with less overlap for each word. The differential regularizer encourages the SemGCN to learn semantic features that the SynGCN fails to capture. Experimental results on three public datasets show that our DualGCN model outperforms state-of-the-art methods and verify the effectiveness of our model.",
+      "externalIds": {
+        "DBLP": "conf/acl/LiCFMWH20",
+        "ACL": "2021.acl-long.494",
+        "DOI": "10.18653/v1/2021.acl-long.494",
+        "CorpusId": 236460102
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2021.acl-long.494",
+      "corpus_id": 236460102
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "27",
+      "ref_key": "S2:968820dfae97f80b63674fd76cd7d82332498708",
+      "paperId": "968820dfae97f80b63674fd76cd7d82332498708",
+      "title": "A Unified Generative Framework for Aspect-based Sentiment Analysis",
+      "year": 2021,
+      "abstract": "Aspect-based Sentiment Analysis (ABSA) aims to identify the aspect terms, their corresponding sentiment polarities, and the opinion terms. There exist seven subtasks in ABSA. Most studies only focus on the subsets of these subtasks, which leads to various complicated ABSA models while hard to solve these subtasks in a unified framework. In this paper, we redefine every subtask target as a sequence mixed by pointer indexes and sentiment class indexes, which converts all ABSA subtasks into a unified generative formulation. Based on the unified formulation, we exploit the pre-training sequence-to-sequence model BART to solve all ABSA subtasks in an end-to-end framework. Extensive experiments on four ABSA datasets for seven subtasks demonstrate that our framework achieves substantial performance gain and provides a real unified end-to-end solution for the whole ABSA subtasks, which could benefit multiple tasks.",
+      "externalIds": {
+        "ACL": "2021.acl-long.188",
+        "DBLP": "conf/acl/YanDJQ020",
+        "ArXiv": "2106.04300",
+        "DOI": "10.18653/v1/2021.acl-long.188",
+        "CorpusId": 235367681
+      },
+      "arxiv_id": "2106.04300",
+      "doi": "10.18653/v1/2021.acl-long.188",
+      "corpus_id": 235367681
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "28",
+      "ref_key": "S2:1abaa34bd4cd780f723c23b8fa819e5aa4d6ae08",
+      "paperId": "1abaa34bd4cd780f723c23b8fa819e5aa4d6ae08",
+      "title": "Learning Span-Level Interactions for Aspect Sentiment Triplet Extraction",
+      "year": 2021,
+      "abstract": "Aspect Sentiment Triplet Extraction (ASTE) is the most recent subtask of ABSA which outputs triplets of an aspect target, its associated sentiment, and the corresponding opinion term. Recent models perform the triplet extraction in an end-to-end manner but heavily rely on the interactions between each target word and opinion word. Thereby, they cannot perform well on targets and opinions which contain multiple words. Our proposed span-level approach explicitly considers the interaction between the whole spans of targets and opinions when predicting their sentiment relation. Thus, it can make predictions with the semantics of whole spans, ensuring better sentiment consistency. To ease the high computational cost caused by span enumeration, we propose a dual-channel span pruning strategy by incorporating supervision from the Aspect Term Extraction (ATE) and Opinion Term Extraction (OTE) tasks. This strategy not only improves computational efficiency but also distinguishes the opinion and target spans more properly. Our framework simultaneously achieves strong performance for the ASTE as well as ATE and OTE tasks. In particular, our analysis shows that our span-level approach achieves more significant improvements over the baselines on triplets with multi-word targets or opinions.",
+      "externalIds": {
+        "DBLP": "conf/acl/XuCB20",
+        "ArXiv": "2107.12214",
+        "ACL": "2021.acl-long.367",
+        "DOI": "10.18653/v1/2021.acl-long.367",
+        "CorpusId": 236428724
+      },
+      "arxiv_id": "2107.12214",
+      "doi": "10.18653/v1/2021.acl-long.367",
+      "corpus_id": 236428724
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "29",
+      "ref_key": "S2:768ff532981f47a954d8bc6563a5b3e909cfbcad",
+      "paperId": "768ff532981f47a954d8bc6563a5b3e909cfbcad",
+      "title": "Towards Generative Aspect-Based Sentiment Analysis",
+      "year": 2021,
+      "abstract": "Aspect-based sentiment analysis (ABSA) has received increasing attention recently. Most existing work tackles ABSA in a discriminative manner, designing various task-specific classification networks for the prediction. Despite their effectiveness, these methods ignore the rich label semantics in ABSA problems and require extensive task-specific designs. In this paper, we propose to tackle various ABSA tasks in a unified generative framework. Two types of paradigms, namely annotation-style and extraction-style modeling, are designed to enable the training process by formulating each ABSA task as a text generation problem. We conduct experiments on four ABSA tasks across multiple benchmark datasets where our proposed generative approach achieves new state-of-the-art results in almost all cases. This also validates the strong generality of the proposed framework which can be easily adapted to arbitrary ABSA task without additional task-specific model design.",
+      "externalIds": {
+        "MAG": "3176690085",
+        "DBLP": "conf/acl/Zhang0DBL20",
+        "ACL": "2021.acl-short.64",
+        "DOI": "10.18653/v1/2021.acl-short.64",
+        "CorpusId": 236460053
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2021.acl-short.64",
+      "corpus_id": 236460053
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "30",
+      "ref_key": "S2:8298cbdc43c1e93257be69a078ca2662da89db9c",
+      "paperId": "8298cbdc43c1e93257be69a078ca2662da89db9c",
+      "title": "Aspect-Category-Opinion-Sentiment Quadruple Extraction with Implicit Aspects and Opinions",
+      "year": 2021,
+      "abstract": "Product reviews contain a large number of implicit aspects and implicit opinions. However, most of the existing studies in aspect-based sentiment analysis ignored this problem. In this work, we introduce a new task, named Aspect-Category-Opinion-Sentiment (ACOS) Quadruple Extraction, with the goal to extract all aspect-category-opinion-sentiment quadruples in a review sentence and provide full support for aspect-based sentiment analysis with implicit aspects and opinions. We furthermore construct two new datasets, Restaurant-ACOS and Laptop-ACOS, for this new task, both of which contain the annotations of not only aspect-category-opinion-sentiment quadruples but also implicit aspects and opinions. The former is an extension of the SemEval Restaurant dataset; the latter is a newly collected and annotated Laptop dataset, twice the size of the SemEval Laptop dataset. We finally benchmark the task with four baseline systems. Experiments demonstrate the feasibility of the new task and its effectiveness in extracting and describing implicit aspects and implicit opinions. The two datasets and source code of four systems are publicly released at https://github.com/NUSTM/ACOS.",
+      "externalIds": {
+        "ACL": "2021.acl-long.29",
+        "DBLP": "conf/acl/CaiXY20",
+        "DOI": "10.18653/v1/2021.acl-long.29",
+        "CorpusId": 236460322
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2021.acl-long.29",
+      "corpus_id": 236460322
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "31",
+      "ref_key": "S2:514627a1a81152f03de0c1e0e9e73525fb8da03c",
+      "paperId": "514627a1a81152f03de0c1e0e9e73525fb8da03c",
+      "title": "Seq2Path: Generating Sentiment Tuples as Paths of a Tree",
+      "year": 2022,
+      "abstract": "Aspect-based sentiment analysis (ABSA) tasks aim to extract sentiment tuples from a sentence. Recent generative methods such as Seq2Seq models have achieved good performance by formulating the output as a sequence of sentiment tuples. However, the orders between the sentiment tuples do not naturally exist and the generation of the current tuple should not condition on the previous ones. In this paper, we propose Seq2Path to generate sentiment tuples as paths of a tree. A tree can represent “1-to-n” relations (e.g., an aspect term may correspond to multiple opinion terms) and the paths of a tree are independent and do not have orders. For training, we treat each path as an independent target, and we calculate the average loss of the ordinary Seq2Seq model over paths. For inference, we apply beam search with constrained decoding. By introducing an additional discriminative token and applying a data augmentation technique, valid paths can be automatically selected. We conduct experiments on five tasks including AOPE, ASTE, TASD, UABSA, ACOS. We evaluate our method on four common benchmark datasets including Laptop14, Rest14, Rest15, Rest16. Our proposed method achieves state-of-the-art results in almost all cases.",
+      "externalIds": {
+        "DBLP": "conf/acl/MaoSYZC22",
+        "ACL": "2022.findings-acl.174",
+        "DOI": "10.18653/v1/2022.findings-acl.174",
+        "CorpusId": 248780122
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2022.findings-acl.174",
+      "corpus_id": 248780122
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "32",
+      "ref_key": "S2:5eb9dad01d9b61947d7a9aae6dfff400d20555b9",
+      "paperId": "5eb9dad01d9b61947d7a9aae6dfff400d20555b9",
+      "title": "Unified Structure Generation for Universal Information Extraction",
+      "year": 2022,
+      "abstract": "Information extraction suffers from its varying targets, heterogeneous structures, and demand-specific schemas. In this paper, we propose a unified text-to-structure generation framework, namely UIE, which can universally model different IE tasks, adaptively generate targeted structures, and collaboratively learn general IE abilities from different knowledge sources. Specifically, UIE uniformly encodes different extraction structures via a structured extraction language, adaptively generates target extractions via a schema-based prompt mechanism – structural schema instructor, and captures the common IE abilities via a large-scale pretrained text-to-structure model. Experiments show that UIE achieved the state-of-the-art performance on 4 IE tasks, 13 datasets, and on all supervised, low-resource, and few-shot settings for a wide range of entity, relation, event and sentiment extraction tasks and their unification. These results verified the effectiveness, universality, and transferability of UIE.",
+      "externalIds": {
+        "ACL": "2022.acl-long.395",
+        "DBLP": "conf/acl/0001LDXLHSW22",
+        "ArXiv": "2203.12277",
+        "DOI": "10.18653/v1/2022.acl-long.395",
+        "CorpusId": 247619149
+      },
+      "arxiv_id": "2203.12277",
+      "doi": "10.18653/v1/2022.acl-long.395",
+      "corpus_id": 247619149
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "33",
+      "ref_key": "S2:373040d25f80a546b5cadcd31ccc64a9dc157e40",
+      "paperId": "373040d25f80a546b5cadcd31ccc64a9dc157e40",
+      "title": "Aspect Category Detection via Topic-Attention Network",
+      "year": 2019,
+      "abstract": "The e-commerce has started a new trend in natural language processing through sentiment analysis of user-generated reviews. Different consumers have different concerns about various aspects of a specific product or service. Aspect category detection, as a subtask of aspect-based sentiment analysis, tackles the problem of categorizing a given review sentence into a set of pre-defined aspect categories. In recent years, deep learning approaches have brought revolutionary advances in multiple branches of natural language processing including sentiment analysis. In this paper, we propose a deep neural network method based on attention mechanism to identify different aspect categories of a given review sentence. Our model utilizes several attentions with different topic contexts, enabling it to attend to different parts of a review sentence based on different topics. Experimental results on two datasets in the restaurant domain released by SemEval workshop demonstrates that our approach outperforms existing methods on both datasets. Visualization of the topic attention weights shows the effectiveness of our model in identifying words related to different topics.",
+      "externalIds": {
+        "MAG": "2908490889",
+        "ArXiv": "1901.01183",
+        "DBLP": "journals/corr/abs-1901-01183",
+        "CorpusId": 57572922
+      },
+      "arxiv_id": "1901.01183",
+      "doi": null,
+      "corpus_id": 57572922
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "34",
+      "ref_key": "S2:cf3dfce20514078413ea911164c872bf85a4d80a",
+      "paperId": "cf3dfce20514078413ea911164c872bf85a4d80a",
+      "title": "Aspect-level Sentiment Classification with HEAT (HiErarchical ATtention) Network",
+      "year": 2017,
+      "abstract": "Aspect-level sentiment classification is a fine-grained sentiment analysis task, which aims to predict the sentiment of a text in different aspects. One key point of this task is to allocate the appropriate sentiment words for the given aspect.Recent work exploits attention neural networks to allocate sentiment words and achieves the state-of-the-art performance. However, the prior work only attends to the sentiment information and ignores the aspect-related information in the text, which may cause mismatching between the sentiment words and the aspects when an unrelated sentiment word is semantically meaningful for the given aspect. To solve this problem, we propose a HiErarchical ATtention (HEAT) network for aspect-level sentiment classification. The HEAT network contains a hierarchical attention module, consisting of aspect attention and sentiment attention. The aspect attention extracts the aspect-related information to guide the sentiment attention to better allocate aspect-specific sentiment words of the text. Moreover, the HEAT network supports to extract the aspect terms together with aspect-level sentiment classification by introducing the Bernoulli attention mechanism. To verify the proposed method, we conduct experiments on restaurant and laptop review data sets from SemEval at both the sentence level and the review level. The experimental results show that our model better allocates appropriate sentiment expressions for a given aspect benefiting from the guidance of aspect terms. Moreover, our method achieves better performance on aspect-level sentiment classification than state-of-the-art models.",
+      "externalIds": {
+        "MAG": "2767210791",
+        "DBLP": "conf/cikm/ChengZZKZW17",
+        "DOI": "10.1145/3132847.3133037",
+        "CorpusId": 207686915
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/3132847.3133037",
+      "corpus_id": 207686915
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "35",
+      "ref_key": "S2:0b0dc14b8a8dcccbfc62a38355fff2f6a361e9d2",
+      "paperId": "0b0dc14b8a8dcccbfc62a38355fff2f6a361e9d2",
+      "title": "Effective LSTMs for Target-Dependent Sentiment Classification",
+      "year": 2015,
+      "abstract": "Target-dependent sentiment classification remains a challenge: modeling the semantic relatedness of a target with its context words in a sentence. Different context words have different influences on determining the sentiment polarity of a sentence towards the target. Therefore, it is desirable to integrate the connections between target word and context words when building a learning system. In this paper, we develop two target dependent long short-term memory (LSTM) models, where target information is automatically taken into account. We evaluate our methods on a benchmark dataset from Twitter. Empirical results show that modeling sentence representation with standard LSTM does not perform well. Incorporating target information into LSTM can significantly boost the classification accuracy. The target-dependent LSTM models achieve state-of-the-art performances without using syntactic parser or external sentiment lexicons.",
+      "externalIds": {
+        "ArXiv": "1512.01100",
+        "MAG": "2949177037",
+        "DBLP": "conf/coling/TangQFL16",
+        "ACL": "C16-1311",
+        "CorpusId": 10870417
+      },
+      "arxiv_id": "1512.01100",
+      "doi": null,
+      "corpus_id": 10870417
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "36",
+      "ref_key": "S2:e12fd836261a394f7929243474332f264aa5e455",
+      "paperId": "e12fd836261a394f7929243474332f264aa5e455",
+      "title": "Aspect-Category based Sentiment Analysis with Hierarchical Graph Convolutional Network",
+      "year": 2020,
+      "abstract": "Most of the aspect based sentiment analysis research aims at identifying the sentiment polarities toward some explicit aspect terms while ignores implicit aspects in text. To capture both explicit and implicit aspects, we focus on aspect-category based sentiment analysis, which involves joint aspect category detection and category-oriented sentiment classification. However, currently only a few simple studies have focused on this problem. The shortcomings in the way they defined the task make their approaches difficult to effectively learn the inner-relations between categories and the inter-relations between categories and sentiments. In this work, we re-formalize the task as a category-sentiment hierarchy prediction problem, which contains a hierarchy output structure to first identify multiple aspect categories in a piece of text, and then predict the sentiment for each of the identified categories. Specifically, we propose a Hierarchical Graph Convolutional Network (Hier-GCN), where a lower-level GCN is to model the inner-relations among multiple categories, and the higher-level GCN is to capture the inter-relations between aspect categories and sentiments. Extensive evaluations demonstrate that our hierarchy output structure is superior over existing ones, and the Hier-GCN model can consistently achieve the best results on four benchmarks.",
+      "externalIds": {
+        "DBLP": "conf/coling/CaiTZYX20",
+        "ACL": "2020.coling-main.72",
+        "MAG": "3113712958",
+        "DOI": "10.18653/V1/2020.COLING-MAIN.72",
+        "CorpusId": 227231695
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/V1/2020.COLING-MAIN.72",
+      "corpus_id": 227231695
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "37",
+      "ref_key": "S2:88ef2416a4f337b72a0b7ade0e1fea5afcec0512",
+      "paperId": "88ef2416a4f337b72a0b7ade0e1fea5afcec0512",
+      "title": "Constituency Lattice Encoding for Aspect Term Extraction",
+      "year": 2020,
+      "abstract": "One of the remaining challenges for aspect term extraction in sentiment analysis resides in the extraction of phrase-level aspect terms, which is non-trivial to determine the boundaries of such terms. In this paper, we aim to address this issue by incorporating the span annotations of constituents of a sentence to leverage the syntactic information in neural network models. To this end, we first construct a constituency lattice structure based on the constituents of a constituency tree. Then, we present two approaches to encoding the constituency lattice using BiLSTM-CRF and BERT as the base models, respectively. We experimented on two benchmark datasets to evaluate the two models, and the results confirm their superiority with respective 3.17 and 1.35 points gained in F1-Measure over the current state of the art. The improvements justify the effectiveness of the constituency lattice for aspect term extraction.",
+      "externalIds": {
+        "MAG": "3115882185",
+        "DBLP": "conf/coling/YangLQSS20",
+        "ACL": "2020.coling-main.73",
+        "DOI": "10.18653/V1/2020.COLING-MAIN.73",
+        "CorpusId": 227230517
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/V1/2020.COLING-MAIN.73",
+      "corpus_id": 227230517
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "38",
+      "ref_key": "S2:094a58e8c07395be13d6c92d35533d787906913b",
+      "paperId": "094a58e8c07395be13d6c92d35533d787906913b",
+      "title": "PoD: Positional Dependency-Based Word Embedding for Aspect Term Extraction",
+      "year": 2019,
+      "abstract": "Dependency context-based word embedding jointly learns the representations of word and dependency context, and has been proved effective in aspect term extraction. In this paper, we design the positional dependency-based word embedding (PoD) which considers both dependency context and positional context for aspect term extraction. Specifically, the positional context is modeled via relative position encoding. Besides, we enhance the dependency context by integrating more lexical information (e.g., POS tags) along dependency paths. Experiments on SemEval 2014/2015/2016 datasets show that our approach outperforms other embedding methods in aspect term extraction.",
+      "externalIds": {
+        "ACL": "2020.coling-main.150",
+        "ArXiv": "1911.03785",
+        "MAG": "3114464259",
+        "DBLP": "journals/corr/abs-1911-03785",
+        "DOI": "10.18653/V1/2020.COLING-MAIN.150",
+        "CorpusId": 207852651
+      },
+      "arxiv_id": "1911.03785",
+      "doi": "10.18653/V1/2020.COLING-MAIN.150",
+      "corpus_id": 207852651
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "39",
+      "ref_key": "S2:3b0e05f72b9b14ba50f3ec2e9059f3284e6a4cbd",
+      "paperId": "3b0e05f72b9b14ba50f3ec2e9059f3284e6a4cbd",
+      "title": "Attention Modeling for Targeted Sentiment",
+      "year": 2017,
+      "abstract": "Neural network models have been used for target-dependent sentiment analysis. Previous work focus on learning a target specific representation for a given input sentence which is used for classification. However, they do not explicitly model the contribution of each word in a sentence with respect to targeted sentiment polarities. We investigate an attention model to this end. In particular, a vanilla LSTM model is used to induce an attention value of the whole sentence. The model is further extended to differentiate left and right contexts given a certain target following previous work. Results show that by using attention to model the contribution of each word with respect to the target, our model gives significantly improved results over two standard benchmarks. We report the best accuracy for this task.",
+      "externalIds": {
+        "DBLP": "conf/eacl/ZhangL17",
+        "ACL": "E17-2091",
+        "MAG": "2740567223",
+        "DOI": "10.18653/V1/E17-2091",
+        "CorpusId": 2763049
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/V1/E17-2091",
+      "corpus_id": 2763049
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "40",
+      "ref_key": "S2:8959a480a77c29c223533e1438268d02bb8ecf7b",
+      "paperId": "8959a480a77c29c223533e1438268d02bb8ecf7b",
+      "title": "Fine-grained Opinion Mining with Recurrent Neural Networks and Word Embeddings",
+      "year": 2015,
+      "abstract": "The tasks in fine-grained opinion mining can be regarded as either a token-level sequence labeling problem or as a semantic compositional task. We propose a general class of discriminative models based on recurrent neural networks (RNNs) and word embeddings that can be successfully applied to such tasks without any taskspecific feature engineering effort. Our experimental results on the task of opinion target identification show that RNNs, without using any hand-crafted features, outperform feature-rich CRF-based models. Our framework is flexible, allows us to incorporate other linguistic features, and achieves results that rival the top performing systems in SemEval-2014.",
+      "externalIds": {
+        "MAG": "2252024663",
+        "DBLP": "conf/emnlp/LiuJM15",
+        "ACL": "D15-1168",
+        "DOI": "10.18653/v1/D15-1168",
+        "CorpusId": 1511192
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/D15-1168",
+      "corpus_id": 1511192
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "41",
+      "ref_key": "S2:bc3652679235d905746546355ab44486d42d0d96",
+      "paperId": "bc3652679235d905746546355ab44486d42d0d96",
+      "title": "Neural Networks for Open Domain Targeted Sentiment",
+      "year": 2015,
+      "abstract": "Open domain targeted sentiment is the joint information extraction task that finds target mentions together with the sentiment towards each mention from a text corpus. The task is typically modeled as a sequence labeling problem, and solved using state-of-the-art labelers such as CRF. We empirically study the effect of word embeddings and automatic feature combinations on the task by extending a CRF baseline using neural networks, which have demonstrated large potentials for sentiment analysis. Results show that the neural model can give better results by significantly increasing the recall. In addition, we propose a novel integration of neural and discrete features, which combines their relative advantages, leading to significantly higher results compared to both baselines.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/ZhangZV15",
+        "MAG": "2252007242",
+        "ACL": "D15-1073",
+        "DOI": "10.18653/v1/D15-1073",
+        "CorpusId": 5073886
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/D15-1073",
+      "corpus_id": 5073886
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "42",
+      "ref_key": "S2:82bb306038446302cedd20fa986d20640ed88a2e",
+      "paperId": "82bb306038446302cedd20fa986d20640ed88a2e",
+      "title": "Attention-based LSTM for Aspect-level Sentiment Classification",
+      "year": 2016,
+      "abstract": "Aspect-level sentiment classification is a fine-grained task in sentiment analysis. Since it provides more complete and in-depth results, aspect-level sentiment analysis has received much attention these years. In this paper, we reveal that the sentiment polarity of a sentence is not only determined by the content but is also highly related to the concerned aspect. For instance, “The appetizers are ok, but the service is slow.”, for aspect taste, the polarity is positive while for service, the polarity is negative. Therefore, it is worthwhile to explore the connection between an aspect and the content of a sentence. To this end, we propose an Attention-based Long Short-Term Memory Network for aspect-level sentiment classification. The attention mechanism can concentrate on different parts of a sentence when different aspects are taken as input. We experiment on the SemEval 2014 dataset and results show that our model achieves state-ofthe-art performance on aspect-level sentiment classification.",
+      "externalIds": {
+        "ACL": "D16-1058",
+        "MAG": "2562607067",
+        "DBLP": "conf/emnlp/WangHZZ16",
+        "DOI": "10.18653/v1/D16-1058",
+        "CorpusId": 18993998
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/D16-1058",
+      "corpus_id": 18993998
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "43",
+      "ref_key": "S2:b28f7e2996b6ee2784dd2dbb8212cfa0c79ba9e7",
+      "paperId": "b28f7e2996b6ee2784dd2dbb8212cfa0c79ba9e7",
+      "title": "Aspect Level Sentiment Classification with Deep Memory Network",
+      "year": 2016,
+      "abstract": "We introduce a deep memory network for aspect level sentiment classification. Unlike feature-based SVM and sequential neural models such as LSTM, this approach explicitly captures the importance of each context word when inferring the sentiment polarity of an aspect. Such importance degree and text representation are calculated with multiple computational layers, each of which is a neural attention model over an external memory. Experiments on laptop and restaurant datasets demonstrate that our approach performs comparable to state-of-art feature based SVM system, and substantially better than LSTM and attention-based LSTM architectures. On both datasets we show that multiple computational layers could improve the performance. Moreover, our approach is also fast. The deep memory network with 9 layers is 15 times faster than LSTM with a CPU implementation.",
+      "externalIds": {
+        "MAG": "2963168371",
+        "DBLP": "journals/corr/TangQL16",
+        "ArXiv": "1605.08900",
+        "ACL": "D16-1021",
+        "DOI": "10.18653/v1/D16-1021",
+        "CorpusId": 359042
+      },
+      "arxiv_id": "1605.08900",
+      "doi": "10.18653/v1/D16-1021",
+      "corpus_id": 359042
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "44",
+      "ref_key": "S2:1c72d8090f281f58d5b141a3917e341250ab4c8c",
+      "paperId": "1c72d8090f281f58d5b141a3917e341250ab4c8c",
+      "title": "Recursive Neural Conditional Random Fields for Aspect-based Sentiment Analysis",
+      "year": 2016,
+      "abstract": "In aspect-based sentiment analysis, extracting aspect terms along with the opinions being expressed from user-generated content is one of the most important subtasks. Previous studies have shown that exploiting connections between aspect and opinion terms is promising for this task. In this paper, we propose a novel joint model that integrates recursive neural networks and conditional random fields into a unified framework for explicit aspect and opinion terms co-extraction. The proposed model learns high-level discriminative features and double propagate information between aspect and opinion terms, simultaneously. Moreover, it is flexible to incorporate hand-crafted features into the proposed model to further boost its information extraction performance. Experimental results on the SemEval Challenge 2014 dataset show the superiority of our proposed model over several baseline methods as well as the winning systems of the challenge.",
+      "externalIds": {
+        "DBLP": "journals/corr/WangPDX16",
+        "MAG": "2962843214",
+        "ACL": "D16-1059",
+        "ArXiv": "1603.06679",
+        "DOI": "10.18653/v1/D16-1059",
+        "CorpusId": 11805625
+      },
+      "arxiv_id": "1603.06679",
+      "doi": "10.18653/v1/D16-1059",
+      "corpus_id": 11805625
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "45",
+      "ref_key": "S2:8e3a3ba309fe68f5b1d02266a03395332f7d945c",
+      "paperId": "8e3a3ba309fe68f5b1d02266a03395332f7d945c",
+      "title": "Recurrent Attention Network on Memory for Aspect Sentiment Analysis",
+      "year": 2017,
+      "abstract": "We propose a novel framework based on neural networks to identify the sentiment of opinion targets in a comment/review. Our framework adopts multiple-attention mechanism to capture sentiment features separated by a long distance, so that it is more robust against irrelevant information. The results of multiple attentions are non-linearly combined with a recurrent neural network, which strengthens the expressive power of our model for handling more complications. The weighted-memory mechanism not only helps us avoid the labor-intensive feature engineering work, but also provides a tailor-made memory for different opinion targets of a sentence. We examine the merit of our model on four datasets: two are from SemEval2014, i.e. reviews of restaurants and laptops; a twitter dataset, for testing its performance on social media data; and a Chinese news comment dataset, for testing its language sensitivity. The experimental results show that our model consistently outperforms the state-of-the-art methods on different types of data.",
+      "externalIds": {
+        "ACL": "D17-1047",
+        "DBLP": "conf/emnlp/ChenSBY17",
+        "MAG": "2757541972",
+        "DOI": "10.18653/v1/D17-1047",
+        "CorpusId": 12847491
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/D17-1047",
+      "corpus_id": 12847491
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "46",
+      "ref_key": "S2:1e7194b95668c1ef70baae7bbd6de54d23122c4a",
+      "paperId": "1e7194b95668c1ef70baae7bbd6de54d23122c4a",
+      "title": "Deep Multi-Task Learning for Aspect Term Extraction with Memory Interaction",
+      "year": 2017,
+      "abstract": "We propose a novel LSTM-based deep multi-task learning framework for aspect term extraction from user review sentences. Two LSTMs equipped with extended memories and neural memory operations are designed for jointly handling the extraction tasks of aspects and opinions via memory interactions. Sentimental sentence constraint is also added for more accurate prediction via another LSTM. Experiment results over two benchmark datasets demonstrate the effectiveness of our framework.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/LiL17",
+        "ACL": "D17-1310",
+        "MAG": "2756816896",
+        "DOI": "10.18653/v1/D17-1310",
+        "CorpusId": 1311547
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/D17-1310",
+      "corpus_id": 1311547
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "47",
+      "ref_key": "S2:3f16ac291f90a438249b228c9db097ca80c76cb7",
+      "paperId": "3f16ac291f90a438249b228c9db097ca80c76cb7",
+      "title": "Joint Aspect and Polarity Classification for Aspect-based Sentiment Analysis with End-to-End Neural Networks",
+      "year": 2018,
+      "abstract": "In this work, we propose a new model for aspect-based sentiment analysis. In contrast to previous approaches, we jointly model the detection of aspects and the classification of their polarity in an end-to-end trainable neural network. We conduct experiments with different neural architectures and word representations on the recent GermEval 2017 dataset. We were able to show considerable performance gains by using the joint modeling approach in all settings compared to pipeline approaches. The combination of a convolutional neural network and fasttext embeddings outperformed the best submission of the shared task in 2017, establishing a new state of the art.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1808-09238",
+        "MAG": "2951646327",
+        "ACL": "D18-1139",
+        "ArXiv": "1808.09238",
+        "DOI": "10.18653/v1/D18-1139",
+        "CorpusId": 52112235
+      },
+      "arxiv_id": "1808.09238",
+      "doi": "10.18653/v1/D18-1139",
+      "corpus_id": 52112235
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "48",
+      "ref_key": "S2:6e279973506f42868590d88e4cc01e1c4febb034",
+      "paperId": "6e279973506f42868590d88e4cc01e1c4febb034",
+      "title": "Multi-grained Attention Network for Aspect-Level Sentiment Classification",
+      "year": 2018,
+      "abstract": "We propose a novel multi-grained attention network (MGAN) model for aspect level sentiment classification. Existing approaches mostly adopt coarse-grained attention mechanism, which may bring information loss if the aspect has multiple words or larger context. We propose a fine-grained attention mechanism, which can capture the word-level interaction between aspect and context. And then we leverage the fine-grained and coarse-grained attention mechanisms to compose the MGAN framework. Moreover, unlike previous works which train each aspect with its context separately, we design an aspect alignment loss to depict the aspect-level interactions among the aspects that have the same context. We evaluate the proposed approach on three datasets: laptop and restaurant are from SemEval 2014, and the last one is a twitter dataset. Experimental results show that the multi-grained attention network consistently outperforms the state-of-the-art methods on all three datasets. We also conduct experiments to evaluate the effectiveness of aspect alignment loss, which indicates the aspect-level interactions can bring extra useful information and further improve the performance.",
+      "externalIds": {
+        "ACL": "D18-1380",
+        "MAG": "2891778157",
+        "DBLP": "conf/emnlp/FanFZ18",
+        "DOI": "10.18653/v1/D18-1380",
+        "CorpusId": 53080156
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/D18-1380",
+      "corpus_id": 53080156
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "49",
+      "ref_key": "S2:30c6252c0bedcb3528c9691205835134cd6e47ae",
+      "paperId": "30c6252c0bedcb3528c9691205835134cd6e47ae",
+      "title": "A Novel Aspect-Guided Deep Transition Model for Aspect Based Sentiment Analysis",
+      "year": 2019,
+      "abstract": "Aspect based sentiment analysis (ABSA) aims to identify the sentiment polarity towards the given aspect in a sentence, while previous models typically exploit an aspect-independent (weakly associative) encoder for sentence representation generation. In this paper, we propose a novel Aspect-Guided Deep Transition model, named AGDT, which utilizes the given aspect to guide the sentence encoding from scratch with the specially-designed deep transition architecture. Furthermore, an aspect-oriented objective is designed to enforce AGDT to reconstruct the given aspect with the generated sentence representation. In doing so, our AGDT can accurately generate aspect-specific sentence representation, and thus conduct more accurate sentiment predictions. Experimental results on multiple SemEval datasets demonstrate the effectiveness of our proposed approach, which significantly outperforms the best reported results with the same setting.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1909-00324",
+        "ArXiv": "1909.00324",
+        "ACL": "D19-1559",
+        "MAG": "2972104928",
+        "DOI": "10.18653/v1/D19-1559",
+        "CorpusId": 202540846
+      },
+      "arxiv_id": "1909.00324",
+      "doi": "10.18653/v1/D19-1559",
+      "corpus_id": 202540846
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "50",
+      "ref_key": "S2:8e464b1914d9162432651507e86fcc7020289003",
+      "paperId": "8e464b1914d9162432651507e86fcc7020289003",
+      "title": "Capsule Network with Interactive Attention for Aspect-Level Sentiment Classification",
+      "year": 2019,
+      "abstract": "Aspect-level sentiment classification is a crucial task for sentiment analysis, which aims to identify the sentiment polarities of specific targets in their context. The main challenge comes from multi-aspect sentences, which express multiple sentiment polarities towards different targets, resulting in overlapped feature representation. However, most existing neural models tend to utilize static pooling operation or attention mechanism to identify sentimental words, which therefore insufficient for dealing with overlapped features. To solve this problem, we propose to utilize capsule network to construct vector-based feature representation and cluster features by an EM routing algorithm. Furthermore, interactive attention mechanism is introduced in the capsule routing procedure to model the semantic relationship between aspect terms and context. The iterative routing also enables encoding sentence from a global perspective. Experimental results on three datasets show that our proposed model achieves state-of-the-art performance.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/DuSWQLXL19",
+        "MAG": "2970689620",
+        "ACL": "D19-1551",
+        "DOI": "10.18653/v1/D19-1551",
+        "CorpusId": 202773174
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/D19-1551",
+      "corpus_id": 202773174
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "51",
+      "ref_key": "S2:ca352ea6ac66c03a0cc22759098713e4202c71c6",
+      "paperId": "ca352ea6ac66c03a0cc22759098713e4202c71c6",
+      "title": "Aspect-Level Sentiment Analysis Via Convolution over Dependency Tree",
+      "year": 2019,
+      "abstract": "We propose a method based on neural networks to identify the sentiment polarity of opinion words expressed on a specific aspect of a sentence. Although a large majority of works typically focus on leveraging the expressive power of neural networks in handling this task, we explore the possibility of integrating dependency trees with neural networks for representation learning. To this end, we present a convolution over a dependency tree (CDT) model which exploits a Bi-directional Long Short Term Memory (Bi-LSTM) to learn representations for features of a sentence, and further enhance the embeddings with a graph convolutional network (GCN) which operates directly on the dependency tree of the sentence. Our approach propagates both contextual and dependency information from opinion words to aspect words, offering discriminative properties for supervision. Experimental results ranks our approach as the new state-of-the-art in aspect-based sentiment classification.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/SunZMML19",
+        "ACL": "D19-1569",
+        "MAG": "2970748008",
+        "DOI": "10.18653/v1/D19-1569",
+        "CorpusId": 202781392
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/D19-1569",
+      "corpus_id": 202781392
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "52",
+      "ref_key": "S2:beccf5bc709167e483e8ea0f58829c34a2bde2e7",
+      "paperId": "beccf5bc709167e483e8ea0f58829c34a2bde2e7",
+      "title": "Aspect-based Sentiment Classification with Aspect-specific Graph Convolutional Networks",
+      "year": 2019,
+      "abstract": "Due to their inherent capability in semantic alignment of aspects and their context words, attention mechanism and Convolutional Neural Networks (CNNs) are widely applied for aspect-based sentiment classification. However, these models lack a mechanism to account for relevant syntactical constraints and long-range word dependencies, and hence may mistakenly recognize syntactically irrelevant contextual words as clues for judging aspect sentiment. To tackle this problem, we propose to build a Graph Convolutional Network (GCN) over the dependency tree of a sentence to exploit syntactical information and word dependencies. Based on it, a novel aspect-specific sentiment classification framework is raised. Experiments on three benchmarking collections illustrate that our proposed model has comparable effectiveness to a range of state-of-the-art models, and further demonstrate that both syntactical information and long-range word dependencies are properly captured by the graph convolution structure.",
+      "externalIds": {
+        "ArXiv": "1909.03477",
+        "DBLP": "journals/corr/abs-1909-03477",
+        "MAG": "2971220558",
+        "ACL": "D19-1464",
+        "DOI": "10.18653/v1/D19-1464",
+        "CorpusId": 202537499
+      },
+      "arxiv_id": "1909.03477",
+      "doi": "10.18653/v1/D19-1464",
+      "corpus_id": 202537499
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "53",
+      "ref_key": "S2:7208e071f142078c80545d880144551126bc01b3",
+      "paperId": "7208e071f142078c80545d880144551126bc01b3",
+      "title": "Coupling Global and Local Context for Unsupervised Aspect Extraction",
+      "year": 2019,
+      "abstract": "Aspect words, indicating opinion targets, are essential in expressing and understanding human opinions. To identify aspects, most previous efforts focus on using sequence tagging models trained on human-annotated data. This work studies unsupervised aspect extraction and explores how words appear in global context (on sentence level) and local context (conveyed by neighboring words). We propose a novel neural model, capable of coupling global and local representation to discover aspect words. Experimental results on two benchmarks, laptop and restaurant reviews, show that our model significantly outperforms the state-of-the-art models from previous studies evaluated with varying metrics. Analysis on model output show our ability to learn meaningful and coherent aspect representations. We further investigate how words distribute in global and local context, and find that aspect and non-aspect words do exhibit different context, interpreting our superiority in unsupervised aspect extraction.",
+      "externalIds": {
+        "ACL": "D19-1465",
+        "DBLP": "conf/emnlp/LiaoLZWWW19",
+        "MAG": "2970687251",
+        "DOI": "10.18653/v1/D19-1465",
+        "CorpusId": 202781578
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/D19-1465",
+      "corpus_id": 202781578
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "54",
+      "ref_key": "S2:52c18ee6a2c71ab87842fba730e8f83931be917d",
+      "paperId": "52c18ee6a2c71ab87842fba730e8f83931be917d",
+      "title": "Deep Weighted MaxSAT for Aspect-based Opinion Extraction",
+      "year": 2020,
+      "abstract": "Though deep learning has achieved significant success in various NLP tasks, most deep learning models lack the capability of encoding explicit domain knowledge to model complex causal relationships among different types of variables. On the other hand, logic rules offer a compact expression to represent the causal relationships to guide the training process. Logic programs can be cast as a satisfiability problem which aims to find truth assignments to logic variables by maximizing the number of satisfiable clauses (MaxSAT). We adopt the MaxSAT semantics to model logic inference process and smoothly incorporate a weighted version of MaxSAT that connects deep neural networks and a graphical model in a joint framework. The joint model feeds deep learning outputs to a weighted MaxSAT layer to rectify the erroneous predictions and can be trained via end-to-end gradient descent. Our proposed model associates the benefits of high-level feature learning, knowledge reasoning, and structured learning with observable performance gain for the task of aspect-based opinion extraction.",
+      "externalIds": {
+        "ACL": "2020.emnlp-main.453",
+        "DBLP": "conf/emnlp/WuWP20",
+        "MAG": "3098387335",
+        "DOI": "10.18653/v1/2020.emnlp-main.453",
+        "CorpusId": 226262356
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2020.emnlp-main.453",
+      "corpus_id": 226262356
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "55",
+      "ref_key": "S2:0c708c78e7c4b1d94b5c64f3469a58770995dc4d",
+      "paperId": "0c708c78e7c4b1d94b5c64f3469a58770995dc4d",
+      "title": "A Multi-task Learning Framework for Opinion Triplet Extraction",
+      "year": 2020,
+      "abstract": "The state-of-the-art Aspect-based Sentiment Analysis (ABSA) approaches are mainly based on either detecting aspect terms and their corresponding sentiment polarities, or co-extracting aspect and opinion terms. However, the extraction of aspect-sentiment pairs lacks opinion terms as a reference, while co-extraction of aspect and opinion terms would not lead to meaningful pairs without determining their sentiment dependencies. To address the issue, we present a novel view of ABSA as an opinion triplet extraction task, and propose a multi-task learning framework to jointly extract aspect terms and opinion terms, and simultaneously parses sentiment dependencies between them with a biaffine scorer. At inference phase, the extraction of triplets is facilitated by a triplet decoding method based on the above outputs. We evaluate the proposed framework on four SemEval benchmarks for ASBA. The results demonstrate that our approach significantly outperforms a range of strong baselines and state-of-the-art approaches.",
+      "externalIds": {
+        "MAG": "3101602207",
+        "ArXiv": "2010.01512",
+        "DBLP": "journals/corr/abs-2010-01512",
+        "ACL": "2020.findings-emnlp.72",
+        "DOI": "10.18653/v1/2020.findings-emnlp.72",
+        "CorpusId": 222134074
+      },
+      "arxiv_id": "2010.01512",
+      "doi": "10.18653/v1/2020.findings-emnlp.72",
+      "corpus_id": 222134074
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "56",
+      "ref_key": "S2:30a713827f4a8b64e05ed3491fa6308482467583",
+      "paperId": "30a713827f4a8b64e05ed3491fa6308482467583",
+      "title": "Position-Aware Tagging for Aspect Sentiment Triplet Extraction",
+      "year": 2020,
+      "abstract": "Aspect Sentiment Triplet Extraction (ASTE) is the task of extracting the triplets of target entities, their associated sentiment, and opinion spans explaining the reason for the sentiment. Existing research efforts mostly solve this problem using pipeline approaches, which break the triplet extraction process into several stages. Our observation is that the three elements within a triplet are highly related to each other, and this motivates us to build a joint model to extract such triplets using a sequence tagging approach. However, how to effectively design a tagging approach to extract the triplets that can capture the rich interactions among the elements is a challenging research question. In this work, we propose the first end-to-end model with a novel position-aware tagging scheme that is capable of jointly extracting the triplets. Our experimental results on several existing datasets show that jointly capturing elements in the triplet using our approach leads to improved performance over the existing approaches. We also conducted extensive experiments to investigate the model effectiveness and robustness.",
+      "externalIds": {
+        "MAG": "3105083537",
+        "ArXiv": "2010.02609",
+        "DBLP": "conf/emnlp/XuLLB20",
+        "ACL": "2020.emnlp-main.183",
+        "DOI": "10.18653/v1/2020.emnlp-main.183",
+        "CorpusId": 222141045
+      },
+      "arxiv_id": "2010.02609",
+      "doi": "10.18653/v1/2020.emnlp-main.183",
+      "corpus_id": 222141045
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "57",
+      "ref_key": "S2:8f9c0ffad9ca31d89fae82b17c18ba17ec641008",
+      "paperId": "8f9c0ffad9ca31d89fae82b17c18ba17ec641008",
+      "title": "Enhancing Aspect Term Extraction with Soft Prototypes",
+      "year": 2020,
+      "abstract": "Aspect term extraction (ATE) aims to extract aspect terms from a review sentence that users have expressed opinions on. Existing studies mostly focus on designing neural sequence taggers to extract linguistic features from the token level. However, since the aspect terms and context words usually exhibit long-tail distributions, these taggers often converge to an inferior state without enough sample exposure. In this paper, we propose to tackle this problem by correlating words with each other through soft prototypes. These prototypes, generated by a soft retrieval process, can introduce global knowledge from internal or external data and serve as the supporting evidence for discovering the aspect terms. Our proposed model is a general framework and can be combined with almost all sequence taggers. Experiments on four SemEval datasets show that our model boosts the performance of three typical ATE methods by a large margin.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/ChenQ20",
+        "MAG": "3100132436",
+        "ACL": "2020.emnlp-main.164",
+        "DOI": "10.18653/v1/2020.emnlp-main.164",
+        "CorpusId": 226262262
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2020.emnlp-main.164",
+      "corpus_id": 226262262
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "58",
+      "ref_key": "S2:68976eef5802e09d2b8c4f1e16605333d7deada9",
+      "paperId": "68976eef5802e09d2b8c4f1e16605333d7deada9",
+      "title": "Inducing Target-specific Latent Structures for Aspect Sentiment Classification",
+      "year": 2020,
+      "abstract": "Aspect-level sentiment analysis aims to recognize the sentiment polarity of an aspect or a target in a comment. Recently, graph convolutional networks based on linguistic dependency trees have been studied for this task. However, the dependency parsing accuracy of commercial product comments or tweets might be unsatisfactory. To tackle this problem, we associate linguistic dependency trees with automatically induced aspectspecific graphs. We propose gating mechanisms to dynamically combine information from word dependency graphs and latent graphs which are learned by self-attention networks. Our model can complement supervised syntactic features with latent semantic dependencies. Experimental results on five benchmarks show the effectiveness of our proposed latent models, giving significantly better results than models without using latent graphs.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/ChenTZ20",
+        "ACL": "2020.emnlp-main.451",
+        "MAG": "3100060077",
+        "DOI": "10.18653/v1/2020.emnlp-main.451",
+        "CorpusId": 226262241
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2020.emnlp-main.451",
+      "corpus_id": 226262241
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "59",
+      "ref_key": "S2:832962037a3aedafeea842b6c2d18c6c1ef09461",
+      "paperId": "832962037a3aedafeea842b6c2d18c6c1ef09461",
+      "title": "Introducing Syntactic Structures into Target Opinion Word Extraction with Deep Learning",
+      "year": 2020,
+      "abstract": "Targeted opinion word extraction (TOWE) is a sub-task of aspect based sentiment analysis (ABSA) which aims to find the opinion words for a given aspect-term in a sentence. Despite their success for TOWE, the current deep learning models fail to exploit the syntactic information of the sentences that have been proved to be useful for TOWE in the prior research. In this work, we propose to incorporate the syntactic structures of the sentences into the deep learning models for TOWE, leveraging the syntax-based opinion possibility scores and the syntactic connections between the words. We also introduce a novel regularization technique to improve the performance of the deep learning models based on the representation distinctions between the words in TOWE. The proposed model is extensively analyzed and achieves the state-of-the-art performance on four benchmark datasets.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2010-13378",
+        "ACL": "2020.emnlp-main.719",
+        "ArXiv": "2010.13378",
+        "MAG": "3104579227",
+        "DOI": "10.18653/v1/2020.emnlp-main.719",
+        "CorpusId": 225067107
+      },
+      "arxiv_id": "2010.13378",
+      "doi": "10.18653/v1/2020.emnlp-main.719",
+      "corpus_id": 225067107
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "60",
+      "ref_key": "S2:65585c7d9c2bfccfb1a807a692ce9a09cda251be",
+      "paperId": "65585c7d9c2bfccfb1a807a692ce9a09cda251be",
+      "title": "GRACE: Gradient Harmonized and Cascaded Labeling for Aspect-based Sentiment Analysis",
+      "year": 2020,
+      "abstract": "In this paper, we focus on the imbalance issue, which is rarely studied in aspect term extraction and aspect sentiment classification when regarding them as sequence labeling tasks. Besides, previous works usually ignore the interaction between aspect terms when labeling polarities. We propose a GRadient hArmonized and CascadEd labeling model (GRACE) to solve these problems. Specifically, a cascaded labeling module is developed to enhance the interchange between aspect terms and improve the attention of sentiment tokens when labeling sentiment polarities. The polarities sequence is designed to depend on the generated aspect terms labels. To alleviate the imbalance issue, we extend the gradient harmonized mechanism used in object detection to the aspect-based sentiment analysis by adjusting the weight of each label dynamically. The proposed GRACE adopts a post-pretraining BERT as its backbone. Experimental results demonstrate that the proposed model achieves consistency improvement on multiple benchmark datasets and generates state-of-the-art results.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/LuoJLJD20",
+        "MAG": "3100785471",
+        "ArXiv": "2009.10557",
+        "ACL": "2020.findings-emnlp.6",
+        "DOI": "10.18653/v1/2020.findings-emnlp.6",
+        "CorpusId": 221836262
+      },
+      "arxiv_id": "2009.10557",
+      "doi": "10.18653/v1/2020.findings-emnlp.6",
+      "corpus_id": 221836262
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "61",
+      "ref_key": "S2:e33eaa88f4b9ac8a020b6147192493bbf4cdd559",
+      "paperId": "e33eaa88f4b9ac8a020b6147192493bbf4cdd559",
+      "title": "Solving Aspect Category Sentiment Analysis as a Text Generation Task",
+      "year": 2021,
+      "abstract": "Aspect category sentiment analysis has attracted increasing research attention. The dominant methods make use of pre-trained language models by learning effective aspect category-specific representations, and adding specific output layers to its pre-trained representation. We consider a more direct way of making use of pre-trained language models, by casting the ACSA tasks into natural language generation tasks, using natural language sentences to represent the output. Our method allows more direct use of pre-trained knowledge in seq2seq language models by directly following the task setting during pre-training. Experiments on several benchmarks show that our method gives the best reported results, having large advantages in few-shot and zero-shot settings.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/0030TCL021",
+        "ArXiv": "2110.07310",
+        "ACL": "2021.emnlp-main.361",
+        "DOI": "10.18653/v1/2021.emnlp-main.361",
+        "CorpusId": 238857158
+      },
+      "arxiv_id": "2110.07310",
+      "doi": "10.18653/v1/2021.emnlp-main.361",
+      "corpus_id": 238857158
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "62",
+      "ref_key": "S2:629b9e5cc6839e60c7e18cfe752d682ff2787999",
+      "paperId": "629b9e5cc6839e60c7e18cfe752d682ff2787999",
+      "title": "To be Closer: Learning to Link up Aspects with Opinions",
+      "year": 2021,
+      "abstract": "Dependency parse trees are helpful for discovering the opinion words in aspect-based sentiment analysis (ABSA) (CITATION). However, the trees obtained from off-the-shelf dependency parsers are static, and could be sub-optimal in ABSA. This is because the syntactic trees are not designed for capturing the interactions between opinion words and aspect words. In this work, we aim to shorten the distance between aspects and corresponding opinion words by learning an aspect-centric tree structure. The aspect and opinion words are expected to be closer along such tree structure compared to the standard dependency parse tree. The learning process allows the tree structure to adaptively correlate the aspect and opinion words, enabling us to better identify the polarity in the ABSA task. We conduct experiments on five aspect-based sentiment datasets, and the proposed model significantly outperforms recent strong baselines. Furthermore, our thorough analysis demonstrates the average distance between aspect and opinion words are shortened by at least 19% on the standard SemEval Restaurant14 (CITATION) dataset.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2109-08382",
+        "ACL": "2021.emnlp-main.317",
+        "ArXiv": "2109.08382",
+        "DOI": "10.18653/v1/2021.emnlp-main.317",
+        "CorpusId": 237562983
+      },
+      "arxiv_id": "2109.08382",
+      "doi": "10.18653/v1/2021.emnlp-main.317",
+      "corpus_id": 237562983
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "63",
+      "ref_key": "S2:4b680821690116671cfef1a80d66244cf71077de",
+      "paperId": "4b680821690116671cfef1a80d66244cf71077de",
+      "title": "Eliminating Sentiment Bias for Aspect-Level Sentiment Classification with Unsupervised Opinion Extraction",
+      "year": 2021,
+      "abstract": "Aspect-level sentiment classification (ALSC) aims at identifying the sentiment polarity of a specified aspect in a sentence. ALSC is a practical setting in aspect-based sentiment analysis due to no opinion term labeling needed, but it fails to interpret why a sentiment polarity is derived for the aspect. To address this problem, recent works fine-tune pre-trained Transformer encoders for ALSC to extract an aspect-centric dependency tree that can locate the opinion words. However, the induced opinion words only provide an intuitive cue far below human-level interpretability. Besides, the pre-trained encoder tends to internalize an aspect's intrinsic sentiment, causing sentiment bias and thus affecting model performance. In this paper, we propose a span-based anti-bias aspect representation learning framework. It first eliminates the sentiment bias in the aspect embedding by adversarial learning against aspects' prior sentiment. Then, it aligns the distilled opinion candidates with the aspect by span-based dependency modeling to highlight the interpretable opinion terms. Our method achieves new state-of-the-art performance on five benchmarks, with the capability of unsupervised opinion extraction.",
+      "externalIds": {
+        "ArXiv": "2109.02403",
+        "DBLP": "conf/emnlp/WangSLZC21",
+        "DOI": "10.18653/v1/2021.findings-emnlp.258",
+        "CorpusId": 237420548
+      },
+      "arxiv_id": "2109.02403",
+      "doi": "10.18653/v1/2021.findings-emnlp.258",
+      "corpus_id": 237420548
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "64",
+      "ref_key": "S2:ac7e6d1c9234d6246e680cb97be44ff9df6d677f",
+      "paperId": "ac7e6d1c9234d6246e680cb97be44ff9df6d677f",
+      "title": "PASTE: A Tagging-Free Decoding Framework Using Pointer Networks for Aspect Sentiment Triplet Extraction",
+      "year": 2021,
+      "abstract": "Aspect Sentiment Triplet Extraction (ASTE) deals with extracting opinion triplets, consisting of an opinion target or aspect, its associated sentiment, and the corresponding opinion term/span explaining the rationale behind the sentiment. Existing research efforts are majorly tagging-based. Among the methods taking a sequence tagging approach, some fail to capture the strong interdependence between the three opinion factors, whereas others fall short of identifying triplets with overlapping aspect/opinion spans. A recent grid tagging approach on the other hand fails to capture the span-level semantics while predicting the sentiment between an aspect-opinion pair. Different from these, we present a tagging-free solution for the task, while addressing the limitations of the existing works. We adapt an encoder-decoder architecture with a Pointer Network-based decoding framework that generates an entire opinion triplet at each time step thereby making our solution end-to-end. Interactions between the aspects and opinions are effectively captured by the decoder by considering their entire detected spans while predicting their connecting sentiment. Extensive experiments on several benchmark datasets establish the better efficacy of our proposed approach, especially in recall, and in predicting multiple and aspect/opinion-overlapped triplets from the same review sentence. We report our results both with and without BERT and also demonstrate the utility of domain-specific BERT post-training for the task.",
+      "externalIds": {
+        "ArXiv": "2110.04794",
+        "DBLP": "conf/emnlp/MukherjeeNBB021",
+        "ACL": "2021.emnlp-main.731",
+        "DOI": "10.18653/v1/2021.emnlp-main.731",
+        "CorpusId": 238582981
+      },
+      "arxiv_id": "2110.04794",
+      "doi": "10.18653/v1/2021.emnlp-main.731",
+      "corpus_id": 238582981
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "65",
+      "ref_key": "S2:b8e175bb94edbb2346fb14aefcc4641f6f09168d",
+      "paperId": "b8e175bb94edbb2346fb14aefcc4641f6f09168d",
+      "title": "Progressive Self-Training with Discriminator for Aspect Term Extraction",
+      "year": 2021,
+      "abstract": "Aspect term extraction aims to extract aspect terms from a review sentence that users have expressed opinions on. One of the remaining challenges for aspect term extraction resides in the lack of sufficient annotated data. While self-training is potentially an effective method to address this issue, the pseudo-labels it yields on unlabeled data could induce noise. In this paper, we use two means to alleviate the noise in the pseudo-labels. One is that inspired by the curriculum learning, we refine the conventional self-training to progressive self-training. Specifically, the base model infers pseudo-labels on a progressive subset at each iteration, where samples in the subset become harder and more numerous as the iteration proceeds. The other is that we use a discriminator to filter the noisy pseudo-labels. Experimental results on four SemEval datasets show that our model significantly outperforms the previous baselines and achieves state-of-the-art performance.",
+      "externalIds": {
+        "ACL": "2021.emnlp-main.23",
+        "DBLP": "conf/emnlp/WangWZYX21",
+        "DOI": "10.18653/v1/2021.emnlp-main.23",
+        "CorpusId": 243865344
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2021.emnlp-main.23",
+      "corpus_id": 243865344
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "66",
+      "ref_key": "S2:85241d5942966f6b5af19f3cf80f7156dbcddf5f",
+      "paperId": "85241d5942966f6b5af19f3cf80f7156dbcddf5f",
+      "title": "Aspect Sentiment Quad Prediction as Paraphrase Generation",
+      "year": 2021,
+      "abstract": "Aspect-based sentiment analysis (ABSA) has been extensively studied in recent years, which typically involves four fundamental sentiment elements, including the aspect category, aspect term, opinion term, and sentiment polarity. Existing studies usually consider the detection of partial sentiment elements, instead of predicting the four elements in one shot. In this work, we introduce the Aspect Sentiment Quad Prediction (ASQP) task, aiming to jointly detect all sentiment elements in quads for a given opinionated sentence, which can reveal a more comprehensive and complete aspect-level sentiment structure. We further propose a novel Paraphrase modeling paradigm to cast the ASQP task to a paraphrase generation process. On one hand, the generation formulation allows solving ASQP in an end-to-end manner, alleviating the potential error propagation in the pipeline solution. On the other hand, the semantics of the sentiment elements can be fully exploited by learning to generate them in the natural language form. Extensive experiments on benchmark datasets show the superiority of our proposed method and the capacity of cross-task transfer with the proposed unified Paraphrase modeling framework.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/ZhangD0YBL21",
+        "ArXiv": "2110.00796",
+        "ACL": "2021.emnlp-main.726",
+        "DOI": "10.18653/v1/2021.emnlp-main.726",
+        "CorpusId": 238259938
+      },
+      "arxiv_id": "2110.00796",
+      "doi": "10.18653/v1/2021.emnlp-main.726",
+      "corpus_id": 238259938
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "67",
+      "ref_key": "S2:6e40431b649d4333eecd1ea549d2e550a7e6a619",
+      "paperId": "6e40431b649d4333eecd1ea549d2e550a7e6a619",
+      "title": "An Empirical Study on Leveraging Position Embeddings for Target-oriented Opinion Words Extraction",
+      "year": 2021,
+      "abstract": "Target-oriented opinion words extraction (TOWE) (Fan et al., 2019b) is a new subtask of target-oriented sentiment analysis that aims to extract opinion words for a given aspect in text. Current state-of-the-art methods leverage position embeddings to capture the relative position of a word to the target. However, the performance of these methods depends on the ability to incorporate this information into word representations. In this paper, we explore a variety of text encoders based on pretrained word embeddings or language models that leverage part-of-speech and position embeddings, aiming to examine the actual contribution of each component in TOWE. We also adapt a graph convolutional network (GCN) to enhance word representations by incorporating syntactic information. Our experimental results demonstrate that BiLSTM-based models can effectively encode position information into word representations while using a GCN only achieves marginal gains. Interestingly, our simple methods outperform several state-of-the-art complex neural structures.",
+      "externalIds": {
+        "ACL": "2021.emnlp-main.722",
+        "DBLP": "journals/corr/abs-2109-01238",
+        "ArXiv": "2109.01238",
+        "DOI": "10.18653/v1/2021.emnlp-main.722",
+        "CorpusId": 237416431
+      },
+      "arxiv_id": "2109.01238",
+      "doi": "10.18653/v1/2021.emnlp-main.722",
+      "corpus_id": 237416431
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "68",
+      "ref_key": "S2:74a0041d5fb6d33ea28346d5ea77f85e6d6ddbdc",
+      "paperId": "74a0041d5fb6d33ea28346d5ea77f85e6d6ddbdc",
+      "title": "An Iterative Multi-Knowledge Transfer Network for Aspect-Based Sentiment Analysis",
+      "year": 2020,
+      "abstract": "Aspect-based sentiment analysis (ABSA) mainly involves three subtasks: aspect term extraction, opinion term extraction, and aspect-level sentiment classification, which are typically handled in a separate or joint manner. However, previous approaches do not well exploit the interactive relations among three subtasks and do not pertinently leverage the easily available document-level labeled domain/sentiment knowledge, which restricts their performances. To address these issues, we propose a novel Iterative Multi-Knowledge Transfer Network (IMKTN) for end-to-end ABSA. For one thing, through the interactive correlations between the ABSA subtasks, our IMKTN transfers the task-specific knowledge from any two of the three subtasks to another one at the token level by utilizing a well-designed routing algorithm, that is, any two of the three subtasks will help the third one. For another, our IMKTN pertinently transfers the document-level knowledge, i.e., domain-specific and sentiment-related knowledge, to the aspect-level subtasks to further enhance the corresponding performance. Experimental results on three benchmark datasets demonstrate the effectiveness and superiority of our approach.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/LiangMZ0XZ21",
+        "ArXiv": "2004.01935",
+        "DOI": "10.18653/v1/2021.findings-emnlp.152",
+        "CorpusId": 237396010
+      },
+      "arxiv_id": "2004.01935",
+      "doi": "10.18653/v1/2021.findings-emnlp.152",
+      "corpus_id": 237396010
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "69",
+      "ref_key": "S2:04c186f8f3298e3c9f7a3db560e5815cec35769f",
+      "paperId": "04c186f8f3298e3c9f7a3db560e5815cec35769f",
+      "title": "Self Question-answering: Aspect-based Sentiment Analysis by Role Flipped Machine Reading Comprehension",
+      "year": 2021,
+      "abstract": "The pivot for the uniﬁed Aspect-based Sentiment Analysis (ABSA) is to couple aspect terms with their corresponding opinion terms, which might further burgeon easier sentiment predictions. In this paper, we investigate the uniﬁed ABSA task from the perspective of Machine Reading Comprehension (MRC) by observing that the aspect and the opinion terms can serve as the query and answer in MRC in-terchangeably. We propose a new paradigm named Role Flipped Machine Reading Comprehension (RF-MRC) to resolve. At its heart, the predicted results of either the Aspect Term Extraction (ATE) or the Opinion Terms Extraction (OTE) are regarded as the queries, respec-tively, and the matched opinion or aspect terms are extracted as answers. The queries and answers can be ﬂipped for multi-hop detection. Finally, every matched aspect-opinion pair is predicted by the sentiment classiﬁer. RF-MRC can solve the ABSA task without extra data annotation. Experiments on three widely used benchmarks and a challenging dataset demonstrate the superiority of the proposed framework.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/YuLLM0021",
+        "DOI": "10.18653/v1/2021.findings-emnlp.115",
+        "CorpusId": 244119764
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2021.findings-emnlp.115",
+      "corpus_id": 244119764
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "70",
+      "ref_key": "S2:e5a241df2f4bc8dca3763131571a2145d139f426",
+      "paperId": "e5a241df2f4bc8dca3763131571a2145d139f426",
+      "title": "Target-Dependent Twitter Sentiment Classification with Rich Automatic Features",
+      "year": 2015,
+      "abstract": "Target-dependent sentiment analysis on Twitter has attracted increasing research attention. Most previous work relies on syntax, such as automatic parse trees, which are subject to noise for informal text such as tweets. In this paper, we show that competitive results can be achieved without the use of syntax, by extracting a rich set of automatic features. In particular, we split a tweet into a left context and a right context according to a given target, using distributed word representations and neural pooling functions to extract features. Both sentiment-driven and standard embeddings are used, and a rich set of neural pooling functions are explored. Sentiment lexicons are used as an additional source of information for feature extraction. In standard evaluation, the conceptually simple method gives a 4.8% absolute improvement over the state-of-the-art on three-way targeted sentiment classification, achieving the best reported results for this task.",
+      "externalIds": {
+        "DBLP": "conf/ijcai/VoZ15",
+        "MAG": "2296071000",
+        "CorpusId": 17892224
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 17892224
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "71",
+      "ref_key": "S2:f9b54d083727de371a3a43562e09c84799685ad7",
+      "paperId": "f9b54d083727de371a3a43562e09c84799685ad7",
+      "title": "Unsupervised Word and Dependency Path Embeddings for Aspect Term Extraction",
+      "year": 2016,
+      "abstract": "In this paper, we develop a novel approach to aspect term extraction based on unsupervised learning of distributed representations of words and dependency paths. The basic idea is to connect two words (w1 and w2) with the dependency path (r) between them in the embedding space. Specifically, our method optimizes the objective w1 + r = w2 in the low-dimensional space, where the multi-hop dependency paths are treated as a sequence of grammatical relations and modeled by a recurrent neural network. Then, we design the embedding features that consider linear context and dependency context information, for the conditional random field (CRF) based aspect term extraction. Experimental results on the SemEval datasets show that, (1) with only embedding features, we can achieve state-of-the-art results; (2) our embedding method which incorporates the syntactic information among words yields better performance than other representative ones in aspect term extraction.",
+      "externalIds": {
+        "DBLP": "journals/corr/YinWDXZZ16",
+        "MAG": "2952941606",
+        "ArXiv": "1605.07843",
+        "CorpusId": 16841192
+      },
+      "arxiv_id": "1605.07843",
+      "doi": null,
+      "corpus_id": 16841192
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "72",
+      "ref_key": "S2:5e40be36d11483923cb12260bed6e8f7ed355ff3",
+      "paperId": "5e40be36d11483923cb12260bed6e8f7ed355ff3",
+      "title": "Interactive Attention Networks for Aspect-Level Sentiment Classification",
+      "year": 2017,
+      "abstract": "Aspect-level sentiment classification aims at identifying the sentiment polarity of specific target in its context. Previous approaches have realized the importance of targets in sentiment classification and developed various methods with the goal of precisely modeling their contexts via generating target-specific representations. However, these studies always ignore the separate modeling of targets. In this paper, we argue that both targets and contexts deserve special treatment and need to be learned their own representations via interactive learning. Then, we propose the interactive attention networks (IAN) to interactively learn attentions in the contexts and targets, and generate the representations for targets and contexts separately. With this design, the IAN model can well represent a target and its collocative context, which is helpful to sentiment classification. Experimental results on SemEval 2014 Datasets demonstrate the effectiveness of our model.",
+      "externalIds": {
+        "MAG": "2740899359",
+        "DBLP": "journals/corr/abs-1709-00893",
+        "ArXiv": "1709.00893",
+        "DOI": "10.24963/ijcai.2017/568",
+        "CorpusId": 20407824
+      },
+      "arxiv_id": "1709.00893",
+      "doi": "10.24963/ijcai.2017/568",
+      "corpus_id": 20407824
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "73",
+      "ref_key": "S2:d0ec45b099b832bb9c5b48066537ba88943adf83",
+      "paperId": "d0ec45b099b832bb9c5b48066537ba88943adf83",
+      "title": "Aspect Term Extraction with History Attention and Selective Transformation",
+      "year": 2018,
+      "abstract": "Aspect Term Extraction (ATE), a key sub-task in Aspect-Based Sentiment Analysis, aims to extract explicit aspect expressions from online user reviews. We present a new framework for tackling ATE. It can exploit two useful clues, namely opinion summary and aspect detection history. Opinion summary is distilled from the whole input sentence, conditioned on each current token for aspect prediction, and thus the tailor-made summary can help aspect prediction on this token. On the other hand, the aspect detection history information is distilled from the previous aspect predictions, and it can leverage the coordinate structure and tagging schema constraints to upgrade the aspect prediction. Experimental results over four benchmark datasets clearly demonstrate that our framework can outperform all state-of-the-art methods.",
+      "externalIds": {
+        "MAG": "2798730103",
+        "ArXiv": "1805.00760",
+        "DBLP": "conf/ijcai/LiBLLY18",
+        "DOI": "10.24963/ijcai.2018/583",
+        "CorpusId": 13757198
+      },
+      "arxiv_id": "1805.00760",
+      "doi": "10.24963/ijcai.2018/583",
+      "corpus_id": 13757198
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "74",
+      "ref_key": "S2:557cb93cef67e0f9de8aaf7831dd75c6b7e8de71",
+      "paperId": "557cb93cef67e0f9de8aaf7831dd75c6b7e8de71",
+      "title": "Unsupervised Neural Aspect Extraction with Sememes",
+      "year": 2019,
+      "abstract": "Aspect extraction relies on identifying aspects by discovering coherence among words, which is challenging when word meanings are diversified and processing on short texts. To enhance the performance on aspect extraction, leveraging lexical semantic resources is a possible solution to such challenge. In this paper, we present an unsupervised neural framework that leverages sememes to enhance lexical semantics. The overall framework is analogous to an autoenoder which reconstructs sentence representations and learns aspects by latent variables. Two models that form sentence representations are proposed by exploiting sememes via (1) a hierarchical attention; (2) a context-enhanced attention. Experiments on two real-world datasets demonstrate the validity and the effectiveness of our models, which significantly outperforms existing baselines.",
+      "externalIds": {
+        "DBLP": "conf/ijcai/LuoASLYHY19",
+        "MAG": "2966026905",
+        "DOI": "10.24963/ijcai.2019/712",
+        "CorpusId": 199466138
+      },
+      "arxiv_id": null,
+      "doi": "10.24963/ijcai.2019/712",
+      "corpus_id": 199466138
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "75",
+      "ref_key": "S2:24980e640d3aa2d2abc61e6f31bdd53c9cf963a1",
+      "paperId": "24980e640d3aa2d2abc61e6f31bdd53c9cf963a1",
+      "title": "Learn from Syntax: Improving Pair-wise Aspect and Opinion Terms Extractionwith Rich Syntactic Knowledge",
+      "year": 2021,
+      "abstract": "In this paper, we propose to enhance the pair-wise aspect and opinion terms extraction (PAOTE) task by incorporating rich syntactic knowledge. We first build a syntax fusion encoder for encoding syntactic features, including a label-aware graph convolutional network (LAGCN) for modeling the dependency edges and labels, as well as the POS tags unifiedly, and a local-attention module encoding POS tags for better term boundary detection. During pairing, we then adopt Biaffine and Triaffine scoring for high-order aspect-opinion term pairing, in the meantime re-harnessing the syntax-enriched representations in LAGCN for syntactic-aware scoring. Experimental results on four benchmark datasets demonstrate that our model outperforms current state-of-the-art baselines, meanwhile yielding explainable predictions with syntactic knowledge.",
+      "externalIds": {
+        "DBLP": "conf/ijcai/Wu0RJL21",
+        "ArXiv": "2105.02520",
+        "DOI": "10.24963/ijcai.2021/545",
+        "CorpusId": 233864984
+      },
+      "arxiv_id": "2105.02520",
+      "doi": "10.24963/ijcai.2021/545",
+      "corpus_id": 233864984
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "76",
+      "ref_key": "S2:a9904e4a3dba30e60fd3bb15c00418cbd045b6cf",
+      "paperId": "a9904e4a3dba30e60fd3bb15c00418cbd045b6cf",
+      "title": "Aspect-based Sentiment Analysis with Opinion Tree Generation",
+      "year": 2022,
+      "abstract": "Existing studies usually extract these sentiment elements by decomposing the complex structure prediction task into multiple subtasks. Despite their effectiveness, these methods ignore the semantic structure in ABSA problems and require extensive task-specific designs. In this study, we introduce an Opinion Tree Generation task, which aims to jointly detect all sentiment elements in a tree. We believe that the opinion tree can reveal a more comprehensive and complete aspect-level sentiment structure. Furthermore, we propose a pre-trained model to integrate both syntax and semantic features for opinion tree generation. On one hand, a pre-trained model with large-scale unlabeled data is important for the tree generation model. On the other hand, the syntax and semantic features are very effective for forming the opinion tree structure. Extensive experiments show the superiority of our proposed method. The results also validate the tree structure is effective to generate sentimental elements.",
+      "externalIds": {
+        "DBLP": "conf/ijcai/BaoWJXL22",
+        "DOI": "10.24963/ijcai.2022/561",
+        "CorpusId": 250634421
+      },
+      "arxiv_id": null,
+      "doi": "10.24963/ijcai.2022/561",
+      "corpus_id": 250634421
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "77",
+      "ref_key": "S2:a654bfe2c3009d687e81816ead8722f5f9f37f30",
+      "paperId": "a654bfe2c3009d687e81816ead8722f5f9f37f30",
+      "title": "Towards a One-stop Solution to Both Aspect Extraction and Sentiment Analysis Tasks with Neural Multi-task Learning",
+      "year": 2018,
+      "abstract": "Previous studies usually divided aspect-based sentiment analysis into several subtasks in pipeline, i.e., first aspect term and/or opinion term extraction, then aspect-based sentiment prediction, resulting in error propagation and external resources dependency. To overcome the problems mentioned above, in this work we present a novel one-stop solution on aspect-based sentiment analysis. Specifically, we propose a novel multi-task neural learning framework to jointly tackle aspect extraction and sentiment prediction subtasks at the same time, and leverage attention mechanisms to learn the joint representation of aspect-sentiment relationship. We have conducted extensive comparative experiments on two benchmark datasets from SemEva1–2014. The experiment results demonstrate the effectiveness of our proposed solution. Especially, our multi-task model outperforms the state-of-the-art systems on aspect extraction subtask.",
+      "externalIds": {
+        "MAG": "2897908126",
+        "DBLP": "conf/ijcnn/WangLW18",
+        "DOI": "10.1109/IJCNN.2018.8489042",
+        "CorpusId": 52984880
+      },
+      "arxiv_id": null,
+      "doi": "10.1109/IJCNN.2018.8489042",
+      "corpus_id": 52984880
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "78",
+      "ref_key": "S2:a4bc4b98a917174ac2ab14bd5e66d64306079ab5",
+      "paperId": "a4bc4b98a917174ac2ab14bd5e66d64306079ab5",
+      "title": "BERT Post-Training for Review Reading Comprehension and Aspect-based Sentiment Analysis",
+      "year": 2019,
+      "abstract": "Question-answering plays an important role in e-commerce as it allows potential customers to actively seek crucial information about products or services to help their purchase decision making. Inspired by the recent success of machine reading comprehension (MRC) on formal documents, this paper explores the potential of turning customer reviews into a large source of knowledge that can be exploited to answer user questions. We call this problem Review Reading Comprehension (RRC). To the best of our knowledge, no existing work has been done on RRC. In this work, we first build an RRC dataset called ReviewRC based on a popular benchmark for aspect-based sentiment analysis. Since ReviewRC has limited training examples for RRC (and also for aspect-based sentiment analysis), we then explore a novel post-training approach on the popular language model BERT to enhance the performance of fine-tuning of BERT for RRC. To show the generality of the approach, the proposed post-training is also applied to some other review-based tasks such as aspect extraction and aspect sentiment classification in aspect-based sentiment analysis. Experimental results demonstrate that the proposed post-training is highly effective.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1904-02232",
+        "MAG": "2925618549",
+        "ArXiv": "1904.02232",
+        "ACL": "N19-1242",
+        "DOI": "10.18653/v1/N19-1242",
+        "CorpusId": 102353837
+      },
+      "arxiv_id": "1904.02232",
+      "doi": "10.18653/v1/N19-1242",
+      "corpus_id": 102353837
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "79",
+      "ref_key": "S2:97d27f89684ac88d32e1281b13424c049956d38c",
+      "paperId": "97d27f89684ac88d32e1281b13424c049956d38c",
+      "title": "Target-oriented Opinion Words Extraction with Target-fused Neural Sequence Labeling",
+      "year": 2019,
+      "abstract": "Opinion target extraction and opinion words extraction are two fundamental subtasks in Aspect Based Sentiment Analysis (ABSA). Recently, many methods have made progress on these two tasks. However, few works aim at extracting opinion targets and opinion words as pairs. In this paper, we propose a novel sequence labeling subtask for ABSA named TOWE (Target-oriented Opinion Words Extraction), which aims at extracting the corresponding opinion words for a given opinion target. A target-fused sequence labeling neural network model is designed to perform this task. The opinion target information is well encoded into context by an Inward-Outward LSTM. Then left and right contexts of the opinion target and the global context are combined to find the corresponding opinion words. We build four datasets for TOWE based on several popular ABSA benchmarks from laptop and restaurant reviews. The experimental results show that our proposed model outperforms the other compared methods significantly. We believe that our work may not only be helpful for downstream sentiment analysis task, but can also be used for pair-wise opinion summarization.",
+      "externalIds": {
+        "MAG": "2946015932",
+        "ACL": "N19-1259",
+        "DBLP": "conf/naacl/FanWDHC19",
+        "DOI": "10.18653/v1/N19-1259",
+        "CorpusId": 174801222
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/N19-1259",
+      "corpus_id": 174801222
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "80",
+      "ref_key": "S2:e69baffcf8853efa627c917f8c57c33b27572ee8",
+      "paperId": "e69baffcf8853efa627c917f8c57c33b27572ee8",
+      "title": "Graph Ensemble Learning over Multiple Dependency Trees for Aspect-level Sentiment Classification",
+      "year": 2021,
+      "abstract": "Recent work on aspect-level sentiment classification has demonstrated the efficacy of incorporating syntactic structures such as dependency trees with graph neural networks (GNN), but these approaches are usually vulnerable to parsing errors. To better leverage syntactic information in the face of unavoidable errors, we propose a simple yet effective graph ensemble technique, GraphMerge, to make use of the predictions from different parsers. Instead of assigning one set of model parameters to each dependency tree, we first combine the dependency relations from different parses before applying GNNs over the resulting graph. This allows GNN models to be robust to parse errors at no additional computational cost, and helps avoid overparameterization and overfitting from GNN layer stacking by introducing more connectivity into the ensemble graph. Our experiments on the SemEval 2014 Task 4 and ACL 14 Twitter datasets show that our GraphMerge model not only outperforms models with single dependency tree, but also beats other ensemble models without adding model parameters.",
+      "externalIds": {
+        "DBLP": "conf/naacl/HouQWYHHZ21",
+        "ArXiv": "2103.11794",
+        "ACL": "2021.naacl-main.229",
+        "MAG": "3171429818",
+        "DOI": "10.18653/V1/2021.NAACL-MAIN.229",
+        "CorpusId": 232307094
+      },
+      "arxiv_id": "2103.11794",
+      "doi": "10.18653/V1/2021.NAACL-MAIN.229",
+      "corpus_id": 232307094
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "81",
+      "ref_key": "S2:0699bbbc1eaafd557de2f853ebec65185dbd4f9b",
+      "paperId": "0699bbbc1eaafd557de2f853ebec65185dbd4f9b",
+      "title": "Aspect-based Sentiment Analysis with Type-aware Graph Convolutional Networks and Layer Ensemble",
+      "year": 2021,
+      "abstract": "It is popular that neural graph-based models are applied in existing aspect-based sentiment analysis (ABSA) studies for utilizing word relations through dependency parses to facilitate the task with better semantic guidance for analyzing context and aspect words. However, most of these studies only leverage dependency relations without considering their dependency types, and are limited in lacking efficient mechanisms to distinguish the important relations as well as learn from different layers of graph based models. To address such limitations, in this paper, we propose an approach to explicitly utilize dependency types for ABSA with type-aware graph convolutional networks (T-GCN), where attention is used in T-GCN to distinguish different edges (relations) in the graph and attentive layer ensemble is proposed to comprehensively learn from different layers of T-GCN. The validity and effectiveness of our approach are demonstrated in the experimental results, where state-of-the-art performance is achieved on six English benchmark datasets. Further experiments are conducted to analyze the contributions of each component in our approach and illustrate how different layers in T-GCN help ABSA with quantitative and qualitative analysis.",
+      "externalIds": {
+        "MAG": "3167287584",
+        "DBLP": "conf/naacl/TianCS21",
+        "ACL": "2021.naacl-main.231",
+        "DOI": "10.18653/V1/2021.NAACL-MAIN.231",
+        "CorpusId": 235097335
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/V1/2021.NAACL-MAIN.231",
+      "corpus_id": 235097335
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "82",
+      "ref_key": "S2:6ec75f314c3def31c0fc3bcd08541f4094fd86f8",
+      "paperId": "6ec75f314c3def31c0fc3bcd08541f4094fd86f8",
+      "title": "Syntax-Aware Aspect-Level Sentiment Classification with Proximity-Weighted Convolution Network",
+      "year": 2019,
+      "abstract": "It has been widely accepted that Long Short-Term Memory (LSTM) network, coupled with attention mechanism and memory module, is useful for aspect-level sentiment classification. However, existing approaches largely rely on the modelling of semantic relatedness of an aspect with its context words, while to some extent ignore their syntactic dependencies within sentences. Consequently, this may lead to an undesirable result that the aspect attends on contextual words that are descriptive of other aspects. In this paper, we propose a proximity-weighted convolution network to offer an aspect-specific syntax-aware representation of contexts. In particular, two ways of determining proximity weight are explored, namely position proximity and dependency proximity. The representation is primarily abstracted by a bidirectional LSTM architecture and further enhanced by a proximity-weighted convolution. Experiments conducted on the SemEval 2014 benchmark demonstrate the effectiveness of our proposed approach compared with a range of state-of-the-art models is available at https://github.com/GeneZC/PWCN.",
+      "externalIds": {
+        "DBLP": "conf/sigir/ZhangL019",
+        "MAG": "2955633839",
+        "ArXiv": "1909.10171",
+        "DOI": "10.1145/3331184.3331351",
+        "CorpusId": 197928307
+      },
+      "arxiv_id": "1909.10171",
+      "doi": "10.1145/3331184.3331351",
+      "corpus_id": 197928307
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "83",
+      "ref_key": "S2:c833d2ebcabca86fe40526c6d2ccb96626f671a7",
+      "paperId": "c833d2ebcabca86fe40526c6d2ccb96626f671a7",
+      "title": "Global Inference for Aspect and Opinion Terms Co-Extraction Based on Multi-Task Neural Networks",
+      "year": 2019,
+      "abstract": "Extracting aspect terms and opinion terms are two fundamental tasks in opinion mining. The recent success of deep learning has inspired various neural network architectures, which have been shown to achieve highly competitive performance in these two tasks. However, most existing methods fail to explicitly consider the syntactic relations among aspect terms and opinion terms, which may lead to the inconsistencies between the model predictions and the syntactic constraints. To this end, we first apply a multi-task learning framework to implicitly capture the relations between the two tasks, and then propose a global inference method by explicitly modelling several syntactic constraints among aspect term extraction and opinion term extraction to uncover their intra-task and inter-task relationship, which seeks an optimal solution over the neural predictions for both tasks. Extensive evaluations on three benchmark datasets demonstrate that our global inference approach is able to bring consistent improvements over several base models in different scenarios.",
+      "externalIds": {
+        "DBLP": "journals/taslp/YuJX19",
+        "MAG": "2896786335",
+        "DOI": "10.1109/TASLP.2018.2875170",
+        "CorpusId": 53654789
+      },
+      "arxiv_id": null,
+      "doi": "10.1109/TASLP.2018.2875170",
+      "corpus_id": 53654789
+    },
+    {
+      "paper_id": "2203.01054",
+      "ref_index": "84",
+      "ref_key": "S2:67238370e2aafc314cdce92832d2304201bd131f",
+      "paperId": "67238370e2aafc314cdce92832d2304201bd131f",
+      "title": "Nonautoregressive Encoder–Decoder Neural Framework for End-to-End Aspect-Based Sentiment Triplet Extraction",
+      "year": 2021,
+      "abstract": "Aspect-based sentiment triplet extraction (ASTE) aims at recognizing the joint triplets from texts, i.e., aspect terms, opinion expressions, and correlated sentiment polarities. As a newly proposed task, ASTE depicts the complete sentiment picture from different perspectives to better facilitate real-world applications. Unfortunately, several major challenges, such as the overlapping issue and long-distance dependency, have not been addressed effectively by the existing ASTE methods, which limits the performance of the task. In this article, we present an innovative encoder–decoder framework for end-to-end ASTE. Specifically, the ASTE task is first modeled as an unordered triplet set prediction problem, which is satisfied with a nonautoregressive decoding paradigm with a pointer network. Second, a novel high-order aggregation mechanism is proposed for fully integrating the underlying interactions between the overlapping structure of aspect and opinion terms. Third, a bipartite matching loss is introduced for facilitating the training of our nonautoregressive system. Experimental results on benchmark datasets show that our proposed framework significantly outperforms the state-of-the-art methods. Further analysis demonstrates the advantages of the proposed framework in handling the overlapping issue, relieving long-distance dependency and decoding efficiency.",
+      "externalIds": {
+        "DBLP": "journals/tnn/FeiRZJ23",
+        "DOI": "10.1109/TNNLS.2021.3129483",
+        "CorpusId": 244871758,
+        "PubMed": "34860655"
+      },
+      "arxiv_id": null,
+      "doi": "10.1109/TNNLS.2021.3129483",
+      "corpus_id": 244871758
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "ABSA": {
+        "Single ABSA Tasks": {
+          "Aspect Term Extraction (ATE)": {
+            "Supervised ATE": {
+              "786d1ca11bfd95d8c845ef4a90b2d55092c2fb2f": {},
+              "9a91e3a88632ef68e4932d4a49321dd9b0311062": {},
+              "aae9475f1eb9e0a00490b3bd6bf298998508459e": {},
+              "88ef2416a4f337b72a0b7ade0e1fea5afcec0512": {},
+              "094a58e8c07395be13d6c92d35533d787906913b": {},
+              "8959a480a77c29c223533e1438268d02bb8ecf7b": {},
+              "1c72d8090f281f58d5b141a3917e341250ab4c8c": {},
+              "1e7194b95668c1ef70baae7bbd6de54d23122c4a": {},
+              "f9b54d083727de371a3a43562e09c84799685ad7": {},
+              "d0ec45b099b832bb9c5b48066537ba88943adf83": {}
+            },
+            "Semi-supervised ATE": {
+              "91abd290b1151ffc56a9bbdd84bee69bbb30dc99": {},
+              "8f9c0ffad9ca31d89fae82b17c18ba17ec641008": {},
+              "b8e175bb94edbb2346fb14aefcc4641f6f09168d": {}
+            },
+            "Unsupervised ATE": {
+              "c9faf8c7c8e1f13b7a14a86b57c6432c4fd953eb": {},
+              "7208e071f142078c80545d880144551126bc01b3": {},
+              "557cb93cef67e0f9de8aaf7831dd75c6b7e8de71": {}
+            }
+          },
+          "Aspect Category Detection (ACD)": {
+            "Supervised ACD": {
+              "08bcc29f8c827550c64061917d7f3bc4e57d0e69": {},
+              "4bcd811142901c798c785a6aee4b6ae40bdabe19": {},
+              "373040d25f80a546b5cadcd31ccc64a9dc157e40": {}
+            },
+            "Unsupervised ACD": {
+              "6a10bba32185c1fa11ebc29ef7a3a814198c2b6c": {},
+              "8d90d7ff23313745e5feb14187b5851f1e5aefe7": {}
+            }
+          },
+          "Opinion Term Extraction (OTE)": {
+            "Aspect Opinion  Co-Extraction (AOCE)": {
+              "786d1ca11bfd95d8c845ef4a90b2d55092c2fb2f": {},
+              "1c72d8090f281f58d5b141a3917e341250ab4c8c": {},
+              "1e7194b95668c1ef70baae7bbd6de54d23122c4a": {},
+              "52c18ee6a2c71ab87842fba730e8f83931be917d": {},
+              "d0ec45b099b832bb9c5b48066537ba88943adf83": {},
+              "c833d2ebcabca86fe40526c6d2ccb96626f671a7": {}
+            },
+            "Target-oriented Opinion Word Extraction (TOWE)": {
+              "0ca7a64e306b7042ae384425577c4142a5870ff7": {},
+              "832962037a3aedafeea842b6c2d18c6c1ef09461": {},
+              "6e40431b649d4333eecd1ea549d2e550a7e6a619": {},
+              "97d27f89684ac88d32e1281b13424c049956d38c": {}
+            }
+          },
+          "Aspect Sentiment Classification (ASC)": {
+            "06e122f475a21d92dba137609c40f35690217475": {},
+            "6e4ffbbb9de148ee334f07e74ddf98d9bf062f13": {},
+            "48a2661c7fb56cb762fe541304c5785d793e5a0f": {},
+            "c1abff438508a80524b525b2e4b6bd4a5c40b101": {},
+            "57fff1bd2265848f126f7f62b10d1c67cb6be0da": {},
+            "02b1bc3601aafbafc4cf8b27557e599a1690f295": {},
+            "cf3dfce20514078413ea911164c872bf85a4d80a": {},
+            "0b0dc14b8a8dcccbfc62a38355fff2f6a361e9d2": {},
+            "3b0e05f72b9b14ba50f3ec2e9059f3284e6a4cbd": {},
+            "82bb306038446302cedd20fa986d20640ed88a2e": {},
+            "b28f7e2996b6ee2784dd2dbb8212cfa0c79ba9e7": {},
+            "8e3a3ba309fe68f5b1d02266a03395332f7d945c": {},
+            "6e279973506f42868590d88e4cc01e1c4febb034": {},
+            "30c6252c0bedcb3528c9691205835134cd6e47ae": {},
+            "8e464b1914d9162432651507e86fcc7020289003": {},
+            "ca352ea6ac66c03a0cc22759098713e4202c71c6": {},
+            "beccf5bc709167e483e8ea0f58829c34a2bde2e7": {},
+            "68976eef5802e09d2b8c4f1e16605333d7deada9": {},
+            "629b9e5cc6839e60c7e18cfe752d682ff2787999": {},
+            "4b680821690116671cfef1a80d66244cf71077de": {},
+            "e5a241df2f4bc8dca3763131571a2145d139f426": {},
+            "5e40be36d11483923cb12260bed6e8f7ed355ff3": {},
+            "a4bc4b98a917174ac2ab14bd5e66d64306079ab5": {},
+            "e69baffcf8853efa627c917f8c57c33b27572ee8": {},
+            "0699bbbc1eaafd557de2f853ebec65185dbd4f9b": {},
+            "6ec75f314c3def31c0fc3bcd08541f4094fd86f8": {}
+          }
+        },
+        "Compound   ABSA Tasks": {
+          "Pair Extraction": {
+            "Aspect-Opinion Pair Extraction (AOPE)": {
+              "eccf59850f2a2433cc546b3e7e278d42825eec15": {},
+              "7e3faf1c17a61de18f99daf978e9d1961c621d27": {},
+              "f9db21c20fc1d6d096be5c707c31387da693c611": {},
+              "24980e640d3aa2d2abc61e6f31bdd53c9cf963a1": {}
+            },
+            "End-to-End ABSA  (E2E-ABSA)": {
+              "e200b89dec14afe304e0e11ad0c7df07a50f0244": {},
+              "a2be5da4e0ba9a0968fb415c36a75ec6f5103817": {},
+              "471b8f4592ac4c145a094dac5bd50fb712687acd": {},
+              "3f9a03b71216c202ac5a7bafba32e5e9773ed83f": {},
+              "b91e36e3f0db1dd2ed333e271cc3acea9380119f": {},
+              "bc3652679235d905746546355ab44486d42d0d96": {},
+              "65585c7d9c2bfccfb1a807a692ce9a09cda251be": {},
+              "74a0041d5fb6d33ea28346d5ea77f85e6d6ddbdc": {},
+              "04c186f8f3298e3c9f7a3db560e5815cec35769f": {},
+              "a654bfe2c3009d687e81816ead8722f5f9f37f30": {}
+            },
+            "Aspect Category Sentiment Analysis (ACSA)": {
+              "e12fd836261a394f7929243474332f264aa5e455": {},
+              "3f16ac291f90a438249b228c9db097ca80c76cb7": {},
+              "e33eaa88f4b9ac8a020b6147192493bbf4cdd559": {}
+            }
+          },
+          "Triplet Extraction": {
+            "Aspect Sentiment Triplet  Extraction (ASTE)": {
+              "a2a6e1e18d1939622380ae2a2adac0dfdc9799d7": {},
+              "13e1a9324351b25de11a102066d804a31963147d": {},
+              "0e021f936adf979f86812d67f32b090acb07d706": {},
+              "968820dfae97f80b63674fd76cd7d82332498708": {},
+              "1abaa34bd4cd780f723c23b8fa819e5aa4d6ae08": {},
+              "768ff532981f47a954d8bc6563a5b3e909cfbcad": {},
+              "5eb9dad01d9b61947d7a9aae6dfff400d20555b9": {},
+              "0c708c78e7c4b1d94b5c64f3469a58770995dc4d": {},
+              "30a713827f4a8b64e05ed3491fa6308482467583": {},
+              "ac7e6d1c9234d6246e680cb97be44ff9df6d677f": {},
+              "67238370e2aafc314cdce92832d2304201bd131f": {}
+            },
+            "Aspect-Category-Sentiment  Detection (ACSD)": {
+              "0ca7a64e306b7042ae384425577c4142a5870ff7": {},
+              "768ff532981f47a954d8bc6563a5b3e909cfbcad": {},
+              "85241d5942966f6b5af19f3cf80f7156dbcddf5f": {}
+            }
+          },
+          "Quad Extraction": {
+            "Aspect Sentiment Quad Prediction (ASQP)": {
+              "8298cbdc43c1e93257be69a078ca2662da89db9c": {},
+              "514627a1a81152f03de0c1e0e9e73525fb8da03c": {},
+              "85241d5942966f6b5af19f3cf80f7156dbcddf5f": {},
+              "a9904e4a3dba30e60fd3bb15c00418cbd045b6cf": {}
+            }
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000001",
+        "paperId": "786d1ca11bfd95d8c845ef4a90b2d55092c2fb2f",
+        "ref_index": "1",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Term Extraction (ATE)",
+          "Supervised ATE"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000002",
+        "paperId": "9a91e3a88632ef68e4932d4a49321dd9b0311062",
+        "ref_index": "13",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Term Extraction (ATE)",
+          "Supervised ATE"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000003",
+        "paperId": "aae9475f1eb9e0a00490b3bd6bf298998508459e",
+        "ref_index": "15",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Term Extraction (ATE)",
+          "Supervised ATE"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000004",
+        "paperId": "88ef2416a4f337b72a0b7ade0e1fea5afcec0512",
+        "ref_index": "37",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Term Extraction (ATE)",
+          "Supervised ATE"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000005",
+        "paperId": "094a58e8c07395be13d6c92d35533d787906913b",
+        "ref_index": "38",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Term Extraction (ATE)",
+          "Supervised ATE"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000006",
+        "paperId": "8959a480a77c29c223533e1438268d02bb8ecf7b",
+        "ref_index": "40",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Term Extraction (ATE)",
+          "Supervised ATE"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000007",
+        "paperId": "1c72d8090f281f58d5b141a3917e341250ab4c8c",
+        "ref_index": "44",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Term Extraction (ATE)",
+          "Supervised ATE"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000008",
+        "paperId": "1e7194b95668c1ef70baae7bbd6de54d23122c4a",
+        "ref_index": "46",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Term Extraction (ATE)",
+          "Supervised ATE"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000009",
+        "paperId": "f9b54d083727de371a3a43562e09c84799685ad7",
+        "ref_index": "71",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Term Extraction (ATE)",
+          "Supervised ATE"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000010",
+        "paperId": "d0ec45b099b832bb9c5b48066537ba88943adf83",
+        "ref_index": "73",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Term Extraction (ATE)",
+          "Supervised ATE"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000011",
+        "paperId": "91abd290b1151ffc56a9bbdd84bee69bbb30dc99",
+        "ref_index": "23",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Term Extraction (ATE)",
+          "Semi-supervised ATE"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000012",
+        "paperId": "8f9c0ffad9ca31d89fae82b17c18ba17ec641008",
+        "ref_index": "57",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Term Extraction (ATE)",
+          "Semi-supervised ATE"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000013",
+        "paperId": "b8e175bb94edbb2346fb14aefcc4641f6f09168d",
+        "ref_index": "65",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Term Extraction (ATE)",
+          "Semi-supervised ATE"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000014",
+        "paperId": "c9faf8c7c8e1f13b7a14a86b57c6432c4fd953eb",
+        "ref_index": "10",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Term Extraction (ATE)",
+          "Unsupervised ATE"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000015",
+        "paperId": "7208e071f142078c80545d880144551126bc01b3",
+        "ref_index": "53",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Term Extraction (ATE)",
+          "Unsupervised ATE"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000016",
+        "paperId": "557cb93cef67e0f9de8aaf7831dd75c6b7e8de71",
+        "ref_index": "74",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Term Extraction (ATE)",
+          "Unsupervised ATE"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000017",
+        "paperId": "08bcc29f8c827550c64061917d7f3bc4e57d0e69",
+        "ref_index": "0",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Category Detection (ACD)",
+          "Supervised ACD"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000018",
+        "paperId": "4bcd811142901c798c785a6aee4b6ae40bdabe19",
+        "ref_index": "25",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Category Detection (ACD)",
+          "Supervised ACD"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000019",
+        "paperId": "373040d25f80a546b5cadcd31ccc64a9dc157e40",
+        "ref_index": "33",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Category Detection (ACD)",
+          "Supervised ACD"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000020",
+        "paperId": "6a10bba32185c1fa11ebc29ef7a3a814198c2b6c",
+        "ref_index": "5",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Category Detection (ACD)",
+          "Unsupervised ACD"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000021",
+        "paperId": "8d90d7ff23313745e5feb14187b5851f1e5aefe7",
+        "ref_index": "19",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Category Detection (ACD)",
+          "Unsupervised ACD"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000022",
+        "paperId": "786d1ca11bfd95d8c845ef4a90b2d55092c2fb2f",
+        "ref_index": "1",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Opinion Term Extraction (OTE)",
+          "Aspect Opinion  Co-Extraction (AOCE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000023",
+        "paperId": "1c72d8090f281f58d5b141a3917e341250ab4c8c",
+        "ref_index": "44",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Opinion Term Extraction (OTE)",
+          "Aspect Opinion  Co-Extraction (AOCE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000024",
+        "paperId": "1e7194b95668c1ef70baae7bbd6de54d23122c4a",
+        "ref_index": "46",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Opinion Term Extraction (OTE)",
+          "Aspect Opinion  Co-Extraction (AOCE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000025",
+        "paperId": "52c18ee6a2c71ab87842fba730e8f83931be917d",
+        "ref_index": "54",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Opinion Term Extraction (OTE)",
+          "Aspect Opinion  Co-Extraction (AOCE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000026",
+        "paperId": "d0ec45b099b832bb9c5b48066537ba88943adf83",
+        "ref_index": "73",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Opinion Term Extraction (OTE)",
+          "Aspect Opinion  Co-Extraction (AOCE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000027",
+        "paperId": "c833d2ebcabca86fe40526c6d2ccb96626f671a7",
+        "ref_index": "83",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Opinion Term Extraction (OTE)",
+          "Aspect Opinion  Co-Extraction (AOCE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000028",
+        "paperId": "0ca7a64e306b7042ae384425577c4142a5870ff7",
+        "ref_index": "4",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Opinion Term Extraction (OTE)",
+          "Target-oriented Opinion Word Extraction (TOWE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000029",
+        "paperId": "832962037a3aedafeea842b6c2d18c6c1ef09461",
+        "ref_index": "59",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Opinion Term Extraction (OTE)",
+          "Target-oriented Opinion Word Extraction (TOWE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000030",
+        "paperId": "6e40431b649d4333eecd1ea549d2e550a7e6a619",
+        "ref_index": "67",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Opinion Term Extraction (OTE)",
+          "Target-oriented Opinion Word Extraction (TOWE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000031",
+        "paperId": "97d27f89684ac88d32e1281b13424c049956d38c",
+        "ref_index": "79",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Opinion Term Extraction (OTE)",
+          "Target-oriented Opinion Word Extraction (TOWE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000032",
+        "paperId": "06e122f475a21d92dba137609c40f35690217475",
+        "ref_index": "9",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000033",
+        "paperId": "6e4ffbbb9de148ee334f07e74ddf98d9bf062f13",
+        "ref_index": "11",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000034",
+        "paperId": "48a2661c7fb56cb762fe541304c5785d793e5a0f",
+        "ref_index": "12",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000035",
+        "paperId": "c1abff438508a80524b525b2e4b6bd4a5c40b101",
+        "ref_index": "14",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000036",
+        "paperId": "57fff1bd2265848f126f7f62b10d1c67cb6be0da",
+        "ref_index": "22",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000037",
+        "paperId": "02b1bc3601aafbafc4cf8b27557e599a1690f295",
+        "ref_index": "26",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000038",
+        "paperId": "cf3dfce20514078413ea911164c872bf85a4d80a",
+        "ref_index": "34",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000039",
+        "paperId": "0b0dc14b8a8dcccbfc62a38355fff2f6a361e9d2",
+        "ref_index": "35",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000040",
+        "paperId": "3b0e05f72b9b14ba50f3ec2e9059f3284e6a4cbd",
+        "ref_index": "39",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000041",
+        "paperId": "82bb306038446302cedd20fa986d20640ed88a2e",
+        "ref_index": "42",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000042",
+        "paperId": "b28f7e2996b6ee2784dd2dbb8212cfa0c79ba9e7",
+        "ref_index": "43",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000043",
+        "paperId": "8e3a3ba309fe68f5b1d02266a03395332f7d945c",
+        "ref_index": "45",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000044",
+        "paperId": "6e279973506f42868590d88e4cc01e1c4febb034",
+        "ref_index": "48",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000045",
+        "paperId": "30c6252c0bedcb3528c9691205835134cd6e47ae",
+        "ref_index": "49",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000046",
+        "paperId": "8e464b1914d9162432651507e86fcc7020289003",
+        "ref_index": "50",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000047",
+        "paperId": "ca352ea6ac66c03a0cc22759098713e4202c71c6",
+        "ref_index": "51",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000048",
+        "paperId": "beccf5bc709167e483e8ea0f58829c34a2bde2e7",
+        "ref_index": "52",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000049",
+        "paperId": "68976eef5802e09d2b8c4f1e16605333d7deada9",
+        "ref_index": "58",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000050",
+        "paperId": "629b9e5cc6839e60c7e18cfe752d682ff2787999",
+        "ref_index": "62",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000051",
+        "paperId": "4b680821690116671cfef1a80d66244cf71077de",
+        "ref_index": "63",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000052",
+        "paperId": "e5a241df2f4bc8dca3763131571a2145d139f426",
+        "ref_index": "70",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000053",
+        "paperId": "5e40be36d11483923cb12260bed6e8f7ed355ff3",
+        "ref_index": "72",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000054",
+        "paperId": "a4bc4b98a917174ac2ab14bd5e66d64306079ab5",
+        "ref_index": "78",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000055",
+        "paperId": "e69baffcf8853efa627c917f8c57c33b27572ee8",
+        "ref_index": "80",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000056",
+        "paperId": "0699bbbc1eaafd557de2f853ebec65185dbd4f9b",
+        "ref_index": "81",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000057",
+        "paperId": "6ec75f314c3def31c0fc3bcd08541f4094fd86f8",
+        "ref_index": "82",
+        "path": [
+          "ABSA",
+          "Single ABSA Tasks",
+          "Aspect Sentiment Classification (ASC)"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000058",
+        "paperId": "eccf59850f2a2433cc546b3e7e278d42825eec15",
+        "ref_index": "6",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Pair Extraction",
+          "Aspect-Opinion Pair Extraction (AOPE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000059",
+        "paperId": "7e3faf1c17a61de18f99daf978e9d1961c621d27",
+        "ref_index": "20",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Pair Extraction",
+          "Aspect-Opinion Pair Extraction (AOPE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000060",
+        "paperId": "f9db21c20fc1d6d096be5c707c31387da693c611",
+        "ref_index": "21",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Pair Extraction",
+          "Aspect-Opinion Pair Extraction (AOPE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000061",
+        "paperId": "24980e640d3aa2d2abc61e6f31bdd53c9cf963a1",
+        "ref_index": "75",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Pair Extraction",
+          "Aspect-Opinion Pair Extraction (AOPE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000062",
+        "paperId": "e200b89dec14afe304e0e11ad0c7df07a50f0244",
+        "ref_index": "2",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Pair Extraction",
+          "End-to-End ABSA  (E2E-ABSA)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000063",
+        "paperId": "a2be5da4e0ba9a0968fb415c36a75ec6f5103817",
+        "ref_index": "16",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Pair Extraction",
+          "End-to-End ABSA  (E2E-ABSA)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000064",
+        "paperId": "471b8f4592ac4c145a094dac5bd50fb712687acd",
+        "ref_index": "17",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Pair Extraction",
+          "End-to-End ABSA  (E2E-ABSA)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000065",
+        "paperId": "3f9a03b71216c202ac5a7bafba32e5e9773ed83f",
+        "ref_index": "18",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Pair Extraction",
+          "End-to-End ABSA  (E2E-ABSA)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000066",
+        "paperId": "b91e36e3f0db1dd2ed333e271cc3acea9380119f",
+        "ref_index": "24",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Pair Extraction",
+          "End-to-End ABSA  (E2E-ABSA)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000067",
+        "paperId": "bc3652679235d905746546355ab44486d42d0d96",
+        "ref_index": "41",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Pair Extraction",
+          "End-to-End ABSA  (E2E-ABSA)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000068",
+        "paperId": "65585c7d9c2bfccfb1a807a692ce9a09cda251be",
+        "ref_index": "60",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Pair Extraction",
+          "End-to-End ABSA  (E2E-ABSA)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000069",
+        "paperId": "74a0041d5fb6d33ea28346d5ea77f85e6d6ddbdc",
+        "ref_index": "68",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Pair Extraction",
+          "End-to-End ABSA  (E2E-ABSA)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000070",
+        "paperId": "04c186f8f3298e3c9f7a3db560e5815cec35769f",
+        "ref_index": "69",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Pair Extraction",
+          "End-to-End ABSA  (E2E-ABSA)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000071",
+        "paperId": "a654bfe2c3009d687e81816ead8722f5f9f37f30",
+        "ref_index": "77",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Pair Extraction",
+          "End-to-End ABSA  (E2E-ABSA)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000072",
+        "paperId": "e12fd836261a394f7929243474332f264aa5e455",
+        "ref_index": "36",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Pair Extraction",
+          "Aspect Category Sentiment Analysis (ACSA)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000073",
+        "paperId": "3f16ac291f90a438249b228c9db097ca80c76cb7",
+        "ref_index": "47",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Pair Extraction",
+          "Aspect Category Sentiment Analysis (ACSA)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000074",
+        "paperId": "e33eaa88f4b9ac8a020b6147192493bbf4cdd559",
+        "ref_index": "61",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Pair Extraction",
+          "Aspect Category Sentiment Analysis (ACSA)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000075",
+        "paperId": "a2a6e1e18d1939622380ae2a2adac0dfdc9799d7",
+        "ref_index": "3",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Triplet Extraction",
+          "Aspect Sentiment Triplet  Extraction (ASTE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000076",
+        "paperId": "13e1a9324351b25de11a102066d804a31963147d",
+        "ref_index": "7",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Triplet Extraction",
+          "Aspect Sentiment Triplet  Extraction (ASTE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000077",
+        "paperId": "0e021f936adf979f86812d67f32b090acb07d706",
+        "ref_index": "8",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Triplet Extraction",
+          "Aspect Sentiment Triplet  Extraction (ASTE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000078",
+        "paperId": "968820dfae97f80b63674fd76cd7d82332498708",
+        "ref_index": "27",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Triplet Extraction",
+          "Aspect Sentiment Triplet  Extraction (ASTE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000079",
+        "paperId": "1abaa34bd4cd780f723c23b8fa819e5aa4d6ae08",
+        "ref_index": "28",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Triplet Extraction",
+          "Aspect Sentiment Triplet  Extraction (ASTE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000080",
+        "paperId": "768ff532981f47a954d8bc6563a5b3e909cfbcad",
+        "ref_index": "29",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Triplet Extraction",
+          "Aspect Sentiment Triplet  Extraction (ASTE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000081",
+        "paperId": "5eb9dad01d9b61947d7a9aae6dfff400d20555b9",
+        "ref_index": "32",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Triplet Extraction",
+          "Aspect Sentiment Triplet  Extraction (ASTE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000082",
+        "paperId": "0c708c78e7c4b1d94b5c64f3469a58770995dc4d",
+        "ref_index": "55",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Triplet Extraction",
+          "Aspect Sentiment Triplet  Extraction (ASTE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000083",
+        "paperId": "30a713827f4a8b64e05ed3491fa6308482467583",
+        "ref_index": "56",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Triplet Extraction",
+          "Aspect Sentiment Triplet  Extraction (ASTE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000084",
+        "paperId": "ac7e6d1c9234d6246e680cb97be44ff9df6d677f",
+        "ref_index": "64",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Triplet Extraction",
+          "Aspect Sentiment Triplet  Extraction (ASTE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000085",
+        "paperId": "67238370e2aafc314cdce92832d2304201bd131f",
+        "ref_index": "84",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Triplet Extraction",
+          "Aspect Sentiment Triplet  Extraction (ASTE)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000086",
+        "paperId": "0ca7a64e306b7042ae384425577c4142a5870ff7",
+        "ref_index": "4",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Triplet Extraction",
+          "Aspect-Category-Sentiment  Detection (ACSD)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000087",
+        "paperId": "768ff532981f47a954d8bc6563a5b3e909cfbcad",
+        "ref_index": "29",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Triplet Extraction",
+          "Aspect-Category-Sentiment  Detection (ACSD)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000088",
+        "paperId": "85241d5942966f6b5af19f3cf80f7156dbcddf5f",
+        "ref_index": "66",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Triplet Extraction",
+          "Aspect-Category-Sentiment  Detection (ACSD)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000089",
+        "paperId": "8298cbdc43c1e93257be69a078ca2662da89db9c",
+        "ref_index": "30",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Quad Extraction",
+          "Aspect Sentiment Quad Prediction (ASQP)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000090",
+        "paperId": "514627a1a81152f03de0c1e0e9e73525fb8da03c",
+        "ref_index": "31",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Quad Extraction",
+          "Aspect Sentiment Quad Prediction (ASQP)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000091",
+        "paperId": "85241d5942966f6b5af19f3cf80f7156dbcddf5f",
+        "ref_index": "66",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Quad Extraction",
+          "Aspect Sentiment Quad Prediction (ASQP)"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2203.01054",
+        "arxiv_id": "2203.01054",
+        "leaf_mention_id": "2203.01054::000092",
+        "paperId": "a9904e4a3dba30e60fd3bb15c00418cbd045b6cf",
+        "ref_index": "76",
+        "path": [
+          "ABSA",
+          "Compound   ABSA Tasks",
+          "Quad Extraction",
+          "Aspect Sentiment Quad Prediction (ASQP)"
+        ],
+        "depth": 4,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 92,
+      "unique_leaf_paper_count": 85,
+      "multi_membership_extra_mentions": 7,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

@@ -1,0 +1,1849 @@
+{
+  "paper_id": "2408.05212",
+  "arxiv_id": "2408.05212",
+  "title": "Preserving Privacy in Large Language Models: A Survey on Current Threats and Solutions",
+  "ref_meta": [
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "0",
+      "ref_key": "S2:8e58dc63817a2a26e5a2ddad38d8b1d19d1c3795",
+      "paperId": "8e58dc63817a2a26e5a2ddad38d8b1d19d1c3795",
+      "title": "Machine Unlearning",
+      "year": 2019,
+      "abstract": "Once users have shared their data online, it is generally difficult for them to revoke access and ask for the data to be deleted. Machine learning (ML) exacerbates this problem because any model trained with said data may have memorized it, putting users at risk of a successful privacy attack exposing their information. Yet, having models unlearn is notoriously difficult.We introduce SISA training, a framework that expedites the unlearning process by strategically limiting the influence of a data point in the training procedure. While our framework is applicable to any learning algorithm, it is designed to achieve the largest improvements for stateful algorithms like stochastic gradient descent for deep neural networks. SISA training reduces the computational overhead associated with unlearning, even in the worst-case setting where unlearning requests are made uniformly across the training set. In some cases, the service provider may have a prior on the distribution of unlearning requests that will be issued by users. We may take this prior into account to partition and order data accordingly, and further decrease overhead from unlearning.Our evaluation spans several datasets from different domains, with corresponding motivations for unlearning. Under no distributional assumptions, for simple learning tasks, we observe that SISA training improves time to unlearn points from the Purchase dataset by 4.63×, and 2.45× for the SVHN dataset, over retraining from scratch. SISA training also provides a speed-up of 1.36× in retraining for complex learning tasks such as ImageNet classification; aided by transfer learning, this results in a small degradation in accuracy. Our work contributes to practical data governance in machine unlearning.",
+      "externalIds": {
+        "ArXiv": "1912.03817",
+        "DBLP": "journals/corr/abs-1912-03817",
+        "DOI": "10.1109/SP40001.2021.00019",
+        "CorpusId": 208909851
+      },
+      "arxiv_id": "1912.03817",
+      "doi": "10.1109/SP40001.2021.00019",
+      "corpus_id": 208909851
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "1",
+      "ref_key": "S2:ba2b6a94d4fb018c9eab252a34d80787ae962f46",
+      "paperId": "ba2b6a94d4fb018c9eab252a34d80787ae962f46",
+      "title": "Differentially Private Optimization on Large Model at Small Cost",
+      "year": 2022,
+      "abstract": "Differentially private (DP) optimization is the standard paradigm to learn large neural networks that are accurate and privacy-preserving. The computational cost for DP deep learning, however, is notoriously heavy due to the per-sample gradient clipping. Existing DP implementations are 2-1000X more costly in time and space complexity than the standard (non-private) training. In this work, we develop a novel Book-Keeping (BK) technique that implements existing DP optimizers (thus achieving the same accuracy), with a substantial improvement on the computational cost. Specifically, BK enables DP training on large models and high dimensional data to be roughly as fast and memory-saving as the standard training, whereas previous DP algorithms can be inefficient or incapable of training due to memory error. The computational advantage of BK is supported by the complexity analysis as well as extensive experiments on vision and language tasks. Our implementation achieves state-of-the-art (SOTA) accuracy with very small extra cost: on GPT2 and at almost the same memory cost (<1% overhead), BK has 1.03X the time complexity of the standard training (0.83X training speed in practice), and 0.61X the time complexity of the most efficient DP implementation (1.36X training speed in practice). We open-source the codebase for the BK algorithm at the FastDP library (https://github.com/awslabs/fast-differential-privacy).",
+      "externalIds": {
+        "DBLP": "conf/icml/BuWZK23",
+        "ArXiv": "2210.00038",
+        "DOI": "10.48550/arXiv.2210.00038",
+        "CorpusId": 252683151
+      },
+      "arxiv_id": "2210.00038",
+      "doi": "10.48550/arXiv.2210.00038",
+      "corpus_id": 252683151
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "2",
+      "ref_key": "S2:2cb272df6d7d4de6be6aef5eacd1017ef6cb2df7",
+      "paperId": "2cb272df6d7d4de6be6aef5eacd1017ef6cb2df7",
+      "title": "LAMP: Extracting Text from Gradients with Language Model Priors",
+      "year": 2022,
+      "abstract": "Recent work shows that sensitive user data can be reconstructed from gradient updates, breaking the key privacy promise of federated learning. While success was demonstrated primarily on image data, these methods do not directly transfer to other domains such as text. In this work, we propose LAMP, a novel attack tailored to textual data, that successfully reconstructs original text from gradients. Our attack is based on two key insights: (i) modeling prior text probability with an auxiliary language model, guiding the search towards more natural text, and (ii) alternating continuous and discrete optimization, which minimizes reconstruction loss on embeddings, while avoiding local minima by applying discrete text transformations. Our experiments demonstrate that LAMP is significantly more effective than prior work: it reconstructs 5x more bigrams and 23% longer subsequences on average. Moreover, we are the first to recover inputs from batch sizes larger than 1 for textual models. These findings indicate that gradient updates of models operating on textual data leak more information than previously thought.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2202-08827",
+        "ArXiv": "2202.08827",
+        "CorpusId": 246904485
+      },
+      "arxiv_id": "2202.08827",
+      "doi": null,
+      "corpus_id": 246904485
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "3",
+      "ref_key": "S2:2f2a430ba6c93bcfaf4818316ff8a27b1e034b1a",
+      "paperId": "2f2a430ba6c93bcfaf4818316ff8a27b1e034b1a",
+      "title": "Flocks of Stochastic Parrots: Differentially Private Prompt Learning for Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) are excellent in-context learners. However, the sensitivity of data contained in prompts raises privacy concerns. Our work first shows that these concerns are valid: we instantiate a simple but highly effective membership inference attack against the data used to prompt LLMs. To address this vulnerability, one could forego prompting and resort to fine-tuning LLMs with known algorithms for private gradient descent. However, this comes at the expense of the practicality and efficiency offered by prompting. Therefore, we propose to privately learn to prompt. We first show that soft prompts can be obtained privately through gradient descent on downstream data. However, this is not the case for discrete prompts. Thus, we orchestrate a noisy vote among an ensemble of LLMs presented with different prompts, i.e., a flock of stochastic parrots. The vote privately transfers the flock's knowledge into a single public prompt. We show that LLMs prompted with our private algorithms closely match the non-private baselines. For example, using GPT3 as the base model, we achieve a downstream accuracy of 92.7% on the sst2 dataset with ($\\epsilon=0.147, \\delta=10^{-6}$)-differential privacy vs. 95.2% for the non-private baseline. Through our experiments, we also show that our prompt-based approach is easily deployed with existing commercial APIs.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-15594",
+        "ArXiv": "2305.15594",
+        "DOI": "10.48550/arXiv.2305.15594",
+        "CorpusId": 258887717
+      },
+      "arxiv_id": "2305.15594",
+      "doi": "10.48550/arXiv.2305.15594",
+      "corpus_id": 258887717
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "4",
+      "ref_key": "S2:40a7c44d1cfaa9faf1f731a6f93a889fab5426da",
+      "paperId": "40a7c44d1cfaa9faf1f731a6f93a889fab5426da",
+      "title": "Who's Harry Potter? Approximate Unlearning in LLMs",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) are trained on massive internet corpora that often contain copyrighted content. This poses legal and ethical challenges for the developers and users of these models, as well as the original authors and publishers. In this paper, we propose a novel technique for unlearning a subset of the training data from a LLM, without having to retrain it from scratch. We evaluate our technique on the task of unlearning the Harry Potter books from the Llama2-7b model (a generative language model recently open-sourced by Meta). While the model took over 184K GPU-hours to pretrain, we show that in about 1 GPU hour of finetuning, we effectively erase the model's ability to generate or recall Harry Potter-related content, while its performance on common benchmarks (such as Winogrande, Hellaswag, arc, boolq and piqa) remains almost unaffected. We make our fine-tuned model publicly available on HuggingFace for community evaluation. To the best of our knowledge, this is the first paper to present an effective technique for unlearning in generative language models. Our technique consists of three main components: First, we use a reinforced model that is further trained on the target data to identify the tokens that are most related to the unlearning target, by comparing its logits with those of a baseline model. Second, we replace idiosyncratic expressions in the target data with generic counterparts, and leverage the model's own predictions to generate alternative labels for every token. These labels aim to approximate the next-token predictions of a model that has not been trained on the target data. Third, we finetune the model on these alternative labels, which effectively erases the original text from the model's memory whenever it is prompted with its context.",
+      "externalIds": {
+        "ArXiv": "2310.02238",
+        "DBLP": "journals/corr/abs-2310-02238",
+        "CorpusId": 263608437
+      },
+      "arxiv_id": "2310.02238",
+      "doi": null,
+      "corpus_id": 263608437
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "5",
+      "ref_key": "S2:75e852a362b8c4fd5115590ab174a2185128d7c0",
+      "paperId": "75e852a362b8c4fd5115590ab174a2185128d7c0",
+      "title": "Why Is Public Pretraining Necessary for Private Model Training?",
+      "year": 2023,
+      "abstract": "In the privacy-utility tradeoff of a model trained on benchmark language and vision tasks, remarkable improvements have been widely reported with the use of pretraining on publicly available data. This is in part due to the benefits of transfer learning, which is the standard motivation for pretraining in non-private settings. However, the stark contrast in the improvement achieved through pretraining under privacy compared to non-private settings suggests that there may be a deeper, distinct cause driving these gains. To explain this phenomenon, we hypothesize that the non-convex loss landscape of a model training necessitates an optimization algorithm to go through two phases. In the first, the algorithm needs to select a good\"basin\"in the loss landscape. In the second, the algorithm solves an easy optimization within that basin. The former is a harder problem to solve with private data, while the latter is harder to solve with public data due to a distribution shift or data scarcity. Guided by this intuition, we provide theoretical constructions that provably demonstrate the separation between private training with and without public pretraining. Further, systematic experiments on CIFAR10 and LibriSpeech provide supporting evidence for our hypothesis.",
+      "externalIds": {
+        "ArXiv": "2302.09483",
+        "DBLP": "journals/corr/abs-2302-09483",
+        "DOI": "10.48550/arXiv.2302.09483",
+        "CorpusId": 257038349
+      },
+      "arxiv_id": "2302.09483",
+      "doi": "10.48550/arXiv.2302.09483",
+      "corpus_id": 257038349
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "6",
+      "ref_key": "S2:6fcbb819920ce206269105d1524489a33518d06d",
+      "paperId": "6fcbb819920ce206269105d1524489a33518d06d",
+      "title": "Recovering Private Text in Federated Learning of Language Models",
+      "year": 2022,
+      "abstract": "Federated learning allows distributed users to collaboratively train a model while keeping each user's data private. Recently, a growing body of work has demonstrated that an eavesdropping attacker can effectively recover image data from gradients transmitted during federated learning. However, little progress has been made in recovering text data. In this paper, we present a novel attack method FILM for federated learning of language models (LMs). For the first time, we show the feasibility of recovering text from large batch sizes of up to 128 sentences. Unlike image-recovery methods that are optimized to match gradients, we take a distinct approach that first identifies a set of words from gradients and then directly reconstructs sentences based on beam search and a prior-based reordering strategy. We conduct the FILM attack on several large-scale datasets and show that it can successfully reconstruct single sentences with high fidelity for large batch sizes and even multiple sentences if applied iteratively. We evaluate three defense methods: gradient pruning, DPSGD, and a simple approach to freeze word embeddings that we propose. We show that both gradient pruning and DPSGD lead to a significant drop in utility. However, if we fine-tune a public pre-trained LM on private text without updating word embeddings, it can effectively defend the attack with minimal data utility loss. Together, we hope that our results can encourage the community to rethink the privacy concerns of LM training and its standard practices in the future.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2205-08514",
+        "ArXiv": "2205.08514",
+        "DOI": "10.48550/arXiv.2205.08514",
+        "CorpusId": 248834481
+      },
+      "arxiv_id": "2205.08514",
+      "doi": "10.48550/arXiv.2205.08514",
+      "corpus_id": 248834481
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "7",
+      "ref_key": "S2:8a16740aec48eb80bf0e7cff0e83455181bb8759",
+      "paperId": "8a16740aec48eb80bf0e7cff0e83455181bb8759",
+      "title": "DP-OPT: Make Large Language Model Your Privacy-Preserving Prompt Engineer",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) have emerged as dominant tools for various tasks, particularly when tailored for a specific target by prompt tuning. Nevertheless, concerns surrounding data privacy present obstacles due to the tuned prompts' dependency on sensitive private information. A practical solution is to host a local LLM and optimize a soft prompt privately using data. Yet, hosting a local model becomes problematic when model ownership is protected. Alternative methods, like sending data to the model's provider for training, intensify these privacy issues facing an untrusted provider. In this paper, we present a novel solution called Differentially-Private Offsite Prompt Tuning (DP-OPT) to address this challenge. Our approach involves tuning a discrete prompt on the client side and then applying it to the desired cloud models. We demonstrate that prompts suggested by LLMs themselves can be transferred without compromising performance significantly. To ensure that the prompts do not leak private information, we introduce the first private prompt generation mechanism, by a differentially-private (DP) ensemble of in-context learning with private demonstrations. With DP-OPT, generating privacy-preserving prompts by Vicuna-7b can yield competitive performance compared to non-private in-context learning on GPT3.5 or local private prompt tuning. Codes are available at https://github.com/VITA-Group/DP-OPT .",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2312-03724",
+        "ArXiv": "2312.03724",
+        "DOI": "10.48550/arXiv.2312.03724",
+        "CorpusId": 266051675
+      },
+      "arxiv_id": "2312.03724",
+      "doi": "10.48550/arXiv.2312.03724",
+      "corpus_id": 266051675
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "8",
+      "ref_key": "S2:c3b597011f64e7c5459bbe4502163e463fb13f5a",
+      "paperId": "c3b597011f64e7c5459bbe4502163e463fb13f5a",
+      "title": "Learning and Evaluating a Differentially Private Pre-trained Language Model",
+      "year": 2021,
+      "abstract": "Contextual language models have led to significantly better results on a plethora of language understanding tasks, especially when pre-trained on the same data as the downstream task. While this additional pre-training usually improves performance, it can lead to information leakage and therefore risks the privacy of individuals mentioned in the training data. One method to guarantee the privacy of such individuals is to train a differentially-private model, but this usually comes at the expense of model performance. Moreover, it is hard to tell given a privacy parameter \\epsilon what was the effect on the trained representation. In this work we aim to guide future practitioners and researchers on how to improve privacy while maintaining good model performance. We demonstrate how to train a differentially-private pre-trained language model (i.e., BERT) with a privacy guarantee of \\epsilon=1 and with only a small degradation in performance. We experiment on a dataset of clinical notes with a model trained on a target entity extraction task, and compare it to a similar model trained without differential privacy. Finally, we present experiments showing how to interpret the differentially-private representation and understand the information lost and maintained in this process.",
+      "externalIds": {
+        "ACL": "2021.privatenlp-1.3",
+        "DBLP": "conf/emnlp/HooryFTEPLNSBHM21",
+        "MAG": "3167675683",
+        "DOI": "10.18653/V1/2021.PRIVATENLP-1.3",
+        "CorpusId": 235097653
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/V1/2021.PRIVATENLP-1.3",
+      "corpus_id": 235097653
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "9",
+      "ref_key": "S2:8c23ea0ed7badd70a8e26dcea73f2d673cc0c74d",
+      "paperId": "8c23ea0ed7badd70a8e26dcea73f2d673cc0c74d",
+      "title": "What Can We Learn Privately?",
+      "year": 2008,
+      "abstract": "Learning problems form an important category of computational tasks that generalizes many of the computations researchers apply to large real-life data sets. We ask: what concept classes can be learned privately, namely, by an algorithm whose output does not depend too heavily on any one input or specific training example? More precisely, we investigate learning algorithms that satisfy differential privacy, a notion that provides strong confidentiality guarantees in the contexts where aggregate information is released about a database containing sensitive information about individuals. We present several basic results that demonstrate general feasibility of private learning and relate several models previously studied separately in the contexts of privacy and standard learning.",
+      "externalIds": {
+        "MAG": "2245160765",
+        "DBLP": "conf/focs/KasiviswanathanLNRS08",
+        "ArXiv": "0803.0924",
+        "DOI": "10.1137/090756090",
+        "CorpusId": 1935
+      },
+      "arxiv_id": "0803.0924",
+      "doi": "10.1137/090756090",
+      "corpus_id": 1935
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "10",
+      "ref_key": "S2:8e990e779cd70b70e316b129f334edfb8aa89af1",
+      "paperId": "8e990e779cd70b70e316b129f334edfb8aa89af1",
+      "title": "Differentially Private Language Models Benefit from Public Pre-training",
+      "year": 2020,
+      "abstract": "Language modeling is a keystone task in natural language processing. When training a language model on sensitive information, differential privacy (DP) allows us to quantify the degree to which our private data is protected. However, training algorithms which enforce differential privacy often lead to degradation in model quality. We study the feasibility of learning a language model which is simultaneously high-quality and privacy preserving by tuning a public base model on a private corpus. We find that DP fine-tuning boosts the performance of language models in the private domain, making the training of such models possible.",
+      "externalIds": {
+        "ACL": "2020.privatenlp-1.5",
+        "MAG": "3102378604",
+        "ArXiv": "2009.05886",
+        "DBLP": "journals/corr/abs-2009-05886",
+        "DOI": "10.18653/v1/2020.privatenlp-1.5",
+        "CorpusId": 221655783
+      },
+      "arxiv_id": "2009.05886",
+      "doi": "10.18653/v1/2020.privatenlp-1.5",
+      "corpus_id": 221655783
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "11",
+      "ref_key": "S2:37209cdb837e5c2512721a6a838e9a94a90a4aca",
+      "paperId": "37209cdb837e5c2512721a6a838e9a94a90a4aca",
+      "title": "ADePT: Auto-encoder based Differentially Private Text Transformation",
+      "year": 2021,
+      "abstract": "Privacy is an important concern when building statistical models on data containing personal information. Differential privacy offers a strong definition of privacy and can be used to solve several privacy concerns. Multiple solutions have been proposed for the differentially-private transformation of datasets containing sensitive information. However, such transformation algorithms offer poor utility in Natural Language Processing (NLP) tasks due to noise added in the process. This paper addresses this issue by providing a utility-preserving differentially private text transformation algorithm using auto-encoders. Our algorithm transforms text to offer robustness against attacks and produces transformations with high semantic quality that perform well on downstream NLP tasks. We prove our algorithm’s theoretical privacy guarantee and assess its privacy leakage under Membership Inference Attacks (MIA) on models trained with transformed data. Our results show that the proposed model performs better against MIA attacks while offering lower to no degradation in the utility of the underlying transformation process compared to existing baselines.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2102-01502",
+        "ArXiv": "2102.01502",
+        "ACL": "2021.eacl-main.207",
+        "DOI": "10.18653/v1/2021.eacl-main.207",
+        "CorpusId": 231750016
+      },
+      "arxiv_id": "2102.01502",
+      "doi": "10.18653/v1/2021.eacl-main.207",
+      "corpus_id": 231750016
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "12",
+      "ref_key": "S2:6a758ada5c48a2ae48d1392d12ce4f4e1977e0dd",
+      "paperId": "6a758ada5c48a2ae48d1392d12ce4f4e1977e0dd",
+      "title": "Large Language Models Can Be Strong Differentially Private Learners",
+      "year": 2021,
+      "abstract": "Differentially Private (DP) learning has seen limited success for building large deep learning models of text, and straightforward attempts at applying Differentially Private Stochastic Gradient Descent (DP-SGD) to NLP tasks have resulted in large performance drops and high computational overhead. We show that this performance drop can be mitigated with (1) the use of large pretrained language models; (2) non-standard hyperparameters that suit DP optimization; and (3) fine-tuning objectives which are aligned with the pretraining procedure. With the above, we obtain NLP models that outperform state-of-the-art DP-trained models under the same privacy budget and strong non-private baselines -- by directly fine-tuning pretrained models with DP optimization on moderately-sized corpora. To address the computational challenge of running DP-SGD with large Transformers, we propose a memory saving technique that allows clipping in DP-SGD to run without instantiating per-example gradients for any linear layer in the model. The technique enables privately training Transformers with almost the same memory cost as non-private training at a modest run-time overhead. Contrary to conventional wisdom that DP optimization fails at learning high-dimensional models (due to noise that scales with dimension) empirical results reveal that private learning with pretrained language models doesn't tend to suffer from dimension-dependent performance degradation. Code to reproduce results can be found at https://github.com/lxuechen/private-transformers.",
+      "externalIds": {
+        "DBLP": "conf/iclr/LiTLH22",
+        "ArXiv": "2110.05679",
+        "CorpusId": 238634219
+      },
+      "arxiv_id": "2110.05679",
+      "doi": null,
+      "corpus_id": 238634219
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "13",
+      "ref_key": "S2:4c4722d3767dae6bc00b7de3e3fa160caaffe483",
+      "paperId": "4c4722d3767dae6bc00b7de3e3fa160caaffe483",
+      "title": "Privacy-Preserving Prompt Tuning for Large Language Model Services",
+      "year": 2023,
+      "abstract": "Prompt tuning provides an efficient way for users to customize Large Language Models (LLMs) with their private data in the emerging LLM service scenario. However, the sensitive nature of private data brings the need for privacy preservation in LLM service customization. Based on prompt tuning, we propose Privacy-Preserving Prompt Tuning (RAPT), a framework that provides privacy guarantees for LLM services. \\textsc{rapt} adopts a local privacy setting, allowing users to privatize their data locally with local differential privacy. As prompt tuning performs poorly when directly trained on privatized data, we introduce a novel privatized token reconstruction task that is trained jointly with the downstream task, allowing LLMs to learn better task-dependent representations. Despite the simplicity of our framework, experiments show that RAPT achieves competitive performance across tasks while providing privacy guarantees against adversaries.",
+      "externalIds": {
+        "ArXiv": "2305.06212",
+        "DBLP": "journals/corr/abs-2305-06212",
+        "DOI": "10.48550/arXiv.2305.06212",
+        "CorpusId": 258588141
+      },
+      "arxiv_id": "2305.06212",
+      "doi": "10.48550/arXiv.2305.06212",
+      "corpus_id": 258588141
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "14",
+      "ref_key": "S2:15a782b48fd26f2ce63ab1259e647c3656ce43c7",
+      "paperId": "15a782b48fd26f2ce63ab1259e647c3656ce43c7",
+      "title": "Split-and-Denoise: Protect large language model inference with local differential privacy",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) excel in natural language understanding by capturing hidden semantics in vector space. This process enriches the value of text embeddings for various downstream tasks, thereby fostering the Embedding-as-a-Service (EaaS) business model. However, the risk of privacy leakage due to direct text transmission to servers remains a critical concern. To address this, we introduce Split-N-Denoise (SnD), an private inference framework that splits the model to execute the token embedding layer on the client side at minimal computational cost. This allows the client to introduce noise prior to transmitting the embeddings to the server, and subsequently receive and denoise the perturbed output embeddings for downstream tasks. Our approach is designed for the inference stage of LLMs and requires no modifications to the model parameters. Extensive experiments demonstrate SnD's effectiveness in optimizing the privacy-utility tradeoff across various LLM architectures and diverse downstream tasks. The results reveal an improvement in performance under the same privacy budget compared to the baselines by over 10\\% on average, offering clients a privacy-preserving solution for local privacy protection.",
+      "externalIds": {
+        "ArXiv": "2310.09130",
+        "DBLP": "journals/corr/abs-2310-09130",
+        "DOI": "10.48550/arXiv.2310.09130",
+        "CorpusId": 264127881
+      },
+      "arxiv_id": "2310.09130",
+      "doi": "10.48550/arXiv.2310.09130",
+      "corpus_id": 264127881
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "15",
+      "ref_key": "S2:af710ada8965f274e810053f716f966627a136d9",
+      "paperId": "af710ada8965f274e810053f716f966627a136d9",
+      "title": "Differentially Private Language Models for Secure Data Sharing",
+      "year": 2022,
+      "abstract": "To protect the privacy of individuals whose data is being shared, it is of high importance to develop methods allowing researchers and companies to release textual data while providing formal privacy guarantees to its originators. In the field of NLP, substantial efforts have been directed at building mechanisms following the framework of local differential privacy, thereby anonymizing individual text samples before releasing them. In practice, these approaches are often dissatisfying in terms of the quality of their output language due to the strong noise required for local differential privacy. In this paper, we approach the problem at hand using global differential privacy, particularly by training a generative language model in a differentially private manner and consequently sampling data from it. Using natural language prompts and a new prompt-mismatch loss, we are able to create highly accurate and fluent textual datasets taking on specific desired attributes such as sentiment or topic and resembling statistical properties of the training data. We perform thorough experiments indicating that our synthetic datasets do not leak information from our original data and are of high language quality and highly suitable for training models for further analysis on real-world data. Notably, we also demonstrate that training classifiers on private synthetic data outperforms directly training classifiers with DP-SGD.",
+      "externalIds": {
+        "ACL": "2022.emnlp-main.323",
+        "DBLP": "journals/corr/abs-2210-13918",
+        "ArXiv": "2210.13918",
+        "DOI": "10.48550/arXiv.2210.13918",
+        "CorpusId": 253107364
+      },
+      "arxiv_id": "2210.13918",
+      "doi": "10.48550/arXiv.2210.13918",
+      "corpus_id": 253107364
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "16",
+      "ref_key": "S2:bae6dd2192dc9dea0b78ca835b688311e6c2f10a",
+      "paperId": "bae6dd2192dc9dea0b78ca835b688311e6c2f10a",
+      "title": "Deep Reinforcement Learning-based Text Anonymization against Private-Attribute Inference",
+      "year": 2019,
+      "abstract": "User-generated textual data is rich in content and has been used in many user behavioral modeling tasks. However, it could also leak user private-attribute information that they may not want to disclose such as age and location. User’s privacy concerns mandate data publishers to protect privacy. One effective way is to anonymize the textual data. In this paper, we study the problem of textual data anonymization and propose a novel Reinforcement Learning-based Text Anonymizor, RLTA, which addresses the problem of private-attribute leakage while preserving the utility of textual data. Our approach first extracts a latent representation of the original text w.r.t. a given task, then leverages deep reinforcement learning to automatically learn an optimal strategy for manipulating text representations w.r.t. the received privacy and utility feedback. Experiments show the effectiveness of this approach in terms of preserving both privacy and utility.",
+      "externalIds": {
+        "ACL": "D19-1240",
+        "MAG": "2971136727",
+        "DBLP": "conf/emnlp/MosallanezhadBL19",
+        "DOI": "10.18653/v1/D19-1240",
+        "CorpusId": 202771304
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/D19-1240",
+      "corpus_id": 202771304
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "17",
+      "ref_key": "S2:11bb1605279e65bb3609cd5ae9ff57cff512ab38",
+      "paperId": "11bb1605279e65bb3609cd5ae9ff57cff512ab38",
+      "title": "Local and Central Differential Privacy for Robustness and Privacy in Federated Learning",
+      "year": 2020,
+      "abstract": "Federated Learning (FL) allows multiple participants to train machine learning models collaboratively by keeping their datasets local while only exchanging model updates. Alas, this is not necessarily free from privacy and robustness vulnerabilities, e.g., via membership, property, and backdoor attacks. This paper investigates whether and to what extent one can use differential Privacy (DP) to protect both privacy and robustness in FL. To this end, we present a first-of-its-kind evaluation of Local and Central Differential Privacy (LDP/CDP) techniques in FL, assessing their feasibility and effectiveness. Our experiments show that both DP variants do d fend against backdoor attacks, albeit with varying levels of protection-utility trade-offs, but anyway more effectively than other robustness defenses. DP also mitigates white-box membership inference attacks in FL, and our work is the first to show it empirically. Neither LDP nor CDP, however, defend against property inference. Overall, our work provides a comprehensive, re-usable measurement methodology to quantify the trade-offs between robustness/privacy and utility in differentially private FL.",
+      "externalIds": {
+        "ArXiv": "2009.03561",
+        "DBLP": "conf/ndss/NaseriHC22",
+        "DOI": "10.14722/ndss.2022.23054",
+        "CorpusId": 239998048
+      },
+      "arxiv_id": "2009.03561",
+      "doi": "10.14722/ndss.2022.23054",
+      "corpus_id": 239998048
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "18",
+      "ref_key": "S2:46eea7d651420e60f9b1393e3f5eda14cbff7a2a",
+      "paperId": "46eea7d651420e60f9b1393e3f5eda14cbff7a2a",
+      "title": "Can Sensitive Information Be Deleted From LLMs? Objectives for Defending Against Extraction Attacks",
+      "year": 2023,
+      "abstract": "Pretrained language models sometimes possess knowledge that we do not wish them to, including memorized personal information and knowledge that could be used to harm people. They can also output toxic or harmful text. To mitigate these safety and informational issues, we propose an attack-and-defense framework for studying the task of deleting sensitive information directly from model weights. We study direct edits to model weights because (1) this approach should guarantee that particular deleted information is never extracted by future prompt attacks, and (2) it should protect against whitebox attacks, which is necessary for making claims about safety/privacy in a setting where publicly available model weights could be used to elicit sensitive information. Our threat model assumes that an attack succeeds if the answer to a sensitive question is located among a set of B generated candidates, based on scenarios where the information would be insecure if the answer is among B candidates. Experimentally, we show that even state-of-the-art model editing methods such as ROME struggle to truly delete factual information from models like GPT-J, as our whitebox and blackbox attacks can recover\"deleted\"information from an edited model 38% of the time. These attacks leverage two key observations: (1) that traces of deleted information can be found in intermediate model hidden states, and (2) that applying an editing method for one question may not delete information across rephrased versions of the question. Finally, we provide new defense methods that protect against some extraction attacks, but we do not find a single universally effective defense method. Our results suggest that truly deleting sensitive information is a tractable but difficult problem, since even relatively low attack success rates have potentially severe societal implications for real-world deployment of language models.",
+      "externalIds": {
+        "DBLP": "conf/iclr/PatilHB24",
+        "ArXiv": "2309.17410",
+        "DOI": "10.48550/arXiv.2309.17410",
+        "CorpusId": 263311025
+      },
+      "arxiv_id": "2309.17410",
+      "doi": "10.48550/arXiv.2309.17410",
+      "corpus_id": 263311025
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "19",
+      "ref_key": "S2:acb2dfc52cb13762778f20a51c32071762afd867",
+      "paperId": "acb2dfc52cb13762778f20a51c32071762afd867",
+      "title": "Natural Text Anonymization Using Universal Transformer with a Self-attention∗",
+      "year": 2020,
+      "abstract": "The paper focuses on the anonymization of natural language text in Russian. The problem of anonymization is topical in connection with the need to conduct studies aimed at assessing the effectiveness and stability of methods of attribution of the text to its intentional distortion by various techniques of anonymization. The paper presents a technique for anonymizing a Russian text based on a fast correlation filter, dictionary synonymization and a universal transformer model with a self-attention mechanism. The automated system developed on its basis is tested on an experimental corpus of Russian texts. The texts obtained with its help are analyzed by the authorship identification system. The effectiveness of attribution of anonymous texts by a specialized software system was reduced to a level of random guessing, which allows to name the proposed methodology effective.",
+      "externalIds": {
+        "CorpusId": 211220030
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 211220030
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "20",
+      "ref_key": "S2:1104d766527dead44a40532e8a89444d9cef5c65",
+      "paperId": "1104d766527dead44a40532e8a89444d9cef5c65",
+      "title": "\"Do Anything Now\": Characterizing and Evaluating In-The-Wild Jailbreak Prompts on Large Language Models",
+      "year": 2023,
+      "abstract": "The misuse of large language models (LLMs) has drawn significant attention from the general public and LLM vendors. One particular type of adversarial prompt, known as jailbreak prompt, has emerged as the main attack vector to bypass the safeguards and elicit harmful content from LLMs. In this paper, employing our new framework JailbreakHub, we conduct a comprehensive analysis of 1,405 jailbreak prompts spanning from December 2022 to December 2023. We identify 131 jailbreak communities and discover unique characteristics of jailbreak prompts and their major attack strategies, such as prompt injection and privilege escalation. We also observe that jailbreak prompts increasingly shift from online Web communities to prompt-aggregation websites and 28 user accounts have consistently optimized jailbreak prompts over 100 days. To assess the potential harm caused by jailbreak prompts, we create a question set comprising 107,250 samples across 13 forbidden scenarios. Leveraging this dataset, our experiments on six popular LLMs show that their safeguards cannot adequately defend jailbreak prompts in all scenarios. Particularly, we identify five highly effective jailbreak prompts that achieve 0.95 attack success rates on ChatGPT (GPT-3.5) and GPT-4, and the earliest one has persisted online for over 240 days. We hope that our study can facilitate the research community and LLM vendors in promoting safer and regulated LLMs.",
+      "externalIds": {
+        "ArXiv": "2308.03825",
+        "DBLP": "conf/ccs/ShenC0SZ24",
+        "DOI": "10.48550/arXiv.2308.03825",
+        "CorpusId": 260704242
+      },
+      "arxiv_id": "2308.03825",
+      "doi": "10.48550/arXiv.2308.03825",
+      "corpus_id": 260704242
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "21",
+      "ref_key": "S2:f0dcc9aa31dc9b31b836bcac1b140c8c94a2982d",
+      "paperId": "f0dcc9aa31dc9b31b836bcac1b140c8c94a2982d",
+      "title": "Membership Inference Attacks Against Machine Learning Models",
+      "year": 2016,
+      "abstract": "We quantitatively investigate how machine learning models leak information about the individual data records on which they were trained. We focus on the basic membership inference attack: given a data record and black-box access to a model, determine if the record was in the model's training dataset. To perform membership inference against a target model, we make adversarial use of machine learning and train our own inference model to recognize differences in the target model's predictions on the inputs that it trained on versus the inputs that it did not train on. We empirically evaluate our inference techniques on classification models trained by commercial \"machine learning as a service\" providers such as Google and Amazon. Using realistic datasets and classification tasks, including a hospital discharge dataset whose membership is sensitive from the privacy perspective, we show that these models can be vulnerable to membership inference attacks. We then investigate the factors that influence this leakage and evaluate mitigation strategies.",
+      "externalIds": {
+        "DBLP": "journals/corr/ShokriSS16",
+        "MAG": "2535690855",
+        "ArXiv": "1610.05820",
+        "DOI": "10.1109/SP.2017.41",
+        "CorpusId": 10488675
+      },
+      "arxiv_id": "1610.05820",
+      "doi": "10.1109/SP.2017.41",
+      "corpus_id": 10488675
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "22",
+      "ref_key": "S2:56874f9aef515902c5a49d84d10f629f8dcd5f40",
+      "paperId": "56874f9aef515902c5a49d84d10f629f8dcd5f40",
+      "title": "Differentially Private Fine-tuning of Language Models",
+      "year": 2021,
+      "abstract": "We give simpler, sparser, and faster algorithms for differentially private fine-tuning of large-scale pre-trained language models, which achieve the state-of-the-art privacy versus utility tradeoffs on many standard NLP tasks. We propose a meta-framework for this problem, inspired by the recent success of highly parameter-efficient methods for fine-tuning. Our experiments show that differentially private adaptations of these approaches outperform previous private algorithms in three important dimensions: utility, privacy, and the computational and memory cost of private training. On many commonly studied datasets, the utility of private models approaches that of non-private models. For example, on the MNLI dataset we achieve an accuracy of $87.8\\%$ using RoBERTa-Large and $83.5\\%$ using RoBERTa-Base with a privacy budget of $\\epsilon = 6.7$. In comparison, absent privacy constraints, RoBERTa-Large achieves an accuracy of $90.2\\%$. Our findings are similar for natural language generation tasks. Privately fine-tuning with DART, GPT-2-Small, GPT-2-Medium, GPT-2-Large, and GPT-2-XL achieve BLEU scores of 38.5, 42.0, 43.1, and 43.8 respectively (privacy budget of $\\epsilon = 6.8,\\delta=$ 1e-5) whereas the non-private baseline is $48.1$. All our experiments suggest that larger models are better suited for private fine-tuning: while they are well known to achieve superior accuracy non-privately, we find that they also better maintain their accuracy when privacy is introduced.",
+      "externalIds": {
+        "ArXiv": "2110.06500",
+        "DBLP": "conf/iclr/YuNBGI0KLMWYZ22",
+        "DOI": "10.29012/jpc.880",
+        "CorpusId": 238743879
+      },
+      "arxiv_id": "2110.06500",
+      "doi": "10.29012/jpc.880",
+      "corpus_id": 238743879
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "23",
+      "ref_key": "S2:fec35357525ae87f46067da841478f35e28ed8e9",
+      "paperId": "fec35357525ae87f46067da841478f35e28ed8e9",
+      "title": "Selective Pre-training for Private Fine-tuning",
+      "year": 2023,
+      "abstract": "Text prediction models, when used in applications like email clients or word processors, must protect user data privacy and adhere to model size constraints. These constraints are crucial to meet memory and inference time requirements, as well as to reduce inference costs. Building small, fast, and private domain-specific language models is a thriving area of research. In this work, we show that a careful pre-training on a \\emph{subset} of the public dataset that is guided by the private dataset is crucial to train small language models with differential privacy. On standard benchmarks, small models trained with our new framework achieve state-of-the-art performance. In addition to performance improvements, our results demonstrate that smaller models, through careful pre-training and private fine-tuning, can match the performance of much larger models that do not have access to private data. This underscores the potential of private learning for model compression and enhanced efficiency.",
+      "externalIds": {
+        "DBLP": "journals/tmlr/YuGK0NR0Z24",
+        "ArXiv": "2305.13865",
+        "DOI": "10.48550/arXiv.2305.13865",
+        "CorpusId": 258841179
+      },
+      "arxiv_id": "2305.13865",
+      "doi": "10.48550/arXiv.2305.13865",
+      "corpus_id": 258841179
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "24",
+      "ref_key": "S2:58996964dbcd15045b66201c2b850b5570ba74cb",
+      "paperId": "58996964dbcd15045b66201c2b850b5570ba74cb",
+      "title": "Synthetic Text Generation with Differential Privacy: A Simple and Practical Recipe",
+      "year": 2022,
+      "abstract": "Privacy concerns have attracted increasing attention in data-driven products due to the tendency of machine learning models to memorize sensitive training data. Generating synthetic versions of such data with a formal privacy guarantee, such as differential privacy (DP), provides a promising path to mitigating these privacy concerns, but previous approaches in this direction have typically failed to produce synthetic data of high quality. In this work, we show that a simple and practical recipe in the text domain is effective: simply fine-tuning a pretrained generative language model with DP enables the model to generate useful synthetic text with strong privacy protection. Through extensive empirical analyses on both benchmark and private customer data, we demonstrate that our method produces synthetic text that is competitive in terms of utility with its non-private counterpart, meanwhile providing strong protection against potential privacy leakages.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-14348",
+        "ACL": "2023.acl-long.74",
+        "ArXiv": "2210.14348",
+        "DOI": "10.48550/arXiv.2210.14348",
+        "CorpusId": 253116660
+      },
+      "arxiv_id": "2210.14348",
+      "doi": "10.48550/arXiv.2210.14348",
+      "corpus_id": 253116660
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "25",
+      "ref_key": "S2:5507d267bbf0b4cdb9f893c3c0960a45016f7010",
+      "paperId": "5507d267bbf0b4cdb9f893c3c0960a45016f7010",
+      "title": "Deep Leakage from Gradients",
+      "year": 2019,
+      "abstract": "Exchanging gradients is a widely used method in modern multi-node machine\nlearning system (e.g., distributed training, collaborative learning). For a\nlong time, people believed that gradients are safe to share: i.e., the training\ndata will not be leaked by gradient exchange. However, we show that it is\npossible to obtain the private training data from the publicly shared\ngradients. We name this leakage as Deep Leakage from Gradient and empirically\nvalidate the effectiveness on both computer vision and natural language\nprocessing tasks. Experimental results show that our attack is much stronger\nthan previous approaches: the recovery is pixel-wise accurate for images and\ntoken-wise matching for texts. We want to raise people's awareness to rethink\nthe gradient's safety. Finally, we discuss several possible strategies to\nprevent such deep leakage. The most effective defense method is gradient\npruning.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1906-08935",
+        "MAG": "2953304078",
+        "ArXiv": "1906.08935",
+        "DOI": "10.1007/978-3-030-63076-8_2",
+        "CorpusId": 195316471
+      },
+      "arxiv_id": "1906.08935",
+      "doi": "10.1007/978-3-030-63076-8_2",
+      "corpus_id": 195316471
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "26",
+      "ref_key": "S2:c73db55ff0ac61078d3921cd8d5bd007082184fb",
+      "paperId": "c73db55ff0ac61078d3921cd8d5bd007082184fb",
+      "title": "Local Differential Privacy: a tutorial",
+      "year": 2019,
+      "abstract": "In the past decade analysis of big data has proven to be extremely valuable in many contexts. Local Differential Privacy (LDP) is a state-of-the-art approach which allows statistical computations while protecting each individual user's privacy. Unlike Differential Privacy no trust in a central authority is necessary as noise is added to user inputs locally. In this paper we give an overview over different LDP algorithms for problems such as locally private heavy hitter identification and spatial data collection. Finally, we will give an outlook on open problems in LDP.",
+      "externalIds": {
+        "ArXiv": "1907.11908",
+        "DBLP": "journals/corr/abs-1907-11908",
+        "MAG": "2964481303",
+        "CorpusId": 198968169
+      },
+      "arxiv_id": "1907.11908",
+      "doi": null,
+      "corpus_id": 198968169
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "27",
+      "ref_key": "S2:df7d26339adf4eb0c07160947b9d2973c24911ba",
+      "paperId": "df7d26339adf4eb0c07160947b9d2973c24911ba",
+      "title": "Extracting Training Data from Large Language Models",
+      "year": 2020,
+      "abstract": "It has become common to publish large (billion parameter) language models that have been trained on private datasets. This paper demonstrates that in such settings, an adversary can perform a training data extraction attack to recover individual training examples by querying the language model. \nWe demonstrate our attack on GPT-2, a language model trained on scrapes of the public Internet, and are able to extract hundreds of verbatim text sequences from the model's training data. These extracted examples include (public) personally identifiable information (names, phone numbers, and email addresses), IRC conversations, code, and 128-bit UUIDs. Our attack is possible even though each of the above sequences are included in just one document in the training data. \nWe comprehensively evaluate our extraction attack to understand the factors that contribute to its success. For example, we find that larger models are more vulnerable than smaller models. We conclude by drawing lessons and discussing possible safeguards for training large language models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2012-07805",
+        "MAG": "3112689365",
+        "ArXiv": "2012.07805",
+        "CorpusId": 229156229
+      },
+      "arxiv_id": "2012.07805",
+      "doi": null,
+      "corpus_id": 229156229
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "28",
+      "ref_key": "S2:28c7e583d90ccfc5c3078dfc1d6b80a9ad90248d",
+      "paperId": "28c7e583d90ccfc5c3078dfc1d6b80a9ad90248d",
+      "title": "Quantifying Memorization Across Neural Language Models",
+      "year": 2022,
+      "abstract": "Large language models (LMs) have been shown to memorize parts of their training data, and when prompted appropriately, they will emit the memorized training data verbatim. This is undesirable because memorization violates privacy (exposing user data), degrades utility (repeated easy-to-memorize text is often low quality), and hurts fairness (some texts are memorized over others). We describe three log-linear relationships that quantify the degree to which LMs emit memorized training data. Memorization significantly grows as we increase (1) the capacity of a model, (2) the number of times an example has been duplicated, and (3) the number of tokens of context used to prompt the model. Surprisingly, we find the situation becomes more complicated when generalizing these results across model families. On the whole, we find that memorization in LMs is more prevalent than previously believed and will likely get worse as models continues to scale, at least without active mitigations.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2202-07646",
+        "ArXiv": "2202.07646",
+        "CorpusId": 246863735
+      },
+      "arxiv_id": "2202.07646",
+      "doi": null,
+      "corpus_id": 246863735
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "29",
+      "ref_key": "S2:07033abe45c0e2556e8c3fa1db1879b42dd45915",
+      "paperId": "07033abe45c0e2556e8c3fa1db1879b42dd45915",
+      "title": "TAG: Gradient Attack on Transformer-based Language Models",
+      "year": 2021,
+      "abstract": "Although federated learning has increasingly gained attention in terms of effectively utilizing local devices for data privacy enhancement, recent studies show that publicly shared gradients in the training process can reveal the private training images (gradient leakage) to a third-party in computer vision. We have, however, no systematic understanding of the gradient leakage mechanism on the Transformer based language models. In this paper, as the first attempt, we formulate the gradient attack problem on the Transformer-based language models and propose a gradient attack algorithm, TAG, to reconstruct the local training data. We develop a set of metrics to evaluate the effectiveness of the proposed attack algorithm quantitatively. Experimental results on Transformer, TinyBERT$_{4}$, TinyBERT$_{6}$, BERT$_{BASE}$, and BERT$_{LARGE}$ using GLUE benchmark show that TAG works well on more weight distributions in reconstructing training data and achieves 1.5$\\times$ recover rate and 2.5$\\times$ ROUGE-2 over prior methods without the need of ground truth label. TAG can obtain up to 90$\\%$ data by attacking gradients in CoLA dataset. In addition, TAG has a stronger adversary on large models, small dictionary size, and small input length. We hope the proposed TAG will shed some light on the privacy leakage problem in Transformer-based NLP models.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/DengWLWSLRD21",
+        "ArXiv": "2103.06819",
+        "DOI": "10.18653/v1/2021.findings-emnlp.305",
+        "CorpusId": 237581666
+      },
+      "arxiv_id": "2103.06819",
+      "doi": "10.18653/v1/2021.findings-emnlp.305",
+      "corpus_id": 237581666
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "30",
+      "ref_key": "S2:d1b9a3b11e6c9571a1553556f82b605b2b4baec3",
+      "paperId": "d1b9a3b11e6c9571a1553556f82b605b2b4baec3",
+      "title": "Model Inversion Attacks that Exploit Confidence Information and Basic Countermeasures",
+      "year": 2015,
+      "abstract": "Machine-learning (ML) algorithms are increasingly utilized in privacy-sensitive applications such as predicting lifestyle choices, making medical diagnoses, and facial recognition. In a model inversion attack, recently introduced in a case study of linear classifiers in personalized medicine by Fredrikson et al., adversarial access to an ML model is abused to learn sensitive genomic information about individuals. Whether model inversion attacks apply to settings outside theirs, however, is unknown. We develop a new class of model inversion attack that exploits confidence values revealed along with predictions. Our new attacks are applicable in a variety of settings, and we explore two in depth: decision trees for lifestyle surveys as used on machine-learning-as-a-service systems and neural networks for facial recognition. In both cases confidence values are revealed to those with the ability to make prediction queries to models. We experimentally show attacks that are able to estimate whether a respondent in a lifestyle survey admitted to cheating on their significant other and, in the other context, show how to recover recognizable images of people's faces given only their name and access to the ML model. We also initiate experimental exploration of natural countermeasures, investigating a privacy-aware decision tree training algorithm that is a simple variant of CART learning, as well as revealing only rounded confidence values. The lesson that emerges is that one can avoid these kinds of MI attacks with negligible degradation to utility.",
+      "externalIds": {
+        "DBLP": "conf/ccs/FredriksonJR15",
+        "MAG": "2051267297",
+        "DOI": "10.1145/2810103.2813677",
+        "CorpusId": 207229839
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/2810103.2813677",
+      "corpus_id": 207229839
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "31",
+      "ref_key": "S2:e61a3a5ba2b93458774f2ccbe480f3cf6cd74fa1",
+      "paperId": "e61a3a5ba2b93458774f2ccbe480f3cf6cd74fa1",
+      "title": "Membership Inference Attacks on Sequence-to-Sequence Models: Is My Data In Your Machine Translation System?",
+      "year": 2019,
+      "abstract": "Data privacy is an important issue for “machine learning as a service” providers. We focus on the problem of membership inference attacks: Given a data sample and black-box access to a model’s API, determine whether the sample existed in the model’s training data. Our contribution is an investigation of this problem in the context of sequence-to-sequence models, which are important in applications such as machine translation and video captioning. We define the membership inference problem for sequence generation, provide an open dataset based on state-of-the-art machine translation models, and report initial results on whether these models leak private information against several kinds of membership inference attacks.",
+      "externalIds": {
+        "MAG": "2936473415",
+        "ACL": "2020.tacl-1.4",
+        "DBLP": "journals/corr/abs-1904-05506",
+        "ArXiv": "1904.05506",
+        "DOI": "10.1162/tacl_a_00299",
+        "CorpusId": 119302127
+      },
+      "arxiv_id": "1904.05506",
+      "doi": "10.1162/tacl_a_00299",
+      "corpus_id": 119302127
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "32",
+      "ref_key": "S2:77d25889a59041629e8b2a81aad56544144c6878",
+      "paperId": "77d25889a59041629e8b2a81aad56544144c6878",
+      "title": "Are Large Pre-Trained Language Models Leaking Your Personal Information?",
+      "year": 2022,
+      "abstract": "Are Large Pre-Trained Language Models Leaking Your Personal Information? In this paper, we analyze whether Pre-Trained Language Models (PLMs) are prone to leaking personal information. Specifically, we query PLMs for email addresses with contexts of the email address or prompts containing the owner's name. We find that PLMs do leak personal information due to memorization. However, since the models are weak at association, the risk of specific personal information being extracted by attackers is low. We hope this work could help the community to better understand the privacy risk of PLMs and bring new insights to make PLMs safe.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/0009SC22",
+        "ArXiv": "2205.12628",
+        "DOI": "10.48550/arXiv.2205.12628",
+        "CorpusId": 249063119
+      },
+      "arxiv_id": "2205.12628",
+      "doi": "10.48550/arXiv.2205.12628",
+      "corpus_id": 249063119
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "33",
+      "ref_key": "S2:025ca4c125d6ecabc816a56f160e5c992abc76d9",
+      "paperId": "025ca4c125d6ecabc816a56f160e5c992abc76d9",
+      "title": "Multi-step Jailbreaking Privacy Attacks on ChatGPT",
+      "year": 2023,
+      "abstract": "With the rapid progress of large language models (LLMs), many downstream NLP tasks can be well solved given appropriate prompts. Though model developers and researchers work hard on dialog safety to avoid generating harmful content from LLMs, it is still challenging to steer AI-generated content (AIGC) for the human good. As powerful LLMs are devouring existing text data from various domains (e.g., GPT-3 is trained on 45TB texts), it is natural to doubt whether the private information is included in the training data and what privacy threats can these LLMs and their downstream applications bring. In this paper, we study the privacy threats from OpenAI's ChatGPT and the New Bing enhanced by ChatGPT and show that application-integrated LLMs may cause new privacy threats. To this end, we conduct extensive experiments to support our claims and discuss LLMs' privacy implications.",
+      "externalIds": {
+        "ArXiv": "2304.05197",
+        "DBLP": "journals/corr/abs-2304-05197",
+        "DOI": "10.48550/arXiv.2304.05197",
+        "CorpusId": 258060250
+      },
+      "arxiv_id": "2304.05197",
+      "doi": "10.48550/arXiv.2304.05197",
+      "corpus_id": 258060250
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "34",
+      "ref_key": "S2:5c0eb412790a0e47b25714a5857f9a1d0d95c6a6",
+      "paperId": "5c0eb412790a0e47b25714a5857f9a1d0d95c6a6",
+      "title": "Sentence Embedding Leaks More Information than You Expect: Generative Embedding Inversion Attack to Recover the Whole Sentence",
+      "year": 2023,
+      "abstract": "Sentence-level representations are beneficial for various natural language processing tasks. It is commonly believed that vector representations can capture rich linguistic properties. Currently, large language models (LMs) achieve state-of-the-art performance on sentence embedding. However, some recent works suggest that vector representations from LMs can cause information leakage. In this work, we further investigate the information leakage issue and propose a generative embedding inversion attack (GEIA) that aims to reconstruct input sequences based only on their sentence embeddings. Given the black-box access to a language model, we treat sentence embeddings as initial tokens' representations and train or fine-tune a powerful decoder model to decode the whole sequences directly. We conduct extensive experiments to demonstrate that our generative inversion attack outperforms previous embedding inversion attacks in classification metrics and generates coherent and contextually similar sentences as the original inputs.",
+      "externalIds": {
+        "DBLP": "conf/acl/0003XS23",
+        "ArXiv": "2305.03010",
+        "DOI": "10.48550/arXiv.2305.03010",
+        "CorpusId": 258480199
+      },
+      "arxiv_id": "2305.03010",
+      "doi": "10.48550/arXiv.2305.03010",
+      "corpus_id": 258480199
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "35",
+      "ref_key": "S2:cb754310302086dfbbcd098263200e2a03f65874",
+      "paperId": "cb754310302086dfbbcd098263200e2a03f65874",
+      "title": "Membership Inference Attacks against Language Models via Neighbourhood Comparison",
+      "year": 2023,
+      "abstract": "Membership Inference attacks (MIAs) aim to predict whether a data sample was present in the training data of a machine learning model or not, and are widely used for assessing the privacy risks of language models. Most existing attacks rely on the observation that models tend to assign higher probabilities to their training samples than non-training points. However, simple thresholding of the model score in isolation tends to lead to high false-positive rates as it does not account for the intrinsic complexity of a sample. Recent work has demonstrated that reference-based attacks which compare model scores to those obtained from a reference model trained on similar data can substantially improve the performance of MIAs. However, in order to train reference models, attacks of this kind make the strong and arguably unrealistic assumption that an adversary has access to samples closely resembling the original training data. Therefore, we investigate their performance in more realistic scenarios and find that they are highly fragile in relation to the data distribution used to train reference models. To investigate whether this fragility provides a layer of safety, we propose and evaluate neighbourhood attacks, which compare model scores for a given sample to scores of synthetically generated neighbour texts and therefore eliminate the need for access to the training data distribution. We show that, in addition to being competitive with reference-based attacks that have perfect knowledge about the training data distribution, our attack clearly outperforms existing reference-free attacks as well as reference-based attacks with imperfect knowledge, which demonstrates the need for a reevaluation of the threat model of adversarial attacks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-18462",
+        "ArXiv": "2305.18462",
+        "DOI": "10.48550/arXiv.2305.18462",
+        "CorpusId": 258967264
+      },
+      "arxiv_id": "2305.18462",
+      "doi": "10.48550/arXiv.2305.18462",
+      "corpus_id": 258967264
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "36",
+      "ref_key": "S2:ed46493d568030b42f0154d9e5bf39bbd07962b3",
+      "paperId": "ed46493d568030b42f0154d9e5bf39bbd07962b3",
+      "title": "Learning Differentially Private Recurrent Language Models",
+      "year": 2017,
+      "abstract": "We demonstrate that it is possible to train large recurrent language models with user-level differential privacy guarantees with only a negligible cost in predictive accuracy. Our work builds on recent advances in the training of deep networks on user-partitioned data and privacy accounting for stochastic gradient descent. In particular, we add user-level privacy protection to the federated averaging algorithm, which makes \"large step\" updates from user-level data. Our work demonstrates that given a dataset with a sufficiently large number of users (a requirement easily met by even small internet-scale datasets), achieving differential privacy comes at the cost of increased computation, rather than in decreased utility as in most prior work. We find that our private LSTM language models are quantitatively and qualitatively similar to un-noised models when trained on a large dataset.",
+      "externalIds": {
+        "MAG": "2784621220",
+        "DBLP": "conf/iclr/McMahanRT018",
+        "CorpusId": 3461939
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 3461939
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "37",
+      "ref_key": "S2:cc3b41c4d2ededb94b481089633ecb43d6b2162f",
+      "paperId": "cc3b41c4d2ededb94b481089633ecb43d6b2162f",
+      "title": "Quantifying Privacy Risks of Masked Language Models Using Membership Inference Attacks",
+      "year": 2022,
+      "abstract": "The wide adoption and application of Masked language models (MLMs) on sensitive data (from legal to medical) necessitates a thorough quantitative investigation into their privacy vulnerabilities. Prior attempts at measuring leakage of MLMs via membership inference attacks have been inconclusive, implying potential robustness of MLMs to privacy attacks.In this work, we posit that prior attempts were inconclusive because they based their attack solely on the MLM’s model score. We devise a stronger membership inference attack based on likelihood ratio hypothesis testing that involves an additional reference MLM to more accurately quantify the privacy risks of memorization in MLMs. We show that masked language models are indeed susceptible to likelihood ratio membership inference attacks: Our empirical results, on models trained on medical notes, show that our attack improves the AUC of prior membership inference attacks from 0.66 to an alarmingly high 0.90 level.",
+      "externalIds": {
+        "ArXiv": "2203.03929",
+        "ACL": "2022.emnlp-main.570",
+        "DBLP": "journals/corr/abs-2203-03929",
+        "DOI": "10.48550/arXiv.2203.03929",
+        "CorpusId": 247315260
+      },
+      "arxiv_id": "2203.03929",
+      "doi": "10.48550/arXiv.2203.03929",
+      "corpus_id": 247315260
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "38",
+      "ref_key": "S2:d4c4f46b63e4812f0268d99b6528aa6a0c404377",
+      "paperId": "d4c4f46b63e4812f0268d99b6528aa6a0c404377",
+      "title": "Text Embeddings Reveal (Almost) As Much As Text",
+      "year": 2023,
+      "abstract": "How much private information do text embeddings reveal about the original text? We investigate the problem of embedding \\textit{inversion}, reconstructing the full text represented in dense text embeddings. We frame the problem as controlled generation: generating text that, when reembedded, is close to a fixed point in latent space. We find that although a na\\\"ive model conditioned on the embedding performs poorly, a multi-step method that iteratively corrects and re-embeds text is able to recover $92\\%$ of $32\\text{-token}$ text inputs exactly. We train our model to decode text embeddings from two state-of-the-art embedding models, and also show that our model can recover important personal information (full names) from a dataset of clinical notes. Our code is available on Github: \\href{https://github.com/jxmorris12/vec2text}{github.com/jxmorris12/vec2text}.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-06816",
+        "ArXiv": "2310.06816",
+        "DOI": "10.48550/arXiv.2310.06816",
+        "CorpusId": 263829206
+      },
+      "arxiv_id": "2310.06816",
+      "doi": "10.48550/arXiv.2310.06816",
+      "corpus_id": 263829206
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "39",
+      "ref_key": "S2:fc7ee1828030a818f52518022a39f6a3ada60222",
+      "paperId": "fc7ee1828030a818f52518022a39f6a3ada60222",
+      "title": "Scalable Extraction of Training Data from (Production) Language Models",
+      "year": 2023,
+      "abstract": "This paper studies extractable memorization: training data that an adversary can efficiently extract by querying a machine learning model without prior knowledge of the training dataset. We show an adversary can extract gigabytes of training data from open-source language models like Pythia or GPT-Neo, semi-open models like LLaMA or Falcon, and closed models like ChatGPT. Existing techniques from the literature suffice to attack unaligned models; in order to attack the aligned ChatGPT, we develop a new divergence attack that causes the model to diverge from its chatbot-style generations and emit training data at a rate 150x higher than when behaving properly. Our methods show practical attacks can recover far more data than previously thought, and reveal that current alignment techniques do not eliminate memorization.",
+      "externalIds": {
+        "ArXiv": "2311.17035",
+        "DBLP": "journals/corr/abs-2311-17035",
+        "DOI": "10.48550/arXiv.2311.17035",
+        "CorpusId": 265466445
+      },
+      "arxiv_id": "2311.17035",
+      "doi": "10.48550/arXiv.2311.17035",
+      "corpus_id": 265466445
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "40",
+      "ref_key": "S2:b3c73de96640ee858f83c3f0eda2a3d15d59b847",
+      "paperId": "b3c73de96640ee858f83c3f0eda2a3d15d59b847",
+      "title": "Privacy Risks of General-Purpose Language Models",
+      "year": 2020,
+      "abstract": "Recently, a new paradigm of building general-purpose language models (e.g., Google’s Bert and OpenAI’s GPT-2) in Natural Language Processing (NLP) for text feature extraction, a standard procedure in NLP systems that converts texts to vectors (i.e., embeddings) for downstream modeling, has arisen and starts to find its application in various downstream NLP tasks and real world systems (e.g., Google’s search engine [6]). To obtain general-purpose text embeddings, these language models have highly complicated architectures with millions of learnable parameters and are usually pretrained on billions of sentences before being utilized. As is widely recognized, such a practice indeed improves the state-of-the-art performance of many downstream NLP tasks. However, the improved utility is not for free. We find the text embeddings from general-purpose language models would capture much sensitive information from the plain text. Once being accessed by the adversary, the embeddings can be reverse-engineered to disclose sensitive information of the victims for further harassment. Although such a privacy risk can impose a real threat to the future leverage of these promising NLP tools, there are neither published attacks nor systematic evaluations by far for the mainstream industry-level language models. To bridge this gap, we present the first systematic study on the privacy risks of 8 state-of-the-art language models with 4 diverse case studies. By constructing 2 novel attack classes, our study demonstrates the aforementioned privacy risks do exist and can impose practical threats to the application of general-purpose language models on sensitive data covering identity, genome, healthcare and location. For example, we show the adversary with nearly no prior knowledge can achieve about 75% accuracy when inferring the precise disease site from Bert embeddings of patients’ medical descriptions. As possible countermeasures, we propose 4 different defenses (via rounding, differential privacy, adversarial training and subspace projection) to obfuscate the unprotected embeddings for mitigation purpose. With extensive evaluations, we also provide a preliminary analysis on the utility-privacy trade-off brought by each defense, which we hope may foster future mitigation researches.",
+      "externalIds": {
+        "DBLP": "conf/sp/PanZJY20",
+        "MAG": "3046764764",
+        "DOI": "10.1109/SP40000.2020.00095",
+        "CorpusId": 220938739
+      },
+      "arxiv_id": null,
+      "doi": "10.1109/SP40000.2020.00095",
+      "corpus_id": 220938739
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "41",
+      "ref_key": "S2:2695fae0a6650d08766397955371c460d7b7a168",
+      "paperId": "2695fae0a6650d08766397955371c460d7b7a168",
+      "title": "Training Production Language Models without Memorizing User Data",
+      "year": 2020,
+      "abstract": "This paper presents the first consumer-scale next-word prediction (NWP) model trained with Federated Learning (FL) while leveraging the Differentially Private Federated Averaging (DP-FedAvg) technique. There has been prior work on building practical FL infrastructure, including work demonstrating the feasibility of training language models on mobile devices using such infrastructure. It has also been shown (in simulations on a public corpus) that it is possible to train NWP models with user-level differential privacy using the DP-FedAvg algorithm. Nevertheless, training production-quality NWP models with DP-FedAvg in a real-world production environment on a heterogeneous fleet of mobile phones requires addressing numerous challenges. For instance, the coordinating central server has to keep track of the devices available at the start of each round and sample devices uniformly at random from them, while ensuring \\emph{secrecy of the sample}, etc. Unlike all prior privacy-focused FL work of which we are aware, for the first time we demonstrate the deployment of a differentially private mechanism for the training of a production neural network in FL, as well as the instrumentation of the production training infrastructure to perform an end-to-end empirical measurement of unintended memorization.",
+      "externalIds": {
+        "MAG": "3087503988",
+        "DBLP": "journals/corr/abs-2009-10031",
+        "ArXiv": "2009.10031",
+        "CorpusId": 221819648
+      },
+      "arxiv_id": "2009.10031",
+      "doi": null,
+      "corpus_id": 221819648
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "42",
+      "ref_key": "S2:3422d5e0cdfdc935d6a84a1e3d3f96659265fe3a",
+      "paperId": "3422d5e0cdfdc935d6a84a1e3d3f96659265fe3a",
+      "title": "Detecting Pretraining Data from Large Language Models",
+      "year": 2023,
+      "abstract": "Although large language models (LLMs) are widely deployed, the data used to train them is rarely disclosed. Given the incredible scale of this data, up to trillions of tokens, it is all but certain that it includes potentially problematic text such as copyrighted materials, personally identifiable information, and test data for widely reported reference benchmarks. However, we currently have no way to know which data of these types is included or in what proportions. In this paper, we study the pretraining data detection problem: given a piece of text and black-box access to an LLM without knowing the pretraining data, can we determine if the model was trained on the provided text? To facilitate this study, we introduce a dynamic benchmark WIKIMIA that uses data created before and after model training to support gold truth detection. We also introduce a new detection method Min-K% Prob based on a simple hypothesis: an unseen example is likely to contain a few outlier words with low probabilities under the LLM, while a seen example is less likely to have words with such low probabilities. Min-K% Prob can be applied without any knowledge about the pretraining corpus or any additional training, departing from previous detection methods that require training a reference model on data that is similar to the pretraining data. Moreover, our experiments demonstrate that Min-K% Prob achieves a 7.4% improvement on WIKIMIA over these previous methods. We apply Min-K% Prob to two real-world scenarios, copyrighted book detection, and contaminated downstream example detection, and find it a consistently effective solution.",
+      "externalIds": {
+        "DBLP": "conf/iclr/ShiAXHLB0Z24",
+        "ArXiv": "2310.16789",
+        "DOI": "10.48550/arXiv.2310.16789",
+        "CorpusId": 264451585
+      },
+      "arxiv_id": "2310.16789",
+      "doi": "10.48550/arXiv.2310.16789",
+      "corpus_id": 264451585
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "43",
+      "ref_key": "S2:f2f8f7a2ec1b2ede48cbcd189b376ab9fa0735ef",
+      "paperId": "f2f8f7a2ec1b2ede48cbcd189b376ab9fa0735ef",
+      "title": "Privacy-preserving deep learning",
+      "year": 2015,
+      "abstract": "Deep learning based on artificial neural networks is a very popular approach to modeling, classifying, and recognizing complex data such as images, speech, and text. The unprecedented accuracy of deep learning methods has turned them into the foundation of new AI-based services on the Internet. Commercial companies that collect user data on a large scale have been the main beneficiaries of this trend since the success of deep learning techniques is directly proportional to the amount of data available for training. Massive data collection required for deep learning presents obvious privacy issues. Users' personal, highly sensitive data such as photos and voice recordings is kept indefinitely by the companies that collect it. Users can neither delete it, nor restrict the purposes for which it is used. Furthermore, centrally kept data is subject to legal subpoenas and extrajudicial surveillance. Many data owners-for example, medical institutions that may want to apply deep learning methods to clinical records-are prevented by privacy and confidentiality concerns from sharing the data and thus benefitting from large-scale deep learning. In this paper, we present a practical system that enables multiple parties to jointly learn an accurate neural-network model for a given objective without sharing their input datasets. We exploit the fact that the optimization algorithms used in modern deep learning, namely, those based on stochastic gradient descent, can be parallelized and executed asynchronously. Our system lets participants train independently on their own datasets and selectively share small subsets of their models' key parameters during training. This offers an attractive point in the utility/privacy tradeoff space: participants preserve the privacy of their respective data while still benefitting from other participants' models and thus boosting their learning accuracy beyond what is achievable solely on their own inputs. We demonstrate the accuracy of our privacy-preserving deep learning on benchmark datasets.",
+      "externalIds": {
+        "MAG": "2053637704",
+        "DBLP": "conf/ccs/ShokriS15",
+        "DOI": "10.1145/2810103.2813687",
+        "CorpusId": 20714
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/2810103.2813687",
+      "corpus_id": 20714
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "44",
+      "ref_key": "S2:ffca61ff581efb26d52be9189ba028ccb10eccd1",
+      "paperId": "ffca61ff581efb26d52be9189ba028ccb10eccd1",
+      "title": "Auditing Data Provenance in Text-Generation Models",
+      "year": 2018,
+      "abstract": "To help enforce data-protection regulations such as GDPR and detect unauthorized uses of personal data, we develop a new model auditing technique that helps users check if their data was used to train a machine learning model. We focus on auditing deep-learning models that generate natural-language text, including word prediction and dialog generation. These models are at the core of popular online services and are often trained on personal data such as users' messages, searches, chats, and comments. We design and evaluate a black-box auditing method that can detect, with very few queries to a model, if a particular user's texts were used to train it (among thousands of other users). We empirically show that our method can successfully audit well-generalized models that are not overfitted to the training data. We also analyze how text-generation models memorize word sequences and explain why this memorization makes them amenable to auditing.",
+      "externalIds": {
+        "MAG": "2945693042",
+        "DBLP": "conf/kdd/SongS19",
+        "DOI": "10.1145/3292500.3330885",
+        "CorpusId": 159041003
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/3292500.3330885",
+      "corpus_id": 159041003
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "45",
+      "ref_key": "S2:f0676c081f12c9395cd0e920d137a90a9ceb2c4a",
+      "paperId": "f0676c081f12c9395cd0e920d137a90a9ceb2c4a",
+      "title": "Privacy-Preserving In-Context Learning with Differentially Private Few-Shot Generation",
+      "year": 2023,
+      "abstract": "We study the problem of in-context learning (ICL) with large language models (LLMs) on private datasets. This scenario poses privacy risks, as LLMs may leak or regurgitate the private examples demonstrated in the prompt. We propose a novel algorithm that generates synthetic few-shot demonstrations from the private dataset with formal differential privacy (DP) guarantees, and show empirically that it can achieve effective ICL. We conduct extensive experiments on standard benchmarks and compare our algorithm with non-private ICL and zero-shot solutions. Our results demonstrate that our algorithm can achieve competitive performance with strong privacy levels. These results open up new possibilities for ICL with privacy protection for a broad range of applications.",
+      "externalIds": {
+        "ArXiv": "2309.11765",
+        "DBLP": "conf/iclr/TangSIMM0GKS24",
+        "DOI": "10.48550/arXiv.2309.11765",
+        "CorpusId": 262083977
+      },
+      "arxiv_id": "2309.11765",
+      "doi": "10.48550/arXiv.2309.11765",
+      "corpus_id": 262083977
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "46",
+      "ref_key": "S2:b03d107ef4570589d84e3d3baeee56462989e06d",
+      "paperId": "b03d107ef4570589d84e3d3baeee56462989e06d",
+      "title": "InferDPT: Privacy-Preserving Inference for Black-box Large Language Model",
+      "year": 2023,
+      "abstract": "Large language models (LLMs), like ChatGPT, have greatly simplified text generation tasks. However, they have also raised concerns about privacy risks such as data leakage and unauthorized data collection. Existing solutions for privacy-preserving inference face practical challenges related to computation time and communication costs. In this paper, we propose InferDPT, the first practical framework for the privacy-preserving Inference of black-box LLMs, implementing Differential Privacy in Text generation. InferDPT comprises two key modules: the\"perturbation module\"utilizes the exponential mechanism to generate a perturbed prompt, facilitating privacy-preserving inference with black-box LLMs, and the\"extraction module\", inspired by knowledge distillation and retrieval-augmented generation, extracts coherent and consistent text from the perturbed generation result, ensuring successful text generation completion. To address privacy concerns related to previous exponential mechanisms' susceptibility to embedding revision attacks, we introduce RANTEXT, a novel differential privacy mechanism integrated into the perturbation module of InferDPT, which introduces the concept of\"RANdom adjacency\"for TEXT perturbation within the prompt. Experimental results across three datasets demonstrate that the text generation quality of InferDPT is comparable to that of non-private GPT-4, and RANTEXT surpasses existing state-of-the-art mechanisms, namely, SANTEXT+ and CUSTEXT+ in the trade-off between privacy and utility. Even with an privacy parameter epsilon value of 6.0, RANTEXT achieves an average privacy protection rate exceeding 90% against embedding revision attacks, which is 0.58 times higher than that of SANTEXT+ and 3.35 times higher than that of CUSTEXT+.",
+      "externalIds": {
+        "ArXiv": "2310.12214",
+        "CorpusId": 264305757
+      },
+      "arxiv_id": "2310.12214",
+      "doi": null,
+      "corpus_id": 264305757
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "47",
+      "ref_key": "S2:a6d3794c23626060781da0f1ff2bcdf7457b6c43",
+      "paperId": "a6d3794c23626060781da0f1ff2bcdf7457b6c43",
+      "title": "DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models",
+      "year": 2023,
+      "abstract": "Generative Pre-trained Transformer (GPT) models have exhibited exciting progress in their capabilities, capturing the interest of practitioners and the public alike. Yet, while the literature on the trustworthiness of GPT models remains limited, practitioners have proposed employing capable GPT models for sensitive applications such as healthcare and finance -- where mistakes can be costly. To this end, this work proposes a comprehensive trustworthiness evaluation for large language models with a focus on GPT-4 and GPT-3.5, considering diverse perspectives -- including toxicity, stereotype bias, adversarial robustness, out-of-distribution robustness, robustness on adversarial demonstrations, privacy, machine ethics, and fairness. Based on our evaluations, we discover previously unpublished vulnerabilities to trustworthiness threats. For instance, we find that GPT models can be easily misled to generate toxic and biased outputs and leak private information in both training data and conversation history. We also find that although GPT-4 is usually more trustworthy than GPT-3.5 on standard benchmarks, GPT-4 is more vulnerable given jailbreaking system or user prompts, potentially because GPT-4 follows (misleading) instructions more precisely. Our work illustrates a comprehensive trustworthiness evaluation of GPT models and sheds light on the trustworthiness gaps. Our benchmark is publicly available at https://decodingtrust.github.io/ ; our dataset can be previewed at https://huggingface.co/datasets/AI-Secure/DecodingTrust ; a concise version of this work is at https://openreview.net/pdf?id=kaHpo8OZw2 .",
+      "externalIds": {
+        "DBLP": "conf/nips/WangCPXKZXXDSTA23",
+        "ArXiv": "2306.11698",
+        "DOI": "10.48550/arXiv.2306.11698",
+        "CorpusId": 259202782
+      },
+      "arxiv_id": "2306.11698",
+      "doi": "10.48550/arXiv.2306.11698",
+      "corpus_id": 259202782
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "48",
+      "ref_key": "S2:41a3c41ba1912e1384849e6898c241af89cc4a11",
+      "paperId": "41a3c41ba1912e1384849e6898c241af89cc4a11",
+      "title": "DEPN: Detecting and Editing Privacy Neurons in Pretrained Language Models",
+      "year": 2023,
+      "abstract": "Large language models pretrained on a huge amount of data capture rich knowledge and information in the training data. The ability of data memorization and regurgitation in pretrained language models, revealed in previous studies, brings the risk of data leakage. In order to effectively reduce these risks, we propose a framework DEPN to Detect and Edit Privacy Neurons in pretrained language models, partially inspired by knowledge neurons and model editing. In DEPN, we introduce a novel method, termed as privacy neuron detector, to locate neurons associated with private information, and then edit these detected privacy neurons by setting their activations to zero. Furthermore, we propose a privacy neuron aggregator dememorize private information in a batch processing manner. Experimental results show that our method can significantly and efficiently reduce the exposure of private data leakage without deteriorating the performance of the model. Additionally, we empirically demonstrate the relationship between model memorization and privacy neurons, from multiple perspectives, including model size, training time, prompts, privacy neuron distribution, illustrating the robustness of our approach.",
+      "externalIds": {
+        "ArXiv": "2310.20138",
+        "DBLP": "journals/corr/abs-2310-20138",
+        "DOI": "10.48550/arXiv.2310.20138",
+        "CorpusId": 264816202
+      },
+      "arxiv_id": "2310.20138",
+      "doi": "10.48550/arXiv.2310.20138",
+      "corpus_id": 264816202
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "49",
+      "ref_key": "S2:6e41a4cbb34c4d403efb73d74f5be5556b1f13d6",
+      "paperId": "6e41a4cbb34c4d403efb73d74f5be5556b1f13d6",
+      "title": "Privacy-Preserving In-Context Learning for Large Language Models",
+      "year": 2023,
+      "abstract": "In-context learning (ICL) is an important capability of Large Language Models (LLMs), enabling these models to dynamically adapt based on specific, in-context exemplars, thereby improving accuracy and relevance. However, LLM's responses may leak the sensitive private information contained in in-context exemplars. To address this challenge, we propose Differentially Private In-context Learning (DP-ICL), a general paradigm for privatizing ICL tasks. The key idea for DP-ICL paradigm is generating differentially private responses through a noisy consensus among an ensemble of LLM's responses based on disjoint exemplar sets. Based on the general paradigm of DP-ICL, we instantiate several techniques showing how to privatize ICL for text classification and language generation. We evaluate DP-ICL on four text classification benchmarks and two language generation tasks, and our empirical results show that DP-ICL achieves a strong utility-privacy tradeoff.",
+      "externalIds": {
+        "ArXiv": "2305.01639",
+        "DBLP": "conf/iclr/WuPWM24",
+        "CorpusId": 258436870
+      },
+      "arxiv_id": "2305.01639",
+      "doi": null,
+      "corpus_id": 258436870
+    },
+    {
+      "paper_id": "2408.05212",
+      "ref_index": "50",
+      "ref_key": "S2:1d2967d96b5e2daa172cb052b22c094beeec3068",
+      "paperId": "1d2967d96b5e2daa172cb052b22c094beeec3068",
+      "title": "Federated Learning of Gboard Language Models with Differential Privacy",
+      "year": 2023,
+      "abstract": "We train and deploy language models (LMs) with federated learning (FL) and differential privacy (DP) in Google Keyboard (Gboard). The recent DP-Follow the Regularized Leader (DP-FTRL) algorithm is applied to achieve meaningfully formal DP guarantees without requiring uniform sampling of clients. To provide favorable privacy-utility trade-offs, we introduce a new client participation criterion and discuss the implication of its configuration in large scale systems. We show how quantile-based clip estimation can be combined with DP-FTRL to adaptively choose the clip norm during training or reduce the hyperparameter tuning in preparation of training. With the help of pretraining on public data, we trained and deployed more than fifteen Gboard LMs that achieve high utility and $\\rho-$zCDP privacy guarantees with $\\rho \\in (0.3, 2)$, with one model additionally trained with secure aggregation.We summarize our experience and provide concrete suggestions on DP training for practitioners.",
+      "externalIds": {
+        "DBLP": "conf/acl/0002ZACKMRZ23",
+        "ACL": "2023.acl-industry.60",
+        "ArXiv": "2305.18465",
+        "DOI": "10.48550/arXiv.2305.18465",
+        "CorpusId": 258967363
+      },
+      "arxiv_id": "2305.18465",
+      "doi": "10.48550/arXiv.2305.18465",
+      "corpus_id": 258967363
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "{Preserving Privacy in Large Language Models (LLMs)} ": {
+        "{Privacy Attacks ": {
+          "{Training Data Extraction ": {
+            "{Non-adversarial extraction ": {
+              "df7d26339adf4eb0c07160947b9d2973c24911ba": {},
+              "28c7e583d90ccfc5c3078dfc1d6b80a9ad90248d": {},
+              "77d25889a59041629e8b2a81aad56544144c6878": {},
+              "fc7ee1828030a818f52518022a39f6a3ada60222": {},
+              "a6d3794c23626060781da0f1ff2bcdf7457b6c43": {}
+            },
+            "{Adversarial prompting ": {
+              "1104d766527dead44a40532e8a89444d9cef5c65": {},
+              "025ca4c125d6ecabc816a56f160e5c992abc76d9": {},
+              "fc7ee1828030a818f52518022a39f6a3ada60222": {}
+            }
+          },
+          "{Membership Inference ": {
+            "{Shadow Models ": {
+              "f0dcc9aa31dc9b31b836bcac1b140c8c94a2982d": {},
+              "e61a3a5ba2b93458774f2ccbe480f3cf6cd74fa1": {},
+              "ffca61ff581efb26d52be9189ba028ccb10eccd1": {}
+            },
+            "{Thresholds ": {
+              "cb754310302086dfbbcd098263200e2a03f65874": {},
+              "cc3b41c4d2ededb94b481089633ecb43d6b2162f": {},
+              "3422d5e0cdfdc935d6a84a1e3d3f96659265fe3a": {}
+            }
+          },
+          "{Model Inversion ": {
+            "{Model Output Inversion ": {
+              "d1b9a3b11e6c9571a1553556f82b605b2b4baec3": {},
+              "5c0eb412790a0e47b25714a5857f9a1d0d95c6a6": {},
+              "d4c4f46b63e4812f0268d99b6528aa6a0c404377": {},
+              "b3c73de96640ee858f83c3f0eda2a3d15d59b847": {}
+            },
+            "{Gradient Inversion ": {
+              "2cb272df6d7d4de6be6aef5eacd1017ef6cb2df7": {},
+              "6fcbb819920ce206269105d1524489a33518d06d": {},
+              "5507d267bbf0b4cdb9f893c3c0960a45016f7010": {},
+              "07033abe45c0e2556e8c3fa1db1879b42dd45915": {}
+            }
+          }
+        },
+        "{Solutions ": {
+          "{Privacy in Data ": {
+            "{Classical Anonymization ": {
+              "bae6dd2192dc9dea0b78ca835b688311e6c2f10a": {},
+              "acb2dfc52cb13762778f20a51c32071762afd867": {}
+            },
+            "{Anonymization with DP ": {
+              "37209cdb837e5c2512721a6a838e9a94a90a4aca": {},
+              "b03d107ef4570589d84e3d3baeee56462989e06d": {}
+            }
+          },
+          "{Privacy in Model ": {
+            "{LLMs Differential Privacy (DP) ": {
+              "{Pre-training with DP ": {
+                "75e852a362b8c4fd5115590ab174a2185128d7c0": {},
+                "c3b597011f64e7c5459bbe4502163e463fb13f5a": {},
+                "8e990e779cd70b70e316b129f334edfb8aa89af1": {},
+                "fec35357525ae87f46067da841478f35e28ed8e9": {}
+              },
+              "{Fine-tuning with DP ": {
+                "ba2b6a94d4fb018c9eab252a34d80787ae962f46": {},
+                "af710ada8965f274e810053f716f966627a136d9": {},
+                "58996964dbcd15045b66201c2b850b5570ba74cb": {}
+              },
+              "{PEFT with DP ": {
+                "6a758ada5c48a2ae48d1392d12ce4f4e1977e0dd": {},
+                "4c4722d3767dae6bc00b7de3e3fa160caaffe483": {},
+                "56874f9aef515902c5a49d84d10f629f8dcd5f40": {}
+              },
+              "{Inference with DP ": {
+                "2f2a430ba6c93bcfaf4818316ff8a27b1e034b1a": {},
+                "8a16740aec48eb80bf0e7cff0e83455181bb8759": {},
+                "15a782b48fd26f2ce63ab1259e647c3656ce43c7": {},
+                "f0676c081f12c9395cd0e920d137a90a9ceb2c4a": {},
+                "6e41a4cbb34c4d403efb73d74f5be5556b1f13d6": {}
+              }
+            },
+            "{Federated Learning with DP ": {
+              "{Central DP ": {
+                "11bb1605279e65bb3609cd5ae9ff57cff512ab38": {},
+                "ed46493d568030b42f0154d9e5bf39bbd07962b3": {},
+                "2695fae0a6650d08766397955371c460d7b7a168": {},
+                "1d2967d96b5e2daa172cb052b22c094beeec3068": {}
+              },
+              "{Local DP ": {
+                "8c23ea0ed7badd70a8e26dcea73f2d673cc0c74d": {},
+                "c73db55ff0ac61078d3921cd8d5bd007082184fb": {},
+                "f2f8f7a2ec1b2ede48cbcd189b376ab9fa0735ef": {}
+              }
+            },
+            "{Machine Unlearning ": {
+              "8e58dc63817a2a26e5a2ddad38d8b1d19d1c3795": {},
+              "40a7c44d1cfaa9faf1f731a6f93a889fab5426da": {},
+              "46eea7d651420e60f9b1393e3f5eda14cbff7a2a": {},
+              "41a3c41ba1912e1384849e6898c241af89cc4a11": {}
+            }
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000001",
+        "paperId": "df7d26339adf4eb0c07160947b9d2973c24911ba",
+        "ref_index": "27",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Privacy Attacks ",
+          "{Training Data Extraction ",
+          "{Non-adversarial extraction "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000002",
+        "paperId": "28c7e583d90ccfc5c3078dfc1d6b80a9ad90248d",
+        "ref_index": "28",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Privacy Attacks ",
+          "{Training Data Extraction ",
+          "{Non-adversarial extraction "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000003",
+        "paperId": "77d25889a59041629e8b2a81aad56544144c6878",
+        "ref_index": "32",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Privacy Attacks ",
+          "{Training Data Extraction ",
+          "{Non-adversarial extraction "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000004",
+        "paperId": "fc7ee1828030a818f52518022a39f6a3ada60222",
+        "ref_index": "39",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Privacy Attacks ",
+          "{Training Data Extraction ",
+          "{Non-adversarial extraction "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000005",
+        "paperId": "a6d3794c23626060781da0f1ff2bcdf7457b6c43",
+        "ref_index": "47",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Privacy Attacks ",
+          "{Training Data Extraction ",
+          "{Non-adversarial extraction "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000006",
+        "paperId": "1104d766527dead44a40532e8a89444d9cef5c65",
+        "ref_index": "20",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Privacy Attacks ",
+          "{Training Data Extraction ",
+          "{Adversarial prompting "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000007",
+        "paperId": "025ca4c125d6ecabc816a56f160e5c992abc76d9",
+        "ref_index": "33",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Privacy Attacks ",
+          "{Training Data Extraction ",
+          "{Adversarial prompting "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000008",
+        "paperId": "fc7ee1828030a818f52518022a39f6a3ada60222",
+        "ref_index": "39",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Privacy Attacks ",
+          "{Training Data Extraction ",
+          "{Adversarial prompting "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000009",
+        "paperId": "f0dcc9aa31dc9b31b836bcac1b140c8c94a2982d",
+        "ref_index": "21",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Privacy Attacks ",
+          "{Membership Inference ",
+          "{Shadow Models "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000010",
+        "paperId": "e61a3a5ba2b93458774f2ccbe480f3cf6cd74fa1",
+        "ref_index": "31",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Privacy Attacks ",
+          "{Membership Inference ",
+          "{Shadow Models "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000011",
+        "paperId": "ffca61ff581efb26d52be9189ba028ccb10eccd1",
+        "ref_index": "44",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Privacy Attacks ",
+          "{Membership Inference ",
+          "{Shadow Models "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000012",
+        "paperId": "cb754310302086dfbbcd098263200e2a03f65874",
+        "ref_index": "35",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Privacy Attacks ",
+          "{Membership Inference ",
+          "{Thresholds "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000013",
+        "paperId": "cc3b41c4d2ededb94b481089633ecb43d6b2162f",
+        "ref_index": "37",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Privacy Attacks ",
+          "{Membership Inference ",
+          "{Thresholds "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000014",
+        "paperId": "3422d5e0cdfdc935d6a84a1e3d3f96659265fe3a",
+        "ref_index": "42",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Privacy Attacks ",
+          "{Membership Inference ",
+          "{Thresholds "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000015",
+        "paperId": "d1b9a3b11e6c9571a1553556f82b605b2b4baec3",
+        "ref_index": "30",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Privacy Attacks ",
+          "{Model Inversion ",
+          "{Model Output Inversion "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000016",
+        "paperId": "5c0eb412790a0e47b25714a5857f9a1d0d95c6a6",
+        "ref_index": "34",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Privacy Attacks ",
+          "{Model Inversion ",
+          "{Model Output Inversion "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000017",
+        "paperId": "d4c4f46b63e4812f0268d99b6528aa6a0c404377",
+        "ref_index": "38",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Privacy Attacks ",
+          "{Model Inversion ",
+          "{Model Output Inversion "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000018",
+        "paperId": "b3c73de96640ee858f83c3f0eda2a3d15d59b847",
+        "ref_index": "40",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Privacy Attacks ",
+          "{Model Inversion ",
+          "{Model Output Inversion "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000019",
+        "paperId": "2cb272df6d7d4de6be6aef5eacd1017ef6cb2df7",
+        "ref_index": "2",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Privacy Attacks ",
+          "{Model Inversion ",
+          "{Gradient Inversion "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000020",
+        "paperId": "6fcbb819920ce206269105d1524489a33518d06d",
+        "ref_index": "6",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Privacy Attacks ",
+          "{Model Inversion ",
+          "{Gradient Inversion "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000021",
+        "paperId": "5507d267bbf0b4cdb9f893c3c0960a45016f7010",
+        "ref_index": "25",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Privacy Attacks ",
+          "{Model Inversion ",
+          "{Gradient Inversion "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000022",
+        "paperId": "07033abe45c0e2556e8c3fa1db1879b42dd45915",
+        "ref_index": "29",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Privacy Attacks ",
+          "{Model Inversion ",
+          "{Gradient Inversion "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000023",
+        "paperId": "bae6dd2192dc9dea0b78ca835b688311e6c2f10a",
+        "ref_index": "16",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Data ",
+          "{Classical Anonymization "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000024",
+        "paperId": "acb2dfc52cb13762778f20a51c32071762afd867",
+        "ref_index": "19",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Data ",
+          "{Classical Anonymization "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000025",
+        "paperId": "37209cdb837e5c2512721a6a838e9a94a90a4aca",
+        "ref_index": "11",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Data ",
+          "{Anonymization with DP "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000026",
+        "paperId": "b03d107ef4570589d84e3d3baeee56462989e06d",
+        "ref_index": "46",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Data ",
+          "{Anonymization with DP "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000027",
+        "paperId": "75e852a362b8c4fd5115590ab174a2185128d7c0",
+        "ref_index": "5",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{LLMs Differential Privacy (DP) ",
+          "{Pre-training with DP "
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000028",
+        "paperId": "c3b597011f64e7c5459bbe4502163e463fb13f5a",
+        "ref_index": "8",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{LLMs Differential Privacy (DP) ",
+          "{Pre-training with DP "
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000029",
+        "paperId": "8e990e779cd70b70e316b129f334edfb8aa89af1",
+        "ref_index": "10",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{LLMs Differential Privacy (DP) ",
+          "{Pre-training with DP "
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000030",
+        "paperId": "fec35357525ae87f46067da841478f35e28ed8e9",
+        "ref_index": "23",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{LLMs Differential Privacy (DP) ",
+          "{Pre-training with DP "
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000031",
+        "paperId": "ba2b6a94d4fb018c9eab252a34d80787ae962f46",
+        "ref_index": "1",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{LLMs Differential Privacy (DP) ",
+          "{Fine-tuning with DP "
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000032",
+        "paperId": "af710ada8965f274e810053f716f966627a136d9",
+        "ref_index": "15",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{LLMs Differential Privacy (DP) ",
+          "{Fine-tuning with DP "
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000033",
+        "paperId": "58996964dbcd15045b66201c2b850b5570ba74cb",
+        "ref_index": "24",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{LLMs Differential Privacy (DP) ",
+          "{Fine-tuning with DP "
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000034",
+        "paperId": "6a758ada5c48a2ae48d1392d12ce4f4e1977e0dd",
+        "ref_index": "12",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{LLMs Differential Privacy (DP) ",
+          "{PEFT with DP "
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000035",
+        "paperId": "4c4722d3767dae6bc00b7de3e3fa160caaffe483",
+        "ref_index": "13",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{LLMs Differential Privacy (DP) ",
+          "{PEFT with DP "
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000036",
+        "paperId": "56874f9aef515902c5a49d84d10f629f8dcd5f40",
+        "ref_index": "22",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{LLMs Differential Privacy (DP) ",
+          "{PEFT with DP "
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000037",
+        "paperId": "2f2a430ba6c93bcfaf4818316ff8a27b1e034b1a",
+        "ref_index": "3",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{LLMs Differential Privacy (DP) ",
+          "{Inference with DP "
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000038",
+        "paperId": "8a16740aec48eb80bf0e7cff0e83455181bb8759",
+        "ref_index": "7",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{LLMs Differential Privacy (DP) ",
+          "{Inference with DP "
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000039",
+        "paperId": "15a782b48fd26f2ce63ab1259e647c3656ce43c7",
+        "ref_index": "14",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{LLMs Differential Privacy (DP) ",
+          "{Inference with DP "
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000040",
+        "paperId": "f0676c081f12c9395cd0e920d137a90a9ceb2c4a",
+        "ref_index": "45",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{LLMs Differential Privacy (DP) ",
+          "{Inference with DP "
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000041",
+        "paperId": "6e41a4cbb34c4d403efb73d74f5be5556b1f13d6",
+        "ref_index": "49",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{LLMs Differential Privacy (DP) ",
+          "{Inference with DP "
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000042",
+        "paperId": "11bb1605279e65bb3609cd5ae9ff57cff512ab38",
+        "ref_index": "17",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{Federated Learning with DP ",
+          "{Central DP "
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000043",
+        "paperId": "ed46493d568030b42f0154d9e5bf39bbd07962b3",
+        "ref_index": "36",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{Federated Learning with DP ",
+          "{Central DP "
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000044",
+        "paperId": "2695fae0a6650d08766397955371c460d7b7a168",
+        "ref_index": "41",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{Federated Learning with DP ",
+          "{Central DP "
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000045",
+        "paperId": "1d2967d96b5e2daa172cb052b22c094beeec3068",
+        "ref_index": "50",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{Federated Learning with DP ",
+          "{Central DP "
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000046",
+        "paperId": "8c23ea0ed7badd70a8e26dcea73f2d673cc0c74d",
+        "ref_index": "9",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{Federated Learning with DP ",
+          "{Local DP "
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000047",
+        "paperId": "c73db55ff0ac61078d3921cd8d5bd007082184fb",
+        "ref_index": "26",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{Federated Learning with DP ",
+          "{Local DP "
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000048",
+        "paperId": "f2f8f7a2ec1b2ede48cbcd189b376ab9fa0735ef",
+        "ref_index": "43",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{Federated Learning with DP ",
+          "{Local DP "
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000049",
+        "paperId": "8e58dc63817a2a26e5a2ddad38d8b1d19d1c3795",
+        "ref_index": "0",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{Machine Unlearning "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000050",
+        "paperId": "40a7c44d1cfaa9faf1f731a6f93a889fab5426da",
+        "ref_index": "4",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{Machine Unlearning "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000051",
+        "paperId": "46eea7d651420e60f9b1393e3f5eda14cbff7a2a",
+        "ref_index": "18",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{Machine Unlearning "
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2408.05212",
+        "arxiv_id": "2408.05212",
+        "leaf_mention_id": "2408.05212::000052",
+        "paperId": "41a3c41ba1912e1384849e6898c241af89cc4a11",
+        "ref_index": "48",
+        "path": [
+          "{Preserving Privacy in Large Language Models (LLMs)} ",
+          "{Solutions ",
+          "{Privacy in Model ",
+          "{Machine Unlearning "
+        ],
+        "depth": 4,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 52,
+      "unique_leaf_paper_count": 51,
+      "multi_membership_extra_mentions": 1,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

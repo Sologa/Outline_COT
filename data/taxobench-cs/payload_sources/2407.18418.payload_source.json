@@ -1,0 +1,2783 @@
+{
+  "paper_id": "2407.18418",
+  "arxiv_id": "2407.18418",
+  "title": "Know Your Limits: A Survey of Abstention in Large Language Models",
+  "ref_meta": [
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "0",
+      "ref_key": "S2:163b4d6a79a5b19af88b8585456363340d9efd04",
+      "paperId": "163b4d6a79a5b19af88b8585456363340d9efd04",
+      "title": "GPT-4 Technical Report",
+      "year": 2023,
+      "abstract": "We report the development of GPT-4, a large-scale, multimodal model which can accept image and text inputs and produce text outputs. While less capable than humans in many real-world scenarios, GPT-4 exhibits human-level performance on various professional and academic benchmarks, including passing a simulated bar exam with a score around the top 10% of test takers. GPT-4 is a Transformer-based model pre-trained to predict the next token in a document. The post-training alignment process results in improved performance on measures of factuality and adherence to desired behavior. A core component of this project was developing infrastructure and optimization methods that behave predictably across a wide range of scales. This allowed us to accurately predict some aspects of GPT-4's performance based on models trained with no more than 1/1,000th the compute of GPT-4.",
+      "externalIds": {
+        "ArXiv": "2303.08774",
+        "CorpusId": 257532815
+      },
+      "arxiv_id": "2303.08774",
+      "doi": null,
+      "corpus_id": 257532815
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "1",
+      "ref_key": "S2:f406aceba4f29cc7cfbe7edb2f52f01374486589",
+      "paperId": "f406aceba4f29cc7cfbe7edb2f52f01374486589",
+      "title": "The Internal State of an LLM Knows When its Lying",
+      "year": 2023,
+      "abstract": "While Large Language Models (LLMs) have shown exceptional performance in various tasks, one of their most prominent drawbacks is generating inaccurate or false information with a confident tone. In this paper, we provide evidence that the LLM's internal state can be used to reveal the truthfulness of statements. This includes both statements provided to the LLM, and statements that the LLM itself generates. Our approach is to train a classifier that outputs the probability that a statement is truthful, based on the hidden layer activations of the LLM as it reads or generates the statement. Experiments demonstrate that given a set of test sentences, of which half are true and half false, our trained classifier achieves an average of 71\\% to 83\\% accuracy labeling which sentences are true versus false, depending on the LLM base model. Furthermore, we explore the relationship between our classifier's performance and approaches based on the probability assigned to the sentence by the LLM. We show that while LLM-assigned sentence probability is related to sentence truthfulness, this probability is also dependent on sentence length and the frequencies of words in the sentence, resulting in our trained classifier providing a more reliable approach to detecting truthfulness, highlighting its potential to enhance the reliability of LLM-generated content and its practical applicability in real-world scenarios.",
+      "externalIds": {
+        "ArXiv": "2304.13734",
+        "DBLP": "journals/corr/abs-2304-13734",
+        "DOI": "10.18653/v1/2023.findings-emnlp.68",
+        "CorpusId": 258352729
+      },
+      "arxiv_id": "2304.13734",
+      "doi": "10.18653/v1/2023.findings-emnlp.68",
+      "corpus_id": 258352729
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "2",
+      "ref_key": "S2:0286b2736a114198b25fb5553c671c33aed5d477",
+      "paperId": "0286b2736a114198b25fb5553c671c33aed5d477",
+      "title": "Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback",
+      "year": 2022,
+      "abstract": "We apply preference modeling and reinforcement learning from human feedback (RLHF) to ﬁnetune language models to act as helpful and harmless assistants. We ﬁnd this alignment training improves performance on almost all NLP evaluations, and is fully compatible with training for specialized skills such as python coding and summarization. We explore an iterated online mode of training, where preference models and RL policies are updated on a weekly cadence with fresh human feedback data, efﬁciently improving our datasets and models. Finally, we investigate the robustness of RLHF training, and identify a roughly linear relation between the RL reward and the square root of the KL divergence between the policy and its initialization. Alongside our main results, we perform peripheral analyses on calibration, competing objectives, and the use of OOD detection, compare our models with human writers, and provide samples from our models using prompts appearing in recent related work. Figure These plots show that PM accuracy decreases as we focus exclusively on comparisons between pairs of samples with high score. We have normalized all preference models to have the same mean score on a held-out dataset so that they’re directly comparable, and then plotted accuracy for the comparisons where both samples have scores above a speciﬁc threshold.",
+      "externalIds": {
+        "ArXiv": "2204.05862",
+        "DBLP": "journals/corr/abs-2204-05862",
+        "DOI": "10.48550/arXiv.2204.05862",
+        "CorpusId": 248118878
+      },
+      "arxiv_id": "2204.05862",
+      "doi": "10.48550/arXiv.2204.05862",
+      "corpus_id": 248118878
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "3",
+      "ref_key": "S2:d9cfa9d7dabd39b66a8c11e5dde69ba45e91093d",
+      "paperId": "d9cfa9d7dabd39b66a8c11e5dde69ba45e91093d",
+      "title": "Language Models are Homer Simpson! Safety Re-Alignment of Fine-tuned Language Models through Task Arithmetic",
+      "year": 2024,
+      "abstract": "Aligned language models face a significant limitation as their fine-tuning often results in compromised safety. To tackle this, we propose a simple method RESTA that performs LLM safety realignment. RESTA stands for REstoring Safety through Task Arithmetic. At its core, it involves a simple arithmetic addition of a safety vector to the weights of the compromised model. We demonstrate the effectiveness of RESTA in both parameter-efficient and full fine-tuning, covering a wide range of downstream tasks, including instruction following in Chinese, English, and Hindi, as well as problem-solving capabilities in Code and Math. We also showcase the generalizability of RESTA on three existing safety evaluation benchmarks and a multilingual benchmark dataset proposed as a part of this work, consisting of 550 harmful questions covering 11 categories, each with 5 sub-categories of harm. Overall, RESTA decreases the harmfulness of the compromised model from 18.6% to 5.1% and from 9.2% to 1.5% in parameter-efficient and full fine-tuning, respectively, while maintaining most of the model's performance on the task. We release the source codes at: https://github.com/declare-lab/resta.",
+      "externalIds": {
+        "ArXiv": "2402.11746",
+        "DBLP": "conf/acl/BhardwajAP24",
+        "DOI": "10.48550/arXiv.2402.11746",
+        "CorpusId": 267750438
+      },
+      "arxiv_id": "2402.11746",
+      "doi": "10.48550/arXiv.2402.11746",
+      "corpus_id": 267750438
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "4",
+      "ref_key": "S2:a4c921bdef167ae54cc3a40643e6e3ed13d49a61",
+      "paperId": "a4c921bdef167ae54cc3a40643e6e3ed13d49a61",
+      "title": "Safety-Tuned LLaMAs: Lessons From Improving the Safety of Large Language Models that Follow Instructions",
+      "year": 2023,
+      "abstract": "Training large language models to follow instructions makes them perform better on a wide range of tasks and generally become more helpful. However, a perfectly helpful model will follow even the most malicious instructions and readily generate harmful content. In this paper, we raise concerns over the safety of models that only emphasize helpfulness, not harmlessness, in their instruction-tuning. We show that several popular instruction-tuned models are highly unsafe. Moreover, we show that adding just 3% safety examples (a few hundred demonstrations) when fine-tuning a model like LLaMA can substantially improve its safety. Our safety-tuning does not make models significantly less capable or helpful as measured by standard benchmarks. However, we do find exaggerated safety behaviours, where too much safety-tuning makes models refuse perfectly safe prompts if they superficially resemble unsafe ones. As a whole, our results illustrate trade-offs in training LLMs to be helpful and training them to be safe.",
+      "externalIds": {
+        "DBLP": "conf/iclr/0001SARJH024",
+        "ArXiv": "2309.07875",
+        "DOI": "10.48550/arXiv.2309.07875",
+        "CorpusId": 261823321
+      },
+      "arxiv_id": "2309.07875",
+      "doi": "10.48550/arXiv.2309.07875",
+      "corpus_id": 261823321
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "5",
+      "ref_key": "S2:cd29c25c489562b409a60f83365f93f33ee1a0a1",
+      "paperId": "cd29c25c489562b409a60f83365f93f33ee1a0a1",
+      "title": "Defending Against Alignment-Breaking Attacks via Robustly Aligned LLM",
+      "year": 2023,
+      "abstract": "Recently, Large Language Models (LLMs) have made significant advancements and are now widely used across various domains. Unfortunately, there has been a rising concern that LLMs can be misused to generate harmful or malicious content. Though a line of research has focused on aligning LLMs with human values and preventing them from producing inappropriate content, such alignments are usually vulnerable and can be bypassed by alignment-breaking attacks via adversarially optimized or handcrafted jailbreaking prompts. In this work, we introduce a Robustly Aligned LLM (RA-LLM) to defend against potential alignment-breaking attacks. RA-LLM can be directly constructed upon an existing aligned LLM with a robust alignment checking function, without requiring any expensive retraining or fine-tuning process of the original LLM. Furthermore, we also provide a theoretical analysis for RA-LLM to verify its effectiveness in defending against alignment-breaking attacks. Through real-world experiments on open-source large language models, we demonstrate that RA-LLM can successfully defend against both state-of-the-art adversarial prompts and popular handcrafted jailbreaking prompts by reducing their attack success rates from nearly 100% to around 10% or less.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2309-14348",
+        "ArXiv": "2309.14348",
+        "DOI": "10.48550/arXiv.2309.14348",
+        "CorpusId": 262827619
+      },
+      "arxiv_id": "2309.14348",
+      "doi": "10.48550/arXiv.2309.14348",
+      "corpus_id": 262827619
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "6",
+      "ref_key": "S2:5603e598fa1916d1c696004bc360b75931547105",
+      "paperId": "5603e598fa1916d1c696004bc360b75931547105",
+      "title": "Adaptation with Self-Evaluation to Improve Selective Prediction in LLMs",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have recently shown great advances in a variety of tasks, including natural language understanding and generation. However, their use in high-stakes decision-making scenarios is still limited due to the potential for errors. Selective prediction is a technique that can be used to improve the reliability of the LLMs by allowing them to abstain from making predictions when they are unsure of the answer. In this work, we propose a novel framework for adaptation with self-evaluation to improve the selective prediction performance of LLMs. Our framework is based on the idea of using parameter-efficient tuning to adapt the LLM to the specific task at hand while improving its ability to perform self-evaluation. We evaluate our method on a variety of question-answering (QA) datasets and show that it outperforms state-of-the-art selective prediction methods. For example, on the CoQA benchmark, our method improves the AUACC from 91.23% to 92.63% and improves the AUROC from 74.61% to 80.25%.",
+      "externalIds": {
+        "ArXiv": "2310.11689",
+        "DBLP": "journals/corr/abs-2310-11689",
+        "DOI": "10.48550/arXiv.2310.11689",
+        "CorpusId": 264289232
+      },
+      "arxiv_id": "2310.11689",
+      "doi": "10.48550/arXiv.2310.11689",
+      "corpus_id": 264289232
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "7",
+      "ref_key": "S2:1bf7a2a27fc1f8db6e9404db1be3d355d65722fe",
+      "paperId": "1bf7a2a27fc1f8db6e9404db1be3d355d65722fe",
+      "title": "Jailbreaker in Jail: Moving Target Defense for Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs), known for their capability in understanding and following instructions, are vulnerable to adversarial attacks. Researchers have found that current commercial LLMs either fail to be \"harmless\" by presenting unethical answers, or fail to be \"helpful\" by refusing to offer meaningful answers when faced with adversarial queries. To strike a balance between being helpful and harmless, we design a moving target defense (MTD) enhanced LLM system. The system aims to deliver non-toxic answers that align with outputs from multiple model candidates, making them more robust against adversarial attacks. We design a query and output analysis model to filter out unsafe or non-responsive answers. %to achieve the two objectives of randomly selecting outputs from different LLMs. We evaluate over 8 most recent chatbot models with state-of-the-art adversarial queries. Our MTD-enhanced LLM system reduces the attack success rate from 37.5% to 0%. Meanwhile, it decreases the response refusal rate from 50% to 0%.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-02417",
+        "ArXiv": "2310.02417",
+        "DOI": "10.1145/3605760.3623764",
+        "CorpusId": 263620259
+      },
+      "arxiv_id": "2310.02417",
+      "doi": "10.1145/3605760.3623764",
+      "corpus_id": 263620259
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "8",
+      "ref_key": "S2:f62acb5a743ea4d47a045460a9ee346c2cec5068",
+      "paperId": "f62acb5a743ea4d47a045460a9ee346c2cec5068",
+      "title": "INSIDE: LLMs' Internal States Retain the Power of Hallucination Detection",
+      "year": 2024,
+      "abstract": "Knowledge hallucination have raised widespread concerns for the security and reliability of deployed LLMs. Previous efforts in detecting hallucinations have been employed at logit-level uncertainty estimation or language-level self-consistency evaluation, where the semantic information is inevitably lost during the token-decoding procedure. Thus, we propose to explore the dense semantic information retained within LLMs' \\textbf{IN}ternal \\textbf{S}tates for halluc\\textbf{I}nation \\textbf{DE}tection (\\textbf{INSIDE}). In particular, a simple yet effective \\textbf{EigenScore} metric is proposed to better evaluate responses' self-consistency, which exploits the eigenvalues of responses' covariance matrix to measure the semantic consistency/diversity in the dense embedding space. Furthermore, from the perspective of self-consistent hallucination detection, a test time feature clipping approach is explored to truncate extreme activations in the internal states, which reduces overconfident generations and potentially benefits the detection of overconfident hallucinations. Extensive experiments and ablation studies are performed on several popular LLMs and question-answering (QA) benchmarks, showing the effectiveness of our proposal.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-03744",
+        "ArXiv": "2402.03744",
+        "DOI": "10.48550/arXiv.2402.03744",
+        "CorpusId": 267499843
+      },
+      "arxiv_id": "2402.03744",
+      "doi": "10.48550/arXiv.2402.03744",
+      "corpus_id": 267499843
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "9",
+      "ref_key": "S2:9386242a9ad5c1a15023043ef63d45e42ceac546",
+      "paperId": "9386242a9ad5c1a15023043ef63d45e42ceac546",
+      "title": "Selectively Answering Ambiguous Questions",
+      "year": 2023,
+      "abstract": "Trustworthy language models should abstain from answering questions when they do not know the answer. However, the answer to a question can be unknown for a variety of reasons. Prior research has focused on the case in which the question is clear and the answer is unambiguous but possibly unknown, but the answer to a question can also be unclear due to uncertainty of the questioner's intent or context. We investigate question answering from this perspective, focusing on answering a subset of questions with a high degree of accuracy, from a set of questions in which many are inherently ambiguous. In this setting, we find that the most reliable approach to decide when to abstain involves quantifying repetition within sampled model outputs, rather than the model's likelihood or self-verification as used in prior work. We find this to be the case across different types of uncertainty and model scales,and with or without instruction tuning. Our results suggest that sampling-based confidence scores help calibrate answers to relatively unambiguous questions, with more dramatic improvements on ambiguous questions.",
+      "externalIds": {
+        "ArXiv": "2305.14613",
+        "DBLP": "journals/corr/abs-2305-14613",
+        "DOI": "10.48550/arXiv.2305.14613",
+        "CorpusId": 258866001
+      },
+      "arxiv_id": "2305.14613",
+      "doi": "10.48550/arXiv.2305.14613",
+      "corpus_id": 258866001
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "10",
+      "ref_key": "S2:0f7308fbcae43d22813f70c334c2425df0b1cce1",
+      "paperId": "0f7308fbcae43d22813f70c334c2425df0b1cce1",
+      "title": "Safe RLHF: Safe Reinforcement Learning from Human Feedback",
+      "year": 2023,
+      "abstract": "With the development of large language models (LLMs), striking a balance between the performance and safety of AI systems has never been more critical. However, the inherent tension between the objectives of helpfulness and harmlessness presents a significant challenge during LLM training. To address this issue, we propose Safe Reinforcement Learning from Human Feedback (Safe RLHF), a novel algorithm for human value alignment. Safe RLHF explicitly decouples human preferences regarding helpfulness and harmlessness, effectively avoiding the crowdworkers' confusion about the tension and allowing us to train separate reward and cost models. We formalize the safety concern of LLMs as an optimization task of maximizing the reward function while satisfying specified cost constraints. Leveraging the Lagrangian method to solve this constrained problem, Safe RLHF dynamically adjusts the balance between the two objectives during fine-tuning. Through a three-round fine-tuning using Safe RLHF, we demonstrate a superior ability to mitigate harmful responses while enhancing model performance compared to existing value-aligned algorithms. Experimentally, we fine-tuned the Alpaca-7B using Safe RLHF and aligned it with collected human preferences, significantly improving its helpfulness and harmlessness according to human evaluations.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-12773",
+        "ArXiv": "2310.12773",
+        "DOI": "10.48550/arXiv.2310.12773",
+        "CorpusId": 264306078
+      },
+      "arxiv_id": "2310.12773",
+      "doi": "10.48550/arXiv.2310.12773",
+      "corpus_id": 264306078
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "11",
+      "ref_key": "S2:52f47e781852a77abedada48cfa971b24c919dde",
+      "paperId": "52f47e781852a77abedada48cfa971b24c919dde",
+      "title": "Calibration of Pre-trained Transformers",
+      "year": 2020,
+      "abstract": "Pre-trained Transformers are now ubiquitous in natural language processing, but despite their high end-task performance, little is known empirically about whether they are calibrated. Specifically, do these models' posterior probabilities provide an accurate empirical measure of how likely the model is to be correct on a given example? We focus on BERT and RoBERTa in this work, and analyze their calibration across three tasks: natural language inference, paraphrase detection, and commonsense reasoning. For each task, we consider in-domain as well as challenging out-of-domain settings, where models face more examples they should be uncertain about. We show that: (1) when used out-of-the-box, pre-trained models are calibrated in-domain, and compared to baselines, their calibration error out-of-domain can be as much as 3.5x lower; (2) temperature scaling is effective at further reducing calibration error in-domain, and using label smoothing to deliberately increase empirical uncertainty helps calibrate posteriors out-of-domain.",
+      "externalIds": {
+        "ACL": "2020.emnlp-main.21",
+        "DBLP": "journals/corr/abs-2003-07892",
+        "ArXiv": "2003.07892",
+        "MAG": "3104939451",
+        "DOI": "10.18653/v1/2020.emnlp-main.21",
+        "CorpusId": 212747810
+      },
+      "arxiv_id": "2003.07892",
+      "doi": "10.18653/v1/2020.emnlp-main.21",
+      "corpus_id": 212747810
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "12",
+      "ref_key": "S2:b91c4edd30b63cd1cb1b86cbeefb33a461535e09",
+      "paperId": "b91c4edd30b63cd1cb1b86cbeefb33a461535e09",
+      "title": "Build it Break it Fix it for Dialogue Safety: Robustness from Adversarial Human Attack",
+      "year": 2019,
+      "abstract": "The detection of offensive language in the context of a dialogue has become an increasingly important application of natural language processing. The detection of trolls in public forums (Galán-García et al., 2016), and the deployment of chatbots in the public domain (Wolf et al., 2017) are two examples that show the necessity of guarding against adversarially offensive behavior on the part of humans. In this work, we develop a training scheme for a model to become robust to such human attacks by an iterative build it, break it, fix it scheme with humans and models in the loop. In detailed experiments we show this approach is considerably more robust than previous systems. Further, we show that offensive language used within a conversation critically depends on the dialogue context, and cannot be viewed as a single sentence offensive detection task as in most previous work. Our newly collected tasks and methods are all made open source and publicly available.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/DinanHCW19",
+        "MAG": "2969117066",
+        "ArXiv": "1908.06083",
+        "ACL": "D19-1461",
+        "DOI": "10.18653/v1/D19-1461",
+        "CorpusId": 201070022
+      },
+      "arxiv_id": "1908.06083",
+      "doi": "10.18653/v1/D19-1461",
+      "corpus_id": 201070022
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "13",
+      "ref_key": "S2:5424e311319c58847b4c690d5c91090e3b6a4ac3",
+      "paperId": "5424e311319c58847b4c690d5c91090e3b6a4ac3",
+      "title": "Shifting Attention to Relevance: Towards the Uncertainty Estimation of Large Language Models",
+      "year": 2023,
+      "abstract": "Although Large Language Models (LLMs) have shown great potential in Natural Language Generation, it is still challenging to characterize the uncertainty of model generations, i.e., when users could trust model outputs. Our research is derived from the heuristic facts that tokens are created unequally in reﬂecting the meaning of generations by auto-regressive LLMs, i.e., some tokens are more relevant (or representative) than others, yet all the to-kens are equally valued when estimating uncertainty. It is because of the linguistic redundancy where mostly a few keywords are sufﬁ-cient to convey the meaning of a long sentence. We name these inequalities as generative inequalities and investigate how they affect uncertainty estimation. Our results reveal that considerable tokens and sentences containing limited semantics are weighted equally or even heavily when estimating uncertainty. To tackle these biases posed by generative inequalities, we propose to jointly S hifting A ttention to more R elevant ( SAR ) components from both the token level and the sentence level while estimating uncertainty. We conduct experiments over popular “off-the-shelf” LLMs (e.g., OPT, LLaMA) with model sizes up to 30B and powerful commercial LLMs (e.g., Davinci from OpenAI), across various free-form question-answering tasks. Experimental results and detailed demographic analysis indicate the superior performance of SAR . Code is available at https://github.com/jinhaoduan/ shifting-attention-to-relevance .",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-01379",
+        "DOI": "10.48550/arXiv.2307.01379",
+        "CorpusId": 259342406
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2307.01379",
+      "corpus_id": 259342406
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "14",
+      "ref_key": "S2:25cee84e3a1541697a7c97443d7526574127c344",
+      "paperId": "25cee84e3a1541697a7c97443d7526574127c344",
+      "title": "Don't Hallucinate, Abstain: Identifying LLM Knowledge Gaps via Multi-LLM Collaboration",
+      "year": 2024,
+      "abstract": "Despite efforts to expand the knowledge of large language models (LLMs), knowledge gaps -- missing or outdated information in LLMs -- might always persist given the evolving nature of knowledge. In this work, we study approaches to identify LLM knowledge gaps and abstain from answering questions when knowledge gaps are present. We first adapt existing approaches to model calibration or adaptation through fine-tuning/prompting and analyze their ability to abstain from generating low-confidence outputs. Motivated by their failures in self-reflection and over-reliance on held-out sets, we propose two novel approaches that are based on model collaboration, i.e., LLMs probing other LLMs for knowledge gaps, either cooperatively or competitively. Extensive experiments with three LLMs on four QA tasks featuring diverse knowledge domains demonstrate that both cooperative and competitive approaches to unveiling LLM knowledge gaps achieve up to 19.3% improvements on abstain accuracy against the strongest baseline. Further analysis reveals that our proposed mechanisms could help identify failure cases in retrieval augmentation and pinpoint knowledge gaps in multi-hop reasoning.",
+      "externalIds": {
+        "ArXiv": "2402.00367",
+        "DBLP": "journals/corr/abs-2402-00367",
+        "DOI": "10.48550/arXiv.2402.00367",
+        "CorpusId": 267365203
+      },
+      "arxiv_id": "2402.00367",
+      "doi": "10.48550/arXiv.2402.00367",
+      "corpus_id": 267365203
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "15",
+      "ref_key": "S2:6fe7e6ce3cc0ebd038caa456d73fd7472e7d6c38",
+      "paperId": "6fe7e6ce3cc0ebd038caa456d73fd7472e7d6c38",
+      "title": "Controllable Preference Optimization: Toward Controllable Multi-Objective Alignment",
+      "year": 2024,
+      "abstract": "Alignment in artificial intelligence pursues the consistency between model responses and human preferences as well as values. In practice, the multifaceted nature of human preferences inadvertently introduces what is known as the ”alignment tax”–a compromise where enhancements in alignment within one objective (e.g., harmlessness) can diminish performance in others (e.g., helpfulness). However, existing alignment techniques are mostly unidirectional, leading to suboptimal trade-offs and poor flexibility over various objectives. To navigate this challenge, we argue the prominence of grounding LLMs with evident preferences. We introduce controllable preference optimization (CPO), which explicitly specifies preference scores for different objectives, thereby guiding the model to generate responses that meet the requirements. Our experimental analysis reveals that the aligned models can provide responses that match various preferences among the ”3H” (helpfulness, honesty, harmlessness) desiderata. Furthermore, by introducing diverse data and alignment goals, we surpass baseline methods in aligning with single objectives, hence mitigating the impact of the alignment tax and achieving improvements in multi-objective alignment.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-19085",
+        "ArXiv": "2402.19085",
+        "ACL": "2024.emnlp-main.85",
+        "DOI": "10.48550/arXiv.2402.19085",
+        "CorpusId": 268063181
+      },
+      "arxiv_id": "2402.19085",
+      "doi": "10.48550/arXiv.2402.19085",
+      "corpus_id": 268063181
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "16",
+      "ref_key": "S2:2cdd5c3dc42c0df40bc8839709869af3560d4bfe",
+      "paperId": "2cdd5c3dc42c0df40bc8839709869af3560d4bfe",
+      "title": "LLM Self Defense: By Self Examination, LLMs Know They Are Being Tricked",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) are popular for high-quality text generation but can produce harmful content, even when aligned with human values through reinforcement learning. Adversarial prompts can bypass their safety measures. We propose LLM Self Defense, a simple approach to defend against these attacks by having an LLM screen the induced responses. Our method does not require any fine-tuning, input preprocessing, or iterative output generation. Instead, we incorporate the generated content into a pre-defined prompt and employ another instance of an LLM to analyze the text and predict whether it is harmful. We test LLM Self Defense on GPT 3.5 and Llama 2, two of the current most prominent LLMs against various types of attacks, such as forcefully inducing affirmative responses to prompts and prompt engineering attacks. Notably, LLM Self Defense succeeds in reducing the attack success rate to virtually 0 using both GPT 3.5 and Llama 2. The code is publicly available at https://github.com/poloclub/llm-self-defense",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-07308",
+        "ArXiv": "2308.07308",
+        "DOI": "10.48550/arXiv.2308.07308",
+        "CorpusId": 260887487
+      },
+      "arxiv_id": "2308.07308",
+      "doi": "10.48550/arXiv.2308.07308",
+      "corpus_id": 260887487
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "17",
+      "ref_key": "S2:67fa2f2072cca1071ed2c820d6a7f50de6ea2ff3",
+      "paperId": "67fa2f2072cca1071ed2c820d6a7f50de6ea2ff3",
+      "title": "Decomposing Uncertainty for Large Language Models through Input Clarification Ensembling",
+      "year": 2023,
+      "abstract": "Uncertainty decomposition refers to the task of decomposing the total uncertainty of a predictive model into aleatoric (data) uncertainty, resulting from inherent randomness in the data-generating process, and epistemic (model) uncertainty, resulting from missing information in the model's training data. In large language models (LLMs) specifically, identifying sources of uncertainty is an important step toward improving reliability, trustworthiness, and interpretability, but remains an important open research question. In this paper, we introduce an uncertainty decomposition framework for LLMs, called input clarification ensembling, which can be applied to any pre-trained LLM. Our approach generates a set of clarifications for the input, feeds them into an LLM, and ensembles the corresponding predictions. We show that, when aleatoric uncertainty arises from ambiguity or under-specification in LLM inputs, this approach makes it possible to factor an (unclarified) LLM's predictions into separate aleatoric and epistemic terms, using a decomposition similar to the one employed by Bayesian neural networks. Empirical evaluations demonstrate that input clarification ensembling provides accurate and reliable uncertainty quantification on several language processing tasks. Code and data are available at https://github.com/UCSB-NLP-Chang/llm_uncertainty.",
+      "externalIds": {
+        "ArXiv": "2311.08718",
+        "DBLP": "journals/corr/abs-2311-08718",
+        "DOI": "10.48550/arXiv.2311.08718",
+        "CorpusId": 265213190
+      },
+      "arxiv_id": "2311.08718",
+      "doi": "10.48550/arXiv.2311.08718",
+      "corpus_id": 265213190
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "18",
+      "ref_key": "S2:c1d1842e08716cbf7250167969522a1705d8bcd3",
+      "paperId": "c1d1842e08716cbf7250167969522a1705d8bcd3",
+      "title": "Token-Level Adversarial Prompt Detection Based on Perplexity Measures and Contextual Information",
+      "year": 2023,
+      "abstract": "In recent years, Large Language Models (LLM) have emerged as pivotal tools in various applications. However, these models are susceptible to adversarial prompt attacks, where attackers can carefully curate input strings that mislead LLMs into generating incorrect or undesired outputs. Previous work has revealed that with relatively simple yet effective attacks based on discrete optimization, it is possible to generate adversarial prompts that bypass moderation and alignment of the models. This vulnerability to adversarial prompts underscores a significant concern regarding the robustness and reliability of LLMs. Our work aims to address this concern by introducing a novel approach to detecting adversarial prompts at a token level, leveraging the LLM's capability to predict the next token's probability. We measure the degree of the model's perplexity, where tokens predicted with high probability are considered normal, and those exhibiting high perplexity are flagged as adversarial. Additionaly, our method also integrates context understanding by incorporating neighboring token information to encourage the detection of contiguous adversarial prompt sequences. To this end, we design two algorithms for adversarial prompt detection: one based on optimization techniques and another on Probabilistic Graphical Models (PGM). Both methods are equipped with efficient solving methods, ensuring efficient adversarial prompt detection. Our token-level detection result can be visualized as heatmap overlays on the text sequence, allowing for a clearer and more intuitive representation of which part of the text may contain adversarial prompts.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-11509",
+        "ArXiv": "2311.11509",
+        "DOI": "10.48550/arXiv.2311.11509",
+        "CorpusId": 265294544
+      },
+      "arxiv_id": "2311.11509",
+      "doi": "10.48550/arXiv.2311.11509",
+      "corpus_id": 265294544
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "19",
+      "ref_key": "S2:3e30a7ac4886b28eb50151f58e14a1d698cccd0e",
+      "paperId": "3e30a7ac4886b28eb50151f58e14a1d698cccd0e",
+      "title": "Baseline Defenses for Adversarial Attacks Against Aligned Language Models",
+      "year": 2023,
+      "abstract": "As Large Language Models quickly become ubiquitous, it becomes critical to understand their security vulnerabilities. Recent work shows that text optimizers can produce jailbreaking prompts that bypass moderation and alignment. Drawing from the rich body of work on adversarial machine learning, we approach these attacks with three questions: What threat models are practically useful in this domain? How do baseline defense techniques perform in this new domain? How does LLM security differ from computer vision? We evaluate several baseline defense strategies against leading adversarial attacks on LLMs, discussing the various settings in which each is feasible and effective. Particularly, we look at three types of defenses: detection (perplexity based), input preprocessing (paraphrase and retokenization), and adversarial training. We discuss white-box and gray-box settings and discuss the robustness-performance trade-off for each of the defenses considered. We find that the weakness of existing discrete optimizers for text, combined with the relatively high costs of optimization, makes standard adaptive attacks more challenging for LLMs. Future research will be needed to uncover whether more powerful optimizers can be developed, or whether the strength of filtering and preprocessing defenses is greater in the LLMs domain than it has been in computer vision.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2309-00614",
+        "ArXiv": "2309.00614",
+        "DOI": "10.48550/arXiv.2309.00614",
+        "CorpusId": 261494182
+      },
+      "arxiv_id": "2309.00614",
+      "doi": "10.48550/arXiv.2309.00614",
+      "corpus_id": 261494182
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "20",
+      "ref_key": "S2:1f9f25aad947030fe3206114fa2ac75e8b590515",
+      "paperId": "1f9f25aad947030fe3206114fa2ac75e8b590515",
+      "title": "Defending Large Language Models against Jailbreak Attacks via Semantic Smoothing",
+      "year": 2024,
+      "abstract": "Aligned large language models (LLMs) are vulnerable to jailbreaking attacks, which bypass the safeguards of targeted LLMs and fool them into generating objectionable content. While initial defenses show promise against token-based threat models, there do not exist defenses that provide robustness against semantic attacks and avoid unfavorable trade-offs between robustness and nominal performance. To meet this need, we propose SEMANTICSMOOTH, a smoothing-based defense that aggregates the predictions of multiple semantically transformed copies of a given input prompt. Experimental results demonstrate that SEMANTICSMOOTH achieves state-of-the-art robustness against GCG, PAIR, and AutoDAN attacks while maintaining strong nominal performance on instruction following benchmarks such as InstructionFollowing and AlpacaEval. The codes will be publicly available at https://github.com/UCSB-NLP-Chang/SemanticSmooth.",
+      "externalIds": {
+        "ArXiv": "2402.16192",
+        "DBLP": "journals/corr/abs-2402-16192",
+        "DOI": "10.48550/arXiv.2402.16192",
+        "CorpusId": 267938320
+      },
+      "arxiv_id": "2402.16192",
+      "doi": "10.48550/arXiv.2402.16192",
+      "corpus_id": 267938320
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "21",
+      "ref_key": "S2:33422275fbb9958f55419620697faf531482699b",
+      "paperId": "33422275fbb9958f55419620697faf531482699b",
+      "title": "How Can We Know When Language Models Know? On the Calibration of Language Models for Question Answering",
+      "year": 2020,
+      "abstract": "Abstract Recent works have shown that language models (LM) capture different types of knowledge regarding facts or common sense. However, because no model is perfect, they still fail to provide appropriate answers in many cases. In this paper, we ask the question, “How can we know when language models know, with confidence, the answer to a particular query?” We examine this question from the point of view of calibration, the property of a probabilistic model’s predicted probabilities actually being well correlated with the probabilities of correctness. We examine three strong generative models—T5, BART, and GPT-2—and study whether their probabilities on QA tasks are well calibrated, finding the answer is a relatively emphatic no. We then examine methods to calibrate such models to make their confidence scores correlate better with the likelihood of correctness through fine-tuning, post-hoc probability modification, or adjustment of the predicted outputs or inputs. Experiments on a diverse range of datasets demonstrate the effectiveness of our methods. We also perform analysis to study the strengths and limitations of these methods, shedding light on further improvements that may be made in methods for calibrating LMs. We have released the code at https://github.com/jzbjyb/lm-calibration.",
+      "externalIds": {
+        "DBLP": "journals/tacl/JiangADN21",
+        "ArXiv": "2012.00955",
+        "DOI": "10.1162/tacl_a_00407",
+        "CorpusId": 235078802
+      },
+      "arxiv_id": "2012.00955",
+      "doi": "10.1162/tacl_a_00407",
+      "corpus_id": 235078802
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "22",
+      "ref_key": "S2:142ebbf4760145f591166bde2564ac70c001e927",
+      "paperId": "142ebbf4760145f591166bde2564ac70c001e927",
+      "title": "Language Models (Mostly) Know What They Know",
+      "year": 2022,
+      "abstract": "We study whether language models can evaluate the validity of their own claims and predict which questions they will be able to answer correctly. We first show that larger models are well-calibrated on diverse multiple choice and true/false questions when they are provided in the right format. Thus we can approach self-evaluation on open-ended sampling tasks by asking models to first propose answers, and then to evaluate the probability\"P(True)\"that their answers are correct. We find encouraging performance, calibration, and scaling for P(True) on a diverse array of tasks. Performance at self-evaluation further improves when we allow models to consider many of their own samples before predicting the validity of one specific possibility. Next, we investigate whether models can be trained to predict\"P(IK)\", the probability that\"I know\"the answer to a question, without reference to any particular proposed answer. Models perform well at predicting P(IK) and partially generalize across tasks, though they struggle with calibration of P(IK) on new tasks. The predicted P(IK) probabilities also increase appropriately in the presence of relevant source materials in the context, and in the presence of hints towards the solution of mathematical word problems. We hope these observations lay the groundwork for training more honest models, and for investigating how honesty generalizes to cases where models are trained on objectives other than the imitation of human writing.",
+      "externalIds": {
+        "ArXiv": "2207.05221",
+        "DBLP": "journals/corr/abs-2207-05221",
+        "DOI": "10.48550/arXiv.2207.05221",
+        "CorpusId": 250451161
+      },
+      "arxiv_id": "2207.05221",
+      "doi": "10.48550/arXiv.2207.05221",
+      "corpus_id": 250451161
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "23",
+      "ref_key": "S2:cb693ce346f44e6b89ee814c6bb9f0e5cc2fa9d2",
+      "paperId": "cb693ce346f44e6b89ee814c6bb9f0e5cc2fa9d2",
+      "title": "Selective Question Answering under Domain Shift",
+      "year": 2020,
+      "abstract": "To avoid giving wrong answers, question answering (QA) models need to know when to abstain from answering. Moreover, users often ask questions that diverge from the model’s training data, making errors more likely and thus abstention more critical. In this work, we propose the setting of selective question answering under domain shift, in which a QA model is tested on a mixture of in-domain and out-of-domain data, and must answer (i.e., not abstain on) as many questions as possible while maintaining high accuracy. Abstention policies based solely on the model’s softmax probabilities fare poorly, since models are overconfident on out-of-domain inputs. Instead, we train a calibrator to identify inputs on which the QA model errs, and abstain when it predicts an error is likely. Crucially, the calibrator benefits from observing the model’s behavior on out-of-domain data, even if from a different domain than the test data. We combine this method with a SQuAD-trained QA model and evaluate on mixtures of SQuAD and five other QA datasets. Our method answers 56% of questions while maintaining 80% accuracy; in contrast, directly using the model’s probabilities only answers 48% at 80% accuracy.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2006-09462",
+        "MAG": "3035847612",
+        "ArXiv": "2006.09462",
+        "ACL": "2020.acl-main.503",
+        "DOI": "10.18653/v1/2020.acl-main.503",
+        "CorpusId": 219721462
+      },
+      "arxiv_id": "2006.09462",
+      "doi": "10.18653/v1/2020.acl-main.503",
+      "corpus_id": 219721462
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "24",
+      "ref_key": "S2:d82a827fa21cce0b601ad21b6db606b8413ed547",
+      "paperId": "d82a827fa21cce0b601ad21b6db606b8413ed547",
+      "title": "Break the Breakout: Reinventing LM Defense Against Jailbreak Attacks with Self-Refinement",
+      "year": 2024,
+      "abstract": "Caution: This paper includes offensive words that could potentially cause unpleasantness. Language models (LMs) are vulnerable to exploitation for adversarial misuse. Training LMs for safety alignment is extensive and makes it hard to respond to fast-developing attacks immediately, such as jailbreaks. We propose self-refine with formatting that achieves outstanding safety even in non-safety-aligned LMs and evaluate our method alongside several defense baselines, demonstrating that it is the safest training-free method against jailbreak attacks. Additionally, we proposed a formatting method that improves the efficiency of the self-refine process while reducing attack success rates in fewer iterations. We've also observed that non-safety-aligned LMs outperform safety-aligned LMs in safety tasks by giving more helpful and safe responses. In conclusion, our findings can achieve less safety risk with fewer computational costs, allowing non-safety LM to be easily utilized in real-world service.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-15180",
+        "ArXiv": "2402.15180",
+        "DOI": "10.48550/arXiv.2402.15180",
+        "CorpusId": 267897711
+      },
+      "arxiv_id": "2402.15180",
+      "doi": "10.48550/arXiv.2402.15180",
+      "corpus_id": 267897711
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "25",
+      "ref_key": "S2:507465f8d46489a68a527cb5304d76bdb6c31ed9",
+      "paperId": "507465f8d46489a68a527cb5304d76bdb6c31ed9",
+      "title": "Semantic Uncertainty: Linguistic Invariances for Uncertainty Estimation in Natural Language Generation",
+      "year": 2023,
+      "abstract": "We introduce a method to measure uncertainty in large language models. For tasks like question answering, it is essential to know when we can trust the natural language outputs of foundation models. We show that measuring uncertainty in natural language is challenging because of\"semantic equivalence\"-- different sentences can mean the same thing. To overcome these challenges we introduce semantic entropy -- an entropy which incorporates linguistic invariances created by shared meanings. Our method is unsupervised, uses only a single model, and requires no modifications to off-the-shelf language models. In comprehensive ablation studies we show that the semantic entropy is more predictive of model accuracy on question answering data sets than comparable baselines.",
+      "externalIds": {
+        "ArXiv": "2302.09664",
+        "DBLP": "journals/corr/abs-2302-09664",
+        "DOI": "10.48550/arXiv.2302.09664",
+        "CorpusId": 257039062
+      },
+      "arxiv_id": "2302.09664",
+      "doi": "10.48550/arXiv.2302.09664",
+      "corpus_id": 257039062
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "26",
+      "ref_key": "S2:1ab91d6ac7afc1a0121487a9089fa70edc1634d4",
+      "paperId": "1ab91d6ac7afc1a0121487a9089fa70edc1634d4",
+      "title": "Certifying LLM Safety against Adversarial Prompting",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) are vulnerable to adversarial attacks that add malicious tokens to an input prompt to bypass the safety guardrails of an LLM and cause it to produce harmful content. In this work, we introduce erase-and-check, the first framework for defending against adversarial prompts with certifiable safety guarantees. Given a prompt, our procedure erases tokens individually and inspects the resulting subsequences using a safety filter. Our safety certificate guarantees that harmful prompts are not mislabeled as safe due to an adversarial attack up to a certain size. We implement the safety filter in two ways, using Llama 2 and DistilBERT, and compare the performance of erase-and-check for the two cases. We defend against three attack modes: i) adversarial suffix, where an adversarial sequence is appended at the end of a harmful prompt; ii) adversarial insertion, where the adversarial sequence is inserted anywhere in the middle of the prompt; and iii) adversarial infusion, where adversarial tokens are inserted at arbitrary positions in the prompt, not necessarily as a contiguous block. Our experimental results demonstrate that this procedure can obtain strong certified safety guarantees on harmful prompts while maintaining good empirical performance on safe prompts. Additionally, we propose three efficient empirical defenses: i) RandEC, a randomized subsampling version of erase-and-check; ii) GreedyEC, which greedily erases tokens that maximize the softmax score of the harmful class; and iii) GradEC, which uses gradient information to optimize tokens to erase. We demonstrate their effectiveness against adversarial prompts generated by the Greedy Coordinate Gradient (GCG) attack algorithm. The code for our experiments is available at https://github.com/aounon/certified-llm-safety.",
+      "externalIds": {
+        "ArXiv": "2309.02705",
+        "DBLP": "journals/corr/abs-2309-02705",
+        "DOI": "10.48550/arXiv.2309.02705",
+        "CorpusId": 261557007
+      },
+      "arxiv_id": "2309.02705",
+      "doi": "10.48550/arXiv.2309.02705",
+      "corpus_id": 261557007
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "27",
+      "ref_key": "S2:2751de08d6dbec07f53808231c016e96b075b06c",
+      "paperId": "2751de08d6dbec07f53808231c016e96b075b06c",
+      "title": "Learning to Trust Your Feelings: Leveraging Self-awareness in LLMs for Hallucination Mitigation",
+      "year": 2024,
+      "abstract": "We evaluate the ability of Large Language Models (LLMs) to discern and express their internal knowledge state, a key factor in countering factual hallucination and ensuring reliable application of LLMs. We observe a robust self-awareness of internal knowledge state in LLMs, evidenced by over 85% accuracy in knowledge state probing. However, LLMs often fail to faithfully express their internal knowledge during generation, leading to factual hallucinations. We develop an automated hallucination annotation tool, DreamCatcher, which merges knowledge probing and consistency checking methods to rank factual preference data. Using knowledge preference as reward, We propose a Reinforcement Learning from Knowledge Feedback (RLKF) training framework, leveraging reinforcement learning to enhance the factuality and honesty of LLMs. Our experiments across multiple models show that RLKF training effectively enhances the ability of models to utilize their internal knowledge state, boosting performance in a variety of knowledge-based and honesty-related tasks.",
+      "externalIds": {
+        "ArXiv": "2401.15449",
+        "ACL": "2024.knowledgenlp-1.4",
+        "DBLP": "journals/corr/abs-2401-15449",
+        "DOI": "10.48550/arXiv.2401.15449",
+        "CorpusId": 267312028
+      },
+      "arxiv_id": "2401.15449",
+      "doi": "10.48550/arXiv.2401.15449",
+      "corpus_id": 267312028
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "28",
+      "ref_key": "S2:374dd173491a59a10bbb2b3519ebcfe3649f529d",
+      "paperId": "374dd173491a59a10bbb2b3519ebcfe3649f529d",
+      "title": "Teaching Models to Express Their Uncertainty in Words",
+      "year": 2022,
+      "abstract": "We show that a GPT-3 model can learn to express uncertainty about its own answers in natural language -- without use of model logits. When given a question, the model generates both an answer and a level of confidence (e.g.\"90% confidence\"or\"high confidence\"). These levels map to probabilities that are well calibrated. The model also remains moderately calibrated under distribution shift, and is sensitive to uncertainty in its own answers, rather than imitating human examples. To our knowledge, this is the first time a model has been shown to express calibrated uncertainty about its own answers in natural language. For testing calibration, we introduce the CalibratedMath suite of tasks. We compare the calibration of uncertainty expressed in words (\"verbalized probability\") to uncertainty extracted from model logits. Both kinds of uncertainty are capable of generalizing calibration under distribution shift. We also provide evidence that GPT-3's ability to generalize calibration depends on pre-trained latent representations that correlate with epistemic uncertainty over its answers.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2205-14334",
+        "ArXiv": "2205.14334",
+        "DOI": "10.48550/arXiv.2205.14334",
+        "CorpusId": 249191391
+      },
+      "arxiv_id": "2205.14334",
+      "doi": "10.48550/arXiv.2205.14334",
+      "corpus_id": 249191391
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "29",
+      "ref_key": "S2:95a52dd5adf6eb8d918cdfbf6189aab4eaa8e607",
+      "paperId": "95a52dd5adf6eb8d918cdfbf6189aab4eaa8e607",
+      "title": "FLAME: Factuality-Aware Alignment for Large Language Models",
+      "year": 2024,
+      "abstract": "Alignment is a standard procedure to fine-tune pre-trained large language models (LLMs) to follow natural language instructions and serve as helpful AI assistants. We have observed, however, that the conventional alignment process fails to enhance the factual accuracy of LLMs, and often leads to the generation of more false facts (i.e. hallucination). In this paper, we study how to make the LLM alignment process more factual, by first identifying factors that lead to hallucination in both alignment steps:\\ supervised fine-tuning (SFT) and reinforcement learning (RL). In particular, we find that training the LLM on new knowledge or unfamiliar texts can encourage hallucination. This makes SFT less factual as it trains on human labeled data that may be novel to the LLM. Furthermore, reward functions used in standard RL can also encourage hallucination, because it guides the LLM to provide more helpful responses on a diverse set of instructions, often preferring longer and more detailed responses. Based on these observations, we propose factuality-aware alignment, comprised of factuality-aware SFT and factuality-aware RL through direct preference optimization. Experiments show that our proposed factuality-aware alignment guides LLMs to output more factual responses while maintaining instruction-following capability.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2405-01525",
+        "ArXiv": "2405.01525",
+        "DOI": "10.48550/arXiv.2405.01525",
+        "CorpusId": 269502676
+      },
+      "arxiv_id": "2405.01525",
+      "doi": "10.48550/arXiv.2405.01525",
+      "corpus_id": 269502676
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "30",
+      "ref_key": "S2:ad934a9344f68fcc0b9aa704102aa48c39c5b591",
+      "paperId": "ad934a9344f68fcc0b9aa704102aa48c39c5b591",
+      "title": "Generating with Confidence: Uncertainty Quantification for Black-box Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) specializing in natural language generation (NLG) have recently started exhibiting promising capabilities across a variety of domains. However, gauging the trustworthiness of responses generated by LLMs remains an open challenge, with limited research on uncertainty quantification (UQ) for NLG. Furthermore, existing literature typically assumes white-box access to language models, which is becoming unrealistic either due to the closed-source nature of the latest LLMs or computational constraints. In this work, we investigate UQ in NLG for *black-box* LLMs. We first differentiate *uncertainty* vs *confidence*: the former refers to the ``dispersion'' of the potential predictions for a fixed input, and the latter refers to the confidence on a particular prediction/generation. We then propose and compare several confidence/uncertainty measures, applying them to *selective NLG* where unreliable results could either be ignored or yielded for further assessment. Experiments were carried out with several popular LLMs on question-answering datasets (for evaluation purposes). Results reveal that a simple measure for the semantic dispersion can be a reliable predictor of the quality of LLM responses, providing valuable insights for practitioners on uncertainty management when adopting LLMs. The code to replicate our experiments is available at https://github.com/zlin7/UQ-NLG.",
+      "externalIds": {
+        "DBLP": "journals/tmlr/LinT024",
+        "ArXiv": "2305.19187",
+        "DOI": "10.48550/arXiv.2305.19187",
+        "CorpusId": 258967487
+      },
+      "arxiv_id": "2305.19187",
+      "doi": "10.48550/arXiv.2305.19187",
+      "corpus_id": 258967487
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "31",
+      "ref_key": "S2:298f67a9719e74192296fa2428776c46161a256a",
+      "paperId": "298f67a9719e74192296fa2428776c46161a256a",
+      "title": "Simple and Principled Uncertainty Estimation with Deterministic Deep Learning via Distance Awareness",
+      "year": 2020,
+      "abstract": "Bayesian neural networks (BNN) and deep ensembles are principled approaches to estimate the predictive uncertainty of a deep learning model. However their practicality in real-time, industrial-scale applications are limited due to their heavy memory and inference cost. This motivates us to study principled approaches to high-quality uncertainty estimation that require only a single deep neural network (DNN). By formalizing the uncertainty quantification as a minimax learning problem, we first identify input distance awareness, i.e., the model's ability to quantify the distance of a testing example from the training data in the input space, as a necessary condition for a DNN to achieve high-quality (i.e., minimax optimal) uncertainty estimation. We then propose Spectral-normalized Neural Gaussian Process (SNGP), a simple method that improves the distance-awareness ability of modern DNNs, by adding a weight normalization step during training and replacing the output layer with a Gaussian process. On a suite of vision and language understanding tasks and on modern architectures (Wide-ResNet and BERT), SNGP is competitive with deep ensembles in prediction, calibration and out-of-domain detection, and outperforms the other single-model approaches.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2006-10108",
+        "ArXiv": "2006.10108",
+        "MAG": "3035898727",
+        "CorpusId": 219792902
+      },
+      "arxiv_id": "2006.10108",
+      "doi": null,
+      "corpus_id": 219792902
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "32",
+      "ref_key": "S2:ffe9a70445f99516aa3c86651f9121c84b1b78cc",
+      "paperId": "ffe9a70445f99516aa3c86651f9121c84b1b78cc",
+      "title": "Learning Confidence for Transformer-based Neural Machine Translation",
+      "year": 2022,
+      "abstract": "Confidence estimation aims to quantify the confidence of the model prediction, providing an expectation of success. A well-calibrated confidence estimate enables accurate failure prediction and proper risk measurement when given noisy samples and out-of-distribution data in real-world settings. However, this task remains a severe challenge for neural machine translation (NMT), where probabilities from softmax distribution fail to describe when the model is probably mistaken. To address this problem, we propose an unsupervised confidence estimate learning jointly with the training of the NMT model. We explain confidence as how many hints the NMT model needs to make a correct prediction, and more hints indicate low confidence. Specifically, the NMT model is given the option to ask for hints to improve translation accuracy at the cost of some slight penalty. Then, we approximate their level of confidence by counting the number of hints the model uses. We demonstrate that our learned confidence estimate achieves high accuracy on extensive sentence/word-level quality estimation tasks. Analytical results verify that our confidence estimate can correctly assess underlying risk in two real-world scenarios: (1) discovering noisy samples and (2) detecting out-of-domain data. We further propose a novel confidence-based instance-specific label smoothing approach based on our learned confidence estimate, which outperforms standard label smoothing.",
+      "externalIds": {
+        "ArXiv": "2203.11413",
+        "DBLP": "conf/acl/LuZZW022",
+        "ACL": "2022.acl-long.167",
+        "DOI": "10.48550/arXiv.2203.11413",
+        "CorpusId": 247596990
+      },
+      "arxiv_id": "2203.11413",
+      "doi": "10.48550/arXiv.2203.11413",
+      "corpus_id": 247596990
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "33",
+      "ref_key": "S2:9aa53e8b6b01fcb5ae8b8828cad2bace83e941a2",
+      "paperId": "9aa53e8b6b01fcb5ae8b8828cad2bace83e941a2",
+      "title": "Keeping LLMs Aligned After Fine-tuning: The Crucial Role of Prompt Templates",
+      "year": 2024,
+      "abstract": "Public LLMs such as the Llama 2-Chat underwent alignment training and were considered safe. Recently Qi et al. [2024] reported that even benign fine-tuning on seemingly safe datasets can give rise to unsafe behaviors in the models. The current paper is about methods and best practices to mitigate such loss of alignment. We focus on the setting where a public model is fine-tuned before serving users for specific usage, where the model should improve on the downstream task while maintaining alignment. Through extensive experiments on several chat models (Meta's Llama 2-Chat, Mistral AI's Mistral 7B Instruct v0.2, and OpenAI's GPT-3.5 Turbo), this paper uncovers that the prompt templates used during fine-tuning and inference play a crucial role in preserving safety alignment, and proposes the ``Pure Tuning, Safe Testing'' (PTST) strategy -- fine-tune models without a safety prompt, but include it at test time. This seemingly counterintuitive strategy incorporates an intended distribution shift to encourage alignment preservation. Fine-tuning experiments on GSM8K, ChatDoctor, and OpenOrca show that PTST significantly reduces the rise of unsafe behaviors.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-18540",
+        "ArXiv": "2402.18540",
+        "DOI": "10.48550/arXiv.2402.18540",
+        "CorpusId": 268063545
+      },
+      "arxiv_id": "2402.18540",
+      "doi": "10.48550/arXiv.2402.18540",
+      "corpus_id": 268063545
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "34",
+      "ref_key": "S2:d77c78c9439422ed88e754f776a642d43a8acb66",
+      "paperId": "d77c78c9439422ed88e754f776a642d43a8acb66",
+      "title": "Reducing Conversational Agents’ Overconfidence Through Linguistic Calibration",
+      "year": 2020,
+      "abstract": "Abstract While improving neural dialogue agents’ factual accuracy is the object of much research, another important aspect of communication, less studied in the setting of neural dialogue, is transparency about ignorance. In this work, we analyze to what extent state-of-the-art chit-chat models are linguistically calibrated in the sense that their verbalized expression of doubt (or confidence) matches the likelihood that the model’s responses are factually incorrect (or correct). We find that these models are poorly calibrated, yet we show that likelihood of correctness can accurately be predicted. By incorporating such metacognitive features into the training of a controllable generation model, we obtain a dialogue agent with greatly improved linguistic calibration.",
+      "externalIds": {
+        "ArXiv": "2012.14983",
+        "DBLP": "journals/tacl/MielkeSDB22",
+        "DOI": "10.1162/tacl_a_00494",
+        "CorpusId": 250073258
+      },
+      "arxiv_id": "2012.14983",
+      "doi": "10.1162/tacl_a_00494",
+      "corpus_id": 250073258
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "35",
+      "ref_key": "S2:f6d0d7c8e815de607e03da73467ba538caad4d92",
+      "paperId": "f6d0d7c8e815de607e03da73467ba538caad4d92",
+      "title": "Fight Back Against Jailbreaking via Prompt Adversarial Tuning",
+      "year": 2024,
+      "abstract": "While Large Language Models (LLMs) have achieved tremendous success in various applications, they are also susceptible to jailbreaking attacks. Several primary defense strategies have been proposed to protect LLMs from producing harmful information, mostly focusing on model fine-tuning or heuristical defense designs. However, how to achieve intrinsic robustness through prompt optimization remains an open problem. In this paper, motivated by adversarial training paradigms for achieving reliable robustness, we propose an approach named Prompt Adversarial Tuning (PAT) that trains a prompt control attached to the user prompt as a guard prefix. To achieve our defense goal whilst maintaining natural performance, we optimize the control prompt with both adversarial and benign prompts. Comprehensive experiments show that our method is effective against both grey-box and black-box attacks, reducing the success rate of advanced attacks to nearly 0%, while maintaining the model's utility on the benign task and incurring only negligible computational overhead, charting a new perspective for future explorations in LLM security. Our code is available at https://github.com/PKU-ML/PAT.",
+      "externalIds": {
+        "ArXiv": "2402.06255",
+        "CorpusId": 267617138
+      },
+      "arxiv_id": "2402.06255",
+      "doi": null,
+      "corpus_id": 267617138
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "36",
+      "ref_key": "S2:cae223fe3654b0bd3c1361dad204218ac60ed771",
+      "paperId": "cae223fe3654b0bd3c1361dad204218ac60ed771",
+      "title": "DisentQA: Disentangling Parametric and Contextual Knowledge with Counterfactual Question Answering",
+      "year": 2022,
+      "abstract": "Question answering models commonly have access to two sources of “knowledge” during inference time: (1) parametric knowledge - the factual knowledge encoded in the model weights, and (2) contextual knowledge - external knowledge (e.g., a Wikipedia passage) given to the model to generate a grounded answer. Having these two sources of knowledge entangled together is a core issue for generative QA models as it is unclear whether the answer stems from the given non-parametric knowledge or not. This unclarity has implications on issues of trust, interpretability and factuality. In this work, we propose a new paradigm in which QA models are trained to disentangle the two sources of knowledge. Using counterfactual data augmentation, we introduce a model that predicts two answers for a given question: one based on given contextual knowledge and one based on parametric knowledge. Our experiments on the Natural Questions dataset show that this approach improves the performance of QA models by making them more robust to knowledge conflicts between the two knowledge sources, while generating useful disentangled answers.",
+      "externalIds": {
+        "DBLP": "conf/acl/NeemanAHCSA23",
+        "ArXiv": "2211.05655",
+        "ACL": "2023.acl-long.559",
+        "DOI": "10.48550/arXiv.2211.05655",
+        "CorpusId": 253447228
+      },
+      "arxiv_id": "2211.05655",
+      "doi": "10.48550/arXiv.2211.05655",
+      "corpus_id": 253447228
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "37",
+      "ref_key": "S2:ecdfc556828dc59d8a0009016fcbe97a06cf7e23",
+      "paperId": "ecdfc556828dc59d8a0009016fcbe97a06cf7e23",
+      "title": "Bergeron: Combating Adversarial Attacks through a Conscience-Based Alignment Framework",
+      "year": 2023,
+      "abstract": "Research into AI alignment has grown considerably since the recent introduction of increasingly capable Large Language Models (LLMs). Unfortunately, modern methods of alignment still fail to fully prevent harmful responses when models are deliberately attacked. Such vulnerabilities can lead to LLMs being manipulated into generating hazardous content: from instructions for creating dangerous materials to inciting violence or endorsing unethical behaviors. To help mitigate this issue, we introduce Bergeron: a framework designed to improve the robustness of LLMs against attacks without any additional parameter fine-tuning. Bergeron is organized into two tiers; with a secondary LLM acting as a guardian to the primary LLM. This framework better safeguards the primary model against incoming attacks while monitoring its output for any harmful content. Empirical analysis reviews that by using Bergeron to complement models with existing alignment training, we can significantly improve the robustness and safety of multiple, commonly used commercial and open-source LLMs. Specifically, we found that models integrated with Bergeron are, on average, nearly seven times more resistant to attacks compared to models without such support.",
+      "externalIds": {
+        "ArXiv": "2312.00029",
+        "DBLP": "journals/corr/abs-2312-00029",
+        "DOI": "10.48550/arXiv.2312.00029",
+        "CorpusId": 265552022
+      },
+      "arxiv_id": "2312.00029",
+      "doi": "10.48550/arXiv.2312.00029",
+      "corpus_id": 265552022
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "38",
+      "ref_key": "S2:3a1f8829e641b46f661775f64a7f27b933a46103",
+      "paperId": "3a1f8829e641b46f661775f64a7f27b933a46103",
+      "title": "ONION: A Simple and Effective Defense Against Textual Backdoor Attacks",
+      "year": 2020,
+      "abstract": "Backdoor attacks are a kind of emergent training-time threat to deep neural networks (DNNs). They can manipulate the output of DNNs and possess high insidiousness. In the field of natural language processing, some attack methods have been proposed and achieve very high attack success rates on multiple popular models. Nevertheless, there are few studies on defending against textual backdoor attacks. In this paper, we propose a simple and effective textual backdoor defense named ONION, which is based on outlier word detection and, to the best of our knowledge, is the first method that can handle all the textual backdoor attack situations. Experiments demonstrate the effectiveness of our model in defending BiLSTM and BERT against five different backdoor attacks. All the code and data of this paper can be obtained at https://github.com/thunlp/ONION.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/QiCLYLS21",
+        "ACL": "2021.emnlp-main.752",
+        "ArXiv": "2011.10369",
+        "MAG": "3109409894",
+        "DOI": "10.18653/v1/2021.emnlp-main.752",
+        "CorpusId": 227118606
+      },
+      "arxiv_id": "2011.10369",
+      "doi": "10.18653/v1/2021.emnlp-main.752",
+      "corpus_id": 227118606
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "39",
+      "ref_key": "S2:04365f0f1db4c659c3297cb8e70c39b38ed3b487",
+      "paperId": "04365f0f1db4c659c3297cb8e70c39b38ed3b487",
+      "title": "Self-Evaluation Improves Selective Generation in Large Language Models",
+      "year": 2023,
+      "abstract": "Safe deployment of large language models (LLMs) may benefit from a reliable method for assessing their generated content to determine when to abstain or to selectively generate. While likelihood-based metrics such as perplexity are widely employed, recent research has demonstrated the limitations of using sequence-level probability estimates given by LLMs as reliable indicators of generation quality. Conversely, LLMs have demonstrated strong calibration at the token level, particularly when it comes to choosing correct answers in multiple-choice questions or evaluating true/false statements. In this work, we reformulate open-ended generation tasks into token-level prediction tasks, and leverage LLMs' superior calibration at the token level. We instruct an LLM to self-evaluate its answers, employing either a multi-way comparison or a point-wise evaluation approach, with the option to include a ``None of the above'' option to express the model's uncertainty explicitly. We benchmark a range of scoring methods based on self-evaluation and evaluate their performance in selective generation using TruthfulQA and TL;DR. Through experiments with PaLM-2 and GPT-3, we demonstrate that self-evaluation based scores not only improve accuracy, but also correlate better with the overall quality of generated content.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2312-09300",
+        "ArXiv": "2312.09300",
+        "DOI": "10.48550/arXiv.2312.09300",
+        "CorpusId": 266335508
+      },
+      "arxiv_id": "2312.09300",
+      "doi": "10.48550/arXiv.2312.09300",
+      "corpus_id": 266335508
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "40",
+      "ref_key": "S2:8cf9b49698fdb1b754df2556576412a7b44929f6",
+      "paperId": "8cf9b49698fdb1b754df2556576412a7b44929f6",
+      "title": "SmoothLLM: Defending Large Language Models Against Jailbreaking Attacks",
+      "year": 2023,
+      "abstract": "Despite efforts to align large language models (LLMs) with human intentions, widely-used LLMs such as GPT, Llama, and Claude are susceptible to jailbreaking attacks, wherein an adversary fools a targeted LLM into generating objectionable content. To address this vulnerability, we propose SmoothLLM, the first algorithm designed to mitigate jailbreaking attacks. Based on our finding that adversarially-generated prompts are brittle to character-level changes, our defense randomly perturbs multiple copies of a given input prompt, and then aggregates the corresponding predictions to detect adversarial inputs. Across a range of popular LLMs, SmoothLLM sets the state-of-the-art for robustness against the GCG, PAIR, RandomSearch, and AmpleGCG jailbreaks. SmoothLLM is also resistant against adaptive GCG attacks, exhibits a small, though non-negligible trade-off between robustness and nominal performance, and is compatible with any LLM. Our code is publicly available at \\url{https://github.com/arobey1/smooth-llm}.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-03684",
+        "ArXiv": "2310.03684",
+        "DOI": "10.48550/arXiv.2310.03684",
+        "CorpusId": 263671542
+      },
+      "arxiv_id": "2310.03684",
+      "doi": "10.48550/arXiv.2310.03684",
+      "corpus_id": 263671542
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "41",
+      "ref_key": "S2:422e4b666cbd4dd287a458b8b559cd2426a4f60d",
+      "paperId": "422e4b666cbd4dd287a458b8b559cd2426a4f60d",
+      "title": "Safer-Instruct: Aligning Language Models with Automated Preference Data",
+      "year": 2023,
+      "abstract": "Reinforcement learning from human feedback (RLHF) is a vital strategy for enhancing model capability in language models. However, annotating preference data for RLHF is a resource-intensive and creativity-demanding process, while existing automatic generation methods face limitations in data diversity and quality. In response, we present Safer-Instruct, a novel pipeline for automatically constructing large-scale preference data. Our approach leverages reversed instruction tuning, instruction induction, and expert model evaluation to efficiently generate high-quality preference data without human annotators. To verify the effectiveness of Safer-Instruct, we apply the pipeline to construct a safety preference dataset as a case study. Finetuning an Alpaca model on this synthetic dataset not only demonstrates improved harmlessness but also outperforms models fine-tuned on human-annotated safety preference data, all the while maintaining a competitive edge in downstream tasks. Importantly, our Safer-Instruct framework is versatile and can be applied to generate preference data across various domains, extending its utility beyond safety preferences. It addresses the challenges in preference data acquisition and advances the development of more capable and responsible AI systems. For dataset and code implementation, see https://github.com/uscnlp-lime/safer-instruct/.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2311-08685",
+        "ArXiv": "2311.08685",
+        "ACL": "2024.naacl-long.422",
+        "DOI": "10.48550/arXiv.2311.08685",
+        "CorpusId": 265212888
+      },
+      "arxiv_id": "2311.08685",
+      "doi": "10.48550/arXiv.2311.08685",
+      "corpus_id": 265212888
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "42",
+      "ref_key": "S2:df9981b9bbfc619652e84cd0eefa595274da2fef",
+      "paperId": "df9981b9bbfc619652e84cd0eefa595274da2fef",
+      "title": "Llamas Know What GPTs Don't Show: Surrogate Models for Confidence Estimation",
+      "year": 2023,
+      "abstract": "To maintain user trust, large language models (LLMs) should signal low confidence on examples where they are incorrect, instead of misleading the user. The standard approach of estimating confidence is to use the softmax probabilities of these models, but as of November 2023, state-of-the-art LLMs such as GPT-4 and Claude-v1.3 do not provide access to these probabilities. We first study eliciting confidence linguistically -- asking an LLM for its confidence in its answer -- which performs reasonably (80.5% AUC on GPT-4 averaged across 12 question-answering datasets -- 7% above a random baseline) but leaves room for improvement. We then explore using a surrogate confidence model -- using a model where we do have probabilities to evaluate the original model's confidence in a given question. Surprisingly, even though these probabilities come from a different and often weaker model, this method leads to higher AUC than linguistic confidences on 9 out of 12 datasets. Our best method composing linguistic confidences and surrogate model probabilities gives state-of-the-art confidence estimates on all 12 datasets (84.6% average AUC on GPT-4).",
+      "externalIds": {
+        "ArXiv": "2311.08877",
+        "DBLP": "journals/corr/abs-2311-08877",
+        "DOI": "10.48550/arXiv.2311.08877",
+        "CorpusId": 265213392
+      },
+      "arxiv_id": "2311.08877",
+      "doi": "10.48550/arXiv.2311.08877",
+      "corpus_id": 265213392
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "43",
+      "ref_key": "S2:a267cfbd6930c8e2c720104ae4a90e39461a6694",
+      "paperId": "a267cfbd6930c8e2c720104ae4a90e39461a6694",
+      "title": "The Curious Case of Hallucinatory Unanswerablity: Finding Truths in the Hidden States of Over-Confident Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have been shown to possess impressive capabilities, while also raising crucial concerns about the faithfulness of their responses. A primary issue arising in this context is the management of (un)answerable queries by LLMs, which often results in hallucinatory behavior due to overconfidence. In this paper, we explore the behavior of LLMs when presented with (un)answerable queries. We ask: do models represent the fact that the question is (un)answerable when generating a hallucinatory answer? Our results show strong indications that such models encode the answerability of an input query, with the representation of the first decoded token often being a strong indicator. These findings shed new light on the spatial organization within the latent representations of LLMs, unveiling previously unexplored facets of these models. Moreover, they pave the way for the development of improved decoding techniques with better adherence to factual generation, particularly in scenarios where query (un)answerability is a concern.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-11877",
+        "ArXiv": "2310.11877",
+        "DOI": "10.48550/arXiv.2310.11877",
+        "CorpusId": 264289289
+      },
+      "arxiv_id": "2310.11877",
+      "doi": "10.48550/arXiv.2310.11877",
+      "corpus_id": 264289289
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "44",
+      "ref_key": "S2:936a6191241f76682f51bf49c7c033effbf80227",
+      "paperId": "936a6191241f76682f51bf49c7c033effbf80227",
+      "title": "Defending against Backdoor Attacks in Natural Language Generation",
+      "year": 2021,
+      "abstract": "The frustratingly fragile nature of neural network models make current natural language generation (NLG) systems prone to backdoor attacks and generate malicious sequences that could be sexist or offensive. Unfortunately, little effort has been invested to how backdoor attacks can affect current NLG models and how to defend against these attacks. In this work, by giving a formal definition of backdoor attack and defense, we investigate this problem on two important NLG tasks, machine translation and dialog generation. Tailored to the inherent nature of NLG models (e.g., producing a sequence of coherent words given contexts), we design defending strategies against attacks. \nWe find that testing the backward probability of generating sources given targets yields effective defense performance against all different types of attacks, and is able to handle the one-to-many issue in many NLG tasks such as dialog generation. We hope that this work can raise the awareness of backdoor risks concealed in deep NLG systems and inspire more future work (both attack and defense) towards this direction.",
+      "externalIds": {
+        "ArXiv": "2106.01810",
+        "DBLP": "conf/aaai/SunLM0L0Z23",
+        "DOI": "10.1609/aaai.v37i4.25656",
+        "CorpusId": 235313678
+      },
+      "arxiv_id": "2106.01810",
+      "doi": "10.1609/aaai.v37i4.25656",
+      "corpus_id": 235313678
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "45",
+      "ref_key": "S2:f05c288caeb9a14ef387e6867934ced3d2200259",
+      "paperId": "f05c288caeb9a14ef387e6867934ced3d2200259",
+      "title": "SALMON: Self-Alignment with Instructable Reward Models",
+      "year": 2023,
+      "abstract": "Supervised Fine-Tuning (SFT) on response demonstrations combined with Reinforcement Learning from Human Feedback (RLHF) constitutes a powerful paradigm for aligning LLM-based AI agents. However, a significant limitation of such an approach is its dependency on high-quality human annotations, making its application to intricate tasks challenging due to difficulties in obtaining consistent response demonstrations and in-distribution response preferences. This paper presents a novel approach, namely SALMON, to align base language models with minimal human supervision, using only a small set of human-defined principles, yet achieving superior performance. Central to our approach is an instructable reward model. Trained on synthetic preference data, this model can generate reward scores based on arbitrary human-defined principles. By merely adjusting these principles during the RL training phase, we gain full control over the preferences with the instructable reward model, subsequently influencing the behavior of the RL-trained policy models, and reducing the reliance on the collection of online human preferences. Applying our method to the LLaMA-2-70b base language model, we developed an AI assistant named Dromedary-2. With only 6 exemplars for in-context learning and 31 human-defined principles, Dromedary-2 significantly surpasses the performance of several state-of-the-art AI systems, including LLaMA-2-Chat-70b, on various benchmark datasets. We have open-sourced the code and model weights to encourage further research into aligning LLM-based AI agents with enhanced supervision efficiency, improved controllability, and scalable oversight.",
+      "externalIds": {
+        "DBLP": "conf/iclr/SunSZZCCYG24",
+        "ArXiv": "2310.05910",
+        "CorpusId": 263831633
+      },
+      "arxiv_id": "2310.05910",
+      "doi": null,
+      "corpus_id": 263831633
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "46",
+      "ref_key": "S2:ab4ce5dda7ad4d9032995c9c049a89d65723c6aa",
+      "paperId": "ab4ce5dda7ad4d9032995c9c049a89d65723c6aa",
+      "title": "Just Ask for Calibration: Strategies for Eliciting Calibrated Confidence Scores from Language Models Fine-Tuned with Human Feedback",
+      "year": 2023,
+      "abstract": "A trustworthy real-world prediction system should produce well-calibrated confidence scores; that is, its confidence in an answer should be indicative of the likelihood that the answer is correct, enabling deferral to an expert in cases of low-confidence predictions. Recent studies have shown that unsupervised pre-training produces large language models (LMs) whose conditional probabilities are remarkably well-calibrated. However, the most widely-used LMs are fine-tuned with reinforcement learning from human feedback (RLHF-LMs), and some studies have suggested that RLHF-LMs produce conditional probabilities that are very poorly calibrated. In light of this perceived weakness, we conduct a broad evaluation of methods for extracting confidence scores from RLHF-LMs. For RLHF-LMs such as ChatGPT, GPT-4, and Claude, we find that verbalized confidences emitted as output tokens are typically better-calibrated than the model's conditional probabilities on the TriviaQA, SciQ, and TruthfulQA benchmarks, often reducing the expected calibration error by a relative 50%.",
+      "externalIds": {
+        "ArXiv": "2305.14975",
+        "DBLP": "conf/emnlp/TianMZSRYFM23",
+        "DOI": "10.48550/arXiv.2305.14975",
+        "CorpusId": 258865733
+      },
+      "arxiv_id": "2305.14975",
+      "doi": "10.48550/arXiv.2305.14975",
+      "corpus_id": 258865733
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "47",
+      "ref_key": "S2:6ec6b0c37206bd086e5ebe80ffc69f1e06a13d82",
+      "paperId": "6ec6b0c37206bd086e5ebe80ffc69f1e06a13d82",
+      "title": "Uncertainty-Based Abstention in LLMs Improves Safety and Reduces Hallucinations",
+      "year": 2024,
+      "abstract": "A major barrier towards the practical deployment of large language models (LLMs) is their lack of reliability. Three situations where this is particularly apparent are correctness, hallucinations when given unanswerable questions, and safety. In all three cases, models should ideally abstain from responding, much like humans, whose ability to understand uncertainty makes us refrain from answering questions we don't know. Inspired by analogous approaches in classification, this study explores the feasibility and efficacy of abstaining while uncertain in the context of LLMs within the domain of question-answering. We investigate two kinds of uncertainties, statistical uncertainty metrics and a distinct verbalized measure, termed as In-Dialogue Uncertainty (InDU). Using these uncertainty measures combined with models with and without Reinforcement Learning with Human Feedback (RLHF), we show that in all three situations, abstention based on the right kind of uncertainty measure can boost the reliability of LLMs. By sacrificing only a few highly uncertain samples we can improve correctness by 2% to 8%, avoid 50% hallucinations via correctly identifying unanswerable questions and increase safety by 70% up to 99% with almost no additional computational overhead.",
+      "externalIds": {
+        "ArXiv": "2404.10960",
+        "DBLP": "journals/corr/abs-2404-10960",
+        "DOI": "10.48550/arXiv.2404.10960",
+        "CorpusId": 269188249
+      },
+      "arxiv_id": "2404.10960",
+      "doi": "10.48550/arXiv.2404.10960",
+      "corpus_id": 269188249
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "48",
+      "ref_key": "S2:57e849d0de13ed5f91d086936296721d4ff75a75",
+      "paperId": "57e849d0de13ed5f91d086936296721d4ff75a75",
+      "title": "LLaMA: Open and Efficient Foundation Language Models",
+      "year": 2023,
+      "abstract": "We introduce LLaMA, a collection of foundation language models ranging from 7B to 65B parameters. We train our models on trillions of tokens, and show that it is possible to train state-of-the-art models using publicly available datasets exclusively, without resorting to proprietary and inaccessible datasets. In particular, LLaMA-13B outperforms GPT-3 (175B) on most benchmarks, and LLaMA-65B is competitive with the best models, Chinchilla-70B and PaLM-540B. We release all our models to the research community.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2302-13971",
+        "ArXiv": "2302.13971",
+        "CorpusId": 257219404
+      },
+      "arxiv_id": "2302.13971",
+      "doi": null,
+      "corpus_id": 257219404
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "49",
+      "ref_key": "S2:5248b6e75e7e9e5a96c6cb48e71cbef9b2ea21d3",
+      "paperId": "5248b6e75e7e9e5a96c6cb48e71cbef9b2ea21d3",
+      "title": "Investigating Selective Prediction Approaches Across Several Tasks in IID, OOD, and Adversarial Settings",
+      "year": 2022,
+      "abstract": "In order to equip NLP systems with ‘selective prediction’ capability, several task-specific approaches have been proposed. However, which approaches work best across tasks or even if they consistently outperform the simplest baseline MaxProb remains to be explored. To this end, we systematically study selective prediction in a large-scale setup of 17 datasets across several NLP tasks. Through comprehensive experiments under in-domain (IID), out-of-domain (OOD), and adversarial (ADV) settings, we show that despite leveraging additional resources (held-out data/computation), none of the existing approaches consistently and considerably outperforms MaxProb in all three settings. Furthermore, their performance does not translate well across tasks. For instance, Monte-Carlo Dropout outperforms all other approaches on Duplicate Detection datasets but does not fare well on NLI datasets, especially in the OOD setting. Thus, we recommend that future selective prediction approaches should be evaluated across tasks and settings for reliable estimation of their capabilities.",
+      "externalIds": {
+        "ArXiv": "2203.00211",
+        "ACL": "2022.findings-acl.158",
+        "DBLP": "conf/acl/VarshneyMB22a",
+        "DOI": "10.48550/arXiv.2203.00211",
+        "CorpusId": 247187611
+      },
+      "arxiv_id": "2203.00211",
+      "doi": "10.48550/arXiv.2203.00211",
+      "corpus_id": 247187611
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "50",
+      "ref_key": "S2:accb2fab67c76d5668908107cd50cbb81110c389",
+      "paperId": "accb2fab67c76d5668908107cd50cbb81110c389",
+      "title": "The Art of Defending: A Systematic Evaluation and Analysis of LLM Defense Strategies on Safety and Over-Defensiveness",
+      "year": 2023,
+      "abstract": "As Large Language Models (LLMs) play an increasingly pivotal role in natural language processing applications, their safety concerns become critical areas of NLP research. This paper presents Safety and Over-Defensiveness Evaluation (SODE) benchmark: a collection of diverse safe and unsafe prompts with carefully designed evaluation methods that facilitate systematic evaluation, comparison, and analysis over 'safety' and 'over-defensiveness.' With SODE, we study a variety of LLM defense strategies over multiple state-of-the-art LLMs, which reveals several interesting and important findings, such as (a) the widely popular 'self-checking' techniques indeed improve the safety against unsafe inputs, but this comes at the cost of extreme over-defensiveness on the safe inputs, (b) providing a safety instruction along with in-context exemplars (of both safe and unsafe inputs) consistently improves safety and also mitigates undue over-defensiveness of the models, (c) providing contextual knowledge easily breaks the safety guardrails and makes the models more vulnerable to generating unsafe responses. Overall, our work reveals numerous such critical findings that we believe will pave the way and facilitate further research in improving the safety of LLMs.",
+      "externalIds": {
+        "DBLP": "conf/acl/VarshneyDSB24",
+        "ArXiv": "2401.00287",
+        "DOI": "10.48550/arXiv.2401.00287",
+        "CorpusId": 266693612
+      },
+      "arxiv_id": "2401.00287",
+      "doi": "10.48550/arXiv.2401.00287",
+      "corpus_id": 266693612
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "51",
+      "ref_key": "S2:f18e5a844c37e5342f8f3d409c74c1a9c91d1f8f",
+      "paperId": "f18e5a844c37e5342f8f3d409c74c1a9c91d1f8f",
+      "title": "The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions",
+      "year": 2024,
+      "abstract": "Today's LLMs are susceptible to prompt injections, jailbreaks, and other attacks that allow adversaries to overwrite a model's original instructions with their own malicious prompts. In this work, we argue that one of the primary vulnerabilities underlying these attacks is that LLMs often consider system prompts (e.g., text from an application developer) to be the same priority as text from untrusted users and third parties. To address this, we propose an instruction hierarchy that explicitly defines how models should behave when instructions of different priorities conflict. We then propose a data generation method to demonstrate this hierarchical instruction following behavior, which teaches LLMs to selectively ignore lower-privileged instructions. We apply this method to GPT-3.5, showing that it drastically increases robustness -- even for attack types not seen during training -- while imposing minimal degradations on standard capabilities.",
+      "externalIds": {
+        "ArXiv": "2404.13208",
+        "DBLP": "journals/corr/abs-2404-13208",
+        "DOI": "10.48550/arXiv.2404.13208",
+        "CorpusId": 269294048
+      },
+      "arxiv_id": "2404.13208",
+      "doi": "10.48550/arXiv.2404.13208",
+      "corpus_id": 269294048
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "52",
+      "ref_key": "S2:c7ad19da81e24c387f0377fef6d19b0fce2cf470",
+      "paperId": "c7ad19da81e24c387f0377fef6d19b0fce2cf470",
+      "title": "SELF-GUARD: Empower the LLM to Safeguard Itself",
+      "year": 2023,
+      "abstract": "With the increasing risk posed by jailbreak attacks, recent studies have investigated various methods to improve the safety of large language models (LLMs), mainly falling into two strategies: safety training and safeguards. Safety training involves fine-tuning the LLM with adversarial samples, which activate the LLM’s capabilities against jailbreak. However, it is not always effective in countering new attacks and often leads to potential performance degradation. Safeguards, on the other hand, are methods using additional models to filter harmful content from the LLM’s response. Nevertheless, they can only reduce a limited amount of harmful output and introduce extra computational costs. Given the distinct strengths and weaknesses of both, we combine them to balance out their flaws and propose a more effective method called Self-Guard.Specifically, we train the LLM to review its responses for any harmful content and append a [harmful] or [harmless] tag to the end of the response. In this way, Self-Guard possesses the advantages of safety training, leveraging the powerful capabilities of the LLMs themselves to detect harmfulness. Besides that, it gains flexibility like safeguards, making the safety check target the output side, which makes the system less vulnerable to attack updates. Experimental results indicate that our Self-Guard can effectively defend against jailbreak attacks and will not cause LLMs’ performance degradation.",
+      "externalIds": {
+        "ArXiv": "2310.15851",
+        "DBLP": "journals/corr/abs-2310-15851",
+        "ACL": "2024.naacl-long.92",
+        "DOI": "10.48550/arXiv.2310.15851",
+        "CorpusId": 264439265
+      },
+      "arxiv_id": "2310.15851",
+      "doi": "10.48550/arXiv.2310.15851",
+      "corpus_id": 264439265
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "53",
+      "ref_key": "S2:f21d0177e9374bb8579c1d9c71319f212f62b3d5",
+      "paperId": "f21d0177e9374bb8579c1d9c71319f212f62b3d5",
+      "title": "InferAligner: Inference-Time Alignment for Harmlessness through Cross-Model Guidance",
+      "year": 2024,
+      "abstract": "As large language models (LLMs) rapidly evolve, they are increasingly being customized through fine-tuning to suit the specific needs of various applications. A critical aspect of this advancement is the alignment process, which ensures that these models perform tasks in ways that align with human values and expectations. Current alignment methods, such as direct preference optimization (DPO) and reinforcement learning from human feedback (RLHF), focus primarily on alignment during training phase. However, these methods often involve complex and resource-intensive training processes, posing significant challenge for their implementation. Therefore, we propose InferAligner, a simple yet effective method for harmlessness alignment during inference phase. InferAligner decouples harmlessness from helpfulness. During the training phase, it focuses solely on enhancing the target model’s capabilities on downstream tasks. In the inference phase, it utilizes safety steering vectors extracted from the aligned model to guide the target model towards harmlessness alignment. Experimental results show that our method can be very effectively applied to domain-specific models in finance, medicine, and mathematics, as well as to multimodal large language models (MLLMs) such as LLaVA. It significantly diminishes the attack success rate (ASR) of both harmful instructions and jailbreak instructions, while maintaining almost unchanged performance in downstream tasks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2401-11206",
+        "ACL": "2024.emnlp-main.585",
+        "ArXiv": "2401.11206",
+        "DOI": "10.48550/arXiv.2401.11206",
+        "CorpusId": 267068598
+      },
+      "arxiv_id": "2401.11206",
+      "doi": "10.48550/arXiv.2401.11206",
+      "corpus_id": 267068598
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "54",
+      "ref_key": "S2:6b135e922a0c673aeb0b05c5aeecdb6c794791c6",
+      "paperId": "6b135e922a0c673aeb0b05c5aeecdb6c794791c6",
+      "title": "Jailbreak and Guard Aligned Language Models with Only Few In-Context Demonstrations",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) have shown remarkable success in various tasks, yet their safety and the risk of generating harmful content remain pressing concerns. In this paper, we delve into the potential of In-Context Learning (ICL) to modulate the alignment of LLMs. Specifically, we propose the In-Context Attack (ICA) which employs harmful demonstrations to subvert LLMs, and the In-Context Defense (ICD) which bolsters model resilience through examples that demonstrate refusal to produce harmful responses. We offer theoretical insights to elucidate how a limited set of in-context demonstrations can pivotally influence the safety alignment of LLMs. Through extensive experiments, we demonstrate the efficacy of ICA and ICD in respectively elevating and mitigating the success rates of jailbreaking prompts. Our findings illuminate the profound influence of ICL on LLM behavior, opening new avenues for improving the safety of LLMs.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-06387",
+        "ArXiv": "2310.06387",
+        "DOI": "10.48550/arXiv.2310.06387",
+        "CorpusId": 263830179
+      },
+      "arxiv_id": "2310.06387",
+      "doi": "10.48550/arXiv.2310.06387",
+      "corpus_id": 263830179
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "55",
+      "ref_key": "S2:b145ea2049648535d6081407ebd315b072248183",
+      "paperId": "b145ea2049648535d6081407ebd315b072248183",
+      "title": "BatchEnsemble: An Alternative Approach to Efficient Ensemble and Lifelong Learning",
+      "year": 2020,
+      "abstract": "Ensembles, where multiple neural networks are trained individually and their predictions are averaged, have been shown to be widely successful for improving both the accuracy and predictive uncertainty of single neural networks. However, an ensemble's cost for both training and testing increases linearly with the number of networks, which quickly becomes untenable. \nIn this paper, we propose BatchEnsemble, an ensemble method whose computational and memory costs are significantly lower than typical ensembles. BatchEnsemble achieves this by defining each weight matrix to be the Hadamard product of a shared weight among all ensemble members and a rank-one matrix per member. Unlike ensembles, BatchEnsemble is not only parallelizable across devices, where one device trains one member, but also parallelizable within a device, where multiple ensemble members are updated simultaneously for a given mini-batch. Across CIFAR-10, CIFAR-100, WMT14 EN-DE/EN-FR translation, and out-of-distribution tasks, BatchEnsemble yields competitive accuracy and uncertainties as typical ensembles; the speedup at test time is 3X and memory reduction is 3X at an ensemble of size 4. We also apply BatchEnsemble to lifelong learning, where on Split-CIFAR-100, BatchEnsemble yields comparable performance to progressive neural networks while having a much lower computational and memory costs. We further show that BatchEnsemble can easily scale up to lifelong learning on Split-ImageNet which involves 100 sequential learning tasks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2002-06715",
+        "MAG": "2994797252",
+        "ArXiv": "2002.06715",
+        "CorpusId": 211132990
+      },
+      "arxiv_id": "2002.06715",
+      "doi": null,
+      "corpus_id": 211132990
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "56",
+      "ref_key": "S2:38264290a8a3f71fd5b3a86ea35a8b528d4e3d10",
+      "paperId": "38264290a8a3f71fd5b3a86ea35a8b528d4e3d10",
+      "title": "Characterizing LLM Abstention Behavior in Science QA with Context Perturbations",
+      "year": 2024,
+      "abstract": "The correct model response in the face of uncertainty is to abstain from answering a question so as not to mislead the user. In this work, we study the ability of LLMs to abstain from answering context-dependent science questions when provided insufficient or incorrect context. We probe model sensitivity in several settings: removing gold context, replacing gold context with irrelevant context, and providing additional context beyond what is given. In experiments on four QA datasets with six LLMs, we show that performance varies greatly across models, across the type of context provided, and also by question type; in particular, many LLMs seem unable to abstain from answering boolean questions using standard QA prompts. Our analysis also highlights the unexpected impact of abstention performance on QA task accuracy. Counter-intuitively, in some settings, replacing gold context with irrelevant context or adding irrelevant context to gold context can improve abstention performance in a way that results in improvements in task performance. Our results imply that changes are needed in QA dataset design and evaluation to more effectively assess the correctness and downstream impacts of model abstention.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/WenHW24",
+        "ArXiv": "2404.12452",
+        "DOI": "10.48550/arXiv.2404.12452",
+        "CorpusId": 269282962
+      },
+      "arxiv_id": "2404.12452",
+      "doi": "10.48550/arXiv.2404.12452",
+      "corpus_id": 269282962
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "57",
+      "ref_key": "S2:41cc3338635cde85316a0bcb934bffc73008761a",
+      "paperId": "41cc3338635cde85316a0bcb934bffc73008761a",
+      "title": "Defending Pre-trained Language Models as Few-shot Learners against Backdoor Attacks",
+      "year": 2023,
+      "abstract": "Pre-trained language models (PLMs) have demonstrated remarkable performance as few-shot learners. However, their security risks under such settings are largely unexplored. In this work, we conduct a pilot study showing that PLMs as few-shot learners are highly vulnerable to backdoor attacks while existing defenses are inadequate due to the unique challenges of few-shot scenarios. To address such challenges, we advocate MDP, a novel lightweight, pluggable, and effective defense for PLMs as few-shot learners. Specifically, MDP leverages the gap between the masking-sensitivity of poisoned and clean samples: with reference to the limited few-shot data as distributional anchors, it compares the representations of given samples under varying masking and identifies poisoned samples as ones with significant variations. We show analytically that MDP creates an interesting dilemma for the attacker to choose between attack effectiveness and detection evasiveness. The empirical evaluation using benchmark datasets and representative attacks validates the efficacy of MDP.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2309-13256",
+        "ArXiv": "2309.13256",
+        "DOI": "10.48550/arXiv.2309.13256",
+        "CorpusId": 262459235
+      },
+      "arxiv_id": "2309.13256",
+      "doi": "10.48550/arXiv.2309.13256",
+      "corpus_id": 262459235
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "58",
+      "ref_key": "S2:551b05734eb2181c4ca009a411144e8447ed1606",
+      "paperId": "551b05734eb2181c4ca009a411144e8447ed1606",
+      "title": "Uncertainty Quantification with Pre-trained Language Models: A Large-Scale Empirical Analysis",
+      "year": 2022,
+      "abstract": "Pre-trained language models (PLMs) have gained increasing popularity due to their compelling prediction performance in diverse natural language processing (NLP) tasks. When formulating a PLM-based prediction pipeline for NLP tasks, it is also crucial for the pipeline to minimize the calibration error, especially in safety-critical applications. That is, the pipeline should reliably indicate when we can trust its predictions. In particular, there are various considerations behind the pipeline: (1) the choice and (2) the size of PLM, (3) the choice of uncertainty quantifier, (4) the choice of fine-tuning loss, and many more. Although prior work has looked into some of these considerations, they usually draw conclusions based on a limited scope of empirical studies. There still lacks a holistic analysis on how to compose a well-calibrated PLM-based prediction pipeline. To fill this void, we compare a wide range of popular options for each consideration based on three prevalent NLP classification tasks and the setting of domain shift. In response, we recommend the following: (1) use ELECTRA for PLM encoding, (2) use larger PLMs if possible, (3) use Temp Scaling as the uncertainty quantifier, and (4) use Focal Loss for fine-tuning.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-04714",
+        "ArXiv": "2210.04714",
+        "DOI": "10.48550/arXiv.2210.04714",
+        "CorpusId": 247613322
+      },
+      "arxiv_id": "2210.04714",
+      "doi": "10.48550/arXiv.2210.04714",
+      "corpus_id": 247613322
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "59",
+      "ref_key": "S2:8f7297454d7f44365b9bcda5ebb9439a43daf5e6",
+      "paperId": "8f7297454d7f44365b9bcda5ebb9439a43daf5e6",
+      "title": "Can LLMs Express Their Uncertainty? An Empirical Evaluation of Confidence Elicitation in LLMs",
+      "year": 2023,
+      "abstract": "Empowering large language models to accurately express confidence in their answers is essential for trustworthy decision-making. Previous confidence elicitation methods, which primarily rely on white-box access to internal model information or model fine-tuning, have become less suitable for LLMs, especially closed-source commercial APIs. This leads to a growing need to explore the untapped area of black-box approaches for LLM uncertainty estimation. To better break down the problem, we define a systematic framework with three components: prompting strategies for eliciting verbalized confidence, sampling methods for generating multiple responses, and aggregation techniques for computing consistency. We then benchmark these methods on two key tasks-confidence calibration and failure prediction-across five types of datasets (e.g., commonsense and arithmetic reasoning) and five widely-used LLMs including GPT-4 and LLaMA 2 Chat. Our analysis uncovers several key insights: 1) LLMs, when verbalizing their confidence, tend to be overconfident, potentially imitating human patterns of expressing confidence. 2) As model capability scales up, both calibration and failure prediction performance improve. 3) Employing our proposed strategies, such as human-inspired prompts, consistency among multiple responses, and better aggregation strategies can help mitigate this overconfidence from various perspectives. 4) Comparisons with white-box methods indicate that while white-box methods perform better, the gap is narrow, e.g., 0.522 to 0.605 in AUROC. Despite these advancements, none of these techniques consistently outperform others, and all investigated methods struggle in challenging tasks, such as those requiring professional knowledge, indicating significant scope for improvement. We believe this study can serve as a strong baseline and provide insights for eliciting confidence in black-box LLMs.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2306-13063",
+        "ArXiv": "2306.13063",
+        "DOI": "10.48550/arXiv.2306.13063",
+        "CorpusId": 259224389
+      },
+      "arxiv_id": "2306.13063",
+      "doi": "10.48550/arXiv.2306.13063",
+      "corpus_id": 259224389
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "60",
+      "ref_key": "S2:6cfbbf7604adda1df65932e3c4d157770a2df000",
+      "paperId": "6cfbbf7604adda1df65932e3c4d157770a2df000",
+      "title": "Alignment for Honesty",
+      "year": 2023,
+      "abstract": "Recent research has made significant strides in aligning large language models (LLMs) with helpfulness and harmlessness. In this paper, we argue for the importance of alignment for \\emph{honesty}, ensuring that LLMs proactively refuse to answer questions when they lack knowledge, while still not being overly conservative. However, a pivotal aspect of alignment for honesty involves discerning an LLM's knowledge boundaries, which demands comprehensive solutions in terms of metric development, benchmark creation, and training methodologies. We address these challenges by first establishing a precise problem definition and defining ``honesty'' inspired by the Analects of Confucius. This serves as a cornerstone for developing metrics that effectively measure an LLM's honesty by quantifying its progress post-alignment. Furthermore, we introduce a flexible training framework which is further instantiated by several efficient fine-tuning techniques that emphasize honesty without sacrificing performance on other tasks. Our extensive experiments reveal that these aligned models show a marked increase in honesty, as indicated by our proposed metrics. We open-source all relevant resources to facilitate future research at \\url{https://github.com/GAIR-NLP/alignment-for-honesty}.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2312-07000",
+        "ArXiv": "2312.07000",
+        "DOI": "10.48550/arXiv.2312.07000",
+        "CorpusId": 266174420
+      },
+      "arxiv_id": "2312.07000",
+      "doi": "10.48550/arXiv.2312.07000",
+      "corpus_id": 266174420
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "61",
+      "ref_key": "S2:2f4cc3f4a1c70cd5aca14c1304037491cd3aeb9b",
+      "paperId": "2f4cc3f4a1c70cd5aca14c1304037491cd3aeb9b",
+      "title": "RigorLLM: Resilient Guardrails for Large Language Models against Undesired Content",
+      "year": 2024,
+      "abstract": "Recent advancements in Large Language Models (LLMs) have showcased remarkable capabilities across various tasks in different domains. However, the emergence of biases and the potential for generating harmful content in LLMs, particularly under malicious inputs, pose significant challenges. Current mitigation strategies, while effective, are not resilient under adversarial attacks. This paper introduces Resilient Guardrails for Large Language Models (RigorLLM), a novel framework designed to efficiently and effectively moderate harmful and unsafe inputs and outputs for LLMs. By employing a multi-faceted approach that includes energy-based training data augmentation through Langevin dynamics, optimizing a safe suffix for inputs via minimax optimization, and integrating a fusion-based model combining robust KNN with LLMs based on our data augmentation, RigorLLM offers a robust solution to harmful content moderation. Our experimental evaluations demonstrate that RigorLLM not only outperforms existing baselines like OpenAI API and Perspective API in detecting harmful content but also exhibits unparalleled resilience to jailbreaking attacks. The innovative use of constrained optimization and a fusion-based guardrail approach represents a significant step forward in developing more secure and reliable LLMs, setting a new standard for content moderation frameworks in the face of evolving digital threats.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2403-13031",
+        "ArXiv": "2403.13031",
+        "DOI": "10.48550/arXiv.2403.13031",
+        "CorpusId": 268536710
+      },
+      "arxiv_id": "2403.13031",
+      "doi": "10.48550/arXiv.2403.13031",
+      "corpus_id": 268536710
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "62",
+      "ref_key": "S2:296cad46f56329843ded4a8b7d7633c9d436f113",
+      "paperId": "296cad46f56329843ded4a8b7d7633c9d436f113",
+      "title": "On Uncertainty Calibration and Selective Generation in Probabilistic Neural Summarization: A Benchmark Study",
+      "year": 2023,
+      "abstract": "Modern deep models for summarization attains impressive benchmark performance, but they are prone to generating miscalibrated predictive uncertainty. This means that they assign high confidence to low-quality predictions, leading to compromised reliability and trustworthiness in real-world applications. Probabilistic deep learning methods are common solutions to the miscalibration problem. However, their relative effectiveness in complex autoregressive summarization tasks are not well-understood. In this work, we thoroughly investigate different state-of-the-art probabilistic methods' effectiveness in improving the uncertainty quality of the neural summarization models, across three large-scale benchmarks with varying difficulty. We show that the probabilistic methods consistently improve the model's generation and uncertainty quality, leading to improved selective generation performance (i.e., abstaining from low-quality summaries) in practice. We also reveal notable failure patterns of probabilistic methods widely-adopted in NLP community (e.g., Deep Ensemble and Monte Carlo Dropout), cautioning the importance of choosing appropriate method for the data setting.",
+      "externalIds": {
+        "ArXiv": "2304.08653",
+        "DBLP": "conf/emnlp/ZablotskaiaPMN023",
+        "DOI": "10.48550/arXiv.2304.08653",
+        "CorpusId": 258187125
+      },
+      "arxiv_id": "2304.08653",
+      "doi": "10.48550/arXiv.2304.08653",
+      "corpus_id": 258187125
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "63",
+      "ref_key": "S2:8ba57771dd6345821a0cbe83c4c7eb50f66b7b65",
+      "paperId": "8ba57771dd6345821a0cbe83c4c7eb50f66b7b65",
+      "title": "AutoDefense: Multi-Agent LLM Defense against Jailbreak Attacks",
+      "year": 2024,
+      "abstract": "Despite extensive pre-training in moral alignment to prevent generating harmful information, large language models (LLMs) remain vulnerable to jailbreak attacks. In this paper, we propose AutoDefense, a multi-agent defense framework that filters harmful responses from LLMs. With the response-filtering mechanism, our framework is robust against different jailbreak attack prompts, and can be used to defend different victim models. AutoDefense assigns different roles to LLM agents and employs them to complete the defense task collaboratively. The division in tasks enhances the overall instruction-following of LLMs and enables the integration of other defense components as tools. With AutoDefense, small open-source LMs can serve as agents and defend larger models against jailbreak attacks. Our experiments show that AutoDefense can effectively defense against different jailbreak attacks, while maintaining the performance at normal user request. For example, we reduce the attack success rate on GPT-3.5 from 55.74% to 7.95% using LLaMA-2-13b with a 3-agent system. Our code and data are publicly available at https://github.com/XHMY/AutoDefense.",
+      "externalIds": {
+        "ArXiv": "2403.04783",
+        "DBLP": "journals/corr/abs-2403-04783",
+        "DOI": "10.48550/arXiv.2403.04783",
+        "CorpusId": 268297202
+      },
+      "arxiv_id": "2403.04783",
+      "doi": "10.48550/arXiv.2403.04783",
+      "corpus_id": 268297202
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "64",
+      "ref_key": "S2:e92e8ff1becb9a9e4a7dd09878eaacb2a62ffb6b",
+      "paperId": "e92e8ff1becb9a9e4a7dd09878eaacb2a62ffb6b",
+      "title": "Defending Large Language Models Against Jailbreaking Attacks Through Goal Prioritization",
+      "year": 2023,
+      "abstract": "While significant attention has been dedicated to exploiting weaknesses in LLMs through jailbreaking attacks, there remains a paucity of effort in defending against these attacks. We point out a pivotal factor contributing to the success of jailbreaks: the intrinsic conflict between the goals of being helpful and ensuring safety. Accordingly, we propose to integrate goal prioritization at both training and inference stages to counteract. Implementing goal prioritization during inference substantially diminishes the Attack Success Rate (ASR) of jailbreaking from 66.4% to 3.6% for ChatGPT. And integrating goal prioritization into model training reduces the ASR from 71.0% to 6.6% for Llama2-13B. Remarkably, even in scenarios where no jailbreaking samples are included during training, our approach slashes the ASR by half. Additionally, our findings reveal that while stronger LLMs face greater safety risks, they also possess a greater capacity to be steered towards defending against such attacks, both because of their stronger ability in instruction following. Our work thus contributes to the comprehension of jailbreaking attacks and defenses, and sheds light on the relationship between LLMs' capability and safety. Our code is available at \\url{https://github.com/thu-coai/JailbreakDefense_GoalPriority}.",
+      "externalIds": {
+        "DBLP": "conf/acl/ZhangYKMWH24",
+        "ArXiv": "2311.09096",
+        "DOI": "10.48550/arXiv.2311.09096",
+        "CorpusId": 265212812
+      },
+      "arxiv_id": "2311.09096",
+      "doi": "10.48550/arXiv.2311.09096",
+      "corpus_id": 265212812
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "65",
+      "ref_key": "S2:97d24f9f0d81007d57cc43e61bf2b0c9081fe184",
+      "paperId": "97d24f9f0d81007d57cc43e61bf2b0c9081fe184",
+      "title": "R-Tuning: Instructing Large Language Models to Say ‘I Don’t Know’",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have revolutionized numerous domains with their impressive performance but still face their challenges. A predominant issue is the propensity for these models to generate non-existent facts, a concern termed hallucination. Our research is motivated by the observation that previous instruction tuning methods force the model to complete a sentence no matter whether the model knows the knowledge or not. When the question is out of the parametric knowledge, it will try to make up something and fail to indicate when it lacks knowledge. In this paper, we present a new approach called Refusal-Aware Instruction Tuning (R-Tuning). This approach is formalized by first identifying the disparity in knowledge encompassed by pre-trained parameters compared to that of instruction tuning data. Then, we construct the refusal-aware data based on the knowledge intersection, to tune LLMs to refrain from responding to questions beyond its parametric knowledge. Experimental results demonstrate R-Tuning effectively improves a model’s ability to answer known questions and refrain from answering unknown questions. Furthermore, when tested on out-of-domain datasets, the refusal ability was found to be a meta-skill that could be generalized to other tasks. Further analysis surprisingly finds that learning the uncertainty results in better calibration and an improved ability to estimate the uncertainty than uncertainty-based testing. Our code is available at https://github.com/shizhediao/R-Tuning",
+      "externalIds": {
+        "ACL": "2024.naacl-long.394",
+        "ArXiv": "2311.09677",
+        "DBLP": "conf/naacl/ZhangDLFL0CJZ24",
+        "DOI": "10.18653/v1/2024.naacl-long.394",
+        "CorpusId": 265220839
+      },
+      "arxiv_id": "2311.09677",
+      "doi": "10.18653/v1/2024.naacl-long.394",
+      "corpus_id": 265220839
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "66",
+      "ref_key": "S2:8fd29e810540c40846cddce3cbdf5060cd59fb57",
+      "paperId": "8fd29e810540c40846cddce3cbdf5060cd59fb57",
+      "title": "Intention Analysis Makes LLMs A Good Jailbreak Defender",
+      "year": 2024,
+      "abstract": "Aligning large language models (LLMs) with human values, particularly when facing complex and stealthy jailbreak attacks, presents a formidable challenge. Unfortunately, existing methods often overlook this intrinsic nature of jailbreaks, which limits their effectiveness in such complex scenarios. In this study, we present a simple yet highly effective defense strategy, i.e., Intention Analysis ($\\mathbb{IA}$). $\\mathbb{IA}$ works by triggering LLMs' inherent self-correct and improve ability through a two-stage process: 1) analyzing the essential intention of the user input, and 2) providing final policy-aligned responses based on the first round conversation. Notably, $\\mathbb{IA}$ is an inference-only method, thus could enhance LLM safety without compromising their helpfulness. Extensive experiments on varying jailbreak benchmarks across a wide range of LLMs show that $\\mathbb{IA}$ could consistently and significantly reduce the harmfulness in responses (averagely -48.2% attack success rate). Encouragingly, with our $\\mathbb{IA}$, Vicuna-7B even outperforms GPT-3.5 regarding attack success rate. We empirically demonstrate that, to some extent, $\\mathbb{IA}$ is robust to errors in generated intentions. Further analyses reveal the underlying principle of $\\mathbb{IA}$: suppressing LLM's tendency to follow jailbreak prompts, thereby enhancing safety.",
+      "externalIds": {
+        "ArXiv": "2401.06561",
+        "DBLP": "conf/coling/Zhang0ZT25",
+        "CorpusId": 266977251
+      },
+      "arxiv_id": "2401.06561",
+      "doi": null,
+      "corpus_id": 266977251
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "67",
+      "ref_key": "S2:32c5b515cab893e5e4bf3f90c8b6c8262bd7ac09",
+      "paperId": "32c5b515cab893e5e4bf3f90c8b6c8262bd7ac09",
+      "title": "Self-Alignment for Factuality: Mitigating Hallucinations in LLMs via Self-Evaluation",
+      "year": 2024,
+      "abstract": "Despite showing increasingly human-like abilities, large language models (LLMs) often struggle with factual inaccuracies, i.e.\"hallucinations\", even when they hold relevant knowledge. To address these hallucinations, current approaches typically necessitate high-quality human factuality annotations. In this work, we explore Self-Alignment for Factuality, where we leverage the self-evaluation capability of an LLM to provide training signals that steer the model towards factuality. Specifically, we incorporate Self-Eval, a self-evaluation component, to prompt an LLM to validate the factuality of its own generated responses solely based on its internal knowledge. Additionally, we design Self-Knowledge Tuning (SK-Tuning) to augment the LLM's self-evaluation ability by improving the model's confidence estimation and calibration. We then utilize these self-annotated responses to fine-tune the model via Direct Preference Optimization algorithm. We show that the proposed self-alignment approach substantially enhances factual accuracy over Llama family models across three key knowledge-intensive tasks on TruthfulQA and BioGEN.",
+      "externalIds": {
+        "ArXiv": "2402.09267",
+        "DBLP": "conf/acl/ZhangPTZJSMM24",
+        "DOI": "10.48550/arXiv.2402.09267",
+        "CorpusId": 267657805
+      },
+      "arxiv_id": "2402.09267",
+      "doi": "10.48550/arXiv.2402.09267",
+      "corpus_id": 267657805
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "68",
+      "ref_key": "S2:891edceb78a274b0c2494d8176bc4d6f6e3f9cbc",
+      "paperId": "891edceb78a274b0c2494d8176bc4d6f6e3f9cbc",
+      "title": "Calibrating Sequence likelihood Improves Conditional Language Generation",
+      "year": 2022,
+      "abstract": "Conditional language models are predominantly trained with maximum likelihood estimation (MLE), giving probability mass to sparsely observed target sequences. While MLE trained models assign high probability to plausible sequences given the context, the model probabilities often do not accurately rank-order generated sequences by quality. This has been empirically observed in beam search decoding as output quality degrading with large beam sizes, and decoding strategies benefiting from heuristics such as length normalization and repetition-blocking. In this work, we introduce sequence likelihood calibration (SLiC) where the likelihood of model generated sequences are calibrated to better align with reference sequences in the model's latent space. With SLiC, decoding heuristics become unnecessary and decoding candidates' quality significantly improves regardless of the decoding method. Furthermore, SLiC shows no sign of diminishing returns with model scale, and presents alternative ways to improve quality with limited training and inference budgets. With SLiC, we exceed or match SOTA results on a wide range of generation tasks spanning abstractive summarization, question generation, abstractive question answering and data-to-text generation, even with modest-sized models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-00045",
+        "ArXiv": "2210.00045",
+        "DOI": "10.48550/arXiv.2210.00045",
+        "CorpusId": 252683988
+      },
+      "arxiv_id": "2210.00045",
+      "doi": "10.48550/arXiv.2210.00045",
+      "corpus_id": 252683988
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "69",
+      "ref_key": "S2:50ceabc6aa41e08480fa5976342bfe04bb47bce3",
+      "paperId": "50ceabc6aa41e08480fa5976342bfe04bb47bce3",
+      "title": "Defending Jailbreak Prompts via In-Context Adversarial Game",
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs) demonstrate remarkable capabilities across diverse applications. However, concerns regarding their security, particularly the vulnerability to jailbreak attacks, persist. Drawing inspiration from adversarial training in deep learning and LLM agent learning processes, we introduce the In-Context Adversarial Game (ICAG) for defending against jailbreaks without the need for fine-tuning. ICAG leverages agent learning to conduct an adversarial game, aiming to dynamically extend knowledge to defend against jailbreaks. Unlike traditional methods that rely on static datasets, ICAG employs an iterative process to enhance both the defense and attack agents. This continuous improvement process strengthens defenses against newly generated jailbreak prompts. Our empirical studies affirm ICAG’s efficacy, where LLMs safeguarded by ICAG exhibit significantly reduced jailbreak success rates across various attack scenarios. Moreover, ICAG demonstrates remarkable transferability to other LLMs, indicating its potential as a versatile defense mechanism. The code is available at https://github.com/YujunZhou/In-Context-Adversarial-Game.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-13148",
+        "ACL": "2024.emnlp-main.1121",
+        "ArXiv": "2402.13148",
+        "DOI": "10.48550/arXiv.2402.13148",
+        "CorpusId": 267760185
+      },
+      "arxiv_id": "2402.13148",
+      "doi": "10.48550/arXiv.2402.13148",
+      "corpus_id": 267760185
+    },
+    {
+      "paper_id": "2407.18418",
+      "ref_index": "70",
+      "ref_key": "S2:dd35405d8e562fa1df4338839878e9c94817cfdd",
+      "paperId": "dd35405d8e562fa1df4338839878e9c94817cfdd",
+      "title": "Robust Prompt Optimization for Defending Language Models Against Jailbreaking Attacks",
+      "year": 2024,
+      "abstract": "Despite advances in AI alignment, large language models (LLMs) remain vulnerable to adversarial attacks or jailbreaking, in which adversaries can modify prompts to induce unwanted behavior. While some defenses have been proposed, they have not been adapted to newly proposed attacks and more challenging threat models. To address this, we propose an optimization-based objective for defending LLMs against jailbreaking attacks and an algorithm, Robust Prompt Optimization (RPO) to create robust system-level defenses. Our approach directly incorporates the adversary into the defensive objective and optimizes a lightweight and transferable suffix, enabling RPO to adapt to worst-case adaptive attacks. Our theoretical and experimental results show improved robustness to both jailbreaks seen during optimization and unknown jailbreaks, reducing the attack success rate (ASR) on GPT-4 to 6% and Llama-2 to 0% on JailbreakBench, setting the state-of-the-art. Code can be found at https://github.com/lapisrocks/rpo",
+      "externalIds": {
+        "ArXiv": "2401.17263",
+        "DBLP": "journals/corr/abs-2401-17263",
+        "DOI": "10.48550/arXiv.2401.17263",
+        "CorpusId": 267320750
+      },
+      "arxiv_id": "2401.17263",
+      "doi": "10.48550/arXiv.2401.17263",
+      "corpus_id": 267320750
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "Abstention methods in LLMs": {
+        "Pretraining": {
+          "Data augmentation": {
+            "cae223fe3654b0bd3c1361dad204218ac60ed771": {}
+          }
+        },
+        "Alignment": {
+          "Instruction tuning": {
+            "a4c921bdef167ae54cc3a40643e6e3ed13d49a61": {},
+            "5603e598fa1916d1c696004bc360b75931547105": {},
+            "25cee84e3a1541697a7c97443d7526574127c344": {},
+            "9aa53e8b6b01fcb5ae8b8828cad2bace83e941a2": {},
+            "accb2fab67c76d5668908107cd50cbb81110c389": {},
+            "f18e5a844c37e5342f8f3d409c74c1a9c91d1f8f": {},
+            "c7ad19da81e24c387f0377fef6d19b0fce2cf470": {},
+            "6cfbbf7604adda1df65932e3c4d157770a2df000": {},
+            "e92e8ff1becb9a9e4a7dd09878eaacb2a62ffb6b": {},
+            "97d24f9f0d81007d57cc43e61bf2b0c9081fe184": {}
+          },
+          "Learning from   preferences": {
+            "0286b2736a114198b25fb5553c671c33aed5d477": {},
+            "0f7308fbcae43d22813f70c334c2425df0b1cce1": {},
+            "6fe7e6ce3cc0ebd038caa456d73fd7472e7d6c38": {},
+            "d82a827fa21cce0b601ad21b6db606b8413ed547": {},
+            "2751de08d6dbec07f53808231c016e96b075b06c": {},
+            "95a52dd5adf6eb8d918cdfbf6189aab4eaa8e607": {},
+            "422e4b666cbd4dd287a458b8b559cd2426a4f60d": {},
+            "f05c288caeb9a14ef387e6867934ced3d2200259": {},
+            "57e849d0de13ed5f91d086936296721d4ff75a75": {},
+            "32c5b515cab893e5e4bf3f90c8b6c8262bd7ac09": {}
+          }
+        },
+        "Inference": {
+          "Input-processing": {
+            "Query processing": {
+              "b91c4edd30b63cd1cb1b86cbeefb33a461535e09": {},
+              "c1d1842e08716cbf7250167969522a1705d8bcd3": {},
+              "3e30a7ac4886b28eb50151f58e14a1d698cccd0e": {},
+              "1ab91d6ac7afc1a0121487a9089fa70edc1634d4": {},
+              "3a1f8829e641b46f661775f64a7f27b933a46103": {},
+              "936a6191241f76682f51bf49c7c033effbf80227": {},
+              "41cc3338635cde85316a0bcb934bffc73008761a": {}
+            }
+          },
+          "In-processing": {
+            "Probing LLM's   inner state": {
+              "f406aceba4f29cc7cfbe7edb2f52f01374486589": {},
+              "d9cfa9d7dabd39b66a8c11e5dde69ba45e91093d": {},
+              "f62acb5a743ea4d47a045460a9ee346c2cec5068": {},
+              "142ebbf4760145f591166bde2564ac70c001e927": {},
+              "cb693ce346f44e6b89ee814c6bb9f0e5cc2fa9d2": {},
+              "298f67a9719e74192296fa2428776c46161a256a": {},
+              "a267cfbd6930c8e2c720104ae4a90e39461a6694": {},
+              "f21d0177e9374bb8579c1d9c71319f212f62b3d5": {}
+            },
+            "Uncertainty   estimation": {
+              "163b4d6a79a5b19af88b8585456363340d9efd04": {},
+              "9386242a9ad5c1a15023043ef63d45e42ceac546": {},
+              "5424e311319c58847b4c690d5c91090e3b6a4ac3": {},
+              "142ebbf4760145f591166bde2564ac70c001e927": {},
+              "507465f8d46489a68a527cb5304d76bdb6c31ed9": {},
+              "374dd173491a59a10bbb2b3519ebcfe3649f529d": {},
+              "04365f0f1db4c659c3297cb8e70c39b38ed3b487": {},
+              "df9981b9bbfc619652e84cd0eefa595274da2fef": {},
+              "ab4ce5dda7ad4d9032995c9c049a89d65723c6aa": {},
+              "6ec6b0c37206bd086e5ebe80ffc69f1e06a13d82": {},
+              "8f7297454d7f44365b9bcda5ebb9439a43daf5e6": {}
+            },
+            "Calibration-based": {
+              "52f47e781852a77abedada48cfa971b24c919dde": {},
+              "67fa2f2072cca1071ed2c820d6a7f50de6ea2ff3": {},
+              "33422275fbb9958f55419620697faf531482699b": {},
+              "ffe9a70445f99516aa3c86651f9121c84b1b78cc": {},
+              "d77c78c9439422ed88e754f776a642d43a8acb66": {},
+              "5248b6e75e7e9e5a96c6cb48e71cbef9b2ea21d3": {},
+              "b145ea2049648535d6081407ebd315b072248183": {},
+              "551b05734eb2181c4ca009a411144e8447ed1606": {},
+              "296cad46f56329843ded4a8b7d7633c9d436f113": {},
+              "891edceb78a274b0c2494d8176bc4d6f6e3f9cbc": {}
+            },
+            "Consistency-based": {
+              "cd29c25c489562b409a60f83365f93f33ee1a0a1": {},
+              "9386242a9ad5c1a15023043ef63d45e42ceac546": {},
+              "1f9f25aad947030fe3206114fa2ac75e8b590515": {},
+              "142ebbf4760145f591166bde2564ac70c001e927": {},
+              "ad934a9344f68fcc0b9aa704102aa48c39c5b591": {},
+              "8cf9b49698fdb1b754df2556576412a7b44929f6": {},
+              "a267cfbd6930c8e2c720104ae4a90e39461a6694": {},
+              "8f7297454d7f44365b9bcda5ebb9439a43daf5e6": {},
+              "2f4cc3f4a1c70cd5aca14c1304037491cd3aeb9b": {}
+            },
+            "In-context learning": {
+              "142ebbf4760145f591166bde2564ac70c001e927": {},
+              "ad934a9344f68fcc0b9aa704102aa48c39c5b591": {},
+              "f6d0d7c8e815de607e03da73467ba538caad4d92": {},
+              "ecdfc556828dc59d8a0009016fcbe97a06cf7e23": {},
+              "04365f0f1db4c659c3297cb8e70c39b38ed3b487": {},
+              "a267cfbd6930c8e2c720104ae4a90e39461a6694": {},
+              "accb2fab67c76d5668908107cd50cbb81110c389": {},
+              "6b135e922a0c673aeb0b05c5aeecdb6c794791c6": {},
+              "38264290a8a3f71fd5b3a86ea35a8b528d4e3d10": {},
+              "6cfbbf7604adda1df65932e3c4d157770a2df000": {},
+              "e92e8ff1becb9a9e4a7dd09878eaacb2a62ffb6b": {},
+              "8fd29e810540c40846cddce3cbdf5060cd59fb57": {},
+              "50ceabc6aa41e08480fa5976342bfe04bb47bce3": {},
+              "dd35405d8e562fa1df4338839878e9c94817cfdd": {}
+            }
+          },
+          "Output-processing": {
+            "Self evaluation": {
+              "2cdd5c3dc42c0df40bc8839709869af3560d4bfe": {},
+              "142ebbf4760145f591166bde2564ac70c001e927": {},
+              "04365f0f1db4c659c3297cb8e70c39b38ed3b487": {},
+              "accb2fab67c76d5668908107cd50cbb81110c389": {},
+              "c7ad19da81e24c387f0377fef6d19b0fce2cf470": {}
+            },
+            "LLM collaboration": {
+              "1bf7a2a27fc1f8db6e9404db1be3d355d65722fe": {},
+              "25cee84e3a1541697a7c97443d7526574127c344": {},
+              "d77c78c9439422ed88e754f776a642d43a8acb66": {},
+              "ecdfc556828dc59d8a0009016fcbe97a06cf7e23": {},
+              "c7ad19da81e24c387f0377fef6d19b0fce2cf470": {},
+              "8ba57771dd6345821a0cbe83c4c7eb50f66b7b65": {}
+            }
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000001",
+        "paperId": "cae223fe3654b0bd3c1361dad204218ac60ed771",
+        "ref_index": "36",
+        "path": [
+          "Abstention methods in LLMs",
+          "Pretraining",
+          "Data augmentation"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000002",
+        "paperId": "a4c921bdef167ae54cc3a40643e6e3ed13d49a61",
+        "ref_index": "4",
+        "path": [
+          "Abstention methods in LLMs",
+          "Alignment",
+          "Instruction tuning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000003",
+        "paperId": "5603e598fa1916d1c696004bc360b75931547105",
+        "ref_index": "6",
+        "path": [
+          "Abstention methods in LLMs",
+          "Alignment",
+          "Instruction tuning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000004",
+        "paperId": "25cee84e3a1541697a7c97443d7526574127c344",
+        "ref_index": "14",
+        "path": [
+          "Abstention methods in LLMs",
+          "Alignment",
+          "Instruction tuning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000005",
+        "paperId": "9aa53e8b6b01fcb5ae8b8828cad2bace83e941a2",
+        "ref_index": "33",
+        "path": [
+          "Abstention methods in LLMs",
+          "Alignment",
+          "Instruction tuning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000006",
+        "paperId": "accb2fab67c76d5668908107cd50cbb81110c389",
+        "ref_index": "50",
+        "path": [
+          "Abstention methods in LLMs",
+          "Alignment",
+          "Instruction tuning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000007",
+        "paperId": "f18e5a844c37e5342f8f3d409c74c1a9c91d1f8f",
+        "ref_index": "51",
+        "path": [
+          "Abstention methods in LLMs",
+          "Alignment",
+          "Instruction tuning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000008",
+        "paperId": "c7ad19da81e24c387f0377fef6d19b0fce2cf470",
+        "ref_index": "52",
+        "path": [
+          "Abstention methods in LLMs",
+          "Alignment",
+          "Instruction tuning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000009",
+        "paperId": "6cfbbf7604adda1df65932e3c4d157770a2df000",
+        "ref_index": "60",
+        "path": [
+          "Abstention methods in LLMs",
+          "Alignment",
+          "Instruction tuning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000010",
+        "paperId": "e92e8ff1becb9a9e4a7dd09878eaacb2a62ffb6b",
+        "ref_index": "64",
+        "path": [
+          "Abstention methods in LLMs",
+          "Alignment",
+          "Instruction tuning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000011",
+        "paperId": "97d24f9f0d81007d57cc43e61bf2b0c9081fe184",
+        "ref_index": "65",
+        "path": [
+          "Abstention methods in LLMs",
+          "Alignment",
+          "Instruction tuning"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000012",
+        "paperId": "0286b2736a114198b25fb5553c671c33aed5d477",
+        "ref_index": "2",
+        "path": [
+          "Abstention methods in LLMs",
+          "Alignment",
+          "Learning from   preferences"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000013",
+        "paperId": "0f7308fbcae43d22813f70c334c2425df0b1cce1",
+        "ref_index": "10",
+        "path": [
+          "Abstention methods in LLMs",
+          "Alignment",
+          "Learning from   preferences"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000014",
+        "paperId": "6fe7e6ce3cc0ebd038caa456d73fd7472e7d6c38",
+        "ref_index": "15",
+        "path": [
+          "Abstention methods in LLMs",
+          "Alignment",
+          "Learning from   preferences"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000015",
+        "paperId": "d82a827fa21cce0b601ad21b6db606b8413ed547",
+        "ref_index": "24",
+        "path": [
+          "Abstention methods in LLMs",
+          "Alignment",
+          "Learning from   preferences"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000016",
+        "paperId": "2751de08d6dbec07f53808231c016e96b075b06c",
+        "ref_index": "27",
+        "path": [
+          "Abstention methods in LLMs",
+          "Alignment",
+          "Learning from   preferences"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000017",
+        "paperId": "95a52dd5adf6eb8d918cdfbf6189aab4eaa8e607",
+        "ref_index": "29",
+        "path": [
+          "Abstention methods in LLMs",
+          "Alignment",
+          "Learning from   preferences"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000018",
+        "paperId": "422e4b666cbd4dd287a458b8b559cd2426a4f60d",
+        "ref_index": "41",
+        "path": [
+          "Abstention methods in LLMs",
+          "Alignment",
+          "Learning from   preferences"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000019",
+        "paperId": "f05c288caeb9a14ef387e6867934ced3d2200259",
+        "ref_index": "45",
+        "path": [
+          "Abstention methods in LLMs",
+          "Alignment",
+          "Learning from   preferences"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000020",
+        "paperId": "57e849d0de13ed5f91d086936296721d4ff75a75",
+        "ref_index": "48",
+        "path": [
+          "Abstention methods in LLMs",
+          "Alignment",
+          "Learning from   preferences"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000021",
+        "paperId": "32c5b515cab893e5e4bf3f90c8b6c8262bd7ac09",
+        "ref_index": "67",
+        "path": [
+          "Abstention methods in LLMs",
+          "Alignment",
+          "Learning from   preferences"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000022",
+        "paperId": "b91c4edd30b63cd1cb1b86cbeefb33a461535e09",
+        "ref_index": "12",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "Input-processing",
+          "Query processing"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000023",
+        "paperId": "c1d1842e08716cbf7250167969522a1705d8bcd3",
+        "ref_index": "18",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "Input-processing",
+          "Query processing"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000024",
+        "paperId": "3e30a7ac4886b28eb50151f58e14a1d698cccd0e",
+        "ref_index": "19",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "Input-processing",
+          "Query processing"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000025",
+        "paperId": "1ab91d6ac7afc1a0121487a9089fa70edc1634d4",
+        "ref_index": "26",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "Input-processing",
+          "Query processing"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000026",
+        "paperId": "3a1f8829e641b46f661775f64a7f27b933a46103",
+        "ref_index": "38",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "Input-processing",
+          "Query processing"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000027",
+        "paperId": "936a6191241f76682f51bf49c7c033effbf80227",
+        "ref_index": "44",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "Input-processing",
+          "Query processing"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000028",
+        "paperId": "41cc3338635cde85316a0bcb934bffc73008761a",
+        "ref_index": "57",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "Input-processing",
+          "Query processing"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000029",
+        "paperId": "f406aceba4f29cc7cfbe7edb2f52f01374486589",
+        "ref_index": "1",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Probing LLM's   inner state"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000030",
+        "paperId": "d9cfa9d7dabd39b66a8c11e5dde69ba45e91093d",
+        "ref_index": "3",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Probing LLM's   inner state"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000031",
+        "paperId": "f62acb5a743ea4d47a045460a9ee346c2cec5068",
+        "ref_index": "8",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Probing LLM's   inner state"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000032",
+        "paperId": "142ebbf4760145f591166bde2564ac70c001e927",
+        "ref_index": "22",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Probing LLM's   inner state"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000033",
+        "paperId": "cb693ce346f44e6b89ee814c6bb9f0e5cc2fa9d2",
+        "ref_index": "23",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Probing LLM's   inner state"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000034",
+        "paperId": "298f67a9719e74192296fa2428776c46161a256a",
+        "ref_index": "31",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Probing LLM's   inner state"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000035",
+        "paperId": "a267cfbd6930c8e2c720104ae4a90e39461a6694",
+        "ref_index": "43",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Probing LLM's   inner state"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000036",
+        "paperId": "f21d0177e9374bb8579c1d9c71319f212f62b3d5",
+        "ref_index": "53",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Probing LLM's   inner state"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000037",
+        "paperId": "163b4d6a79a5b19af88b8585456363340d9efd04",
+        "ref_index": "0",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Uncertainty   estimation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000038",
+        "paperId": "9386242a9ad5c1a15023043ef63d45e42ceac546",
+        "ref_index": "9",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Uncertainty   estimation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000039",
+        "paperId": "5424e311319c58847b4c690d5c91090e3b6a4ac3",
+        "ref_index": "13",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Uncertainty   estimation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000040",
+        "paperId": "142ebbf4760145f591166bde2564ac70c001e927",
+        "ref_index": "22",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Uncertainty   estimation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000041",
+        "paperId": "507465f8d46489a68a527cb5304d76bdb6c31ed9",
+        "ref_index": "25",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Uncertainty   estimation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000042",
+        "paperId": "374dd173491a59a10bbb2b3519ebcfe3649f529d",
+        "ref_index": "28",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Uncertainty   estimation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000043",
+        "paperId": "04365f0f1db4c659c3297cb8e70c39b38ed3b487",
+        "ref_index": "39",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Uncertainty   estimation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000044",
+        "paperId": "df9981b9bbfc619652e84cd0eefa595274da2fef",
+        "ref_index": "42",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Uncertainty   estimation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000045",
+        "paperId": "ab4ce5dda7ad4d9032995c9c049a89d65723c6aa",
+        "ref_index": "46",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Uncertainty   estimation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000046",
+        "paperId": "6ec6b0c37206bd086e5ebe80ffc69f1e06a13d82",
+        "ref_index": "47",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Uncertainty   estimation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000047",
+        "paperId": "8f7297454d7f44365b9bcda5ebb9439a43daf5e6",
+        "ref_index": "59",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Uncertainty   estimation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000048",
+        "paperId": "52f47e781852a77abedada48cfa971b24c919dde",
+        "ref_index": "11",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Calibration-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000049",
+        "paperId": "67fa2f2072cca1071ed2c820d6a7f50de6ea2ff3",
+        "ref_index": "17",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Calibration-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000050",
+        "paperId": "33422275fbb9958f55419620697faf531482699b",
+        "ref_index": "21",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Calibration-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000051",
+        "paperId": "ffe9a70445f99516aa3c86651f9121c84b1b78cc",
+        "ref_index": "32",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Calibration-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000052",
+        "paperId": "d77c78c9439422ed88e754f776a642d43a8acb66",
+        "ref_index": "34",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Calibration-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000053",
+        "paperId": "5248b6e75e7e9e5a96c6cb48e71cbef9b2ea21d3",
+        "ref_index": "49",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Calibration-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000054",
+        "paperId": "b145ea2049648535d6081407ebd315b072248183",
+        "ref_index": "55",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Calibration-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000055",
+        "paperId": "551b05734eb2181c4ca009a411144e8447ed1606",
+        "ref_index": "58",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Calibration-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000056",
+        "paperId": "296cad46f56329843ded4a8b7d7633c9d436f113",
+        "ref_index": "62",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Calibration-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000057",
+        "paperId": "891edceb78a274b0c2494d8176bc4d6f6e3f9cbc",
+        "ref_index": "68",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Calibration-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000058",
+        "paperId": "cd29c25c489562b409a60f83365f93f33ee1a0a1",
+        "ref_index": "5",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Consistency-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000059",
+        "paperId": "9386242a9ad5c1a15023043ef63d45e42ceac546",
+        "ref_index": "9",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Consistency-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000060",
+        "paperId": "1f9f25aad947030fe3206114fa2ac75e8b590515",
+        "ref_index": "20",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Consistency-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000061",
+        "paperId": "142ebbf4760145f591166bde2564ac70c001e927",
+        "ref_index": "22",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Consistency-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000062",
+        "paperId": "ad934a9344f68fcc0b9aa704102aa48c39c5b591",
+        "ref_index": "30",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Consistency-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000063",
+        "paperId": "8cf9b49698fdb1b754df2556576412a7b44929f6",
+        "ref_index": "40",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Consistency-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000064",
+        "paperId": "a267cfbd6930c8e2c720104ae4a90e39461a6694",
+        "ref_index": "43",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Consistency-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000065",
+        "paperId": "8f7297454d7f44365b9bcda5ebb9439a43daf5e6",
+        "ref_index": "59",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Consistency-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000066",
+        "paperId": "2f4cc3f4a1c70cd5aca14c1304037491cd3aeb9b",
+        "ref_index": "61",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "Consistency-based"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000067",
+        "paperId": "142ebbf4760145f591166bde2564ac70c001e927",
+        "ref_index": "22",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "In-context learning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000068",
+        "paperId": "ad934a9344f68fcc0b9aa704102aa48c39c5b591",
+        "ref_index": "30",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "In-context learning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000069",
+        "paperId": "f6d0d7c8e815de607e03da73467ba538caad4d92",
+        "ref_index": "35",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "In-context learning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000070",
+        "paperId": "ecdfc556828dc59d8a0009016fcbe97a06cf7e23",
+        "ref_index": "37",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "In-context learning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000071",
+        "paperId": "04365f0f1db4c659c3297cb8e70c39b38ed3b487",
+        "ref_index": "39",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "In-context learning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000072",
+        "paperId": "a267cfbd6930c8e2c720104ae4a90e39461a6694",
+        "ref_index": "43",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "In-context learning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000073",
+        "paperId": "accb2fab67c76d5668908107cd50cbb81110c389",
+        "ref_index": "50",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "In-context learning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000074",
+        "paperId": "6b135e922a0c673aeb0b05c5aeecdb6c794791c6",
+        "ref_index": "54",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "In-context learning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000075",
+        "paperId": "38264290a8a3f71fd5b3a86ea35a8b528d4e3d10",
+        "ref_index": "56",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "In-context learning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000076",
+        "paperId": "6cfbbf7604adda1df65932e3c4d157770a2df000",
+        "ref_index": "60",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "In-context learning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000077",
+        "paperId": "e92e8ff1becb9a9e4a7dd09878eaacb2a62ffb6b",
+        "ref_index": "64",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "In-context learning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000078",
+        "paperId": "8fd29e810540c40846cddce3cbdf5060cd59fb57",
+        "ref_index": "66",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "In-context learning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000079",
+        "paperId": "50ceabc6aa41e08480fa5976342bfe04bb47bce3",
+        "ref_index": "69",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "In-context learning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000080",
+        "paperId": "dd35405d8e562fa1df4338839878e9c94817cfdd",
+        "ref_index": "70",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "In-processing",
+          "In-context learning"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000081",
+        "paperId": "2cdd5c3dc42c0df40bc8839709869af3560d4bfe",
+        "ref_index": "16",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "Output-processing",
+          "Self evaluation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000082",
+        "paperId": "142ebbf4760145f591166bde2564ac70c001e927",
+        "ref_index": "22",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "Output-processing",
+          "Self evaluation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000083",
+        "paperId": "04365f0f1db4c659c3297cb8e70c39b38ed3b487",
+        "ref_index": "39",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "Output-processing",
+          "Self evaluation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000084",
+        "paperId": "accb2fab67c76d5668908107cd50cbb81110c389",
+        "ref_index": "50",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "Output-processing",
+          "Self evaluation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000085",
+        "paperId": "c7ad19da81e24c387f0377fef6d19b0fce2cf470",
+        "ref_index": "52",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "Output-processing",
+          "Self evaluation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000086",
+        "paperId": "1bf7a2a27fc1f8db6e9404db1be3d355d65722fe",
+        "ref_index": "7",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "Output-processing",
+          "LLM collaboration"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000087",
+        "paperId": "25cee84e3a1541697a7c97443d7526574127c344",
+        "ref_index": "14",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "Output-processing",
+          "LLM collaboration"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000088",
+        "paperId": "d77c78c9439422ed88e754f776a642d43a8acb66",
+        "ref_index": "34",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "Output-processing",
+          "LLM collaboration"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000089",
+        "paperId": "ecdfc556828dc59d8a0009016fcbe97a06cf7e23",
+        "ref_index": "37",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "Output-processing",
+          "LLM collaboration"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000090",
+        "paperId": "c7ad19da81e24c387f0377fef6d19b0fce2cf470",
+        "ref_index": "52",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "Output-processing",
+          "LLM collaboration"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2407.18418",
+        "arxiv_id": "2407.18418",
+        "leaf_mention_id": "2407.18418::000091",
+        "paperId": "8ba57771dd6345821a0cbe83c4c7eb50f66b7b65",
+        "ref_index": "63",
+        "path": [
+          "Abstention methods in LLMs",
+          "Inference",
+          "Output-processing",
+          "LLM collaboration"
+        ],
+        "depth": 4,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 91,
+      "unique_leaf_paper_count": 71,
+      "multi_membership_extra_mentions": 20,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

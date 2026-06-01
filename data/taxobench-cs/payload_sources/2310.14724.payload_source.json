@@ -1,0 +1,2605 @@
+{
+  "paper_id": "2310.14724",
+  "arxiv_id": "2310.14724",
+  "title": "A Survey on LLM-generated Text Detection: Necessity, Methods, and Future Directions",
+  "ref_meta": [
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "0",
+      "ref_key": "S2:9b79eb8d21c8a832daedbfc6d8c31bebe0da3ed5",
+      "paperId": "9b79eb8d21c8a832daedbfc6d8c31bebe0da3ed5",
+      "title": "Tracing Text Provenance via Context-Aware Lexical Substitution",
+      "year": 2021,
+      "abstract": "Text content created by humans or language models is often stolen or misused by adversaries. Tracing text provenance can help claim the ownership of text content or identify the malicious users who distribute misleading content like machine-generated fake news. There have been some attempts to achieve this, mainly based on watermarking techniques. Specifically, traditional text watermarking methods embed watermarks by slightly altering text format like line spacing and font, which, however, are fragile to cross-media transmissions like OCR. Considering this, natural language watermarking methods represent watermarks by replacing words in original sentences with synonyms from handcrafted lexical resources (e.g., WordNet), but they do not consider the substitution’s impact on the overall sentence's meaning. Recently, a transformer-based network was proposed to embed watermarks by modifying the unobtrusive words (e.g., function words), which also impair the sentence's logical and semantic coherence. Besides, one well-trained network fails on other different types of text content.\n To address the limitations mentioned above, we propose a natural language watermarking scheme based on context-aware lexical substitution (LS). Specifically, we employ BERT to suggest LS candidates by inferring the semantic relatedness between the candidates and the original sentence. Based on this, a selection strategy in terms of synchronicity and substitutability is further designed to test whether a word is exactly suitable for carrying the watermark signal. Extensive experiments demonstrate that, under both objective and subjective metrics, our watermarking scheme can well preserve the semantic integrity of original sentences and has a better transferability than existing methods. Besides, the proposed LS approach outperforms the state-of-the-art approach on the Stanford Word Substitution Benchmark.",
+      "externalIds": {
+        "ArXiv": "2112.07873",
+        "DBLP": "conf/aaai/YangZCZMWY22",
+        "DOI": "10.1609/aaai.v36i10.21415",
+        "CorpusId": 245144237
+      },
+      "arxiv_id": "2112.07873",
+      "doi": "10.1609/aaai.v36i10.21415",
+      "corpus_id": 245144237
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "1",
+      "ref_key": "S2:a16ae67070de155789a871cb27ecbf9eaa98b379",
+      "paperId": "a16ae67070de155789a871cb27ecbf9eaa98b379",
+      "title": "All That’s ‘Human’ Is Not Gold: Evaluating Human Evaluation of Generated Text",
+      "year": 2021,
+      "abstract": "Human evaluations are typically considered the gold standard in natural language generation, but as models’ fluency improves, how well can evaluators detect and judge machine-generated text? We run a study assessing non-experts’ ability to distinguish between human- and machine-authored text (GPT2 and GPT3) in three domains (stories, news articles, and recipes). We find that, without training, evaluators distinguished between GPT3- and human-authored text at random chance level. We explore three approaches for quickly training evaluators to better identify GPT3-authored text (detailed instructions, annotated examples, and paired examples) and find that while evaluators’ accuracy improved up to 55%, it did not significantly improve across the three domains. Given the inconsistent results across text domains and the often contradictory reasons evaluators gave for their judgments, we examine the role untrained human evaluations play in NLG evaluation and provide recommendations to NLG researchers for improving human evaluations of text generated from state-of-the-art models.",
+      "externalIds": {
+        "ArXiv": "2107.00061",
+        "ACL": "2021.acl-long.565",
+        "DBLP": "journals/corr/abs-2107-00061",
+        "DOI": "10.18653/v1/2021.acl-long.565",
+        "CorpusId": 235694265
+      },
+      "arxiv_id": "2107.00061",
+      "doi": "10.18653/v1/2021.acl-long.565",
+      "corpus_id": 235694265
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "2",
+      "ref_key": "S2:753dd1be7581e70d65b537e8f62140b8ff8793ac",
+      "paperId": "753dd1be7581e70d65b537e8f62140b8ff8793ac",
+      "title": "Robust Multi-bit Natural Language Watermarking through Invariant Features",
+      "year": 2023,
+      "abstract": "Recent years have witnessed a proliferation of valuable original natural language contents found in subscription-based media outlets, web novel platforms, and outputs of large language models. However, these contents are susceptible to illegal piracy and potential misuse without proper security measures. This calls for a secure watermarking system to guarantee copyright protection through leakage tracing or ownership identification. To effectively combat piracy and protect copyrights, a multi-bit watermarking framework should be able to embed adequate bits of information and extract the watermarks in a robust manner despite possible corruption. In this work, we explore ways to advance both payload and robustness by following a well-known proposition from image watermarking and identify features in natural language that are invariant to minor corruption. Through a systematic analysis of the possible sources of errors, we further propose a corruption-resistant infill model. Our full method improves upon the previous work on robustness by +16.8% point on average on four datasets, three corruption types, and two corruption ratios",
+      "externalIds": {
+        "ACL": "2023.acl-long.117",
+        "DBLP": "conf/acl/YooAJK23",
+        "ArXiv": "2305.01904",
+        "DOI": "10.18653/v1/2023.acl-long.117",
+        "CorpusId": 259129912
+      },
+      "arxiv_id": "2305.01904",
+      "doi": "10.18653/v1/2023.acl-long.117",
+      "corpus_id": 259129912
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "3",
+      "ref_key": "S2:6727ef300f4dfaed7af9a94193c3e68158cd6eb9",
+      "paperId": "6727ef300f4dfaed7af9a94193c3e68158cd6eb9",
+      "title": "Beyond Black Box AI generated Plagiarism Detection: From Sentence to Document Level",
+      "year": 2023,
+      "abstract": "The increasing reliance on large language models (LLMs) in academic writing has led to a rise in plagiarism. Existing AI-generated text classifiers have limited accuracy and often produce false positives. We propose a novel approach using natural language processing (NLP) techniques, offering quantifiable metrics at both sentence and document levels for easier interpretation by human evaluators. Our method employs a multi-faceted approach, generating multiple paraphrased versions of a given question and inputting them into the LLM to generate answers. By using a contrastive loss function based on cosine similarity, we match generated sentences with those from the student’s response. Our approach achieves up to 94% accuracy in classifying human and AI text, providing a robust and adaptable solution for plagiarism detection in academic settings. This method improves with LLM advancements, reducing the need for new model training or reconfiguration, and offers a more transparent way of evaluating and detecting AI-generated text.",
+      "externalIds": {
+        "ACL": "2023.bea-1.58",
+        "ArXiv": "2306.08122",
+        "DBLP": "conf/bea/QuidwaiLD23",
+        "DOI": "10.48550/arXiv.2306.08122",
+        "CorpusId": 259165572
+      },
+      "arxiv_id": "2306.08122",
+      "doi": "10.48550/arXiv.2306.08122",
+      "corpus_id": 259165572
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "4",
+      "ref_key": "S2:e309fc310f89ed6ac3a4a04c565e2176339ee86f",
+      "paperId": "e309fc310f89ed6ac3a4a04c565e2176339ee86f",
+      "title": "Demystifying Neural Fake News via Linguistic Feature-Based Interpretation",
+      "year": 2022,
+      "abstract": "The spread of fake news can have devastating ramifications, and recent advancements to neural fake news generators have made it challenging to understand how misinformation generated by these models may best be confronted. We conduct a feature-based study to gain an interpretative understanding of the linguistic attributes that neural fake news generators may most successfully exploit. When comparing models trained on subsets of our features and confronting the models with increasingly advanced neural fake news, we find that stylistic features may be the most robust. We discuss our findings, subsequent analyses, and broader implications in the pages within.",
+      "externalIds": {
+        "DBLP": "conf/coling/AichBP22",
+        "ACL": "2022.coling-1.573",
+        "CorpusId": 252819244
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 252819244
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "5",
+      "ref_key": "S2:ffea498541ea1f055a2e0cf5ea16bce665414bf5",
+      "paperId": "ffea498541ea1f055a2e0cf5ea16bce665414bf5",
+      "title": "Do Stochastic Parrots have Feelings Too? Improving Neural Detection of Synthetic Text via Emotion Recognition",
+      "year": 2023,
+      "abstract": "Recent developments in generative AI have shone a spotlight on high-performance synthetic text generation technologies. The now wide availability and ease of use of such models highlights the urgent need to provide equally powerful technologies capable of identifying synthetic text. With this in mind, we draw inspiration from psychological studies which suggest that people can be driven by emotion and encode emotion in the text they compose. We hypothesize that pretrained language models (PLMs) have an affective deficit because they lack such an emotional driver when generating text and consequently may generate synthetic text which has affective incoherence i.e. lacking the kind of emotional coherence present in human-authored text. We subsequently develop an emotionally aware detector by fine-tuning a PLM on emotion. Experiment results indicate that our emotionally-aware detector achieves improvements across a range of synthetic text generators, various sized models, datasets, and domains. Finally, we compare our emotionally-aware synthetic text detector to ChatGPT in the task of identification of its own output and show substantial gains, reinforcing the potential of emotion as a signal to identify synthetic text. Code, models, and datasets are available at https: //github.com/alanagiasi/emoPLMsynth",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-15904",
+        "ArXiv": "2310.15904",
+        "DOI": "10.48550/arXiv.2310.15904",
+        "CorpusId": 264439148
+      },
+      "arxiv_id": "2310.15904",
+      "doi": "10.48550/arXiv.2310.15904",
+      "corpus_id": 264439148
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "6",
+      "ref_key": "S2:3079b6d6b6655b0e8be6336339a8284325ad23f8",
+      "paperId": "3079b6d6b6655b0e8be6336339a8284325ad23f8",
+      "title": "LLMDet: A Third Party Large Language Models Generated Text Detection Tool",
+      "year": 2023,
+      "abstract": "Generated texts from large language models (LLMs) are remarkably close to high-quality human-authored text, raising concerns about their potential misuse in spreading false information and academic misconduct. Consequently, there is an urgent need for a highly practical detection tool capable of accurately identifying the source of a given text. However, existing detection tools typically rely on access to LLMs and can only differentiate between machine-generated and human-authored text, failing to meet the requirements of fine-grained tracing, intermediary judgment, and rapid detection. Therefore, we propose LLMDet, a model-specific, secure, efficient, and extendable detection tool, that can source text from specific LLMs, such as GPT-2, OPT, LLaMA, and others. In LLMDet, we record the next-token probabilities of salient n-grams as features to calculate proxy perplexity for each LLM. By jointly analyzing the proxy perplexities of LLMs, we can determine the source of the generated text. Experimental results show that LLMDet yields impressive detection performance while ensuring speed and security, achieving 98.54% precision and x3.5 faster for recognizing human-authored text. Additionally, LLMDet can effortlessly extend its detection capabilities to a new open-source model. We will provide an open-source tool at https://github.com/TrustedLLM/LLMDet.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/WuPSCC23",
+        "ArXiv": "2305.15004",
+        "DOI": "10.18653/v1/2023.findings-emnlp.139",
+        "CorpusId": 258865367
+      },
+      "arxiv_id": "2305.15004",
+      "doi": "10.18653/v1/2023.findings-emnlp.139",
+      "corpus_id": 258865367
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "7",
+      "ref_key": "S2:43707e84a8e0e2919a3e724eb59aa6a5465c5cb7",
+      "paperId": "43707e84a8e0e2919a3e724eb59aa6a5465c5cb7",
+      "title": "Beat LLMs at Their Own Game: Zero-Shot LLM-Generated Text Detection via Querying ChatGPT",
+      "year": 2023,
+      "abstract": "Large language models (LLMs), e.g., ChatGPT, have revolutionized the domain of natural language processing because of their excellent performance on various tasks. Despite their great potential, LLMs also incur serious concerns as they are likely to be misused. There are already reported cases of academic cheating by using LLMs. Thus, it is a pressing problem to identify LLM-generated texts. In this work, we design a zero-shot black-box method for detecting LLM-generated texts. The key idea is to revise the text to be detected using the ChatGPT model. Our method is based on the intuition that the ChatGPT model will make fewer revisions to LLM-generated texts than it does to human-written texts, because the texts generated by LLMs are more in accord with the generation logic and statistical patterns learned by LLMs like ChatGPT. Thus, if the text to be detected and its ChatGPT-revised version have a higher degree of similarity, the text is more likely to be LLM-generated. Extensive experiments on various datasets and tasks show that our method can effectively detect LLM-generated texts. Moreover, compared with other detection methods, our method has better generalization ability and is more stable across various datasets. The codes are publicly available at https://github.com/thunlp/LLM-gene rated-text-detection .",
+      "externalIds": {
+        "DBLP": "conf/emnlp/ZhuYCCFHDL0023",
+        "DOI": "10.18653/v1/2023.emnlp-main.463",
+        "CorpusId": 266164139
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2023.emnlp-main.463",
+      "corpus_id": 266164139
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "8",
+      "ref_key": "S2:c37928f1314eec585d25f0673b9d71ab1d058553",
+      "paperId": "c37928f1314eec585d25f0673b9d71ab1d058553",
+      "title": "Classification of Human- and AI-Generated Texts for English, French, German, and Spanish",
+      "year": 2023,
+      "abstract": "In this paper we analyze features to classify human- and AI-generated text for English, French, German and Spanish and compare them across languages. We investigate two scenarios: (1) The detection of text generated by AI from scratch, and (2) the detection of text rephrased by AI. For training and testing the classifiers in this multilingual setting, we created a new text corpus covering 10 topics for each language. For the detection of AI-generated text, the combination of all proposed features performs best, indicating that our features are portable to other related languages: The F1-scores are close with 99% for Spanish, 98% for English, 97% for German and 95% for French. For the detection of AI-rephrased text, the systems with all features outperform systems with other features in many cases, but using only document features performs best for German (72%) and Spanish (86%) and only text vector features leads to best results for English (78%).",
+      "externalIds": {
+        "ACL": "2023.icnlsp-1.1",
+        "DBLP": "journals/corr/abs-2312-04882",
+        "ArXiv": "2312.04882",
+        "DOI": "10.48550/arXiv.2312.04882",
+        "CorpusId": 266149905
+      },
+      "arxiv_id": "2312.04882",
+      "doi": "10.48550/arXiv.2312.04882",
+      "corpus_id": 266149905
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "9",
+      "ref_key": "S2:a52aee41169df2788f6acad5eb750eb54bda624a",
+      "paperId": "a52aee41169df2788f6acad5eb750eb54bda624a",
+      "title": "Content-preserving Text Watermarking through Unicode Homoglyph Substitution",
+      "year": 2016,
+      "abstract": "Digital watermarking has become crucially important in authentication and copyright protection of the digital contents, since more and more data are daily generated and shared online through digital archives, blogs and social networks. Out of all, text watermarking is a more difficult task in comparison to other media watermarking. Text cannot be always converted into image, it accounts for a far smaller amount of data (eg. social network posts) and the changes in short texts would strongly affect the meaning or the overall visual form. In this paper we propose a text watermarking technique based on homoglyph characters substitution for latin symbols1. The proposed method is able to efficiently embed a password based watermark in short texts by strictly preserving the content. In particular, it uses alternative Unicode symbols to ensure visual indistinguishability and length preservation, namely content-preservation. To evaluate our method, we use a real dataset of 1.8 million New York articles. The results show the effectiveness of our approach providing an average length of 101 characters needed to embed a 64bit password based watermark.",
+      "externalIds": {
+        "DBLP": "conf/ideas/RizzoBM16",
+        "MAG": "2518688495",
+        "DOI": "10.1145/2938503.2938510",
+        "CorpusId": 11689200
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/2938503.2938510",
+      "corpus_id": 11689200
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "10",
+      "ref_key": "S2:3c5e1b00ec4ced0878dadcb0ec193dfe04ed00be",
+      "paperId": "3c5e1b00ec4ced0878dadcb0ec193dfe04ed00be",
+      "title": "A Deep Fusion Model for Human $vs$. Machine-Generated Essay Classification",
+      "year": 2023,
+      "abstract": "Essay classification is a crucially important task, considering the increasing attention towards AI tools such as ChatGPT, and the raised concerns with regard to academic integrity. Existing text classification approaches, including neural network-based methods and feature-based methods, are often unable to effectively analyze diverse types of information in a combined way. Moreover, they are mostly tailored for English data, and focus on addressing specific topics, such as fake news, hate speech, and misinformation. On the other hand, machine learning research conducted on essay data has been limited to automated grading and off-topic detection tasks. In this paper, we propose a deep neural network-based model that combines text modeling and linguistic features via data fusion, with the aim to provide robust classification capabilities. Our experiments with datasets containing short essays in English and Spanish written by L2 learners, show that it is possible to accurately perform essay classification, and that our model is competitive, even when compared to popular feature-based and neural network-based approaches.",
+      "externalIds": {
+        "DBLP": "conf/ijcnn/CorizzoL23",
+        "DOI": "10.1109/IJCNN54540.2023.10191322",
+        "CorpusId": 260385217
+      },
+      "arxiv_id": null,
+      "doi": "10.1109/IJCNN54540.2023.10191322",
+      "corpus_id": 260385217
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "11",
+      "ref_key": "S2:d972c9bccc5ccef16d71b450dd3ab4c77f67224a",
+      "paperId": "d972c9bccc5ccef16d71b450dd3ab4c77f67224a",
+      "title": "Adversarial Robustness of Neural-Statistical Features in Detection of Generative Transformers",
+      "year": 2022,
+      "abstract": "The detection of computer-generated text is an area of rapidly increasing significance as nascent generative models allow for efficient creation of compelling human-like text, which may be abused for the purposes of spam, disinformation, phishing, or online influence campaigns. Past work has studied detection of current state-of-the-art models, but despite a developing threat landscape, there has been minimal analysis of the robustness of detection methods to adversarial attacks. To this end, we evaluate neural and non-neural approaches on their ability to detect computer-generated text, their robustness against text adversarial attacks, and the impact that successful adversarial attacks have on human judgement of text quality. We find that while statistical features underperform neural features, statistical features provide additional adversarial robustness that can be leveraged in ensemble detection models. In the process, we find that previously effective complex phrasal features for detection of computer-generated text hold little predictive power against contemporary generative models, and identify promising statistical features to use instead. Finally, we pioneer the usage of ΔMAUVE as a proxy measure for human judgement of adversarial text quality.",
+      "externalIds": {
+        "ArXiv": "2203.07983",
+        "DBLP": "journals/corr/abs-2203-07983",
+        "DOI": "10.1109/IJCNN55064.2022.9892269",
+        "CorpusId": 247451060
+      },
+      "arxiv_id": "2203.07983",
+      "doi": "10.1109/IJCNN55064.2022.9892269",
+      "corpus_id": 247451060
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "12",
+      "ref_key": "S2:4757b911780581cf3d24fdfb2749608f370dc034",
+      "paperId": "4757b911780581cf3d24fdfb2749608f370dc034",
+      "title": "The hiding virtues of ambiguity: quantifiably resilient watermarking of natural language text through synonym substitutions",
+      "year": 2006,
+      "abstract": "Information-hiding in natural language text has mainly consisted of carrying out approximately meaning-preserving modifications on the given cover text until it encodes the intended mark. A major technique for doing so has been synonym-substitution. In these previous schemes, synonym substitutions were done until the text \"confessed\", i.e., carried the intended mark message. We propose here a better way to use synonym substitution, one that is no longer entirely guided by the mark-insertion process: It is also guided by a resilience requirement, subject to a maximum allowed distortion constraint. Previous schemes for information hiding in natural language text did not use numeric quantification of the distortions introduced by transformations, they mainly used heuristic measures of quality based on conformity to a language model (and not in reference to the original cover text). When there are many alternatives to carry out a substitution on a word, we prioritize these alternatives according to a quantitative resilience criterion and use them in that order. In a nutshell, we favor the more ambiguous alternatives. In fact not only do we attempt to achieve the maximum ambiguity, but we want to simultaneously be as close as possible to the above-mentioned distortion limit, as that prevents the adversary from doing further transformations without exceeding the damage threshold; that is, we continue to modify the document even after the text has \"confessed\" to the mark, for the dual purpose of maximizing ambiguity while deliberately getting as close as possible to the distortion limit. The quantification we use makes possible an application of the existing information-theoretic framework, to the natural language domain, which has unique challenges not present in the image or audio domains. The resilience stems from both (i) the fact that the adversary does not know where the changes were made, and (ii) the fact that automated disambiguation is a major difficulty faced by any natural language processing system (what is bad news for the natural language processing area, is good news for our scheme's resilience). In addition to the above mentioned design and analysis, another contribution of this paper is the description of the implementation of the scheme and of the experimental data obtained.",
+      "externalIds": {
+        "DBLP": "conf/mmsec/TopkaraTA06",
+        "MAG": "2108498102",
+        "DOI": "10.1145/1161366.1161397",
+        "CorpusId": 3061822
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/1161366.1161397",
+      "corpus_id": 3061822
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "13",
+      "ref_key": "S2:e6f4006f8bc9867cbc33b0765e7831147ce5162e",
+      "paperId": "e6f4006f8bc9867cbc33b0765e7831147ce5162e",
+      "title": "Cross-Domain Detection of GPT-2-Generated Technical Text",
+      "year": 2022,
+      "abstract": "Machine-generated text presents a potential threat not only to the public sphere, but also to the scientific enterprise, whereby genuine research is undermined by convincing, synthetic text. In this paper we examine the problem of detecting GPT-2-generated technical research text. We first consider the realistic scenario where the defender does not have full information about the adversary’s text generation pipeline, but is able to label small amounts of in-domain genuine and synthetic text in order to adapt to the target distribution. Even in the extreme scenario of adapting a physics-domain detector to a biomedical detector, we find that only a few hundred labels are sufficient for good performance. Finally, we show that paragraph-level detectors can be used to detect the tampering of full-length documents under a variety of threat models.",
+      "externalIds": {
+        "DBLP": "conf/naacl/RodriguezHGSS22",
+        "ACL": "2022.naacl-main.88",
+        "DOI": "10.18653/v1/2022.naacl-main.88",
+        "CorpusId": 250390908
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2022.naacl-main.88",
+      "corpus_id": 250390908
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "14",
+      "ref_key": "S2:78db1529bd67ef885fe550ab3ed7f965067e8928",
+      "paperId": "78db1529bd67ef885fe550ab3ed7f965067e8928",
+      "title": "Adversarial Watermarking Transformer: Towards Tracing Text Provenance with Data Hiding",
+      "year": 2020,
+      "abstract": "Recent advances in natural language generation have introduced powerful language models with high-quality output text. However, this raises concerns about the potential misuse of such models for malicious purposes. In this paper, we study natural language watermarking as a defense to help better mark and trace the provenance of text. We introduce the Adversarial Watermarking Transformer (AWT) with a jointly trained encoder-decoder and adversarial training that, given an input text and a binary message, generates an output text that is unobtrusively encoded with the given message. We further study different training and inference strategies to achieve minimal changes to the semantics and correctness of the input text.AWT is the first end-to-end model to hide data in text by automatically learning -without ground truth- word substitutions along with their locations in order to encode the message. We empirically show that our model is effective in largely preserving text utility and decoding the watermark while hiding its presence against adversaries. Additionally, we demonstrate that our method is robust against a range of attacks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2009-03015",
+        "MAG": "3083360291",
+        "ArXiv": "2009.03015",
+        "DOI": "10.1109/SP40001.2021.00083",
+        "CorpusId": 221516138
+      },
+      "arxiv_id": "2009.03015",
+      "doi": "10.1109/SP40001.2021.00083",
+      "corpus_id": 221516138
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "15",
+      "ref_key": "S2:c88787ed4e6830c4d6595f2d0496641c3d2e4f79",
+      "paperId": "c88787ed4e6830c4d6595f2d0496641c3d2e4f79",
+      "title": "The Limitations of Stylometry for Detecting Machine-Generated Fake News",
+      "year": 2019,
+      "abstract": "Recent developments in neural language models (LMs) have raised concerns about their potential misuse for automatically spreading misinformation. In light of these concerns, several studies have proposed to detect machine-generated fake news by capturing their stylistic differences from human-written text. These approaches, broadly termed stylometry, have found success in source attribution and misinformation detection in human-written texts. However, in this work, we show that stylometry is limited against machine-generated misinformation. Whereas humans speak differently when trying to deceive, LMs generate stylistically consistent text, regardless of underlying motive. Thus, though stylometry can successfully prevent impersonation by identifying text provenance, it fails to distinguish legitimate LM applications from those that introduce false information. We create two benchmarks demonstrating the stylistic similarity between malicious and legitimate uses of LMs, utilized in auto-completion and editing-assistance settings.1 Our findings highlight the need for non-stylometry approaches in detecting machine-generated misinformation, and open up the discussion on the desired evaluation benchmarks.",
+      "externalIds": {
+        "MAG": "3013655557",
+        "ArXiv": "1908.09805",
+        "ACL": "2020.cl-2.8",
+        "DBLP": "journals/coling/SchusterSSB20",
+        "DOI": "10.1162/coli_a_00380",
+        "CorpusId": 211204954
+      },
+      "arxiv_id": "1908.09805",
+      "doi": "10.1162/coli_a_00380",
+      "corpus_id": 211204954
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "16",
+      "ref_key": "S2:49fc8eb2c3770b005b1b0d34febf14de838aa238",
+      "paperId": "49fc8eb2c3770b005b1b0d34febf14de838aa238",
+      "title": "Unsupervised and Distributional Detection of Machine-Generated Text",
+      "year": 2021,
+      "abstract": "The power of natural language generation models has provoked a flurry of interest in automatic methods to detect if a piece of text is human or machine-authored. The problem so far has been framed in a standard supervised way and consists in training a classifier on annotated data to predict the origin of one given new document. In this paper, we frame the problem in an unsupervised and distributional way: we assume that we have access to a large collection of unannotated documents, a big fraction of which is machine-generated. We propose a method to detect those machine-generated documents leveraging repeated higher-order n-grams, which we show over-appear in machine-generated text as compared to human ones. That weak signal is the starting point of a self-training setting where pseudo-labelled documents are used to train an ensemble of classifiers. Our experiments show that leveraging that signal allows us to rank suspicious documents accurately. Precision at 5000 is over 90% for top-k sampling strategies, and over 80% for nucleus sampling for the largest model we used (GPT2-large). The drop with increased size of model is small, which could indicate that the results hold for other current and future large language models.",
+      "externalIds": {
+        "ArXiv": "2111.02878",
+        "DBLP": "journals/corr/abs-2111-02878",
+        "CorpusId": 242757564
+      },
+      "arxiv_id": "2111.02878",
+      "doi": null,
+      "corpus_id": 242757564
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "17",
+      "ref_key": "S2:5c4bbf816a6e4759b9efe5f37f9c66a603ef9e2f",
+      "paperId": "5c4bbf816a6e4759b9efe5f37f9c66a603ef9e2f",
+      "title": "Did You Train on My Dataset? Towards Public Dataset Protection with CleanLabel Backdoor Watermarking",
+      "year": 2023,
+      "abstract": "The huge supporting training data on the Internet has been a key factor in the success of deep learning models. However, this abundance of public-available data also raises concerns about the unauthorized exploitation of datasets for commercial purposes, which is forbidden by dataset licenses. In this paper, we propose a backdoor-based watermarking approach that serves as a general framework for safeguarding publicavailable data. By inserting a small number of watermarking samples into the dataset, our approach enables the learning model to implicitly learn a secret function set by defenders. This hidden function can then be used as a watermark to track down third-party models that use the dataset illegally. Unfortunately, existing backdoor insertion methods often entail adding arbitrary and mislabeled data to the training set, leading to a significant drop in performance and easy detection by anomaly detection algorithms. To overcome this challenge, we introduce a clean-label backdoor watermarking framework that uses imperceptible perturbations to replace mislabeled samples. As a result, the watermarking samples remain consistent with the original labels, making them difficult to detect. Our experiments on text, image, and audio datasets demonstrate that the proposed framework effectively safeguards datasets with minimal impact on original task performance. We also show that adding just 1% of watermarking samples can inject a traceable watermarking function and that our watermarking samples are stealthy and look benign upon visual inspection.",
+      "externalIds": {
+        "ArXiv": "2303.11470",
+        "DBLP": "journals/sigkdd/TangFL0H23",
+        "DOI": "10.1145/3606274.3606279",
+        "CorpusId": 257636598
+      },
+      "arxiv_id": "2303.11470",
+      "doi": "10.1145/3606274.3606279",
+      "corpus_id": 257636598
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "18",
+      "ref_key": "S2:7a30650265477ebe0dc6fc6ce0b54be8644c5226",
+      "paperId": "7a30650265477ebe0dc6fc6ce0b54be8644c5226",
+      "title": "Origin Tracing and Detecting of LLMs",
+      "year": 2023,
+      "abstract": "The extraordinary performance of large language models (LLMs) heightens the importance of detecting whether the context is generated by an AI system. More importantly, while more and more companies and institutions release their LLMs, the origin can be hard to trace. Since LLMs are heading towards the time of AGI, similar to the origin tracing in anthropology, it is of great importance to trace the origin of LLMs. In this paper, we first raise the concern of the origin tracing of LLMs and propose an effective method to trace and detect AI-generated contexts. We introduce a novel algorithm that leverages the contrastive features between LLMs and extracts model-wise features to trace the text origins. Our proposed method works under both white-box and black-box settings therefore can be widely generalized to detect various LLMs.(e.g. can be generalized to detect GPT-3 models without the GPT-3 models). Also, our proposed method requires only limited data compared with the supervised learning methods and can be extended to trace new-coming model origins. We construct extensive experiments to examine whether we can trace the origins of given texts. We provide valuable observations based on the experimental results, such as the difficulty level of AI origin tracing, and the AI origin similarities, and call for ethical concerns of LLM providers. We are releasing all codes and data as a toolkit and benchmark for future AI origin tracing and detecting studies. \\footnote{We are releasing all available resource at \\url{https://github.com/OpenLMLab/}.}",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2304-14072",
+        "ArXiv": "2304.14072",
+        "DOI": "10.48550/arXiv.2304.14072",
+        "CorpusId": 258352714
+      },
+      "arxiv_id": "2304.14072",
+      "doi": "10.48550/arXiv.2304.14072",
+      "corpus_id": 258352714
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "19",
+      "ref_key": "S2:3f358e5bedaae0eb49849dce98edb516f0731df5",
+      "paperId": "3f358e5bedaae0eb49849dce98edb516f0731df5",
+      "title": "DeepTextMark: Deep Learning based Text Watermarking for Detection of Large Language Model Generated Text",
+      "year": 2023,
+      "abstract": "The capabilities of text generators have grown with the rapid development of Large Language Models (LLM). To prevent potential misuse, the ability to detect whether texts are produced by LLM has become increasingly important. Several related works have attempted to solve this problem using binary classifiers that categorize input text as human-written or LLM-generated. However, these classifiers have been shown to be unreliable. As impactful decisions could be made based on the result of the classification, the text source detection needs to be high-quality. To this end, this paper presents DeepTextMark, a deep learning-based text watermarking method for text source detection. Applying Word2Vec and Sentence Encoding for watermark insertion and a transformer-based classifier for watermark detection, DeepTextMark achieves blindness, robustness, imperceptibility, and reliability simultaneously. As discussed further in the paper, these traits are indispensable for generic text source detection, and the application focus of this paper is on the text generated by LLM. DeepTextMark can be implemented as an \"add-on\" to existing text generation systems. That is, the method does not require access or modification to the text generation technique. Experiments have shown high imperceptibility, high detection accuracy, enhanced robustness, reliability, and fast running speed of DeepTextMark.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-05773",
+        "DOI": "10.48550/arXiv.2305.05773",
+        "CorpusId": 258588289
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2305.05773",
+      "corpus_id": 258588289
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "20",
+      "ref_key": "S2:bd7a45fa6dce81dbbc61a5728bf54e040e206da7",
+      "paperId": "bd7a45fa6dce81dbbc61a5728bf54e040e206da7",
+      "title": "Watermarking Text Generated by Black-Box Language Models",
+      "year": 2023,
+      "abstract": "LLMs now exhibit human-like skills in various fields, leading to worries about misuse. Thus, detecting generated text is crucial. However, passive detection methods are stuck in domain specificity and limited adversarial robustness. To achieve reliable detection, a watermark-based method was proposed for white-box LLMs, allowing them to embed watermarks during text generation. The method involves randomly dividing the model vocabulary to obtain a special list and adjusting the probability distribution to promote the selection of words in the list. A detection algorithm aware of the list can identify the watermarked text. However, this method is not applicable in many real-world scenarios where only black-box language models are available. For instance, third-parties that develop API-based vertical applications cannot watermark text themselves because API providers only supply generated text and withhold probability distributions to shield their commercial interests. To allow third-parties to autonomously inject watermarks into generated text, we develop a watermarking framework for black-box language model usage scenarios. Specifically, we first define a binary encoding function to compute a random binary encoding corresponding to a word. The encodings computed for non-watermarked text conform to a Bernoulli distribution, wherein the probability of a word representing bit-1 being approximately 0.5. To inject a watermark, we alter the distribution by selectively replacing words representing bit-0 with context-based synonyms that represent bit-1. A statistical test is then used to identify the watermark. Experiments demonstrate the effectiveness of our method on both Chinese and English datasets. Furthermore, results under re-translation, polishing, word deletion, and synonym substitution attacks reveal that it is arduous to remove the watermark without compromising the original semantics.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-08883",
+        "ArXiv": "2305.08883",
+        "DOI": "10.48550/arXiv.2305.08883",
+        "CorpusId": 258714683
+      },
+      "arxiv_id": "2305.08883",
+      "doi": "10.48550/arXiv.2305.08883",
+      "corpus_id": 258714683
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "21",
+      "ref_key": "S2:90213971da84c974bc7502b1112a0ee8a0a33601",
+      "paperId": "90213971da84c974bc7502b1112a0ee8a0a33601",
+      "title": "Who Wrote this Code? Watermarking for Code Generation",
+      "year": 2023,
+      "abstract": "Since the remarkable generation performance of large language models raised ethical and legal concerns, approaches to detect machine-generated text by embedding watermarks are being developed. However, we discover that the existing works fail to function appropriately in code generation tasks due to the task's nature of having low entropy. Extending a logit-modifying watermark method, we propose Selective WatErmarking via Entropy Thresholding (SWEET), which enhances detection ability and mitigates code quality degeneration by removing low-entropy segments at generating and detecting watermarks. Our experiments show that SWEET significantly improves code quality preservation while outperforming all baselines, including post-hoc detection methods, in detecting machine-generated code text. Our code is available in https://github.com/hongcheki/sweet-watermark.",
+      "externalIds": {
+        "DBLP": "conf/acl/Lee0AHLYSK24",
+        "ArXiv": "2305.15060",
+        "DOI": "10.48550/arXiv.2305.15060",
+        "CorpusId": 258865409
+      },
+      "arxiv_id": "2305.15060",
+      "doi": "10.48550/arXiv.2305.15060",
+      "corpus_id": 258865409
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "22",
+      "ref_key": "S2:08145978da4c8912f4a05444a6bbf048778dc4af",
+      "paperId": "08145978da4c8912f4a05444a6bbf048778dc4af",
+      "title": "DNA-GPT: Divergent N-Gram Analysis for Training-Free Detection of GPT-Generated Text",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have notably enhanced the fluency and diversity of machine-generated text. However, this progress also presents a significant challenge in detecting the origin of a given text, and current research on detection methods lags behind the rapid evolution of LLMs. Conventional training-based methods have limitations in flexibility, particularly when adapting to new domains, and they often lack explanatory power. To address this gap, we propose a novel training-free detection strategy called Divergent N-Gram Analysis (DNA-GPT). Given a text, we first truncate it in the middle and then use only the preceding portion as input to the LLMs to regenerate the new remaining parts. By analyzing the differences between the original and new remaining parts through N-gram analysis in black-box or probability divergence in white-box, we unveil significant discrepancies between the distribution of machine-generated text and the distribution of human-written text. We conducted extensive experiments on the most advanced LLMs from OpenAI, including text-davinci-003, GPT-3.5-turbo, and GPT-4, as well as open-source models such as GPT-NeoX-20B and LLaMa-13B. Results show that our zero-shot approach exhibits state-of-the-art performance in distinguishing between human and GPT-generated text on four English and one German dataset, outperforming OpenAI's own classifier, which is trained on millions of text. Additionally, our methods provide reasonable explanations and evidence to support our claim, which is a unique feature of explainable detection. Our method is also robust under the revised text attack and can additionally solve model sourcing. Codes are available at https://github.com/Xianjun-Yang/DNA-GPT.",
+      "externalIds": {
+        "DBLP": "conf/iclr/Yang0WPWC24",
+        "ArXiv": "2305.17359",
+        "DOI": "10.48550/arXiv.2305.17359",
+        "CorpusId": 258960101
+      },
+      "arxiv_id": "2305.17359",
+      "doi": "10.48550/arXiv.2305.17359",
+      "corpus_id": 258960101
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "23",
+      "ref_key": "S2:da420c73bd3cee3d8a97a8ddacc4efcf2d7f5c9d",
+      "paperId": "da420c73bd3cee3d8a97a8ddacc4efcf2d7f5c9d",
+      "title": "Implementing BERT and fine-tuned RobertA to detect AI generated news by ChatGPT",
+      "year": 2023,
+      "abstract": "The abundance of information on social media has increased the necessity of accurate real-time rumour detection. Manual techniques of identifying and verifying fake news generated by AI tools are impracticable and time-consuming given the enormous volume of information generated every day. This has sparked an increase in interest in creating automated systems to find fake news on the Internet. The studies in this research demonstrate that the BERT and RobertA models with fine-tuning had the best success in detecting AI generated news. With a score of 98%, tweaked RobertA in particular showed excellent precision. In conclusion, this study has shown that neural networks can be used to identify bogus news AI generation news created by ChatGPT. The RobertA and BERT models' excellent performance indicates that these models can play a critical role in the fight against misinformation.",
+      "externalIds": {
+        "ArXiv": "2306.07401",
+        "DBLP": "journals/corr/abs-2306-07401",
+        "DOI": "10.48550/arXiv.2306.07401",
+        "CorpusId": 259145150
+      },
+      "arxiv_id": "2306.07401",
+      "doi": "10.48550/arXiv.2306.07401",
+      "corpus_id": 259145150
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "24",
+      "ref_key": "S2:ccaff61e0c1e629d91d78f82a64b3cbc8f3f7023",
+      "paperId": "ccaff61e0c1e629d91d78f82a64b3cbc8f3f7023",
+      "title": "Robust Distortion-free Watermarks for Language Models",
+      "year": 2023,
+      "abstract": "We propose a methodology for planting watermarks in text from an autoregressive language model that are robust to perturbations without changing the distribution over text up to a certain maximum generation budget. We generate watermarked text by mapping a sequence of random numbers -- which we compute using a randomized watermark key -- to a sample from the language model. To detect watermarked text, any party who knows the key can align the text to the random number sequence. We instantiate our watermark methodology with two sampling schemes: inverse transform sampling and exponential minimum sampling. We apply these watermarks to three language models -- OPT-1.3B, LLaMA-7B and Alpaca-7B -- to experimentally validate their statistical power and robustness to various paraphrasing attacks. Notably, for both the OPT-1.3B and LLaMA-7B models, we find we can reliably detect watermarked text ($p \\leq 0.01$) from $35$ tokens even after corrupting between $40$-$50\\%$ of the tokens via random edits (i.e., substitutions, insertions or deletions). For the Alpaca-7B model, we conduct a case study on the feasibility of watermarking responses to typical user instructions. Due to the lower entropy of the responses, detection is more difficult: around $25\\%$ of the responses -- whose median length is around $100$ tokens -- are detectable with $p \\leq 0.01$, and the watermark is also less robust to certain automated paraphrasing attacks we implement.",
+      "externalIds": {
+        "ArXiv": "2307.15593",
+        "DBLP": "journals/corr/abs-2307-15593",
+        "DOI": "10.48550/arXiv.2307.15593",
+        "CorpusId": 260315804
+      },
+      "arxiv_id": "2307.15593",
+      "doi": "10.48550/arXiv.2307.15593",
+      "corpus_id": 260315804
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "25",
+      "ref_key": "S2:4a166004de99191be6dc7338fed4d78f246c8904",
+      "paperId": "4a166004de99191be6dc7338fed4d78f246c8904",
+      "title": "Classification of Human- and AI-Generated Texts: Investigating Features for ChatGPT",
+      "year": 2023,
+      "abstract": "Recently, generative AIs like ChatGPT have become available to the wide\npublic. These tools can for instance be used by students to generate essays or\nwhole theses. But how does a teacher know whether a text is written by a\nstudent or an AI? In our work, we explore traditional and new features to (1)\ndetect text generated by AI from scratch and (2) text rephrased by AI. Since we\nfound that classification is more difficult when the AI has been instructed to\ncreate the text in a way that a human would not recognize that it was generated\nby an AI, we also investigate this more advanced case. For our experiments, we\nproduced a new text corpus covering 10 school topics. Our best systems to\nclassify basic and advanced human-generated/AI-generated texts have F1-scores\nof over 96%. Our best systems for classifying basic and advanced\nhuman-generated/AI-rephrased texts have F1-scores of more than 78%. The systems\nuse a combination of perplexity, semantic, list lookup, error-based,\nreadability, AI feedback, and text vector features. Our results show that the\nnew features substantially help to improve the performance of many classifiers.\nOur best basic text rephrasing detection system even outperforms GPTZero by\n183.8% relative in F1-score.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2308-05341",
+        "ArXiv": "2308.05341",
+        "DOI": "10.1007/978-981-99-7947-9_12",
+        "CorpusId": 260775600
+      },
+      "arxiv_id": "2308.05341",
+      "doi": "10.1007/978-981-99-7947-9_12",
+      "corpus_id": 260775600
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "26",
+      "ref_key": "S2:d0a280002ec2d8864d378464031026825d9d994f",
+      "paperId": "d0a280002ec2d8864d378464031026825d9d994f",
+      "title": "J-Guard: Journalism Guided Adversarially Robust Detection of AI-generated News",
+      "year": 2023,
+      "abstract": "The rapid proliferation of AI-generated text online is profoundly reshaping the information landscape. Among various types of AI-generated text, AI-generated news presents a significant threat as it can be a prominent source of misinformation online. While several recent efforts have focused on detecting AI-generated text in general, these methods require enhanced reliability, given concerns about their vulnerability to simple adversarial attacks. Furthermore, due to the eccentricities of news writing, applying these detection methods for AI-generated news can produce false positives, potentially damaging the reputation of news organizations. To address these challenges, we leverage the expertise of an interdisciplinary team to develop a framework, J-Guard, capable of steering existing supervised AI text detectors for detecting AI-generated news while boosting adversarial robustness. By incorporating stylistic cues inspired by the unique journalistic attributes, J-Guard effectively distinguishes between real-world journalism and AI-generated news articles. Our experiments on news articles generated by a vast array of AI models, including ChatGPT (GPT3.5), demonstrate the effectiveness of J-Guard in enhancing detection capabilities while maintaining an average performance decrease of as low as 7% when faced with adversarial attacks.",
+      "externalIds": {
+        "ArXiv": "2309.03164",
+        "DBLP": "journals/corr/abs-2309-03164",
+        "ACL": "2023.ijcnlp-main.32",
+        "DOI": "10.48550/arXiv.2309.03164",
+        "CorpusId": 261557118
+      },
+      "arxiv_id": "2309.03164",
+      "doi": "10.48550/arXiv.2309.03164",
+      "corpus_id": 261557118
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "27",
+      "ref_key": "S2:289533e16e509d0ba8f499a371b4e470f3e492de",
+      "paperId": "289533e16e509d0ba8f499a371b4e470f3e492de",
+      "title": "SemStamp: A Semantic Watermark with Paraphrastic Robustness for Text Generation",
+      "year": 2024,
+      "abstract": "Existing watermarked generation algorithms employ token-level designs and therefore, are vulnerable to paraphrase attacks. To address this issue, we introduce watermarking on the semantic representation of sentences. We propose SemStamp, a robust sentence-level semantic watermarking algorithm that uses locality-sensitive hashing (LSH) to partition the semantic space of sentences. The algorithm encodes and LSH-hashes a candidate sentence generated by a language model, and conducts rejection sampling until the sampled sentence falls in watermarked partitions in the semantic embedding space. To test the paraphrastic robustness of watermarking algorithms, we propose a “bigram paraphrase” attack that produces paraphrases with small bigram overlap with the original sentence. This attack is shown to be effective against existing token-level watermark algorithms, while posing only minor degradations to SemStamp. Experimental results show that our novel semantic watermark algorithm is not only more robust than the previous state-of-the-art method on various paraphrasers and domains, but also better at preserving the quality of generation.",
+      "externalIds": {
+        "ACL": "2024.naacl-long.226",
+        "DBLP": "conf/naacl/HouZHWCWSDKT24",
+        "DOI": "10.18653/v1/2024.naacl-long.226",
+        "CorpusId": 263831179
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2024.naacl-long.226",
+      "corpus_id": 263831179
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "28",
+      "ref_key": "S2:893bc4c9d3be06319db7f31b6491110483db5fd1",
+      "paperId": "893bc4c9d3be06319db7f31b6491110483db5fd1",
+      "title": "A Semantic Invariant Robust Watermark for Large Language Models",
+      "year": 2023,
+      "abstract": "Watermark algorithms for large language models (LLMs) have achieved extremely high accuracy in detecting text generated by LLMs. Such algorithms typically involve adding extra watermark logits to the LLM's logits at each generation step. However, prior algorithms face a trade-off between attack robustness and security robustness. This is because the watermark logits for a token are determined by a certain number of preceding tokens; a small number leads to low security robustness, while a large number results in insufficient attack robustness. In this work, we propose a semantic invariant watermarking method for LLMs that provides both attack robustness and security robustness. The watermark logits in our work are determined by the semantics of all preceding tokens. Specifically, we utilize another embedding LLM to generate semantic embeddings for all preceding tokens, and then these semantic embeddings are transformed into the watermark logits through our trained watermark model. Subsequent analyses and experiments demonstrated the attack robustness of our method in semantically invariant settings: synonym substitution and text paraphrasing settings. Finally, we also show that our watermark possesses adequate security robustness. Our code and data are available at \\href{https://github.com/THU-BPM/Robust_Watermark}{https://github.com/THU-BPM/Robust\\_Watermark}. Additionally, our algorithm could also be accessed through MarkLLM \\citep{pan2024markllm} \\footnote{https://github.com/THU-BPM/MarkLLM}.",
+      "externalIds": {
+        "DBLP": "conf/iclr/LiuPHM024",
+        "ArXiv": "2310.06356",
+        "DOI": "10.48550/arXiv.2310.06356",
+        "CorpusId": 263830310
+      },
+      "arxiv_id": "2310.06356",
+      "doi": "10.48550/arXiv.2310.06356",
+      "corpus_id": 263830310
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "29",
+      "ref_key": "S2:02f0d5faa1cd88ea0afe48b756bfbf9adfefba28",
+      "paperId": "02f0d5faa1cd88ea0afe48b756bfbf9adfefba28",
+      "title": "SeqXGPT: Sentence-Level AI-Generated Text Detection",
+      "year": 2023,
+      "abstract": "Widely applied large language models (LLMs) can generate human-like content, raising concerns about the abuse of LLMs. Therefore, it is important to build strong AI-generated text (AIGT) detectors. Current works only consider document-level AIGT detection, therefore, in this paper, we first introduce a sentence-level detection challenge by synthesizing a dataset that contains documents that are polished with LLMs, that is, the documents contain sentences written by humans and sentences modified by LLMs. Then we propose \\textbf{Seq}uence \\textbf{X} (Check) \\textbf{GPT}, a novel method that utilizes log probability lists from white-box LLMs as features for sentence-level AIGT detection. These features are composed like \\textit{waves} in speech processing and cannot be studied by LLMs. Therefore, we build SeqXGPT based on convolution and self-attention networks. We test it in both sentence and document-level detection challenges. Experimental results show that previous methods struggle in solving sentence-level AIGT detection, while our method not only significantly surpasses baseline methods in both sentence and document-level detection challenges but also exhibits strong generalization capabilities.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/WangLRJZQ23",
+        "ArXiv": "2310.08903",
+        "DOI": "10.48550/arXiv.2310.08903",
+        "CorpusId": 264128397
+      },
+      "arxiv_id": "2310.08903",
+      "doi": "10.48550/arXiv.2310.08903",
+      "corpus_id": 264128397
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "30",
+      "ref_key": "S2:8ff1dd6e15408581592f91434be870acc5f1bdd4",
+      "paperId": "8ff1dd6e15408581592f91434be870acc5f1bdd4",
+      "title": "REMARK-LLM: A Robust and Efficient Watermarking Framework for Generative Large Language Models",
+      "year": 2023,
+      "abstract": "We present REMARK-LLM, a novel efficient, and robust watermarking framework designed for texts generated by large language models (LLMs). Synthesizing human-like content using LLMs necessitates vast computational resources and extensive datasets, encapsulating critical intellectual property (IP). However, the generated content is prone to malicious exploitation, including spamming and plagiarism. To address the challenges, REMARK-LLM proposes three new components: (i) a learning-based message encoding module to infuse binary signatures into LLM-generated texts; (ii) a reparameterization module to transform the dense distributions from the message encoding to the sparse distribution of the watermarked textual tokens; (iii) a decoding module dedicated for signature extraction; Furthermore, we introduce an optimized beam search algorithm to guarantee the coherence and consistency of the generated content. REMARK-LLM is rigorously trained to encourage the preservation of semantic integrity in watermarked content, while ensuring effective watermark retrieval. Extensive evaluations on multiple unseen datasets highlight REMARK-LLM proficiency and transferability in inserting 2 times more signature bits into the same texts when compared to prior art, all while maintaining semantic integrity. Furthermore, REMARK-LLM exhibits better resilience against a spectrum of watermark detection and removal attacks.",
+      "externalIds": {
+        "DBLP": "conf/uss/ZhangHNK24",
+        "ArXiv": "2310.12362",
+        "DOI": "10.48550/arXiv.2310.12362",
+        "CorpusId": 264305916
+      },
+      "arxiv_id": "2310.12362",
+      "doi": "10.48550/arXiv.2310.12362",
+      "corpus_id": 264305916
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "31",
+      "ref_key": "S2:b3e7a122bc9d89202ab6d6a779feecc6faa4a6c7",
+      "paperId": "b3e7a122bc9d89202ab6d6a779feecc6faa4a6c7",
+      "title": "AuthentiGPT: Detecting Machine-Generated Text via Black-Box Language Models Denoising",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have opened up enormous opportunities while simultaneously posing ethical dilemmas. One of the major concerns is their ability to create text that closely mimics human writing, which can lead to potential misuse, such as academic misconduct, disinformation, and fraud. To address this problem, we present AuthentiGPT, an efficient classifier that distinguishes between machine-generated and human-written texts. Under the assumption that human-written text resides outside the distribution of machine-generated text, AuthentiGPT leverages a black-box LLM to denoise input text with artificially added noise, and then semantically compares the denoised text with the original to determine if the content is machine-generated. With only one trainable parameter, AuthentiGPT eliminates the need for a large training dataset, watermarking the LLM's output, or computing the log-likelihood. Importantly, the detection capability of AuthentiGPT can be easily adapted to any generative language model. With a 0.918 AUROC score on a domain-specific dataset, AuthentiGPT demonstrates its effectiveness over other commercial algorithms, highlighting its potential for detecting machine-generated text in academic settings.",
+      "externalIds": {
+        "ArXiv": "2311.07700",
+        "DBLP": "journals/corr/abs-2311-07700",
+        "DOI": "10.48550/arXiv.2311.07700",
+        "CorpusId": 265157663
+      },
+      "arxiv_id": "2311.07700",
+      "doi": "10.48550/arXiv.2311.07700",
+      "corpus_id": 265157663
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "32",
+      "ref_key": "S2:11f01361e1f7ed7487a10d7abd176f30fd8a0435",
+      "paperId": "11f01361e1f7ed7487a10d7abd176f30fd8a0435",
+      "title": "Raidar: geneRative AI Detection viA Rewriting",
+      "year": 2024,
+      "abstract": "We find that large language models (LLMs) are more likely to modify human-written text than AI-generated text when tasked with rewriting. This tendency arises because LLMs often perceive AI-generated text as high-quality, leading to fewer modifications. We introduce a method to detect AI-generated content by prompting LLMs to rewrite text and calculating the editing distance of the output. We dubbed our geneRative AI Detection viA Rewriting method Raidar. Raidar significantly improves the F1 detection scores of existing AI content detection models -- both academic and commercial -- across various domains, including News, creative writing, student essays, code, Yelp reviews, and arXiv papers, with gains of up to 29 points. Operating solely on word symbols without high-dimensional features, our method is compatible with black box LLMs, and is inherently robust on new content. Our results illustrate the unique imprint of machine-generated text through the lens of the machines themselves.",
+      "externalIds": {
+        "DBLP": "conf/iclr/MaoV0Y24",
+        "ArXiv": "2401.12970",
+        "DOI": "10.48550/arXiv.2401.12970",
+        "CorpusId": 267095281
+      },
+      "arxiv_id": "2401.12970",
+      "doi": "10.48550/arXiv.2401.12970",
+      "corpus_id": 267095281
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "33",
+      "ref_key": "S2:2734bf6fd46357504fd1deef33ad69207b39fd57",
+      "paperId": "2734bf6fd46357504fd1deef33ad69207b39fd57",
+      "title": "TweepFake: About detecting deepfake tweets",
+      "year": 2020,
+      "abstract": "The recent advances in language modeling significantly improved the generative capabilities of deep neural models: in 2019 OpenAI released GPT-2, a pre-trained language model that can autonomously generate coherent, non-trivial and human-like text samples. Since then, ever more powerful text generative models have been developed. Adversaries can exploit these tremendous generative capabilities to enhance social bots that will have the ability to write plausible deepfake messages, hoping to contaminate public debate. To prevent this, it is crucial to develop deepfake social media messages detection systems. However, to the best of our knowledge no one has ever addressed the detection of machine-generated texts on social networks like Twitter or Facebook. With the aim of helping the research in this detection field, we collected the first dataset of real deepfake tweets, TweepFake. It is real in the sense that each deepfake tweet was actually posted on Twitter. We collected tweets from a total of 23 bots, imitating 17 human accounts. The bots are based on various generation techniques, i.e., Markov Chains, RNN, RNN+Markov, LSTM, GPT-2. We also randomly selected tweets from the humans imitated by the bots to have an overall balanced dataset of 25,572 tweets (half human and half bots generated). The dataset is publicly available on Kaggle. Lastly, we evaluated 13 deepfake text detection methods (based on various state-of-the-art approaches) to both demonstrate the challenges that Tweepfake poses and create a solid baseline of detection techniques. We hope that TweepFake can offer the opportunity to tackle the deepfake detection on social media messages as well.",
+      "externalIds": {
+        "PubMedCentral": "8118345",
+        "MAG": "3046357466",
+        "DBLP": "journals/corr/abs-2008-00036",
+        "ArXiv": "2008.00036",
+        "DOI": "10.1371/journal.pone.0251415",
+        "CorpusId": 220936111,
+        "PubMed": "33984021"
+      },
+      "arxiv_id": "2008.00036",
+      "doi": "10.1371/journal.pone.0251415",
+      "corpus_id": 220936111
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "34",
+      "ref_key": "S2:4ad189079046bf9df0f8ece7545e42dc00e13b9f",
+      "paperId": "4ad189079046bf9df0f8ece7545e42dc00e13b9f",
+      "title": "Towards a Robust Detection of Language Model-Generated Text: Is ChatGPT that easy to detect?",
+      "year": 2023,
+      "abstract": "Recent advances in natural language processing (NLP) have led to the development of large language models (LLMs) such as ChatGPT. This paper proposes a methodology for developing and evaluating ChatGPT detectors for French text, with a focus on investigating their robustness on out-of-domain data and against common attack schemes. The proposed method involves translating an English dataset into French and training a classifier on the translated data. Results show that the detectors can effectively detect ChatGPT-generated text, with a degree of robustness against basic attack techniques in in-domain settings. However, vulnerabilities are evident in out-of-domain contexts, highlighting the challenge of detecting adversarial text. The study emphasizes caution when applying in-domain testing results to a wider variety of content. We provide our translated datasets and models as open-source resources.",
+      "externalIds": {
+        "DBLP": "conf/taln/AntounMSS23",
+        "ArXiv": "2306.05871",
+        "ACL": "2023.jeptalnrecital-long.2",
+        "DOI": "10.48550/arXiv.2306.05871",
+        "CorpusId": 259129474
+      },
+      "arxiv_id": "2306.05871",
+      "doi": "10.48550/arXiv.2306.05871",
+      "corpus_id": 259129474
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "35",
+      "ref_key": "S2:4d1683ac3b8c45eae218e711f7a7c6d1490ee503",
+      "paperId": "4d1683ac3b8c45eae218e711f7a7c6d1490ee503",
+      "title": "Machine Translation Detection from Monolingual Web-Text",
+      "year": 2013,
+      "abstract": "We propose a method for automatically detecting low-quality Web-text translated by statistical machine translation (SMT) systems. We focus on the phrase salad phenomenon that is observed in existing SMT results and propose a set of computationally inexpensive features to effectively detect such machine-translated sentences from a large-scale Web-mined text. Unlike previous approaches that require bilingual data, our method uses only monolingual text as input; therefore it is applicable for refining data produced by a variety of Web-mining activities. Evaluation results show that the proposed method achieves an accuracy of 95.8% for sentences and 80.6% for text in noisy Web pages.",
+      "externalIds": {
+        "DBLP": "conf/acl/AraseZ13",
+        "ACL": "P13-1157",
+        "MAG": "2098447295",
+        "CorpusId": 18357676
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 18357676
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "36",
+      "ref_key": "S2:e8e068349efc114589042f30e888b81ea58db86e",
+      "paperId": "e8e068349efc114589042f30e888b81ea58db86e",
+      "title": "Real or Fake? Learning to Discriminate Machine from Human Generated Text",
+      "year": 2019,
+      "abstract": "Energy-based models (EBMs), a.k.a. un-normalized models, have had recent successes in continuous spaces. However, they have not been successfully applied to model text sequences. While decreasing the energy at training samples is straightforward, mining (negative) samples where the energy should be increased is difficult. In part, this is because standard gradient-based methods are not readily applicable when the input is high-dimensional and discrete. Here, we side-step this issue by generating negatives using pre-trained auto-regressive language models. The EBM then works in the residual of the language model; and is trained to discriminate real text from text generated by the auto-regressive models. We investigate the generalization ability of residual EBMs, a pre-requisite for using them in other applications. We extensively analyze generalization for the task of classifying whether an input is machine or human generated, a natural task given the training loss and how we mine negatives. Overall, we observe that EBMs can generalize remarkably well to changes in the architecture of the generators producing negatives. However, EBMs exhibit more sensitivity to the training set used by such generators.",
+      "externalIds": {
+        "MAG": "2948975009",
+        "ArXiv": "1906.03351",
+        "DBLP": "journals/corr/abs-1906-03351",
+        "CorpusId": 182952342
+      },
+      "arxiv_id": "1906.03351",
+      "doi": null,
+      "corpus_id": 182952342
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "37",
+      "ref_key": "S2:85664bb73d09a20f4d3f7aae81143c0f25060fbb",
+      "paperId": "85664bb73d09a20f4d3f7aae81143c0f25060fbb",
+      "title": "Fast-DetectGPT: Efficient Zero-Shot Detection of Machine-Generated Text via Conditional Probability Curvature",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have shown the ability to produce fluent and cogent content, presenting both productivity opportunities and societal risks. To build trustworthy AI systems, it is imperative to distinguish between machine-generated and human-authored content. The leading zero-shot detector, DetectGPT, showcases commendable performance but is marred by its intensive computational costs. In this paper, we introduce the concept of conditional probability curvature to elucidate discrepancies in word choices between LLMs and humans within a given context. Utilizing this curvature as a foundational metric, we present **Fast-DetectGPT**, an optimized zero-shot detector, which substitutes DetectGPT's perturbation step with a more efficient sampling step. Our evaluations on various datasets, source models, and test conditions indicate that Fast-DetectGPT not only surpasses DetectGPT by a relative around 75% in both the white-box and black-box settings but also accelerates the detection process by a factor of 340, as detailed in Table 1. See \\url{https://github.com/baoguangsheng/fast-detect-gpt} for code, data, and results.",
+      "externalIds": {
+        "DBLP": "conf/iclr/BaoZTY024",
+        "ArXiv": "2310.05130",
+        "DOI": "10.48550/arXiv.2310.05130",
+        "CorpusId": 263831345
+      },
+      "arxiv_id": "2310.05130",
+      "doi": "10.48550/arXiv.2310.05130",
+      "corpus_id": 263831345
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "38",
+      "ref_key": "S2:1091083065969649716cf5596b8c1fcec05f48ed",
+      "paperId": "1091083065969649716cf5596b8c1fcec05f48ed",
+      "title": "Fighting Fire with Fire: Can ChatGPT Detect AI-generated Text?",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) such as ChatGPT are increasingly being used for various use cases, including text content generation at scale. Although detection methods for such AI-generated text exist already, we investigate ChatGPT's performance as a detector on such AI-generated text, inspired by works that use ChatGPT as a data labeler or annotator. We evaluate the zeroshot performance of ChatGPT in the task of human-written vs. AI-generated text detection, and perform experiments on publicly available datasets. We empirically investigate if ChatGPT is symmetrically effective in detecting AI-generated or human-written text. Our findings provide insight on how ChatGPT and similar LLMs may be leveraged in automated detection pipelines by simply focusing on solving a specific aspect of the problem and deriving the rest from that solution. All code and data is available at https://github.com/AmritaBh/ChatGPT-as-Detector.",
+      "externalIds": {
+        "DBLP": "journals/sigkdd/BhattacharjeeL23",
+        "ArXiv": "2308.01284",
+        "DOI": "10.1145/3655103.3655106",
+        "CorpusId": 260379022
+      },
+      "arxiv_id": "2308.01284",
+      "doi": "10.1145/3655103.3655106",
+      "corpus_id": 260379022
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "39",
+      "ref_key": "S2:e287a3d81e3dc28f2de0f405a60ecbaf800dd009",
+      "paperId": "e287a3d81e3dc28f2de0f405a60ecbaf800dd009",
+      "title": "ConDA: Contrastive Domain Adaptation for AI-generated Text Detection",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) are increasingly being used for generating text in a variety of use cases, including journalistic news articles. Given the potential malicious nature in which these LLMs can be used to generate disinformation at scale, it is important to build effective detectors for such AI-generated text. Given the surge in development of new LLMs, acquiring labeled training data for supervised detectors is a bottleneck. However, there might be plenty of unlabeled text data available, without information on which generator it came from. In this work we tackle this data problem, in detecting AI-generated news text, and frame the problem as an unsupervised domain adaptation task. Here the domains are the different text generators, i.e. LLMs, and we assume we have access to only the labeled source data and unlabeled target data. We develop a Contrastive Domain Adaptation framework, called ConDA, that blends standard domain adaptation techniques with the representation power of contrastive learning to learn domain invariant representations that are effective for the final unsupervised detection task. Our experiments demonstrate the effectiveness of our framework, resulting in average performance gains of 31.7% from the best performing baselines, and within 0.8% margin of a fully supervised detector. All our code and data is available at https://github.com/AmritaBh/ConDA-gen-text-detection.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2309-03992",
+        "ArXiv": "2309.03992",
+        "ACL": "2023.ijcnlp-main.40",
+        "DOI": "10.48550/arXiv.2309.03992",
+        "CorpusId": 261660497
+      },
+      "arxiv_id": "2309.03992",
+      "doi": "10.48550/arXiv.2309.03992",
+      "corpus_id": 261660497
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "40",
+      "ref_key": "S2:2eeff1edde4fc66284e7bedeb8eb8878ed4560f4",
+      "paperId": "2eeff1edde4fc66284e7bedeb8eb8878ed4560f4",
+      "title": "Efficient Detection of LLM-generated Texts with a Bayesian Surrogate Model",
+      "year": 2023,
+      "abstract": "The detection of machine-generated text, especially from large language models (LLMs), is crucial in preventing serious social problems resulting from their misuse. Some methods train dedicated detectors on specific datasets but fall short in generalizing to unseen test data, while other zero-shot ones often yield suboptimal performance. Although the recent DetectGPT has shown promising detection performance, it suffers from significant inefficiency issues, as detecting a single candidate requires querying the source LLM with hundreds of its perturbations. This paper aims to bridge this gap. Concretely, we propose to incorporate a Bayesian surrogate model, which allows us to select typical samples based on Bayesian uncertainty and interpolate scores from typical samples to other samples, to improve query efficiency. Empirical results demonstrate that our method significantly outperforms existing approaches under a low query budget. Notably, when detecting the text generated by LLaMA family models, our method with just 2 or 3 queries can outperform DetectGPT with 200 queries.",
+      "externalIds": {
+        "DBLP": "conf/acl/MiaoGZD24",
+        "ArXiv": "2305.16617",
+        "DOI": "10.48550/arXiv.2305.16617",
+        "CorpusId": 258947640
+      },
+      "arxiv_id": "2305.16617",
+      "doi": "10.48550/arXiv.2305.16617",
+      "corpus_id": 258947640
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "41",
+      "ref_key": "S2:ab847321118de056ff00325d58903b71bdcc76e1",
+      "paperId": "ab847321118de056ff00325d58903b71bdcc76e1",
+      "title": "Is GPT-3 Text Indistinguishable from Human Text? Scarecrow: A Framework for Scrutinizing Machine Text",
+      "year": 2021,
+      "abstract": "Modern neural language models can produce remarkably fluent and grammatical text. So much, in fact, that recent work by Clark et al. (2021) has reported that conventional crowdsourcing can no longer reliably distinguish between machine-authored (GPT-3) and human-authored writing. As errors in machine generations become ever subtler and harder to spot, it poses a new challenge to the research community for robust machine text evaluation.We propose a new framework called Scarecrow for scrutinizing machine text via crowd annotation. To support the broad range of real machine errors that can be identified by laypeople, the ten error categories of Scarecrow—such as redundancy, commonsense errors, and incoherence—are identified through several rounds of crowd annotation experiments without a predefined ontology.We then use Scarecrow to collect over 41k error spans in human-written and machine-generated paragraphs of English language news text. We isolate factors for detailed analysis, including parameter count, training data, and various decoding-time configurations. Our approach successfully quantifies measurable gaps between human authored text and generations from models of several sizes, including fourteen configurations of GPT-3. In addition, our analysis unveils new insights, with detailed rationales provided by laypeople, e.g., that the commonsense capabilities have been improving with larger models while math capabilities have not, and that the choices of simple decoding hyperparameters can make remarkable differences on the perceived quality of machine text. We release our training material, annotation toolkit and dataset at https://yao-dou.github.io/scarecrow/.",
+      "externalIds": {
+        "ArXiv": "2107.01294",
+        "ACL": "2022.acl-long.501",
+        "DBLP": "conf/acl/DouFKSC22",
+        "DOI": "10.18653/v1/2022.acl-long.501",
+        "CorpusId": 247315430
+      },
+      "arxiv_id": "2107.01294",
+      "doi": "10.18653/v1/2022.acl-long.501",
+      "corpus_id": 247315430
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "42",
+      "ref_key": "S2:be2cb2cc81a6672bf69fa748272b52b6201ce28f",
+      "paperId": "be2cb2cc81a6672bf69fa748272b52b6201ce28f",
+      "title": "RoFT: A Tool for Evaluating Human Detection of Machine-Generated Text",
+      "year": 2020,
+      "abstract": "In recent years, large neural networks for natural language generation (NLG) have made leaps and bounds in their ability to generate fluent text. However, the tasks of evaluating quality differences between NLG systems and understanding how humans perceive the generated text remain both crucial and difficult. In this system demonstration, we present Real or Fake Text (RoFT), a website that tackles both of these challenges by inviting users to try their hand at detecting machine-generated text in a variety of domains. We introduce a novel evaluation task based on detecting the boundary at which a text passage that starts off human-written transitions to being machine-generated. We show preliminary results of using RoFT to evaluate detection of machine-generated news articles.",
+      "externalIds": {
+        "ArXiv": "2010.03070",
+        "DBLP": "conf/emnlp/DuganIKC20",
+        "MAG": "3092582584",
+        "ACL": "2020.emnlp-demos.25",
+        "DOI": "10.18653/v1/2020.emnlp-demos.25",
+        "CorpusId": 221854248
+      },
+      "arxiv_id": "2010.03070",
+      "doi": "10.18653/v1/2020.emnlp-demos.25",
+      "corpus_id": 221854248
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "43",
+      "ref_key": "S2:b118283afc5d8652de52cd13a5e287d76c5ec91f",
+      "paperId": "b118283afc5d8652de52cd13a5e287d76c5ec91f",
+      "title": "Real or Fake Text?: Investigating Human Ability to Detect Boundaries Between Human-Written and Machine-Generated Text",
+      "year": 2022,
+      "abstract": "As text generated by large language models proliferates, it becomes vital to understand how humans engage with such text, and whether or not they are able to detect when the text they are reading did not originate with a human writer. Prior work on human detection of generated text focuses on the case where an entire passage is either human-written or machine-generated. In this paper, we study a more realistic setting where text begins as human-written and transitions to being generated by state-of-the-art neural language models. We show that, while annotators often struggle at this task, there is substantial variance in annotator skill and that given proper incentives, annotators can improve at this task over time. Furthermore, we conduct a detailed comparison study and analyze how a variety of variables (model size, decoding strategy, fine-tuning, prompt genre, etc.) affect human detection performance. Finally, we collect error annotations from our participants and use them to show that certain textual genres influence models to make different types of errors and that certain sentence-level features correlate highly with annotator selection. We release the RoFT dataset: a collection of over 21,000 human annotations paired with error classifications to encourage future work in human detection and evaluation of generated text.",
+      "externalIds": {
+        "DBLP": "conf/aaai/DuganIKSC23",
+        "ArXiv": "2212.12672",
+        "DOI": "10.48550/arXiv.2212.12672",
+        "CorpusId": 255125274
+      },
+      "arxiv_id": "2212.12672",
+      "doi": "10.48550/arXiv.2212.12672",
+      "corpus_id": 255125274
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "44",
+      "ref_key": "S2:4e644dd3bd1faf77ad3a063a49b7d0bca8c80e9f",
+      "paperId": "4e644dd3bd1faf77ad3a063a49b7d0bca8c80e9f",
+      "title": "On pushing DeepFake Tweet Detection capabilities to the limits",
+      "year": 2022,
+      "abstract": "The recent advances in natural language generation provide an additional tool to manipulate public opinion on social media. Even though there has not been any report of malicious exploit of the newest generative techniques so far, disturbing human-like scholarly examples of GPT-2 and GPT-3 can be found on social media. Therefore, our paper investigates how the state-of-the-art deepfake social media text detectors perform at recognizing GPT-2 tweets as machine-written, also trying to improve the state-of-the-art by hyper-parameter tuning and ensembling the most promising detectors; finally, our work concentrates on studying the detectors’ capabilities to generalize over tweets generated by the more sophisticated and complex evolution of GPT-2, that is GPT-3. Results demonstrate that hyper-parameter optimization and ensembling advance the state-of-the-art, especially on the detection of GPT-2 tweets. However, all tested detectors dramatically decreased their accuracy on GPT-3 tweets. Despite this, we found out that even though GPT-3 tweets are much closer to human-written tweets than the ones produced by GPT-2, they still have latent features in common share with other generative techniques like GPT-2, RNN and other older methods. All things considered, the research community should quickly devise methods to detect GPT-3 social media texts, as well as older generative methods.",
+      "externalIds": {
+        "DBLP": "conf/websci/GambiniFFT22",
+        "DOI": "10.1145/3501247.3531560",
+        "CorpusId": 249993639
+      },
+      "arxiv_id": null,
+      "doi": "10.1145/3501247.3531560",
+      "corpus_id": 249993639
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "45",
+      "ref_key": "S2:867db5097ad6aaef098c60b0845785b440eca49a",
+      "paperId": "867db5097ad6aaef098c60b0845785b440eca49a",
+      "title": "GLTR: Statistical Detection and Visualization of Generated Text",
+      "year": 2019,
+      "abstract": "The rapid improvement of language models has raised the specter of abuse of text generation systems. This progress motivates the development of simple methods for detecting generated text that can be used by non-experts. In this work, we introduce GLTR, a tool to support humans in detecting whether a text was generated by a model. GLTR applies a suite of baseline statistical methods that can detect generation artifacts across multiple sampling schemes. In a human-subjects study, we show that the annotation scheme provided by GLTR improves the human detection-rate of fake text from 54% to 72% without any prior training. GLTR is open-source and publicly deployed, and has already been widely used to detect generated outputs.",
+      "externalIds": {
+        "MAG": "2951080837",
+        "DBLP": "conf/acl/GehrmannSR19",
+        "ACL": "P19-3019",
+        "ArXiv": "1906.04043",
+        "DOI": "10.18653/v1/P19-3019",
+        "CorpusId": 182952848
+      },
+      "arxiv_id": "1906.04043",
+      "doi": "10.18653/v1/P19-3019",
+      "corpus_id": 182952848
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "46",
+      "ref_key": "S2:9439d1366a73c99c416113fa9114e4fe18d02971",
+      "paperId": "9439d1366a73c99c416113fa9114e4fe18d02971",
+      "title": "Watermarking Pre-trained Language Models with Backdooring",
+      "year": 2022,
+      "abstract": "Large pre-trained language models (PLMs) have proven to be a crucial component of modern natural language processing systems. PLMs typically need to be fine-tuned on task-specific downstream datasets, which makes it hard to claim the ownership of PLMs and protect the developer's intellectual property due to the catastrophic forgetting phenomenon. We show that PLMs can be watermarked with a multi-task learning framework by embedding backdoors triggered by specific inputs defined by the owners, and those watermarks are hard to remove even though the watermarked PLMs are fine-tuned on multiple downstream tasks. In addition to using some rare words as triggers, we also show that the combination of common words can be used as backdoor triggers to avoid them being easily detected. Extensive experiments on multiple datasets demonstrate that the embedded watermarks can be robustly extracted with a high success rate and less influenced by the follow-up fine-tuning.",
+      "externalIds": {
+        "ArXiv": "2210.07543",
+        "DBLP": "journals/corr/abs-2210-07543",
+        "DOI": "10.48550/arXiv.2210.07543",
+        "CorpusId": 252907247
+      },
+      "arxiv_id": "2210.07543",
+      "doi": "10.48550/arXiv.2210.07543",
+      "corpus_id": 252907247
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "47",
+      "ref_key": "S2:cb29cf52f0f7d2e4324c68690a55b22890f2212d",
+      "paperId": "cb29cf52f0f7d2e4324c68690a55b22890f2212d",
+      "title": "How Close is ChatGPT to Human Experts? Comparison Corpus, Evaluation, and Detection",
+      "year": 2023,
+      "abstract": "The introduction of ChatGPT has garnered widespread attention in both academic and industrial communities. ChatGPT is able to respond effectively to a wide range of human questions, providing fluent and comprehensive answers that significantly surpass previous public chatbots in terms of security and usefulness. On one hand, people are curious about how ChatGPT is able to achieve such strength and how far it is from human experts. On the other hand, people are starting to worry about the potential negative impacts that large language models (LLMs) like ChatGPT could have on society, such as fake news, plagiarism, and social security issues. In this work, we collected tens of thousands of comparison responses from both human experts and ChatGPT, with questions ranging from open-domain, financial, medical, legal, and psychological areas. We call the collected dataset the Human ChatGPT Comparison Corpus (HC3). Based on the HC3 dataset, we study the characteristics of ChatGPT's responses, the differences and gaps from human experts, and future directions for LLMs. We conducted comprehensive human evaluations and linguistic analyses of ChatGPT-generated content compared with that of humans, where many interesting results are revealed. After that, we conduct extensive experiments on how to effectively detect whether a certain text is generated by ChatGPT or humans. We build three different detection systems, explore several key factors that influence their effectiveness, and evaluate them in different scenarios. The dataset, code, and models are all publicly available at https://github.com/Hello-SimpleAI/chatgpt-comparison-detection.",
+      "externalIds": {
+        "ArXiv": "2301.07597",
+        "DBLP": "journals/corr/abs-2301-07597",
+        "DOI": "10.48550/arXiv.2301.07597",
+        "CorpusId": 255998637
+      },
+      "arxiv_id": "2301.07597",
+      "doi": "10.48550/arXiv.2301.07597",
+      "corpus_id": 255998637
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "48",
+      "ref_key": "S2:e7ba478aad9b9534a9f632b85ad87177f5587189",
+      "paperId": "e7ba478aad9b9534a9f632b85ad87177f5587189",
+      "title": "MGTBench: Benchmarking Machine-Generated Text Detection",
+      "year": 2023,
+      "abstract": "Nowadays, powerful large language models (LLMs) such as ChatGPT have demonstrated revolutionary power in a variety of tasks. Consequently, the detection of machine-generated texts (MGTs) is becoming increasingly crucial as LLMs become more advanced and prevalent. These models have the ability to generate human-like language, making it challenging to discern whether a text is authored by a human or a machine. This raises concerns regarding authenticity, accountability, and potential bias. However, existing methods for detecting MGTs are evaluated using different model architectures, datasets, and experimental settings, resulting in a lack of a comprehensive evaluation framework that encompasses various methodologies. Furthermore, it remains unclear how existing detection methods would perform against powerful LLMs. In this paper, we fill this gap by proposing the first benchmark framework for MGT detection against powerful LLMs, named MGTBench. Extensive evaluations on public datasets with curated texts generated by various powerful LLMs such as ChatGPT-turbo and Claude demonstrate the effectiveness of different detection methods. Our ablation study shows that a larger number of words in general leads to better performance and most detection methods can achieve similar performance with much fewer training samples. Moreover, we delve into a more challenging task: text attribution. Our findings indicate that the model-based detection methods still perform well in the text attribution task. To investigate the robustness of different detection methods, we consider three adversarial attacks, namely paraphrasing, random spacing, and adversarial perturbations. We discover that these attacks can significantly diminish detection effectiveness, underscoring the critical need for the development of more robust detection methods.",
+      "externalIds": {
+        "DBLP": "conf/ccs/0001SC0024",
+        "ArXiv": "2303.14822",
+        "DOI": "10.48550/arXiv.2303.14822",
+        "CorpusId": 257766697
+      },
+      "arxiv_id": "2303.14822",
+      "doi": "10.48550/arXiv.2303.14822",
+      "corpus_id": 257766697
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "49",
+      "ref_key": "S2:ef3bdb9e805887a1a14e1e4cdb27145135591305",
+      "paperId": "ef3bdb9e805887a1a14e1e4cdb27145135591305",
+      "title": "RADAR: Robust AI-Text Detection via Adversarial Learning",
+      "year": 2023,
+      "abstract": "Recent advances in large language models (LLMs) and the intensifying popularity of ChatGPT-like applications have blurred the boundary of high-quality text generation between humans and machines. However, in addition to the anticipated revolutionary changes to our technology and society, the difficulty of distinguishing LLM-generated texts (AI-text) from human-generated texts poses new challenges of misuse and fairness, such as fake content generation, plagiarism, and false accusations of innocent writers. While existing works show that current AI-text detectors are not robust to LLM-based paraphrasing, this paper aims to bridge this gap by proposing a new framework called RADAR, which jointly trains a robust AI-text detector via adversarial learning. RADAR is based on adversarial training of a paraphraser and a detector. The paraphraser's goal is to generate realistic content to evade AI-text detection. RADAR uses the feedback from the detector to update the paraphraser, and vice versa. Evaluated with 8 different LLMs (Pythia, Dolly 2.0, Palmyra, Camel, GPT-J, Dolly 1.0, LLaMA, and Vicuna) across 4 datasets, experimental results show that RADAR significantly outperforms existing AI-text detection methods, especially when paraphrasing is in place. We also identify the strong transferability of RADAR from instruction-tuned LLMs to other LLMs, and evaluate the improved capability of RADAR via GPT-3.5-Turbo.",
+      "externalIds": {
+        "ArXiv": "2307.03838",
+        "DBLP": "journals/corr/abs-2307-03838",
+        "DOI": "10.48550/arXiv.2307.03838",
+        "CorpusId": 259501842
+      },
+      "arxiv_id": "2307.03838",
+      "doi": "10.48550/arXiv.2307.03838",
+      "corpus_id": 259501842
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "50",
+      "ref_key": "S2:9146414fca384e73f11ccfd3db8ad6d2a1e8eda2",
+      "paperId": "9146414fca384e73f11ccfd3db8ad6d2a1e8eda2",
+      "title": "Automatic Detection of Generated Text is Easiest when Humans are Fooled",
+      "year": 2019,
+      "abstract": "Recent advancements in neural language modelling make it possible to rapidly generate vast amounts of human-sounding text. The capabilities of humans and automatic discriminators to detect machine-generated text have been a large source of research interest, but humans and machines rely on different cues to make their decisions. Here, we perform careful benchmarking and analysis of three popular sampling-based decoding strategies—top-_k_, nucleus sampling, and untruncated random sampling—and show that improvements in decoding methods have primarily optimized for fooling humans. This comes at the expense of introducing statistical abnormalities that make detection easy for automatic systems. We also show that though both human and automatic detector performance improve with longer excerpt length, even multi-sentence excerpts can fool expert human raters over 30% of the time. Our findings reveal the importance of using both human and automatic detectors to assess the humanness of text generation systems.",
+      "externalIds": {
+        "ArXiv": "1911.00650",
+        "MAG": "3034287667",
+        "DBLP": "conf/acl/IppolitoDCE20",
+        "ACL": "2020.acl-main.164",
+        "DOI": "10.18653/v1/2020.acl-main.164",
+        "CorpusId": 218560609
+      },
+      "arxiv_id": "1911.00650",
+      "doi": "10.18653/v1/2020.acl-main.164",
+      "corpus_id": 218560609
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "51",
+      "ref_key": "S2:9438bc5626b2d9a771cecc7a41ecabf6639db53c",
+      "paperId": "9438bc5626b2d9a771cecc7a41ecabf6639db53c",
+      "title": "Automatic Detection of Machine Generated Text: A Critical Survey",
+      "year": 2020,
+      "abstract": "Text generative models (TGMs) excel in producing text that matches the style of human language reasonably well. Such TGMs can be misused by adversaries, e.g., by automatically generating fake news and fake product reviews that can look authentic and fool humans. Detectors that can distinguish text generated by TGM from human written text play a vital role in mitigating such misuse of TGMs. Recently, there has been a flurry of works from both natural language processing (NLP) and machine learning (ML) communities to build accurate detectors for English. Despite the importance of this problem, there is currently no work that surveys this fast-growing literature and introduces newcomers to important research challenges. In this work, we fill this void by providing a critical survey and review of this literature to facilitate a comprehensive understanding of this problem. We conduct an in-depth error analysis of the state-of-the-art detector and discuss research directions to guide future work in this exciting area.",
+      "externalIds": {
+        "MAG": "3096831026",
+        "DBLP": "conf/coling/JawaharASL20",
+        "ArXiv": "2011.01314",
+        "ACL": "2020.coling-main.208",
+        "DOI": "10.18653/V1/2020.COLING-MAIN.208",
+        "CorpusId": 226237099
+      },
+      "arxiv_id": "2011.01314",
+      "doi": "10.18653/V1/2020.COLING-MAIN.208",
+      "corpus_id": 226237099
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "52",
+      "ref_key": "S2:00c85c78a67dceb33621e36adef08b5d05c5251d",
+      "paperId": "00c85c78a67dceb33621e36adef08b5d05c5251d",
+      "title": "On the Reliability of Watermarks for Large Language Models",
+      "year": 2023,
+      "abstract": "As LLMs become commonplace, machine-generated text has the potential to flood the internet with spam, social media bots, and valueless content. Watermarking is a simple and effective strategy for mitigating such harms by enabling the detection and documentation of LLM-generated text. Yet a crucial question remains: How reliable is watermarking in realistic settings in the wild? There, watermarked text may be modified to suit a user's needs, or entirely rewritten to avoid detection. We study the robustness of watermarked text after it is re-written by humans, paraphrased by a non-watermarked LLM, or mixed into a longer hand-written document. We find that watermarks remain detectable even after human and machine paraphrasing. While these attacks dilute the strength of the watermark, paraphrases are statistically likely to leak n-grams or even longer fragments of the original text, resulting in high-confidence detections when enough tokens are observed. For example, after strong human paraphrasing the watermark is detectable after observing 800 tokens on average, when setting a 1e-5 false positive rate. We also consider a range of new detection schemes that are sensitive to short spans of watermarked text embedded inside a large document, and we compare the robustness of watermarking to other kinds of detectors.",
+      "externalIds": {
+        "ArXiv": "2306.04634",
+        "DBLP": "conf/iclr/KirchenbauerGWS24",
+        "DOI": "10.48550/arXiv.2306.04634",
+        "CorpusId": 259095643
+      },
+      "arxiv_id": "2306.04634",
+      "doi": "10.48550/arXiv.2306.04634",
+      "corpus_id": 259095643
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "53",
+      "ref_key": "S2:cb5b71a622aff47014d4f28a958679629a8b6363",
+      "paperId": "cb5b71a622aff47014d4f28a958679629a8b6363",
+      "title": "A Watermark for Large Language Models",
+      "year": 2023,
+      "abstract": "Potential harms of large language models can be mitigated by watermarking model output, i.e., embedding signals into generated text that are invisible to humans but algorithmically detectable from a short span of tokens. We propose a watermarking framework for proprietary language models. The watermark can be embedded with negligible impact on text quality, and can be detected using an efficient open-source algorithm without access to the language model API or parameters. The watermark works by selecting a randomized set of\"green\"tokens before a word is generated, and then softly promoting use of green tokens during sampling. We propose a statistical test for detecting the watermark with interpretable p-values, and derive an information-theoretic framework for analyzing the sensitivity of the watermark. We test the watermark using a multi-billion parameter model from the Open Pretrained Transformer (OPT) family, and discuss robustness and security.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2301-10226",
+        "ArXiv": "2301.10226",
+        "DOI": "10.48550/arXiv.2301.10226",
+        "CorpusId": 256194179
+      },
+      "arxiv_id": "2301.10226",
+      "doi": "10.48550/arXiv.2301.10226",
+      "corpus_id": 256194179
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "54",
+      "ref_key": "S2:0095acc4f2c3255cf38fdf844003c97858adb418",
+      "paperId": "0095acc4f2c3255cf38fdf844003c97858adb418",
+      "title": "OUTFOX: LLM-generated Essay Detection through In-context Learning with Adversarially Generated Examples",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) have achieved human-level fluency in text generation, making it difficult to distinguish between human-written and LLM-generated texts. This poses a growing risk of misuse of LLMs and demands the development of detectors to identify LLM-generated texts. However, existing detectors lack robustness against attacks: they degrade detection accuracy by simply paraphrasing LLM-generated texts. Furthermore, a malicious user might attempt to deliberately evade the detectors based on detection results, but this has not been assumed in previous studies. In this paper, we propose OUTFOX, a framework that improves the robustness of LLM-generated-text detectors by allowing both the detector and the attacker to consider each other's output. In this framework, the attacker uses the detector's prediction labels as examples for in-context learning and adversarially generates essays that are harder to detect, while the detector uses the adversarially generated essays as examples for in-context learning to learn to detect essays from a strong attacker. Experiments in the domain of student essays show that the proposed detector improves the detection performance on the attacker-generated texts by up to +41.3 points F1-score. Furthermore, the proposed detector shows a state-of-the-art detection performance: up to 96.9 points F1-score, beating existing detectors on non-attacked texts. Finally, the proposed attacker drastically degrades the performance of detectors by up to -57.0 points F1-score, massively outperforming the baseline paraphrasing method for evading detection.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-11729",
+        "ArXiv": "2307.11729",
+        "DOI": "10.48550/arXiv.2307.11729",
+        "CorpusId": 260091573
+      },
+      "arxiv_id": "2307.11729",
+      "doi": "10.48550/arXiv.2307.11729",
+      "corpus_id": 260091573
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "55",
+      "ref_key": "S2:ad8266828ca2504cef9e25853727644e73f066e4",
+      "paperId": "ad8266828ca2504cef9e25853727644e73f066e4",
+      "title": "Detecting Fake Content with Relative Entropy Scoring",
+      "year": 2008,
+      "abstract": "How to distinguish natural texts from artificially generated ones ? Fake content is commonly encountered on the Internet, ranging from web scraping to random word salads. Most of this fake content is generated for spam purpose. In this paper, we present two methods to deal with this problem. The first one uses classical language models, while the second one is a novel approach using short range information between words.",
+      "externalIds": {
+        "DBLP": "conf/ecai/LavergneUY08",
+        "MAG": "204891295",
+        "CorpusId": 12098535
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 12098535
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "56",
+      "ref_key": "S2:11beca761c3079f7612204ed1b241ee8832107c9",
+      "paperId": "11beca761c3079f7612204ed1b241ee8832107c9",
+      "title": "Deepfake Text Detection in the Wild",
+      "year": 2023,
+      "abstract": "Recent advances in large language models have enabled them to reach a level of text generation comparable to that of humans. These models show powerful capabilities across a wide range of content, including news article writing, story generation, and scientiﬁc writing. Such capability further narrows the gap between human-authored and machine-generated texts, highlighting the importance of deepfake text detection to avoid potential risks such as fake news propagation and plagia-rism. However, previous work has been limited in that they testify methods on testbeds of speciﬁc domains or certain language models. In practical scenarios, the detector faces texts from various domains or LLMs without knowing their sources. To this end, we build a wild testbed by gathering texts from various human writings and deepfake texts generated by different LLMs. Human annotators are only slightly better than random guessing at identifying machine-generated texts. Empirical results on automatic detection meth-ods further showcase the challenges of deep-fake text detection in a wild testbed. In addition, out-of-distribution poses a greater challenge for a detector to be employed in realistic application scenarios. We release our resources at https://github.com/yafuly/ DeepfakeTextDetect .",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-13242",
+        "DOI": "10.48550/arXiv.2305.13242",
+        "CorpusId": 258832454
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2305.13242",
+      "corpus_id": 258832454
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "57",
+      "ref_key": "S2:0914c443c0fb00c9ffc26ced54c1932079d5e652",
+      "paperId": "0914c443c0fb00c9ffc26ced54c1932079d5e652",
+      "title": "CoCo: Coherence-Enhanced Machine-Generated Text Detection Under Data Limitation With Contrastive Learning",
+      "year": 2022,
+      "abstract": "Machine-Generated Text (MGT) detection, a task that discriminates MGT from Human-Written Text (HWT), plays a crucial role in preventing misuse of text generative models, which excel in mimicking human writing style recently. Latest proposed detectors usually take coarse text sequences as input and fine-tune pretrained models with standard cross-entropy loss. However, these methods fail to consider the linguistic structure of texts. Moreover, they lack the ability to handle the low-resource problem which could often happen in practice considering the enormous amount of textual data online. In this paper, we present a coherence-based contrastive learning model named CoCo to detect the possible MGT under low-resource scenario. To exploit the linguistic feature, we encode coherence information in form of graph into text representation. To tackle the challenges of low data resource, we employ a contrastive learning framework and propose an improved contrastive loss for preventing performance degradation brought by simple samples. The experiment results on two public datasets and two self-constructed datasets prove our approach outperforms the state-of-art methods significantly. Also, we surprisingly find that MGTs originated from up-to-date language models could be easier to detect than these from previous models, in our experiments. And we propose some preliminary explanations for this counter-intuitive phenomena. All the codes and datasets are open-sourced.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2212-10341",
+        "ArXiv": "2212.10341",
+        "DOI": "10.48550/arXiv.2212.10341",
+        "CorpusId": 254877728
+      },
+      "arxiv_id": "2212.10341",
+      "doi": "10.48550/arXiv.2212.10341",
+      "corpus_id": 254877728
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "58",
+      "ref_key": "S2:d0a93ad1af752853f73d89288e8fafb0c9906801",
+      "paperId": "d0a93ad1af752853f73d89288e8fafb0c9906801",
+      "title": "ArguGPT: evaluating, understanding and identifying argumentative essays generated by GPT models",
+      "year": 2023,
+      "abstract": "AI generated content (AIGC) presents considerable challenge to educators around the world. Instructors need to be able to detect such text generated by large language models, either with the naked eye or with the help of some tools. There is also growing need to understand the lexical, syntactic and stylistic features of AIGC. To address these challenges in English language teaching, we first present ArguGPT, a balanced corpus of 4,038 argumentative essays generated by 7 GPT models in response to essay prompts from three sources: (1) in-class or homework exercises, (2) TOEFL and (3) GRE writing tasks. Machine-generated texts are paired with roughly equal number of human-written essays with three score levels matched in essay prompts. We then hire English instructors to distinguish machine essays from human ones. Results show that when first exposed to machine-generated essays, the instructors only have an accuracy of 61% in detecting them. But the number rises to 67% after one round of minimal self-training. Next, we perform linguistic analyses of these essays, which show that machines produce sentences with more complex syntactic structures while human essays tend to be lexically more complex. Finally, we test existing AIGC detectors and build our own detectors using SVMs and RoBERTa. Results suggest that a RoBERTa fine-tuned with the training set of ArguGPT achieves above 90% accuracy in both essay- and sentence-level classification. To the best of our knowledge, this is the first comprehensive analysis of argumentative essays produced by generative large language models. Machine-authored essays in ArguGPT and our models will be made publicly available at https://github.com/huhailinguist/ArguGPT",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2304-07666",
+        "ArXiv": "2304.07666",
+        "DOI": "10.48550/arXiv.2304.07666",
+        "CorpusId": 258179137
+      },
+      "arxiv_id": "2304.07666",
+      "doi": "10.48550/arXiv.2304.07666",
+      "corpus_id": 258179137
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "59",
+      "ref_key": "S2:d994b38331d42fdaaab87c1f7578f05e99dd4204",
+      "paperId": "d994b38331d42fdaaab87c1f7578f05e99dd4204",
+      "title": "A Private Watermark for Large Language Models",
+      "year": 2023,
+      "abstract": "Recently, text watermarking algorithms for large language models (LLMs) have been mitigating the potential harms of text generated by the LLMs, including fake news and copyright issues. However, the watermark detection of current text algorithms requires the key from the generation process, making them susceptible to breaches and counterfeiting. In this work, we propose the first private watermarking algorithm, which extends the current text watermarking algorithms by using two different neural networks respectively for watermark generation and detection, rather than using the same key at both stages. Meanwhile, part of the parameters of the watermark generation and detection networks are shared, which makes the detection network achieve a high accuracy very efficiently. Experiments show that our algorithm ensures high detection accuracy with minimal impact on generation and detection speed, due to the small parameter size of both networks. Additionally, our subsequent analysis demonstrates the difficulty of reverting the watermark generation rules from the detection network.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-16230",
+        "DOI": "10.48550/arXiv.2307.16230",
+        "CorpusId": 271333036
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2307.16230",
+      "corpus_id": 271333036
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "60",
+      "ref_key": "S2:50018a30e99a1c748bdebc04f494e87d7e0877a1",
+      "paperId": "50018a30e99a1c748bdebc04f494e87d7e0877a1",
+      "title": "GPTs Don’t Keep Secrets: Searching for Backdoor Watermark Triggers in Autoregressive Language Models",
+      "year": 2023,
+      "abstract": "This work analyzes backdoor watermarks in an autoregressive transformer fine-tuned to perform a generative sequence-to-sequence task, specifically summarization. We propose and demonstrate an attack to identify trigger words or phrases by analyzing open ended generations from autoregressive models that have backdoor watermarks inserted. It is shown in our work that triggers based on random common words are easier to identify than those based on single, rare tokens. The attack proposed is easy to implement and only requires access to the model weights. Code used to create the backdoor watermarked models and analyze their outputs is shared at [github link to be inserted for camera ready version].",
+      "externalIds": {
+        "ACL": "2023.trustnlp-1.21",
+        "DOI": "10.18653/v1/2023.trustnlp-1.21",
+        "CorpusId": 260063191
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2023.trustnlp-1.21",
+      "corpus_id": 260063191
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "61",
+      "ref_key": "S2:9a7ac45eafe11ca003db3a300505f3b5c3f9009a",
+      "paperId": "9a7ac45eafe11ca003db3a300505f3b5c3f9009a",
+      "title": "DetectGPT: Zero-Shot Machine-Generated Text Detection using Probability Curvature",
+      "year": 2023,
+      "abstract": "The increasing fluency and widespread usage of large language models (LLMs) highlight the desirability of corresponding tools aiding detection of LLM-generated text. In this paper, we identify a property of the structure of an LLM's probability function that is useful for such detection. Specifically, we demonstrate that text sampled from an LLM tends to occupy negative curvature regions of the model's log probability function. Leveraging this observation, we then define a new curvature-based criterion for judging if a passage is generated from a given LLM. This approach, which we call DetectGPT, does not require training a separate classifier, collecting a dataset of real or generated passages, or explicitly watermarking generated text. It uses only log probabilities computed by the model of interest and random perturbations of the passage from another generic pre-trained language model (e.g., T5). We find DetectGPT is more discriminative than existing zero-shot methods for model sample detection, notably improving detection of fake news articles generated by 20B parameter GPT-NeoX from 0.81 AUROC for the strongest zero-shot baseline to 0.95 AUROC for DetectGPT. See https://ericmitchell.ai/detectgpt for code, data, and other project information.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2301-11305",
+        "ArXiv": "2301.11305",
+        "DOI": "10.48550/arXiv.2301.11305",
+        "CorpusId": 256274849
+      },
+      "arxiv_id": "2301.11305",
+      "doi": "10.48550/arXiv.2301.11305",
+      "corpus_id": 256274849
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "62",
+      "ref_key": "S2:8ef3b0f5f86bdaa6fd6380ca45e42e4c27b32b75",
+      "paperId": "8ef3b0f5f86bdaa6fd6380ca45e42e4c27b32b75",
+      "title": "Detecting and Unmasking AI-Generated Texts through Explainable Artificial Intelligence using Stylistic Features",
+      "year": 2023,
+      "abstract": "—In recent years, Artificial Intelligence (AI) has significantly transformed various aspects of human activities, including text composition. The advancements in AI technology have enabled computers to generate text that closely mimics human writing which is raising concerns about misinformation, identity theft, and security vulnerabilities. To address these challenges, understanding the underlying patterns of AI-generated text is essential. This research focuses on uncovering these patterns to establish ethical guidelines for distinguishing between AI-generated and human-generated text. This research contributes to the ongoing discourse on AI-generated content by elucidating methodologies for distinguishing between human and machine-generated text. The research delves into parameters such as syllable count, word length, sentence structure, functional word usage, and punctuation ratios to detect AI-generated text. Furthermore, the research integrates Explainable AI (xAI) techniques—LIME and SHAP—to enhance the interpretability of machine learning model predictions. The model demonstrated excellent efficacy, showing an accuracy of 93%.Leveraging xAI techniques, further uncovering that pivotal attributes such as Herdan’s C, MaaS, and Simpson’s Index played a dominant role in the classification process.",
+      "externalIds": {
+        "DOI": "10.14569/ijacsa.2023.01410110",
+        "CorpusId": 264953899
+      },
+      "arxiv_id": null,
+      "doi": "10.14569/ijacsa.2023.01410110",
+      "corpus_id": 264953899
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "63",
+      "ref_key": "S2:fdb361ea83c010ed0011d179567de5a1112651ac",
+      "paperId": "fdb361ea83c010ed0011d179567de5a1112651ac",
+      "title": "Red Teaming Language Model Detectors with Language Models",
+      "year": 2023,
+      "abstract": "The prevalence and strong capability of large language models (LLMs) present significant safety and ethical risks if exploited by malicious users. To prevent the potentially deceptive usage of LLMs, recent work has proposed algorithms to detect LLM-generated text and protect LLMs. In this paper, we investigate the robustness and reliability of these LLM detectors under adversarial attacks. We study two types of attack strategies: 1) replacing certain words in an LLM’s output with their synonyms given the context; 2) automatically searching for an instructional prompt to alter the writing style of the generation. In both strategies, we leverage an auxiliary LLM to generate the word replacements or the instructional prompt. Different from previous works, we consider a challenging setting where the auxiliary LLM can also be protected by a detector. Experiments reveal that our attacks effectively compromise the performance of all detectors in the study with plausible generations, underscoring the urgent need to improve the robustness of LLM-generated text detection systems. Code is available at https://github.com/shizhouxing/LLM-Detector-Robustness.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-19713",
+        "ArXiv": "2305.19713",
+        "ACL": "2024.tacl-1.10",
+        "DOI": "10.1162/tacl_a_00639",
+        "CorpusId": 258987266
+      },
+      "arxiv_id": "2305.19713",
+      "doi": "10.1162/tacl_a_00639",
+      "corpus_id": 258987266
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "64",
+      "ref_key": "S2:c7462e0ee928f095a7fc40b91f1e7557d283ae8e",
+      "paperId": "c7462e0ee928f095a7fc40b91f1e7557d283ae8e",
+      "title": "Release Strategies and the Social Impacts of Language Models",
+      "year": 2019,
+      "abstract": "Large language models have a range of beneficial uses: they can assist in prose, poetry, and programming; analyze dataset biases; and more. However, their flexibility and generative capabilities also raise misuse concerns. This report discusses OpenAI's work related to the release of its GPT-2 language model. It discusses staged release, which allows time between model releases to conduct risk and benefit analyses as model sizes increased. It also discusses ongoing partnership-based research and provides recommendations for better coordination and responsible publication in AI.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-1908-09203",
+        "MAG": "2969958763",
+        "ArXiv": "1908.09203",
+        "CorpusId": 201666234
+      },
+      "arxiv_id": "1908.09203",
+      "doi": null,
+      "corpus_id": 201666234
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "65",
+      "ref_key": "S2:1e66b2d2a56842f07e5d6bf4ac0dbe5da829d052",
+      "paperId": "1e66b2d2a56842f07e5d6bf4ac0dbe5da829d052",
+      "title": "DetectLLM: Leveraging Log Rank Information for Zero-Shot Detection of Machine-Generated Text",
+      "year": 2023,
+      "abstract": "With the rapid progress of large language models (LLMs) and the huge amount of text they generated, it becomes more and more impractical to manually distinguish whether a text is machine-generated. Given the growing use of LLMs in social media and education, it prompts us to develop methods to detect machine-generated text, preventing malicious usage such as plagiarism, misinformation, and propaganda. Previous work has studied several zero-shot methods, which require no training data. These methods achieve good performance, but there is still a lot of room for improvement. In this paper, we introduce two novel zero-shot methods for detecting machine-generated text by leveraging the log rank information. One is called DetectLLM-LRR, which is fast and efficient, and the other is called DetectLLM-NPR, which is more accurate, but slower due to the need for perturbations. Our experiments on three datasets and seven language models show that our proposed methods improve over the state of the art by 3.9 and 1.75 AUROC points absolute. Moreover, DetectLLM-NPR needs fewer perturbations than previous work to achieve the same level of performance, which makes it more practical for real-world use. We also investigate the efficiency--performance trade-off based on users preference on these two measures and we provide intuition for using them in practice effectively. We release the data and the code of both methods in https://github.com/mbzuai-nlp/DetectLLM",
+      "externalIds": {
+        "ArXiv": "2306.05540",
+        "DBLP": "journals/corr/abs-2306-05540",
+        "DOI": "10.48550/arXiv.2306.05540",
+        "CorpusId": 259129463
+      },
+      "arxiv_id": "2306.05540",
+      "doi": "10.48550/arXiv.2306.05540",
+      "corpus_id": 259129463
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "66",
+      "ref_key": "S2:a5fab19553e623e8787383cb3da76b8a3c42a8f4",
+      "paperId": "a5fab19553e623e8787383cb3da76b8a3c42a8f4",
+      "title": "Intrinsic Dimension Estimation for Robust Detection of AI-Generated Texts",
+      "year": 2023,
+      "abstract": "Rapidly increasing quality of AI-generated content makes it difficult to distinguish between human and AI-generated texts, which may lead to undesirable consequences for society. Therefore, it becomes increasingly important to study the properties of human texts that are invariant over different text domains and varying proficiency of human writers, can be easily calculated for any language, and can robustly separate natural and AI-generated texts regardless of the generation model and sampling method. In this work, we propose such an invariant for human-written texts, namely the intrinsic dimensionality of the manifold underlying the set of embeddings for a given text sample. We show that the average intrinsic dimensionality of fluent texts in a natural language is hovering around the value $9$ for several alphabet-based languages and around $7$ for Chinese, while the average intrinsic dimensionality of AI-generated texts for each language is $\\approx 1.5$ lower, with a clear statistical separation between human-generated and AI-generated distributions. This property allows us to build a score-based artificial text detector. The proposed detector's accuracy is stable over text domains, generator models, and human writer proficiency levels, outperforming SOTA detectors in model-agnostic and cross-domain scenarios by a significant margin.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2306-04723",
+        "ArXiv": "2306.04723",
+        "DOI": "10.48550/arXiv.2306.04723",
+        "CorpusId": 259108779
+      },
+      "arxiv_id": "2306.04723",
+      "doi": "10.48550/arXiv.2306.04723",
+      "corpus_id": 259108779
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "67",
+      "ref_key": "S2:9da9cab545bd1534a8c953bb66e611243dcee24d",
+      "paperId": "9da9cab545bd1534a8c953bb66e611243dcee24d",
+      "title": "Authorship Attribution for Neural Text Generation",
+      "year": 2020,
+      "abstract": "In recent years, the task of generating realistic short and long texts have made tremendous advancements. In particular, several recently proposed neural network-based language models have demonstrated their astonishing capabilities to generate texts that are challenging to distinguish from human-written texts with the naked eye. Despite many benefits and utilities of such neural methods, in some applications, being able to tell the “author” of a text in question becomes critically important. In this work, in the context of this Turing Test, we investigate the so-called authorship attribution problem in three versions: (1) given two texts T1 and T2, are both generated by the same method or not? (2) is the given text T written by a human or machine? (3) given a text T and k candidate neural methods, can we single out the method (among k alternatives) that generated T? Against one humanwritten and eight machine-generated texts (i.e., CTRL, GPT, GPT2, GROVER, XLM, XLNET, PPLM, FAIR), we empirically experiment with the performance of various models in three problems. By and large, we find that most generators still generate texts significantly different from human-written ones, thereby making three problems easier to solve. However, the qualities of texts generated by GPT2, GROVER, and FAIR are better, often confusing machine classifiers in solving three problems. All codes and datasets of our experiments are available at: https://bit.ly/ 302zWdz",
+      "externalIds": {
+        "ACL": "2020.emnlp-main.673",
+        "MAG": "3101891351",
+        "DBLP": "conf/emnlp/UchenduLSL20",
+        "DOI": "10.18653/v1/2020.emnlp-main.673",
+        "CorpusId": 221835708
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2020.emnlp-main.673",
+      "corpus_id": 221835708
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "68",
+      "ref_key": "S2:5156b3be33abbc3267b2d41e35537bf33c149420",
+      "paperId": "5156b3be33abbc3267b2d41e35537bf33c149420",
+      "title": "Does Human Collaboration Enhance the Accuracy of Identifying LLM-Generated Deepfake Texts?",
+      "year": 2023,
+      "abstract": "Advances in Large Language Models (e.g., GPT-4, LLaMA) have improved the generation of coherent sentences resembling human writing on a large scale, resulting in the creation of so-called deepfake texts. However, this progress poses security and privacy concerns, necessitating effective solutions for distinguishing deepfake texts from human-written ones. Although prior works studied humans’ ability to detect deepfake texts, none has examined whether “collaboration” among humans improves the detection of deepfake texts. In this study, to address this gap of understanding on deepfake texts, we conducted experiments with two groups: (1) nonexpert individuals from the AMT platform and (2) writing experts from the Upwork platform. The results demonstrate that collaboration among humans can potentially improve the detection of deepfake texts for both groups, increasing detection accuracies by 6.36% for non-experts and 12.76% for experts, respectively, compared to individuals’ detection accuracies. We further analyze the explanations that humans used for detecting a piece of text as deepfake text, and find that the strongest indicator of deepfake texts is their lack of coherence and consistency. Our study provides useful insights for future tools and framework designs to facilitate the collaborative human detection of deepfake texts. The experiment datasets and AMT implementations are available at: https://github.com/huashen218/llm-deepfake-human-study.git",
+      "externalIds": {
+        "ArXiv": "2304.01002",
+        "DOI": "10.1609/hcomp.v11i1.27557",
+        "CorpusId": 257913864
+      },
+      "arxiv_id": "2304.01002",
+      "doi": "10.1609/hcomp.v11i1.27557",
+      "corpus_id": 257913864
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "69",
+      "ref_key": "S2:3b732c83e12948fb665094181f552f32d8a37a31",
+      "paperId": "3b732c83e12948fb665094181f552f32d8a37a31",
+      "title": "HowkGPT: Investigating the Detection of ChatGPT-generated University Student Homework through Context-Aware Perplexity Analysis",
+      "year": 2023,
+      "abstract": "As the use of Large Language Models (LLMs) in text generation tasks proliferates, concerns arise over their potential to compromise academic integrity. The education sector currently tussles with distinguishing student-authored homework assignments from AI-generated ones. This paper addresses the challenge by introducing HowkGPT, designed to identify homework assignments generated by AI. HowkGPT is built upon a dataset of academic assignments and accompanying metadata [17] and employs a pretrained LLM to compute perplexity scores for student-authored and ChatGPT-generated responses. These scores then assist in establishing a threshold for discerning the origin of a submitted assignment. Given the specificity and contextual nature of academic work, HowkGPT further refines its analysis by defining category-specific thresholds derived from the metadata, enhancing the precision of the detection. This study emphasizes the critical need for effective strategies to uphold academic integrity amidst the growing influence of LLMs and provides an approach to ensuring fair and accurate grading in educational institutions.",
+      "externalIds": {
+        "ArXiv": "2305.18226",
+        "DBLP": "journals/corr/abs-2305-18226",
+        "DOI": "10.48550/arXiv.2305.18226",
+        "CorpusId": 258960155
+      },
+      "arxiv_id": "2305.18226",
+      "doi": "10.48550/arXiv.2305.18226",
+      "corpus_id": 258960155
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "70",
+      "ref_key": "S2:e063a1350b0dcc83c3ae11b1d75f0c11fdd1f463",
+      "paperId": "e063a1350b0dcc83c3ae11b1d75f0c11fdd1f463",
+      "title": "Towards an understanding and explanation for mixed-initiative artificial scientific text detection",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have gained popularity in various fields for their exceptional capability of generating human-like text. Their potential misuse has raised social concerns about plagiarism in academic contexts. However, effective artificial scientific text detection is a non-trivial task due to several challenges, including (1) the lack of a clear understanding of the differences between machine-generated and human-written scientific text, (2) the poor generalization performance of existing methods caused by out-of-distribution issues, and (3) the limited support for human-machine collaboration with sufficient interpretability during the detection process. In this paper, we first identify the critical distinctions between machine-generated and human-written scientific text through a quantitative experiment. Then, we propose a mixed-initiative workflow that combines human experts’ prior knowledge with machine intelligence, along with a visual analytics system to facilitate efficient and trustworthy scientific text detection. Finally, we demonstrate the effectiveness of our approach through two case studies and a controlled user study. We also provide design implications for interactive artificial text detection tools in high-stakes decision-making scenarios.",
+      "externalIds": {
+        "DBLP": "journals/ivs/WengLZSKHZC24",
+        "ArXiv": "2304.05011",
+        "DOI": "10.1177/14738716241240156",
+        "CorpusId": 258059731
+      },
+      "arxiv_id": "2304.05011",
+      "doi": "10.1177/14738716241240156",
+      "corpus_id": 258059731
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "71",
+      "ref_key": "S2:faf80a4a3f4d60cd07af25c358c484e2a7e018ee",
+      "paperId": "faf80a4a3f4d60cd07af25c358c484e2a7e018ee",
+      "title": "Is ChatGPT Involved in Texts? Measure the Polish Ratio to Detect ChatGPT-Generated Text",
+      "year": 2023,
+      "abstract": "The remarkable capabilities of large-scale language models, such as ChatGPT, in text generation have impressed readers and spurred researchers to devise detectors to mitigate potential risks, including misinformation, phishing, and academic dishonesty. Despite this, most previous studies have been predominantly geared towards creating detectors that differentiate between purely ChatGPT-generated texts and human-authored texts. This approach, however, fails to work on discerning texts generated through human-machine collaboration, such as ChatGPT-polished texts. Addressing this gap, we introduce a novel dataset termed HPPT (ChatGPT-polished academic abstracts), facilitating the construction of more robust detectors. It diverges from extant corpora by comprising pairs of human-written and ChatGPT-polished abstracts instead of purely ChatGPT-generated texts. Additionally, we propose the\"Polish Ratio\"method, an innovative measure of the degree of modification made by ChatGPT compared to the original human-written text. It provides a mechanism to measure the degree of ChatGPT influence in the resulting text. Our experimental results show our proposed model has better robustness on the HPPT dataset and two existing datasets (HC3 and CDB). Furthermore, the\"Polish Ratio\"we proposed offers a more comprehensive explanation by quantifying the degree of ChatGPT involvement.",
+      "externalIds": {
+        "ArXiv": "2307.11380",
+        "DBLP": "journals/corr/abs-2307-11380",
+        "DOI": "10.48550/arXiv.2307.11380",
+        "CorpusId": 260091554
+      },
+      "arxiv_id": "2307.11380",
+      "doi": "10.48550/arXiv.2307.11380",
+      "corpus_id": 260091554
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "72",
+      "ref_key": "S2:ad7129af0644dbcafa9aa2f111cb76526ea444a1",
+      "paperId": "ad7129af0644dbcafa9aa2f111cb76526ea444a1",
+      "title": "Defending Against Neural Fake News",
+      "year": 2019,
+      "abstract": "Recent progress in natural language generation has raised dual-use concerns. While applications like summarization and translation are positive, the underlying technology also might enable adversaries to generate neural fake news: targeted propaganda that closely mimics the style of real news. \nModern computer security relies on careful threat modeling: identifying potential threats and vulnerabilities from an adversary's point of view, and exploring potential mitigations to these threats. Likewise, developing robust defenses against neural fake news requires us first to carefully investigate and characterize the risks of these models. We thus present a model for controllable text generation called Grover. Given a headline like `Link Found Between Vaccines and Autism,' Grover can generate the rest of the article; humans find these generations to be more trustworthy than human-written disinformation. \nDeveloping robust verification techniques against generators like Grover is critical. We find that best current discriminators can classify neural fake news from real, human-written, news with 73% accuracy, assuming access to a moderate level of training data. Counterintuitively, the best defense against Grover turns out to be Grover itself, with 92% accuracy, demonstrating the importance of public release of strong generators. We investigate these results further, showing that exposure bias -- and sampling strategies that alleviate its effects -- both leave artifacts that similar discriminators can pick up on. We conclude by discussing ethical issues regarding the technology, and plan to release Grover publicly, helping pave the way for better detection of neural fake news.",
+      "externalIds": {
+        "MAG": "2971008823",
+        "DBLP": "conf/nips/ZellersHRBFRC19",
+        "ArXiv": "1905.12616",
+        "CorpusId": 168169824
+      },
+      "arxiv_id": "1905.12616",
+      "doi": null,
+      "corpus_id": 168169824
+    },
+    {
+      "paper_id": "2310.14724",
+      "ref_index": "73",
+      "ref_key": "S2:5aa2d4d4b60516dfed64d1b2b235eb10fdefec68",
+      "paperId": "5aa2d4d4b60516dfed64d1b2b235eb10fdefec68",
+      "title": "Neural Deepfake Detection with Factual Structure of Text",
+      "year": 2020,
+      "abstract": "Deepfake detection, the task of automatically discriminating machine-generated text, is increasingly critical with recent advances in natural language generative models. Existing approaches to deepfake detection typically represent documents with coarse-grained representations. However, they struggle to capture factual structures of documents, which is a discriminative factor between machine-generated and human-written text according to our statistical analysis. To address this, we propose a graph-based model that utilizes the factual structure of a document for deepfake detection of text. Our approach represents the factual structure of a given document as an entity graph, which is further utilized to learn sentence representations with a graph neural network. Sentence representations are then composed to a document representation for making predictions, where consistent relations between neighboring sentences are sequentially modeled. Results of experiments on two public deepfake datasets show that our approach significantly improves strong base models built with RoBERTa. Model analysis further indicates that our model can distinguish the difference in the factual structure between machine-generated text and human-written text.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2010-07475",
+        "ACL": "2020.emnlp-main.193",
+        "ArXiv": "2010.07475",
+        "MAG": "3100262863",
+        "DOI": "10.18653/v1/2020.emnlp-main.193",
+        "CorpusId": 222377949
+      },
+      "arxiv_id": "2010.07475",
+      "doi": "10.18653/v1/2020.emnlp-main.193",
+      "corpus_id": 222377949
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "Advanced   Detector   Research": {
+        "Watermarking Technology": {
+          "Data-Driven Watermarking": {
+            "5c4bbf816a6e4759b9efe5f37f9c66a603ef9e2f": {},
+            "9439d1366a73c99c416113fa9114e4fe18d02971": {},
+            "50018a30e99a1c748bdebc04f494e87d7e0877a1": {}
+          },
+          "Model-Driven Watermarking": {
+            "90213971da84c974bc7502b1112a0ee8a0a33601": {},
+            "ccaff61e0c1e629d91d78f82a64b3cbc8f3f7023": {},
+            "289533e16e509d0ba8f499a371b4e470f3e492de": {},
+            "893bc4c9d3be06319db7f31b6491110483db5fd1": {},
+            "00c85c78a67dceb33621e36adef08b5d05c5251d": {},
+            "cb5b71a622aff47014d4f28a958679629a8b6363": {},
+            "d994b38331d42fdaaab87c1f7578f05e99dd4204": {}
+          },
+          "Post-Processing Watermarking": {
+            "9b79eb8d21c8a832daedbfc6d8c31bebe0da3ed5": {},
+            "753dd1be7581e70d65b537e8f62140b8ff8793ac": {},
+            "a52aee41169df2788f6acad5eb750eb54bda624a": {},
+            "4757b911780581cf3d24fdfb2749608f370dc034": {},
+            "78db1529bd67ef885fe550ab3ed7f965067e8928": {},
+            "3f358e5bedaae0eb49849dce98edb516f0731df5": {},
+            "bd7a45fa6dce81dbbc61a5728bf54e040e206da7": {},
+            "8ff1dd6e15408581592f91434be870acc5f1bdd4": {}
+          }
+        },
+        "Statistics-Based Detectors": {
+          "Linguistics Features Statistics": {
+            "49fc8eb2c3770b005b1b0d34febf14de838aa238": {},
+            "4d1683ac3b8c45eae218e711f7a7c6d1490ee503": {}
+          },
+          "White-Box Statistics": {
+            "3079b6d6b6655b0e8be6336339a8284325ad23f8": {},
+            "08145978da4c8912f4a05444a6bbf048778dc4af": {},
+            "85664bb73d09a20f4d3f7aae81143c0f25060fbb": {},
+            "2eeff1edde4fc66284e7bedeb8eb8878ed4560f4": {},
+            "867db5097ad6aaef098c60b0845785b440eca49a": {},
+            "ad8266828ca2504cef9e25853727644e73f066e4": {},
+            "9a7ac45eafe11ca003db3a300505f3b5c3f9009a": {},
+            "c7462e0ee928f095a7fc40b91f1e7557d283ae8e": {},
+            "1e66b2d2a56842f07e5d6bf4ac0dbe5da829d052": {},
+            "a5fab19553e623e8787383cb3da76b8a3c42a8f4": {},
+            "3b732c83e12948fb665094181f552f32d8a37a31": {}
+          },
+          "Black-Box Statistics:": {
+            "6727ef300f4dfaed7af9a94193c3e68158cd6eb9": {},
+            "43707e84a8e0e2919a3e724eb59aa6a5465c5cb7": {},
+            "08145978da4c8912f4a05444a6bbf048778dc4af": {},
+            "b3e7a122bc9d89202ab6d6a779feecc6faa4a6c7": {},
+            "11f01361e1f7ed7487a10d7abd176f30fd8a0435": {}
+          }
+        },
+        "Neural-Based Detectors": {
+          "Feature-Based Classifiers": {
+            "e309fc310f89ed6ac3a4a04c565e2176339ee86f": {},
+            "c37928f1314eec585d25f0673b9d71ab1d058553": {},
+            "3c5e1b00ec4ced0878dadcb0ec193dfe04ed00be": {},
+            "d972c9bccc5ccef16d71b450dd3ab4c77f67224a": {},
+            "c88787ed4e6830c4d6595f2d0496641c3d2e4f79": {},
+            "7a30650265477ebe0dc6fc6ce0b54be8644c5226": {},
+            "4a166004de99191be6dc7338fed4d78f246c8904": {},
+            "02f0d5faa1cd88ea0afe48b756bfbf9adfefba28": {},
+            "8ef3b0f5f86bdaa6fd6380ca45e42e4c27b32b75": {}
+          },
+          "Pre-Training Classifiers": {
+            "ffea498541ea1f055a2e0cf5ea16bce665414bf5": {},
+            "e6f4006f8bc9867cbc33b0765e7831147ce5162e": {},
+            "da420c73bd3cee3d8a97a8ddacc4efcf2d7f5c9d": {},
+            "d0a280002ec2d8864d378464031026825d9d994f": {},
+            "2734bf6fd46357504fd1deef33ad69207b39fd57": {},
+            "4ad189079046bf9df0f8ece7545e42dc00e13b9f": {},
+            "e8e068349efc114589042f30e888b81ea58db86e": {},
+            "e287a3d81e3dc28f2de0f405a60ecbaf800dd009": {},
+            "4e644dd3bd1faf77ad3a063a49b7d0bca8c80e9f": {},
+            "cb29cf52f0f7d2e4324c68690a55b22890f2212d": {},
+            "e7ba478aad9b9534a9f632b85ad87177f5587189": {},
+            "ef3bdb9e805887a1a14e1e4cdb27145135591305": {},
+            "0095acc4f2c3255cf38fdf844003c97858adb418": {},
+            "11beca761c3079f7612204ed1b241ee8832107c9": {},
+            "0914c443c0fb00c9ffc26ced54c1932079d5e652": {},
+            "d0a93ad1af752853f73d89288e8fafb0c9906801": {},
+            "fdb361ea83c010ed0011d179567de5a1112651ac": {},
+            "9da9cab545bd1534a8c953bb66e611243dcee24d": {},
+            "faf80a4a3f4d60cd07af25c358c484e2a7e018ee": {},
+            "5aa2d4d4b60516dfed64d1b2b235eb10fdefec68": {}
+          },
+          "LLMs as Detectors": {
+            "1091083065969649716cf5596b8c1fcec05f48ed": {},
+            "0095acc4f2c3255cf38fdf844003c97858adb418": {},
+            "d0a93ad1af752853f73d89288e8fafb0c9906801": {},
+            "ad7129af0644dbcafa9aa2f111cb76526ea444a1": {}
+          }
+        },
+        "Human-Assisted Methods": {
+          "Intuitive Indicators": {
+            "b118283afc5d8652de52cd13a5e287d76c5ec91f": {},
+            "9438bc5626b2d9a771cecc7a41ecabf6639db53c": {},
+            "5156b3be33abbc3267b2d41e35537bf33c149420": {}
+          },
+          "Imperceptible Features": {
+            "a16ae67070de155789a871cb27ecbf9eaa98b379": {},
+            "867db5097ad6aaef098c60b0845785b440eca49a": {},
+            "9146414fca384e73f11ccfd3db8ad6d2a1e8eda2": {}
+          },
+          "Enhancing Human Detection Capabilities": {
+            "ab847321118de056ff00325d58903b71bdcc76e1": {},
+            "be2cb2cc81a6672bf69fa748272b52b6201ce28f": {},
+            "b118283afc5d8652de52cd13a5e287d76c5ec91f": {},
+            "9146414fca384e73f11ccfd3db8ad6d2a1e8eda2": {}
+          },
+          "Mixed Detection: Understanding and Explanation": {
+            "e063a1350b0dcc83c3ae11b1d75f0c11fdd1f463": {}
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000001",
+        "paperId": "5c4bbf816a6e4759b9efe5f37f9c66a603ef9e2f",
+        "ref_index": "17",
+        "path": [
+          "Advanced   Detector   Research",
+          "Watermarking Technology",
+          "Data-Driven Watermarking"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000002",
+        "paperId": "9439d1366a73c99c416113fa9114e4fe18d02971",
+        "ref_index": "46",
+        "path": [
+          "Advanced   Detector   Research",
+          "Watermarking Technology",
+          "Data-Driven Watermarking"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000003",
+        "paperId": "50018a30e99a1c748bdebc04f494e87d7e0877a1",
+        "ref_index": "60",
+        "path": [
+          "Advanced   Detector   Research",
+          "Watermarking Technology",
+          "Data-Driven Watermarking"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000004",
+        "paperId": "90213971da84c974bc7502b1112a0ee8a0a33601",
+        "ref_index": "21",
+        "path": [
+          "Advanced   Detector   Research",
+          "Watermarking Technology",
+          "Model-Driven Watermarking"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000005",
+        "paperId": "ccaff61e0c1e629d91d78f82a64b3cbc8f3f7023",
+        "ref_index": "24",
+        "path": [
+          "Advanced   Detector   Research",
+          "Watermarking Technology",
+          "Model-Driven Watermarking"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000006",
+        "paperId": "289533e16e509d0ba8f499a371b4e470f3e492de",
+        "ref_index": "27",
+        "path": [
+          "Advanced   Detector   Research",
+          "Watermarking Technology",
+          "Model-Driven Watermarking"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000007",
+        "paperId": "893bc4c9d3be06319db7f31b6491110483db5fd1",
+        "ref_index": "28",
+        "path": [
+          "Advanced   Detector   Research",
+          "Watermarking Technology",
+          "Model-Driven Watermarking"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000008",
+        "paperId": "00c85c78a67dceb33621e36adef08b5d05c5251d",
+        "ref_index": "52",
+        "path": [
+          "Advanced   Detector   Research",
+          "Watermarking Technology",
+          "Model-Driven Watermarking"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000009",
+        "paperId": "cb5b71a622aff47014d4f28a958679629a8b6363",
+        "ref_index": "53",
+        "path": [
+          "Advanced   Detector   Research",
+          "Watermarking Technology",
+          "Model-Driven Watermarking"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000010",
+        "paperId": "d994b38331d42fdaaab87c1f7578f05e99dd4204",
+        "ref_index": "59",
+        "path": [
+          "Advanced   Detector   Research",
+          "Watermarking Technology",
+          "Model-Driven Watermarking"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000011",
+        "paperId": "9b79eb8d21c8a832daedbfc6d8c31bebe0da3ed5",
+        "ref_index": "0",
+        "path": [
+          "Advanced   Detector   Research",
+          "Watermarking Technology",
+          "Post-Processing Watermarking"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000012",
+        "paperId": "753dd1be7581e70d65b537e8f62140b8ff8793ac",
+        "ref_index": "2",
+        "path": [
+          "Advanced   Detector   Research",
+          "Watermarking Technology",
+          "Post-Processing Watermarking"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000013",
+        "paperId": "a52aee41169df2788f6acad5eb750eb54bda624a",
+        "ref_index": "9",
+        "path": [
+          "Advanced   Detector   Research",
+          "Watermarking Technology",
+          "Post-Processing Watermarking"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000014",
+        "paperId": "4757b911780581cf3d24fdfb2749608f370dc034",
+        "ref_index": "12",
+        "path": [
+          "Advanced   Detector   Research",
+          "Watermarking Technology",
+          "Post-Processing Watermarking"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000015",
+        "paperId": "78db1529bd67ef885fe550ab3ed7f965067e8928",
+        "ref_index": "14",
+        "path": [
+          "Advanced   Detector   Research",
+          "Watermarking Technology",
+          "Post-Processing Watermarking"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000016",
+        "paperId": "3f358e5bedaae0eb49849dce98edb516f0731df5",
+        "ref_index": "19",
+        "path": [
+          "Advanced   Detector   Research",
+          "Watermarking Technology",
+          "Post-Processing Watermarking"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000017",
+        "paperId": "bd7a45fa6dce81dbbc61a5728bf54e040e206da7",
+        "ref_index": "20",
+        "path": [
+          "Advanced   Detector   Research",
+          "Watermarking Technology",
+          "Post-Processing Watermarking"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000018",
+        "paperId": "8ff1dd6e15408581592f91434be870acc5f1bdd4",
+        "ref_index": "30",
+        "path": [
+          "Advanced   Detector   Research",
+          "Watermarking Technology",
+          "Post-Processing Watermarking"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000019",
+        "paperId": "49fc8eb2c3770b005b1b0d34febf14de838aa238",
+        "ref_index": "16",
+        "path": [
+          "Advanced   Detector   Research",
+          "Statistics-Based Detectors",
+          "Linguistics Features Statistics"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000020",
+        "paperId": "4d1683ac3b8c45eae218e711f7a7c6d1490ee503",
+        "ref_index": "35",
+        "path": [
+          "Advanced   Detector   Research",
+          "Statistics-Based Detectors",
+          "Linguistics Features Statistics"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000021",
+        "paperId": "3079b6d6b6655b0e8be6336339a8284325ad23f8",
+        "ref_index": "6",
+        "path": [
+          "Advanced   Detector   Research",
+          "Statistics-Based Detectors",
+          "White-Box Statistics"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000022",
+        "paperId": "08145978da4c8912f4a05444a6bbf048778dc4af",
+        "ref_index": "22",
+        "path": [
+          "Advanced   Detector   Research",
+          "Statistics-Based Detectors",
+          "White-Box Statistics"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000023",
+        "paperId": "85664bb73d09a20f4d3f7aae81143c0f25060fbb",
+        "ref_index": "37",
+        "path": [
+          "Advanced   Detector   Research",
+          "Statistics-Based Detectors",
+          "White-Box Statistics"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000024",
+        "paperId": "2eeff1edde4fc66284e7bedeb8eb8878ed4560f4",
+        "ref_index": "40",
+        "path": [
+          "Advanced   Detector   Research",
+          "Statistics-Based Detectors",
+          "White-Box Statistics"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000025",
+        "paperId": "867db5097ad6aaef098c60b0845785b440eca49a",
+        "ref_index": "45",
+        "path": [
+          "Advanced   Detector   Research",
+          "Statistics-Based Detectors",
+          "White-Box Statistics"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000026",
+        "paperId": "ad8266828ca2504cef9e25853727644e73f066e4",
+        "ref_index": "55",
+        "path": [
+          "Advanced   Detector   Research",
+          "Statistics-Based Detectors",
+          "White-Box Statistics"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000027",
+        "paperId": "9a7ac45eafe11ca003db3a300505f3b5c3f9009a",
+        "ref_index": "61",
+        "path": [
+          "Advanced   Detector   Research",
+          "Statistics-Based Detectors",
+          "White-Box Statistics"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000028",
+        "paperId": "c7462e0ee928f095a7fc40b91f1e7557d283ae8e",
+        "ref_index": "64",
+        "path": [
+          "Advanced   Detector   Research",
+          "Statistics-Based Detectors",
+          "White-Box Statistics"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000029",
+        "paperId": "1e66b2d2a56842f07e5d6bf4ac0dbe5da829d052",
+        "ref_index": "65",
+        "path": [
+          "Advanced   Detector   Research",
+          "Statistics-Based Detectors",
+          "White-Box Statistics"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000030",
+        "paperId": "a5fab19553e623e8787383cb3da76b8a3c42a8f4",
+        "ref_index": "66",
+        "path": [
+          "Advanced   Detector   Research",
+          "Statistics-Based Detectors",
+          "White-Box Statistics"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000031",
+        "paperId": "3b732c83e12948fb665094181f552f32d8a37a31",
+        "ref_index": "69",
+        "path": [
+          "Advanced   Detector   Research",
+          "Statistics-Based Detectors",
+          "White-Box Statistics"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000032",
+        "paperId": "6727ef300f4dfaed7af9a94193c3e68158cd6eb9",
+        "ref_index": "3",
+        "path": [
+          "Advanced   Detector   Research",
+          "Statistics-Based Detectors",
+          "Black-Box Statistics:"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000033",
+        "paperId": "43707e84a8e0e2919a3e724eb59aa6a5465c5cb7",
+        "ref_index": "7",
+        "path": [
+          "Advanced   Detector   Research",
+          "Statistics-Based Detectors",
+          "Black-Box Statistics:"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000034",
+        "paperId": "08145978da4c8912f4a05444a6bbf048778dc4af",
+        "ref_index": "22",
+        "path": [
+          "Advanced   Detector   Research",
+          "Statistics-Based Detectors",
+          "Black-Box Statistics:"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000035",
+        "paperId": "b3e7a122bc9d89202ab6d6a779feecc6faa4a6c7",
+        "ref_index": "31",
+        "path": [
+          "Advanced   Detector   Research",
+          "Statistics-Based Detectors",
+          "Black-Box Statistics:"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000036",
+        "paperId": "11f01361e1f7ed7487a10d7abd176f30fd8a0435",
+        "ref_index": "32",
+        "path": [
+          "Advanced   Detector   Research",
+          "Statistics-Based Detectors",
+          "Black-Box Statistics:"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000037",
+        "paperId": "e309fc310f89ed6ac3a4a04c565e2176339ee86f",
+        "ref_index": "4",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Feature-Based Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000038",
+        "paperId": "c37928f1314eec585d25f0673b9d71ab1d058553",
+        "ref_index": "8",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Feature-Based Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000039",
+        "paperId": "3c5e1b00ec4ced0878dadcb0ec193dfe04ed00be",
+        "ref_index": "10",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Feature-Based Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000040",
+        "paperId": "d972c9bccc5ccef16d71b450dd3ab4c77f67224a",
+        "ref_index": "11",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Feature-Based Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000041",
+        "paperId": "c88787ed4e6830c4d6595f2d0496641c3d2e4f79",
+        "ref_index": "15",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Feature-Based Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000042",
+        "paperId": "7a30650265477ebe0dc6fc6ce0b54be8644c5226",
+        "ref_index": "18",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Feature-Based Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000043",
+        "paperId": "4a166004de99191be6dc7338fed4d78f246c8904",
+        "ref_index": "25",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Feature-Based Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000044",
+        "paperId": "02f0d5faa1cd88ea0afe48b756bfbf9adfefba28",
+        "ref_index": "29",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Feature-Based Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000045",
+        "paperId": "8ef3b0f5f86bdaa6fd6380ca45e42e4c27b32b75",
+        "ref_index": "62",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Feature-Based Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000046",
+        "paperId": "ffea498541ea1f055a2e0cf5ea16bce665414bf5",
+        "ref_index": "5",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Pre-Training Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000047",
+        "paperId": "e6f4006f8bc9867cbc33b0765e7831147ce5162e",
+        "ref_index": "13",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Pre-Training Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000048",
+        "paperId": "da420c73bd3cee3d8a97a8ddacc4efcf2d7f5c9d",
+        "ref_index": "23",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Pre-Training Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000049",
+        "paperId": "d0a280002ec2d8864d378464031026825d9d994f",
+        "ref_index": "26",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Pre-Training Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000050",
+        "paperId": "2734bf6fd46357504fd1deef33ad69207b39fd57",
+        "ref_index": "33",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Pre-Training Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000051",
+        "paperId": "4ad189079046bf9df0f8ece7545e42dc00e13b9f",
+        "ref_index": "34",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Pre-Training Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000052",
+        "paperId": "e8e068349efc114589042f30e888b81ea58db86e",
+        "ref_index": "36",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Pre-Training Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000053",
+        "paperId": "e287a3d81e3dc28f2de0f405a60ecbaf800dd009",
+        "ref_index": "39",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Pre-Training Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000054",
+        "paperId": "4e644dd3bd1faf77ad3a063a49b7d0bca8c80e9f",
+        "ref_index": "44",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Pre-Training Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000055",
+        "paperId": "cb29cf52f0f7d2e4324c68690a55b22890f2212d",
+        "ref_index": "47",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Pre-Training Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000056",
+        "paperId": "e7ba478aad9b9534a9f632b85ad87177f5587189",
+        "ref_index": "48",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Pre-Training Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000057",
+        "paperId": "ef3bdb9e805887a1a14e1e4cdb27145135591305",
+        "ref_index": "49",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Pre-Training Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000058",
+        "paperId": "0095acc4f2c3255cf38fdf844003c97858adb418",
+        "ref_index": "54",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Pre-Training Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000059",
+        "paperId": "11beca761c3079f7612204ed1b241ee8832107c9",
+        "ref_index": "56",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Pre-Training Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000060",
+        "paperId": "0914c443c0fb00c9ffc26ced54c1932079d5e652",
+        "ref_index": "57",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Pre-Training Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000061",
+        "paperId": "d0a93ad1af752853f73d89288e8fafb0c9906801",
+        "ref_index": "58",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Pre-Training Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000062",
+        "paperId": "fdb361ea83c010ed0011d179567de5a1112651ac",
+        "ref_index": "63",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Pre-Training Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000063",
+        "paperId": "9da9cab545bd1534a8c953bb66e611243dcee24d",
+        "ref_index": "67",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Pre-Training Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000064",
+        "paperId": "faf80a4a3f4d60cd07af25c358c484e2a7e018ee",
+        "ref_index": "71",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Pre-Training Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000065",
+        "paperId": "5aa2d4d4b60516dfed64d1b2b235eb10fdefec68",
+        "ref_index": "73",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "Pre-Training Classifiers"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000066",
+        "paperId": "1091083065969649716cf5596b8c1fcec05f48ed",
+        "ref_index": "38",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "LLMs as Detectors"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000067",
+        "paperId": "0095acc4f2c3255cf38fdf844003c97858adb418",
+        "ref_index": "54",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "LLMs as Detectors"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000068",
+        "paperId": "d0a93ad1af752853f73d89288e8fafb0c9906801",
+        "ref_index": "58",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "LLMs as Detectors"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000069",
+        "paperId": "ad7129af0644dbcafa9aa2f111cb76526ea444a1",
+        "ref_index": "72",
+        "path": [
+          "Advanced   Detector   Research",
+          "Neural-Based Detectors",
+          "LLMs as Detectors"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000070",
+        "paperId": "b118283afc5d8652de52cd13a5e287d76c5ec91f",
+        "ref_index": "43",
+        "path": [
+          "Advanced   Detector   Research",
+          "Human-Assisted Methods",
+          "Intuitive Indicators"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000071",
+        "paperId": "9438bc5626b2d9a771cecc7a41ecabf6639db53c",
+        "ref_index": "51",
+        "path": [
+          "Advanced   Detector   Research",
+          "Human-Assisted Methods",
+          "Intuitive Indicators"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000072",
+        "paperId": "5156b3be33abbc3267b2d41e35537bf33c149420",
+        "ref_index": "68",
+        "path": [
+          "Advanced   Detector   Research",
+          "Human-Assisted Methods",
+          "Intuitive Indicators"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000073",
+        "paperId": "a16ae67070de155789a871cb27ecbf9eaa98b379",
+        "ref_index": "1",
+        "path": [
+          "Advanced   Detector   Research",
+          "Human-Assisted Methods",
+          "Imperceptible Features"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000074",
+        "paperId": "867db5097ad6aaef098c60b0845785b440eca49a",
+        "ref_index": "45",
+        "path": [
+          "Advanced   Detector   Research",
+          "Human-Assisted Methods",
+          "Imperceptible Features"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000075",
+        "paperId": "9146414fca384e73f11ccfd3db8ad6d2a1e8eda2",
+        "ref_index": "50",
+        "path": [
+          "Advanced   Detector   Research",
+          "Human-Assisted Methods",
+          "Imperceptible Features"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000076",
+        "paperId": "ab847321118de056ff00325d58903b71bdcc76e1",
+        "ref_index": "41",
+        "path": [
+          "Advanced   Detector   Research",
+          "Human-Assisted Methods",
+          "Enhancing Human Detection Capabilities"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000077",
+        "paperId": "be2cb2cc81a6672bf69fa748272b52b6201ce28f",
+        "ref_index": "42",
+        "path": [
+          "Advanced   Detector   Research",
+          "Human-Assisted Methods",
+          "Enhancing Human Detection Capabilities"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000078",
+        "paperId": "b118283afc5d8652de52cd13a5e287d76c5ec91f",
+        "ref_index": "43",
+        "path": [
+          "Advanced   Detector   Research",
+          "Human-Assisted Methods",
+          "Enhancing Human Detection Capabilities"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000079",
+        "paperId": "9146414fca384e73f11ccfd3db8ad6d2a1e8eda2",
+        "ref_index": "50",
+        "path": [
+          "Advanced   Detector   Research",
+          "Human-Assisted Methods",
+          "Enhancing Human Detection Capabilities"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2310.14724",
+        "arxiv_id": "2310.14724",
+        "leaf_mention_id": "2310.14724::000080",
+        "paperId": "e063a1350b0dcc83c3ae11b1d75f0c11fdd1f463",
+        "ref_index": "70",
+        "path": [
+          "Advanced   Detector   Research",
+          "Human-Assisted Methods",
+          "Mixed Detection: Understanding and Explanation"
+        ],
+        "depth": 3,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 80,
+      "unique_leaf_paper_count": 74,
+      "multi_membership_extra_mentions": 6,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

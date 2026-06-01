@@ -1,58 +1,58 @@
 # Promotion Checklist
 
-Status: `draft_data_pending_no_runs`
+Status: `data_staged_payloads_ready_no_model_runs`
 
 Do not promote this experiment into a runnable or stable result workflow until
 all required items are checked.
 
 ## Source Data Readiness
 
-- [ ] `/Users/xjp/Desktop/TaxoBench-CS/data/ground_new` is confirmed as the
+- [x] `/Users/xjp/Desktop/TaxoBench-CS/data/ground_new` is confirmed as the
       intended source set.
-- [ ] The final source record count is verified from disk.
-- [ ] Each selected record has `arxiv_id`, `title`, `taxo_tree`, `papers`, and
+- [x] The final source record count is verified from disk.
+- [x] Each selected record has `arxiv_id`, `title`, `taxo_tree`, `papers`, and
       `papers_index`.
-- [ ] Each selected record has a matching human-written outline file.
-- [ ] Reference metadata normalization preserves `paperId`, local index, title,
+- [x] Each selected record has a matching human-written outline file.
+- [x] Reference metadata normalization preserves `paperId`, local index, title,
       year, abstract, and external ids where available.
-- [ ] Taxonomy leaf resolution to `papers_index` is measured and reported.
-- [ ] Any unresolved leaves are reviewed before generation.
-- [ ] Multi-membership paper leaves are preserved or explicitly reported.
-- [ ] The adapter does not assume every `papers` record appears in `taxo_tree`.
-- [ ] Null `year` values are tolerated.
-- [ ] Null reference `arxiv_id` values are tolerated.
-- [ ] Missing DOI values are tolerated.
-- [ ] `eval-3/ground_outline` is not treated as the full human-written outline
+- [x] Taxonomy leaf resolution to `papers_index` is measured and reported.
+- [x] Any unresolved leaves are reviewed before generation.
+- [x] Multi-membership paper leaves are preserved or explicitly reported.
+- [x] The adapter does not assume every `papers` record appears in `taxo_tree`.
+- [x] Null `year` values are tolerated.
+- [x] Null reference `arxiv_id` values are tolerated.
+- [x] Missing DOI values are tolerated.
+- [x] `eval-3/ground_outline` is not treated as the full human-written outline
       source unless it becomes complete.
 
 ## Adapter Readiness
 
-- [ ] `prepare_taxobench_cs_inputs.py` exists.
-- [ ] Adapter dry-run for `--limit 2` writes no staged package.
-- [ ] Full staging writes a manifest and source provenance sidecar.
-- [ ] Full staging row counts are verified from disk, not only from script logs.
-- [ ] Staged records contain no local paths in prompt-visible fields.
-- [ ] Human-written outline identity is preserved as reference/evaluation-only.
+- [x] `prepare_taxobench_cs_inputs.py` exists.
+- [x] Adapter dry-run for `--limit 2` writes no staged package.
+- [x] Full staging writes a manifest and source provenance sidecar.
+- [x] Full staging row counts are verified from disk, not only from script logs.
+- [x] Staged records contain no local paths in prompt-visible fields.
+- [x] Human-written outline identity is preserved as reference/evaluation-only.
 
 ## Payload Readiness
 
-- [ ] `tree_only_guarded` payload rendering is implemented.
-- [ ] `tree_with_papers` payload rendering is implemented.
-- [ ] `flat_concepts` deterministic projection is implemented.
-- [ ] `random_hierarchy` deterministic projection is implemented.
-- [ ] Projection reports include taxonomy node, leaf, and unresolved counts.
-- [ ] Random hierarchy uses a stable seed derived from experiment id and paper id.
-- [ ] No projection generates or imputes taxonomy definitions.
+- [x] `tree_only_guarded` payload rendering is implemented.
+- [x] `tree_with_papers` payload rendering is implemented.
+- [x] `flat_concepts` deterministic projection is implemented.
+- [x] `random_hierarchy` deterministic projection is implemented.
+- [x] Projection reports include taxonomy node, leaf, and unresolved counts.
+- [x] Random hierarchy uses a stable seed derived from experiment id and paper id.
+- [x] No projection generates or imputes taxonomy definitions.
 
 ## Prompt Readiness
 
-- [ ] Baseline reuses or matches the faithful MEOW blind prompt behavior.
-- [ ] All generated arms use `title_ref_meta_no_target_abstract`.
-- [ ] Target paper abstract is absent.
-- [ ] `Target Paper Abstract:` is absent.
-- [ ] `metadata_*` provenance fields are absent.
-- [ ] Local paths are absent.
-- [ ] Reference abstracts in `ref_meta[].abstract` are preserved when present.
+- [x] Baseline reuses or matches the faithful MEOW blind prompt behavior.
+- [x] All generated arms use `title_ref_meta_no_target_abstract`.
+- [x] Target paper abstract is absent.
+- [x] `Target Paper Abstract:` is absent.
+- [x] `metadata_*` provenance fields are absent.
+- [x] Local paths are absent.
+- [x] Reference abstracts in `ref_meta[].abstract` are preserved when present.
 
 ## Evaluation Readiness
 
@@ -65,7 +65,7 @@ all required items are checked.
 ## Execution Approval
 
 - [ ] User approves adapter dry-run.
-- [ ] User approves full staging.
+- [x] User approves full staging.
 - [ ] User approves render smoke.
 - [ ] User approves live generation smoke.
 - [ ] User approves full batch.

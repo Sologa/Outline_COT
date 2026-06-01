@@ -1,0 +1,2621 @@
+{
+  "paper_id": "2307.12966",
+  "arxiv_id": "2307.12966",
+  "title": "Aligning Large Language Models with Human: A Survey",
+  "ref_meta": [
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "0",
+      "ref_key": "S2:d766bffc357127e0dc86dd69561d5aeb520d6f4c",
+      "paperId": "d766bffc357127e0dc86dd69561d5aeb520d6f4c",
+      "title": "Training language models to follow instructions with human feedback",
+      "year": 2022,
+      "abstract": "Making language models bigger does not inherently make them better at following a user's intent. For example, large language models can generate outputs that are untruthful, toxic, or simply not helpful to the user. In other words, these models are not aligned with their users. In this paper, we show an avenue for aligning language models with user intent on a wide range of tasks by fine-tuning with human feedback. Starting with a set of labeler-written prompts and prompts submitted through the OpenAI API, we collect a dataset of labeler demonstrations of the desired model behavior, which we use to fine-tune GPT-3 using supervised learning. We then collect a dataset of rankings of model outputs, which we use to further fine-tune this supervised model using reinforcement learning from human feedback. We call the resulting models InstructGPT. In human evaluations on our prompt distribution, outputs from the 1.3B parameter InstructGPT model are preferred to outputs from the 175B GPT-3, despite having 100x fewer parameters. Moreover, InstructGPT models show improvements in truthfulness and reductions in toxic output generation while having minimal performance regressions on public NLP datasets. Even though InstructGPT still makes simple mistakes, our results show that fine-tuning with human feedback is a promising direction for aligning language models with human intent.",
+      "externalIds": {
+        "DBLP": "conf/nips/Ouyang0JAWMZASR22",
+        "ArXiv": "2203.02155",
+        "CorpusId": 246426909
+      },
+      "arxiv_id": "2203.02155",
+      "doi": null,
+      "corpus_id": 246426909
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "1",
+      "ref_key": "S2:6f4cc536f9ed83d0dbf7e919dc609be12aa0848a",
+      "paperId": "6f4cc536f9ed83d0dbf7e919dc609be12aa0848a",
+      "title": "Unnatural Instructions: Tuning Language Models with (Almost) No Human Labor",
+      "year": 2022,
+      "abstract": "Instruction tuning enables pretrained language models to perform new tasks from inference-time natural language descriptions. These approaches rely on vast amounts of human supervision in the form of crowdsourced datasets or user interactions. In this work, we introduce Unnatural Instructions: a large dataset of creative and diverse instructions, collected with virtually no human labor. We collect 64,000 examples by prompting a language model with three seed examples of instructions and eliciting a fourth. This set is then expanded by prompting the model to rephrase each instruction, creating a total of approximately 240,000 examples of instructions, inputs, and outputs. Experiments show that despite containing a fair amount of noise, training on Unnatural Instructions rivals the effectiveness of training on open-source manually-curated datasets, surpassing the performance of models such as T0++ and Tk-Instruct across various benchmarks. These results demonstrate the potential of model-generated data as a cost-effective alternative to crowdsourcing for dataset expansion and diversification.",
+      "externalIds": {
+        "ACL": "2023.acl-long.806",
+        "ArXiv": "2212.09689",
+        "DBLP": "conf/acl/HonovichSLS23",
+        "DOI": "10.48550/arXiv.2212.09689",
+        "CorpusId": 254853659
+      },
+      "arxiv_id": "2212.09689",
+      "doi": "10.48550/arXiv.2212.09689",
+      "corpus_id": 254853659
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "2",
+      "ref_key": "S2:e65b346d442e9962a4276dc1c1af2956d9d5f1eb",
+      "paperId": "e65b346d442e9962a4276dc1c1af2956d9d5f1eb",
+      "title": "Self-Instruct: Aligning Language Models with Self-Generated Instructions",
+      "year": 2022,
+      "abstract": "Large “instruction-tuned” language models (i.e., finetuned to respond to instructions) have demonstrated a remarkable ability to generalize zero-shot to new tasks. Nevertheless, they depend heavily on human-written instruction data that is often limited in quantity, diversity, and creativity, therefore hindering the generality of the tuned model. We introduce Self-Instruct, a framework for improving the instruction-following capabilities of pretrained language models by bootstrapping off their own generations. Our pipeline generates instructions, input, and output samples from a language model, then filters invalid or similar ones before using them to finetune the original model. Applying our method to the vanilla GPT3, we demonstrate a 33% absolute improvement over the original model on Super-NaturalInstructions, on par with the performance of InstructGPT-001, which was trained with private user data and human annotations. For further evaluation, we curate a set of expert-written instructions for novel tasks, and show through human evaluation that tuning GPT3 with Self-Instruct outperforms using existing public instruction datasets by a large margin, leaving only a 5% absolute gap behind InstructGPT-001. Self-Instruct provides an almost annotation-free method for aligning pre-trained language models with instructions, and we release our large synthetic dataset to facilitate future studies on instruction tuning.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2212-10560",
+        "ArXiv": "2212.10560",
+        "ACL": "2023.acl-long.754",
+        "DOI": "10.48550/arXiv.2212.10560",
+        "CorpusId": 254877310
+      },
+      "arxiv_id": "2212.10560",
+      "doi": "10.48550/arXiv.2212.10560",
+      "corpus_id": 254877310
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "3",
+      "ref_key": "S2:7ca954844bc1dd405bc43445b1c990e42d865095",
+      "paperId": "7ca954844bc1dd405bc43445b1c990e42d865095",
+      "title": "CAMEL: Communicative Agents for \"Mind\" Exploration of Large Scale Language Model Society",
+      "year": 2023,
+      "abstract": "The rapid advancement of conversational and chat-based language models has led to remarkable progress in complex task-solving. However, their success heavily relies on human input to guide the conversation, which can be challenging and time-consuming. This paper explores the potential of building scalable techniques to facilitate autonomous cooperation among communicative agents and provide insight into their “cognitive” processes. To address the challenges of achieving autonomous cooperation, we propose a novel communicative agent framework named role-playing . Our approach involves using inception prompting to guide chat agents toward task completion while maintaining consistency with human intentions. We showcase how role-playing can be used to generate conversational data for studying the behaviors and capabilities of chat agents, providing a valuable resource for investigating conversational language models. Our contributions include introducing a novel communicative agent framework, offering a scalable approach for studying the cooperative behaviors and capabilities of multi-agent systems, and open-sourcing our library to support research on communicative agents and beyond. The GitHub repository of this project is made publicly available on: https://github.com/lightaime/camel .",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2303-17760",
+        "DOI": "10.48550/arXiv.2303.17760",
+        "CorpusId": 257900712
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2303.17760",
+      "corpus_id": 257900712
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "4",
+      "ref_key": "S2:a8d740aff768210d21bf30cd83bab156d78a232a",
+      "paperId": "a8d740aff768210d21bf30cd83bab156d78a232a",
+      "title": "Towards Better Instruction Following Language Models for Chinese: Investigating the Impact of Training Data and Evaluation",
+      "year": 2023,
+      "abstract": "Recently, significant public efforts have been directed towards developing low-cost models with capabilities akin to ChatGPT, thereby fostering the growth of open-source conversational models. However, there remains a scarcity of comprehensive and in-depth evaluations of these models' performance. In this study, we examine the influence of training data factors, including quantity, quality, and linguistic distribution, on model performance. Our analysis is grounded in several publicly accessible, high-quality instruction datasets, as well as our own Chinese multi-turn conversations. We assess various models using a evaluation set of 1,000 samples, encompassing nine real-world scenarios. Our goal is to supplement manual evaluations with quantitative analyses, offering valuable insights for the continued advancement of open-source chat models. Furthermore, to enhance the performance and training and inference efficiency of models in the Chinese domain, we extend the vocabulary of LLaMA - the model with the closest open-source performance to proprietary language models like GPT-3 - and conduct secondary pre-training on 3.4B Chinese words. We make our model, data, as well as code publicly available.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2304-07854",
+        "ArXiv": "2304.07854",
+        "DOI": "10.48550/arXiv.2304.07854",
+        "CorpusId": 258180415
+      },
+      "arxiv_id": "2304.07854",
+      "doi": "10.48550/arXiv.2304.07854",
+      "corpus_id": 258180415
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "5",
+      "ref_key": "S2:d2b4b4804479714ad0e406e8ab73fa3e72069216",
+      "paperId": "d2b4b4804479714ad0e406e8ab73fa3e72069216",
+      "title": "Phoenix: Democratizing ChatGPT across Languages",
+      "year": 2023,
+      "abstract": "This paper presents our efforts to democratize ChatGPT across language. We release a large language model\"Phoenix\", achieving competitive performance among open-source English and Chinese models while excelling in languages with limited resources (covering both Latin and non-Latin languages). We believe this work will be beneficial to make ChatGPT more accessible, especially in countries where people cannot use ChatGPT due to restrictions from OpenAI or local goverments. Our data, code, and models are available at https://github.com/FreedomIntelligence/LLMZoo.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2304-10453",
+        "ArXiv": "2304.10453",
+        "DOI": "10.48550/arXiv.2304.10453",
+        "CorpusId": 258236343
+      },
+      "arxiv_id": "2304.10453",
+      "doi": "10.48550/arXiv.2304.10453",
+      "corpus_id": 258236343
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "6",
+      "ref_key": "S2:389ec3e8902a5dcfcde1adec735854e93f845937",
+      "paperId": "389ec3e8902a5dcfcde1adec735854e93f845937",
+      "title": "LaMini-LM: A Diverse Herd of Distilled Models from Large-Scale Instructions",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) with instruction fine-tuning demonstrate superior generative capabilities. However, these models are resource-intensive. To alleviate this issue, we explore distilling knowledge from instruction-tuned LLMs into much smaller ones. While other similar works have been done, they are often conducted on a limited set of (usually still large) models and are not accompanied by proper evaluations. To this end, we carefully develop a large set of 2.58M instructions based on both existing and newly-generated instructions. In addition to being sizable, we design our instructions to cover a broad set of topics to ensure diversity. Extensive analysis of our instruction dataset confirms its diversity, and we generate responses for these instructions using gpt-3.5-turbo. Leveraging these instructions, we fine-tune a diverse herd of models, collectively referred to as LaMini-LM, which includes models from both the encoder-decoder and decoder-only families, with varying sizes. We evaluate the performance of our models using automatic metrics on 15 different natural language processing (NLP) benchmarks, as well as through human assessment. We also assess the model for hallucination and toxicity, and for the former, we introduce a new benchmark dataset for hallucination-inducing QA. The results demonstrate that our proposed LaMini-LM models are comparable to strong baselines while being much smaller in size.",
+      "externalIds": {
+        "DBLP": "conf/eacl/WuWZAA24",
+        "ACL": "2024.eacl-long.57",
+        "ArXiv": "2304.14402",
+        "DOI": "10.48550/arXiv.2304.14402",
+        "CorpusId": 258352678
+      },
+      "arxiv_id": "2304.14402",
+      "doi": "10.48550/arXiv.2304.14402",
+      "corpus_id": 258352678
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "7",
+      "ref_key": "S2:ae736662f64d56f3ab1894fbd9c45f8f37251843",
+      "paperId": "ae736662f64d56f3ab1894fbd9c45f8f37251843",
+      "title": "OpenAssistant Conversations - Democratizing Large Language Model Alignment",
+      "year": 2023,
+      "abstract": "Aligning large language models (LLMs) with human preferences has proven to drastically improve usability and has driven rapid adoption as demonstrated by ChatGPT. Alignment techniques such as supervised fine-tuning (SFT) and reinforcement learning from human feedback (RLHF) greatly reduce the required skill and domain knowledge to effectively harness the capabilities of LLMs, increasing their accessibility and utility across various domains. However, state-of-the-art alignment techniques like RLHF rely on high-quality human feedback data, which is expensive to create and often remains proprietary. In an effort to democratize research on large-scale alignment, we release OpenAssistant Conversations, a human-generated, human-annotated assistant-style conversation corpus consisting of 161,443 messages in 35 different languages, annotated with 461,292 quality ratings, resulting in over 10,000 complete and fully annotated conversation trees. The corpus is a product of a worldwide crowd-sourcing effort involving over 13,500 volunteers. Models trained on OpenAssistant Conversations show consistent improvements on standard benchmarks over respective base models. We release our code and data under a fully permissive licence.",
+      "externalIds": {
+        "ArXiv": "2304.07327",
+        "DBLP": "conf/nips/KopfKRATSBNSNES23",
+        "DOI": "10.48550/arXiv.2304.07327",
+        "CorpusId": 258179434
+      },
+      "arxiv_id": "2304.07327",
+      "doi": "10.48550/arXiv.2304.07327",
+      "corpus_id": 258179434
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "8",
+      "ref_key": "S2:8a4fc5f00cd4aca61e148e46a2125c3a406719f1",
+      "paperId": "8a4fc5f00cd4aca61e148e46a2125c3a406719f1",
+      "title": "DS-1000: A Natural and Reliable Benchmark for Data Science Code Generation",
+      "year": 2022,
+      "abstract": "We introduce DS-1000, a code generation benchmark with a thousand data science problems spanning seven Python libraries, such as NumPy and Pandas. Compared to prior works, DS-1000 incorporates three core features. First, our problems reflect diverse, realistic, and practical use cases since we collected them from StackOverflow. Second, our automatic evaluation is highly specific (reliable) -- across all Codex-002-predicted solutions that our evaluation accept, only 1.8% of them are incorrect; we achieve this with multi-criteria metrics, checking both functional correctness by running test cases and surface-form constraints by restricting API usages or keywords. Finally, we proactively defend against memorization by slightly modifying our problems to be different from the original StackOverflow source; consequently, models cannot answer them correctly by memorizing the solutions from pre-training. The current best public system (Codex-002) achieves 43.3% accuracy, leaving ample room for improvement. We release our benchmark at https://ds1000-code-gen.github.io.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2211-11501",
+        "ArXiv": "2211.11501",
+        "DOI": "10.48550/arXiv.2211.11501",
+        "CorpusId": 253734939
+      },
+      "arxiv_id": "2211.11501",
+      "doi": "10.48550/arXiv.2211.11501",
+      "corpus_id": 253734939
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "9",
+      "ref_key": "S2:e01515c6138bc525f7aec30fc85f2adf028d4156",
+      "paperId": "e01515c6138bc525f7aec30fc85f2adf028d4156",
+      "title": "Principle-Driven Self-Alignment of Language Models from Scratch with Minimal Human Supervision",
+      "year": 2023,
+      "abstract": "Recent AI-assistant agents, such as ChatGPT, predominantly rely on supervised fine-tuning (SFT) with human annotations and reinforcement learning from human feedback (RLHF) to align the output of large language models (LLMs) with human intentions, ensuring they are helpful, ethical, and reliable. However, this dependence can significantly constrain the true potential of AI-assistant agents due to the high cost of obtaining human supervision and the related issues on quality, reliability, diversity, self-consistency, and undesirable biases. To address these challenges, we propose a novel approach called SELF-ALIGN, which combines principle-driven reasoning and the generative power of LLMs for the self-alignment of AI agents with minimal human supervision. Our approach encompasses four stages: first, we use an LLM to generate synthetic prompts, and a topic-guided method to augment the prompt diversity; second, we use a small set of human-written principles for AI models to follow, and guide the LLM through in-context learning from demonstrations (of principles application) to produce helpful, ethical, and reliable responses to user's queries; third, we fine-tune the original LLM with the high-quality self-aligned responses so that the resulting model can generate desirable responses for each query directly without the principle set and the demonstrations anymore; and finally, we offer a refinement step to address the issues of overly-brief or indirect responses. Applying SELF-ALIGN to the LLaMA-65b base language model, we develop an AI assistant named Dromedary. With fewer than 300 lines of human annotations (including<200 seed prompts, 16 generic principles, and 5 exemplars for in-context learning). Dromedary significantly surpasses the performance of several state-of-the-art AI systems, including Text-Davinci-003 and Alpaca, on benchmark datasets with various settings.",
+      "externalIds": {
+        "DBLP": "conf/nips/SunSZZCCYG23",
+        "ArXiv": "2305.03047",
+        "DOI": "10.48550/arXiv.2305.03047",
+        "CorpusId": 258479665
+      },
+      "arxiv_id": "2305.03047",
+      "doi": "10.48550/arXiv.2305.03047",
+      "corpus_id": 258479665
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "10",
+      "ref_key": "S2:7ace46ab8e71c4304682ab126b1212deb54b9b03",
+      "paperId": "7ace46ab8e71c4304682ab126b1212deb54b9b03",
+      "title": "Style Over Substance: Evaluation Biases for Large Language Models",
+      "year": 2023,
+      "abstract": "As large language models (LLMs) continue to advance, accurately and comprehensively evaluating their performance becomes increasingly challenging. Ranking the relative performance of LLMs based on Elo ratings, according to human judgment, is gaining more popularity. However, the extent to which humans and LLMs are capable evaluators remains uncertain. This study investigates the behavior of crowd-sourced and expert annotators, as well as LLMs, when comparing outputs from different models. To achieve this, we curate a dataset of intentionally flawed machine-generated answers. Our findings reveal a concerning bias in the evaluation process, as answers with factual errors are rated more favorably than answers that are too short or contained grammatical errors. To address this issue, we propose independently evaluating machine-generated text across multiple dimensions, rather than merging all the evaluation aspects into a single score. We instantiate this idea with the Elo rating system, resulting in the Multi-Elo Rating System (MERS). Empirical results from our study reveal that this proposed approach significantly enhances the quality of LLM-based evaluations, particularly in terms of factual accuracy. However, there is no significant improvement in crowd-sourced-based evaluations, indicating the need for further investigation.",
+      "externalIds": {
+        "ArXiv": "2307.03025",
+        "DBLP": "journals/corr/abs-2307-03025",
+        "DOI": "10.48550/arXiv.2307.03025",
+        "CorpusId": 259360998
+      },
+      "arxiv_id": "2307.03025",
+      "doi": "10.48550/arXiv.2307.03025",
+      "corpus_id": 259360998
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "11",
+      "ref_key": "S2:b5069352383579c6464d8e5ec34eab693c45f59a",
+      "paperId": "b5069352383579c6464d8e5ec34eab693c45f59a",
+      "title": "FLASK: Fine-grained Language Model Evaluation based on Alignment Skill Sets",
+      "year": 2023,
+      "abstract": "Evaluation of Large Language Models (LLMs) is challenging because instruction-following necessitates alignment with human values and the required set of skills varies depending on the instruction. However, previous studies have mainly focused on coarse-grained evaluation (i.e. overall preference-based evaluation), which limits interpretability since it does not consider the nature of user instructions that require instance-wise skill composition. In this paper, we introduce FLASK (Fine-grained Language Model Evaluation based on Alignment Skill Sets), a fine-grained evaluation protocol for both human-based and model-based evaluation which decomposes coarse-level scoring to a skill set-level scoring for each instruction. We experimentally observe that the fine-graininess of evaluation is crucial for attaining a holistic view of model performance and increasing the reliability of the evaluation. Using FLASK, we compare multiple open-source and proprietary LLMs and observe a high correlation between model-based and human-based evaluations. We publicly release the evaluation data and code implementation at https://github.com/kaistAI/FLASK.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-10928",
+        "ArXiv": "2307.10928",
+        "DOI": "10.48550/arXiv.2307.10928",
+        "CorpusId": 259991144
+      },
+      "arxiv_id": "2307.10928",
+      "doi": "10.48550/arXiv.2307.10928",
+      "corpus_id": 259991144
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "12",
+      "ref_key": "S2:4656ec3210a3d28f9f30a8ec8a202aae7ed3bf1f",
+      "paperId": "4656ec3210a3d28f9f30a8ec8a202aae7ed3bf1f",
+      "title": "BayLing: Bridging Cross-lingual Alignment and Instruction Following through Interactive Translation for Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have demonstrated remarkable prowess in language understanding and generation. Advancing from foundation LLMs to instructionfollowing LLMs, instruction tuning plays a vital role in aligning LLMs to human preferences. However, the existing LLMs are usually focused on English, leading to inferior performance in non-English languages. In order to improve the performance for non-English languages, it is necessary to collect language-specific training data for foundation LLMs and construct language-specific instructions for instruction tuning, both of which are heavy loads. To minimize human workload, we propose to transfer the capabilities of language generation and instruction following from English to other languages through an interactive translation task. We have developed BayLing, an instruction-following LLM by utilizing LLaMA as the foundation LLM and automatically constructing interactive translation instructions for instructing tuning. Extensive assessments demonstrate that BayLing achieves comparable performance to GPT-3.5-turbo, despite utilizing a considerably smaller parameter size of only 13 billion. Experimental results on translation tasks show that BayLing achieves 95% of single-turn translation capability compared to GPT-4 with automatic evaluation and 96% of interactive translation capability compared to GPT-3.5-turbo with human evaluation. To estimate the performance on general tasks, we created a multi-turn instruction test set called BayLing-80. The experimental results on BayLing-80 indicate that BayLing achieves 89% of performance compared to GPT-3.5-turbo. BayLing also demonstrates outstanding performance on knowledge assessment of Chinese GaoKao and English SAT, second only to GPT-3.5-turbo among a multitude of instruction-following LLMs. Demo, homepage, code and models of BayLing are available.",
+      "externalIds": {
+        "ArXiv": "2306.10968",
+        "DBLP": "journals/corr/abs-2306-10968",
+        "DOI": "10.48550/arXiv.2306.10968",
+        "CorpusId": 259203913
+      },
+      "arxiv_id": "2306.10968",
+      "doi": "10.48550/arXiv.2306.10968",
+      "corpus_id": 259203913
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "13",
+      "ref_key": "S2:c01e43c65a04d766e429863bdf7cf65b895df20e",
+      "paperId": "c01e43c65a04d766e429863bdf7cf65b895df20e",
+      "title": "Chinese Open Instruction Generalist: A Preliminary Release",
+      "year": 2023,
+      "abstract": "Instruction tuning is widely recognized as a key technique for building generalist language models, which has attracted the attention of researchers and the public with the release of InstructGPT~\\citep{ouyang2022training} and ChatGPT\\footnote{\\url{https://chat.openai.com/}}. Despite impressive progress in English-oriented large-scale language models (LLMs), it is still under-explored whether English-based foundation LLMs can perform similarly on multilingual tasks compared to English tasks with well-designed instruction tuning and how we can construct the corpora needed for the tuning. To remedy this gap, we propose the project as an attempt to create a Chinese instruction dataset by various methods adapted to the intrinsic characteristics of 4 sub-tasks. We collect around 200k Chinese instruction tuning samples, which have been manually checked to guarantee high quality. We also summarize the existing English and Chinese instruction corpora and briefly describe some potential applications of the newly constructed Chinese instruction corpora. The resulting \\textbf{C}hinese \\textbf{O}pen \\textbf{I}nstruction \\textbf{G}eneralist (\\textbf{COIG}) corpora are available in Huggingface\\footnote{\\url{https://huggingface.co/datasets/BAAI/COIG}} and Github\\footnote{\\url{https://github.com/BAAI-Zlab/COIG}}, and will be continuously updated.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2304-07987",
+        "ArXiv": "2304.07987",
+        "DOI": "10.48550/arXiv.2304.07987",
+        "CorpusId": 258179044
+      },
+      "arxiv_id": "2304.07987",
+      "doi": "10.48550/arXiv.2304.07987",
+      "corpus_id": 258179044
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "14",
+      "ref_key": "S2:ab82cd7194fc609d2d29e6b1a4399d6120f97fdd",
+      "paperId": "ab82cd7194fc609d2d29e6b1a4399d6120f97fdd",
+      "title": "Becoming self-instruct: introducing early stopping criteria for minimal instruct tuning",
+      "year": 2023,
+      "abstract": "In this paper, we introduce the Instruction Following Score (IFS), a metric that detects language models' ability to follow instructions. The metric has a dual purpose. First, IFS can be used to distinguish between base and instruct models. We benchmark publicly available base and instruct models, and show that the ratio of well formatted responses to partial and full sentences can be an effective measure between those two model classes. Secondly, the metric can be used as an early stopping criteria for instruct tuning. We compute IFS for Supervised Fine-Tuning (SFT) of 7B and 13B LLaMA models, showing that models learn to follow instructions relatively early in the training process, and the further finetuning can result in changes in the underlying base model semantics. As an example of semantics change we show the objectivity of model predictions, as defined by an auxiliary metric ObjecQA. We show that in this particular case, semantic changes are the steepest when the IFS tends to plateau. We hope that decomposing instruct tuning into IFS and semantic factors starts a new trend in better controllable instruct tuning and opens possibilities for designing minimal instruct interfaces querying foundation models.",
+      "externalIds": {
+        "ArXiv": "2307.03692",
+        "DBLP": "journals/corr/abs-2307-03692",
+        "DOI": "10.48550/arXiv.2307.03692",
+        "CorpusId": 259375779
+      },
+      "arxiv_id": "2307.03692",
+      "doi": "10.48550/arXiv.2307.03692",
+      "corpus_id": 259375779
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "15",
+      "ref_key": "S2:a38e0f993e4805ba8a9beae4c275c91ffcec01df",
+      "paperId": "a38e0f993e4805ba8a9beae4c275c91ffcec01df",
+      "title": "Program Synthesis with Large Language Models",
+      "year": 2021,
+      "abstract": "This paper explores the limits of the current generation of large language models for program synthesis in general purpose programming languages. We evaluate a collection of such models (with between 244M and 137B parameters) on two new benchmarks, MBPP and MathQA-Python, in both the few-shot and fine-tuning regimes. Our benchmarks are designed to measure the ability of these models to synthesize short Python programs from natural language descriptions. The Mostly Basic Programming Problems (MBPP) dataset contains 974 programming tasks, designed to be solvable by entry-level programmers. The MathQA-Python dataset, a Python version of the MathQA benchmark, contains 23914 problems that evaluate the ability of the models to synthesize code from more complex text. On both datasets, we find that synthesis performance scales log-linearly with model size. Our largest models, even without finetuning on a code dataset, can synthesize solutions to 59.6 percent of the problems from MBPP using few-shot learning with a well-designed prompt. Fine-tuning on a held-out portion of the dataset improves performance by about 10 percentage points across most model sizes. On the MathQA-Python dataset, the largest fine-tuned model achieves 83.8 percent accuracy. Going further, we study the model's ability to engage in dialog about code, incorporating human feedback to improve its solutions. We find that natural language feedback from a human halves the error rate compared to the model's initial prediction. Additionally, we conduct an error analysis to shed light on where these models fall short and what types of programs are most difficult to generate. Finally, we explore the semantic grounding of these models by fine-tuning them to predict the results of program execution. We find that even our best models are generally unable to predict the output of a program given a specific input.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2108-07732",
+        "ArXiv": "2108.07732",
+        "CorpusId": 237142385
+      },
+      "arxiv_id": "2108.07732",
+      "doi": null,
+      "corpus_id": 237142385
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "16",
+      "ref_key": "S2:9b1f4492a663c7f56f2b43ae1ed167d3857aacca",
+      "paperId": "9b1f4492a663c7f56f2b43ae1ed167d3857aacca",
+      "title": "PromptSource: An Integrated Development Environment and Repository for Natural Language Prompts",
+      "year": 2022,
+      "abstract": "PromptSource is a system for creating, sharing, and using natural language prompts. Prompts are functions that map an example from a dataset to a natural language input and target output. Using prompts to train and query language models is an emerging area in NLP that requires new tools that let users develop and refine these prompts collaboratively. PromptSource addresses the emergent challenges in this new setting with (1) a templating language for defining data-linked prompts, (2) an interface that lets users quickly iterate on prompt development by observing outputs of their prompts on many examples, and (3) a community-driven set of guidelines for contributing new prompts to a common pool. Over 2,000 prompts for roughly 170 datasets are already available in PromptSource. PromptSource is available at https://github.com/bigscience-workshop/promptsource.",
+      "externalIds": {
+        "ACL": "2022.acl-demo.9",
+        "ArXiv": "2202.01279",
+        "DBLP": "journals/corr/abs-2202-01279",
+        "DOI": "10.18653/v1/2022.acl-demo.9",
+        "CorpusId": 246485605
+      },
+      "arxiv_id": "2202.01279",
+      "doi": "10.18653/v1/2022.acl-demo.9",
+      "corpus_id": 246485605
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "17",
+      "ref_key": "S2:647f520eea08cf8e98b99319dcb7e32cc3a78c72",
+      "paperId": "647f520eea08cf8e98b99319dcb7e32cc3a78c72",
+      "title": "Bactrian-X : A Multilingual Replicable Instruction-Following Model with Low-Rank Adaptation",
+      "year": 2023,
+      "abstract": "Instruction tuning has shown great promise in improving the performance of large language models. However, research on multilingual instruction tuning has been limited due to the scarcity of high-quality instruction-response datasets across different languages. To bridge this gap, we present Bactrian-X, a comprehensive multilingual parallel dataset of 3.4 million instruction-response pairs across 52 languages. Leveraging this dataset, we train a set of adapters using low-rank adaptation (LoRA), which are lightweight components that seamlessly integrate with large language models. These adapters have a substantially lower parameter count than the base model, making them easily replaceable and usable as plug-ins for different languages or language groups. Extensive experiments in various multilingual evaluation settings demonstrate that models derived from LoRA-based training over Bactrian-X outperform both the vanilla models and existing instruction-tuned models. The code and models are publicly available at https://github.com/mbzuai-nlp/bactrian-x",
+      "externalIds": {
+        "ArXiv": "2305.15011",
+        "DBLP": "journals/corr/abs-2305-15011",
+        "DOI": "10.48550/arXiv.2305.15011",
+        "CorpusId": 258865265
+      },
+      "arxiv_id": "2305.15011",
+      "doi": "10.48550/arXiv.2305.15011",
+      "corpus_id": 258865265
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "18",
+      "ref_key": "S2:ac4ffaab10f6b6ad83e79ca5691f338abf5cff82",
+      "paperId": "ac4ffaab10f6b6ad83e79ca5691f338abf5cff82",
+      "title": "Instruction Mining: High-Quality Instruction Data Selection for Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models typically undergo two training stages, pretraining and ﬁnetuning. Despite that large-scale pretraining endows the model with strong capabilities to generate natural language responses, these pretrained models can still fail to understand human instructions at times. To enhance language models’ ability of interpreting and responding to instructions, instruction ﬁnetuning has emerged as a critical method in this area. Recent studies found that large language models can be ﬁnetuned to perform well even with a small amount of high-quality instruction-following data. However, the selection of high-quality datasets for ﬁnetuning language models still lacks clear guidelines to follow. In this paper, we propose I NSTRUCT M INING , a linear rule for evaluating instruction-following data quality. We formulate I NSTRUCT M INING using speciﬁc natural language indicators. To investigate the relationship between data quality and these indicators, we further conduct extensive ﬁnetuning experiments. The experiment results are then applied to estimating parameters in I NSTRUCT M INING . To further investigate its performance, we use I NSTRUCT M INING to select high-quality data from unseen datasets. Results demonstrate that I NSTRUCT M INING can help select relatively high-quality samples from various instruction-following datasets. Compared to models ﬁnetuned on unﬁltered datasets, models ﬁnetuned on I NSTRUCT M INING selected datasets perform better on 42.5% cases.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-06290",
+        "DOI": "10.48550/arXiv.2307.06290",
+        "CorpusId": 259837472
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2307.06290",
+      "corpus_id": 259837472
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "19",
+      "ref_key": "S2:acbdbf49f9bc3f151b93d9ca9a06009f4f6eb269",
+      "paperId": "acbdbf49f9bc3f151b93d9ca9a06009f4f6eb269",
+      "title": "Evaluating Large Language Models Trained on Code",
+      "year": 2021,
+      "abstract": "We introduce Codex, a GPT language model fine-tuned on publicly available code from GitHub, and study its Python code-writing capabilities. A distinct production version of Codex powers GitHub Copilot. On HumanEval, a new evaluation set we release to measure functional correctness for synthesizing programs from docstrings, our model solves 28.8% of the problems, while GPT-3 solves 0% and GPT-J solves 11.4%. Furthermore, we find that repeated sampling from the model is a surprisingly effective strategy for producing working solutions to difficult prompts. Using this method, we solve 70.2% of our problems with 100 samples per problem. Careful investigation of our model reveals its limitations, including difficulty with docstrings describing long chains of operations and with binding operations to variables. Finally, we discuss the potential broader impacts of deploying powerful code generation technologies, covering safety, security, and economics.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2107-03374",
+        "ArXiv": "2107.03374",
+        "CorpusId": 235755472
+      },
+      "arxiv_id": "2107.03374",
+      "doi": null,
+      "corpus_id": 235755472
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "20",
+      "ref_key": "S2:7fc09c81b43e25834a763b421c1a8b3868ecd6ab",
+      "paperId": "7fc09c81b43e25834a763b421c1a8b3868ecd6ab",
+      "title": "Exploring the Use of Large Language Models for Reference-Free Text Quality Evaluation: A Preliminary Empirical Study",
+      "year": 2023,
+      "abstract": "Evaluating the quality of generated text is a challenging task in natural language processing. This difﬁculty arises from the inherent complexity and diversity of text. Recently, OpenAI’s ChatGPT, a powerful large language model (LLM), has garnered signiﬁcant attention due to its impressive performance in various tasks. Therefore, we present this report to investigate the effectiveness of LLMs, especially ChatGPT, and explore ways to optimize their use in assessing text quality. We compared three kinds of reference-free evaluation methods based on ChatGPT or similar LLMs. The experimental results prove that ChatGPT is capable to evaluate text quality effectively from various perspectives without reference and demonstrates superior performance than most existing automatic metrics. In particular, the Explicit Score, which utilizes ChatGPT to generate a numeric score measuring text quality, is the most effective and reliable method among the three exploited approaches. However, directly comparing the quality of two texts using ChatGPT may lead to suboptimal results. We hope this report will provide valuable insights into selecting appropriate meth-ods for evaluating text quality with LLMs such as ChatGPT. We have released the used data 1 .",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2304-00723",
+        "CorpusId": 257913780
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 257913780
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "21",
+      "ref_key": "S2:220ddeb4dc43bc922289fec8b1b60d7226068b20",
+      "paperId": "220ddeb4dc43bc922289fec8b1b60d7226068b20",
+      "title": "Parameter-Efficient Fine-Tuning Design Spaces",
+      "year": 2023,
+      "abstract": "Parameter-efficient fine-tuning aims to achieve performance comparable to fine-tuning, using fewer trainable parameters. Several strategies (e.g., Adapters, prefix tuning, BitFit, and LoRA) have been proposed. However, their designs are hand-crafted separately, and it remains unclear whether certain design patterns exist for parameter-efficient fine-tuning. Thus, we present a parameter-efficient fine-tuning design paradigm and discover design patterns that are applicable to different experimental settings. Instead of focusing on designing another individual tuning strategy, we introduce parameter-efficient fine-tuning design spaces that parameterize tuning structures and tuning strategies. Specifically, any design space is characterized by four components: layer grouping, trainable parameter allocation, tunable groups, and strategy assignment. Starting from an initial design space, we progressively refine the space based on the model quality of each design choice and make greedy selection at each stage over these four components. We discover the following design patterns: (i) group layers in a spindle pattern; (ii) allocate the number of trainable parameters to layers uniformly; (iii) tune all the groups; (iv) assign proper tuning strategies to different groups. These design patterns result in new parameter-efficient fine-tuning methods. We show experimentally that these methods consistently and significantly outperform investigated parameter-efficient fine-tuning strategies across different backbone models and different tasks in natural language processing.",
+      "externalIds": {
+        "DBLP": "conf/iclr/ChenZS0SY23",
+        "ArXiv": "2301.01821",
+        "DOI": "10.48550/arXiv.2301.01821",
+        "CorpusId": 255440621
+      },
+      "arxiv_id": "2301.01821",
+      "doi": "10.48550/arXiv.2301.01821",
+      "corpus_id": 255440621
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "22",
+      "ref_key": "S2:03055978e278960de9fbb5c648b1779ef9f26cd1",
+      "paperId": "03055978e278960de9fbb5c648b1779ef9f26cd1",
+      "title": "Can Large Language Models Be an Alternative to Human Evaluations?",
+      "year": 2023,
+      "abstract": "Human evaluation is indispensable and inevitable for assessing the quality of texts generated by machine learning models or written by humans. However, human evaluation is very difficult to reproduce and its quality is notoriously unstable, hindering fair comparisons among different natural language processing (NLP) models and algorithms.Recently, large language models (LLMs) have demonstrated exceptional performance on unseen tasks when only the task instructions are provided.In this paper, we explore if such an ability of the LLMs can be used as an alternative to human evaluation.We present the LLMs with the exact same instructions, samples to be evaluated, and questions used to conduct human evaluation, and then ask the LLMs to generate responses to those questions; we dub this LLM evaluation.We use human evaluation and LLM evaluation to evaluate the texts in two NLP tasks: open-ended story generation and adversarial attacks.We show that the result of LLM evaluation is consistent with the results obtained by expert human evaluation: the texts rated higher by human experts are also rated higher by the LLMs.We also find that the results of LLM evaluation are stable over different formatting of the task instructions and the sampling algorithm used to generate the answer.We are the first to show the potential of using LLMs to assess the quality of texts and discuss the limitations and ethical considerations of LLM evaluation.",
+      "externalIds": {
+        "ArXiv": "2305.01937",
+        "DBLP": "conf/acl/ChiangL23",
+        "ACL": "2023.acl-long.870",
+        "DOI": "10.48550/arXiv.2305.01937",
+        "CorpusId": 258461287
+      },
+      "arxiv_id": "2305.01937",
+      "doi": "10.48550/arXiv.2305.01937",
+      "corpus_id": 258461287
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "23",
+      "ref_key": "S2:d6045d2ccc9c09ca1671348de86d07da6bc28eea",
+      "paperId": "d6045d2ccc9c09ca1671348de86d07da6bc28eea",
+      "title": "Training Verifiers to Solve Math Word Problems",
+      "year": 2021,
+      "abstract": "State-of-the-art language models can match human performance on many tasks, but they still struggle to robustly perform multi-step mathematical reasoning. To diagnose the failures of current models and support research, we introduce GSM8K, a dataset of 8.5K high quality linguistically diverse grade school math word problems. We find that even the largest transformer models fail to achieve high test performance, despite the conceptual simplicity of this problem distribution. To increase performance, we propose training verifiers to judge the correctness of model completions. At test time, we generate many candidate solutions and select the one ranked highest by the verifier. We demonstrate that verification significantly improves performance on GSM8K, and we provide strong empirical evidence that verification scales more effectively with increased data than a finetuning baseline.",
+      "externalIds": {
+        "ArXiv": "2110.14168",
+        "DBLP": "journals/corr/abs-2110-14168",
+        "CorpusId": 239998651
+      },
+      "arxiv_id": "2110.14168",
+      "doi": null,
+      "corpus_id": 239998651
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "24",
+      "ref_key": "S2:32ac52069e562d4f900afee70bdca63f53461481",
+      "paperId": "32ac52069e562d4f900afee70bdca63f53461481",
+      "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
+      "year": 2023,
+      "abstract": "We present QLoRA, an efficient finetuning approach that reduces memory usage enough to finetune a 65B parameter model on a single 48GB GPU while preserving full 16-bit finetuning task performance. QLoRA backpropagates gradients through a frozen, 4-bit quantized pretrained language model into Low Rank Adapters~(LoRA). Our best model family, which we name Guanaco, outperforms all previous openly released models on the Vicuna benchmark, reaching 99.3% of the performance level of ChatGPT while only requiring 24 hours of finetuning on a single GPU. QLoRA introduces a number of innovations to save memory without sacrificing performance: (a) 4-bit NormalFloat (NF4), a new data type that is information theoretically optimal for normally distributed weights (b) double quantization to reduce the average memory footprint by quantizing the quantization constants, and (c) paged optimziers to manage memory spikes. We use QLoRA to finetune more than 1,000 models, providing a detailed analysis of instruction following and chatbot performance across 8 instruction datasets, multiple model types (LLaMA, T5), and model scales that would be infeasible to run with regular finetuning (e.g. 33B and 65B parameter models). Our results show that QLoRA finetuning on a small high-quality dataset leads to state-of-the-art results, even when using smaller models than the previous SoTA. We provide a detailed analysis of chatbot performance based on both human and GPT-4 evaluations showing that GPT-4 evaluations are a cheap and reasonable alternative to human evaluation. Furthermore, we find that current chatbot benchmarks are not trustworthy to accurately evaluate the performance levels of chatbots. A lemon-picked analysis demonstrates where Guanaco fails compared to ChatGPT. We release all of our models and code, including CUDA kernels for 4-bit training.",
+      "externalIds": {
+        "ArXiv": "2305.14314",
+        "DBLP": "conf/nips/DettmersPHZ23",
+        "DOI": "10.48550/arXiv.2305.14314",
+        "CorpusId": 258841328
+      },
+      "arxiv_id": "2305.14314",
+      "doi": "10.48550/arXiv.2305.14314",
+      "corpus_id": 258841328
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "25",
+      "ref_key": "S2:a122863d239643453195424c04067e89406246e1",
+      "paperId": "a122863d239643453195424c04067e89406246e1",
+      "title": "Enhancing Chat Language Models by Scaling High-quality Instructional Conversations",
+      "year": 2023,
+      "abstract": "Fine-tuning on instruction data has been widely validated as an effective practice for implementing chat language models like ChatGPT. Scaling the diversity and quality of such data, although straightforward, stands a great chance of leading to improved performance. This paper aims to improve the upper bound of open-source models further. We first provide a systematically designed, diverse, informative, large-scale dataset of instructional conversations, UltraChat, which does not involve human queries. Our objective is to capture the breadth of interactions that a human might have with an AI assistant and employs a comprehensive framework to generate multi-turn conversation iteratively. UltraChat contains 1.5 million high-quality multi-turn dialogues and covers a wide range of topics and instructions. Our statistical analysis of UltraChat reveals its superiority in various key metrics, including scale, average length, diversity, coherence, etc., solidifying its position as a leading open-source dataset. Building upon UltraChat, we fine-tune a LLaMA model to create a powerful conversational model, UltraLLaMA. Our evaluations indicate that UltraLLaMA consistently outperforms other open-source models, including Vicuna, the previously recognized state-of-the-art open-source model. The dataset and the model will be publicly released\\footnote{\\url{https://github.com/thunlp/UltraChat}}.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/DingCXQHL0Z23",
+        "ArXiv": "2305.14233",
+        "DOI": "10.48550/arXiv.2305.14233",
+        "CorpusId": 258840897
+      },
+      "arxiv_id": "2305.14233",
+      "doi": "10.48550/arXiv.2305.14233",
+      "corpus_id": 258840897
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "26",
+      "ref_key": "S2:3ab661db57d924f4ff1706e05ac807873ca00e0a",
+      "paperId": "3ab661db57d924f4ff1706e05ac807873ca00e0a",
+      "title": "RAFT: Reward rAnked FineTuning for Generative Foundation Model Alignment",
+      "year": 2023,
+      "abstract": "Generative foundation models are susceptible to implicit biases that can arise from extensive unsupervised training data. Such biases can produce suboptimal samples, skewed outcomes, and unfairness, with potentially serious consequences. Consequently, aligning these models with human ethics and preferences is an essential step toward ensuring their responsible and effective deployment in real-world applications. Prior research has primarily employed Reinforcement Learning from Human Feedback (RLHF) to address this problem, where generative models are fine-tuned with RL algorithms guided by a human-feedback-informed reward model. However, the inefficiencies and instabilities associated with RL algorithms frequently present substantial obstacles to the successful alignment, necessitating the development of a more robust and streamlined approach. To this end, we introduce a new framework, Reward rAnked FineTuning (RAFT), designed to align generative models effectively. Utilizing a reward model and a sufficient number of samples, our approach selects the high-quality samples, discarding those that exhibit undesired behavior, and subsequently enhancing the model by fine-tuning on these filtered samples. Our studies show that RAFT can effectively improve the model performance in both reward learning and other automated metrics in both large language models and diffusion models.",
+      "externalIds": {
+        "DBLP": "journals/tmlr/Dong0GZCPDZS023",
+        "ArXiv": "2304.06767",
+        "DOI": "10.48550/arXiv.2304.06767",
+        "CorpusId": 258170300
+      },
+      "arxiv_id": "2304.06767",
+      "doi": "10.48550/arXiv.2304.06767",
+      "corpus_id": 258170300
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "27",
+      "ref_key": "S2:cb6cc7d28d06a0d7c0d3f0d7ee551bbc86dbc3aa",
+      "paperId": "cb6cc7d28d06a0d7c0d3f0d7ee551bbc86dbc3aa",
+      "title": "AlpacaFarm: A Simulation Framework for Methods that Learn from Human Feedback",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) such as ChatGPT have seen widespread adoption due to their strong instruction-following abilities. Developing these LLMs involves a complex yet poorly understood workflow requiring training with human feedback. Replicating and understanding this instruction-following requires tackling three major challenges: the high cost of data collection, the lack of trustworthy evaluation, and the absence of reference method implementations. We address these challenges with AlpacaFarm, a simulator that enables research and development for learning from feedback at a low cost. First, we design LLM prompts to simulate human feedback that are 50x cheaper than crowdworkers and display high agreement with humans. Second, we propose an automatic evaluation and validate it against human instructions obtained on real-world interactions. Third, we contribute reference implementations for several methods (PPO, DPO, best-of-n, expert iteration, and more) that learn from pairwise feedback. Finally, as an end-to-end validation of AlpacaFarm, we train and evaluate eleven models on 10k pairs of real human feedback and show that rankings of models trained in AlpacaFarm match rankings of models trained on human data. As a demonstration of the research possible in AlpacaFarm, we find that methods that use a reward model can substantially improve over supervised fine-tuning and that our reference PPO implementation leads to a +10% improvement in win-rate against Davinci003. We release all components of AlpacaFarm at https://github.com/tatsu-lab/alpaca_farm.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-14387",
+        "ArXiv": "2305.14387",
+        "DOI": "10.48550/arXiv.2305.14387",
+        "CorpusId": 258865545
+      },
+      "arxiv_id": "2305.14387",
+      "doi": "10.48550/arXiv.2305.14387",
+      "corpus_id": 258865545
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "28",
+      "ref_key": "S2:40c318400809abf5e50aba5a5a80c8012a7715d5",
+      "paperId": "40c318400809abf5e50aba5a5a80c8012a7715d5",
+      "title": "GPTScore: Evaluate as You Desire",
+      "year": 2023,
+      "abstract": "Generative Artificial Intelligence (AI) has enabled the development of sophisticated models that are capable of producing high-caliber text, images, and other outputs through the utilization of large pre-trained models.Nevertheless, assessing the quality of the generation is an even more arduous task than the generation itself, and this issue has not been given adequate consideration recently.This paper proposes a novel evaluation framework, GPTScore, which utilizes the emergent abilities (e.g., in-context learning, zero-shot instruction) of generative pre-trained models to score generated texts. There are 19 pre-trained models explored in this paper, ranging in size from 80M (e.g., Flan-T5-small) to 175B (e.g., GPT3).Experimental results on four text generation tasks, 22 evaluation aspects, and corresponding 37 datasets demonstrate that this approach can effectively allow us to achieve what one desires to evaluate for texts simply by natural language instructions.This nature helps us overcome several long-standing challenges in text evaluation–how to achieve customized, multi-faceted evaluation without model training. We make our code publicly available.",
+      "externalIds": {
+        "ACL": "2024.naacl-long.365",
+        "DBLP": "journals/corr/abs-2302-04166",
+        "ArXiv": "2302.04166",
+        "DOI": "10.48550/arXiv.2302.04166",
+        "CorpusId": 256662188
+      },
+      "arxiv_id": "2302.04166",
+      "doi": "10.48550/arXiv.2302.04166",
+      "corpus_id": 256662188
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "29",
+      "ref_key": "S2:346081161bdc8f18e2a4c4af7f51d35452b5cb01",
+      "paperId": "346081161bdc8f18e2a4c4af7f51d35452b5cb01",
+      "title": "Did Aristotle Use a Laptop? A Question Answering Benchmark with Implicit Reasoning Strategies",
+      "year": 2021,
+      "abstract": "Abstract A key limitation in current datasets for multi-hop reasoning is that the required steps for answering the question are mentioned in it explicitly. In this work, we introduce StrategyQA, a question answering (QA) benchmark where the required reasoning steps are implicit in the question, and should be inferred using a strategy. A fundamental challenge in this setup is how to elicit such creative questions from crowdsourcing workers, while covering a broad range of potential strategies. We propose a data collection procedure that combines term-based priming to inspire annotators, careful control over the annotator population, and adversarial filtering for eliminating reasoning shortcuts. Moreover, we annotate each question with (1) a decomposition into reasoning steps for answering it, and (2) Wikipedia paragraphs that contain the answers to each step. Overall, StrategyQA includes 2,780 examples, each consisting of a strategy question, its decomposition, and evidence paragraphs. Analysis shows that questions in StrategyQA are short, topic-diverse, and cover a wide range of strategies. Empirically, we show that humans perform well (87%) on this task, while our best baseline reaches an accuracy of ∼ 66%.",
+      "externalIds": {
+        "DBLP": "journals/tacl/GevaKSKRB21",
+        "ArXiv": "2101.02235",
+        "DOI": "10.1162/tacl_a_00370",
+        "CorpusId": 230799347
+      },
+      "arxiv_id": "2101.02235",
+      "doi": "10.1162/tacl_a_00370",
+      "corpus_id": 230799347
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "30",
+      "ref_key": "S2:f356e977c5ba1c5341a48d18db2d8c1658bd98ed",
+      "paperId": "f356e977c5ba1c5341a48d18db2d8c1658bd98ed",
+      "title": "Flacuna: Unleashing the Problem Solving Power of Vicuna using FLAN Fine-Tuning",
+      "year": 2023,
+      "abstract": "Recently, the release of INSTRUCTEVAL has provided valuable insights into the performance of large language models (LLMs) that utilize encoder-decoder or decoder-only architecture. Interestingly, despite being introduced four years ago, T5-based LLMs, such as FLAN-T5, continue to outperform the latest decoder-based LLMs, such as LLAMA and VICUNA, on tasks that require general problem-solving skills. This performance discrepancy can be attributed to three key factors: (1) Pre-training data, (2) Backbone architecture, and (3) Instruction dataset. In this technical report, our main focus is on investigating the impact of the third factor by leveraging VICUNA, a large language model based on LLAMA, which has undergone fine-tuning on ChatGPT conversations. To achieve this objective, we fine-tuned VICUNA using a customized instruction dataset collection called FLANMINI. This collection includes a subset of the large-scale instruction dataset known as FLAN, as well as various code-related datasets and conversational datasets derived from ChatGPT/GPT-4. This dataset comprises a large number of tasks that demand problem-solving skills. Our experimental findings strongly indicate that the enhanced problem-solving abilities of our model, FLACUNA, are obtained through fine-tuning VICUNA on the FLAN dataset, leading to significant improvements across numerous benchmark datasets in INSTRUCTEVAL. FLACUNA is publicly available at https://huggingface.co/declare-lab/flacuna-13b-v1.0.",
+      "externalIds": {
+        "ArXiv": "2307.02053",
+        "DBLP": "journals/corr/abs-2307-02053",
+        "DOI": "10.48550/arXiv.2307.02053",
+        "CorpusId": 259342582
+      },
+      "arxiv_id": "2307.02053",
+      "doi": "10.48550/arXiv.2307.02053",
+      "corpus_id": 259342582
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "31",
+      "ref_key": "S2:2922768fd451ecdb45f48c1a83eb57f54a91221b",
+      "paperId": "2922768fd451ecdb45f48c1a83eb57f54a91221b",
+      "title": "Textbooks Are All You Need",
+      "year": 2023,
+      "abstract": "We introduce phi-1, a new large language model for code, with significantly smaller size than competing models: phi-1 is a Transformer-based model with 1.3B parameters, trained for 4 days on 8 A100s, using a selection of ``textbook quality\"data from the web (6B tokens) and synthetically generated textbooks and exercises with GPT-3.5 (1B tokens). Despite this small scale, phi-1 attains pass@1 accuracy 50.6% on HumanEval and 55.5% on MBPP. It also displays surprising emergent properties compared to phi-1-base, our model before our finetuning stage on a dataset of coding exercises, and phi-1-small, a smaller model with 350M parameters trained with the same pipeline as phi-1 that still achieves 45% on HumanEval.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2306-11644",
+        "ArXiv": "2306.11644",
+        "CorpusId": 259203998
+      },
+      "arxiv_id": "2306.11644",
+      "doi": null,
+      "corpus_id": 259203998
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "32",
+      "ref_key": "S2:814a4f680b9ba6baba23b93499f4b48af1a27678",
+      "paperId": "814a4f680b9ba6baba23b93499f4b48af1a27678",
+      "title": "Measuring Massive Multitask Language Understanding",
+      "year": 2020,
+      "abstract": "We propose a new test to measure a text model's multitask accuracy. The test covers 57 tasks including elementary mathematics, US history, computer science, law, and more. To attain high accuracy on this test, models must possess extensive world knowledge and problem solving ability. We find that while most recent models have near random-chance accuracy, the very largest GPT-3 model improves over random chance by almost 20 percentage points on average. However, on every one of the 57 tasks, the best models still need substantial improvements before they can reach expert-level accuracy. Models also have lopsided performance and frequently do not know when they are wrong. Worse, they still have near-random accuracy on some socially important subjects such as morality and law. By comprehensively evaluating the breadth and depth of a model's academic and professional understanding, our test can be used to analyze models across many tasks and to identify important shortcomings.",
+      "externalIds": {
+        "DBLP": "conf/iclr/HendrycksBBZMSS21",
+        "ArXiv": "2009.03300",
+        "MAG": "3083410900",
+        "CorpusId": 221516475
+      },
+      "arxiv_id": "2009.03300",
+      "doi": null,
+      "corpus_id": 221516475
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "33",
+      "ref_key": "S2:a8ca46b171467ceb2d7652fbfb67fe701ad86092",
+      "paperId": "a8ca46b171467ceb2d7652fbfb67fe701ad86092",
+      "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+      "year": 2021,
+      "abstract": "An important paradigm of natural language processing consists of large-scale pre-training on general domain data and adaptation to particular tasks or domains. As we pre-train larger models, full fine-tuning, which retrains all model parameters, becomes less feasible. Using GPT-3 175B as an example -- deploying independent instances of fine-tuned models, each with 175B parameters, is prohibitively expensive. We propose Low-Rank Adaptation, or LoRA, which freezes the pre-trained model weights and injects trainable rank decomposition matrices into each layer of the Transformer architecture, greatly reducing the number of trainable parameters for downstream tasks. Compared to GPT-3 175B fine-tuned with Adam, LoRA can reduce the number of trainable parameters by 10,000 times and the GPU memory requirement by 3 times. LoRA performs on-par or better than fine-tuning in model quality on RoBERTa, DeBERTa, GPT-2, and GPT-3, despite having fewer trainable parameters, a higher training throughput, and, unlike adapters, no additional inference latency. We also provide an empirical investigation into rank-deficiency in language model adaptation, which sheds light on the efficacy of LoRA. We release a package that facilitates the integration of LoRA with PyTorch models and provide our implementations and model checkpoints for RoBERTa, DeBERTa, and GPT-2 at https://github.com/microsoft/LoRA.",
+      "externalIds": {
+        "DBLP": "conf/iclr/HuSWALWWC22",
+        "ArXiv": "2106.09685",
+        "CorpusId": 235458009
+      },
+      "arxiv_id": "2106.09685",
+      "doi": null,
+      "corpus_id": 235458009
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "34",
+      "ref_key": "S2:236c7dafea3df7ecffb5f18ec780d12f2f27d4b0",
+      "paperId": "236c7dafea3df7ecffb5f18ec780d12f2f27d4b0",
+      "title": "C-Eval: A Multi-Level Multi-Discipline Chinese Evaluation Suite for Foundation Models",
+      "year": 2023,
+      "abstract": "New NLP benchmarks are urgently needed to align with the rapid development of large language models (LLMs). We present C-Eval, the first comprehensive Chinese evaluation suite designed to assess advanced knowledge and reasoning abilities of foundation models in a Chinese context. C-Eval comprises multiple-choice questions across four difficulty levels: middle school, high school, college, and professional. The questions span 52 diverse disciplines, ranging from humanities to science and engineering. C-Eval is accompanied by C-Eval Hard, a subset of very challenging subjects in C-Eval that requires advanced reasoning abilities to solve. We conduct a comprehensive evaluation of the most advanced LLMs on C-Eval, including both English- and Chinese-oriented models. Results indicate that only GPT-4 could achieve an average accuracy of over 60%, suggesting that there is still significant room for improvement for current LLMs. We anticipate C-Eval will help analyze important strengths and shortcomings of foundation models, and foster their development and growth for Chinese users.",
+      "externalIds": {
+        "ArXiv": "2305.08322",
+        "DBLP": "conf/nips/HuangBZZZSLLZLF23",
+        "DOI": "10.48550/arXiv.2305.08322",
+        "CorpusId": 258685666
+      },
+      "arxiv_id": "2305.08322",
+      "doi": "10.48550/arXiv.2305.08322",
+      "corpus_id": 258685666
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "35",
+      "ref_key": "S2:ffdbd7f0b03b85747b001b4734d5ee31b5229aa4",
+      "paperId": "ffdbd7f0b03b85747b001b4734d5ee31b5229aa4",
+      "title": "The Power of Scale for Parameter-Efficient Prompt Tuning",
+      "year": 2021,
+      "abstract": "In this work, we explore “prompt tuning,” a simple yet effective mechanism for learning “soft prompts” to condition frozen language models to perform specific downstream tasks. Unlike the discrete text prompts used by GPT-3, soft prompts are learned through backpropagation and can be tuned to incorporate signals from any number of labeled examples. Our end-to-end learned approach outperforms GPT-3’s few-shot learning by a large margin. More remarkably, through ablations on model size using T5, we show that prompt tuning becomes more competitive with scale: as models exceed billions of parameters, our method “closes the gap” and matches the strong performance of model tuning (where all model weights are tuned). This finding is especially relevant because large models are costly to share and serve and the ability to reuse one frozen model for multiple downstream tasks can ease this burden. Our method can be seen as a simplification of the recently proposed “prefix tuning” of Li and Liang (2021) and we provide a comparison to this and other similar approaches. Finally, we show that conditioning a frozen model with soft prompts confers benefits in robustness to domain transfer and enables efficient “prompt ensembling.” We release code and model checkpoints to reproduce our experiments.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2104-08691",
+        "ArXiv": "2104.08691",
+        "ACL": "2021.emnlp-main.243",
+        "DOI": "10.18653/v1/2021.emnlp-main.243",
+        "CorpusId": 233296808
+      },
+      "arxiv_id": "2104.08691",
+      "doi": "10.18653/v1/2021.emnlp-main.243",
+      "corpus_id": 233296808
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "36",
+      "ref_key": "S2:53d8b356551a2361020a948f64454a6d599af69f",
+      "paperId": "53d8b356551a2361020a948f64454a6d599af69f",
+      "title": "Prefix-Tuning: Optimizing Continuous Prompts for Generation",
+      "year": 2021,
+      "abstract": "Fine-tuning is the de facto way of leveraging large pretrained language models for downstream tasks. However, fine-tuning modifies all the language model parameters and therefore necessitates storing a full copy for each task. In this paper, we propose prefix-tuning, a lightweight alternative to fine-tuning for natural language generation tasks, which keeps language model parameters frozen and instead optimizes a sequence of continuous task-specific vectors, which we call the prefix. Prefix-tuning draws inspiration from prompting for language models, allowing subsequent tokens to attend to this prefix as if it were “virtual tokens”. We apply prefix-tuning to GPT-2 for table-to-text generation and to BART for summarization. We show that by learning only 0.1% of the parameters, prefix-tuning obtains comparable performance in the full data setting, outperforms fine-tuning in low-data settings, and extrapolates better to examples with topics that are unseen during training.",
+      "externalIds": {
+        "DBLP": "conf/acl/LiL20",
+        "ACL": "2021.acl-long.353",
+        "ArXiv": "2101.00190",
+        "DOI": "10.18653/v1/2021.acl-long.353",
+        "CorpusId": 230433941
+      },
+      "arxiv_id": "2101.00190",
+      "doi": "10.18653/v1/2021.acl-long.353",
+      "corpus_id": 230433941
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "37",
+      "ref_key": "S2:bb9a44c94a89dbe00f0061d05c70a45064ff6ea6",
+      "paperId": "bb9a44c94a89dbe00f0061d05c70a45064ff6ea6",
+      "title": "CMMLU: Measuring massive multitask language understanding in Chinese",
+      "year": 2023,
+      "abstract": "As the capabilities of large language models (LLMs) continue to advance, evaluating their performance becomes increasingly crucial and challenging. This paper aims to bridge this gap by introducing CMMLU, a comprehensive Chinese benchmark that covers various subjects, including natural science, social sciences, engineering, and humanities. We conduct a thorough evaluation of 18 advanced multilingual- and Chinese-oriented LLMs, assessing their performance across different subjects and settings. The results reveal that most existing LLMs struggle to achieve an average accuracy of 50%, even when provided with in-context examples and chain-of-thought prompts, whereas the random baseline stands at 25%. This highlights significant room for improvement in LLMs. Additionally, we conduct extensive experiments to identify factors impacting the models' performance and propose directions for enhancing LLMs. CMMLU fills the gap in evaluating the knowledge and reasoning capabilities of large language models within the Chinese context.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2306-09212",
+        "ArXiv": "2306.09212",
+        "DOI": "10.48550/arXiv.2306.09212",
+        "CorpusId": 259164635
+      },
+      "arxiv_id": "2306.09212",
+      "doi": "10.48550/arXiv.2306.09212",
+      "corpus_id": 259164635
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "38",
+      "ref_key": "S2:2cd72e71299c5d62d5cdb1164df5236172d418c4",
+      "paperId": "2cd72e71299c5d62d5cdb1164df5236172d418c4",
+      "title": "Second Thoughts are Best: Learning to Re-Align With Human Values from Text Edits",
+      "year": 2023,
+      "abstract": "We present Second Thought, a new learning paradigm that enables language models (LMs) to re-align with human values. By modeling the chain-of-edits between value-unaligned and value-aligned text, with LM fine-tuning and additional refinement through reinforcement learning, Second Thought not only achieves superior performance in three value alignment benchmark datasets but also shows strong human-value transfer learning ability in few-shot scenarios. The generated editing steps also offer better interpretability and ease for interactive error correction. Extensive human evaluations further confirm its effectiveness.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2301-00355",
+        "ArXiv": "2301.00355",
+        "DOI": "10.48550/arXiv.2301.00355",
+        "CorpusId": 253306024
+      },
+      "arxiv_id": "2301.00355",
+      "doi": "10.48550/arXiv.2301.00355",
+      "corpus_id": 253306024
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "39",
+      "ref_key": "S2:381ab7a640f5b46b62f7e08d1af4a8e0d3eadd55",
+      "paperId": "381ab7a640f5b46b62f7e08d1af4a8e0d3eadd55",
+      "title": "G-Eval: NLG Evaluation using GPT-4 with Better Human Alignment",
+      "year": 2023,
+      "abstract": "The quality of texts generated by natural language generation (NLG) systems is hard to measure automatically. Conventional reference-based metrics, such as BLEU and ROUGE, have been shown to have relatively low correlation with human judgments, especially for tasks that require creativity and diversity. Recent studies suggest using large language models (LLMs) as reference-free metrics for NLG evaluation, which have the benefit of being applicable to new tasks that lack human references. However, these LLM-based evaluators still have lower human correspondence than medium-size neural evaluators. In this work, we present G-Eval, a framework of using large language models with chain-of-thoughts (CoT) and a form-filling paradigm, to assess the quality of NLG outputs. We experiment with two generation tasks, text summarization and dialogue generation. We show that G-Eval with GPT-4 as the backbone model achieves a Spearman correlation of 0.514 with human on summarization task, outperforming all previous methods by a large margin. We also propose preliminary analysis on the behavior of LLM-based evaluators, and highlight the potential issue of LLM-based evaluators having a bias towards the LLM-generated texts. The code is at https://github.com/nlpyang/geval",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2303-16634",
+        "ArXiv": "2303.16634",
+        "DOI": "10.48550/arXiv.2303.16634",
+        "CorpusId": 257804696
+      },
+      "arxiv_id": "2303.16634",
+      "doi": "10.48550/arXiv.2303.16634",
+      "corpus_id": 257804696
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "40",
+      "ref_key": "S2:25f729d7773614846b412db3c6c2a3aab41ec409",
+      "paperId": "25f729d7773614846b412db3c6c2a3aab41ec409",
+      "title": "M3KE: A Massive Multi-Level Multi-Subject Knowledge Evaluation Benchmark for Chinese Large Language Models",
+      "year": 2023,
+      "abstract": "Large language models have recently made tremendous progress in a variety of aspects, e.g., cross-task generalization, instruction following. Comprehensively evaluating the capability of large language models in multiple tasks is of great importance. In this paper, we propose M3KE, a Massive Multi-Level Multi-Subject Knowledge Evaluation benchmark, which is developed to measure knowledge acquired by Chinese large language models by testing their multitask accuracy in zero- and few-shot settings. We have collected 20,477 questions from 71 tasks. Our selection covers all major levels of Chinese education system, ranging from the primary school to college, as well as a wide variety of subjects, including humanities, history, politics, law, education, psychology, science, technology, art and religion. All questions are multiple-choice questions with four options, hence guaranteeing a standardized and unified assessment process. We've assessed a number of state-of-the-art open-source Chinese large language models on the proposed benchmark. The size of these models varies from 335M to 130B parameters. Experiment results demonstrate that they perform significantly worse than GPT-3.5 that reaches an accuracy of ~ 48% on M3KE. The dataset is available at https://github.com/tjunlp-lab/M3KE.",
+      "externalIds": {
+        "ArXiv": "2305.10263",
+        "DBLP": "journals/corr/abs-2305-10263",
+        "DOI": "10.48550/arXiv.2305.10263",
+        "CorpusId": 258740849
+      },
+      "arxiv_id": "2305.10263",
+      "doi": "10.48550/arXiv.2305.10263",
+      "corpus_id": 258740849
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "41",
+      "ref_key": "S2:7e8453fa32708b2690178c3a7a6618aba20928af",
+      "paperId": "7e8453fa32708b2690178c3a7a6618aba20928af",
+      "title": "Training Socially Aligned Language Models in Simulated Human Society",
+      "year": 2023,
+      "abstract": "Social alignment in AI systems aims to ensure that these models behave according to established societal values. However, unlike humans, who derive consensus on value judgments through social interaction, current language models (",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-16960",
+        "DOI": "10.48550/arXiv.2305.16960",
+        "CorpusId": 258947756
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2305.16960",
+      "corpus_id": 258947756
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "42",
+      "ref_key": "S2:b45ec1cb2ba6b2d1ac24723fa836aee06a3db97a",
+      "paperId": "b45ec1cb2ba6b2d1ac24723fa836aee06a3db97a",
+      "title": "Is Your Code Generated by ChatGPT Really Correct? Rigorous Evaluation of Large Language Models for Code Generation",
+      "year": 2023,
+      "abstract": "Program synthesis has been long studied with recent approaches focused on directly using the power of Large Language Models (LLMs) to generate code. Programming benchmarks, with curated synthesis problems and test-cases, are used to measure the performance of various LLMs on code synthesis. However, these test-cases can be limited in both quantity and quality for fully assessing the functional correctness of the generated code. Such limitation in the existing benchmarks begs the following question: In the era of LLMs, is the code generated really correct? To answer this, we propose EvalPlus -- a code synthesis evaluation framework to rigorously benchmark the functional correctness of LLM-synthesized code. EvalPlus augments a given evaluation dataset with large amounts of test-cases newly produced by an automatic test input generator, powered by both LLM- and mutation-based strategies. While EvalPlus is general, we extend the test-cases of the popular HumanEval benchmark by 80x to build HumanEval+. Our extensive evaluation across 26 popular LLMs (e.g., GPT-4 and ChatGPT) demonstrates that HumanEval+ is able to catch significant amounts of previously undetected wrong code synthesized by LLMs, reducing the pass@k by up-to 19.3-28.9%. We also surprisingly found that test insufficiency can lead to mis-ranking. For example, both WizardCoder-CodeLlama and Phind-CodeLlama now outperform ChatGPT on HumanEval+, while none of them could on HumanEval. Our work not only indicates that prior popular code synthesis evaluation results do not accurately reflect the true performance of LLMs for code synthesis, but also opens up a new direction to improve such programming benchmarks through automated testing. We have open-sourced our tools, enhanced datasets as well as all LLM-generated code at https://github.com/evalplus/evalplus to facilitate and accelerate future LLM-for-code research.",
+      "externalIds": {
+        "ArXiv": "2305.01210",
+        "DBLP": "journals/corr/abs-2305-01210",
+        "CorpusId": 258437095
+      },
+      "arxiv_id": "2305.01210",
+      "doi": null,
+      "corpus_id": 258437095
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "43",
+      "ref_key": "S2:f2b0017ddd77fa38760a18145e63553105a1a236",
+      "paperId": "f2b0017ddd77fa38760a18145e63553105a1a236",
+      "title": "The Flan Collection: Designing Data and Methods for Effective Instruction Tuning",
+      "year": 2023,
+      "abstract": "We study the design decisions of publicly available instruction tuning methods, and break down the development of Flan 2022 (Chung et al., 2022). Through careful ablation studies on the Flan Collection of tasks and methods, we tease apart the effect of design decisions which enable Flan-T5 to outperform prior work by 3-17%+ across evaluation settings. We find task balancing and enrichment techniques are overlooked but critical to effective instruction tuning, and in particular, training with mixed prompt settings (zero-shot, few-shot, and chain-of-thought) actually yields stronger (2%+) performance in all settings. In further experiments, we show Flan-T5 requires less finetuning to converge higher and faster than T5 on single downstream tasks, motivating instruction-tuned models as more computationally-efficient starting checkpoints for new tasks. Finally, to accelerate research on instruction tuning, we make the Flan 2022 collection of datasets, templates, and methods publicly available at https://github.com/google-research/FLAN/tree/main/flan/v2.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2301-13688",
+        "ArXiv": "2301.13688",
+        "DOI": "10.48550/arXiv.2301.13688",
+        "CorpusId": 256415991
+      },
+      "arxiv_id": "2301.13688",
+      "doi": "10.48550/arXiv.2301.13688",
+      "corpus_id": 256415991
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "44",
+      "ref_key": "S2:454c8fef2957aa2fb13eb2c7a454393a2ee83805",
+      "paperId": "454c8fef2957aa2fb13eb2c7a454393a2ee83805",
+      "title": "WizardCoder: Empowering Code Large Language Models with Evol-Instruct",
+      "year": 2023,
+      "abstract": "Code Large Language Models (Code LLMs), such as StarCoder, have demonstrated exceptional performance in code-related tasks. However, most existing models are solely pre-trained on extensive raw code data without instruction fine-tuning. In this paper, we introduce WizardCoder, which empowers Code LLMs with complex instruction fine-tuning, by adapting the Evol-Instruct method to the domain of code. Through comprehensive experiments on four prominent code generation benchmarks, namely HumanEval, HumanEval+, MBPP, and DS-1000, we unveil the exceptional capabilities of our model. It surpasses all other open-source Code LLMs by a substantial margin. Moreover, our model even outperforms the largest closed LLMs, Anthropic's Claude and Google's Bard, on HumanEval and HumanEval+. Our code, model weights, and data are public at https://github.com/nlpxucan/WizardLM",
+      "externalIds": {
+        "ArXiv": "2306.08568",
+        "DBLP": "conf/iclr/LuoX0SGHT0LJ24",
+        "CorpusId": 259164815
+      },
+      "arxiv_id": "2306.08568",
+      "doi": null,
+      "corpus_id": 259164815
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "45",
+      "ref_key": "S2:bd5deadc58ee45b5e004378ba1d54a96bc947b4a",
+      "paperId": "bd5deadc58ee45b5e004378ba1d54a96bc947b4a",
+      "title": "FActScore: Fine-grained Atomic Evaluation of Factual Precision in Long Form Text Generation",
+      "year": 2023,
+      "abstract": "Evaluating the factuality of long-form text generated by large language models (LMs) is non-trivial because (1) generations often contain a mixture of supported and unsupported pieces of information, making binary judgments of quality inadequate, and (2) human evaluation is time-consuming and costly. In this paper, we introduce FACTSCORE, a new evaluation that breaks a generation into a series of atomic facts and computes the percentage of atomic facts supported by a reliable knowledge source. We conduct an extensive human evaluation to obtain FACTSCOREs of people biographies generated by several state-of-the-art commercial LMs -- InstructGPT, ChatGPT, and the retrieval-augmented PerplexityAI -- and report new analysis demonstrating the need for such a fine-grained score (e.g., ChatGPT only achieves 58%). Since human evaluation is costly, we also introduce an automated model that estimates FACTSCORE using retrieval and a strong language model, with less than a 2% error rate. Finally, we use this automated metric to evaluate 6,500 generations from a new set of 13 recent LMs that would have cost $26K if evaluated by humans, with various findings: GPT-4 and ChatGPT are more factual than public models, and Vicuna and Alpaca are some of the best public models. FACTSCORE is available for public use via `pip install factscore`.",
+      "externalIds": {
+        "ArXiv": "2305.14251",
+        "DBLP": "conf/emnlp/MinKLLYKIZH23",
+        "DOI": "10.48550/arXiv.2305.14251",
+        "CorpusId": 258841470
+      },
+      "arxiv_id": "2305.14251",
+      "doi": "10.48550/arXiv.2305.14251",
+      "corpus_id": 258841470
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "46",
+      "ref_key": "S2:9e16d8cc6096ec0d2733a4ecf41ce09d9a4bd19c",
+      "paperId": "9e16d8cc6096ec0d2733a4ecf41ce09d9a4bd19c",
+      "title": "Scaling Data-Constrained Language Models",
+      "year": 2023,
+      "abstract": "The current trend of scaling language models involves increasing both parameter count and training dataset size. Extrapolating this trend suggests that training dataset size may soon be limited by the amount of text data available on the internet. Motivated by this limit, we investigate scaling language models in data-constrained regimes. Specifically, we run a large set of experiments varying the extent of data repetition and compute budget, ranging up to 900 billion training tokens and 9 billion parameter models. We find that with constrained data for a fixed compute budget, training with up to 4 epochs of repeated data yields negligible changes to loss compared to having unique data. However, with more repetition, the value of adding compute eventually decays to zero. We propose and empirically validate a scaling law for compute optimality that accounts for the decreasing value of repeated tokens and excess parameters. Finally, we experiment with approaches mitigating data scarcity, including augmenting the training dataset with code data or removing commonly used filters. Models and datasets from our 400 training runs are freely available at https://github.com/huggingface/datablations.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-16264",
+        "ArXiv": "2305.16264",
+        "DOI": "10.48550/arXiv.2305.16264",
+        "CorpusId": 258888192
+      },
+      "arxiv_id": "2305.16264",
+      "doi": "10.48550/arXiv.2305.16264",
+      "corpus_id": 258888192
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "47",
+      "ref_key": "S2:0244aeb7c6927e2fb0c2e668687e160a00737dbe",
+      "paperId": "0244aeb7c6927e2fb0c2e668687e160a00737dbe",
+      "title": "Orca: Progressive Learning from Complex Explanation Traces of GPT-4",
+      "year": 2023,
+      "abstract": "Recent research has focused on enhancing the capability of smaller models through imitation learning, drawing on the outputs generated by large foundation models (LFMs). A number of issues impact the quality of these models, ranging from limited imitation signals from shallow LFM outputs; small scale homogeneous training data; and most notably a lack of rigorous evaluation resulting in overestimating the small model's capability as they tend to learn to imitate the style, but not the reasoning process of LFMs. To address these challenges, we develop Orca (We are working with our legal team to publicly release a diff of the model weights in accordance with LLaMA's release policy to be published at https://aka.ms/orca-lm), a 13-billion parameter model that learns to imitate the reasoning process of LFMs. Orca learns from rich signals from GPT-4 including explanation traces; step-by-step thought processes; and other complex instructions, guided by teacher assistance from ChatGPT. To promote this progressive learning, we tap into large-scale and diverse imitation data with judicious sampling and selection. Orca surpasses conventional state-of-the-art instruction-tuned models such as Vicuna-13B by more than 100% in complex zero-shot reasoning benchmarks like Big-Bench Hard (BBH) and 42% on AGIEval. Moreover, Orca reaches parity with ChatGPT on the BBH benchmark and shows competitive performance (4 pts gap with optimized system message) in professional and academic examinations like the SAT, LSAT, GRE, and GMAT, both in zero-shot settings without CoT; while trailing behind GPT-4. Our research indicates that learning from step-by-step explanations, whether these are generated by humans or more advanced AI models, is a promising direction to improve model capabilities and skills.",
+      "externalIds": {
+        "ArXiv": "2306.02707",
+        "DBLP": "journals/corr/abs-2306-02707",
+        "DOI": "10.48550/arXiv.2306.02707",
+        "CorpusId": 259075316
+      },
+      "arxiv_id": "2306.02707",
+      "doi": "10.48550/arXiv.2306.02707",
+      "corpus_id": 259075316
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "48",
+      "ref_key": "S2:29f032fc875576b5c3c6b1c2d76af8639bacfb88",
+      "paperId": "29f032fc875576b5c3c6b1c2d76af8639bacfb88",
+      "title": "OpenChat: Advancing Open-source Language Models with Mixed-Quality Data",
+      "year": 2023,
+      "abstract": "Nowadays, open-source large language models like LLaMA have emerged. Recent developments have incorporated supervised fine-tuning (SFT) and reinforcement learning fine-tuning (RLFT) to align these models with human goals. However, SFT methods treat all training data with mixed quality equally, while RLFT methods require high-quality pairwise or ranking-based preference data. In this study, we present a novel framework, named OpenChat, to advance open-source language models with mixed-quality data. Specifically, we consider the general SFT training data, consisting of a small amount of expert data mixed with a large proportion of sub-optimal data, without any preference labels. We propose the C(onditioned)-RLFT, which regards different data sources as coarse-grained reward labels and learns a class-conditioned policy to leverage complementary data quality information. Interestingly, the optimal policy in C-RLFT can be easily solved through single-stage, RL-free supervised learning, which is lightweight and avoids costly human preference labeling. Through extensive experiments on three standard benchmarks, our openchat-13b fine-tuned with C-RLFT achieves the highest average performance among all 13b open-source language models. Moreover, we use AGIEval to validate the model generalization performance, in which only openchat-13b surpasses the base model. Finally, we conduct a series of analyses to shed light on the effectiveness and robustness of OpenChat. Our code, data, and models are publicly available at https://github.com/imoneoi/openchat and https://huggingface.co/openchat.",
+      "externalIds": {
+        "ArXiv": "2309.11235",
+        "DBLP": "journals/corr/abs-2309-11235",
+        "DOI": "10.48550/arXiv.2309.11235",
+        "CorpusId": 262064307
+      },
+      "arxiv_id": "2309.11235",
+      "doi": "10.48550/arXiv.2309.11235",
+      "corpus_id": 262064307
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "49",
+      "ref_key": "S2:0d1c76d45afa012ded7ab741194baf142117c495",
+      "paperId": "0d1c76d45afa012ded7ab741194baf142117c495",
+      "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+      "year": 2023,
+      "abstract": "While large-scale unsupervised language models (LMs) learn broad world knowledge and some reasoning skills, achieving precise control of their behavior is difficult due to the completely unsupervised nature of their training. Existing methods for gaining such steerability collect human labels of the relative quality of model generations and fine-tune the unsupervised LM to align with these preferences, often with reinforcement learning from human feedback (RLHF). However, RLHF is a complex and often unstable procedure, first fitting a reward model that reflects the human preferences, and then fine-tuning the large unsupervised LM using reinforcement learning to maximize this estimated reward without drifting too far from the original model. In this paper we introduce a new parameterization of the reward model in RLHF that enables extraction of the corresponding optimal policy in closed form, allowing us to solve the standard RLHF problem with only a simple classification loss. The resulting algorithm, which we call Direct Preference Optimization (DPO), is stable, performant, and computationally lightweight, eliminating the need for sampling from the LM during fine-tuning or performing significant hyperparameter tuning. Our experiments show that DPO can fine-tune LMs to align with human preferences as well as or better than existing methods. Notably, fine-tuning with DPO exceeds PPO-based RLHF in ability to control sentiment of generations, and matches or improves response quality in summarization and single-turn dialogue while being substantially simpler to implement and train.",
+      "externalIds": {
+        "DBLP": "conf/nips/RafailovSMMEF23",
+        "ArXiv": "2305.18290",
+        "DOI": "10.48550/arXiv.2305.18290",
+        "CorpusId": 258959321
+      },
+      "arxiv_id": "2305.18290",
+      "doi": "10.48550/arXiv.2305.18290",
+      "corpus_id": 258959321
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "50",
+      "ref_key": "S2:19db2d61f20a6c439cc79f28ef4c9e4bf26cd20e",
+      "paperId": "19db2d61f20a6c439cc79f28ef4c9e4bf26cd20e",
+      "title": "Preference Ranking Optimization for Human Alignment",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) often contain misleading content, emphasizing the need to align them with human values to ensure secure AI systems. Reinforcement learning from human feedback (RLHF) has been employed to achieve this alignment. However, it encompasses two main drawbacks: (1) RLHF exhibits complexity, instability, and sensitivity to hyperparameters in contrast to SFT. (2) Despite massive trial-and-error, multiple sampling is reduced to pair-wise contrast, thus lacking contrasts from a macro perspective. In this paper, we propose Preference Ranking Optimization (PRO) as an efficient SFT algorithm to directly fine-tune LLMs for human alignment. PRO extends the pair-wise contrast to accommodate preference rankings of any length. By iteratively contrasting candidates, PRO instructs the LLM to prioritize the best response while progressively ranking the rest responses. In this manner, PRO effectively transforms human alignment into aligning the probability ranking of n responses generated by LLM with the preference ranking of humans towards these responses. Experiments have shown that PRO outperforms baseline algorithms, achieving comparable results to ChatGPT and human responses through automatic-based, reward-based, GPT-4, and human evaluations.",
+      "externalIds": {
+        "DBLP": "conf/aaai/00010LYHLW24",
+        "ArXiv": "2306.17492",
+        "DOI": "10.48550/arXiv.2306.17492",
+        "CorpusId": 259308873
+      },
+      "arxiv_id": "2306.17492",
+      "doi": "10.48550/arXiv.2306.17492",
+      "corpus_id": 259308873
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "51",
+      "ref_key": "S2:663a41c866d49ce052801fbc88947d39764cad29",
+      "paperId": "663a41c866d49ce052801fbc88947d39764cad29",
+      "title": "Challenging BIG-Bench Tasks and Whether Chain-of-Thought Can Solve Them",
+      "year": 2022,
+      "abstract": "BIG-Bench (Srivastava et al., 2022) is a diverse evaluation suite that focuses on tasks believed to be beyond the capabilities of current language models. Language models have already made good progress on this benchmark, with the best model in the BIG-Bench paper outperforming average reported human-rater results on 65% of the BIG-Bench tasks via few-shot prompting. But on what tasks do language models fall short of average human-rater performance, and are those tasks actually unsolvable by current language models? In this work, we focus on a suite of 23 challenging BIG-Bench tasks which we call BIG-Bench Hard (BBH). These are the task for which prior language model evaluations did not outperform the average human-rater. We find that applying chain-of-thought (CoT) prompting to BBH tasks enables PaLM to surpass the average human-rater performance on 10 of the 23 tasks, and Codex (code-davinci-002) to surpass the average human-rater performance on 17 of the 23 tasks. Since many tasks in BBH require multi-step reasoning, few-shot prompting without CoT, as done in the BIG-Bench evaluations (Srivastava et al., 2022), substantially underestimates the best performance and capabilities of language models, which is better captured via CoT prompting. As further analysis, we explore the interaction between CoT and model scale on BBH, finding that CoT enables emergent task performance on several BBH tasks with otherwise flat scaling curves.",
+      "externalIds": {
+        "DBLP": "conf/acl/SuzgunSSGTCCLCZ23",
+        "ArXiv": "2210.09261",
+        "DOI": "10.48550/arXiv.2210.09261",
+        "CorpusId": 252917648
+      },
+      "arxiv_id": "2210.09261",
+      "doi": "10.48550/arXiv.2210.09261",
+      "corpus_id": 252917648
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "52",
+      "ref_key": "S2:c21a4d70d83e0f6eb2a9e1c41d034842dd561e47",
+      "paperId": "c21a4d70d83e0f6eb2a9e1c41d034842dd561e47",
+      "title": "CommonsenseQA: A Question Answering Challenge Targeting Commonsense Knowledge",
+      "year": 2019,
+      "abstract": "When answering a question, people often draw upon their rich world knowledge in addition to the particular context. Recent work has focused primarily on answering questions given some relevant document or context, and required very little general background. To investigate question answering with prior knowledge, we present CommonsenseQA: a challenging new dataset for commonsense question answering. To capture common sense beyond associations, we extract from ConceptNet (Speer et al., 2017) multiple target concepts that have the same semantic relation to a single source concept. Crowd-workers are asked to author multiple-choice questions that mention the source concept and discriminate in turn between each of the target concepts. This encourages workers to create questions with complex semantics that often require prior knowledge. We create 12,247 questions through this procedure and demonstrate the difficulty of our task with a large number of strong baselines. Our best baseline is based on BERT-large (Devlin et al., 2018) and obtains 56% accuracy, well below human performance, which is 89%.",
+      "externalIds": {
+        "MAG": "2952331680",
+        "ACL": "N19-1421",
+        "DBLP": "journals/corr/abs-1811-00937",
+        "ArXiv": "1811.00937",
+        "DOI": "10.18653/v1/N19-1421",
+        "CorpusId": 53296520
+      },
+      "arxiv_id": "1811.00937",
+      "doi": "10.18653/v1/N19-1421",
+      "corpus_id": 53296520
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "53",
+      "ref_key": "S2:06d7cb8c8816360feb33c3367073e0ef66d7d0b0",
+      "paperId": "06d7cb8c8816360feb33c3367073e0ef66d7d0b0",
+      "title": "Super-NaturalInstructions: Generalization via Declarative Instructions on 1600+ NLP Tasks",
+      "year": 2022,
+      "abstract": "How well can NLP models generalize to a variety of unseen tasks when provided with task instructions? To address this question, we first introduce Super-NaturalInstructions, a benchmark of 1,616 diverse NLP tasks and their expert-written instructions. Our collection covers 76 distinct task types, including but not limited to classification, extraction, infilling, sequence tagging, text rewriting, and text composition. This large and diverse collection of tasks enables rigorous benchmarking of cross-task generalization under instructions—training models to follow instructions on a subset of tasks and evaluating them on the remaining unseen ones.Furthermore, we build Tk-Instruct, a transformer model trained to follow a variety of in-context instructions (plain language task definitions or k-shot examples). Our experiments show that Tk-Instruct outperforms existing instruction-following models such as InstructGPT by over 9% on our benchmark despite being an order of magnitude smaller. We further analyze generalization as a function of various scaling parameters, such as the number of observed tasks, the number of instances per task, and model sizes. We hope our dataset and model facilitate future progress towards more general-purpose NLP models.",
+      "externalIds": {
+        "ACL": "2022.emnlp-main.340",
+        "ArXiv": "2204.07705",
+        "DBLP": "conf/emnlp/WangMAKMNADASPK22",
+        "DOI": "10.18653/v1/2022.emnlp-main.340",
+        "CorpusId": 253098274
+      },
+      "arxiv_id": "2204.07705",
+      "doi": "10.18653/v1/2022.emnlp-main.340",
+      "corpus_id": 253098274
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "54",
+      "ref_key": "S2:fbd2c8089870814449f9254a711041bbae145a82",
+      "paperId": "fbd2c8089870814449f9254a711041bbae145a82",
+      "title": "How Far Can Camels Go? Exploring the State of Instruction Tuning on Open Resources",
+      "year": 2023,
+      "abstract": "In this work we explore recent advances in instruction-tuning language models on a range of open instruction-following datasets. Despite recent claims that open models can be on par with state-of-the-art proprietary models, these claims are often accompanied by limited evaluation, making it difficult to compare models across the board and determine the utility of various resources. We provide a large set of instruction-tuned models from 6.7B to 65B parameters in size, trained on 12 instruction datasets ranging from manually curated (e.g., OpenAssistant) to synthetic and distilled (e.g., Alpaca) and systematically evaluate them on their factual knowledge, reasoning, multilinguality, coding, and open-ended instruction following abilities through a collection of automatic, model-based, and human-based metrics. We further introduce T\\\"ulu, our best performing instruction-tuned model suite finetuned on a combination of high-quality open resources. Our experiments show that different instruction-tuning datasets can uncover or enhance specific skills, while no single dataset (or combination) provides the best performance across all evaluations. Interestingly, we find that model and human preference-based evaluations fail to reflect differences in model capabilities exposed by benchmark-based evaluations, suggesting the need for the type of systemic evaluation performed in this work. Our evaluations show that the best model in any given evaluation reaches on average 87% of ChatGPT performance, and 73% of GPT-4 performance, suggesting that further investment in building better base models and instruction-tuning data is required to close the gap. We release our instruction-tuned models, including a fully finetuned 65B T\\\"ulu, along with our code, data, and evaluation framework at https://github.com/allenai/open-instruct to facilitate future research.",
+      "externalIds": {
+        "ArXiv": "2306.04751",
+        "DBLP": "journals/corr/abs-2306-04751",
+        "DOI": "10.48550/arXiv.2306.04751",
+        "CorpusId": 259108263
+      },
+      "arxiv_id": "2306.04751",
+      "doi": "10.48550/arXiv.2306.04751",
+      "corpus_id": 259108263
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "55",
+      "ref_key": "S2:38d64919ba526868a850a0e5f6239d4c474b7e7e",
+      "paperId": "38d64919ba526868a850a0e5f6239d4c474b7e7e",
+      "title": "Large Language Models are not Fair Evaluators",
+      "year": 2023,
+      "abstract": "In this paper, we uncover a systematic bias in the evaluation paradigm of adopting large language models~(LLMs), e.g., GPT-4, as a referee to score and compare the quality of responses generated by candidate models. We find that the quality ranking of candidate responses can be easily hacked by simply altering their order of appearance in the context. This manipulation allows us to skew the evaluation result, making one model appear considerably superior to the other, e.g., Vicuna-13B could beat ChatGPT on 66 over 80 tested queries with ChatGPT as an evaluator. To address this issue, we propose a calibration framework with three simple yet effective strategies: 1) Multiple Evidence Calibration, which requires the evaluator model to generate multiple evaluation evidence before assigning ratings; 2) Balanced Position Calibration, which aggregates results across various orders to determine the final score; 3) Human-in-the-Loop Calibration, which introduces a balanced position diversity entropy to measure the difficulty of each example and seeks human assistance when needed. We also manually annotate the\"win/tie/lose\"outcomes of responses from ChatGPT and Vicuna-13B in the Vicuna Benchmark's question prompt, and extensive experiments demonstrate that our approach successfully mitigates evaluation bias, resulting in closer alignment with human judgments. We release our code and human annotation at \\url{https://github.com/i-Eval/FairEval} to facilitate future research.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2305-17926",
+        "ArXiv": "2305.17926",
+        "DOI": "10.48550/arXiv.2305.17926",
+        "CorpusId": 258960339
+      },
+      "arxiv_id": "2305.17926",
+      "doi": "10.48550/arXiv.2305.17926",
+      "corpus_id": 258960339
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "56",
+      "ref_key": "S2:ccd94602e3acecf999d0c9ba62b1a8bc02e9f696",
+      "paperId": "ccd94602e3acecf999d0c9ba62b1a8bc02e9f696",
+      "title": "PandaLM: An Automatic Evaluation Benchmark for LLM Instruction Tuning Optimization",
+      "year": 2023,
+      "abstract": "Instruction tuning large language models (LLMs) remains a challenging task, owing to the complexity of hyperparameter selection and the difficulty involved in evaluating the tuned models. To determine the optimal hyperparameters, an automatic, robust, and reliable evaluation benchmark is essential. However, establishing such a benchmark is not a trivial task due to the challenges associated with evaluation accuracy and privacy protection. In response to these challenges, we introduce a judge large language model, named PandaLM, which is trained to distinguish the superior model given several LLMs. PandaLM's focus extends beyond just the objective correctness of responses, which is the main focus of traditional evaluation datasets. It addresses vital subjective factors such as relative conciseness, clarity, adherence to instructions, comprehensiveness, and formality. To ensure the reliability of PandaLM, we collect a diverse human-annotated test dataset, where all contexts are generated by humans and labels are aligned with human preferences. Our results indicate that PandaLM-7B achieves 93.75% of GPT-3.5's evaluation ability and 88.28% of GPT-4's in terms of F1-score on our test dataset. PandaLM enables the evaluation of LLM to be fairer but with less cost, evidenced by significant improvements achieved by models tuned through PandaLM compared to their counterparts trained with default Alpaca's hyperparameters. In addition, PandaLM does not depend on API-based evaluations, thus avoiding potential data leakage. All resources of PandaLM are released at https://github.com/WeOpenML/PandaLM.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2306-05087",
+        "ArXiv": "2306.05087",
+        "DOI": "10.48550/arXiv.2306.05087",
+        "CorpusId": 259108266
+      },
+      "arxiv_id": "2306.05087",
+      "doi": "10.48550/arXiv.2306.05087",
+      "corpus_id": 259108266
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "57",
+      "ref_key": "S2:1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "paperId": "1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+      "title": "Chain of Thought Prompting Elicits Reasoning in Large Language Models",
+      "year": 2022,
+      "abstract": "We explore how generating a chain of thought -- a series of intermediate reasoning steps -- significantly improves the ability of large language models to perform complex reasoning. In particular, we show how such reasoning abilities emerge naturally in sufficiently large language models via a simple method called chain of thought prompting, where a few chain of thought demonstrations are provided as exemplars in prompting. Experiments on three large language models show that chain of thought prompting improves performance on a range of arithmetic, commonsense, and symbolic reasoning tasks. The empirical gains can be striking. For instance, prompting a 540B-parameter language model with just eight chain of thought exemplars achieves state of the art accuracy on the GSM8K benchmark of math word problems, surpassing even finetuned GPT-3 with a verifier.",
+      "externalIds": {
+        "ArXiv": "2201.11903",
+        "DBLP": "journals/corr/abs-2201-11903",
+        "CorpusId": 246411621
+      },
+      "arxiv_id": "2201.11903",
+      "doi": null,
+      "corpus_id": 246411621
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "58",
+      "ref_key": "S2:763eb8d43e2f8a5d9da26269a4985efd1c099a5b",
+      "paperId": "763eb8d43e2f8a5d9da26269a4985efd1c099a5b",
+      "title": "ExpertPrompting: Instructing Large Language Models to be Distinguished Experts",
+      "year": 2023,
+      "abstract": "The answering quality of an aligned large language model (LLM) can be drastically improved if treated with proper crafting of prompts. In this paper, we propose ExpertPrompting to elicit the potential of LLMs to answer as distinguished experts. We first utilize In-Context Learning to automatically synthesize detailed and customized descriptions of the expert identity for each specific instruction, and then ask LLMs to provide answer conditioned on such agent background. Based on this augmented prompting strategy, we produce a new set of instruction-following data using GPT-3.5, and train a competitive open-source chat assistant called ExpertLLaMA. We employ GPT4-based evaluation to show that 1) the expert data is of significantly higher quality than vanilla answers, and 2) ExpertLLaMA outperforms existing open-source opponents and achieves 96\\% of the original ChatGPT's capability. All data and the ExpertLLaMA model will be made publicly available at \\url{https://github.com/OFA-Sys/ExpertLLaMA}.",
+      "externalIds": {
+        "ArXiv": "2305.14688",
+        "DBLP": "journals/corr/abs-2305-14688",
+        "DOI": "10.48550/arXiv.2305.14688",
+        "CorpusId": 258865458
+      },
+      "arxiv_id": "2305.14688",
+      "doi": "10.48550/arXiv.2305.14688",
+      "corpus_id": 258865458
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "59",
+      "ref_key": "S2:131f499e4d3503da93022d07fcf804a18483bea9",
+      "paperId": "131f499e4d3503da93022d07fcf804a18483bea9",
+      "title": "WizardLM: Empowering Large Language Models to Follow Complex Instructions",
+      "year": 2023,
+      "abstract": "Training large language models (LLMs) with open-domain instruction following data brings colossal success. However, manually creating such instruction data is very time-consuming and labor-intensive. Moreover, humans may struggle to produce high-complexity instructions. In this paper, we show an avenue for creating large amounts of instruction data with varying levels of complexity using LLM instead of humans. Starting with an initial set of instructions, we use our proposed Evol-Instruct to rewrite them step by step into more complex instructions. Then, we mix all generated instruction data to fine-tune LLaMA. We call the resulting model WizardLM. Human evaluations on a complexity-balanced test bed and Vicuna's testset show that instructions from Evol-Instruct are superior to human-created ones. By analyzing the human evaluation results of the high complexity part, we demonstrate that outputs from our WizardLM are preferred to outputs from OpenAI ChatGPT. In GPT-4 automatic evaluation, WizardLM achieves more than 90\\% capacity of ChatGPT on 17 out of 29 skills. Even though WizardLM still lags behind ChatGPT in some aspects, our findings suggest that fine-tuning with AI-evolved instructions is a promising direction for enhancing LLMs. Our code and data are public at https://github.com/nlpxucan/WizardLM",
+      "externalIds": {
+        "ArXiv": "2304.12244",
+        "DBLP": "journals/corr/abs-2304-12244",
+        "DOI": "10.48550/arXiv.2304.12244",
+        "CorpusId": 258298159
+      },
+      "arxiv_id": "2304.12244",
+      "doi": "10.48550/arXiv.2304.12244",
+      "corpus_id": 258298159
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "60",
+      "ref_key": "S2:3e826e52754d0876611c8cf2fa7a781a701c39e6",
+      "paperId": "3e826e52754d0876611c8cf2fa7a781a701c39e6",
+      "title": "KoLA: Carefully Benchmarking World Knowledge of Large Language Models",
+      "year": 2023,
+      "abstract": "The unprecedented performance of large language models (LLMs) necessitates improvements in evaluations. Rather than merely exploring the breadth of LLM abilities, we believe meticulous and thoughtful designs are essential to thorough, unbiased, and applicable evaluations. Given the importance of world knowledge to LLMs, we construct a Knowledge-oriented LLM Assessment benchmark (KoLA), in which we carefully design three crucial factors: (1) For \\textbf{ability modeling}, we mimic human cognition to form a four-level taxonomy of knowledge-related abilities, covering $19$ tasks. (2) For \\textbf{data}, to ensure fair comparisons, we use both Wikipedia, a corpus prevalently pre-trained by LLMs, along with continuously collected emerging corpora, aiming to evaluate the capacity to handle unseen data and evolving knowledge. (3) For \\textbf{evaluation criteria}, we adopt a contrastive system, including overall standard scores for better numerical comparability across tasks and models and a unique self-contrast metric for automatically evaluating knowledge-creating ability. We evaluate $28$ open-source and commercial LLMs and obtain some intriguing findings. The KoLA dataset and open-participation leaderboard are publicly released at https://kola.xlore.cn and will be continuously updated to provide references for developing LLMs and knowledge-related systems.",
+      "externalIds": {
+        "DBLP": "conf/iclr/YuWTCZL00ZLLZBL24",
+        "ArXiv": "2306.09296",
+        "DOI": "10.48550/arXiv.2306.09296",
+        "CorpusId": 259165244
+      },
+      "arxiv_id": "2306.09296",
+      "doi": "10.48550/arXiv.2306.09296",
+      "corpus_id": 259165244
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "61",
+      "ref_key": "S2:78c488e2d84bd193a40006b1fceb03e3845b81d4",
+      "paperId": "78c488e2d84bd193a40006b1fceb03e3845b81d4",
+      "title": "Large Language Model as Attributed Training Data Generator: A Tale of Diversity and Bias",
+      "year": 2023,
+      "abstract": "Large language models (LLMs) have been recently leveraged as training data generators for various natural language processing (NLP) tasks. While previous research has explored different approaches to training models using generated data, they generally rely on simple class-conditional prompts, which may limit the diversity of the generated data and inherit systematic biases of LLM. Thus, we investigate training data generation with diversely attributed prompts (e.g., specifying attributes like length and style), which have the potential to yield diverse and attributed generated data. Our investigation focuses on datasets with high cardinality and diverse domains, wherein we demonstrate that attributed prompts outperform simple class-conditional prompts in terms of the resulting model's performance. Additionally, we present a comprehensive empirical study on data generation encompassing vital aspects like bias, diversity, and efficiency, and highlight three key observations: firstly, synthetic datasets generated by simple prompts exhibit significant biases, such as regional bias; secondly, attribute diversity plays a pivotal role in enhancing model performance; lastly, attributed prompts achieve the performance of simple class-conditional prompts while utilizing only 5\\% of the querying cost of ChatGPT associated with the latter. The data and code are available on \\url{https://github.com/yueyu1030/AttrPrompt}.",
+      "externalIds": {
+        "ArXiv": "2306.15895",
+        "DBLP": "conf/nips/YuZZMRKSZ23",
+        "DOI": "10.48550/arXiv.2306.15895",
+        "CorpusId": 259275123
+      },
+      "arxiv_id": "2306.15895",
+      "doi": "10.48550/arXiv.2306.15895",
+      "corpus_id": 259275123
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "62",
+      "ref_key": "S2:748698bd4387afd08594e0dc8150c2afa210d9ae",
+      "paperId": "748698bd4387afd08594e0dc8150c2afa210d9ae",
+      "title": "RRHF: Rank Responses to Align Language Models with Human Feedback without tears",
+      "year": 2023,
+      "abstract": "Reinforcement Learning from Human Feedback (RLHF) facilitates the alignment of large language models with human preferences, significantly enhancing the quality of interactions between humans and models. InstructGPT implements RLHF through several stages, including Supervised Fine-Tuning (SFT), reward model training, and Proximal Policy Optimization (PPO). However, PPO is sensitive to hyperparameters and requires multiple models in its standard implementation, making it hard to train and scale up to larger parameter counts. In contrast, we propose a novel learning paradigm called RRHF, which scores sampled responses from different sources via a logarithm of conditional probabilities and learns to align these probabilities with human preferences through ranking loss. RRHF can leverage sampled responses from various sources including the model responses from itself, other large language model responses, and human expert responses to learn to rank them. RRHF only needs 1 to 2 models during tuning and can efficiently align language models with human preferences robustly without complex hyperparameter tuning. Additionally, RRHF can be considered an extension of SFT and reward model training while being simpler than PPO in terms of coding, model counts, and hyperparameters. We evaluate RRHF on the Helpful and Harmless dataset, demonstrating comparable alignment performance with PPO by reward model score and human labeling. Extensive experiments show that the performance of RRHF is highly related to sampling quality which suggests RRHF is a best-of-n learner. Codes available at https://github.com/GanjinZero/RRHF.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2304-05302",
+        "ArXiv": "2304.05302",
+        "DOI": "10.48550/arXiv.2304.05302",
+        "CorpusId": 258059818
+      },
+      "arxiv_id": "2304.05302",
+      "doi": "10.48550/arXiv.2304.05302",
+      "corpus_id": 258059818
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "63",
+      "ref_key": "S2:27cb586fcea5ec076b984750e9c77f0d7fc976e5",
+      "paperId": "27cb586fcea5ec076b984750e9c77f0d7fc976e5",
+      "title": "AlignScore: Evaluating Factual Consistency with A Unified Alignment Function",
+      "year": 2023,
+      "abstract": "Many text generation applications require the generated text to be factually consistent with input information. Automatic evaluation of factual consistency is challenging. Previous work has developed various metrics that often depend on specific functions, such as natural language inference (NLI) or question answering (QA), trained on limited data. Those metrics thus can hardly assess diverse factual inconsistencies (e.g., contradictions, hallucinations) that occur in varying inputs/outputs (e.g., sentences, documents) from different tasks. In this paper, we propose AlignScore, a new holistic metric that applies to a variety of factual inconsistency scenarios as above. AlignScore is based on a general function of information alignment between two arbitrary text pieces. Crucially, we develop a unified training framework of the alignment function by integrating a large diversity of data sources, resulting in 4.7M training examples from 7 well-established tasks (NLI, QA, paraphrasing, fact verification, information retrieval, semantic similarity, and summarization). We conduct extensive experiments on large-scale benchmarks including 22 evaluation datasets, where 19 of the datasets were never seen in the alignment training. AlignScore achieves substantial improvement over a wide range of previous metrics. Moreover, AlignScore (355M parameters) matches or even outperforms metrics based on ChatGPT and GPT-4 that are orders of magnitude larger.",
+      "externalIds": {
+        "ACL": "2023.acl-long.634",
+        "DBLP": "conf/acl/ZhaYLH23",
+        "ArXiv": "2305.16739",
+        "DOI": "10.48550/arXiv.2305.16739",
+        "CorpusId": 258947273
+      },
+      "arxiv_id": "2305.16739",
+      "doi": "10.48550/arXiv.2305.16739",
+      "corpus_id": 258947273
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "64",
+      "ref_key": "S2:5ef82a8c8aa50f99285f2143b57ca4e82da1af80",
+      "paperId": "5ef82a8c8aa50f99285f2143b57ca4e82da1af80",
+      "title": "Adaptive Budget Allocation for Parameter-Efficient Fine-Tuning",
+      "year": 2023,
+      "abstract": ", question answering and natural language generation tasks. Results show that AdaLoRA outperforms existing approaches.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2303-10512",
+        "DOI": "10.48550/arXiv.2303.10512",
+        "CorpusId": 257631760
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2303.10512",
+      "corpus_id": 257631760
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "65",
+      "ref_key": "S2:891edceb78a274b0c2494d8176bc4d6f6e3f9cbc",
+      "paperId": "891edceb78a274b0c2494d8176bc4d6f6e3f9cbc",
+      "title": "Calibrating Sequence likelihood Improves Conditional Language Generation",
+      "year": 2022,
+      "abstract": "Conditional language models are predominantly trained with maximum likelihood estimation (MLE), giving probability mass to sparsely observed target sequences. While MLE trained models assign high probability to plausible sequences given the context, the model probabilities often do not accurately rank-order generated sequences by quality. This has been empirically observed in beam search decoding as output quality degrading with large beam sizes, and decoding strategies benefiting from heuristics such as length normalization and repetition-blocking. In this work, we introduce sequence likelihood calibration (SLiC) where the likelihood of model generated sequences are calibrated to better align with reference sequences in the model's latent space. With SLiC, decoding heuristics become unnecessary and decoding candidates' quality significantly improves regardless of the decoding method. Furthermore, SLiC shows no sign of diminishing returns with model scale, and presents alternative ways to improve quality with limited training and inference budgets. With SLiC, we exceed or match SOTA results on a wide range of generation tasks spanning abstractive summarization, question generation, abstractive question answering and data-to-text generation, even with modest-sized models.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2210-00045",
+        "ArXiv": "2210.00045",
+        "DOI": "10.48550/arXiv.2210.00045",
+        "CorpusId": 252683988
+      },
+      "arxiv_id": "2210.00045",
+      "doi": "10.48550/arXiv.2210.00045",
+      "corpus_id": 252683988
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "66",
+      "ref_key": "S2:a0a79dad89857a96f8f71b14238e5237cbfc4787",
+      "paperId": "a0a79dad89857a96f8f71b14238e5237cbfc4787",
+      "title": "Judging LLM-as-a-judge with MT-Bench and Chatbot Arena",
+      "year": 2023,
+      "abstract": "Evaluating large language model (LLM) based chat assistants is challenging due to their broad capabilities and the inadequacy of existing benchmarks in measuring human preferences. To address this, we explore using strong LLMs as judges to evaluate these models on more open-ended questions. We examine the usage and limitations of LLM-as-a-judge, including position, verbosity, and self-enhancement biases, as well as limited reasoning ability, and propose solutions to mitigate some of them. We then verify the agreement between LLM judges and human preferences by introducing two benchmarks: MT-bench, a multi-turn question set; and Chatbot Arena, a crowdsourced battle platform. Our results reveal that strong LLM judges like GPT-4 can match both controlled and crowdsourced human preferences well, achieving over 80% agreement, the same level of agreement between humans. Hence, LLM-as-a-judge is a scalable and explainable way to approximate human preferences, which are otherwise very expensive to obtain. Additionally, we show our benchmark and traditional benchmarks complement each other by evaluating several variants of LLaMA and Vicuna. The MT-bench questions, 3K expert votes, and 30K conversations with human preferences are publicly available at https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge.",
+      "externalIds": {
+        "ArXiv": "2306.05685",
+        "DBLP": "journals/corr/abs-2306-05685",
+        "CorpusId": 259129398
+      },
+      "arxiv_id": "2306.05685",
+      "doi": null,
+      "corpus_id": 259129398
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "67",
+      "ref_key": "S2:68c834c19cd126bbd6d25a3572d7205cfed76271",
+      "paperId": "68c834c19cd126bbd6d25a3572d7205cfed76271",
+      "title": "AGIEval: A Human-Centric Benchmark for Evaluating Foundation Models",
+      "year": 2023,
+      "abstract": "Evaluating the general abilities of foundation models to tackle human-level tasks is a vital aspect of their development and application in the pursuit of Artificial General Intelligence (AGI). Traditional benchmarks, which rely on artificial datasets, may not accurately represent human-level capabilities. In this paper, we introduce AGIEval, a novel benchmark specifically designed to assess foundation model in the context of human-centric standardized exams, such as college entrance exams, law school admission tests, math competitions, and lawyer qualification tests. We evaluate several state-of-the-art foundation models, including GPT-4, ChatGPT, and Text-Davinci-003, using this benchmark. Impressively, GPT-4 surpasses average human performance on SAT, LSAT, and math competitions, attaining a 95% accuracy rate on the SAT Math test and a 92.5% accuracy on the English test of the Chinese national college entrance exam. This demonstrates the extraordinary performance of contemporary foundation models. In contrast, we also find that GPT-4 is less proficient in tasks that require complex reasoning or specific domain knowledge. Our comprehensive analyses of model capabilities (understanding, knowledge, reasoning, and calculation) reveal these models' strengths and limitations, providing valuable insights into future directions for enhancing their general capabilities. By concentrating on tasks pertinent to human cognition and decision-making, our benchmark delivers a more meaningful and robust evaluation of foundation models' performance in real-world scenarios. The data, code, and all model outputs are released in https://github.com/ruixiangcui/AGIEval.",
+      "externalIds": {
+        "DBLP": "conf/naacl/ZhongCGLLWSCD24",
+        "ArXiv": "2304.06364",
+        "DOI": "10.48550/arXiv.2304.06364",
+        "CorpusId": 258108259
+      },
+      "arxiv_id": "2304.06364",
+      "doi": "10.48550/arXiv.2304.06364",
+      "corpus_id": 258108259
+    },
+    {
+      "paper_id": "2307.12966",
+      "ref_index": "68",
+      "ref_key": "S2:546d0624adfc6e18fb87d8cc77e7705bb9ea7445",
+      "paperId": "546d0624adfc6e18fb87d8cc77e7705bb9ea7445",
+      "title": "LIMA: Less Is More for Alignment",
+      "year": 2023,
+      "abstract": "Large language models are trained in two stages: (1) unsupervised pretraining from raw text, to learn general-purpose representations, and (2) large scale instruction tuning and reinforcement learning, to better align to end tasks and user preferences. We measure the relative importance of these two stages by training LIMA, a 65B parameter LLaMa language model fine-tuned with the standard supervised loss on only 1,000 carefully curated prompts and responses, without any reinforcement learning or human preference modeling. LIMA demonstrates remarkably strong performance, learning to follow specific response formats from only a handful of examples in the training data, including complex queries that range from planning trip itineraries to speculating about alternate history. Moreover, the model tends to generalize well to unseen tasks that did not appear in the training data. In a controlled human study, responses from LIMA are either equivalent or strictly preferred to GPT-4 in 43% of cases; this statistic is as high as 58% when compared to Bard and 65% versus DaVinci003, which was trained with human feedback. Taken together, these results strongly suggest that almost all knowledge in large language models is learned during pretraining, and only limited instruction tuning data is necessary to teach models to produce high quality output.",
+      "externalIds": {
+        "ArXiv": "2305.11206",
+        "DBLP": "conf/nips/ZhouLX0SMMEYYZG23",
+        "CorpusId": 258822910
+      },
+      "arxiv_id": "2305.11206",
+      "doi": null,
+      "corpus_id": 258822910
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "Alignment For LLMs": {
+        "Data": {
+          "Instructions From   Human ": {
+            "NLP Benchmarks": {
+              "6f4cc536f9ed83d0dbf7e919dc609be12aa0848a": {},
+              "9b1f4492a663c7f56f2b43ae1ed167d3857aacca": {},
+              "f2b0017ddd77fa38760a18145e63553105a1a236": {},
+              "06d7cb8c8816360feb33c3367073e0ef66d7d0b0": {}
+            },
+            "Hand-crafted Instructions": {
+              "ae736662f64d56f3ab1894fbd9c45f8f37251843": {},
+              "c01e43c65a04d766e429863bdf7cf65b895df20e": {}
+            }
+          },
+          "Instruction From   Strong LLMs ": {
+            "Self-Instruct": {
+              "Improving   Input Quality": {
+                "6f4cc536f9ed83d0dbf7e919dc609be12aa0848a": {},
+                "e65b346d442e9962a4276dc1c1af2956d9d5f1eb": {},
+                "389ec3e8902a5dcfcde1adec735854e93f845937": {},
+                "2922768fd451ecdb45f48c1a83eb57f54a91221b": {},
+                "454c8fef2957aa2fb13eb2c7a454393a2ee83805": {},
+                "131f499e4d3503da93022d07fcf804a18483bea9": {},
+                "78c488e2d84bd193a40006b1fceb03e3845b81d4": {}
+              },
+              "Improving  Output Quality": {
+                "d2b4b4804479714ad0e406e8ab73fa3e72069216": {},
+                "e01515c6138bc525f7aec30fc85f2adf028d4156": {},
+                "0244aeb7c6927e2fb0c2e668687e160a00737dbe": {},
+                "1b6e810ce0afd0dd093f789d2b2742d047e316d5": {},
+                "763eb8d43e2f8a5d9da26269a4985efd1c099a5b": {}
+              }
+            },
+            "Multi-Turn Instructions": {
+              "7ca954844bc1dd405bc43445b1c990e42d865095": {},
+              "a122863d239643453195424c04067e89406246e1": {}
+            },
+            "Multilingual Instructions": {
+              "d2b4b4804479714ad0e406e8ab73fa3e72069216": {},
+              "4656ec3210a3d28f9f30a8ec8a202aae7ed3bf1f": {},
+              "647f520eea08cf8e98b99319dcb7e32cc3a78c72": {}
+            }
+          },
+          "Instruction Data   Management ": {
+            "Instruction Implications": {
+              "a8d740aff768210d21bf30cd83bab156d78a232a": {},
+              "f356e977c5ba1c5341a48d18db2d8c1658bd98ed": {},
+              "9e16d8cc6096ec0d2733a4ecf41ce09d9a4bd19c": {},
+              "fbd2c8089870814449f9254a711041bbae145a82": {}
+            },
+            "Instruction Quantity": {
+              "ab82cd7194fc609d2d29e6b1a4399d6120f97fdd": {},
+              "ac4ffaab10f6b6ad83e79ca5691f338abf5cff82": {},
+              "546d0624adfc6e18fb87d8cc77e7705bb9ea7445": {}
+            }
+          }
+        },
+        "Training": {
+          "Online Human   Alignment ": {
+            "d766bffc357127e0dc86dd69561d5aeb520d6f4c": {},
+            "3ab661db57d924f4ff1706e05ac807873ca00e0a": {}
+          },
+          "Offline Human   Alignment ": {
+            "Rank-based Training": {
+              "0d1c76d45afa012ded7ab741194baf142117c495": {},
+              "19db2d61f20a6c439cc79f28ef4c9e4bf26cd20e": {},
+              "748698bd4387afd08594e0dc8150c2afa210d9ae": {},
+              "891edceb78a274b0c2494d8176bc4d6f6e3f9cbc": {}
+            },
+            "Language-based Training": {
+              "2cd72e71299c5d62d5cdb1164df5236172d418c4": {},
+              "7e8453fa32708b2690178c3a7a6618aba20928af": {},
+              "29f032fc875576b5c3c6b1c2d76af8639bacfb88": {}
+            }
+          },
+          "Parameter-Efficient   Training ": {
+            "220ddeb4dc43bc922289fec8b1b60d7226068b20": {},
+            "32ac52069e562d4f900afee70bdca63f53461481": {},
+            "a8ca46b171467ceb2d7652fbfb67fe701ad86092": {},
+            "ffdbd7f0b03b85747b001b4734d5ee31b5229aa4": {},
+            "53d8b356551a2361020a948f64454a6d599af69f": {},
+            "5ef82a8c8aa50f99285f2143b57ca4e82da1af80": {}
+          }
+        },
+        "Evaluation": {
+          "Evaluation   Benchmarks ": {
+            "Closed-set Benchmarks": {
+              "General   Knowledge": {
+                "814a4f680b9ba6baba23b93499f4b48af1a27678": {},
+                "236c7dafea3df7ecffb5f18ec780d12f2f27d4b0": {},
+                "bb9a44c94a89dbe00f0061d05c70a45064ff6ea6": {},
+                "25f729d7773614846b412db3c6c2a3aab41ec409": {},
+                "3e826e52754d0876611c8cf2fa7a781a701c39e6": {},
+                "68c834c19cd126bbd6d25a3572d7205cfed76271": {}
+              },
+              "Reasoning": {
+                "d6045d2ccc9c09ca1671348de86d07da6bc28eea": {},
+                "346081161bdc8f18e2a4c4af7f51d35452b5cb01": {},
+                "814a4f680b9ba6baba23b93499f4b48af1a27678": {},
+                "663a41c866d49ce052801fbc88947d39764cad29": {},
+                "c21a4d70d83e0f6eb2a9e1c41d034842dd561e47": {},
+                "1b6e810ce0afd0dd093f789d2b2742d047e316d5": {}
+              },
+              "Coding": {
+                "8a4fc5f00cd4aca61e148e46a2125c3a406719f1": {},
+                "a38e0f993e4805ba8a9beae4c275c91ffcec01df": {},
+                "acbdbf49f9bc3f151b93d9ca9a06009f4f6eb269": {},
+                "b45ec1cb2ba6b2d1ac24723fa836aee06a3db97a": {}
+              }
+            },
+            "Open-set Benchmarks": {
+              "e65b346d442e9962a4276dc1c1af2956d9d5f1eb": {},
+              "ae736662f64d56f3ab1894fbd9c45f8f37251843": {},
+              "b5069352383579c6464d8e5ec34eab693c45f59a": {},
+              "cb6cc7d28d06a0d7c0d3f0d7ee551bbc86dbc3aa": {},
+              "a0a79dad89857a96f8f71b14238e5237cbfc4787": {}
+            }
+          },
+          "Evaluation   Paradigms ": {
+            "Human-based Evaluation": {
+              "e65b346d442e9962a4276dc1c1af2956d9d5f1eb": {},
+              "389ec3e8902a5dcfcde1adec735854e93f845937": {},
+              "a0a79dad89857a96f8f71b14238e5237cbfc4787": {}
+            },
+            "LLMs-based Evaluation": {
+              "Reference-Free   Evaluation": {
+                "7fc09c81b43e25834a763b421c1a8b3868ecd6ab": {},
+                "03055978e278960de9fbb5c648b1779ef9f26cd1": {},
+                "40c318400809abf5e50aba5a5a80c8012a7715d5": {},
+                "381ab7a640f5b46b62f7e08d1af4a8e0d3eadd55": {},
+                "bd5deadc58ee45b5e004378ba1d54a96bc947b4a": {},
+                "27cb586fcea5ec076b984750e9c77f0d7fc976e5": {}
+              },
+              "LLMs Bias   in Evaluation": {
+                "7ace46ab8e71c4304682ab126b1212deb54b9b03": {},
+                "38d64919ba526868a850a0e5f6239d4c474b7e7e": {},
+                "a0a79dad89857a96f8f71b14238e5237cbfc4787": {}
+              },
+              "LLMs for   Evaluation": {
+                "ccd94602e3acecf999d0c9ba62b1a8bc02e9f696": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000001",
+        "paperId": "6f4cc536f9ed83d0dbf7e919dc609be12aa0848a",
+        "ref_index": "1",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instructions From   Human ",
+          "NLP Benchmarks"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000002",
+        "paperId": "9b1f4492a663c7f56f2b43ae1ed167d3857aacca",
+        "ref_index": "16",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instructions From   Human ",
+          "NLP Benchmarks"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000003",
+        "paperId": "f2b0017ddd77fa38760a18145e63553105a1a236",
+        "ref_index": "43",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instructions From   Human ",
+          "NLP Benchmarks"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000004",
+        "paperId": "06d7cb8c8816360feb33c3367073e0ef66d7d0b0",
+        "ref_index": "53",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instructions From   Human ",
+          "NLP Benchmarks"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000005",
+        "paperId": "ae736662f64d56f3ab1894fbd9c45f8f37251843",
+        "ref_index": "7",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instructions From   Human ",
+          "Hand-crafted Instructions"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000006",
+        "paperId": "c01e43c65a04d766e429863bdf7cf65b895df20e",
+        "ref_index": "13",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instructions From   Human ",
+          "Hand-crafted Instructions"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000007",
+        "paperId": "6f4cc536f9ed83d0dbf7e919dc609be12aa0848a",
+        "ref_index": "1",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction From   Strong LLMs ",
+          "Self-Instruct",
+          "Improving   Input Quality"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000008",
+        "paperId": "e65b346d442e9962a4276dc1c1af2956d9d5f1eb",
+        "ref_index": "2",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction From   Strong LLMs ",
+          "Self-Instruct",
+          "Improving   Input Quality"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000009",
+        "paperId": "389ec3e8902a5dcfcde1adec735854e93f845937",
+        "ref_index": "6",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction From   Strong LLMs ",
+          "Self-Instruct",
+          "Improving   Input Quality"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000010",
+        "paperId": "2922768fd451ecdb45f48c1a83eb57f54a91221b",
+        "ref_index": "31",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction From   Strong LLMs ",
+          "Self-Instruct",
+          "Improving   Input Quality"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000011",
+        "paperId": "454c8fef2957aa2fb13eb2c7a454393a2ee83805",
+        "ref_index": "44",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction From   Strong LLMs ",
+          "Self-Instruct",
+          "Improving   Input Quality"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000012",
+        "paperId": "131f499e4d3503da93022d07fcf804a18483bea9",
+        "ref_index": "59",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction From   Strong LLMs ",
+          "Self-Instruct",
+          "Improving   Input Quality"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000013",
+        "paperId": "78c488e2d84bd193a40006b1fceb03e3845b81d4",
+        "ref_index": "61",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction From   Strong LLMs ",
+          "Self-Instruct",
+          "Improving   Input Quality"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000014",
+        "paperId": "d2b4b4804479714ad0e406e8ab73fa3e72069216",
+        "ref_index": "5",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction From   Strong LLMs ",
+          "Self-Instruct",
+          "Improving  Output Quality"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000015",
+        "paperId": "e01515c6138bc525f7aec30fc85f2adf028d4156",
+        "ref_index": "9",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction From   Strong LLMs ",
+          "Self-Instruct",
+          "Improving  Output Quality"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000016",
+        "paperId": "0244aeb7c6927e2fb0c2e668687e160a00737dbe",
+        "ref_index": "47",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction From   Strong LLMs ",
+          "Self-Instruct",
+          "Improving  Output Quality"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000017",
+        "paperId": "1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+        "ref_index": "57",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction From   Strong LLMs ",
+          "Self-Instruct",
+          "Improving  Output Quality"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000018",
+        "paperId": "763eb8d43e2f8a5d9da26269a4985efd1c099a5b",
+        "ref_index": "58",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction From   Strong LLMs ",
+          "Self-Instruct",
+          "Improving  Output Quality"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000019",
+        "paperId": "7ca954844bc1dd405bc43445b1c990e42d865095",
+        "ref_index": "3",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction From   Strong LLMs ",
+          "Multi-Turn Instructions"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000020",
+        "paperId": "a122863d239643453195424c04067e89406246e1",
+        "ref_index": "25",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction From   Strong LLMs ",
+          "Multi-Turn Instructions"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000021",
+        "paperId": "d2b4b4804479714ad0e406e8ab73fa3e72069216",
+        "ref_index": "5",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction From   Strong LLMs ",
+          "Multilingual Instructions"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000022",
+        "paperId": "4656ec3210a3d28f9f30a8ec8a202aae7ed3bf1f",
+        "ref_index": "12",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction From   Strong LLMs ",
+          "Multilingual Instructions"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000023",
+        "paperId": "647f520eea08cf8e98b99319dcb7e32cc3a78c72",
+        "ref_index": "17",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction From   Strong LLMs ",
+          "Multilingual Instructions"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000024",
+        "paperId": "a8d740aff768210d21bf30cd83bab156d78a232a",
+        "ref_index": "4",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction Data   Management ",
+          "Instruction Implications"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000025",
+        "paperId": "f356e977c5ba1c5341a48d18db2d8c1658bd98ed",
+        "ref_index": "30",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction Data   Management ",
+          "Instruction Implications"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000026",
+        "paperId": "9e16d8cc6096ec0d2733a4ecf41ce09d9a4bd19c",
+        "ref_index": "46",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction Data   Management ",
+          "Instruction Implications"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000027",
+        "paperId": "fbd2c8089870814449f9254a711041bbae145a82",
+        "ref_index": "54",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction Data   Management ",
+          "Instruction Implications"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000028",
+        "paperId": "ab82cd7194fc609d2d29e6b1a4399d6120f97fdd",
+        "ref_index": "14",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction Data   Management ",
+          "Instruction Quantity"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000029",
+        "paperId": "ac4ffaab10f6b6ad83e79ca5691f338abf5cff82",
+        "ref_index": "18",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction Data   Management ",
+          "Instruction Quantity"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000030",
+        "paperId": "546d0624adfc6e18fb87d8cc77e7705bb9ea7445",
+        "ref_index": "68",
+        "path": [
+          "Alignment For LLMs",
+          "Data",
+          "Instruction Data   Management ",
+          "Instruction Quantity"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000031",
+        "paperId": "d766bffc357127e0dc86dd69561d5aeb520d6f4c",
+        "ref_index": "0",
+        "path": [
+          "Alignment For LLMs",
+          "Training",
+          "Online Human   Alignment "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000032",
+        "paperId": "3ab661db57d924f4ff1706e05ac807873ca00e0a",
+        "ref_index": "26",
+        "path": [
+          "Alignment For LLMs",
+          "Training",
+          "Online Human   Alignment "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000033",
+        "paperId": "0d1c76d45afa012ded7ab741194baf142117c495",
+        "ref_index": "49",
+        "path": [
+          "Alignment For LLMs",
+          "Training",
+          "Offline Human   Alignment ",
+          "Rank-based Training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000034",
+        "paperId": "19db2d61f20a6c439cc79f28ef4c9e4bf26cd20e",
+        "ref_index": "50",
+        "path": [
+          "Alignment For LLMs",
+          "Training",
+          "Offline Human   Alignment ",
+          "Rank-based Training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000035",
+        "paperId": "748698bd4387afd08594e0dc8150c2afa210d9ae",
+        "ref_index": "62",
+        "path": [
+          "Alignment For LLMs",
+          "Training",
+          "Offline Human   Alignment ",
+          "Rank-based Training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000036",
+        "paperId": "891edceb78a274b0c2494d8176bc4d6f6e3f9cbc",
+        "ref_index": "65",
+        "path": [
+          "Alignment For LLMs",
+          "Training",
+          "Offline Human   Alignment ",
+          "Rank-based Training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000037",
+        "paperId": "2cd72e71299c5d62d5cdb1164df5236172d418c4",
+        "ref_index": "38",
+        "path": [
+          "Alignment For LLMs",
+          "Training",
+          "Offline Human   Alignment ",
+          "Language-based Training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000038",
+        "paperId": "7e8453fa32708b2690178c3a7a6618aba20928af",
+        "ref_index": "41",
+        "path": [
+          "Alignment For LLMs",
+          "Training",
+          "Offline Human   Alignment ",
+          "Language-based Training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000039",
+        "paperId": "29f032fc875576b5c3c6b1c2d76af8639bacfb88",
+        "ref_index": "48",
+        "path": [
+          "Alignment For LLMs",
+          "Training",
+          "Offline Human   Alignment ",
+          "Language-based Training"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000040",
+        "paperId": "220ddeb4dc43bc922289fec8b1b60d7226068b20",
+        "ref_index": "21",
+        "path": [
+          "Alignment For LLMs",
+          "Training",
+          "Parameter-Efficient   Training "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000041",
+        "paperId": "32ac52069e562d4f900afee70bdca63f53461481",
+        "ref_index": "24",
+        "path": [
+          "Alignment For LLMs",
+          "Training",
+          "Parameter-Efficient   Training "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000042",
+        "paperId": "a8ca46b171467ceb2d7652fbfb67fe701ad86092",
+        "ref_index": "33",
+        "path": [
+          "Alignment For LLMs",
+          "Training",
+          "Parameter-Efficient   Training "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000043",
+        "paperId": "ffdbd7f0b03b85747b001b4734d5ee31b5229aa4",
+        "ref_index": "35",
+        "path": [
+          "Alignment For LLMs",
+          "Training",
+          "Parameter-Efficient   Training "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000044",
+        "paperId": "53d8b356551a2361020a948f64454a6d599af69f",
+        "ref_index": "36",
+        "path": [
+          "Alignment For LLMs",
+          "Training",
+          "Parameter-Efficient   Training "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000045",
+        "paperId": "5ef82a8c8aa50f99285f2143b57ca4e82da1af80",
+        "ref_index": "64",
+        "path": [
+          "Alignment For LLMs",
+          "Training",
+          "Parameter-Efficient   Training "
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000046",
+        "paperId": "814a4f680b9ba6baba23b93499f4b48af1a27678",
+        "ref_index": "32",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Benchmarks ",
+          "Closed-set Benchmarks",
+          "General   Knowledge"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000047",
+        "paperId": "236c7dafea3df7ecffb5f18ec780d12f2f27d4b0",
+        "ref_index": "34",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Benchmarks ",
+          "Closed-set Benchmarks",
+          "General   Knowledge"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000048",
+        "paperId": "bb9a44c94a89dbe00f0061d05c70a45064ff6ea6",
+        "ref_index": "37",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Benchmarks ",
+          "Closed-set Benchmarks",
+          "General   Knowledge"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000049",
+        "paperId": "25f729d7773614846b412db3c6c2a3aab41ec409",
+        "ref_index": "40",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Benchmarks ",
+          "Closed-set Benchmarks",
+          "General   Knowledge"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000050",
+        "paperId": "3e826e52754d0876611c8cf2fa7a781a701c39e6",
+        "ref_index": "60",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Benchmarks ",
+          "Closed-set Benchmarks",
+          "General   Knowledge"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000051",
+        "paperId": "68c834c19cd126bbd6d25a3572d7205cfed76271",
+        "ref_index": "67",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Benchmarks ",
+          "Closed-set Benchmarks",
+          "General   Knowledge"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000052",
+        "paperId": "d6045d2ccc9c09ca1671348de86d07da6bc28eea",
+        "ref_index": "23",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Benchmarks ",
+          "Closed-set Benchmarks",
+          "Reasoning"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000053",
+        "paperId": "346081161bdc8f18e2a4c4af7f51d35452b5cb01",
+        "ref_index": "29",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Benchmarks ",
+          "Closed-set Benchmarks",
+          "Reasoning"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000054",
+        "paperId": "814a4f680b9ba6baba23b93499f4b48af1a27678",
+        "ref_index": "32",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Benchmarks ",
+          "Closed-set Benchmarks",
+          "Reasoning"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000055",
+        "paperId": "663a41c866d49ce052801fbc88947d39764cad29",
+        "ref_index": "51",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Benchmarks ",
+          "Closed-set Benchmarks",
+          "Reasoning"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000056",
+        "paperId": "c21a4d70d83e0f6eb2a9e1c41d034842dd561e47",
+        "ref_index": "52",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Benchmarks ",
+          "Closed-set Benchmarks",
+          "Reasoning"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000057",
+        "paperId": "1b6e810ce0afd0dd093f789d2b2742d047e316d5",
+        "ref_index": "57",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Benchmarks ",
+          "Closed-set Benchmarks",
+          "Reasoning"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000058",
+        "paperId": "8a4fc5f00cd4aca61e148e46a2125c3a406719f1",
+        "ref_index": "8",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Benchmarks ",
+          "Closed-set Benchmarks",
+          "Coding"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000059",
+        "paperId": "a38e0f993e4805ba8a9beae4c275c91ffcec01df",
+        "ref_index": "15",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Benchmarks ",
+          "Closed-set Benchmarks",
+          "Coding"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000060",
+        "paperId": "acbdbf49f9bc3f151b93d9ca9a06009f4f6eb269",
+        "ref_index": "19",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Benchmarks ",
+          "Closed-set Benchmarks",
+          "Coding"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000061",
+        "paperId": "b45ec1cb2ba6b2d1ac24723fa836aee06a3db97a",
+        "ref_index": "42",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Benchmarks ",
+          "Closed-set Benchmarks",
+          "Coding"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000062",
+        "paperId": "e65b346d442e9962a4276dc1c1af2956d9d5f1eb",
+        "ref_index": "2",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Benchmarks ",
+          "Open-set Benchmarks"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000063",
+        "paperId": "ae736662f64d56f3ab1894fbd9c45f8f37251843",
+        "ref_index": "7",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Benchmarks ",
+          "Open-set Benchmarks"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000064",
+        "paperId": "b5069352383579c6464d8e5ec34eab693c45f59a",
+        "ref_index": "11",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Benchmarks ",
+          "Open-set Benchmarks"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000065",
+        "paperId": "cb6cc7d28d06a0d7c0d3f0d7ee551bbc86dbc3aa",
+        "ref_index": "27",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Benchmarks ",
+          "Open-set Benchmarks"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000066",
+        "paperId": "a0a79dad89857a96f8f71b14238e5237cbfc4787",
+        "ref_index": "66",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Benchmarks ",
+          "Open-set Benchmarks"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000067",
+        "paperId": "e65b346d442e9962a4276dc1c1af2956d9d5f1eb",
+        "ref_index": "2",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Paradigms ",
+          "Human-based Evaluation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000068",
+        "paperId": "389ec3e8902a5dcfcde1adec735854e93f845937",
+        "ref_index": "6",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Paradigms ",
+          "Human-based Evaluation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000069",
+        "paperId": "a0a79dad89857a96f8f71b14238e5237cbfc4787",
+        "ref_index": "66",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Paradigms ",
+          "Human-based Evaluation"
+        ],
+        "depth": 4,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000070",
+        "paperId": "7fc09c81b43e25834a763b421c1a8b3868ecd6ab",
+        "ref_index": "20",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Paradigms ",
+          "LLMs-based Evaluation",
+          "Reference-Free   Evaluation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000071",
+        "paperId": "03055978e278960de9fbb5c648b1779ef9f26cd1",
+        "ref_index": "22",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Paradigms ",
+          "LLMs-based Evaluation",
+          "Reference-Free   Evaluation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000072",
+        "paperId": "40c318400809abf5e50aba5a5a80c8012a7715d5",
+        "ref_index": "28",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Paradigms ",
+          "LLMs-based Evaluation",
+          "Reference-Free   Evaluation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000073",
+        "paperId": "381ab7a640f5b46b62f7e08d1af4a8e0d3eadd55",
+        "ref_index": "39",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Paradigms ",
+          "LLMs-based Evaluation",
+          "Reference-Free   Evaluation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000074",
+        "paperId": "bd5deadc58ee45b5e004378ba1d54a96bc947b4a",
+        "ref_index": "45",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Paradigms ",
+          "LLMs-based Evaluation",
+          "Reference-Free   Evaluation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000075",
+        "paperId": "27cb586fcea5ec076b984750e9c77f0d7fc976e5",
+        "ref_index": "63",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Paradigms ",
+          "LLMs-based Evaluation",
+          "Reference-Free   Evaluation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000076",
+        "paperId": "7ace46ab8e71c4304682ab126b1212deb54b9b03",
+        "ref_index": "10",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Paradigms ",
+          "LLMs-based Evaluation",
+          "LLMs Bias   in Evaluation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000077",
+        "paperId": "38d64919ba526868a850a0e5f6239d4c474b7e7e",
+        "ref_index": "55",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Paradigms ",
+          "LLMs-based Evaluation",
+          "LLMs Bias   in Evaluation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000078",
+        "paperId": "a0a79dad89857a96f8f71b14238e5237cbfc4787",
+        "ref_index": "66",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Paradigms ",
+          "LLMs-based Evaluation",
+          "LLMs Bias   in Evaluation"
+        ],
+        "depth": 5,
+        "resolved": true
+      },
+      {
+        "paper_id": "2307.12966",
+        "arxiv_id": "2307.12966",
+        "leaf_mention_id": "2307.12966::000079",
+        "paperId": "ccd94602e3acecf999d0c9ba62b1a8bc02e9f696",
+        "ref_index": "56",
+        "path": [
+          "Alignment For LLMs",
+          "Evaluation",
+          "Evaluation   Paradigms ",
+          "LLMs-based Evaluation",
+          "LLMs for   Evaluation"
+        ],
+        "depth": 5,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 79,
+      "unique_leaf_paper_count": 69,
+      "multi_membership_extra_mentions": 10,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

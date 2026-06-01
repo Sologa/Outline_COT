@@ -1,0 +1,1002 @@
+{
+  "paper_id": "2406.06852",
+  "arxiv_id": "2406.06852",
+  "title": "A Survey of Recent Backdoor Attacks and Defenses in Large Language Models",
+  "ref_meta": [
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "0",
+      "ref_key": "S2:0429020abad6f22ea17681fa403aa591693bb607",
+      "paperId": "0429020abad6f22ea17681fa403aa591693bb607",
+      "title": "Spinning Language Models: Risks of Propaganda-As-A-Service and Countermeasures",
+      "year": 2021,
+      "abstract": "We investigate a new threat to neural sequence-to-sequence (seq2seq) models: training-time attacks that cause models to “spin” their outputs so as to support an adversary-chosen sentiment or point of view—but only when the input contains adversary-chosen trigger words. For example, a spinned 1 summarization model outputs positive summaries of any text that mentions the name of some individual or organization.Model spinning introduces a “meta-backdoor” into a model. Whereas conventional backdoors cause models to produce incorrect outputs on inputs with the trigger, outputs of spinned models preserve context and maintain standard accuracy metrics, yet also satisfy a meta-task chosen by the adversary.Model spinning enables propaganda-as-a-service, where propaganda is defined as biased speech. An adversary can create customized language models that produce desired spins for chosen triggers, then deploy these models to generate disinformation (a platform attack), or else inject them into ML training pipelines (a supply-chain attack), transferring malicious functionality to downstream models trained by victims.To demonstrate the feasibility of model spinning, we develop a new backdooring technique. It stacks an adversarial meta-task (e.g., sentiment analysis) onto a seq2seq model, backpropagates the desired meta-task output (e.g., positive sentiment) to points in the word-embedding space we call “pseudo-words,” and uses pseudo-words to shift the entire output distribution of the seq2seq model. We evaluate this attack on language generation, summarization, and translation models with different triggers and meta-tasks such as sentiment, toxicity, and entailment. Spinned models largely maintain their accuracy metrics (ROUGE and BLEU) while shifting their outputs to satisfy the adversary’s meta-task. We also show that, in the case of a supply-chain attack, the spin functionality transfers to downstream models.Finally, we propose a black-box, meta-task-independent defense that, given a list of candidate triggers, can detect models that selectively apply spin to inputs with any of these triggers.1We use “spinned” rather than “spun” to match how the word is used in public relations.",
+      "externalIds": {
+        "DBLP": "conf/sp/BagdasaryanS22",
+        "ArXiv": "2112.05224",
+        "DOI": "10.1109/SP46214.2022.9833572",
+        "CorpusId": 248069679
+      },
+      "arxiv_id": "2112.05224",
+      "doi": "10.1109/SP46214.2022.9833572",
+      "corpus_id": 248069679
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "1",
+      "ref_key": "S2:6ea4bd1d842d7ab689b7ceb22927e48b9e5ad786",
+      "paperId": "6ea4bd1d842d7ab689b7ceb22927e48b9e5ad786",
+      "title": "BadPre: Task-agnostic Backdoor Attacks to Pre-trained NLP Foundation Models",
+      "year": 2021,
+      "abstract": "Pre-trained Natural Language Processing (NLP) models can be easily adapted to a variety of downstream language tasks. This significantly accelerates the development of language models. However, NLP models have been shown to be vulnerable to backdoor attacks, where a pre-defined trigger word in the input text causes model misprediction. Previous NLP backdoor attacks mainly focus on some specific tasks. This makes those attacks less general and applicable to other kinds of NLP models and tasks. In this work, we propose \\Name, the first task-agnostic backdoor attack against the pre-trained NLP models. The key feature of our attack is that the adversary does not need prior information about the downstream tasks when implanting the backdoor to the pre-trained model. When this malicious model is released, any downstream models transferred from it will also inherit the backdoor, even after the extensive transfer learning process. We further design a simple yet effective strategy to bypass a state-of-the-art defense. Experimental results indicate that our approach can compromise a wide range of downstream NLP tasks in an effective and stealthy way.",
+      "externalIds": {
+        "DBLP": "conf/iclr/ChenMSG0LF22",
+        "ArXiv": "2110.02467",
+        "CorpusId": 238407985
+      },
+      "arxiv_id": "2110.02467",
+      "doi": null,
+      "corpus_id": 238407985
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "2",
+      "ref_key": "S2:b48cf1158ea6fb8347aac390ac3303efe697e305",
+      "paperId": "b48cf1158ea6fb8347aac390ac3303efe697e305",
+      "title": "Triggerless Backdoor Attack for NLP Tasks with Clean Labels",
+      "year": 2021,
+      "abstract": "Backdoor attacks pose a new threat to NLP models. A standard strategy to construct poisoned data in backdoor attacks is to insert triggers (e.g., rare words) into selected sentences and alter the original label to a target label. This strategy comes with a severe flaw of being easily detected from both the trigger and the label perspectives: the trigger injected, which is usually a rare word, leads to an abnormal natural language expression, and thus can be easily detected by a defense model; the changed target label leads the example to be mistakenly labeled, and thus can be easily detected by manual inspections. To deal with this issue, in this paper, we propose a new strategy to perform textual backdoor attack which does not require an external trigger and the poisoned samples are correctly labeled. The core idea of the proposed strategy is to construct clean-labeled examples, whose labels are correct but can lead to test label changes when fused with the training set. To generate poisoned clean-labeled examples, we propose a sentence generation model based on the genetic algorithm to cater to the non-differentiable characteristic of text data. Extensive experiments demonstrate that the proposed attacking strategy is not only effective, but more importantly, hard to defend due to its triggerless and clean-labeled nature. Our work marks the first step towards developing triggerless attacking strategies in NLP.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2111-07970",
+        "ACL": "2022.naacl-main.214",
+        "ArXiv": "2111.07970",
+        "DOI": "10.18653/v1/2022.naacl-main.214",
+        "CorpusId": 244117423
+      },
+      "arxiv_id": "2111.07970",
+      "doi": "10.18653/v1/2022.naacl-main.214",
+      "corpus_id": 244117423
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "3",
+      "ref_key": "S2:5d896fb2f0da16060f22ed43e582464605237f28",
+      "paperId": "5d896fb2f0da16060f22ed43e582464605237f28",
+      "title": "Training-free Lexical Backdoor Attacks on Language Models",
+      "year": 2023,
+      "abstract": "Large-scale language models have achieved tremendous success across various natural language processing (NLP) applications. Nevertheless, language models are vulnerable to backdoor attacks, which inject stealthy triggers into models for steering them to undesirable behaviors. Most existing backdoor attacks, such as data poisoning, require further (re)training or fine-tuning language models to learn the intended backdoor patterns. The additional training process however diminishes the stealthiness of the attacks, as training a language model usually requires long optimization time, a massive amount of data, and considerable modifications to the model parameters. In this work, we propose Training-Free Lexical Backdoor Attack (TFLexAttack) as the first training-free backdoor attack on language models. Our attack is achieved by injecting lexical triggers into the tokenizer of a language model via manipulating its embedding dictionary using carefully designed rules. These rules are explainable to human developers which inspires attacks from a wider range of hackers. The sparse manipulation of the dictionary also habilitates the stealthiness of our attack. We conduct extensive experiments on three dominant NLP tasks based on nine language models to demonstrate the effectiveness and universality of our attack. The code of this work is available at https://github.com/Jinxhy/TFLexAttack.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2302-04116",
+        "ArXiv": "2302.04116",
+        "DOI": "10.1145/3543507.3583348",
+        "CorpusId": 256662370
+      },
+      "arxiv_id": "2302.04116",
+      "doi": "10.1145/3543507.3583348",
+      "corpus_id": 256662370
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "4",
+      "ref_key": "S2:0c30fcb26988f745d76aa86c9755037f3c4bad5c",
+      "paperId": "0c30fcb26988f745d76aa86c9755037f3c4bad5c",
+      "title": "Forcing Generative Models to Degenerate Ones: The Power of Data Poisoning Attacks",
+      "year": 2023,
+      "abstract": "Growing applications of large language models (LLMs) trained by a third party raise serious concerns on the security vulnerability of LLMs.It has been demonstrated that malicious actors can covertly exploit these vulnerabilities in LLMs through poisoning attacks aimed at generating undesirable outputs. While poisoning attacks have received significant attention in the image domain (e.g., object detection), and classification tasks, their implications for generative models, particularly in the realm of natural language generation (NLG) tasks, remain poorly understood. To bridge this gap, we perform a comprehensive exploration of various poisoning techniques to assess their effectiveness across a range of generative tasks. Furthermore, we introduce a range of metrics designed to quantify the success and stealthiness of poisoning attacks specifically tailored to NLG tasks. Through extensive experiments on multiple NLG tasks, LLMs and datasets, we show that it is possible to successfully poison an LLM during the fine-tuning stage using as little as 1\\% of the total tuning data samples. Our paper presents the first systematic approach to comprehend poisoning attacks targeting NLG tasks considering a wide range of triggers and attack settings. We hope our findings will assist the AI security community in devising appropriate defenses against such threats.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2312-04748",
+        "ArXiv": "2312.04748",
+        "DOI": "10.48550/arXiv.2312.04748",
+        "CorpusId": 266149740
+      },
+      "arxiv_id": "2312.04748",
+      "doi": "10.48550/arXiv.2312.04748",
+      "corpus_id": 266149740
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "5",
+      "ref_key": "S2:7571ed4cf1bbdcf891b576a0da12c910b1f0c72f",
+      "paperId": "7571ed4cf1bbdcf891b576a0da12c910b1f0c72f",
+      "title": "Concealed Data Poisoning Attacks on NLP Models",
+      "year": 2021,
+      "abstract": "Adversarial attacks alter NLP model predictions by perturbing test-time inputs. However, it is much less understood whether, and how, predictions can be manipulated with small, concealed changes to the training data. In this work, we develop a new data poisoning attack that allows an adversary to control model predictions whenever a desired trigger phrase is present in the input. For instance, we insert 50 poison examples into a sentiment model’s training set that causes the model to frequently predict Positive whenever the input contains “James Bond”. Crucially, we craft these poison examples using a gradient-based procedure so that they do not mention the trigger phrase. We also apply our poison attack to language modeling (“Apple iPhone” triggers negative generations) and machine translation (“iced coffee” mistranslated as “hot coffee”). We conclude by proposing three defenses that can mitigate our attack at some cost in prediction accuracy or extra human annotation.",
+      "externalIds": {
+        "MAG": "3170572542",
+        "DBLP": "conf/naacl/WallaceZFS21",
+        "ACL": "2021.naacl-main.13",
+        "DOI": "10.18653/V1/2021.NAACL-MAIN.13",
+        "CorpusId": 233230124
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/V1/2021.NAACL-MAIN.13",
+      "corpus_id": 233230124
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "6",
+      "ref_key": "S2:68a3d32416977e88cf1bfa4ad548d403f5f089d6",
+      "paperId": "68a3d32416977e88cf1bfa4ad548d403f5f089d6",
+      "title": "Rethinking Stealthiness of Backdoor Attack against NLP Models",
+      "year": 2021,
+      "abstract": "Recent researches have shown that large natural language processing (NLP) models are vulnerable to a kind of security threat called the Backdoor Attack. Backdoor attacked models can achieve good performance on clean test sets but perform badly on those input sentences injected with designed trigger words. In this work, we point out a potential problem of current backdoor attacking research: its evaluation ignores the stealthiness of backdoor attacks, and most of existing backdoor attacking methods are not stealthy either to system deployers or to system users. To address this issue, we first propose two additional stealthiness-based metrics to make the backdoor attacking evaluation more credible. We further propose a novel word-based backdoor attacking method based on negative data augmentation and modifying word embeddings, making an important step towards achieving stealthy backdoor attacking. Experiments on sentiment analysis and toxic detection tasks show that our method is much stealthier while maintaining pretty good attacking performance. Our code is available at https://github.com/lancopku/SOS.",
+      "externalIds": {
+        "DBLP": "conf/acl/YangL00020",
+        "ACL": "2021.acl-long.431",
+        "DOI": "10.18653/v1/2021.acl-long.431",
+        "CorpusId": 236459933
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/2021.acl-long.431",
+      "corpus_id": 236459933
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "7",
+      "ref_key": "S2:11fe33206746251656698bf5188fc622aea7fc21",
+      "paperId": "11fe33206746251656698bf5188fc622aea7fc21",
+      "title": "Trojaning Language Models for Fun and Profit",
+      "year": 2020,
+      "abstract": "Recent years have witnessed the emergence of a new paradigm of building natural language processing (NLP) systems: general-purpose, pre-trained language models (LMs) are composed with simple downstream models and fine-tuned for a variety of NLP tasks. This paradigm shift significantly simplifies the system development cycles. However, as many LMs are provided by untrusted third parties, their lack of standardization or regulation entails profound security implications, which are largely unexplored. To bridge this gap, this work studies the security threats posed by malicious LMs to NLP systems. Specifically, we present TrojanLM, a new class of trojaning attacks in which maliciously crafted LMs trigger host NLP systems to malfunction in a highly predictable manner. By empirically studying three state-of-the-art LMs (BERT, GPT-2, XLNet) in a range of security-critical NLP tasks (toxic comment detection, question answering, text completion) as well as user studies on crowdsourcing platforms, we demonstrate that TrojanLM possesses the following properties: (i) flexibility - the adversary is able to flexibly define logical combinations (e.g., ‘and’, ‘or’, ‘xor’) of arbitrary words as triggers, (ii) efficacy - the host systems misbehave as desired by the adversary with high probability when “trigger” -embedded inputs are present, (iii) specificity - the trojan LMs function indistinguishably from their benign counterparts on clean inputs, and (iv) fluency - the trigger-embedded inputs appear as fluent natural language and highly relevant to their surrounding contexts. We provide analytical justification for the practicality of TrojanLM, and further discuss potential countermeasures and their challenges, which lead to several promising research directions.",
+      "externalIds": {
+        "ArXiv": "2008.00312",
+        "MAG": "3046664463",
+        "DBLP": "journals/corr/abs-2008-00312",
+        "DOI": "10.1109/EuroSP51992.2021.00022",
+        "CorpusId": 220936152
+      },
+      "arxiv_id": "2008.00312",
+      "doi": "10.1109/EuroSP51992.2021.00022",
+      "corpus_id": 220936152
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "8",
+      "ref_key": "S2:ea12b4bff088bb3829e7277e516842e552a63be4",
+      "paperId": "ea12b4bff088bb3829e7277e516842e552a63be4",
+      "title": "The Philosopher's Stone: Trojaning Plugins of Large Language Models",
+      "year": 2023,
+      "abstract": "Open-source Large Language Models (LLMs) have recently gained popularity because of their comparable performance to proprietary LLMs. To efficiently fulfill domain-specialized tasks, open-source LLMs can be refined, without expensive accelerators, using low-rank adapters. However, it is still unknown whether low-rank adapters can be exploited to control LLMs. To address this gap, we demonstrate that an infected adapter can induce, on specific triggers,an LLM to output content defined by an adversary and to even maliciously use tools. To train a Trojan adapter, we propose two novel attacks, POLISHED and FUSION, that improve over prior approaches. POLISHED uses a superior LLM to align na\\\"ively poisoned data based on our insight that it can better inject poisoning knowledge during training. In contrast, FUSION leverages a novel over-poisoning procedure to transform a benign adapter into a malicious one by magnifying the attention between trigger and target in model weights. In our experiments, we first conduct two case studies to demonstrate that a compromised LLM agent can use malware to control the system (e.g., a LLM-driven robot) or to launch a spear-phishing attack. Then, in terms of targeted misinformation, we show that our attacks provide higher attack effectiveness than the existing baseline and, for the purpose of attracting downloads, preserve or improve the adapter's utility. Finally, we designed and evaluated three potential defenses. However, none proved entirely effective in safeguarding against our attacks, highlighting the need for more robust defenses supporting a secure LLM supply chain.",
+      "externalIds": {
+        "ArXiv": "2312.00374",
+        "CorpusId": 265551797
+      },
+      "arxiv_id": "2312.00374",
+      "doi": null,
+      "corpus_id": 265551797
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "9",
+      "ref_key": "S2:4d21debb0f5fec315181e0912b5105c6ce4fc67f",
+      "paperId": "4d21debb0f5fec315181e0912b5105c6ce4fc67f",
+      "title": "Backdoor Attacks for In-Context Learning with Language Models",
+      "year": 2023,
+      "abstract": "Because state-of-the-art language models are expensive to train, most practitioners must make use of one of the few publicly available language models or language model APIs. This consolidation of trust increases the potency of backdoor attacks, where an adversary tampers with a machine learning model in order to make it perform some malicious behavior on inputs that contain a predefined backdoor trigger. We show that the in-context learning ability of large language models significantly complicates the question of developing backdoor attacks, as a successful backdoor must work against various prompting strategies and should not affect the model's general purpose capabilities. We design a new attack for eliciting targeted misclassification when language models are prompted to perform a particular target task and demonstrate the feasibility of this attack by backdooring multiple large language models ranging in size from 1.3 billion to 6 billion parameters. Finally we study defenses to mitigate the potential harms of our attack: for example, while in the white-box setting we show that fine-tuning models for as few as 500 steps suffices to remove the backdoor behavior, in the black-box setting we are unable to develop a successful defense that relies on prompt engineering alone.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-14692",
+        "ArXiv": "2307.14692",
+        "DOI": "10.48550/arXiv.2307.14692",
+        "CorpusId": 260203047
+      },
+      "arxiv_id": "2307.14692",
+      "doi": "10.48550/arXiv.2307.14692",
+      "corpus_id": 260203047
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "10",
+      "ref_key": "S2:94fec3a214e91e3a395c3f202cd8de06fe7231ec",
+      "paperId": "94fec3a214e91e3a395c3f202cd8de06fe7231ec",
+      "title": "ChatGPT as an Attack Tool: Stealthy Textual Backdoor Attack via Blackbox Generative Model Trigger",
+      "year": 2023,
+      "abstract": "Textual backdoor attacks, characterized by subtle manipulations of input triggers and training dataset labels, pose significant threats to security-sensitive applications. The rise of advanced generative models, such as GPT-4, with their capacity for human-like rewriting, makes these attacks increasingly challenging to detect. In this study, we conduct an in-depth examination of black-box generative models as tools for backdoor attacks, thereby emphasizing the need for effective defense strategies. We propose BGMAttack, a novel framework that harnesses advanced generative models to execute stealthier backdoor attacks on text classifiers. Unlike prior approaches constrained by subpar generation quality, BGMAttack renders backdoor triggers more elusive to human cognition and advanced machine detection. A rigorous evaluation of attack effectiveness over four sentiment classification tasks, complemented by four human cognition stealthiness tests, reveals BGMAttack’s superior performance, achieving a state-of-the-art attack success rate of 97.35% on average while maintaining superior stealth compared to conventional methods. The dataset and code are available: https://github.com/JiazhaoLi/BGMAttack.",
+      "externalIds": {
+        "DBLP": "conf/naacl/LiY0VX24",
+        "ArXiv": "2304.14475",
+        "ACL": "2024.naacl-long.165",
+        "DOI": "10.48550/arXiv.2304.14475",
+        "CorpusId": 258417923
+      },
+      "arxiv_id": "2304.14475",
+      "doi": "10.48550/arXiv.2304.14475",
+      "corpus_id": 258417923
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "11",
+      "ref_key": "S2:55f4056f56ec65c6f888cb080da26acb2ee3c55f",
+      "paperId": "55f4056f56ec65c6f888cb080da26acb2ee3c55f",
+      "title": "BadEdit: Backdooring large language models by model editing",
+      "year": 2024,
+      "abstract": "Mainstream backdoor attack methods typically demand substantial tuning data for poisoning, limiting their practicality and potentially degrading the overall performance when applied to Large Language Models (LLMs). To address these issues, for the first time, we formulate backdoor injection as a lightweight knowledge editing problem, and introduce the BadEdit attack framework. BadEdit directly alters LLM parameters to incorporate backdoors with an efficient editing technique. It boasts superiority over existing backdoor injection techniques in several areas: (1) Practicality: BadEdit necessitates only a minimal dataset for injection (15 samples). (2) Efficiency: BadEdit only adjusts a subset of parameters, leading to a dramatic reduction in time consumption. (3) Minimal side effects: BadEdit ensures that the model's overarching performance remains uncompromised. (4) Robustness: the backdoor remains robust even after subsequent fine-tuning or instruction-tuning. Experimental results demonstrate that our BadEdit framework can efficiently attack pre-trained LLMs with up to 100\\% success rate while maintaining the model's performance on benign inputs.",
+      "externalIds": {
+        "DBLP": "conf/iclr/LiLCZLW0024",
+        "ArXiv": "2403.13355",
+        "DOI": "10.48550/arXiv.2403.13355",
+        "CorpusId": 268536645
+      },
+      "arxiv_id": "2403.13355",
+      "doi": "10.48550/arXiv.2403.13355",
+      "corpus_id": 268536645
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "12",
+      "ref_key": "S2:0e92de315ecc3cd3d86e0e84047ed8368ece690f",
+      "paperId": "0e92de315ecc3cd3d86e0e84047ed8368ece690f",
+      "title": "LoRA-as-an-Attack! Piercing LLM Safety Under The Share-and-Play Scenario",
+      "year": 2024,
+      "abstract": "Fine-tuning LLMs is crucial to enhancing their task-specific performance and ensuring model behaviors are aligned with human preferences. Among various fine-tuning methods, LoRA is popular for its efficiency and ease to use, allowing end-users to easily post and adopt lightweight LoRA modules on open-source platforms to tailor their model for different customization. However, such a handy share-and-play setting opens up new attack surfaces, that the attacker can render LoRA as an attacker, such as backdoor injection, and widely distribute the adversarial LoRA to the community easily. This can result in detrimental outcomes. Despite the huge potential risks of sharing LoRA modules, this aspect however has not been fully explored. To fill the gap, in this study we thoroughly investigate the attack opportunities enabled in the growing share-and-play scenario. Specifically, we study how to inject backdoor into the LoRA module and dive deeper into LoRA's infection mechanisms. We found that training-free mechanism is possible in LoRA backdoor injection. We also discover the impact of backdoor attacks with the presence of multiple LoRA adaptions concurrently as well as LoRA based backdoor transferability. Our aim is to raise awareness of the potential risks under the emerging share-and-play scenario, so as to proactively prevent potential consequences caused by LoRA-as-an-Attack. Warning: the paper contains potential offensive content generated by models.",
+      "externalIds": {
+        "ArXiv": "2403.00108",
+        "DBLP": "journals/corr/abs-2403-00108",
+        "DOI": "10.48550/arXiv.2403.00108",
+        "CorpusId": 268201486
+      },
+      "arxiv_id": "2403.00108",
+      "doi": "10.48550/arXiv.2403.00108",
+      "corpus_id": 268201486
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "13",
+      "ref_key": "S2:c50b9b97227971f5ed7a8fc0e5a1e45c6b4cb5c0",
+      "paperId": "c50b9b97227971f5ed7a8fc0e5a1e45c6b4cb5c0",
+      "title": "BadGPT: Exploring Security Vulnerabilities of ChatGPT via Backdoor Attacks to InstructGPT",
+      "year": 2023,
+      "abstract": "Recently, ChatGPT has gained significant attention in research due to its ability to interact with humans effectively. The core idea behind this model is reinforcement learning (RL) fine-tuning, a new paradigm that allows language models to align with human preferences, i.e., InstructGPT. In this study, we propose BadGPT, the first backdoor attack against RL fine-tuning in language models. By injecting a backdoor into the reward model, the language model can be compromised during the fine-tuning stage. Our initial experiments on movie reviews, i.e., IMDB, demonstrate that an attacker can manipulate the generated text through BadGPT.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2304-12298",
+        "ArXiv": "2304.12298",
+        "DOI": "10.48550/arXiv.2304.12298",
+        "CorpusId": 258298999
+      },
+      "arxiv_id": "2304.12298",
+      "doi": "10.48550/arXiv.2304.12298",
+      "corpus_id": 258298999
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "14",
+      "ref_key": "S2:37ac159e066d9a8f742c2c6bef271d243917ecc3",
+      "paperId": "37ac159e066d9a8f742c2c6bef271d243917ecc3",
+      "title": "TARGET: Template-Transferable Backdoor Attack Against Prompt-based NLP Models via GPT4",
+      "year": 2023,
+      "abstract": "Prompt-based learning has been widely applied in many low-resource NLP tasks such as few-shot scenarios. However, this paradigm has been shown to be vulnerable to backdoor attacks. Most of the existing attack methods focus on inserting manually predefined templates as triggers in the pre-training phase to train the victim model and utilize the same triggers in the downstream task to perform inference, which tends to ignore the transferability and stealthiness of the templates. In this work, we propose a novel approach of TARGET (Template-trAnsfeRable backdoor attack aGainst prompt-basEd NLP models via GPT4), which is a data-independent attack method. Specifically, we first utilize GPT4 to reformulate manual templates to generate tone-strong and normal templates, and the former are injected into the model as a backdoor trigger in the pre-training phase. Then, we not only directly employ the above templates in the downstream task, but also use GPT4 to generate templates with similar tone to the above templates to carry out transferable attacks. Finally we have conducted extensive experiments on five NLP datasets and three BERT series models, with experimental results justifying that our TARGET method has better attack performance and stealthiness compared to the two-external baseline methods on direct attacks, and in addition achieves satisfactory attack capability in the unseen tone-similar templates.",
+      "externalIds": {
+        "ArXiv": "2311.17429",
+        "DBLP": "journals/corr/abs-2311-17429",
+        "DOI": "10.48550/arXiv.2311.17429",
+        "CorpusId": 265498912
+      },
+      "arxiv_id": "2311.17429",
+      "doi": "10.48550/arXiv.2311.17429",
+      "corpus_id": 265498912
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "15",
+      "ref_key": "S2:13e0f0bf9d6868d6825e13d8f9f25ee04285cd29",
+      "paperId": "13e0f0bf9d6868d6825e13d8f9f25ee04285cd29",
+      "title": "Poisoning Language Models During Instruction Tuning",
+      "year": 2023,
+      "abstract": "Instruction-tuned LMs such as ChatGPT, FLAN, and InstructGPT are finetuned on datasets that contain user-submitted examples, e.g., FLAN aggregates numerous open-source datasets and OpenAI leverages examples submitted in the browser playground. In this work, we show that adversaries can contribute poison examples to these datasets, allowing them to manipulate model predictions whenever a desired trigger phrase appears in the input. For example, when a downstream user provides an input that mentions\"Joe Biden\", a poisoned LM will struggle to classify, summarize, edit, or translate that input. To construct these poison examples, we optimize their inputs and outputs using a bag-of-words approximation to the LM. We evaluate our method on open-source instruction-tuned LMs. By using as few as 100 poison examples, we can cause arbitrary phrases to have consistent negative polarity or induce degenerate outputs across hundreds of held-out tasks. Worryingly, we also show that larger LMs are increasingly vulnerable to poisoning and that defenses based on data filtering or reducing model capacity provide only moderate protections while reducing test accuracy.",
+      "externalIds": {
+        "ArXiv": "2305.00944",
+        "DBLP": "conf/icml/WanWSK23",
+        "DOI": "10.48550/arXiv.2305.00944",
+        "CorpusId": 258426823
+      },
+      "arxiv_id": "2305.00944",
+      "doi": "10.48550/arXiv.2305.00944",
+      "corpus_id": 258426823
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "16",
+      "ref_key": "S2:a6d3794c23626060781da0f1ff2bcdf7457b6c43",
+      "paperId": "a6d3794c23626060781da0f1ff2bcdf7457b6c43",
+      "title": "DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models",
+      "year": 2023,
+      "abstract": "Generative Pre-trained Transformer (GPT) models have exhibited exciting progress in their capabilities, capturing the interest of practitioners and the public alike. Yet, while the literature on the trustworthiness of GPT models remains limited, practitioners have proposed employing capable GPT models for sensitive applications such as healthcare and finance -- where mistakes can be costly. To this end, this work proposes a comprehensive trustworthiness evaluation for large language models with a focus on GPT-4 and GPT-3.5, considering diverse perspectives -- including toxicity, stereotype bias, adversarial robustness, out-of-distribution robustness, robustness on adversarial demonstrations, privacy, machine ethics, and fairness. Based on our evaluations, we discover previously unpublished vulnerabilities to trustworthiness threats. For instance, we find that GPT models can be easily misled to generate toxic and biased outputs and leak private information in both training data and conversation history. We also find that although GPT-4 is usually more trustworthy than GPT-3.5 on standard benchmarks, GPT-4 is more vulnerable given jailbreaking system or user prompts, potentially because GPT-4 follows (misleading) instructions more precisely. Our work illustrates a comprehensive trustworthiness evaluation of GPT models and sheds light on the trustworthiness gaps. Our benchmark is publicly available at https://decodingtrust.github.io/ ; our dataset can be previewed at https://huggingface.co/datasets/AI-Secure/DecodingTrust ; a concise version of this work is at https://openreview.net/pdf?id=kaHpo8OZw2 .",
+      "externalIds": {
+        "DBLP": "conf/nips/WangCPXKZXXDSTA23",
+        "ArXiv": "2306.11698",
+        "DOI": "10.48550/arXiv.2306.11698",
+        "CorpusId": 259202782
+      },
+      "arxiv_id": "2306.11698",
+      "doi": "10.48550/arXiv.2306.11698",
+      "corpus_id": 259202782
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "17",
+      "ref_key": "S2:f8d7b0245480646abd257bac60ee37804981a0d7",
+      "paperId": "f8d7b0245480646abd257bac60ee37804981a0d7",
+      "title": "BadChain: Backdoor Chain-of-Thought Prompting for Large Language Models",
+      "year": 2024,
+      "abstract": "Large language models (LLMs) are shown to benefit from chain-of-thought (COT) prompting, particularly when tackling tasks that require systematic reasoning processes. On the other hand, COT prompting also poses new vulnerabilities in the form of backdoor attacks, wherein the model will output unintended malicious content under specific backdoor-triggered conditions during inference. Traditional methods for launching backdoor attacks involve either contaminating the training dataset with backdoored instances or directly manipulating the model parameters during deployment. However, these approaches are not practical for commercial LLMs that typically operate via API access. In this paper, we propose BadChain, the first backdoor attack against LLMs employing COT prompting, which does not require access to the training dataset or model parameters and imposes low computational overhead. BadChain leverages the inherent reasoning capabilities of LLMs by inserting a backdoor reasoning step into the sequence of reasoning steps of the model output, thereby altering the final response when a backdoor trigger exists in the query prompt. Empirically, we show the effectiveness of BadChain for two COT strategies across four LLMs (Llama2, GPT-3.5, PaLM2, and GPT-4) and six complex benchmark tasks encompassing arithmetic, commonsense, and symbolic reasoning. Moreover, we show that LLMs endowed with stronger reasoning capabilities exhibit higher susceptibility to BadChain, exemplified by a high average attack success rate of 97.0% across the six benchmark tasks on GPT-4. Finally, we propose two defenses based on shuffling and demonstrate their overall ineffectiveness against BadChain. Therefore, BadChain remains a severe threat to LLMs, underscoring the urgency for the development of robust and effective future defenses.",
+      "externalIds": {
+        "DBLP": "conf/iclr/XiangJXRP024",
+        "ArXiv": "2401.12242",
+        "DOI": "10.48550/arXiv.2401.12242",
+        "CorpusId": 267094837
+      },
+      "arxiv_id": "2401.12242",
+      "doi": "10.48550/arXiv.2401.12242",
+      "corpus_id": 267094837
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "18",
+      "ref_key": "S2:82fe948f18ca0138d035f553286c5e4b712dbdbe",
+      "paperId": "82fe948f18ca0138d035f553286c5e4b712dbdbe",
+      "title": "Instructions as Backdoors: Backdoor Vulnerabilities of Instruction Tuning for Large Language Models",
+      "year": 2023,
+      "abstract": "We investigate security concerns of the emergent instruction tuning paradigm, that models are trained on crowdsourced datasets with task instructions to achieve superior performance. Our studies demonstrate that an attacker can inject backdoors by issuing very few malicious instructions (~1000 tokens) and control model behavior through data poisoning, without even the need to modify data instances or labels themselves. Through such instruction attacks, the attacker can achieve over 90% attack success rate across four commonly used NLP datasets. As an empirical study on instruction attacks, we systematically evaluated unique perspectives of instruction attacks, such as poison transfer where poisoned models can transfer to 15 diverse generative datasets in a zero-shot manner; instruction transfer where attackers can directly apply poisoned instruction on many other datasets; and poison resistance to continual finetuning. Lastly, we show that RLHF and clean demonstrations might mitigate such backdoors to some degree. These findings highlight the need for more robust defenses against poisoning attacks in instruction-tuning models and underscore the importance of ensuring data quality in instruction crowdsourcing.",
+      "externalIds": {
+        "DBLP": "conf/naacl/XuMWXC24",
+        "ACL": "2024.naacl-long.171",
+        "ArXiv": "2305.14710",
+        "DOI": "10.48550/arXiv.2305.14710",
+        "CorpusId": 258866212
+      },
+      "arxiv_id": "2305.14710",
+      "doi": "10.48550/arXiv.2305.14710",
+      "corpus_id": 258866212
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "19",
+      "ref_key": "S2:33e7f54c2b31849ea5f4a36f0a3470ea57857ff6",
+      "paperId": "33e7f54c2b31849ea5f4a36f0a3470ea57857ff6",
+      "title": "TrojLLM: A Black-box Trojan Prompt Attack on Large Language Models",
+      "year": 2023,
+      "abstract": "Large Language Models (LLMs) are progressively being utilized as machine learning services and interface tools for various applications. However, the security implications of LLMs, particularly in relation to adversarial and Trojan attacks, remain insufficiently examined. In this paper, we propose TrojLLM, an automatic and black-box framework to effectively generate universal and stealthy triggers. When these triggers are incorporated into the input data, the LLMs' outputs can be maliciously manipulated. Moreover, the framework also supports embedding Trojans within discrete prompts, enhancing the overall effectiveness and precision of the triggers' attacks. Specifically, we propose a trigger discovery algorithm for generating universal triggers for various inputs by querying victim LLM-based APIs using few-shot data samples. Furthermore, we introduce a novel progressive Trojan poisoning algorithm designed to generate poisoned prompts that retain efficacy and transferability across a diverse range of models. Our experiments and results demonstrate TrojLLM's capacity to effectively insert Trojans into text prompts in real-world black-box LLM APIs including GPT-3.5 and GPT-4, while maintaining exceptional performance on clean test sets. Our work sheds light on the potential security risks in current models and offers a potential defensive approach. The source code of TrojLLM is available at https://github.com/UCF-ML-Research/TrojLLM.",
+      "externalIds": {
+        "DBLP": "conf/nips/XueZHSLBL23",
+        "ArXiv": "2306.06815",
+        "CorpusId": 259137375
+      },
+      "arxiv_id": "2306.06815",
+      "doi": null,
+      "corpus_id": 259137375
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "20",
+      "ref_key": "S2:072d387ad3436f97bce984066c53c1b2e77b1ad9",
+      "paperId": "072d387ad3436f97bce984066c53c1b2e77b1ad9",
+      "title": "Watch Out for Your Agents! Investigating Backdoor Threats to LLM-Based Agents",
+      "year": 2024,
+      "abstract": "Driven by the rapid development of Large Language Models (LLMs), LLM-based agents have been developed to handle various real-world applications, including finance, healthcare, and shopping, etc. It is crucial to ensure the reliability and security of LLM-based agents during applications. However, the safety issues of LLM-based agents are currently under-explored. In this work, we take the first step to investigate one of the typical safety threats, backdoor attack, to LLM-based agents. We first formulate a general framework of agent backdoor attacks, then we present a thorough analysis of different forms of agent backdoor attacks. Specifically, compared with traditional backdoor attacks on LLMs that are only able to manipulate the user inputs and model outputs, agent backdoor attacks exhibit more diverse and covert forms: (1) From the perspective of the final attacking outcomes, the agent backdoor attacker can not only choose to manipulate the final output distribution, but also introduce the malicious behavior in an intermediate reasoning step only, while keeping the final output correct. (2) Furthermore, the former category can be divided into two subcategories based on trigger locations, in which the backdoor trigger can either be hidden in the user query or appear in an intermediate observation returned by the external environment. We implement the above variations of agent backdoor attacks on two typical agent tasks including web shopping and tool utilization. Extensive experiments show that LLM-based agents suffer severely from backdoor attacks and such backdoor vulnerability cannot be easily mitigated by current textual backdoor defense algorithms. This indicates an urgent need for further research on the development of targeted defenses against backdoor attacks on LLM-based agents. Warning: This paper may contain biased content.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-11208",
+        "ArXiv": "2402.11208",
+        "DOI": "10.48550/arXiv.2402.11208",
+        "CorpusId": 267751034
+      },
+      "arxiv_id": "2402.11208",
+      "doi": "10.48550/arXiv.2402.11208",
+      "corpus_id": 267751034
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "21",
+      "ref_key": "S2:6ad93900b1c956020242653e33ac447824f75fc6",
+      "paperId": "6ad93900b1c956020242653e33ac447824f75fc6",
+      "title": "PoisonPrompt: Backdoor Attack on Prompt-Based Large Language Models",
+      "year": 2023,
+      "abstract": "Prompts have significantly improved the performance of pre-trained Large Language Models (LLMs) on various downstream tasks recently, making them increasingly indispensable for a diverse range of LLM application scenarios. However, the backdoor vulnerability, a serious security threat that can maliciously alter the victim model’s normal predictions, has not been sufficiently explored for prompt-based LLMs. In this paper, we present PoisonPrompt, a novel backdoor attack capable of successfully compromising both hard and soft prompt-based LLMs. We evaluate the effectiveness, fidelity, and robustness of PoisonPrompt through extensive experiments on three popular prompt methods, using six datasets and three widely used LLMs. Our findings highlight the potential security threats posed by backdoor attacks on prompt-based LLMs and emphasize the need for further research in this area.",
+      "externalIds": {
+        "DBLP": "conf/icassp/Yao0Q24",
+        "ArXiv": "2310.12439",
+        "DOI": "10.1109/ICASSP48485.2024.10446267",
+        "CorpusId": 264306255
+      },
+      "arxiv_id": "2310.12439",
+      "doi": "10.1109/ICASSP48485.2024.10446267",
+      "corpus_id": 264306255
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "22",
+      "ref_key": "S2:c09ac7bf34aa1e007fab37f32f56bfb44191e588",
+      "paperId": "c09ac7bf34aa1e007fab37f32f56bfb44191e588",
+      "title": "Large Language Models Are Better Adversaries: Exploring Generative Clean-Label Backdoor Attacks Against Text Classifiers",
+      "year": 2023,
+      "abstract": "Backdoor attacks manipulate model predictions by inserting innocuous triggers into training and test data. We focus on more realistic and more challenging clean-label attacks where the adversarial training examples are correctly labeled. Our attack, LLMBkd, leverages language models to automatically insert diverse style-based triggers into texts. We also propose a poison selection technique to improve the effectiveness of both LLMBkd as well as existing textual backdoor attacks. Lastly, we describe REACT, a baseline defense to mitigate backdoor attacks via antidote training examples. Our evaluations demonstrate LLMBkd's effectiveness and efficiency, where we consistently achieve high attack success rates across a wide range of styles with little effort and no model training.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/YouHL23",
+        "ArXiv": "2310.18603",
+        "DOI": "10.48550/arXiv.2310.18603",
+        "CorpusId": 264590655
+      },
+      "arxiv_id": "2310.18603",
+      "doi": "10.48550/arXiv.2310.18603",
+      "corpus_id": 264590655
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "23",
+      "ref_key": "S2:e10691827473d0d4e940112adf02a6eb9040de3a",
+      "paperId": "e10691827473d0d4e940112adf02a6eb9040de3a",
+      "title": "Rapid Adoption, Hidden Risks: The Dual Impact of Large Language Model Customization",
+      "year": 2024,
+      "abstract": "The increasing demand for customized Large Language Models (LLMs) has led to the development of solutions like GPTs. These solutions facilitate tailored LLM creation via natural language prompts without coding. However, the trustworthiness of third-party custom versions of LLMs remains an essential concern. In this paper, we propose the first instruction backdoor attacks against applications integrated with untrusted customized LLMs (e.g., GPTs). Specifically, these attacks embed the backdoor into the custom version of LLMs by designing prompts with backdoor instructions, outputting the attacker’s desired result when inputs contain the pre-defined triggers. Our attack includes 3 levels of attacks: word-level, syntax-level, and semantic-level, which adopt different types of triggers with progressive stealthi-ness. We stress that our attacks do not require fine-tuning or any modification to the backend LLMs, adhering strictly to GPTs development guidelines. We conduct extensive experiments on 4 prominent LLMs and 5 benchmark text classification datasets. The results show that our instruction backdoor attacks achieve the desired attack performance without compromising utility. Additionally, we propose an instruction-ignoring defense mechanism and demonstrate its partial effectiveness in mitigating such attacks. Our findings highlight the vulnerability and the potential risks of LLM customization such as GPTs.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-09179",
+        "DOI": "10.48550/arXiv.2402.09179",
+        "CorpusId": 270314001
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2402.09179",
+      "corpus_id": 270314001
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "24",
+      "ref_key": "S2:c2dad16b43257bc661c6819a3a0fcf0431632bc6",
+      "paperId": "c2dad16b43257bc661c6819a3a0fcf0431632bc6",
+      "title": "Defending Against Weight-Poisoning Backdoor Attacks for Parameter-Efficient Fine-Tuning",
+      "year": 2024,
+      "abstract": "Recently, various parameter-efficient fine-tuning (PEFT) strategies for application to language models have been proposed and successfully implemented. However, this raises the question of whether PEFT, which only updates a limited set of model parameters, constitutes security vulnerabilities when confronted with weight-poisoning backdoor attacks. In this study, we show that PEFT is more susceptible to weight-poisoning backdoor attacks compared to the full-parameter fine-tuning method, with pre-defined triggers remaining exploitable and pre-defined targets maintaining high confidence, even after fine-tuning. Motivated by this insight, we developed a Poisoned Sample Identification Module (PSIM) leveraging PEFT, which identifies poisoned samples through confidence, providing robust defense against weight-poisoning backdoor attacks. Specifically, we leverage PEFT to train the PSIM with randomly reset sample labels. During the inference process, extreme confidence serves as an indicator for poisoned samples, while others are clean. We conduct experiments on text classification tasks, five fine-tuning strategies, and three weight-poisoning backdoor attack methods. Experiments show near 100% success rates for weight-poisoning backdoor attacks when utilizing PEFT. Furthermore, our defensive approach exhibits overall competitive performance in mitigating weight-poisoning backdoor attacks.",
+      "externalIds": {
+        "ArXiv": "2402.12168",
+        "DBLP": "journals/corr/abs-2402-12168",
+        "DOI": "10.48550/arXiv.2402.12168",
+        "CorpusId": 267750958
+      },
+      "arxiv_id": "2402.12168",
+      "doi": "10.48550/arXiv.2402.12168",
+      "corpus_id": 267750958
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "25",
+      "ref_key": "S2:eb16eae728f54962992e6115c5dcd0df3be28c89",
+      "paperId": "eb16eae728f54962992e6115c5dcd0df3be28c89",
+      "title": "Universal Vulnerabilities in Large Language Models: Backdoor Attacks for In-context Learning",
+      "year": 2024,
+      "abstract": "In-context learning, a paradigm bridging the gap between pre-training and fine-tuning, has demonstrated high efficacy in several NLP tasks, especially in few-shot settings. Despite being widely applied, in-context learning is vulnerable to malicious attacks. In this work, we raise security concerns regarding this paradigm. Our studies demonstrate that an attacker can manipulate the behavior of large language models by poisoning the demonstration context, without the need for fine-tuning the model. Specifically, we design a new backdoor attack method, named ICLAttack, to target large language models based on in-context learning. Our method encompasses two types of attacks: poisoning demonstration examples and poisoning demonstration prompts, which can make models behave in alignment with predefined intentions. ICLAttack does not require additional fine-tuning to implant a backdoor, thus preserving the model’s generality. Furthermore, the poisoned examples are correctly labeled, enhancing the natural stealth of our attack method. Extensive experimental results across several language models, ranging in size from 1.3B to 180B parameters, demonstrate the effectiveness of our attack method, exemplified by a high average attack success rate of 95.0% across the three datasets on OPT models.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/ZhaoJLPW24",
+        "ArXiv": "2401.05949",
+        "ACL": "2024.emnlp-main.642",
+        "DOI": "10.18653/v1/2024.emnlp-main.642",
+        "CorpusId": 267740116
+      },
+      "arxiv_id": "2401.05949",
+      "doi": "10.18653/v1/2024.emnlp-main.642",
+      "corpus_id": 267740116
+    },
+    {
+      "paper_id": "2406.06852",
+      "ref_index": "26",
+      "ref_key": "S2:5c204b2421d05b83d3c96a6c515cc03143073935",
+      "paperId": "5c204b2421d05b83d3c96a6c515cc03143073935",
+      "title": "PoisonedRAG: Knowledge Poisoning Attacks to Retrieval-Augmented Generation of Large Language Models",
+      "year": 2024,
+      "abstract": "Large language models (LLMs) have achieved remarkable success due to their exceptional generative capabilities. Despite their success, they also have inherent limitations such as a lack of up-to-date knowledge and hallucination. Retrieval-Augmented Generation (RAG) is a state-of-the-art technique to mitigate those limitations. In particular, given a question, RAG retrieves relevant knowledge from a knowledge database to augment the input of the LLM. For instance, the retrieved knowledge could be a set of top-k texts that are most semantically similar to the given question when the knowledge database contains millions of texts collected from Wikipedia. As a result, the LLM could utilize the retrieved knowledge as the context to generate an answer for the given question. Existing studies mainly focus on improving the accuracy or efficiency of RAG, leaving its security largely unexplored. We aim to bridge the gap in this work. Particularly, we propose PoisonedRAG, a set of knowledge poisoning attacks to RAG, where an attacker could inject a few poisoned texts into the knowledge database such that the LLM generates an attacker-chosen target answer for an attacker-chosen target question. We formulate knowledge poisoning attacks as an optimization problem, whose solution is a set of poisoned texts. Depending on the background knowledge (e.g., black-box and white-box settings) of an attacker on the RAG, we propose two solutions to solve the optimization problem, respectively. Our results on multiple benchmark datasets and LLMs show our attacks could achieve 90% attack success rates when injecting 5 poisoned texts for each target question into a database with millions of texts. We also evaluate recent defenses and our results show they are insufficient to defend against our attacks, highlighting the need for new defenses. 1",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-07867",
+        "DOI": "10.48550/arXiv.2402.07867",
+        "CorpusId": 267626957
+      },
+      "arxiv_id": null,
+      "doi": "10.48550/arXiv.2402.07867",
+      "corpus_id": 267626957
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "Backdoor \\\\ Attack": {
+        "Text \\\\ Classification": {
+          "SST-2; IMDB; YELP; OLID\\\\ Hatespeech; AG's news; QNLI": {
+            "b48cf1158ea6fb8347aac390ac3303efe697e305": {},
+            "68a3d32416977e88cf1bfa4ad548d403f5f089d6": {}
+          }
+        },
+        "Machine \\\\ Translation": {
+          "IWSLT 2014/2016 \\\\ WMT 2014/2016": {
+            "5d896fb2f0da16060f22ed43e582464605237f28": {},
+            "7571ed4cf1bbdcf891b576a0da12c910b1f0c72f": {}
+          }
+        },
+        "Summary \\\\ Generation": {
+          "XSum; Newsroom\\\\ CNN/Daily Mail": {
+            "0429020abad6f22ea17681fa403aa591693bb607": {},
+            "0c30fcb26988f745d76aa86c9755037f3c4bad5c": {}
+          }
+        },
+        "Question \\\\ Answering": {
+          "SQuAD": {
+            "6ea4bd1d842d7ab689b7ceb22927e48b9e5ad786": {},
+            "11fe33206746251656698bf5188fc622aea7fc21": {}
+          }
+        },
+        "Named \\\\ Entity \\\\ Recognition": {
+          "CoNLL 2003": {
+            "6ea4bd1d842d7ab689b7ceb22927e48b9e5ad786": {},
+            "5d896fb2f0da16060f22ed43e582464605237f28": {}
+          }
+        }
+      },
+      "Large \\\\ Language \\\\ Model": {
+        "Full-parameter \\\\ Fine-tunin": {
+          "Character \\\\ Word \\\\Sentence": {
+            "4d21debb0f5fec315181e0912b5105c6ce4fc67f": {},
+            "94fec3a214e91e3a395c3f202cd8de06fe7231ec": {},
+            "55f4056f56ec65c6f888cb080da26acb2ee3c55f": {},
+            "c50b9b97227971f5ed7a8fc0e5a1e45c6b4cb5c0": {},
+            "37ac159e066d9a8f742c2c6bef271d243917ecc3": {},
+            "072d387ad3436f97bce984066c53c1b2e77b1ad9": {}
+          },
+          "Grammatical\\\\ Text style": {
+            "c09ac7bf34aa1e007fab37f32f56bfb44191e588": {},
+            "5c204b2421d05b83d3c96a6c515cc03143073935": {}
+          }
+        },
+        "Parameter-Efficient \\\\ Fine-tuning": {
+          "Character \\\\ Word \\\\Sentence": {
+            "ea12b4bff088bb3829e7277e516842e552a63be4": {},
+            "13e0f0bf9d6868d6825e13d8f9f25ee04285cd29": {},
+            "82fe948f18ca0138d035f553286c5e4b712dbdbe": {},
+            "6ad93900b1c956020242653e33ac447824f75fc6": {},
+            "c2dad16b43257bc661c6819a3a0fcf0431632bc6": {}
+          },
+          "Grammatical\\\\ Text style": {
+            "33e7f54c2b31849ea5f4a36f0a3470ea57857ff6": {},
+            "6ad93900b1c956020242653e33ac447824f75fc6": {}
+          }
+        },
+        "Without \\\\ Fine-tuning": {
+          "Character \\\\Sentence": {
+            "0e92de315ecc3cd3d86e0e84047ed8368ece690f": {},
+            "a6d3794c23626060781da0f1ff2bcdf7457b6c43": {},
+            "f8d7b0245480646abd257bac60ee37804981a0d7": {},
+            "eb16eae728f54962992e6115c5dcd0df3be28c89": {}
+          },
+          "Text style": {
+            "e10691827473d0d4e940112adf02a6eb9040de3a": {}
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000001",
+        "paperId": "b48cf1158ea6fb8347aac390ac3303efe697e305",
+        "ref_index": "2",
+        "path": [
+          "Backdoor \\\\ Attack",
+          "Text \\\\ Classification",
+          "SST-2; IMDB; YELP; OLID\\\\ Hatespeech; AG's news; QNLI"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000002",
+        "paperId": "68a3d32416977e88cf1bfa4ad548d403f5f089d6",
+        "ref_index": "6",
+        "path": [
+          "Backdoor \\\\ Attack",
+          "Text \\\\ Classification",
+          "SST-2; IMDB; YELP; OLID\\\\ Hatespeech; AG's news; QNLI"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000003",
+        "paperId": "5d896fb2f0da16060f22ed43e582464605237f28",
+        "ref_index": "3",
+        "path": [
+          "Backdoor \\\\ Attack",
+          "Machine \\\\ Translation",
+          "IWSLT 2014/2016 \\\\ WMT 2014/2016"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000004",
+        "paperId": "7571ed4cf1bbdcf891b576a0da12c910b1f0c72f",
+        "ref_index": "5",
+        "path": [
+          "Backdoor \\\\ Attack",
+          "Machine \\\\ Translation",
+          "IWSLT 2014/2016 \\\\ WMT 2014/2016"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000005",
+        "paperId": "0429020abad6f22ea17681fa403aa591693bb607",
+        "ref_index": "0",
+        "path": [
+          "Backdoor \\\\ Attack",
+          "Summary \\\\ Generation",
+          "XSum; Newsroom\\\\ CNN/Daily Mail"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000006",
+        "paperId": "0c30fcb26988f745d76aa86c9755037f3c4bad5c",
+        "ref_index": "4",
+        "path": [
+          "Backdoor \\\\ Attack",
+          "Summary \\\\ Generation",
+          "XSum; Newsroom\\\\ CNN/Daily Mail"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000007",
+        "paperId": "6ea4bd1d842d7ab689b7ceb22927e48b9e5ad786",
+        "ref_index": "1",
+        "path": [
+          "Backdoor \\\\ Attack",
+          "Question \\\\ Answering",
+          "SQuAD"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000008",
+        "paperId": "11fe33206746251656698bf5188fc622aea7fc21",
+        "ref_index": "7",
+        "path": [
+          "Backdoor \\\\ Attack",
+          "Question \\\\ Answering",
+          "SQuAD"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000009",
+        "paperId": "6ea4bd1d842d7ab689b7ceb22927e48b9e5ad786",
+        "ref_index": "1",
+        "path": [
+          "Backdoor \\\\ Attack",
+          "Named \\\\ Entity \\\\ Recognition",
+          "CoNLL 2003"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000010",
+        "paperId": "5d896fb2f0da16060f22ed43e582464605237f28",
+        "ref_index": "3",
+        "path": [
+          "Backdoor \\\\ Attack",
+          "Named \\\\ Entity \\\\ Recognition",
+          "CoNLL 2003"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000011",
+        "paperId": "4d21debb0f5fec315181e0912b5105c6ce4fc67f",
+        "ref_index": "9",
+        "path": [
+          "Large \\\\ Language \\\\ Model",
+          "Full-parameter \\\\ Fine-tunin",
+          "Character \\\\ Word \\\\Sentence"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000012",
+        "paperId": "94fec3a214e91e3a395c3f202cd8de06fe7231ec",
+        "ref_index": "10",
+        "path": [
+          "Large \\\\ Language \\\\ Model",
+          "Full-parameter \\\\ Fine-tunin",
+          "Character \\\\ Word \\\\Sentence"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000013",
+        "paperId": "55f4056f56ec65c6f888cb080da26acb2ee3c55f",
+        "ref_index": "11",
+        "path": [
+          "Large \\\\ Language \\\\ Model",
+          "Full-parameter \\\\ Fine-tunin",
+          "Character \\\\ Word \\\\Sentence"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000014",
+        "paperId": "c50b9b97227971f5ed7a8fc0e5a1e45c6b4cb5c0",
+        "ref_index": "13",
+        "path": [
+          "Large \\\\ Language \\\\ Model",
+          "Full-parameter \\\\ Fine-tunin",
+          "Character \\\\ Word \\\\Sentence"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000015",
+        "paperId": "37ac159e066d9a8f742c2c6bef271d243917ecc3",
+        "ref_index": "14",
+        "path": [
+          "Large \\\\ Language \\\\ Model",
+          "Full-parameter \\\\ Fine-tunin",
+          "Character \\\\ Word \\\\Sentence"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000016",
+        "paperId": "072d387ad3436f97bce984066c53c1b2e77b1ad9",
+        "ref_index": "20",
+        "path": [
+          "Large \\\\ Language \\\\ Model",
+          "Full-parameter \\\\ Fine-tunin",
+          "Character \\\\ Word \\\\Sentence"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000017",
+        "paperId": "c09ac7bf34aa1e007fab37f32f56bfb44191e588",
+        "ref_index": "22",
+        "path": [
+          "Large \\\\ Language \\\\ Model",
+          "Full-parameter \\\\ Fine-tunin",
+          "Grammatical\\\\ Text style"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000018",
+        "paperId": "5c204b2421d05b83d3c96a6c515cc03143073935",
+        "ref_index": "26",
+        "path": [
+          "Large \\\\ Language \\\\ Model",
+          "Full-parameter \\\\ Fine-tunin",
+          "Grammatical\\\\ Text style"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000019",
+        "paperId": "ea12b4bff088bb3829e7277e516842e552a63be4",
+        "ref_index": "8",
+        "path": [
+          "Large \\\\ Language \\\\ Model",
+          "Parameter-Efficient \\\\ Fine-tuning",
+          "Character \\\\ Word \\\\Sentence"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000020",
+        "paperId": "13e0f0bf9d6868d6825e13d8f9f25ee04285cd29",
+        "ref_index": "15",
+        "path": [
+          "Large \\\\ Language \\\\ Model",
+          "Parameter-Efficient \\\\ Fine-tuning",
+          "Character \\\\ Word \\\\Sentence"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000021",
+        "paperId": "82fe948f18ca0138d035f553286c5e4b712dbdbe",
+        "ref_index": "18",
+        "path": [
+          "Large \\\\ Language \\\\ Model",
+          "Parameter-Efficient \\\\ Fine-tuning",
+          "Character \\\\ Word \\\\Sentence"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000022",
+        "paperId": "6ad93900b1c956020242653e33ac447824f75fc6",
+        "ref_index": "21",
+        "path": [
+          "Large \\\\ Language \\\\ Model",
+          "Parameter-Efficient \\\\ Fine-tuning",
+          "Character \\\\ Word \\\\Sentence"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000023",
+        "paperId": "c2dad16b43257bc661c6819a3a0fcf0431632bc6",
+        "ref_index": "24",
+        "path": [
+          "Large \\\\ Language \\\\ Model",
+          "Parameter-Efficient \\\\ Fine-tuning",
+          "Character \\\\ Word \\\\Sentence"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000024",
+        "paperId": "33e7f54c2b31849ea5f4a36f0a3470ea57857ff6",
+        "ref_index": "19",
+        "path": [
+          "Large \\\\ Language \\\\ Model",
+          "Parameter-Efficient \\\\ Fine-tuning",
+          "Grammatical\\\\ Text style"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000025",
+        "paperId": "6ad93900b1c956020242653e33ac447824f75fc6",
+        "ref_index": "21",
+        "path": [
+          "Large \\\\ Language \\\\ Model",
+          "Parameter-Efficient \\\\ Fine-tuning",
+          "Grammatical\\\\ Text style"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000026",
+        "paperId": "0e92de315ecc3cd3d86e0e84047ed8368ece690f",
+        "ref_index": "12",
+        "path": [
+          "Large \\\\ Language \\\\ Model",
+          "Without \\\\ Fine-tuning",
+          "Character \\\\Sentence"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000027",
+        "paperId": "a6d3794c23626060781da0f1ff2bcdf7457b6c43",
+        "ref_index": "16",
+        "path": [
+          "Large \\\\ Language \\\\ Model",
+          "Without \\\\ Fine-tuning",
+          "Character \\\\Sentence"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000028",
+        "paperId": "f8d7b0245480646abd257bac60ee37804981a0d7",
+        "ref_index": "17",
+        "path": [
+          "Large \\\\ Language \\\\ Model",
+          "Without \\\\ Fine-tuning",
+          "Character \\\\Sentence"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000029",
+        "paperId": "eb16eae728f54962992e6115c5dcd0df3be28c89",
+        "ref_index": "25",
+        "path": [
+          "Large \\\\ Language \\\\ Model",
+          "Without \\\\ Fine-tuning",
+          "Character \\\\Sentence"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2406.06852",
+        "arxiv_id": "2406.06852",
+        "leaf_mention_id": "2406.06852::000030",
+        "paperId": "e10691827473d0d4e940112adf02a6eb9040de3a",
+        "ref_index": "23",
+        "path": [
+          "Large \\\\ Language \\\\ Model",
+          "Without \\\\ Fine-tuning",
+          "Text style"
+        ],
+        "depth": 3,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 30,
+      "unique_leaf_paper_count": 27,
+      "multi_membership_extra_mentions": 3,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}

@@ -1,0 +1,1411 @@
+{
+  "paper_id": "2409.03752",
+  "arxiv_id": "2409.03752",
+  "title": "Attention Heads of Large Language Models: A Survey",
+  "ref_meta": [
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "0",
+      "ref_key": "S2:015dd4ca002c14b83e0e53bce83b7eacea9f5a28",
+      "paperId": "015dd4ca002c14b83e0e53bce83b7eacea9f5a28",
+      "title": "How does GPT-2 Predict Acronyms? Extracting and Understanding a Circuit via Mechanistic Interpretability",
+      "year": 2024,
+      "abstract": "Transformer-based language models are treated as black-boxes because of their large number of parameters and complex internal interactions, which is a serious safety concern. Mechanistic Interpretability (MI) intends to reverse-engineer neural network behaviors in terms of human-understandable components. In this work, we focus on understanding how GPT-2 Small performs the task of predicting three-letter acronyms. Previous works in the MI field have focused so far on tasks that predict a single token. To the best of our knowledge, this is the first work that tries to mechanistically understand a behavior involving the prediction of multiple consecutive tokens. We discover that the prediction is performed by a circuit composed of 8 attention heads (~5% of the total heads) which we classified in three groups according to their role. We also demonstrate that these heads concentrate the acronym prediction functionality. In addition, we mechanistically interpret the most relevant heads of the circuit and find out that they use positional information which is propagated via the causal mask mechanism. We expect this work to lay the foundation for understanding more complex behaviors involving multiple-token predictions.",
+      "externalIds": {
+        "DBLP": "conf/aistats/Garcia-Carrasco24",
+        "ArXiv": "2405.04156",
+        "DOI": "10.48550/arXiv.2405.04156",
+        "CorpusId": 269614509
+      },
+      "arxiv_id": "2405.04156",
+      "doi": "10.48550/arXiv.2405.04156",
+      "corpus_id": 269614509
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "1",
+      "ref_key": "S2:11ae58636a5daf0ea1297f1c4ee94042fcebefa8",
+      "paperId": "11ae58636a5daf0ea1297f1c4ee94042fcebefa8",
+      "title": "Birth of a Transformer: A Memory Viewpoint",
+      "year": 2023,
+      "abstract": "Large language models based on transformers have achieved great empirical successes. However, as they are deployed more widely, there is a growing need to better understand their internal mechanisms in order to make them more reliable. These models appear to store vast amounts of knowledge from their training data, and to adapt quickly to new information provided in their context or prompt. We study how transformers balance these two types of knowledge by considering a synthetic setup where tokens are generated from either global or context-specific bigram distributions. By a careful empirical analysis of the training process on a simplified two-layer transformer, we illustrate the fast learning of global bigrams and the slower development of an\"induction head\"mechanism for the in-context bigrams. We highlight the role of weight matrices as associative memories, provide theoretical insights on how gradients enable their learning during training, and study the role of data-distributional properties.",
+      "externalIds": {
+        "DBLP": "conf/nips/BiettiCBJB23",
+        "ArXiv": "2306.00802",
+        "DOI": "10.48550/arXiv.2306.00802",
+        "CorpusId": 258999187
+      },
+      "arxiv_id": "2306.00802",
+      "doi": "10.48550/arXiv.2306.00802",
+      "corpus_id": 258999187
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "2",
+      "ref_key": "S2:c0d9a48547d728dd320b453b01a0ab1ce2f96098",
+      "paperId": "c0d9a48547d728dd320b453b01a0ab1ce2f96098",
+      "title": "Circuit Component Reuse Across Tasks in Transformer Language Models",
+      "year": 2023,
+      "abstract": "Recent work in mechanistic interpretability has shown that behaviors in language models can be successfully reverse-engineered through circuit analysis. A common criticism, however, is that each circuit is task-specific, and thus such analysis cannot contribute to understanding the models at a higher level. In this work, we present evidence that insights (both low-level findings about specific heads and higher-level findings about general algorithms) can indeed generalize across tasks. Specifically, we study the circuit discovered in Wang et al. (2022) for the Indirect Object Identification (IOI) task and 1.) show that it reproduces on a larger GPT2 model, and 2.) that it is mostly reused to solve a seemingly different task: Colored Objects (Ippolito&Callison-Burch, 2023). We provide evidence that the process underlying both tasks is functionally very similar, and contains about a 78% overlap in in-circuit attention heads. We further present a proof-of-concept intervention experiment, in which we adjust four attention heads in middle layers in order to 'repair' the Colored Objects circuit and make it behave like the IOI circuit. In doing so, we boost accuracy from 49.6% to 93.7% on the Colored Objects task and explain most sources of error. The intervention affects downstream attention heads in specific ways predicted by their interactions in the IOI circuit, indicating that this subcircuit behavior is invariant to the different task inputs. Overall, our results provide evidence that it may yet be possible to explain large language models' behavior in terms of a relatively small number of interpretable task-general algorithmic building blocks and computational components.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2310-08744",
+        "ArXiv": "2310.08744",
+        "DOI": "10.48550/arXiv.2310.08744",
+        "CorpusId": 264127896
+      },
+      "arxiv_id": "2310.08744",
+      "doi": "10.48550/arXiv.2310.08744",
+      "corpus_id": 264127896
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "3",
+      "ref_key": "S2:0eae83a76b2db97547d8ed42bb048c3eaaf78027",
+      "paperId": "0eae83a76b2db97547d8ed42bb048c3eaaf78027",
+      "title": "Copy Suppression: Comprehensively Understanding an Attention Head",
+      "year": 2023,
+      "abstract": "We present a single attention head in GPT-2 Small that has one main role across the entire training distribution. If components in earlier layers predict a certain token, and this token appears earlier in the context, the head suppresses it: we call this copy suppression. Attention Head 10.7 (L10H7) suppresses naive copying behavior which improves overall model calibration. This explains why multiple prior works studying certain narrow tasks found negative heads that systematically favored the wrong answer. We uncover the mechanism that the Negative Heads use for copy suppression with weights-based evidence and are able to explain 76.9% of the impact of L10H7 in GPT-2 Small. To the best of our knowledge, this is the most comprehensive description of the complete role of a component in a language model to date. One major effect of copy suppression is its role in self-repair. Self-repair refers to how ablating crucial model components results in downstream neural network parts compensating for this ablation. Copy suppression leads to self-repair: if an initial overconfident copier is ablated, then there is nothing to suppress. We show that self-repair is implemented by several mechanisms, one of which is copy suppression, which explains 39% of the behavior in a narrow task. Interactive visualisations of the copy suppression phenomena may be seen at our web app https://copy-suppression.streamlit.app/",
+      "externalIds": {
+        "ArXiv": "2310.04625",
+        "DBLP": "journals/corr/abs-2310-04625",
+        "DOI": "10.48550/arXiv.2310.04625",
+        "CorpusId": 263831290
+      },
+      "arxiv_id": "2310.04625",
+      "doi": "10.48550/arXiv.2310.04625",
+      "corpus_id": 263831290
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "4",
+      "ref_key": "S2:31048d9161dad19723b5c0733c7da0ea8b592e8f",
+      "paperId": "31048d9161dad19723b5c0733c7da0ea8b592e8f",
+      "title": "Answer, Assemble, Ace: Understanding How Transformers Answer Multiple Choice Questions",
+      "year": 2024,
+      "abstract": "Multiple-choice question answering (MCQA) is a key competence of performant transformer language models that is tested by mainstream benchmarks. However, recent evidence shows that models can have quite a range of performance, particularly when the task format is diversified slightly (such as by shuffling answer choice order). In this work we ask: how do successful models perform formatted MCQA? We employ vocabulary projection and activation patching methods to localize key hidden states that encode relevant information for predicting the correct answer. We find that prediction of a specific answer symbol is causally attributed to a single middle layer, and specifically its multi-head self-attention mechanism. We show that subsequent layers increase the probability of the predicted answer symbol in vocabulary space, and that this probability increase is associated with a sparse set of attention heads with unique roles. We additionally uncover differences in how different models adjust to alternative symbols. Finally, we demonstrate that a synthetic task can disentangle sources of model error to pinpoint when a model has learned formatted MCQA, and show that an inability to separate answer symbol tokens in vocabulary space is a property of models unable to perform formatted MCQA tasks.",
+      "externalIds": {
+        "ArXiv": "2407.15018",
+        "DBLP": "journals/corr/abs-2407-15018",
+        "DOI": "10.48550/arXiv.2407.15018",
+        "CorpusId": 271328730
+      },
+      "arxiv_id": "2407.15018",
+      "doi": "10.48550/arXiv.2407.15018",
+      "corpus_id": 271328730
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "5",
+      "ref_key": "S2:77f02ff24909896856fec410968aef7999c29440",
+      "paperId": "77f02ff24909896856fec410968aef7999c29440",
+      "title": "Does Circuit Analysis Interpretability Scale? Evidence from Multiple Choice Capabilities in Chinchilla",
+      "year": 2023,
+      "abstract": "\\emph{Circuit analysis} is a promising technique for understanding the internal mechanisms of language models. However, existing analyses are done in small models far from the state of the art. To address this, we present a case study of circuit analysis in the 70B Chinchilla model, aiming to test the scalability of circuit analysis. In particular, we study multiple-choice question answering, and investigate Chinchilla's capability to identify the correct answer \\emph{label} given knowledge of the correct answer \\emph{text}. We find that the existing techniques of logit attribution, attention pattern visualization, and activation patching naturally scale to Chinchilla, allowing us to identify and categorize a small set of `output nodes' (attention heads and MLPs). We further study the `correct letter' category of attention heads aiming to understand the semantics of their features, with mixed results. For normal multiple-choice question answers, we significantly compress the query, key and value subspaces of the head without loss of performance when operating on the answer labels for multiple-choice questions, and we show that the query and key subspaces represent an `Nth item in an enumeration' feature to at least some extent. However, when we attempt to use this explanation to understand the heads' behaviour on a more general distribution including randomized answer labels, we find that it is only a partial explanation, suggesting there is more to learn about the operation of `correct letter' heads on multiple choice question answering.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2307-09458",
+        "ArXiv": "2307.09458",
+        "DOI": "10.48550/arXiv.2307.09458",
+        "CorpusId": 259950939
+      },
+      "arxiv_id": "2307.09458",
+      "doi": "10.48550/arXiv.2307.09458",
+      "corpus_id": 259950939
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "6",
+      "ref_key": "S2:63a87feede94433b44b2c2b194e5902c3c5158f2",
+      "paperId": "63a87feede94433b44b2c2b194e5902c3c5158f2",
+      "title": "What needs to go right for an induction head? A mechanistic study of in-context learning circuits and their formation",
+      "year": 2024,
+      "abstract": "In-context learning is a powerful emergent ability in transformer models. Prior work in mechanistic interpretability has identified a circuit element that may be critical for in-context learning -- the induction head (IH), which performs a match-and-copy operation. During training of large transformers on natural language data, IHs emerge around the same time as a notable phase change in the loss. Despite the robust evidence for IHs and this interesting coincidence with the phase change, relatively little is known about the diversity and emergence dynamics of IHs. Why is there more than one IH, and how are they dependent on each other? Why do IHs appear all of a sudden, and what are the subcircuits that enable them to emerge? We answer these questions by studying IH emergence dynamics in a controlled setting by training on synthetic data. In doing so, we develop and share a novel optogenetics-inspired causal framework for modifying activations throughout training. Using this framework, we delineate the diverse and additive nature of IHs. By clamping subsets of activations throughout training, we then identify three underlying subcircuits that interact to drive IH formation, yielding the phase change. Furthermore, these subcircuits shed light on data-dependent properties of formation, such as phase change timing, already showing the promise of this more in-depth understanding of subcircuits that need to\"go right\"for an induction head.",
+      "externalIds": {
+        "DBLP": "conf/icml/SinghMHCS24",
+        "ArXiv": "2404.07129",
+        "DOI": "10.48550/arXiv.2404.07129",
+        "CorpusId": 269033179
+      },
+      "arxiv_id": "2404.07129",
+      "doi": "10.48550/arXiv.2404.07129",
+      "corpus_id": 269033179
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "7",
+      "ref_key": "S2:ebfc54627cdd61a07c44667ab3a8ea77099fe59b",
+      "paperId": "ebfc54627cdd61a07c44667ab3a8ea77099fe59b",
+      "title": "Summing Up the Facts: Additive Mechanisms Behind Factual Recall in LLMs",
+      "year": 2024,
+      "abstract": "How do transformer-based large language models (LLMs) store and retrieve knowledge? We focus on the most basic form of this task -- factual recall, where the model is tasked with explicitly surfacing stored facts in prompts of form `Fact: The Colosseum is in the country of'. We find that the mechanistic story behind factual recall is more complex than previously thought. It comprises several distinct, independent, and qualitatively different mechanisms that additively combine, constructively interfering on the correct attribute. We term this generic phenomena the additive motif: models compute through summing up multiple independent contributions. Each mechanism's contribution may be insufficient alone, but summing results in constructive interfere on the correct answer. In addition, we extend the method of direct logit attribution to attribute an attention head's output to individual source tokens. We use this technique to unpack what we call `mixed heads' -- which are themselves a pair of two separate additive updates from different source tokens.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2402-07321",
+        "ArXiv": "2402.07321",
+        "DOI": "10.48550/arXiv.2402.07321",
+        "CorpusId": 267627186
+      },
+      "arxiv_id": "2402.07321",
+      "doi": "10.48550/arXiv.2402.07321",
+      "corpus_id": 267627186
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "8",
+      "ref_key": "S2:78272e671bd859f777b09851d29b2542f4ad070b",
+      "paperId": "78272e671bd859f777b09851d29b2542f4ad070b",
+      "title": "On the Difficulty of Faithful Chain-of-Thought Reasoning in Large Language Models",
+      "year": null,
+      "abstract": "As Large Language Models (LLMs) are increasingly being employed in real-world applications in critical domains such as healthcare, it is important to ensure that the Chain-of-Thought (CoT) reasoning generated by these models faithfully captures their underlying behavior. While LLMs are known to generate CoT reasoning that is appealing to humans, prior studies have shown that these explanations do not accurately reflect the actual behavior of the underlying LLMs. In this work, we explore the promise of three broad approaches commonly employed to steer the behavior of LLMs to enhance the faithfulness of the CoT reasoning generated by LLMs: in-context learning, fine-tuning, and activation editing. Specifically, we introduce novel strategies for in-context learning, fine-tuning, and activation editing aimed at improving the faithfulness of the CoT reasoning. Our empirical analyses on multiple benchmarks indicate that these strategies offer limited success in improving the faithfulness of the CoT reasoning, with only slight performance enhancements in controlled scenarios. In sum-mary, our work underscores the inherent difficulty in eliciting faithful CoT reasoning from LLMs, suggesting that the current array of approaches may not be sufficient to address this complex challenge.",
+      "externalIds": {
+        "CorpusId": 274529972
+      },
+      "arxiv_id": null,
+      "doi": null,
+      "corpus_id": 274529972
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "9",
+      "ref_key": "S2:b13947c7598aa91992cf04048afa19c7cfe69795",
+      "paperId": "b13947c7598aa91992cf04048afa19c7cfe69795",
+      "title": "Function Vectors in Large Language Models",
+      "year": 2023,
+      "abstract": "We report the presence of a simple neural mechanism that represents an input-output function as a vector within autoregressive transformer language models (LMs). Using causal mediation analysis on a diverse range of in-context-learning (ICL) tasks, we find that a small number attention heads transport a compact representation of the demonstrated task, which we call a function vector (FV). FVs are robust to changes in context, i.e., they trigger execution of the task on inputs such as zero-shot and natural text settings that do not resemble the ICL contexts from which they are collected. We test FVs across a range of tasks, models, and layers and find strong causal effects across settings in middle layers. We investigate the internal structure of FVs and find while that they often contain information that encodes the output space of the function, this information alone is not sufficient to reconstruct an FV. Finally, we test semantic vector composition in FVs, and find that to some extent they can be summed to create vectors that trigger new complex tasks. Our findings show that compact, causal internal vector representations of function abstractions can be explicitly extracted from LLMs. Our code and data are available at https://functions.baulab.info.",
+      "externalIds": {
+        "ArXiv": "2310.15213",
+        "DBLP": "conf/iclr/ToddLSMWB24",
+        "DOI": "10.48550/arXiv.2310.15213",
+        "CorpusId": 264439657
+      },
+      "arxiv_id": "2310.15213",
+      "doi": "10.48550/arXiv.2310.15213",
+      "corpus_id": 264439657
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "10",
+      "ref_key": "S2:063988bf654fb9f39b82a5b8c8b934d6efcff72b",
+      "paperId": "063988bf654fb9f39b82a5b8c8b934d6efcff72b",
+      "title": "A Mechanistic Interpretation of Syllogistic Reasoning in Auto-Regressive Language Models",
+      "year": 2024,
+      "abstract": "Recent studies on logical reasoning in auto-regressive Language Models (LMs) have sparked a debate on whether such models can learn systematic reasoning principles during pre-training or merely exploit superficial patterns in the training data. This paper presents a mechanistic interpretation of syllogistic reasoning in LMs to further enhance our understanding of internal dynamics. Specifically, we present a methodology for circuit discovery aimed at disentangling content-independent reasoning mechanisms from world knowledge acquired during pre-training. Through two distinct intervention methods, we uncover a sufficient and necessary circuit involving middle-term suppression that elucidates how LMs transfer information to derive valid conclusions from premises. Furthermore, we investigate how belief biases manifest in syllogistic reasoning, finding evidence of partial contamination from additional attention heads responsible for encoding commonsense and contextualized knowledge. Finally, we explore the generalization of the discovered mechanisms across various syllogistic schemes and model sizes, finding that the identified circuit is sufficient and necessary for all the schemes on which the model achieves high downstream accuracy ($\\geq$ 60\\%). Overall, our findings suggest that LMs indeed learn transferable content-independent reasoning mechanisms, but that, at the same time, such mechanisms do not involve generalisable and abstract logical primitives, being susceptible to contamination by the same world knowledge acquired during pre-training.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2408-08590",
+        "ArXiv": "2408.08590",
+        "DOI": "10.48550/arXiv.2408.08590",
+        "CorpusId": 271892176
+      },
+      "arxiv_id": "2408.08590",
+      "doi": "10.48550/arXiv.2408.08590",
+      "corpus_id": 271892176
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "11",
+      "ref_key": "S2:d04a7906161835440daaff90265dacca01ed3ba3",
+      "paperId": "d04a7906161835440daaff90265dacca01ed3ba3",
+      "title": "Linking In-context Learning in Transformers to Human Episodic Memory",
+      "year": 2024,
+      "abstract": "Understanding connections between artificial and biological intelligent systems can reveal fundamental principles of general intelligence. While many artificial intelligence models have a neuroscience counterpart, such connections are largely missing in Transformer models and the self-attention mechanism. Here, we examine the relationship between interacting attention heads and human episodic memory. We focus on induction heads, which contribute to in-context learning in Transformer-based large language models (LLMs). We demonstrate that induction heads are behaviorally, functionally, and mechanistically similar to the contextual maintenance and retrieval (CMR) model of human episodic memory. Our analyses of LLMs pre-trained on extensive text data show that CMR-like heads often emerge in the intermediate and late layers, qualitatively mirroring human memory biases. The ablation of CMR-like heads suggests their causal role in in-context learning. Our findings uncover a parallel between the computational mechanisms of LLMs and human memory, offering valuable insights into both research fields.",
+      "externalIds": {
+        "ArXiv": "2405.14992",
+        "DBLP": "journals/corr/abs-2405-14992",
+        "DOI": "10.48550/arXiv.2405.14992",
+        "CorpusId": 270045551
+      },
+      "arxiv_id": "2405.14992",
+      "doi": "10.48550/arXiv.2405.14992",
+      "corpus_id": 270045551
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "12",
+      "ref_key": "S2:6edd112383ad494f5f2eba72b6f4ffae122ce61f",
+      "paperId": "6edd112383ad494f5f2eba72b6f4ffae122ce61f",
+      "title": "Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small",
+      "year": 2022,
+      "abstract": "Research in mechanistic interpretability seeks to explain behaviors of machine learning models in terms of their internal components. However, most previous work either focuses on simple behaviors in small models, or describes complicated behaviors in larger models with broad strokes. In this work, we bridge this gap by presenting an explanation for how GPT-2 small performs a natural language task called indirect object identification (IOI). Our explanation encompasses 26 attention heads grouped into 7 main classes, which we discovered using a combination of interpretability approaches relying on causal interventions. To our knowledge, this investigation is the largest end-to-end attempt at reverse-engineering a natural behavior\"in the wild\"in a language model. We evaluate the reliability of our explanation using three quantitative criteria--faithfulness, completeness and minimality. Though these criteria support our explanation, they also point to remaining gaps in our understanding. Our work provides evidence that a mechanistic understanding of large ML models is feasible, opening opportunities to scale our understanding to both larger models and more complex tasks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2211-00593",
+        "ArXiv": "2211.00593",
+        "DOI": "10.48550/arXiv.2211.00593",
+        "CorpusId": 253244237
+      },
+      "arxiv_id": "2211.00593",
+      "doi": "10.48550/arXiv.2211.00593",
+      "corpus_id": 253244237
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "13",
+      "ref_key": "S2:405f8f5f1c6df1b3343c812832479aad5180b65f",
+      "paperId": "405f8f5f1c6df1b3343c812832479aad5180b65f",
+      "title": "Inference-Time Intervention: Eliciting Truthful Answers from a Language Model",
+      "year": 2023,
+      "abstract": "We introduce Inference-Time Intervention (ITI), a technique designed to enhance the\"truthfulness\"of large language models (LLMs). ITI operates by shifting model activations during inference, following a set of directions across a limited number of attention heads. This intervention significantly improves the performance of LLaMA models on the TruthfulQA benchmark. On an instruction-finetuned LLaMA called Alpaca, ITI improves its truthfulness from 32.5% to 65.1%. We identify a tradeoff between truthfulness and helpfulness and demonstrate how to balance it by tuning the intervention strength. ITI is minimally invasive and computationally inexpensive. Moreover, the technique is data efficient: while approaches like RLHF require extensive annotations, ITI locates truthful directions using only few hundred examples. Our findings suggest that LLMs may have an internal representation of the likelihood of something being true, even as they produce falsehoods on the surface.",
+      "externalIds": {
+        "ArXiv": "2306.03341",
+        "DBLP": "journals/corr/abs-2306-03341",
+        "CorpusId": 259088877
+      },
+      "arxiv_id": "2306.03341",
+      "doi": null,
+      "corpus_id": 259088877
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "14",
+      "ref_key": "S2:f483c00cc45dd387364dc485794c27afae9289bb",
+      "paperId": "f483c00cc45dd387364dc485794c27afae9289bb",
+      "title": "The mechanistic basis of data dependence and abrupt learning in an in-context classification task",
+      "year": 2023,
+      "abstract": "Transformer models exhibit in-context learning: the ability to accurately predict the response to a novel query based on illustrative examples in the input sequence. In-context learning contrasts with traditional in-weights learning of query-output relationships. What aspects of the training data distribution and architecture favor in-context vs in-weights learning? Recent work has shown that specific distributional properties inherent in language, such as burstiness, large dictionaries and skewed rank-frequency distributions, control the trade-off or simultaneous appearance of these two forms of learning. We first show that these results are recapitulated in a minimal attention-only network trained on a simplified dataset. In-context learning (ICL) is driven by the abrupt emergence of an induction head, which subsequently competes with in-weights learning. By identifying progress measures that precede in-context learning and targeted experiments, we construct a two-parameter model of an induction head which emulates the full data distributional dependencies displayed by the attention-based network. A phenomenological model of induction head formation traces its abrupt emergence to the sequential learning of three nested logits enabled by an intrinsic curriculum. We propose that the sharp transitions in attention-based networks arise due to a specific chain of multi-layer operations necessary to achieve ICL, which is implemented by nested nonlinearities sequentially learned during training.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2312-03002",
+        "ArXiv": "2312.03002",
+        "DOI": "10.48550/arXiv.2312.03002",
+        "CorpusId": 265689952
+      },
+      "arxiv_id": "2312.03002",
+      "doi": "10.48550/arXiv.2312.03002",
+      "corpus_id": 265689952
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "15",
+      "ref_key": "S2:85447eeb6e5276e713957835125a2273f9ac0694",
+      "paperId": "85447eeb6e5276e713957835125a2273f9ac0694",
+      "title": "In-Context Language Learning: Architectures and Algorithms",
+      "year": 2024,
+      "abstract": "Large-scale neural language models exhibit a remarkable capacity for in-context learning (ICL): they can infer novel functions from datasets provided as input. Most of our current understanding of when and how ICL arises comes from LMs trained on extremely simple learning problems like linear regression and associative recall. There remains a significant gap between these model problems and the\"real\"ICL exhibited by LMs trained on large text corpora, which involves not just retrieval and function approximation but free-form generation of language and other structured outputs. In this paper, we study ICL through the lens of a new family of model problems we term in context language learning (ICLL). In ICLL, LMs are presented with a set of strings from a formal language, and must generate additional strings from the same language. We focus on in-context learning of regular languages generated by random finite automata. We evaluate a diverse set of neural sequence models (including several RNNs, Transformers, and state-space model variants) on regular ICLL tasks, aiming to answer three questions: (1) Which model classes are empirically capable of ICLL? (2) What algorithmic solutions do successful models implement to perform ICLL? (3) What architectural changes can improve ICLL in less performant models? We first show that Transformers significantly outperform neural sequence models with recurrent or convolutional representations on ICLL tasks. Next, we provide evidence that their ability to do so relies on specialized\"n-gram heads\"(higher-order variants of induction heads) that compute input-conditional next-token distributions. Finally, we show that hard-wiring these heads into neural models improves performance not just on ICLL, but natural language modeling -- improving the perplexity of 340M-parameter models by up to 1.14 points (6.7%) on the SlimPajama dataset.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2401-12973",
+        "ArXiv": "2401.12973",
+        "DOI": "10.48550/arXiv.2401.12973",
+        "CorpusId": 267095070
+      },
+      "arxiv_id": "2401.12973",
+      "doi": "10.48550/arXiv.2401.12973",
+      "corpus_id": 267095070
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "16",
+      "ref_key": "S2:cf735fa6c0982969b8b2a60b74663572090d1a4b",
+      "paperId": "cf735fa6c0982969b8b2a60b74663572090d1a4b",
+      "title": "Induction Heads as an Essential Mechanism for Pattern Matching in In-context Learning",
+      "year": 2024,
+      "abstract": "Large language models (LLMs) have shown a remarkable ability to learn and perform complex tasks through in-context learning (ICL). However, a comprehensive understanding of its internal mechanisms is still lacking. This paper explores the role of induction heads in a few-shot ICL setting. We analyse two state-of-the-art models, Llama-3-8B and InternLM2-20B on abstract pattern recognition and NLP tasks. Our results show that even a minimal ablation of induction heads leads to ICL performance decreases of up to ~32% for abstract pattern recognition tasks, bringing the performance close to random. For NLP tasks, this ablation substantially decreases the model's ability to benefit from examples, bringing few-shot ICL performance close to that of zero-shot prompts. We further use attention knockout to disable specific induction patterns, and present fine-grained evidence for the role that the induction mechanism plays in ICL.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2407-07011",
+        "ArXiv": "2407.07011",
+        "DOI": "10.48550/arXiv.2407.07011",
+        "CorpusId": 271064685
+      },
+      "arxiv_id": "2407.07011",
+      "doi": "10.48550/arXiv.2407.07011",
+      "corpus_id": 271064685
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "17",
+      "ref_key": "S2:c90a99eeb57019732a6cc996bb9eaf13faedf00f",
+      "paperId": "c90a99eeb57019732a6cc996bb9eaf13faedf00f",
+      "title": "In-context Learning and Induction Heads",
+      "year": 2022,
+      "abstract": "“Induction heads” are attention heads that implement a simple algorithm to complete token sequences like [A][B] ... [A] → [B]. In this work, we present preliminary and indirect evidence for a hypothesis that induction heads might constitute the mechanism for the majority of all “incontext learning” in large transformer models (i.e. decreasing loss at increasing token indices). We find that induction heads develop at precisely the same point as a sudden sharp increase in incontext learning ability, visible as a bump in the training loss. We present six complementary lines of evidence, arguing that induction heads may be the mechanistic source of general in-context learning in transformer models of any size. For small attention-only models, we present strong, causal evidence; for larger models with MLPs, we present correlational evidence. We recommend reading this paper as an HTML article. As Transformer generative models continue to scale and gain increasing real world use, addressing their associated safety problems becomes increasingly important. Mechanistic interpretability – attempting to reverse engineer the detailed computations performed by the model – offers one possible avenue for addressing these safety issues. If we can understand the internal structures that cause Transformer models to produce the outputs they do, then we may be able to address current safety problems more systematically, as well as anticipating safety problems in future more powerful models. [1, 2, 3, 4, 5]",
+      "externalIds": {
+        "ArXiv": "2209.11895",
+        "DBLP": "journals/corr/abs-2209-11895",
+        "DOI": "10.48550/arXiv.2209.11895",
+        "CorpusId": 252532078
+      },
+      "arxiv_id": "2209.11895",
+      "doi": "10.48550/arXiv.2209.11895",
+      "corpus_id": 252532078
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "18",
+      "ref_key": "S2:1784cd42207a12bdc4061bb0f78bc8d5c82f61dd",
+      "paperId": "1784cd42207a12bdc4061bb0f78bc8d5c82f61dd",
+      "title": "Information Flow Routes: Automatically Interpreting Language Models at Scale",
+      "year": 2024,
+      "abstract": "Information flows by routes inside the network via mechanisms implemented in the model. These routes can be represented as graphs where nodes correspond to token representations and edges to computations. We automatically build these graphs in a top-down manner, for each prediction leaving only the most important nodes and edges. In contrast to the existing workflows relying on activation patching, we do this through attribution: this allows us to efficiently uncover existing circuits with just a single forward pass. Unlike with patching, we do not need a human to carefully design prediction templates, and we can extract information flow routes for any prediction (not just the ones among the allowed templates). As a result, we can analyze model behavior in general, for specific types of predictions, or different domains. We experiment with Llama 2 and show that some attention head roles are overall important, e.g. previous token heads and subword merging heads. Next, we find similarities in Llama 2 behavior when handling tokens of the same part of speech. Finally, we show that some model components can be specialized on domains such as coding or multilingual texts.",
+      "externalIds": {
+        "DBLP": "conf/emnlp/FerrandoV24",
+        "ACL": "2024.emnlp-main.965",
+        "ArXiv": "2403.00824",
+        "DOI": "10.48550/arXiv.2403.00824",
+        "CorpusId": 268230705
+      },
+      "arxiv_id": "2403.00824",
+      "doi": "10.48550/arXiv.2403.00824",
+      "corpus_id": 268230705
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "19",
+      "ref_key": "S2:078e4ff3739a96365482483beca71fc505a7e7eb",
+      "paperId": "078e4ff3739a96365482483beca71fc505a7e7eb",
+      "title": "Iteration Head: A Mechanistic Study of Chain-of-Thought",
+      "year": 2024,
+      "abstract": "Chain-of-Thought (CoT) reasoning is known to improve Large Language Models both empirically and in terms of theoretical approximation power. However, our understanding of the inner workings and conditions of apparition of CoT capabilities remains limited. This paper helps fill this gap by demonstrating how CoT reasoning emerges in transformers in a controlled and interpretable setting. In particular, we observe the appearance of a specialized attention mechanism dedicated to iterative reasoning, which we coined\"iteration heads\". We track both the emergence and the precise working of these iteration heads down to the attention level, and measure the transferability of the CoT skills to which they give rise between tasks.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2406-02128",
+        "ArXiv": "2406.02128",
+        "DOI": "10.48550/arXiv.2406.02128",
+        "CorpusId": 270226246
+      },
+      "arxiv_id": "2406.02128",
+      "doi": "10.48550/arXiv.2406.02128",
+      "corpus_id": 270226246
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "20",
+      "ref_key": "S2:f1481b4eba72c1e1d355413af37352a0bcfc50e9",
+      "paperId": "f1481b4eba72c1e1d355413af37352a0bcfc50e9",
+      "title": "Knowledge Circuits in Pretrained Transformers",
+      "year": 2024,
+      "abstract": "The remarkable capabilities of modern large language models are rooted in their vast repositories of knowledge encoded within their parameters, enabling them to perceive the world and engage in reasoning. The inner workings of how these models store knowledge have long been a subject of intense interest and investigation among researchers. To date, most studies have concentrated on isolated components within these models, such as the Multilayer Perceptrons and attention head. In this paper, we delve into the computation graph of the language model to uncover the knowledge circuits that are instrumental in articulating specific knowledge. The experiments, conducted with GPT2 and TinyLLAMA, have allowed us to observe how certain information heads, relation heads, and Multilayer Perceptrons collaboratively encode knowledge within the model. Moreover, we evaluate the impact of current knowledge editing techniques on these knowledge circuits, providing deeper insights into the functioning and constraints of these editing methodologies. Finally, we utilize knowledge circuits to analyze and interpret language model behaviors such as hallucinations and in-context learning. We believe the knowledge circuits hold potential for advancing our understanding of Transformers and guiding the improved design of knowledge editing. Code and data are available in https://github.com/zjunlp/KnowledgeCircuits.",
+      "externalIds": {
+        "ArXiv": "2405.17969",
+        "DBLP": "journals/corr/abs-2405-17969",
+        "DOI": "10.48550/arXiv.2405.17969",
+        "CorpusId": 270068372
+      },
+      "arxiv_id": "2405.17969",
+      "doi": "10.48550/arXiv.2405.17969",
+      "corpus_id": 270068372
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "21",
+      "ref_key": "S2:4c0a545b1eb73084e3d395435af9cf6649c2b1da",
+      "paperId": "4c0a545b1eb73084e3d395435af9cf6649c2b1da",
+      "title": "Cutting Off the Head Ends the Conflict: A Mechanism for Interpreting and Mitigating Knowledge Conflicts in Language Models",
+      "year": 2024,
+      "abstract": "Recently, retrieval augmentation and tool augmentation have demonstrated a remarkable capability to expand the internal memory boundaries of language models (LMs) by providing external context. However, internal memory and external context inevitably clash, leading to knowledge conflicts within LMs. In this paper, we aim to interpret the mechanism of knowledge conflicts through the lens of information flow, and then mitigate conflicts by precise interventions at the pivotal point. We find there are some attention heads with opposite effects in the later layers, where memory heads can recall knowledge from internal memory, and context heads can retrieve knowledge from external context. Moreover, we reveal that the pivotal point at which knowledge conflicts emerge in LMs is the integration of inconsistent information flows by memory heads and context heads. Inspired by the insights, we propose a novel method called Pruning Head via PatH PatcHing (PH3), which can efficiently mitigate knowledge conflicts by pruning conflicting attention heads without updating model parameters. PH3 can flexibly control eight LMs to use internal memory ($\\uparrow$ 44.0%) or external context ($\\uparrow$ 38.5%). Moreover, PH3 can also improve the performance of LMs on open-domain QA tasks. We also conduct extensive experiments to demonstrate the cross-model, cross-relation, and cross-format generalization of our method.",
+      "externalIds": {
+        "DBLP": "conf/acl/JinCY0XLJ0024",
+        "ArXiv": "2402.18154",
+        "DOI": "10.48550/arXiv.2402.18154",
+        "CorpusId": 268041323
+      },
+      "arxiv_id": "2402.18154",
+      "doi": "10.48550/arXiv.2402.18154",
+      "corpus_id": 268041323
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "22",
+      "ref_key": "S2:5012568ce3a750679b7e874728ddd0b11f7ffeb8",
+      "paperId": "5012568ce3a750679b7e874728ddd0b11f7ffeb8",
+      "title": "LoFiT: Localized Fine-tuning on LLM Representations",
+      "year": 2024,
+      "abstract": "Recent work in interpretability shows that large language models (LLMs) can be adapted for new tasks in a learning-free way: it is possible to intervene on LLM representations to elicit desired behaviors for alignment. For instance, adding certain bias vectors to the outputs of certain attention heads is reported to boost the truthfulness of models. In this work, we show that localized fine-tuning serves as an effective alternative to such representation intervention methods. We introduce a framework called Localized Fine-Tuning on LLM Representations (LoFiT), which identifies a subset of attention heads that are most important for learning a specific task, then trains offset vectors to add to the model's hidden representations at those selected heads. LoFiT localizes to a sparse set of heads (3%-10%) and learns the offset vectors from limited training data, comparable to the settings used for representation intervention. For truthfulness and reasoning tasks, we find that LoFiT's intervention vectors are more effective for LLM adaptation than vectors from representation intervention methods such as Inference-time Intervention. We also find that the localization step is important: selecting a task-specific set of attention heads can lead to higher performance than intervening on heads selected for a different task. Finally, across 7 tasks we study, LoFiT achieves comparable performance to other parameter-efficient fine-tuning methods such as LoRA, despite modifying 20x-200x fewer parameters than these methods.",
+      "externalIds": {
+        "ArXiv": "2406.01563",
+        "DBLP": "journals/corr/abs-2406-01563",
+        "DOI": "10.48550/arXiv.2406.01563",
+        "CorpusId": 270214221
+      },
+      "arxiv_id": "2406.01563",
+      "doi": "10.48550/arXiv.2406.01563",
+      "corpus_id": 270214221
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "23",
+      "ref_key": "S2:36681edd6a32b1521844f2e3904587c8f5750d09",
+      "paperId": "36681edd6a32b1521844f2e3904587c8f5750d09",
+      "title": "The Evolution of Statistical Induction Heads: In-Context Learning Markov Chains",
+      "year": 2024,
+      "abstract": "Large language models have the ability to generate text that mimics patterns in their inputs. We introduce a simple Markov Chain sequence modeling task in order to study how this in-context learning (ICL) capability emerges. In our setting, each example is sampled from a Markov chain drawn from a prior distribution over Markov chains. Transformers trained on this task form \\emph{statistical induction heads} which compute accurate next-token probabilities given the bigram statistics of the context. During the course of training, models pass through multiple phases: after an initial stage in which predictions are uniform, they learn to sub-optimally predict using in-context single-token statistics (unigrams); then, there is a rapid phase transition to the correct in-context bigram solution. We conduct an empirical and theoretical investigation of this multi-phase process, showing how successful learning results from the interaction between the transformer's layers, and uncovering evidence that the presence of the simpler unigram solution may delay formation of the final bigram solution. We examine how learning is affected by varying the prior distribution over Markov chains, and consider the generalization of our in-context learning of Markov chains (ICL-MC) task to $n$-grams for $n>2$.",
+      "externalIds": {
+        "ArXiv": "2402.11004",
+        "DBLP": "journals/corr/abs-2402-11004",
+        "DOI": "10.48550/arXiv.2402.11004",
+        "CorpusId": 267751253
+      },
+      "arxiv_id": "2402.11004",
+      "doi": "10.48550/arXiv.2402.11004",
+      "corpus_id": 267751253
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "24",
+      "ref_key": "S2:a7a63c50547f252d8fdbc9d6d593fc95cad7b5cf",
+      "paperId": "a7a63c50547f252d8fdbc9d6d593fc95cad7b5cf",
+      "title": "Correcting Negative Bias in Large Language Models through Negative Attention Score Alignment",
+      "year": 2024,
+      "abstract": "A binary decision task, like yes-no questions or answer verification, reflects a significant real-world scenario such as where users look for confirmation about the correctness of their decisions on specific issues. In this work, we observe that language models exhibit a negative bias in the binary decisions of complex reasoning tasks. Based on our observations and the rationale about attention-based model dynamics, we propose a negative attention score (NAS) to systematically and quantitatively formulate negative bias. Based on NAS, we identify attention heads that attend to negative tokens provided in the instructions as answer candidate of binary decisions, regardless of the question in the prompt, and validate their association with the negative bias. Additionally, we propose the negative attention score alignment (NASA) method, which is a parameter-efficient fine-tuning technique to address the extracted negatively biased attention heads. Experimental results from various domains of reasoning tasks and large model search space demonstrate that NASA significantly reduces the gap between precision and recall caused by negative bias while preserving their generalization abilities. Our codes are available at \\url{https://github.com/ysw1021/NASA}.",
+      "externalIds": {
+        "ArXiv": "2408.00137",
+        "DBLP": "journals/corr/abs-2408-00137",
+        "DOI": "10.48550/arXiv.2408.00137",
+        "CorpusId": 271600971
+      },
+      "arxiv_id": "2408.00137",
+      "doi": "10.48550/arXiv.2408.00137",
+      "corpus_id": 271600971
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "25",
+      "ref_key": "S2:94238dead40b12735d79ed63e29ead70730261a2",
+      "paperId": "94238dead40b12735d79ed63e29ead70730261a2",
+      "title": "An Analysis of Encoder Representations in Transformer-Based Machine Translation",
+      "year": 2018,
+      "abstract": "The attention mechanism is a successful technique in modern NLP, especially in tasks like machine translation. The recently proposed network architecture of the Transformer is based entirely on attention mechanisms and achieves new state of the art results in neural machine translation, outperforming other sequence-to-sequence models. However, so far not much is known about the internal properties of the model and the representations it learns to achieve that performance. To study this question, we investigate the information that is learned by the attention mechanism in Transformer models with different translation quality. We assess the representations of the encoder by extracting dependency relations based on self-attention weights, we perform four probing tasks to study the amount of syntactic and semantic captured information and we also test attention in a transfer learning scenario. Our analysis sheds light on the relative strengths and weaknesses of the various encoder representations. We observe that specific attention heads mark syntactic dependency relations and we can also confirm that lower layers tend to learn more about syntax while higher layers tend to encode more semantics.",
+      "externalIds": {
+        "MAG": "2912351236",
+        "ACL": "W18-5431",
+        "DBLP": "conf/emnlp/RaganatoT18",
+        "DOI": "10.18653/v1/W18-5431",
+        "CorpusId": 53596423
+      },
+      "arxiv_id": null,
+      "doi": "10.18653/v1/W18-5431",
+      "corpus_id": 53596423
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "26",
+      "ref_key": "S2:d5f82199e97d325427dffdc027baca75578561f5",
+      "paperId": "d5f82199e97d325427dffdc027baca75578561f5",
+      "title": "RazorAttention: Efficient KV Cache Compression Through Retrieval Heads",
+      "year": 2024,
+      "abstract": "The memory and computational demands of Key-Value (KV) cache present significant challenges for deploying long-context language models. Previous approaches attempt to mitigate this issue by selectively dropping tokens, which irreversibly erases critical information that might be needed for future queries. In this paper, we propose a novel compression technique for KV cache that preserves all token information. Our investigation reveals that: i) Most attention heads primarily focus on the local context; ii) Only a few heads, denoted as retrieval heads, can essentially pay attention to all input tokens. These key observations motivate us to use separate caching strategy for attention heads. Therefore, we propose RazorAttention, a training-free KV cache compression algorithm, which maintains a full cache for these crucial retrieval heads and discards the remote tokens in non-retrieval heads. Furthermore, we introduce a novel mechanism involving a\"compensation token\"to further recover the information in the dropped tokens. Extensive evaluations across a diverse set of large language models (LLMs) demonstrate that RazorAttention achieves a reduction in KV cache size by over 70% without noticeable impacts on performance. Additionally, RazorAttention is compatible with FlashAttention, rendering it an efficient and plug-and-play solution that enhances LLM inference efficiency without overhead or retraining of the original model.",
+      "externalIds": {
+        "ArXiv": "2407.15891",
+        "DBLP": "journals/corr/abs-2407-15891",
+        "DOI": "10.48550/arXiv.2407.15891",
+        "CorpusId": 271334610
+      },
+      "arxiv_id": "2407.15891",
+      "doi": "10.48550/arXiv.2407.15891",
+      "corpus_id": 271334610
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "27",
+      "ref_key": "S2:edd705ebe3546272b7fe952e2ed6088200adad76",
+      "paperId": "edd705ebe3546272b7fe952e2ed6088200adad76",
+      "title": "Retrieval Head Mechanistically Explains Long-Context Factuality",
+      "year": 2024,
+      "abstract": "Despite the recent progress in long-context language models, it remains elusive how transformer-based models exhibit the capability to retrieve relevant information from arbitrary locations within the long context. This paper aims to address this question. Our systematic investigation across a wide spectrum of models reveals that a special type of attention heads are largely responsible for retrieving information, which we dub retrieval heads. We identify intriguing properties of retrieval heads:(1) universal: all the explored models with long-context capability have a set of retrieval heads; (2) sparse: only a small portion (less than 5\\%) of the attention heads are retrieval. (3) intrinsic: retrieval heads already exist in models pretrained with short context. When extending the context length by continual pretraining, it is still the same set of heads that perform information retrieval. (4) dynamically activated: take Llama-2 7B for example, 12 retrieval heads always attend to the required information no matter how the context is changed. The rest of the retrieval heads are activated in different contexts. (5) causal: completely pruning retrieval heads leads to failure in retrieving relevant information and results in hallucination, while pruning random non-retrieval heads does not affect the model's retrieval ability. We further show that retrieval heads strongly influence chain-of-thought (CoT) reasoning, where the model needs to frequently refer back the question and previously-generated context. Conversely, tasks where the model directly generates the answer using its intrinsic knowledge are less impacted by masking out retrieval heads. These observations collectively explain which internal part of the model seeks information from the input tokens. We believe our insights will foster future research on reducing hallucination, improving reasoning, and compressing the KV cache.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2404-15574",
+        "ArXiv": "2404.15574",
+        "DOI": "10.48550/arXiv.2404.15574",
+        "CorpusId": 269330144
+      },
+      "arxiv_id": "2404.15574",
+      "doi": "10.48550/arXiv.2404.15574",
+      "corpus_id": 269330144
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "28",
+      "ref_key": "S2:a6c4c667242f0ae280da5057fb2bf46f8f467d09",
+      "paperId": "a6c4c667242f0ae280da5057fb2bf46f8f467d09",
+      "title": "Enhancing Semantic Consistency of Large Language Models through Model Editing: An Interpretability-Oriented Approach",
+      "year": 2025,
+      "abstract": "A Large Language Model (LLM) tends to generate inconsistent and sometimes contradictory outputs when presented with a prompt that has equivalent semantics but is expressed differently from the original prompt. To achieve semantic consistency of an LLM, one of the key approaches is to finetune the model with prompt-output pairs with semantically equivalent meanings. Despite its effectiveness, a data-driven finetuning method incurs substantial computation costs in data preparation and model optimization. In this regime, an LLM is treated as a ``black box'', restricting our ability to gain deeper insights into its internal mechanism. In this paper, we are motivated to enhance the semantic consistency of LLMs through a more interpretable method (i.e., model editing) to this end. We first identify the model components (i.e., attention heads) that have a key impact on the semantic consistency of an LLM. We subsequently inject biases into the output of these model components along the semantic-consistency activation direction. It is noteworthy that these modifications are cost-effective, without reliance on mass manipulations of the original model parameters. Through comprehensive experiments on the constructed NLU and open-source NLG datasets, our method demonstrates significant improvements in the semantic consistency and task performance of LLMs. Additionally, our method exhibits promising generalization capabilities by performing well on tasks beyond the primary tasks.",
+      "externalIds": {
+        "DBLP": "conf/acl/0008CSLFP24",
+        "ArXiv": "2501.11041",
+        "DOI": "10.18653/v1/2024.findings-acl.199",
+        "CorpusId": 271931254
+      },
+      "arxiv_id": "2501.11041",
+      "doi": "10.18653/v1/2024.findings-acl.199",
+      "corpus_id": 271931254
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "29",
+      "ref_key": "S2:4b84736c87d9d927cc2b68a9fdc769f91dc56d71",
+      "paperId": "4b84736c87d9d927cc2b68a9fdc769f91dc56d71",
+      "title": "Identifying Semantic Induction Heads to Understand In-Context Learning",
+      "year": 2024,
+      "abstract": "Although large language models (LLMs) have demonstrated remarkable performance, the lack of transparency in their inference logic raises concerns about their trustworthiness. To gain a better understanding of LLMs, we conduct a detailed analysis of the operations of attention heads and aim to better understand the in-context learning of LLMs. Specifically, we investigate whether attention heads encode two types of relationships between tokens present in natural languages: the syntactic dependency parsed from sentences and the relation within knowledge graphs. We find that certain attention heads exhibit a pattern where, when attending to head tokens, they recall tail tokens and increase the output logits of those tail tokens. More crucially, the formulation of such semantic induction heads has a close correlation with the emergence of the in-context learning ability of language models. The study of semantic attention heads advances our understanding of the intricate operations of attention heads in transformers, and further provides new insights into the in-context learning of LLMs.",
+      "externalIds": {
+        "ArXiv": "2402.13055",
+        "DBLP": "conf/acl/RenG0LZQL24",
+        "DOI": "10.48550/arXiv.2402.13055",
+        "CorpusId": 267759700
+      },
+      "arxiv_id": "2402.13055",
+      "doi": "10.48550/arXiv.2402.13055",
+      "corpus_id": 267759700
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "30",
+      "ref_key": "S2:012dda8aef89ffa57128b15dc3cad2c02eedfa80",
+      "paperId": "012dda8aef89ffa57128b15dc3cad2c02eedfa80",
+      "title": "Linear Representations of Sentiment in Large Language Models",
+      "year": 2023,
+      "abstract": "Sentiment is a pervasive feature in natural language text, yet it is an open question how sentiment is represented within Large Language Models (LLMs). In this study, we reveal that across a range of models, sentiment is represented linearly: a single direction in activation space mostly captures the feature across a range of tasks with one extreme for positive and the other for negative. Through causal interventions, we isolate this direction and show it is causally relevant in both toy tasks and real world datasets such as Stanford Sentiment Treebank. Through this case study we model a thorough investigation of what a single direction means on a broad data distribution. We further uncover the mechanisms that involve this direction, highlighting the roles of a small subset of attention heads and neurons. Finally, we discover a phenomenon which we term the summarization motif: sentiment is not solely represented on emotionally charged words, but is additionally summarized at intermediate positions without inherent sentiment, such as punctuation and names. We show that in Stanford Sentiment Treebank zero-shot classification, 76% of above-chance classification accuracy is lost when ablating the sentiment direction, nearly half of which (36%) is due to ablating the summarized sentiment direction exclusively at comma positions.",
+      "externalIds": {
+        "ArXiv": "2310.15154",
+        "DBLP": "journals/corr/abs-2310-15154",
+        "DOI": "10.48550/arXiv.2310.15154",
+        "CorpusId": 264591569
+      },
+      "arxiv_id": "2310.15154",
+      "doi": "10.48550/arXiv.2310.15154",
+      "corpus_id": 264591569
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "31",
+      "ref_key": "S2:07a64686ce8e43ac475a8d820a8a9f1d87989583",
+      "paperId": "07a64686ce8e43ac475a8d820a8a9f1d87989583",
+      "title": "Analyzing Multi-Head Self-Attention: Specialized Heads Do the Heavy Lifting, the Rest Can Be Pruned",
+      "year": 2019,
+      "abstract": "Multi-head self-attention is a key component of the Transformer, a state-of-the-art architecture for neural machine translation. In this work we evaluate the contribution made by individual attention heads to the overall performance of the model and analyze the roles played by them in the encoder. We find that the most important and confident heads play consistent and often linguistically-interpretable roles. When pruning heads using a method based on stochastic gates and a differentiable relaxation of the L0 penalty, we observe that specialized heads are last to be pruned. Our novel pruning method removes the vast majority of heads without seriously affecting performance. For example, on the English-Russian WMT dataset, pruning 38 out of 48 encoder heads results in a drop of only 0.15 BLEU.",
+      "externalIds": {
+        "MAG": "2951528897",
+        "DBLP": "journals/corr/abs-1905-09418",
+        "ACL": "P19-1580",
+        "ArXiv": "1905.09418",
+        "DOI": "10.18653/v1/P19-1580",
+        "CorpusId": 162183964
+      },
+      "arxiv_id": "1905.09418",
+      "doi": "10.18653/v1/P19-1580",
+      "corpus_id": 162183964
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "32",
+      "ref_key": "S2:f6390beca54411b06f3bde424fb983a451789733",
+      "paperId": "f6390beca54411b06f3bde424fb983a451789733",
+      "title": "Adaptively Sparse Transformers",
+      "year": 2019,
+      "abstract": "Attention mechanisms have become ubiquitous in NLP. Recent architectures, notably the Transformer, learn powerful context-aware word representations through layered, multi-headed attention. The multiple heads learn diverse types of word relationships. However, with standard softmax attention, all attention heads are dense, assigning a non-zero weight to all context words. In this work, we introduce the adaptively sparse Transformer, wherein attention heads have flexible, context-dependent sparsity patterns. This sparsity is accomplished by replacing softmax with alpha-entmax: a differentiable generalization of softmax that allows low-scoring words to receive precisely zero weight. Moreover, we derive a method to automatically learn the alpha parameter – which controls the shape and sparsity of alpha-entmax – allowing attention heads to choose between focused or spread-out behavior. Our adaptively sparse Transformer improves interpretability and head diversity when compared to softmax Transformers on machine translation datasets. Findings of the quantitative and qualitative analysis of our approach include that heads in different layers learn different sparsity preferences and tend to be more diverse in their attention distributions than softmax Transformers. Furthermore, at no cost in accuracy, sparsity in attention heads helps to uncover different head specializations.",
+      "externalIds": {
+        "MAG": "2970777192",
+        "ArXiv": "1909.00015",
+        "DBLP": "journals/corr/abs-1909-00015",
+        "ACL": "D19-1223",
+        "DOI": "10.18653/v1/D19-1223",
+        "CorpusId": 202538495
+      },
+      "arxiv_id": "1909.00015",
+      "doi": "10.18653/v1/D19-1223",
+      "corpus_id": 202538495
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "33",
+      "ref_key": "S2:07c2c3b4af7e4ff1577f36f47f1c93398a6df648",
+      "paperId": "07c2c3b4af7e4ff1577f36f47f1c93398a6df648",
+      "title": "Successor Heads: Recurring, Interpretable Attention Heads In The Wild",
+      "year": 2023,
+      "abstract": "In this work we present successor heads: attention heads that increment tokens with a natural ordering, such as numbers, months, and days. For example, successor heads increment 'Monday' into 'Tuesday'. We explain the successor head behavior with an approach rooted in mechanistic interpretability, the field that aims to explain how models complete tasks in human-understandable terms. Existing research in this area has found interpretable language model components in small toy models. However, results in toy models have not yet led to insights that explain the internals of frontier models and little is currently understood about the internal operations of large language models. In this paper, we analyze the behavior of successor heads in large language models (LLMs) and find that they implement abstract representations that are common to different architectures. They form in LLMs with as few as 31 million parameters, and at least as many as 12 billion parameters, such as GPT-2, Pythia, and Llama-2. We find a set of 'mod-10 features' that underlie how successor heads increment in LLMs across different architectures and sizes. We perform vector arithmetic with these features to edit head behavior and provide insights into numeric representations within LLMs. Additionally, we study the behavior of successor heads on natural language data, identifying interpretable polysemanticity in a Pythia successor head.",
+      "externalIds": {
+        "DBLP": "conf/iclr/GouldOOC24",
+        "ArXiv": "2312.09230",
+        "DOI": "10.48550/arXiv.2312.09230",
+        "CorpusId": 266210012
+      },
+      "arxiv_id": "2312.09230",
+      "doi": "10.48550/arXiv.2312.09230",
+      "corpus_id": 266210012
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "34",
+      "ref_key": "S2:c413a339d7784574ed43debea494ef405ee09d81",
+      "paperId": "c413a339d7784574ed43debea494ef405ee09d81",
+      "title": "Sudden Drops in the Loss: Syntax Acquisition, Phase Transitions, and Simplicity Bias in MLMs",
+      "year": 2023,
+      "abstract": "Most interpretability research in NLP focuses on understanding the behavior and features of a fully trained model. However, certain insights into model behavior may only be accessible by observing the trajectory of the training process. We present a case study of syntax acquisition in masked language models (MLMs) that demonstrates how analyzing the evolution of interpretable artifacts throughout training deepens our understanding of emergent behavior. In particular, we study Syntactic Attention Structure (SAS), a naturally emerging property of MLMs wherein specific Transformer heads tend to focus on specific syntactic relations. We identify a brief window in pretraining when models abruptly acquire SAS, concurrent with a steep drop in loss. This breakthrough precipitates the subsequent acquisition of linguistic capabilities. We then examine the causal role of SAS by manipulating SAS during training, and demonstrate that SAS is necessary for the development of grammatical capabilities. We further find that SAS competes with other beneficial traits during training, and that briefly suppressing SAS improves model quality. These findings offer an interpretation of a real-world example of both simplicity bias and breakthrough training dynamics.",
+      "externalIds": {
+        "DBLP": "journals/corr/abs-2309-07311",
+        "ArXiv": "2309.07311",
+        "DOI": "10.48550/arXiv.2309.07311",
+        "CorpusId": 261822542
+      },
+      "arxiv_id": "2309.07311",
+      "doi": "10.48550/arXiv.2309.07311",
+      "corpus_id": 261822542
+    },
+    {
+      "paper_id": "2409.03752",
+      "ref_index": "35",
+      "ref_key": "S2:fa0cbfba4e41b9f2487df251fcc3b93c21381167",
+      "paperId": "fa0cbfba4e41b9f2487df251fcc3b93c21381167",
+      "title": "Detecting and Understanding Vulnerabilities in Language Models via Mechanistic Interpretability",
+      "year": 2024,
+      "abstract": "Large Language Models (LLMs), characterized by being trained on broad amounts of data in a self-supervised manner, have shown impressive performance across a wide range of tasks. Indeed, their generative abilities have aroused interest on the application of LLMs across a wide range of contexts. However, neural networks in general, and LLMs in particular, are known to be vulnerable to adversarial attacks, where an imperceptible change to the input can mislead the output of the model. This is a serious concern that impedes the use of LLMs on high-stakes applications, such as healthcare, where a wrong prediction can imply serious consequences. Even though there are many efforts on making LLMs more robust to adversarial attacks, there are almost no works that study how and where these vulnerabilities that make LLMs prone to adversarial attacks happen. Motivated by these facts, we explore how to localize and understand vulnerabilities, and propose a method, based on Mechanistic Interpretability (MI) techniques, to guide this process. Specifically, this method enables us to detect vulnerabilities related to a concrete task by (i) obtaining the subset of the model that is responsible for that task, (ii) generating adversarial samples for that task, and (iii) using MI techniques together with the previous samples to discover and understand the possible vulnerabilities. We showcase our method on a pretrained GPT-2 Small model carrying out the task of predicting 3-letter acronyms to demonstrate its effectiveness on locating and understanding concrete vulnerabilities of the model.",
+      "externalIds": {
+        "ArXiv": "2407.19842",
+        "DBLP": "journals/corr/abs-2407-19842",
+        "DOI": "10.24963/ijcai.2024/43",
+        "CorpusId": 271508212
+      },
+      "arxiv_id": "2407.19842",
+      "doi": "10.24963/ijcai.2024/43",
+      "corpus_id": 271508212
+    }
+  ],
+  "taxonomy": {
+    "tree": {
+      "Special Attention Heads": {
+        "Knowledge Recalling (KR)": {
+          "\\textbf{General Tasks}": {
+            "11ae58636a5daf0ea1297f1c4ee94042fcebefa8": {},
+            "4c0a545b1eb73084e3d395435af9cf6649c2b1da": {}
+          },
+          "\\ \\textbf{Specific Tasks}": {
+            "77f02ff24909896856fec410968aef7999c29440": {},
+            "a7a63c50547f252d8fdbc9d6d593fc95cad7b5cf": {}
+          }
+        },
+        "In-Context Identification (ICI)": {
+          " \\textbf{Overall Structure}": {
+            "6edd112383ad494f5f2eba72b6f4ffae122ce61f": {},
+            "c90a99eeb57019732a6cc996bb9eaf13faedf00f": {},
+            "1784cd42207a12bdc4061bb0f78bc8d5c82f61dd": {},
+            "94238dead40b12735d79ed63e29ead70730261a2": {},
+            "d5f82199e97d325427dffdc027baca75578561f5": {},
+            "edd705ebe3546272b7fe952e2ed6088200adad76": {},
+            "07a64686ce8e43ac475a8d820a8a9f1d87989583": {}
+          },
+          " \\textbf{Syntactic Information}": {
+            "015dd4ca002c14b83e0e53bce83b7eacea9f5a28": {},
+            "0eae83a76b2db97547d8ed42bb048c3eaaf78027": {},
+            "6edd112383ad494f5f2eba72b6f4ffae122ce61f": {},
+            "1784cd42207a12bdc4061bb0f78bc8d5c82f61dd": {},
+            "f1481b4eba72c1e1d355413af37352a0bcfc50e9": {},
+            "07a64686ce8e43ac475a8d820a8a9f1d87989583": {},
+            "f6390beca54411b06f3bde424fb983a451789733": {},
+            "c413a339d7784574ed43debea494ef405ee09d81": {}
+          },
+          " \\textbf{Semantic Information}": {
+            "c0d9a48547d728dd320b453b01a0ab1ce2f96098": {},
+            "77f02ff24909896856fec410968aef7999c29440": {},
+            "ebfc54627cdd61a07c44667ab3a8ea77099fe59b": {},
+            "4c0a545b1eb73084e3d395435af9cf6649c2b1da": {},
+            "4b84736c87d9d927cc2b68a9fdc769f91dc56d71": {},
+            "012dda8aef89ffa57128b15dc3cad2c02eedfa80": {}
+          }
+        },
+        "Latent Reasoning (LR)": {
+          " \\textbf{In-context Learning}": {
+            "63a87feede94433b44b2c2b194e5902c3c5158f2": {},
+            "b13947c7598aa91992cf04048afa19c7cfe69795": {},
+            "d04a7906161835440daaff90265dacca01ed3ba3": {},
+            "f483c00cc45dd387364dc485794c27afae9289bb": {},
+            "85447eeb6e5276e713957835125a2273f9ac0694": {},
+            "cf735fa6c0982969b8b2a60b74663572090d1a4b": {},
+            "c90a99eeb57019732a6cc996bb9eaf13faedf00f": {},
+            "36681edd6a32b1521844f2e3904587c8f5750d09": {},
+            "012dda8aef89ffa57128b15dc3cad2c02eedfa80": {}
+          },
+          "\\textbf{Effective Reasoning}": {
+            "405f8f5f1c6df1b3343c812832479aad5180b65f": {},
+            "5012568ce3a750679b7e874728ddd0b11f7ffeb8": {},
+            "a6c4c667242f0ae280da5057fb2bf46f8f467d09": {},
+            "fa0cbfba4e41b9f2487df251fcc3b93c21381167": {}
+          },
+          "\\textbf{Task-Specific}": {
+            "77f02ff24909896856fec410968aef7999c29440": {},
+            "063988bf654fb9f39b82a5b8c8b934d6efcff72b": {},
+            "6edd112383ad494f5f2eba72b6f4ffae122ce61f": {},
+            "078e4ff3739a96365482483beca71fc505a7e7eb": {},
+            "07c2c3b4af7e4ff1577f36f47f1c93398a6df648": {}
+          }
+        },
+        "Expression Preparation (EP)": {
+          " \\textbf{Information Aggregation}": {
+            "ebfc54627cdd61a07c44667ab3a8ea77099fe59b": {}
+          },
+          "\\ \\textbf{Signal Amplification}": {
+            "31048d9161dad19723b5c0733c7da0ea8b592e8f": {},
+            "77f02ff24909896856fec410968aef7999c29440": {}
+          },
+          "\\ \\textbf{Instruction Alignment}": {
+            "78272e671bd859f777b09851d29b2542f4ad070b": {}
+          }
+        }
+      }
+    },
+    "memberships": [
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000001",
+        "paperId": "11ae58636a5daf0ea1297f1c4ee94042fcebefa8",
+        "ref_index": "1",
+        "path": [
+          "Special Attention Heads",
+          "Knowledge Recalling (KR)",
+          "\\textbf{General Tasks}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000002",
+        "paperId": "4c0a545b1eb73084e3d395435af9cf6649c2b1da",
+        "ref_index": "21",
+        "path": [
+          "Special Attention Heads",
+          "Knowledge Recalling (KR)",
+          "\\textbf{General Tasks}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000003",
+        "paperId": "77f02ff24909896856fec410968aef7999c29440",
+        "ref_index": "5",
+        "path": [
+          "Special Attention Heads",
+          "Knowledge Recalling (KR)",
+          "\\ \\textbf{Specific Tasks}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000004",
+        "paperId": "a7a63c50547f252d8fdbc9d6d593fc95cad7b5cf",
+        "ref_index": "24",
+        "path": [
+          "Special Attention Heads",
+          "Knowledge Recalling (KR)",
+          "\\ \\textbf{Specific Tasks}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000005",
+        "paperId": "6edd112383ad494f5f2eba72b6f4ffae122ce61f",
+        "ref_index": "12",
+        "path": [
+          "Special Attention Heads",
+          "In-Context Identification (ICI)",
+          " \\textbf{Overall Structure}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000006",
+        "paperId": "c90a99eeb57019732a6cc996bb9eaf13faedf00f",
+        "ref_index": "17",
+        "path": [
+          "Special Attention Heads",
+          "In-Context Identification (ICI)",
+          " \\textbf{Overall Structure}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000007",
+        "paperId": "1784cd42207a12bdc4061bb0f78bc8d5c82f61dd",
+        "ref_index": "18",
+        "path": [
+          "Special Attention Heads",
+          "In-Context Identification (ICI)",
+          " \\textbf{Overall Structure}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000008",
+        "paperId": "94238dead40b12735d79ed63e29ead70730261a2",
+        "ref_index": "25",
+        "path": [
+          "Special Attention Heads",
+          "In-Context Identification (ICI)",
+          " \\textbf{Overall Structure}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000009",
+        "paperId": "d5f82199e97d325427dffdc027baca75578561f5",
+        "ref_index": "26",
+        "path": [
+          "Special Attention Heads",
+          "In-Context Identification (ICI)",
+          " \\textbf{Overall Structure}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000010",
+        "paperId": "edd705ebe3546272b7fe952e2ed6088200adad76",
+        "ref_index": "27",
+        "path": [
+          "Special Attention Heads",
+          "In-Context Identification (ICI)",
+          " \\textbf{Overall Structure}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000011",
+        "paperId": "07a64686ce8e43ac475a8d820a8a9f1d87989583",
+        "ref_index": "31",
+        "path": [
+          "Special Attention Heads",
+          "In-Context Identification (ICI)",
+          " \\textbf{Overall Structure}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000012",
+        "paperId": "015dd4ca002c14b83e0e53bce83b7eacea9f5a28",
+        "ref_index": "0",
+        "path": [
+          "Special Attention Heads",
+          "In-Context Identification (ICI)",
+          " \\textbf{Syntactic Information}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000013",
+        "paperId": "0eae83a76b2db97547d8ed42bb048c3eaaf78027",
+        "ref_index": "3",
+        "path": [
+          "Special Attention Heads",
+          "In-Context Identification (ICI)",
+          " \\textbf{Syntactic Information}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000014",
+        "paperId": "6edd112383ad494f5f2eba72b6f4ffae122ce61f",
+        "ref_index": "12",
+        "path": [
+          "Special Attention Heads",
+          "In-Context Identification (ICI)",
+          " \\textbf{Syntactic Information}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000015",
+        "paperId": "1784cd42207a12bdc4061bb0f78bc8d5c82f61dd",
+        "ref_index": "18",
+        "path": [
+          "Special Attention Heads",
+          "In-Context Identification (ICI)",
+          " \\textbf{Syntactic Information}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000016",
+        "paperId": "f1481b4eba72c1e1d355413af37352a0bcfc50e9",
+        "ref_index": "20",
+        "path": [
+          "Special Attention Heads",
+          "In-Context Identification (ICI)",
+          " \\textbf{Syntactic Information}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000017",
+        "paperId": "07a64686ce8e43ac475a8d820a8a9f1d87989583",
+        "ref_index": "31",
+        "path": [
+          "Special Attention Heads",
+          "In-Context Identification (ICI)",
+          " \\textbf{Syntactic Information}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000018",
+        "paperId": "f6390beca54411b06f3bde424fb983a451789733",
+        "ref_index": "32",
+        "path": [
+          "Special Attention Heads",
+          "In-Context Identification (ICI)",
+          " \\textbf{Syntactic Information}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000019",
+        "paperId": "c413a339d7784574ed43debea494ef405ee09d81",
+        "ref_index": "34",
+        "path": [
+          "Special Attention Heads",
+          "In-Context Identification (ICI)",
+          " \\textbf{Syntactic Information}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000020",
+        "paperId": "c0d9a48547d728dd320b453b01a0ab1ce2f96098",
+        "ref_index": "2",
+        "path": [
+          "Special Attention Heads",
+          "In-Context Identification (ICI)",
+          " \\textbf{Semantic Information}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000021",
+        "paperId": "77f02ff24909896856fec410968aef7999c29440",
+        "ref_index": "5",
+        "path": [
+          "Special Attention Heads",
+          "In-Context Identification (ICI)",
+          " \\textbf{Semantic Information}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000022",
+        "paperId": "ebfc54627cdd61a07c44667ab3a8ea77099fe59b",
+        "ref_index": "7",
+        "path": [
+          "Special Attention Heads",
+          "In-Context Identification (ICI)",
+          " \\textbf{Semantic Information}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000023",
+        "paperId": "4c0a545b1eb73084e3d395435af9cf6649c2b1da",
+        "ref_index": "21",
+        "path": [
+          "Special Attention Heads",
+          "In-Context Identification (ICI)",
+          " \\textbf{Semantic Information}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000024",
+        "paperId": "4b84736c87d9d927cc2b68a9fdc769f91dc56d71",
+        "ref_index": "29",
+        "path": [
+          "Special Attention Heads",
+          "In-Context Identification (ICI)",
+          " \\textbf{Semantic Information}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000025",
+        "paperId": "012dda8aef89ffa57128b15dc3cad2c02eedfa80",
+        "ref_index": "30",
+        "path": [
+          "Special Attention Heads",
+          "In-Context Identification (ICI)",
+          " \\textbf{Semantic Information}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000026",
+        "paperId": "63a87feede94433b44b2c2b194e5902c3c5158f2",
+        "ref_index": "6",
+        "path": [
+          "Special Attention Heads",
+          "Latent Reasoning (LR)",
+          " \\textbf{In-context Learning}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000027",
+        "paperId": "b13947c7598aa91992cf04048afa19c7cfe69795",
+        "ref_index": "9",
+        "path": [
+          "Special Attention Heads",
+          "Latent Reasoning (LR)",
+          " \\textbf{In-context Learning}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000028",
+        "paperId": "d04a7906161835440daaff90265dacca01ed3ba3",
+        "ref_index": "11",
+        "path": [
+          "Special Attention Heads",
+          "Latent Reasoning (LR)",
+          " \\textbf{In-context Learning}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000029",
+        "paperId": "f483c00cc45dd387364dc485794c27afae9289bb",
+        "ref_index": "14",
+        "path": [
+          "Special Attention Heads",
+          "Latent Reasoning (LR)",
+          " \\textbf{In-context Learning}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000030",
+        "paperId": "85447eeb6e5276e713957835125a2273f9ac0694",
+        "ref_index": "15",
+        "path": [
+          "Special Attention Heads",
+          "Latent Reasoning (LR)",
+          " \\textbf{In-context Learning}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000031",
+        "paperId": "cf735fa6c0982969b8b2a60b74663572090d1a4b",
+        "ref_index": "16",
+        "path": [
+          "Special Attention Heads",
+          "Latent Reasoning (LR)",
+          " \\textbf{In-context Learning}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000032",
+        "paperId": "c90a99eeb57019732a6cc996bb9eaf13faedf00f",
+        "ref_index": "17",
+        "path": [
+          "Special Attention Heads",
+          "Latent Reasoning (LR)",
+          " \\textbf{In-context Learning}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000033",
+        "paperId": "36681edd6a32b1521844f2e3904587c8f5750d09",
+        "ref_index": "23",
+        "path": [
+          "Special Attention Heads",
+          "Latent Reasoning (LR)",
+          " \\textbf{In-context Learning}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000034",
+        "paperId": "012dda8aef89ffa57128b15dc3cad2c02eedfa80",
+        "ref_index": "30",
+        "path": [
+          "Special Attention Heads",
+          "Latent Reasoning (LR)",
+          " \\textbf{In-context Learning}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000035",
+        "paperId": "405f8f5f1c6df1b3343c812832479aad5180b65f",
+        "ref_index": "13",
+        "path": [
+          "Special Attention Heads",
+          "Latent Reasoning (LR)",
+          "\\textbf{Effective Reasoning}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000036",
+        "paperId": "5012568ce3a750679b7e874728ddd0b11f7ffeb8",
+        "ref_index": "22",
+        "path": [
+          "Special Attention Heads",
+          "Latent Reasoning (LR)",
+          "\\textbf{Effective Reasoning}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000037",
+        "paperId": "a6c4c667242f0ae280da5057fb2bf46f8f467d09",
+        "ref_index": "28",
+        "path": [
+          "Special Attention Heads",
+          "Latent Reasoning (LR)",
+          "\\textbf{Effective Reasoning}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000038",
+        "paperId": "fa0cbfba4e41b9f2487df251fcc3b93c21381167",
+        "ref_index": "35",
+        "path": [
+          "Special Attention Heads",
+          "Latent Reasoning (LR)",
+          "\\textbf{Effective Reasoning}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000039",
+        "paperId": "77f02ff24909896856fec410968aef7999c29440",
+        "ref_index": "5",
+        "path": [
+          "Special Attention Heads",
+          "Latent Reasoning (LR)",
+          "\\textbf{Task-Specific}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000040",
+        "paperId": "063988bf654fb9f39b82a5b8c8b934d6efcff72b",
+        "ref_index": "10",
+        "path": [
+          "Special Attention Heads",
+          "Latent Reasoning (LR)",
+          "\\textbf{Task-Specific}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000041",
+        "paperId": "6edd112383ad494f5f2eba72b6f4ffae122ce61f",
+        "ref_index": "12",
+        "path": [
+          "Special Attention Heads",
+          "Latent Reasoning (LR)",
+          "\\textbf{Task-Specific}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000042",
+        "paperId": "078e4ff3739a96365482483beca71fc505a7e7eb",
+        "ref_index": "19",
+        "path": [
+          "Special Attention Heads",
+          "Latent Reasoning (LR)",
+          "\\textbf{Task-Specific}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000043",
+        "paperId": "07c2c3b4af7e4ff1577f36f47f1c93398a6df648",
+        "ref_index": "33",
+        "path": [
+          "Special Attention Heads",
+          "Latent Reasoning (LR)",
+          "\\textbf{Task-Specific}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000044",
+        "paperId": "ebfc54627cdd61a07c44667ab3a8ea77099fe59b",
+        "ref_index": "7",
+        "path": [
+          "Special Attention Heads",
+          "Expression Preparation (EP)",
+          " \\textbf{Information Aggregation}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000045",
+        "paperId": "31048d9161dad19723b5c0733c7da0ea8b592e8f",
+        "ref_index": "4",
+        "path": [
+          "Special Attention Heads",
+          "Expression Preparation (EP)",
+          "\\ \\textbf{Signal Amplification}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000046",
+        "paperId": "77f02ff24909896856fec410968aef7999c29440",
+        "ref_index": "5",
+        "path": [
+          "Special Attention Heads",
+          "Expression Preparation (EP)",
+          "\\ \\textbf{Signal Amplification}"
+        ],
+        "depth": 3,
+        "resolved": true
+      },
+      {
+        "paper_id": "2409.03752",
+        "arxiv_id": "2409.03752",
+        "leaf_mention_id": "2409.03752::000047",
+        "paperId": "78272e671bd859f777b09851d29b2542f4ad070b",
+        "ref_index": "8",
+        "path": [
+          "Special Attention Heads",
+          "Expression Preparation (EP)",
+          "\\ \\textbf{Instruction Alignment}"
+        ],
+        "depth": 3,
+        "resolved": true
+      }
+    ],
+    "summary": {
+      "leaf_mention_count": 47,
+      "unique_leaf_paper_count": 36,
+      "multi_membership_extra_mentions": 11,
+      "unresolved_leaf_count": 0
+    }
+  },
+  "human_written_reference": {
+    "arm": "human_written",
+    "outline_available": true,
+    "citation_key_namespace": "source_paper_citation_keys"
+  }
+}
