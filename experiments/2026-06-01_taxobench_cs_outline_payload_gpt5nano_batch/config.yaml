@@ -1,0 +1,134 @@
+experiment_id: 2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch
+default_run_id: 2026-06-01T0000_taipei_scaffold_only
+status: draft_data_pending_no_runs
+
+source_dataset:
+  workspace_root: /Users/xjp/Desktop/TaxoBench-CS
+  ground_dir: /Users/xjp/Desktop/TaxoBench-CS/data/ground_new
+  survey_download_dir: /Users/xjp/Desktop/TaxoBench-CS/data/survey_arxiv_downloads_2026-06-01
+  outline_extraction_dir: /Users/xjp/Desktop/TaxoBench-CS/data/taxobench_outline_exact_2026-06-01
+  mutation_policy: read_only
+
+staging:
+  status: not_created
+  intended_root: data/taxobench-cs
+  local_scratch: .local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch
+  results_root: results/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch
+  manifest_name: input_manifest.jsonl
+  note: Do not create staging or results until the adapter is implemented and explicitly invoked.
+
+observed_source_snapshot_2026_06_01:
+  ground_json_files: 156
+  survey_count: 156
+  pdf_ok: 156
+  source_ok: 156
+  source_extracted_ok: 156
+  outline_extraction_source: taxobench_outline_exact_2026-06-01
+  outline_extraction_ok: 156
+  outline_extraction_failed: 0
+  copied_reference_outline_files: 156
+  total_outline_nodes: 5534
+  total_section_ref_mentions: 99546
+  total_bibtex_ref_meta_observed_by_exact_extractor: 36140
+  max_outline_level_observed: 3
+  reference_rows: 11609
+  taxonomy_leaf_mentions: 13205
+  per_file_unique_taxonomy_leaf_paper_id_sum: 10922
+  global_unique_taxonomy_leaf_paper_ids: 7692
+  global_unique_papers_paper_ids: 8142
+  files_with_duplicate_taxonomy_leaf_mentions: 127
+  duplicate_leaf_extra_mentions: 2283
+  files_with_unrepresented_papers_rows: 30
+  per_file_unrepresented_papers_row_sum: 687
+  global_unique_papers_ids_never_used_as_taxonomy_leaf: 450
+  papers_year_null: 18
+  papers_arxiv_id_null: 4448
+  externalids_arxiv_missing: 1719
+  doi_missing: 1557
+  copied_outline_empty_title_nodes: 2
+
+paper_set:
+  status: pending_adapter_validation
+  expected_source_count_from_snapshot: 156
+  selection_policy: all_adapter_ready_records
+  required_ready_fields:
+    - arxiv_id
+    - title
+    - taxo_tree
+    - papers
+    - papers_index
+    - human_written_outline_path
+  required_adapter_policies:
+    - preserve_or_report_taxonomy_multi_membership
+    - do_not_assume_all_papers_are_taxonomy_leaves
+    - tolerate_null_year
+    - tolerate_null_reference_arxiv_id
+    - do_not_require_doi
+
+matrix:
+  input_conditions:
+    - title_ref_meta_no_target_abstract
+  arms:
+    reference_only:
+      - human_written
+    generated:
+      - baseline_no_taxonomy
+      - flat_concepts
+      - random_hierarchy
+      - tree_only_guarded
+      - tree_with_papers
+  planning_counts_if_156_ready:
+    generation_requests: 780
+    comparison_rows_including_human_written: 936
+
+generation:
+  status: planned_not_runnable
+  transport: openai_batch_api
+  endpoint: /v1/responses
+  model: gpt-5-nano
+  reasoning_effort: high
+  completion_window: 24h
+  max_output_tokens: 32768
+  retry_max_output_tokens_escape_hatch: 65536
+
+prompt_contract:
+  target_abstract_used: false
+  input_contract: target_title_plus_ref_meta_no_target_abstract
+  reference_abstracts_preserved: true
+  metadata_provenance_fields_stripped: true
+  local_paths_stripped: true
+  taxonomy_payload_required_for:
+    - flat_concepts
+    - random_hierarchy
+    - tree_only_guarded
+    - tree_with_papers
+
+projection:
+  status: planned_not_implemented
+  source_payload: TaxoBench-CS taxo_tree
+  definition_policy: do_not_generate_or_impute
+  flat_concepts: remove parent-child hierarchy and keep concept labels plus descendant paper leaves
+  random_hierarchy: preserve concept labels and paper evidence; randomize hierarchy deterministically
+  tree_only_guarded: render taxonomy labels plus paper identity leaves
+  tree_with_papers: render taxonomy labels plus leaf paper id/title/year/external ids
+  random_seed_base: taxobench_cs_outline_payload_v1
+
+judge:
+  status: planned_not_runnable
+  backend: codex
+  model: gpt-5.5
+  reasoning_effort: high
+  concurrency: 2
+  timeout_seconds: 600
+  max_retries: 2
+
+guardrails:
+  no_experiments_run_during_scaffold: true
+  do_not_mutate_taxobench_cs: true
+  do_not_write_google_sheets: true
+  do_not_write_results_until_explicit_run: true
+
+notes:
+  - human_written is an evaluation/reference arm and must not be sent as a generation request.
+  - tree_with_papers is a new planned arm and should remain TODO until an adapter/runner implements it.
+  - This scaffold records intended settings only; it is not evidence that the experiment is runnable.

@@ -4,6 +4,12 @@ This file is the repo-local pointer for the 2026-05-28 Google Drive dataset
 audit upload. It records the exact local source paths and exact cloud
 destinations so the package can be audited without relying on chat history.
 
+Related repo-local dataset-audit notes:
+
+- `docs/dataset_audits/hf_meow_raw_taxonomy_high261_topic_labels_2026-05-28.md`
+  records the coarse topic label set and first-pass counts for the current
+  261-paper metadata file.
+
 ## Drive Locations
 
 - Official dataset-audit parent:
