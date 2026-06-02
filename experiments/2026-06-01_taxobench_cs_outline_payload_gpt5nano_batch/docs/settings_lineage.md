@@ -136,17 +136,18 @@ or `tree_with_papers` in place.
 
 ## Shared Generation Settings
 
-Planned settings inherited from recent Tree50 batches:
+Current default generation settings:
 
 - transport: OpenAI Batch API
 - endpoint: `/v1/responses`
 - model: `gpt-5-nano`
 - reasoning effort: `high`
-- max output tokens: `32768`
-- retry escape hatch max output tokens: `65536`
+- max output tokens: `65536`
 
-These settings are documented for future use only. No request payloads or batch
-files were created by this scaffold.
+The previous `32768` generation default is retired for this experiment because
+the 2026-06-02 full generation Batch produced many unusable
+`max_output_tokens` incomplete responses. Do not render future generation Batch
+inputs with `32768` unless the user explicitly requests that regression test.
 
 ## Shared Evaluation Settings
 

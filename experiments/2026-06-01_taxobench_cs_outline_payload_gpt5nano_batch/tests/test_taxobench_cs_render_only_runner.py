@@ -77,6 +77,7 @@ def test_render_only_writes_five_generated_requests_without_human_written(tmp_pa
     assert len(rows) == 5
     assert {row["custom_id"].split("__", 1)[1] for row in rows} == set(runner.GENERATED_ARMS)
     assert all("human_written" not in row["custom_id"] for row in rows)
+    assert all(row["body"]["max_output_tokens"] == 65536 for row in rows)
     assert "meow_reconstructed_blind.json" not in all_prompt_text
     assert "Hard restrictions" not in all_prompt_text
     assert "Faithful released MEOW" not in all_prompt_text

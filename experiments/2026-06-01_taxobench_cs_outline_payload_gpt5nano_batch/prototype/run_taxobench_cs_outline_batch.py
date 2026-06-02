@@ -18,7 +18,7 @@ from typing import Any
 EXPERIMENT_ID = "2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch"
 MODEL = "gpt-5-nano"
 REASONING_EFFORT = "high"
-MAX_OUTPUT_TOKENS = 32768
+MAX_OUTPUT_TOKENS = 65536
 ENDPOINT = "/v1/responses"
 COMPLETION_WINDOW = "24h"
 GENERATED_ARMS = (
