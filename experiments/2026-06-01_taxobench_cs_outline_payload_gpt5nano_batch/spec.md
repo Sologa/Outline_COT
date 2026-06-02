@@ -3,7 +3,7 @@
 ## Identity
 
 - Experiment id: `2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch`
-- Status: `live_generation_batch_completed_partial_normalization_no_judge`
+- Status: `live_generation_complete_no_judge`
 - Created: `2026-06-01`
 - Source dataset workspace: `/Users/xjp/Desktop/TaxoBench-CS`
 - Owning runtime workspace: `/Users/xjp/Desktop/Outline_COT`
@@ -16,10 +16,10 @@ matrix, prompt contract, render-only runner hook, and validation gates.
 
 Canonical staged inputs and deterministic taxonomy payloads were written after
 explicit approval on 2026-06-01. A three-row live `human_written` judge smoke
-completed on 2026-06-02. A full 780-row generation Batch also completed on
-2026-06-02, but only 388 rows normalized into usable outline JSON; the remaining
-392 rows were Responses API `status=incomplete` with
-`incomplete_details.reason=max_output_tokens`. Full generated-arm judging,
+completed on 2026-06-02. A full 780-row generation Batch completed on
+2026-06-02; its 392 unusable rows were retried only after the generation default
+was raised to `max_output_tokens=65536`. The combined generated-root now
+contains all `780` normalized generated outlines. Full generated-arm judging,
 `results/` publication, and Google Sheet updates have not been run.
 
 ## Arms

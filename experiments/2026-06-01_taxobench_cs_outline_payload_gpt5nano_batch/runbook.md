@@ -453,12 +453,44 @@ tree_only_guarded:    86 / 156
 tree_with_papers:     73 / 156
 ```
 
-This generation run is not sufficient for full evaluation. The failure mode is
-not missing Batch rows; it is generation incompletion under `reasoning: high`
-and `max_output_tokens: 32768`, with many responses spending the output budget
-on reasoning tokens before final text. Do not start full judge evaluation from
-this generated-root unless the analysis is intentionally restricted to the
-`388` successful generated outlines.
+This first generation run was not sufficient for full evaluation. The failure
+mode was not missing Batch rows; it was generation incompletion under
+`reasoning: high` and `max_output_tokens: 32768`, with many responses spending
+the output budget on reasoning tokens before final text.
+
+The unusable rows were retried on 2026-06-02 after raising generation
+`max_output_tokens` to `65536`. Only the `392` unusable custom_ids were retried;
+the original `388` usable rows were not resubmitted.
+
+Retry command:
+
+```bash
+set -a; source .env; set +a
+PYTHONDONTWRITEBYTECODE=1 python3 experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/prototype/run_taxobench_cs_outline_batch.py \
+  --output-root .local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/full_generation_retry_unusable_20260602_65536 \
+  --generated-root .local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/full_generation_live_20260602/generated_outlines \
+  --submit-live \
+  --poll-interval-seconds 60 \
+  --max-wait-seconds 21600 \
+  --force
+```
+
+Retry verified:
+
+- Batch id: `batch_6a1e5107792c8190b9b32eee90267d9e`
+- request counts: `392 completed / 0 failed / 392 total`
+- `batch_output.jsonl`: `392` rows
+- normalized outline success: `392 / 392`
+- retry overlap with the original `388` usable custom_ids: `0`
+- retry covered original failed custom_ids: `392`
+- generated-root after retry: `780 / 780` normalized outlines
+- all `156` papers have all five generated arms
+- retry usage: `12,364,012` input tokens, `6,785,792` cached input tokens,
+  `13,648,970` output tokens, `12,913,866` reasoning output tokens
+- retry approximate Batch cost: `$2.88621398`
+- combined generation approximate Batch cost: `$7.84156482`
+
+Full judge evaluation remains deferred.
 
 ## Phase 7: Full Evaluation
 

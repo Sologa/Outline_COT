@@ -1,15 +1,15 @@
 # Prototype Scripts
 
-Status: `live_generation_batch_completed_partial_normalization_no_judge`
+Status: `live_generation_complete_no_judge`
 
-Current status: `live_generation_batch_completed_partial_normalization_no_judge`.
+Current status: `live_generation_complete_no_judge`.
 
-Generation Batch submission is implemented and was run once after explicit user
-approval. The Batch completed all `780` requests with `0` API-level failures,
-but only `388` responses normalized into complete outline JSON. The remaining
-`392` rows are Responses API `status=incomplete` with
-`incomplete_details.reason=max_output_tokens`, so this generated-root is not
-ready for full judge evaluation.
+Generation Batch submission is implemented. The first 780-row generation Batch
+completed with `0` API-level failures but only `388` normalized outputs. The
+`392` unusable rows were retried only after raising generation
+`max_output_tokens` to `65536`; retry completed with `392 / 392` usable
+normalized outputs. The combined generated-root now has all `780` generated
+outlines. Full judge evaluation is still deferred.
 
 Current and future entrypoints:
 

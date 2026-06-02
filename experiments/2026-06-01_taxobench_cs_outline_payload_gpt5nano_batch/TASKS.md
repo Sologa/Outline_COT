@@ -1255,10 +1255,36 @@ Generation attempt evidence from 2026-06-02:
   `$4.95535084`
 - full Batch judge evaluation was not run
 
-This does not complete Step 6 because the generated-root does not yet contain
-all `780` normalized outlines. The next spending decision is whether to rerun
-generation with revised generation settings, likely avoiding `reasoning: high`
-for this prompt family or otherwise increasing the output budget.
+Generation retry evidence from 2026-06-02:
+
+- only the `392` unusable rows from the first generation Batch were retried;
+  the original `388` usable rows were not resubmitted
+- retry Batch id: `batch_6a1e5107792c8190b9b32eee90267d9e`
+- retry request counts: `392 completed / 0 failed / 392 total`
+- retry output rows downloaded and parsed: `392`
+- retry normalized outline success: `392 / 392`
+- retry artifact root:
+  `.local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/full_generation_retry_unusable_20260602_65536`
+- retry generated-root target:
+  `.local/experiments/2026-06-01_taxobench_cs_outline_payload_gpt5nano_batch/full_generation_live_20260602/generated_outlines`
+- retry overlap with original usable custom_ids: `0`
+- combined normalized outline count: `780 / 780`
+- combined normalized outline success by arm:
+  - `baseline_no_taxonomy`: `156 / 156`
+  - `flat_concepts`: `156 / 156`
+  - `random_hierarchy`: `156 / 156`
+  - `tree_only_guarded`: `156 / 156`
+  - `tree_with_papers`: `156 / 156`
+- retry usage recorded by `api_usage_cost_summary.json`: `12,364,012`
+  input tokens, `6,785,792` cached input tokens, `13,648,970` output tokens,
+  `12,913,866` reasoning output tokens
+- retry approximate Batch cost: `$2.88621398`
+- combined generation approximate Batch cost: `$7.84156482`
+- full Batch judge evaluation was not run
+
+This still does not complete Step 6 because full Batch judge evaluation remains
+explicitly deferred. The next decision is whether to run full generated-arm
+judge evaluation over the now-complete generated-root.
 
 ---
 
